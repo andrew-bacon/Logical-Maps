@@ -3171,9 +3171,22 @@ function renderModels() {
 }
 
 function certBadges(r) {
-  const c = r.certificate;
-  return `${sourceBadge(sourceOf(r))}${c.lean === 'verified' ? '<span class="badge lean verified">Lean ✓</span>' : ''}${r.status === 'conjectured' ? '<span class="badge conj">conjecture</span>' : ''}`;
+  const c = r.certificate, n = leanVerdicts(r).length;
+  const lean = c.lean === 'verified' ? '<span class="badge lean verified">Lean ✓</span>'
+    : n ? `<span class="badge lean" title="${n} of its verdicts proved in Lean">Lean: ${n} verdict${n === 1 ? '' : 's'}</span>` : '';
+  return `${sourceBadge(sourceOf(r))}${lean}${r.status === 'conjectured' ? '<span class="badge conj">conjecture</span>' : ''}`;
 }
+// A model's verdicts proved one by one in Lean (its record's lean.verdicts), once verified.
+const leanVerdicts = m => ((m.lean || {}).verdicts || []).filter(v => v.status === 'verified');
+const leanVerdict = (m, c) => leanVerdicts(m).find(v => (v.holds || v.fails) === c);
+// In a verdict's evidence: its Lean links, and the argument that gives it, if one does.
+const leanVerdictLinks = (m, c) => {
+  const v = leanVerdict(m, c);
+  if (!v) return '';
+  const via = !v.via ? '' : ` <span class="dim">by ${v.via.group ? `the group’s argument ${esc(v.via.argument)}` : `the argument <button class="lnk" data-open-argument="${esc(v.via.argument)}">${esc(v.via.argument)}</button>`}</span>`;
+  return `<div class="links">${['<span class="badge lean verified">Lean ✓</span>', ...leanLinkTags(v.lean_links)].join(' ')}${via}</div>`;
+};
+
 // Abbreviate only equivalent positive conjunctions. These are presentation
 // aliases: the original records and the engines' premise arrays stay intact.
 // baseE uses proved, source-filtered rules and the fixed topic framework;
@@ -3597,10 +3610,27 @@ function argumentSource(m, a) { return a.by ? null : sourceOf(m); }
 function shortAuthor(by) { return String(by || '').split(/ \(|[,;]/)[0].trim(); }
 function trawlChain(m, a) { return a.provenance ? (PROVENANCE.get(a.provenance)?.records || {})[m.companion_of || m.id] || null : null; }
 const isoDay = t => String(t || '').slice(0, 10);
-function argumentTags(a) {
+function argumentTags(a, m) {
+  const forModel = m && leanForArgument(m, a).length;
   return (a.standing === 'conjectured' ? `<span class="badge conj">conjecture${a.tier ? ' · ' + esc(a.tier) : ''}</span>` : '')
-    + (a.withdrawn ? '<span class="badge withdrawn">withdrawn</span>' : '');
+    + (a.withdrawn ? '<span class="badge withdrawn">withdrawn</span>' : '')
+    + (forModel ? '<span class="badge lean verified" title="Proved in Lean for this model">Lean ✓</span>'
+      : leanArgument(a).length ? '<span class="badge lean verified" title="Proved in Lean, for every model meeting its conditions">Lean ✓</span>' : '');
 }
+// The model's Lean certificates of the verdicts an argument gives it.
+const leanForArgument = (m, a) => [...(a.holds || []), ...(a.fails || [])].map(c => leanVerdict(m, c)).filter(Boolean);
+const leanModelLine = (m, a) => {
+  const ls = leanForArgument(m, a);
+  return ls.length ? `<p class="note lean-argument">Proved in Lean for this model: ${ls.map(v => (v.holds ? '✓ ' : '✗ ') + esc(name(v.holds || v.fails))
+    + ((v.lean_links || []).length ? ' (' + leanLinkTags(v.lean_links).join(' · ') + ')' : '')).join('; ')}.</p>` : '';
+};
+// A general argument's verdicts proved in Lean, for every model meeting its conditions.
+const leanArgument = a => (a.lean || []).filter(e => e.status === 'verified');
+const leanArgumentLine = a => {
+  const ls = leanArgument(a);
+  return ls.length ? `<p class="note lean-argument">Proved in Lean: ${ls.map(e => (e.holds ? '✓ ' : '✗ ') + esc(name(e.holds || e.fails))
+    + ((e.lean_links || []).length ? ' (' + leanLinkTags(e.lean_links).join(' · ') + ')' : '')).join('; ')}.</p>` : '';
+};
 // Who and when, without repeating a date the name already gives ("…, 20 September 2026").
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 function withDate(by, date) {
@@ -3640,10 +3670,11 @@ function argumentHtml(m, a, i) {
   ].filter(Boolean).join(' ');
   // A shared argument applies to a member through the conditions it requires; say why the member meets each.
   const conditions = (a.conditions || []).map(c => `<div class="note condition"><b>Requires:</b> ${fmt(c.text || '')}${c.reason ? ` <b>Here:</b> ${fmt(c.reason)}` : ''}</div>`).join('');
-  return `<details class="argument${a.withdrawn ? ' withdrawn' : ''}"${i === undefined ? '' : ` id="argument-${i}"`}><summary><span class="argument-verdicts">${marks}</span> ${argumentTags(a)}</summary>`
+  return `<details class="argument${a.withdrawn ? ' withdrawn' : ''}"${i === undefined ? '' : ` id="argument-${i}"`}><summary><span class="argument-verdicts">${marks}</span> ${argumentTags(a, m)}</summary>`
     + (a.text ? `<div class="prose reading">${fmt(a.text)}</div>` : '')
     + ((a.adapt || '').trim() ? `<div class="prose reading">${fmt(a.adapt)}</div>` : '')
     + conditions
+    + (leanModelLine(m, a) || leanArgumentLine(a))
     + creditHtml(m, a)
     + (meta ? `<p class="note">${meta}</p>` : '')
     + (a.revisions || []).map(r => `<p class="note">Revised ${esc(r.date)}${r.by ? ' by ' + esc(r.by) : ''}: ${esc(r.note)}</p>`).join('')
@@ -4199,7 +4230,7 @@ function renderDetail() {
     h += equivalentList([(sel.negative ? '!' : '') + sel.id]);
   } else if (sel.type === 'model-verdict') {
     const m = byMid.get(sel.id), e = modelEvidence(m, sel.principle);
-    h += `<div class="pop-t">${esc(m.name)}</div><div class="pop-s">${esc(name(sel.principle))}: ${e ? e.value ? '✓ satisfied' : '✗ violated' : '? unknown'}</div>`;
+    h += `<div class="pop-t">${esc(m.name)}</div><div class="pop-s">${esc(name(sel.principle))}: ${e ? e.value ? '✓ satisfied' : '✗ violated' : '? unknown'}</div>${leanVerdictLinks(m, sel.principle)}`;
     if (e) h += `<div class="badges">${evidenceBadges(e, m, sel.principle)}</div><div class="pop-l">${e.direct ? 'Recorded directly for the model.' : 'Derived from the model and the recorded implications.'}</div>${sourceSummary(e.items)}<div class="links"><button class="lnk" data-goto="1">details</button></div>`;
   } else {
     const x = sel.type === 'result' ? byRid.get(sel.id) : byMid.get(sel.id);

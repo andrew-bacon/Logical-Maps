@@ -158,8 +158,9 @@ gives `lean: {model, verdicts}`: a Lean term for the model, and a list of entrie
 generated statement, `Models.<model>.<principle>`, in `ModelStatements.lean`, from the
 topic's `lean.verdict` templates (`holds`, `fails`, with `{model}` and `{def}`; `imports`;
 and a `relative` conjunct for principles in `relative_categories`). Validation requires each
-such verdict to be one the map already gives the model. The record covers that model alone:
-a group's generated variants do not inherit it.
+such verdict to be one the map already gives the model. The viewer counts the verified ones
+on the model's badge and shows each on the argument that gives it. The record covers that model alone: a
+group's generated variants do not inherit it.
 
 General arguments are formalised the same way, so that a model's verdicts follow in Lean
 along the route the map gives them:
@@ -179,7 +180,8 @@ along the route the map gives them:
   conditions, by applying the argument's certificate. A verdict the record lists itself
   takes precedence.
 - **Status:** `lean-check` audits the argument and derived certificates with the rest. The
-  build marks them verified when they are in the index on the allowed axioms.
+  build marks them verified when they are in the index on the allowed axioms. The viewer
+  marks an argument proved in Lean, and says which argument gives each derived verdict.
 
 `pmap lean-check` builds the library and audits wrapper proofs at the generated
 statement types. Failed elaboration, `sorryAx`, and nonstandard axioms are rejected. The `lean` certificate field is `none`,
