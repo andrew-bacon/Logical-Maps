@@ -477,4 +477,412 @@ theorem necessary_well_ordering_and_intensional_choice_imply_modal_well_ordering
         (hu : ∃ R, G R ∧ ∀ R', G R' → R' = R) => wellOrders_of_unique G hGF hu))
     ((le_iff G _).1 hGF)) hu⟩
 
+
+/-! ### Zorn's Lemma gives Well-Ordering (8 October 2026)
+
+The good relations — well-orders of their own fields — ordered by end-extension, with every
+relation that is not good put at the bottom. -/
+
+section zornWO
+variable {σ : Type} [Ty σ]
+
+/-- `S` is good: its pairs lie in its field, which it well-orders. -/
+def ZGood (S : σ → σ → Prop) : Prop :=
+  (∀ x y, S x y → S x x ∧ S y y) ∧ TotalOrderOn S (fun x => S x x) ∧
+    ∀ Y : σ → Prop, (∀ y, Y y → S y y) → (∃ y, Y y) → ∃ x, Y x ∧ ∀ y, Y y → S y x → y = x
+
+/-- `S'` end-extends `S`. -/
+def ZExt (S S' : σ → σ → Prop) : Prop :=
+  (∀ x y, S x y → S' x y) ∧ ∀ x y, S x x → S' y x → S y x
+
+/-- The preorder of the proof: `¬Good(S) ∨ (Good(S') ∧ S ⊑ S')`. -/
+def ZR (S S' : σ → σ → Prop) : Prop := ¬ ZGood S ∨ (ZGood S' ∧ ZExt S S')
+
+theorem zext_refl (S : σ → σ → Prop) : ZExt S S := ⟨fun _ _ h => h, fun _ _ _ h => h⟩
+
+theorem zext_trans (S₁ S₂ S₃ : σ → σ → Prop) (h₁ : ZExt S₁ S₂) (h₂ : ZExt S₂ S₃) :
+    ZExt S₁ S₃ :=
+  ⟨fun x y h => h₂.1 x y (h₁.1 x y h),
+   fun x y hx h => h₁.2 x y hx (h₂.2 x y (h₁.1 x x hx) h)⟩
+
+theorem zr_refl (S : σ → σ → Prop) : ZR S S :=
+  (em (ZGood S)).elim (fun g => Or.inr ⟨g, zext_refl S⟩) Or.inl
+
+theorem zr_trans (S₁ S₂ S₃ : σ → σ → Prop) (h₁ : ZR S₁ S₂) (h₂ : ZR S₂ S₃) : ZR S₁ S₃ :=
+  h₁.elim Or.inl fun ⟨g₂, e₁⟩ => h₂.elim (fun n => (n g₂).elim)
+    fun ⟨g₃, e₂⟩ => Or.inr ⟨g₃, zext_trans S₁ S₂ S₃ e₁ e₂⟩
+
+/-- The empty relation. -/
+def ZEmpty : σ → σ → Prop := fun _ _ => False
+
+/-- The empty relation is good. -/
+theorem zgood_empty : ZGood (ZEmpty (σ := σ)) :=
+  ⟨fun _ _ h => h.elim, ⟨fun _ _ _ h => h.elim, fun _ _ h => h.elim, fun _ _ h => h.elim⟩,
+   fun Y hY ⟨y, hy⟩ => (hY y hy).elim⟩
+
+/-- Two good members of an `ZR`-chain are comparable by end-extension. -/
+theorem zchain_comparable (𝒳 : (σ → σ → Prop) → Prop) (hc : TotalOrderOn ZR 𝒳)
+    {S S' : σ → σ → Prop} (hS : 𝒳 S) (hS' : 𝒳 S') (g : ZGood S) (g' : ZGood S') :
+    ZExt S S' ∨ ZExt S' S :=
+  (hc.2.2 S S' hS hS').elim
+    (fun h => h.elim (fun n => (n g).elim) fun h => Or.inl h.2)
+    (fun h => h.elim (fun n => (n g').elim) fun h => Or.inr h.2)
+
+/-- Two good members of a chain lie below a common good member. -/
+theorem zchain_common (𝒳 : (σ → σ → Prop) → Prop) (hc : TotalOrderOn ZR 𝒳)
+    {S₁ S₂ : σ → σ → Prop} (h₁ : 𝒳 S₁) (h₂ : 𝒳 S₂) (g₁ : ZGood S₁) (g₂ : ZGood S₂) :
+    ∃ S, 𝒳 S ∧ ZGood S ∧ (∀ a b, S₁ a b → S a b) ∧ ∀ a b, S₂ a b → S a b :=
+  (zchain_comparable 𝒳 hc h₁ h₂ g₁ g₂).elim
+    (fun e => ⟨S₂, h₂, g₂, e.1, fun _ _ h => h⟩)
+    (fun e => ⟨S₁, h₁, g₁, fun _ _ h => h, e.1⟩)
+
+/-- The union of the good members of a chain. -/
+def ZUnion (𝒳 : (σ → σ → Prop) → Prop) : σ → σ → Prop :=
+  fun x y => ∃ S, 𝒳 S ∧ ZGood S ∧ S x y
+
+theorem zunion_ext (𝒳 : (σ → σ → Prop) → Prop) (hc : TotalOrderOn ZR 𝒳)
+    {S : σ → σ → Prop} (hS : 𝒳 S) (g : ZGood S) : ZExt S (ZUnion 𝒳) :=
+  ⟨fun x y h => ⟨S, hS, g, h⟩, fun x y hx ⟨S', hS', g', h'⟩ =>
+    (zchain_comparable 𝒳 hc hS hS' g g').elim (fun e => e.2 x y hx h') (fun e => e.1 y x h')⟩
+
+theorem zunion_good (𝒳 : (σ → σ → Prop) → Prop) (hc : TotalOrderOn ZR 𝒳) :
+    ZGood (ZUnion 𝒳) :=
+  ⟨fun x y ⟨S, hS, g, h⟩ => ⟨⟨S, hS, g, (g.1 x y h).1⟩, ⟨S, hS, g, (g.1 x y h).2⟩⟩,
+   ⟨fun x y z _ _ _ ⟨S₁, h₁, g₁, a⟩ ⟨S₂, h₂, g₂, b⟩ =>
+      (zchain_common 𝒳 hc h₁ h₂ g₁ g₂).elim fun S ⟨hS, g, i₁, i₂⟩ =>
+        ⟨S, hS, g, g.2.1.1 x y z (g.1 x y (i₁ x y a)).1 (g.1 x y (i₁ x y a)).2
+          (g.1 y z (i₂ y z b)).2 (i₁ x y a) (i₂ y z b)⟩,
+    fun x y _ _ ⟨S₁, h₁, g₁, a⟩ ⟨S₂, h₂, g₂, b⟩ =>
+      (zchain_common 𝒳 hc h₁ h₂ g₁ g₂).elim fun S ⟨_, g, i₁, i₂⟩ =>
+        g.2.1.2.1 x y (g.1 x y (i₁ x y a)).1 (g.1 x y (i₁ x y a)).2 (i₁ x y a) (i₂ y x b),
+    fun x y ⟨S₁, h₁, g₁, a⟩ ⟨S₂, h₂, g₂, b⟩ =>
+      (zchain_common 𝒳 hc h₁ h₂ g₁ g₂).elim fun S ⟨hS, g, i₁, i₂⟩ =>
+        (g.2.1.2.2 x y (i₁ x x a) (i₂ y y b)).elim
+          (fun h => Or.inl ⟨S, hS, g, h⟩) (fun h => Or.inr ⟨S, hS, g, h⟩)⟩,
+   fun Y hY ⟨y₀, hy₀⟩ => (hY y₀ hy₀).elim fun S ⟨hS, g, h₀⟩ =>
+      (g.2.2 (fun w => Y w ∧ S w w) (fun _ h => h.2) ⟨y₀, hy₀, h₀⟩).elim fun m ⟨⟨hm, hmm⟩, hmin⟩ =>
+        ⟨m, hm, fun y hy ⟨S', hS', g', h'⟩ =>
+          have hym : S y m := (zchain_comparable 𝒳 hc hS hS' g g').elim
+            (fun e => e.2 m y hmm h') (fun e => e.1 y m h')
+          hmin y ⟨hy, (g.1 y m hym).1⟩ hym⟩⟩
+
+/-- `m` with a new point `z` put on top. -/
+def ZTop (m : σ → σ → Prop) (z : σ) : σ → σ → Prop :=
+  fun x y => m x y ∨ (m x x ∧ y = z) ∨ (x = z ∧ y = z)
+
+theorem ztop_good (m : σ → σ → Prop) (g : ZGood m) (z : σ) (hz : ¬ m z z) :
+    ZGood (ZTop m z) := by
+  -- the field of `ZTop m z` is that of `m` with `z`
+  have fld : ∀ x, ZTop m z x x → m x x ∨ x = z := fun x h =>
+    h.elim Or.inl fun h => h.elim (fun h => Or.inl h.1) fun h => Or.inr h.1
+  have top : ∀ x, (m x x ∨ x = z) → ZTop m z x z := fun x h =>
+    h.elim (fun h => Or.inr (Or.inl ⟨h, rfl⟩)) fun h => Or.inr (Or.inr ⟨h, rfl⟩)
+  -- a pair of `ZTop m z` ending below `z` is a pair of `m`
+  have low : ∀ x y, ZTop m z x y → y ≠ z → m x y := fun x y h hy =>
+    h.elim id fun h => h.elim (fun h => (hy h.2).elim) fun h => (hy h.2).elim
+  have mne : ∀ x, m x x → x ≠ z := fun x hx e => hz (e ▸ hx)
+  refine ⟨fun x y h => ⟨?_, ?_⟩, ⟨?_, ?_, ?_⟩, ?_⟩
+  · exact h.elim (fun h => Or.inl (g.1 x y h).1)
+      fun h => h.elim (fun h => Or.inl h.1) fun h => Or.inr (Or.inr ⟨h.1, h.1⟩)
+  · exact h.elim (fun h => Or.inl (g.1 x y h).2)
+      fun h => h.elim (fun h => Or.inr (Or.inr ⟨h.2, h.2⟩)) fun h => Or.inr (Or.inr ⟨h.2, h.2⟩)
+  · intro x y w _ _ _ hxy hyw
+    refine (em (w = z)).elim (fun e => ?_) (fun e => ?_)
+    · rw [e]
+      exact top x (hxy.elim (fun h => Or.inl (g.1 x y h).1)
+        fun h => h.elim (fun h => Or.inl h.1) fun h => Or.inr h.1)
+    · have h₂ : m y w := low y w hyw e
+      have hy : y ≠ z := mne y (g.1 y w h₂).1
+      exact Or.inl (g.2.1.1 x y w (g.1 x y (low x y hxy hy)).1 (g.1 y w h₂).1
+        (g.1 y w h₂).2 (low x y hxy hy) h₂)
+  · intro x y _ _ hxy hyx
+    refine (em (y = z)).elim (fun e => ?_) (fun e => ?_)
+    · rw [e] at hyx ⊢
+      exact hyx.elim (fun h => (hz (g.1 z x h).1).elim)
+        fun h => h.elim (fun h => (hz h.1).elim) fun h => h.2
+    · refine (em (x = z)).elim (fun e' => ?_) (fun e' => ?_)
+      · rw [e'] at hxy
+        exact (hz (g.1 z y (low z y hxy e)).1).elim
+      · exact g.2.1.2.1 x y (g.1 x y (low x y hxy e)).1 (g.1 x y (low x y hxy e)).2
+          (low x y hxy e) (low y x hyx e')
+  · intro x y hx hy
+    refine (em (y = z)).elim (fun e => ?_) (fun e => ?_)
+    · rw [e]; exact Or.inl (top x (fld x hx))
+    · refine (em (x = z)).elim (fun e' => ?_) (fun e' => ?_)
+      · rw [e']; exact Or.inr (top y (fld y hy))
+      · have hx' : m x x := (fld x hx).elim id fun h => (e' h).elim
+        have hy' : m y y := (fld y hy).elim id fun h => (e h).elim
+        exact (g.2.1.2.2 x y hx' hy').elim (fun h => Or.inl (Or.inl h)) fun h => Or.inr (Or.inl h)
+  · intro Y hY hne
+    refine (em (∃ y, Y y ∧ m y y)).elim (fun ⟨y₀, hy₀, hm₀⟩ => ?_) (fun hn => ?_)
+    · obtain ⟨m₀, ⟨hm₀Y, hm₀m⟩, hmin⟩ :=
+        g.2.2 (fun w => Y w ∧ m w w) (fun _ h => h.2) ⟨y₀, hy₀, hm₀⟩
+      refine ⟨m₀, hm₀Y, fun y hy hym => ?_⟩
+      have hym' : m y m₀ := low y m₀ hym (mne m₀ hm₀m)
+      exact hmin y ⟨hy, (g.1 y m₀ hym').1⟩ hym'
+    · obtain ⟨y₀, hy₀⟩ := hne
+      have allz : ∀ y, Y y → y = z := fun y hy =>
+        (fld y (hY y hy)).elim (fun h => (hn ⟨y, hy, h⟩).elim) id
+      exact ⟨y₀, hy₀, fun y hy _ => (allz y hy).trans (allz y₀ hy₀).symm⟩
+
+theorem ztop_ext (m : σ → σ → Prop) (z : σ) (hz : ¬ m z z) : ZExt m (ZTop m z) :=
+  ⟨fun _ _ h => Or.inl h, fun x y hx h => h.elim id fun h => h.elim
+    (fun h => (hz (h.2 ▸ hx)).elim) fun h => (hz (h.2 ▸ hx)).elim⟩
+
+end zornWO
+
+/-- `zorn-r-implies-well-ordering-r`: Zorn's Lemma at `σσt`, for the good relations under
+end-extension, gives a good relation whose field is everything. -/
+theorem zorn_r_implies_well_ordering_r {σ : Type} [Ty σ] :
+    Zorn (σ → σ → Prop) → WellOrdering σ := fun zl =>
+  (zl ZR ⟨⟨zr_refl, zr_trans⟩, fun 𝒳 hc => ⟨ZUnion 𝒳, fun S hS =>
+      (em (ZGood S)).elim (fun g => Or.inr ⟨zunion_good 𝒳 hc, zunion_ext 𝒳 hc hS g⟩) Or.inl⟩⟩).elim
+  fun m hmax =>
+  have g : ZGood m := (em (ZGood m)).elim id fun n =>
+    ((hmax _ (Or.inl n)).elim (fun h => (h zgood_empty).elim) fun h => h.1)
+  have hall : ∀ z, m z z := fun z => (em (m z z)).elim id fun hz =>
+    (hmax _ (Or.inr ⟨ztop_good m g z hz, ztop_ext m z hz⟩)).elim
+      (fun h => (h (ztop_good m g z hz)).elim)
+      (fun h => h.2.1 z z (Or.inr (Or.inr ⟨rfl, rfl⟩)))
+  ⟨m, fun x y w => g.2.1.1 x y w (hall x) (hall y) (hall w),
+   fun x y => g.2.1.2.1 x y (hall x) (hall y),
+   fun x y => g.2.1.2.2 x y (hall x) (hall y),
+   fun Y hY => g.2.2 Y (fun y _ => hall y) hY⟩
+
+
+/-! ### Transversal Choice gives Zorn's Lemma (8 October 2026)
+
+Lewin's proof (*A Simple Proof of Zorn's Lemma*, 1991), as in the write-up of
+`transversal-choice-r-implies-zorn-r`. The core is stated for a preorder `R` with no
+maximal element and any functional, extensional `F` choosing a strict upper bound for each
+chain; Transversal Choice supplies such an `F`. -/
+
+section lewin
+variable {σ : Type} [Ty σ] (R : σ → σ → Prop) (F : (σ → Prop) → σ → Prop)
+
+/-- `R` well-orders `A`. -/
+def LWO (A : σ → Prop) : Prop :=
+  TotalOrderOn R A ∧ ∀ Y : σ → Prop, (∀ y, Y y → A y) → (∃ y, Y y) →
+    ∃ x, Y x ∧ ∀ y, Y y → R y x → y = x
+
+/-- The initial segment `P(C,x)`. -/
+def LP (C : σ → Prop) (x : σ) : σ → Prop := fun y => C y ∧ (R y x ∧ ¬ R x y)
+
+/-- Conforming: well-ordered, each point the `F`-choice for its initial segment. -/
+def LConf (A : σ → Prop) : Prop := LWO R A ∧ ∀ x, A x → F (LP R A x) x
+
+/-- The union of the conforming properties. -/
+def LUstar (w : σ) : Prop := ∃ A, LConf R F A ∧ A w
+
+theorem lwo_exists_least {A : σ → Prop} (h : LWO R A) (Y : σ → Prop) (hYA : ∀ y, Y y → A y)
+    (hY : ∃ y, Y y) : ∃ m, Y m ∧ ∀ y, Y y → R m y :=
+  (h.2 Y hYA hY).elim fun m ⟨hm, hmin⟩ => ⟨m, hm, fun y hy =>
+    (h.1.2.2 m y (hYA m hm) (hYA y hy)).elim id fun hym => by
+      rw [hmin y hy hym]
+      exact (h.1.2.2 m m (hYA m hm) (hYA m hm)).elim id id⟩
+
+variable {R F}
+variable (htrans : ∀ x y z, R x y → R y z → R x z)
+  (Fext : ∀ C C', (∀ y, C y ↔ C' y) → ∀ x, F C x → F C' x)
+  (Funiq : ∀ C x z, F C x → F C z → x = z)
+
+include htrans in
+theorem lt_of_le_lt' (x y z : σ) (h₁ : R x y) (h : R y z ∧ ¬ R z y) : R x z ∧ ¬ R z x :=
+  ⟨htrans x y z h₁ h.1, fun h' => h.2 (htrans z x y h' h₁)⟩
+
+include htrans Fext Funiq in
+/-- Lemma 1: if `x` is the least instance of `A` not in `B`, then `B ≡ P(A,x)`. -/
+theorem lewin_lemma1 (A B : σ → Prop) (hA : LConf R F A) (hB : LConf R F B) (x : σ)
+    (hxA : A x) (hxB : ¬ B x) (hxl : ∀ w, (A w ∧ ¬ B w) → R x w) :
+    ∀ y, B y ↔ LP R A x y := by
+  have hPB : ∀ w, LP R A x w → B w := fun w ⟨hwA, hwx⟩ =>
+    (em (B w)).elim id fun hwB => (hwx.2 (hxl w ⟨hwA, hwB⟩)).elim
+  refine (em (∀ y, B y → LP R A x y)).elim (fun h y => ⟨h y, hPB y⟩) fun hn' => ?_
+  exfalso
+  have hex : ∃ w, B w ∧ ¬ LP R A x w := (em (∃ w, B w ∧ ¬ LP R A x w)).elim id fun h =>
+    (hn' fun w hw => (em (LP R A x w)).elim id fun hp => (h ⟨w, hw, hp⟩).elim).elim
+  obtain ⟨y, ⟨hyB, hyP⟩, hyl⟩ :=
+    lwo_exists_least R hB.1 (fun w => B w ∧ ¬ LP R A x w) (fun w h => h.1) hex
+  have h1 : ∀ w, LP R B y w → LP R A x w := fun w ⟨hwB, hwy⟩ =>
+    (em (LP R A x w)).elim id fun hp => (hwy.2 (hyl w ⟨hwB, hp⟩)).elim
+  obtain ⟨z, ⟨hzA, hzP⟩, hzl⟩ := lwo_exists_least R hA.1 (fun w => A w ∧ ¬ LP R B y w)
+    (fun w h => h.1) ⟨x, hxA, fun h => hxB h.1⟩
+  have hAB : ∀ w, LP R A z w ↔ LP R B y w := fun w =>
+    ⟨fun ⟨hwA, hwz⟩ => (em (LP R B y w)).elim id fun hp => (hwz.2 (hzl w ⟨hwA, hp⟩)).elim,
+     fun hw => by
+      obtain ⟨hwA, hwx⟩ := h1 w hw
+      refine ⟨hwA, (em (R w z ∧ ¬ R z w)).elim id fun hwz => ?_⟩
+      exfalso
+      have hzw : R z w := (hA.1.1.2.2 z w hzA hwA).elim id fun h =>
+        (em (R z w)).elim id fun h' => (hwz ⟨h, h'⟩).elim
+      exact hzP ⟨hPB z ⟨hzA, lt_of_le_lt' htrans z w x hzw hwx⟩,
+        lt_of_le_lt' htrans z w y hzw hw.2⟩⟩
+  have hyz : y = z := Funiq (LP R B y) y z (hB.2 y hyB) (Fext _ _ hAB z (hA.2 z hzA))
+  have hyA : A y := by rw [hyz]; exact hzA
+  have hxy : R x y := (em (R y x ∧ ¬ R x y)).elim (fun h => (hyP ⟨hyA, h⟩).elim) fun h =>
+    (hA.1.1.2.2 x y hxA hyA).elim id fun hyx => (em (R x y)).elim id fun hxy' =>
+      (h ⟨hyx, hxy'⟩).elim
+  have hxne : ¬ R y x := fun hyx => hxB (by
+    rw [hA.1.1.2.1 x y hxA hyA hxy hyx]; exact hyB)
+  have hxP : LP R A z x := ⟨hxA, by rw [← hyz]; exact ⟨hxy, hxne⟩⟩
+  exact hxB ((hAB x).1 hxP).1
+
+include htrans Fext Funiq in
+/-- Lemma 2: conforming properties are comparable. -/
+theorem lewin_comparable (A B : σ → Prop) (hA : LConf R F A) (hB : LConf R F B) :
+    (∀ w, A w → B w) ∨ (∀ w, B w → A w) :=
+  (em (∀ w, A w → B w)).elim Or.inl fun hn => Or.inr (by
+    have hex : ∃ w, A w ∧ ¬ B w := (em (∃ w, A w ∧ ¬ B w)).elim id fun h =>
+      (hn fun w hw => (em (B w)).elim id fun hb => (h ⟨w, hw, hb⟩).elim).elim
+    obtain ⟨x, ⟨hxA, hxB⟩, hxl⟩ := lwo_exists_least R hA.1 _ (fun w h => h.1) hex
+    exact fun w hw => ((lewin_lemma1 htrans Fext Funiq A B hA hB x hxA hxB hxl w).1 hw).1)
+
+include htrans Fext Funiq in
+/-- Lemma 2: a conforming property inside another is downward closed in it. -/
+theorem lewin_down (A B : σ → Prop) (hA : LConf R F A) (hB : LConf R F B)
+    (a b : σ) (ha : A a) (hb : B b) (hba : R b a) : A b :=
+  (em (∀ w, B w → A w)).elim (fun h => h b hb) fun hn => by
+    have hex : ∃ w, B w ∧ ¬ A w := (em (∃ w, B w ∧ ¬ A w)).elim id fun h =>
+      (hn fun w hw => (em (A w)).elim id fun ha' => (h ⟨w, hw, ha'⟩).elim).elim
+    obtain ⟨x, ⟨hxB, hxA⟩, hxl⟩ := lwo_exists_least R hB.1 _ (fun w h => h.1) hex
+    have he := lewin_lemma1 htrans Fext Funiq B A hB hA x hxB hxA hxl
+    exact (he b).2 ⟨hb, lt_of_le_lt' htrans b a x hba ((he a).1 ha).2⟩
+
+include htrans Fext Funiq in
+/-- Lemma 3. -/
+theorem lewin_lemma3 (A : σ → Prop) (hA : LConf R F A) (a w : σ) (ha : A a)
+    (hw : LUstar R F w) (hwa : R w a) : A w :=
+  hw.elim fun B ⟨hB, hwB⟩ => (lewin_comparable htrans Fext Funiq A B hA hB).elim
+    (fun h => lewin_down htrans Fext Funiq A B hA hB a w ha hwB hwa) (fun h => h w hwB)
+
+include htrans Fext Funiq in
+/-- Any two points of the union lie in one conforming property. -/
+theorem lewin_common (x y : σ) (hx : LUstar R F x) (hy : LUstar R F y) :
+    ∃ C, LConf R F C ∧ C x ∧ C y :=
+  hx.elim fun A ⟨hA, hxA⟩ => hy.elim fun B ⟨hB, hyB⟩ =>
+    (lewin_comparable htrans Fext Funiq A B hA hB).elim
+      (fun h => ⟨B, hB, h x hxA, hyB⟩) (fun h => ⟨A, hA, hxA, h y hyB⟩)
+
+include htrans Fext Funiq in
+/-- Lemma 4: the union is conforming. -/
+theorem lewin_lemma4 : LConf R F (LUstar R F) :=
+  ⟨⟨⟨fun x y z _ _ _ => htrans x y z,
+     fun x y hx hy => (lewin_common htrans Fext Funiq x y hx hy).elim fun C ⟨hC, hxC, hyC⟩ =>
+       hC.1.1.2.1 x y hxC hyC,
+     fun x y hx hy => (lewin_common htrans Fext Funiq x y hx hy).elim fun C ⟨hC, hxC, hyC⟩ =>
+       hC.1.1.2.2 x y hxC hyC⟩,
+    fun Y hY ⟨y₀, hy₀⟩ => (hY y₀ hy₀).elim fun A ⟨hA, hy₀A⟩ =>
+      (hA.1.2 (fun w => Y w ∧ A w) (fun w h => h.2) ⟨y₀, hy₀, hy₀A⟩).elim
+        fun m ⟨⟨hm, hmA⟩, hmin⟩ => ⟨m, hm, fun y hy hym =>
+          hmin y ⟨hy, lewin_lemma3 htrans Fext Funiq A hA m y hmA (hY y hy) hym⟩ hym⟩⟩,
+   fun x ⟨A, hA, hxA⟩ => Fext (LP R A x) (LP R (LUstar R F) x)
+     (fun y => ⟨fun ⟨hyA, hyx⟩ => ⟨⟨A, hA, hyA⟩, hyx⟩,
+       fun ⟨hy, hyx⟩ => ⟨lewin_lemma3 htrans Fext Funiq A hA x y hxA hy hyx.1, hyx⟩⟩)
+     x (hA.2 x hxA)⟩
+
+include htrans Fext Funiq in
+/-- The core: no functional, extensional `F` picks a strict upper bound for every chain. -/
+theorem lewin_core (hrefl : ∀ x, R x x)
+    (Ffun : ∀ C, ∃ x, F C x)
+    (FU : ∀ C x, F C x → TotalOrderOn R C → ∀ y, C y → R y x ∧ ¬ R x y) : False := by
+  have h4 := lewin_lemma4 htrans Fext Funiq
+  obtain ⟨x, hx⟩ := Ffun (LUstar R F)
+  have below : ∀ y, LUstar R F y → R y x ∧ ¬ R x y := FU _ x hx h4.1.1
+  -- `U' := U* ∪ {x}` is conforming
+  have hconf : LConf R F (fun w => LUstar R F w ∨ w = x) := by
+    refine ⟨⟨⟨fun a b c _ _ _ => htrans a b c, ?_, ?_⟩, ?_⟩, ?_⟩
+    · intro a b ha hb hab hba
+      rcases ha with ha | ha <;> rcases hb with hb | hb
+      · exact h4.1.1.2.1 a b ha hb hab hba
+      · rw [hb] at hab hba; exact ((below a ha).2 hba).elim
+      · rw [ha] at hab hba; exact ((below b hb).2 hab).elim
+      · rw [ha, hb]
+    · intro a b ha hb
+      rcases ha with ha | ha <;> rcases hb with hb | hb
+      · exact h4.1.1.2.2 a b ha hb
+      · rw [hb]; exact Or.inl (below a ha).1
+      · rw [ha]; exact Or.inr (below b hb).1
+      · rw [ha, hb]; exact Or.inl (hrefl x)
+    · intro Y hY hne
+      refine (em (∃ y, Y y ∧ LUstar R F y)).elim (fun hex => ?_) (fun hn => ?_)
+      · obtain ⟨m, ⟨hmY, hmU⟩, hml⟩ :=
+          lwo_exists_least R h4.1 (fun w => Y w ∧ LUstar R F w) (fun w h => h.2) hex
+        refine ⟨m, hmY, fun y hy hym => ?_⟩
+        rcases hY y hy with hyU | hyx
+        · exact h4.1.1.2.1 y m hyU hmU hym (hml y ⟨hy, hyU⟩)
+        · rw [hyx] at hym; exact ((below m hmU).2 hym).elim
+      · obtain ⟨y₀, hy₀⟩ := hne
+        have allx : ∀ y, Y y → y = x := fun y hy =>
+          (hY y hy).elim (fun h => (hn ⟨y, hy, h⟩).elim) id
+        exact ⟨y₀, hy₀, fun y hy _ => (allx y hy).trans (allx y₀ hy₀).symm⟩
+    · intro w hw
+      rcases hw with hwU | hwx
+      · have hwlt := below w hwU
+        exact Fext (LP R (LUstar R F) w) _ (fun y => ⟨fun ⟨hy, hyw⟩ => ⟨Or.inl hy, hyw⟩,
+          fun ⟨hy, hyw⟩ => ⟨hy.elim id fun e => by
+            rw [e] at hyw; exact (hwlt.2 hyw.1).elim, hyw⟩⟩) w (h4.2 w hwU)
+      · rw [hwx]
+        exact Fext (LUstar R F) _ (fun y => ⟨fun hy => ⟨Or.inl hy, below y hy⟩,
+          fun ⟨hy, hyx⟩ => hy.elim id fun e => by
+            rw [e] at hyx; exact (hyx.2 hyx.1).elim⟩) x hx
+  exact (below x ⟨_, hconf, Or.inr rfl⟩).2 (hrefl x)
+
+end lewin
+
+/-- `transversal-choice-r-implies-zorn-r`: Relational Choice (from Transversal Choice at
+`(σt)σt`) chooses a strict upper bound for each chain, and the transversal of coextension
+(Transversal Choice at `σt`) makes the choice extensional; Lewin's argument then refutes
+the absence of a maximal element. -/
+theorem transversal_choice_r_implies_zorn_r {σ : Type} [Ty σ] :
+    TransversalChoice (σ → Prop) → TransversalChoice ((σ → Prop) → σ → Prop) → Zorn σ := by
+  intro tc tc₂ R ⟨⟨hrefl, htrans⟩, hub⟩
+  refine (em (∃ m, ∀ y, R m y → R y m)).elim id fun hnm => ?_
+  exfalso
+  have hn : ∀ m, ∃ y, R m y ∧ ¬ R y m := fun m =>
+    (em (∃ y, R m y ∧ ¬ R y m)).elim id fun h => (hnm ⟨m, fun y hy =>
+      (em (R y m)).elim id fun hyn => (h ⟨y, hy, hyn⟩).elim⟩).elim
+  obtain ⟨u₀, -⟩ := hub (fun _ => False)
+    ⟨fun _ _ _ h => h.elim, fun _ _ h => h.elim, fun _ _ h => h.elim⟩
+  have toc : ∀ C D : σ → Prop, (∀ y, C y ↔ D y) → TotalOrderOn R C → TotalOrderOn R D :=
+    fun C D he ⟨a, b, c⟩ =>
+      ⟨fun x y z hx hy hz => a x y z ((he x).2 hx) ((he y).2 hy) ((he z).2 hz),
+       fun x y hx hy => b x y ((he x).2 hx) ((he y).2 hy),
+       fun x y hx hy => c x y ((he x).2 hx) ((he y).2 hy)⟩
+  have hU : ∀ C : σ → Prop, ∃ x, (TotalOrderOn R C → ∀ y, C y → R y x ∧ ¬ R x y) := fun C =>
+    (em (TotalOrderOn R C)).elim
+      (fun hc => (hub C hc).elim fun u hu => (hn u).elim fun v hv =>
+        ⟨v, fun _ y hy => lt_of_le_lt' htrans y u v (hu y hy) hv⟩)
+      (fun hc => ⟨u₀, fun h => (hc h).elim⟩)
+  obtain ⟨S, hSf, hSU⟩ := Proofs.transversal_choice_r_implies_relational_choice_r tc₂
+    (fun C x => TotalOrderOn R C → ∀ y, C y → R y x ∧ ¬ R x y) hU
+  obtain ⟨𝒯, h𝒯⟩ := tc (fun C D => ∀ y, C y ↔ D y)
+    ⟨fun _ _ => Iff.rfl, fun _ _ h y => (h y).symm, fun _ _ _ h₁ h₂ y => (h₁ y).trans (h₂ y)⟩
+  refine lewin_core (R := R) (F := fun C x => ∃ D, 𝒯 D ∧ (∀ y, C y ↔ D y) ∧ S D x) htrans
+    (fun C C' he x ⟨D, hD, hCD, hx⟩ => ⟨D, hD, fun y => ((he y).symm).trans (hCD y), hx⟩)
+    ?_ hrefl ?_ ?_
+  · intro C x z ⟨D, hD, hCD, hx⟩ ⟨D', hD', hCD', hz⟩
+    obtain ⟨E, -, -, huE⟩ := h𝒯 C
+    have e : D = D' := (huE D ⟨hCD, hD⟩).symm.trans (huE D' ⟨hCD', hD'⟩)
+    rw [← e] at hz
+    obtain ⟨w, -, hw⟩ := hSf D
+    exact (hw x hx).symm.trans (hw z hz)
+  · intro C
+    obtain ⟨D, hCD, hD, -⟩ := h𝒯 C
+    obtain ⟨x, hx, -⟩ := hSf D
+    exact ⟨x, D, hD, hCD, hx⟩
+  · intro C x ⟨D, _, hCD, hx⟩ hc y hy
+    exact hSU D x hx (toc C D hCD hc) y ((hCD y).1 hy)
+
+
+/-- `necessary-transversal-choice-r-implies-necessary-well-ordering-r`: Transversal Choice
+gives Zorn's Lemma at `σσt`, which gives Well-Ordering at `σ`; necessitated. -/
+theorem necessary_transversal_choice_r_implies_necessary_well_ordering_r {σ : Type} [Ty σ] :
+    NecTransversalChoice ((σ → σ → Prop) → Prop) →
+      NecTransversalChoice (((σ → σ → Prop) → Prop) → (σ → σ → Prop) → Prop) →
+      NecWellOrdering σ := fun h₁ h₂ =>
+  modal_K _ _ (modal_K _ _
+    (nec% (fun (a : TransversalChoice ((σ → σ → Prop) → Prop))
+        (b : TransversalChoice (((σ → σ → Prop) → Prop) → (σ → σ → Prop) → Prop)) =>
+      zorn_r_implies_well_ordering_r (transversal_choice_r_implies_zorn_r a b))) h₁) h₂
+
 end Classicism.Proofs

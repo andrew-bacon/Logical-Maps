@@ -1,5 +1,15 @@
 {"results":
- {"witnessed-possibility-incompatible-with-nd":
+ {"zorn-r-implies-well-ordering-r":
+  {"proofs":
+   [{"name": "Classicism.Proofs.zorn_r_implies_well_ordering_r",
+     "lines": [634, 650],
+     "file": "Classicism/Results/Records/Choice.lean"}],
+   "certificate":
+   {"name": "Classicism.Map.zorn_r_implies_well_ordering_r",
+    "lines": [1756, 1758],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "witnessed-possibility-incompatible-with-nd":
   {"proofs":
    [{"name": "Classicism.Meta.witnessedPossibility_nd_inconsistent",
      "lines": [173, 186],
@@ -160,6 +170,16 @@
    {"name":
     "Classicism.Map.vicinity_and_distinctness_preserving_collapse_imply_actuality",
     "lines": [1097, 1099],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "transversal-choice-r-implies-zorn-r":
+  {"proofs":
+   [{"name": "Classicism.Proofs.transversal_choice_r_implies_zorn_r",
+     "lines": [832, 874],
+     "file": "Classicism/Results/Records/Choice.lean"}],
+   "certificate":
+   {"name": "Classicism.Map.transversal_choice_r_implies_zorn_r",
+    "lines": [1752, 1754],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "transversal-choice-r-implies-transversal-r":
@@ -1325,6 +1345,18 @@
    {"name":
     "Classicism.Map.necessary_transversal_choice_r_implies_transversal_choice_r",
     "lines": [793, 795],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "necessary-transversal-choice-r-implies-necessary-well-ordering-r":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.necessary_transversal_choice_r_implies_necessary_well_ordering_r",
+     "lines": [877, 886],
+     "file": "Classicism/Results/Records/Choice.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.necessary_transversal_choice_r_implies_necessary_well_ordering_r",
+    "lines": [1760, 1762],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-transversal-choice-r-implies-necessary-transversal-r":

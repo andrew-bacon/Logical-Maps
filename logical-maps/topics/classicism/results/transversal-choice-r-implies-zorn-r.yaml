@@ -9,7 +9,8 @@ certificate:
   recorded_by: Claude Opus 5.5 (Anthropic), 8 October 2026
   checked_by: []
   date: '2026-10-08'
-  lean: stated
+  lean: verified
+  lean_ref: Classicism.Map.transversal_choice_r_implies_zorn_r
 sources:
 - Jonathan Lewin, A Simple Proof of Zorn's Lemma, American Mathematical Monthly 98 (1991), pp. 353–354.
 - Cian Dorr, suggestion of 8 October 2026, to translate Lewin's proof into C and to ask whether it needs

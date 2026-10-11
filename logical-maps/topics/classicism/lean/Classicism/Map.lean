@@ -1749,4 +1749,16 @@ theorem modal_well_ordering_r_implies_necessary_well_ordering_r : Statements.mod
 theorem necessary_well_ordering_and_intensional_choice_imply_modal_well_ordering : Statements.necessary_well_ordering_and_intensional_choice_imply_modal_well_ordering := by
   map_cert Proofs.necessary_well_ordering_and_intensional_choice_imply_modal_well_ordering.entails
 
+/-- `transversal-choice-r-implies-zorn-r` -/
+theorem transversal_choice_r_implies_zorn_r : Statements.transversal_choice_r_implies_zorn_r := by
+  map_cert Proofs.transversal_choice_r_implies_zorn_r.entails
+
+/-- `zorn-r-implies-well-ordering-r` -/
+theorem zorn_r_implies_well_ordering_r : Statements.zorn_r_implies_well_ordering_r := by
+  map_cert Proofs.zorn_r_implies_well_ordering_r.entails
+
+/-- `necessary-transversal-choice-r-implies-necessary-well-ordering-r` -/
+theorem necessary_transversal_choice_r_implies_necessary_well_ordering_r : Statements.necessary_transversal_choice_r_implies_necessary_well_ordering_r := by
+  map_cert Proofs.necessary_transversal_choice_r_implies_necessary_well_ordering_r.entails
+
 end Classicism.Map
