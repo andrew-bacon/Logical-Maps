@@ -1,6 +1,6 @@
 # □Well-Ordering ⇒ □Transversal Choice
 
-<p class='cert'>Result — Source: Misc.; produced by Claude Opus 5.5 (Anthropic), 8 October 2026, necessitating the unboxed argument; recorded by Claude Opus 5.5 (Anthropic), 8 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_well_ordering_r_implies_necessary_transversal_choice_r`; produced by Claude Opus 5.5 (Anthropic), 8 October 2026, necessitating the unboxed argument; recorded by Claude Opus 5.5 (Anthropic), 8 October 2026.</p>
 
 ## Premises
 

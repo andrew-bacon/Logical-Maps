@@ -1,6 +1,6 @@
 # □Atomicity ∧ □BF (relational types) ⇒ □Strong Leibniz Biconditionals
 
-<p class='cert'>Result — Source: Misc.; produced by Claude Opus 5.5 (Anthropic), 11 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), 11 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_atomicity_and_necessary_bf_relational_imply_necessary_strong_leibniz`; produced by Claude Opus 5.5 (Anthropic), 11 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), 11 October 2026.</p>
 
 ## Premises
 

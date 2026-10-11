@@ -1,6 +1,6 @@
 # □Atomicity (type t) ∧ □Weakly Inextensible Comprehension ⇒ □Actuality
 
-<p class='cert'>Result — Source: Misc.; produced by Claude Opus 5.5 (Anthropic), 2 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), 2 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_atomicity_t_and_necessary_wic_imply_necessary_actuality`; produced by Claude Opus 5.5 (Anthropic), 2 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), 2 October 2026.</p>
 
 ## Premises
 

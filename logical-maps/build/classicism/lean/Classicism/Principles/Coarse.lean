@@ -163,6 +163,12 @@ theorem NecBarcan.to_dual {σ : Type} [Ty σ] : NecBarcan σ → NecBarcanDual �
 theorem NecBarcan.of_dual {σ : Type} [Ty σ] : NecBarcanDual σ → NecBarcan σ :=
   modal_K _ _ (nec% (Barcan.of_dual (σ := σ)))
 
+/-- `barcan-relational` at `τ`: BF at a relational type. -/
+def BarcanRelational (τ : Type) [Rel τ] : Prop :=
+  ∀ X : τ → Prop, (∀ x, □ (X x)) → □ (∀ x, X x)
+/-- `necessary-barcan-relational`: □BF at a relational type. -/
+def NecBarcanRelational (τ : Type) [Rel τ] : Prop := □ (BarcanRelational τ)
+
 /-! ## Tractarianism -/
 
 /-- `tractarianism-r` at `σ`: `∀pX. (∀x. p ≤ Xx) → p ≤ ∀x. Xx`. -/

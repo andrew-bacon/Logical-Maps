@@ -47,6 +47,10 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.Barcan.schemaIn
 
+/-- Principle definition check: `barcan-relational`. -/
+example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
+  Classicism.P.BarcanRelational.schemaIn
+
 /-- Principle definition check: `barcan-t`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.BarcanT.schemaIn
@@ -175,6 +179,10 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.ModalT.schemaIn
 
+/-- Principle definition check: `modal-well-ordering-r`. -/
+example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
+  Classicism.P.ModalWellOrdering.schemaIn
+
 /-- Principle definition check: `modalized-fregean`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.ModalizedFregean.schemaIn
@@ -202,6 +210,10 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 /-- Principle definition check: `necessary-barcan-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.NecBarcan.schemaIn
+
+/-- Principle definition check: `necessary-barcan-relational`. -/
+example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
+  Classicism.P.NecBarcanRelational.schemaIn
 
 /-- Principle definition check: `necessary-barcan-t`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
@@ -335,6 +347,10 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.NecWeaklyRigidWeakRigidity.schemaIn
 
+/-- Principle definition check: `necessary-well-ordering-r`. -/
+example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
+  Classicism.P.NecWellOrdering.schemaIn
+
 /-- Principle definition check: `necessity-of-arithmetic`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   (Classicism.Meta.AxiomSet.ofPure Classicism.Meta.AxiomSet.necessityOfArithmetic)
@@ -463,9 +479,17 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.WeaklyRigidWeakRigidity.schemaIn
 
+/-- Principle definition check: `well-ordering-r`. -/
+example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
+  Classicism.P.WellOrdering.schemaIn
+
 /-- Principle definition check: `witnessed-possibility-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   (Classicism.Meta.AxiomSet.witnessedPossibility _)
+
+/-- Principle definition check: `zorn-r`. -/
+example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
+  Classicism.P.Zorn.schemaIn
 
 /-- `actual-profile-r-implies-actuality`
 
@@ -576,6 +600,15 @@ def atomicity_and_bf_imply_strong_leibniz : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Atomicity.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Barcan.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongLeibniz.schemaIn
+
+/-- `atomicity-and-bf-relational-imply-strong-leibniz`
+
+Atomicity ∧ BF (relational types) ⇒ Strong Leibniz Biconditionals -/
+def atomicity_and_bf_relational_imply_strong_leibniz : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Atomicity.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanRelational.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongLeibniz.schemaIn
 
 /-- `atomicity-r-implies-atomicity-t`
@@ -697,6 +730,14 @@ def barcan_and_weakly_rigid_power_imply_weakly_rigid_weak_rigidity : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeaklyRigidPower.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeaklyRigidWeakRigidity.schemaIn
 
+/-- `barcan-r-implies-barcan-relational`
+
+BF ⇒ BF (relational types) -/
+def barcan_r_implies_barcan_relational : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Barcan.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanRelational.schemaIn
+
 /-- `barcan-r-implies-barcan-t`
 
 BF ⇒ BF (type t) -/
@@ -712,6 +753,14 @@ def barcan_r_implies_functionality_r : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Barcan.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Functionality.schemaIn
+
+/-- `barcan-relational-implies-barcan-t`
+
+BF (relational types) ⇒ BF (type t) -/
+def barcan_relational_implies_barcan_t : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanRelational.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanT.schemaIn
 
 /-- `bf-weak-rigid-comprehension-atomicity-and-relational-choice-imply-intensional-choice`
 
@@ -1485,6 +1534,30 @@ def modal_freedom_signature_r_implies_no_pure_contingency_r : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.modalFreedom _) →
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.noContingency)
 
+/-- `modal-well-ordering-r-implies-intensional-choice-r`
+
+Modal Well-Ordering ⇒ Intensional Choice -/
+def modal_well_ordering_r_implies_intensional_choice_r : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalWellOrdering.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.IntensionalChoice.schemaIn
+
+/-- `modal-well-ordering-r-implies-necessary-intensional-choice-r`
+
+Modal Well-Ordering ⇒ □Intensional Choice -/
+def modal_well_ordering_r_implies_necessary_intensional_choice_r : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalWellOrdering.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecIntensionalChoice.schemaIn
+
+/-- `modal-well-ordering-r-implies-necessary-well-ordering-r`
+
+Modal Well-Ordering ⇒ □Well-Ordering -/
+def modal_well_ordering_r_implies_necessary_well_ordering_r : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalWellOrdering.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWellOrdering.schemaIn
+
 /-- `nd-and-bf-imply-necessary-nd`
 
 ND ∧ BF ⇒ □ND -/
@@ -1568,6 +1641,15 @@ def necessary_atomicity_and_necessary_bf_imply_necessary_strong_leibniz : Prop :
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomicity.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcan.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecStrongLeibniz.schemaIn
+
+/-- `necessary-atomicity-and-necessary-bf-relational-imply-necessary-strong-leibniz`
+
+□Atomicity ∧ □BF (relational types) ⇒ □Strong Leibniz Biconditionals -/
+def necessary_atomicity_and_necessary_bf_relational_imply_necessary_strong_leibniz : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomicity.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcanRelational.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecStrongLeibniz.schemaIn
 
 /-- `necessary-atomicity-and-necessary-bf-t-imply-necessary-strong-leibniz-t`
@@ -1657,6 +1739,14 @@ def necessary_barcan_r_implies_barcan_r : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcan.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Barcan.schemaIn
 
+/-- `necessary-barcan-r-implies-necessary-barcan-relational`
+
+□BF ⇒ □BF (relational types) -/
+def necessary_barcan_r_implies_necessary_barcan_relational : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcan.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcanRelational.schemaIn
+
 /-- `necessary-barcan-r-implies-necessary-barcan-t`
 
 □BF ⇒ □BF (type t) -/
@@ -1672,6 +1762,22 @@ def necessary_barcan_r_implies_necessary_functionality_r : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcan.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecFunctionality.schemaIn
+
+/-- `necessary-barcan-relational-implies-barcan-relational`
+
+□BF (relational types) ⇒ BF (relational types) -/
+def necessary_barcan_relational_implies_barcan_relational : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcanRelational.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanRelational.schemaIn
+
+/-- `necessary-barcan-relational-implies-necessary-barcan-t`
+
+□BF (relational types) ⇒ □BF (type t) -/
+def necessary_barcan_relational_implies_necessary_barcan_t : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcanRelational.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcanT.schemaIn
 
 /-- `necessary-barcan-t-implies-barcan-t`
 
@@ -2110,6 +2216,15 @@ def necessary_strong_actuality_implies_strong_actuality : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecStrongActuality.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongActuality.schemaIn
 
+/-- `necessary-strong-leibniz-and-rigid-comprehension-imply-necessary-bf-relational`
+
+□Strong Leibniz Biconditionals ∧ Rigid Comprehension ⇒ □BF (relational types) -/
+def necessary_strong_leibniz_and_rigid_comprehension_imply_necessary_bf_relational : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecStrongLeibniz.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidComprehension.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcanRelational.schemaIn
+
 /-- `necessary-strong-leibniz-implies-necessary-atomicity`
 
 □Strong Leibniz Biconditionals ⇒ □Atomicity -/
@@ -2243,6 +2358,14 @@ def necessary_transversal_choice_r_implies_necessary_transversal_r : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTransversalChoice.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTransversal.schemaIn
 
+/-- `necessary-transversal-choice-r-implies-necessary-well-ordering-r`
+
+□Transversal Choice ⇒ □Well-Ordering -/
+def necessary_transversal_choice_r_implies_necessary_well_ordering_r : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTransversalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWellOrdering.schemaIn
+
 /-- `necessary-transversal-choice-r-implies-transversal-choice-r`
 
 □Transversal Choice ⇒ Transversal Choice -/
@@ -2332,6 +2455,31 @@ def necessary_weakly_rigid_weak_rigidity_r_implies_weakly_rigid_weak_rigidity_r 
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWeaklyRigidWeakRigidity.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeaklyRigidWeakRigidity.schemaIn
 
+/-- `necessary-well-ordering-and-intensional-choice-imply-modal-well-ordering`
+
+□Well-Ordering ∧ Intensional Choice ⇒ Modal Well-Ordering -/
+def necessary_well_ordering_and_intensional_choice_imply_modal_well_ordering : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWellOrdering.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.IntensionalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalWellOrdering.schemaIn
+
+/-- `necessary-well-ordering-r-implies-necessary-transversal-choice-r`
+
+□Well-Ordering ⇒ □Transversal Choice -/
+def necessary_well_ordering_r_implies_necessary_transversal_choice_r : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWellOrdering.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTransversalChoice.schemaIn
+
+/-- `necessary-well-ordering-r-implies-well-ordering-r`
+
+□Well-Ordering ⇒ Well-Ordering -/
+def necessary_well_ordering_r_implies_well_ordering_r : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWellOrdering.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WellOrdering.schemaIn
+
 /-- `no-contingency-signature-incompatible-with-witnessed-possibility`
 
 No Contingency (signature Σ) ∧ Witnessed Possibility ⇒ ⊥ -/
@@ -2409,6 +2557,15 @@ def no_pure_contingency_and_bf_imply_necessary_bf : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.noContingency) →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Barcan.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcan.schemaIn
+
+/-- `no-pure-contingency-and-bf-relational-imply-necessary-bf-relational`
+
+No Pure Contingency ∧ BF (relational types) ⇒ □BF (relational types) -/
+def no_pure_contingency_and_bf_relational_imply_necessary_bf_relational : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.noContingency) →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanRelational.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcanRelational.schemaIn
 
 /-- `no-pure-contingency-and-bf-t-imply-necessary-bf-t`
 
@@ -2679,6 +2836,15 @@ def no_pure_contingency_and_weakly_rigid_power_imply_necessary_weakly_rigid_powe
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.noContingency) →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeaklyRigidPower.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWeaklyRigidPower.schemaIn
+
+/-- `no-pure-contingency-and-well-ordering-imply-necessary-well-ordering`
+
+No Pure Contingency ∧ Well-Ordering ⇒ □Well-Ordering -/
+def no_pure_contingency_and_well_ordering_imply_necessary_well_ordering : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.noContingency) →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WellOrdering.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWellOrdering.schemaIn
 
 /-- `no-pure-contingency-implies-necessity-of-arithmetic`
 
@@ -3234,6 +3400,15 @@ def tame_rigidity_and_barcan_imply_necessary_barcan : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Barcan.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcan.schemaIn
 
+/-- `tame-rigidity-and-bf-relational-imply-necessary-bf-relational`
+
+Tame Rigidity ∧ BF (relational types) ⇒ □BF (relational types) -/
+def tame_rigidity_and_bf_relational_imply_necessary_bf_relational : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.TameRigidity.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanRelational.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcanRelational.schemaIn
+
 /-- `tame-rigidity-and-rigid-power-imply-weakly-rigid-power`  (conjectured)
 
 Tame Rigidity ∧ Rigid Power ⇒ Weakly Rigid Power -/
@@ -3284,6 +3459,14 @@ def transversal_choice_r_implies_transversal_r : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.TransversalChoice.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Transversal.schemaIn
+
+/-- `transversal-choice-r-implies-zorn-r`
+
+Transversal Choice ⇒ Zorn's Lemma -/
+def transversal_choice_r_implies_zorn_r : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.TransversalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Zorn.schemaIn
 
 /-- `vicinity-and-distinctness-preserving-collapse-imply-actuality`
 
@@ -3367,6 +3550,24 @@ def weakly_rigid_weak_rigidity_implies_rigid_rigidity : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeaklyRigidWeakRigidity.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidRigidity.schemaIn
 
+/-- `well-ordering-r-implies-transversal-choice-r`
+
+Well-Ordering ⇒ Transversal Choice -/
+def well_ordering_r_implies_transversal_choice_r : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WellOrdering.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.TransversalChoice.schemaIn
+
+/-- `well-ordering-weak-rigid-comprehension-and-bf-imply-modal-well-ordering`
+
+Well-Ordering ∧ Weak Rigid Comprehension ∧ BF ⇒ Modal Well-Ordering -/
+def well_ordering_weak_rigid_comprehension_and_bf_imply_modal_well_ordering : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WellOrdering.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeakRigidComprehension.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Barcan.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalWellOrdering.schemaIn
+
 /-- `witnessed-possibility-and-no-pure-contingency-imply-logical-necessity`
 
 Witnessed Possibility ∧ No Pure Contingency ⇒ Logical Necessity -/
@@ -3393,6 +3594,14 @@ def witnessed_possibility_incompatible_with_nd : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.witnessedPossibility _) →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessityOfDistinctness.schemaIn →
     ¬ Classicism.Meta.AxiomSet.Consistent Ax
+
+/-- `zorn-r-implies-well-ordering-r`
+
+Zorn's Lemma ⇒ Well-Ordering -/
+def zorn_r_implies_well_ordering_r : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Zorn.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WellOrdering.schemaIn
 
 /-- `coalesced-all-finite-individual-domains`
 
@@ -5861,6 +6070,36 @@ def full_surjection_monoid_individuals_fixed_infinite_sigma_true_atom_metatheory
     ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.FregeanAxiom.schemaIn ∧
     ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.signatureB _) ∧
     ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.noContingency _) ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.witnessedPossibility _) ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.separatedStructure _) ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.independence _) ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.distinctnessC _) ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessityOfDistinctnessT.schemaIn
+
+/-- `full-two-object-chain-new-individual`
+
+Full action model: two-object chain, one individual becoming two: a witness satisfying 10 principles
+and violating 13. -/
+def full_two_object_chain_new_individual : Prop :=
+  ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.DistinctnessPreservingCollapse.schemaIn ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomicity.schemaIn ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcanRelational.schemaIn ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRigidComprehension.schemaIn ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecIntensionalChoice.schemaIn ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRelationalChoice.schemaIn ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RelationalChoice.schemaIn ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidPower.schemaIn ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRigidPower.schemaIn ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.TransversalChoice.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Barcan.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.PossibleInfinityE.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.infinityE) ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.signatureB) ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.PossibleInfinityT.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.infinityT) ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AxiomOfInfinityT.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.FregeanAxiom.schemaIn ∧
     ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.witnessedPossibility _) ∧
     ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.separatedStructure _) ∧
     ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.independence _) ∧

@@ -1,6 +1,6 @@
 # Tame Rigidity ∧ BF ⇒ □BF
 
-<p class='cert'>Result — Source: Misc.; produced by Claude Fable 5.1 (Anthropic), 3 October 2026; recorded by Claude Opus 5.5 (Anthropic), 3 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.tame_rigidity_and_barcan_imply_necessary_barcan`; produced by Claude Fable 5.1 (Anthropic), 3 October 2026; recorded by Claude Opus 5.5 (Anthropic), 3 October 2026.</p>
 
 ## Premises
 

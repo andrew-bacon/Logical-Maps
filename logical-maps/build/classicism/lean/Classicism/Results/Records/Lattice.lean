@@ -847,4 +847,50 @@ theorem actuality_and_distinctness_preserving_collapse_imply_strong_actuality :
         (nec% (fun (f : ◇ a → ◇ q) (g : ◇ q → ActualWorld a) (h : ◇ a) => g (f h))) h₁) hq.2
       ⟨a, ha.1, modal_K _ _ (nec% (decides_of_dia_actual a)) h₂⟩
 
+/-! ### BF at the relational types (11 October 2026) -/
+
+/-- `atomicity-and-bf-relational-imply-strong-leibniz`, at `σ → t`: the argument of
+`atomicity_and_bf_imply_strong_leibniz` uses BF only at the relational type `σ → t`. -/
+theorem atomicity_and_bf_relational_imply_strong_leibniz {σ : Type} [Ty σ] :
+    Atomicity (σ → Prop) → BarcanRelational (σ → Prop) → StrongLeibniz (σ → Prop) :=
+  atomicity_and_bf_imply_strong_leibniz
+
+/-- `necessary-atomicity-and-necessary-bf-relational-imply-necessary-strong-leibniz`. -/
+theorem necessary_atomicity_and_necessary_bf_relational_imply_necessary_strong_leibniz
+    {σ : Type} [Ty σ] :
+    NecAtomicity (σ → Prop) → NecBarcanRelational (σ → Prop) → NecStrongLeibniz (σ → Prop) :=
+  fun h₁ h₂ => modal_K _ _ (modal_K _ _
+    (nec% (atomicity_and_bf_relational_imply_strong_leibniz (σ := σ))) h₁) h₂
+
+/-! ### Atomicity (type t) and Weakly Inextensible Comprehension give Actuality (11 October 2026) -/
+
+/-- `atomicity-t-and-weakly-inextensible-comprehension-imply-actuality`: a weakly inextensible
+`X*` coextensive with `λp. ⊤` lets every atom entail the existence of a true proposition
+deciding every member of `X*`; Atomicity (type `t`) makes that existence true, and `X*` holds
+of every proposition. -/
+theorem atomicity_t_and_weakly_inextensible_comprehension_imply_actuality :
+    AtomicityT → WeaklyInextensibleComprehension (Prop → Prop) → Actuality := fun at_ wic =>
+  (wic (fun _ : Prop => True)).elim fun Xs ⟨hwi, hco⟩ =>
+  have hC : (∃ p : Prop, p ∧ ∀ q : Prop, Xs q → p ≤ q ∨ p ≤ ¬ q) :=
+    (at_ (¬ ∃ p : Prop, p ∧ ∀ q : Prop, Xs q → p ≤ q ∨ p ≤ ¬ q)).elim
+      (fun h => box_elim (box_of_neg_le_neg_neg _ h))
+      (fun ⟨w, hw, hwn⟩ => by
+        have hwC : w ≤ (∃ p : Prop, p ∧ ∀ q : Prop, Xs q → p ≤ q ∨ p ≤ ¬ q) :=
+          (le_iff_prop w _).2 (modal_K _ _
+            (nec% (fun (h : ∀ q : Prop, Xs q → w ≤ q ∨ w ≤ ¬ q) (hw : w) =>
+              (⟨w, hw, h⟩ : ∃ p : Prop, p ∧ ∀ q : Prop, Xs q → p ≤ q ∨ p ≤ ¬ q)))
+            (hwi (fun q => w ≤ q ∨ w ≤ ¬ q)
+              fun q _ => box_le_or_le w q (atom_le_or_le_neg w q hw)))
+        have h1 := le_and_prop w _ _ hwC hwn
+        rw [and_not_self_eq] at h1
+        exact (not_le_neg_of_atom hw (le_trans_prop w False (¬ w) h1 (bot_le_prop (¬ w)))).elim)
+  hC.elim fun p ⟨hp, hd⟩ => actuality_of_decides p (fun q => hd q ((hco q).1 trivial)) hp
+
+/-- `necessary-atomicity-t-and-necessary-wic-imply-necessary-actuality`: the last,
+necessitated. -/
+theorem necessary_atomicity_t_and_necessary_wic_imply_necessary_actuality :
+    NecAtomicityT → NecWeaklyInextensibleComprehension (Prop → Prop) → NecActuality :=
+  fun h₁ h₂ => modal_K _ _ (modal_K _ _
+    (nec% atomicity_t_and_weakly_inextensible_comprehension_imply_actuality) h₁) h₂
+
 end Classicism.Proofs

@@ -1,6 +1,6 @@
 # Modal Well-Ordering ⇒ □Well-Ordering
 
-<p class='cert'>Result — Source: Misc.; produced by Cian Dorr, 8 October 2026; recorded by Claude Opus 5.5 (Anthropic), 8 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.modal_well_ordering_r_implies_necessary_well_ordering_r`; produced by Cian Dorr, 8 October 2026; recorded by Claude Opus 5.5 (Anthropic), 8 October 2026.</p>
 
 ## Premises
 

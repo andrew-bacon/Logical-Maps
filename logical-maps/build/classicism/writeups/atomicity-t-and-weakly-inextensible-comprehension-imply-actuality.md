@@ -1,6 +1,6 @@
 # Atomicity (type t) ∧ Weakly Inextensible Comprehension ⇒ Actuality
 
-<p class='cert'>Result — Source: Misc.; produced by Claude Opus 5.5 (Anthropic), the argument from Atomicity (type t) and Boolean Completeness, 1 October 2026; Cian Dorr, the observation that it needs only Weak Inextensible Comprehension, and the streamlined proof, 1 October 2026; recorded by Claude Opus 5.5 (Anthropic), 1 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.atomicity_t_and_weakly_inextensible_comprehension_imply_actuality`; produced by Claude Opus 5.5 (Anthropic), the argument from Atomicity (type t) and Boolean Completeness, 1 October 2026; Cian Dorr, the observation that it needs only Weak Inextensible Comprehension, and the streamlined proof, 1 October 2026; recorded by Claude Opus 5.5 (Anthropic), 1 October 2026.</p>
 
 ## Premises
 

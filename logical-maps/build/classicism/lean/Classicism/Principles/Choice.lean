@@ -85,4 +85,31 @@ def IntensionalChoice (σ : Type) [Ty σ] : Prop :=
 /-- `necessary-intensional-choice-r` at `σ`: the instance boxed. -/
 def NecIntensionalChoice (σ : Type) [Ty σ] : Prop := □ (IntensionalChoice σ)
 
+/-! ## Well-orders and Zorn's Lemma -/
+
+/-- `WO(R)`: `R` totally orders the whole type (transitive, antisymmetric, total) and every
+instantiated property has an `R`-minimal instance (Background, with `X := λx. ⊤`). -/
+def WellOrders {σ : Type} [Ty σ] (R : σ → σ → Prop) : Prop :=
+  (∀ x y z, R x y → R y z → R x z) ∧ (∀ x y, R x y → R y x → x = y) ∧ (∀ x y, R x y ∨ R y x) ∧
+    ∀ Y : σ → Prop, (∃ y, Y y) → ∃ x, Y x ∧ ∀ y, Y y → R y x → y = x
+
+/-- `TotalOrder(R,X)`: `R` totally orders `X`. -/
+def TotalOrderOn {σ : Type} [Ty σ] (R : σ → σ → Prop) (X : σ → Prop) : Prop :=
+  (∀ x y z, X x → X y → X z → R x y → R y z → R x z) ∧
+    (∀ x y, X x → X y → R x y → R y x → x = y) ∧ (∀ x y, X x → X y → R x y ∨ R y x)
+
+/-- `well-ordering-r` at `σ`: some relation well-orders the type. -/
+def WellOrdering (σ : Type) [Ty σ] : Prop := ∃ R : σ → σ → Prop, WellOrders R
+/-- `necessary-well-ordering-r` at `σ`: the instance boxed. -/
+def NecWellOrdering (σ : Type) [Ty σ] : Prop := □ (WellOrdering σ)
+/-- `modal-well-ordering-r` at `σ`: some relation is necessarily a well-order. -/
+def ModalWellOrdering (σ : Type) [Ty σ] : Prop := ∃ R : σ → σ → Prop, □ (WellOrders R)
+
+/-- `zorn-r` at `σ`, in its preorder form: a preorder in which every chain has an upper bound
+has a maximal element. -/
+def Zorn (σ : Type) [Ty σ] : Prop :=
+  ∀ R : σ → σ → Prop, ((∀ x, R x x) ∧ (∀ x y z, R x y → R y z → R x z)) ∧
+      (∀ X : σ → Prop, TotalOrderOn R X → ∃ u, ∀ x, X x → R x u) →
+    ∃ m, ∀ y, R m y → R y m
+
 end Classicism.P

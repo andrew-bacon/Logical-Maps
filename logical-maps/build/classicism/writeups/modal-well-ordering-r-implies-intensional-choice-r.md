@@ -1,6 +1,6 @@
 # Modal Well-Ordering ⇒ Intensional Choice
 
-<p class='cert'>Result — Source: Misc.; produced by Claude Opus 5.5 (Anthropic), 7 October 2026, in an argument sketched by Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), 8 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.modal_well_ordering_r_implies_intensional_choice_r`; produced by Claude Opus 5.5 (Anthropic), 7 October 2026, in an argument sketched by Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), 8 October 2026.</p>
 
 ## Premises
 

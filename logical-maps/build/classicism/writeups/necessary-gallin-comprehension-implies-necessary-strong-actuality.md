@@ -1,6 +1,6 @@
 # □Gallin Extensional Comprehension ⇒ □Strong Actuality
 
-<p class='cert'>Result — Source: Misc.; produced by Claude Opus 5.5 (Anthropic), 9 October 2026, necessitating the unboxed argument; recorded by Claude Opus 5.5 (Anthropic), 9 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_gallin_comprehension_implies_necessary_strong_actuality`; produced by Claude Opus 5.5 (Anthropic), 9 October 2026, necessitating the unboxed argument; recorded by Claude Opus 5.5 (Anthropic), 9 October 2026.</p>
 
 ## Premises
 

@@ -321,4 +321,69 @@ theorem weakly_rigid_weak_rigidity_implies_necessary_weakly_rigid_weak_rigidity 
 theorem necessary_weakly_rigid_weak_rigidity_r_implies_weakly_rigid_weak_rigidity_r {τ : Type}
     [Rel τ] : NecWeaklyRigidWeakRigidity τ → WeaklyRigidWeakRigidity τ := box_elim
 
+/-! ### BF at the relational types, Gallin and Strong Actuality (11 October 2026) -/
+
+/-- `barcan-r-implies-barcan-relational`: an instance at a relational type. -/
+theorem barcan_r_implies_barcan_relational {τ : Type} [Rel τ] :
+    Barcan τ → BarcanRelational τ := fun h => h
+/-- `barcan-relational-implies-barcan-t`: the instance at `t`. -/
+theorem barcan_relational_implies_barcan_t : BarcanRelational Prop → BarcanT := fun h => h
+/-- `necessary-barcan-r-implies-necessary-barcan-relational`. -/
+theorem necessary_barcan_r_implies_necessary_barcan_relational {τ : Type} [Rel τ] :
+    NecBarcan τ → NecBarcanRelational τ := fun h => h
+/-- `necessary-barcan-relational-implies-necessary-barcan-t`. -/
+theorem necessary_barcan_relational_implies_necessary_barcan_t :
+    NecBarcanRelational Prop → NecBarcanT := fun h => h
+/-- `necessary-barcan-relational-implies-barcan-relational`: `T`. -/
+theorem necessary_barcan_relational_implies_barcan_relational {τ : Type} [Rel τ] :
+    NecBarcanRelational τ → BarcanRelational τ := box_elim
+
+/-- The weak inextensibility of `λx. ⊤` is BF. -/
+theorem barcan_of_weaklyInextensible_top {σ : Type} [Ty σ]
+    (wi : WeaklyInextensible (fun _ : σ => True)) : Barcan σ := fun X hX =>
+  modal_K _ _ (nec% (fun (h : ∀ x : σ, True → X x) (x : σ) => h x trivial))
+    (wi X (fun x _ => hX x))
+
+/-- BF makes `λx. ⊤` weakly rigid. -/
+theorem weaklyRigid_top_of_barcan {σ : Type} [Ty σ] (bf : Barcan σ) :
+    WeaklyRigid (fun _ : σ => True) :=
+  ⟨fun _ _ => box_true, fun Z hZ =>
+    modal_K _ _ (nec% (fun (h : ∀ x : σ, Z x) (x : σ) (_ : True) => h x))
+      (bf Z fun z => hZ z trivial)⟩
+
+/-- `tame-rigidity-and-barcan-imply-necessary-barcan`, at `σ`: Tame Rigidity at `σ → t`
+makes the weakly rigid `λx. ⊤` rigid, and its inextensibility is `□`BF. -/
+theorem tame_rigidity_and_barcan_imply_necessary_barcan {σ : Type} [Ty σ] :
+    TameRigidity (σ → Prop) → Barcan σ → NecBarcan σ := fun tr bf =>
+  modal_K _ _ (nec% (barcan_of_weaklyInextensible_top (σ := σ)))
+    (tr _ (weaklyRigid_top_of_barcan bf)).2
+
+/-- `tame-rigidity-and-bf-relational-imply-necessary-bf-relational`: the same, at a
+relational type. -/
+theorem tame_rigidity_and_bf_relational_imply_necessary_bf_relational {τ : Type} [Rel τ] :
+    TameRigidity (τ → Prop) → BarcanRelational τ → NecBarcanRelational τ :=
+  tame_rigidity_and_barcan_imply_necessary_barcan (σ := τ)
+
+/-- `gallin-comprehension-implies-strong-actuality`: a Gallin-rigid `Y` coextensive with
+`λq. q` makes `∀q. Yq ↔ q` a true proposition that necessarily decides every proposition. -/
+theorem gallin_comprehension_implies_strong_actuality :
+    GallinExtensionalComprehension (Prop → Prop) → StrongActuality := fun g =>
+  (g (fun q : Prop => q)).elim fun Y hY =>
+  ⟨∀ q : Prop, Y q ↔ q, fun q => (hY.2.2 q).symm,
+   modal_K _ _ (modal_K _ _
+     (nec% (fun (h₁ : ∀ q : Prop, Y q → □ (Y q)) (h₂ : ∀ q : Prop, ¬ Y q → □ (¬ Y q))
+         (q : Prop) =>
+       (em (Y q)).elim
+         (fun hy => Or.inl (le_of_box_incl (modal_K _ _
+           (nec% (fun (hy : Y q) (hp : ∀ r : Prop, Y r ↔ r) => (hp q).1 hy)) (h₁ q hy))))
+         (fun hn => Or.inr (le_of_box_incl (modal_K _ _
+           (nec% (fun (hn : ¬ Y q) (hp : ∀ r : Prop, Y r ↔ r) (hq : q) => hn ((hp q).2 hq)))
+           (h₂ q hn))))))
+     hY.1) hY.2.1⟩
+
+/-- `necessary-gallin-comprehension-implies-necessary-strong-actuality`. -/
+theorem necessary_gallin_comprehension_implies_necessary_strong_actuality :
+    NecGallinExtensionalComprehension (Prop → Prop) → NecStrongActuality :=
+  modal_K _ _ (nec% gallin_comprehension_implies_strong_actuality)
+
 end Classicism.Proofs

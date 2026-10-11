@@ -1,6 +1,6 @@
 # □ND ∧ □Persistent Comprehension ⇒ □Gallin Extensional Comprehension
 
-<p class='cert'>Result — Source: Misc.; produced by Claude Opus 5.5 (Anthropic), 2 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), 2 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.c5_and_necessary_persistent_comprehension_imply_necessary_gallin`; produced by Claude Opus 5.5 (Anthropic), 2 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), 2 October 2026.</p>
 
 ## Premises
 
