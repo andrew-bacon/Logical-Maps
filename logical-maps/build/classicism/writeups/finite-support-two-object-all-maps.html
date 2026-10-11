@@ -346,6 +346,9 @@ possibly zero is not a successor and successor is injective on numbers.
 One sentence for each arithmetical sentence.</li>
 <li><strong>B for sentences of Σ.</strong> The B instance for every
 closed sentence of the language of the fixed signature Sigma.</li>
+<li><strong>□Rigid Power.</strong> Every closed instance of Rigid Power
+is necessary. Box the entire object-variable closure; retain the same
+type range and other schema side conditions.</li>
 <li><strong>□Intensional Choice.</strong> Every closed instance of
 Intensional Choice is necessary. Box the entire object-variable closure;
 retain the same type range and other schema side conditions.</li>
@@ -582,6 +585,90 @@ class="math inline">W_0</span>, as the corresponding argument in the
 permutation model does.</p>
 <p><em>By Claude Opus 5.5 (Anthropic), at Cian Dorr’s request,
 2026-09-27.</em></p>
+<h3 id="holds-rigid-power.">Holds □Rigid Power.</h3>
+<p>Boxed Rigid Power, by lifting at each object; criterion (1) is part
+(1) of tame-rigidity-factorizable, which holds with several objects.
+Write <span class="math inline">c</span> for the map to the singleton
+and <span class="math inline">i_n</span> for the map from it with value
+<span class="math inline">n</span>. (a) Stable hulls. Let <span
+class="math inline">F</span> be rigid at <span
+class="math inline">\mathbb N</span> with extension <span
+class="math inline">E</span>, <span class="math inline">P</span> a
+nonempty finite set containing a pin of <span
+class="math inline">F</span>, and <span class="math inline">A\subseteq
+E</span> closed under the self-maps fixing <span
+class="math inline">P</span>. Then <span
+class="math inline">Y:=B_P(A)</span> has extension <span
+class="math inline">A</span>, lies below <span
+class="math inline">F</span>, and is rigid. Weak rigidity at <span
+class="math inline">\mathbb N</span> is as in rigid-power-surjections,
+part (a), with self-maps (into the singleton, <span
+class="math inline">r:=c</span>). For a self-map <span
+class="math inline">h</span>, a member <span
+class="math inline">k^{\prime}a</span> of <span
+class="math inline">Y_{kh}</span> (<span
+class="math inline">k^{\prime}</span> agreeing with <span
+class="math inline">kh</span> on <span class="math inline">P</span>) is
+<span class="math inline">j(ra)</span> with <span
+class="math inline">ra\in Y_h</span>, <span class="math inline">r</span>
+agreeing with <span class="math inline">h</span> on <span
+class="math inline">P</span> and sending the rest of a pin of <span
+class="math inline">a</span> to fresh points, and <span
+class="math inline">j</span> agreeing with <span
+class="math inline">k</span> on any given finite <span
+class="math inline">N\supseteq hP</span>; and <span
+class="math inline">Y_c=cA=cY_h</span> since <span
+class="math inline">cr=c</span>; so <span class="math inline">h\cdot
+Y</span> is weakly rigid. At the singleton a weakly rigid relation is
+the exact image of its extension; <span class="math inline">c\cdot
+F</span> is rigid, so <span class="math inline">F_{i_nc}=i_ncE</span>,
+and a member <span class="math inline">x=ga</span> of <span
+class="math inline">Y_{i_nc}</span> (<span class="math inline">g</span>
+agreeing with <span class="math inline">i_nc</span> on <span
+class="math inline">P</span>) lies in <span
+class="math inline">i_ncE</span>, so <span
+class="math inline">x=i_ncx=i_ncga=i_nca</span>, <span
+class="math inline">cg</span> being <span class="math inline">c</span>.
+So <span class="math inline">c\cdot Y=T(cA)</span>, which is rigid. (b)
+Lifting at <span class="math inline">\mathbb N</span>. A weakly rigid
+<span class="math inline">H</span> with extension <span
+class="math inline">E</span> has <span class="math inline">H_j=jE</span>
+for every surjective self-map <span class="math inline">j</span>, as in
+rigid-power-surjections, part (b). Given a rigid <span
+class="math inline">F</span>, an arrow <span
+class="math inline">k</span>, a finite <span
+class="math inline">N</span> containing a pin of <span
+class="math inline">F</span>, and a rigid <span class="math inline">X\le
+k\cdot F</span> with extension <span class="math inline">D</span> pinned
+down by <span class="math inline">T</span>: if <span
+class="math inline">k</span> is a self-map, extend <span
+class="math inline">k|_N</span> to a surjection <span
+class="math inline">j</span> with finitely many non-singleton fibres,
+all finite, take <span class="math inline">P</span> containing <span
+class="math inline">N</span>, those fibres and preimages of <span
+class="math inline">T</span>, and <span class="math inline">A:=\{a\in
+E:ja\in D\}</span>; for <span class="math inline">u</span> fixing <span
+class="math inline">P</span>, <span class="math inline">ju=vj</span>
+with <span class="math inline">v</span> fixing <span
+class="math inline">T</span>, so <span class="math inline">uA\subseteq
+A</span>, and <span class="math inline">j\cdot B_P(A)=X</span> by (a)
+and the exact-image fact. If <span class="math inline">k=c</span>, take
+<span class="math inline">A:=\{a\in E:ca\in D\}</span>, stable since
+<span class="math inline">cu=c</span>, and <span
+class="math inline">c\cdot B_P(A)=X</span>. (c) At the singleton every
+rigid <span class="math inline">F</span> is <span
+class="math inline">T(E)</span> and every <span
+class="math inline">T(A)</span>, <span class="math inline">A\subseteq
+E</span>, is admitted; a rigid <span class="math inline">X\le i_n\cdot
+F</span> with extension <span class="math inline">D</span> is <span
+class="math inline">i_n\cdot T(cD)</span>, since <span
+class="math inline">ci_n=1</span>. So the power property of every rigid
+relation, at either object, is weakly rigid, and Rigid Power holds at
+every world. Weakly Rigid Power still fails, with Tame Rigidity.</p>
+<p><em>Address:
+<code>finite-support-two-object-all-maps#rigid-power</code>. By GPT-6
+Astra (OpenAI), at Cian Dorr’s request; checked and recorded by Claude
+Opus 5.5 (Anthropic), 2026-10-11.</em></p>
 <h3 id="holds-intensional-choice.">Holds □Intensional Choice.</h3>
 <p>For each object <span class="math inline">U</span> and type <span
 class="math inline">\sigma</span> fix a well-ordering <span

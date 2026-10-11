@@ -347,6 +347,8 @@ quantifier over propositions.</li>
 displayed closed propositional formulation.</li>
 <li><strong>¬ Rigid Power.</strong> If a relation is rigid, so is the
 property of being a rigid relation that entails it.</li>
+<li><strong>¬ Tame Rigidity.</strong> Every weakly rigid relation,
+including a proposition, is rigid.</li>
 <li><strong>¬ Axiom of Infinity (type e).</strong> There are not
 finitely many individuals. No finite cardinality holds of the universal
 property, so the domain of the type cannot be exhausted by finitely many
@@ -516,6 +518,46 @@ class="math inline">\{a,b\}</span> being one. The power property is not
 weakly inextensible: Rigid Power fails.</p>
 <p><em>Address:
 <code>symmetric-qualitative-links-individuals-singleton-sigma-true-atom#rigid-power</code>.
+By GPT-6 Astra (OpenAI), at Cian Dorr’s request; checked and recorded by
+Claude Opus 5.5 (Anthropic), 2026-10-11.</em></p>
+<h3 id="fails-tame-rigidity.">Fails Tame Rigidity.</h3>
+<p>At type <span class="math inline">(t\to t)\to t</span>, with
+propositions indexed by nonpoints, so with one individual. Let <span
+class="math inline">V</span> be the companions and links, which every
+arrow maps onto <span class="math inline">V</span>, and <span
+class="math inline">q_{uv}:=\{h:hu=hv\}</span>. Codes of distinct
+unordered pairs of nonpoints differ: by the draft’s extension step
+(proof of its Proposition 50), any binary assignment on finitely many
+nonpoints is realized by a collapse sending them to the two companions
+of one point. Let <span class="math inline">C_z:=T(\{q_{zw}:w\in
+V\})</span>; it is symmetric, pinned down by <span
+class="math inline">\{z\}</span>, rigid, and <span
+class="math inline">h\cdot C_z=C_{hz}</span>, and <span
+class="math inline">z\mapsto C_z</span> is injective. Let <span
+class="math inline">U_h:=\{C_z:z\in R(ha,hb)\}</span>, where <span
+class="math inline">a,b</span> is the distinguished pair and <span
+class="math inline">R(p,q)</span> is the link fibre over <span
+class="math inline">p\ne q</span> or the two companions of <span
+class="math inline">p=q</span>. <span class="math inline">U</span> is
+symmetric, pinned down by <span class="math inline">\{a,b\}</span>, and
+weakly rigid by part (1) of tame-rigidity-factorizable: at a symmetry
+each <span class="math inline">B_N</span> is <span
+class="math inline">U_h</span>, and at a collapse a fresh link can be
+sent to either companion. At a collapse <span
+class="math inline">h</span> with <span
+class="math inline">p:=ha=hb</span>, <span
+class="math inline">U_h=\{C_{d_0},C_{d_1}\}</span> for <span
+class="math inline">p</span>’s companions; the rigid <span
+class="math inline">T(\{C_{d_0},C_{d_1}\})</span> necessarily holds of
+both, but after a collapse <span class="math inline">k</span> merging
+<span class="math inline">d_0</span> and <span
+class="math inline">d_1</span> it holds of <span
+class="math inline">C_{kd_0}</span> alone, while <span
+class="math inline">U_{kh}</span> has both companions’ codes. So <span
+class="math inline">h\cdot U</span> is not weakly inextensible: <span
+class="math inline">U</span> is weakly rigid and not rigid.</p>
+<p><em>Address:
+<code>symmetric-qualitative-links-individuals-singleton-sigma-true-atom#tame-rigidity</code>.
 By GPT-6 Astra (OpenAI), at Cian Dorr’s request; checked and recorded by
 Claude Opus 5.5 (Anthropic), 2026-10-11.</em></p>
 <h3 id="holds-axiom-of-infinity-type-t.">Holds Axiom of Infinity (type

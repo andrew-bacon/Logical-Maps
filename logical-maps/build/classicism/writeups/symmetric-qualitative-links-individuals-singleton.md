@@ -14,6 +14,7 @@
 - **B for sentences of Σ.** The B instance for every closed sentence of the language of the fixed signature Sigma.
 - **¬ Atomicity (type t).** Atomicity (type t) in the displayed closed propositional formulation.
 - **¬ Rigid Power.** If a relation is rigid, so is the property of being a rigid relation that entails it.
+- **¬ Tame Rigidity.** Every weakly rigid relation, including a proposition, is rigid.
 - **¬ Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **¬ Infinity Schema (type e).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
 - **¬ Possible Infinity (type e).** Possibly there are not finitely many individuals: the Axiom of Infinity at this type, under a diamond.
@@ -54,6 +55,12 @@ No rigid $Z\le F$ has $Z_h=Y_1$ at a collapse $h$. Close a finite pinning set $T
 So the test $B_{\{a,b\}}$ of the extension of $F$'s power property (constant, since $h\cdot F=F$) necessarily holds of its instances but omits $Y$ at a collapse, every arrow agreeing with a collapse on $\{a,b\}$ being one. The power property is not weakly inextensible: Rigid Power fails.
 
 *Address: `symmetric-qualitative-links-individuals-singleton#rigid-power`. By GPT-6 Astra (OpenAI), at Cian Dorr's request; checked and recorded by Claude Opus 5.5 (Anthropic), 2026-10-11.*
+
+### Fails Tame Rigidity.
+
+At type $(t\to t)\to t$, with propositions indexed by nonpoints, so with one individual. Let $V$ be the companions and links, which every arrow maps onto $V$, and $q_{uv}:=\{h:hu=hv\}$. Codes of distinct unordered pairs of nonpoints differ: by the draft's extension step (proof of its Proposition 50), any binary assignment on finitely many nonpoints is realized by a collapse sending them to the two companions of one point. Let $C_z:=T(\{q_{zw}:w\in V\})$; it is symmetric, pinned down by $\{z\}$, rigid, and $h\cdot C_z=C_{hz}$, and $z\mapsto C_z$ is injective. Let $U_h:=\{C_z:z\in R(ha,hb)\}$, where $a,b$ is the distinguished pair and $R(p,q)$ is the link fibre over $p\ne q$ or the two companions of $p=q$. $U$ is symmetric, pinned down by $\{a,b\}$, and weakly rigid by part (1) of tame-rigidity-factorizable: at a symmetry each $B_N$ is $U_h$, and at a collapse a fresh link can be sent to either companion. At a collapse $h$ with $p:=ha=hb$, $U_h=\{C_{d_0},C_{d_1}\}$ for $p$'s companions; the rigid $T(\{C_{d_0},C_{d_1}\})$ necessarily holds of both, but after a collapse $k$ merging $d_0$ and $d_1$ it holds of $C_{kd_0}$ alone, while $U_{kh}$ has both companions' codes. So $h\cdot U$ is not weakly inextensible: $U$ is weakly rigid and not rigid.
+
+*Address: `symmetric-qualitative-links-individuals-singleton#tame-rigidity`. By GPT-6 Astra (OpenAI), at Cian Dorr's request; checked and recorded by Claude Opus 5.5 (Anthropic), 2026-10-11.*
 
 ### Holds Axiom of Infinity (type t).
 

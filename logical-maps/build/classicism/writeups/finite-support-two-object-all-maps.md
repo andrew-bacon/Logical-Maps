@@ -10,6 +10,7 @@
 - **□Relational Choice.** Necessarily, every serial binary relation has a functional subrelation.
 - **Necessity of Arithmetic.** Every arithmetical sentence is either necessarily true or necessarily false, given that possibly zero is not a successor and successor is injective on numbers. One sentence for each arithmetical sentence.
 - **B for sentences of Σ.** The B instance for every closed sentence of the language of the fixed signature Sigma.
+- **□Rigid Power.** Every closed instance of Rigid Power is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
 - **□Intensional Choice.** Every closed instance of Intensional Choice is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
 - **Transversal Choice.** Every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
 - **¬ □BF.** Necessarily, the Barcan Formula holds at every type. The predicate formulation closes the formula schema using lambda abstraction.
@@ -105,6 +106,15 @@ A true $w$ pinned down by a finite set $S$ contains every arrow agreeing with th
 The argument above against Inextensible Comprehension at type $t\to t$ uses only the unboxed matrix of inextensibility at the identity arrow of $W_0$, as the corresponding argument in the permutation model does.
 
 *By Claude Opus 5.5 (Anthropic), at Cian Dorr's request, 2026-09-27.*
+
+### Holds □Rigid Power.
+
+Boxed Rigid Power, by lifting at each object; criterion (1) is part (1) of tame-rigidity-factorizable, which holds with several objects. Write $c$ for the map to the singleton and $i_n$ for the map from it with value $n$.
+(a) Stable hulls. Let $F$ be rigid at $\mathbb N$ with extension $E$, $P$ a nonempty finite set containing a pin of $F$, and $A\subseteq E$ closed under the self-maps fixing $P$. Then $Y:=B_P(A)$ has extension $A$, lies below $F$, and is rigid. Weak rigidity at $\mathbb N$ is as in rigid-power-surjections, part (a), with self-maps (into the singleton, $r:=c$). For a self-map $h$, a member $k^{\prime}a$ of $Y_{kh}$ ($k^{\prime}$ agreeing with $kh$ on $P$) is $j(ra)$ with $ra\in Y_h$, $r$ agreeing with $h$ on $P$ and sending the rest of a pin of $a$ to fresh points, and $j$ agreeing with $k$ on any given finite $N\supseteq hP$; and $Y_c=cA=cY_h$ since $cr=c$; so $h\cdot Y$ is weakly rigid. At the singleton a weakly rigid relation is the exact image of its extension; $c\cdot F$ is rigid, so $F_{i_nc}=i_ncE$, and a member $x=ga$ of $Y_{i_nc}$ ($g$ agreeing with $i_nc$ on $P$) lies in $i_ncE$, so $x=i_ncx=i_ncga=i_nca$, $cg$ being $c$. So $c\cdot Y=T(cA)$, which is rigid.
+(b) Lifting at $\mathbb N$. A weakly rigid $H$ with extension $E$ has $H_j=jE$ for every surjective self-map $j$, as in rigid-power-surjections, part (b). Given a rigid $F$, an arrow $k$, a finite $N$ containing a pin of $F$, and a rigid $X\le k\cdot F$ with extension $D$ pinned down by $T$: if $k$ is a self-map, extend $k|_N$ to a surjection $j$ with finitely many non-singleton fibres, all finite, take $P$ containing $N$, those fibres and preimages of $T$, and $A:=\{a\in E:ja\in D\}$; for $u$ fixing $P$, $ju=vj$ with $v$ fixing $T$, so $uA\subseteq A$, and $j\cdot B_P(A)=X$ by (a) and the exact-image fact. If $k=c$, take $A:=\{a\in E:ca\in D\}$, stable since $cu=c$, and $c\cdot B_P(A)=X$.
+(c) At the singleton every rigid $F$ is $T(E)$ and every $T(A)$, $A\subseteq E$, is admitted; a rigid $X\le i_n\cdot F$ with extension $D$ is $i_n\cdot T(cD)$, since $ci_n=1$. So the power property of every rigid relation, at either object, is weakly rigid, and Rigid Power holds at every world. Weakly Rigid Power still fails, with Tame Rigidity.
+
+*Address: `finite-support-two-object-all-maps#rigid-power`. By GPT-6 Astra (OpenAI), at Cian Dorr's request; checked and recorded by Claude Opus 5.5 (Anthropic), 2026-10-11.*
 
 ### Holds □Intensional Choice.
 
