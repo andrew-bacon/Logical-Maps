@@ -1,33 +1,59 @@
-# □Strong Leibniz Biconditionals ∧ Rigid Comprehension ⇒ □BF (relational types)
+# □Strong Leibniz and Rigid Comprehension imply □BF at the relational types (conjectured)
 
-<p class='cert'>Result — Source: Philosophical Introduction to HOL (2024); produced by Andrew Bacon; recorded by Claude Fable 5.1 (Anthropic), 22 September 2026.</p>
+> **Status: conjectured (downgraded 11 October 2026).** This is Theorem 8.2 of Andrew Bacon,
+> *A Philosophical Introduction to Higher-Order Logics* (Routledge, 2024), pp. 169–170. Its
+> proof has a gap, marked **Gap** below. It was found while formalizing the proof in Lean, and
+> Cian Dorr agreed with the diagnosis. The argument is the book's, kept so that the gap can be
+> seen in place; it is not a proof.
 
-## Premises
+Definitions follow the book (§8.2, pp. 165–166). $\Diamond_\sigma X$ is $X\ne\bot_\sigma$. A
+strong world of type $\sigma$ is a possible $W$ that necessarily entails every entity of the type
+or its negation. $V$ is accessible to $W$ when $W$ entails $\Diamond V$, read pointwise for
+properties: $W\le\lambda q\,.\,\Diamond Vq$. The book treats the case $\sigma=t$ and indicates the
+general one; the case $\sigma=t$ is given here.
 
-- **□Strong Leibniz Biconditionals.** Necessarily, at each relational type, every possible entity (one distinct from bottom) is entailed by a strong world: a possible entity that necessarily entails every entity of the type or its negation.
-- **Rigid Comprehension.** Every relation, including a proposition, is coextensive with a rigid one.
+## The argument
 
-## Conclusion
+Suppose $\Diamond\exists p\,.\,Xp$. Then $X$ is a possible property, so by Strong Leibniz at
+$t\to t$ some strong world property $W$ entails $X$. By Rigid Comprehension let $H$ be a rigid
+property coextensive with the property of being a strong world property accessible to $W$, and
+put
+$$r:=\exists V\,\exists p\,.\,HV\land Vp\land p.$$
+The aim is $\Diamond Xr$, which gives $\exists p\,.\,\Diamond Xp$, the dual of BF at $t$.
 
-- **□BF (relational types).** Necessarily, BF holds at every relational type.
+(i) *If $Wp$, then $\Box(p\to r)$.* By □Strong Leibniz at $t$ it suffices that every strong
+world proposition $v$ entails $\exists V\,.\,HV\land Vp$. Let $U:=\lambda q\,.\,v\land q=p$. $U$ is
+a strong world property, and it is accessible to $W$: $W$ decides $\lambda q\,.\,\Diamond Uq$, and
+$p$ is $W$ and possibly $U$. **So $U$ is $H$**, and necessarily $H$ by the rigidity of $H$. Since
+$v$ entails $Up$, $v$ entails $\exists V\,.\,HV\land Vp$.
 
-## Proof
+(ii) *If $Wp$, then $\Box(r\to p)$.* By the weak inextensibility of $H$ it suffices that
+$\Box\forall q\,.\,Vq\to p=q$ for each $V$ with $HV$. Since $Wp$ and $W$ entails
+$\lambda q\,.\,\Diamond Vq$, $\Diamond Vp$; $V$, a strong world property, cannot then entail
+$\lambda q\,.\,q\ne p$, so it entails $\lambda q\,.\,q=p$.
 
-Theorem 8.2 of the book: given Rigid Comprehension, $\Box\mathrm{SL}_\sigma$ at all relational types implies $\Box\mathrm{BF}_\sigma$ for every relational $\sigma\ne e$. Its proof for $\sigma=t$ (pp. 170–171): from $\Diamond\exists p\, .\,Xp$, $X$ is a possible property, so by $\mathrm{SL}_{tt}$ it is entailed by a strong world property $W$; let $H$ be the rigid collection, supplied by Rigid Comprehension, of world properties accessible to $W$, and let $r:=\exists V\, .\,\exists p\, .\,HV\land Vp\land p$. Bacon shows $\Box\forall p\, .\,Wp\to p=r$, using $\Box\mathrm{SL}_t$ for the step that every world proposition entails $\exists V\, .\,HV\land Vp$ and the rigidity of $H$ for the converse; since $W$ entails $X$, $\Diamond Xr$, which gives $\exists p\, .\,\Diamond Xp$, the contrapositive of $\mathrm{BF}_t$. The argument is carried out under necessary assumptions, so it yields $\Box\mathrm{BF}_t$. The book proves the same for every relational type other than $e$, and the map records it at all of them.
+So $\forall p\,.\,Wp\to p=r$. The book continues: "Putting this together we have proven
+$\forall p(Wp\to p=r)$ from necessary assumptions, and thus we may conclude
+$\Box\forall p(Wp\to p=r)$." With $W\le X$ and $\Diamond\exists p\,.\,Wp$, this gives
+$\Diamond Xr$.
 
-## Notes
+## Gap
 
-The right-to-left half of Theorem 8.2 is the recorded implication from □Atomicity and □BF (relational types) to □SL, which needs no Rigid Comprehension. The type-$t$ case, which the book proves in full, is derived through □BF (relational types) ⇒ □BF (type t).
+The conclusion is needed under the box, because $W$ may have no actual instance: the only
+$p$ with $Wp$ may exist only at other worlds. Running (i) at such a world $u$ requires the step
+in bold, that the world property $U$ built at $u$ from $u$'s $v$ and $p$ is $H$. At the
+evaluation point this holds because $H$ is coextensive there with the strong world properties
+accessible to $W$. At $u$ nothing gives it: Rigid Comprehension supplies a coextension only at
+the evaluation point, and the rigidity of $H$ only stops $H$ from acquiring instances; it does
+not make $H$ hold of new world properties at $u$. So "necessary assumptions" covers the rigidity
+of $H$, □Strong Leibniz and the boxed facts about $W$, but not the coextension of $H$ that the
+bold step uses. Step (ii) uses only rigidity and the boxed facts, and goes through at every world.
 
-## Revisions
+Boxing Rigid Comprehension does not obviously repair this. It gives each world its own rigid
+coextension, while $r$ has to be defined from one $H$ existing at the evaluation point.
 
-- **2026-10-11** (Claude Opus 5.5 (Anthropic), at Cian Dorr's direction) — The conclusion is now □BF (relational types), as Theorem 8.2 states it, in place of □BF (type t), recorded until then for want of a node; the record's id changed with it (formerly necessary-strong-leibniz-and-rigid-comprehension-imply-necessary-bf-t). The proof text is unchanged except for its last sentence.
-
-## Sources
-
-- **Philosophical Introduction to HOL** — Andrew Bacon, A Philosophical Introduction to Higher-Order Logics, Routledge, 2024, §8.2, Theorem 8.2, pp. 169–171.
-
-<p class='cert'>Record: <code>topics/classicism/results/necessary-strong-leibniz-and-rigid-comprehension-imply-necessary-bf-relational.yaml</code></p>
+The other half of Theorem 8.2, that □Atomicity and □BF at the relational types give □Strong
+Leibniz, is unaffected (atomicity-and-bf-relational-imply-strong-leibniz and its boxed form).
 
 ## Paper references
 

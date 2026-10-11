@@ -160,6 +160,20 @@
     "lines": [1105, 1107],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
+  "weak-rigid-comprehension-and-nd-imply-plenitude":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.weak_rigid_comprehension_and_nd_imply_plenitude",
+     "lines": [463, 489],
+     "file": "Classicism/Results/Records/C5.lean"},
+    {"name": "Classicism.Meta.weak_rigid_comprehension_and_nd_imply_plenitude",
+     "lines": [705, 710],
+     "file": "Classicism/Results/Arity.lean"}],
+   "certificate":
+   {"name": "Classicism.Map.weak_rigid_comprehension_and_nd_imply_plenitude",
+    "lines": [1020, 1022],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
   "vicinity-and-weakly-inextensible-comprehension-imply-actuality":
   {"proofs":
    [{"name":
@@ -468,19 +482,6 @@
    "certificate":
    {"name": "Classicism.Map.rigid_comprehension_implies_tame_rigidity",
     "lines": [1528, 1530],
-    "file": "Classicism/Map.lean",
-    "axioms": ["propext", "Quot.sound"]}},
-  "rigid-comprehension-and-nd-imply-plenitude":
-  {"proofs":
-   [{"name": "Classicism.Proofs.rigid_comprehension_and_nd_imply_plenitude",
-     "lines": [463, 488],
-     "file": "Classicism/Results/Records/C5.lean"},
-    {"name": "Classicism.Meta.rigid_comprehension_and_nd_imply_plenitude",
-     "lines": [705, 710],
-     "file": "Classicism/Results/Arity.lean"}],
-   "certificate":
-   {"name": "Classicism.Map.rigid_comprehension_and_nd_imply_plenitude",
-    "lines": [1020, 1022],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "rigid-comprehension-and-bf-imply-necessary-bf":
@@ -3187,7 +3188,7 @@
   "c5-implies-tame-rigidity":
   {"proofs":
    [{"name": "Classicism.Proofs.c5_implies_tame_rigidity",
-     "lines": [600, 604],
+     "lines": [601, 605],
      "file": "Classicism/Results/Records/C5.lean"},
     {"name": "Classicism.Meta.c5_implies_tame_rigidity",
      "lines": [870, 872],
@@ -3200,7 +3201,7 @@
   "c5-implies-necessary-tame-rigidity":
   {"proofs":
    [{"name": "Classicism.Proofs.c5_implies_necessary_tame_rigidity",
-     "lines": [606, 609],
+     "lines": [607, 610],
      "file": "Classicism/Results/Records/C5.lean"},
     {"name": "Classicism.Meta.c5_implies_necessary_tame_rigidity",
      "lines": [874, 877],
@@ -3213,7 +3214,7 @@
   "c5-implies-necessary-rigid-power":
   {"proofs":
    [{"name": "Classicism.Proofs.c5_implies_necessary_rigid_power",
-     "lines": [594, 597],
+     "lines": [595, 598],
      "file": "Classicism/Results/Records/C5.lean"},
     {"name": "Classicism.Meta.c5_implies_necessary_rigid_power",
      "lines": [864, 867],

@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>□Strong Leibniz Biconditionals ∧ Rigid Comprehension ⇒ □BF (relational types)</title><link rel="icon" type="image/png" href="../favicon.png">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>□Strong Leibniz and Rigid Comprehension imply □BF at the relational types (conjectured)</title><link rel="icon" type="image/png" href="../favicon.png">
 <style>/* Fixed forest palette, adapted from the supplied style example.
    Semantic and source hues retain their meaning in both modes. */
 :root {
@@ -322,77 +322,114 @@ body.writeup-page { max-width: 82ch; margin: 3em auto; padding: 0 1.5em 3em; fon
 <link rel="stylesheet" href="../math/katex.min.css">
 <script defer src="../math/katex.min.js"></script>
 <script defer src="../math/contrib/auto-render.min.js"></script>
-<script defer src="../math/math.js"></script></head><body class="writeup-page"><nav class="writeup-nav" aria-label="Write-up navigation"><a href="../index.html">← Back to map</a><div class="display-toggles"><button type="button" class="theme-toggle" data-theme-toggle>[Dark mode]</button><button type="button" class="theme-toggle" data-colourblind-toggle aria-label="Colourblind mode" aria-pressed="false">[Colourblind mode: off]</button></div></nav><header id="title-block-header"><h1>□Strong Leibniz Biconditionals ∧ Rigid Comprehension ⇒ □BF (relational types)</h1></header><p class="cert">
-Result — Source: Philosophical Introduction to HOL (2024); produced by
-Andrew Bacon; recorded by Claude Fable 5.1 (Anthropic), 22 September
-2026.
-</p>
-<h2 id="premises">Premises</h2>
-<ul>
-<li><strong>□Strong Leibniz Biconditionals.</strong> Necessarily, at
-each relational type, every possible entity (one distinct from bottom)
-is entailed by a strong world: a possible entity that necessarily
-entails every entity of the type or its negation.</li>
-<li><strong>Rigid Comprehension.</strong> Every relation, including a
-proposition, is coextensive with a rigid one.</li>
-</ul>
-<h2 id="conclusion">Conclusion</h2>
-<ul>
-<li><strong>□BF (relational types).</strong> Necessarily, BF holds at
-every relational type.</li>
-</ul>
-<h2 id="proof">Proof</h2>
-<p>Theorem 8.2 of the book: given Rigid Comprehension, <span
-class="math inline">\Box\mathrm{SL}_\sigma</span> at all relational
-types implies <span class="math inline">\Box\mathrm{BF}_\sigma</span>
-for every relational <span class="math inline">\sigma\ne e</span>. Its
-proof for <span class="math inline">\sigma=t</span> (pp. 170–171): from
-<span class="math inline">\Diamond\exists p\, .\,Xp</span>, <span
-class="math inline">X</span> is a possible property, so by <span
-class="math inline">\mathrm{SL}_{tt}</span> it is entailed by a strong
-world property <span class="math inline">W</span>; let <span
-class="math inline">H</span> be the rigid collection, supplied by Rigid
-Comprehension, of world properties accessible to <span
-class="math inline">W</span>, and let <span
-class="math inline">r:=\exists V\, .\,\exists p\, .\,HV\land Vp\land
-p</span>. Bacon shows <span class="math inline">\Box\forall p\, .\,Wp\to
-p=r</span>, using <span class="math inline">\Box\mathrm{SL}_t</span> for
-the step that every world proposition entails <span
-class="math inline">\exists V\, .\,HV\land Vp</span> and the rigidity of
-<span class="math inline">H</span> for the converse; since <span
-class="math inline">W</span> entails <span class="math inline">X</span>,
-<span class="math inline">\Diamond Xr</span>, which gives <span
-class="math inline">\exists p\, .\,\Diamond Xp</span>, the
-contrapositive of <span class="math inline">\mathrm{BF}_t</span>. The
-argument is carried out under necessary assumptions, so it yields <span
-class="math inline">\Box\mathrm{BF}_t</span>. The book proves the same
-for every relational type other than <span class="math inline">e</span>,
-and the map records it at all of them.</p>
-<h2 id="notes">Notes</h2>
-<p>The right-to-left half of Theorem 8.2 is the recorded implication
-from □Atomicity and □BF (relational types) to □SL, which needs no Rigid
-Comprehension. The type-<span class="math inline">t</span> case, which
-the book proves in full, is derived through □BF (relational types) ⇒ □BF
-(type t).</p>
-<h2 id="revisions">Revisions</h2>
-<ul>
-<li><strong>2026-10-11</strong> (Claude Opus 5.5 (Anthropic), at Cian
-Dorr’s direction) — The conclusion is now □BF (relational types), as
-Theorem 8.2 states it, in place of □BF (type t), recorded until then for
-want of a node; the record’s id changed with it (formerly
-necessary-strong-leibniz-and-rigid-comprehension-imply-necessary-bf-t).
-The proof text is unchanged except for its last sentence.</li>
-</ul>
-<h2 id="sources">Sources</h2>
-<ul>
-<li><strong>Philosophical Introduction to HOL</strong> — Andrew Bacon, A
-Philosophical Introduction to Higher-Order Logics, Routledge, 2024,
-§8.2, Theorem 8.2, pp. 169–171.</li>
-</ul>
-<p class="cert">
-Record:
-<code>topics/classicism/results/necessary-strong-leibniz-and-rigid-comprehension-imply-necessary-bf-relational.yaml</code>
-</p>
+<script defer src="../math/math.js"></script></head><body class="writeup-page"><nav class="writeup-nav" aria-label="Write-up navigation"><a href="../index.html">← Back to map</a><div class="display-toggles"><button type="button" class="theme-toggle" data-theme-toggle>[Dark mode]</button><button type="button" class="theme-toggle" data-colourblind-toggle aria-label="Colourblind mode" aria-pressed="false">[Colourblind mode: off]</button></div></nav><header id="title-block-header"><h1>□Strong Leibniz and Rigid Comprehension imply □BF at the relational types (conjectured)</h1></header><blockquote>
+<p><strong>Status: conjectured (downgraded 11 October 2026).</strong>
+This is Theorem 8.2 of Andrew Bacon, <em>A Philosophical Introduction to
+Higher-Order Logics</em> (Routledge, 2024), pp. 169–170. Its proof has a
+gap, marked <strong>Gap</strong> below. It was found while formalizing
+the proof in Lean, and Cian Dorr agreed with the diagnosis. The argument
+is the book’s, kept so that the gap can be seen in place; it is not a
+proof.</p>
+</blockquote>
+<p>Definitions follow the book (§8.2, pp. 165–166). <span
+class="math inline">\Diamond_\sigma X</span> is <span
+class="math inline">X\ne\bot_\sigma</span>. A strong world of type <span
+class="math inline">\sigma</span> is a possible <span
+class="math inline">W</span> that necessarily entails every entity of
+the type or its negation. <span class="math inline">V</span> is
+accessible to <span class="math inline">W</span> when <span
+class="math inline">W</span> entails <span class="math inline">\Diamond
+V</span>, read pointwise for properties: <span
+class="math inline">W\le\lambda q\,.\,\Diamond Vq</span>. The book
+treats the case <span class="math inline">\sigma=t</span> and indicates
+the general one; the case <span class="math inline">\sigma=t</span> is
+given here.</p>
+<h2 id="the-argument">The argument</h2>
+<p>Suppose <span class="math inline">\Diamond\exists p\,.\,Xp</span>.
+Then <span class="math inline">X</span> is a possible property, so by
+Strong Leibniz at <span class="math inline">t\to t</span> some strong
+world property <span class="math inline">W</span> entails <span
+class="math inline">X</span>. By Rigid Comprehension let <span
+class="math inline">H</span> be a rigid property coextensive with the
+property of being a strong world property accessible to <span
+class="math inline">W</span>, and put <span
+class="math display">r:=\exists V\,\exists p\,.\,HV\land Vp\land
+p.</span> The aim is <span class="math inline">\Diamond Xr</span>, which
+gives <span class="math inline">\exists p\,.\,\Diamond Xp</span>, the
+dual of BF at <span class="math inline">t</span>.</p>
+<ol type="i">
+<li><p><em>If <span class="math inline">Wp</span>, then <span
+class="math inline">\Box(p\to r)</span>.</em> By □Strong Leibniz at
+<span class="math inline">t</span> it suffices that every strong world
+proposition <span class="math inline">v</span> entails <span
+class="math inline">\exists V\,.\,HV\land Vp</span>. Let <span
+class="math inline">U:=\lambda q\,.\,v\land q=p</span>. <span
+class="math inline">U</span> is a strong world property, and it is
+accessible to <span class="math inline">W</span>: <span
+class="math inline">W</span> decides <span class="math inline">\lambda
+q\,.\,\Diamond Uq</span>, and <span class="math inline">p</span> is
+<span class="math inline">W</span> and possibly <span
+class="math inline">U</span>. <strong>So <span
+class="math inline">U</span> is <span
+class="math inline">H</span></strong>, and necessarily <span
+class="math inline">H</span> by the rigidity of <span
+class="math inline">H</span>. Since <span class="math inline">v</span>
+entails <span class="math inline">Up</span>, <span
+class="math inline">v</span> entails <span class="math inline">\exists
+V\,.\,HV\land Vp</span>.</p></li>
+<li><p><em>If <span class="math inline">Wp</span>, then <span
+class="math inline">\Box(r\to p)</span>.</em> By the weak
+inextensibility of <span class="math inline">H</span> it suffices that
+<span class="math inline">\Box\forall q\,.\,Vq\to p=q</span> for each
+<span class="math inline">V</span> with <span
+class="math inline">HV</span>. Since <span class="math inline">Wp</span>
+and <span class="math inline">W</span> entails <span
+class="math inline">\lambda q\,.\,\Diamond Vq</span>, <span
+class="math inline">\Diamond Vp</span>; <span
+class="math inline">V</span>, a strong world property, cannot then
+entail <span class="math inline">\lambda q\,.\,q\ne p</span>, so it
+entails <span class="math inline">\lambda q\,.\,q=p</span>.</p></li>
+</ol>
+<p>So <span class="math inline">\forall p\,.\,Wp\to p=r</span>. The book
+continues: “Putting this together we have proven <span
+class="math inline">\forall p(Wp\to p=r)</span> from necessary
+assumptions, and thus we may conclude <span
+class="math inline">\Box\forall p(Wp\to p=r)</span>.” With <span
+class="math inline">W\le X</span> and <span
+class="math inline">\Diamond\exists p\,.\,Wp</span>, this gives <span
+class="math inline">\Diamond Xr</span>.</p>
+<h2 id="gap">Gap</h2>
+<p>The conclusion is needed under the box, because <span
+class="math inline">W</span> may have no actual instance: the only <span
+class="math inline">p</span> with <span class="math inline">Wp</span>
+may exist only at other worlds. Running (i) at such a world <span
+class="math inline">u</span> requires the step in bold, that the world
+property <span class="math inline">U</span> built at <span
+class="math inline">u</span> from <span class="math inline">u</span>’s
+<span class="math inline">v</span> and <span
+class="math inline">p</span> is <span class="math inline">H</span>. At
+the evaluation point this holds because <span
+class="math inline">H</span> is coextensive there with the strong world
+properties accessible to <span class="math inline">W</span>. At <span
+class="math inline">u</span> nothing gives it: Rigid Comprehension
+supplies a coextension only at the evaluation point, and the rigidity of
+<span class="math inline">H</span> only stops <span
+class="math inline">H</span> from acquiring instances; it does not make
+<span class="math inline">H</span> hold of new world properties at <span
+class="math inline">u</span>. So “necessary assumptions” covers the
+rigidity of <span class="math inline">H</span>, □Strong Leibniz and the
+boxed facts about <span class="math inline">W</span>, but not the
+coextension of <span class="math inline">H</span> that the bold step
+uses. Step (ii) uses only rigidity and the boxed facts, and goes through
+at every world.</p>
+<p>Boxing Rigid Comprehension does not obviously repair this. It gives
+each world its own rigid coextension, while <span
+class="math inline">r</span> has to be defined from one <span
+class="math inline">H</span> existing at the evaluation point.</p>
+<p>The other half of Theorem 8.2, that □Atomicity and □BF at the
+relational types give □Strong Leibniz, is unaffected
+(atomicity-and-bf-relational-imply-strong-leibniz and its boxed
+form).</p>
 <h2 id="paper-references">Paper references</h2>
 <ul>
 <li><strong>Proof: A Philosophical Introduction to Higher-Order

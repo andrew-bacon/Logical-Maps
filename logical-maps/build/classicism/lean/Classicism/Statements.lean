@@ -2216,7 +2216,7 @@ def necessary_strong_actuality_implies_strong_actuality : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecStrongActuality.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongActuality.schemaIn
 
-/-- `necessary-strong-leibniz-and-rigid-comprehension-imply-necessary-bf-relational`
+/-- `necessary-strong-leibniz-and-rigid-comprehension-imply-necessary-bf-relational`  (conjectured)
 
 □Strong Leibniz Biconditionals ∧ Rigid Comprehension ⇒ □BF (relational types) -/
 def necessary_strong_leibniz_and_rigid_comprehension_imply_necessary_bf_relational : Prop :=
@@ -3169,15 +3169,6 @@ def rigid_comprehension_and_bf_imply_necessary_bf : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Barcan.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcan.schemaIn
 
-/-- `rigid-comprehension-and-nd-imply-plenitude`
-
-Rigid Comprehension ∧ ND ⇒ Plenitude -/
-def rigid_comprehension_and_nd_imply_plenitude : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidComprehension.schemaIn →
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessityOfDistinctness.schemaIn →
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Plenitude.schemaIn
-
 /-- `rigid-comprehension-implies-tame-rigidity`
 
 Rigid Comprehension ⇒ Tame Rigidity -/
@@ -3485,6 +3476,15 @@ def vicinity_and_weakly_inextensible_comprehension_imply_actuality : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Vicinity.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeaklyInextensibleComprehension.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Actuality.schemaIn
+
+/-- `weak-rigid-comprehension-and-nd-imply-plenitude`
+
+Weak Rigid Comprehension ∧ ND ⇒ Plenitude -/
+def weak_rigid_comprehension_and_nd_imply_plenitude : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeakRigidComprehension.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessityOfDistinctness.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Plenitude.schemaIn
 
 /-- `weak-rigid-comprehension-r-implies-boolean-completeness-r`
 

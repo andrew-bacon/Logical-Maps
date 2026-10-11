@@ -702,12 +702,12 @@ theorem c5_and_completeness_imply_plenitude :
     (Entails.trans (Entails.union (Entails.union_right _ _) (Entails.union_left _ _))
       Proofs.c5_and_completeness_imply_plenitude.listEntails)
 
-/-- `rigid-comprehension-and-nd-imply-plenitude` (Proposition 2.16), at every output
-type. -/
-theorem rigid_comprehension_and_nd_imply_plenitude :
-    P.RigidComprehension.schema ∪ P.NecessityOfDistinctness.schema ⟹ P.Plenitude.schema :=
+/-- `weak-rigid-comprehension-and-nd-imply-plenitude` (Proposition 2.16, with Weak Rigid
+Comprehension), at every output type. -/
+theorem weak_rigid_comprehension_and_nd_imply_plenitude :
+    P.WeakRigidComprehension.schema ∪ P.NecessityOfDistinctness.schema ⟹ P.Plenitude.schema :=
   Entails.mono_right (schema_subset_args₂ _)
-    Proofs.rigid_comprehension_and_nd_imply_plenitude.listEntails
+    Proofs.weak_rigid_comprehension_and_nd_imply_plenitude.listEntails
 
 /-- `extensionality-r-implies-plenitude-r`, at every output type: Extensionality gives the
 Fregean Axiom, hence `□ND`, and Boolean Completeness, and Proposition 2.14. -/
