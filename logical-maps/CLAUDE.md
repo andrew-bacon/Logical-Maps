@@ -54,7 +54,10 @@ and reports unless it is asked for by name.
 
 - `python3 scripts/pmap.py validate` — must pass before any commit.
 - `python3 scripts/pmap.py build` — regenerates `build/<topic>/index.html`,
-  `data.json`, write-ups, and downloadable topic files.
+  `data.json`, write-ups, and downloadable topic files. The viewer's payload (the page and
+  `build/<topic>/data.json`) is size-encoded by `compact_viewer_payload` to stay under the
+  host's 25 MiB per file, and `decodePayload` in `viewer/template.html` restores it exactly;
+  change the two together. The bundle's `data.json` is not encoded.
 - `python3 scripts/pmap.py status` — counts, open pairs, redundancies.
 - `python3 scripts/pmap.py lynchpins` — the central questions, open questions ranked by
   the harmonic mean of what either answer would settle (the expected settlement when an
