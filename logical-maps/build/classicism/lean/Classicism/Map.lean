@@ -1769,4 +1769,12 @@ theorem well_ordering_weak_rigid_comprehension_and_bf_imply_modal_well_ordering 
 theorem bf_weak_rigid_comprehension_atomicity_and_relational_choice_imply_intensional_choice : Statements.bf_weak_rigid_comprehension_atomicity_and_relational_choice_imply_intensional_choice := by
   map_cert Meta.bf_weak_rigid_comprehension_atomicity_and_relational_choice_imply_intensional_choice
 
+/-- `strong-leibniz-t-necessary-rigid-comprehension-and-rigid-power-imply-bf-t` -/
+theorem strong_leibniz_t_necessary_rigid_comprehension_and_rigid_power_imply_bf_t : Statements.strong_leibniz_t_necessary_rigid_comprehension_and_rigid_power_imply_bf_t := by
+  map_cert _root_.Classicism.slt_nrc_rp_bft.entails
+
+/-- `strong-leibniz-necessary-rigid-comprehension-and-rigid-power-imply-bf-relational` -/
+theorem strong_leibniz_necessary_rigid_comprehension_and_rigid_power_imply_bf_relational : Statements.strong_leibniz_necessary_rigid_comprehension_and_rigid_power_imply_bf_relational := by
+  map_cert Meta.strong_leibniz_necessary_rigid_comprehension_and_rigid_power_imply_bf_relational
+
 end Classicism.Map

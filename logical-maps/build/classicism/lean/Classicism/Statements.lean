@@ -3300,6 +3300,16 @@ def strong_actuality_implies_actuality : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongActuality.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Actuality.schemaIn
 
+/-- `strong-leibniz-necessary-rigid-comprehension-and-rigid-power-imply-bf-relational`
+
+Strong Leibniz Biconditionals ∧ □Rigid Comprehension ∧ Rigid Power ⇒ BF (relational types) -/
+def strong_leibniz_necessary_rigid_comprehension_and_rigid_power_imply_bf_relational : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongLeibniz.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRigidComprehension.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidPower.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanRelational.schemaIn
+
 /-- `strong-leibniz-r-implies-atomicity-r`
 
 Strong Leibniz Biconditionals ⇒ Atomicity -/
@@ -3339,6 +3349,16 @@ def strong_leibniz_t_implies_strong_actuality : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongLeibnizT.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongActuality.schemaIn
+
+/-- `strong-leibniz-t-necessary-rigid-comprehension-and-rigid-power-imply-bf-t`
+
+Strong Leibniz Biconditionals (type t) ∧ □Rigid Comprehension ∧ Rigid Power ⇒ BF (type t) -/
+def strong_leibniz_t_necessary_rigid_comprehension_and_rigid_power_imply_bf_t : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongLeibnizT.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRigidComprehension.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidPower.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanT.schemaIn
 
 /-- `strong-possibility-and-distinctness-preserving-collapse-incompatible`
 
