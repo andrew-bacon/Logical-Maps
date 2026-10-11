@@ -2667,6 +2667,30 @@
     "lines": [1736, 1738],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
+  "modal-well-ordering-implies-necessary-modalized-relational-choice":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.modal_well_ordering_implies_necessary_modalized_relational_choice",
+     "lines": [1201, 1206],
+     "file": "Classicism/Results/Records/Choice.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.modal_well_ordering_implies_necessary_modalized_relational_choice",
+    "lines": [1816, 1818],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "modal-well-ordering-implies-modalized-relational-choice":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.modal_well_ordering_implies_modalized_relational_choice",
+     "lines": [1187, 1199],
+     "file": "Classicism/Results/Records/Choice.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.modal_well_ordering_implies_modalized_relational_choice",
+    "lines": [1812, 1814],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
   "modal-freedom-signature-r-implies-no-pure-contingency-r":
   {"proofs":
    [{"name": "Classicism.Meta.modalFreedom_entails_npc",

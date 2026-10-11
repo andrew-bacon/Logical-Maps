@@ -1542,6 +1542,22 @@ def modal_freedom_signature_r_implies_no_pure_contingency_r : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.modalFreedom _) →
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.noContingency)
 
+/-- `modal-well-ordering-implies-modalized-relational-choice`
+
+Modal Well-Ordering ⇒ Modalized Relational Choice -/
+def modal_well_ordering_implies_modalized_relational_choice : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalWellOrdering.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalizedRelationalChoice.schemaIn
+
+/-- `modal-well-ordering-implies-necessary-modalized-relational-choice`
+
+Modal Well-Ordering ⇒ □Modalized Relational Choice -/
+def modal_well_ordering_implies_necessary_modalized_relational_choice : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalWellOrdering.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecModalizedRelationalChoice.schemaIn
+
 /-- `modal-well-ordering-r-implies-intensional-choice-r`
 
 Modal Well-Ordering ⇒ Intensional Choice -/

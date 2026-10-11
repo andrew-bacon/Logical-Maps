@@ -1809,4 +1809,12 @@ theorem necessary_relational_choice_and_necessary_intensional_choice_imply_neces
 theorem no_pure_contingency_and_modalized_relational_choice_imply_necessary_modalized_relational_choice : Statements.no_pure_contingency_and_modalized_relational_choice_imply_necessary_modalized_relational_choice := by
   map_cert (Entails.mono_right (Ax₃ := P.NecModalizedRelationalChoice.schema) (by map_box) (npc_union_entails_box_pure P.ModalizedRelationalChoice.schema_closedTypes))
 
+/-- `modal-well-ordering-implies-modalized-relational-choice` -/
+theorem modal_well_ordering_implies_modalized_relational_choice : Statements.modal_well_ordering_implies_modalized_relational_choice := by
+  map_cert Proofs.modal_well_ordering_implies_modalized_relational_choice.entails
+
+/-- `modal-well-ordering-implies-necessary-modalized-relational-choice` -/
+theorem modal_well_ordering_implies_necessary_modalized_relational_choice : Statements.modal_well_ordering_implies_necessary_modalized_relational_choice := by
+  map_cert Proofs.modal_well_ordering_implies_necessary_modalized_relational_choice.entails
+
 end Classicism.Map

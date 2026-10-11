@@ -1184,4 +1184,25 @@ theorem necessary_relational_choice_and_necessary_intensional_choice_imply_neces
     (nec% (necessary_relational_choice_and_intensional_choice_imply_modalized_relational_choice
       (σ := σ) (τ := τ))) (modal_four _ h₁)) h₂
 
+/-- `modal-well-ordering-implies-modalized-relational-choice`: the least value under a necessary
+well-order of the outputs. -/
+theorem modal_well_ordering_implies_modalized_relational_choice {σ τ : Type} [Ty σ] [Ty τ] :
+    ModalWellOrdering τ → ModalizedRelationalChoice σ τ := fun ⟨W, hW⟩ R hR =>
+  ⟨fun x y => R x y ∧ ∀ z, R x z → W y z,
+   modal_K _ _ (modal_K _ _
+     (nec% (fun (hw : WellOrders W) (hs : Serial R) (x : σ) =>
+       (unique_least W (R x) hw (hs x)).elim fun y ⟨hy, hu⟩ =>
+         (⟨y, hy, fun z hz => (hu z hz).symm⟩ :
+           ∃ y, (R x y ∧ ∀ z, R x z → W y z) ∧
+             ∀ z, (R x z ∧ ∀ z', R x z' → W z z') → y = z)))
+     hW) hR,
+   le_of_box_incl (nec% (fun (x : σ) (y : τ) (h : R x y ∧ ∀ z, R x z → W y z) => h.1))⟩
+
+/-- `modal-well-ordering-implies-necessary-modalized-relational-choice`: Modal Well-Ordering is
+necessary, by `4`. -/
+theorem modal_well_ordering_implies_necessary_modalized_relational_choice {σ τ : Type} [Ty σ]
+    [Ty τ] : ModalWellOrdering τ → NecModalizedRelationalChoice σ τ := fun h =>
+  modal_K _ _ (nec% (modal_well_ordering_implies_modalized_relational_choice (σ := σ) (τ := τ)))
+    (box_modal_well_ordering h)
+
 end Classicism.Proofs

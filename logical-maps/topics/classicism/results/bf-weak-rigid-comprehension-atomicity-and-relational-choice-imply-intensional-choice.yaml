@@ -36,3 +36,18 @@ notes: >-
   Without ND, a weakly rigid functional relation need not stay functional, since distinct arguments can
   later be identified. That is why the chosen relation is restricted to atoms: two actual atoms cannot
   both be true together unless they are identical.
+
+
+  A stronger conclusion holds by another route (11 October 2026): BF, Weak Rigid Comprehension and
+  Relational Choice give Modal Well-Ordering (through Transversal Choice, Zorn's Lemma and
+  Well-Ordering), which gives Modalized Relational Choice
+  (modal-well-ordering-implies-modalized-relational-choice); Atomicity is not needed. The atom
+  argument here does not extend to Modalized Relational Choice: with inputs, the uniqueness step pulls
+  two values back to actual instances whose inputs an atom may identify without ND, so the merged
+  input could have two values. This record's Lean certificate is the composition through Modal
+  Well-Ordering, not the atom argument.
+changes:
+- date: '2026-10-11'
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's request
+  summary: Noted the stronger conclusion, Modalized Relational Choice from BF, Weak Rigid Comprehension
+    and Relational Choice, and why this record's atom argument does not give it.
