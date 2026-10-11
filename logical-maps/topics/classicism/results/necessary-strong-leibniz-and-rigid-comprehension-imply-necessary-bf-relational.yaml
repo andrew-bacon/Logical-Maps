@@ -35,7 +35,9 @@ notes: >-
   does not obviously help, since $r$ must be defined from a single actual $H$. What would settle
   the conjecture: a repair of step (i), or a model of C with □Strong Leibniz and Rigid Comprehension
   in which BF fails at some relational type. No recorded model refutes it, and without this record
-  the map does not derive it. The converse half of Theorem 8.2,
+  the map does not derive it. With □Rigid Comprehension and Rigid Power in place of Rigid
+  Comprehension the conclusion holds (strong-leibniz-necessary-rigid-comprehension-and-rigid-power-imply-bf-relational,
+  Cian Dorr), so a countermodel must fail one of those. The converse half of Theorem 8.2,
   atomicity-and-bf-relational-imply-strong-leibniz and its boxed form, is unaffected.
 changes:
 - date: '2026-10-11'

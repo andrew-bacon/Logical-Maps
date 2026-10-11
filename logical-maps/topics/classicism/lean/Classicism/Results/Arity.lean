@@ -404,6 +404,163 @@ theorem nbf_natom_nrc_nec_rigid_power :
     (nec% (nbf_natom_nrc_rigid_power (σ := σ))) (modal_four _ h₁)) (modal_four _ h₂))
     (modal_four _ h₃)) (modal_four _ h₄)
 
+/-! ### Strong Leibniz, □Rigid Comprehension and Rigid Power give BF (11 October 2026)
+
+Cian Dorr's argument. Let `A` be rigid and coextensive with being an atom. (a) Necessarily
+everything lies in some `A`-member; (b) necessarily every `A`-member decides every entity of
+its type. (ii) At every world each entity `Y` is the join `J(R_Y)` of a rigid `R_Y ≤ A`, from
+Rigid Comprehension there. (iii) BF at the type of `Y` then follows from the weak
+inextensibility of the rigid power property of `A`. -/
+
+/-- An atom of type `σ → t` is a strong world, given Strong Leibniz there. -/
+theorem sl_atom_decides (sl : P.StrongLeibniz (σ → Prop)) (W : σ → Prop) (hW : Atom W) :
+    □ (∀ Z : σ → Prop, W ≤ Z ∨ W ≤ ¬ Z) :=
+  (sl W fun e => not_le_neg_of_atom hW (by rw [e]; exact bot_le_arrow _)).elim fun S ⟨hS, hSW⟩ =>
+    have e : S = W := (em (S = W)).elim id fun hne =>
+      (hS.1 (eq_bot_of_le_neg_arrow S ((hW S).1 ⟨hSW, hne⟩))).elim
+    e ▸ hS.2
+
+/-- The join of the members of `R` applying to an argument. -/
+def JoinOf (R : (σ → Prop) → Prop) : σ → Prop := fun x => ∃ W, R W ∧ W x
+
+/-- (ii), at one world: from Rigid Comprehension there and the necessary facts (a) and (b) about
+`A`, every `Y` is the join of a rigid `R ≤ A`. -/
+theorem sl_join_rep (A : (σ → Prop) → Prop) (rc : P.RigidComprehension ((σ → Prop) → Prop))
+    (wpA : WeaklyPersistent A) (wiA : WeaklyInextensible A)
+    (ha : □ (∀ x : σ, ∃ W, A W ∧ W x))
+    (hb : □ (∀ W, A W → ∀ Z : σ → Prop, W ≤ Z ∨ W ≤ ¬ Z)) (Y : σ → Prop) :
+    ∃ R : (σ → Prop) → Prop, (Rigid R ∧ R ≤ A) ∧ Y = JoinOf R :=
+  (rc (fun W => A W ∧ W ≤ Y)).elim fun R ⟨hR, hco⟩ =>
+  have hRA : R ≤ A := le_of_box_incl (weaklyInextensible_of_inextensible hR.2 A
+    fun W hW => wpA W ((hco W).2 hW).1)
+  have h1 : JoinOf R ≤ Y := (le_iff _ _).2 (modal_K _ _
+    (nec% (fun (h : ∀ W, R W → W ≤ Y) (x : σ) (hx : JoinOf R x) =>
+      hx.elim fun W ⟨hW, hWx⟩ => incl_of_le (h W hW) x hWx))
+    (weaklyInextensible_of_inextensible hR.2 (fun W => W ≤ Y)
+      fun W hW => Proofs.box_le_arrow' W Y ((hco W).2 hW).2))
+  have hz : □ (∀ W, A W → (∃ x, W x) → W ≤ Y → R W) :=
+    wiA (fun W => (∃ x, W x) → W ≤ Y → R W) fun W hW =>
+      (box_elim hb W hW Y).elim
+        (fun h => modal_K _ _ (nec% (fun (h : R W) (_ : ∃ x, W x) (_ : W ≤ Y) => h))
+          (weaklyPersistent_of_persistent hR.1 W ((hco W).1 ⟨hW, h⟩)))
+        (fun h => modal_K _ _ (nec% (fun (hn : W ≤ ¬ Y) (hx : ∃ x, W x) (hy : W ≤ Y) =>
+            (hx.elim fun x hx => (incl_of_le hn x hx (incl_of_le hy x hx)).elim : R W)))
+          (Proofs.box_le_arrow' W (¬ Y) h))
+  have h2 : Y ≤ JoinOf R := (le_iff _ _).2 (modal_K _ _ (modal_K _ _ (modal_K _ _
+    (nec% (fun (ha : ∀ x : σ, ∃ W, A W ∧ W x) (hb : ∀ W, A W → ∀ Z : σ → Prop, W ≤ Z ∨ W ≤ ¬ Z)
+        (hz : ∀ W, A W → (∃ x, W x) → W ≤ Y → R W) (x : σ) (hY : Y x) =>
+      (ha x).elim fun W ⟨hW, hWx⟩ =>
+        (⟨W, hz W hW ⟨x, hWx⟩ ((hb W hW Y).elim id fun hn => (incl_of_le hn x hWx hY).elim),
+          hWx⟩ : JoinOf R x)))
+    ha) hb) hz)
+  ⟨R, ⟨hR, hRA⟩, le_antisymm_arrow Y _ h2 h1⟩
+
+/-- `strong-leibniz-necessary-rigid-comprehension-and-rigid-power-imply-bf-relational`, at
+`σ → t` (Cian Dorr). -/
+theorem sl_nrc_rp_bf :
+    P.StrongLeibniz (σ → Prop) → P.NecRigidComprehension ((σ → Prop) → Prop) →
+      P.RigidPower ((σ → Prop) → Prop) → P.BarcanRelational (σ → Prop) := fun sl nrc rp X hX =>
+  (box_elim nrc (fun W => Atom W)).elim fun A ⟨hA, hco⟩ =>
+  -- (a)
+  have ha : □ (∀ x : σ, ∃ W, A W ∧ W x) :=
+    have h := P.Atomicity.to_dual (Proofs.strong_leibniz_r_implies_atomicity_r sl) (JoinOf A)
+      fun W hW => (le_iff _ _).2 (modal_K _ _
+        (nec% (fun (h : A W) (x : σ) (hx : W x) => (⟨W, h, hx⟩ : JoinOf A x)))
+        (weaklyPersistent_of_persistent hA.1 W ((hco W).1 hW)))
+    modal_K _ _ (nec% (fun (h : ∀ x : σ, ¬ JoinOf A x → JoinOf A x) (x : σ) =>
+      ((em (JoinOf A x)).elim id (h x) : ∃ W, A W ∧ W x))) ((le_iff _ _).1 h)
+  -- (b)
+  have hb : □ (∀ W, A W → ∀ Z : σ → Prop, W ≤ Z ∨ W ≤ ¬ Z) :=
+    weaklyInextensible_of_inextensible hA.2 (fun W => ∀ Z : σ → Prop, W ≤ Z ∨ W ≤ ¬ Z)
+      fun W hW => sl_atom_decides sl W ((hco W).2 hW)
+  -- (ii), at every world
+  have key : □ (∀ Y : σ → Prop, ∃ R : (σ → Prop) → Prop, (Rigid R ∧ R ≤ A) ∧ Y = JoinOf R) :=
+    modal_K _ _ (modal_K _ _ (modal_K _ _ (modal_K _ _ (modal_K _ _
+      (nec% (fun (rc : P.RigidComprehension ((σ → Prop) → Prop)) (wpA : WeaklyPersistent A)
+          (wiA : WeaklyInextensible A) (ha : □ (∀ x : σ, ∃ W, A W ∧ W x))
+          (hb : □ (∀ W, A W → ∀ Z : σ → Prop, W ≤ Z ∨ W ≤ ¬ Z)) (Y : σ → Prop) =>
+        sl_join_rep A rc wpA wiA ha hb Y))
+      nrc) hA.1) hA.2) (modal_four _ ha)) (modal_four _ hb)
+  -- (iii)
+  have hall : □ (∀ R : (σ → Prop) → Prop, (Rigid R ∧ R ≤ A) → X (JoinOf R)) :=
+    weaklyInextensible_of_inextensible (rp A hA).2 (fun R => X (JoinOf R)) fun R _ => hX _
+  modal_K _ _ (modal_K _ _
+    (nec% (fun (hall : ∀ R : (σ → Prop) → Prop, (Rigid R ∧ R ≤ A) → X (JoinOf R))
+        (key : ∀ Y : σ → Prop, ∃ R : (σ → Prop) → Prop, (Rigid R ∧ R ≤ A) ∧ Y = JoinOf R)
+        (Y : σ → Prop) =>
+      (key Y).elim fun R ⟨hR, e⟩ => Eq.subst (motive := fun Z => X Z) e.symm (hall R hR)))
+    hall) key
+
+/-! ### The same at type `t` (11 October 2026) -/
+
+/-- An atom is a strong world, given Strong Leibniz at `t`. -/
+theorem slt_atom_decides (sl : P.StrongLeibnizT) (w : Prop) (hw : Atom w) :
+    □ (∀ q : Prop, w ≤ q ∨ w ≤ ¬ q) :=
+  (sl w (dia_of_atom hw)).elim fun s ⟨hs, hsw⟩ =>
+    have e : s = w := (em (s = w)).elim id fun hne =>
+      (hs.1 (eq_false_of_le_neg s ((hw s).1 ⟨hsw, hne⟩))).elim
+    e ▸ hs.2
+
+/-- (ii) at `t`, at one world. -/
+theorem slt_join_rep (A : Prop → Prop) (rc : P.RigidComprehension (Prop → Prop))
+    (wpA : WeaklyPersistent A) (wiA : WeaklyInextensible A)
+    (ha : □ (∃ w, A w ∧ w)) (hb : □ (∀ w, A w → ∀ q : Prop, w ≤ q ∨ w ≤ ¬ q)) (p : Prop) :
+    ∃ R : Prop → Prop, (Rigid R ∧ R ≤ A) ∧ p = (∃ w, R w ∧ w) :=
+  (rc (fun w => A w ∧ w ≤ p)).elim fun R ⟨hR, hco⟩ =>
+  have hRA : R ≤ A := le_of_box_incl (weaklyInextensible_of_inextensible hR.2 A
+    fun w hw => wpA w ((hco w).2 hw).1)
+  have h1 : (∃ w, R w ∧ w) ≤ p := (le_iff_prop _ _).2 (modal_K _ _
+    (nec% (fun (h : ∀ w, R w → w ≤ p) (hx : ∃ w, R w ∧ w) =>
+      hx.elim fun w ⟨hw, hww⟩ => imp_of_le_prop w p (h w hw) hww))
+    (weaklyInextensible_of_inextensible hR.2 (fun w => w ≤ p)
+      fun w hw => box_le_prop w p ((hco w).2 hw).2))
+  have hz : □ (∀ w, A w → w → w ≤ p → R w) :=
+    wiA (fun w => w → w ≤ p → R w) fun w hw =>
+      (box_elim hb w hw p).elim
+        (fun h => modal_K _ _ (nec% (fun (h : R w) (_ : w) (_ : w ≤ p) => h))
+          (weaklyPersistent_of_persistent hR.1 w ((hco w).1 ⟨hw, h⟩)))
+        (fun h => modal_K _ _ (nec% (fun (hn : w ≤ ¬ p) (hx : w) (hy : w ≤ p) =>
+            ((imp_of_le_prop w (¬ p) hn hx (imp_of_le_prop w p hy hx)).elim : R w)))
+          (box_le_prop w (¬ p) h))
+  have h2 : p ≤ (∃ w, R w ∧ w) := (le_iff_prop _ _).2 (modal_K _ _ (modal_K _ _ (modal_K _ _
+    (nec% (fun (ha : ∃ w, A w ∧ w) (hb : ∀ w, A w → ∀ q : Prop, w ≤ q ∨ w ≤ ¬ q)
+        (hz : ∀ w, A w → w → w ≤ p → R w) (hp : p) =>
+      ha.elim fun w ⟨hw, hww⟩ =>
+        (⟨w, hz w hw hww ((hb w hw p).elim id fun hn =>
+          (imp_of_le_prop w (¬ p) hn hww hp).elim), hww⟩ : ∃ w, R w ∧ w)))
+    ha) hb) hz)
+  ⟨R, ⟨hR, hRA⟩, le_antisymm_prop p _ h2 h1⟩
+
+/-- `strong-leibniz-t-necessary-rigid-comprehension-and-rigid-power-imply-bf-t` (Cian Dorr). -/
+theorem slt_nrc_rp_bft :
+    P.StrongLeibnizT → P.NecRigidComprehension (Prop → Prop) → P.RigidPower (Prop → Prop) →
+      P.BarcanT := fun sl nrc rp X hX =>
+  (box_elim nrc (fun w => Atom w)).elim fun A ⟨hA, hco⟩ =>
+  have ha : □ (∃ w, A w ∧ w) :=
+    (Proofs.strong_leibniz_t_implies_atomicity_t sl (¬ ∃ w, A w ∧ w)).elim
+      (fun h => Proofs.box_of_neg_le_neg_neg _ h)
+      (fun ⟨y, hy, hyn⟩ => (atom_absurd hy (modal_K _ _ (modal_K _ _
+        (nec% (fun (h : A y) (f : y → ¬ ∃ w, A w ∧ w) (hy : y) => f hy ⟨y, h, hy⟩))
+        (weaklyPersistent_of_persistent hA.1 y ((hco y).1 hy)))
+        ((le_iff_prop _ _).1 hyn))).elim)
+  have hb : □ (∀ w, A w → ∀ q : Prop, w ≤ q ∨ w ≤ ¬ q) :=
+    weaklyInextensible_of_inextensible hA.2 (fun w => ∀ q : Prop, w ≤ q ∨ w ≤ ¬ q)
+      fun w hw => slt_atom_decides sl w ((hco w).2 hw)
+  have key : □ (∀ p : Prop, ∃ R : Prop → Prop, (Rigid R ∧ R ≤ A) ∧ p = (∃ w, R w ∧ w)) :=
+    modal_K _ _ (modal_K _ _ (modal_K _ _ (modal_K _ _ (modal_K _ _
+      (nec% (fun (rc : P.RigidComprehension (Prop → Prop)) (wpA : WeaklyPersistent A)
+          (wiA : WeaklyInextensible A) (ha : □ (∃ w, A w ∧ w))
+          (hb : □ (∀ w, A w → ∀ q : Prop, w ≤ q ∨ w ≤ ¬ q)) (p : Prop) =>
+        slt_join_rep A rc wpA wiA ha hb p))
+      nrc) hA.1) hA.2) (modal_four _ ha)) (modal_four _ hb)
+  have hall : □ (∀ R : Prop → Prop, (Rigid R ∧ R ≤ A) → X (∃ w, R w ∧ w)) :=
+    weaklyInextensible_of_inextensible (rp A hA).2 (fun R => X (∃ w, R w ∧ w)) fun R _ => hX _
+  modal_K _ _ (modal_K _ _
+    (nec% (fun (hall : ∀ R : Prop → Prop, (Rigid R ∧ R ≤ A) → X (∃ w, R w ∧ w))
+        (key : ∀ p : Prop, ∃ R : Prop → Prop, (Rigid R ∧ R ≤ A) ∧ p = (∃ w, R w ∧ w)) (p : Prop) =>
+      (key p).elim fun R ⟨hR, e⟩ => Eq.subst (motive := fun Z => X Z) e.symm (hall R hR)))
+    hall) key
+
 end unary
 
 /-- In `C5`, `□`Boolean Completeness gives `□`Plenitude, for relations `σ → (σ' → t) → t`:
@@ -440,7 +597,7 @@ theorem fregean_actuality_necessary_actuality : P.FregeanAxiom → P.Actuality �
   Classicism.necessary_actuality_implies_necessary_persistent_comprehension
   Classicism.c5_and_necessary_persistent_comprehension_imply_necessary_gallin
   Classicism.nd_strong_actuality_gallin Classicism.c5_nec_strong_actuality_nec_gallin
-  Classicism.nbf_natom_nrc_nec_rigid_power
+  Classicism.nbf_natom_nrc_nec_rigid_power Classicism.sl_nrc_rp_bf Classicism.slt_nrc_rp_bft
   Classicism.bf_wrp_weakly_rigid_weak_rigidity Classicism.rr_necessary_barcan
   Classicism.nbf_rp_rigid_rigidity
   Classicism.gallin_bf_weak_rigid_comprehension Classicism.gallin_c5_rigid_comprehension
@@ -456,7 +613,7 @@ theorem fregean_actuality_necessary_actuality : P.FregeanAxiom → P.Actuality �
   Classicism.necessary_actuality_implies_necessary_persistent_comprehension
   Classicism.c5_and_necessary_persistent_comprehension_imply_necessary_gallin
   Classicism.nd_strong_actuality_gallin Classicism.c5_nec_strong_actuality_nec_gallin
-  Classicism.nbf_natom_nrc_nec_rigid_power
+  Classicism.nbf_natom_nrc_nec_rigid_power Classicism.sl_nrc_rp_bf Classicism.slt_nrc_rp_bft
   Classicism.bf_wrp_weakly_rigid_weak_rigidity Classicism.rr_necessary_barcan
   Classicism.nbf_rp_rigid_rigidity
   Classicism.gallin_bf_weak_rigid_comprehension Classicism.gallin_c5_rigid_comprehension
@@ -978,6 +1135,14 @@ theorem bf_weak_rigid_comprehension_atomicity_and_relational_choice_imply_intens
   Entails.trans (Entails.trans (Entails.union (Entails.union (Entails.union wo wrc) wrc) bf)
     Proofs.well_ordering_weak_rigid_comprehension_and_bf_imply_modal_well_ordering.entails)
     Proofs.modal_well_ordering_r_implies_intensional_choice_r.entails
+
+
+/-- `strong-leibniz-necessary-rigid-comprehension-and-rigid-power-imply-bf-relational`, at every
+relational type (Cian Dorr): the core at `σ → t`, vectorized. -/
+theorem strong_leibniz_necessary_rigid_comprehension_and_rigid_power_imply_bf_relational :
+    P.StrongLeibniz.schema ∪ P.NecRigidComprehension.schema ∪ P.RigidPower.schema ⟹
+      P.BarcanRelational.schema :=
+  Entails.mono_right (schema_subset_args _) sl_nrc_rp_bf.listEntails
 
 end Meta
 
