@@ -389,4 +389,92 @@ theorem extensionality_r_implies_intensional_choice_r {σ : Type} [Ty σ] :
       le_of_box_incl (modal_K _ _ (nec% (fun (h : F a) (x : σ) (hx : x = a) => hx ▸ h)) hb),
       nec% ⟨a, rfl, fun _ hy => hy⟩⟩
 
+
+/-! ### Well-orders (7–8 October 2026) -/
+
+/-- In a well-order the minimal instance of a property is its least instance. -/
+theorem least_of_minimal {σ : Type} [Ty σ] {R : σ → σ → Prop} (h : WellOrders R)
+    {Y : σ → Prop} {m : σ} (hmin : ∀ y, Y y → R y m → y = m) : ∀ z, Y z → R m z :=
+  fun z hz => (h.2.2.1 m z).elim id fun hzm => by
+    rw [hmin z hz hzm]
+    exact (h.2.2.1 m m).elim id id
+
+/-- `well-ordering-r-implies-transversal-choice-r`: the least member of each cell. -/
+theorem well_ordering_r_implies_transversal_choice_r {σ : Type} [Ty σ] :
+    WellOrdering σ → TransversalChoice σ := fun ⟨R, hR⟩ E hE =>
+  ⟨fun y => ∀ z, E y z → R y z, fun x =>
+    (hR.2.2.2 (fun z => E x z) ⟨x, hE.1 x⟩).elim fun m ⟨hm, hmin⟩ =>
+    have least := least_of_minimal hR hmin
+    ⟨m, hm, fun z hz => least z (hE.2.2 x m z hm hz), fun z ⟨hxz, hFz⟩ =>
+      hR.2.1 m z (least z hxz) (hFz m (hE.2.2 z x m (hE.2.1 x z hxz) hm))⟩⟩
+
+/-- `necessary-well-ordering-r-implies-well-ordering-r`: `T`. -/
+theorem necessary_well_ordering_r_implies_well_ordering_r {σ : Type} [Ty σ] :
+    NecWellOrdering σ → WellOrdering σ := box_elim
+
+/-- `necessary-well-ordering-r-implies-necessary-transversal-choice-r`. -/
+theorem necessary_well_ordering_r_implies_necessary_transversal_choice_r {σ : Type} [Ty σ] :
+    NecWellOrdering σ → NecTransversalChoice σ :=
+  modal_K _ _ (nec% (well_ordering_r_implies_transversal_choice_r (σ := σ)))
+
+/-- A well-order makes the least instance of an instantiated property its unique least
+instance. -/
+theorem unique_least {σ : Type} [Ty σ] (R : σ → σ → Prop) (F : σ → Prop) (h : WellOrders R)
+    (hF : ∃ x, F x) : ∃ x, (F x ∧ ∀ y, F y → R x y) ∧ ∀ y, (F y ∧ ∀ z, F z → R y z) → y = x :=
+  (h.2.2.2 F hF).elim fun m ⟨hm, hmin⟩ =>
+    have least := least_of_minimal h hmin
+    ⟨m, ⟨hm, least⟩, fun y hy => h.2.1 y m (hy.2 m hm) (least y hy.1)⟩
+
+/-- `modal-well-ordering-r-implies-intensional-choice-r`: being the least instance. -/
+theorem modal_well_ordering_r_implies_intensional_choice_r {σ : Type} [Ty σ] :
+    ModalWellOrdering σ → IntensionalChoice σ := fun ⟨R, hR⟩ F hF =>
+  ⟨fun x => F x ∧ ∀ y, F y → R x y,
+   le_of_box_incl (nec% (fun (x : σ) (h : F x ∧ ∀ y, F y → R x y) => h.1)),
+   modal_K _ _ (modal_K _ _ (nec% (unique_least R F)) hR) hF⟩
+
+/-- Modal Well-Ordering is necessary, by `4`. -/
+theorem box_modal_well_ordering {σ : Type} [Ty σ] (h : ModalWellOrdering σ) :
+    □ (ModalWellOrdering σ) :=
+  h.elim fun R hR => modal_K _ _
+    (nec% (fun (h : □ (WellOrders R)) => (⟨R, h⟩ : ModalWellOrdering σ))) (modal_four _ hR)
+
+/-- `modal-well-ordering-r-implies-necessary-intensional-choice-r`. -/
+theorem modal_well_ordering_r_implies_necessary_intensional_choice_r {σ : Type} [Ty σ] :
+    ModalWellOrdering σ → NecIntensionalChoice σ := fun h =>
+  modal_K _ _ (nec% (modal_well_ordering_r_implies_intensional_choice_r (σ := σ)))
+    (box_modal_well_ordering h)
+
+/-- `modal-well-ordering-r-implies-necessary-well-ordering-r`. -/
+theorem modal_well_ordering_r_implies_necessary_well_ordering_r {σ : Type} [Ty σ] :
+    ModalWellOrdering σ → NecWellOrdering σ := fun ⟨R, hR⟩ =>
+  modal_K _ _ (nec% (fun (h : WellOrders R) => (⟨R, h⟩ : WellOrdering σ))) hR
+
+/-- Being a well-order depends only on the extension. -/
+theorem wellOrders_of_iff {σ : Type} [Ty σ] (R R' : σ → σ → Prop) (he : ∀ x y, R' x y ↔ R x y)
+    (h : WellOrders R) : WellOrders R' :=
+  ⟨fun x y z a b => (he x z).2 (h.1 x y z ((he x y).1 a) ((he y z).1 b)),
+   fun x y a b => h.2.1 x y ((he x y).1 a) ((he y x).1 b),
+   fun x y => (h.2.2.1 x y).elim (fun a => Or.inl ((he x y).2 a)) (fun a => Or.inr ((he y x).2 a)),
+   fun Y hY => (h.2.2.2 Y hY).elim fun x ⟨hx, hmin⟩ =>
+     ⟨x, hx, fun y hy hyx => hmin y hy ((he y x).1 hyx)⟩⟩
+
+/-- The relation defined from a unique well-order is a well-order. -/
+theorem wellOrders_of_unique {σ : Type} [Ty σ] (G : (σ → σ → Prop) → Prop)
+    (hG : ∀ R, G R → WellOrders R) (hu : ∃ R, G R ∧ ∀ R', G R' → R' = R) :
+    WellOrders (fun x y => ∃ R, G R ∧ R x y) :=
+  hu.elim fun R₀ ⟨h₀, hu₀⟩ => wellOrders_of_iff R₀ _
+    (fun x y => ⟨fun ⟨R, hR, hxy⟩ => by rw [← hu₀ R hR]; exact hxy, fun hxy => ⟨R₀, h₀, hxy⟩⟩)
+    (hG R₀ h₀)
+
+/-- `necessary-well-ordering-and-intensional-choice-imply-modal-well-ordering`: Intensional
+Choice at the type of relations picks a necessarily unique well-order, and the relation it
+defines is necessarily a well-order. -/
+theorem necessary_well_ordering_and_intensional_choice_imply_modal_well_ordering {σ : Type}
+    [Ty σ] : NecWellOrdering σ → IntensionalChoice (σ → σ → Prop) → ModalWellOrdering σ :=
+  fun hwo ic => (ic (fun R => WellOrders R) hwo).elim fun G ⟨hGF, hu⟩ =>
+  ⟨fun x y => ∃ R, G R ∧ R x y, modal_K _ _ (modal_K _ _
+    (nec% (fun (hGF : ∀ R : σ → σ → Prop, G R → WellOrders R)
+        (hu : ∃ R, G R ∧ ∀ R', G R' → R' = R) => wellOrders_of_unique G hGF hu))
+    ((le_iff G _).1 hGF)) hu⟩
+
 end Classicism.Proofs

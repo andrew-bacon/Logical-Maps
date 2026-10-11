@@ -11,7 +11,8 @@ certificate:
   recorded_by: Claude Opus 5.5 (Anthropic), 3 October 2026
   checked_by: []
   date: '2026-10-03'
-  lean: stated
+  lean: verified
+  lean_ref: Classicism.Map.necessary_bf_atomicity_and_rigid_comprehension_imply_necessary_rigid_power
 sources:
 - Original argument of 3 October 2026, in response to Cian Dorr's question about Rigid Power.
 source_names:

@@ -22,3 +22,4 @@ changes:
   summary: >-
     □Modal Well-Ordering retired, since Modal Well-Ordering implies it by 4; its result giving □Intensional
     Choice now starts from Modal Well-Ordering.
+lean_def: Classicism.P.ModalWellOrdering.schemaIn

@@ -179,6 +179,10 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.ModalT.schemaIn
 
+/-- Principle definition check: `modal-well-ordering-r`. -/
+example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
+  Classicism.P.ModalWellOrdering.schemaIn
+
 /-- Principle definition check: `modalized-fregean`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.ModalizedFregean.schemaIn
@@ -343,6 +347,10 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.NecWeaklyRigidWeakRigidity.schemaIn
 
+/-- Principle definition check: `necessary-well-ordering-r`. -/
+example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
+  Classicism.P.NecWellOrdering.schemaIn
+
 /-- Principle definition check: `necessity-of-arithmetic`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   (Classicism.Meta.AxiomSet.ofPure Classicism.Meta.AxiomSet.necessityOfArithmetic)
@@ -471,9 +479,17 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.WeaklyRigidWeakRigidity.schemaIn
 
+/-- Principle definition check: `well-ordering-r`. -/
+example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
+  Classicism.P.WellOrdering.schemaIn
+
 /-- Principle definition check: `witnessed-possibility-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   (Classicism.Meta.AxiomSet.witnessedPossibility _)
+
+/-- Principle definition check: `zorn-r`. -/
+example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
+  Classicism.P.Zorn.schemaIn
 
 /-- `actual-profile-r-implies-actuality`
 
@@ -1518,6 +1534,30 @@ def modal_freedom_signature_r_implies_no_pure_contingency_r : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.modalFreedom _) →
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.noContingency)
 
+/-- `modal-well-ordering-r-implies-intensional-choice-r`
+
+Modal Well-Ordering ⇒ Intensional Choice -/
+def modal_well_ordering_r_implies_intensional_choice_r : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalWellOrdering.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.IntensionalChoice.schemaIn
+
+/-- `modal-well-ordering-r-implies-necessary-intensional-choice-r`
+
+Modal Well-Ordering ⇒ □Intensional Choice -/
+def modal_well_ordering_r_implies_necessary_intensional_choice_r : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalWellOrdering.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecIntensionalChoice.schemaIn
+
+/-- `modal-well-ordering-r-implies-necessary-well-ordering-r`
+
+Modal Well-Ordering ⇒ □Well-Ordering -/
+def modal_well_ordering_r_implies_necessary_well_ordering_r : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalWellOrdering.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWellOrdering.schemaIn
+
 /-- `nd-and-bf-imply-necessary-nd`
 
 ND ∧ BF ⇒ □ND -/
@@ -2318,6 +2358,14 @@ def necessary_transversal_choice_r_implies_necessary_transversal_r : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTransversalChoice.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTransversal.schemaIn
 
+/-- `necessary-transversal-choice-r-implies-necessary-well-ordering-r`
+
+□Transversal Choice ⇒ □Well-Ordering -/
+def necessary_transversal_choice_r_implies_necessary_well_ordering_r : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTransversalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWellOrdering.schemaIn
+
 /-- `necessary-transversal-choice-r-implies-transversal-choice-r`
 
 □Transversal Choice ⇒ Transversal Choice -/
@@ -2406,6 +2454,31 @@ def necessary_weakly_rigid_weak_rigidity_r_implies_weakly_rigid_weak_rigidity_r 
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWeaklyRigidWeakRigidity.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeaklyRigidWeakRigidity.schemaIn
+
+/-- `necessary-well-ordering-and-intensional-choice-imply-modal-well-ordering`
+
+□Well-Ordering ∧ Intensional Choice ⇒ Modal Well-Ordering -/
+def necessary_well_ordering_and_intensional_choice_imply_modal_well_ordering : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWellOrdering.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.IntensionalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalWellOrdering.schemaIn
+
+/-- `necessary-well-ordering-r-implies-necessary-transversal-choice-r`
+
+□Well-Ordering ⇒ □Transversal Choice -/
+def necessary_well_ordering_r_implies_necessary_transversal_choice_r : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWellOrdering.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTransversalChoice.schemaIn
+
+/-- `necessary-well-ordering-r-implies-well-ordering-r`
+
+□Well-Ordering ⇒ Well-Ordering -/
+def necessary_well_ordering_r_implies_well_ordering_r : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWellOrdering.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WellOrdering.schemaIn
 
 /-- `no-contingency-signature-incompatible-with-witnessed-possibility`
 
@@ -2763,6 +2836,15 @@ def no_pure_contingency_and_weakly_rigid_power_imply_necessary_weakly_rigid_powe
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.noContingency) →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeaklyRigidPower.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWeaklyRigidPower.schemaIn
+
+/-- `no-pure-contingency-and-well-ordering-imply-necessary-well-ordering`
+
+No Pure Contingency ∧ Well-Ordering ⇒ □Well-Ordering -/
+def no_pure_contingency_and_well_ordering_imply_necessary_well_ordering : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.noContingency) →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WellOrdering.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWellOrdering.schemaIn
 
 /-- `no-pure-contingency-implies-necessity-of-arithmetic`
 
@@ -3378,6 +3460,14 @@ def transversal_choice_r_implies_transversal_r : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.TransversalChoice.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Transversal.schemaIn
 
+/-- `transversal-choice-r-implies-zorn-r`
+
+Transversal Choice ⇒ Zorn's Lemma -/
+def transversal_choice_r_implies_zorn_r : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.TransversalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Zorn.schemaIn
+
 /-- `vicinity-and-distinctness-preserving-collapse-imply-actuality`
 
 Vicinity ∧ Distinctness-preserving collapse ⇒ Actuality -/
@@ -3460,6 +3550,24 @@ def weakly_rigid_weak_rigidity_implies_rigid_rigidity : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeaklyRigidWeakRigidity.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidRigidity.schemaIn
 
+/-- `well-ordering-r-implies-transversal-choice-r`
+
+Well-Ordering ⇒ Transversal Choice -/
+def well_ordering_r_implies_transversal_choice_r : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WellOrdering.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.TransversalChoice.schemaIn
+
+/-- `well-ordering-weak-rigid-comprehension-and-bf-imply-modal-well-ordering`
+
+Well-Ordering ∧ Weak Rigid Comprehension ∧ BF ⇒ Modal Well-Ordering -/
+def well_ordering_weak_rigid_comprehension_and_bf_imply_modal_well_ordering : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WellOrdering.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeakRigidComprehension.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Barcan.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalWellOrdering.schemaIn
+
 /-- `witnessed-possibility-and-no-pure-contingency-imply-logical-necessity`
 
 Witnessed Possibility ∧ No Pure Contingency ⇒ Logical Necessity -/
@@ -3486,6 +3594,14 @@ def witnessed_possibility_incompatible_with_nd : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.witnessedPossibility _) →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessityOfDistinctness.schemaIn →
     ¬ Classicism.Meta.AxiomSet.Consistent Ax
+
+/-- `zorn-r-implies-well-ordering-r`
+
+Zorn's Lemma ⇒ Well-Ordering -/
+def zorn_r_implies_well_ordering_r : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Zorn.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WellOrdering.schemaIn
 
 /-- `coalesced-all-finite-individual-domains`
 

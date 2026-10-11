@@ -30,3 +30,4 @@ notes: >-
   usual sense. Zorn's Lemma is equivalent to Transversal Choice and to Well-Ordering, by the recorded
   results; the proof from Transversal Choice follows Lewin and uses Transversal Choice only to make
   the choice relation give coextensive chains the same value.
+lean_def: Classicism.P.Zorn.schemaIn

@@ -13,3 +13,4 @@ notes: >-
   The necessitation of Well-Ordering; the instances are closed, and type quantifiers remain outside the
   box. The well-order may differ from world to world. Modal Well-Ordering, which asks for one relation
   that is necessarily a well-order, implies it.
+lean_def: Classicism.P.NecWellOrdering.schemaIn

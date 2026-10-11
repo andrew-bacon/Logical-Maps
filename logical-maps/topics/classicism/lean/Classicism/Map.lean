@@ -1709,4 +1709,44 @@ theorem necessary_actuality_implies_necessary_persistent_comprehension : Stateme
 theorem c5_and_necessary_persistent_comprehension_imply_necessary_gallin : Statements.c5_and_necessary_persistent_comprehension_imply_necessary_gallin := by
   map_cert _root_.Classicism.c5_and_necessary_persistent_comprehension_imply_necessary_gallin.entails
 
+/-- `necessary-bf-atomicity-and-rigid-comprehension-imply-necessary-rigid-power` -/
+theorem necessary_bf_atomicity_and_rigid_comprehension_imply_necessary_rigid_power : Statements.necessary_bf_atomicity_and_rigid_comprehension_imply_necessary_rigid_power := by
+  map_cert Meta.necessary_bf_atomicity_and_rigid_comprehension_imply_necessary_rigid_power
+
+/-- `atomicity-t-and-weakly-inextensible-comprehension-imply-actuality` -/
+theorem atomicity_t_and_weakly_inextensible_comprehension_imply_actuality : Statements.atomicity_t_and_weakly_inextensible_comprehension_imply_actuality := by
+  map_cert Proofs.atomicity_t_and_weakly_inextensible_comprehension_imply_actuality.entails
+
+/-- `necessary-atomicity-t-and-necessary-wic-imply-necessary-actuality` -/
+theorem necessary_atomicity_t_and_necessary_wic_imply_necessary_actuality : Statements.necessary_atomicity_t_and_necessary_wic_imply_necessary_actuality := by
+  map_cert Proofs.necessary_atomicity_t_and_necessary_wic_imply_necessary_actuality.entails
+
+/-- `well-ordering-r-implies-transversal-choice-r` -/
+theorem well_ordering_r_implies_transversal_choice_r : Statements.well_ordering_r_implies_transversal_choice_r := by
+  map_cert Proofs.well_ordering_r_implies_transversal_choice_r.entails
+
+/-- `necessary-well-ordering-r-implies-well-ordering-r` -/
+theorem necessary_well_ordering_r_implies_well_ordering_r : Statements.necessary_well_ordering_r_implies_well_ordering_r := by
+  map_cert Proofs.necessary_well_ordering_r_implies_well_ordering_r.entails
+
+/-- `necessary-well-ordering-r-implies-necessary-transversal-choice-r` -/
+theorem necessary_well_ordering_r_implies_necessary_transversal_choice_r : Statements.necessary_well_ordering_r_implies_necessary_transversal_choice_r := by
+  map_cert Proofs.necessary_well_ordering_r_implies_necessary_transversal_choice_r.entails
+
+/-- `modal-well-ordering-r-implies-intensional-choice-r` -/
+theorem modal_well_ordering_r_implies_intensional_choice_r : Statements.modal_well_ordering_r_implies_intensional_choice_r := by
+  map_cert Proofs.modal_well_ordering_r_implies_intensional_choice_r.entails
+
+/-- `modal-well-ordering-r-implies-necessary-intensional-choice-r` -/
+theorem modal_well_ordering_r_implies_necessary_intensional_choice_r : Statements.modal_well_ordering_r_implies_necessary_intensional_choice_r := by
+  map_cert Proofs.modal_well_ordering_r_implies_necessary_intensional_choice_r.entails
+
+/-- `modal-well-ordering-r-implies-necessary-well-ordering-r` -/
+theorem modal_well_ordering_r_implies_necessary_well_ordering_r : Statements.modal_well_ordering_r_implies_necessary_well_ordering_r := by
+  map_cert Proofs.modal_well_ordering_r_implies_necessary_well_ordering_r.entails
+
+/-- `necessary-well-ordering-and-intensional-choice-imply-modal-well-ordering` -/
+theorem necessary_well_ordering_and_intensional_choice_imply_modal_well_ordering : Statements.necessary_well_ordering_and_intensional_choice_imply_modal_well_ordering := by
+  map_cert Proofs.necessary_well_ordering_and_intensional_choice_imply_modal_well_ordering.entails
+
 end Classicism.Map

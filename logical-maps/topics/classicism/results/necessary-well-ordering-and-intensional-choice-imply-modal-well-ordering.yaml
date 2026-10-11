@@ -10,7 +10,8 @@ certificate:
   recorded_by: Claude Opus 5.5 (Anthropic), 8 October 2026
   checked_by: []
   date: '2026-10-08'
-  lean: none
+  lean: verified
+  lean_ref: Classicism.Map.necessary_well_ordering_and_intensional_choice_imply_modal_well_ordering
 sources:
 - Cian Dorr, 8 October 2026.
 source_names:

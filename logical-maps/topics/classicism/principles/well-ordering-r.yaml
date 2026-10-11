@@ -17,3 +17,4 @@ notes: >-
   Well-Ordering is equivalent to Transversal Choice and to Zorn's Lemma, by the recorded results, as
   the well-ordering theorem is to the axiom of choice in set theory (Cian Dorr's conjecture of 7 October
   2026). Relational Choice is enough only if it implies Transversal Choice, which is open.
+lean_def: Classicism.P.WellOrdering.schemaIn
