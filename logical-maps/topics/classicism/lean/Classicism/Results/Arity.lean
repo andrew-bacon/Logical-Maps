@@ -103,6 +103,19 @@ theorem c5_and_necessary_rigid_comprehension_imply_necessary_gallin_comprehensio
       P.NecGallinExtensionalComprehension τ := fun hnd hrc =>
   modal_K _ _ (modal_K _ _ (nec% (c5_rigid_gallin (τ := τ))) (modal_four _ hnd)) hrc
 
+/-- `necessary-actuality-implies-necessary-persistent-comprehension`. -/
+theorem necessary_actuality_implies_necessary_persistent_comprehension :
+    P.NecActuality → P.NecPersistentComprehension τ :=
+  modal_K _ _ (nec% (actuality_implies_persistent_comprehension_r (τ := τ)))
+
+/-- `c5-and-necessary-persistent-comprehension-imply-necessary-gallin`: the unboxed record
+necessitated, `□ND` boxed by `4`. -/
+theorem c5_and_necessary_persistent_comprehension_imply_necessary_gallin :
+    P.NecNecessityOfDistinctness Prop → P.NecPersistentComprehension τ →
+      P.NecGallinExtensionalComprehension τ := fun hnd hpc =>
+  modal_K _ _ (modal_K _ _ (nec% (c5_and_persistent_comprehension_imply_gallin (τ := τ)))
+    (modal_four _ hnd)) hpc
+
 end shallowCores
 
 section unary
@@ -210,6 +223,41 @@ theorem nbf_rp_rigid_rigidity :
         (⟨h, le_top_unary X⟩ : Rigid X ∧ X ≤ (fun _ : σ => True)))))
   show Rigid (fun X : σ → Prop => Rigid X) from heq ▸ rp _ htop
 
+/-! ### ND, Strong Actuality and Gallin (11 October 2026) -/
+
+/-- A possible `w` entailing `¬q` does not entail `q`. -/
+theorem not_le_of_dia_le_neg (w q : Prop) (hd : ◇ w) (h : w ≤ ¬ q) : ¬ (w ≤ q) := fun h' =>
+  hd (Eq.mp (box_not_eq w) (modal_K _ _ (modal_K _ _
+    (nec% (fun (a : w → q) (b : w → ¬ q) (hw : w) => b hw (a hw)))
+    ((le_iff_prop w q).1 h')) ((le_iff_prop w (¬ q)).1 h)))
+
+/-- `nd-and-strong-actuality-imply-gallin-comprehension`, at `σ → t` (Cian Dorr): for `w`
+witnessing Strong Actuality, `λz. w ≤ Xz` is coextensive with `X`, persistent by `4`, and has
+a persistent negation by `B` (from ND at `t`) and the boxed decisions of `w`. -/
+theorem nd_strong_actuality_gallin :
+    P.NecessityOfDistinctness Prop → P.StrongActuality →
+      P.GallinExtensionalComprehension (σ → Prop) := fun nd sa X =>
+  sa.elim fun w hw =>
+  have hb : □ (◇ w) :=
+    Proofs.modal_five_implies_modal_b (Proofs.distinctness_necessary_t_implies_modal_five nd) w hw.1
+  ⟨fun z => w ≤ X z,
+   nec% (fun (z : σ) (h : w ≤ X z) => box_le_prop w (X z) h),
+   modal_K _ _ (modal_K _ _
+     (nec% (fun (hb : □ (◇ w)) (hd : ∀ q : Prop, w ≤ q ∨ w ≤ ¬ q) (z : σ) (hn : ¬ (w ≤ X z)) =>
+       (hd (X z)).elim (fun h => absurd h hn) fun h =>
+         modal_K _ _ (modal_K _ _ (nec% (not_le_of_dia_le_neg w (X z))) hb)
+           (box_le_prop w (¬ X z) h)))
+     (modal_four _ hb)) hw.2,
+   fun z => ⟨fun hx => (box_elim hw.2 (X z)).elim id
+       fun h => absurd hx (imp_of_le_prop w (¬ X z) h hw.1),
+     fun h => imp_of_le_prop w (X z) h hw.1⟩⟩
+
+/-- `c5-and-necessary-strong-actuality-imply-necessary-gallin-comprehension`, at `σ → t`. -/
+theorem c5_nec_strong_actuality_nec_gallin :
+    P.NecNecessityOfDistinctness Prop → P.NecStrongActuality →
+      P.NecGallinExtensionalComprehension (σ → Prop) := fun h₁ h₂ =>
+  modal_K _ _ (modal_K _ _ (nec% (nd_strong_actuality_gallin (σ := σ))) h₁) h₂
+
 end unary
 
 /-- In `C5`, `□`Boolean Completeness gives `□`Plenitude, for relations `σ → (σ' → t) → t`:
@@ -243,6 +291,9 @@ theorem fregean_actuality_necessary_actuality : P.FregeanAxiom → P.Actuality �
 /-! ## 2. Certification -/
 
 #classicism_certify Classicism.actuality_implies_persistent_comprehension_r
+  Classicism.necessary_actuality_implies_necessary_persistent_comprehension
+  Classicism.c5_and_necessary_persistent_comprehension_imply_necessary_gallin
+  Classicism.nd_strong_actuality_gallin Classicism.c5_nec_strong_actuality_nec_gallin
   Classicism.bf_wrp_weakly_rigid_weak_rigidity Classicism.rr_necessary_barcan
   Classicism.nbf_rp_rigid_rigidity
   Classicism.gallin_bf_weak_rigid_comprehension Classicism.gallin_c5_rigid_comprehension
@@ -255,6 +306,9 @@ theorem fregean_actuality_necessary_actuality : P.FregeanAxiom → P.Actuality �
   Classicism.necessary_completeness_c5_necessary_plenitude
 
 #classicism_entails Classicism.actuality_implies_persistent_comprehension_r
+  Classicism.necessary_actuality_implies_necessary_persistent_comprehension
+  Classicism.c5_and_necessary_persistent_comprehension_imply_necessary_gallin
+  Classicism.nd_strong_actuality_gallin Classicism.c5_nec_strong_actuality_nec_gallin
   Classicism.bf_wrp_weakly_rigid_weak_rigidity Classicism.rr_necessary_barcan
   Classicism.nbf_rp_rigid_rigidity
   Classicism.gallin_bf_weak_rigid_comprehension Classicism.gallin_c5_rigid_comprehension
@@ -710,6 +764,34 @@ theorem necessary_barcan_and_rigid_power_imply_rigid_rigidity :
         (Entails.trans (Entails.union_left _ _) P.NecBarcan.schema_entails_listSchema)
         (Entails.union_right _ _))
       nbf_rp_rigid_rigidity.listEntails)
+
+
+/-! ### BF at the relational types; ND, Strong Actuality and Gallin (11 October 2026) -/
+
+/-- `atomicity-and-bf-relational-imply-strong-leibniz`, at every arity. -/
+theorem atomicity_and_bf_relational_imply_strong_leibniz :
+    P.Atomicity.schema ∪ P.BarcanRelational.schema ⟹ P.StrongLeibniz.schema :=
+  Entails.mono_right (schema_subset_args _)
+    Proofs.atomicity_and_bf_relational_imply_strong_leibniz.listEntails
+
+/-- `necessary-atomicity-and-necessary-bf-relational-imply-necessary-strong-leibniz`, at every
+arity. -/
+theorem necessary_atomicity_and_necessary_bf_relational_imply_necessary_strong_leibniz :
+    P.NecAtomicity.schema ∪ P.NecBarcanRelational.schema ⟹ P.NecStrongLeibniz.schema :=
+  Entails.mono_right (schema_subset_args _)
+    Proofs.necessary_atomicity_and_necessary_bf_relational_imply_necessary_strong_leibniz.listEntails
+
+/-- `nd-and-strong-actuality-imply-gallin-comprehension`, at every arity. -/
+theorem nd_and_strong_actuality_imply_gallin_comprehension :
+    P.NecessityOfDistinctness.schema ∪ P.StrongActuality.schema ⟹
+      P.GallinExtensionalComprehension.schema :=
+  Entails.mono_right (schema_subset_args _) nd_strong_actuality_gallin.listEntails
+
+/-- `c5-and-necessary-strong-actuality-imply-necessary-gallin-comprehension`, at every arity. -/
+theorem c5_and_necessary_strong_actuality_imply_necessary_gallin_comprehension :
+    P.NecNecessityOfDistinctness.schema ∪ P.NecStrongActuality.schema ⟹
+      P.NecGallinExtensionalComprehension.schema :=
+  Entails.mono_right (schema_subset_args _) c5_nec_strong_actuality_nec_gallin.listEntails
 
 end Meta
 

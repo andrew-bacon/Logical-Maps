@@ -9,7 +9,8 @@ certificate:
   recorded_by: Claude Opus 5.5 (Anthropic), 11 October 2026
   checked_by: []
   date: '2026-10-11'
-  lean: none
+  lean: verified
+  lean_ref: Classicism.Map.barcan_relational_implies_barcan_t
 sources:
 - Cian Dorr, suggestion of 11 October 2026.
 source_names:

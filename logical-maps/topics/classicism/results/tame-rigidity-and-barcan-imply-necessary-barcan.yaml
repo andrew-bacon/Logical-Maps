@@ -10,7 +10,8 @@ certificate:
   recorded_by: Claude Opus 5.5 (Anthropic), 3 October 2026
   checked_by: []
   date: '2026-10-03'
-  lean: stated
+  lean: verified
+  lean_ref: Classicism.Map.tame_rigidity_and_barcan_imply_necessary_barcan
 sources:
 - Claude Fable 5.1 (Anthropic), Classicism session of 3 October 2026, answering Cian Dorr's question about
   Tame Rigidity in the coalesced roots.

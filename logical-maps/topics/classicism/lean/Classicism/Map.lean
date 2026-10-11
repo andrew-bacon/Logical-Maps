@@ -1645,4 +1645,68 @@ theorem rigid_rigidity_implies_necessary_barcan : Statements.rigid_rigidity_impl
 theorem necessary_barcan_and_rigid_power_imply_rigid_rigidity : Statements.necessary_barcan_and_rigid_power_imply_rigid_rigidity := by
   map_cert Meta.necessary_barcan_and_rigid_power_imply_rigid_rigidity
 
+/-- `barcan-r-implies-barcan-relational` -/
+theorem barcan_r_implies_barcan_relational : Statements.barcan_r_implies_barcan_relational := by
+  map_cert Proofs.barcan_r_implies_barcan_relational.entails
+
+/-- `barcan-relational-implies-barcan-t` -/
+theorem barcan_relational_implies_barcan_t : Statements.barcan_relational_implies_barcan_t := by
+  map_cert Proofs.barcan_relational_implies_barcan_t.entails
+
+/-- `necessary-barcan-r-implies-necessary-barcan-relational` -/
+theorem necessary_barcan_r_implies_necessary_barcan_relational : Statements.necessary_barcan_r_implies_necessary_barcan_relational := by
+  map_cert Proofs.necessary_barcan_r_implies_necessary_barcan_relational.entails
+
+/-- `necessary-barcan-relational-implies-necessary-barcan-t` -/
+theorem necessary_barcan_relational_implies_necessary_barcan_t : Statements.necessary_barcan_relational_implies_necessary_barcan_t := by
+  map_cert Proofs.necessary_barcan_relational_implies_necessary_barcan_t.entails
+
+/-- `necessary-barcan-relational-implies-barcan-relational` -/
+theorem necessary_barcan_relational_implies_barcan_relational : Statements.necessary_barcan_relational_implies_barcan_relational := by
+  map_cert Proofs.necessary_barcan_relational_implies_barcan_relational.entails
+
+/-- `no-pure-contingency-and-bf-relational-imply-necessary-bf-relational` -/
+theorem no_pure_contingency_and_bf_relational_imply_necessary_bf_relational : Statements.no_pure_contingency_and_bf_relational_imply_necessary_bf_relational := by
+  map_cert (Entails.mono_right (Ax₃ := P.NecBarcanRelational.schema) (by map_box) (npc_union_entails_box_pure P.BarcanRelational.schema_closedTypes))
+
+/-- `tame-rigidity-and-bf-relational-imply-necessary-bf-relational` -/
+theorem tame_rigidity_and_bf_relational_imply_necessary_bf_relational : Statements.tame_rigidity_and_bf_relational_imply_necessary_bf_relational := by
+  map_cert Proofs.tame_rigidity_and_bf_relational_imply_necessary_bf_relational.entails
+
+/-- `tame-rigidity-and-barcan-imply-necessary-barcan` -/
+theorem tame_rigidity_and_barcan_imply_necessary_barcan : Statements.tame_rigidity_and_barcan_imply_necessary_barcan := by
+  map_cert Proofs.tame_rigidity_and_barcan_imply_necessary_barcan.entails
+
+/-- `atomicity-and-bf-relational-imply-strong-leibniz` -/
+theorem atomicity_and_bf_relational_imply_strong_leibniz : Statements.atomicity_and_bf_relational_imply_strong_leibniz := by
+  map_cert Meta.atomicity_and_bf_relational_imply_strong_leibniz
+
+/-- `necessary-atomicity-and-necessary-bf-relational-imply-necessary-strong-leibniz` -/
+theorem necessary_atomicity_and_necessary_bf_relational_imply_necessary_strong_leibniz : Statements.necessary_atomicity_and_necessary_bf_relational_imply_necessary_strong_leibniz := by
+  map_cert Meta.necessary_atomicity_and_necessary_bf_relational_imply_necessary_strong_leibniz
+
+/-- `gallin-comprehension-implies-strong-actuality` -/
+theorem gallin_comprehension_implies_strong_actuality : Statements.gallin_comprehension_implies_strong_actuality := by
+  map_cert Proofs.gallin_comprehension_implies_strong_actuality.entails
+
+/-- `necessary-gallin-comprehension-implies-necessary-strong-actuality` -/
+theorem necessary_gallin_comprehension_implies_necessary_strong_actuality : Statements.necessary_gallin_comprehension_implies_necessary_strong_actuality := by
+  map_cert Proofs.necessary_gallin_comprehension_implies_necessary_strong_actuality.entails
+
+/-- `nd-and-strong-actuality-imply-gallin-comprehension` -/
+theorem nd_and_strong_actuality_imply_gallin_comprehension : Statements.nd_and_strong_actuality_imply_gallin_comprehension := by
+  map_cert Meta.nd_and_strong_actuality_imply_gallin_comprehension
+
+/-- `c5-and-necessary-strong-actuality-imply-necessary-gallin-comprehension` -/
+theorem c5_and_necessary_strong_actuality_imply_necessary_gallin_comprehension : Statements.c5_and_necessary_strong_actuality_imply_necessary_gallin_comprehension := by
+  map_cert Meta.c5_and_necessary_strong_actuality_imply_necessary_gallin_comprehension
+
+/-- `necessary-actuality-implies-necessary-persistent-comprehension` -/
+theorem necessary_actuality_implies_necessary_persistent_comprehension : Statements.necessary_actuality_implies_necessary_persistent_comprehension := by
+  map_cert _root_.Classicism.necessary_actuality_implies_necessary_persistent_comprehension.entails
+
+/-- `c5-and-necessary-persistent-comprehension-imply-necessary-gallin` -/
+theorem c5_and_necessary_persistent_comprehension_imply_necessary_gallin : Statements.c5_and_necessary_persistent_comprehension_imply_necessary_gallin := by
+  map_cert _root_.Classicism.c5_and_necessary_persistent_comprehension_imply_necessary_gallin.entails
+
 end Classicism.Map

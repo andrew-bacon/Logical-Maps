@@ -9,7 +9,8 @@ certificate:
   recorded_by: Claude Opus 5.5 (Anthropic), 9 October 2026
   checked_by: []
   date: '2026-10-09'
-  lean: stated
+  lean: verified
+  lean_ref: Classicism.Map.necessary_gallin_comprehension_implies_necessary_strong_actuality
 sources:
 - Cian Dorr, question of 9 October 2026; unboxed proof as recorded in gallin-comprehension-implies-strong-actuality.
 source_names:

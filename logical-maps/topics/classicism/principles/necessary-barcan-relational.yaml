@@ -11,3 +11,4 @@ source_names:
 references: []
 notes: Box each fully closed instance of BF (relational types). Type quantifiers and the type restriction
   remain outside the box.
+lean_def: Classicism.P.NecBarcanRelational.schemaIn

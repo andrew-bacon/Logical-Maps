@@ -847,4 +847,19 @@ theorem actuality_and_distinctness_preserving_collapse_imply_strong_actuality :
         (nec% (fun (f : ◇ a → ◇ q) (g : ◇ q → ActualWorld a) (h : ◇ a) => g (f h))) h₁) hq.2
       ⟨a, ha.1, modal_K _ _ (nec% (decides_of_dia_actual a)) h₂⟩
 
+/-! ### BF at the relational types (11 October 2026) -/
+
+/-- `atomicity-and-bf-relational-imply-strong-leibniz`, at `σ → t`: the argument of
+`atomicity_and_bf_imply_strong_leibniz` uses BF only at the relational type `σ → t`. -/
+theorem atomicity_and_bf_relational_imply_strong_leibniz {σ : Type} [Ty σ] :
+    Atomicity (σ → Prop) → BarcanRelational (σ → Prop) → StrongLeibniz (σ → Prop) :=
+  atomicity_and_bf_imply_strong_leibniz
+
+/-- `necessary-atomicity-and-necessary-bf-relational-imply-necessary-strong-leibniz`. -/
+theorem necessary_atomicity_and_necessary_bf_relational_imply_necessary_strong_leibniz
+    {σ : Type} [Ty σ] :
+    NecAtomicity (σ → Prop) → NecBarcanRelational (σ → Prop) → NecStrongLeibniz (σ → Prop) :=
+  fun h₁ h₂ => modal_K _ _ (modal_K _ _
+    (nec% (atomicity_and_bf_relational_imply_strong_leibniz (σ := σ))) h₁) h₂
+
 end Classicism.Proofs
