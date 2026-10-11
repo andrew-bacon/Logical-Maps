@@ -1,0 +1,54 @@
+id: modalized-relational-choice-r
+name: Modalized Relational Choice
+category: choice
+statement: Every necessarily serial relation is entailed by a necessarily functional relation.
+formal: $\forall R^{\sigma\tau t}\, .\,\Box\operatorname{Serial}(R)\to\exists S^{\sigma\tau t}\, .\,\Box\operatorname{Functional}(S)\land S\le R$
+date: '2026-10-11'
+sources:
+- Cian Dorr, suggestion of 11 October 2026.
+source_names:
+- Dorr 11 Oct
+references: []
+notes: >-
+  Due to Cian Dorr. It implies Intensional Choice (its polyadic form at the empty tuple is Intensional
+  Choice) and Relational Choice; □Relational Choice with Intensional Choice implies it, the
+  necessarily instantiated property of being a functional subrelation of a necessarily serial relation
+  being necessarily uniquely instantiated below. Whether unboxed Relational Choice with Intensional
+  Choice suffices is open: the argument needs the functional subrelations to exist at every world.
+  Boxed, □Modalized Relational Choice is equivalent to □Relational Choice with □Intensional Choice.
+variants:
+- id: entailing
+  name: Entailing form
+  statement: Every relation is entailed by one that necessarily relates each thing bearing the first
+    relation to something to exactly one thing.
+  formal: $\forall R^{\sigma\tau t}\, \exists S^{\sigma\tau t}\, .\,S\le R\land\Box\forall x^\sigma\,
+    .\,(\exists y^\tau\, .\,(Rx)y)\to\exists y^\tau\, .\,(Sx)y\land\forall z^\tau\, .\,(Sx)z\to y=z$
+  equivalence: >-
+    From the entailing form: if $R$ is necessarily serial, an $S$ as there is necessarily functional. To
+    the entailing form: given $R$, $R':=\lambda xy\,.\,\neg\exists z\,(Rx)z\lor(Rx)y$ is necessarily
+    serial, every type being inhabited in C; take a necessarily functional $S'\le R'$ and put
+    $S:=\lambda xy\,.\,(S'x)y\land(Rx)y$. Then $S\le R$, and necessarily, if $x$ bears $R$ to something,
+    the unique $S'$-value of $x$ is an $R$-value, so the unique $S$-value.
+- id: polyadic
+  name: Polyadic form
+  statement: Every necessarily serial relation from tuples is entailed by a necessarily functional one.
+  formal: $\forall R^{\bar\sigma\tau t}\, .\,\Box\operatorname{Serial}(R)\to\exists S^{\bar\sigma\tau t}\,
+    .\,\Box\operatorname{Functional}(S)\land S\le R$
+  equivalence: >-
+    The original form is the case of a one-element tuple. Conversely, code tuples by their haecceities
+    $H_{\bar x}$ (Background, Polyadic forms). Given a necessarily serial $R$, put $R':=\lambda
+    A\,y\,.\,(\exists\bar x\,.\,A=H_{\bar x}\land(R[\bar x])y)\lor\neg\exists\bar x\,.\,A=H_{\bar x}$,
+    of input type $\bar\sigma t$. It is necessarily serial: at each world a code is the haecceity of a
+    tuple there, and $R$ is serial there. The original form gives a necessarily functional $S'\le R'$,
+    and $S:=\lambda\bar x\,y\,.\,(S'H_{\bar x})y$ is necessarily functional and entails $R$, the coding
+    being injective. At the empty tuple the polyadic form is Intensional Choice.
+- id: polyadic-entailing
+  name: Polyadic entailing form
+  statement: The entailing form for relations from tuples.
+  formal: $\forall R^{\bar\sigma\tau t}\, \exists S^{\bar\sigma\tau t}\, .\,S\le R\land\Box\forall\bar x^{\bar\sigma}\,
+    .\,(\exists y^\tau\, .\,(R[\bar x])y)\to\exists y^\tau\, .\,(S[\bar x])y\land\forall z^\tau\, .\,(S[\bar x])z\to y=z$
+  equivalence: >-
+    The two equivalences above combined: the polyadic form and the polyadic entailing form are related
+    as the original form and the entailing form, by the same construction with tuples in place of single
+    arguments.
+lean_def: Classicism.P.ModalizedRelationalChoice.schemaIn

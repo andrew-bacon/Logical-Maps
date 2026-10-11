@@ -195,6 +195,10 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.ModalizedPlenitude.schemaIn
 
+/-- Principle definition check: `modalized-relational-choice-r`. -/
+example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
+  Classicism.P.ModalizedRelationalChoice.schemaIn
+
 /-- Principle definition check: `necessary-actuality`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.NecActuality.schemaIn
@@ -274,6 +278,10 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 /-- Principle definition check: `necessary-modal-five`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.NecModalFive.schemaIn
+
+/-- Principle definition check: `necessary-modalized-relational-choice-r`. -/
+example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
+  Classicism.P.NecModalizedRelationalChoice.schemaIn
 
 /-- Principle definition check: `necessary-persistent-comprehension-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
@@ -1558,6 +1566,22 @@ def modal_well_ordering_r_implies_necessary_well_ordering_r : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalWellOrdering.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWellOrdering.schemaIn
 
+/-- `modalized-relational-choice-implies-intensional-choice`
+
+Modalized Relational Choice ⇒ Intensional Choice -/
+def modalized_relational_choice_implies_intensional_choice : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalizedRelationalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.IntensionalChoice.schemaIn
+
+/-- `modalized-relational-choice-implies-relational-choice`
+
+Modalized Relational Choice ⇒ Relational Choice -/
+def modalized_relational_choice_implies_relational_choice : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalizedRelationalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RelationalChoice.schemaIn
+
 /-- `nd-and-bf-imply-necessary-nd`
 
 ND ∧ BF ⇒ □ND -/
@@ -2055,6 +2079,30 @@ def necessary_modal_five_implies_necessary_modal_b : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecModalFive.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecModalB.schemaIn
 
+/-- `necessary-modalized-relational-choice-implies-necessary-intensional-choice`
+
+□Modalized Relational Choice ⇒ □Intensional Choice -/
+def necessary_modalized_relational_choice_implies_necessary_intensional_choice : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecModalizedRelationalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecIntensionalChoice.schemaIn
+
+/-- `necessary-modalized-relational-choice-implies-necessary-relational-choice`
+
+□Modalized Relational Choice ⇒ □Relational Choice -/
+def necessary_modalized_relational_choice_implies_necessary_relational_choice : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecModalizedRelationalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRelationalChoice.schemaIn
+
+/-- `necessary-modalized-relational-choice-r-implies-modalized-relational-choice-r`
+
+□Modalized Relational Choice ⇒ Modalized Relational Choice -/
+def necessary_modalized_relational_choice_r_implies_modalized_relational_choice_r : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecModalizedRelationalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalizedRelationalChoice.schemaIn
+
 /-- `necessary-nd-implies-bf`
 
 □ND ⇒ BF -/
@@ -2118,6 +2166,24 @@ def necessary_plenitude_r_implies_plenitude_r : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecPlenitude.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Plenitude.schemaIn
+
+/-- `necessary-relational-choice-and-intensional-choice-imply-modalized-relational-choice`
+
+□Relational Choice ∧ Intensional Choice ⇒ Modalized Relational Choice -/
+def necessary_relational_choice_and_intensional_choice_imply_modalized_relational_choice : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRelationalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.IntensionalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalizedRelationalChoice.schemaIn
+
+/-- `necessary-relational-choice-and-necessary-intensional-choice-imply-necessary-modalized-relational-choice`
+
+□Relational Choice ∧ □Intensional Choice ⇒ □Modalized Relational Choice -/
+def necessary_relational_choice_and_necessary_intensional_choice_imply_necessary_modalized_relational_choice : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRelationalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecIntensionalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecModalizedRelationalChoice.schemaIn
 
 /-- `necessary-relational-choice-and-necessary-plenitude-imply-necessary-functional-choice`
 
@@ -2674,6 +2740,15 @@ def no_pure_contingency_and_intensional_choice_imply_necessary_intensional_choic
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.noContingency) →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.IntensionalChoice.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecIntensionalChoice.schemaIn
+
+/-- `no-pure-contingency-and-modalized-relational-choice-imply-necessary-modalized-relational-choice`
+
+No Pure Contingency ∧ Modalized Relational Choice ⇒ □Modalized Relational Choice -/
+def no_pure_contingency_and_modalized_relational_choice_imply_necessary_modalized_relational_choice : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.noContingency) →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalizedRelationalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecModalizedRelationalChoice.schemaIn
 
 /-- `no-pure-contingency-and-nd-imply-necessary-nd`
 

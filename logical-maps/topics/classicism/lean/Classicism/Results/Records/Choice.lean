@@ -1102,4 +1102,86 @@ theorem well_ordering_weak_rigid_comprehension_and_bf_imply_modal_well_ordering 
       (mwo_step1 hR hRs hco)) (mwo_step2 hR hRs hco)) (mwo_step3 hR hRs hco bf wrc))
       (mwo_step4 hR hRs hco wrc)⟩
 
+
+/-! ### Modalized Relational Choice (11 October 2026) -/
+
+/-- `modalized-relational-choice-implies-intensional-choice`: from one input of type `t`,
+ignored, the choice at `⊤`. -/
+theorem modalized_relational_choice_implies_intensional_choice {τ : Type} [Ty τ] :
+    ModalizedRelationalChoice Prop τ → IntensionalChoice τ := fun mrc F hF =>
+  (mrc (fun _ y => F y) (modal_K _ _ (nec% (fun (h : ∃ y, F y) (_ : Prop) => h)) hF)).elim
+    fun S ⟨hS, hle⟩ =>
+  ⟨S True, le_of_box_incl (modal_K _ _
+      (nec% (fun (h : ∀ (p : Prop) (y : τ), S p y → F y) (y : τ) (hy : S True y) => h True y hy))
+      ((le_iff _ _).1 hle)),
+   modal_K _ _ (nec% (fun (h : Functional S) => (h True).elim fun y ⟨hy, hu⟩ =>
+      (⟨y, hy, fun z hz => (hu z hz).symm⟩ : ∃ x, S True x ∧ ∀ z, S True z → z = x))) hS⟩
+
+/-- `modalized-relational-choice-implies-relational-choice`: a serial `U` is coextensive with
+the necessarily serial `λxy. Serial(U) → Uxy`. -/
+theorem modalized_relational_choice_implies_relational_choice {σ τ : Type} [Ty σ] [Ty τ] :
+    ModalizedRelationalChoice σ τ → RelationalChoice σ τ := fun mrc U hU =>
+  (em (∃ _ : σ, True)).elim
+    (fun ⟨x₀, _⟩ => (hU x₀).elim fun y₀ _ =>
+      (mrc (fun x y => Serial U → U x y)
+        (nec% (fun (x : σ) => ((em (Serial U)).elim
+          (fun h => (h x).elim fun y hy => ⟨y, fun _ => hy⟩)
+          (fun h => ⟨y₀, fun hs => (h hs).elim⟩) : ∃ y, Serial U → U x y)))).elim
+        fun S ⟨hS, hle⟩ => ⟨S, box_elim hS, fun x y h => incl_of_le hle x y h hU⟩)
+    (fun hσ => ⟨U, fun x => (hσ ⟨x, trivial⟩).elim, fun _ _ h => h⟩)
+
+/-- The relation applying the unique chosen functional relation is functional. -/
+theorem functional_of_unique {σ τ : Type} [Ty σ] [Ty τ] (R : σ → τ → Prop)
+    (G : (σ → τ → Prop) → Prop) (hG : ∀ Z, G Z → Functional Z ∧ ∀ x y, Z x y → R x y)
+    (hu : ∃ Z, G Z ∧ ∀ Z', G Z' → Z' = Z) : Functional (fun x y => ∃ Z, G Z ∧ Z x y) :=
+  hu.elim fun Z₀ ⟨h₀, hu₀⟩ => fun x => ((hG Z₀ h₀).1 x).elim fun y ⟨hy, hyu⟩ =>
+    ⟨y, ⟨Z₀, h₀, hy⟩, fun z ⟨Z, hZ, hz⟩ => hyu z (by rw [← hu₀ Z hZ]; exact hz)⟩
+
+/-- `necessary-relational-choice-and-intensional-choice-imply-modalized-relational-choice`
+(Cian Dorr): □Relational Choice makes the functional subrelations of a necessarily serial `R`
+necessarily instantiated, Intensional Choice picks a necessarily unique one, and the relation
+that applies it is necessarily functional and entails `R`. -/
+theorem necessary_relational_choice_and_intensional_choice_imply_modalized_relational_choice
+    {σ τ : Type} [Ty σ] [Ty τ] :
+    NecRelationalChoice σ τ → IntensionalChoice (σ → τ → Prop) →
+      ModalizedRelationalChoice σ τ := fun nrc ic R hR =>
+  (ic (fun Z => Functional Z ∧ ∀ x y, Z x y → R x y) (modal_K _ _ (modal_K _ _
+      (nec% (fun (rc : RelationalChoice σ τ) (hs : Serial R) => rc R hs)) nrc) hR)).elim
+    fun G ⟨hGF, hu⟩ =>
+  ⟨fun x y => ∃ Z, G Z ∧ Z x y,
+   modal_K _ _ (modal_K _ _
+     (nec% (fun (hG : ∀ Z, G Z → Functional Z ∧ ∀ x y, Z x y → R x y)
+         (hu : ∃ Z, G Z ∧ ∀ Z', G Z' → Z' = Z) => functional_of_unique R G hG hu))
+     ((le_iff _ _).1 hGF)) hu,
+   le_of_box_incl (modal_K _ _
+     (nec% (fun (hG : ∀ Z, G Z → Functional Z ∧ ∀ x y, Z x y → R x y) (x : σ) (y : τ)
+         (h : ∃ Z, G Z ∧ Z x y) => h.elim fun Z ⟨hZ, hxy⟩ => (hG Z hZ).2 x y hxy))
+     ((le_iff _ _).1 hGF))⟩
+
+/-- `necessary-modalized-relational-choice-r-implies-modalized-relational-choice-r`: `T`. -/
+theorem necessary_modalized_relational_choice_r_implies_modalized_relational_choice_r
+    {σ τ : Type} [Ty σ] [Ty τ] :
+    NecModalizedRelationalChoice σ τ → ModalizedRelationalChoice σ τ := box_elim
+
+/-- `necessary-modalized-relational-choice-implies-necessary-intensional-choice`. -/
+theorem necessary_modalized_relational_choice_implies_necessary_intensional_choice
+    {τ : Type} [Ty τ] : NecModalizedRelationalChoice Prop τ → NecIntensionalChoice τ :=
+  modal_K _ _ (nec% (modalized_relational_choice_implies_intensional_choice (τ := τ)))
+
+/-- `necessary-modalized-relational-choice-implies-necessary-relational-choice`. -/
+theorem necessary_modalized_relational_choice_implies_necessary_relational_choice
+    {σ τ : Type} [Ty σ] [Ty τ] :
+    NecModalizedRelationalChoice σ τ → NecRelationalChoice σ τ :=
+  modal_K _ _ (nec% (modalized_relational_choice_implies_relational_choice (σ := σ) (τ := τ)))
+
+/-- `necessary-relational-choice-and-necessary-intensional-choice-imply-necessary-modalized-relational-choice`:
+`4` boxes □Relational Choice again. -/
+theorem necessary_relational_choice_and_necessary_intensional_choice_imply_necessary_modalized_relational_choice
+    {σ τ : Type} [Ty σ] [Ty τ] :
+    NecRelationalChoice σ τ → NecIntensionalChoice (σ → τ → Prop) →
+      NecModalizedRelationalChoice σ τ := fun h₁ h₂ =>
+  modal_K _ _ (modal_K _ _
+    (nec% (necessary_relational_choice_and_intensional_choice_imply_modalized_relational_choice
+      (σ := σ) (τ := τ))) (modal_four _ h₁)) h₂
+
 end Classicism.Proofs

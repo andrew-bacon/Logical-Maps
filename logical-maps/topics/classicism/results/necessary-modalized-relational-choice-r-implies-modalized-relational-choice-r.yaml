@@ -1,0 +1,25 @@
+id: necessary-modalized-relational-choice-r-implies-modalized-relational-choice-r
+premises:
+- necessary-modalized-relational-choice-r
+conclusion: modalized-relational-choice-r
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Claude Opus 5.5 (Anthropic), 11 October 2026, from a suggestion of Cian Dorr
+  recorded_by: Claude Opus 5.5 (Anthropic), 11 October 2026
+  checked_by: []
+  date: '2026-10-11'
+  lean: verified
+  lean_ref: Classicism.Map.necessary_modalized_relational_choice_r_implies_modalized_relational_choice_r
+sources:
+- Cian Dorr, suggestion of 11 October 2026.
+source_names:
+- Dorr 11 Oct
+proof: >-
+  At each admitted closed instance $\phi$, T gives $\Box\phi\to\phi$.
+references:
+- paper: bacon-dorr-classicism
+  role: background
+  locator: §1.5, p. 16
+  note: T and 4 for the fixed background modality.
+notes: ''

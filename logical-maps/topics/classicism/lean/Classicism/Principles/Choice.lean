@@ -39,6 +39,15 @@ def RelationalChoice (σ τ : Type) [Ty σ] [Ty τ] : Prop :=
 /-- `necessary-relational-choice-r` at `σ`, `τ`. -/
 def NecRelationalChoice (σ τ : Type) [Ty σ] [Ty τ] : Prop := □ (RelationalChoice σ τ)
 
+open Classicism.Paper in
+/-- `modalized-relational-choice-r` at `σ`, `τ`: every necessarily serial relation is entailed
+by a necessarily functional one. -/
+def ModalizedRelationalChoice (σ τ : Type) [Ty σ] [Ty τ] : Prop :=
+  ∀ R : σ → τ → Prop, □ (Serial R) → ∃ S : σ → τ → Prop, □ (Functional S) ∧ S ≤ R
+/-- `necessary-modalized-relational-choice-r` at `σ`, `τ`: the instance boxed. -/
+def NecModalizedRelationalChoice (σ τ : Type) [Ty σ] [Ty τ] : Prop :=
+  □ (ModalizedRelationalChoice σ τ)
+
 /-! ## Plenitude -/
 
 /-- `plenitude-r` at `σ`, `τ`: every functional relation `U : σ → τ → Prop` is represented

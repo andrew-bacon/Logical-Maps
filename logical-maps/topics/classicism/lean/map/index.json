@@ -983,6 +983,17 @@
     "lines": [878, 880],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
+  "no-pure-contingency-and-modalized-relational-choice-imply-necessary-modalized-relational-choice":
+  {"proofs":
+   [{"name": "Classicism.Meta.npc_union_entails_box_pure",
+     "lines": [73, 77],
+     "file": "Classicism/Results/SentenceSchemas/Contingency.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.no_pure_contingency_and_modalized_relational_choice_imply_necessary_modalized_relational_choice",
+    "lines": [1808, 1810],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-intensional-choice-imply-necessary-intensional-choice":
   {"proofs":
    [{"name": "Classicism.Meta.npc_union_entails_box_pure",
@@ -1739,6 +1750,30 @@
     "lines": [721, 723],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
+  "necessary-relational-choice-and-necessary-intensional-choice-imply-necessary-modalized-relational-choice":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.necessary_relational_choice_and_necessary_intensional_choice_imply_necessary_modalized_relational_choice",
+     "lines": [1177, 1185],
+     "file": "Classicism/Results/Records/Choice.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.necessary_relational_choice_and_necessary_intensional_choice_imply_necessary_modalized_relational_choice",
+    "lines": [1804, 1806],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "necessary-relational-choice-and-intensional-choice-imply-modalized-relational-choice":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.necessary_relational_choice_and_intensional_choice_imply_modalized_relational_choice",
+     "lines": [1140, 1159],
+     "file": "Classicism/Results/Records/Choice.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.necessary_relational_choice_and_intensional_choice_imply_modalized_relational_choice",
+    "lines": [1788, 1790],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
   "necessary-plenitude-r-implies-plenitude-r":
   {"proofs":
    [{"name": "Classicism.Proofs.necessary_plenitude_r_implies_plenitude_r",
@@ -1826,6 +1861,42 @@
    "certificate":
    {"name": "Classicism.Map.necessary_nd_implies_bf",
     "lines": [697, 699],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "necessary-modalized-relational-choice-r-implies-modalized-relational-choice-r":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.necessary_modalized_relational_choice_r_implies_modalized_relational_choice_r",
+     "lines": [1161, 1164],
+     "file": "Classicism/Results/Records/Choice.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.necessary_modalized_relational_choice_r_implies_modalized_relational_choice_r",
+    "lines": [1792, 1794],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "necessary-modalized-relational-choice-implies-necessary-relational-choice":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.necessary_modalized_relational_choice_implies_necessary_relational_choice",
+     "lines": [1171, 1175],
+     "file": "Classicism/Results/Records/Choice.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.necessary_modalized_relational_choice_implies_necessary_relational_choice",
+    "lines": [1800, 1802],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "necessary-modalized-relational-choice-implies-necessary-intensional-choice":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.necessary_modalized_relational_choice_implies_necessary_intensional_choice",
+     "lines": [1166, 1169],
+     "file": "Classicism/Results/Records/Choice.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.necessary_modalized_relational_choice_implies_necessary_intensional_choice",
+    "lines": [1796, 1798],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-modal-five-implies-necessary-modal-b":
@@ -2535,6 +2606,30 @@
    "certificate":
    {"name": "Classicism.Map.nd_and_bf_imply_necessary_nd",
     "lines": [553, 555],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "modalized-relational-choice-implies-relational-choice":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.modalized_relational_choice_implies_relational_choice",
+     "lines": [1120, 1131],
+     "file": "Classicism/Results/Records/Choice.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.modalized_relational_choice_implies_relational_choice",
+    "lines": [1784, 1786],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "modalized-relational-choice-implies-intensional-choice":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.modalized_relational_choice_implies_intensional_choice",
+     "lines": [1108, 1118],
+     "file": "Classicism/Results/Records/Choice.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.modalized_relational_choice_implies_intensional_choice",
+    "lines": [1780, 1782],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "modal-well-ordering-r-implies-necessary-well-ordering-r":
@@ -12068,7 +12163,7 @@
       "lines": [174, 176],
       "file": "Classicism/Principles/Coarse.lean"},
      {"name": "Classicism.P.TractarianismDual.listQuoted",
-      "lines": [63, 63],
+      "lines": [64, 64],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.tractarianism_r.dual_polyadic",
@@ -12163,7 +12258,7 @@
       "file": "Classicism/Results/Lists.lean"}],
     "definitions":
     [{"name": "Classicism.P.Plenitude",
-      "lines": [44, 47],
+      "lines": [53, 56],
       "file": "Classicism/Principles/Choice.lean"},
      {"name": "Classicism.P.Plenitude.listQuoted",
       "lines": [33, 33],
@@ -12228,7 +12323,7 @@
       "lines": [195, 196],
       "file": "Classicism/Principles/Coarse.lean"},
      {"name": "Classicism.P.NecTractarianismDual.listQuoted",
-      "lines": [64, 64],
+      "lines": [65, 65],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_tractarianism_r.dual_polyadic",
@@ -12323,7 +12418,7 @@
       "file": "Classicism/Results/Lists.lean"}],
     "definitions":
     [{"name": "Classicism.P.NecPlenitude",
-      "lines": [48, 49],
+      "lines": [57, 58],
       "file": "Classicism/Principles/Choice.lean"},
      {"name": "Classicism.P.NecPlenitude.listQuoted",
       "lines": [34, 34],
@@ -12468,7 +12563,7 @@
       "lines": [116, 117],
       "file": "Classicism/Principles/Coarse.lean"},
      {"name": "Classicism.P.NecNecessityOfDistinctnessDual.listQuoted",
-      "lines": [62, 62],
+      "lines": [63, 63],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_distinctness_necessary_r.dual_polyadic",
@@ -12571,7 +12666,7 @@
       "lines": [154, 155],
       "file": "Classicism/Principles/Coarse.lean"},
      {"name": "Classicism.P.NecBarcanDual.listQuoted",
-      "lines": [63, 63],
+      "lines": [64, 64],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_barcan_r.dual_polyadic",
@@ -12627,7 +12722,7 @@
       "file": "Classicism/Results/Lists.lean"}],
     "definitions":
     [{"name": "Classicism.P.ModalizedPlenitude",
-      "lines": [51, 56],
+      "lines": [60, 65],
       "file": "Classicism/Principles/Choice.lean"},
      {"name": "Classicism.P.ModalizedPlenitude.listQuoted",
       "lines": [43, 43],
@@ -12946,7 +13041,7 @@
       "lines": [99, 100],
       "file": "Classicism/Principles/Coarse.lean"},
      {"name": "Classicism.P.NecessityOfDistinctnessDual.listQuoted",
-      "lines": [62, 62],
+      "lines": [63, 63],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.distinctness_necessary_r.dual_polyadic",
@@ -13007,7 +13102,7 @@
       "lines": [67, 68],
       "file": "Classicism/Principles/Base.lean"},
      {"name": "Classicism.P.ConverseBarcanDual.listQuoted",
-      "lines": [60, 60],
+      "lines": [61, 61],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.converse_barcan_r.dual_polyadic",
@@ -13149,7 +13244,7 @@
       "lines": [133, 134],
       "file": "Classicism/Principles/Coarse.lean"},
      {"name": "Classicism.P.BarcanDual.listQuoted",
-      "lines": [63, 63],
+      "lines": [64, 64],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.barcan_r.dual_polyadic",
@@ -13221,15 +13316,15 @@
  "definitions":
  {"Classicism.P.Zorn":
   {"name": "Classicism.P.Zorn",
-   "lines": [108, 113],
+   "lines": [117, 122],
    "file": "Classicism/Principles/Choice.lean"},
   "Classicism.P.WellOrders":
   {"name": "Classicism.P.WellOrders",
-   "lines": [90, 94],
+   "lines": [99, 103],
    "file": "Classicism/Principles/Choice.lean"},
   "Classicism.P.WellOrdering":
   {"name": "Classicism.P.WellOrdering",
-   "lines": [101, 102],
+   "lines": [110, 111],
    "file": "Classicism/Principles/Choice.lean"},
   "Classicism.P.WeaklyRigidWeakRigidity":
   {"name": "Classicism.P.WeaklyRigidWeakRigidity",
@@ -13257,11 +13352,11 @@
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.TransversalChoice":
   {"name": "Classicism.P.TransversalChoice",
-   "lines": [72, 76],
+   "lines": [81, 85],
    "file": "Classicism/Principles/Choice.lean"},
   "Classicism.P.Transversal":
   {"name": "Classicism.P.Transversal",
-   "lines": [64, 68],
+   "lines": [73, 77],
    "file": "Classicism/Principles/Choice.lean"},
   "Classicism.P.TractarianismDual":
   {"name": "Classicism.P.TractarianismDual",
@@ -13277,7 +13372,7 @@
    "file": "Classicism/Principles/Coarse.lean"},
   "Classicism.P.TotalOrderOn":
   {"name": "Classicism.P.TotalOrderOn",
-   "lines": [96, 99],
+   "lines": [105, 108],
    "file": "Classicism/Principles/Choice.lean"},
   "Classicism.P.TameRigidity":
   {"name": "Classicism.P.TameRigidity",
@@ -13345,7 +13440,7 @@
    "file": "Classicism/Principles/Infinity.lean"},
   "Classicism.P.Plenitude":
   {"name": "Classicism.P.Plenitude",
-   "lines": [44, 47],
+   "lines": [53, 56],
    "file": "Classicism/Principles/Choice.lean"},
   "Classicism.P.PersistentComprehension":
   {"name": "Classicism.P.PersistentComprehension",
@@ -13377,7 +13472,7 @@
    "file": "Classicism/Principles/Coarse.lean"},
   "Classicism.P.NecWellOrdering":
   {"name": "Classicism.P.NecWellOrdering",
-   "lines": [103, 104],
+   "lines": [112, 113],
    "file": "Classicism/Principles/Choice.lean"},
   "Classicism.P.NecWeaklyRigidWeakRigidity":
   {"name": "Classicism.P.NecWeaklyRigidWeakRigidity",
@@ -13405,11 +13500,11 @@
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.NecTransversalChoice":
   {"name": "Classicism.P.NecTransversalChoice",
-   "lines": [77, 78],
+   "lines": [86, 87],
    "file": "Classicism/Principles/Choice.lean"},
   "Classicism.P.NecTransversal":
   {"name": "Classicism.P.NecTransversal",
-   "lines": [69, 70],
+   "lines": [78, 79],
    "file": "Classicism/Principles/Choice.lean"},
   "Classicism.P.NecTractarianismDual":
   {"name": "Classicism.P.NecTractarianismDual",
@@ -13473,7 +13568,7 @@
    "file": "Classicism/Principles/Choice.lean"},
   "Classicism.P.NecPlenitude":
   {"name": "Classicism.P.NecPlenitude",
-   "lines": [48, 49],
+   "lines": [57, 58],
    "file": "Classicism/Principles/Choice.lean"},
   "Classicism.P.NecPersistentComprehension":
   {"name": "Classicism.P.NecPersistentComprehension",
@@ -13499,6 +13594,10 @@
   {"name": "Classicism.P.NecNecessityOfDistinctness",
    "lines": [116, 117],
    "file": "Classicism/Principles/Coarse.lean"},
+  "Classicism.P.NecModalizedRelationalChoice":
+  {"name": "Classicism.P.NecModalizedRelationalChoice",
+   "lines": [47, 49],
+   "file": "Classicism/Principles/Choice.lean"},
   "Classicism.P.NecModalizedPlenitude":
   {"name": "Classicism.P.NecModalizedPlenitude",
    "lines": [113, 114],
@@ -13521,7 +13620,7 @@
    "file": "Classicism/Principles/Coarse.lean"},
   "Classicism.P.NecIntensionalChoice":
   {"name": "Classicism.P.NecIntensionalChoice",
-   "lines": [85, 86],
+   "lines": [94, 95],
    "file": "Classicism/Principles/Choice.lean"},
   "Classicism.P.NecInextensibleComprehension":
   {"name": "Classicism.P.NecInextensibleComprehension",
@@ -13611,13 +13710,17 @@
   {"name": "Classicism.P.NecActuality",
    "lines": [125, 126],
    "file": "Classicism/Principles/Lattice.lean"},
+  "Classicism.P.ModalizedRelationalChoice":
+  {"name": "Classicism.P.ModalizedRelationalChoice",
+   "lines": [43, 46],
+   "file": "Classicism/Principles/Choice.lean"},
   "Classicism.P.ModalizedPlenitudeCons":
   {"name": "Classicism.P.ModalizedPlenitudeCons",
    "lines": [109, 112],
    "file": "Classicism/Results/Lists.lean"},
   "Classicism.P.ModalizedPlenitude":
   {"name": "Classicism.P.ModalizedPlenitude",
-   "lines": [51, 56],
+   "lines": [60, 65],
    "file": "Classicism/Principles/Choice.lean"},
   "Classicism.P.ModalizedFunctionality":
   {"name": "Classicism.P.ModalizedFunctionality",
@@ -13629,7 +13732,7 @@
    "file": "Classicism/Principles/Base.lean"},
   "Classicism.P.ModalWellOrdering":
   {"name": "Classicism.P.ModalWellOrdering",
-   "lines": [105, 106],
+   "lines": [114, 115],
    "file": "Classicism/Principles/Choice.lean"},
   "Classicism.P.ModalTDual":
   {"name": "Classicism.P.ModalTDual",
@@ -13677,7 +13780,7 @@
    "file": "Classicism/Principles/Base.lean"},
   "Classicism.P.IntensionalChoice":
   {"name": "Classicism.P.IntensionalChoice",
-   "lines": [81, 84],
+   "lines": [90, 93],
    "file": "Classicism/Principles/Choice.lean"},
   "Classicism.P.InextensibleComprehension":
   {"name": "Classicism.P.InextensibleComprehension",
@@ -13725,7 +13828,7 @@
    "file": "Classicism/Principles/Base.lean"},
   "Classicism.P.EquivRel":
   {"name": "Classicism.P.EquivRel",
-   "lines": [60, 62],
+   "lines": [69, 71],
    "file": "Classicism/Principles/Choice.lean"},
   "Classicism.P.DistinctnessPreservingCollapseDual":
   {"name": "Classicism.P.DistinctnessPreservingCollapseDual",

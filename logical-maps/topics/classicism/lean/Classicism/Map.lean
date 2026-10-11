@@ -1777,4 +1777,36 @@ theorem strong_leibniz_t_necessary_rigid_comprehension_and_rigid_power_imply_bf_
 theorem strong_leibniz_necessary_rigid_comprehension_and_rigid_power_imply_bf_relational : Statements.strong_leibniz_necessary_rigid_comprehension_and_rigid_power_imply_bf_relational := by
   map_cert Meta.strong_leibniz_necessary_rigid_comprehension_and_rigid_power_imply_bf_relational
 
+/-- `modalized-relational-choice-implies-intensional-choice` -/
+theorem modalized_relational_choice_implies_intensional_choice : Statements.modalized_relational_choice_implies_intensional_choice := by
+  map_cert Proofs.modalized_relational_choice_implies_intensional_choice.entails
+
+/-- `modalized-relational-choice-implies-relational-choice` -/
+theorem modalized_relational_choice_implies_relational_choice : Statements.modalized_relational_choice_implies_relational_choice := by
+  map_cert Proofs.modalized_relational_choice_implies_relational_choice.entails
+
+/-- `necessary-relational-choice-and-intensional-choice-imply-modalized-relational-choice` -/
+theorem necessary_relational_choice_and_intensional_choice_imply_modalized_relational_choice : Statements.necessary_relational_choice_and_intensional_choice_imply_modalized_relational_choice := by
+  map_cert Proofs.necessary_relational_choice_and_intensional_choice_imply_modalized_relational_choice.entails
+
+/-- `necessary-modalized-relational-choice-r-implies-modalized-relational-choice-r` -/
+theorem necessary_modalized_relational_choice_r_implies_modalized_relational_choice_r : Statements.necessary_modalized_relational_choice_r_implies_modalized_relational_choice_r := by
+  map_cert Proofs.necessary_modalized_relational_choice_r_implies_modalized_relational_choice_r.entails
+
+/-- `necessary-modalized-relational-choice-implies-necessary-intensional-choice` -/
+theorem necessary_modalized_relational_choice_implies_necessary_intensional_choice : Statements.necessary_modalized_relational_choice_implies_necessary_intensional_choice := by
+  map_cert Proofs.necessary_modalized_relational_choice_implies_necessary_intensional_choice.entails
+
+/-- `necessary-modalized-relational-choice-implies-necessary-relational-choice` -/
+theorem necessary_modalized_relational_choice_implies_necessary_relational_choice : Statements.necessary_modalized_relational_choice_implies_necessary_relational_choice := by
+  map_cert Proofs.necessary_modalized_relational_choice_implies_necessary_relational_choice.entails
+
+/-- `necessary-relational-choice-and-necessary-intensional-choice-imply-necessary-modalized-relational-choice` -/
+theorem necessary_relational_choice_and_necessary_intensional_choice_imply_necessary_modalized_relational_choice : Statements.necessary_relational_choice_and_necessary_intensional_choice_imply_necessary_modalized_relational_choice := by
+  map_cert Proofs.necessary_relational_choice_and_necessary_intensional_choice_imply_necessary_modalized_relational_choice.entails
+
+/-- `no-pure-contingency-and-modalized-relational-choice-imply-necessary-modalized-relational-choice` -/
+theorem no_pure_contingency_and_modalized_relational_choice_imply_necessary_modalized_relational_choice : Statements.no_pure_contingency_and_modalized_relational_choice_imply_necessary_modalized_relational_choice := by
+  map_cert (Entails.mono_right (Ax₃ := P.NecModalizedRelationalChoice.schema) (by map_box) (npc_union_entails_box_pure P.ModalizedRelationalChoice.schema_closedTypes))
+
 end Classicism.Map

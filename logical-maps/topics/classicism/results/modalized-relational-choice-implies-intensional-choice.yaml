@@ -1,0 +1,24 @@
+id: modalized-relational-choice-implies-intensional-choice
+premises:
+- modalized-relational-choice-r
+conclusion: intensional-choice-r
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Cian Dorr, 11 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), 11 October 2026
+  checked_by: []
+  date: '2026-10-11'
+  lean: verified
+  lean_ref: Classicism.Map.modalized_relational_choice_implies_intensional_choice
+sources:
+- Cian Dorr, suggestion of 11 October 2026.
+source_names:
+- Dorr 11 Oct
+proof: >-
+  Given $F^{\tau t}$ with $\Box\exists y\,.\,Fy$, the relation $R:=\lambda p\,y\,.\,Fy$ from
+  propositions is necessarily serial. Modalized Relational Choice at $t$ and $\tau$ gives a
+  necessarily functional $S\le R$. Then $G:=\lambda y\,.\,(S\top)y$ is necessarily uniquely
+  instantiated, and $G\le F$. (In the polyadic form, Intensional Choice is the case of no inputs.)
+references: []
+notes: ''

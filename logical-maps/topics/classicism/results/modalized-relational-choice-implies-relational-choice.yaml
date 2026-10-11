@@ -1,0 +1,25 @@
+id: modalized-relational-choice-implies-relational-choice
+premises:
+- modalized-relational-choice-r
+conclusion: relational-choice-r
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Cian Dorr, 11 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), 11 October 2026
+  checked_by: []
+  date: '2026-10-11'
+  lean: verified
+  lean_ref: Classicism.Map.modalized_relational_choice_implies_relational_choice
+sources:
+- Cian Dorr, suggestion of 11 October 2026.
+source_names:
+- Dorr 11 Oct
+proof: >-
+  Given a serial $U$, the relation $U':=\lambda xy\,.\,\operatorname{Serial}(U)\to(Ux)y$ is
+  necessarily serial: where $U$ is serial it is $U$, and elsewhere it relates everything to
+  everything, the output type being inhabited. Modalized Relational Choice gives a necessarily
+  functional $S\le U'$; at the evaluation point $U$ is serial, so $S$ is a functional subrelation of
+  $U$.
+references: []
+notes: ''
