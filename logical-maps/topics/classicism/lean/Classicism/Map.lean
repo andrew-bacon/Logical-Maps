@@ -1761,4 +1761,12 @@ theorem zorn_r_implies_well_ordering_r : Statements.zorn_r_implies_well_ordering
 theorem necessary_transversal_choice_r_implies_necessary_well_ordering_r : Statements.necessary_transversal_choice_r_implies_necessary_well_ordering_r := by
   map_cert Proofs.necessary_transversal_choice_r_implies_necessary_well_ordering_r.entails
 
+/-- `well-ordering-weak-rigid-comprehension-and-bf-imply-modal-well-ordering` -/
+theorem well_ordering_weak_rigid_comprehension_and_bf_imply_modal_well_ordering : Statements.well_ordering_weak_rigid_comprehension_and_bf_imply_modal_well_ordering := by
+  map_cert Proofs.well_ordering_weak_rigid_comprehension_and_bf_imply_modal_well_ordering.entails
+
+/-- `bf-weak-rigid-comprehension-atomicity-and-relational-choice-imply-intensional-choice` -/
+theorem bf_weak_rigid_comprehension_atomicity_and_relational_choice_imply_intensional_choice : Statements.bf_weak_rigid_comprehension_atomicity_and_relational_choice_imply_intensional_choice := by
+  map_cert Meta.bf_weak_rigid_comprehension_atomicity_and_relational_choice_imply_intensional_choice
+
 end Classicism.Map

@@ -885,4 +885,221 @@ theorem necessary_transversal_choice_r_implies_necessary_well_ordering_r {σ : T
         (b : TransversalChoice (((σ → σ → Prop) → Prop) → (σ → σ → Prop) → Prop)) =>
       zorn_r_implies_well_ordering_r (transversal_choice_r_implies_zorn_r a b))) h₁) h₂
 
+
+/-! ### Well-Ordering, Weak Rigid Comprehension and BF give Modal Well-Ordering (7 October 2026)
+
+The write-up's five steps. `J x Y`: `Y` is a weakly rigid property coextensive with the
+initial segment `λy. y ≼ x`; `R*` a weakly rigid property coextensive with being such a `Y`
+for some `x`. Steps 1–4 hold necessarily of the members of `R*`; Step 5 turns them into a
+necessary well-order. -/
+
+section mwo
+variable {σ : Type} [Ty σ]
+
+/-- Well-founded induction along a well-order. -/
+theorem wo_induction {R : σ → σ → Prop} (hR : WellOrders R) (P : σ → Prop)
+    (h : ∀ x, (∀ y, R y x → y ≠ x → P y) → P x) : ∀ x, P x :=
+  fun x₀ => (em (∀ x, P x)).elim (fun h' => h' x₀) fun hn => by
+    have hex : ∃ x, ¬ P x := (em (∃ x, ¬ P x)).elim id fun h' =>
+      (hn fun x => (em (P x)).elim id fun hx => (h' ⟨x, hx⟩).elim).elim
+    obtain ⟨m, hm, hmin⟩ := hR.2.2.2 (fun x => ¬ P x) hex
+    exact (hm (h m fun y hy hne => (em (P y)).elim id fun hpy => (hne (hmin y hpy hy)).elim)).elim
+
+/-- (F1): weakly rigid properties included at the evaluation point are entailed. -/
+theorem wr_le_of_incl (A B : σ → Prop) (hA : WeaklyRigid A) (hB : WeaklyRigid B)
+    (h : ∀ y, A y → B y) : A ≤ B :=
+  le_of_box_incl (hA.2 B fun y hy => hB.1 y (h y hy))
+
+/-- Entailment is necessary if true. -/
+theorem box_le_arrow' (A B : σ → Prop) (h : A ≤ B) : □ (A ≤ B) :=
+  modal_K _ _ (nec% (le_iff A B).2) (modal_four _ ((le_iff A B).1 h))
+
+/-- `J x Y`: `Y` is weakly rigid and coextensive with the segment up to `x`. -/
+def MJ (R : σ → σ → Prop) (x : σ) (Y : σ → Prop) : Prop :=
+  WeaklyRigid Y ∧ ∀ y, Y y ↔ R y x
+
+/-- The members form a chain under entailment. -/
+def MChain (Rs : (σ → Prop) → Prop) : Prop :=
+  ∀ M M', Rs M → Rs M' → M ≤ M' ∨ M' ≤ M
+
+/-- A family of members containing `M` has a least instance. -/
+def MLeast (Rs : (σ → Prop) → Prop) (M : σ → Prop) : Prop :=
+  ∀ Z : (σ → Prop) → Prop, Z M → (∀ W, Z W → Rs W) → ∃ L, Z L ∧ ∀ W, Z W → L ≤ W
+
+/-- Every individual belongs to a member. -/
+def MCover (Rs : (σ → Prop) → Prop) : Prop := ∀ t, ∃ M, Rs M ∧ M t
+
+/-- Distinct individuals of `M` are separated by a member. -/
+def MGood (Rs : (σ → Prop) → Prop) (M : σ → Prop) : Prop :=
+  ∀ a b, M a → M b → a ≠ b → ∃ N, Rs N ∧ (N a ↔ ¬ N b)
+
+variable {R : σ → σ → Prop} (hR : WellOrders R) {Rs : (σ → Prop) → Prop}
+  (hRs : WeaklyRigid Rs) (hco : ∀ Y, (∃ x, MJ R x Y) ↔ Rs Y)
+
+include hRs hco in
+/-- Weak inextensibility of `R*`, in the form used throughout. -/
+theorem rs_wi (ψ : (σ → Prop) → Prop) (h : ∀ A, (∃ x, MJ R x A) → □ (ψ A)) :
+    □ (∀ M, Rs M → ψ M) :=
+  hRs.2 ψ fun M hM => h M ((hco M).2 hM)
+
+include hRs hco in
+theorem rs_box (x : σ) (A : σ → Prop) (hA : MJ R x A) : □ (Rs A) :=
+  hRs.1 A ((hco A).1 ⟨x, hA⟩)
+
+include hR in
+theorem mj_le (x y : σ) (A C : σ → Prop) (hA : MJ R x A) (hC : MJ R y C) (hxy : R x y) :
+    A ≤ C :=
+  wr_le_of_incl A C hA.1 hC.1 fun z hz => (hC.2 z).2 (hR.1 z x y ((hA.2 z).1 hz) hxy)
+
+include hR hRs hco in
+/-- Step 1: necessarily, the members form a chain. -/
+theorem mwo_step1 : □ (MChain Rs) :=
+  have inner : ∀ A, (∃ x, MJ R x A) → □ (∀ M', Rs M' → A ≤ M' ∨ M' ≤ A) := fun A ⟨x, hA⟩ =>
+    rs_wi hRs hco (fun M' => A ≤ M' ∨ M' ≤ A) fun C ⟨y, hC⟩ =>
+      (hR.2.2.1 x y).elim
+        (fun h => modal_K _ _ (nec% (fun (h : A ≤ C) => (Or.inl h : A ≤ C ∨ C ≤ A)))
+          (box_le_arrow' A C (mj_le hR x y A C hA hC h)))
+        (fun h => modal_K _ _ (nec% (fun (h : C ≤ A) => (Or.inr h : A ≤ C ∨ C ≤ A)))
+          (box_le_arrow' C A (mj_le hR y x C A hC hA h)))
+  modal_K _ _ (nec% (fun (h : ∀ M, Rs M → ∀ M', Rs M' → M ≤ M' ∨ M' ≤ M) M M' hM hM' =>
+    h M hM M' hM')) (rs_wi hRs hco _ inner)
+
+/-- The step at a world: given the members strictly below `A` have least elements. -/
+theorem mwo_step2_world (A : σ → Prop) (hc : MChain Rs) (hA : Rs A)
+    (hbelow : ∀ W, Rs W → (W ≤ A ∧ W ≠ A) → MLeast Rs W) : MLeast Rs A := fun Z hZA hZ =>
+  (em (∃ W, Z W ∧ (W ≤ A ∧ W ≠ A))).elim
+    (fun ⟨W, hW, hWA⟩ => hbelow W (hZ W hW) hWA Z hW hZ)
+    (fun hn => ⟨A, hZA, fun W hW => (hc A W hA (hZ W hW)).elim id fun hWA =>
+      (em (W = A)).elim (fun e => by rw [e]; exact le_refl_arrow_prop A)
+        fun hne => (hn ⟨W, hW, hWA, hne⟩).elim⟩)
+
+include hR hRs hco in
+/-- Step 2: necessarily, every family of members has a least instance. -/
+theorem mwo_step2 : □ (∀ M, Rs M → MLeast Rs M) := by
+  have key : ∀ x A, MJ R x A → □ (MLeast Rs A) := by
+    refine wo_induction hR (fun x => ∀ A, MJ R x A → □ (MLeast Rs A)) (fun x ih A hA => ?_)
+    have hlow : □ (∀ W, Rs W → (W ≤ A ∧ W ≠ A) → MLeast Rs W) :=
+      rs_wi hRs hco (fun W => (W ≤ A ∧ W ≠ A) → MLeast Rs W) fun C ⟨y, hC⟩ =>
+        (em (R y x ∧ y ≠ x)).elim
+          (fun ⟨h₁, h₂⟩ => modal_K _ _
+            (nec% (fun (h : MLeast Rs C) (_ : C ≤ A ∧ C ≠ A) => h)) (ih y h₁ h₂ C hC))
+          (fun hn =>
+            have hxy : R x y := (hR.2.2.1 x y).elim id fun h =>
+              (em (y = x)).elim (fun e => by rw [e]; exact (hR.2.2.1 x x).elim id id)
+                fun hne => (hn ⟨h, hne⟩).elim
+            modal_K _ _ (nec% (fun (hAC : A ≤ C) (h : C ≤ A ∧ C ≠ A) =>
+                ((h.2 (le_antisymm_arrow C A h.1 hAC)).elim : MLeast Rs C)))
+              (box_le_arrow' A C (mj_le hR x y A C hA hC hxy)))
+    exact modal_K _ _ (modal_K _ _ (modal_K _ _
+      (nec% (fun (hc : MChain Rs) (hA : Rs A)
+          (hb : ∀ W, Rs W → (W ≤ A ∧ W ≠ A) → MLeast Rs W) => mwo_step2_world A hc hA hb))
+      (mwo_step1 hR hRs hco)) (rs_box hRs hco x A hA)) hlow
+  exact rs_wi hRs hco _ fun A ⟨x, hA⟩ => key x A hA
+
+include hR hRs hco in
+/-- Step 3: necessarily, every individual belongs to a member, by BF. -/
+theorem mwo_step3 (bf : P.Barcan σ) (wrc : P.WeakRigidComprehension (σ → Prop)) :
+    □ (MCover Rs) :=
+  bf (fun t => ∃ M, Rs M ∧ M t) fun t => (wrc (fun y => R y t)).elim fun A ⟨hA, hco'⟩ =>
+    have hJ : MJ R t A := ⟨hA, fun y => (hco' y).symm⟩
+    modal_K _ _ (modal_K _ _
+      (nec% (fun (h₁ : Rs A) (h₂ : A t) => (⟨A, h₁, h₂⟩ : ∃ M, Rs M ∧ M t)))
+      (rs_box hRs hco t A hJ)) (hA.1 t ((hJ.2 t).2 ((hR.2.2.1 t t).elim id id)))
+
+/-- Step 4 at a world. -/
+theorem mwo_step4_world (A B : σ → Prop) (x : σ) (hc : MChain Rs)
+    (hi : ∀ t, A t → t = x ∨ B t)
+    (hii : ∀ t, B t → ∃ M, Rs M ∧ M t ∧ M ≤ B ∧ MGood Rs M) : MGood Rs A :=
+  fun a b ha hb hab => (em (B a)).elim
+    (fun hBa => (em (B b)).elim
+      (fun hBb => (hii a hBa).elim fun M₁ ⟨h₁, h₁a, _, g₁⟩ => (hii b hBb).elim
+        fun M₂ ⟨h₂, h₂b, _, g₂⟩ => (hc M₁ M₂ h₁ h₂).elim
+          (fun h => g₂ a b (incl_of_le h a h₁a) h₂b hab)
+          (fun h => g₁ a b h₁a (incl_of_le h b h₂b) hab))
+      (fun hnBb => (hii a hBa).elim fun M₁ ⟨h₁, h₁a, h₁B, _⟩ =>
+        ⟨M₁, h₁, ⟨fun _ hb' => hnBb (incl_of_le h₁B b hb'), fun _ => h₁a⟩⟩))
+    (fun hnBa =>
+      have hax : a = x := (hi a ha).elim id fun h => (hnBa h).elim
+      have hBb : B b := (hi b hb).elim (fun e => (hab (hax.trans e.symm)).elim) id
+      (hii b hBb).elim fun M₂ ⟨h₂, h₂b, h₂B, _⟩ =>
+        ⟨M₂, h₂, ⟨fun ha' => (hnBa (incl_of_le h₂B a ha')).elim, fun hnb => (hnb h₂b).elim⟩⟩)
+
+include hR hRs hco in
+/-- Step 4: necessarily, every member is Good. -/
+theorem mwo_step4 (wrc : P.WeakRigidComprehension (σ → Prop)) :
+    □ (∀ M, Rs M → MGood Rs M) := by
+  have key : ∀ x A, MJ R x A → □ (MGood Rs A) := by
+    refine wo_induction hR (fun x => ∀ A, MJ R x A → □ (MGood Rs A)) (fun x ih A hA => ?_)
+    obtain ⟨B, hB, hcoB⟩ := wrc (fun y => R y x ∧ y ≠ x)
+    -- (i)
+    have hi : □ (∀ t, A t → t = x ∨ B t) := hA.1.2 (fun t => t = x ∨ B t) fun t ht =>
+      (em (t = x)).elim
+        (fun e => modal_K _ _ (nec% (fun (e : t = x) => (Or.inl e : t = x ∨ B t)))
+          (necessity_of_identity t x e))
+        (fun hne => modal_K _ _ (nec% (fun (h : B t) => (Or.inr h : t = x ∨ B t)))
+          (hB.1 t ((hcoB t).1 ⟨(hA.2 t).1 ht, hne⟩)))
+    -- (ii)
+    have hii : □ (∀ t, B t → ∃ M, Rs M ∧ M t ∧ M ≤ B ∧ MGood Rs M) :=
+      hB.2 (fun t => ∃ M, Rs M ∧ M t ∧ M ≤ B ∧ MGood Rs M) fun t ht =>
+        have htx : R t x ∧ t ≠ x := (hcoB t).2 ht
+        (wrc (fun y => R y t)).elim fun C ⟨hC, hcoC⟩ =>
+        have hJ : MJ R t C := ⟨hC, fun y => (hcoC y).symm⟩
+        have hCB : C ≤ B := wr_le_of_incl C B hC hB fun y hy =>
+          have hyt : R y t := (hJ.2 y).1 hy
+          (hcoB y).1 ⟨hR.1 y t x hyt htx.1, fun e => htx.2
+            (hR.2.1 t x htx.1 (by rw [← e]; exact hyt))⟩
+        modal_K _ _ (modal_K _ _ (modal_K _ _ (modal_K _ _
+          (nec% (fun (h₁ : Rs C) (h₂ : C t) (h₃ : C ≤ B) (h₄ : MGood Rs C) =>
+            (⟨C, h₁, h₂, h₃, h₄⟩ : ∃ M, Rs M ∧ M t ∧ M ≤ B ∧ MGood Rs M)))
+          (rs_box hRs hco t C hJ)) (hC.1 t ((hJ.2 t).2 ((hR.2.2.1 t t).elim id id))))
+          (box_le_arrow' C B hCB)) (ih t htx.1 htx.2 C hJ)
+    exact modal_K _ _ (modal_K _ _ (modal_K _ _
+      (nec% (fun (hc : MChain Rs) (hi : ∀ t, A t → t = x ∨ B t)
+          (hii : ∀ t, B t → ∃ M, Rs M ∧ M t ∧ M ≤ B ∧ MGood Rs M) =>
+        mwo_step4_world A B x hc hi hii))
+      (mwo_step1 hR hRs hco)) hi) hii
+  exact rs_wi hRs hco _ fun A ⟨x, hA⟩ => key x A hA
+
+end mwo
+
+/-- Step 5: at any world where Steps 1–4 hold, `λx y. ∀M. R*M ∧ My → Mx` is a well-order. -/
+theorem mwo_step5 {σ : Type} [Ty σ] (Rs : (σ → Prop) → Prop) (hc : MChain Rs)
+    (hl : ∀ M, Rs M → MLeast Rs M) (hcov : MCover Rs) (hg : ∀ M, Rs M → MGood Rs M) :
+    WellOrders (fun x y => ∀ M, Rs M → M y → M x) := by
+  have anti : ∀ x y, (∀ M, Rs M → M y → M x) → (∀ M, Rs M → M x → M y) → x = y :=
+    fun x y hxy hyx => (em (x = y)).elim id fun hne => by
+      obtain ⟨Mx, hMx, hxM⟩ := hcov x
+      obtain ⟨My, hMy, hyM⟩ := hcov y
+      have both : ∃ L, Rs L ∧ L x ∧ L y := (hc Mx My hMx hMy).elim
+        (fun h => ⟨My, hMy, incl_of_le h x hxM, hyM⟩)
+        (fun h => ⟨Mx, hMx, hxM, incl_of_le h y hyM⟩)
+      obtain ⟨L, hL, hLx, hLy⟩ := both
+      obtain ⟨N, hN, hsep⟩ := hg L hL x y hLx hLy hne
+      exact (em (N x)).elim (fun h => (hsep.1 h (hyx N hN h)).elim)
+        fun h => (h (hxy N hN ((em (N y)).elim id fun h' => (h (hsep.2 h')).elim))).elim
+  refine ⟨fun x y z h₁ h₂ M hM hz => h₁ M hM (h₂ M hM hz), anti, fun x y => ?_, fun X hX => ?_⟩
+  · refine (em (∀ M, Rs M → M y → M x)).elim Or.inl fun hn => Or.inr fun N hN hNx => ?_
+    have hex : ∃ M, Rs M ∧ M y ∧ ¬ M x := (em (∃ M, Rs M ∧ M y ∧ ¬ M x)).elim id fun h =>
+      (hn fun M hM hMy => (em (M x)).elim id fun hMx => (h ⟨M, hM, hMy, hMx⟩).elim).elim
+    obtain ⟨M, hM, hMy, hMx⟩ := hex
+    exact (hc N M hN hM).elim (fun h => (hMx (incl_of_le h x hNx)).elim)
+      fun h => incl_of_le h y hMy
+  · obtain ⟨y₀, hy₀⟩ := hX
+    obtain ⟨M₀, hM₀, hy₀M⟩ := hcov y₀
+    obtain ⟨L, ⟨hL, y₁, hXy₁, hLy₁⟩, hleast⟩ :=
+      hl M₀ hM₀ (fun M => Rs M ∧ ∃ y, X y ∧ M y) ⟨hM₀, y₀, hy₀, hy₀M⟩ (fun W h => h.1)
+    have hy₁ : ∀ y, X y → ∀ M, Rs M → M y → M y₁ := fun y hy M hM hMy =>
+      incl_of_le (hleast M ⟨hM, y, hy, hMy⟩) y₁ hLy₁
+    exact ⟨y₁, hXy₁, fun y hy hyy₁ => anti y y₁ hyy₁ (hy₁ y hy)⟩
+
+/-- `well-ordering-weak-rigid-comprehension-and-bf-imply-modal-well-ordering`. -/
+theorem well_ordering_weak_rigid_comprehension_and_bf_imply_modal_well_ordering {σ : Type}
+    [Ty σ] : WellOrdering σ → WeakRigidComprehension (σ → Prop) →
+      WeakRigidComprehension ((σ → Prop) → Prop) → Barcan σ → ModalWellOrdering σ :=
+  fun ⟨R, hR⟩ wrc wrc₂ bf => (wrc₂ (fun Y => ∃ x, MJ R x Y)).elim fun Rs ⟨hRs, hco⟩ =>
+    ⟨fun x y => ∀ M, Rs M → M y → M x, modal_K _ _ (modal_K _ _ (modal_K _ _ (modal_K _ _
+      (nec% (mwo_step5 (σ := σ) Rs))
+      (mwo_step1 hR hRs hco)) (mwo_step2 hR hRs hco)) (mwo_step3 hR hRs hco bf wrc))
+      (mwo_step4 hR hRs hco wrc)⟩
+
 end Classicism.Proofs

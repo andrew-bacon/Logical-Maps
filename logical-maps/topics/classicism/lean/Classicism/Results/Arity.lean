@@ -957,6 +957,28 @@ theorem necessary_bf_atomicity_and_rigid_comprehension_imply_necessary_rigid_pow
         (Entails.union_right _ _))
       nbf_natom_nrc_nec_rigid_power.listEntails)
 
+
+/-- `bf-weak-rigid-comprehension-atomicity-and-relational-choice-imply-intensional-choice`,
+by composition: Relational Choice and Weak Rigid Comprehension give Transversal Choice, which
+gives Zorn's Lemma and so Well-Ordering; with Weak Rigid Comprehension and BF, Modal
+Well-Ordering; and that gives Intensional Choice. Atomicity is not used. -/
+theorem bf_weak_rigid_comprehension_atomicity_and_relational_choice_imply_intensional_choice :
+    P.Barcan.schema ∪ P.WeakRigidComprehension.schema ∪ P.Atomicity.schema ∪
+      P.RelationalChoice.schema ⟹ P.IntensionalChoice.schema :=
+  have bf := Entails.trans (Entails.union_left _ _)
+    (Entails.trans (Entails.union_left _ _) (Entails.union_left _ _))
+  have wrc := Entails.trans (Entails.union_left _ _)
+    (Entails.trans (Entails.union_left _ _) (Entails.union_right _ _))
+  have rc := Entails.union_right _ _
+  have tc := Entails.trans (Entails.union rc wrc)
+    Proofs.relational_choice_and_weak_rigid_comprehension_imply_transversal_choice.entails
+  have wo := Entails.trans (Entails.trans (Entails.union tc tc)
+    Proofs.transversal_choice_r_implies_zorn_r.entails)
+    Proofs.zorn_r_implies_well_ordering_r.entails
+  Entails.trans (Entails.trans (Entails.union (Entails.union (Entails.union wo wrc) wrc) bf)
+    Proofs.well_ordering_weak_rigid_comprehension_and_bf_imply_modal_well_ordering.entails)
+    Proofs.modal_well_ordering_r_implies_intensional_choice_r.entails
+
 end Meta
 
 end Classicism

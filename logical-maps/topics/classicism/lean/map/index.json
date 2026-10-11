@@ -43,6 +43,18 @@
     "lines": [1119, 1121],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
+  "well-ordering-weak-rigid-comprehension-and-bf-imply-modal-well-ordering":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.well_ordering_weak_rigid_comprehension_and_bf_imply_modal_well_ordering",
+     "lines": [1095, 1103],
+     "file": "Classicism/Results/Records/Choice.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.well_ordering_weak_rigid_comprehension_and_bf_imply_modal_well_ordering",
+    "lines": [1764, 1766],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
   "well-ordering-r-implies-transversal-choice-r":
   {"proofs":
    [{"name": "Classicism.Proofs.well_ordering_r_implies_transversal_choice_r",
@@ -3407,6 +3419,18 @@
    {"name":
     "Classicism.Map.boolean_completeness_r_implies_boolean_completeness_t",
     "lines": [252, 254],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "bf-weak-rigid-comprehension-atomicity-and-relational-choice-imply-intensional-choice":
+  {"proofs":
+   [{"name":
+     "Classicism.Meta.bf_weak_rigid_comprehension_atomicity_and_relational_choice_imply_intensional_choice",
+     "lines": [961, 980],
+     "file": "Classicism/Results/Arity.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.bf_weak_rigid_comprehension_atomicity_and_relational_choice_imply_intensional_choice",
+    "lines": [1768, 1770],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "barcan-relational-implies-barcan-t":

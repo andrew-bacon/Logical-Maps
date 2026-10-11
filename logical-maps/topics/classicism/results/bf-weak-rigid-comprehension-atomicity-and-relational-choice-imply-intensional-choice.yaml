@@ -14,7 +14,8 @@ certificate:
   recorded_by: Claude Opus 5.5 (Anthropic), 3 October 2026
   checked_by: []
   date: '2026-10-03'
-  lean: stated
+  lean: verified
+  lean_ref: Classicism.Map.bf_weak_rigid_comprehension_atomicity_and_relational_choice_imply_intensional_choice
 sources:
 - Cian Dorr, suggestion of 3 October 2026.
 source_names:
