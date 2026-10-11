@@ -122,6 +122,34 @@ arguments:
     arrows into $W_1$, pinned down by $\emptyset$ since it depends only on the codomain, satisfies
     $\forall p\, .\,\Box Xp$ at $W_0$, while after any $f_T$ it fails of $q$.
 
+- id: rigid-power
+  holds: [necessary-rigid-power-r]
+  by: GPT-6 Astra (OpenAI), at Cian Dorr's request; checked and recorded by Claude Opus 5.5 (Anthropic)
+  date: '2026-10-11'
+  text: >-
+    Boxed Rigid Power: every weakly rigid relation is $T(E)$ ($h\mapsto hE$) and every $T(A)$ below a
+    rigid one is admitted, so rigid subrelations lift exactly. Criterion (1) is part (1) of
+    tame-rigidity-factorizable, which holds with several objects.
+
+    (a) Weakly rigid relations are exact images. At $W_0$, with $E:=F_1$: by (1) a member $x$ of
+    $F_{f_T}$ is $f_Ua$ with $a\in E$ and $U$ agreeing with $T$ on a finite $N$ containing $\pi M$, $M$
+    pinning $x$ down. Then $e_Ux=e_Uf_Ua=x$; $e_U$ and $e_T$ agree on $M$, so $e_Tx=x$; and $\pi x=a$;
+    so $x=e_Tx=f_T\pi x=f_Ta$. So $F_{f_T}=f_TE$. At $W_1$, $F_\pi=\pi E$, $\pi$ being the only arrow to
+    $W_0$; for $x\in F_{e_T}$ take $N$ containing a pin of $F$, a pin of $x$ and a whole fibre of $\pi$,
+    which no arrow agreeing with $e_T$ on $N$ can be the identity; (1) gives $x=e_Ua$ with $a\in E$, and
+    as before $x=e_Tx=f_T\pi a=e_Ta$.
+
+    (b) Subsets are admitted. Let $F=T(E)$ be rigid at $W_0$, pinned down by $S$. If $U,V$ agree on $S$,
+    $f_UE=f_VE$; for $a\in E$ pick $b$ with $f_Ua=f_Vb$ and apply $\pi$: $a=b$. So $f_Ua=f_Va$ for each
+    $a\in E$, and $T(A)$ is pinned down by $S$ for every $A\subseteq E$. At $W_1$, with a fibre of $\pi$
+    in $S$ (so the identity agrees with no retraction on $S$), $e_UE=e_VE$ gives $e_Ua=e_Vb$ with $\pi
+    a=\pi b$, so $e_Ua=f_V\pi a=e_Va$.
+
+    (c) For a rigid $F=T(E)$ at either object, an arrow $h$ and a rigid $X\le h\cdot F$ with extension
+    $D$, $A:=\{a\in E:ha\in D\}$ gives a rigid $T(A)\le F$ with $h\cdot T(A)=X$. So the power property
+    of $F$ is the exact image of its extension, and rigid. Rigid Power holds at both objects, hence at
+    every world.
+
 notes: >-
   Found on 27 September 2026 in answer to Cian Dorr's question whether Actuality implies
   Inextensible Comprehension, after the observation that Christopher Sun's witness $\lambda\bar

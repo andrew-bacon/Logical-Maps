@@ -169,6 +169,27 @@ arguments:
     necessarily holds of its instances but omits $Y$ at a collapse, every arrow agreeing with a collapse
     on $\{a,b\}$ being one. The power property is not weakly inextensible: Rigid Power fails.
 
+- id: tame-rigidity
+  fails: [tame-rigidity-r]
+  when: {individuals: singleton}
+  by: GPT-6 Astra (OpenAI), at Cian Dorr's request; checked and recorded by Claude Opus 5.5 (Anthropic)
+  date: '2026-10-11'
+  text: >-
+    At type $(t\to t)\to t$, with propositions indexed by nonpoints, so with one individual. Let $V$ be
+    the companions and links, which every arrow maps onto $V$, and $q_{uv}:=\{h:hu=hv\}$. Codes of
+    distinct unordered pairs of nonpoints differ: by the draft's extension step (proof of its
+    Proposition 50), any binary assignment on finitely many nonpoints is realized by a collapse sending
+    them to the two companions of one point. Let $C_z:=T(\{q_{zw}:w\in V\})$; it is symmetric, pinned
+    down by $\{z\}$, rigid, and $h\cdot C_z=C_{hz}$, and $z\mapsto C_z$ is injective. Let
+    $U_h:=\{C_z:z\in R(ha,hb)\}$, where $a,b$ is the distinguished pair and $R(p,q)$ is the link fibre
+    over $p\ne q$ or the two companions of $p=q$. $U$ is symmetric, pinned down by $\{a,b\}$, and weakly
+    rigid by part (1) of tame-rigidity-factorizable: at a symmetry each $B_N$ is $U_h$, and at a
+    collapse a fresh link can be sent to either companion. At a collapse $h$ with $p:=ha=hb$,
+    $U_h=\{C_{d_0},C_{d_1}\}$ for $p$'s companions; the rigid $T(\{C_{d_0},C_{d_1}\})$ necessarily holds
+    of both, but after a collapse $k$ merging $d_0$ and $d_1$ it holds of $C_{kd_0}$ alone, while
+    $U_{kh}$ has both companions' codes. So $h\cdot U$ is not weakly inextensible: $U$ is weakly rigid
+    and not rigid.
+
 notes: >-
   This is the draft's answer to the question its two-object model leaves open. Boxed Boolean
   Completeness, boxed Actuality and the boxed type-e instance of BF all hold, and Rigid
