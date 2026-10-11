@@ -1017,9 +1017,9 @@ theorem relational_choice_and_weak_rigid_comprehension_imply_transversal_choice 
 theorem rigid_comprehension_and_bf_imply_necessary_bf : Statements.rigid_comprehension_and_bf_imply_necessary_bf := by
   map_cert Proofs.rigid_comprehension_and_bf_imply_necessary_bf.entails
 
-/-- `rigid-comprehension-and-nd-imply-plenitude` -/
-theorem rigid_comprehension_and_nd_imply_plenitude : Statements.rigid_comprehension_and_nd_imply_plenitude := by
-  map_cert Meta.rigid_comprehension_and_nd_imply_plenitude
+/-- `weak-rigid-comprehension-and-nd-imply-plenitude` -/
+theorem weak_rigid_comprehension_and_nd_imply_plenitude : Statements.weak_rigid_comprehension_and_nd_imply_plenitude := by
+  map_cert Meta.weak_rigid_comprehension_and_nd_imply_plenitude
 
 /-- `rigid-comprehension-r-implies-actuality` -/
 theorem rigid_comprehension_r_implies_actuality : Statements.rigid_comprehension_r_implies_actuality := by

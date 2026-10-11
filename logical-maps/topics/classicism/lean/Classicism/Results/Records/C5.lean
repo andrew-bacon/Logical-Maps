@@ -460,14 +460,15 @@ theorem z_of_functional₂ {σ σ' : Type} [Ty σ] [Ty σ'] (Rs : σ → (σ' �
     (∀ y P, Rs y P → y ≠ x ∨ P = Q) → ∀ z, Q z → ∀ P : σ' → Prop, Rs x P → P z :=
   fun h z hQz P hP => (h x P hP).elim (fun hne => (hne rfl).elim) (fun e => e ▸ hQz)
 
-/-- `rigid-comprehension-and-nd-imply-plenitude` (Proposition 2.16), for relations
-`σ → (σ' → t) → t`, its list form in `σ'` being the map's record: with `Rs` rigid and
+/-- `weak-rigid-comprehension-and-nd-imply-plenitude` (Proposition 2.16, with Weak Rigid
+Comprehension), for relations `σ → (σ' → t) → t`, its list form in `σ'` being the map's
+record: with `Rs` weakly rigid and
 coextensive with the functional `R`, `Z := λyz. ∀P. Rs y P → Pz` represents it. At `x`
 with `RxQ`: `Rs x Q` is necessary, so `Zx ≤ Q`; and every `Rs y P` has `y ≠ x ∨ P = Q`,
-necessarily so by `ND` and `NI`, so by inextensibility necessarily, which gives
-`Q ≤ Zx`. -/
-theorem rigid_comprehension_and_nd_imply_plenitude {σ' σ : Type} [Ty σ'] [Ty σ] :
-    RigidComprehension (σ → (σ' → Prop) → Prop) → NecessityOfDistinctness σ →
+necessarily so by `ND` and `NI`, so by weak inextensibility necessarily, which gives
+`Q ≤ Zx`. Only weak persistence and weak inextensibility are used. -/
+theorem weak_rigid_comprehension_and_nd_imply_plenitude {σ' σ : Type} [Ty σ'] [Ty σ] :
+    WeakRigidComprehension (σ → (σ' → Prop) → Prop) → NecessityOfDistinctness σ →
       Plenitude σ (σ' → Prop) :=
   fun rc nd R hR => (rc R).elim fun Rs hRs =>
     ⟨λ y z ↦ ∀ P : σ' → Prop, Rs y P → P z, fun x => (hR x).elim fun Q hQ =>
@@ -479,10 +480,10 @@ theorem rigid_comprehension_and_nd_imply_plenitude {σ' σ : Type} [Ty σ'] [Ty 
           Or.inl
       have hle1 : (λ z ↦ ∀ P : σ' → Prop, Rs x P → P z) ≤ Q := (le_iff _ _).2
         (modal_K _ _ (nec% (z_imp_of_rs₂ Rs x Q))
-          (weaklyPersistent_of_persistent hRs.1.1 x Q hRsQ))
+          (hRs.1.1 x Q hRsQ))
       have hle2 : Q ≤ (λ z ↦ ∀ P : σ' → Prop, Rs x P → P z) := (le_iff _ _).2
         (modal_K _ _ (nec% (z_of_functional₂ Rs x Q))
-          (weaklyInextensible_of_inextensible hRs.1.2 (λ y P ↦ y ≠ x ∨ P = Q)
+          (hRs.1.2 (λ y P ↦ y ≠ x ∨ P = Q)
             (fun y P hp => box_ne_or_eq nd y x P Q (hfun y P hp))))
       show R x (λ z ↦ ∀ P : σ' → Prop, Rs x P → P z) by
         rw [← le_antisymm_arrow Q _ hle2 hle1]; exact hQ.1⟩

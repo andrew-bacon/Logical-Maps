@@ -3,7 +3,7 @@ premises:
 - necessary-strong-leibniz-r
 - rigid-comprehension-r
 conclusion: necessary-barcan-relational
-status: proved
+status: conjectured
 certificate:
   source_id: bacon-2024-book
   produced_by: Andrew Bacon
@@ -16,24 +16,27 @@ sources:
   pp. 169–171.
 source_names:
 - Philosophical Introduction to HOL
-proof: 'Theorem 8.2 of the book: given Rigid Comprehension, $\Box\mathrm{SL}_\sigma$ at all relational
-  types implies $\Box\mathrm{BF}_\sigma$ for every relational $\sigma\ne e$. Its proof for $\sigma=t$
-  (pp. 170–171): from $\Diamond\exists p\, .\,Xp$, $X$ is a possible property, so by $\mathrm{SL}_{tt}$
-  it is entailed by a strong world property $W$; let $H$ be the rigid collection, supplied by Rigid Comprehension,
-  of world properties accessible to $W$, and let $r:=\exists V\, .\,\exists p\, .\,HV\land Vp\land p$.
-  Bacon shows $\Box\forall p\, .\,Wp\to p=r$, using $\Box\mathrm{SL}_t$ for the step that every world
-  proposition entails $\exists V\, .\,HV\land Vp$ and the rigidity of $H$ for the converse; since $W$
-  entails $X$, $\Diamond Xr$, which gives $\exists p\, .\,\Diamond Xp$, the contrapositive of $\mathrm{BF}_t$.
-  The argument is carried out under necessary assumptions, so it yields $\Box\mathrm{BF}_t$. The book proves the same
-  for every relational type other than $e$, and the map records it at all of them.'
+proof: ''
 references:
 - paper: bacon-2024-book
   role: proof
   locator: §8.2, Theorem 8.2, pp. 169–171
 notes: >-
-  The right-to-left half of Theorem 8.2 is the recorded implication from □Atomicity and □BF
-  (relational types) to □SL, which needs no Rigid Comprehension. The type-$t$ case, which the book proves in full, is derived
-  through □BF (relational types) ⇒ □BF (type t).
+  Downgraded from proved to conjectured on 11 October 2026, at Cian Dorr's request. The proof of
+  Theorem 8.2 in the book has a gap, found while formalizing it in Lean and confirmed by Cian Dorr;
+  the write-up sets out the book's argument with the gap marked. The argument proves
+  $\forall p\,.\,Wp\to p=r$ at the evaluation point and then boxes it as following "from necessary
+  assumptions". But step (i), that a $W$-proposition $p$ falls under some member of $H$ at every
+  world, uses the claim that the world property $U=\lambda q\,.\,v\land q=p$ is $H$ because it is
+  a world property accessible to $W$; that holds at the evaluation point, where $H$ is coextensive
+  with the accessible world properties, but at another world $H$ is known only to be rigid, and
+  need not contain the world properties built there from that world's $v$ and $p$. The step is
+  needed exactly at such worlds, since $W$ may have no actual instance. Boxing Rigid Comprehension
+  does not obviously help, since $r$ must be defined from a single actual $H$. What would settle
+  the conjecture: a repair of step (i), or a model of C with □Strong Leibniz and Rigid Comprehension
+  in which BF fails at some relational type. No recorded model refutes it, and without this record
+  the map does not derive it. The converse half of Theorem 8.2,
+  atomicity-and-bf-relational-imply-strong-leibniz and its boxed form, is unaffected.
 changes:
 - date: '2026-10-11'
   by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
@@ -42,3 +45,10 @@ changes:
     recorded until then for want of a node; the record's id changed with it (formerly
     necessary-strong-leibniz-and-rigid-comprehension-imply-necessary-bf-t). The proof text is
     unchanged except for its last sentence.
+- date: '2026-10-11'
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's request
+  summary: >-
+    Downgraded from proved to conjectured: the book's proof has a gap in step (i) at non-actual
+    worlds (see the notes). Found while formalizing the proof in Lean; Cian Dorr agreed. The
+    summary of the book's argument moved from the proof field to the write-up, where the gap is
+    marked.
