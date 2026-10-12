@@ -268,8 +268,7 @@ try {
   assert.ok(signatureButtons.every(b=>b.getAttribute('aria-pressed')==='true'),'the category control restores signature schemata');
   const baseline=Object.fromEntries(sections.map(id=>[id,listed(id)]));
   const baselineProgress=cd.getElementById('open-progress').textContent;
-  // The report as the page holds it, after decodePayload has undone the build's size encoding.
-  const report=classic.window.eval('DATA').lynchpins.reports.find(r=>r.background===null);
+  const report=classicData.lynchpins.reports.find(r=>r.background===null);
   const premisePair=['distinctness-necessary-r','strong-leibniz-r'];
   const bfAlternatives=['barcan-r','converse-witnessed-possibility-r','necessary-barcan-r','necessary-distinctness-necessary-r','necessary-gallin-extensional-comprehension-r'];
   for(const list of [report.rows,report.auto]) {

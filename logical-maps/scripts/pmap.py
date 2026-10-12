@@ -2818,70 +2818,6 @@ def lean_source_links(topic_id: str, data: dict) -> dict | None:
                        for mid, vs in idx.get("models", {}).items()}}
 
 
-# Lynchpin row fields whose values are principle or model ids, dictionary-encoded in the viewer
-# payload: a string becomes its index in `lynchpins.strings`, a list of them a list of indices.
-LYNCHPIN_ID_FIELDS = ("premises", "premise_sets", "conclusion", "conclusions", "principle", "model")
-
-
-def compact_viewer_payload(payload: dict) -> dict:
-    """The payload as the viewer receives it (data.json and the page), encoded to fit the website
-    host's 25 MiB limit per file; `decodePayload` in viewer/template.html restores it exactly.
-
-    - Each lynchpin report's `rows` become a table, `{"fields": [...], "data": [[...], ...]}`, a
-      missing field null (no row stores a null), with ids dictionary-encoded in `lynchpins.strings`.
-    - `auto` is dropped when it is exactly `rows` ordered by `auto_rank`, as `build` makes it; the
-      report is marked `auto_from_rows` and the viewer rebuilds it.
-    - A model argument occurring more than once (a group's shared arguments, copied into every
-      member and generated variant) is stored once in `shared_arguments` and cited as `{"$ref": i}`.
-    The input is not modified."""
-    out = dict(payload)
-    lp = payload.get("lynchpins")
-    if isinstance(lp, dict) and lp.get("reports"):
-        strings: list[str] = []
-        index: dict[str, int] = {}
-
-        def enc(v):
-            if isinstance(v, list):
-                return [enc(x) for x in v]
-            if isinstance(v, str):
-                if v not in index:
-                    index[v] = len(strings)
-                    strings.append(v)
-                return index[v]
-            return v
-
-        reports = []
-        for rep in lp["reports"]:
-            rep = dict(rep)
-            rows = rep.get("rows")
-            if isinstance(rows, list) and rows and not any(v is None for r in rows for v in r.values()):
-                if rep.get("auto") == sorted((r for r in rows if r.get("auto_rank") is not None),
-                                             key=lambda r: r["auto_rank"]):
-                    del rep["auto"]
-                    rep["auto_from_rows"] = True
-                fields = sorted({k for r in rows for k in r})
-                rep["rows"] = {"fields": fields, "data": [
-                    [enc(r[f]) if f in LYNCHPIN_ID_FIELDS and f in r else r.get(f) for f in fields]
-                    for r in rows]}
-            reports.append(rep)
-        out["lynchpins"] = {**lp, "reports": reports, "strings": strings}
-    seen: dict[str, int] = {}
-    for m in payload.get("models", []):
-        for a in m.get("arguments") or []:
-            k = json.dumps(a, sort_keys=True, ensure_ascii=False)
-            seen[k] = seen.get(k, 0) + 1
-    shared = [k for k, n in seen.items() if n > 1]
-    if shared:
-        ref = {k: i for i, k in enumerate(shared)}
-        out["shared_arguments"] = [json.loads(k) for k in shared]
-        out["models"] = [
-            {**m, "arguments": [
-                {"$ref": ref[k]} if (k := json.dumps(a, sort_keys=True, ensure_ascii=False)) in ref else a
-                for a in m["arguments"]]} if m.get("arguments") else m
-            for m in payload.get("models", [])]
-    return out
-
-
 def build_topic(topic_id: str, out: Path | None = None, *, fragment: bool = False, starter_archive: Path | None = None) -> Path:
     """Build build/<topic>/ : index.html (viewer), data.json, source.zip, <topic>-map.zip, writeups/, sources/, lean/.
     With --out, write only the viewer HTML to that path (fragment=True omits the page skeleton)."""
@@ -2966,11 +2902,10 @@ def build_topic(topic_id: str, out: Path | None = None, *, fragment: bool = Fals
                 if isinstance(a, dict) and a.get("lean") and (a.get("general") or a.get("group")):
                     a["lean"] = mark(a["lean"], a["general"] if a.get("general") else f"{a['group']}/{a.get('id')}")
     # Compact: the website host serves no file over 25 MiB, and indentation alone added half again.
-    viewer_payload = compact_viewer_payload(payload)
-    (outdir / "data.json").write_text(json.dumps(viewer_payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    (outdir / "data.json").write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     bundle_topic(topic_id)
     html = TEMPLATE.read_text(encoding="utf-8").replace("<!--__PMAP_THEME__-->", theme_head(topic_id, math_path=None if out else 'math'))
-    blob = json.dumps(viewer_payload, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    blob = json.dumps(payload, ensure_ascii=False).replace("</", "<\\/")
     html = html.replace("/*__PMAP_DATA__*/null", blob)
     html = html.replace("__PMAP_TITLE__", payload["topic"]["title"])
     if not fragment:

@@ -821,38 +821,6 @@
 
 <script>
 const DATA = /*__PMAP_DATA__*/null;
-// Undo the build's size encoding (compact_viewer_payload in scripts/pmap.py), restoring the
-// payload exactly: lynchpin rows stored as tables with dictionary-encoded ids, the automatic
-// conjectures as the rows reordered by `auto_rank`, and repeated model arguments as references.
-// A payload without the encoding (the UI checks' fixtures) passes through unchanged.
-(function decodePayload(D) {
-  if (!D) return;
-  const LP = D.lynchpins, S = (LP && LP.strings) || [];
-  const ID_FIELDS = new Set(['premises', 'premise_sets', 'conclusion', 'conclusions', 'principle', 'model']);
-  const dec = v => Array.isArray(v) ? v.map(dec) : typeof v === 'number' ? S[v] : v;
-  for (const rep of (LP && LP.reports) || []) {
-    const t = rep.rows;
-    if (t && !Array.isArray(t) && t.fields) {
-      rep.rows = t.data.map(a => {
-        const r = {};
-        t.fields.forEach((f, i) => { if (a[i] !== null) r[f] = ID_FIELDS.has(f) ? dec(a[i]) : a[i]; });
-        return r;
-      });
-    }
-    if (rep.auto_from_rows) {
-      rep.auto = rep.rows.filter(r => r.auto_rank !== undefined).sort((a, b) => a.auto_rank - b.auto_rank).map(r => ({ ...r }));
-      delete rep.auto_from_rows;
-    }
-  }
-  if (LP) delete LP.strings;
-  const shared = D.shared_arguments;
-  if (shared) {
-    for (const m of D.models || []) {
-      if (m.arguments) m.arguments = m.arguments.map(a => a && a.$ref !== undefined ? JSON.parse(JSON.stringify(shared[a.$ref])) : a);
-    }
-    delete D.shared_arguments;
-  }
-})(DATA);
 const FALSE = "false";
 const TRUE = "⊤"; // Display-only ID, outside the record ID alphabet.
 const papers = DATA.papers || [];
