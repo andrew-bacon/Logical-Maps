@@ -12,7 +12,7 @@
 - **ND.** Distinct things of any type are necessarily distinct.
 - **Rigid Power.** If a relation is rigid, so is the property of being a rigid relation that entails it.
 - **□Rigid Power.** Every closed instance of Rigid Power is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
-- **¬ Distinctness-preserving collapse.** Every truth is necessary under the distinctness-preserving modality.
+- **¬ Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **¬ Possible Infinity (type t).** Possibly there are not finitely many propositions: the Axiom of Infinity at this type, under a diamond.
 - **¬ Infinity Schema (type t).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
 - **¬ Axiom of Infinity (type t).** There are not finitely many propositions. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
@@ -40,7 +40,7 @@ Metatheory, fixed for this record: the construction is carried out in ZF togethe
 
 ## Arguments
 
-### Fails Distinctness-preserving collapse.
+### Fails Truth implies ND-necessity.
 
 Let $p:=\{1\}$, in the domain since the model is full, and true. Any witness $q$ for $\Box_{\ne}p$ is true, so contains the identity; under an arrow $i\ne 1$ with a retraction $r$, the arrow $r\circ i=1$ makes $\Diamond q$ true, while $p$ is false. So no true $q$ has $\Box(\Diamond q\to p)$. (The surjection monoid's own argument of 23 September, stated once.)
 

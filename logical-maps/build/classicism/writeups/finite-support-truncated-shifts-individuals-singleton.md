@@ -10,7 +10,7 @@
 - **Actuality.** There is a true proposition that entails every true proposition.
 - **Atomicity.** Every non-bottom entity of each relational type has an atom below it.
 - **BF.** The Barcan Formula at every type. The predicate formulation closes the formula schema using lambda abstraction.
-- **Distinctness-preserving collapse.** Every truth is necessary under the distinctness-preserving modality.
+- **Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **Infinity Schema (type t).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
 - **□Intensional Choice.** Every closed instance of Intensional Choice is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
 - **No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
@@ -91,7 +91,7 @@ By Proposition D.6.
 
 *Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* The finite-support members' citations of Proposition D.6 stated once, then moved to the topic; each model's reason for meeting D.6's hypothesis is under its `meets`.
 
-### Holds Distinctness-preserving collapse.
+### Holds Truth implies ND-necessity.
 
 For a true $p$, $a\le p$, since $a$ entails every truth. Take $q:=a$ in the definition of $\Box_{\ne}p$: at a world in $a$, $p$ holds; at a world outside $a$, $\Diamond a$ fails. So every truth is $\Box_{\ne}$-necessary.
 
@@ -173,7 +173,7 @@ The record's revision log before it was written as arguments.
 - **2026-09-25** (Claude Fable 5.1 (Anthropic)) — Added Transversal Choice, by the argument recorded for Relational Choice: the model is extensionally full at every object, so for an equivalence relation at the evaluation point a transversal of its extension there, chosen in the metatheory, is the extension of an element pinned down by the empty set; the equivalence and transversal conditions are unboxed. Recorded on a question of Zachary Goodsell, after an observation of Christopher Sun. Now satisfies: Transversal Choice.
 - **2026-09-25** (OpenAI Codex (GPT-6)) — Accepted the trawl's type-t Boolean Completeness failure after checking the finite/cofinite domain and replacing the conditional higher-type argument by the source's extensional-fullness lemma. Informal review; no Lean verification. Now violates: Boolean Completeness (type t).
 - **2026-09-25** (Claude Fable 5.1 (Anthropic)) — Added the failure of Boolean Completeness (type t); see the notes. Now violates: Boolean Completeness (type t).
-- **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Expanded the description from Appendix D, naming Proposition D.5 and its part; added the failure of Countable Boolean Completeness at type e→t; settled the Distinctness-preserving collapse. Now satisfies: Distinctness-preserving collapse. Now violates: Countable Boolean Completeness.
+- **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Expanded the description from Appendix D, naming Proposition D.5 and its part; added the failure of Countable Boolean Completeness at type e→t; settled the Distinctness-preserving collapse. Now satisfies: Truth implies ND-necessity. Now violates: Countable Boolean Completeness.
 - **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Re-fixed the interpretation of Σ so as to settle No Contingency (signature Σ) and B for sentences of Σ, at Cian Dorr’s request; see the notes. Now violates: No Contingency (signature Σ), B for sentences of Σ.
 - **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Corrected the reason given for the failures of Independence (signature Σ) and Distinctness (signature Σ): the true atom is denoted by no closed pure term, since such terms denote entities fixed by every arrow; the failures come from the other relational constants, which denote top. No verdict changes.
 - **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Added Relational Choice and its necessitation at Cian Dorr’s direction: ideally full models are extensionally full at every object, and choice in the metatheory supplies the functional subrelation; see the notes. Now satisfies: Relational Choice, □Relational Choice.

@@ -8,7 +8,7 @@
 - **Boolean Completeness.** Every property of entities of a relational type has a greatest lower bound in that type.
 - **Rigid Comprehension.** Every relation, including a proposition, is coextensive with a rigid one.
 - **Tame Rigidity.** Every weakly rigid relation, including a proposition, is rigid.
-- **Distinctness-preserving collapse.** Every truth is necessary under the distinctness-preserving modality.
+- **Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
 - **Rigid Power.** If a relation is rigid, so is the property of being a rigid relation that entails it.
 - **□Rigid Power.** Every closed instance of Rigid Power is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
@@ -89,7 +89,7 @@ The constant maps form one orbit of the symmetry group, so the proposition $C$ t
 
 *From the group *Symmetry-constrained full models*, shared argument `symmetry-constrained-full#strong-leibniz-t`. By Claude Opus 5.5 (Anthropic), from Cian Dorr's observation, 2026-10-08.*
 
-### Holds Distinctness-preserving collapse.
+### Holds Truth implies ND-necessity.
 
 For a true $p$, $a\le p$, since $a$ entails every truth. Take $q:=a$ in the definition of $\Box_{\ne}p$: at a world in $a$, $p$ holds; at a world outside $a$, $\Diamond a$ fails. So every truth is $\Box_{\ne}$-necessary.
 

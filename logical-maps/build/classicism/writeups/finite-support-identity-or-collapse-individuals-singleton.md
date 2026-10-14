@@ -8,7 +8,7 @@
 - **Tame Rigidity.** Every weakly rigid relation, including a proposition, is rigid.
 - **Axiom of Infinity (type t).** There are not finitely many propositions. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **Actuality.** There is a true proposition that entails every true proposition.
-- **Distinctness-preserving collapse.** Every truth is necessary under the distinctness-preserving modality.
+- **Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **Infinity Schema (type t).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
 - **□Intensional Choice.** Every closed instance of Intensional Choice is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
 - **No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
@@ -90,7 +90,7 @@ In a one-object finitely pinned model, BF (type t) fails as soon as there are a 
 
 *Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* The finite-support group's argument and the symmetric range-gap models' copies stated once for the topic; that $X$ is in the domain (pinned down by $N$, and in a symmetric model symmetric) is now part of each record's reason for meeting transport-gap.
 
-### Holds Distinctness-preserving collapse.
+### Holds Truth implies ND-necessity.
 
 For a true $p$, $a\le p$, since $a$ entails every truth. Take $q:=a$ in the definition of $\Box_{\ne}p$: at a world in $a$, $p$ holds; at a world outside $a$, $\Diamond a$ fails. So every truth is $\Box_{\ne}$-necessary.
 
@@ -173,7 +173,7 @@ The record's revision log before it was written as arguments.
 - **2026-09-25** (OpenAI Codex (GPT-6)) — Confirmed the trawl's BC-t conclusion with a replacement proof: alternating differences of finite agreement classes have no least upper bound. The original missing-intersection argument is invalid. Used source extensional fullness for domain membership. Also localized the source-reported Atomicity failure to t (footnote 92), with a corrected direct splitting proof. Now violates: Boolean Completeness (type t), Atomicity (type t).
 - **2026-09-25** (Claude Fable 5.1 (Anthropic)) — Added the failure of Atomicity (type t), of BF (type t) and of Boolean Completeness (type t), with the arguments in the notes. Now violates: Atomicity (type t), BF (type t), Boolean Completeness (type t).
 - **2026-09-25** (Claude Opus 5.5 (Anthropic)) — Merged the two sets of arguments recorded on 23 and 25 September into one, keeping the 23 September arguments for Atomicity (type t) and BF (type t).
-- **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Expanded the description from Appendix D, naming Proposition D.5 and its part; added the failure of Countable Boolean Completeness at type e→t; settled the Distinctness-preserving collapse. Now satisfies: Distinctness-preserving collapse. Now violates: Countable Boolean Completeness.
+- **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Expanded the description from Appendix D, naming Proposition D.5 and its part; added the failure of Countable Boolean Completeness at type e→t; settled the Distinctness-preserving collapse. Now satisfies: Truth implies ND-necessity. Now violates: Countable Boolean Completeness.
 - **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Re-fixed the interpretation of Σ so as to settle No Contingency (signature Σ) and B for sentences of Σ, at Cian Dorr’s request; see the notes. Now violates: No Contingency (signature Σ), B for sentences of Σ.
 - **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Corrected the reason given for the failures of Independence (signature Σ) and Distinctness (signature Σ): the true atom is denoted by no closed pure term, since such terms denote entities fixed by every arrow; the failures come from the other relational constants, which denote top. No verdict changes.
 - **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Added Relational Choice and its necessitation at Cian Dorr’s direction: ideally full models are extensionally full at every object, and choice in the metatheory supplies the functional subrelation; see the notes. Now satisfies: Relational Choice, □Relational Choice.

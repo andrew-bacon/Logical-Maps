@@ -4,7 +4,7 @@
 
 ## Package
 
-- **Distinctness-preserving collapse.** Every truth is necessary under the distinctness-preserving modality.
+- **Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **Rigid Power.** If a relation is rigid, so is the property of being a rigid relation that entails it.
 - **Tame Rigidity.** Every weakly rigid relation, including a proposition, is rigid.
 - **Axiom of Infinity (type t).** There are not finitely many propositions. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
@@ -42,7 +42,7 @@ The strongest true proposition pinned down by $\{0,\ldots,n\}$ is $\{1_{\mathbb 
 
 *Source: Classicism, Proposition D.5(6), p. 78. Address: `finite-support-truncations-individuals-singleton#actuality`. By Andrew Bacon and Cian Dorr, 2026-09-17.*
 
-### Holds Distinctness-preserving collapse.
+### Holds Truth implies ND-necessity.
 
 For a true proposition $p$ pinned down by a finite set take as the witness $q$ the strongest true proposition pinned down by $\{0,\ldots,N\}$ for $N$ beyond the pinning set of $p$, namely $\{1_{\mathbb N}\}\cup\{g_m:m\ge N\}$. Under $g_n$ the only arrows reachable are $g_m$ with $m\le n$, so $\Diamond q$ holds at $g_n$ only if $n\ge N$, and then $g_n$ agrees with the identity on the pinning set of $p$ and is in $p$.
 
@@ -168,7 +168,7 @@ The record's revision log before it was written as arguments.
 - **2026-09-25** (OpenAI Codex (GPT-6)) — Confirmed the trawl's Strong Leibniz-t failure: an admitted nonidentity-idempotent singleton shifts to a set containing both the identity and the idempotent, which a target-domain proposition separates. Quantifiers inside the box range over the entire target domain. The boxed failure follows by T. Now violates: Strong Leibniz Biconditionals (type t).
 - **2026-09-25** (Claude Fable 5.1 (Anthropic)) — Added the failure of Strong Leibniz Biconditionals (type t), of BF (type t) and of Inextensible Comprehension, with the arguments in the notes. Now violates: Strong Leibniz Biconditionals (type t), BF (type t), Inextensible Comprehension.
 - **2026-09-25** (Claude Opus 5.5 (Anthropic)) — Merged the two sets of arguments recorded on 23 and 25 September into one: BF (type t) now follows from Atomicity and the failure of the type-t Strong Leibniz Biconditionals, with the direct counterexample of 25 September; the Inextensible Comprehension argument already refutes the weak form. Now violates: Weakly Inextensible Comprehension.
-- **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Expanded the description from Appendix D, naming Proposition D.5 and its part; added the failure of Countable Boolean Completeness at type e→t; settled the Distinctness-preserving collapse. Now satisfies: Distinctness-preserving collapse. Now violates: Countable Boolean Completeness.
+- **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Expanded the description from Appendix D, naming Proposition D.5 and its part; added the failure of Countable Boolean Completeness at type e→t; settled the Distinctness-preserving collapse. Now satisfies: Truth implies ND-necessity. Now violates: Countable Boolean Completeness.
 - **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Added the failure of Boolean Completeness at type t, by the family of even truncation singletons; see the notes. Now violates: Boolean Completeness (type t).
 - **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Added Relational Choice and its necessitation at Cian Dorr’s direction: ideally full models are extensionally full at every object, and choice in the metatheory supplies the functional subrelation; see the notes. Now satisfies: Relational Choice, □Relational Choice.
 - **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Recorded the failure of Inextensible Comprehension at type e→t for the property of being even, sharpening the failure of Actuality; argument in the notes. Now violates: Inextensible Comprehension.

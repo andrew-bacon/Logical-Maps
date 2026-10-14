@@ -1,11 +1,11 @@
-# Vicinity ∧ Distinctness-preserving collapse ⇒ Actuality
+# Vicinity ∧ Truth implies ND-necessity ⇒ Actuality
 
 <p class='cert'>Result — Source: Misc., Lean `Classicism.Map.vicinity_and_distinctness_preserving_collapse_imply_actuality`; produced by Cian Dorr, 27 September 2026; recorded by Claude Opus 5.5 (Anthropic), 27 September 2026.</p>
 
 ## Premises
 
 - **Vicinity.** There is a true proposition that entails the possibility of each true proposition.
-- **Distinctness-preserving collapse.** Every truth is necessary under the distinctness-preserving modality.
+- **Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 
 ## Conclusion
 
@@ -17,7 +17,7 @@ Let $w$ witness Vicinity; we show that $w$ itself witnesses Actuality. Let $p$ b
 
 ## Notes
 
-The witness is the same proposition. With Actuality ⇒ Vicinity, Actuality is equivalent to Vicinity under Distinctness-preserving collapse, as it is under Weakly Inextensible Comprehension.
+The witness is the same proposition. With Actuality ⇒ Vicinity, Actuality is equivalent to Vicinity under Distinctness-preserving collapse, as it is under Weakly Inextensible Comprehension. With the ND-necessity form of Vicinity (added 14 October 2026) the proof is one line: a witness entails every ND-necessary truth, and under Truth implies ND-necessity every truth is ND-necessary.
 
 ## Sources
 

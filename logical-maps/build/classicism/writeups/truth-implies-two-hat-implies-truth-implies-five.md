@@ -1,0 +1,25 @@
+# Truth implies two-hat necessity ⇒ Truth implies 5-necessity
+
+<p class='cert'>Result — Source: Misc.; produced by Claude Fable 5.1 (Anthropic), 14 October 2026, at Cian Dorr's direction; recorded by Claude Fable 5.1 (Anthropic), 14 October 2026.</p>
+
+## Premises
+
+- **Truth implies two-hat necessity.** Every truth is two-hat necessary.
+
+## Conclusion
+
+- **Truth implies 5-necessity.** Every truth is 5-necessary: necessary under every S5 operator.
+
+## Proof
+
+The chain $\Box\le\Box_{\ne}\le\hat{\hat\Box}\le\Box_5\le\lambda p\, .\,p$ is a theorem of C (Background, Hats, two-hat necessity and 5-necessity): hatting is monotone, $\Box\le\hat\Box=\Box_{\ne}$, $\hat{\hat\Box}\le\Box_5$ is Proposition D21 of The Bounds of Possibility, Appendix D, right to left, and $\Box_5$ is T. So $p\to\hat{\hat\Box}p\to\Box_5p$.
+
+## Notes
+
+One of the composition and decomposition facts for the chain of necessity operators.
+
+## Sources
+
+- **Dorr–Claude 14 Oct** — Cian Dorr and Claude Fable 5.1 (Anthropic), conversation of 14 October 2026 (transcript in the private notes).
+
+<p class='cert'>Record: <code>topics/classicism/results/truth-implies-two-hat-implies-truth-implies-five.yaml</code></p>

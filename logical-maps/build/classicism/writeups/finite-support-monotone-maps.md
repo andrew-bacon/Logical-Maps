@@ -5,6 +5,7 @@
 ## Package
 
 - **Atomlessness.** Atomlessness in the displayed closed propositional formulation.
+- **Truth implies two-hat necessity.** Every truth is two-hat necessary.
 - **Rigid Power.** If a relation is rigid, so is the property of being a rigid relation that entails it.
 - **Tame Rigidity.** Every weakly rigid relation, including a proposition, is rigid.
 - **Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
@@ -16,7 +17,7 @@
 - **Transversal Choice.** Every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
 - **¬ Witnessed Possibility.** For pure-formulas P with free variables among a finite tuple x, and distinct matching nonlogical constants c, a witness to P entails that P at those constants is possible.
 - **¬ No Contingency (signature Σ).** Each closed sentence of the language of the fixed signature Sigma, if true, is necessary. A sentence schema, standing to No Pure Contingency as Possibility Maximalism (signature Σ) stands to Possibility Maximalism (pure).
-- **¬ Distinctness-preserving collapse.** Every truth is necessary under the distinctness-preserving modality.
+- **¬ Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **¬ Vicinity.** There is a true proposition that entails the possibility of each true proposition.
 - **¬ BF.** The Barcan Formula at every type. The predicate formulation closes the formula schema using lambda abstraction.
 - **¬ Boolean Completeness.** Every property of entities of a relational type has a greatest lower bound in that type.
@@ -49,7 +50,7 @@ No Contingency (signature Σ) fails, since $\forall\bar x\, .\,c\bar x$ denotes 
 
 *Revised 2026-09-23 by Claude Fable 5.1 (Anthropic):* Re-fixed the interpretation of Σ so that the designated constant denotes a contingent proposition, refuting No Contingency (signature Σ) and settling the open question whether Atomlessness implies it; Independence (signature Σ) is no longer claimed for this model.
 
-### Fails Distinctness-preserving collapse.
+### Fails Truth implies ND-necessity.
 
 The shift $h$ that fixes $0,\ldots,m-1$ and adds one to everything from $m$ on is a monotone injection, so for any true $q$ pinned down by a finite $Y$ a monotone $k$ with $k(hy)=y$ on $Y$ exists and $k\circ h\in q$; thus $\Diamond q$ holds at $h$, while the true proposition that $m$ is fixed is false there.
 
@@ -62,6 +63,12 @@ A true $w$ pinned down by a finite set $S$ contains every arrow agreeing with th
 *By Claude Opus 5.5 (Anthropic), at Cian Dorr's request, 2026-09-27.*
 
 *Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* The proposition that $a$ and $b$ are distinct is named as the set of arrows that keep them apart, so that the argument covers the variant with a single individual.
+
+### Holds Truth implies two-hat necessity.
+
+Write $\mathrm{fix}_N$ for the arrows agreeing with the identity on the finite set $N$, the least true proposition pinned by $N$, and $\delta_N$ for the arrows injective on $N$. An arrow $v$ is in $\Diamond\,\mathrm{fix}_{[n]}$ iff some monotone $x$ has $x\circ v$ fixing $[n]$, iff $v$ is injective on $[n]$; and $\Diamond\delta_{[n]}=\delta_{[n]}$. So $\Box_{\ne}p$ holds iff $p\supseteq\delta_{[n]}$ for some $n$, and the true proposition $\{h:h(0)=0\}$ is not ND-necessary, since the shift $m\mapsto m+1$ is injective. Two-hat necessity, however, is truth: $u\in\hat\Diamond\,\mathrm{fix}_{[n]}$ requires, for every $m$, a monotone $v$ injective on $[m]$ with $v\circ u$ fixing $[n]$; injectivity of $v$ on $[m]$ gives $v(j)\ge j$ for $j\le m$, so $i=v(u(i))\ge u(i)\ge i$ and $u$ fixes $[n]$. Thus $\hat\Diamond\,\mathrm{fix}_{[n]}=\mathrm{fix}_{[n]}$, every truth is two-hat necessary, and $\{h:h(0)=0\}$ is two-hat necessary but not ND-necessary. (The verdicts this argument also establishes but does not record are derived by the engine.)
+
+*Address: `finite-support-monotone-maps#nd-necessity-not-two-hat`. By Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 2026-10-14.*
 
 ### Holds Rigid Power.
 
@@ -190,7 +197,7 @@ The record's revision log before it was written as arguments.
 - **2026-09-25** (Claude Fable 5.1 (Anthropic)) — Added Transversal Choice, by the argument recorded for Relational Choice: the model is extensionally full at every object, so for an equivalence relation at the evaluation point a transversal of its extension there, chosen in the metatheory, is the extension of an element pinned down by the empty set; the equivalence and transversal conditions are unboxed. Recorded on a question of Zachary Goodsell, after an observation of Christopher Sun. Now satisfies: Transversal Choice.
 - **2026-09-25** (Claude Fable 5.1 (Anthropic)) — Added the failure of BF (type t), of Boolean Completeness (type t) and of Inextensible Comprehension, with the arguments in the notes. Now violates: BF (type t), Boolean Completeness (type t), Inextensible Comprehension.
 - **2026-09-25** (Claude Opus 5.5 (Anthropic)) — Merged the two sets of arguments recorded on 23 and 25 September into one, keeping the 23 September arguments for Inextensible Comprehension and BF (type t); the former already refutes the weak form. Now violates: Weakly Inextensible Comprehension.
-- **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Expanded the description from Appendix D, naming Proposition D.5 and its part; added the failure of Countable Boolean Completeness at type e→t; settled the Distinctness-preserving collapse. Now violates: Countable Boolean Completeness, Distinctness-preserving collapse.
+- **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Expanded the description from Appendix D, naming Proposition D.5 and its part; added the failure of Countable Boolean Completeness at type e→t; settled the Distinctness-preserving collapse. Now violates: Countable Boolean Completeness, Truth implies ND-necessity.
 - **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Re-fixed the interpretation of Σ so that the designated constant denotes a contingent proposition, refuting No Contingency (signature Σ) and settling the open question whether Atomlessness implies it; Independence (signature Σ) is no longer claimed for this model. Now violates: No Contingency (signature Σ).
 - **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Added Relational Choice and its necessitation at Cian Dorr’s direction: ideally full models are extensionally full at every object, and choice in the metatheory supplies the functional subrelation; see the notes. Now satisfies: Relational Choice, □Relational Choice.
 - **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Recorded the failure of Inextensible Comprehension at type e→t for the property of being even, sharpening the failure of Actuality; argument in the notes. Now violates: Inextensible Comprehension.

@@ -5,7 +5,7 @@
 ## Package
 
 - **Atomlessness.** Atomlessness in the displayed closed propositional formulation.
-- **Distinctness-preserving collapse.** Every truth is necessary under the distinctness-preserving modality.
+- **Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **Axiom of Infinity (type t).** There are not finitely many propositions. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **BF.** The Barcan Formula at every type. The predicate formulation closes the formula schema using lambda abstraction.
 - **Infinity Schema (type t).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
@@ -41,7 +41,7 @@ As in part 1.
 
 *Source: Classicism, Proposition D.5(2), pp. 76–77. By Andrew Bacon and Cian Dorr, 2026-09-17.*
 
-### Holds Distinctness-preserving collapse.
+### Holds Truth implies ND-necessity.
 
 For a true proposition $p$ pinned down by a finite set take as the witness $q$ the proposition that the arrow fixes $0,\ldots,N$ for $N$ beyond the pinning set. An arrow fixing $0,\ldots,N$ agrees with the identity on that set and so is in $p$. An arrow $h$ that does not, with least moved point $m\le N$, has $hm<m$ by monotone surjectivity and so collapses $m-1$ and $m$; then no $k\circ h$ can fix both, so $\Diamond q$ fails at $h$. Hence $\Box(\Diamond q\to p)$.
 
@@ -153,7 +153,7 @@ The record's revision log before it was written as arguments.
 - **2026-09-25** (OpenAI Codex (GPT-6)) — Confirmed the trawl's BC-t conclusion with a replacement proof: alternating differences of finite agreement classes have no least upper bound. The original missing-intersection argument is invalid. Used source extensional fullness for domain membership. Now violates: Boolean Completeness (type t).
 - **2026-09-25** (Claude Fable 5.1 (Anthropic)) — Added the failure of Boolean Completeness (type t) and of Inextensible Comprehension, with the arguments in the notes. Now violates: Boolean Completeness (type t), Inextensible Comprehension.
 - **2026-09-25** (Claude Opus 5.5 (Anthropic)) — Merged the two sets of arguments recorded on 23 and 25 September into one, keeping the 23 September argument for Inextensible Comprehension, which already refutes the weak form. Now violates: Weakly Inextensible Comprehension.
-- **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Expanded the description from Appendix D, naming Proposition D.5 and its part; added the failure of Countable Boolean Completeness at type e→t; settled the Distinctness-preserving collapse. Now satisfies: Distinctness-preserving collapse. Now violates: Countable Boolean Completeness.
+- **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Expanded the description from Appendix D, naming Proposition D.5 and its part; added the failure of Countable Boolean Completeness at type e→t; settled the Distinctness-preserving collapse. Now satisfies: Truth implies ND-necessity. Now violates: Countable Boolean Completeness.
 - **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Added Relational Choice and its necessitation at Cian Dorr’s direction: ideally full models are extensionally full at every object, and choice in the metatheory supplies the functional subrelation; see the notes. Now satisfies: Relational Choice, □Relational Choice.
 - **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Recorded the failure of Inextensible Comprehension at type e→t for the property of being even, sharpening the failure of Actuality; argument in the notes. Now violates: Inextensible Comprehension.
 - **2026-09-22** (Claude Fable 5.1 (Anthropic)) — Fixed an interpretation of Σ (relational constants as top, individual constants as one fixed individual) and recorded the signature schemata it refutes, at Cian Dorr’s request. Now violates: Witnessed Possibility, Separated Structure, Independence (signature Σ), Maximalism (signature Σ).

@@ -1,0 +1,21 @@
+# □5-necessity implies two-hat necessity ⇒ 5-necessity implies two-hat necessity
+
+<p class='cert'>Result — Source: Misc.; produced by Claude Fable 5.1 (Anthropic), 14 October 2026, at Cian Dorr's direction; recorded by Claude Fable 5.1 (Anthropic), 14 October 2026.</p>
+
+## Premises
+
+- **□5-necessity implies two-hat necessity.** Necessarily, whatever is 5-necessary is two-hat necessary. In C this is the identity $\Box_5=\hat{\hat\Box}$.
+
+## Conclusion
+
+- **5-necessity implies two-hat necessity.** Whatever is 5-necessary is two-hat necessary.
+
+## Proof
+
+The T axiom for $\Box$: the boxed closed sentence implies the sentence.
+
+## Sources
+
+- **Dorr–Claude 14 Oct** — Cian Dorr and Claude Fable 5.1 (Anthropic), conversation of 14 October 2026 (transcript in the private notes).
+
+<p class='cert'>Record: <code>topics/classicism/results/necessary-five-implies-two-hat-necessity-implies-five-implies-two-hat-necessity.yaml</code></p>

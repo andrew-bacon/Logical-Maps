@@ -8,6 +8,7 @@
 - **Inextensible Comprehension.** Every relation, including a proposition, is coextensive with a inextensible one.
 - **Rigid Power.** If a relation is rigid, so is the property of being a rigid relation that entails it.
 - **Boolean Completeness.** Every property of entities of a relational type has a greatest lower bound in that type.
+- **Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
 - **Tame Rigidity.** Every weakly rigid relation, including a proposition, is rigid.
 - **No Contingency (signature Σ).** Each closed sentence of the language of the fixed signature Sigma, if true, is necessary. A sentence schema, standing to No Pure Contingency as Possibility Maximalism (signature Σ) stands to Possibility Maximalism (pure).
@@ -72,6 +73,12 @@ In a one-object finitely pinned model, BF (type t) fails as soon as there are a 
 *General argument `arguments/barcan-t-transport`. It requires that The model is a one-object action model whose entities are finitely pinned, and there are a finite set $N$, an arrow $i$ and a proposition $q$ in the domain such that $q$ separates two arrows that agree on the range of every arrow agreeing with $i$ on $N$, and the intension $\{\langle r,j\rangle : r\ne q\text{ or }j\text{ disagrees with }i\text{ on }N\}$ is in the domain. Here: Take $N=\{0\}$, $i$ any arrow with $i0\ne0$, so that every arrow agreeing with it on $N$ omits $0$ from its range, and $q:=\{k : k0=0\}$, the first class of arrows, pinned down by $\{0\}$ and symmetric: an arrow $k$ of the first class and the arrow $k^{\prime}$ agreeing with it off $0$ but sending $0$ elsewhere, which omits $0$ from its range since $0$ is $k$’s only preimage of $0$, are separated by $q$. The intension the argument uses is pinned down by $N$, and symmetric, since $g\cdot q=q$ for $g$ fixing $0$ and $(g\circ j)0=0$ iff $j0=0$, so it lies in the domain. By Claude Fable 5.1 (Anthropic), answering Cian Dorr’s question whether the failure of BF sharpens to type $t$, 2026-09-23.*
 
 *Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* The finite-support group's argument and the symmetric range-gap models' copies stated once for the topic; that $X$ is in the domain (pinned down by $N$, and in a symmetric model symmetric) is now part of each record's reason for meeting transport-gap.
+
+### Holds Truth implies ND-necessity.
+
+Let $p$ be true, pinned by $N$ (and symmetric, when there is a symmetry group), and let $N^\prime$ be as in the condition. Let $q$ be the set of arrows that some arrow composes to agree with the identity on $N^\prime$; it is true, pinned by $N^\prime$, symmetric, and $\Diamond q=q$. By the condition every member of $q$ agrees on $N$ with a symmetry (or the identity), so lies in $p$ together with the identity. Hence $\Box(\Diamond q\to p)$ with $q$ true, i.e. $\Box_{\ne}p$.
+
+*General argument `arguments/dpc-retractable-actual-pattern`. It requires that For every finite set $N$ of individuals at the evaluation object there is a finite $N^\prime\supseteq N$ such that every arrow $u$ out of that object for which some arrow $x$ makes $x\circ u$ agree with the identity on $N^\prime$ agrees on $N$ with a member of the symmetry group (with the identity, when the model has no symmetry group). Here: With $N^\prime=N\cup\{0\}$: if $x\circ u$ is the identity on $N^\prime$ then $u$ fixes $0$, so is of the first kind, and is injective on $N^\prime$; it therefore agrees on $N$ with a permutation fixing $0$, a member of the symmetry group. By Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 2026-10-14.*
 
 ### Holds No Pure Contingency.
 

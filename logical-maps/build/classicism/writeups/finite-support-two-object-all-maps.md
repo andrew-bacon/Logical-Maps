@@ -11,17 +11,20 @@
 - **Necessity of Arithmetic.** Every arithmetical sentence is either necessarily true or necessarily false, given that possibly zero is not a successor and successor is injective on numbers. One sentence for each arithmetical sentence.
 - **B for sentences of Σ.** The B instance for every closed sentence of the language of the fixed signature Sigma.
 - **□Rigid Power.** Every closed instance of Rigid Power is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **Two-hat necessity implies ND-necessity.** Whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat.
+- **□5-necessity implies two-hat necessity.** Necessarily, whatever is 5-necessary is two-hat necessary. In C this is the identity $\Box_5=\hat{\hat\Box}$.
 - **□Intensional Choice.** Every closed instance of Intensional Choice is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
 - **Transversal Choice.** Every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
 - **¬ □BF.** Necessarily, the Barcan Formula holds at every type. The predicate formulation closes the formula schema using lambda abstraction.
 - **¬ Atomlessness.** Atomlessness in the displayed closed propositional formulation.
-- **¬ Distinctness-preserving collapse.** Every truth is necessary under the distinctness-preserving modality.
+- **¬ Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **¬ Boolean Completeness (type t).** Boolean Completeness (type t) in the displayed closed propositional formulation.
 - **¬ Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable when it injects into the natural numbers.
 - **¬ □BF (type t).** Necessarily, BF (type t) holds, in the displayed closed propositional formulation.
 - **¬ Inextensible Comprehension.** Every relation, including a proposition, is coextensive with a inextensible one.
 - **¬ Vicinity.** There is a true proposition that entails the possibility of each true proposition.
 - **¬ Weakly Inextensible Comprehension.** Every relation, including a proposition, is coextensive with a weakly inextensible one.
+- **¬ □Two-hat necessity implies ND-necessity.** Necessarily, whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat. In C this is the identity $\hat{\hat\Box}=\Box_{\ne}$.
 - **¬ Witnessed Possibility.** For pure-formulas P with free variables among a finite tuple x, and distinct matching nonlogical constants c, a witness to P entails that P at those constants is possible.
 - **¬ Separated Structure.** For each typed nonlogical constant c and closed same-typed terms F,G not containing c, equality after application to c implies equality of F and G.
 - **¬ Independence (signature Σ).** No constant of Sigma is a pure operation applied to other constants: for a closed pure term A and distinct constants c, d_1,…,d_n with n ≥ 0, c differs from A applied to the d’s. With n = 0, no constant denotes a pure entity.
@@ -53,7 +56,7 @@ The individuals are the natural numbers and identity at the evaluation arrow is 
 
 *By Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 2026-09-20.*
 
-### Fails Distinctness-preserving collapse.
+### Fails Truth implies ND-necessity.
 
 The transposition of $5$ and $6$ is an arrow with an inverse, so for any true $q$ the composite of a member of $q$ with the inverse carries the transposition into $q$, making $\Diamond q$ true there, while the true proposition that $5$ is fixed is false there.
 
@@ -116,6 +119,12 @@ Boxed Rigid Power, by lifting at each object; criterion (1) is part (1) of tame-
 
 *Address: `finite-support-two-object-all-maps#rigid-power`. By GPT-6 Astra (OpenAI), at Cian Dorr's request; checked and recorded by Claude Opus 5.5 (Anthropic), 2026-10-11.*
 
+### Holds Two-hat necessity implies ND-necessity, □5-necessity implies two-hat necessity. Fails □Two-hat necessity implies ND-necessity.
+
+Write $\mathrm{fix}_N$ for the arrows agreeing with the identity on the finite set $N$, the least true proposition pinned by $N$, and $\delta_N$ for the arrows injective on $N$. At $W_0$ the arrows are all maps $\mathbb N\to\mathbb N$ and the one map $c$ to $W_1=\{0\}$. $\Diamond\,\mathrm{fix}^{00}_N$ is the set of maps injective on $N$, together with $c$ when $|N|\le1$; the same set is $\hat\Diamond\,\mathrm{fix}^{00}_N$, since an injective-on-$N$ map is undone by a bijection and $c$ by the map picking the point of $N$, which returns to every truth at $W_1$ ($W_1$ is a point, so its domains are full and $c\circ v=1_{W_1}$). So $\Box_{\ne}$ and $\hat{\hat\Box}$ coincide at the evaluation point. BF at type $t$ holds for $\hat{\hat\Box}$ there: for $Y$ pinned by $X_Y$ and $N\supseteq X_Y$ with two elements, every $k\in\hat\Diamond\,\mathrm{fix}^{00}_N$ is a map injective on $N$, which agrees on $X_Y$ with a bijection $b$, and $Y_k=Y_b$ contains every transport along $b$, i.e. everything; so by Proposition D8 of The Bounds of Possibility $\Box_5$ implies two-hat necessity at $W_0$, and at $W_1$ too, which is full. The truth $\mathrm{fix}^{00}_{\{0\}}$ is not 5-necessary, since $\Box_5\le\hat{\hat\Box}$ fails on it (a bijection moving $0$ is in every $\hat\Diamond\,\mathrm{fix}^{00}_N$). At $W_1$, the maps $W_1\to W_0$ are retracted by $c$ but not invertible, so, $W_1$ being full, $\{1_{W_1}\}$ is two-hat necessary and not ND-necessary there: the identity $\Box_{\ne}=\hat{\hat\Box}$ fails. (The verdicts this argument also establishes but does not record are derived by the engine.)
+
+*Address: `finite-support-two-object-all-maps#collapse-at-root`. By Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 2026-10-14.*
+
 ### Holds □Intensional Choice.
 
 For each object $U$ and type $\sigma$ fix a well-ordering $<_U$ of the domain $D^\sigma_U$, and let $W$ be the intension of type $\sigma\to\sigma\to t$ with $W(h):={<_{\operatorname{cod}h}}$. Its value depends only on the arrow's codomain, so by the condition it is in the domain, and at every world its extension well-orders that world's type-$\sigma$ domain. Given $F$ with $\Box\exists x\, .\,Fx$, put $G:=\lambda x\, .\,Fx\land\forall y\, .\,(Fy\to\neg Wyx)$, the $W$-least $F$. It is definable from $F$ and $W$, so in the domain; $G\le F$, and its extension at every arrow is the singleton of the least element of $F$'s. So Intensional Choice holds, and the same at every reachable object gives $\Box$Intensional Choice. Cian Dorr's observation that such models are qualitatively full, made precise.
@@ -153,7 +162,7 @@ The record's revision log before it was written as arguments.
 - **2026-09-25** (Claude Fable 5.1 (Anthropic)) — Added Transversal Choice, by the argument recorded for Relational Choice: the model is extensionally full at every object, so for an equivalence relation at the evaluation point a transversal of its extension there, chosen in the metatheory, is the extension of an element pinned down by the empty set; the equivalence and transversal conditions are unboxed. Recorded on a question of Zachary Goodsell, after an observation of Christopher Sun. Now satisfies: Transversal Choice.
 - **2026-09-25** (Claude Fable 5.1 (Anthropic)) — Settled Actuality, Atomicity (type t), Boolean Completeness (type t), Countable Boolean Completeness, □BF (type t) and Inextensible Comprehension as failing, and Necessity of Arithmetic, B for pure sentences and B for sentences of Σ as holding, with the arguments in the notes. Now satisfies: B for pure sentences, B for sentences of Σ, Necessity of Arithmetic. Now violates: Actuality, Atomicity (type t), Boolean Completeness (type t), Countable Boolean Completeness, □BF (type t), Inextensible Comprehension.
 - **2026-09-25** (Claude Opus 5.5 (Anthropic)) — Merged the two sets of arguments recorded on 23 and 25 September into one, keeping the 23 September argument for Atomicity (type t).
-- **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Expanded the description from Appendix D; settled the Distinctness-preserving collapse. Now violates: Distinctness-preserving collapse.
+- **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Expanded the description from Appendix D; settled the Distinctness-preserving collapse. Now violates: Truth implies ND-necessity.
 - **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Added Relational Choice and its necessitation at Cian Dorr’s direction: ideally full models are extensionally full at every object, and choice in the metatheory supplies the functional subrelation; see the notes. Now satisfies: Relational Choice, □Relational Choice.
 - **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Recorded the failure of Atomicity (type t), and with it of the Strong Leibniz Biconditionals; see the notes. Now violates: Atomicity (type t).
 - **2026-09-22** (Claude Fable 5.1 (Anthropic)) — Fixed an interpretation of Σ (relational constants as top, individual constants as one fixed individual) and recorded the signature schemata it refutes, at Cian Dorr’s request. Now violates: Witnessed Possibility, Separated Structure, Independence (signature Σ), Maximalism (signature Σ).

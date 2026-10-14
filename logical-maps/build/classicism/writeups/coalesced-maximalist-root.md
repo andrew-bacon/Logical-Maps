@@ -8,8 +8,11 @@
 - **Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **Relational Choice.** Every serial binary relation has a functional subrelation.
 - **Actuality.** There is a true proposition that entails every true proposition.
-- **Distinctness-preserving collapse.** Every truth is necessary under the distinctness-preserving modality.
+- **Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **¬ Possibility+ (pure).** The strengthened Possibility Maximalism schema for pure C-consistent formulas whose only free variables are the displayed individual variables; include the empty tuple.
+- **¬ □Two-hat necessity implies ND-necessity.** Necessarily, whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat. In C this is the identity $\hat{\hat\Box}=\Box_{\ne}$.
+- **¬ □5-necessity implies two-hat necessity.** Necessarily, whatever is 5-necessary is two-hat necessary. In C this is the identity $\Box_5=\hat{\hat\Box}$.
+- **¬ □Truth implies 5-necessity.** Necessarily, every truth is 5-necessary: necessary under every S5 operator. In C this is the identity $\Box_5=\lambda p\, .\,p$.
 - **¬ Tame Rigidity.** Every weakly rigid relation, including a proposition, is rigid.
 - **¬ Rigid Power.** If a relation is rigid, so is the property of being a rigid relation that entails it.
 - **¬ Intensional Choice.** If a property is necessarily instantiated, then some property entailing it is necessarily uniquely instantiated.
@@ -45,6 +48,12 @@ The root individuals are all families of component individuals, infinitely many 
 Some component $N$ satisfies necessarily that there are at least three individuals, since that sentence is consistent; take two root individuals that differ at $N$ and agree everywhere else; the pure formula saying that $x\ne y$ and there are exactly two individuals is consistent, but at the root there are infinitely many individuals, under every arrow into another component the two collapse, and under every arrow into $N$ there are at least three.
 
 *By Cian Dorr, recorded by Claude Fable 5.1 (Anthropic), 2026-09-22.*
+
+### Fails □Two-hat necessity implies ND-necessity, □5-necessity implies two-hat necessity, □Truth implies 5-necessity.
+
+The components form a set of action models complete for C in the signature, so for each of the three unboxed collapse principles, which fail in some model of C (the paired-individuals two-object model for 5-necessity implies two-hat necessity, the two-object retract full model for two-hat necessity implies ND-necessity, the involution group for Truth implies 5-necessity), some component falsifies it at its own evaluation point; the component is carried into the coalesced sum unchanged and its evaluation point is a world accessible from the root by the distinguished arrow. So none of the boxed collapse principles holds at the root, although every truth at the root is ND-necessary.
+
+*Address: `coalesced-maximalist-root#no-boxed-collapse`. By Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 2026-10-14.*
 
 ### Fails Tame Rigidity.
 
@@ -123,7 +132,7 @@ Every pure sentence consistent with C is possible at the root (pure-sentences-po
 
 *Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* The three members' verbatim copies stated once; "By the same argument" became a reference to pure-sentences-possible.
 
-### Holds Distinctness-preserving collapse.
+### Holds Truth implies ND-necessity.
 
 For a true $p$, $a\le p$, since $a$ entails every truth. Take $q:=a$ in the definition of $\Box_{\ne}p$: at a world in $a$, $p$ holds; at a world outside $a$, $\Diamond a$ fails. So every truth is $\Box_{\ne}$-necessary.
 
@@ -148,7 +157,7 @@ The record's revision log before it was written as arguments.
 - **2026-09-22** (Cian Dorr, recorded by Claude Fable 5.1 (Anthropic)) — Added the failure of BF and of BF (type t) at the root, by transporting a component’s counterexample to BF along the distinguished arrow; see the notes. Now violates: BF, BF (type t).
 - **2026-09-22** (Cian Dorr, recorded by Claude Fable 5.1 (Anthropic)) — Settled Atomicity (type t), Boolean Completeness (type t) and Possibility+ (pure) as failing and the Axiom of Infinity (type e) and Relational Choice as holding, with the arguments in the notes; Cian Dorr’s observations, with Relational Choice corrected in direction. Now satisfies: Axiom of Infinity (type e), Relational Choice. Now violates: Atomicity (type t), Possibility+ (pure).
 - **2026-09-22** (Claude Fable 5.1 (Anthropic)) — Recorded the failure of □Relational Choice, already argued in the notes. Now violates: □Relational Choice.
-- **2026-09-17** (OpenAI Codex (GPT-6)) — Adopted the source’s relational type system at the user’s request. The cited construction now directly supplies the recorded model; the former type-extension obligation is removed. Now satisfies: Maximalism (signature Σ), Actuality, Distinctness-preserving collapse. Now violates: Strong Possibility (pure), ND.
+- **2026-09-17** (OpenAI Codex (GPT-6)) — Adopted the source’s relational type system at the user’s request. The cited construction now directly supplies the recorded model; the former type-extension obligation is removed. Now satisfies: Maximalism (signature Σ), Actuality, Truth implies ND-necessity. Now violates: Strong Possibility (pure), ND.
 
 ## Sources
 

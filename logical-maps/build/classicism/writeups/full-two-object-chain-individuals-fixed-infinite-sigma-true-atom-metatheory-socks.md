@@ -4,7 +4,7 @@
 
 ## Package
 
-- **Distinctness-preserving collapse.** Every truth is necessary under the distinctness-preserving modality.
+- **Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **□Atomicity.** Necessarily, every non-bottom entity of each relational type has an atom below it.
 - **□BF.** Necessarily, the Barcan Formula holds at every type. The predicate formulation closes the formula schema using lambda abstraction.
 - **□Rigid Comprehension.** Necessarily, every relation, including a proposition, is coextensive with a rigid one.
@@ -40,7 +40,7 @@ Metatheory, fixed for this record: the construction is carried out in ZF togethe
 
 ## Arguments
 
-### Holds Distinctness-preserving collapse.
+### Holds Truth implies ND-necessity.
 
 For a true $p$, $a\le p$, since $a$ entails every truth. Take $q:=a$ in the definition of $\Box_{\ne}p$: at a world in $a$, $p$ holds; at a world outside $a$, $\Diamond a$ fails. So every truth is $\Box_{\ne}$-necessary.
 
@@ -145,7 +145,7 @@ The record's revision log before it was written as arguments.
 
 - **2026-09-25** (Claude Fable 5.1 (Anthropic)) — Added Transversal Choice, by the argument recorded for Relational Choice: a full model contains every intension, in particular one whose extension at the evaluation point is a transversal, chosen in the metatheory, of the extension there of an equivalence relation; the equivalence and transversal conditions are unboxed. Recorded on a question of Zachary Goodsell, after an observation of Christopher Sun. Now satisfies: Transversal Choice.
 - **2026-09-25** (Claude Fable 5.1 (Anthropic)) — Added BF (type t) and □BF (type t), and the failure of Possible Infinity (type t) and of B for pure sentences; see the notes. Now satisfies: BF (type t), □BF (type t). Now violates: Possible Infinity (type t), B for pure sentences.
-- **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Recorded the Distinctness-preserving collapse; see the notes. Now satisfies: Distinctness-preserving collapse.
+- **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Recorded the Distinctness-preserving collapse; see the notes. Now satisfies: Truth implies ND-necessity.
 - **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Extended the Strong Leibniz Biconditionals from type t to every relational type, with the necessitation: transports of atoms along the unique arrow out of W1 are atoms or empty. Now satisfies: Strong Leibniz Biconditionals, □Strong Leibniz Biconditionals.
 - **2026-09-22** (Claude Fable 5.1 (Anthropic)) — Fixed an interpretation of Σ (relational constants as top, individual constants as one fixed individual) and recorded the signature schemata it refutes, at Cian Dorr’s request. Now violates: Witnessed Possibility, Separated Structure, Independence (signature Σ), Maximalism (signature Σ).
 - **2026-09-22** (Claude Fable 5.1 (Anthropic)) — Added □Strong Leibniz Biconditionals (type t); see the notes. Now satisfies: □Strong Leibniz Biconditionals (type t).

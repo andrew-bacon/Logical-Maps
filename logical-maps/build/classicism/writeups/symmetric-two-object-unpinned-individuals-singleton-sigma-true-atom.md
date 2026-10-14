@@ -7,13 +7,15 @@
 - **□Actuality.** Necessarily, there is a true proposition that entails every true proposition.
 - **□Boolean Completeness.** Necessarily, every property of entities of a relational type has a greatest lower bound in that type.
 - **□Rigid Power.** Every closed instance of Rigid Power is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Truth implies 5-necessity.** Necessarily, every truth is 5-necessary: necessary under every S5 operator. In C this is the identity $\Box_5=\lambda p\, .\,p$.
 - **Axiom of Infinity (type t).** There are not finitely many propositions. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **Boolean Completeness.** Every property of entities of a relational type has a greatest lower bound in that type.
-- **Distinctness-preserving collapse.** Every truth is necessary under the distinctness-preserving modality.
+- **Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **¬ Atomicity (type t).** Atomicity (type t) in the displayed closed propositional formulation.
 - **¬ □Strong Actuality.** Necessarily, there is a true strong world proposition: a true proposition that necessarily entails every proposition or its negation.
 - **¬ Tame Rigidity.** Every weakly rigid relation, including a proposition, is rigid.
 - **¬ BF (type t).** BF (type t) in the displayed closed propositional formulation.
+- **¬ □Two-hat necessity implies ND-necessity.** Necessarily, whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat. In C this is the identity $\hat{\hat\Box}=\Box_{\ne}$.
 - **¬ Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **¬ Infinity Schema (type e).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
 - **¬ Possible Infinity (type e).** Possibly there are not finitely many individuals: the Axiom of Infinity at this type, under a diamond.
@@ -80,6 +82,12 @@ At the base world. Every transport of a proposition $p$ of the first object alon
 
 *Address: `symmetric-two-object-unpinned-individuals-singleton-sigma-true-atom#barcan-t`. By Claude Opus 5.5 (Anthropic), at Cian Dorr's request to settle BF at the relational types, 2026-10-11.*
 
+### Holds □Truth implies 5-necessity. Fails □Two-hat necessity implies ND-necessity.
+
+At the second object the domains are the symmetric intensions, so a proposition is a set of functions determined by their kernels, and the least true proposition is the set $B$ of bijections. $\Diamond B$ is the set of injections (an injection is completed to a bijection by a further map), so $\Box_{\ne}p$ holds there iff $p$ contains every injection; but $\hat\Diamond B=B$, since $v\circ u$ bijective with $v$ injective forces $u$ to be bijective, so $\hat{\hat\Box}$ is the identity operator at the second object. Hence $B$ is two-hat necessary but not ND-necessary there, and the identity $\Box_{\ne}=\hat{\hat\Box}$ fails; while every truth at either object is 5-necessary: at the second because $\hat{\hat\Box}$ is the identity, at the first because every truth there is ND-necessary (recorded).
+
+*Address: `symmetric-two-object-unpinned-individuals-singleton-sigma-true-atom#collapse-split`. By Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 2026-10-14.*
+
 ### Holds Axiom of Infinity (type t).
 
 The propositions $C_{n,m}:=\{h : hn=hm\}$, that an arrow collapses $n$ and $m$, are symmetric, since relabelling the individuals of a world by a member of the symmetry group keeps identities among them, and each is pinned down by $\{n,m\}$; by the condition infinitely many of them are pairwise distinct, so there are infinitely many propositions. The set of numerals at type $t$ is fixed by every arrow, hence symmetric and pinned down by the empty set, so finite cardinality is standard and no finite cardinality holds of the universal property.
@@ -98,7 +106,7 @@ At every relational type: a property $F$ of type-$\tau$ entities has a least upp
 
 *Revised 2026-10-06 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* No longer requires one-object-action-model: as the draft notes (proof of Proposition 40), nothing in the theorem uses a single object, pinning, separation, amalgamability and hulls all quantifying over arrows with a fixed target; the condition hull-conditions now says so.
 
-### Holds Distinctness-preserving collapse.
+### Holds Truth implies ND-necessity.
 
 For a true $p$, $a\le p$, since $a$ entails every truth. Take $q:=a$ in the definition of $\Box_{\ne}p$: at a world in $a$, $p$ holds; at a world outside $a$, $\Diamond a$ fails. So every truth is $\Box_{\ne}$-necessary.
 
@@ -140,7 +148,7 @@ The point of the model is that boxed Boolean Completeness and boxed Actuality, a
 The record's revision log before it was written as arguments.
 
 - **2026-09-25** (Claude Fable 5.1 (Anthropic)) — Added the failure of B for pure sentences; see the notes. Now violates: B for pure sentences.
-- **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Recorded the Distinctness-preserving collapse; see the notes. Now satisfies: Distinctness-preserving collapse.
+- **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Recorded the Distinctness-preserving collapse; see the notes. Now satisfies: Truth implies ND-necessity.
 - **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Recorded the failure of Relational Choice, at types (e→t) and e: a functional subrelation of the serial relation pairing each property with its members would be symmetric and finitely pinned, and a symmetry fixing its pinning set would carry its choice for the property of lying outside that set to a second choice. Cian Dorr’s observation that a choice cannot be finitely pinned; argument in the notes. Now violates: Relational Choice.
 - **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Recorded the failure of Atomicity (type t), and with it of the Strong Leibniz Biconditionals; see the notes. Now violates: Atomicity (type t).
 - **2026-09-22** (Claude Fable 5.1 (Anthropic)) — Fixed an interpretation of Σ (relational constants as top, individual constants as one fixed individual) and recorded the signature schemata it refutes, at Cian Dorr’s request. Now violates: Witnessed Possibility, Separated Structure, Independence (signature Σ), Maximalism (signature Σ).

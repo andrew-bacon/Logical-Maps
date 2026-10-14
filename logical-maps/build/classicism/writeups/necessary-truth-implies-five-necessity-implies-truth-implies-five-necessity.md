@@ -1,0 +1,21 @@
+# □Truth implies 5-necessity ⇒ Truth implies 5-necessity
+
+<p class='cert'>Result — Source: Misc.; produced by Claude Fable 5.1 (Anthropic), 14 October 2026, at Cian Dorr's direction; recorded by Claude Fable 5.1 (Anthropic), 14 October 2026.</p>
+
+## Premises
+
+- **□Truth implies 5-necessity.** Necessarily, every truth is 5-necessary: necessary under every S5 operator. In C this is the identity $\Box_5=\lambda p\, .\,p$.
+
+## Conclusion
+
+- **Truth implies 5-necessity.** Every truth is 5-necessary: necessary under every S5 operator.
+
+## Proof
+
+The T axiom for $\Box$: the boxed closed sentence implies the sentence.
+
+## Sources
+
+- **Dorr–Claude 14 Oct** — Cian Dorr and Claude Fable 5.1 (Anthropic), conversation of 14 October 2026 (transcript in the private notes).
+
+<p class='cert'>Record: <code>topics/classicism/results/necessary-truth-implies-five-necessity-implies-truth-implies-five-necessity.yaml</code></p>

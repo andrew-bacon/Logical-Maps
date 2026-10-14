@@ -10,6 +10,7 @@
 - **Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **BF.** The Barcan Formula at every type. The predicate formulation closes the formula schema using lambda abstraction.
 - **Boolean Completeness.** Every property of entities of a relational type has a greatest lower bound in that type.
+- **Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
 - **Rigid Power.** If a relation is rigid, so is the property of being a rigid relation that entails it.
 - **Rigid Rigidity.** Being rigid is a rigid property of relations, including propositions.
@@ -101,6 +102,12 @@ At every relational type: a property $F$ of type-$\tau$ entities has a least upp
 *Revised 2026-10-06 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* The draft's main theorem, which the all-surjections and collapse-pair models each applied in an argument of their own, stated once; what each member does to meet its hypotheses is its reason for meeting hull-conditions. Proved in Lean (SymBase.lub_of_hull).
 
 *Revised 2026-10-06 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* No longer requires one-object-action-model: as the draft notes (proof of Proposition 40), nothing in the theorem uses a single object, pinning, separation, amalgamability and hulls all quantifying over arrows with a fixed target; the condition hull-conditions now says so.
+
+### Holds Truth implies ND-necessity.
+
+Let $p$ be true, pinned by $N$ (and symmetric, when there is a symmetry group), and let $N^\prime$ be as in the condition. Let $q$ be the set of arrows that some arrow composes to agree with the identity on $N^\prime$; it is true, pinned by $N^\prime$, symmetric, and $\Diamond q=q$. By the condition every member of $q$ agrees on $N$ with a symmetry (or the identity), so lies in $p$ together with the identity. Hence $\Box(\Diamond q\to p)$ with $q$ true, i.e. $\Box_{\ne}p$.
+
+*General argument `arguments/dpc-retractable-actual-pattern`. It requires that For every finite set $N$ of individuals at the evaluation object there is a finite $N^\prime\supseteq N$ such that every arrow $u$ out of that object for which some arrow $x$ makes $x\circ u$ agree with the identity on $N^\prime$ agrees on $N$ with a member of the symmetry group (with the identity, when the model has no symmetry group). Here: With $N^\prime=N$: if $x\circ u$ is the identity on $N$ then $u$ is injective on $N$, so it agrees on $N$ with a permutation. By Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 2026-10-14.*
 
 ### Fails Intensional Choice.
 

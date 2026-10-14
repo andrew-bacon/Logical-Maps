@@ -1,0 +1,25 @@
+# 5-necessity implies ND-necessity ⇒ Two-hat necessity implies ND-necessity
+
+<p class='cert'>Result — Source: Misc.; produced by Claude Fable 5.1 (Anthropic), 14 October 2026, at Cian Dorr's direction; recorded by Claude Fable 5.1 (Anthropic), 14 October 2026.</p>
+
+## Premises
+
+- **5-necessity implies ND-necessity.** Whatever is 5-necessary is ND-necessary.
+
+## Conclusion
+
+- **Two-hat necessity implies ND-necessity.** Whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat.
+
+## Proof
+
+The chain $\Box\le\Box_{\ne}\le\hat{\hat\Box}\le\Box_5\le\lambda p\, .\,p$ is a theorem of C (Background, Hats, two-hat necessity and 5-necessity): hatting is monotone, $\Box\le\hat\Box=\Box_{\ne}$, $\hat{\hat\Box}\le\Box_5$ is Proposition D21 of The Bounds of Possibility, Appendix D, right to left, and $\Box_5$ is T. So $\hat{\hat\Box}p\to\Box_5p\to\Box_{\ne}p$.
+
+## Notes
+
+One of the composition and decomposition facts for the chain of necessity operators.
+
+## Sources
+
+- **Dorr–Claude 14 Oct** — Cian Dorr and Claude Fable 5.1 (Anthropic), conversation of 14 October 2026 (transcript in the private notes).
+
+<p class='cert'>Record: <code>topics/classicism/results/five-implies-nd-implies-two-hat-implies-nd.yaml</code></p>

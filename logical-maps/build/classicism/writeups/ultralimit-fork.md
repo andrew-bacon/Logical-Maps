@@ -10,7 +10,8 @@
 - **□Intensional Choice.** Every closed instance of Intensional Choice is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
 - **□Rigid Power.** Every closed instance of Rigid Power is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
 - **□Transversal Choice.** Necessarily, every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
-- **Distinctness-preserving collapse.** Every truth is necessary under the distinctness-preserving modality.
+- **□Truth implies 5-necessity.** Necessarily, every truth is 5-necessary: necessary under every S5 operator. In C this is the identity $\Box_5=\lambda p\, .\,p$.
+- **Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **Axiom of Infinity (type t).** There are not finitely many propositions. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **Infinity Schema (type t).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
 - **Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable when it injects into the natural numbers.
@@ -71,7 +72,13 @@ At the root by the general argument transversal-choice-extensionally-full, the m
 
 *Address: `ultralimit-fork#transversal-choice-everywhere`. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-08.*
 
-### Holds Distinctness-preserving collapse.
+### Holds □Truth implies 5-necessity.
+
+The category is a poset: no non-identity arrow has a retraction. The actual-world proposition is in the domain at every object (at the root the proposition true at $o$ alone; the other objects are full), so $\Box_{\ne}p$ holds at an identity iff $p$ contains $\Diamond\{1\}=\{1\}$, i.e. iff $p$ is true: $\Box_{\ne}$ is the identity operator at every object, hence so are $\hat{\hat\Box}$ and $\Box_5$, and every truth is 5-necessary everywhere.
+
+*Address: `ultralimit-fork#five-necessity-is-truth`. By Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 2026-10-14.*
+
+### Holds Truth implies ND-necessity.
 
 For a true $p$, $a\le p$, since $a$ entails every truth. Take $q:=a$ in the definition of $\Box_{\ne}p$: at a world in $a$, $p$ holds; at a world outside $a$, $\Diamond a$ fails. So every truth is $\Box_{\ne}$-necessary.
 

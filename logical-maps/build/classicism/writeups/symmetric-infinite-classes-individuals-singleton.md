@@ -6,6 +6,7 @@
 
 - **Inextensible Comprehension.** Every relation, including a proposition, is coextensive with a inextensible one.
 - **Atomlessness.** Atomlessness in the displayed closed propositional formulation.
+- **5-necessity implies ND-necessity.** Whatever is 5-necessary is ND-necessary.
 - **BF.** The Barcan Formula at every type. The predicate formulation closes the formula schema using lambda abstraction.
 - **Boolean Completeness.** Every property of entities of a relational type has a greatest lower bound in that type.
 - **No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
@@ -14,6 +15,7 @@
 - **Tame Rigidity.** Every weakly rigid relation, including a proposition, is rigid.
 - **No Contingency (signature Σ).** Each closed sentence of the language of the fixed signature Sigma, if true, is necessary. A sentence schema, standing to No Pure Contingency as Possibility Maximalism (signature Σ) stands to Possibility Maximalism (pure).
 - **B for sentences of Σ.** The B instance for every closed sentence of the language of the fixed signature Sigma.
+- **¬ Truth implies 5-necessity.** Every truth is 5-necessary: necessary under every S5 operator.
 - **¬ Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **¬ Infinity Schema (type e).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
 - **¬ Possible Infinity (type e).** Possibly there are not finitely many individuals: the Axiom of Infinity at this type, under a diamond.
@@ -45,6 +47,12 @@ At every relational type: the witness for X pinned down by S agrees with X at th
 As in Base 1.
 
 *By Cian Dorr, 27 September 2026 (the idea of a symmetric finitely pinned model whose symmetry group is the automorphism group of a rich qualitative structure, in which each new pinned point makes new infinite-coinfinite extensions available), with Claude Opus 5.5 (Anthropic), who chose the structure and wrote the verification.*
+
+### Holds 5-necessity implies ND-necessity. Fails Truth implies 5-necessity.
+
+Write $\mathrm{fix}_N$ for the arrows agreeing with the identity on the finite set $N$, the least true proposition pinned by $N$, and $\delta_N$ for the arrows injective on $N$. A true symmetric proposition pinned by $N$ contains the surjections that agree on $N$ with an automorphism of the equivalence relation. The set $\delta_N$ is symmetric, pinned by $N$ and true, with $\Diamond\delta_N=\delta_N$, and every true $q$ pinned by $N$ has $\Diamond q\supseteq\delta_N$, since a surjection injective on $N$ is undone on $N$ by some surjection. So $\Box_{\ne}p$ iff $p\supseteq\delta_N$ for some $N$. Likewise $\hat\Diamond\delta_N=\delta_N$ (undo by a bijection, which returns to every truth), so $\hat{\hat\Box}$ and $\Box_{\ne}$ coincide, and BF at type $t$ holds for them by the bijection argument (a symmetric $Y$ pinned by $X_Y$ has $Y_k=Y_b$ for a bijection $b$ agreeing with $k$ on $X_Y$); by Proposition D8 of The Bounds of Possibility, $\Box_5$ implies ND-necessity. The truth that $0$ and $1$ are collapsed into one class... more precisely, with $0\sim1$, the true symmetric proposition $\{h:h(0)\sim h(1)\}$, pinned by $\{0,1\}$, is not ND-necessary, since a surjection injective on $\{0,1\}$ may separate the classes of $h(0)$ and $h(1)$; so not every truth is 5-necessary.
+
+*Address: `symmetric-infinite-classes-individuals-singleton#collapse-to-nd`. By Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 2026-10-14.*
 
 ### Holds BF.
 
