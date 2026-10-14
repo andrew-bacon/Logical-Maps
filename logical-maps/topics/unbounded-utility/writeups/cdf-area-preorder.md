@@ -397,10 +397,13 @@ $Y+Z$ and is strictly preferred by the area rule. This refutes Independent
 Sum Cancellation and therefore Independent Sum Invariance.
 
 The original model still satisfies Independent Sum Preservation, Positive
-Affine Invariance and Comonotonic Sum Invariance. Its existing comonotonic
-copula establishes Existential Copula Sum Invariance. Consequently this
-one model supplies the report's second and fifth non-implications, and also
-separates Independent Sum Preservation from Cancellation over DU.
+Affine Invariance and Comonotonic Sum Invariance. Its comonotonic copula
+established the since-retired Existential Copula Sum Invariance (removed
+11 October 2026); its Relative Expectation now gives Uninteractive Sum
+Invariance by `relative-independence-equivalence-imply-uninteractive-sum`.
+Consequently this one model supplies the report's second and fifth
+non-implications, in the report's own terms, and also separates Independent
+Sum Preservation from Cancellation over DU.
 
 `checks/fitelson_report.py` checks the exact block inequalities, finite-prefix
 variation and areas, and samples the closed-form convolution. Those numerical

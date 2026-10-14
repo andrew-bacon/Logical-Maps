@@ -73,9 +73,10 @@ incompatibility from the displayed package. Requiring only an arbitrary
 total extension would not answer the question.
 
 This candidate asks for a model of the comonotonic instance specifically.
-The existing total independent-sum model already supplies a model of
-Existential Copula Sum Invariance using the product copula, so the weaker
-existential-copula consistency question is not being reopened here.
+The existing total independent-sum model already supplies a model of the
+product-copula instance (the since-retired Existential Copula Sum Invariance,
+removed 11 October 2026), so the weaker existential-copula consistency
+question is not being reopened here.
 
 **Original work: precise candidate formulation and obstacle analysis.**
 Goodsell's *Unbounded Utility and Background Risk* (unpublished), §3,

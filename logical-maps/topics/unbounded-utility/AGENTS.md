@@ -20,9 +20,9 @@ Display names and historical IDs differ. Confirm definitions in
 | EU, finite/simple EU, relative/folded expectation, CDF areas | `expected-utility`, `simple-eu`, `relative-expectation`, `simple-relative-expectation`, `folded-expectation`, `cdf-area-extension` |
 | Sym, symmetry, affine transformations, reflection, neutrality | `shift-invariance`, `scale-invariance`, `positive-affine-invariance`, `negative-affine-anti-invariance`, `reflection-anti-invariance`, `symmetric-neutrality`; inspect the cited result's actual package |
 | Background risk, independent addition, preservation vs cancellation | `independent-sum-consistency` (Independent Sum Invariance), `independent-sum-preservation`, `independent-sum-cancellation`, `full-sum-consistency` |
-| Copulas, comonotonic / antitonic addition | `comonotonic-sum-consistency`, `antitonic-sum-consistency`, `existential-copula-sum-consistency`, `universal-copula-sum-consistency` (displayed as Invariance) |
+| Copulas, comonotonic / antitonic addition | `comonotonic-sum-consistency`, `antitonic-sum-consistency`, `universal-copula-sum-consistency` (displayed as Invariance) |
 | Comonotonic preservation/cancellation, St Petersburg incompleteness | `comonotonic-sum-weak-preservation`, `comonotonic-sum-preservation` (includes strict preservation), `comonotonic-sum-cancellation`; `writeups/st-petersburg-refutes-total-comonotonic-preservation.md` |
-| Nonindependent copulas, mixture commutation | `existential-nonindependent-copula-sum-consistency`; `writeups/independent-sum-eu-imply-nonindependent-copula.md` |
+| Uninteractive addition, tails avoiding each other, integrable overlap, UAIS | `uninteractive-sum-invariance`; equivalent to Relative Expectation under DU by `relative-independence-equivalence-imply-uninteractive-sum` and `uninteractive-sum-equivalence-imply-relative` |
 | L¹, continuity, transfer of a shift | `l1-continuity`, `vanishing-shift-continuity`, `shift-transfer` |
 | Pasadena, Arroyo, alternating St Petersburg, self-similarity | `pasadena-value`, `arroyo-value`, `alternating-st-petersburg-value`, `negative-self-similarity` |
 

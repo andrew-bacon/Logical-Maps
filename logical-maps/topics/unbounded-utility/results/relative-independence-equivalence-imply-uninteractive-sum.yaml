@@ -1,0 +1,25 @@
+id: relative-independence-equivalence-imply-uninteractive-sum
+premises:
+- rich-outcomes
+- stochastic-equivalence
+- independence
+- relative-expectation
+conclusion: uninteractive-sum-invariance
+status: proved
+certificate:
+  source_id: misc
+  lean: none
+  produced_by: Claude (Fable 5.1)
+  recorded_by: Claude (Fable 5.1), 2026-10-11
+  checked_by: []
+  date: '2026-10-11'
+proof: |-
+  Write M for the fair mixture, realized by a coin B independent of the gambles mixed and shared by both sides of a comparison. Step 1 (integrable summand): for integrable Z and any coupling, X ≽ Y iff X+Z ≽ Y+Z. By Mixture Independence X ≽ Y iff M(X,Y+Z) ≽ M(Y,Y+Z); the differences M(X,Y+Z) − M(X+Z,Y) and M(Y,Y+Z) − M(Y+Z,Y) both equal Z(2B−1), integrable with mean E[Z]E[2B−1] = 0, so Relative Expectation makes each pair indifferent; Mixture Independence again gives M(X+Z,Y) ≽ M(Y+Z,Y) iff X+Z ≽ Y+Z. Step 2 (separability): Mixture Independence and Stochastic Equivalence give Sure-Thing (independence-to-sure-thing); if X°, Y° vanish on an event A and Z vanishes off A, the sums agree on A, so X° ≽ Y° iff X°+Z ≽ Y°+Z. Step 3: let $A=\{|Z|>\max(|X|,|Y|)\}$. Then $|X|1_A, |Y|1_A \le \min(|X|,|Z|)$ and $|Z|1_{A^c}\le \min(|X|,|Z|)+\min(|Y|,|Z|)$ are integrable. If P(A) = 1, X − Y is integrable and Relative Expectation decides both comparisons by E[X−Y]. Otherwise put a = E[X1_A], b = E[Y1_A], p = P(A), γ = (b−a)/(1−p), X° = X1_{A^c}, Y° = (Y+γ)1_{A^c}. Relative Expectation gives X ∼ X°+a and Y ∼ Y°+a (the differences X1_A − a and Y1_A − γ1_{A^c} − a are integrable with mean zero), so by Step 1 X ≽ Y iff X° ≽ Y°. Step 1 removes the integrable Z1_{A^c} from the shifted comparison, the same replacements give X+Z ≽ Y+Z iff X°+Z1_A ≽ Y°+Z1_A, and Step 2 closes the loop. Rich Outcomes supplies the auxiliary gambles in the real chart. Full argument in writeups/relative-independence-equivalence-imply-uninteractive-sum.md.
+sources:
+- 'Claude (Fable 5.1), Logical Maps session, 10–11 October 2026: proof in writeups/relative-independence-equivalence-imply-uninteractive-sum.md, in response to Zachary Goodsell''s request for a minimal set of principles entailing Uninteractive Sum Invariance.'
+- 'Zachary Goodsell, Logical Maps session, 6 October 2026: proposal of the principle and of the replacement of the existential copula principles.'
+source_names:
+- Claude connecting proof 10–11 Oct
+- Goodsell proposal 6 Oct
+notes: |-
+  Original work: connecting proof. Stochastic Equivalence enters only through Sure-Thing (two-cell separability); Relative Expectation alone with Mixture Independence already gives invariance under integrable common summands in any coupling, hence Shift Invariance. The premises are close to minimal: finite-shift-total-extension satisfies DTU and Shift Invariance but fails Shift Transfer, which follows from Uninteractive Sum Invariance through the converse result uninteractive-sum-equivalence-imply-relative, so Shift Invariance with Sure-Thing does not suffice; total-exact-ultrafilter has DTU without Shift, so some continuity is needed; the extension of the base area preorder by one Cauchy comparison (write-up, final section) has CDF-Area Extension without Mixture Independence and fails Shift. L¹ Continuity is not needed: lexicographic-folded-extension has Relative Expectation without it. Together with the converse, the principle is equivalent to Relative Expectation under Mixture Independence and Stochastic Equivalence. Not Lean-checked.

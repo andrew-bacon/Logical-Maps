@@ -106,8 +106,23 @@ GPT-6 (Codex) expanded and informally checked the argument.
 
 The [fixed shuffle-copula proof](calibrated-geometric-continuous-ultrafilter.html#shared-clipping-and-shuffle-copula-proof)
 applies to this model's cutoffs and tolerance-based ultrafilter comparison.
-It proves **Existential Copula Sum Invariance** using one copula for all
-triples, including atomic marginals. This does not change the model's
+It proves the fixed-copula invariance $\operatorname{SC}(C_\sigma)$ using one
+copula for all triples, including atomic marginals; the map recorded this as
+Existential Copula Sum Invariance until that principle was retired on
+11 October 2026 in favour of Uninteractive Sum Invariance, which this model
+satisfies by Relative Expectation
+(`relative-independence-equivalence-imply-uninteractive-sum`). This does not change the model's
 existing failure of Comonotonic Sum Invariance. The original construction
 and earlier results retain their original attribution. The expanded model
 has no Lean verification; its earlier record was marked stated.
+
+## Relative Expectation
+
+**Added 11 October 2026.** The flag follows from the shared clipping proof's
+[continuity section](calibrated-geometric-continuous-ultrafilter.html#shared-clipping-and-shuffle-copula-proof):
+if $E|X-Y|<\infty$ then the clipped difference is bounded by $|X-Y|$ and
+converges pointwise to $X-Y$, so $v_X-v_Y\to E[X-Y]$ by dominated convergence
+and the tolerance-based comparison is decided by the sign of $E[X-Y]$, with
+indifference at zero. With Mixture Independence and Stochastic Equivalence this
+gives Uninteractive Sum Invariance by the recorded result
+`relative-independence-equivalence-imply-uninteractive-sum`.

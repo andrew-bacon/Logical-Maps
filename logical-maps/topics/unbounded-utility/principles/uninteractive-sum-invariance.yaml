@@ -1,0 +1,23 @@
+id: uninteractive-sum-invariance
+name: Uninteractive Sum Invariance
+statement: |-
+  Call real-utility variables X and Z uninteractive when $E[\min(|X|,|Z|)]<\infty$: their tails are jointly rare. Whenever (X,Z) and (Y,Z) are uninteractive, $X \succeq Y$ iff $X+Z \succeq Y+Z$. The condition applies to each pair separately; nothing is assumed about the joint law of (X,Y,Z), and no law invariance is built in.
+formal: |-
+  $E\min(|X|,|Z|)<\infty \land E\min(|Y|,|Z|)<\infty \Rightarrow (X \succeq Y \Leftrightarrow X+Z \succeq Y+Z)$.
+category: invariance-principles
+tags:
+- background-risk
+sources:
+- 'Zachary Goodsell, Logical Maps session, 6 October 2026: proposed an invariance of the ordering under addition when the tails of the added variables avoid each other, as a simplification of the existential copula principles; formulated with the integrable-overlap condition and checked in the truncation ultrafilter models by Claude (Opus 5.5), 6 October 2026.'
+- 'Claude (Fable 5.1), Logical Maps session, 10–11 October 2026: equivalence with Relative Expectation under Mixture Independence and Stochastic Equivalence, recorded as relative-independence-equivalence-imply-uninteractive-sum and uninteractive-sum-equivalence-imply-relative.'
+source_names:
+- Goodsell uninteractive addition proposal 6 Oct
+- Claude RET equivalence 10–11 Oct
+notes: |-
+  Numerical scope: variables in the real utility chart for which both pointwise sums exist as gambles. Uninteractive pairs include every pair with an integrable member, every disjointly supported pair, every pair with bounded $\min(|X|,|Z|)$, and every pair admitting a corner-avoiding copula (one giving zero mass to $([0,\delta)\cup(1-\delta,1])^2$ for some $\delta>0$), since each quantile function is then bounded wherever the other is not. The quarter-shuffle copula is corner-avoiding, so this principle implies the fixed-copula invariance $\operatorname{SC}(C_\sigma)$ that the map recorded as Existential Copula Sum Invariance and Existential Nonindependent Copula Sum Invariance until 11 October 2026; those two principles were removed on that date and this one replaces them (extraction.md, 11 October 2026). A constant summand gives Shift Invariance; a disjointly supported summand gives the two-cell statewise Sure-Thing instance. Uninteractive pairs need not be independent, comonotonic or antitonic, and the principle says nothing about copulas with corner mass.
+  The absolute values matter: a version that only keeps same-sign tails apart fails in the asymmetric window $[-t,2t]$ model, where a Cauchy C has value $\ln(2)/\pi$ and X = C, Y = $\ln(2)/\pi$, Z = −C give X ∼ Y but X+Z = 0 ≺ Y+Z. The bounded-overlap variant (bounded $\min(|X|,|Z|)$) is implied; whether it implies this integrable form under DU is open, and reduces to Y + R ∼ Y + E[R] for integrable R ≥ 0 and arbitrary Y.
+  Under Mixture Independence and Stochastic Equivalence this principle is equivalent to Relative Expectation. It holds in every continuous clipped-expectation model and in both liminf models, by dominated convergence applied to $|q_i(x+z)-q_i(x)-q_i(z)|\le 2\min(|x|,|z|)$; it fails in the exact ultrafilter and eventual clipped-expectation models, which fail Shift Invariance.
+date: '2026-10-11'
+aliases:
+- Uninteractive Addition Invariance
+- UAIS

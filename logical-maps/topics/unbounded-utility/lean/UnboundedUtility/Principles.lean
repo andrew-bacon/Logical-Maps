@@ -162,8 +162,6 @@ def CopulaSumConsistency (P : Pref O) (C : Copula) : Prop :=
   ∀ X Y Z XZ YZ : Numeric P, X.Sum Z XZ → Y.Sum Z YZ → C.Admits X Z → C.Admits Y Z →
     (X.gamble ≽[P] Y.gamble ↔ XZ.gamble ≽[P] YZ.gamble)
 
-def ExistentialCopulaSumConsistency (P : Pref O) : Prop := ∃ C, CopulaSumConsistency P C
-
 def UniversalCopulaSumConsistency (P : Pref O) : Prop := ∀ C, CopulaSumConsistency P C
 
 def RelativeExpectation (P : Pref O) : Prop :=

@@ -1,0 +1,22 @@
+id: uninteractive-sum-equivalence-imply-relative
+premises:
+- rich-outcomes
+- stochastic-equivalence
+- uninteractive-sum-invariance
+conclusion: relative-expectation
+status: proved
+certificate:
+  source_id: misc
+  lean: none
+  produced_by: Claude (Fable 5.1)
+  recorded_by: Claude (Fable 5.1), 2026-10-11
+  checked_by: []
+  date: '2026-10-11'
+proof: |-
+  Lemma (stationary realization): for every integrable law μ with mean zero there are D ∼ μ and Z with Z + D equal in law to Z. For a mean-zero two-point law with values x > 0 > y, the probability of x is |y|/(x+|y|); let Z be uniform on [−|y|, x) and T the swap of [−|y|,0) and [0,x) by translation, which preserves the uniform law; D := T(Z) − Z takes the value x exactly on [−|y|,0), so D has the two-point law and Z + D = T(Z) has the law of Z. In general, with m = ∫x⁺dμ = ∫x⁻dμ and μ⁺, μ⁻ the restrictions to the half-lines, the measure π(dx,dy) = ((x+|y|)/m) μ⁺(dx)μ⁻(dy) has mass 1 − μ({0}) and ∫ρ_{x,y} dπ + μ({0})δ₀ = μ, where ρ_{x,y} is the mean-zero two-point law on {x,y}; draw (x,y) from π and then (D,Z) as above, so Z + D equals Z in law conditionally on (x,y), hence unconditionally, while D ∼ μ. Step 1: an integrable mean-zero D is indifferent to 0. Realize (D′,Z) on the standing space with D′ ∼ D. The compared pair (D′,0) and summand Z are uninteractive since E min(|D′|,|Z|) ≤ E|D′|. So D′ ≽ 0 iff D′+Z ≽ Z and 0 ≽ D′ iff Z ≽ D′+Z, and both right-hand sides hold by Stochastic Equivalence; hence D′ ∼ 0 and, by Stochastic Equivalence, D ∼ 0. Step 2: let X − Y = c + D₀ with c = E[X−Y] and E D₀ = 0. The compared pair (c+D₀, 0) with summand Y is uninteractive because E min(|c+D₀|,|Y|) ≤ |c| + E|D₀|, so X ≽ Y iff c+D₀ ≽ 0 iff (constant summand −c) D₀ ≽ −c iff (Step 1) 0 ≽ −c iff c ≥ 0; symmetrically Y ≽ X iff c ≤ 0. This is Relative Expectation. Mixture Independence and Stochastic Dominance are not used; Rich Outcomes supplies the real chart for the auxiliary gambles. Full argument in writeups/uninteractive-sum-equivalence-imply-relative.md.
+sources:
+- 'Claude (Fable 5.1), Logical Maps session, 10–11 October 2026: proof in writeups/uninteractive-sum-equivalence-imply-relative.md, in response to Zachary Goodsell''s question whether Relative Expectation and Uninteractive Sum Invariance coincide under DU.'
+source_names:
+- Claude converse proof 10–11 Oct
+notes: |-
+  Original work: converse connecting proof. Only instances of the principle with an integrable compared pair and an arbitrary common summand are used, so under Stochastic Equivalence and Rich Outcomes that restricted form, the full principle and Relative Expectation are equivalent given relative-independence-equivalence-imply-uninteractive-sum. The stationary realization can be sharpened to make min(|D|,|Z|) bounded, by pairing large positive values only with small negative ones and conversely; with the bounded-overlap variant of the principle this still gives Step 1, hence every integrable gamble indifferent to its mean, Shift Invariance, Shift Transfer and Relative Expectation for bounded differences, but Step 2 needs the integrable form, and the bounded variant's implication of Relative Expectation is open. Not Lean-checked.

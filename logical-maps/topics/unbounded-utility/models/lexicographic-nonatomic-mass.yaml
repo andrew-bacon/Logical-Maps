@@ -39,8 +39,8 @@ violates:
 - full-sum-consistency
 - comonotonic-sum-consistency
 - antitonic-sum-consistency
-- existential-copula-sum-consistency
 - universal-copula-sum-consistency
+- uninteractive-sum-invariance
 status: proved
 certificate:
   source_id: misc
@@ -86,3 +86,10 @@ references:
   role: related
   locator: '§§4–5, author manuscript pp. 15–16 and 22; Appendix A, pp. 25–26'
   note: Published theorem for countably supported lotteries. The new countermodel uses nonatomic laws, outside that domain.
+changes:
+- date: '2026-10-11'
+  by: Claude (Fable 5.1)
+  summary: >-
+    The existential copula flag is retired with that principle. Uninteractive Sum Invariance fails on this bounded chart, where every pair is uninteractive: with the comonotonic coupling W = U, X = U/4 ≻ Y = 1/8 while X + Z = U/2 and Y + Z = 1/8 + U/4 both have vector (1/4, 1), so Y + Z ≽ X + Z. The write-up section “No fixed copula works” records the calculation.
+  violates:
+  - uninteractive-sum-invariance

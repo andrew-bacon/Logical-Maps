@@ -124,17 +124,6 @@ theorem total_preservation_implies_independent_cancellation : Statements.total_p
   have hs := (hp Y X Z YZ XZ hy hx (independentNoise_swap hi)).2 ⟨hyx, hn⟩
   exact hs.2 hz
 
-/-- The independent copula witnesses that the quantifier over copulas is nonempty. -/
-def independentCopula : Copula where
-  measure := (volume : Measure Sample).prod volume
-  probability := inferInstance
-  fst_uniform := by simp
-  snd_uniform := by simp
-
-theorem universal_copula_implies_existential : Statements.universal_copula_implies_existential := by
-  intro O _ _ P _ h
-  exact ⟨independentCopula, h independentCopula⟩
-
 theorem relative_implies_simple_relative : Statements.relative_implies_simple_relative := by
   intro O _ _ P _ h X Y hFinite
   exact h X Y (integrable_finite_range (X.measurable.sub Y.measurable) hFinite)

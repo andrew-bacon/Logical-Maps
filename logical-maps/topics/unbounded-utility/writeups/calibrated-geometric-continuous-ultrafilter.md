@@ -20,8 +20,10 @@ Put $X\succeq Y$ iff for every $\epsilon>0$ the set
 $\{n:v_X(n)-v_Y(n)\ge-\epsilon\}$ belongs to $\mathcal U$.
 The [common clipping proof](calibrated-geometric-continuous-ultrafilter.html#shared-clipping-and-shuffle-copula-proof) establishes
 DTU, CDF-Area Extension, Relative Expectation, Expected Utility, L¹ Continuity,
-Shift Invariance, and Existential Copula Sum Invariance. In particular the
-copula is chosen once, not separately for different triples.
+Shift Invariance, and the fixed-copula invariance $\operatorname{SC}(C_\sigma)$
+for the quarter-shuffle copula below, with the copula chosen once rather than
+per triple. Uninteractive Sum Invariance follows from Relative Expectation by
+the recorded result `relative-independence-equivalence-imply-uninteractive-sum`.
 
 ## Exact alternating-game evaluation
 
@@ -175,10 +177,15 @@ u-1/4,&3/4\le u<1.
 The distribution $C_\sigma$ of $(U,\sigma(U))$ is a copula, since $\sigma$
 preserves Lebesgue measure. It is fixed independently of all gamble laws.
 It is nonindependent: $H_{C_\sigma}(1/4,1/4)=0$, whereas the product
-copula gives $1/16$. Thus the argument below also verifies the separate
-Existential Nonindependent Copula Sum Invariance principle added on
-3 October 2026; this observation retains the attribution of the existing
-shuffle construction.
+copula gives $1/16$. The map recorded the conclusion of this section as
+Existential Copula Sum Invariance and, from 3 October 2026, also as
+Existential Nonindependent Copula Sum Invariance. Both principles were
+removed on 11 October 2026 and replaced by Uninteractive Sum Invariance,
+which follows from Relative Expectation
+(`relative-independence-equivalence-imply-uninteractive-sum`) and implies
+$\operatorname{SC}(C)$ for every corner-avoiding copula, $C_\sigma$ included.
+This section is retained as the original direct verification, with its
+attribution.
 For any two real probability laws take
 
 $$A=Q_A(U),\qquad B=Q_B(\sigma(U)).$$
@@ -210,8 +217,8 @@ apply (2) to the two pairs separately and subtract:
 $$v_{X+Z}-v_{Y+Z}=v_X-v_Y+o(1).$$
 
 Both comparison rules ignore that error, in both directions. Thus
-$\operatorname{SC}(C_\sigma)$ holds, proving **Existential Copula Sum
-Invariance**. There is no additional requirement on the triple's joint law.
+$\operatorname{SC}(C_\sigma)$ holds. There is no additional requirement on
+the triple's joint law.
 Strict comparisons are preserved because the equivalence holds in both
 ordered directions.
 

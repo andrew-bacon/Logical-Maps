@@ -1,0 +1,19 @@
+id: uninteractive-sum-implies-shift
+premises:
+- uninteractive-sum-invariance
+conclusion: shift-invariance
+status: proved
+certificate:
+  source_id: misc
+  lean: none
+  produced_by: Claude (Opus 5.5)
+  recorded_by: Claude (Fable 5.1), 2026-10-11
+  checked_by: []
+  date: '2026-10-11'
+proof: |-
+  Take the common summand Z = b constant. Then $E\min(|X|,|b|)\le |b|<\infty$ and likewise for Y, so the pairs are uninteractive and the principle gives $X\succeq Y$ iff $X+b\succeq Y+b$, which is Shift Invariance. In particular the exact ultrafilter and eventual clipped-expectation models, which fail Shift Invariance, fail Uninteractive Sum Invariance.
+sources:
+- 'Claude (Opus 5.5), Logical Maps session, 6 October 2026, while formulating the principle at Zachary Goodsell''s request; recorded by Claude (Fable 5.1), 11 October 2026.'
+source_names:
+- Claude constant-summand observation 6 Oct
+notes: Immediate instance. Not Lean-checked.

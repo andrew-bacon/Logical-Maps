@@ -313,7 +313,10 @@ sloped pieces and integral zero, so the sums are incomparable although
 $X\sim_CY$. Weak preservation of indifference fails, hence Independent Sum
 Invariance fails as well.
 
-**Existential Copula Sum Invariance fails.** Fix any copula $\mathcal C$
+**Uninteractive Sum Invariance fails, and with it sum invariance for every
+copula** (recorded as Existential Copula Sum Invariance until 11 October
+2026). All three gambles below are bounded, so both pairs are uninteractive.
+Fix any copula $\mathcal C$
 and realize $(U,W)$ with law $\mathcal C$. Put $X=2\cdot\mathbf1\{U>1/2\}$,
 $Z=W$ and $Y=1$. Since $X$ is a nondecreasing function of $U$, the pair
 $(X,Z)$ admits $\mathcal C$; a constant $Y$ admits every copula. For

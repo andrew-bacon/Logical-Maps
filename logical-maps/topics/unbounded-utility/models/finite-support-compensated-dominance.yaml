@@ -27,7 +27,7 @@ violates:
 - integer-negative-self-similarity
 - comonotonic-sum-consistency
 - independent-sum-preservation
-- existential-copula-sum-consistency
+- uninteractive-sum-invariance
 status: proved
 certificate:
   source_id: misc
@@ -77,10 +77,15 @@ changes:
   - negative-self-similarity
   - comonotonic-sum-consistency
   - independent-sum-preservation
-  - existential-copula-sum-consistency
 - date: '2026-09-24'
   by: Claude (Fable 5.1)
   summary: >-
     Uniqueness of Negative Self-Similarity (integer ratios) shown to fail: the recorded uniqueness witness uses p = 1/2, a = 2, b = 0 and Z = −2, with A and −1/2 incomparable fixed values.
   violates:
   - integer-negative-self-similarity
+- date: '2026-10-11'
+  by: Claude (Fable 5.1)
+  summary: >-
+    The existential copula flag is retired with that principle. The same witness (X = 2·1{U > 1/2}, Y = 1, Z = W, all bounded, so both pairs are uninteractive) refutes Uninteractive Sum Invariance directly: X ∼ Y while X + Z and Y + Z are incomparable. The write-up paragraph is retitled accordingly.
+  violates:
+  - uninteractive-sum-invariance

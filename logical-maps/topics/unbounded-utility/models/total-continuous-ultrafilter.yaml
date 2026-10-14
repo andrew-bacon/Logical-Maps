@@ -8,10 +8,9 @@ satisfies:
 - stochastic-dominance
 - independence
 - expected-utility
+- relative-expectation
 - shift-invariance
 - reflection-anti-invariance
-- existential-copula-sum-consistency
-- existential-nonindependent-copula-sum-consistency
 violates:
 - scale-invariance
 - rational-scale-invariance
@@ -67,13 +66,15 @@ changes:
     to zero. The tolerance-based comparison ignores that error in both directions. Full proof in writeups/calibrated-geometric-continuous-ultrafilter.md (shared clipping proof);
     original construction attribution and date are preserved. The previous record was Lean stated; the
     expanded statement is not Lean-checked.'
-  satisfies:
-  - existential-copula-sum-consistency
 - date: '2026-10-03'
   by: GPT-6 (Codex), classification of the previously recorded AI shuffle proof communicated by Branden Fitelson
   summary: 'The same fixed adjacent-quarter shuffle is nonindependent: its joint CDF at (1/4,1/4) is zero rather than 1/16. The existing full invariance proof therefore also verifies Existential Nonindependent Copula Sum Invariance; no new construction or original-author attribution is claimed.'
+- date: '2026-10-11'
+  by: Claude (Fable 5.1)
+  summary: >-
+    The two existential copula principles were removed from the map, so their flags are retired here; the fixed quarter-shuffle argument in the write-up remains as history. Uninteractive Sum Invariance is now derived for this model from its Relative Expectation, Mixture Independence and Stochastic Equivalence flags by the recorded result relative-independence-equivalence-imply-uninteractive-sum. Relative Expectation is flagged: for E|X − Y| < ∞ the clipped difference is bounded by |X − Y| and converges pointwise to X − Y, so v_X − v_Y → E[X − Y] by dominated convergence, and the tolerance-based comparison is decided by its sign (shared clipping proof, writeups/calibrated-geometric-continuous-ultrafilter.md, section “Area, relative expectation, continuity and shifts”).
   satisfies:
-  - existential-nonindependent-copula-sum-consistency
+  - relative-expectation
 references:
 - paper: decision-theory-unbound
   role: proof
