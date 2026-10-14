@@ -16,229 +16,192 @@ references:
 - paper: bacon-dorr-classicism
   role: proof
   locator: Appendix D, p. 79, paragraph beginning “One particularly interesting result”
-
-# migration: the definition is the old description without its verdict sentences, then the notes'
-# interpretation of Σ.
-# migration (3 October): the interpretation of Σ has no individual constants, as the topic's condition
-# sigma-top now says (Cian Dorr's decision); it read "and each individual constant denotes one
-# fixed individual".
-definition: >-
-  Appendix D, p. 79, the paragraph beginning “One particularly interesting result”: two objects,
-  $W_0=\mathbb N$ and $W_1=\{0\}$, with all functions between them as arrows, $W_i^\ddagger$ the
-  finite subsets of $W_i$, and the model ideally full as in Proposition D.5. Evaluation point:
-  $W_0$, at its identity arrow.
+definition: 'Appendix D, p. 79, the paragraph beginning “One particularly interesting result”: two objects,
+  $W_0=\mathbb N$ and $W_1=\{0\}$, with all functions between them as arrows, $W_i^\ddagger$ the finite
+  subsets of $W_i$, and the model ideally full as in Proposition D.5. Evaluation point: $W_0$, at its
+  identity arrow.
 
 
-  Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each
-  denotes the top element of its type.
-
-# 2 October 2026: the topic's general arguments sigma-top and transversal-choice-extensionally-full
-# replace this record's copies of them, through these conditions.
+  Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each denotes the
+  top element of its type.'
 meets:
-  codomain-intensions: >-
-    The model is ideally full at both objects, and an intension whose value at an arrow depends
-    only on the arrow's codomain is pinned down by $\emptyset$ (Appendix D, the remark after
-    Definition D.3).
+  codomain-intensions: The model is ideally full at both objects, and an intension whose value at an arrow
+    depends only on the arrow's codomain is pinned down by $\emptyset$ (Appendix D, the remark after Definition
+    D.3).
   sigma-top: This is the interpretation the definition fixes.
-  extensionally-full: >-
-    The model is ideally full, hence extensionally full at every object (Appendix D, the remark
-    after Definition D.3).
-
+  extensionally-full: The model is ideally full, hence extensionally full at every object (Appendix D,
+    the remark after Definition D.3).
 arguments:
-
-# Only the verdicts the engine needs to derive the rest are recorded, the source's first. Lead-ins
-# naming the verdict, and attribution sentences, are dropped from the texts, their content being in
-# holds, fails, by and date; a text cut from a longer sentence begins with a capital and ends with a
-# full stop.
-
-# --- from the source (17 Sep record) ---
-
-- holds: [barcan-r]
-  fails: [necessary-barcan-r]
-  source: {paper: bacon-dorr-classicism, locator: 'p. 79'}
-  text: >-
-    BF holds at $W_0$, since every map agrees on any finite set with a surjection, and fails at
-    $W_1$, where $\forall y\,\Box\,x=y$ holds of the one individual but $\Box\forall y\,x=y$ does
-    not; so BF holds without $\Box$BF.
-
-# --- later additions ---
-
-- fails: [atomlessness]
-  # migration: `by` and `date` are those of the 19 September change, which calls this an original
-  # observation, not in the source. The lead-in "Atomlessness fails at $W_0$:" is dropped, $W_0$
-  # being the evaluation point.
+- holds:
+  - barcan-r
+  fails:
+  - necessary-barcan-r
+  source:
+    paper: bacon-dorr-classicism
+    locator: p. 79
+  text: BF holds at $W_0$, since every map agrees on any finite set with a surjection, and fails at $W_1$,
+    where $\forall y\,\Box\,x=y$ holds of the one individual but $\Box\forall y\,x=y$ does not; so BF
+    holds without $\Box$BF.
+- fails:
+  - atomlessness
   by: Claude Fable 5.1 (Anthropic)
   date: '2026-09-19'
-  text: >-
-    The closed sentence that there is exactly one individual denotes the singleton of the unique
-    map to $W_1$, a nonempty proposition with no nonempty proper subproposition.
-
-- holds: [axiom-of-infinity-e, axiom-of-infinity-t]
-  # migration: `by` adds "at Cian Dorr's direction" from the change's summary, which is the text.
+  text: The closed sentence that there is exactly one individual denotes the singleton of the unique map
+    to $W_1$, a nonempty proposition with no nonempty proper subproposition.
+- holds:
+  - axiom-of-infinity-e
+  - axiom-of-infinity-t
   by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
   date: '2026-09-20'
-  text: >-
-    The individuals are the natural numbers and identity at the evaluation arrow is literal, so no
-    numeral counts them. The propositions that a given individual is fixed by the arrow, one for
-    each individual, are pairwise distinct and each has that individual as finite support, so
-    there are infinitely many propositions. The set of numerals at each type is invariant under
-    every arrow, hence has empty support and lies in the domain, so finite cardinality is standard
-    and no finite cardinality holds of the universal property at either type.
-
-- fails: [distinctness-preserving-collapse]
-  # migration: the lead-in "Distinctness-preserving collapse fails at $W_0$:" is dropped, $W_0$
-  # being the evaluation point.
+  text: The individuals are the natural numbers and identity at the evaluation arrow is literal, so no
+    numeral counts them. The propositions that a given individual is fixed by the arrow, one for each
+    individual, are pairwise distinct and each has that individual as finite support, so there are infinitely
+    many propositions. The set of numerals at each type is invariant under every arrow, hence has empty
+    support and lies in the domain, so finite cardinality is standard and no finite cardinality holds
+    of the universal property at either type.
+- fails:
+  - distinctness-preserving-collapse
   by: Claude Fable 5.1 (Anthropic)
   date: '2026-09-23'
-  text: >-
-    The transposition of $5$ and $6$ is an arrow with an inverse, so for any true $q$ the
-    composite of a member of $q$ with the inverse carries the transposition into $q$, making
-    $\Diamond q$ true there, while the true proposition that $5$ is fixed is false there.
-
-- holds: [necessary-relational-choice-r]
-  # migration: `by` renders the closing "Cian Dorr’s observation of 23 September 2026." and the
-  # change's author.
+  text: The transposition of $5$ and $6$ is an arrow with an inverse, so for any true $q$ the composite
+    of a member of $q$ with the inverse carries the transposition into $q$, making $\Diamond q$ true there,
+    while the true proposition that $5$ is fixed is false there.
+- holds:
+  - necessary-relational-choice-r
   by: Cian Dorr (observation); recorded by Claude Fable 5.1 (Anthropic)
   date: '2026-09-23'
-  text: >-
-    The model is ideally full, hence extensionally full at every object (Appendix D, the remark
-    after Definition D.3): for any set $R$ of tuples from the domains at an object $V$, the
-    intension that assigns to every arrow out of $V$ into an object $U$ a fixed set $R_U$ of
-    tuples from $U$’s domains, with $R_V=R$, is pinned down by $\emptyset$, so it is the intension
-    of an element of $V^{\bar\sigma\to t}$ with extension $R$ at $1_V$. Given a relation $U$
-    serial at $V$, choose for each $x$ a $y$ with $(Ux)y$, by choice in the metatheory; the graph
-    is such an $R$, and its element $S$ is functional and a subrelation of $U$ at $1_V$, both
-    conditions being unboxed. The closed Relational Choice instance is true at an arrow $h\colon
-    W_0\to V$ iff it is true at $1_V$ in the truncation by $h$, whose domains at $V$ are those of
-    the model, so it holds at every arrow and $\Box$Relational Choice follows.
-
-- fails: [boolean-completeness-t, countable-boolean-completeness-r]
-  # migration: the arguments of 25 September close with "Observations of Claude Fable 5.1
-  # (Anthropic), 25 September 2026; not in the source.", which becomes `by` and `date`. They follow
-  # "Further verdicts at $W_0$.", which is dropped, and the argument for the failure of Actuality,
-  # now derived, which is dropped too. This text keeps the closing "so Countable Boolean
-  # Completeness fails too" of its second sentence.
+  text: 'The model is ideally full, hence extensionally full at every object (Appendix D, the remark after
+    Definition D.3): for any set $R$ of tuples from the domains at an object $V$, the intension that assigns
+    to every arrow out of $V$ into an object $U$ a fixed set $R_U$ of tuples from $U$’s domains, with
+    $R_V=R$, is pinned down by $\emptyset$, so it is the intension of an element of $V^{\bar\sigma\to
+    t}$ with extension $R$ at $1_V$. Given a relation $U$ serial at $V$, choose for each $x$ a $y$ with
+    $(Ux)y$, by choice in the metatheory; the graph is such an $R$, and its element $S$ is functional
+    and a subrelation of $U$ at $1_V$, both conditions being unboxed. The closed Relational Choice instance
+    is true at an arrow $h\colon W_0\to V$ iff it is true at $1_V$ in the truncation by $h$, whose domains
+    at $V$ are those of the model, so it holds at every arrow and $\Box$Relational Choice follows.'
+- fails:
+  - boolean-completeness-t
+  - countable-boolean-completeness-r
   by: Claude Fable 5.1 (Anthropic)
   date: '2026-09-25'
-  text: >-
-    Any set $F$ of propositions is the extension of the profile $\langle h,p\rangle\mapsto\{i :
-    i\cdot p\in F\}$, and for $F$ the family of propositions $A_m$ that a map $W_0\to W_0$ is
-    constant on $\{0,\ldots,2m-1\}$ and first changes value at $2m$, the least superset of
-    $\bigcup F$ pinned down by $\{0,\ldots,N\}$, the maps whose first change is at an even
-    position or beyond $N$, strictly shrinks as $N$ grows, so $F$ has no least upper bound. The
-    family is countable in the model's sense, the relation pairing $A_m$ with the numeral $m$
-    being in the domain by extensional fullness, so Countable Boolean Completeness fails too.
-
-- holds: [necessity-of-arithmetic]
+  text: 'Any set $F$ of propositions is the extension of the profile $\langle h,p\rangle\mapsto\{i : i\cdot
+    p\in F\}$, and for $F$ the family of propositions $A_m$ that a map $W_0\to W_0$ is constant on $\{0,\ldots,2m-1\}$
+    and first changes value at $2m$, the least superset of $\bigcup F$ pinned down by $\{0,\ldots,N\}$,
+    the maps whose first change is at an even position or beyond $N$, strictly shrinks as $N$ grows, so
+    $F$ has no least upper bound. The family is countable in the model''s sense, the relation pairing
+    $A_m$ with the numeral $m$ being in the domain by extensional fullness, so Countable Boolean Completeness
+    fails too.'
+- holds:
+  - necessity-of-arithmetic
   by: Claude Fable 5.1 (Anthropic)
   date: '2026-09-25'
-  text: >-
-    At $W_0$ the finite cardinalities are the standard numerals and $I^*$ is true; at $W_1$ the
-    numerals remain pairwise distinct, because they differ at the arrows back into $W_0$ and
-    identity is necessary, $I^*$ is again true, the numerals are the finite cardinalities by
-    extensional fullness, and $\operatorname{Sum}$ and $\operatorname{Prod}$ are standard, their
-    graphs being in the domain; so every arithmetical sentence has its standard truth value at
-    every world.
-
-- fails: [necessary-barcan-t]
+  text: At $W_0$ the finite cardinalities are the standard numerals and $I^*$ is true; at $W_1$ the numerals
+    remain pairwise distinct, because they differ at the arrows back into $W_0$ and identity is necessary,
+    $I^*$ is again true, the numerals are the finite cardinalities by extensional fullness, and $\operatorname{Sum}$
+    and $\operatorname{Prod}$ are standard, their graphs being in the domain; so every arithmetical sentence
+    has its standard truth value at every world.
+- fails:
+  - necessary-barcan-t
   by: Claude Fable 5.1 (Anthropic)
   date: '2026-09-25'
-  text: >-
-    At $W_1$ the arrow $c_n\colon W_1\to W_0$ picking $n$ sends a proposition $q$ to $\{j :
-    c_{j(n)}\in q\}$ (with the arrow to $W_1$ added when $q$ contains $1_{W_1}$), a proposition
-    pinned down by $\{n\}$, so the proposition that $0$ and $1$ are collapsed is in no such image;
-    the profile holding at $\langle h,d\rangle$ iff $h=1_{W_1}$ or $d$ is in the image of $h$,
-    pinned down by $\{0\}$, is necessary of every proposition at $W_1$ but not universal at the
-    world $c_0$.
-
+  text: 'At $W_1$ the arrow $c_n\colon W_1\to W_0$ picking $n$ sends a proposition $q$ to $\{j : c_{j(n)}\in
+    q\}$ (with the arrow to $W_1$ added when $q$ contains $1_{W_1}$), a proposition pinned down by $\{n\}$,
+    so the proposition that $0$ and $1$ are collapsed is in no such image; the profile holding at $\langle
+    h,d\rangle$ iff $h=1_{W_1}$ or $d$ is in the image of $h$, pinned down by $\{0\}$, is necessary of
+    every proposition at $W_1$ but not universal at the world $c_0$.'
 - id: inextensible-comprehension
-  fails: [inextensible-comprehension-r]
-  # Recorded although the failure of Weakly Inextensible Comprehension gives it: the argument for
-  # that builds on this one.
+  fails:
+  - inextensible-comprehension-r
   by: Claude Fable 5.1 (Anthropic)
   date: '2026-09-25'
-  text: >-
-    At type $t\to t$, for the family $E$ of propositions $p_n$ that $n$ is fixed: for $Y$
-    inextensible with extension $E$ pinned down by the finite set $S$, pick $k\notin S$ and let
-    $X$, pinned down by $S_X:=S\cup\{k\}$, hold at an arrow $h$ into $W_0$ exactly of the
-    propositions $\{i : i(m)=n\}$ with $n\notin S_X$ and of the propositions $\{i : i(h(n))=n\}$
-    with $n\in S_X$; $X$ is necessary of every $p_n$, so $Y\le X$, yet at a map $h$ fixing $S$
-    pointwise and moving $k$, where $h\cdot Y=Y$, the extension of $X$ omits $p_k$.
-
-- holds: [signature-b-r]
-  # migration: the argument before it in the old notes, for B for pure sentences, now derived, is
-  # dropped.
+  text: 'At type $t\to t$, for the family $E$ of propositions $p_n$ that $n$ is fixed: for $Y$ inextensible
+    with extension $E$ pinned down by the finite set $S$, pick $k\notin S$ and let $X$, pinned down by
+    $S_X:=S\cup\{k\}$, hold at an arrow $h$ into $W_0$ exactly of the propositions $\{i : i(m)=n\}$ with
+    $n\notin S_X$ and of the propositions $\{i : i(h(n))=n\}$ with $n\in S_X$; $X$ is necessary of every
+    $p_n$, so $Y\le X$, yet at a map $h$ fixing $S$ pointwise and moving $k$, where $h\cdot Y=Y$, the
+    extension of $X$ omits $p_k$.'
+- holds:
+  - signature-b-r
   by: Claude Fable 5.1 (Anthropic)
   date: '2026-09-25'
-  text: >-
-    A closed $\Sigma$-sentence denotes what $P(d,\ldots,d)$ denotes for a pure $P$ and the
-    individual $d$, and from any world some arrow into $W_0$ carries the current image of $d$ back
-    to $d$, as all maps are arrows.
-
-- fails: [vicinity]
+  text: A closed $\Sigma$-sentence denotes what $P(d,\ldots,d)$ denotes for a pure $P$ and the individual
+    $d$, and from any world some arrow into $W_0$ carries the current image of $d$ back to $d$, as all
+    maps are arrows.
+- fails:
+  - vicinity
   by: Claude Opus 5.5 (Anthropic), at Cian Dorr's request
   date: '2026-09-27'
-  text: >-
-    A true $w$ pinned down by a finite set $S$ contains every arrow agreeing with the identity on
-    $S$, among them a map $W_0\to W_0$ that collapses two individuals $a\ne b$ outside $S$. The
-    proposition that $a$ and $b$ are distinct is true, and it is possible at no arrow that
-    collapses them, since a collapse persists under composition, so $w\not\le\Diamond(a\ne b)$.
-
-- fails: [weakly-inextensible-comprehension-r]
+  text: A true $w$ pinned down by a finite set $S$ contains every arrow agreeing with the identity on
+    $S$, among them a map $W_0\to W_0$ that collapses two individuals $a\ne b$ outside $S$. The proposition
+    that $a$ and $b$ are distinct is true, and it is possible at no arrow that collapses them, since a
+    collapse persists under composition, so $w\not\le\Diamond(a\ne b)$.
+- fails:
+  - weakly-inextensible-comprehension-r
   by: Claude Opus 5.5 (Anthropic), at Cian Dorr's request
   date: '2026-09-27'
-  text: >-
-    The argument above against Inextensible Comprehension at type $t\to t$ uses only the unboxed
-    matrix of inextensibility at the identity arrow of $W_0$, as the corresponding argument in the
-    permutation model does.
-
-# migration: text of the old notes that no argument holds, verbatim: their first two sentences, and
-# the sentence that followed the Σ argument, referring to its failures. The argument of 23 September
-# for the failure of Atomicity (type $t$), now derived, is dropped.
-
+  text: The argument above against Inextensible Comprehension at type $t\to t$ uses only the unboxed matrix
+    of inextensibility at the identity arrow of $W_0$, as the corresponding argument in the permutation
+    model does.
 - id: rigid-power
-  holds: [necessary-rigid-power-r]
+  holds:
+  - necessary-rigid-power-r
   by: GPT-6 Astra (OpenAI), at Cian Dorr's request; checked and recorded by Claude Opus 5.5 (Anthropic)
   date: '2026-10-11'
-  text: >-
-    Boxed Rigid Power, by lifting at each object; criterion (1) is part (1) of
-    tame-rigidity-factorizable, which holds with several objects. Write $c$ for the map to the singleton
-    and $i_n$ for the map from it with value $n$.
+  text: 'Boxed Rigid Power, by lifting at each object; criterion (1) is part (1) of tame-rigidity-factorizable,
+    which holds with several objects. Write $c$ for the map to the singleton and $i_n$ for the map from
+    it with value $n$.
 
-    (a) Stable hulls. Let $F$ be rigid at $\mathbb N$ with extension $E$, $P$ a nonempty finite set
-    containing a pin of $F$, and $A\subseteq E$ closed under the self-maps fixing $P$. Then $Y:=B_P(A)$
-    has extension $A$, lies below $F$, and is rigid. Weak rigidity at $\mathbb N$ is as in
-    rigid-power-surjections, part (a), with self-maps (into the singleton, $r:=c$). For a self-map $h$,
-    a member $k^{\prime}a$ of $Y_{kh}$ ($k^{\prime}$ agreeing with $kh$ on $P$) is $j(ra)$ with $ra\in
-    Y_h$, $r$ agreeing with $h$ on $P$ and sending the rest of a pin of $a$ to fresh points, and $j$
-    agreeing with $k$ on any given finite $N\supseteq hP$; and $Y_c=cA=cY_h$ since $cr=c$; so $h\cdot Y$
-    is weakly rigid. At the singleton a weakly rigid relation is the exact image of its extension;
-    $c\cdot F$ is rigid, so $F_{i_nc}=i_ncE$, and a member $x=ga$ of $Y_{i_nc}$ ($g$ agreeing with
-    $i_nc$ on $P$) lies in $i_ncE$, so $x=i_ncx=i_ncga=i_nca$, $cg$ being $c$. So $c\cdot Y=T(cA)$,
-    which is rigid.
+    (a) Stable hulls. Let $F$ be rigid at $\mathbb N$ with extension $E$, $P$ a nonempty finite set containing
+    a pin of $F$, and $A\subseteq E$ closed under the self-maps fixing $P$. Then $Y:=B_P(A)$ has extension
+    $A$, lies below $F$, and is rigid. Weak rigidity at $\mathbb N$ is as in rigid-power-surjections,
+    part (a), with self-maps (into the singleton, $r:=c$). For a self-map $h$, a member $k^{\prime}a$
+    of $Y_{kh}$ ($k^{\prime}$ agreeing with $kh$ on $P$) is $j(ra)$ with $ra\in Y_h$, $r$ agreeing with
+    $h$ on $P$ and sending the rest of a pin of $a$ to fresh points, and $j$ agreeing with $k$ on any
+    given finite $N\supseteq hP$; and $Y_c=cA=cY_h$ since $cr=c$; so $h\cdot Y$ is weakly rigid. At the
+    singleton a weakly rigid relation is the exact image of its extension; $c\cdot F$ is rigid, so $F_{i_nc}=i_ncE$,
+    and a member $x=ga$ of $Y_{i_nc}$ ($g$ agreeing with $i_nc$ on $P$) lies in $i_ncE$, so $x=i_ncx=i_ncga=i_nca$,
+    $cg$ being $c$. So $c\cdot Y=T(cA)$, which is rigid.
 
     (b) Lifting at $\mathbb N$. A weakly rigid $H$ with extension $E$ has $H_j=jE$ for every surjective
     self-map $j$, as in rigid-power-surjections, part (b). Given a rigid $F$, an arrow $k$, a finite $N$
     containing a pin of $F$, and a rigid $X\le k\cdot F$ with extension $D$ pinned down by $T$: if $k$
-    is a self-map, extend $k|_N$ to a surjection $j$ with finitely many non-singleton fibres, all
-    finite, take $P$ containing $N$, those fibres and preimages of $T$, and $A:=\{a\in E:ja\in D\}$; for
-    $u$ fixing $P$, $ju=vj$ with $v$ fixing $T$, so $uA\subseteq A$, and $j\cdot B_P(A)=X$ by (a) and
-    the exact-image fact. If $k=c$, take $A:=\{a\in E:ca\in D\}$, stable since $cu=c$, and $c\cdot
-    B_P(A)=X$.
+    is a self-map, extend $k|_N$ to a surjection $j$ with finitely many non-singleton fibres, all finite,
+    take $P$ containing $N$, those fibres and preimages of $T$, and $A:=\{a\in E:ja\in D\}$; for $u$ fixing
+    $P$, $ju=vj$ with $v$ fixing $T$, so $uA\subseteq A$, and $j\cdot B_P(A)=X$ by (a) and the exact-image
+    fact. If $k=c$, take $A:=\{a\in E:ca\in D\}$, stable since $cu=c$, and $c\cdot B_P(A)=X$.
 
-    (c) At the singleton every rigid $F$ is $T(E)$ and every $T(A)$, $A\subseteq E$, is admitted; a
-    rigid $X\le i_n\cdot F$ with extension $D$ is $i_n\cdot T(cD)$, since $ci_n=1$. So the power
-    property of every rigid relation, at either object, is weakly rigid, and Rigid Power holds at every
-    world. Weakly Rigid Power still fails, with Tame Rigidity.
-
-notes: >-
-  The cited construction is a model of the map’s relational-type framework. The description
-  identifies its evaluation point; construction and verification are given at the PDF locations in
-  References. Everything that implies these fails with them.
-
+    (c) At the singleton every rigid $F$ is $T(E)$ and every $T(A)$, $A\subseteq E$, is admitted; a rigid
+    $X\le i_n\cdot F$ with extension $D$ is $i_n\cdot T(cD)$, since $ci_n=1$. So the power property of
+    every rigid relation, at either object, is weakly rigid, and Rigid Power holds at every world. Weakly
+    Rigid Power still fails, with Tame Rigidity.'
+- id: collapse-at-root
+  holds:
+  - two-hat-implies-nd-necessity
+  - necessary-five-implies-two-hat-necessity
+  fails:
+  - necessary-two-hat-implies-nd-necessity
+  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-14'
+  text: 'Write $\mathrm{fix}_N$ for the arrows agreeing with the identity on the finite set $N$, the least
+    true proposition pinned by $N$, and $\delta_N$ for the arrows injective on $N$. At $W_0$ the arrows
+    are all maps $\mathbb N\to\mathbb N$ and the one map $c$ to $W_1=\{0\}$. $\Diamond\,\mathrm{fix}^{00}_N$
+    is the set of maps injective on $N$, together with $c$ when $|N|\le1$; the same set is $\hat\Diamond\,\mathrm{fix}^{00}_N$,
+    since an injective-on-$N$ map is undone by a bijection and $c$ by the map picking the point of $N$,
+    which returns to every truth at $W_1$ ($W_1$ is a point, so its domains are full and $c\circ v=1_{W_1}$).
+    So $\Box_{\ne}$ and $\hat{\hat\Box}$ coincide at the evaluation point. BF at type $t$ holds for $\hat{\hat\Box}$
+    there: for $Y$ pinned by $X_Y$ and $N\supseteq X_Y$ with two elements, every $k\in\hat\Diamond\,\mathrm{fix}^{00}_N$
+    is a map injective on $N$, which agrees on $X_Y$ with a bijection $b$, and $Y_k=Y_b$ contains every
+    transport along $b$, i.e. everything; so by Proposition D8 of The Bounds of Possibility $\Box_5$ implies
+    two-hat necessity at $W_0$, and at $W_1$ too, which is full. The truth $\mathrm{fix}^{00}_{\{0\}}$
+    is not 5-necessary, since $\Box_5\le\hat{\hat\Box}$ fails on it (a bijection moving $0$ is in every
+    $\hat\Diamond\,\mathrm{fix}^{00}_N$). At $W_1$, the maps $W_1\to W_0$ are retracted by $c$ but not
+    invertible, so, $W_1$ being full, $\{1_{W_1}\}$ is two-hat necessary and not ND-necessary there: the
+    identity $\Box_{\ne}=\hat{\hat\Box}$ fails. (The verdicts this argument also establishes but does
+    not record are derived by the engine.)'
+notes: The cited construction is a model of the map’s relational-type framework. The description identifies
+  its evaluation point; construction and verification are given at the PDF locations in References. Everything
+  that implies these fails with them.
 was_conjectured: true
-
-# The old `changes` log, verbatim and frozen.
 history:
 - date: '2026-09-17'
   by: OpenAI Codex (GPT-6)
@@ -322,12 +285,11 @@ history:
     argument for Atomicity (type t).
 - date: '2026-09-27'
   by: Claude Opus 5.5 (Anthropic), at Cian Dorr's request
-  summary: Recorded the failure of Vicinity and of Weakly Inextensible Comprehension; arguments in the notes.
+  summary: Recorded the failure of Vicinity and of Weakly Inextensible Comprehension; arguments in the
+    notes.
   violates:
   - vicinity
   - weakly-inextensible-comprehension-r
-
-# Verdicts proved in Lean (Classicism/MapModels.lean); statuses are written by lean-check --update.
 lean:
   model: Classicism.Meta.Intensional.ContingentBarcan.model
   verdicts:

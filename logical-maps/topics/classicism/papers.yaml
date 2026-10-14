@@ -97,3 +97,10 @@ papers:
   citation: Lewin, Jonathan W. (1991). A Simple Proof of Zorn's Lemma. American Mathematical Monthly 98(4),
     pp. 353–354.
   url: https://digitalcommons.kennesaw.edu/facpubs/1158/
+- id: bounds-of-possibility
+  title: The Bounds of Possibility
+  citation: Dorr, Cian, John Hawthorne, and Juhani Yli-Vakkuri (2021). The Bounds of Possibility. Oxford
+    University Press. Appendix D, Narrower Modalities in Higher-Order S4, pp. 400–409; locators follow the
+    OUP corrected proof dated 9 May 2024. Its background logic HS4 (a primitive S4 operator over higher-order
+    logic) is read into C by interpreting the primitive box as $\lambda p\, .\,p=\top$, under which every
+    theorem of HS4 is a theorem of C.

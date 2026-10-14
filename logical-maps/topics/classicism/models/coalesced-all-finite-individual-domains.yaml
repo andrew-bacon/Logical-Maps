@@ -7,10 +7,6 @@ certificate:
   checked_by: []
   date: '2026-09-20'
   lean: stated
-  # migration: the `trawl` block moves to
-  # provenance/admission-c0a37bbe6b6c45cc985428b174812564.yaml, which holds the blocks of the eight
-  # records admitted together: this record's discovery and evidence in its entry, and the
-  # checkpoint, review and admission they share once.
 sources:
 - Claude Fable 5.1 (Anthropic), construction and verification of 20 September 2026 (see the write-up).
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §3.2, Definition 3.6 and Proposition 3.7,
@@ -30,156 +26,114 @@ references:
   note: The summands are the source's full Henkin models. The root construction is in the manner of the
     source's coalesced sums, but is spelled out and verified in the write-up rather than taken from Definition
     E.2.
-
-# migration: the definition is the old description without its verdict sentences.
 group: coalesced-sums
-# migration (2 October): the old definition is the group's, completed by these settings.
 settings:
-  # migration: the old definition's sentences in the old order, except that the clause on domains
-  # ("propositions are sets of worlds; an entity of a function type is ...") is the `domains` slot,
-  # which the group's definition places last.
-  construction: >-
-    Take the full Henkin models $M_n$ with individual domain $\{1,\ldots,n\}$ for every $n\ge1$, and
-    add a root world. Individuals are threads $(a_n)_n$ with $a_n\in\{1,\ldots,n\}$. Application is
-    componentwise, identity at world $n$ is the identity of $M_n$ and at the root is identity of
-    elements. Every theorem of C holds at every world. Evaluation point: the root.
+  construction: 'Take the full Henkin models $M_n$ with individual domain $\{1,\ldots,n\}$ for every $n\ge1$,
+    and add a root world. Individuals are threads $(a_n)_n$ with $a_n\in\{1,\ldots,n\}$. Application is
+    componentwise, identity at world $n$ is the identity of $M_n$ and at the root is identity of elements.
+    Every theorem of C holds at every world. Evaluation point: the root.'
   domains:
-    text: >-
-      Propositions are sets of worlds; an entity of a function type is a family of $M_n$-entities
+    text: Propositions are sets of worlds; an entity of a function type is a family of $M_n$-entities
       together with an arbitrary root component defined on whole threads.
-# migration (3 October): the interpretation of Σ has no individual constants, as the topic's condition
-# sigma-top now says (Cian Dorr's decision); it read "and each individual constant denotes one
-# fixed individual".
-# migration (2 October): the interpretation of Σ that the change of 22 September fixed (see
-# `history`), stated in the definition, as every record's is. (Moved out of the definition's text
-# on 3 October, where YAML had read it as part of the definition.)
-definition: >-
-  Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each
-  denotes the top element of its type.
+definition: 'Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each denotes
+  the top element of its type.'
 meets:
   free-root-component: An entity of a function type has an arbitrary root component defined on whole threads.
   sigma-top: This is the interpretation the definition fixes.
-
 arguments:
-
-# Restructured on 2 October 2026 (Claude Opus 5.5, at Cian Dorr's direction): every argument this
-# record shared in substance with another coalesced sum is now a shared argument of the group
-# coalesced-sums or one of the topic's general arguments (arguments/); what follows is this
-# record's own. Only the verdicts the engine needs to derive the rest are recorded, the source's
-# first.
-
-# --- as first recorded (20 Sep) ---
-
-- holds: [axiom-of-infinity-e, axiom-of-infinity-t]
-  text: >-
-    At the root the finite cardinalities are the numerals, the $k$-th numeral's successor holds of
-    the universal property at world $k+1$, and $\Diamond$ at the root is truth at some world, so
-    the sentence that there could be any positive number of individuals, used in
-    pure-possibility-implies-axiom-of-infinity-t, holds there. The root has uncountably many
-    individuals and infinitely many propositions, so both Axioms of Infinity hold there.
-
-- fails: [distinctness-necessary-r]
-  text: >-
-    Two threads that agree at some world are distinct but possibly identical, so ND fails at type
+- holds:
+  - axiom-of-infinity-e
+  - axiom-of-infinity-t
+  text: At the root the finite cardinalities are the numerals, the $k$-th numeral's successor holds of
+    the universal property at world $k+1$, and $\Diamond$ at the root is truth at some world, so the sentence
+    that there could be any positive number of individuals, used in pure-possibility-implies-axiom-of-infinity-t,
+    holds there. The root has uncountably many individuals and infinitely many propositions, so both Axioms
+    of Infinity hold there.
+- fails:
+  - distinctness-necessary-r
+  text: Two threads that agree at some world are distinct but possibly identical, so ND fails at type
     $e$.
-
-# --- later additions ---
-
-- holds: [barcan-r]
-  # migration: the arguments of 22 September before it in the old notes, for Actuality and their
-  # lead-in "Further facts:", and after it, for the failures of No Pure Contingency and Possibility
-  # Maximalism (pure), all now derived, are dropped.
+- holds:
+  - barcan-r
   by: Claude Fable 5.1 (Anthropic)
   date: '2026-09-22'
-  text: >-
-    An entity of a relational type there is a family of component entities with a free root
-    component, every component entity is the component of some root entity, so if $\forall y\,
-    .\,\Box Xy$ holds at the root then every component of $X$ is universal and so is its root
-    component, whence $\Box\forall y\, .\,Xy$; BF holds at the one-world components trivially, so
-    $\Box$BF holds.
-
-- holds: [necessary-strong-leibniz-t]
+  text: An entity of a relational type there is a family of component entities with a free root component,
+    every component entity is the component of some root entity, so if $\forall y\, .\,\Box Xy$ holds
+    at the root then every component of $X$ is universal and so is its root component, whence $\Box\forall
+    y\, .\,Xy$; BF holds at the one-world components trivially, so $\Box$BF holds.
+- holds:
+  - necessary-strong-leibniz-t
   by: Claude Fable 5.1 (Anthropic)
   date: '2026-09-22'
-  text: >-
-    At the root, the singleton of the arrow to component $n$ becomes that component’s identity
-    under it and empty under every other arrow, and the root proposition becomes empty under every
-    non-identity arrow, so every singleton is a strong world; the components are one-world models.
-
+  text: At the root, the singleton of the arrow to component $n$ becomes that component’s identity under
+    it and empty under every other arrow, and the root proposition becomes empty under every non-identity
+    arrow, so every singleton is a strong world; the components are one-world models.
 - id: free-root-component
-  holds: [atomicity-t, boolean-completeness-t]
-  # migration: the argument after it in the old notes, for the failure of Possibility+ (pure), now
-  # derived, is dropped.
-  # Recorded although the other verdicts give them: the □Relational Choice argument builds on this
-  # one.
+  holds:
+  - atomicity-t
+  - boolean-completeness-t
   by: Cian Dorr, recorded by Claude Fable 5.1 (Anthropic)
   date: '2026-09-22'
-  text: >-
-    Here the components are full Henkin models, so every set of arrows is a root proposition: the
-    root propositions form a complete atomic algebra, giving Atomicity and Boolean Completeness at
-    type t.
+  text: 'Here the components are full Henkin models, so every set of arrows is a root proposition: the
+    root propositions form a complete atomic algebra, giving Atomicity and Boolean Completeness at type
+    t.'
   revisions:
   - date: '2026-10-02'
     by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
-    note: >-
-      Its closing clause, that Relational Choice holds at the root by a functional choice in the
-      free root component, is now the group's shared argument relational-choice-free-root.
-
-- holds: [necessary-relational-choice-r]
+    note: Its closing clause, that Relational Choice holds at the root by a functional choice in the free
+      root component, is now the group's shared argument relational-choice-free-root.
+- holds:
+  - necessary-relational-choice-r
   by: Claude Fable 5.1 (Anthropic)
   date: '2026-09-22'
-  text: >-
-    Relational Choice holds at the root by the free root component and at every component, each
-    being a full Henkin model.
-
-- holds: [necessary-rigid-comprehension-r]
+  text: Relational Choice holds at the root by the free root component and at every component, each being
+    a full Henkin model.
+- holds:
+  - necessary-rigid-comprehension-r
   by: Claude Fable 5.1 (Anthropic)
   date: '2026-09-25'
-  text: >-
-    At a type $\sigma\to t$ a root entity is a pair $(G_0,(G_n)_n)$ with $G_0$ any function on the
-    root domain and $G_n$ in the full domain of $M_n$; entailment is componentwise. Atomicity:
-    below a nonzero $G$ lies the atom that is true at the root of one argument $a$ with $G_0(a)=1$
-    and bottom in every component, or, if $G_0=0$, the atom that is bottom at the root and in all
-    but one component $M_n$, where it is an atom of that full model below $G_n$. Both kinds of
-    atom are strong worlds: at the root they entail every entity or its negation, being singletons
-    in one coordinate and bottom elsewhere, and their shifts to the components are bottom or atoms
-    of a one-world full model. So the Strong Leibniz Biconditionals hold at every type. Boolean
-    Completeness: the componentwise meet of any set of root entities is a root entity and is the
-    greatest lower bound. Rigid Comprehension: given $X$ with root extension $E$, let $Y$ have
-    root component $X_0$ and, in $M_n$, the projection of $E$ to the $n$-th coordinates; $Y$ is
-    persistent, since a root instance has its projection in every component, and inextensible,
-    since a relation necessary of every root instance contains those projections, while in the
-    one-world components persistence and inextensibility are automatic. Each component is a full
-    Henkin model, in which all of these hold, so the boxed forms hold at the root; Countable
-    Boolean Completeness, the weak rigid comprehension principles and Necessity of Arithmetic
-    follow by the recorded results.
-
-- fails: [pure-b-r]
+  text: 'At a type $\sigma\to t$ a root entity is a pair $(G_0,(G_n)_n)$ with $G_0$ any function on the
+    root domain and $G_n$ in the full domain of $M_n$; entailment is componentwise. Atomicity: below a
+    nonzero $G$ lies the atom that is true at the root of one argument $a$ with $G_0(a)=1$ and bottom
+    in every component, or, if $G_0=0$, the atom that is bottom at the root and in all but one component
+    $M_n$, where it is an atom of that full model below $G_n$. Both kinds of atom are strong worlds: at
+    the root they entail every entity or its negation, being singletons in one coordinate and bottom elsewhere,
+    and their shifts to the components are bottom or atoms of a one-world full model. So the Strong Leibniz
+    Biconditionals hold at every type. Boolean Completeness: the componentwise meet of any set of root
+    entities is a root entity and is the greatest lower bound. Rigid Comprehension: given $X$ with root
+    extension $E$, let $Y$ have root component $X_0$ and, in $M_n$, the projection of $E$ to the $n$-th
+    coordinates; $Y$ is persistent, since a root instance has its projection in every component, and inextensible,
+    since a relation necessary of every root instance contains those projections, while in the one-world
+    components persistence and inextensibility are automatic. Each component is a full Henkin model, in
+    which all of these hold, so the boxed forms hold at the root; Countable Boolean Completeness, the
+    weak rigid comprehension principles and Necessity of Arithmetic follow by the recorded results.'
+- fails:
+  - pure-b-r
   by: Claude Fable 5.1 (Anthropic)
   date: '2026-09-25'
-  text: >-
-    The pure sentence that there are two individuals is true at the root and false at the first
-    component, from which no arrow returns.
-
-# migration: text of the old notes that no argument holds, verbatim: their first two sentences, and
-# the sentence that followed the Σ argument.
-
-- holds: [necessary-intensional-choice-r]
+  text: The pure sentence that there are two individuals is true at the root and false at the first component,
+    from which no arrow returns.
+- holds:
+  - necessary-intensional-choice-r
   by: Claude Fable 5.1 (Anthropic), at Cian Dorr's suggestion
   date: '2026-10-03'
-  text: >-
-    Intensional Choice holds at the root, as the map derives from this record's other verdicts. Every
-    other world is a world of one of the full Henkin components, where a necessarily instantiated
-    $F$ has an instance $a$ and $G:=\lambda x\, .\,x=a$ is in the domain, entails $F$ and is
-    necessarily uniquely instantiated. So Intensional Choice holds at every world.
-
-notes: >-
-  Recorded to witness the consistency with C of the sentence through which Possibility Maximalism
-  (pure) reaches the Axiom of Infinity at type $t$, and of that Axiom itself. The construction and
-  its verification are in the write-up; no independent check is claimed. Everything that implies
-  these fails with them.
-
-# The old `changes` log, verbatim and frozen.
+  text: Intensional Choice holds at the root, as the map derives from this record's other verdicts. Every
+    other world is a world of one of the full Henkin components, where a necessarily instantiated $F$
+    has an instance $a$ and $G:=\lambda x\, .\,x=a$ is in the domain, entails $F$ and is necessarily uniquely
+    instantiated. So Intensional Choice holds at every world.
+- id: five-necessity-is-truth
+  holds:
+  - necessary-truth-implies-five-necessity
+  text: At the root every truth is ND-necessary (recorded), so every truth is 5-necessary there. Every
+    other world is a one-world Henkin model $M_n$, in which $\Box$ is the identity operator, hence so
+    is every operator in the tower from $\Box$ to $\Box_5$, and every truth is 5-necessary. So the principle
+    holds at every world.
+  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-14'
+notes: Recorded to witness the consistency with C of the sentence through which Possibility Maximalism
+  (pure) reaches the Axiom of Infinity at type $t$, and of that Axiom itself. The construction and its
+  verification are in the write-up; no independent check is claimed. Everything that implies these fails
+  with them.
 history:
 - date: '2026-09-22'
   by: Claude Fable 5.1 (Anthropic)

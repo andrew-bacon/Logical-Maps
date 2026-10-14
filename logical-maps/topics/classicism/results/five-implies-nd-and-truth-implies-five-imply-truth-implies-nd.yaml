@@ -1,0 +1,20 @@
+id: five-implies-nd-and-truth-implies-five-imply-truth-implies-nd
+premises:
+- five-implies-nd-necessity
+- truth-implies-five-necessity
+conclusion: distinctness-preserving-collapse
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Claude Fable 5.1 (Anthropic), 14 October 2026, at Cian Dorr's direction
+  recorded_by: Claude Fable 5.1 (Anthropic), 14 October 2026
+  checked_by: []
+  date: '2026-10-14'
+  lean: none
+sources:
+- Cian Dorr and Claude Fable 5.1 (Anthropic), conversation of 14 October 2026 (transcript in the private
+  notes).
+source_names:
+- Dorr–Claude 14 Oct
+proof: 'Compose: $p\to\Box_5p\to\Box_{\ne}p$.'
+notes: One of the composition and decomposition facts for the chain of necessity operators.

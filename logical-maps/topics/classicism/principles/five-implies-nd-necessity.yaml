@@ -1,0 +1,19 @@
+id: five-implies-nd-necessity
+name: 5-necessity implies ND-necessity
+statement: Whatever is 5-necessary is ND-necessary.
+formal: $\forall p\, .\,\Box_5 p\to\Box_{\ne}p$
+notes: Added at the suggestion of Christopher Sun, 14 October 2026. The converse implication is a theorem
+  of C (Background, Hats, two-hat necessity and 5-necessity), so this principle says that the two operators
+  are coextensive.
+category: necessity-varieties
+date: '2026-10-14'
+sources:
+- Cian Dorr, John Hawthorne, and Juhani Yli-Vakkuri, The Bounds of Possibility, Appendix D, pp. 400–409
+  (definitions of the hat operation and of the 5-necessity operator; the principles themselves are not
+  stated there).
+source_names:
+- Bounds of Possibility
+references:
+- paper: bounds-of-possibility
+  role: background
+  locator: Appendix D, pp. 400–409

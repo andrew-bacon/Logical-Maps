@@ -19,15 +19,15 @@ sources:
 source_names:
 - Dorr 27 Sep
 - Classicism
-proof: >-
-  Let $w$ witness Vicinity; we show that $w$ itself witnesses Actuality. Let $p$ be true. Distinctness-preserving
-  collapse gives $\Box_{\ne}p$, that is, a true $q$ with $\Box(\Diamond q\to p)$, i.e. $\Diamond q\le p$.
-  Since $q$ is true, Vicinity gives $w\le\Diamond q$. So $w\le p$.
+proof: Let $w$ witness Vicinity; we show that $w$ itself witnesses Actuality. Let $p$ be true. Distinctness-preserving
+  collapse gives $\Box_{\ne}p$, that is, a true $q$ with $\Box(\Diamond q\to p)$, i.e. $\Diamond q\le
+  p$. Since $q$ is true, Vicinity gives $w\le\Diamond q$. So $w\le p$.
 references:
 - paper: bacon-dorr-classicism
   role: background
   locator: §2.6, p. 42; Appendix E, p. 83
   note: Definition of $\Box_{\ne}$ and formulation of Distinctness-preserving collapse.
-notes: >-
-  The witness is the same proposition. With Actuality ⇒ Vicinity, Actuality is equivalent to Vicinity
-  under Distinctness-preserving collapse, as it is under Weakly Inextensible Comprehension.
+notes: 'The witness is the same proposition. With Actuality ⇒ Vicinity, Actuality is equivalent to Vicinity
+  under Distinctness-preserving collapse, as it is under Weakly Inextensible Comprehension. With the ND-necessity
+  form of Vicinity (added 14 October 2026) the proof is one line: a witness entails every ND-necessary
+  truth, and under Truth implies ND-necessity every truth is ND-necessary.'

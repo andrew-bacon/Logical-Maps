@@ -1,0 +1,20 @@
+id: necessary-truth-implies-nd-implies-necessary-truth-implies-five
+premises:
+- necessary-distinctness-preserving-collapse
+conclusion: necessary-truth-implies-five-necessity
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Claude Fable 5.1 (Anthropic), 14 October 2026, at Cian Dorr's direction
+  recorded_by: Claude Fable 5.1 (Anthropic), 14 October 2026
+  checked_by: []
+  date: '2026-10-14'
+  lean: none
+sources:
+- Cian Dorr and Claude Fable 5.1 (Anthropic), conversation of 14 October 2026 (transcript in the private
+  notes).
+source_names:
+- Dorr–Claude 14 Oct
+proof: The chain $\Box\le\Box_{\ne}\le\hat{\hat\Box}\le\Box_5\le\lambda p\, .\,p$ is a theorem of C (Background),
+  so its instances are necessary and K distributes. Necessarily, $p\to\Box_{\ne}p\to\Box_5p$.
+notes: Boxed form of a composition or decomposition fact for the chain of necessity operators.

@@ -1,0 +1,19 @@
+id: necessary-two-hat-implies-nd-necessity-implies-two-hat-implies-nd-necessity
+premises:
+- necessary-two-hat-implies-nd-necessity
+conclusion: two-hat-implies-nd-necessity
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Claude Fable 5.1 (Anthropic), 14 October 2026, at Cian Dorr's direction
+  recorded_by: Claude Fable 5.1 (Anthropic), 14 October 2026
+  checked_by: []
+  date: '2026-10-14'
+  lean: none
+sources:
+- Cian Dorr and Claude Fable 5.1 (Anthropic), conversation of 14 October 2026 (transcript in the private
+  notes).
+source_names:
+- Dorr–Claude 14 Oct
+proof: 'The T axiom for $\Box$: the boxed closed sentence implies the sentence.'
+notes: ''

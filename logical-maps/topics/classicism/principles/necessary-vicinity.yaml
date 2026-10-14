@@ -1,7 +1,7 @@
 id: necessary-vicinity
 name: □Vicinity
 category: lattice
-statement: "Necessarily, there is a true proposition that entails the possibility of each true proposition."
+statement: Necessarily, there is a true proposition that entails the possibility of each true proposition.
 formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of Vicinity}$
 date: '2026-09-27'
 sources:
@@ -16,3 +16,13 @@ changes:
   by: Claude Opus 5.5 (Anthropic)
   summary: Restated the statement as the necessitation of the base principle's statement, in place of
     a generic description of necessitation; the formal statement is unchanged.
+- date: '2026-10-14'
+  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
+  summary: Added the boxed ND-necessity form as a variant, mirroring Vicinity.
+variants:
+- id: nd-necessity
+  name: ND-necessity form
+  statement: Every closed instance of the ND-necessity form of Vicinity is necessary.
+  formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of the ND-necessity form of Vicinity}$
+  equivalence: The two forms of Vicinity are equivalent in C (see the page of Vicinity); necessitating
+    the derivation and applying K carries the equivalence to the boxed forms.

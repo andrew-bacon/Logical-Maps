@@ -1,0 +1,46 @@
+id: vicinity-and-barcan-t-imply-two-hat-implies-nd
+premises:
+- vicinity
+- barcan-t
+conclusion: two-hat-implies-nd-necessity
+status: proved
+certificate:
+  source_id: bounds-of-possibility
+  produced_by: Claude Fable 5.1 (Anthropic), 14 October 2026, from Proposition D18 of The Bounds of Possibility,
+    Appendix D; Vicinity in place of Actuality suggested by Christopher Sun
+  recorded_by: Claude Fable 5.1 (Anthropic), 14 October 2026
+  checked_by: []
+  date: '2026-10-14'
+  lean: none
+sources:
+- Cian Dorr, John Hawthorne, and Juhani Yli-Vakkuri, The Bounds of Possibility, Appendix D, Proposition
+  D18, p. 408.
+- Cian Dorr and Claude Fable 5.1 (Anthropic), conversation of 14 October 2026 (transcript in the private
+  notes).
+source_names:
+- Bounds of Possibility
+- Dorr–Claude 14 Oct
+references:
+- paper: bounds-of-possibility
+  role: proof
+  locator: Proposition D18
+  note: Stated there with Actuality; the Vicinity strengthening was suggested by Christopher Sun.
+proof: 'Let $w$ witness Vicinity: $w$ is true and $\forall t(t\to\Box(w\to\Diamond t))$. First, $\Box_{\ne}p\leftrightarrow\Box(\Diamond
+  w\to p)$ for every $p$: right to left take $q:=w$ in the definition of $\Box_{\ne}$; left to right,
+  if $q$ is true with $\Box(\Diamond q\to p)$, Vicinity gives $\Box(w\to\Diamond q)$, so $\Box(\Diamond
+  w\to\Diamond q)$ by S4 and $\Box(\Diamond w\to p)$. (Equivalently, by the ND-necessity form of Vicinity,
+  $w$ entails every ND-necessary truth, and $\Diamond r$ is ND-necessary for true $r$; this is Proposition
+  D18 of The Bounds of Possibility for $X=\Box$, with the Vicinity witness in place of the atom.) Second,
+  B for $\Box_{\ne}$ at every true $p$: $\hat\Diamond p=\forall r(r\to\Diamond(\Diamond r\wedge p))$,
+  so by the first step it suffices to show $\Box(\Diamond w\to\forall r(r\to\Diamond(\Diamond r\wedge
+  p)))$, and by BF at type $t$ (with CBF) it suffices to show $\Box(\Diamond w\wedge r\to\Diamond(\Diamond
+  r\wedge p))$ for each $r$. If $\Box\neg r$ this is vacuous. Otherwise $\Diamond r\wedge p$ is true,
+  so Vicinity gives $\Box(w\to\Diamond(\Diamond r\wedge p))$, hence $\Box(\Diamond w\to\Diamond(\Diamond
+  r\wedge p))$ by S4. Finally, if $\hat{\hat\Box}p$ with witness $q$, i.e. $q$ true and $\Box(\hat\Diamond
+  q\to p)$, then B at $q$ gives $\Box(\Diamond w\to\hat\Diamond q)$, hence $\Box(\Diamond w\to p)$, i.e.
+  $\Box_{\ne}p$.'
+notes: With Actuality in place of Vicinity the first step is Proposition D18 of The Bounds of Possibility;
+  Christopher Sun suggested that Vicinity suffices wherever Actuality is applied only to ND-necessary
+  truths, and the second step applies Vicinity to the truth $\Diamond r\wedge p$. BF at type $t$ cannot
+  be dropped (the surjective paired-individuals model), nor Vicinity (the two-object retract full model,
+  which has Actuality).

@@ -1,0 +1,32 @@
+id: necessary-distinctness-necessary-t-implies-necessary-two-hat-implies-nd
+premises:
+- necessary-distinctness-necessary-t
+conclusion: necessary-two-hat-implies-nd-necessity
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Claude Fable 5.1 (Anthropic), 14 October 2026, at Cian Dorr's direction
+  recorded_by: Claude Fable 5.1 (Anthropic), 14 October 2026
+  checked_by: []
+  date: '2026-10-14'
+  lean: none
+sources:
+- Cian Dorr and Claude Fable 5.1 (Anthropic), conversation of 14 October 2026 (transcript in the private
+  notes).
+- Cian Dorr, John Hawthorne, and Juhani Yli-Vakkuri, The Bounds of Possibility, Appendix D, Proposition
+  D2, p. 401.
+source_names:
+- Dorr–Claude 14 Oct
+- Bounds of Possibility
+references:
+- paper: bounds-of-possibility
+  role: related
+  locator: Proposition D2
+proof: In C, $\Box p$ is $p=\top$, so ND at type $t$ instantiated at $y:=\neg p$, $z:=\top$ reads $\Diamond
+  p\to\Box\Diamond p$, the 5 axiom; with T this gives B, $p\to\Box\Diamond p$. Under the boxed premise
+  $\Box$ is therefore necessarily N, K and B, an S5 operator, so $\Box_5p\to\Box p$ by the definition
+  of $\Box_5$. With the chain $\Box\le\Box_{\ne}\le\hat{\hat\Box}\le\Box_5$ all four operators are identical,
+  necessarily.
+notes: Boxed ND at type $t$ makes $\Box$ itself S5, so every operator in the tower collapses to $\Box$
+  (collapse at level 0); the other boxed principles of the category follow by the composition results.
+  Proposition D2 of The Bounds of Possibility gives the same step for identity-based operators.

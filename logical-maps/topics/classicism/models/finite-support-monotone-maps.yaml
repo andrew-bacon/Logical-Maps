@@ -16,137 +16,113 @@ references:
 - paper: bacon-dorr-classicism
   role: proof
   locator: Appendix D, Proposition D.5(3), pp. 74–75; construction p. 77; p. 79 (No Pure Contingency)
-
-# migration: the definition is the old description without its verdict clauses, then the notes'
-# interpretation of Σ.
 group: finite-support-one-object
-# migration: the definition is the group's, completed by these settings: `monoid` is the
-# sentence before "In every part", verbatim; this record keeps its own interpretation of Σ, verbatim.
 settings:
-  monoid: >-
-    Proposition D.5, part 3 (p. 77): the one-object category whose arrows are all the monotone maps
-    of $\mathbb N$.
-  # migration (3 October): no individual constants, as in the group's interpretations of Σ.
+  monoid: 'Proposition D.5, part 3 (p. 77): the one-object category whose arrows are all the monotone
+    maps of $\mathbb N$.'
   sigma:
-    text: >-
-      Interpretation of Σ, fixed for this record: one designated relational constant $c$ of type
-      $\tau=\bar\sigma t$ denotes $\lambda\bar x\, .\,p_0$, where $p_0$ is the proposition that the
-      arrow fixes $0$, pinned down by $\{0\}$; every other constant of Σ is relational and
-      denotes the top element of its type.
-
+    text: 'Interpretation of Σ, fixed for this record: one designated relational constant $c$ of type
+      $\tau=\bar\sigma t$ denotes $\lambda\bar x\, .\,p_0$, where $p_0$ is the proposition that the arrow
+      fixes $0$, pinned down by $\{0\}$; every other constant of Σ is relational and denotes the top element
+      of its type.'
 meets:
-  # uniformly-pinned-rigidity revised 9 October 2026 (Claude Opus 5.5, at Cian Dorr's direction):
-  # stated for weakly rigid relations, which the argument only uses, and the comparison union taken
-  # over $[0,s'+1]$, where every agreeing arrow jumps.
-  uniformly-pinned-rigidity: >-
-    Let $Y$ be weakly rigid, pinned down by $S=[0,s]$, with extension $E$ at the identity. Pinning
-    and weak persistence give $Y(k)\supseteq k_2\cdot E$ for every $k_2$ agreeing with $k$ on $S$,
-    and weak inextensibility, tested on the intension $k\mapsto\bigcup\{k_2\cdot E:k_2\text{ agrees
-    with }k\text{ on }N\}$, pinned down by $N$, gives the reverse inclusion; so
-    $\bigcup\{k_2\cdot E:k_2\text{ agrees with }k\text{ on }N\}=Y(k)$ for every finite $N\supseteq S$. If some $p\in E$ were pinned minimally at $T$ with $t:=\max T>s$, take
-    $s'\ge t$ and the jump map $k$, the identity on $[0,s']$ and adding
-    $100$ beyond: an arrow agreeing with $k$ on $S$ and sending $t$ to $s'+1$ puts into the
-    $S$-union an element pinned at $s'+1$, while every element of the $[0,s'+1]$-union is pinned
-    inside $k([0,s'])\cup[s'+100,\infty)$. So $E\subseteq\operatorname{Pin}(S)$, and then
-    $k_2\cdot p=k\cdot p$ whenever $k_2$ agrees with $k$ on $S$, so $Y(k)=k\cdot E$.
-  evens-avoidable: >-
-    With $N_0\subseteq[0,M_0]$: $i$ the monotone map that is the identity on $[0,M_0]$ and adds one
-    beyond it; an even $b>M_0+1$, whose only preimage under $i$ is the odd $b-1$; and
-    $N^{\prime}:=[0,b]$: a monotone map agreeing with $i$ there has the same preimages of $b$ within
-    $[0,b]$ and takes values at least $i(b)=b+1$ beyond it.
-  positive-preserving: >-
-    Every arrow is monotone, and the constant map to $1$ sends $0$ to a positive number.
-  transport-gap: >-
-    Take $N=\{0\}$, $i$ any monotone map with $i0=2$, so that every $i^{\prime}$ agreeing with it
-    on $N$ has range within $[2,\infty)$, and $q:=\{k : k1=1\}$, pinned down by $\{1\}$: two
-    monotone maps agreeing on $[2,\infty)$ with $k2\ge1$ may take the values $1$ and $0$ at $1$.
-    The model is a one-object finite-support model, and the intension the argument uses is pinned
-    down by $N$.
-  unbounded-haecceities: >-
-    As in part 2, with $A$ the even numbers.
-  no-least-pinned-cover: >-
-    Let $F$ be the family of propositions $A_m$ ($m\ge1$), each pinned down by $\{0,2m-1,2m\}$,
-    that the arrow is constant on $\{0,\ldots,2m-1\}$ and first changes value at $2m$. The least
-    superset of $\bigcup F$ pinned down by $\{0,\ldots,N\}$ consists of the arrows whose first
-    change of value is at an even position or beyond $N$, and it strictly shrinks as $N$ grows.
-
+  uniformly-pinned-rigidity: 'Let $Y$ be weakly rigid, pinned down by $S=[0,s]$, with extension $E$ at
+    the identity. Pinning and weak persistence give $Y(k)\supseteq k_2\cdot E$ for every $k_2$ agreeing
+    with $k$ on $S$, and weak inextensibility, tested on the intension $k\mapsto\bigcup\{k_2\cdot E:k_2\text{
+    agrees with }k\text{ on }N\}$, pinned down by $N$, gives the reverse inclusion; so $\bigcup\{k_2\cdot
+    E:k_2\text{ agrees with }k\text{ on }N\}=Y(k)$ for every finite $N\supseteq S$. If some $p\in E$ were
+    pinned minimally at $T$ with $t:=\max T>s$, take $s''\ge t$ and the jump map $k$, the identity on
+    $[0,s'']$ and adding $100$ beyond: an arrow agreeing with $k$ on $S$ and sending $t$ to $s''+1$ puts
+    into the $S$-union an element pinned at $s''+1$, while every element of the $[0,s''+1]$-union is pinned
+    inside $k([0,s''])\cup[s''+100,\infty)$. So $E\subseteq\operatorname{Pin}(S)$, and then $k_2\cdot
+    p=k\cdot p$ whenever $k_2$ agrees with $k$ on $S$, so $Y(k)=k\cdot E$.'
+  evens-avoidable: 'With $N_0\subseteq[0,M_0]$: $i$ the monotone map that is the identity on $[0,M_0]$
+    and adds one beyond it; an even $b>M_0+1$, whose only preimage under $i$ is the odd $b-1$; and $N^{\prime}:=[0,b]$:
+    a monotone map agreeing with $i$ there has the same preimages of $b$ within $[0,b]$ and takes values
+    at least $i(b)=b+1$ beyond it.'
+  positive-preserving: Every arrow is monotone, and the constant map to $1$ sends $0$ to a positive number.
+  transport-gap: 'Take $N=\{0\}$, $i$ any monotone map with $i0=2$, so that every $i^{\prime}$ agreeing
+    with it on $N$ has range within $[2,\infty)$, and $q:=\{k : k1=1\}$, pinned down by $\{1\}$: two monotone
+    maps agreeing on $[2,\infty)$ with $k2\ge1$ may take the values $1$ and $0$ at $1$. The model is a
+    one-object finite-support model, and the intension the argument uses is pinned down by $N$.'
+  unbounded-haecceities: As in part 2, with $A$ the even numbers.
+  no-least-pinned-cover: Let $F$ be the family of propositions $A_m$ ($m\ge1$), each pinned down by $\{0,2m-1,2m\}$,
+    that the arrow is constant on $\{0,\ldots,2m-1\}$ and first changes value at $2m$. The least superset
+    of $\bigcup F$ pinned down by $\{0,\ldots,N\}$ consists of the arrows whose first change of value
+    is at an even position or beyond $N$, and it strictly shrinks as $N$ grows.
 arguments:
-
-# Rewritten at Cian Dorr's direction on 2 October 2026 (Claude Opus 5.5): every argument this
-# record shared in substance with another member is now a shared argument of the group
-# finite-support-one-object, with this record's witness under `meets`; second arguments for a
-# verdict already argued (the trawl's, among them) were dropped. What follows is this record's own.
-# Only the verdicts the engine needs to derive the rest are recorded, the source's first. Lead-ins
-# naming the verdict, and attribution sentences, are dropped from the texts, their content being in
-# holds, fails, by and date.
-
-- holds: [atomlessness]
-  source: {paper: bacon-dorr-classicism, locator: 'Proposition D.5(3), p. 77'}
-  text: >-
-    As in part 2.
-
+- holds:
+  - atomlessness
+  source:
+    paper: bacon-dorr-classicism
+    locator: Proposition D.5(3), p. 77
+  text: As in part 2.
 - id: sigma-contingent
-  when: {sigma: own}
-  fails: [witnessed-possibility-r, no-contingency-signature-r]
-  # migration: `by` adds "at Cian Dorr’s request" from the change's summary. The text is the 23
-  # September version; the revision note is the 23 September change.
+  when:
+    sigma: own
+  fails:
+  - witnessed-possibility-r
+  - no-contingency-signature-r
   by: Claude Fable 5.1 (Anthropic), at Cian Dorr’s request
   date: '2026-09-22'
-  text: >-
-    No Contingency (signature Σ) fails, since $\forall\bar x\, .\,c\bar x$ denotes $p_0$, true and
-    false at the constant map to $1$. Witnessed Possibility fails for the pure formula
-    $x=\top_\tau$, witnessed by $\top_\tau$: $\Diamond(c=\top_\tau)$ is $\Diamond\Box p_0$, and
-    $\Box p_0$ holds at no arrow $h$, since the constant map to $1$ composed after $h$ moves $0$.
-    Separated Structure fails with it, being equivalent to Possibly Witnessed Possibility.
-    Distinctness Maximalism (signature Σ) fails by derivation, since Possibility Maximalism (pure)
-    fails here. Whether $c$ denotes what some closed pure term denotes is not settled, so
-    Independence (signature Σ) is left unknown. The choice of a contingent rather than a pure
-    denotation is deliberate: this is the only recorded model of Atomlessness in which No
-    Contingency (signature Σ) is refuted, the others being one-object models with pure
-    interpretations of the constants.
+  text: 'No Contingency (signature Σ) fails, since $\forall\bar x\, .\,c\bar x$ denotes $p_0$, true and
+    false at the constant map to $1$. Witnessed Possibility fails for the pure formula $x=\top_\tau$,
+    witnessed by $\top_\tau$: $\Diamond(c=\top_\tau)$ is $\Diamond\Box p_0$, and $\Box p_0$ holds at no
+    arrow $h$, since the constant map to $1$ composed after $h$ moves $0$. Separated Structure fails with
+    it, being equivalent to Possibly Witnessed Possibility. Distinctness Maximalism (signature Σ) fails
+    by derivation, since Possibility Maximalism (pure) fails here. Whether $c$ denotes what some closed
+    pure term denotes is not settled, so Independence (signature Σ) is left unknown. The choice of a contingent
+    rather than a pure denotation is deliberate: this is the only recorded model of Atomlessness in which
+    No Contingency (signature Σ) is refuted, the others being one-object models with pure interpretations
+    of the constants.'
   revisions:
   - date: '2026-09-23'
     by: Claude Fable 5.1 (Anthropic)
-    note: >-
-      Re-fixed the interpretation of Σ so that the designated constant denotes a contingent
-      proposition, refuting No Contingency (signature Σ) and settling the open question whether
-      Atomlessness implies it; Independence (signature Σ) is no longer claimed for this model.
-
-- fails: [distinctness-preserving-collapse]
+    note: Re-fixed the interpretation of Σ so that the designated constant denotes a contingent proposition,
+      refuting No Contingency (signature Σ) and settling the open question whether Atomlessness implies
+      it; Independence (signature Σ) is no longer claimed for this model.
+- fails:
+  - distinctness-preserving-collapse
   by: Claude Fable 5.1 (Anthropic)
   date: '2026-09-23'
-  text: >-
-    The shift $h$ that fixes $0,\ldots,m-1$ and adds one to everything from $m$ on is a monotone
-    injection, so for any true $q$ pinned down by a finite $Y$ a monotone $k$ with $k(hy)=y$ on
-    $Y$ exists and $k\circ h\in q$; thus $\Diamond q$ holds at $h$, while the true proposition
-    that $m$ is fixed is false there.
-
-- fails: [vicinity]
+  text: The shift $h$ that fixes $0,\ldots,m-1$ and adds one to everything from $m$ on is a monotone injection,
+    so for any true $q$ pinned down by a finite $Y$ a monotone $k$ with $k(hy)=y$ on $Y$ exists and $k\circ
+    h\in q$; thus $\Diamond q$ holds at $h$, while the true proposition that $m$ is fixed is false there.
+- fails:
+  - vicinity
   by: Claude Opus 5.5 (Anthropic), at Cian Dorr's request
   date: '2026-09-27'
-  text: >-
-    A true $w$ pinned down by a finite set $S$ contains every arrow agreeing with the identity on
-    $S$, among them the monotone map equal to the identity up to $M$ and constant at $M+1$ beyond
-    it, for $S\subseteq[0,M]$, one that collapses two numbers $a\ne b$ outside $S$. The
-    proposition $\{k : ka\ne kb\}$ (with the natural numbers as individuals, that $a$ and $b$ are
-    distinct) is true, and it is possible at no arrow that collapses them, since a collapse
-    persists under composition, so $w$ does not entail its possibility.
+  text: 'A true $w$ pinned down by a finite set $S$ contains every arrow agreeing with the identity on
+    $S$, among them the monotone map equal to the identity up to $M$ and constant at $M+1$ beyond it,
+    for $S\subseteq[0,M]$, one that collapses two numbers $a\ne b$ outside $S$. The proposition $\{k :
+    ka\ne kb\}$ (with the natural numbers as individuals, that $a$ and $b$ are distinct) is true, and
+    it is possible at no arrow that collapses them, since a collapse persists under composition, so $w$
+    does not entail its possibility.'
   revisions:
   - date: '2026-10-02'
     by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
-    note: >-
-      The proposition that $a$ and $b$ are distinct is named as the set of arrows that keep them
-      apart, so that the argument covers the variant with a single individual.
-
-notes: >-
-  The cited construction is a model of the map’s relational-type framework. The description
-  identifies its evaluation point; construction and verification are given at the PDF locations in
-  References. The source notes that with all maps BF would still hold, since every map agrees on any finite
-  set with a surjection; monotonicity is what makes it fail.
-
+    note: The proposition that $a$ and $b$ are distinct is named as the set of arrows that keep them apart,
+      so that the argument covers the variant with a single individual.
+- id: nd-necessity-not-two-hat
+  holds:
+  - truth-implies-two-hat-necessity
+  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-14'
+  text: 'Write $\mathrm{fix}_N$ for the arrows agreeing with the identity on the finite set $N$, the least
+    true proposition pinned by $N$, and $\delta_N$ for the arrows injective on $N$. An arrow $v$ is in
+    $\Diamond\,\mathrm{fix}_{[n]}$ iff some monotone $x$ has $x\circ v$ fixing $[n]$, iff $v$ is injective
+    on $[n]$; and $\Diamond\delta_{[n]}=\delta_{[n]}$. So $\Box_{\ne}p$ holds iff $p\supseteq\delta_{[n]}$
+    for some $n$, and the true proposition $\{h:h(0)=0\}$ is not ND-necessary, since the shift $m\mapsto
+    m+1$ is injective. Two-hat necessity, however, is truth: $u\in\hat\Diamond\,\mathrm{fix}_{[n]}$ requires,
+    for every $m$, a monotone $v$ injective on $[m]$ with $v\circ u$ fixing $[n]$; injectivity of $v$
+    on $[m]$ gives $v(j)\ge j$ for $j\le m$, so $i=v(u(i))\ge u(i)\ge i$ and $u$ fixes $[n]$. Thus $\hat\Diamond\,\mathrm{fix}_{[n]}=\mathrm{fix}_{[n]}$,
+    every truth is two-hat necessary, and $\{h:h(0)=0\}$ is two-hat necessary but not ND-necessary. (The
+    verdicts this argument also establishes but does not record are derived by the engine.)'
+notes: The cited construction is a model of the map’s relational-type framework. The description identifies
+  its evaluation point; construction and verification are given at the PDF locations in References. The
+  source notes that with all maps BF would still hold, since every map agrees on any finite set with a
+  surjection; monotonicity is what makes it fail.
 was_conjectured: true
-
-# The old `changes` log, verbatim and frozen.
 history:
 - date: '2026-09-17'
   by: OpenAI Codex (GPT-6)
@@ -242,10 +218,6 @@ history:
   summary: Recorded the failure of Vicinity; argument in the notes.
   violates:
   - vicinity
-
-# The model in Lean, and its verdicts proved there (Classicism/MapModels.lean); statuses are written by
-# lean-check --update. The verdicts the map's general arguments give it are certified from the
-# arguments' (MapDerived.lean), with the proofs under `meets` that it meets their conditions.
 lean:
   param: Classicism.Meta.Intensional.Monoids.mono
   meets:

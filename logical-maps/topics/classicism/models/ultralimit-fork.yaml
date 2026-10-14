@@ -10,13 +10,11 @@ certificate:
   date: '2026-10-01'
   lean: stated
 sources:
-- >-
-  Branden Fitelson, with Claude (Anthropic) and GPT-6 Astra (OpenAI), A proposed counterexample to Proposition
-  2.11, note communicated to Cian Dorr, 1 October 2026; Isabelle/HOL verification at
-  github.com/fitelson/hom-isabelle, commit 4042cc0, Applications/2.11.
-- >-
-  Cian Dorr, with Claude Opus 5.5 (Anthropic), A counterexample to Proposition 2.11 of 'Classicism':
-  Fitelson's model, as an intensional action model, draft of 1 October 2026, sources/prop-2-11-counterexample.pdf.
+- Branden Fitelson, with Claude (Anthropic) and GPT-6 Astra (OpenAI), A proposed counterexample to Proposition
+  2.11, note communicated to Cian Dorr, 1 October 2026; Isabelle/HOL verification at github.com/fitelson/hom-isabelle,
+  commit 4042cc0, Applications/2.11.
+- 'Cian Dorr, with Claude Opus 5.5 (Anthropic), A counterexample to Proposition 2.11 of ''Classicism'':
+  Fitelson''s model, as an intensional action model, draft of 1 October 2026, sources/prop-2-11-counterexample.pdf.'
 source_names:
 - Fitelson 1 Oct
 - Intensional write-up 1 Oct
@@ -37,150 +35,118 @@ references:
   role: background
   locator: Proposition 2.11 and n. 42
   note: The proposition this model refutes.
-
-# migration: the definition is the old description.
-# migration (3 October): the interpretation of Σ has no individual constants, as the topic's condition
-# sigma-top now says (Cian Dorr's decision); it read "and each individual constant the individual
-#".
-definition: >-
-  An intensional action model with one individual. The objects are the root $o$, $s$, $u$, and $n$ for
-  each $n\ge1$; besides identities the arrows are $h_s\colon o\to s$, $j\colon s\to u$, $h_u:=j\circ h_s$
-  and $h_n\colon o\to n$, so the root reaches each object by exactly one arrow and worlds may be identified
-  with objects. The domains at $s$, $u$ and each $n$ are full. Identify the domains at the terminal objects
-  $u$ and $n$ with one finite full type structure $M$ over one individual. Fix a non-principal ultrafilter
-  $\mathcal U$ on the positive integers. At the root, an element of a relational type is any element of the
-  full intension space whose extension at $u$ is the $\mathcal U$-limit of its extensions at the worlds
-  $n$; its extensions at $o$, at $s$ and at each $n$ are unconstrained. So a root proposition is any choice
-  of truth values at $o$, $s$ and the $n$s, with its value at $u$ fixed as the limit. Evaluation point: the
-  root. Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each
-  denotes the top element of its type.
-
-# 2 October 2026: the topic's general argument sigma-top replaces this record's copy of it.
+definition: 'An intensional action model with one individual. The objects are the root $o$, $s$, $u$,
+  and $n$ for each $n\ge1$; besides identities the arrows are $h_s\colon o\to s$, $j\colon s\to u$, $h_u:=j\circ
+  h_s$ and $h_n\colon o\to n$, so the root reaches each object by exactly one arrow and worlds may be
+  identified with objects. The domains at $s$, $u$ and each $n$ are full. Identify the domains at the
+  terminal objects $u$ and $n$ with one finite full type structure $M$ over one individual. Fix a non-principal
+  ultrafilter $\mathcal U$ on the positive integers. At the root, an element of a relational type is any
+  element of the full intension space whose extension at $u$ is the $\mathcal U$-limit of its extensions
+  at the worlds $n$; its extensions at $o$, at $s$ and at each $n$ are unconstrained. So a root proposition
+  is any choice of truth values at $o$, $s$ and the $n$s, with its value at $u$ fixed as the limit. Evaluation
+  point: the root. Interpretation of Σ, fixed for this record: every constant of Σ is relational, and
+  each denotes the top element of its type.'
 meets:
   sigma-top: This is the interpretation the definition fixes.
-  # 8 October 2026 (Claude Opus 5.5, at Cian Dorr's direction): conditions of the topic's general
-  # arguments that the model meets.
   one-individual: The definition fixes one individual, at every world.
-  extensionally-full: >-
-    At the root an element's extension at $o$ is unconstrained, so every set of tuples is the
-    extension there of an element of the domain; the domains at $s$, $u$ and each $n$ are full.
-  infinitely-many-propositions: >-
-    A root proposition is any choice of truth values at $o$, $s$ and the $n$s, so there are
-    infinitely many.
-  fewer-propositions-after: >-
-    The root has at least three distinct propositions, while each world $n$, which sees only itself,
-    has two.
-  actual-world-isolated: >-
-    The proposition true at $o$ alone (false at $s$, at every $n$, and so in the limit at $u$) is in
-    the root domain and entails every truth, every true proposition being true at $o$; no world other
-    than $o$ sees $o$.
-
+  extensionally-full: At the root an element's extension at $o$ is unconstrained, so every set of tuples
+    is the extension there of an element of the domain; the domains at $s$, $u$ and each $n$ are full.
+  infinitely-many-propositions: A root proposition is any choice of truth values at $o$, $s$ and the $n$s,
+    so there are infinitely many.
+  fewer-propositions-after: The root has at least three distinct propositions, while each world $n$, which
+    sees only itself, has two.
+  actual-world-isolated: The proposition true at $o$ alone (false at $s$, at every $n$, and so in the
+    limit at $u$) is in the root domain and entails every truth, every true proposition being true at
+    $o$; no world other than $o$ sees $o$.
 arguments:
-
-# Only the verdicts the engine needs to derive the rest are recorded, the source's first. Lead-ins
-# naming the verdict, and attribution sentences, are dropped from the texts, their content being in
-# holds, fails, by and date; a text cut from a longer sentence begins with a capital and ends with a
-# full stop.
-
-# --- from the source (1 Oct record) ---
-
-- holds: [necessary-atomicity-r, necessary-boolean-completeness-r]
-  text: >-
-    At the root, the map sending an element to its extensions at $o$, $s$ and the $n$s is an order
-    isomorphism onto a product of powerset algebras, the extension at $u$ being recomputed as the
-    limit. So every family has a meet and a join, computed coordinatewise except at $u$, and every
-    nonzero element lies above an atom with one tuple in one free coordinate. The other worlds carry
-    finite full powerset algebras. Hence Boolean Completeness and Atomicity hold at every world and
-    every relational type.
-
-- holds: [necessary-barcan-r]
-  text: >-
-    Every arrow acts surjectively at every type, so BF holds at every world (write-up, Proposition
+- holds:
+  - necessary-atomicity-r
+  - necessary-boolean-completeness-r
+  text: At the root, the map sending an element to its extensions at $o$, $s$ and the $n$s is an order
+    isomorphism onto a product of powerset algebras, the extension at $u$ being recomputed as the limit.
+    So every family has a meet and a join, computed coordinatewise except at $u$, and every nonzero element
+    lies above an atom with one tuple in one free coordinate. The other worlds carry finite full powerset
+    algebras. Hence Boolean Completeness and Atomicity hold at every world and every relational type.
+- holds:
+  - necessary-barcan-r
+  text: Every arrow acts surjectively at every type, so BF holds at every world (write-up, Proposition
     4).
-
-- fails: [rigid-comprehension-r]
-  # migration: the lead-in "Rigid Comprehension fails at type $t\to t$ (write-up, Theorem 6)."
-  # becomes "At type $t\to t$ (write-up, Theorem 6)."
-  text: >-
-    At type $t\to t$ (write-up, Theorem 6). Let $A_0$ be the root propositions false at $s$ and at
-    $u$, and $X$ the property with extension $A_0$ at the root and empty extensions elsewhere. A
-    persistent property coextensive with $X$ contains both truth values at every world $n$, since
-    members of $A_0$ take both values there; the limit condition then puts the true proposition in
-    its extension at $u$. Rigidity at the root forces its extension at $s$ to be the proposition
-    false at $s$ and $u$, and rigidity at $s$, tested against that proposition's haecceity, forbids
-    the true proposition at $u$. The least upper bound of the haecceities of the $X$s, the candidate
-    rigid coextension in the proof of Proposition 2.11, is weakly rigid but fails the rigidity
-    condition at $s$. The model therefore refutes Proposition 2.11
-    (necessary-atomicity-completeness-bf-imply-rigid-comprehension); the gap is the normalization
+- fails:
+  - rigid-comprehension-r
+  text: At type $t\to t$ (write-up, Theorem 6). Let $A_0$ be the root propositions false at $s$ and at
+    $u$, and $X$ the property with extension $A_0$ at the root and empty extensions elsewhere. A persistent
+    property coextensive with $X$ contains both truth values at every world $n$, since members of $A_0$
+    take both values there; the limit condition then puts the true proposition in its extension at $u$.
+    Rigidity at the root forces its extension at $s$ to be the proposition false at $s$ and $u$, and rigidity
+    at $s$, tested against that proposition's haecceity, forbids the true proposition at $u$. The least
+    upper bound of the haecceities of the $X$s, the candidate rigid coextension in the proof of Proposition
+    2.11, is weakly rigid but fails the rigidity condition at $s$. The model therefore refutes Proposition
+    2.11 (necessary-atomicity-completeness-bf-imply-rigid-comprehension); the gap is the normalization
     step of n. 42, part (iv), which the write-up runs inside the model (§5).
-
-# migration: text of the old notes that no argument holds, verbatim: their first sentence. The
-# argument for Actuality at every world, now derived, is dropped: "Actuality holds at every world: at
-# the root the proposition true at $o$ alone is a true atom."
-
-- holds: [necessary-intensional-choice-r]
+- holds:
+  - necessary-intensional-choice-r
   by: Claude Fable 5.1 (Anthropic), at Cian Dorr's suggestion
   date: '2026-10-03'
-  text: >-
-    At the root: given $F$ with $\Box\exists x\, .\,Fx$, let $G$ pick the least element of $F$ at $o$, $s$
-    and each $n$, under fixed well-orderings, the same ordering of $M^\sigma$ at every $n$. The sets
-    $\{n : G(n)=\{a\}\}$ for $a\in M^\sigma$ partition the positive integers into finitely many pieces, so
-    exactly one is in $\mathcal U$, say for $a_0$; then $\lim_{\mathcal U}G(n)=\{a_0\}$, and $a_0\in
-    F(u)=\lim_{\mathcal U}F(n)$. Setting $G(u):=\{a_0\}$ puts $G$ in the root domain, with $G\le F$
-    and every extension a singleton. At $s$, $u$ and the $n$ the domains are full, and the
-    well-ordering argument (arguments/intensional-choice-well-ordering) applies there, so the
-    boxed form holds too.
-
-
-# --- later additions ---
-
+  text: 'At the root: given $F$ with $\Box\exists x\, .\,Fx$, let $G$ pick the least element of $F$ at
+    $o$, $s$ and each $n$, under fixed well-orderings, the same ordering of $M^\sigma$ at every $n$. The
+    sets $\{n : G(n)=\{a\}\}$ for $a\in M^\sigma$ partition the positive integers into finitely many pieces,
+    so exactly one is in $\mathcal U$, say for $a_0$; then $\lim_{\mathcal U}G(n)=\{a_0\}$, and $a_0\in
+    F(u)=\lim_{\mathcal U}F(n)$. Setting $G(u):=\{a_0\}$ puts $G$ in the root domain, with $G\le F$ and
+    every extension a singleton. At $s$, $u$ and the $n$ the domains are full, and the well-ordering argument
+    (arguments/intensional-choice-well-ordering) applies there, so the boxed form holds too.'
 - id: rigid-power
-  holds: [necessary-rigid-power-r]
+  holds:
+  - necessary-rigid-power-r
   by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
   date: '2026-10-08'
-  text: >-
-    At every relational type and every world. Write $k\cdot E$ for the transport of a set $E$ of tuples
-    along an arrow $k$, and $X_0(E)$ for the relation $k\mapsto k\cdot E$, the disjunction of the
-    haecceities of the members of $E$. At $s$, $u$ and each $n$ the model is full, and Rigid Power
-    holds there as in every full model (arguments/rigid-power-tight). At the root, call a set $E$ of
-    root tuples admissible when $X_0(E)$ is in the domain, that is, when $h_u\cdot E$ is the
-    $\mathcal U$-limit of the sets $h_n\cdot E$ (subsets of a finite set, so the limit is the set
-    taken at $\mathcal U$-many $n$). Since each member of $E$ has its value at $u$ as the limit of its
-    values at the $n$, $h_u\cdot E$ is always included in that limit; and every finite $E$ is
-    admissible, the finitely many limits being attained together at $\mathcal U$-many $n$.
+  text: 'At every relational type and every world. Write $k\cdot E$ for the transport of a set $E$ of
+    tuples along an arrow $k$, and $X_0(E)$ for the relation $k\mapsto k\cdot E$, the disjunction of the
+    haecceities of the members of $E$. At $s$, $u$ and each $n$ the model is full, and Rigid Power holds
+    there as in every full model (arguments/rigid-power-tight). At the root, call a set $E$ of root tuples
+    admissible when $X_0(E)$ is in the domain, that is, when $h_u\cdot E$ is the $\mathcal U$-limit of
+    the sets $h_n\cdot E$ (subsets of a finite set, so the limit is the set taken at $\mathcal U$-many
+    $n$). Since each member of $E$ has its value at $u$ as the limit of its values at the $n$, $h_u\cdot
+    E$ is always included in that limit; and every finite $E$ is admissible, the finitely many limits
+    being attained together at $\mathcal U$-many $n$.
 
 
-    (1) The rigid relations at the root are exactly the $X_0(E)$ with $E$ admissible. Such an
-    $X_0(E)$, being in the domain, is rigid: it is persistent, and at every world $w$ it is
-    $X_0(w\cdot E)$ there, included in every $X$ that necessarily holds of the members of $w\cdot E$.
-    Conversely let $Y$ be rigid with extension $E$. Persistence gives $Y_k\supseteq k\cdot E$ at
-    every arrow $k$. The root element $X$ with extensions $E$ at $o$, $h_s\cdot E$ at $s$, $h_n\cdot
-    E$ at each $n$, and the limit at $u$, necessarily holds of every member of $E$ (its extension at
-    $u$ includes $h_u\cdot E$, by the above), so inextensibility at the root gives $Y\le X$: $Y$ has
-    extension $h_s\cdot E$ at $s$ and $h_n\cdot E$ at each $n$. Rigidity at $s$, in the full model
-    on $s$ and $u$, makes the extension of $Y$ at $u$ the transport $j\cdot(h_s\cdot E)=h_u\cdot E$,
-    and since $Y$ is in the domain that is also the limit of the $h_n\cdot E$. So $E$ is admissible
-    and $Y=X_0(E)$.
+    (1) The rigid relations at the root are exactly the $X_0(E)$ with $E$ admissible. Such an $X_0(E)$,
+    being in the domain, is rigid: it is persistent, and at every world $w$ it is $X_0(w\cdot E)$ there,
+    included in every $X$ that necessarily holds of the members of $w\cdot E$. Conversely let $Y$ be rigid
+    with extension $E$. Persistence gives $Y_k\supseteq k\cdot E$ at every arrow $k$. The root element
+    $X$ with extensions $E$ at $o$, $h_s\cdot E$ at $s$, $h_n\cdot E$ at each $n$, and the limit at $u$,
+    necessarily holds of every member of $E$ (its extension at $u$ includes $h_u\cdot E$, by the above),
+    so inextensibility at the root gives $Y\le X$: $Y$ has extension $h_s\cdot E$ at $s$ and $h_n\cdot
+    E$ at each $n$. Rigidity at $s$, in the full model on $s$ and $u$, makes the extension of $Y$ at $u$
+    the transport $j\cdot(h_s\cdot E)=h_u\cdot E$, and since $Y$ is in the domain that is also the limit
+    of the $h_n\cdot E$. So $E$ is admissible and $Y=X_0(E)$.
 
 
-    (2) Let $F=X_0(S)$ be rigid at the root, and $P:=\lambda X\, .\,\operatorname{Rigid}(X)\land
-    X\le F$, in the domain since it is definable from $F$. By (1) its extension at the root is
-    $E_P:=\{X_0(T) : T\subseteq S\text{ admissible}\}$, and at a world $k$ among $s$, $u$ and the $n$
-    it is the set of rigid relations there below $k\cdot F$, which in those full models are the
-    $X_0(T')$ with $T'\subseteq k\cdot S$. Each such $T'$ is finite, the domains there being finite,
-    so it is $k\cdot T$ for a finite, hence admissible, $T\subseteq S$ (one preimage for each member),
-    and $X_0(T')=k\cdot X_0(T)$. So the extension of $P$ at every $k$ is $k\cdot E_P$: $P=X_0(E_P)$, a
-    rigid relation. Hence Rigid Power holds at the root, and so at every world.
-
+    (2) Let $F=X_0(S)$ be rigid at the root, and $P:=\lambda X\, .\,\operatorname{Rigid}(X)\land X\le
+    F$, in the domain since it is definable from $F$. By (1) its extension at the root is $E_P:=\{X_0(T)
+    : T\subseteq S\text{ admissible}\}$, and at a world $k$ among $s$, $u$ and the $n$ it is the set of
+    rigid relations there below $k\cdot F$, which in those full models are the $X_0(T'')$ with $T''\subseteq
+    k\cdot S$. Each such $T''$ is finite, the domains there being finite, so it is $k\cdot T$ for a finite,
+    hence admissible, $T\subseteq S$ (one preimage for each member), and $X_0(T'')=k\cdot X_0(T)$. So
+    the extension of $P$ at every $k$ is $k\cdot E_P$: $P=X_0(E_P)$, a rigid relation. Hence Rigid Power
+    holds at the root, and so at every world.'
 - id: transversal-choice-everywhere
-  holds: [necessary-transversal-choice-r]
+  holds:
+  - necessary-transversal-choice-r
   by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
   date: '2026-10-08'
-  text: >-
-    At the root by the general argument transversal-choice-extensionally-full, the model being
-    extensionally full there; at $s$, $u$ and each $n$ by the same argument, those worlds' domains
-    being full and so extensionally full.
-
-notes: >-
-  It is a model: the limit condition commutes with every finite operation, so every term denotes in
-  the domains (write-up, Lemma 2).
+  text: At the root by the general argument transversal-choice-extensionally-full, the model being extensionally
+    full there; at $s$, $u$ and each $n$ by the same argument, those worlds' domains being full and so
+    extensionally full.
+- id: five-necessity-is-truth
+  holds:
+  - necessary-truth-implies-five-necessity
+  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-14'
+  text: 'The category is a poset: no non-identity arrow has a retraction. The actual-world proposition
+    is in the domain at every object (at the root the proposition true at $o$ alone; the other objects
+    are full), so $\Box_{\ne}p$ holds at an identity iff $p$ contains $\Diamond\{1\}=\{1\}$, i.e. iff
+    $p$ is true: $\Box_{\ne}$ is the identity operator at every object, hence so are $\hat{\hat\Box}$
+    and $\Box_5$, and every truth is 5-necessary everywhere.'
+notes: 'It is a model: the limit condition commutes with every finite operation, so every term denotes
+  in the domains (write-up, Lemma 2).'

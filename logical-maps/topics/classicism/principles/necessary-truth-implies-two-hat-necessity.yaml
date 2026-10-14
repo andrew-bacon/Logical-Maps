@@ -1,0 +1,19 @@
+id: necessary-truth-implies-two-hat-necessity
+name: □Truth implies two-hat necessity
+category: necessity-varieties
+statement: Necessarily, every truth is two-hat necessary. In C this is the identity $\hat{\hat\Box}=\lambda
+  p\, .\,p$.
+formal: $\Box\,\forall p\, .\,p\to\hat{\hat\Box}p$
+date: '2026-10-14'
+sources:
+- Cian Dorr, John Hawthorne, and Juhani Yli-Vakkuri, The Bounds of Possibility, Appendix D, pp. 400–409
+  (definitions of the hat operation and of the 5-necessity operator; the principles themselves are not
+  stated there).
+source_names:
+- Bounds of Possibility
+references:
+- paper: bounds-of-possibility
+  role: background
+  locator: Appendix D, pp. 400–409
+notes: Added at the suggestion of Christopher Sun, 14 October 2026. Box the closed sentence; since identity
+  of operators in C is necessary coextensiveness, this is the identity $\hat{\hat\Box}=\lambda p\, .\,p$.

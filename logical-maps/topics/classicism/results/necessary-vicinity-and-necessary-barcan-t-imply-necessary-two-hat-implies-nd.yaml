@@ -1,0 +1,31 @@
+id: necessary-vicinity-and-necessary-barcan-t-imply-necessary-two-hat-implies-nd
+premises:
+- necessary-vicinity
+- necessary-barcan-t
+conclusion: necessary-two-hat-implies-nd-necessity
+status: proved
+certificate:
+  source_id: bounds-of-possibility
+  produced_by: Claude Fable 5.1 (Anthropic), 14 October 2026, from Propositions D3, D6, D11 and D18 of
+    The Bounds of Possibility, Appendix D; Vicinity in place of Actuality suggested by Christopher Sun
+  recorded_by: Claude Fable 5.1 (Anthropic), 14 October 2026
+  checked_by: []
+  date: '2026-10-14'
+  lean: none
+sources:
+- Cian Dorr, John Hawthorne, and Juhani Yli-Vakkuri, The Bounds of Possibility, Appendix D, Propositions
+  D3, D6, D11, D18.
+- Cian Dorr and Claude Fable 5.1 (Anthropic), conversation of 14 October 2026 (transcript in the private
+  notes).
+source_names:
+- Bounds of Possibility
+- Dorr–Claude 14 Oct
+references:
+- paper: bounds-of-possibility
+  role: proof
+  locator: Propositions D3, D6, D11, D18
+proof: The unboxed result shows that Vicinity and BF at type $t$ give B for $\Box_{\ne}$ at the world
+  of evaluation; under the boxed premises this holds at every world, so $\Box_{\ne}$ is necessarily B,
+  and then Propositions D3, D6 and D11 of The Bounds of Possibility, Appendix D, with fact (A5), give
+  $\Box_{\ne}=\Box_5$ (see the result that collapse propagates upward), in particular the boxed principle.
+notes: Boxed form; the hypotheses are the necessitations of those of the unboxed result.

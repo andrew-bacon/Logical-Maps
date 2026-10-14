@@ -576,7 +576,7 @@ def Models.finite_support_truncations.independence_signature_r : Prop :=
 def Models.finite_support_truncations.no_contingency_signature_r : Prop :=
   (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.MonoidModel.model (Classicism.Meta.Intensional.Monoids.truncs)) (Classicism.Meta.Intensional.MonoidModel.model_isModel (Classicism.Meta.Intensional.Monoids.truncs))).Admitted ∧ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.MonoidModel.model (Classicism.Meta.Intensional.Monoids.truncs)) (Classicism.Meta.Intensional.MonoidModel.model_isModel (Classicism.Meta.Intensional.Monoids.truncs))).IsModel ∧ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.MonoidModel.model (Classicism.Meta.Intensional.Monoids.truncs)) (Classicism.Meta.Intensional.MonoidModel.model_isModel (Classicism.Meta.Intensional.Monoids.truncs))).HoldsAx (Classicism.Meta.AxiomSet.noContingency _)
 
-/-- `full-idempotent-monoid`: Distinctness-preserving collapse holds. -/
+/-- `full-idempotent-monoid`: Truth implies ND-necessity holds. -/
 def Models.full_idempotent_monoid.distinctness_preserving_collapse : Prop :=
   (Classicism.Meta.Intensional.MSet.model Classicism.Meta.Intensional.Idem).IsModel ∧ (Classicism.Meta.Intensional.MSet.model Classicism.Meta.Intensional.Idem).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
 
@@ -652,7 +652,7 @@ def Models.full_idempotent_monoid.no_contingency_signature_r : Prop :=
 def Models.full_involution_group.gallin_extensional_comprehension_r : Prop :=
   (Classicism.Meta.Intensional.MSet.model Classicism.Meta.Intensional.Invol).IsModel ∧ (Classicism.Meta.Intensional.MSet.model Classicism.Meta.Intensional.Invol).HoldsAx Classicism.P.GallinExtensionalComprehension.schemaIn
 
-/-- `full-involution-group`: Distinctness-preserving collapse fails. -/
+/-- `full-involution-group`: Truth implies ND-necessity fails. -/
 def Models.full_involution_group.distinctness_preserving_collapse : Prop :=
   (Classicism.Meta.Intensional.MSet.model Classicism.Meta.Intensional.Invol).IsModel ∧ ¬ (Classicism.Meta.Intensional.MSet.model Classicism.Meta.Intensional.Invol).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
 
@@ -728,7 +728,7 @@ def Models.full_involution_group.no_contingency_signature_r : Prop :=
 def Models.full_permutation_group_infinite_set.gallin_extensional_comprehension_r : Prop :=
   (Classicism.Meta.Intensional.MSet.model (Equiv.Perm ℕ)).IsModel ∧ (Classicism.Meta.Intensional.MSet.model (Equiv.Perm ℕ)).HoldsAx Classicism.P.GallinExtensionalComprehension.schemaIn
 
-/-- `full-permutation-group-infinite-set`: Distinctness-preserving collapse fails. -/
+/-- `full-permutation-group-infinite-set`: Truth implies ND-necessity fails. -/
 def Models.full_permutation_group_infinite_set.distinctness_preserving_collapse : Prop :=
   (Classicism.Meta.Intensional.MSet.model (Equiv.Perm ℕ)).IsModel ∧ ¬ (Classicism.Meta.Intensional.MSet.model (Equiv.Perm ℕ)).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
 
@@ -796,7 +796,7 @@ def Models.full_permutation_group_infinite_set.independence_signature_r : Prop :
 def Models.full_permutation_group_infinite_set.no_contingency_signature_r : Prop :=
   (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.MSet.model (Equiv.Perm ℕ)) (Classicism.Meta.Intensional.MSet.model_isModel (Equiv.Perm ℕ))).Admitted ∧ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.MSet.model (Equiv.Perm ℕ)) (Classicism.Meta.Intensional.MSet.model_isModel (Equiv.Perm ℕ))).IsModel ∧ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.MSet.model (Equiv.Perm ℕ)) (Classicism.Meta.Intensional.MSet.model_isModel (Equiv.Perm ℕ))).HoldsAx (Classicism.Meta.AxiomSet.noContingency _)
 
-/-- `full-surjection-monoid`: Distinctness-preserving collapse fails. -/
+/-- `full-surjection-monoid`: Truth implies ND-necessity fails. -/
 def Models.full_surjection_monoid.distinctness_preserving_collapse : Prop :=
   (Classicism.Meta.Intensional.MSet.model Classicism.Meta.Intensional.FullActionModels.surj).IsModel ∧ ¬ (Classicism.Meta.Intensional.MSet.model Classicism.Meta.Intensional.FullActionModels.surj).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
 
@@ -864,7 +864,7 @@ def Models.full_surjection_monoid.independence_signature_r : Prop :=
 def Models.full_surjection_monoid.no_contingency_signature_r : Prop :=
   (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.MSet.model Classicism.Meta.Intensional.FullActionModels.surj) (Classicism.Meta.Intensional.MSet.model_isModel Classicism.Meta.Intensional.FullActionModels.surj)).Admitted ∧ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.MSet.model Classicism.Meta.Intensional.FullActionModels.surj) (Classicism.Meta.Intensional.MSet.model_isModel Classicism.Meta.Intensional.FullActionModels.surj)).IsModel ∧ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.MSet.model Classicism.Meta.Intensional.FullActionModels.surj) (Classicism.Meta.Intensional.MSet.model_isModel Classicism.Meta.Intensional.FullActionModels.surj)).HoldsAx (Classicism.Meta.AxiomSet.noContingency _)
 
-/-- `full-two-object-chain`: Distinctness-preserving collapse holds. -/
+/-- `full-two-object-chain`: Truth implies ND-necessity holds. -/
 def Models.full_two_object_chain.distinctness_preserving_collapse : Prop :=
   (Classicism.Meta.Intensional.FullActionModels.chain).IsModel ∧ (Classicism.Meta.Intensional.FullActionModels.chain).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
 
@@ -932,7 +932,7 @@ def Models.full_two_object_chain.distinctness_necessary_t : Prop :=
 def Models.full_two_object_chain.independence_signature_r : Prop :=
   (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.FullActionModels.chain) (Classicism.Meta.Intensional.FullActionModels.unitModel_isModel _)).Admitted ∧ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.FullActionModels.chain) (Classicism.Meta.Intensional.FullActionModels.unitModel_isModel _)).IsModel ∧ ¬ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.FullActionModels.chain) (Classicism.Meta.Intensional.FullActionModels.unitModel_isModel _)).HoldsAx (Classicism.Meta.AxiomSet.independence _)
 
-/-- `full-two-object-double-retraction`: Distinctness-preserving collapse fails. -/
+/-- `full-two-object-double-retraction`: Truth implies ND-necessity fails. -/
 def Models.full_two_object_double_retraction.distinctness_preserving_collapse : Prop :=
   (Classicism.Meta.Intensional.FullActionModels.doubleRetraction).IsModel ∧ ¬ (Classicism.Meta.Intensional.FullActionModels.doubleRetraction).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
 
@@ -1004,7 +1004,7 @@ def Models.full_two_object_double_retraction.independence_signature_r : Prop :=
 def Models.full_two_object_retract.gallin_extensional_comprehension_r : Prop :=
   (Classicism.Meta.Intensional.FullActionModels.retract).IsModel ∧ (Classicism.Meta.Intensional.FullActionModels.retract).HoldsAx Classicism.P.GallinExtensionalComprehension.schemaIn
 
-/-- `full-two-object-retract`: Distinctness-preserving collapse fails. -/
+/-- `full-two-object-retract`: Truth implies ND-necessity fails. -/
 def Models.full_two_object_retract.distinctness_preserving_collapse : Prop :=
   (Classicism.Meta.Intensional.FullActionModels.retract).IsModel ∧ ¬ (Classicism.Meta.Intensional.FullActionModels.retract).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
 
@@ -1128,7 +1128,7 @@ def Models.symmetric_collapse_pair.actuality : Prop :=
 def Models.symmetric_collapse_pair.boolean_completeness_r : Prop :=
   (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.SymIdeal.Base.toSym Classicism.Meta.Intensional.SymIdeal.collapsePair)).IsModel ∧ (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.SymIdeal.Base.toSym Classicism.Meta.Intensional.SymIdeal.collapsePair)).HoldsAx Classicism.P.BooleanCompleteness.schemaIn
 
-/-- `symmetric-collapse-pair`: Distinctness-preserving collapse holds. -/
+/-- `symmetric-collapse-pair`: Truth implies ND-necessity holds. -/
 def Models.symmetric_collapse_pair.distinctness_preserving_collapse : Prop :=
   (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.SymIdeal.Base.toSym Classicism.Meta.Intensional.SymIdeal.collapsePair)).IsModel ∧ (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.SymIdeal.Base.toSym Classicism.Meta.Intensional.SymIdeal.collapsePair)).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
 
@@ -1232,7 +1232,7 @@ def Models.symmetric_range_gap.barcan_r : Prop :=
 def Models.symmetric_range_gap.boolean_completeness_r : Prop :=
   (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.SymIdeal.Base.toSym Classicism.Meta.Intensional.SymIdeal.rangeGap)).IsModel ∧ (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.SymIdeal.Base.toSym Classicism.Meta.Intensional.SymIdeal.rangeGap)).HoldsAx Classicism.P.BooleanCompleteness.schemaIn
 
-/-- `symmetric-range-gap`: Distinctness-preserving collapse holds. -/
+/-- `symmetric-range-gap`: Truth implies ND-necessity holds. -/
 def Models.symmetric_range_gap.distinctness_preserving_collapse : Prop :=
   (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.SymIdeal.Base.toSym Classicism.Meta.Intensional.SymIdeal.rangeGap)).IsModel ∧ (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.SymIdeal.Base.toSym Classicism.Meta.Intensional.SymIdeal.rangeGap)).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
 
@@ -1256,7 +1256,7 @@ def Models.symmetric_two_object_unpinned.boolean_completeness_r : Prop :=
 def Models.symmetric_two_object_unpinned.independence_signature_r : Prop :=
   (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.SymIdeal.twoBase)) (Classicism.Meta.Intensional.SymBase.model_isModel (Classicism.Meta.Intensional.SymIdeal.twoBase))).Admitted ∧ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.SymIdeal.twoBase)) (Classicism.Meta.Intensional.SymBase.model_isModel (Classicism.Meta.Intensional.SymIdeal.twoBase))).IsModel ∧ ¬ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.SymIdeal.twoBase)) (Classicism.Meta.Intensional.SymBase.model_isModel (Classicism.Meta.Intensional.SymIdeal.twoBase))).HoldsAx (Classicism.Meta.AxiomSet.independence _)
 
-/-- `symmetry-constrained-full-all-maps`: Distinctness-preserving collapse holds. -/
+/-- `symmetry-constrained-full-all-maps`: Truth implies ND-necessity holds. -/
 def Models.symmetry_constrained_full_all_maps.distinctness_preserving_collapse : Prop :=
   (Classicism.Meta.Intensional.SymFull.model Classicism.Meta.Intensional.SymFull.allMaps).IsModel ∧ (Classicism.Meta.Intensional.SymFull.model Classicism.Meta.Intensional.SymFull.allMaps).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
 
@@ -1276,7 +1276,7 @@ def Models.symmetry_constrained_full_all_maps.independence_signature_r : Prop :=
 def Models.symmetry_constrained_full_all_maps.no_contingency_signature_r : Prop :=
   (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.SymFull.model Classicism.Meta.Intensional.SymFull.allMaps) (Classicism.Meta.Intensional.SymFull.model_isModel Classicism.Meta.Intensional.SymFull.allMaps)).Admitted ∧ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.SymFull.model Classicism.Meta.Intensional.SymFull.allMaps) (Classicism.Meta.Intensional.SymFull.model_isModel Classicism.Meta.Intensional.SymFull.allMaps)).IsModel ∧ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.SymFull.model Classicism.Meta.Intensional.SymFull.allMaps) (Classicism.Meta.Intensional.SymFull.model_isModel Classicism.Meta.Intensional.SymFull.allMaps)).HoldsAx (Classicism.Meta.AxiomSet.noContingency _)
 
-/-- `symmetry-constrained-full-collapse`: Distinctness-preserving collapse holds. -/
+/-- `symmetry-constrained-full-collapse`: Truth implies ND-necessity holds. -/
 def Models.symmetry_constrained_full_collapse.distinctness_preserving_collapse : Prop :=
   (Classicism.Meta.Intensional.SymFull.model Classicism.Meta.Intensional.SymFull.permsCollapses).IsModel ∧ (Classicism.Meta.Intensional.SymFull.model Classicism.Meta.Intensional.SymFull.permsCollapses).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
 
@@ -1304,11 +1304,11 @@ def Arguments.barcan_d6.barcan_r : Prop :=
 def Arguments.coherent_retractions.gallin_extensional_comprehension_r : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} {C : Type} [CategoryTheory.SmallCategory C] (A : Classicism.Meta.Intensional.Premodel Sig C), A.IsModel → Classicism.Meta.Intensional.Premodel.Full A → Classicism.Meta.Intensional.Premodel.CoherentRetractions A → (A).HoldsAx Classicism.P.GallinExtensionalComprehension.schemaIn
 
-/-- argument `dpc-isolated-actual-world`: Distinctness-preserving collapse holds in every model meeting its conditions. -/
+/-- argument `dpc-isolated-actual-world`: Truth implies ND-necessity holds in every model meeting its conditions. -/
 def Arguments.dpc_isolated_actual_world.distinctness_preserving_collapse : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} {C : Type} [CategoryTheory.SmallCategory C] (A : Classicism.Meta.Intensional.Premodel Sig C), A.IsModel → Classicism.Meta.Intensional.Premodel.ActualWorldIsolated A → (A).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
 
-/-- argument `dpc-returning-arrow`: Distinctness-preserving collapse fails in every model meeting its conditions. -/
+/-- argument `dpc-returning-arrow`: Truth implies ND-necessity fails in every model meeting its conditions. -/
 def Arguments.dpc_returning_arrow.distinctness_preserving_collapse : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} {C : Type} [CategoryTheory.SmallCategory C] (A : Classicism.Meta.Intensional.Premodel Sig C), A.IsModel → Classicism.Meta.Intensional.Premodel.Full A → Classicism.Meta.Intensional.Premodel.ReturningArrow A → ¬ (A).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
 

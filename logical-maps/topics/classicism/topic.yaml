@@ -50,6 +50,9 @@ source_catalog:
 - id: sun-possible-worlds-without-atomicity
   name: Possible Worlds Without Atomicity (draft)
   kind: misc
+- id: bounds-of-possibility
+  name: The Bounds of Possibility (2021)
+  kind: published-paper
 - id: misc
   name: Misc.
   kind: misc
@@ -71,6 +74,8 @@ principle_categories:
   name: Infinity
 - id: schematic
   name: Possibility and pure schemata
+- id: necessity-varieties
+  name: Varieties of necessity
 - id: signature
   name: Signature schemata (Σ)
   hidden_by_default: true

@@ -1,0 +1,21 @@
+id: necessary-five-implies-two-hat-and-truth-implies-five-imply-truth-implies-two-hat
+premises:
+- necessary-five-implies-two-hat-necessity
+- necessary-truth-implies-five-necessity
+conclusion: necessary-truth-implies-two-hat-necessity
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Claude Fable 5.1 (Anthropic), 14 October 2026, at Cian Dorr's direction
+  recorded_by: Claude Fable 5.1 (Anthropic), 14 October 2026
+  checked_by: []
+  date: '2026-10-14'
+  lean: none
+sources:
+- Cian Dorr and Claude Fable 5.1 (Anthropic), conversation of 14 October 2026 (transcript in the private
+  notes).
+source_names:
+- Dorr–Claude 14 Oct
+proof: 'Necessitate the proof of the unboxed result: Compose: $p\to\Box_5p\to\hat{\hat\Box}p$. The chain
+  is a theorem, so its instances are necessary, and K distributes.'
+notes: Boxed form of the corresponding unboxed result.

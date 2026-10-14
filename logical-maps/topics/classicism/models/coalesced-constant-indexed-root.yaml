@@ -21,60 +21,48 @@ references:
   locator: §2.6, pp. 41–42 and n. 61; Appendix E, pp. 80–83
   note: Page 83 describes the alternative root whose individuals are indexed by the individual constants;
     the construction is the coalesced sum of Definition E.2.
-
-# migration: the definition is the old description, then the notes' sentence on the root domains,
-# which describes the construction.
 group: coalesced-sums
-# migration (2 October): the old definition is the group's, completed by these settings.
 settings:
-  construction: >-
-    For a signature Σ with countably infinitely many individual constants and at least one
-    relational constant, take a set of action models for L(Σ) complete for C(Σ), and coalesce them
-    at a new root whose individual domain is the set of individual constants, each constant denoting
-    itself there and being carried by the distinguished arrow to each component onto its
-    interpretation in that component; relational constants are glued as in Definition E.2, with free
-    root extensions. Evaluation point: the root.
+  construction: 'For a signature Σ with countably infinitely many individual constants and at least one
+    relational constant, take a set of action models for L(Σ) complete for C(Σ), and coalesce them at
+    a new root whose individual domain is the set of individual constants, each constant denoting itself
+    there and being carried by the distinguished arrow to each component onto its interpretation in that
+    component; relational constants are glued as in Definition E.2, with free root extensions. Evaluation
+    point: the root.'
   domains: fullest
 meets:
-  complete-components: >-
-    The action models for L(Σ) are a set complete for C(Σ), so in particular for C.
+  complete-components: The action models for L(Σ) are a set complete for C(Σ), so in particular for C.
   free-root-component: The root domains are as full as compatibility allows.
-
 arguments:
-
-# Restructured on 2 October 2026 (Claude Opus 5.5, at Cian Dorr's direction): every argument this
-# record shared in substance with another coalesced sum is now a shared argument of the group
-# coalesced-sums or one of the topic's general arguments (arguments/); what follows is this
-# record's own. Only the verdicts the engine needs to derive the rest are recorded, the source's
-# first.
-
-# --- from the source (22 Sep record) ---
-
-- holds: [possibility-plus-signature-r]
-  text: >-
-    The root satisfies Maximalist Classicism for Σ, since every C(Σ)-consistent sentence holds at
-    some component root. It satisfies Possibility+ (signature Σ): for P with free individual
-    variables x̄, instantiate x̄ by pairwise distinct root individuals, that is, distinct
-    constants c̄′ not occurring in P; P[c̄′/x̄] is C(Σ)-consistent because the c̄′ are fresh, so
-    it is possible at the root. The instances of the pure form follow.
-
-- holds: [axiom-of-infinity-e]
-  text: >-
-    Distinct constants denote distinct root individuals, so there are infinitely many individuals
-    at the root, giving the Infinity Schema at type e and, the root domains being as full as
-    possible so that the numeral intensions exist, the Axiom of Infinity at type e.
-
-# --- later additions ---
-
-# migration: the sentence of the old notes that no argument holds, verbatim. The arguments for
-# □Relational Choice and the 23 September correction, whose verdicts are now derived, are dropped.
-
-notes: >-
-  Possibility+ holds here, unlike at the maximalist root, because the root individuals are the
-  constants, and two distinct constants stay distinct in every component where the sentence of
-  their distinctness is realized, not in one component only.
-
-# The old `changes` log, verbatim and frozen.
+- holds:
+  - possibility-plus-signature-r
+  text: 'The root satisfies Maximalist Classicism for Σ, since every C(Σ)-consistent sentence holds at
+    some component root. It satisfies Possibility+ (signature Σ): for P with free individual variables
+    x̄, instantiate x̄ by pairwise distinct root individuals, that is, distinct constants c̄′ not occurring
+    in P; P[c̄′/x̄] is C(Σ)-consistent because the c̄′ are fresh, so it is possible at the root. The instances
+    of the pure form follow.'
+- holds:
+  - axiom-of-infinity-e
+  text: Distinct constants denote distinct root individuals, so there are infinitely many individuals
+    at the root, giving the Infinity Schema at type e and, the root domains being as full as possible
+    so that the numeral intensions exist, the Axiom of Infinity at type e.
+- id: no-boxed-collapse
+  fails:
+  - necessary-two-hat-implies-nd-necessity
+  - necessary-five-implies-two-hat-necessity
+  - necessary-truth-implies-five-necessity
+  text: The components form a set of action models complete for C in the signature, so for each of the
+    three unboxed collapse principles, which fail in some model of C (the paired-individuals two-object
+    model for 5-necessity implies two-hat necessity, the two-object retract full model for two-hat necessity
+    implies ND-necessity, the involution group for Truth implies 5-necessity), some component falsifies
+    it at its own evaluation point; the component is carried into the coalesced sum unchanged and its
+    evaluation point is a world accessible from the root by the distinguished arrow. So none of the boxed
+    collapse principles holds at the root, although every truth at the root is ND-necessary.
+  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-14'
+notes: Possibility+ holds here, unlike at the maximalist root, because the root individuals are the constants,
+  and two distinct constants stay distinct in every component where the sentence of their distinctness
+  is realized, not in one component only.
 history:
 - date: '2026-09-22'
   by: Cian Dorr, recorded by Claude Fable 5.1 (Anthropic)
@@ -106,10 +94,10 @@ history:
 - date: '2026-09-25'
   by: Claude Fable 5.1 (Anthropic)
   summary: 'Added Transversal Choice at the root, by the argument recorded for Relational Choice: a root
-    entity has an arbitrary root component, so take the property whose root component is a transversal, chosen
-    in the metatheory, of the root component of an equivalence relation at the root, with empty component
-    parts; the equivalence and transversal conditions are all evaluated at the root''s identity arrow.
-    Recorded on a question of Zachary Goodsell, after an observation of Christopher Sun.'
+    entity has an arbitrary root component, so take the property whose root component is a transversal,
+    chosen in the metatheory, of the root component of an equivalence relation at the root, with empty
+    component parts; the equivalence and transversal conditions are all evaluated at the root''s identity
+    arrow. Recorded on a question of Zachary Goodsell, after an observation of Christopher Sun.'
   satisfies:
   - transversal-choice-r
 - date: '2026-09-27'
@@ -120,7 +108,7 @@ history:
   - necessary-weakly-inextensible-comprehension-r
 - date: '2026-09-28'
   by: Claude Opus 5.5 (Anthropic)
-  summary: 'Recorded the failure of □Transversal: every pure sentence consistent with C is possible at the
-    root, and symmetric-infinite-classes refutes Transversal at type e.'
+  summary: 'Recorded the failure of □Transversal: every pure sentence consistent with C is possible at
+    the root, and symmetric-infinite-classes refutes Transversal at type e.'
   violates:
   - necessary-transversal-r

@@ -16,70 +16,55 @@ references:
 - paper: bacon-dorr-classicism
   role: proof
   locator: Theorem 3.26, §§3.6, pp. 62–64; Appendix E, pp. 80–83; §2.6, p. 41
-
-# migration: the definition is the old description's first sentence and the first clause of its
-# second, then the notes' sentence on the root domains (Cian Dorr's, 22 September 2026), which
-# describes the construction.
 group: coalesced-sums
-# migration (2 October): the old definition is the group's, completed by these settings.
 settings:
-  construction: >-
-    Take a coalesced sum of a set of source action models complete for C in the fixed signature,
+  construction: Take a coalesced sum of a set of source action models complete for C in the fixed signature,
     evaluated at the new root. See Definition E.2 for the construction.
   domains: fullest
 meets:
-  complete-components: >-
-    The source action models are a set complete for C.
+  complete-components: The source action models are a set complete for C.
   free-root-component: The root domains are as full as compatibility allows.
-
 arguments:
-
-# Restructured on 2 October 2026 (Claude Opus 5.5, at Cian Dorr's direction): every argument this
-# record shared in substance with another coalesced sum is now a shared argument of the group
-# coalesced-sums or one of the topic's general arguments (arguments/); what follows is this
-# record's own. Only the verdicts the engine needs to derive the rest are recorded, the source's
-# first.
-
-# --- from the source (17 Sep record) ---
-
-- holds: [distinctness-signature-r]
-  source: {paper: bacon-dorr-classicism, locator: 'Theorem 3.26, §3.6, pp. 62–64'}
-
-# --- later additions ---
-
-- holds: [axiom-of-infinity-e]
+- holds:
+  - distinctness-signature-r
+  source:
+    paper: bacon-dorr-classicism
+    locator: Theorem 3.26, §3.6, pp. 62–64
+- holds:
+  - axiom-of-infinity-e
   by: Cian Dorr, recorded by Claude Fable 5.1 (Anthropic)
   date: '2026-09-22'
-  text: >-
-    The root individuals are all families of component individuals, infinitely many since
-    components have arbitrarily many individuals; identity at the root is identity of families;
-    and the property of cardinalities that is true of exactly the standard numerals at the root
-    and universal in every component is a root entity, so a finite cardinality at the root is a
-    standard numeral, and no standard numeral holds of the universal property over an infinite
-    domain.
-
-- fails: [possibility-plus-r]
+  text: The root individuals are all families of component individuals, infinitely many since components
+    have arbitrarily many individuals; identity at the root is identity of families; and the property
+    of cardinalities that is true of exactly the standard numerals at the root and universal in every
+    component is a root entity, so a finite cardinality at the root is a standard numeral, and no standard
+    numeral holds of the universal property over an infinite domain.
+- fails:
+  - possibility-plus-r
   by: Cian Dorr, recorded by Claude Fable 5.1 (Anthropic)
   date: '2026-09-22'
-  text: >-
-    Some component $N$ satisfies necessarily that there are at least three individuals, since that
-    sentence is consistent; take two root individuals that differ at $N$ and agree everywhere
-    else; the pure formula saying that $x\ne y$ and there are exactly two individuals is
-    consistent, but at the root there are infinitely many individuals, under every arrow into
-    another component the two collapse, and under every arrow into $N$ there are at least three.
-
-# migration: the first two sentences of the old notes, verbatim; their other text is above. The
-# arguments for □Relational Choice and the 23 September correction, whose verdicts are now derived,
-# are dropped.
-
-notes: >-
-  The cited construction is a model of the map’s relational-type framework. The description
-  identifies its evaluation point; construction and verification are given at the PDF locations in
-  References.
-
+  text: Some component $N$ satisfies necessarily that there are at least three individuals, since that
+    sentence is consistent; take two root individuals that differ at $N$ and agree everywhere else; the
+    pure formula saying that $x\ne y$ and there are exactly two individuals is consistent, but at the
+    root there are infinitely many individuals, under every arrow into another component the two collapse,
+    and under every arrow into $N$ there are at least three.
+- id: no-boxed-collapse
+  fails:
+  - necessary-two-hat-implies-nd-necessity
+  - necessary-five-implies-two-hat-necessity
+  - necessary-truth-implies-five-necessity
+  text: The components form a set of action models complete for C in the signature, so for each of the
+    three unboxed collapse principles, which fail in some model of C (the paired-individuals two-object
+    model for 5-necessity implies two-hat necessity, the two-object retract full model for two-hat necessity
+    implies ND-necessity, the involution group for Truth implies 5-necessity), some component falsifies
+    it at its own evaluation point; the component is carried into the coalesced sum unchanged and its
+    evaluation point is a world accessible from the root by the distinguished arrow. So none of the boxed
+    collapse principles holds at the root, although every truth at the root is ND-necessary.
+  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-14'
+notes: The cited construction is a model of the map’s relational-type framework. The description identifies
+  its evaluation point; construction and verification are given at the PDF locations in References.
 was_conjectured: true
-
-# The old `changes` log, verbatim and frozen.
 history:
 - date: '2026-09-17'
   by: OpenAI Codex (GPT-6)
@@ -132,10 +117,10 @@ history:
 - date: '2026-09-25'
   by: Claude Fable 5.1 (Anthropic)
   summary: 'Added Transversal Choice at the root, by the argument recorded for Relational Choice: a root
-    entity has an arbitrary root component, so take the property whose root component is a transversal, chosen
-    in the metatheory, of the root component of an equivalence relation at the root, with empty component
-    parts; the equivalence and transversal conditions are all evaluated at the root''s identity arrow.
-    Recorded on a question of Zachary Goodsell, after an observation of Christopher Sun.'
+    entity has an arbitrary root component, so take the property whose root component is a transversal,
+    chosen in the metatheory, of the root component of an equivalence relation at the root, with empty
+    component parts; the equivalence and transversal conditions are all evaluated at the root''s identity
+    arrow. Recorded on a question of Zachary Goodsell, after an observation of Christopher Sun.'
   satisfies:
   - transversal-choice-r
 - date: '2026-09-27'
@@ -146,7 +131,7 @@ history:
   - necessary-weakly-inextensible-comprehension-r
 - date: '2026-09-28'
   by: Claude Opus 5.5 (Anthropic)
-  summary: 'Recorded the failure of □Transversal: every pure sentence consistent with C is possible at the
-    root, and symmetric-infinite-classes refutes Transversal at type e.'
+  summary: 'Recorded the failure of □Transversal: every pure sentence consistent with C is possible at
+    the root, and symmetric-infinite-classes refutes Transversal at type e.'
   violates:
   - necessary-transversal-r

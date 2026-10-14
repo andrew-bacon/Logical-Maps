@@ -1,0 +1,33 @@
+id: necessary-actuality-implies-necessary-five-implies-two-hat
+premises:
+- necessary-actuality
+conclusion: necessary-five-implies-two-hat-necessity
+status: proved
+certificate:
+  source_id: bounds-of-possibility
+  produced_by: The Bounds of Possibility, Appendix D, Propositions D19–D21 (in HS4R); the weakening of
+    the hypothesis to necessary Actuality observed by Cian Dorr and Claude Fable 5.1 (Anthropic), 14 October
+    2026
+  recorded_by: Claude Fable 5.1 (Anthropic), 14 October 2026
+  checked_by: []
+  date: '2026-10-14'
+  lean: none
+sources:
+- Cian Dorr, John Hawthorne, and Juhani Yli-Vakkuri, The Bounds of Possibility, Appendix D, Propositions
+  D18–D21 and Corollary D23, pp. 407–409.
+- Cian Dorr and Claude Fable 5.1 (Anthropic), conversation of 14 October 2026 (transcript in the private
+  notes).
+source_names:
+- Bounds of Possibility
+- Dorr–Claude 14 Oct
+references:
+- paper: bounds-of-possibility
+  role: proof
+  locator: Propositions D18–D21, pp. 407–408
+proof: Proposition D21 of The Bounds of Possibility, Appendix D, proves $\forall p(\Box_5p\leftrightarrow\hat{\hat\Box}p)$
+  in HS4R. Its right-to-left direction uses only HS4. Its left-to-right direction uses, through Corollary
+  D20 and Proposition D19, only Actuality ($\exists w\,W@w$) at the world of evaluation, and needs it
+  at every world accessible from the actual one in order to obtain $\Box$NKJF$_{\langle\rangle}\hat{\hat\Box}$;
+  $\Box$Actuality supplies exactly that. Necessitating gives the boxed principle.
+notes: Appendix D notes that the proof needs only this consequence of the rigidity axioms (Proposition
+  C7). Corollary D23 is the same fact stated as $\hat{\hat{\hat\Box}}\equiv\hat{\hat\Box}$.

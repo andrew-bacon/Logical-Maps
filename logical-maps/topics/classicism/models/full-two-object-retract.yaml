@@ -16,73 +16,33 @@ references:
 - paper: bacon-dorr-classicism
   role: proof
   locator: §3.5, p. 59, fifth paragraph and n. 81; p. 61
-
-# migration: the definition is the old description's first sentence, then the notes' interpretation
-# of Σ.
 group: full-action-models
-# migration (2 October): the old definition is the group's, completed by these settings: `construction`
-# is its first paragraph, verbatim; its interpretation of Σ is one of the group's values.
-# migration (3 October): recorded at the group's defaults, one individual and Σ top; the source
-# leaves the individuals open.
 settings:
-  construction: >-
-    Use the source’s category with h:W0→W1, j:W1→W0 and k:W1→W1, evaluated at W0.
+  construction: Use the source’s category with h:W0→W1, j:W1→W0 and k:W1→W1, evaluated at W0.
   individuals: singleton
   sigma: top
 meets:
-  nonepic-arrow: >-
-    $1\circ h=k\circ h$, with $1\ne k$.
-  returning-arrow: >-
-    $h$, which $j$ retracts.
-  unique-retractions-everywhere: >-
-    Out of $W_0$, the identity has only itself as retraction and $h$ only $j$, the one arrow back.
-    Out of $W_1$, the identity has only itself; $j$ has none, since $h\circ j=k\ne1$; and $k$ has
-    none, since $1\circ k=k\circ k=k$.
-  coherent-retractions: >-
-    Every arrow into $W_0$ is the one function to its single member, so any choice is coherent.
-  nonidentity-arrow: >-
-    The arrow $h:W_0\to W_1$.
-  retractions: >-
-    The arrows out of $W_0$ are its identity and $h$, which $j$ retracts.
-  finitely-many-propositions: >-
-    $W_0$ has four propositions, the sets of its two arrows out.
-  finitely-many-propositions-everywhere: >-
-    $W_0$ has four propositions and $W_1$ eight, the sets of its three arrows out.
+  nonepic-arrow: $1\circ h=k\circ h$, with $1\ne k$.
+  returning-arrow: $h$, which $j$ retracts.
+  unique-retractions-everywhere: Out of $W_0$, the identity has only itself as retraction and $h$ only
+    $j$, the one arrow back. Out of $W_1$, the identity has only itself; $j$ has none, since $h\circ j=k\ne1$;
+    and $k$ has none, since $1\circ k=k\circ k=k$.
+  coherent-retractions: Every arrow into $W_0$ is the one function to its single member, so any choice
+    is coherent.
+  nonidentity-arrow: The arrow $h:W_0\to W_1$.
+  retractions: The arrows out of $W_0$ are its identity and $h$, which $j$ retracts.
+  finitely-many-propositions: $W_0$ has four propositions, the sets of its two arrows out.
+  finitely-many-propositions-everywhere: $W_0$ has four propositions and $W_1$ eight, the sets of its
+    three arrows out.
   sigma-apart: The construction does not mention Σ.
-
+  noninvertible-retracted-arrow: $h$ is retracted by $j$ but $h\circ j=k\ne 1_{W_1}$.
+  trivial-isomorphisms-everywhere: Out of $W_0$ only the identity is invertible; out of $W_1$, $j$ has
+    no inverse and $k$ is a non-identity idempotent.
 arguments: []
-
-# 6 October 2026 (Claude Opus 5.5, at Cian Dorr's direction): verdicts now given by the topic's
-# general arguments (full-atomicity, full-rigid-comprehension, full-epic-barcan, invertible-arrows,
-# retractions, unretracted-arrow, nonidentity-arrow, infinitely-many-propositions,
-# finitely-many-propositions, finitely-many-propositions-everywhere), through this record's `meets`
-# and its group's, are dropped from its own arguments, and arguments left with none are dropped:
-# necessary-rigid-comprehension-r, necessary-atomicity-r, distinctness-necessary-t, no-pure-contingency-r, infinity-t, possible-infinity-t.
-
-# Restructured on 2 October 2026 (Claude Opus 5.5, at Cian Dorr's direction): every argument this
-# record shared in substance with another full action model is now one of the topic's general
-# arguments (arguments/), reached through the group full-action-models and this record's `meets`;
-# what follows is this record's own. Only the verdicts the engine needs to derive the rest are
-# recorded, the source's first.
-
-# --- later additions ---
-
-# 6 October 2026 (Claude Opus 5.5, at Cian Dorr's direction): the remaining own arguments are
-# now general arguments, reached through this record's `meets`, and dropped: strong-leibniz-t (nonepic-strong-leibniz), gallin-extensional-comprehension-r (coherent-retractions).
-
-# migration: the old description's last sentence and the text of the old notes that no argument
-# holds, verbatim. The argument for the failure of the Distinctness-preserving collapse, now
-# derived, is dropped.
-
-notes: >-
-  The cited construction is a model of the map’s relational-type framework. The description
-  identifies its evaluation point; construction and verification are given at the PDF locations in
-  References. Only the type-t ND assertion is recorded. Everything that implies these fails with
-  them.
-
+notes: The cited construction is a model of the map’s relational-type framework. The description identifies
+  its evaluation point; construction and verification are given at the PDF locations in References. Only
+  the type-t ND assertion is recorded. Everything that implies these fails with them.
 was_conjectured: true
-
-# The old `changes` log, verbatim and frozen.
 history:
 - date: '2026-09-17'
   by: OpenAI Codex (GPT-6)
@@ -146,10 +106,6 @@ history:
   violates:
   - infinity-t
   - possible-infinity-t
-
-# The model in Lean (Models/FullActionModels.lean), and its verdicts proved there (Classicism/MapModels.lean);
-# statuses are written by lean-check --update. The verdicts the map's general arguments give it are certified
-# from the arguments' (MapDerived.lean), with the proofs under `meets` that it meets their conditions.
 lean:
   model: Classicism.Meta.Intensional.FullActionModels.retract
   is_model: Classicism.Meta.Intensional.FullActionModels.unitModel_isModel _
@@ -161,11 +117,13 @@ lean:
     finitely-many-propositions-everywhere: Classicism.Meta.Intensional.FullActionModels.retract_finitely_many_everywhere
     retractions: Classicism.Meta.Intensional.FullActionModels.retract_retractions
     unique-retractions-everywhere: Classicism.Meta.Intensional.FullActionModels.retract_unique_retractions
-    identity-singletons: Classicism.Meta.Intensional.Premodel.Full.identitySingletons _ (Classicism.Meta.Intensional.FullActionModels.unitModel_full _)
+    identity-singletons: Classicism.Meta.Intensional.Premodel.Full.identitySingletons _ (Classicism.Meta.Intensional.FullActionModels.unitModel_full
+      _)
     nonidentity-arrow: Classicism.Meta.Intensional.FullActionModels.retract_nonidentity
     full-model: Classicism.Meta.Intensional.FullActionModels.unitModel_full _
     full-action-model: Classicism.Meta.Intensional.FullActionModels.unitModel_full _
-    extensionally-full: Classicism.Meta.Intensional.Premodel.Full.extFull _ (Classicism.Meta.Intensional.FullActionModels.unitModel_full _)
+    extensionally-full: Classicism.Meta.Intensional.Premodel.Full.extFull _ (Classicism.Meta.Intensional.FullActionModels.unitModel_full
+      _)
     one-individual: Classicism.Meta.Intensional.FullActionModels.unitModel_one_individual _
   verdicts:
   - holds: distinctness-necessary-t

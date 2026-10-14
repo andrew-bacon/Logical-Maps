@@ -20,197 +20,172 @@ references:
   role: background
   locator: Appendix D, pp. 73–79
   note: The per-object ideals that this construction uses, and the two-object models built on them.
-
-# migration: the definition is the old description's first paragraph, then the notes' interpretation
-# of Σ.
 group: symmetric-ideally-full
-# migration (2 October): the old definition is the group's, completed by these settings: `construction`
-# is its first paragraph, verbatim; its interpretation of Σ is one of the group's values.
-# migration (3 October): recorded at the group's defaults, Σ top and the base as the individuals; the individuals were the base already.
 settings:
-  construction: >-
-    A symmetric ideally-full intensional action model over two objects, each a copy of the natural
-    numbers. The arrows from the first object to itself are the permutations; the arrows from the
-    first to the second and from the second to itself are all the functions; there are none back.
-    Both symmetry groups are all the permutations. The first object carries the ideal of finite
-    sets, the second the improper ideal, so at the second object every symmetric intension belongs
-    to the domain. The evaluation point is the identity arrow on the first object.
+  construction: A symmetric ideally-full intensional action model over two objects, each a copy of the
+    natural numbers. The arrows from the first object to itself are the permutations; the arrows from
+    the first to the second and from the second to itself are all the functions; there are none back.
+    Both symmetry groups are all the permutations. The first object carries the ideal of finite sets,
+    the second the improper ideal, so at the second object every symmetric intension belongs to the domain.
+    The evaluation point is the identity arrow on the first object.
   individuals: base
   sigma: top
 meets:
-  collapse-onto-point: >-
-    Take $F:=\lambda x\, .\,x\ne a$, so $p\notin F_h$. $h$ is a function from the first object to the second that is constant on $N\cup\{a\}$; the symmetry group of the second object is all permutations.
-  transposable: >-
-    $M=\emptyset$, and for $N$ the property of not belonging to $N$, at the first object, where the
-    domain is symmetric and finitely pinned: the transposition of $y$ with another individual of the
-    first object outside $N$ lies in its symmetry group.
-  separable-collapses: >-
-    The pairs $\{n,m\}$ of individuals of the first object: a function into the second object that
-    collapses $n$ with $m$ and nothing else is an arrow, all functions being arrows there.
-  actual-world-isolated: >-
-    The actual-world proposition is the set of arrows from the first object to itself, all
-    permutations, in the domain by the source argument for Actuality; no arrow from the second object
+  collapse-onto-point: Take $F:=\lambda x\, .\,x\ne a$, so $p\notin F_h$. $h$ is a function from the first
+    object to the second that is constant on $N\cup\{a\}$; the symmetry group of the second object is
+    all permutations.
+  transposable: '$M=\emptyset$, and for $N$ the property of not belonging to $N$, at the first object,
+    where the domain is symmetric and finitely pinned: the transposition of $y$ with another individual
+    of the first object outside $N$ lies in its symmetry group.'
+  separable-collapses: 'The pairs $\{n,m\}$ of individuals of the first object: a function into the second
+    object that collapses $n$ with $m$ and nothing else is an arrow, all functions being arrows there.'
+  actual-world-isolated: The actual-world proposition is the set of arrows from the first object to itself,
+    all permutations, in the domain by the source argument for Actuality; no arrow from the second object
     returns to the first.
-  actuality-contingent: >-
-    The actual-world proposition, the arrows from the first object to itself, is in the domain; at
-    every world an arrow into the second object leads outside it, and such an arrow carries it to the
-    empty set.
-  irreversible-arrow: >-
-    An arrow into the second object: no arrow returns from there to the first.
-  hull-conditions: >-
-    With $M_0=\emptyset$ (the draft's argument for this model, Proposition 40): an arrow to the
-    first object is a permutation and so separated by any set, while for arrows to the second,
-    splicing is unconstrained, every function being an arrow; points are moved off a finite set by
-    a permutation of the first object.
-
+  actuality-contingent: The actual-world proposition, the arrows from the first object to itself, is in
+    the domain; at every world an arrow into the second object leads outside it, and such an arrow carries
+    it to the empty set.
+  irreversible-arrow: 'An arrow into the second object: no arrow returns from there to the first.'
+  hull-conditions: 'With $M_0=\emptyset$ (the draft''s argument for this model, Proposition 40): an arrow
+    to the first object is a permutation and so separated by any set, while for arrows to the second,
+    splicing is unconstrained, every function being an arrow; points are moved off a finite set by a permutation
+    of the first object.'
 arguments:
-
-# Restructured on 2 October 2026 (Claude Opus 5.5, at Cian Dorr's direction): every argument this
-# record shared in substance with another symmetric model is now a shared argument of the group
-# symmetric-ideally-full or one of the topic's general arguments (arguments/), with this record's
-# witness under `meets`; what follows is this record's own. Only the verdicts the engine needs to
-# derive the rest are recorded, the source's first.
-
-# --- from the source (19 Sep record) ---
-
-- holds: [necessary-actuality]
-  text: >-
-    At both objects, and hence necessarily: at each, the orbit of the identity under the symmetry
-    group is the smallest symmetric set of arrows containing it, and it is in the domain, at the
-    first object because it is pinned down by the empty set and at the second because nothing is
-    required there.
-
-- holds: [necessary-boolean-completeness-r]
-  text: >-
-    At both, and hence necessarily: at the first by the draft's main theorem with the empty
-    distinguished set, since an arrow to the first object is automatically a permutation and so
-    separated, while for arrows to the second splicing is unconstrained; at the second trivially,
-    since its domains are closed under arbitrary unions.
+- holds:
+  - necessary-actuality
+  text: 'At both objects, and hence necessarily: at each, the orbit of the identity under the symmetry
+    group is the smallest symmetric set of arrows containing it, and it is in the domain, at the first
+    object because it is pinned down by the empty set and at the second because nothing is required there.'
+- holds:
+  - necessary-boolean-completeness-r
+  text: 'At both, and hence necessarily: at the first by the draft''s main theorem with the empty distinguished
+    set, since an arrow to the first object is automatically a permutation and so separated, while for
+    arrows to the second splicing is unconstrained; at the second trivially, since its domains are closed
+    under arbitrary unions.'
   revisions:
   - date: '2026-10-06'
     by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
-    note: >-
-      Boolean Completeness at the first object is now the group argument boolean-completeness,
-      by hull-conditions; this argument still gives its necessitation, through the second object.
-
-- fails: [rigid-comprehension-r]
-  when: {individuals: base}  # proved at type $e$ (3 October: the one-individual variant leaves it open)
-  text: >-
-    No rigid property of individuals is coextensive with the universal one. Weak persistence
-    together with finite pinning forces any candidate to contain every pair whose arrow targets
-    the second object, so its transport there is the top property. But the property of being in
-    the range of one's arrow is symmetric and persistent, its extension at that world is
-    everything, and the top property does not entail it, because the arrows out of the second
-    object include non-surjections. So the rigidity criterion fails at that world.
-
-- fails: [necessary-barcan-r, no-pure-contingency-r]
-  when: {individuals: base}  # proved at type $e$ (3 October: the one-individual variant leaves it open)
-  text: >-
-    The draft records that the type-e instance of BF is true at the base world and false at the
-    second object, so BF is true while boxed BF is false; that is what the violation of boxed BF
-    records, and it also refutes No Pure Contingency, since that instance is a closed pure
-    sentence true at the base and false at an accessible world.
-
-- fails: [distinctness-necessary-r]
-  when: {individuals: base}  # proved at type $e$ (3 October: the one-individual variant leaves it open)
-  text: >-
-    At type e because some arrow to the second object collapses two individuals.
-
-# --- later additions ---
-
-- fails: [atomicity-t]
+    note: Boolean Completeness at the first object is now the group argument boolean-completeness, by
+      hull-conditions; this argument still gives its necessitation, through the second object.
+- fails:
+  - rigid-comprehension-r
+  when:
+    individuals: base
+  text: No rigid property of individuals is coextensive with the universal one. Weak persistence together
+    with finite pinning forces any candidate to contain every pair whose arrow targets the second object,
+    so its transport there is the top property. But the property of being in the range of one's arrow
+    is symmetric and persistent, its extension at that world is everything, and the top property does
+    not entail it, because the arrows out of the second object include non-surjections. So the rigidity
+    criterion fails at that world.
+- fails:
+  - necessary-barcan-r
+  - no-pure-contingency-r
+  when:
+    individuals: base
+  text: The draft records that the type-e instance of BF is true at the base world and false at the second
+    object, so BF is true while boxed BF is false; that is what the violation of boxed BF records, and
+    it also refutes No Pure Contingency, since that instance is a closed pure sentence true at the base
+    and false at an accessible world.
+- fails:
+  - distinctness-necessary-r
+  when:
+    individuals: base
+  text: At type e because some arrow to the second object collapses two individuals.
+- fails:
+  - atomicity-t
   by: Claude Fable 5.1 (Anthropic)
   date: '2026-09-23'
-  text: >-
-    The symmetry group of $W_0$ is an atom, but no atom lies inside the nonempty proposition of
-    the arrows into $W_1$, which is pinned down by the empty set since targets are: a nonempty
-    symmetric $p$ of such arrows pinned down by $N$ and containing $h$ contains every arrow into
-    $W_1$ whose restriction to $N$ has the same fibres as $h$’s, the symmetry group of $W_1$ being
-    all permutations, and those agreeing in that sense on $N\cup\{m\}$ form a smaller nonempty
-    symmetric proposition.
-
-- fails: [pure-b-r]
-  when: {individuals: base}  # proved at type $e$ (3 October: the one-individual variant leaves it open)
+  text: 'The symmetry group of $W_0$ is an atom, but no atom lies inside the nonempty proposition of the
+    arrows into $W_1$, which is pinned down by the empty set since targets are: a nonempty symmetric $p$
+    of such arrows pinned down by $N$ and containing $h$ contains every arrow into $W_1$ whose restriction
+    to $N$ has the same fibres as $h$’s, the symmetry group of $W_1$ being all permutations, and those
+    agreeing in that sense on $N\cup\{m\}$ form a smaller nonempty symmetric proposition.'
+- fails:
+  - pure-b-r
+  when:
+    individuals: base
   by: Claude Fable 5.1 (Anthropic)
   date: '2026-09-25'
-  text: >-
-    The type-$e$ instance of BF is a closed pure sentence true at the base world and false at the
-    second object, and no arrow leads back from the second object, so at that world the sentence
-    is not even possible.
-
-# migration: text of the old notes that no argument holds, verbatim.
-- fails: [necessary-strong-actuality]
+  text: The type-$e$ instance of BF is a closed pure sentence true at the base world and false at the
+    second object, and no arrow leads back from the second object, so at that world the sentence is not
+    even possible.
+- fails:
+  - necessary-strong-actuality
   by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
   date: '2026-10-06'
-  text: >-
-    Strong Actuality fails at the second object, which an arrow from the first reaches. There a
-    true proposition contains the identity and, being symmetric, every permutation. Let $s$ be the
-    successor map, an arrow from the second object to itself, and $k_0,k_1$ its retractions sending
-    $n+1$ to $n$ and $0$ to $0$ and to $1$ respectively. Under $s$ the true proposition becomes one
-    containing $k_0$ and $k_1$. The proposition that the arrow sends $0$ and $1$ to the same
-    individual is closed under composition with permutations, so in the domain at the second
-    object, where every symmetric intension is; it contains $k_0$ and not $k_1$. So no true
-    proposition at the second object is a strong world. (Strong Actuality holds at the first
-    object, by Actuality and the Distinctness-preserving collapse.)
-
+  text: Strong Actuality fails at the second object, which an arrow from the first reaches. There a true
+    proposition contains the identity and, being symmetric, every permutation. Let $s$ be the successor
+    map, an arrow from the second object to itself, and $k_0,k_1$ its retractions sending $n+1$ to $n$
+    and $0$ to $0$ and to $1$ respectively. Under $s$ the true proposition becomes one containing $k_0$
+    and $k_1$. The proposition that the arrow sends $0$ and $1$ to the same individual is closed under
+    composition with permutations, so in the domain at the second object, where every symmetric intension
+    is; it contains $k_0$ and not $k_1$. So no true proposition at the second object is a strong world.
+    (Strong Actuality holds at the first object, by Actuality and the Distinctness-preserving collapse.)
 - id: rigid-power
-  holds: [necessary-rigid-power-r]
+  holds:
+  - necessary-rigid-power-r
   by: GPT-6 Astra (OpenAI), at Cian Dorr's request; checked and recorded by Claude Opus 5.5 (Anthropic)
   date: '2026-10-11'
-  text: >-
-    Boxed Rigid Power, for either choice of individuals. At $W_1$ every symmetric intension is in the
-    domain, so every $X_0(A)$ ($k\mapsto kA$) is, and a weakly rigid relation is $X_0$ of its extension;
-    a rigid $X\le h\cdot F$ is $h\cdot X_0(A)$ for the inverse image $A$ of its extension, so Rigid
-    Power holds there. At $W_0$ let $F$ be rigid, pinned down by a nonempty finite $S$, with extension
-    $E_0$. For $h:W_0\to W_1$, $h\cdot F=X_0(F_h)$ is pinned down by $hS$; for an idempotent retraction
-    $r$ onto $hS$, $F_h=F_{rh}=rF_h$, so $r$ fixes every tuple of $F_h$, and for $k,k^{\prime}$ agreeing
-    on $hS$, $kz=krz=k^{\prime}rz=k^{\prime}z$. Through a bijection $W_0\to W_1$, every $h:W_0\to W_1$
-    acts on the tuples of $E_0$ through $h|_S$; with the invariance of $E_0$ under the permutations
-    fixing $S$, $X_0(E_0)$ is in the domain, so $F=X_0(E_0)$. For a rigid $X\le h\cdot F$, $X=X_0(D)$
-    and $X=h\cdot X_0(A)$ with $A:=\{z\in E_0:hz\in D\}$, in the domain for the same reason;
-    permutations are lifted by their inverses. So the power property is $X_0$ of its extension and
-    rigid, at both objects.
-
+  text: Boxed Rigid Power, for either choice of individuals. At $W_1$ every symmetric intension is in
+    the domain, so every $X_0(A)$ ($k\mapsto kA$) is, and a weakly rigid relation is $X_0$ of its extension;
+    a rigid $X\le h\cdot F$ is $h\cdot X_0(A)$ for the inverse image $A$ of its extension, so Rigid Power
+    holds there. At $W_0$ let $F$ be rigid, pinned down by a nonempty finite $S$, with extension $E_0$.
+    For $h:W_0\to W_1$, $h\cdot F=X_0(F_h)$ is pinned down by $hS$; for an idempotent retraction $r$ onto
+    $hS$, $F_h=F_{rh}=rF_h$, so $r$ fixes every tuple of $F_h$, and for $k,k^{\prime}$ agreeing on $hS$,
+    $kz=krz=k^{\prime}rz=k^{\prime}z$. Through a bijection $W_0\to W_1$, every $h:W_0\to W_1$ acts on
+    the tuples of $E_0$ through $h|_S$; with the invariance of $E_0$ under the permutations fixing $S$,
+    $X_0(E_0)$ is in the domain, so $F=X_0(E_0)$. For a rigid $X\le h\cdot F$, $X=X_0(D)$ and $X=h\cdot
+    X_0(A)$ with $A:=\{z\in E_0:hz\in D\}$, in the domain for the same reason; permutations are lifted
+    by their inverses. So the power property is $X_0$ of its extension and rigid, at both objects.
 - id: tame-rigidity
-  fails: [tame-rigidity-r]
-  when: {individuals: singleton}
+  fails:
+  - tame-rigidity-r
+  when:
+    individuals: singleton
   by: GPT-6 Astra (OpenAI), at Cian Dorr's request; checked and recorded by Claude Opus 5.5 (Anthropic)
   date: '2026-10-11'
-  text: >-
-    At type $t\to t$. With $q_{uv}:=\{h:hu=hv\}$ on the points at each object, fix a point $a$ at $W_0$
-    and let $U$ have extension $gE_a$, $E_a:=\{q_{na}:n\}$, at a permutation $g$, and $\{q_{y,ha}:y\}$
+  text: At type $t\to t$. With $q_{uv}:=\{h:hu=hv\}$ on the points at each object, fix a point $a$ at
+    $W_0$ and let $U$ have extension $gE_a$, $E_a:=\{q_{na}:n\}$, at a permutation $g$, and $\{q_{y,ha}:y\}$
     at $h:W_0\to W_1$. It is symmetric, pinned down by $\{a\}$, and equal to its $B_N$ for every finite
-    $N\ni a$ (a fresh $n$ can be sent to any $y$), so weakly rigid. At $W_1$, where every symmetric
-    intension is in the domain, a weakly rigid relation is $X_0$ of its extension; but for $j$ constant
-    with value $c$, $j(U_h)=\{\top\}$ while $U_{jh}=\{q_{y,c}:y\}$ has non-top members. So $h\cdot U$ is
-    not weakly rigid, $U$ is not rigid, and Tame Rigidity fails, even with one individual.
-
+    $N\ni a$ (a fresh $n$ can be sent to any $y$), so weakly rigid. At $W_1$, where every symmetric intension
+    is in the domain, a weakly rigid relation is $X_0$ of its extension; but for $j$ constant with value
+    $c$, $j(U_h)=\{\top\}$ while $U_{jh}=\{q_{y,c}:y\}$ has non-top members. So $h\cdot U$ is not weakly
+    rigid, $U$ is not rigid, and Tame Rigidity fails, even with one individual.
 - id: barcan-t
-  fails: [barcan-t]
+  fails:
+  - barcan-t
   choice: free
   by: Claude Opus 5.5 (Anthropic), at Cian Dorr's request to settle BF at the relational types
   date: '2026-10-11'
-  text: >-
-    At the base world. Every transport of a proposition $p$ of the first object along an arrow $h$ into
-    the second is pinned down by $h(N)$, for $N$ a finite set pinning $p$ down, since $k\circ h$ and
-    $k^{\prime}\circ h$ agree on $N$ when $k,k^{\prime}$ agree on $h(N)$. Let $X$ hold, at an arrow into
-    the first object, of every proposition, and at an arrow into the second, of the finitely pinned
-    ones; it depends only on the codomain, so is pinned down by $\emptyset$, and it is symmetric, a
-    permutation carrying finitely pinned propositions to finitely pinned ones. Then $\forall p\, .\,\Box
-    Xp$ holds at the base world. But the second object's domain is unrestricted and contains
-    $q:=\{k:k\text{ injective}\}$, symmetric and pinned down by no finite set, so after any arrow into
-    the second object $X$ fails of $q$ and $\Box\forall p\, .\,Xp$ fails. This does not involve the
-    individuals.
-
-notes: >-
-  The point of the model is that boxed Boolean Completeness and boxed Actuality, and so Weak Rigid
-  Comprehension, do not yield Rigid Comprehension. The gap is exactly the leading box of the
-  inextensibility conjunct. The status of the unboxed BF schema at the base world is left unknown
-  here: the draft's working comments report that higher-type instances fail there, which would
-  make the schema fail, but its text does not. The source is a work in progress. Everything that
-  implies these fails with them.
-
-# The old `changes` log, verbatim and frozen.
+  text: At the base world. Every transport of a proposition $p$ of the first object along an arrow $h$
+    into the second is pinned down by $h(N)$, for $N$ a finite set pinning $p$ down, since $k\circ h$
+    and $k^{\prime}\circ h$ agree on $N$ when $k,k^{\prime}$ agree on $h(N)$. Let $X$ hold, at an arrow
+    into the first object, of every proposition, and at an arrow into the second, of the finitely pinned
+    ones; it depends only on the codomain, so is pinned down by $\emptyset$, and it is symmetric, a permutation
+    carrying finitely pinned propositions to finitely pinned ones. Then $\forall p\, .\,\Box Xp$ holds
+    at the base world. But the second object's domain is unrestricted and contains $q:=\{k:k\text{ injective}\}$,
+    symmetric and pinned down by no finite set, so after any arrow into the second object $X$ fails of
+    $q$ and $\Box\forall p\, .\,Xp$ fails. This does not involve the individuals.
+- id: collapse-split
+  fails:
+  - necessary-two-hat-implies-nd-necessity
+  holds:
+  - necessary-truth-implies-five-necessity
+  text: 'At the second object the domains are the symmetric intensions, so a proposition is a set of functions
+    determined by their kernels, and the least true proposition is the set $B$ of bijections. $\Diamond
+    B$ is the set of injections (an injection is completed to a bijection by a further map), so $\Box_{\ne}p$
+    holds there iff $p$ contains every injection; but $\hat\Diamond B=B$, since $v\circ u$ bijective with
+    $v$ injective forces $u$ to be bijective, so $\hat{\hat\Box}$ is the identity operator at the second
+    object. Hence $B$ is two-hat necessary but not ND-necessary there, and the identity $\Box_{\ne}=\hat{\hat\Box}$
+    fails; while every truth at either object is 5-necessary: at the second because $\hat{\hat\Box}$ is
+    the identity, at the first because every truth there is ND-necessary (recorded).'
+  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-14'
+notes: 'The point of the model is that boxed Boolean Completeness and boxed Actuality, and so Weak Rigid
+  Comprehension, do not yield Rigid Comprehension. The gap is exactly the leading box of the inextensibility
+  conjunct. The status of the unboxed BF schema at the base world is left unknown here: the draft''s working
+  comments report that higher-type instances fail there, which would make the schema fail, but its text
+  does not. The source is a work in progress. Everything that implies these fails with them.'
 history:
 - date: '2026-09-20'
   by: Claude Fable 5.1 (Anthropic)
@@ -257,9 +232,6 @@ history:
   summary: Added the failure of B for pure sentences; see the notes.
   violates:
   - pure-b-r
-
-# The model in Lean (Classicism/Models/SymmetricIdeal.lean): the base, the group's parameter, its
-# second object carrying the improper ideal.
 lean:
   param: Classicism.Meta.Intensional.SymIdeal.twoBase
   meets:

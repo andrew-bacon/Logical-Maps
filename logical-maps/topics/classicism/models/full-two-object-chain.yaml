@@ -15,73 +15,31 @@ references:
 - paper: bacon-dorr-classicism
   role: proof
   locator: §3.5, p. 59, fourth paragraph; p. 61
-
-# migration: the definition is the old description's first sentence, then the notes' interpretation
-# of Σ.
 group: full-action-models
-# migration (2 October): the old definition is the group's, completed by these settings: `construction`
-# is its first paragraph, verbatim; its interpretation of Σ is one of the group's values.
-# migration (3 October): recorded at the group's defaults, one individual and Σ top; the source
-# leaves the individuals open.
 settings:
-  construction: >-
-    Use two objects with one nonidentity arrow from W0 to W1, evaluated at W0.
+  construction: Use two objects with one nonidentity arrow from W0 to W1, evaluated at W0.
   individuals: singleton
   sigma: top
 meets:
-  fewer-propositions-after: >-
-    $W_0$ has four propositions and $W_1$, after which there is only itself, two.
-  nonidentity-arrow: >-
-    The arrow $W_0\to W_1$.
-  unretracted-arrow: >-
-    There is no arrow from $W_1$ back to $W_0$.
-  epic-arrows: >-
-    Out of $W_1$ there is only the identity, so the arrow $W_0\to W_1$ is an epimorphism; and on the individuals every arrow is the identity.
-  finitely-many-propositions-everywhere: >-
-    $W_0$ has four propositions and $W_1$ two.
+  fewer-propositions-after: $W_0$ has four propositions and $W_1$, after which there is only itself, two.
+  nonidentity-arrow: The arrow $W_0\to W_1$.
+  unretracted-arrow: There is no arrow from $W_1$ back to $W_0$.
+  epic-arrows: Out of $W_1$ there is only the identity, so the arrow $W_0\to W_1$ is an epimorphism; and
+    on the individuals every arrow is the identity.
+  finitely-many-propositions-everywhere: $W_0$ has four propositions and $W_1$ two.
   sigma-apart: The construction does not mention Σ.
-  finitely-many-propositions: >-
-    The propositions at the evaluation object are the subsets of the two arrows out of it, four in
-    all.
-  actual-world-isolated: >-
-    The actual-world proposition, the singleton of the identity, is in the domain, the model being
-    full; no arrow leads back from $W_1$ to $W_0$.
-
+  finitely-many-propositions: The propositions at the evaluation object are the subsets of the two arrows
+    out of it, four in all.
+  actual-world-isolated: The actual-world proposition, the singleton of the identity, is in the domain,
+    the model being full; no arrow leads back from $W_1$ to $W_0$.
+  trivial-isomorphisms-everywhere: The only arrows are the identities and $W_0\to W_1$, which has no inverse.
+  retracted-arrows-invertible-everywhere: 'No non-identity arrow has a retraction: nothing returns from
+    $W_1$.'
 arguments: []
-
-# 6 October 2026 (Claude Opus 5.5, at Cian Dorr's direction): verdicts now given by the topic's
-# general arguments (full-atomicity, full-rigid-comprehension, full-epic-barcan, invertible-arrows,
-# retractions, unretracted-arrow, nonidentity-arrow, infinitely-many-propositions,
-# finitely-many-propositions, finitely-many-propositions-everywhere), through this record's `meets`
-# and its group's, are dropped from its own arguments, and arguments left with none are dropped:
-# necessary-rigid-comprehension-r, necessary-atomicity-r, no-pure-contingency-r, necessary-strong-leibniz-r, necessary-barcan-r.
-
-# Restructured on 2 October 2026 (Claude Opus 5.5, at Cian Dorr's direction): every argument this
-# record shared in substance with another full action model is now one of the topic's general
-# arguments (arguments/), reached through the group full-action-models and this record's `meets`;
-# what follows is this record's own. Only the verdicts the engine needs to derive the rest are
-# recorded, the source's first.
-
-# --- later additions ---
-
-# 6 October 2026 (Claude Opus 5.5, at Cian Dorr's direction): the remaining own argument is now a
-# general argument, reached through this record's `meets`, and dropped: pure-b-r
-# (fewer-propositions-after).
-
-# migration: text of the old notes that no argument holds, verbatim: their first two sentences, the
-# sentence that followed the Σ argument, and the last sentence of the argument for BF (type $t$).
-# That argument, the one for the failure of Possible Infinity (type $t$) and the one for □Relational
-# Choice of 20 September, whose verdicts are now derived, are dropped.
-# migration (3 October): its last sentence, that BF at type $e$ was left open since the record did
-# not fix the individual domains, is dropped: they are fixed now, and BF is argued above.
-notes: >-
-  The cited construction is a model of the map’s relational-type framework. The description
-  identifies its evaluation point; construction and verification are given at the PDF locations in
-  References. Everything that implies these fails with them.
-
+notes: The cited construction is a model of the map’s relational-type framework. The description identifies
+  its evaluation point; construction and verification are given at the PDF locations in References. Everything
+  that implies these fails with them.
 was_conjectured: true
-
-# The old `changes` log, verbatim and frozen.
 history:
 - date: '2026-09-17'
   by: OpenAI Codex (GPT-6)
@@ -158,10 +116,6 @@ history:
   violates:
   - possible-infinity-t
   - pure-b-r
-
-# The model in Lean (Models/FullActionModels.lean), and its verdicts proved there (Classicism/MapModels.lean);
-# statuses are written by lean-check --update. The verdicts the map's general arguments give it are certified
-# from the arguments' (MapDerived.lean), with the proofs under `meets` that it meets their conditions.
 lean:
   model: Classicism.Meta.Intensional.FullActionModels.chain
   is_model: Classicism.Meta.Intensional.FullActionModels.unitModel_isModel _
@@ -173,7 +127,8 @@ lean:
     nonidentity-arrow: Classicism.Meta.Intensional.FullActionModels.chain_nonidentity
     full-model: Classicism.Meta.Intensional.FullActionModels.unitModel_full _
     full-action-model: Classicism.Meta.Intensional.FullActionModels.unitModel_full _
-    extensionally-full: Classicism.Meta.Intensional.Premodel.Full.extFull _ (Classicism.Meta.Intensional.FullActionModels.unitModel_full _)
+    extensionally-full: Classicism.Meta.Intensional.Premodel.Full.extFull _ (Classicism.Meta.Intensional.FullActionModels.unitModel_full
+      _)
     one-individual: Classicism.Meta.Intensional.FullActionModels.unitModel_one_individual _
     finitely-many-propositions: Classicism.Meta.Intensional.FullActionModels.chain_finitely_many_propositions
     actual-world-isolated: Classicism.Meta.Intensional.FullActionModels.chain_actual_world_isolated

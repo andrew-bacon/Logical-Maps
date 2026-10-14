@@ -1,236 +1,178 @@
-# Conditions a model may meet, stated once for the topic. A general argument (arguments/<id>.yaml)
-# requires some of them; a model record meets one by its own `meets`, by its group's `meets`, or by
-# the value of one of its group's parameters, each with the reason it holds there. Introduced by
-# Claude Opus 5.5 at Cian Dorr's direction, 2 October 2026.
 conditions:
 - id: one-object-action-model
-  text: >-
-    The model is an action model (Classicism, Appendix D), or an intensional action model in the
-    sense of Dorr's draft (Boolean Completeness does not imply Rigid Comprehension), with a single
-    object.
+  text: The model is an action model (Classicism, Appendix D), or an intensional action model in the sense
+    of Dorr's draft (Boolean Completeness does not imply Rigid Comprehension), with a single object.
   lean: Classicism.Meta.Intensional.Premodel.OneObject
 - id: extensionally-full
-  text: >-
-    The model is extensionally full at every object: every set of tuples from the domains at an
-    object is the extension, at the identity arrow, of an element of the domain of the matching
-    relational type there.
+  text: 'The model is extensionally full at every object: every set of tuples from the domains at an object
+    is the extension, at the identity arrow, of an element of the domain of the matching relational type
+    there.'
   lean: Classicism.Meta.Intensional.Premodel.ExtFull
 - id: d6-surjective
-  text: >-
-    The model is an ideally full action model in which every arrow out of the evaluation object
-    acts surjectively both on the individuals and on the pinning sets (Proposition D.6's
-    hypothesis).
+  text: The model is an ideally full action model in which every arrow out of the evaluation object acts
+    surjectively both on the individuals and on the pinning sets (Proposition D.6's hypothesis).
   lean: Classicism.Meta.Intensional.Premodel.D6Surjective
 - id: sigma-top
-  text: >-
-    Every constant of Σ is relational, and each denotes the top element of its type.
+  text: Every constant of Σ is relational, and each denotes the top element of its type.
   lean: Classicism.Meta.Intensional.Premodel.SigmaTop
 - id: one-individual
-  text: >-
-    There is exactly one individual, at every world.
+  text: There is exactly one individual, at every world.
   lean: Classicism.Meta.Intensional.Premodel.OneIndividual
 - id: full-model
-  text: >-
-    The model is full: at each object, the domain of each relational type contains every intension
-    of that type.
+  text: 'The model is full: at each object, the domain of each relational type contains every intension
+    of that type.'
   lean: Classicism.Meta.Intensional.Premodel.Full
 - id: full-action-model
-  text: >-
-    The model is a full action model: an action model (Classicism, Appendix D) that is full at
-    every object.
+  text: 'The model is a full action model: an action model (Classicism, Appendix D) that is full at every
+    object.'
   lean: Classicism.Meta.Intensional.Premodel.Full
 - id: codomain-intensions
-  text: >-
-    At every object reachable from the evaluation point, the domain contains every intension
-    whose value at an arrow depends only on the arrow's codomain.
+  text: At every object reachable from the evaluation point, the domain contains every intension whose
+    value at an arrow depends only on the arrow's codomain.
 - id: fixed-infinite-individuals
-  text: >-
-    At every object the individuals are the same infinite set, and every arrow acts on them as the
+  text: At every object the individuals are the same infinite set, and every arrow acts on them as the
     identity.
 - id: homogeneous-individuals
-  text: >-
-    The model's automorphisms carry every individual to every other.
+  text: The model's automorphisms carry every individual to every other.
 - id: finitely-many-propositions
-  text: >-
-    There are finitely many propositions at the evaluation world.
+  text: There are finitely many propositions at the evaluation world.
   lean: Classicism.Meta.Intensional.Premodel.FinitelyManyPropositions
 - id: sigma-true-atom
-  text: >-
-    Σ has a designated relational constant $c$ of type $\tau=\bar\sigma t$ denoting
-    $\lambda\bar x\, .\,a$, where $a$ is the actual-world proposition, the unique true atom; every
-    other constant, of which there is at least one, is relational and denotes the top element of
-    its type.
+  text: Σ has a designated relational constant $c$ of type $\tau=\bar\sigma t$ denoting $\lambda\bar x\,
+    .\,a$, where $a$ is the actual-world proposition, the unique true atom; every other constant, of which
+    there is at least one, is relational and denotes the top element of its type.
 - id: actuality-contingent
-  text: >-
-    The actual-world proposition $a$, the strongest truth, is in the domain; it is necessary at no
+  text: The actual-world proposition $a$, the strongest truth, is in the domain; it is necessary at no
     world, and some arrow does not fix it.
 - id: irreversible-arrow
-  text: >-
-    Some world sees no world at which the actual-world proposition is true.
+  text: Some world sees no world at which the actual-world proposition is true.
 - id: actual-world-isolated
-  text: >-
-    The actual-world proposition $a$ is in the domain and entails every truth, and no world outside
+  text: The actual-world proposition $a$ is in the domain and entails every truth, and no world outside
     $a$ sees a world in $a$.
   lean: Classicism.Meta.Intensional.Premodel.ActualWorldIsolated
 - id: transport-gap
-  text: >-
-    The model is a one-object action model whose entities are finitely pinned, and there are a
-    finite set $N$, an arrow $i$ and a proposition $q$ in the domain such that $q$ separates two
-    arrows that agree on the range of every arrow agreeing with $i$ on $N$, and the intension
-    $\{\langle r,j\rangle : r\ne q\text{ or }j\text{ disagrees with }i\text{ on }N\}$ is in the
-    domain.
-# Added 4 October 2026 (Claude Fable 5.1, at Cian Dorr's direction) for the general argument
-# intensional-choice-collapse, shared by the symmetric ideally-full models and the
-# symmetry-constrained full models.
+  text: 'The model is a one-object action model whose entities are finitely pinned, and there are a finite
+    set $N$, an arrow $i$ and a proposition $q$ in the domain such that $q$ separates two arrows that
+    agree on the range of every arrow agreeing with $i$ on $N$, and the intension $\{\langle r,j\rangle
+    : r\ne q\text{ or }j\text{ disagrees with }i\text{ on }N\}$ is in the domain.'
 - id: symmetric-domains
-  text: >-
-    A group $G$ acts on the individuals at the evaluation object, and every element of a relational
-    domain there is symmetric, meaning that $\langle\bar x,h\rangle\in D$ implies
-    $\langle g\cdot\bar x,g\circ h\rangle\in D$ whenever $g\in G$ and $g\circ h$ is an arrow, and is
-    pinned down by a finite set of individuals, its extension at an arrow depending only on the
-    arrow's values there.
+  text: A group $G$ acts on the individuals at the evaluation object, and every element of a relational
+    domain there is symmetric, meaning that $\langle\bar x,h\rangle\in D$ implies $\langle g\cdot\bar
+    x,g\circ h\rangle\in D$ whenever $g\in G$ and $g\circ h$ is an arrow, and is pinned down by a finite
+    set of individuals, its extension at an arrow depending only on the arrow's values there.
 - id: construction-individuals
-  text: >-
-    The individuals at the evaluation object are those the construction acts on, and the arrows
-    act on them as the construction says.
+  text: The individuals at the evaluation object are those the construction acts on, and the arrows act
+    on them as the construction says.
 - id: collapse-onto-point
-  # Claude Opus 5.5, 3 October 2026, as a condition of the group symmetric-ideally-full: the
-  # hypothesis of the collapse lemma for Intensional Choice. Moved to the topic on 4 October 2026.
-  text: >-
-    There are an individual $a$ and a necessarily instantiated property $F$ in the domain such
-    that, for every finite set $N$ of individuals at the evaluation object, some arrow $h$ sends
-    $N\cup\{a\}$ to a single individual $p$, and every individual $y\ne p$ in $F$'s extension at
-    $h$ is moved by a member $\sigma$ of the symmetry group that fixes $p$, with $\sigma\circ h$
-    again an arrow.
-# Added 4 October 2026 (Claude Fable 5.1, at Cian Dorr's direction) for the general argument
-# rigid-power-tight.
+  text: There are an individual $a$ and a necessarily instantiated property $F$ in the domain such that,
+    for every finite set $N$ of individuals at the evaluation object, some arrow $h$ sends $N\cup\{a\}$
+    to a single individual $p$, and every individual $y\ne p$ in $F$'s extension at $h$ is moved by a
+    member $\sigma$ of the symmetry group that fixes $p$, with $\sigma\circ h$ again an arrow.
 - id: rigid-haecceity-disjunctions
-  text: >-
-    At every object reachable from the evaluation point, the rigid relations of each relational
-    type are exactly the intensions $k\mapsto k\cdot E$, the disjunctions of the haecceities of the
-    members of $E$, for $E$ any set of tuples from the domains there; in particular every such
-    intension is in the domain.
-# Added 6 October 2026 (Claude Opus 5.5, at Cian Dorr's direction) for the general arguments
-# full-epic-barcan, infinitely-many-individuals, infinitely-many-propositions and
-# finitely-many-propositions-everywhere.
+  text: At every object reachable from the evaluation point, the rigid relations of each relational type
+    are exactly the intensions $k\mapsto k\cdot E$, the disjunctions of the haecceities of the members
+    of $E$, for $E$ any set of tuples from the domains there; in particular every such intension is in
+    the domain.
 - id: epic-arrows
-  text: >-
-    Every arrow out of every object reachable from the evaluation point is an epimorphism (arrows
+  text: Every arrow out of every object reachable from the evaluation point is an epimorphism (arrows
     after it that agree after it are equal) and acts surjectively on the individuals.
   lean: Classicism.Meta.Intensional.Premodel.EpicArrows
 - id: infinitely-many-individuals
-  text: >-
-    There are infinitely many individuals at the evaluation world.
+  text: There are infinitely many individuals at the evaluation world.
   lean: Classicism.Meta.Intensional.Premodel.InfinitelyManyIndividuals
 - id: infinitely-many-propositions
-  text: >-
-    There are infinitely many propositions at the evaluation world.
+  text: There are infinitely many propositions at the evaluation world.
   lean: Classicism.Meta.Intensional.Premodel.InfinitelyManyPropositions
 - id: finitely-many-propositions-everywhere
-  text: >-
-    There are finitely many propositions at every object reachable from the evaluation point.
+  text: There are finitely many propositions at every object reachable from the evaluation point.
   lean: Classicism.Meta.Intensional.Premodel.FinitelyManyPropositionsEverywhere
 - id: invertible-arrows
-  text: >-
-    Every arrow out of every object reachable from the evaluation point is invertible.
+  text: Every arrow out of every object reachable from the evaluation point is invertible.
   lean: Classicism.Meta.Intensional.Premodel.InvertibleArrows
 - id: retractions
-  text: >-
-    Every arrow out of the evaluation object has a retraction: an arrow back after which it composes
-    to the identity.
+  text: 'Every arrow out of the evaluation object has a retraction: an arrow back after which it composes
+    to the identity.'
   lean: Classicism.Meta.Intensional.Premodel.Retractions
 - id: unretracted-arrow
-  text: >-
-    Some arrow out of the evaluation object has no retraction.
+  text: Some arrow out of the evaluation object has no retraction.
   lean: Classicism.Meta.Intensional.Premodel.UnretractedArrow
 - id: nonidentity-arrow
-  text: >-
-    Some arrow out of the evaluation object is not its identity.
+  text: Some arrow out of the evaluation object is not its identity.
   lean: Classicism.Meta.Intensional.Premodel.NonidentityArrow
 - id: nonepic-arrow
-  text: >-
-    Some arrow out of the evaluation object is not an epimorphism: two distinct arrows after it
-    agree after it.
+  text: 'Some arrow out of the evaluation object is not an epimorphism: two distinct arrows after it agree
+    after it.'
   lean: Classicism.Meta.Intensional.Premodel.NonepicArrow
 - id: returning-arrow
-  text: >-
-    Some arrow out of the evaluation object other than its identity has a retraction: an arrow back
-    after which it composes to the identity.
+  text: 'Some arrow out of the evaluation object other than its identity has a retraction: an arrow back
+    after which it composes to the identity.'
   lean: Classicism.Meta.Intensional.Premodel.ReturningArrow
 - id: coherent-retractions
-  text: >-
-    Every arrow $g$ out of the evaluation object has a retraction $r_g$, chosen so that
-    $r_{x\circ g}\circ x=r_g$ for every arrow $x$ after $g$.
+  text: Every arrow $g$ out of the evaluation object has a retraction $r_g$, chosen so that $r_{x\circ
+    g}\circ x=r_g$ for every arrow $x$ after $g$.
   lean: Classicism.Meta.Intensional.Premodel.CoherentRetractions
 - id: fewer-propositions-after
-  text: >-
-    For some $n$, the evaluation object has $n$ distinct propositions, while some world after it,
+  text: For some $n$, the evaluation object has $n$ distinct propositions, while some world after it,
     and every world after that one, has fewer.
   lean: Classicism.Meta.Intensional.Premodel.FewerPropositionsAfter
-# Added 6 October 2026 (Claude Opus 5.5, at Cian Dorr's direction), for Strong Actuality.
 - id: identity-singletons
-  text: >-
-    At the evaluation object, and at the target of every arrow out of it, the singleton of the
-    identity arrow is in the domain.
+  text: At the evaluation object, and at the target of every arrow out of it, the singleton of the identity
+    arrow is in the domain.
   lean: Classicism.Meta.Intensional.Premodel.IdentitySingletons
 - id: unique-retractions-everywhere
-  text: >-
-    At the evaluation object, and at the target of every arrow out of it, every arrow out of that
+  text: At the evaluation object, and at the target of every arrow out of it, every arrow out of that
     object has at most one retraction.
   lean: Classicism.Meta.Intensional.Premodel.UniqueRetractionsEverywhere
 - id: separated-retractions
-  text: >-
-    Some arrow out of the evaluation object has two retractions that some proposition in the
-    domain at its target separates.
+  text: Some arrow out of the evaluation object has two retractions that some proposition in the domain
+    at its target separates.
   lean: Classicism.Meta.Intensional.Premodel.SeparatedRetractions
-# Added 8 October 2026 (Claude Opus 5.5, at Cian Dorr's direction), for the metatheory variants.
 - id: numbered-returning-arrows
-  text: >-
-    There are pairwise distinct arrows $h_n$ out of the evaluation object, one for each natural
-    number $n$, each with a retraction $r_n$, all given by the construction without choice.
+  text: There are pairwise distinct arrows $h_n$ out of the evaluation object, one for each natural number
+    $n$, each with a retraction $r_n$, all given by the construction without choice.
 - id: countable-choice-reals-fails
-  text: >-
-    The construction is carried out in ZF together with a countable family $(A_n)_{n\in\omega}$ of
-    nonempty sets of sets of natural numbers that has no choice function ($\neg\mathrm{AC}_\omega(\mathbb R)$).
+  text: The construction is carried out in ZF together with a countable family $(A_n)_{n\in\omega}$ of
+    nonempty sets of sets of natural numbers that has no choice function ($\neg\mathrm{AC}_\omega(\mathbb
+    R)$).
 - id: socks-sets
-  text: >-
-    The construction is carried out in ZF with a countable family $(P_n)_{n\in\omega}$ of pairwise
-    disjoint two-element sets that has no choice function, and every infinite set the construction
-    leaves unspecified is their union.
+  text: The construction is carried out in ZF with a countable family $(P_n)_{n\in\omega}$ of pairwise
+    disjoint two-element sets that has no choice function, and every infinite set the construction leaves
+    unspecified is their union.
 - id: arbitrary-infinite-set
-  text: >-
-    The construction uses an infinite set that it leaves unspecified: any infinite set will do.
-# Added 9 October 2026 (Claude Opus 5.5, on Cian Dorr's request to settle Tame Rigidity where open).
+  text: 'The construction uses an infinite set that it leaves unspecified: any infinite set will do.'
 - id: finitely-pinned-domains
-  text: >-
-    Write an entity of relational type at the evaluation object as its intension $k\mapsto Y_k$
-    over the arrows $k$ out of it, so that $Y\bar a$ holds at $k$ iff $k\cdot\bar a\in Y_k$; $Y$ is
-    pinned down by a finite set $N$ of the points the arrows act on when $Y_k=Y_{k^{\prime}}$ for any
-    arrows $k,k^{\prime}$ agreeing on $N$. Every entity in a domain is pinned down by a finite set, in
-    the sense that $k\cdot x=k^{\prime}\cdot x$ for arrows agreeing on it, and the domain of each
-    relational type at the evaluation object holds every intension pinned down by a finite set (in a
-    symmetric model, every symmetric one).
+  text: Write an entity of relational type at the evaluation object as its intension $k\mapsto Y_k$ over
+    the arrows $k$ out of it, so that $Y\bar a$ holds at $k$ iff $k\cdot\bar a\in Y_k$; $Y$ is pinned
+    down by a finite set $N$ of the points the arrows act on when $Y_k=Y_{k^{\prime}}$ for any arrows
+    $k,k^{\prime}$ agreeing on $N$. Every entity in a domain is pinned down by a finite set, in the sense
+    that $k\cdot x=k^{\prime}\cdot x$ for arrows agreeing on it, and the domain of each relational type
+    at the evaluation object holds every intension pinned down by a finite set (in a symmetric model,
+    every symmetric one).
 - id: factorizable-arrows
-  text: >-
-    For every arrow $h$ out of the evaluation object and finite sets $N,S$ there is a finite
-    $N^{\prime\prime}\supseteq S$ such that, whenever $k^{\prime}$ agrees with $k\circ h$ on
-    $N^{\prime\prime}$, for every finite $M$ some arrows $k^{\prime\prime}$ agreeing with $h$ on
-    $N^{\prime\prime}$ and $j$ agreeing with $k$ on $N$ have $j\circ k^{\prime\prime}$ agreeing with
-    $k^{\prime}$ on $M$.
-# Added 10 October 2026 (Claude Opus 5.5, on Cian Dorr's request to settle Rigid Rigidity where open).
+  text: For every arrow $h$ out of the evaluation object and finite sets $N,S$ there is a finite $N^{\prime\prime}\supseteq
+    S$ such that, whenever $k^{\prime}$ agrees with $k\circ h$ on $N^{\prime\prime}$, for every finite
+    $M$ some arrows $k^{\prime\prime}$ agreeing with $h$ on $N^{\prime\prime}$ and $j$ agreeing with $k$
+    on $N$ have $j\circ k^{\prime\prime}$ agreeing with $k^{\prime}$ on $M$.
 - id: section-arrows
-  text: >-
-    For every arrow $k$ out of the evaluation object and finite sets $N,T$ of the points the arrows
-    act on, there are arrows $k^{\prime}$ agreeing with $k$ on $N$ and $\sigma$ such that
-    $k^{\prime}\circ\sigma$ is the identity on $T$.
-# Added 11 October 2026 (Claude Opus 5.5, recording GPT-6 Astra's Rigid Power arguments).
+  text: For every arrow $k$ out of the evaluation object and finite sets $N,T$ of the points the arrows
+    act on, there are arrows $k^{\prime}$ agreeing with $k$ on $N$ and $\sigma$ such that $k^{\prime}\circ\sigma$
+    is the identity on $T$.
 - id: all-surjection-arrows
-  text: >-
-    The arrows out of the evaluation object are exactly the surjections of the set of points it
-    acts on.
-# Added 11 October 2026 (Claude Opus 5.5, at Cian Dorr's direction), for BF at relational types.
+  text: The arrows out of the evaluation object are exactly the surjections of the set of points it acts
+    on.
 - id: relationally-epic-arrows
-  text: >-
-    Every arrow out of every object reachable from the evaluation point is an epimorphism: arrows
+  text: 'Every arrow out of every object reachable from the evaluation point is an epimorphism: arrows
     after it that agree after it are equal. (Unlike epic-arrows, nothing is required of its action on
-    the individuals.)
+    the individuals.)'
+- id: trivial-isomorphisms-everywhere
+  text: Out of every object reachable from the evaluation point, the identity is the only invertible arrow.
+- id: noninvertible-retracted-arrow
+  text: Some arrow out of the evaluation object has a retraction but is not invertible.
+- id: retracted-arrows-invertible-everywhere
+  text: Out of every object reachable from the evaluation point, every arrow that has a retraction is
+    invertible.
+- id: retractable-means-actual-pattern
+  text: For every finite set $N$ of individuals at the evaluation object there is a finite $N^\prime\supseteq
+    N$ such that every arrow $u$ out of that object for which some arrow $x$ makes $x\circ u$ agree with
+    the identity on $N^\prime$ agrees on $N$ with a member of the symmetry group (with the identity, when
+    the model has no symmetry group).

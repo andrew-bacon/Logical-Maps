@@ -1,7 +1,7 @@
 id: distinctness-preserving-collapse
-name: Distinctness-preserving collapse
-category: schematic
-statement: Every truth is necessary under the distinctness-preserving modality.
+name: Truth implies ND-necessity
+category: necessity-varieties
+statement: Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 formal: $\forall p\, .\,p\to\Box_{\ne}p$
 date: '2026-09-17'
 sources:
@@ -12,7 +12,8 @@ references:
 - paper: bacon-dorr-classicism
   role: formulation
   locator: Appendix E, p. 83
-notes: ''
+notes: Formerly named Distinctness-preserving collapse; renamed on 14 October 2026 when the Varieties
+  of necessity category was added at the suggestion of Christopher Sun. The id is unchanged.
 variants:
 - id: dual
   lean:
@@ -26,3 +27,10 @@ variants:
     contrapose, and rewrite with $\Diamond_{\ne}=\neg\Box_{\ne}\neg$ and $q\le r\leftrightarrow\neg r\le\neg
     q$. This yields the other form, and the same steps lead back.
 lean_def: Classicism.P.DistinctnessPreservingCollapse.schemaIn
+aliases:
+- Distinctness-preserving collapse
+changes:
+- date: '2026-10-14'
+  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
+  summary: Renamed from Distinctness-preserving collapse to Truth implies ND-necessity and moved to the
+    new category Varieties of necessity; statement reworded, formal statement unchanged.

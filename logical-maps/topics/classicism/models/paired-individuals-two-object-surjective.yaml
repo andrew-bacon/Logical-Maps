@@ -1,0 +1,103 @@
+id: paired-individuals-two-object-surjective
+name: 'Paired-individuals two-object model: surjective block-respecting maps'
+certificate:
+  source_id: misc
+  produced_by: Claude Fable 5.1 (Anthropic), 14 October 2026, at Cian Dorr's direction
+  recorded_by: Claude Fable 5.1 (Anthropic), 14 October 2026
+  checked_by: []
+  date: '2026-10-14'
+  lean: none
+sources:
+- Cian Dorr and Claude Fable 5.1 (Anthropic), conversation of 14 October 2026 (transcript in the private
+  notes).
+- Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, Appendix D, Definitions D.1–D.3 and Proposition
+  D.4, pp. 73–74 (ideally full action models).
+source_names:
+- Dorr–Claude 14 Oct
+- Classicism
+references:
+- paper: bacon-dorr-classicism
+  role: background
+  locator: Appendix D, pp. 73–74
+- paper: bounds-of-possibility
+  role: background
+  locator: Appendix D
+definition: 'A two-object ideally full action model. Fix a fixed-point-free involution $\pi$ on $\mathbb
+  N$ (say $2k\leftrightarrow 2k+1$), which partitions $\mathbb N$ into two-element blocks. The objects
+  are $W_0$, with individuals $\mathbb N$, and $V$, with individuals $\mathbb N\sqcup\{\star\}$ where
+  $\star$ forms a block by itself. The arrows are all surjective block-respecting maps between these sets:
+  $g(\pi c)\in\{g(c),\pi g(c)\}$ for every $c$, so a block maps into a block, either injectively or collapsed
+  to a point, there are surjective arrows $W_0\to V$, obtained by collapsing one block onto $\star$ and
+  mapping the remaining blocks onto all blocks; and the new individual $\star$ can be hit only by collapsing
+  a block onto it. The pinning action is the identity on individuals, the ideal is the finite sets, and
+  the individuals are the type-$e$ domains, so the model is ideally full in the sense of Classicism, Appendix
+  D, and a model of C by its Proposition D.4. The evaluation point is the identity on $W_0$.
+
+
+
+  Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each denotes the
+  top element of its type.'
+meets:
+  sigma-top: This is the interpretation the definition fixes.
+arguments:
+- id: necessary-barcan
+  holds:
+  - necessary-barcan-r
+  text: Every arrow is surjective on individuals, hence on finite sets of individuals, so Proposition
+    D.6 of Classicism gives BF at every type with any object as the evaluation point.
+- id: root-coextension
+  holds:
+  - two-hat-implies-nd-necessity
+  text: 'Write $\mathrm{fix}^{WW}_N$ for the arrows $W\to W$ agreeing with the identity on the finite
+    set $N$, the least true proposition at $W$ pinned by $N$. For a proposition $q$ at the evaluation
+    object put $C_0(q):=\Diamond q$ and $C_{n+1}(q):=\{u : \text{for every } r \text{ true at } \mathrm{trg}(u)
+    \text{ some } v \text{ has } vu\in q \text{ and } v\in C_n(r)\}$; then $\hat\Diamond q=C_1(q)$, $\hat{\hat\Diamond}q=C_2(q)$,
+    and $\hat{(n+1)}\Box\,s$ holds at the identity iff $C_n(q)\subseteq s$ for some true $q$ (the game
+    form of the hat tower, conversation of 14 October 2026). At $1_{W_0}$ both $C_0(\mathrm{fix}^{00}_N)$
+    and $C_1(\mathrm{fix}^{00}_N)$ are the arrows out of $W_0$ (to either object) that are injective and
+    block-injective on $N$: such an arrow $u$ is undone on $N$ by a block-respecting $v$ into $W_0$, and
+    $v$ can be chosen to be injective and block-injective on any finite set named at $\mathrm{trg}(u)$,
+    sending $\star$ (if present) to a fresh block, so that a block-respecting $x$ with $xv$ fixing that
+    set exists, collapsing that block onto $\star$ when needed. Hence $\Box_{\ne}$ and $\hat{\hat\Box}$
+    are coextensive at the evaluation point.'
+- id: two-hat-not-five
+  fails:
+  - five-implies-two-hat-necessity
+  text: 'Let $p_0$ be the proposition that the world is $W_0$, the set of arrows $W_0\to W_0$, true and
+    pinned by $\emptyset$. It is not two-hat necessary: every $C_1(\mathrm{fix}^{00}_N)$ contains a surjective
+    arrow $\iota\colon W_0\to V$ injective on $N$, collapsing a block outside $N$ onto $\star$ (given
+    $r$ true at $V$ pinned by $N_1$, let $v\colon V\to W_0$ be the identity on $\mathbb N$ with $\star$
+    sent to a block $\{e,\pi e\}$ disjoint from $N_1$; then $v\iota=1_{W_0}$, and the map collapsing that
+    block onto $\star$ and fixing everything else brings $v$ back into $\mathrm{fix}^{VV}_{N_1}$). It
+    is 5-necessary: let $Y_k$, for an arrow $k$ out of $W_0$, be the set of propositions at $\mathrm{trg}(k)$
+    pinned by a finite set of individuals in the range of some arrow from $W_0$ (at $W_0$ all propositions,
+    at $V$ those pinned by old individuals); $Y$ is pinned by $\emptyset$. For $z$ pinned by $S$ put $N_z:=S\cup\pi
+    S$; an arrow injective on $N_z$ cannot collapse a block of $S$ onto $\star$, so $k^tz\in Y_k$ for
+    every $k\in C_1(\mathrm{fix}^{00}_{N_z})$ and $\hat{\hat\Box}(Yz)$ holds for every $z$. Since $\hat{\hat\Box}\le\Box_5$
+    and $\Box_5$ satisfies BF at type $t$ (Theorem D16 and Corollary D6 of The Bounds of Possibility),
+    $\Box_5\forall z\,Yz$ holds, and $\forall z\,Yz=p_0$ because at $V$ the proposition that $\star$ is
+    fixed is pinned by no set of old individuals (the identity and a surjection sending $\star$ into $\mathbb
+    N$ and collapsing a block away from that set onto $\star$ agree on it).'
+- id: not-all-truths-five-necessary
+  fails:
+  - truth-implies-five-necessity
+  text: 'The three-hat operator $\hat{(3)}\Box$ is necessarily B here: at $W_0$, $C_2(\mathrm{fix}^{00}_N)=C_3(\mathrm{fix}^{00}_N)$
+    is the set of arrows $W_0\to W_0$ injective and block-injective on $N$ (arrows into $V$ drop out at
+    $C_2$ by the argument for $p_0$, and block-bijections, which are surjective, are in every $C_n$),
+    and at $V$ likewise $C_1=C_2$ on $\mathrm{fix}^{VV}_{N}$. So it is an S5 operator, and $\Box_5\le\hat{(3)}\Box$.
+    But $\mathrm{fix}^{00}_N$ is true and not $\hat{(3)}\Box$-necessary, since a block-bijection moving
+    a point of $N$ lies in every $C_2(\mathrm{fix}^{00}_{N^\prime})$. The argument for the non-surjective
+    model carries over, every arrow used in it being surjective or replaceable by a surjective one that
+    agrees with it on the finite set in question.'
+notes: 'The surjective variant of the paired-individuals model: necessary BF holds at every type by Classicism,
+  Proposition D.6, yet 5-necessity still fails to imply two-hat necessity at the evaluation point and
+  $\Box_{\ne}\ne\hat{\hat\Box}$. Built in the conversation of 14 October 2026. The two operators $\Box_{\ne}$
+  and $\hat{\hat\Box}$ are coextensive at the evaluation point but differ at $V$: Let $p:=\mathrm{fix}^{VV}_{\{\star\}}$.
+  For any true $q$ at $V$, pinned by $N_q$, let $u\colon V\to W_0$ be the identity on $\mathbb N$ with
+  $\star\mapsto b$ for a block $B\ni b$ disjoint from $N_q$; then $u\in\Diamond q$, since the map fixing
+  $N_q$ and collapsing $B$ onto $\star$ brings it back into $\mathrm{fix}^{VV}_{N_q}$. But $u\notin\hat\Diamond
+  p$: any $v$ with $vu\in p$ sends the whole block $B$ to $\star$, so no arrow after $v$ fixes $B$, i.e.
+  $v\notin\Diamond\,\mathrm{fix}^{00}_B$. So B fails for $\Box_{\ne}$ at $V$, and by Propositions D11
+  and D22 of The Bounds of Possibility $\hat{\hat\Box}\ne\Box_{\ne}$. These verdicts, with the failure
+  of Actuality and of ND at type $e$ (the block of $0$ collapses onto $\star$), are derived by the engine
+  from the recorded ones.'

@@ -149,3 +149,33 @@ Expected connections, to be checked before recording:
 - Their relations to NPC, Atomicity and the existence of worlds need working out,
   as do their boxed forms. With $\Box$ the broadest necessity, boxed and unboxed
   forms may differ.
+
+## No Collapse
+
+*Added 14 October 2026, from the conversation on Appendix D of The Bounds of Possibility.*
+Starting from $\Box$ and hatting repeatedly ($\hat X:=\lambda p\, .\,\exists q\, .\,q\land\Box(\neg X\neg q\to p)$)
+gives the increasing tower $\Box\le\Box_{\ne}\le\hat{\hat\Box}\le\cdots\le\Box_5$, and if any
+operator in it is identical to its own hat, so is everything above it. The map records
+the collapse principles at the first two steps (category Varieties of necessity). The
+candidate says that no step collapses, as a single object-language sentence rather than a
+schema:
+
+- **No Collapse:** $\exists\mathcal F^{(tt)t}\, .\,\mathcal F\Box\land
+  \forall X\, .\,(\mathcal FX\to\mathcal F\hat X)\land(\mathcal FX\to X\ne\hat X)$.
+- **Extensional No Collapse:** the same with $X\ne\hat X$ replaced by
+  $\neg\forall p\, .\,Xp\leftrightarrow\hat Xp$.
+
+Any hat-closed family containing $\Box$ contains every iterate $\hat{(n)}\Box$, so No
+Collapse implies $\hat{(n)}\Box\ne\hat{(n+1)}\Box$ for every $n$; it is stronger than that
+schema, since it also requires the domain to contain a family separating the iterates from
+their fixed points. *Status.* Its consistency with C is conjectured (Cian Dorr, 14 October
+2026). Known: the paired-individuals two-object model collapses exactly at the third hat
+($\hat{(3)}\Box=\hat{(4)}\Box=\Box_5$); a two-object model over graphs (finite stars at the
+root, an infinite star at the other object, weak homomorphisms as arrows) has
+$\hat{(3)}\Box\ne\hat{(4)}\Box$, so no collapse before the fourth hat is a theorem. A model
+with all levels distinct would need a cost mechanism that bites after an arbitrary number of
+returns; the two mechanisms found (collapsing a paired block, bounded degree) each bite at a
+fixed round. *Conventions.* The sentence is positive, so it may be recorded as a principle;
+it would be incompatible with each recorded identity principle, and only a model with all
+levels distinct could witness it. $\Box$Actuality refutes it (collapse at the second hat),
+as does $\Box$ND at type $t$ (collapse at $\Box$ itself).

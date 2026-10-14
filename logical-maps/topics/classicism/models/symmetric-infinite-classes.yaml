@@ -24,124 +24,106 @@ references:
   locator: §3; Lemma 21, p. 10; Proposition 22, p. 11; Theorem 36, p. 18
   note: The framework of symmetric ideally-full models, which are models of C for every base, and the
     lemmas and Boolean Completeness theorem used in the verification.
-
-# migration: the definition is the old description's first paragraph.
 group: symmetric-ideally-full
-# migration (2 October): the old definition is the group's, completed by these settings: `construction`
-# is its first paragraph, verbatim; its interpretation of Σ is one of the group's values.
-# migration (3 October): recorded at the group's defaults, Σ top and the base as the individuals; the record fixed no interpretation of Σ until then.
 settings:
-  construction: >-
-    A symmetric ideally-full intensional action model over one object, the set of natural numbers,
-    equipped with an equivalence relation that has infinitely many classes, each infinite. Its
-    arrows are all the surjections of that set, as in Base 1 of the draft, and its symmetry group is
-    the automorphism group of the equivalence relation: the permutations that map classes onto
-    classes. The evaluation point is the identity arrow.
+  construction: 'A symmetric ideally-full intensional action model over one object, the set of natural
+    numbers, equipped with an equivalence relation that has infinitely many classes, each infinite. Its
+    arrows are all the surjections of that set, as in Base 1 of the draft, and its symmetry group is the
+    automorphism group of the equivalence relation: the permutations that map classes onto classes. The
+    evaluation point is the identity arrow.'
   individuals: base
   sigma: top
 meets:
   all-surjection-arrows: The arrows are all the surjections of $\mathbb N$, as in Base 1.
-  section-arrows: >-
-    As in symmetric-all-surjections, the arrows being all the surjections: let $k^{\prime}$ agree with
-    $k$ on $N$ and send distinct fresh points $x_t\notin N$ to $t\in T$, and let $\sigma$ be a surjection
-    with $\sigma t=x_t$.
-  factorizable-arrows: >-
-    Take $N^{\prime\prime}:=S$ and, enlarging $N$, assume $h(N^{\prime\prime})\subseteq N$. Let
-    $k^{\prime\prime}$ agree with $h$ on $N^{\prime\prime}$; for $m\in M\setminus N^{\prime\prime}$ let
-    $k^{\prime\prime}m$ be some $n\in N$ with $kn=k^{\prime}m$ if there is one, and otherwise a fresh
+  section-arrows: 'As in symmetric-all-surjections, the arrows being all the surjections: let $k^{\prime}$
+    agree with $k$ on $N$ and send distinct fresh points $x_t\notin N$ to $t\in T$, and let $\sigma$ be
+    a surjection with $\sigma t=x_t$.'
+  factorizable-arrows: Take $N^{\prime\prime}:=S$ and, enlarging $N$, assume $h(N^{\prime\prime})\subseteq
+    N$. Let $k^{\prime\prime}$ agree with $h$ on $N^{\prime\prime}$; for $m\in M\setminus N^{\prime\prime}$
+    let $k^{\prime\prime}m$ be some $n\in N$ with $kn=k^{\prime}m$ if there is one, and otherwise a fresh
     point outside $N$, one for each value of $k^{\prime}$. Let $j$ agree with $k$ on $N$ and send each
-    fresh point to its value. Both extend to surjections, infinitely many points being left free,
-    and $jk^{\prime\prime}$ agrees with $k^{\prime}$ on $M$.
-  finitely-pinned-domains: >-
-    A relational domain holds exactly the symmetric intensions pinned down by a finite set, and
-    every individual $n$ is pinned down by $\{n\}$.
-  collapse-onto-point: >-
-    Take $F:=\lambda x\, .\,x\ne a$, so $p\notin F_h$. $h$ is any surjection constant on $N\cup\{a\}$; a transposition inside $y$'s class that fixes $p$ is an automorphism of the equivalence relation, and moves $y$.
-  one-object-action-model: >-
-    It has one object (Dorr, draft, §3.1: closed pure terms denote entities fixed by every arrow).
-  transposable: >-
-    $M=\emptyset$, and for $N$ the property of not belonging to $N$: the transposition of $y$ with
-    another individual of its class outside $N$, which exists since the classes are infinite, maps
-    classes onto classes, so lies in the symmetry group.
+    fresh point to its value. Both extend to surjections, infinitely many points being left free, and
+    $jk^{\prime\prime}$ agrees with $k^{\prime}$ on $M$.
+  finitely-pinned-domains: A relational domain holds exactly the symmetric intensions pinned down by a
+    finite set, and every individual $n$ is pinned down by $\{n\}$.
+  collapse-onto-point: Take $F:=\lambda x\, .\,x\ne a$, so $p\notin F_h$. $h$ is any surjection constant
+    on $N\cup\{a\}$; a transposition inside $y$'s class that fixes $p$ is an automorphism of the equivalence
+    relation, and moves $y$.
+  one-object-action-model: 'It has one object (Dorr, draft, §3.1: closed pure terms denote entities fixed
+    by every arrow).'
+  transposable: '$M=\emptyset$, and for $N$ the property of not belonging to $N$: the transposition of
+    $y$ with another individual of its class outside $N$, which exists since the classes are infinite,
+    maps classes onto classes, so lies in the symmetry group.'
   surjective-arrows: The arrows are all the surjections of $\mathbb N$, as in Base 1.
-  hull-conditions: >-
-    With $M_0=\emptyset$, as in Base 1: an arrow is prescribed only on a finite set and extends
-    freely to a surjection; and a point outside $N$ can be transposed with a member of its own
-    class outside $N\cup Q$, the classes being infinite, by a class-preserving permutation fixing
-    $N$ pointwise.
+  hull-conditions: 'With $M_0=\emptyset$, as in Base 1: an arrow is prescribed only on a finite set and
+    extends freely to a surjection; and a point outside $N$ can be transposed with a member of its own
+    class outside $N\cup Q$, the classes being infinite, by a class-preserving permutation fixing $N$
+    pointwise.'
   finite-pinning: Every object carries the ideal of finite sets.
-
 arguments:
-
-# Restructured on 2 October 2026 (Claude Opus 5.5, at Cian Dorr's direction): every argument this
-# record shared in substance with another symmetric model is now a shared argument of the group
-# symmetric-ideally-full or one of the topic's general arguments (arguments/), with this record's
-# witness under `meets`; what follows is this record's own. Only the verdicts the engine needs to
-# derive the rest are recorded, the source's first.
-
-# --- as first recorded (27 Sep) ---
-
-- fails: [transversal-r]
-  when: {individuals: base}  # proved at type $e$ (3 October: the one-individual variant leaves it open)
-  text: >-
-    At type e. The class of a fixed individual is the extension of a property pinned down by that
-    individual. A classifier F pinned down by a finite set cannot choose a representative for the
-    class of an individual in a class disjoint from that set: by symmetry and uniqueness the
-    representative is fixed by every automorphism that fixes the pinning set of F and preserves
-    the class, so its least pinning set lies inside the pinning set of F, and then its extension
-    would be preserved by an automorphism that swaps the class with another.
-
-# --- later additions ---
-
-- holds: [inextensible-comprehension-r]
-  # migration: `by` and `date` are those of the 28 September change, which adds that the argument
-  # was not yet checked.
+- fails:
+  - transversal-r
+  when:
+    individuals: base
+  text: 'At type e. The class of a fixed individual is the extension of a property pinned down by that
+    individual. A classifier F pinned down by a finite set cannot choose a representative for the class
+    of an individual in a class disjoint from that set: by symmetry and uniqueness the representative
+    is fixed by every automorphism that fixes the pinning set of F and preserves the class, so its least
+    pinning set lies inside the pinning set of F, and then its extension would be preserved by an automorphism
+    that swaps the class with another.'
+- holds:
+  - inextensible-comprehension-r
   by: Claude Opus 5.5 (Anthropic), at Cian Dorr's request
   date: '2026-09-28'
   writeup: symmetric-infinite-classes
-  text: >-
-    At every relational type: the witness for X pinned down by S agrees with X at the worlds that
-    preserve the equivalence pattern on S, and is the S-hull of the extension of X elsewhere.
-    Details in the write-up.
+  text: 'At every relational type: the witness for X pinned down by S agrees with X at the worlds that
+    preserve the equivalence pattern on S, and is the S-hull of the extension of X elsewhere. Details
+    in the write-up.'
+- holds:
+  - atomlessness
+  text: As in Base 1.
+- id: collapse-to-nd
+  holds:
+  - five-implies-nd-necessity
+  fails:
+  - truth-implies-five-necessity
+  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-14'
+  text: Write $\mathrm{fix}_N$ for the arrows agreeing with the identity on the finite set $N$, the least
+    true proposition pinned by $N$, and $\delta_N$ for the arrows injective on $N$. A true symmetric proposition
+    pinned by $N$ contains the surjections that agree on $N$ with an automorphism of the equivalence relation.
+    The set $\delta_N$ is symmetric, pinned by $N$ and true, with $\Diamond\delta_N=\delta_N$, and every
+    true $q$ pinned by $N$ has $\Diamond q\supseteq\delta_N$, since a surjection injective on $N$ is undone
+    on $N$ by some surjection. So $\Box_{\ne}p$ iff $p\supseteq\delta_N$ for some $N$. Likewise $\hat\Diamond\delta_N=\delta_N$
+    (undo by a bijection, which returns to every truth), so $\hat{\hat\Box}$ and $\Box_{\ne}$ coincide,
+    and BF at type $t$ holds for them by the bijection argument (a symmetric $Y$ pinned by $X_Y$ has $Y_k=Y_b$
+    for a bijection $b$ agreeing with $k$ on $X_Y$); by Proposition D8 of The Bounds of Possibility, $\Box_5$
+    implies ND-necessity. The truth that $0$ and $1$ are collapsed into one class... more precisely, with
+    $0\sim1$, the true symmetric proposition $\{h:h(0)\sim h(1)\}$, pinned by $\{0,1\}$, is not ND-necessary,
+    since a surjection injective on $\{0,1\}$ may separate the classes of $h(0)$ and $h(1)$; so not every
+    truth is 5-necessary.
+notes: 'The first recorded model refuting Transversal, so Transversal is not a theorem of C. Since the
+  coalesced roots make every pure sentence consistent with C possible, □Transversal fails there too. The
+  classes must be infinite: with finite classes, being identical to one of the members of a class is a
+  canonical representative. The mechanism is a failure of weak elimination of imaginaries: the class,
+  as a definable set, has no canonical finite set of parameters. Structures with weak elimination of imaginaries,
+  such as a dense linear order or the random graph, give no such failure, and in the binary tree with
+  a parent function the levels are fixed as soon as one node is. Since Inextensible Comprehension holds,
+  it does not imply Transversal. Left unknown: the Axiom of Infinity at type e, and every signature schema,
+  since no interpretation of Σ has been fixed. Vicinity fails by derivation: Weakly Inextensible Comprehension
+  holds, and with Vicinity it would give Actuality.
 
-- holds: [atomlessness]
-  # migration (2 October): what is left of the clause "Boolean Completeness, BF and No Pure
-  # Contingency hold as in Base 1, and Actuality, Relational Choice, Atomicity at type t and ND fail
-  # as there" once No Pure Contingency, BF and Relational Choice come from the group and the topic.
-  # 6 October (Claude Opus 5.5, at Cian Dorr's direction): Boolean Completeness, the other half of
-  # "as in Base 1", now comes from the group argument boolean-completeness, by hull-conditions.
-  text: >-
-    As in Base 1.
-
-# migration: the old notes, whole.
-notes: >-
-  The first recorded model refuting Transversal, so Transversal is not a theorem of C. Since the
-  coalesced roots make every pure sentence consistent with C possible, □Transversal fails there
-  too. The classes must be infinite: with finite classes, being identical to one of the members of
-  a class is a canonical representative. The mechanism is a failure of weak elimination of
-  imaginaries: the class, as a definable set, has no canonical finite set of parameters.
-  Structures with weak elimination of imaginaries, such as a dense linear order or the random
-  graph, give no such failure, and in the binary tree with a parent function the levels are fixed
-  as soon as one node is. Since Inextensible Comprehension holds, it does not imply Transversal.
-  Left unknown: the Axiom of Infinity at type e, and every signature schema, since no
-  interpretation of Σ has been fixed. Vicinity fails by derivation: Weakly Inextensible
-  Comprehension holds, and with Vicinity it would give Actuality.
-
-  Since 2 October the Axiom of Infinity at type e holds by the group's argument, and the record's
-  interpretation of Σ is its own text saying that none is fixed; its variants with each of the
-  group's interpretations are generated.
-
-# The old `changes` log, verbatim and frozen.
+  Since 2 October the Axiom of Infinity at type e holds by the group''s argument, and the record''s interpretation
+  of Σ is its own text saying that none is fixed; its variants with each of the group''s interpretations
+  are generated.'
 history:
 - date: '2026-09-28'
   by: Claude Opus 5.5 (Anthropic), at Cian Dorr's request
-  summary: 'Recorded Inextensible Comprehension at every relational type. The witness for X pinned down
+  summary: Recorded Inextensible Comprehension at every relational type. The witness for X pinned down
     by S is X at the worlds agreeing on S with a symmetry, and the S-hull of the extension of X at the
-    others; a finitary old-image criterion shows it inextensible. Argument in the write-up; not yet checked.'
+    others; a finitary old-image criterion shows it inextensible. Argument in the write-up; not yet checked.
   satisfies:
   - inextensible-comprehension-r
-
-# The model in Lean (Classicism/Models/SymmetricIdeal.lean): the base, the group's parameter.
 lean:
   param: Classicism.Meta.Intensional.SymIdeal.Base.toSym Classicism.Meta.Intensional.SymIdeal.infClasses
   meets:
