@@ -1,6 +1,6 @@
 # Contribute
 
-<p class="thanks">Thanks to <a class="prismatic" style="--prism-x: 44%; --prism-y: 62%" href="https://ciandorr.github.io/" target="_blank" rel="noopener">Cian Dorr</a> for major contributions to Classicism + Logical Maps!</p>
+<p class="thanks">Thanks to <a class="prismatic" style="--prism-x: 47%; --prism-y: 58%" href="https://ciandorr.github.io/" target="_blank" rel="noopener">Cian Dorr</a> for major contributions to Classicism + Logical Maps!</p>
 
 Email me (Zach) at [zacharyw.goodsell@gmail.com](mailto:zacharyw.goodsell@gmail.com?subject=%5BLogical%20Maps%5D%20Classicism) with further suggestions.
 
