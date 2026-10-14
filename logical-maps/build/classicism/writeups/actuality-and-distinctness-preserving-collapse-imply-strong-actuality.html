@@ -90,16 +90,16 @@ input[type="checkbox"] { accent-color: var(--accent); }
 .display-toggles { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 16px; }
 .theme-toggle[aria-pressed="true"] { color: var(--accent); }
 
-/* A prismatic name: rainbow spokes from a point in the word, spinning;
+/* A prismatic name: one rainbow wheel around a point in the word, spinning;
    --prism-x and --prism-y move that point off the middle.
    Pure spectral stops, turned by a registered angle rather than a hue
    filter, which would muddy them. */
 @property --prism { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
-.prismatic { font-weight: 600; color: transparent; background: repeating-conic-gradient(from var(--prism) at var(--prism-x, 50%) var(--prism-y, 50%), #ff1a1a 0.00deg, #ff8a00 17.14deg, #ffd000 34.29deg, #22c33a 51.43deg, #00a8f0 68.57deg, #3d4bff 85.71deg, #b026ff 102.86deg, #ff1a1a 120.00deg); -webkit-background-clip: text; background-clip: text; animation: prism-spin 4s linear infinite; }
+.prismatic { font-weight: 600; color: transparent; background: conic-gradient(from var(--prism) at var(--prism-x, 50%) var(--prism-y, 50%), #ff1a1a, #ff8a00, #ffd000, #22c33a, #00a8f0, #3d4bff, #b026ff, #ff1a1a); -webkit-background-clip: text; background-clip: text; animation: prism-spin 6s linear infinite; }
 /* As a link it keeps the gradient on hover, under an accent underline. */
 a.prismatic, a.prismatic:hover { color: transparent; }
 a.prismatic:hover { text-decoration-color: var(--accent); }
-@keyframes prism-spin { to { --prism: 120deg; } }
+@keyframes prism-spin { to { --prism: 360deg; } }
 @media (prefers-reduced-motion: reduce) { .prismatic { animation: none; } }
 
 /* Standalone write-ups use the same quiet, ruled typography as the map. */
@@ -323,72 +323,31 @@ body.writeup-page { max-width: 82ch; margin: 3em auto; padding: 0 1.5em 3em; fon
 <script defer src="../math/katex.min.js"></script>
 <script defer src="../math/contrib/auto-render.min.js"></script>
 <script defer src="../math/math.js"></script></head><body class="writeup-page"><nav class="writeup-nav" aria-label="Write-up navigation"><a href="../index.html">← Back to map</a><div class="display-toggles"><button type="button" class="theme-toggle" data-theme-toggle>[Dark mode]</button><button type="button" class="theme-toggle" data-colourblind-toggle aria-label="Colourblind mode" aria-pressed="false">[Colourblind mode: off]</button></div></nav><header id="title-block-header"><h1>Actuality ∧ Distinctness-preserving collapse ⇒ Strong Actuality</h1></header><p class="cert">
-Result — Source: Misc., Lean
-<code>Classicism.Map.actuality_and_distinctness_preserving_collapse_imply_strong_actuality</code>;
-produced by Cian Dorr, 6 October 2026; written out by Claude Opus 5.5
-(Anthropic); recorded by Claude Opus 5.5 (Anthropic), 6 October 2026.
+Result — Source: Misc., Lean <code>Classicism.Map.actuality_and_distinctness_preserving_collapse_imply_strong_actuality</code>; produced by Cian Dorr, 6 October 2026; written out by Claude Opus 5.5 (Anthropic); recorded by Claude Opus 5.5 (Anthropic), 6 October 2026.
 </p>
 <h2 id="premises">Premises</h2>
 <ul>
-<li><strong>Actuality.</strong> There is a true proposition that entails
-every true proposition.</li>
-<li><strong>Distinctness-preserving collapse.</strong> Every truth is
-necessary under the distinctness-preserving modality.</li>
+<li><strong>Actuality.</strong> There is a true proposition that entails every true proposition.</li>
+<li><strong>Distinctness-preserving collapse.</strong> Every truth is necessary under the distinctness-preserving modality.</li>
 </ul>
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li><strong>Strong Actuality.</strong> There is a true strong world
-proposition: a true proposition that necessarily entails every
-proposition or its negation.</li>
+<li><strong>Strong Actuality.</strong> There is a true strong world proposition: a true proposition that necessarily entails every proposition or its negation.</li>
 </ul>
 <h2 id="proof">Proof</h2>
-<p>Let <span class="math inline">a</span> witness Actuality and write
-<span class="math inline">L(a)</span> for <span
-class="math inline">a\land\forall q\, .\,q\to a\le q</span>. As in the
-recorded derivation of Inextensible Comprehension from the same
-premises, Distinctness-preserving collapse applied to the truth <span
-class="math inline">L(a)</span> gives a true <span
-class="math inline">q^*</span> with <span
-class="math inline">\Box(\Diamond q^*\to L(a))</span>, and since <span
-class="math inline">a\le q^*</span>, 4 and K give <span
-class="math inline">\Box(\Diamond a\to L(a))</span>. Two theorems of C:
-(i) <span class="math inline">L(a)\to\forall q\, .\,a\le q\lor a\le\neg
-q</span>, since one of <span class="math inline">q</span> and <span
-class="math inline">\neg q</span> is true and <span
-class="math inline">a</span> entails it; (ii) <span
-class="math inline">\neg\Diamond a\to\forall q\, .\,a\le q\lor a\le\neg
-q</span>, since then <span class="math inline">a=\bot\le q</span>. So
-<span class="math inline">(\Diamond a\to L(a))\to\forall q\, .\,a\le
-q\lor a\le\neg q</span> is a theorem; necessitating it and applying K
-gives <span class="math inline">\Box\forall q\, .\,a\le q\lor a\le\neg
-q</span>. With <span class="math inline">a</span> true, <span
-class="math inline">a</span> witnesses Strong Actuality.</p>
+<p>Let <span class="math inline">a</span> witness Actuality and write <span class="math inline">L(a)</span> for <span class="math inline">a\land\forall q\, .\,q\to a\le q</span>. As in the recorded derivation of Inextensible Comprehension from the same premises, Distinctness-preserving collapse applied to the truth <span class="math inline">L(a)</span> gives a true <span class="math inline">q^*</span> with <span class="math inline">\Box(\Diamond q^*\to L(a))</span>, and since <span class="math inline">a\le q^*</span>, 4 and K give <span class="math inline">\Box(\Diamond a\to L(a))</span>. Two theorems of C: (i) <span class="math inline">L(a)\to\forall q\, .\,a\le q\lor a\le\neg q</span>, since one of <span class="math inline">q</span> and <span class="math inline">\neg q</span> is true and <span class="math inline">a</span> entails it; (ii) <span class="math inline">\neg\Diamond a\to\forall q\, .\,a\le q\lor a\le\neg q</span>, since then <span class="math inline">a=\bot\le q</span>. So <span class="math inline">(\Diamond a\to L(a))\to\forall q\, .\,a\le q\lor a\le\neg q</span> is a theorem; necessitating it and applying K gives <span class="math inline">\Box\forall q\, .\,a\le q\lor a\le\neg q</span>. With <span class="math inline">a</span> true, <span class="math inline">a</span> witnesses Strong Actuality.</p>
 <h2 id="notes">Notes</h2>
-<p>Given the collapse principle, the Actuality witness is necessarily
-either the least truth or impossible, and either way necessarily settles
-every proposition (Cian Dorr’s observation). Every action model whose
-actual world is isolated satisfies the collapse principle, so this
-settles Strong Actuality in all of them.</p>
+<p>Given the collapse principle, the Actuality witness is necessarily either the least truth or impossible, and either way necessarily settles every proposition (Cian Dorr’s observation). Every action model whose actual world is isolated satisfies the collapse principle, so this settles Strong Actuality in all of them.</p>
 <h2 id="sources">Sources</h2>
 <ul>
-<li><strong>Dorr 6 Oct</strong> — Cian Dorr, suggestion of 6 October
-2026.</li>
-<li><strong>Classicism</strong> — Andrew Bacon and Cian Dorr,
-Classicism, draft of 16 May 2023, §2.6, p. 42; Appendix E, p. 83.</li>
+<li><strong>Dorr 6 Oct</strong> — Cian Dorr, suggestion of 6 October 2026.</li>
+<li><strong>Classicism</strong> — Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.6, p. 42; Appendix E, p. 83.</li>
 </ul>
 <p class="cert">
-Record:
-<code>topics/classicism/results/actuality-and-distinctness-preserving-collapse-imply-strong-actuality.yaml</code>
+Record: <code>topics/classicism/results/actuality-and-distinctness-preserving-collapse-imply-strong-actuality.yaml</code>
 </p>
 <h2 id="paper-references">Paper references</h2>
 <ul>
-<li><strong>Background: Classicism.</strong> Bacon, Andrew, and Cian
-Dorr (2024). Classicism. In Peter Fritz and Nicholas K. Jones (eds),
-Higher-Order Metaphysics, Oxford University Press, pp. 109–190. The map
-was built from the draft dated 16 May 2023, 87 pages, which does not
-differ materially from the published version; all page, proposition and
-footnote locators in this map refer to that draft’s numbering. — §2.6,
-p. 42; Appendix E, p. 83. The distinctness-preserving modality and the
-collapse principle.</li>
+<li><strong>Background: Classicism.</strong> Bacon, Andrew, and Cian Dorr (2024). Classicism. In Peter Fritz and Nicholas K. Jones (eds), Higher-Order Metaphysics, Oxford University Press, pp. 109–190. The map was built from the draft dated 16 May 2023, 87 pages, which does not differ materially from the published version; all page, proposition and footnote locators in this map refer to that draft’s numbering. — §2.6, p. 42; Appendix E, p. 83. The distinctness-preserving modality and the collapse principle.</li>
 </ul>
 </body></html>

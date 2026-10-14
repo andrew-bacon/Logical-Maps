@@ -90,16 +90,16 @@ input[type="checkbox"] { accent-color: var(--accent); }
 .display-toggles { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 16px; }
 .theme-toggle[aria-pressed="true"] { color: var(--accent); }
 
-/* A prismatic name: rainbow spokes from a point in the word, spinning;
+/* A prismatic name: one rainbow wheel around a point in the word, spinning;
    --prism-x and --prism-y move that point off the middle.
    Pure spectral stops, turned by a registered angle rather than a hue
    filter, which would muddy them. */
 @property --prism { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
-.prismatic { font-weight: 600; color: transparent; background: repeating-conic-gradient(from var(--prism) at var(--prism-x, 50%) var(--prism-y, 50%), #ff1a1a 0.00deg, #ff8a00 17.14deg, #ffd000 34.29deg, #22c33a 51.43deg, #00a8f0 68.57deg, #3d4bff 85.71deg, #b026ff 102.86deg, #ff1a1a 120.00deg); -webkit-background-clip: text; background-clip: text; animation: prism-spin 4s linear infinite; }
+.prismatic { font-weight: 600; color: transparent; background: conic-gradient(from var(--prism) at var(--prism-x, 50%) var(--prism-y, 50%), #ff1a1a, #ff8a00, #ffd000, #22c33a, #00a8f0, #3d4bff, #b026ff, #ff1a1a); -webkit-background-clip: text; background-clip: text; animation: prism-spin 6s linear infinite; }
 /* As a link it keeps the gradient on hover, under an accent underline. */
 a.prismatic, a.prismatic:hover { color: transparent; }
 a.prismatic:hover { text-decoration-color: var(--accent); }
-@keyframes prism-spin { to { --prism: 120deg; } }
+@keyframes prism-spin { to { --prism: 360deg; } }
 @media (prefers-reduced-motion: reduce) { .prismatic { animation: none; } }
 
 /* Standalone write-ups use the same quiet, ruled typography as the map. */
@@ -289,7 +289,7 @@ body.writeup-page { max-width: 82ch; margin: 3em auto; padding: 0 1.5em 3em; fon
 <p>Its preservation for the seed area relation does not show preservation for newly adjoined comparisons. Meanwhile Mixture Independence is conveniently linear in survival coordinates and is not generally linear in quantiles. Thus simply repeating the convolution proof with a different word for its operators does not prove this candidate.</p>
 <h2 id="what-would-settle-the-entry">What would settle the entry</h2>
 <p>A positive solution must complete the order while preserving every weak and strict area comparison, full Mixture Independence, and both directions of the comonotonic-sum comparison. A negative solution must give an explicit incompatibility from the displayed package. Requiring only an arbitrary total extension would not answer the question.</p>
-<p>This candidate asks for a model of the comonotonic instance specifically. The existing total independent-sum model already supplies a model of Existential Copula Sum Invariance using the product copula, so the weaker existential-copula consistency question is not being reopened here.</p>
+<p>This candidate asks for a model of the comonotonic instance specifically. The existing total independent-sum model already supplies a model of the product-copula instance (the since-retired Existential Copula Sum Invariance, removed 11 October 2026), so the weaker existential-copula consistency question is not being reopened here.</p>
 <p><strong>Original work: precise candidate formulation and obstacle analysis.</strong> Goodsell’s <em>Unbounded Utility and Background Risk</em> (unpublished), §3, pp. 7–8, and the discussion before Theorem 7 and Theorem 7, pp. 19–20, supply the area construction, comonotonic claim, and broader consistency question. GPT-6 (Codex), 9 September 2026, formulated this precise total-extension entry and recorded the gap. The candidate’s direct source is Misc.; the underlying construction remains attributed to Goodsell. No new completed construction, literature novelty, independent check, or Lean verification is claimed.</p>
 <h2 id="a-necessary-condition-forced-comparisons-of-both-infinite-pairs">A necessary condition: forced comparisons of both-infinite pairs</h2>
 <p><strong>Addition: Claude (Fable 5.1), 23 September 2026.</strong> The conjecture is unchanged; this section records constraints that any solution must meet, the ideas tried, and the directions that remain. Statements are labelled <em>proved</em>, <em>verified numerically</em> or <em>heuristic</em>. <code>checks/comonotonic_witnesses.py</code> verifies the explicit example below.</p>

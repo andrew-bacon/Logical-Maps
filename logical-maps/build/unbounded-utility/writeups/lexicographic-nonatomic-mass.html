@@ -90,16 +90,16 @@ input[type="checkbox"] { accent-color: var(--accent); }
 .display-toggles { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 16px; }
 .theme-toggle[aria-pressed="true"] { color: var(--accent); }
 
-/* A prismatic name: rainbow spokes from a point in the word, spinning;
+/* A prismatic name: one rainbow wheel around a point in the word, spinning;
    --prism-x and --prism-y move that point off the middle.
    Pure spectral stops, turned by a registered angle rather than a hue
    filter, which would muddy them. */
 @property --prism { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
-.prismatic { font-weight: 600; color: transparent; background: repeating-conic-gradient(from var(--prism) at var(--prism-x, 50%) var(--prism-y, 50%), #ff1a1a 0.00deg, #ff8a00 17.14deg, #ffd000 34.29deg, #22c33a 51.43deg, #00a8f0 68.57deg, #3d4bff 85.71deg, #b026ff 102.86deg, #ff1a1a 120.00deg); -webkit-background-clip: text; background-clip: text; animation: prism-spin 4s linear infinite; }
+.prismatic { font-weight: 600; color: transparent; background: conic-gradient(from var(--prism) at var(--prism-x, 50%) var(--prism-y, 50%), #ff1a1a, #ff8a00, #ffd000, #22c33a, #00a8f0, #3d4bff, #b026ff, #ff1a1a); -webkit-background-clip: text; background-clip: text; animation: prism-spin 6s linear infinite; }
 /* As a link it keeps the gradient on hover, under an accent underline. */
 a.prismatic, a.prismatic:hover { color: transparent; }
 a.prismatic:hover { text-decoration-color: var(--accent); }
-@keyframes prism-spin { to { --prism: 120deg; } }
+@keyframes prism-spin { to { --prism: 360deg; } }
 @media (prefers-reduced-motion: reduce) { .prismatic { animation: none; } }
 
 /* Standalone write-ups use the same quiet, ruled typography as the map. */
@@ -363,13 +363,14 @@ E|X_n-X|=\frac1{n+3}\longrightarrow0,</span></p>
 <p>For the independent row, the sum of the two independent uniforms has no atoms: condition on either summand to see that the probability of each singleton is zero. The other nonatomic sums in the table are nonconstant affine functions of a uniform variable. In the last row, <span class="math inline">X+Z</span> is sure <span class="math inline">1/4</span>.</p>
 <p>The independent row violates the strict clause of <strong>Independent Sum Preservation</strong>. It also violates <strong>Independent Sum Cancellation</strong>: <span class="math inline">Y+Z\succeq X+Z</span> but <span class="math inline">Y\not\succeq X</span>. Hence <strong>Independent Sum Invariance</strong> fails. The other rows refute <strong>Comonotonic</strong> and <strong>Antitonic Sum Invariance</strong>; a constant is eligible for either dependence condition. These examples also refute <strong>Full Sum Invariance</strong>.</p>
 <h2 id="no-fixed-copula-works">No fixed copula works</h2>
-<p>In fact <strong>Existential Copula Sum Invariance fails</strong>, as does its <strong>Universal</strong> counterpart. The same parameters work for every copula.</p>
+<p>In fact <strong>Universal Copula Sum Invariance fails</strong>, as did the since-retired Existential Copula Sum Invariance (removed 11 October 2026). The same parameters work for every copula, and the comonotonic case refutes <strong>Uninteractive Sum Invariance</strong> on this bounded chart, where every pair of gambles is uninteractive.</p>
 <p>Fix any copula <span class="math inline">C</span> and realize <span class="math inline">(U,W)</span> with joint law <span class="math inline">C</span> on the standing sample space. Take</p>
 <p><span class="math display">X=U/4,\qquad Y=1/8,\qquad Z=W/4.</span></p>
 <p>The pair <span class="math inline">(X,Z)</span> admits <span class="math inline">C</span> by positive rescaling. The pair <span class="math inline">(Y,Z)</span> also admits <span class="math inline">C</span>: the CDF of the constant <span class="math inline">Y</span> is either zero or one, and every copula satisfies <span class="math inline">H_C(0,v)=0</span> and <span class="math inline">H_C(1,v)=v</span>.</p>
 <p>As before <span class="math inline">X\succ Y</span>, and both sums have mean <span class="math inline">1/4</span>. But <span class="math inline">Y+Z</span> is uniform on <span class="math inline">[1/8,3/8]</span>, so</p>
 <p><span class="math display">c_{Y+Z}=1\geq c_{X+Z}.</span></p>
 <p>Therefore <span class="math inline">Y+Z\succeq X+Z</span> while <span class="math inline">Y\not\succeq X</span>, contradicting <span class="math inline">\mathrm{SC}(C)</span>. This uses the comparison in the reversed order <span class="math inline">(Y,X)</span>, which the universal quantifier permits. Since <span class="math inline">C</span> was arbitrary, no copula satisfies <span class="math inline">\mathrm{SC}(C)</span>. No assumption about atoms of <span class="math inline">X+Z</span>, and no choice of parameters depending on <span class="math inline">C</span>, is needed.</p>
+<p>With the comonotonic coupling <span class="math inline">W=U</span> the sums are <span class="math inline">X+Z=U/2</span> and <span class="math inline">Y+Z=1/8+U/4</span>, both with vector <span class="math inline">(1/4,1)</span>, so <span class="math inline">Y+Z\succeq X+Z</span> although <span class="math inline">Y\not\succeq X</span>. Every gamble on this chart is bounded, so the pairs <span class="math inline">(X,Z)</span> and <span class="math inline">(Y,Z)</span> are uninteractive and Uninteractive Sum Invariance fails.</p>
 <h2 id="principles-with-trivial-or-empty-scope-here">Principles with trivial or empty scope here</h2>
 <p>The outcome chart is <span class="math inline">[0,1]</span>. Numerical axioms concern only their stated eligible gambles and transformations. This matters for the following satisfactions.</p>
 <ul>

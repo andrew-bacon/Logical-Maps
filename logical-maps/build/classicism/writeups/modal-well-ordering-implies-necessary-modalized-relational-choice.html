@@ -90,16 +90,16 @@ input[type="checkbox"] { accent-color: var(--accent); }
 .display-toggles { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 16px; }
 .theme-toggle[aria-pressed="true"] { color: var(--accent); }
 
-/* A prismatic name: rainbow spokes from a point in the word, spinning;
+/* A prismatic name: one rainbow wheel around a point in the word, spinning;
    --prism-x and --prism-y move that point off the middle.
    Pure spectral stops, turned by a registered angle rather than a hue
    filter, which would muddy them. */
 @property --prism { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
-.prismatic { font-weight: 600; color: transparent; background: repeating-conic-gradient(from var(--prism) at var(--prism-x, 50%) var(--prism-y, 50%), #ff1a1a 0.00deg, #ff8a00 17.14deg, #ffd000 34.29deg, #22c33a 51.43deg, #00a8f0 68.57deg, #3d4bff 85.71deg, #b026ff 102.86deg, #ff1a1a 120.00deg); -webkit-background-clip: text; background-clip: text; animation: prism-spin 4s linear infinite; }
+.prismatic { font-weight: 600; color: transparent; background: conic-gradient(from var(--prism) at var(--prism-x, 50%) var(--prism-y, 50%), #ff1a1a, #ff8a00, #ffd000, #22c33a, #00a8f0, #3d4bff, #b026ff, #ff1a1a); -webkit-background-clip: text; background-clip: text; animation: prism-spin 6s linear infinite; }
 /* As a link it keeps the gradient on hover, under an accent underline. */
 a.prismatic, a.prismatic:hover { color: transparent; }
 a.prismatic:hover { text-decoration-color: var(--accent); }
-@keyframes prism-spin { to { --prism: 120deg; } }
+@keyframes prism-spin { to { --prism: 360deg; } }
 @media (prefers-reduced-motion: reduce) { .prismatic { animation: none; } }
 
 /* Standalone write-ups use the same quiet, ruled typography as the map. */
@@ -323,40 +323,25 @@ body.writeup-page { max-width: 82ch; margin: 3em auto; padding: 0 1.5em 3em; fon
 <script defer src="../math/katex.min.js"></script>
 <script defer src="../math/contrib/auto-render.min.js"></script>
 <script defer src="../math/math.js"></script></head><body class="writeup-page"><nav class="writeup-nav" aria-label="Write-up navigation"><a href="../index.html">← Back to map</a><div class="display-toggles"><button type="button" class="theme-toggle" data-theme-toggle>[Dark mode]</button><button type="button" class="theme-toggle" data-colourblind-toggle aria-label="Colourblind mode" aria-pressed="false">[Colourblind mode: off]</button></div></nav><header id="title-block-header"><h1>Modal Well-Ordering ⇒ □Modalized Relational Choice</h1></header><p class="cert">
-Result — Source: Misc., Lean
-<code>Classicism.Map.modal_well_ordering_implies_necessary_modalized_relational_choice</code>;
-produced by Claude Opus 5.5 (Anthropic), 11 October 2026, answering a
-question of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), 11
-October 2026.
+Result — Source: Misc., Lean <code>Classicism.Map.modal_well_ordering_implies_necessary_modalized_relational_choice</code>; produced by Claude Opus 5.5 (Anthropic), 11 October 2026, answering a question of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), 11 October 2026.
 </p>
 <h2 id="premises">Premises</h2>
 <ul>
-<li><strong>Modal Well-Ordering.</strong> Every type, including e, has a
-relation that is necessarily a well-order of it.</li>
+<li><strong>Modal Well-Ordering.</strong> Every type, including e, has a relation that is necessarily a well-order of it.</li>
 </ul>
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li><strong>□Modalized Relational Choice.</strong> Necessarily, every
-necessarily serial relation is entailed by a necessarily functional
-relation.</li>
+<li><strong>□Modalized Relational Choice.</strong> Necessarily, every necessarily serial relation is entailed by a necessarily functional relation.</li>
 </ul>
 <h2 id="proof">Proof</h2>
-<p>Modal Well-Ordering implies its own necessitation by 4, since <span
-class="math inline">\Box\operatorname{WO}(W)</span> gives <span
-class="math inline">\Box\Box\operatorname{WO}(W)</span>; necessitate
-modal-well-ordering-implies-modalized-relational-choice and apply K.</p>
+<p>Modal Well-Ordering implies its own necessitation by 4, since <span class="math inline">\Box\operatorname{WO}(W)</span> gives <span class="math inline">\Box\Box\operatorname{WO}(W)</span>; necessitate modal-well-ordering-implies-modalized-relational-choice and apply K.</p>
 <h2 id="notes">Notes</h2>
-<p>Supersedes
-modal-well-ordering-r-implies-necessary-intensional-choice-r.</p>
+<p>Supersedes modal-well-ordering-r-implies-necessary-intensional-choice-r.</p>
 <h2 id="sources">Sources</h2>
 <ul>
-<li><strong>Dorr 11 Oct</strong> — Cian Dorr, question of 11 October
-2026 (whether
-bf-weak-rigid-comprehension-atomicity-and-relational-choice-imply-intensional-choice
-strengthens to Modalized Relational Choice).</li>
+<li><strong>Dorr 11 Oct</strong> — Cian Dorr, question of 11 October 2026 (whether bf-weak-rigid-comprehension-atomicity-and-relational-choice-imply-intensional-choice strengthens to Modalized Relational Choice).</li>
 </ul>
 <p class="cert">
-Record:
-<code>topics/classicism/results/modal-well-ordering-implies-necessary-modalized-relational-choice.yaml</code>
+Record: <code>topics/classicism/results/modal-well-ordering-implies-necessary-modalized-relational-choice.yaml</code>
 </p>
 </body></html>

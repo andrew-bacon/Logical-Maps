@@ -90,16 +90,16 @@ input[type="checkbox"] { accent-color: var(--accent); }
 .display-toggles { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 16px; }
 .theme-toggle[aria-pressed="true"] { color: var(--accent); }
 
-/* A prismatic name: rainbow spokes from a point in the word, spinning;
+/* A prismatic name: one rainbow wheel around a point in the word, spinning;
    --prism-x and --prism-y move that point off the middle.
    Pure spectral stops, turned by a registered angle rather than a hue
    filter, which would muddy them. */
 @property --prism { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
-.prismatic { font-weight: 600; color: transparent; background: repeating-conic-gradient(from var(--prism) at var(--prism-x, 50%) var(--prism-y, 50%), #ff1a1a 0.00deg, #ff8a00 17.14deg, #ffd000 34.29deg, #22c33a 51.43deg, #00a8f0 68.57deg, #3d4bff 85.71deg, #b026ff 102.86deg, #ff1a1a 120.00deg); -webkit-background-clip: text; background-clip: text; animation: prism-spin 4s linear infinite; }
+.prismatic { font-weight: 600; color: transparent; background: conic-gradient(from var(--prism) at var(--prism-x, 50%) var(--prism-y, 50%), #ff1a1a, #ff8a00, #ffd000, #22c33a, #00a8f0, #3d4bff, #b026ff, #ff1a1a); -webkit-background-clip: text; background-clip: text; animation: prism-spin 6s linear infinite; }
 /* As a link it keeps the gradient on hover, under an accent underline. */
 a.prismatic, a.prismatic:hover { color: transparent; }
 a.prismatic:hover { text-decoration-color: var(--accent); }
-@keyframes prism-spin { to { --prism: 120deg; } }
+@keyframes prism-spin { to { --prism: 360deg; } }
 @media (prefers-reduced-motion: reduce) { .prismatic { animation: none; } }
 
 /* Standalone write-ups use the same quiet, ruled typography as the map. */
@@ -274,7 +274,7 @@ body.writeup-page { max-width: 82ch; margin: 3em auto; padding: 0 1.5em 3em; fon
 <p>Use all real-valued gambles with identity utility, a free ultrafilter <span class="math inline">\mathcal U</span> on the positive integers, and</p>
 <p><span class="math display">a_n=\tfrac74\,4^n,\quad b_n=2\cdot4^n,\quad
 v_X(n)=E[\max(-a_n,\min(X,b_n))].</span></p>
-<p>Put <span class="math inline">X\succeq Y</span> iff for every <span class="math inline">\epsilon&gt;0</span> the set <span class="math inline">\{n:v_X(n)-v_Y(n)\ge-\epsilon\}</span> belongs to <span class="math inline">\mathcal U</span>. The <a href="calibrated-geometric-continuous-ultrafilter.html#shared-clipping-and-shuffle-copula-proof">common clipping proof</a> establishes DTU, CDF-Area Extension, Relative Expectation, Expected Utility, L¹ Continuity, Shift Invariance, and Existential Copula Sum Invariance. In particular the copula is chosen once, not separately for different triples.</p>
+<p>Put <span class="math inline">X\succeq Y</span> iff for every <span class="math inline">\epsilon&gt;0</span> the set <span class="math inline">\{n:v_X(n)-v_Y(n)\ge-\epsilon\}</span> belongs to <span class="math inline">\mathcal U</span>. The <a href="calibrated-geometric-continuous-ultrafilter.html#shared-clipping-and-shuffle-copula-proof">common clipping proof</a> establishes DTU, CDF-Area Extension, Relative Expectation, Expected Utility, L¹ Continuity, Shift Invariance, and the fixed-copula invariance <span class="math inline">\operatorname{SC}(C_\sigma)</span> for the quarter-shuffle copula below, with the copula chosen once rather than per triple. Uninteractive Sum Invariance follows from Relative Expectation by the recorded result <code>relative-independence-equivalence-imply-uninteractive-sum</code>.</p>
 <h2 id="exact-alternating-game-evaluation">Exact alternating-game evaluation</h2>
 <p>Let <span class="math inline">\Pr(A=(-2)^j)=2^{-j}</span> for <span class="math inline">j\ge1</span>. For each <span class="math inline">n\ge1</span>, the first <span class="math inline">2n</span> atoms contribute <span class="math inline">-n+n=0</span>. The remaining negative and positive probabilities are respectively <span class="math inline">(2/3)4^{-n}</span> and <span class="math inline">(1/3)4^{-n}</span>. They lie beyond the two cutoffs. Therefore</p>
 <p><span class="math display">v_A(n)=-\tfrac74\,4^n\tfrac23\,4^{-n}
@@ -329,7 +329,7 @@ u-1/4,&amp;1/4\le u&lt;1/2,\\
 u+1/4,&amp;1/2\le u&lt;3/4,\\
 u-1/4,&amp;3/4\le u&lt;1.
 \end{cases}</span></p>
-<p>The distribution <span class="math inline">C_\sigma</span> of <span class="math inline">(U,\sigma(U))</span> is a copula, since <span class="math inline">\sigma</span> preserves Lebesgue measure. It is fixed independently of all gamble laws. It is nonindependent: <span class="math inline">H_{C_\sigma}(1/4,1/4)=0</span>, whereas the product copula gives <span class="math inline">1/16</span>. Thus the argument below also verifies the separate Existential Nonindependent Copula Sum Invariance principle added on 3 October 2026; this observation retains the attribution of the existing shuffle construction. For any two real probability laws take</p>
+<p>The distribution <span class="math inline">C_\sigma</span> of <span class="math inline">(U,\sigma(U))</span> is a copula, since <span class="math inline">\sigma</span> preserves Lebesgue measure. It is fixed independently of all gamble laws. It is nonindependent: <span class="math inline">H_{C_\sigma}(1/4,1/4)=0</span>, whereas the product copula gives <span class="math inline">1/16</span>. The map recorded the conclusion of this section as Existential Copula Sum Invariance and, from 3 October 2026, also as Existential Nonindependent Copula Sum Invariance. Both principles were removed on 11 October 2026 and replaced by Uninteractive Sum Invariance, which follows from Relative Expectation (<code>relative-independence-equivalence-imply-uninteractive-sum</code>) and implies <span class="math inline">\operatorname{SC}(C)</span> for every corner-avoiding copula, <span class="math inline">C_\sigma</span> included. This section is retained as the original direct verification, with its attribution. For any two real probability laws take</p>
 <p><span class="math display">A=Q_A(U),\qquad B=Q_B(\sigma(U)).</span></p>
 <p>On the first and last quarters, <span class="math inline">Q_B(\sigma(U))</span> ranges over an interior quarter and is bounded. On the middle two quarters, <span class="math inline">Q_A(U)</span> is bounded. Interior quantiles of any real probability law are finite. Thus on each quarter at least one summand has a fixed finite absolute bound.</p>
 <p>Clipping is 1-Lipschitz and fixes zero, so for all real <span class="math inline">x,z</span>,</p>
@@ -339,7 +339,7 @@ u-1/4,&amp;3/4\le u&lt;1.
 <p>This is valid even for asymmetric windows and nonintegrable marginals. If a pair admits <span class="math inline">C_\sigma</span> in the graph’s compatibility definition, its joint CDF equals that of the displayed quantile pair. It has the same joint law, hence the same sum law. This observation also covers atomic marginals and does not presume a uniquely assigned copula.</p>
 <p>For every eligible triple <span class="math inline">(X,Y,Z)</span> whose two pairs admit this fixed copula, apply (2) to the two pairs separately and subtract:</p>
 <p><span class="math display">v_{X+Z}-v_{Y+Z}=v_X-v_Y+o(1).</span></p>
-<p>Both comparison rules ignore that error, in both directions. Thus <span class="math inline">\operatorname{SC}(C_\sigma)</span> holds, proving <strong>Existential Copula Sum Invariance</strong>. There is no additional requirement on the triple’s joint law. Strict comparisons are preserved because the equivalence holds in both ordered directions.</p>
+<p>Both comparison rules ignore that error, in both directions. Thus <span class="math inline">\operatorname{SC}(C_\sigma)</span> holds. There is no additional requirement on the triple’s joint law. Strict comparisons are preserved because the equivalence holds in both ordered directions.</p>
 <p>This proof also adds the copula property to the map’s existing continuous ultrafilter models with windows <span class="math inline">[-t,t]</span>, <span class="math inline">[-t,2t]</span>, <span class="math inline">[-4^n,4^n]</span>, and <span class="math inline">[-4^n,4^{2n}]</span>. It makes no assertion about the exact, zero-tolerance ultrafilter or eventual-comparison rules.</p>
 <h2 id="paper-references">Paper references</h2>
 <ul>

@@ -18,7 +18,9 @@ X\succeq Y\iff\liminf_{t\to\infty}(v_X(t)-v_Y(t))\ge0.$$
 
 The [common clipping proof](calibrated-geometric-continuous-ultrafilter.html#shared-clipping-and-shuffle-copula-proof) gives DU,
 CDF-Area Extension, Relative Expectation, Expected Utility, L¹ Continuity,
-Shift Invariance and Existential Copula Sum Invariance. Scaling reparametrizes
+Shift Invariance and the fixed shuffle-copula invariance; Uninteractive Sum
+Invariance follows from Relative Expectation
+(`relative-independence-equivalence-imply-uninteractive-sum`). Scaling reparametrizes
 all positive real cutoffs by $t\mapsto t/a$, with a positive multiplier $a$,
 so Positive Affine Invariance holds. Oddness of symmetric clipping gives
 $v_{-Y}-v_{-X}=v_X-v_Y$, proving Reflection Anti-Invariance.

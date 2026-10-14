@@ -90,16 +90,16 @@ input[type="checkbox"] { accent-color: var(--accent); }
 .display-toggles { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 16px; }
 .theme-toggle[aria-pressed="true"] { color: var(--accent); }
 
-/* A prismatic name: rainbow spokes from a point in the word, spinning;
+/* A prismatic name: one rainbow wheel around a point in the word, spinning;
    --prism-x and --prism-y move that point off the middle.
    Pure spectral stops, turned by a registered angle rather than a hue
    filter, which would muddy them. */
 @property --prism { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
-.prismatic { font-weight: 600; color: transparent; background: repeating-conic-gradient(from var(--prism) at var(--prism-x, 50%) var(--prism-y, 50%), #ff1a1a 0.00deg, #ff8a00 17.14deg, #ffd000 34.29deg, #22c33a 51.43deg, #00a8f0 68.57deg, #3d4bff 85.71deg, #b026ff 102.86deg, #ff1a1a 120.00deg); -webkit-background-clip: text; background-clip: text; animation: prism-spin 4s linear infinite; }
+.prismatic { font-weight: 600; color: transparent; background: conic-gradient(from var(--prism) at var(--prism-x, 50%) var(--prism-y, 50%), #ff1a1a, #ff8a00, #ffd000, #22c33a, #00a8f0, #3d4bff, #b026ff, #ff1a1a); -webkit-background-clip: text; background-clip: text; animation: prism-spin 6s linear infinite; }
 /* As a link it keeps the gradient on hover, under an accent underline. */
 a.prismatic, a.prismatic:hover { color: transparent; }
 a.prismatic:hover { text-decoration-color: var(--accent); }
-@keyframes prism-spin { to { --prism: 120deg; } }
+@keyframes prism-spin { to { --prism: 360deg; } }
 @media (prefers-reduced-motion: reduce) { .prismatic { animation: none; } }
 
 /* Standalone write-ups use the same quiet, ruled typography as the map. */
@@ -356,7 +356,7 @@ v_X(t)=E[q_t(X)],\qquad t&gt;0.</span></p>
 <p><strong>Addition: Claude (Fable 5.1), 24 September 2026.</strong> The uniqueness witness above has ratio <span class="math inline">a=2</span>, so the model also fails Uniqueness of Negative Self-Similarity (integer ratios), the restriction of the principle to integer ratios.</p>
 <h2 id="a-fixed-shuffle-copula">A fixed shuffle copula</h2>
 <p><strong>Added 2 October 2026.</strong> The AI-generated report communicated by <strong>Branden Fitelson</strong>, <em>Unbounded Utility: Five Top-Ranked Open Conjectures Resolved</em> (30 September 2026), §4(b), supplies a new property of this construction. Its producers are identified as Claude agents, with model versions unspecified. GPT-6 (Codex) expanded and informally checked the argument.</p>
-<p>The <a href="calibrated-geometric-continuous-ultrafilter.html#shared-clipping-and-shuffle-copula-proof">fixed shuffle-copula proof</a> applies to this model’s cutoffs and tolerance-based ultrafilter comparison. It proves <strong>Existential Copula Sum Invariance</strong> using one copula for all triples, including atomic marginals. This does not change the model’s existing failure of Comonotonic Sum Invariance. The original construction and earlier results retain their original attribution. The expanded model has no Lean verification; its earlier record was marked stated.</p>
+<p>The <a href="calibrated-geometric-continuous-ultrafilter.html#shared-clipping-and-shuffle-copula-proof">fixed shuffle-copula proof</a> applies to this model’s cutoffs and tolerance-based ultrafilter comparison. It proves the fixed-copula invariance <span class="math inline">\operatorname{SC}(C_\sigma)</span> using one copula for all triples, including atomic marginals; the map recorded this as Existential Copula Sum Invariance until that principle was retired on 11 October 2026 in favour of Uninteractive Sum Invariance, which this model satisfies by Relative Expectation (<code>relative-independence-equivalence-imply-uninteractive-sum</code>). This does not change the model’s existing failure of Comonotonic Sum Invariance. The original construction and earlier results retain their original attribution. The expanded model has no Lean verification; its earlier record was marked stated.</p>
 <h2 id="paper-references">Paper references</h2>
 <ul>
 <li><strong>Proof: <a href="https://doi.org/10.1111/nous.12549">Symmetries of value</a>.</strong> (<a href="../sources/Goodsell%20-%202026%20-%20Symmetries%20of%20value.pdf">PDF</a>) Zachary Goodsell (2026). Symmetries of value. Noûs, 60, 16–37. — Theorem 1, p. 24. Already states the failure of affine-symmetry implications under DTU, including with L¹ Continuity and Relative Expectation, and cites Decision theory unbound, Remark 3, for the reflection countermodel</li>

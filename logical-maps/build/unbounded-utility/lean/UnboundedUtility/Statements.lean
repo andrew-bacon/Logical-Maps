@@ -46,10 +46,6 @@ example {O : Type*} [MeasurableSpace O] [LinearOrder O] (P : Pref O) : Prop :=
 example {O : Type*} [MeasurableSpace O] [LinearOrder O] (P : Pref O) : Prop :=
   UnboundedUtility.CountableSureThing P
 
-/-- Principle definition check: `existential-copula-sum-consistency`. -/
-example {O : Type*} [MeasurableSpace O] [LinearOrder O] (P : Pref O) : Prop :=
-  UnboundedUtility.ExistentialCopulaSumConsistency P
-
 /-- Principle definition check: `expected-utility`. -/
 example {O : Type*} [MeasurableSpace O] [LinearOrder O] (P : Pref O) : Prop :=
   UnboundedUtility.ExpectedUtility P
@@ -170,15 +166,6 @@ example {O : Type*} [MeasurableSpace O] [LinearOrder O] (P : Pref O) : Prop :=
 example {O : Type*} [MeasurableSpace O] [LinearOrder O] (P : Pref O) : Prop :=
   UnboundedUtility.VanishingShiftContinuity P
 
-/-- `antitonic-sum-and-equivalence-imply-existential-copula`
-
-Antitonic Sum Invariance ∧ Stochastic Equivalence ⇒ Existential Copula Sum Invariance -/
-def antitonic_sum_and_equivalence_imply_existential_copula : Prop :=
-  ∀ {O : Type*} [MeasurableSpace O] [LinearOrder O] (P : Pref O) [P.Regular],
-    UnboundedUtility.AntitonicSumConsistency P →
-    UnboundedUtility.StochasticEquivalence P →
-    UnboundedUtility.ExistentialCopulaSumConsistency P
-
 /-- `antitonic-sum-implies-shift`
 
 Antitonic Sum Invariance ⇒ Shift Invariance -/
@@ -218,15 +205,6 @@ def cdf_area_implies_relative : Prop :=
   ∀ {O : Type*} [MeasurableSpace O] [LinearOrder O] (P : Pref O) [P.Regular],
     UnboundedUtility.CDFAreaExtension P →
     UnboundedUtility.RelativeExpectation P
-
-/-- `comonotonic-sum-and-equivalence-imply-existential-copula`
-
-Comonotonic Sum Invariance ∧ Stochastic Equivalence ⇒ Existential Copula Sum Invariance -/
-def comonotonic_sum_and_equivalence_imply_existential_copula : Prop :=
-  ∀ {O : Type*} [MeasurableSpace O] [LinearOrder O] (P : Pref O) [P.Regular],
-    UnboundedUtility.ComonotonicSumConsistency P →
-    UnboundedUtility.StochasticEquivalence P →
-    UnboundedUtility.ExistentialCopulaSumConsistency P
 
 /-- `comonotonic-sum-implies-shift`
 
@@ -423,14 +401,6 @@ def eu_independence_l1_imply_relative : Prop :=
     UnboundedUtility.L1Continuity P →
     UnboundedUtility.RelativeExpectation P
 
-/-- `existential-copula-implies-shift`
-
-Existential Copula Sum Invariance ⇒ Shift Invariance -/
-def existential_copula_implies_shift : Prop :=
-  ∀ {O : Type*} [MeasurableSpace O] [LinearOrder O] (P : Pref O) [P.Regular],
-    UnboundedUtility.ExistentialCopulaSumConsistency P →
-    UnboundedUtility.ShiftInvariance P
-
 /-- `expected-utility-implies-simple`
 
 Expected Utility ⇒ Simple Expected Utility -/
@@ -525,15 +495,6 @@ def independence_to_sure_thing : Prop :=
     UnboundedUtility.StochasticEquivalence P →
     UnboundedUtility.MixtureIndependence P →
     UnboundedUtility.SureThing P
-
-/-- `independent-sum-and-equivalence-imply-existential-copula`
-
-Independent Sum Invariance ∧ Stochastic Equivalence ⇒ Existential Copula Sum Invariance -/
-def independent_sum_and_equivalence_imply_existential_copula : Prop :=
-  ∀ {O : Type*} [MeasurableSpace O] [LinearOrder O] (P : Pref O) [P.Regular],
-    UnboundedUtility.IndependentSumConsistency P →
-    UnboundedUtility.StochasticEquivalence P →
-    UnboundedUtility.ExistentialCopulaSumConsistency P
 
 /-- `independent-sum-implies-cancellation`
 
@@ -1060,14 +1021,6 @@ def universal_copula_implies_comonotonic : Prop :=
     UnboundedUtility.UniversalCopulaSumConsistency P →
     UnboundedUtility.ComonotonicSumConsistency P
 
-/-- `universal-copula-implies-existential`
-
-Universal Copula Sum Invariance ⇒ Existential Copula Sum Invariance -/
-def universal_copula_implies_existential : Prop :=
-  ∀ {O : Type*} [MeasurableSpace O] [LinearOrder O] (P : Pref O) [P.Regular],
-    UnboundedUtility.UniversalCopulaSumConsistency P →
-    UnboundedUtility.ExistentialCopulaSumConsistency P
-
 /-- `universal-copula-implies-independent`
 
 Universal Copula Sum Invariance ⇒ Independent Sum Invariance -/
@@ -1092,6 +1045,30 @@ def affine_symmetric_extension : Prop :=
     UnboundedUtility.L1Continuity W.pref ∧
     ¬ UnboundedUtility.CountableSureThing W.pref ∧
     ¬ UnboundedUtility.ArchimedeanGambles W.pref
+
+/-- `asymmetric-liminf-clipped-expectation`
+
+Clipped expectation: liminf dominance [−t, 2t]: a witness satisfying 11 principles
+and violating 6. -/
+def asymmetric_liminf_clipped_expectation : Prop :=
+  ∃ W : Witness,
+    UnboundedUtility.RichOutcomes W.pref ∧
+    UnboundedUtility.ArchimedeanOutcomes W.pref ∧
+    UnboundedUtility.StochasticEquivalence W.pref ∧
+    UnboundedUtility.StochasticDominance W.pref ∧
+    UnboundedUtility.MixtureIndependence W.pref ∧
+    UnboundedUtility.ExpectedUtility W.pref ∧
+    UnboundedUtility.CDFAreaExtension W.pref ∧
+    UnboundedUtility.RelativeExpectation W.pref ∧
+    UnboundedUtility.L1Continuity W.pref ∧
+    UnboundedUtility.ShiftInvariance W.pref ∧
+    UnboundedUtility.PositiveAffineInvariance W.pref ∧
+    ¬ UnboundedUtility.Totality W.pref ∧
+    ¬ UnboundedUtility.ReflectionAntiInvariance W.pref ∧
+    ¬ UnboundedUtility.NegativeAffineAntiInvariance W.pref ∧
+    ¬ UnboundedUtility.SymmetricNeutrality W.pref ∧
+    ¬ UnboundedUtility.FoldedExpectation W.pref ∧
+    ¬ UnboundedUtility.AlternatingStPetersburgValue W.pref
 
 /-- `cdf-conclosure-preorder`
 
@@ -1218,50 +1195,50 @@ def finite_two_sample_minimum : Prop :=
     ¬ UnboundedUtility.StochasticDominance W.pref ∧
     ¬ UnboundedUtility.StatewiseDominance W.pref
 
-/-- `lexicographic-nonatomic-mass`
+/-- `polynomial-asymmetric-continuous-ultrafilter`
 
-Lexicographic expectation: nonatomic mass: a witness satisfying 23 principles
-and violating 16. -/
-def lexicographic_nonatomic_mass : Prop :=
+Clipped expectation: continuous ultrafilter dominance [−4ⁿ, 4²ⁿ]: a witness satisfying 11 principles
+and violating 4. -/
+def polynomial_asymmetric_continuous_ultrafilter : Prop :=
   ∃ W : Witness,
-    UnboundedUtility.ArchimedeanOutcomes W.pref ∧
+    UnboundedUtility.RichOutcomes W.pref ∧
     UnboundedUtility.Totality W.pref ∧
-    UnboundedUtility.RestrictedTotality W.pref ∧
     UnboundedUtility.StochasticEquivalence W.pref ∧
-    UnboundedUtility.RestrictedStochasticEquivalence W.pref ∧
     UnboundedUtility.SimpleEU W.pref ∧
     UnboundedUtility.StochasticDominance W.pref ∧
-    UnboundedUtility.StatewiseDominance W.pref ∧
     UnboundedUtility.MixtureIndependence W.pref ∧
-    UnboundedUtility.SureThing W.pref ∧
-    UnboundedUtility.CountableSureThing W.pref ∧
-    UnboundedUtility.PositiveAffineInvariance W.pref ∧
+    UnboundedUtility.CDFAreaExtension W.pref ∧
+    UnboundedUtility.RelativeExpectation W.pref ∧
+    UnboundedUtility.L1Continuity W.pref ∧
     UnboundedUtility.ShiftInvariance W.pref ∧
-    UnboundedUtility.ScaleInvariance W.pref ∧
-    UnboundedUtility.ReflectionAntiInvariance W.pref ∧
     UnboundedUtility.ShiftTransfer W.pref ∧
-    UnboundedUtility.SimpleRelativeExpectation W.pref ∧
-    UnboundedUtility.SymmetricNeutrality W.pref ∧
-    UnboundedUtility.NegativeSelfSimilarity W.pref ∧
-    UnboundedUtility.AlternatingStPetersburgValue W.pref ∧
-    UnboundedUtility.PasadenaValue W.pref ∧
-    UnboundedUtility.ArroyoValue W.pref ∧
-    UnboundedUtility.VanishingShiftContinuity W.pref ∧
-    ¬ UnboundedUtility.RichOutcomes W.pref ∧
-    ¬ UnboundedUtility.ExpectedUtility W.pref ∧
-    ¬ UnboundedUtility.ArchimedeanGambles W.pref ∧
-    ¬ UnboundedUtility.RelativeExpectation W.pref ∧
-    ¬ UnboundedUtility.CDFAreaExtension W.pref ∧
-    ¬ UnboundedUtility.FoldedExpectation W.pref ∧
-    ¬ UnboundedUtility.L1Continuity W.pref ∧
-    ¬ UnboundedUtility.NegativeAffineAntiInvariance W.pref ∧
-    ¬ UnboundedUtility.IndependentSumConsistency W.pref ∧
-    ¬ UnboundedUtility.IndependentSumCancellation W.pref ∧
+    ¬ UnboundedUtility.PasadenaValue W.pref ∧
+    ¬ UnboundedUtility.ArroyoValue W.pref ∧
+    ¬ UnboundedUtility.SymmetricNeutrality W.pref ∧
+    ¬ UnboundedUtility.ComonotonicSumConsistency W.pref
+
+/-- `symmetric-liminf-clipped-expectation`
+
+Clipped expectation: liminf dominance [−t, t]: a witness satisfying 13 principles
+and violating 4. -/
+def symmetric_liminf_clipped_expectation : Prop :=
+  ∃ W : Witness,
+    UnboundedUtility.RichOutcomes W.pref ∧
+    UnboundedUtility.ArchimedeanOutcomes W.pref ∧
+    UnboundedUtility.StochasticEquivalence W.pref ∧
+    UnboundedUtility.StochasticDominance W.pref ∧
+    UnboundedUtility.MixtureIndependence W.pref ∧
+    UnboundedUtility.ExpectedUtility W.pref ∧
+    UnboundedUtility.CDFAreaExtension W.pref ∧
+    UnboundedUtility.RelativeExpectation W.pref ∧
+    UnboundedUtility.L1Continuity W.pref ∧
+    UnboundedUtility.ShiftInvariance W.pref ∧
+    UnboundedUtility.PositiveAffineInvariance W.pref ∧
+    UnboundedUtility.ReflectionAntiInvariance W.pref ∧
+    UnboundedUtility.FoldedExpectation W.pref ∧
+    ¬ UnboundedUtility.Totality W.pref ∧
     ¬ UnboundedUtility.IndependentSumPreservation W.pref ∧
-    ¬ UnboundedUtility.FullSumConsistency W.pref ∧
     ¬ UnboundedUtility.ComonotonicSumConsistency W.pref ∧
-    ¬ UnboundedUtility.AntitonicSumConsistency W.pref ∧
-    ¬ UnboundedUtility.ExistentialCopulaSumConsistency W.pref ∧
-    ¬ UnboundedUtility.UniversalCopulaSumConsistency W.pref
+    ¬ UnboundedUtility.AlternatingStPetersburgValue W.pref
 
 end UnboundedUtility.Statements

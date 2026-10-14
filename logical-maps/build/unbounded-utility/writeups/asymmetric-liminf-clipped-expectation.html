@@ -90,16 +90,16 @@ input[type="checkbox"] { accent-color: var(--accent); }
 .display-toggles { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 16px; }
 .theme-toggle[aria-pressed="true"] { color: var(--accent); }
 
-/* A prismatic name: rainbow spokes from a point in the word, spinning;
+/* A prismatic name: one rainbow wheel around a point in the word, spinning;
    --prism-x and --prism-y move that point off the middle.
    Pure spectral stops, turned by a registered angle rather than a hue
    filter, which would muddy them. */
 @property --prism { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
-.prismatic { font-weight: 600; color: transparent; background: repeating-conic-gradient(from var(--prism) at var(--prism-x, 50%) var(--prism-y, 50%), #ff1a1a 0.00deg, #ff8a00 17.14deg, #ffd000 34.29deg, #22c33a 51.43deg, #00a8f0 68.57deg, #3d4bff 85.71deg, #b026ff 102.86deg, #ff1a1a 120.00deg); -webkit-background-clip: text; background-clip: text; animation: prism-spin 4s linear infinite; }
+.prismatic { font-weight: 600; color: transparent; background: conic-gradient(from var(--prism) at var(--prism-x, 50%) var(--prism-y, 50%), #ff1a1a, #ff8a00, #ffd000, #22c33a, #00a8f0, #3d4bff, #b026ff, #ff1a1a); -webkit-background-clip: text; background-clip: text; animation: prism-spin 6s linear infinite; }
 /* As a link it keeps the gradient on hover, under an accent underline. */
 a.prismatic, a.prismatic:hover { color: transparent; }
 a.prismatic:hover { text-decoration-color: var(--accent); }
-@keyframes prism-spin { to { --prism: 120deg; } }
+@keyframes prism-spin { to { --prism: 360deg; } }
 @media (prefers-reduced-motion: reduce) { .prismatic { animation: none; } }
 
 /* Standalone write-ups use the same quiet, ruled typography as the map. */
@@ -274,7 +274,7 @@ body.writeup-page { max-width: 82ch; margin: 3em auto; padding: 0 1.5em 3em; fon
 <p>On all real-valued gambles with identity utility define</p>
 <p><span class="math display">v_X(t)=E[\max(-t,\min(X,2t))],\qquad
 X\succeq Y\iff\liminf_{t\to\infty}(v_X(t)-v_Y(t))\ge0.</span></p>
-<p>The parameter ranges over <strong>all positive real numbers</strong>. The <a href="calibrated-geometric-continuous-ultrafilter.html#shared-clipping-and-shuffle-copula-proof">common proof</a> establishes DU, CDF-Area Extension, Relative Expectation, Expected Utility, L¹ Continuity, Shift Invariance, and Existential Copula Sum Invariance.</p>
+<p>The parameter ranges over <strong>all positive real numbers</strong>. The <a href="calibrated-geometric-continuous-ultrafilter.html#shared-clipping-and-shuffle-copula-proof">common proof</a> establishes DU, CDF-Area Extension, Relative Expectation, Expected Utility, L¹ Continuity, Shift Invariance, and the fixed shuffle-copula invariance; Uninteractive Sum Invariance follows from Relative Expectation (<code>relative-independence-equivalence-imply-uninteractive-sum</code>).</p>
 <p>For <span class="math inline">a&gt;0</span>, clipping gives the exact identity</p>
 <p><span class="math display">v_{aX}(t)-v_{aY}(t)=a\bigl(v_X(t/a)-v_Y(t/a)\bigr).</span></p>
 <p>Reparametrizing all real <span class="math inline">t</span> preserves the liminf sign in both directions. Together with Shift Invariance this proves full Positive Affine Invariance, including preservation of strict order, and hence Integer Affine Preservation. This reparametrization argument is not an assertion that an arbitrary ultrafilter is invariant under dilation.</p>

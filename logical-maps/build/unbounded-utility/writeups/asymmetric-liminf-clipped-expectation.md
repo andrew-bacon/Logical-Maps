@@ -17,7 +17,9 @@ X\succeq Y\iff\liminf_{t\to\infty}(v_X(t)-v_Y(t))\ge0.$$
 The parameter ranges over **all positive real numbers**. The
 [common proof](calibrated-geometric-continuous-ultrafilter.html#shared-clipping-and-shuffle-copula-proof) establishes DU,
 CDF-Area Extension, Relative Expectation, Expected Utility, L¹ Continuity,
-Shift Invariance, and Existential Copula Sum Invariance.
+Shift Invariance, and the fixed shuffle-copula invariance; Uninteractive Sum
+Invariance follows from Relative Expectation
+(`relative-independence-equivalence-imply-uninteractive-sum`).
 
 For $a>0$, clipping gives the exact identity
 

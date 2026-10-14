@@ -213,8 +213,11 @@ dependence condition. These examples also refute **Full Sum Invariance**.
 
 ## No fixed copula works
 
-In fact **Existential Copula Sum Invariance fails**, as does its
-**Universal** counterpart. The same parameters work for every copula.
+In fact **Universal Copula Sum Invariance fails**, as did the since-retired
+Existential Copula Sum Invariance (removed 11 October 2026). The same
+parameters work for every copula, and the comonotonic case refutes
+**Uninteractive Sum Invariance** on this bounded chart, where every pair of
+gambles is uninteractive.
 
 Fix any copula $C$ and realize $(U,W)$ with joint law $C$ on the standing
 sample space. Take
@@ -235,6 +238,12 @@ $\mathrm{SC}(C)$. This uses the comparison in the reversed order
 $(Y,X)$, which the universal quantifier permits. Since $C$ was arbitrary,
 no copula satisfies $\mathrm{SC}(C)$. No assumption about atoms of
 $X+Z$, and no choice of parameters depending on $C$, is needed.
+
+With the comonotonic coupling $W=U$ the sums are $X+Z=U/2$ and
+$Y+Z=1/8+U/4$, both with vector $(1/4,1)$, so $Y+Z\succeq X+Z$ although
+$Y\not\succeq X$. Every gamble on this chart is bounded, so the pairs
+$(X,Z)$ and $(Y,Z)$ are uninteractive and Uninteractive Sum Invariance
+fails.
 
 ## Principles with trivial or empty scope here
 
