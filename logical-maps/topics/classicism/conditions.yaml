@@ -176,3 +176,5 @@ conditions:
     N$ such that every arrow $u$ out of that object for which some arrow $x$ makes $x\circ u$ agree with
     the identity on $N^\prime$ agrees on $N$ with a member of the symmetry group (with the identity, when
     the model has no symmetry group).
+- id: nonidentity-isomorphism
+  text: Some invertible arrow out of the evaluation object is not its identity.

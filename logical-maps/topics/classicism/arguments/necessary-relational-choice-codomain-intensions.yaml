@@ -1,0 +1,16 @@
+id: necessary-relational-choice-codomain-intensions
+requires:
+- codomain-intensions
+choice: uses
+holds:
+- necessary-relational-choice-r
+- necessary-transversal-choice-r
+by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
+date: '2026-10-14'
+text: At any reachable object $W$, let $U$ be a serial relation in the domain there. Using the axiom of
+  choice, pick for each $x$ a $y$ with $(x,y)$ in the extension of $U$ at the identity, and let $S$ be
+  the intension whose value at every arrow $W\to W$ is the graph of this choice and whose value at arrows
+  with any other codomain is empty; it depends only on the codomain, so the condition puts it in the domain,
+  and at the identity it is a functional subrelation of $U$. Likewise a set of representatives of an equivalence
+  relation at $W$, made into such an intension, is a transversal. Since $W$ was any reachable object,
+  both principles hold at every world.

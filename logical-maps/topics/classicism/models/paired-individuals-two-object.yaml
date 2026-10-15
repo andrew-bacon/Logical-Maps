@@ -38,6 +38,10 @@ definition: 'A two-object ideally full action model. Fix a fixed-point-free invo
   top element of its type.'
 meets:
   sigma-top: This is the interpretation the definition fixes.
+  codomain-intensions: The model is ideally full with the ideal of finite sets and no symmetry group,
+    so every intension pinned down by the empty set, i.e. whose value at an arrow depends only on the
+    codomain, is in the domain at every object (Classicism, Definition D.3).
+  extensionally-full: Ideally full action models are extensionally full (Classicism, p. 74).
 arguments:
 - id: root-coextension
   holds:

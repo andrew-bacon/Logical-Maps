@@ -1,0 +1,80 @@
+id: full-free-product-glued-constants
+name: 'Full action model: free product of a free monoid with an idempotent, the bicyclic monoid and an
+  involution, glued constants'
+certificate:
+  source_id: misc
+  produced_by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 14 October 2026, by Bacon's gluing
+    construction (Logical Combinatorialism, Appendix A.3; A Philosophical Introduction to Higher-Order
+    Logics, Definition 18.15) at Cian Dorr's suggestion of varying the monoid
+  recorded_by: Claude Fable 5.1 (Anthropic), 14 October 2026
+  checked_by: []
+  date: '2026-10-14'
+  lean: none
+sources:
+- Cian Dorr and Claude Fable 5.1 (Anthropic), conversation of 14 October 2026 (transcript in the private
+  notes); writeups/full-free-product-glued-constants.md.
+- Andrew Bacon, Logical Combinatorialism, Appendix A.3 (the gluing of Σ-models at the sites of a self-similar
+  frame); A Philosophical Introduction to Higher-Order Logics, §18.6, Definition 18.15.
+- Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §3.5, pp. 58–61 (full one-object action
+  models; Proposition 3.24).
+source_names:
+- Dorr–Claude 14 Oct
+- Bacon, gluing
+- Classicism
+references:
+- paper: bacon-2020
+  role: formulation
+  locator: Appendix A.3
+  note: The gluing construction, here carried out over a free product instead of the free monoid.
+- paper: bacon-2024-book
+  role: background
+  locator: §18.6, Definition 18.15
+- paper: bacon-dorr-classicism
+  role: background
+  locator: §3.5, pp. 58–61
+definition: 'Let $M:=F_\infty * E * B * \mathbb Z_2$ be the free product of monoids, where $F_\infty$
+  is the free monoid on countably many generators $f_1,f_2,\ldots$, $E=\{1,e\}$ with $e^2=e$, $B=\langle
+  b,c\mid cb=1\rangle$ is the bicyclic monoid, and $\mathbb Z_2=\{1,s\}$ with $s^2=1$. Take the full one-object
+  action model over $M$ (Classicism, §3.5) with a single individual, evaluated at the identity. The constants
+  of Σ are glued at the sites $f_k$: enumerate the pure formulas $P_k(\bar x)$, with $\bar x$ matching
+  a tuple of distinct constants, such that $\exists\bar x\,P_k$ is true at the identity, choose a witness
+  tuple for each, and let each constant denote the intension whose value at an arrow $u\circ f_k$ is $u$
+  applied to the $k$-th witness and whose value at the remaining arrows is empty. Each factor has one
+  job (write-up, §4): the free generators are the gluing sites that give Logical Necessity; the idempotent
+  $e$ is a non-epic arrow, so BF fails; $b$ is retracted by $c$ but not invertible, so ND-necessity and
+  two-hat necessity come apart; $s$ is a non-identity unit, so some truth is not 5-necessary.'
+meets:
+  one-object-action-model: It has one object.
+  full-model: Every intension of every relational type is present.
+  full-action-model: A full action model with one object.
+  codomain-intensions: The domains are full.
+  extensionally-full: The domains are full.
+  one-individual: The construction fixes a single individual.
+  infinitely-many-propositions: $M$ is infinite and the propositions are all its subsets.
+  nonidentity-arrow: Any of $e$, $b$, $s$ or $f_1$.
+  nonepic-arrow: $1\circ e=e\circ e$ with $1\ne e$; also $1\circ b=(b\circ c)\circ b$.
+  unretracted-arrow: '$e$: no reduced word $x$ has $x\circ e=1$, the last syllable of $x\circ e$ being
+    $e$ or a product with it.'
+  returning-arrow: '$b$, which $c$ retracts: $c\circ b=1$.'
+  noninvertible-retracted-arrow: '$b$: $c\circ b=1$ but $b\circ c\ne1$ in $B$.'
+  nonidentity-isomorphism: $s$, with $s\circ s=1$.
+  irreversible-arrow: '$e$: no arrow after it returns to the identity, so no world after $e$ makes $\{1\}$
+    true.'
+arguments:
+- id: logical-necessity
+  holds:
+  - logical-necessity-r
+  writeup: full-free-product-glued-constants
+  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-14'
+  text: 'The write-up, §2, verifies the gluing: the sites $f_k$ are right-cancellable with pairwise disjoint
+    left ideals $Mf_k$, so the glued intensions are well defined and, the model being full, in the domain;
+    at the site $f_k$ the constants denote the $k$-th witness tuple, and one-object models make pure sentences
+    world-independent, which gives both directions of the schema.'
+notes: Built on 14 October 2026 to separate Logical Necessity from what the glued free-monoid models also
+  satisfy. The free product is chosen so that each factor contributes one failure while the gluing sites
+  stay free; models over $F_\infty * E$, $F_\infty * B$ or $F_\infty * \mathbb Z_2$ alone would disaggregate
+  the failures (write-up, §4). Being full, the model satisfies Rigid Comprehension, Actuality, Atomicity,
+  Boolean Completeness and the choice principles, so it cannot separate Logical Necessity from those;
+  that needs a non-full gluing-closed construction. The failure of BF is derived by the engine from the
+  non-epic arrow $e$ (write-up, §3).

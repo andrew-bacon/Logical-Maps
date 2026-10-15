@@ -1,0 +1,22 @@
+id: necessary-actuality-and-necessary-two-hat-implies-nd-imply-necessary-strong-actuality
+premises:
+- necessary-actuality
+- necessary-two-hat-implies-nd-necessity
+conclusion: necessary-strong-actuality
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Cian Dorr, 14 October 2026 (with 5-necessity implies ND-necessity as the second premise);
+    weakened to Two-hat necessity implies ND-necessity, and checked, by Claude Fable 5.1 (Anthropic) the
+    same day
+  recorded_by: Claude Fable 5.1 (Anthropic), 14 October 2026
+  checked_by: []
+  date: '2026-10-14'
+  lean: none
+sources:
+- Cian Dorr, argument of 14 October 2026 (see the unboxed result).
+source_names:
+- Dorr 14 Oct
+proof: 'Necessitate the proof of the unboxed result: under the boxed premises the argument applies at
+  every world.'
+notes: Boxed form.

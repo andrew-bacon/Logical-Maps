@@ -1,0 +1,14 @@
+id: five-necessity-nonidentity-isomorphism
+requires:
+- full-model
+- nonidentity-isomorphism
+fails:
+- truth-implies-five-necessity
+by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
+date: '2026-10-14'
+text: In a full model the actual-world proposition $\{1\}$ is in the domain, and with it as witness $\hat{\hat\Box}p$
+  holds at the identity iff $p$ contains every invertible arrow out of the evaluation object (an arrow
+  lies in $\hat\Diamond\{1\}$ iff some retraction of it has a retraction, i.e. iff it is invertible);
+  full models satisfy necessary Actuality, so $\Box_5=\hat{\hat\Box}$ by Proposition D21 of The Bounds
+  of Possibility. A non-identity invertible arrow lies outside the true proposition $\{1\}$, which is
+  therefore not 5-necessary.
