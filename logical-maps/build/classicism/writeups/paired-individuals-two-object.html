@@ -332,6 +332,17 @@ October 2026, at Cian Dorr’s direction; recorded by Claude Fable 5.1
 <li><strong>Two-hat necessity implies ND-necessity.</strong> Whatever is
 two-hat necessary is ND-necessary: the distinctness-preserving modality
 agrees with its hat.</li>
+<li><strong>□Intensional Choice.</strong> Every closed instance of
+Intensional Choice is necessary. Box the entire object-variable closure;
+retain the same type range and other schema side conditions.</li>
+<li><strong>□Relational Choice.</strong> Necessarily, every serial
+binary relation has a functional subrelation.</li>
+<li><strong>□Transversal Choice.</strong> Necessarily, every equivalence
+relation, at any type including e, has a transversal, that is, a
+property with exactly one instance in each of its cells.</li>
+<li><strong>Transversal Choice.</strong> Every equivalence relation, at
+any type including e, has a transversal, that is, a property with
+exactly one instance in each of its cells.</li>
 <li><strong>¬ 5-necessity implies two-hat necessity.</strong> Whatever
 is 5-necessary is two-hat necessary.</li>
 <li><strong>¬ Truth implies 5-necessity.</strong> Every truth is
@@ -507,6 +518,66 @@ that <span class="math inline">\star</span> is fixed.</p>
 <code>paired-individuals-two-object#barcan-t-fails</code>. By Claude
 Fable 5.1 (Anthropic), 14 October 2026, at Cian Dorr’s
 direction.</em></p>
+<h3 id="holds-intensional-choice.">Holds □Intensional Choice.</h3>
+<p>For each object <span class="math inline">U</span> and type <span
+class="math inline">\sigma</span> fix a well-ordering <span
+class="math inline">&lt;_U</span> of the domain <span
+class="math inline">D^\sigma_U</span>, and let <span
+class="math inline">W</span> be the intension of type <span
+class="math inline">\sigma\to\sigma\to t</span> with <span
+class="math inline">W(h):={&lt;_{\operatorname{cod}h}}</span>. Its value
+depends only on the arrow’s codomain, so by the condition it is in the
+domain, and at every world its extension well-orders that world’s
+type-<span class="math inline">\sigma</span> domain. Given <span
+class="math inline">F</span> with <span class="math inline">\Box\exists
+x\, .\,Fx</span>, put <span class="math inline">G:=\lambda x\,
+.\,Fx\land\forall y\, .\,(Fy\to\neg Wyx)</span>, the <span
+class="math inline">W</span>-least <span class="math inline">F</span>.
+It is definable from <span class="math inline">F</span> and <span
+class="math inline">W</span>, so in the domain; <span
+class="math inline">G\le F</span>, and its extension at every arrow is
+the singleton of the least element of <span
+class="math inline">F</span>’s. So Intensional Choice holds, and the
+same at every reachable object gives <span
+class="math inline">\Box</span>Intensional Choice. Cian Dorr’s
+observation that such models are qualitatively full, made precise.</p>
+<p><em>General argument
+<code>arguments/intensional-choice-well-ordering</code>. It requires
+that At every object reachable from the evaluation point, the domain
+contains every intension whose value at an arrow depends only on the
+arrow’s codomain. Here: The model is ideally full with the ideal of
+finite sets and no symmetry group, so every intension pinned down by the
+empty set, i.e. whose value at an arrow depends only on the codomain, is
+in the domain at every object (Classicism, Definition D.3). By Claude
+Fable 5.1 (Anthropic), at Cian Dorr’s suggestion, 2026-10-03.</em></p>
+<h3 id="holds-relational-choice-transversal-choice.">Holds □Relational
+Choice, □Transversal Choice.</h3>
+<p>At any reachable object <span class="math inline">W</span>, let <span
+class="math inline">U</span> be a serial relation in the domain there.
+Using the axiom of choice, pick for each <span
+class="math inline">x</span> a <span class="math inline">y</span> with
+<span class="math inline">(x,y)</span> in the extension of <span
+class="math inline">U</span> at the identity, and let <span
+class="math inline">S</span> be the intension whose value at every arrow
+<span class="math inline">W\to W</span> is the graph of this choice and
+whose value at arrows with any other codomain is empty; it depends only
+on the codomain, so the condition puts it in the domain, and at the
+identity it is a functional subrelation of <span
+class="math inline">U</span>. Likewise a set of representatives of an
+equivalence relation at <span class="math inline">W</span>, made into
+such an intension, is a transversal. Since <span
+class="math inline">W</span> was any reachable object, both principles
+hold at every world.</p>
+<p><em>General argument
+<code>arguments/necessary-relational-choice-codomain-intensions</code>.
+It requires that At every object reachable from the evaluation point,
+the domain contains every intension whose value at an arrow depends only
+on the arrow’s codomain. Here: The model is ideally full with the ideal
+of finite sets and no symmetry group, so every intension pinned down by
+the empty set, i.e. whose value at an arrow depends only on the
+codomain, is in the domain at every object (Classicism, Definition D.3).
+By Claude Fable 5.1 (Anthropic), at Cian Dorr’s direction,
+2026-10-14.</em></p>
 <h3
 id="fails-witnessed-possibility-separated-structure-independence-signature-σ-maximalism-signature-σ.">Fails
 Witnessed Possibility, Separated Structure, Independence (signature Σ),
@@ -534,6 +605,27 @@ Claude Fable 5.1 (Anthropic), at Cian Dorr’s request,
 <p><em>Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr’s
 direction:</em> Moved from the group finite-support-one-object to the
 topic; it uses nothing about the model.</p>
+<h3 id="holds-transversal-choice.">Holds Transversal Choice.</h3>
+<p>For an equivalence relation at the evaluation point, a transversal of
+its extension there, chosen in the metatheory, is by extensional
+fullness the extension of an element of the domain; the equivalence and
+transversal conditions are unboxed.</p>
+<p><em>General argument
+<code>arguments/transversal-choice-extensionally-full</code>. It
+requires that The model is extensionally full at every object: every set
+of tuples from the domains at an object is the extension, at the
+identity arrow, of an element of the domain of the matching relational
+type there. Here: Ideally full action models are extensionally full
+(Classicism, p. 74). By Cian Dorr (observation); recorded by Claude
+Fable 5.1 (Anthropic), on a question of Zachary Goodsell, after an
+observation of Christopher Sun, 2026-09-25.</em></p>
+<p><em>Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr’s
+direction:</em> The Relational Choice and Transversal Choice arguments
+merged into one, stated for every extensionally full model.</p>
+<p><em>Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr’s
+direction:</em> Moved from the group finite-support-one-object to the
+topic. Its first sentence, deriving extensional fullness from ideal
+fullness, is now the group’s reason for meeting extensionally-full.</p>
 <h2 id="notes">Notes</h2>
 <p>Built in the conversation of 14 October 2026 to settle the question
 left open on p. 407 of The Bounds of Possibility, Appendix D: whether

@@ -354,6 +354,11 @@ each positive integer n.</li>
 <li><strong>□Intensional Choice.</strong> Every closed instance of
 Intensional Choice is necessary. Box the entire object-variable closure;
 retain the same type range and other schema side conditions.</li>
+<li><strong>□Relational Choice.</strong> Necessarily, every serial
+binary relation has a functional subrelation.</li>
+<li><strong>□Transversal Choice.</strong> Necessarily, every equivalence
+relation, at any type including e, has a transversal, that is, a
+property with exactly one instance in each of its cells.</li>
 <li><strong>No Pure Contingency.</strong> Each closed sentence of the
 pure language, if true, is necessary. This is a sentence schema, not a
 quantifier over propositions.</li>
@@ -848,6 +853,33 @@ arrow’s codomain. Here: With one object such an intension is constant,
 so it is pinned down by <span class="math inline">\emptyset</span>, and
 the domain holds every finitely pinned intension. By Claude Fable 5.1
 (Anthropic), at Cian Dorr’s suggestion, 2026-10-03.</em></p>
+<h3 id="holds-relational-choice-transversal-choice.">Holds □Relational
+Choice, □Transversal Choice.</h3>
+<p>At any reachable object <span class="math inline">W</span>, let <span
+class="math inline">U</span> be a serial relation in the domain there.
+Using the axiom of choice, pick for each <span
+class="math inline">x</span> a <span class="math inline">y</span> with
+<span class="math inline">(x,y)</span> in the extension of <span
+class="math inline">U</span> at the identity, and let <span
+class="math inline">S</span> be the intension whose value at every arrow
+<span class="math inline">W\to W</span> is the graph of this choice and
+whose value at arrows with any other codomain is empty; it depends only
+on the codomain, so the condition puts it in the domain, and at the
+identity it is a functional subrelation of <span
+class="math inline">U</span>. Likewise a set of representatives of an
+equivalence relation at <span class="math inline">W</span>, made into
+such an intension, is a transversal. Since <span
+class="math inline">W</span> was any reachable object, both principles
+hold at every world.</p>
+<p><em>General argument
+<code>arguments/necessary-relational-choice-codomain-intensions</code>.
+It requires that At every object reachable from the evaluation point,
+the domain contains every intension whose value at an arrow depends only
+on the arrow’s codomain. Here: With one object such an intension is
+constant, so it is pinned down by <span
+class="math inline">\emptyset</span>, and the domain holds every
+finitely pinned intension. By Claude Fable 5.1 (Anthropic), at Cian
+Dorr’s direction, 2026-10-14.</em></p>
 <h3 id="holds-no-pure-contingency.">Holds No Pure Contingency.</h3>
 <p>Closed pure terms denote entities fixed by every arrow (§3.5, p. 58).
 With a single object, a proposition fixed by every arrow contains every

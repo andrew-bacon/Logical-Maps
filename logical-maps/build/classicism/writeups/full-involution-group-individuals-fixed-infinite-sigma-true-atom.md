@@ -12,8 +12,9 @@
 - **Infinity Schema (type e).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
 - **□Intensional Choice.** Every closed instance of Intensional Choice is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
 - **□ND.** Necessarily, distinct things of any type are necessarily distinct.
-- **No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
 - **□Relational Choice.** Necessarily, every serial binary relation has a functional subrelation.
+- **□Transversal Choice.** Necessarily, every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
+- **No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
 - **Relational Choice.** Every serial binary relation has a functional subrelation.
 - **Rigid Power.** If a relation is rigid, so is the property of being a rigid relation that entails it.
 - **□Rigid Power.** Every closed instance of Rigid Power is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
@@ -112,6 +113,12 @@ For each object $U$ and type $\sigma$ fix a well-ordering $<_U$ of the domain $D
 Every arrow's action is a bijection at every type, so ND and BF hold at every object reachable from the evaluation point (Proposition 3.24(i) and (ii)), and are necessary.
 
 *Source: Classicism, §3.5, Proposition 3.24. General argument `arguments/invertible-arrows`. It requires that Every arrow out of every object reachable from the evaluation point is invertible. Here: The arrows form a group. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-06.*
+
+### Holds □Relational Choice, □Transversal Choice.
+
+At any reachable object $W$, let $U$ be a serial relation in the domain there. Using the axiom of choice, pick for each $x$ a $y$ with $(x,y)$ in the extension of $U$ at the identity, and let $S$ be the intension whose value at every arrow $W\to W$ is the graph of this choice and whose value at arrows with any other codomain is empty; it depends only on the codomain, so the condition puts it in the domain, and at the identity it is a functional subrelation of $U$. Likewise a set of representatives of an equivalence relation at $W$, made into such an intension, is a transversal. Since $W$ was any reachable object, both principles hold at every world.
+
+*General argument `arguments/necessary-relational-choice-codomain-intensions`. It requires that At every object reachable from the evaluation point, the domain contains every intension whose value at an arrow depends only on the arrow's codomain. Here: The domains are full at every object. By Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 2026-10-14.*
 
 ### Holds No Pure Contingency.
 
