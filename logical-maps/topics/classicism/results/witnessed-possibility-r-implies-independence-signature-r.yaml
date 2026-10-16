@@ -1,0 +1,33 @@
+id: witnessed-possibility-r-implies-independence-signature-r
+premises:
+- witnessed-possibility-r
+conclusion: independence-signature-r
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Claude Fable 5.1 (Anthropic), 14 October 2026, at Cian Dorr's direction, after Bacon's
+    derivation of Independence from Logical Necessity
+  recorded_by: Claude Fable 5.1 (Anthropic), 14 October 2026
+  checked_by: []
+  date: '2026-10-14'
+  lean: none
+sources:
+- Andrew Bacon, Logical Combinatorialism, Philosophical Review 129 (2020), §4, p. 568 and n. 53.
+source_names:
+- Logical Combinatorialism
+references:
+- paper: bacon-2020
+  role: origin
+  locator: §4, p. 568 and n. 53
+  note: Independence of the fundamental and its derivation from Logical Necessity; this record shows that
+    only the witnessed half of Logical Necessity is used.
+proof: 'Let $c$ be a constant of relational type $\tau$, $\bar d$ distinct constants other than $c$, and
+  $A$ closed and pure. The pure formula $P(x,\bar y):=x\ne A\bar y$ has free variables matching the distinct
+  constants $c,\bar d$, and its existential closure is a theorem of C: for any $\bar y$, $A\bar y$ is
+  one entity of type $\tau$, and $\top_\tau\ne\bot_\tau$, so one of these differs from it. Witnessed Possibility
+  therefore gives $\Diamond(c\ne A\bar d)$. If $c=A\bar d$, the necessity of identity, a theorem of C,
+  gives $\Box(c=A\bar d)$, contradicting that possibility. So $c\ne A\bar d$.'
+notes: 'Bacon''s n. 53 derives Independence from Logical Necessity, that is from Witnessed Possibility
+  together with No Pure Contingency; the second conjunct is not needed, whereas Separated Structure does
+  need it: the model full-double-retraction-glued-constants has Witnessed Possibility without Separated
+  Structure. Recorded while surveying what Witnessed Possibility leaves open.'

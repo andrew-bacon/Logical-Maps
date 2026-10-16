@@ -3706,6 +3706,14 @@ def witnessed_possibility_incompatible_with_nd : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessityOfDistinctness.schemaIn →
     ¬ Classicism.Meta.AxiomSet.Consistent Ax
 
+/-- `witnessed-possibility-r-implies-independence-signature-r`
+
+Witnessed Possibility ⇒ Independence (signature Σ) -/
+def witnessed_possibility_r_implies_independence_signature_r : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.witnessedPossibility _) →
+    Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.independence _)
+
 /-- `zorn-r-implies-well-ordering-r`
 
 Zorn's Lemma ⇒ Well-Ordering -/

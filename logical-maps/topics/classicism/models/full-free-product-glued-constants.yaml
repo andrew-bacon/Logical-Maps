@@ -60,6 +60,16 @@ meets:
   nonidentity-isomorphism: $s$, with $s\circ s=1$.
   irreversible-arrow: '$e$: no arrow after it returns to the identity, so no world after $e$ makes $\{1\}$
     true.'
+  identity-singletons: $\{1\}$ is in the domain, the model being full.
+  unique-retractions-everywhere: By Lemma 3 of the write-up, $xu=1$ forces the syllables of $x$ to be,
+    in reverse order, left inverses in their own factors of the syllables of $u$, and left inverses are
+    unique in each factor ($c^k$ for $b^k$, $s$ for $s$, none for $e$, the generators or any $b^ic^j$
+    with $j\ge1$); so every arrow has at most one retraction.
+  rigid-haecceity-disjunctions: Every intension is present at the one object, so for any set $E$ the intension
+    $k\mapsto k\cdot E$ is in the domain. A relation is weakly inextensible at a world iff it lies below
+    that intension over its extension there, that being the smallest intension whose transports contain
+    the extension, and with persistence a weakly rigid relation equals it; so the rigid relations, the
+    necessarily weakly rigid ones, are exactly these, as in the group of full action models.
 arguments:
 - id: logical-necessity
   holds:
@@ -77,4 +87,14 @@ notes: Built on 14 October 2026 to separate Logical Necessity from what the glue
   the failures (write-up, §4). Being full, the model satisfies Rigid Comprehension, Actuality, Atomicity,
   Boolean Completeness and the choice principles, so it cannot separate Logical Necessity from those;
   that needs a non-full gluing-closed construction. The failure of BF is derived by the engine from the
-  non-epic arrow $e$ (write-up, §3).
+  non-epic arrow $e$ (write-up, §3). Strong Actuality, Rigid Power and Weakly Rigid Power, with their
+  boxed forms, were settled on the evening of 14 October 2026 by the general arguments for full models
+  with unique retractions (write-up, §3).
+history:
+- date: '2026-10-14'
+  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's request
+  summary: Added the conditions identity-singletons, unique-retractions-everywhere and rigid-haecceity-disjunctions,
+    which the topic's general arguments turn into Strong Actuality and Rigid Power with their boxed forms;
+    Weakly Rigid Power follows from Rigid Power and □Tame Rigidity by the recorded results. The model
+    is not a member of the full-action-models group, whose shared conditions would otherwise have supplied
+    these.
