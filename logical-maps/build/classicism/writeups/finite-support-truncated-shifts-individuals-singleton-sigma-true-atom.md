@@ -18,6 +18,7 @@
 - **No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
 - **Transversal Choice.** Every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
 - **¬ Boolean Completeness (type t).** Boolean Completeness (type t) in the displayed closed propositional formulation.
+- **¬ Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable relative to a type $\sigma$ when it injects into the finite cardinalities of properties of type $\sigma$; one instance for each $\sigma$.
 - **¬ Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **¬ Infinity Schema (type e).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
 - **¬ Possible Infinity (type e).** Possibly there are not finitely many individuals: the Axiom of Infinity at this type, under a diamond.
@@ -83,6 +84,12 @@ The source (n. 92) conjectures this but does not show it. Any set $F$ of proposi
 *From the group *Finite-support action models on one object*, shared argument `finite-support-one-object#boolean-completeness-t`. It requires that Some family $F$ of propositions has no least finitely pinned superset of its union $\bigcup F$. Here: An arrow $k_n$ is determined by its value at any $m\ge n$ and all $k_n$ with $n\ge N$ agree on $\{0,\ldots,N\}$, so the finitely pinned propositions are exactly the finite and cofinite sets of arrows. Let $F$ be the family of singletons $\{k_{2j}\}$: a finitely pinned superset of $\bigcup F$ is a cofinite set, and removing from it an odd-indexed member gives a strictly smaller one. By Claude Fable 5.1 (Anthropic), 2026-09-25.*
 
 *Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* The seven members' copies stated once, each member's family moved to the condition no-least-pinned-cover; the truncations' separate argument of 23 September, by Claude Fable 5.1 prompted by Cian Dorr, is now its witness, its own proof that the family is in the domain giving way to the profile above. The trawl's second arguments for the same verdict (25 September, DeepSeek, reviewed by OpenAI Codex) were dropped.
+
+### Fails Countable Boolean Completeness.
+
+At $\sigma=\tau=t$: the family $F$ of the condition no-least-pinned-cover, which has no least upper bound by the shared argument boolean-completeness-t, is in every member a sequence of propositions $A_m$, and it is countable relative to $t$. The numerals at type $t$ are the finite cardinalities and are pairwise distinct (the shared argument axiom-of-infinity-t), and extensional fullness puts in the domain the relation pairing each $A_m$ with the $m$-th numeral, which injects $F$ into them. This needs no infinity of individuals, so it covers the members with a single individual.
+
+*From the group *Finite-support action models on one object*, shared argument `finite-support-one-object#countable-boolean-completeness-t`. It requires that Some family $F$ of propositions has no least finitely pinned superset of its union $\bigcup F$. Here: An arrow $k_n$ is determined by its value at any $m\ge n$ and all $k_n$ with $n\ge N$ agree on $\{0,\ldots,N\}$, so the finitely pinned propositions are exactly the finite and cofinite sets of arrows. Let $F$ be the family of singletons $\{k_{2j}\}$: a finitely pinned superset of $\bigcup F$ is a cofinite set, and removing from it an odd-indexed member gives a strictly smaller one. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-16.*
 
 ### Holds BF.
 

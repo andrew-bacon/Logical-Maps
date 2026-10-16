@@ -1354,6 +1354,21 @@ the union over closed `σ`. The closed-types lemmas, before by `rfl`, are by `si
 341 of 577 results verified in all. `lean-check` still reports the 26 model records that
 claim `lean: stated` without a generated statement, unchanged by this work.
 
+## Varieties of necessity defined, 16 October
+
+The eleven principles added on 14 October (Truth, 5-necessity, two-hat necessity and
+ND-necessity compared, and their boxed forms, including `□`Truth implies ND-necessity) had no
+`lean_def`, so no model with a verdict on one of them had a generated statement and
+`lean-check` failed on 26 model records claiming `lean: stated`.
+`Principles/Schematic.lean` now defines, beside `BoxNe`, the hat of an operator (`Hat`),
+two-hat necessity (`BoxHH`, the hat of `BoxNe`), S5 operators (`S5Op`: necessarily N, K and B)
+and 5-necessity (`Box5`), as in the Background, and the eleven principles from them; all are
+quoted by `#classicism_schema` (142 schemas).
+
+*Checked.* The full build passes and `lean-check` reports OK: 132 of 132 principles defined,
+577 of 577 records with generated statements (the 26 model records among them), 341 proofs
+verified; no claim fails.
+
 ## Certificates
 
 No record's `lean` field was changed; all 208 remain `none`. Two things have to happen

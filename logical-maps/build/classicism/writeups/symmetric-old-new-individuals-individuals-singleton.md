@@ -12,6 +12,7 @@
 - **□Rigid Comprehension.** Necessarily, every relation, including a proposition, is coextensive with a rigid one.
 - **□Rigid Power.** Every closed instance of Rigid Power is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
 - **□Truth implies 5-necessity.** Necessarily, every truth is 5-necessary: necessary under every S5 operator. In C this is the identity $\Box_5=\lambda p\, .\,p$.
+- **Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable relative to a type $\sigma$ when it injects into the finite cardinalities of properties of type $\sigma$; one instance for each $\sigma$.
 - **¬ Strong Leibniz Biconditionals (type t).** The type-t instance of the Strong Leibniz Biconditionals: every possible proposition is entailed by a strong world proposition, one that is possible and necessarily entails every proposition or its negation.
 - **¬ Infinity Schema (type t).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
 - **¬ Two-hat necessity implies ND-necessity.** Whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat.
@@ -86,6 +87,12 @@ Boxed Rigid Power, for either choice of individuals. Arrows are injective; at $E
 At $E$ the four propositions are determined by the target, and the strong world $a$ is the set of arrows $E\to E$. $\Diamond a$ is every arrow out of $E$, since an injection $E\to O$ with old range is followed by an injection $O\to E$, so $\Box_{\ne}=\Box$ at $E$. But $\hat\Diamond a$ contains no arrow $u:E\to O$: its retractions $v:O\to E$ cannot return to the truth $G_O$ at $O$, because any $x:E\to O$ has old range and $x\circ v\in K$. So $\hat{\hat\Box}$ at $E$ is the box over $a$; $a$ is two-hat necessary and not ND-necessary, and every truth ($\top$ and $a$) is two-hat necessary. At $O$, with strong world $G_O$, $\hat\Diamond G_O=G_O$ (a member of $K$ or an arrow to $E$ cannot be brought back into $G_O$), so every truth at $O$, each containing $G_O$, is two-hat necessary. With necessary Strong Actuality, $\Box_5=\hat{\hat\Box}$ everywhere, so every truth is 5-necessary at both objects.
 
 *Address: `symmetric-old-new-individuals-individuals-singleton#collapse-split`. By Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 2026-10-14.*
+
+### Holds Countable Boolean Completeness.
+
+At $E$, for every $\sigma$. If $R$ injects $X$ into the numerals at $\sigma$, with $N$ a finite set pinning both, then each instance of $X$ is fixed by every symmetry fixing $N$ pointwise: the symmetry carries the pair of the instance and its numeral to another such pair, and the numeral is fixed. An entity pinned down by $M$ and fixed by those symmetries is pinned down by $M\cap N$. So the instances of $X$ are all pinned down by $N$, and their union is in the domain and is the least upper bound. The haecceities of the even numbers, which have none, are not countable in the model. See the write-up.
+
+*Write-up: [symmetric-old-new-individuals](symmetric-old-new-individuals.html). By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-16.*
 
 ### Fails Possible Infinity (type t).
 

@@ -18,6 +18,7 @@
 - **¬ Atomicity.** Every non-bottom entity of each relational type has an atom below it.
 - **¬ Atomicity (type t).** Atomicity (type t) in the displayed closed propositional formulation.
 - **¬ Boolean Completeness (type t).** Boolean Completeness (type t) in the displayed closed propositional formulation.
+- **¬ Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable relative to a type $\sigma$ when it injects into the finite cardinalities of properties of type $\sigma$; one instance for each $\sigma$.
 - **¬ BF (type t).** BF (type t) in the displayed closed propositional formulation.
 - **¬ Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **¬ Infinity Schema (type e).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
@@ -82,6 +83,12 @@ The source (n. 92) conjectures this but does not show it. Any set $F$ of proposi
 *From the group *Finite-support action models on one object*, shared argument `finite-support-one-object#boolean-completeness-t`. It requires that Some family $F$ of propositions has no least finitely pinned superset of its union $\bigcup F$. Here: Let $F$ be the family of propositions $A_m$ ($m\ge1$), each pinned down by $\{1,2m,2m+1\}$, that the arrow is constant on $\{1,\ldots,2m\}$ and increases at $2m+1$; the identity belongs to no $A_m$. The least superset of $\bigcup F$ pinned down by $\{0,\ldots,N\}$ consists of the non-identity arrows whose first increase after $1$ is at an odd position or beyond $N$, and it strictly shrinks as $N$ grows. By Claude Fable 5.1 (Anthropic), 2026-09-25.*
 
 *Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* The seven members' copies stated once, each member's family moved to the condition no-least-pinned-cover; the truncations' separate argument of 23 September, by Claude Fable 5.1 prompted by Cian Dorr, is now its witness, its own proof that the family is in the domain giving way to the profile above. The trawl's second arguments for the same verdict (25 September, DeepSeek, reviewed by OpenAI Codex) were dropped.
+
+### Fails Countable Boolean Completeness.
+
+At $\sigma=\tau=t$: the family $F$ of the condition no-least-pinned-cover, which has no least upper bound by the shared argument boolean-completeness-t, is in every member a sequence of propositions $A_m$, and it is countable relative to $t$. The numerals at type $t$ are the finite cardinalities and are pairwise distinct (the shared argument axiom-of-infinity-t), and extensional fullness puts in the domain the relation pairing each $A_m$ with the $m$-th numeral, which injects $F$ into them. This needs no infinity of individuals, so it covers the members with a single individual.
+
+*From the group *Finite-support action models on one object*, shared argument `finite-support-one-object#countable-boolean-completeness-t`. It requires that Some family $F$ of propositions has no least finitely pinned superset of its union $\bigcup F$. Here: Let $F$ be the family of propositions $A_m$ ($m\ge1$), each pinned down by $\{1,2m,2m+1\}$, that the arrow is constant on $\{1,\ldots,2m\}$ and increases at $2m+1$; the identity belongs to no $A_m$. The least superset of $\bigcup F$ pinned down by $\{0,\ldots,N\}$ consists of the non-identity arrows whose first increase after $1$ is at an odd position or beyond $N$, and it strictly shrinks as $N$ grows. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-16.*
 
 ### Fails BF (type t).
 

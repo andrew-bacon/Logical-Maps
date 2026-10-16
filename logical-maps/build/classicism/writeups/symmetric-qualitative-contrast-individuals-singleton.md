@@ -9,6 +9,8 @@
 - **Axiom of Infinity (type t).** There are not finitely many propositions. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **□Intensional Choice.** Every closed instance of Intensional Choice is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
 - **¬ Atomicity.** Every non-bottom entity of each relational type has an atom below it.
+- **¬ □Countable Boolean Completeness.** Every closed instance of Countable Boolean Completeness is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **¬ □Boolean Completeness (type t).** Every closed instance of Boolean Completeness (type t) is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
 - **¬ Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **¬ Infinity Schema (type e).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
 - **¬ Possible Infinity (type e).** Possibly there are not finitely many individuals: the Axiom of Infinity at this type, under a diamond.
@@ -48,6 +50,12 @@ The propositions that the arrow leads to $W_1$ and sends a given individual to i
 At every type. (i) An element $a$ of an ideally full domain at $W_0$ is fixed by every permutation fixing its pinning set $T$ pointwise, since $(g\cdot a)(k)=a(k\circ g)$ and $k\circ g$ agrees with $k$ on $T$. (ii) The arrows into $W_0$ are exactly the symmetries, so $F(h)=h\cdot F(1)$ for them. Given $F$ at $W_0$, pick $a\in F(1)$ with pinning set $T$ and let $G(h):=\{h\cdot a\}$ for $h$ into $W_0$: the haecceity of $a$, inside $F(h)$ by (ii), symmetric, and pinned down by $T$ by (i). For $h$ into $W_1$ there is no symmetry constraint, $G_{W_1}$ being trivial, so let $G(h)$ be the least element of $F(h)$ under a fixed well-ordering, which depends only on $h$ on $F$'s pinning set. The combined $G$ is in the domain, entails $F$, and has singleton extensions. At $W_1$ the same two moves work: the arrows $W_1\to W_0$ are one orbit $h=g\circ h_0$, where $G(h):=\{g\cdot a_0\}$ for some $a_0\in F(h_0)$, and the arrows $W_1\to W_1$ are unconstrained. So Intensional Choice holds at both objects, hence necessarily. In general, the haecceity of an actual instance witnesses Intensional Choice wherever every arrow out of the object is a symmetry.
 
 *By Claude Fable 5.1 (Anthropic), at Cian Dorr's suggestion, 2026-10-03.*
+
+### Fails □Countable Boolean Completeness, □Boolean Completeness (type t).
+
+At $W_1$, reached from $W_0$, whose symmetry group is trivial, at $\sigma=\tau=t$. Let $A_m$ ($m\ge1$) be the set of permutations $h:W_1\to W_1$ with $h0=m$ and $hm=0$, pinned down by $\{0,m\}$ and symmetric, holding at no arrow into $W_0$. An upper bound pinned down by a finite $S$ may omit every arrow into $W_0$, and among arrows into $W_1$ the computation is that of the one-object permutation model: a permutation $\pi$ lies in the least $S$-pinned superset of $\bigcup_m A_m$ iff $\pi0\in S\setminus\{0\}$ and $\pi\pi0=0$, or $\pi0\notin S$ and $0\notin\pi(S)$, and the 3-cycle $(0\ N{+}1\ N{+}2)$ shows these strictly shrink for $S=\{0,\ldots,N\}$. So the family has no least upper bound. It is in the domain, and so is the relation pairing $A_m$ with the $m$-th numeral at type $t$: both are codomain intensions, holding at arrows into $W_1$ as at the identity and of nothing at arrows into $W_0$, so pinned down by $\emptyset$ and symmetric. The numerals at $t$ are standard at $W_1$ by the same fullness, so the family is countable relative to $t$. This uses no individuals, so it holds in every variant.
+
+*By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-16.*
 
 ### Fails Axiom of Infinity (type e), Infinity Schema (type e), Possible Infinity (type e).
 

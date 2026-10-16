@@ -830,6 +830,118 @@ leastness of <span class="math inline">L</span>.</p>
 <p>So Boolean Completeness fails at <span class="math inline">e\to
 t</span> (base individuals). It still holds at <span
 class="math inline">t</span>, where the algebras are finite.</p>
+<h2 id="countable-boolean-completeness-holds-at-e">Countable Boolean
+Completeness holds at <span class="math inline">E</span></h2>
+<p>Added by Claude Opus 5.5 (Anthropic) on 16 October 2026, at Cian
+Dorr’s direction. Although Boolean Completeness fails at <span
+class="math inline">E</span>, its countable restriction holds there, for
+countability relative to every type <span
+class="math inline">\sigma</span>. The family of haecceities above is
+infinite but not countable in the model: no injection of it into the
+numerals is in the domain.</p>
+<p>Write <span class="math inline">k\cdot x</span> for the transport of
+an entity <span class="math inline">x</span> along an arrow <span
+class="math inline">k</span>, so that <span
+class="math inline">\langle\bar a,h\rangle\in k\cdot x</span> iff <span
+class="math inline">\langle\bar a,h\circ k\rangle\in
+x</span>. For a finite <span class="math inline">N\subseteq\mathbb
+N</span>, let <span class="math inline">\mathrm{Fix}(N)</span> be the
+set of permutations in <span class="math inline">G_E</span> that fix
+<span class="math inline">N</span> pointwise.</p>
+<p><strong>Step 1: the members of a countable property are
+invariant.</strong> Let <span class="math inline">X</span> be a property
+at <span class="math inline">E</span> that is countable relative to
+<span class="math inline">\sigma</span>, witnessed by <span
+class="math inline">R</span>, and let a finite <span
+class="math inline">N</span> pin down both. Take <span
+class="math inline">x</span> with <span class="math inline">X(x)</span>
+at <span class="math inline">1_E</span>. Then <span
+class="math inline">R(x,\bar
+n)</span> at <span class="math inline">1_E</span> for some numeral <span
+class="math inline">\bar n</span> at <span
+class="math inline">\sigma</span>. Let <span
+class="math inline">g\in\mathrm{Fix}(N)</span>.</p>
+<ul>
+<li>Numerals denote closed pure terms, so <span
+class="math inline">g\cdot\bar n=\bar n</span>.</li>
+<li>By symmetry, <span class="math inline">\langle g\cdot x,\bar
+n,g\rangle\in R</span> and <span class="math inline">\langle g\cdot
+x,g\rangle\in X</span>.</li>
+<li>The arrows <span class="math inline">g</span> and <span
+class="math inline">1_E</span> agree on <span
+class="math inline">N</span> and have the same target, so by pinning,
+<span class="math inline">R(g\cdot x,\bar n)</span> and <span
+class="math inline">X(g\cdot x)</span> hold at <span
+class="math inline">1_E</span>.</li>
+</ul>
+<p><span class="math inline">R</span> is injective on the instances of
+<span class="math inline">X</span> at <span
+class="math inline">1_E</span>, so <span class="math inline">g\cdot
+x=x</span>.</p>
+<p><strong>Step 2: invariance shrinks pinning sets.</strong> Suppose
+<span class="math inline">x</span> is pinned down by a finite <span
+class="math inline">M</span> and <span class="math inline">g\cdot
+x=x</span> for every <span
+class="math inline">g\in\mathrm{Fix}(N)</span>. We show that <span
+class="math inline">x</span> is pinned down by <span
+class="math inline">M\cap N</span>.</p>
+<p>Let <span class="math inline">h,h&#39;</span> be arrows out of <span
+class="math inline">E</span> with a common target that agree on <span
+class="math inline">M\cap N</span>. Every arrow into <span
+class="math inline">E</span> is an injection into <span
+class="math inline">\mathbb N</span>, and every arrow into <span
+class="math inline">O</span> an injection into the old individuals.</p>
+<ol type="1">
+<li>Choose <span class="math inline">g\in\mathrm{Fix}(N)</span> sending
+the points of <span class="math inline">M\setminus N</span> outside
+<span class="math inline">N\cup M</span> and outside <span
+class="math inline">h^{-1}(h&#39;(M))</span>.</li>
+<li>Choose distinct fresh points <span class="math inline">p_m</span>,
+one for each <span class="math inline">m\in M\setminus N</span>, outside
+<span class="math inline">N\cup M\cup g(M)</span>. Let <span
+class="math inline">h&#39;&#39;</span> be an arrow with the target of
+<span class="math inline">h</span> that agrees with <span
+class="math inline">h\circ g</span> on <span
+class="math inline">M</span> and sends each <span
+class="math inline">p_m</span> to <span
+class="math inline">h&#39;(m)</span>. The prescribed values are
+distinct: <span class="math inline">h&#39;</span> is injective and
+agrees with <span class="math inline">h</span> on <span
+class="math inline">M\cap N</span>, and step 1 kept <span
+class="math inline">h(g(M\setminus N))</span> away from <span
+class="math inline">h&#39;(M)</span>. So <span
+class="math inline">h&#39;&#39;</span> can be taken injective, with old
+range when the target is <span class="math inline">O</span>.</li>
+<li>Let <span class="math inline">g&#39;\in\mathrm{Fix}(N)</span> swap
+each <span class="math inline">m\in M\setminus N</span> with <span
+class="math inline">p_m</span>. Then <span
+class="math inline">h&#39;&#39;\circ g&#39;</span> agrees with <span
+class="math inline">h&#39;</span> on <span
+class="math inline">M</span>.</li>
+</ol>
+<p>Pinning by <span class="math inline">M</span> and invariance give
+<span class="math inline">x(h)=x(h\circ
+g)=x(h&#39;&#39;)=x(h&#39;&#39;\circ g&#39;)=x(h&#39;)</span>.</p>
+<p><strong>Step 3: the join.</strong> By steps 1 and 2, every instance
+of <span class="math inline">X</span> at <span
+class="math inline">1_E</span> is pinned down by <span
+class="math inline">N</span>. Their union <span
+class="math inline">J</span>, tuple by tuple at each arrow, is
+symmetric, being a union of symmetric intensions, and is pinned down by
+<span class="math inline">N</span>. So <span
+class="math inline">J</span> is in the domain. At <span
+class="math inline">1_E</span>, <span class="math inline">Y\le Z</span>
+is inclusion at every arrow out of <span class="math inline">E</span>,
+so <span class="math inline">J</span> is the least upper bound of <span
+class="math inline">X</span>.</p>
+<p>This is the Fraenkel–Mostowski phenomenon: in a permutation model, a
+set of atoms is countable only if it is finite. Whether Countable
+Boolean Completeness also holds at <span class="math inline">O</span>,
+and so is necessary, is open. Step 2 is the obstacle: the arrows into
+<span class="math inline">O</span> there are of two kinds, <span
+class="math inline">G_O</span> and <span class="math inline">K</span>,
+and <span class="math inline">h&#39;&#39;</span> must be chosen of a
+suitable kind.</p>
 <h2 id="with-one-individual-bc-and-rigid-comprehension">With one
 individual: □BC and □Rigid Comprehension</h2>
 <p>In the variant with a single individual, the failures of Inextensible

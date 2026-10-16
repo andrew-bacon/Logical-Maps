@@ -12187,7 +12187,7 @@
       "lines": [174, 176],
       "file": "Classicism/Principles/Coarse.lean"},
      {"name": "Classicism.P.TractarianismDual.listQuoted",
-      "lines": [64, 64],
+      "lines": [70, 70],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.tractarianism_r.dual_polyadic",
@@ -12347,7 +12347,7 @@
       "lines": [195, 196],
       "file": "Classicism/Principles/Coarse.lean"},
      {"name": "Classicism.P.NecTractarianismDual.listQuoted",
-      "lines": [65, 65],
+      "lines": [71, 71],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_tractarianism_r.dual_polyadic",
@@ -12587,7 +12587,7 @@
       "lines": [116, 117],
       "file": "Classicism/Principles/Coarse.lean"},
      {"name": "Classicism.P.NecNecessityOfDistinctnessDual.listQuoted",
-      "lines": [63, 63],
+      "lines": [69, 69],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_distinctness_necessary_r.dual_polyadic",
@@ -12690,7 +12690,7 @@
       "lines": [154, 155],
       "file": "Classicism/Principles/Coarse.lean"},
      {"name": "Classicism.P.NecBarcanDual.listQuoted",
-      "lines": [64, 64],
+      "lines": [70, 70],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_barcan_r.dual_polyadic",
@@ -12749,7 +12749,7 @@
       "lines": [60, 65],
       "file": "Classicism/Principles/Choice.lean"},
      {"name": "Classicism.P.ModalizedPlenitude.listQuoted",
-      "lines": [43, 43],
+      "lines": [49, 49],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.modalized_plenitude_r.polyadic",
@@ -13065,7 +13065,7 @@
       "lines": [99, 100],
       "file": "Classicism/Principles/Coarse.lean"},
      {"name": "Classicism.P.NecessityOfDistinctnessDual.listQuoted",
-      "lines": [63, 63],
+      "lines": [69, 69],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.distinctness_necessary_r.dual_polyadic",
@@ -13126,7 +13126,7 @@
       "lines": [67, 68],
       "file": "Classicism/Principles/Base.lean"},
      {"name": "Classicism.P.ConverseBarcanDual.listQuoted",
-      "lines": [61, 61],
+      "lines": [67, 67],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.converse_barcan_r.dual_polyadic",
@@ -13164,7 +13164,7 @@
       "lines": [94, 95],
       "file": "Classicism/Principles/Base.lean"},
      {"name": "Classicism.P.BroadNecessitism.listQuoted",
-      "lines": [40, 40],
+      "lines": [46, 46],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.broad_necessitism_r.polyadic",
@@ -13268,7 +13268,7 @@
       "lines": [133, 134],
       "file": "Classicism/Principles/Coarse.lean"},
      {"name": "Classicism.P.BarcanDual.listQuoted",
-      "lines": [64, 64],
+      "lines": [70, 70],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.barcan_r.dual_polyadic",
@@ -13374,6 +13374,18 @@
   {"name": "Classicism.P.Vicinity",
    "lines": [136, 138],
    "file": "Classicism/Principles/Lattice.lean"},
+  "Classicism.P.TwoHatImpliesNdNecessity":
+  {"name": "Classicism.P.TwoHatImpliesNdNecessity",
+   "lines": [63, 64],
+   "file": "Classicism/Principles/Schematic.lean"},
+  "Classicism.P.TruthImpliesTwoHatNecessity":
+  {"name": "Classicism.P.TruthImpliesTwoHatNecessity",
+   "lines": [57, 58],
+   "file": "Classicism/Principles/Schematic.lean"},
+  "Classicism.P.TruthImpliesFiveNecessity":
+  {"name": "Classicism.P.TruthImpliesFiveNecessity",
+   "lines": [55, 56],
+   "file": "Classicism/Principles/Schematic.lean"},
   "Classicism.P.TransversalChoice":
   {"name": "Classicism.P.TransversalChoice",
    "lines": [81, 85],
@@ -13430,6 +13442,10 @@
   {"name": "Classicism.P.SWorld",
    "lines": [150, 152],
    "file": "Classicism/Principles/Lattice.lean"},
+  "Classicism.P.S5Op":
+  {"name": "Classicism.P.S5Op",
+   "lines": [48, 51],
+   "file": "Classicism/Principles/Schematic.lean"},
   "Classicism.P.RigidRigidity":
   {"name": "Classicism.P.RigidRigidity",
    "lines": [108, 109],
@@ -13522,6 +13538,18 @@
   {"name": "Classicism.P.NecVicinity",
    "lines": [139, 140],
    "file": "Classicism/Principles/Lattice.lean"},
+  "Classicism.P.NecTwoHatImpliesNdNecessity":
+  {"name": "Classicism.P.NecTwoHatImpliesNdNecessity",
+   "lines": [76, 77],
+   "file": "Classicism/Principles/Schematic.lean"},
+  "Classicism.P.NecTruthImpliesTwoHatNecessity":
+  {"name": "Classicism.P.NecTruthImpliesTwoHatNecessity",
+   "lines": [70, 71],
+   "file": "Classicism/Principles/Schematic.lean"},
+  "Classicism.P.NecTruthImpliesFiveNecessity":
+  {"name": "Classicism.P.NecTruthImpliesFiveNecessity",
+   "lines": [68, 69],
+   "file": "Classicism/Principles/Schematic.lean"},
   "Classicism.P.NecTransversalChoice":
   {"name": "Classicism.P.NecTransversalChoice",
    "lines": [86, 87],
@@ -13674,10 +13702,22 @@
   {"name": "Classicism.P.NecFregeanAxiom",
    "lines": [16, 17],
    "file": "Classicism/Principles/Extensionality.lean"},
+  "Classicism.P.NecFiveImpliesTwoHatNecessity":
+  {"name": "Classicism.P.NecFiveImpliesTwoHatNecessity",
+   "lines": [72, 73],
+   "file": "Classicism/Principles/Schematic.lean"},
+  "Classicism.P.NecFiveImpliesNdNecessity":
+  {"name": "Classicism.P.NecFiveImpliesNdNecessity",
+   "lines": [74, 75],
+   "file": "Classicism/Principles/Schematic.lean"},
   "Classicism.P.NecExtensionality":
   {"name": "Classicism.P.NecExtensionality",
    "lines": [21, 22],
    "file": "Classicism/Principles/Extensionality.lean"},
+  "Classicism.P.NecDistinctnessPreservingCollapse":
+  {"name": "Classicism.P.NecDistinctnessPreservingCollapse",
+   "lines": [66, 67],
+   "file": "Classicism/Principles/Schematic.lean"},
   "Classicism.P.NecCountableBooleanCompleteness":
   {"name": "Classicism.P.NecCountableBooleanCompleteness",
    "lines": [117, 119],
@@ -13810,6 +13850,10 @@
   {"name": "Classicism.P.InextensibleComprehension",
    "lines": [33, 35],
    "file": "Classicism/Principles/Comprehension.lean"},
+  "Classicism.P.Hat":
+  {"name": "Classicism.P.Hat",
+   "lines": [44, 45],
+   "file": "Classicism/Principles/Schematic.lean"},
   "Classicism.P.GallinExtensionalComprehension":
   {"name": "Classicism.P.GallinExtensionalComprehension",
    "lines": [44, 47],
@@ -13838,6 +13882,14 @@
   {"name": "Classicism.P.FregeanAxiom",
    "lines": [14, 15],
    "file": "Classicism/Principles/Extensionality.lean"},
+  "Classicism.P.FiveImpliesTwoHatNecessity":
+  {"name": "Classicism.P.FiveImpliesTwoHatNecessity",
+   "lines": [59, 60],
+   "file": "Classicism/Principles/Schematic.lean"},
+  "Classicism.P.FiveImpliesNdNecessity":
+  {"name": "Classicism.P.FiveImpliesNdNecessity",
+   "lines": [61, 62],
+   "file": "Classicism/Principles/Schematic.lean"},
   "Classicism.P.Extensionality":
   {"name": "Classicism.P.Extensionality",
    "lines": [19, 20],
@@ -13885,6 +13937,14 @@
   "Classicism.P.BoxNe":
   {"name": "Classicism.P.BoxNe",
    "lines": [16, 17],
+   "file": "Classicism/Principles/Schematic.lean"},
+  "Classicism.P.BoxHH":
+  {"name": "Classicism.P.BoxHH",
+   "lines": [46, 47],
+   "file": "Classicism/Principles/Schematic.lean"},
+  "Classicism.P.Box5":
+  {"name": "Classicism.P.Box5",
+   "lines": [52, 53],
    "file": "Classicism/Principles/Schematic.lean"},
   "Classicism.P.BooleanCompletenessTLUB":
   {"name": "Classicism.P.BooleanCompletenessTLUB",

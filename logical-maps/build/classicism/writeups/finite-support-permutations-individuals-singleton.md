@@ -17,6 +17,7 @@
 - **B for sentences of Σ.** The B instance for every closed sentence of the language of the fixed signature Sigma.
 - **¬ Weakly Inextensible Comprehension.** Every relation, including a proposition, is coextensive with a weakly inextensible one.
 - **¬ Boolean Completeness (type t).** Boolean Completeness (type t) in the displayed closed propositional formulation.
+- **¬ Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable relative to a type $\sigma$ when it injects into the finite cardinalities of properties of type $\sigma$; one instance for each $\sigma$.
 - **¬ Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **¬ Infinity Schema (type e).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
 - **¬ Possible Infinity (type e).** Possibly there are not finitely many individuals: the Axiom of Infinity at this type, under a diamond.
@@ -68,6 +69,12 @@ The source (n. 92) conjectures this but does not show it. Any set $F$ of proposi
 *From the group *Finite-support action models on one object*, shared argument `finite-support-one-object#boolean-completeness-t`. It requires that Some family $F$ of propositions has no least finitely pinned superset of its union $\bigcup F$. Here: Let $F$ be the family of propositions $A_m$ ($m\ge1$), each pinned down by $\{0,m\}$, that the permutation swaps $0$ and $m$. A permutation $\pi$ belongs to the least superset of $\bigcup F$ pinned down by $S=\{0,\ldots,N\}$ iff either $\pi(0)\in S\setminus\{0\}$ and $\pi(\pi(0))=0$, or $\pi(0)\notin S$ and $0\notin\pi(S)$; the $3$-cycle $(0\ N{+}1\ N{+}2)$ satisfies the second clause for $S$ but neither clause for $\{0,\ldots,N+1\}$, so these supersets strictly shrink. By Claude Fable 5.1 (Anthropic), 2026-09-25.*
 
 *Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* The seven members' copies stated once, each member's family moved to the condition no-least-pinned-cover; the truncations' separate argument of 23 September, by Claude Fable 5.1 prompted by Cian Dorr, is now its witness, its own proof that the family is in the domain giving way to the profile above. The trawl's second arguments for the same verdict (25 September, DeepSeek, reviewed by OpenAI Codex) were dropped.
+
+### Fails Countable Boolean Completeness.
+
+At $\sigma=\tau=t$: the family $F$ of the condition no-least-pinned-cover, which has no least upper bound by the shared argument boolean-completeness-t, is in every member a sequence of propositions $A_m$, and it is countable relative to $t$. The numerals at type $t$ are the finite cardinalities and are pairwise distinct (the shared argument axiom-of-infinity-t), and extensional fullness puts in the domain the relation pairing each $A_m$ with the $m$-th numeral, which injects $F$ into them. This needs no infinity of individuals, so it covers the members with a single individual.
+
+*From the group *Finite-support action models on one object*, shared argument `finite-support-one-object#countable-boolean-completeness-t`. It requires that Some family $F$ of propositions has no least finitely pinned superset of its union $\bigcup F$. Here: Let $F$ be the family of propositions $A_m$ ($m\ge1$), each pinned down by $\{0,m\}$, that the permutation swaps $0$ and $m$. A permutation $\pi$ belongs to the least superset of $\bigcup F$ pinned down by $S=\{0,\ldots,N\}$ iff either $\pi(0)\in S\setminus\{0\}$ and $\pi(\pi(0))=0$, or $\pi(0)\notin S$ and $0\notin\pi(S)$; the $3$-cycle $(0\ N{+}1\ N{+}2)$ satisfies the second clause for $S$ but neither clause for $\{0,\ldots,N+1\}$, so these supersets strictly shrink. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-16.*
 
 ### Holds Axiom of Infinity (type t), Infinity Schema (type t).
 

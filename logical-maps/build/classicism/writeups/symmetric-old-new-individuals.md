@@ -299,6 +299,66 @@ contradicts the leastness of $L$.
 So Boolean Completeness fails at $e\to t$ (base individuals). It still holds
 at $t$, where the algebras are finite.
 
+## Countable Boolean Completeness holds at $E$
+
+Added by Claude Opus 5.5 (Anthropic) on 16 October 2026, at Cian Dorr's
+direction. Although Boolean Completeness fails at $E$, its countable
+restriction holds there, for countability relative to every type $\sigma$.
+The family of haecceities above is infinite but not countable in the model:
+no injection of it into the numerals is in the domain.
+
+Write $k\cdot x$ for the transport of an entity $x$ along an arrow $k$, so
+that $\langle\bar a,h\rangle\in k\cdot x$ iff $\langle\bar a,h\circ k\rangle\in
+x$. For a finite $N\subseteq\mathbb N$, let $\mathrm{Fix}(N)$ be the set of
+permutations in $G_E$ that fix $N$ pointwise.
+
+**Step 1: the members of a countable property are invariant.** Let $X$ be a
+property at $E$ that is countable relative to $\sigma$, witnessed by $R$, and
+let a finite $N$ pin down both. Take $x$ with $X(x)$ at $1_E$. Then $R(x,\bar
+n)$ at $1_E$ for some numeral $\bar n$ at $\sigma$. Let $g\in\mathrm{Fix}(N)$.
+
+- Numerals denote closed pure terms, so $g\cdot\bar n=\bar n$.
+- By symmetry, $\langle g\cdot x,\bar n,g\rangle\in R$ and $\langle g\cdot
+  x,g\rangle\in X$.
+- The arrows $g$ and $1_E$ agree on $N$ and have the same target, so by
+  pinning, $R(g\cdot x,\bar n)$ and $X(g\cdot x)$ hold at $1_E$.
+
+$R$ is injective on the instances of $X$ at $1_E$, so $g\cdot x=x$.
+
+**Step 2: invariance shrinks pinning sets.** Suppose $x$ is pinned down by a
+finite $M$ and $g\cdot x=x$ for every $g\in\mathrm{Fix}(N)$. We show that $x$
+is pinned down by $M\cap N$.
+
+Let $h,h'$ be arrows out of $E$ with a common target that agree on $M\cap N$.
+Every arrow into $E$ is an injection into $\mathbb N$, and every arrow into $O$
+an injection into the old individuals.
+
+1. Choose $g\in\mathrm{Fix}(N)$ sending the points of $M\setminus N$ outside
+   $N\cup M$ and outside $h^{-1}(h'(M))$.
+2. Choose distinct fresh points $p_m$, one for each $m\in M\setminus N$,
+   outside $N\cup M\cup g(M)$. Let $h''$ be an arrow with the target of $h$
+   that agrees with $h\circ g$ on $M$ and sends each $p_m$ to $h'(m)$. The
+   prescribed values are distinct: $h'$ is injective and agrees with $h$ on
+   $M\cap N$, and step 1 kept $h(g(M\setminus N))$ away from $h'(M)$. So $h''$
+   can be taken injective, with old range when the target is $O$.
+3. Let $g'\in\mathrm{Fix}(N)$ swap each $m\in M\setminus N$ with $p_m$. Then
+   $h''\circ g'$ agrees with $h'$ on $M$.
+
+Pinning by $M$ and invariance give
+$x(h)=x(h\circ g)=x(h'')=x(h''\circ g')=x(h')$.
+
+**Step 3: the join.** By steps 1 and 2, every instance of $X$ at $1_E$ is
+pinned down by $N$. Their union $J$, tuple by tuple at each arrow, is
+symmetric, being a union of symmetric intensions, and is pinned down by $N$.
+So $J$ is in the domain. At $1_E$, $Y\le Z$ is inclusion at every arrow out of
+$E$, so $J$ is the least upper bound of $X$.
+
+This is the Fraenkel–Mostowski phenomenon: in a permutation model, a set of
+atoms is countable only if it is finite. Whether Countable Boolean
+Completeness also holds at $O$, and so is necessary, is open. Step 2 is the
+obstacle: the arrows into $O$ there are of two kinds, $G_O$ and $K$, and
+$h''$ must be chosen of a suitable kind.
+
 ## With one individual: □BC and □Rigid Comprehension
 
 In the variant with a single individual, the failures of Inextensible
