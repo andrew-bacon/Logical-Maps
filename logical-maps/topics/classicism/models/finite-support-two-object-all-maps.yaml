@@ -91,6 +91,11 @@ arguments:
     $F$ has no least upper bound. The family is countable in the model''s sense, the relation pairing
     $A_m$ with the numeral $m$ being in the domain by extensional fullness, so Countable Boolean Completeness
     fails too.'
+  revisions:
+  - date: '2026-10-16'
+    by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+    note: Refutes the instance of Countable Boolean Completeness counting at $e$, which the principle,
+      now schematic in that type, includes.
 - holds:
   - necessity-of-arithmetic
   by: Claude Fable 5.1 (Anthropic)
@@ -100,6 +105,16 @@ arguments:
     $I^*$ is again true, the numerals are the finite cardinalities by extensional fullness, and $\operatorname{Sum}$
     and $\operatorname{Prod}$ are standard, their graphs being in the domain; so every arithmetical sentence
     has its standard truth value at every world.
+  revisions:
+  - date: '2026-10-16'
+    by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+    note: The Necessity of Arithmetic is now a schema in the type $\sigma$ whose finite cardinalities
+      are the numbers, and the argument covers every $\sigma$ unchanged. At $W_0$ every type has
+      infinitely many entities, so $I^*_\sigma$ is true there, and the numerals at $\sigma$ are standard
+      by the argument for the Axioms of Infinity, whose set of numerals at each type is invariant under
+      every arrow. At $W_1$ the numerals at $\sigma$ still differ at the arrows back into $W_0$, the set
+      of them is in the domain and closed under zero and successor, and the graphs of
+      $\operatorname{Sum}_\sigma$ and $\operatorname{Prod}_\sigma$ are in the domain, as at $e$.
 - fails:
   - necessary-barcan-t
   by: Claude Fable 5.1 (Anthropic)

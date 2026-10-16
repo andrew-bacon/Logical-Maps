@@ -28,3 +28,10 @@ references:
   locator: §2.2, p. 27
 notes: Immediate, and consistent with the recorded incompatibility of No Pure Contingency with Possibility Maximalism
   (pure), which the Necessity of Arithmetic is also incompatible with.
+changes:
+- date: '2026-10-16'
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  summary: >-
+    The Necessity of Arithmetic is now a schema in the type $\sigma$ whose finite cardinalities are the
+    numbers; $I_\sigma$, $\mathbb N_\sigma$, $\operatorname{Sum}_\sigma$ and $\operatorname{Prod}_\sigma$ are still defined from logical vocabulary, so the proof covers
+    every instance unchanged.

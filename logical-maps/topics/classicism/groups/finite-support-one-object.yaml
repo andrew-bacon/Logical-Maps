@@ -405,6 +405,9 @@ arguments:
   - date: '2026-10-02'
     by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
     note: Now builds on the shared argument boolean-completeness instead of on each member's source argument; no change of substance.
+  - date: '2026-10-16'
+    by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+    note: Refutes the instance of Countable Boolean Completeness counting at $e$, which the principle, now schematic in that type, includes.
 
 - id: boolean-completeness-t
   requires: [no-least-pinned-cover]

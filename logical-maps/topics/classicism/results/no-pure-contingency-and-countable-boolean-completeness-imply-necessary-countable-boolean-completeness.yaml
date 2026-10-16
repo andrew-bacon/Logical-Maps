@@ -28,3 +28,9 @@ references:
   locator: §2.2, p. 27
   note: Formulation of No Pure Contingency.
 notes: One of the uniform family by which No Pure Contingency carries a pure principle to its boxed form.
+changes:
+- date: '2026-10-16'
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  summary: >-
+    Countable Boolean Completeness now measures countability at every type $\sigma$; its instances are still
+    closed pure sentences, so the proof is unchanged.

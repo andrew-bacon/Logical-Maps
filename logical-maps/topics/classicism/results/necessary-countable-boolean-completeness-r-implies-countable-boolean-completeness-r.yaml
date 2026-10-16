@@ -24,3 +24,9 @@ references:
   locator: §1.5, p. 16
   note: T for the fixed background modality.
 notes: ''
+changes:
+- date: '2026-10-16'
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  summary: >-
+    Countable Boolean Completeness now measures countability at every type $\sigma$; T applies instance by
+    instance, unchanged.

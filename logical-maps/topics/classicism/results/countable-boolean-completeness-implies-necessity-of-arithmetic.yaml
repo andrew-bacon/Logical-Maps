@@ -33,3 +33,12 @@ notes: >-
   pure-possibility-implies-axiom-of-infinity-t. Lemma 8 says that natural numberhood is a rigid property in
   the source's sense, the Barcan direction; the converse Barcan direction is Lemma 3. The source's logic
   lacks T, 4 and Logical Equivalence, so the proof transfers to C unchanged.
+changes:
+- date: '2026-10-16'
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  summary: >-
+    Both principles are now schemata in the type $\sigma$ whose finite cardinalities are the numbers. The
+    source's theorem is stated for arbitrary parameters $\nu$, $0$ and successor, so it gives the Necessity of
+    Arithmetic at $\sigma$ from Countable Boolean Completeness counting at the same $\sigma$; the one use of it, in
+    Lemma 8, is the instance at $\sigma$ and $\tau=\nu_\sigma t$. The write-up now carries the subscript $\sigma$ throughout;
+    the proof is otherwise unchanged.

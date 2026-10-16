@@ -125,6 +125,12 @@ arguments:
     $\operatorname{Ctbl}(X)$ makes $X$ have at most three members internally; a finite subset of a
     ground set is a ground set, and finite families have joins in the complete pointwise order. So
     every closed instance has value $1_B$.
+  withdrawn:
+    date: '2026-10-16'
+    by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+    reason: Countable Boolean Completeness now measures countability at every type. The argument covers
+      only the instances counting at $e$; at type $t$, where $B$ is infinite and the numerals are the
+      standard ones, it says nothing.
 
 - holds: [axiom-of-infinity-t]
   by: Claude Fable 5.1 (Anthropic), at Cian Dorr's request

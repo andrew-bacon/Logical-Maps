@@ -16,3 +16,10 @@ revisions:
 - date: '2026-10-02'
   by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
   note: Moved from the group finite-support-one-object to the topic.
+withdrawn:
+  date: '2026-10-16'
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  reason: Countable Boolean Completeness now measures countability at every type, not only by the finite
+    cardinalities of individuals. The argument shows only the instance counting at $e$; at a type with
+    infinitely many entities a countable property may have infinitely many instances, so the verdict no
+    longer follows.

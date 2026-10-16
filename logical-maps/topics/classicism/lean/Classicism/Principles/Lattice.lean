@@ -109,13 +109,14 @@ theorem NecBooleanCompleteness.of_lub : NecBooleanCompletenessLUB τ → NecBool
 
 end
 
-/-- `countable-boolean-completeness-r` at `τ`: every countable property of entities of the
-type has a least upper bound. -/
-def CountableBooleanCompleteness (τ : Type) [Rel τ] : Prop :=
-  ∀ X : τ → Prop, Ctbl X → ∃ y : τ, LUB y X
+/-- `countable-boolean-completeness-r` at `σ`, `τ`: every property of entities of `τ` that is
+countable relative to `σ` has a least upper bound. -/
+def CountableBooleanCompleteness (σ τ : Type) [Ty σ] [Rel τ] : Prop :=
+  ∀ X : τ → Prop, Ctbl σ X → ∃ y : τ, LUB y X
 
-/-- `necessary-countable-boolean-completeness-r` at `τ`: the instance boxed. -/
-def NecCountableBooleanCompleteness (τ : Type) [Rel τ] : Prop := □ (CountableBooleanCompleteness τ)
+/-- `necessary-countable-boolean-completeness-r` at `σ`, `τ`: the instance boxed. -/
+def NecCountableBooleanCompleteness (σ τ : Type) [Ty σ] [Rel τ] : Prop :=
+  □ (CountableBooleanCompleteness σ τ)
 
 /-! ## Actuality, Actual Profile, Vicinity and Strong Actuality -/
 

@@ -1325,6 +1325,35 @@ into a lemma (`eq_top_not_dia_ne`).
 *Checked.* The full build passes. 234 result certificates and 22 form certificates prove
 their generated statements; 3 rest on `Classicism.e` and `e_exists`, as before.
 
+## Counting at every type: Countable Boolean Completeness and Necessity of Arithmetic, 16 October
+
+Both principles had fixed Goodsell's number type at `(e → t) → t`. They are now schemas in the
+type `σ` whose finite cardinalities are the numbers.
+
+**Principles.** `Ctbl σ X` (`Cardinality.lean`) injects `X` into `FiniteCardinality` at
+`σ`; `CountableBooleanCompleteness σ τ` and its boxed form (`Principles/Lattice.lean`) take
+`σ` as a second type parameter, which `#classicism_schema` reads as a second schema
+parameter, as for Relational Choice. The three records in `Results/Records/Infinity.lean`
+take `σ` and keep their proofs; `#classicism_entails` already allows a conclusion parameter
+that no premise mentions.
+
+**Necessity of Arithmetic.** `Arith.zero`, `suc`, `N`, `Sum` and `Prod`
+(`Certified/Arithmetic.lean`) take `(σ : Type) [Ty σ]`. `#classicism_quote_term`
+(`Tools/QuoteTerm.lean`) now accepts leading type parameters, as `#classicism_quote` does:
+`foo.term : (σ' : Ty) → Term …` and `foo.reflect`, at every `σ'`, that the term denotes
+`foo (⟦σ'⟧)` over the domain `e`, checked by `rfl` or the same rewriting. `Ty.nu`, `numCtx`,
+`ATerm.toTerm`, `AForm.toTerm` and `arithI` take `σ : Ty`, and `necessityOfArithmetic` is
+the union over closed `σ`. The closed-types lemmas, before by `rfl`, are by `simp` from
+`σ.Closed`; `npc_entails_necessityOfArithmetic` is otherwise unchanged.
+
+*Checked.* The full build passes. The five certified records that mention the two principles
+(`boolean-completeness-r-implies-countable-boolean-completeness-r`, its boxed form,
+`necessary-countable-boolean-completeness-r-implies-countable-boolean-completeness-r`,
+`no-pure-contingency-and-countable-boolean-completeness-imply-necessary-countable-boolean-completeness`,
+`no-pure-contingency-implies-necessity-of-arithmetic`) prove their regenerated statements;
+341 of 577 results verified in all. `lean-check` still reports the 26 model records that
+claim `lean: stated` without a generated statement, unchanged by this work.
+
 ## Certificates
 
 No record's `lean` field was changed; all 208 remain `none`. Two things have to happen

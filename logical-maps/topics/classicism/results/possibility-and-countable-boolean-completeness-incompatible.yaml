@@ -44,3 +44,9 @@ changes:
     Distinctness Maximalism and Possibility Maximalism unified as Maximalism, with Distinctness the
     official form and Possibility a variant form; this record's premise changed from the Possibility
     principle to Maximalism. The proof is unchanged, the two forms being equivalent in C.
+- date: '2026-10-16'
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  summary: >-
+    Countable Boolean Completeness and the Necessity of Arithmetic are now schemata in the type $\sigma$ whose
+    finite cardinalities are the numbers. The premise is stronger than before, and the proof goes
+    through at $\sigma=e$ as before, with $I$ read as $I_e$.

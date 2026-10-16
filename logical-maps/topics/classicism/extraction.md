@@ -78,7 +78,8 @@ and their connecting results make those steps explicit.
 Source: Zachary Goodsell, *Arithmetic is Necessary*, draft dated 5 June 2024,
 28 pages. Its logic HKC is H plus K plus Countable Boolean Completeness,
 which C extends, so its theorems transfer to the map with the type $\nu$
-instantiated as $(et)t$ (see Background).
+instantiated as $(\sigma t)t$ at every type $\sigma$ (see Background; until 16 October
+2026 the map fixed $\sigma=e$).
 
 | Source | Connections recorded |
 | --- | --- |

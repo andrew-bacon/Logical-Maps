@@ -17,13 +17,14 @@ passes from a cardinality to its successor. Every type here ends in `t`, so no t
 needed. The Axioms of Infinity (`Principles.lean`) say that no finite cardinality holds of
 the universal property.
 
-Following Goodsell's *Arithmetic is Necessary*, the numbers are the finite cardinalities
-of individuals, of type `ν := (e → t) → t`, and a property `X` is countable when it
-injects into them:
+Following Goodsell's *Arithmetic is Necessary*, the numbers counted at a type `σ` are its
+finite cardinalities, of type `ν_σ := (σ → t) → t`, and a property `X` is countable
+relative to `σ` when it injects into them:
 
-    Ctbl_τ(X) := ∃R^{τνt}. ∀y z. Xy ∧ Xz → ((∃n ∈ ℕ. Ryn ∧ Rzn) ↔ y = z)
+    Ctbl_{σ,τ}(X) := ∃R^{τν_σt}. ∀y z. Xy ∧ Xz → ((∃n ∈ ℕ_σ. Ryn ∧ Rzn) ↔ y = z)
 
-with `n ∈ ℕ` for `FiniteCardinality_e(n)`. Countable Boolean Completeness uses it.
+with `n ∈ ℕ_σ` for `FiniteCardinality_σ(n)`. Countable Boolean Completeness uses it, as a
+schema in `σ`.
 
 The lemmas below are the two of the write-up for
 `possible-infinity-t-and-bf-t-imply-axiom-of-infinity-t`: finite cardinalities respect
@@ -45,10 +46,10 @@ that passes from a cardinality to its successor. -/
 def FiniteCardinality {σ : Type} [Ty σ] (Z : (σ → Prop) → Prop) : Prop :=
   ∀ W : ((σ → Prop) → Prop) → Prop, (W (ZeroCard σ) ∧ ∀ Y, W Y → W (SucCard Y)) → W Z
 
-/-- `Ctbl_τ(X)`: `X` injects into the natural numbers, the finite cardinalities of
-individuals. -/
-def Ctbl {τ : Type} [Ty τ] (X : τ → Prop) : Prop :=
-  ∃ R : τ → ((e → Prop) → Prop) → Prop, ∀ y z : τ, X y ∧ X z →
+/-- `Ctbl_{σ,τ}(X)`: `X` injects into the natural numbers counted at `σ`, the finite
+cardinalities of properties of type `σ`. -/
+def Ctbl (σ : Type) [Ty σ] {τ : Type} [Ty τ] (X : τ → Prop) : Prop :=
+  ∃ R : τ → ((σ → Prop) → Prop) → Prop, ∀ y z : τ, X y ∧ X z →
     ((∃ n, FiniteCardinality n ∧ R y n ∧ R z n) ↔ y = z)
 
 section lemmas

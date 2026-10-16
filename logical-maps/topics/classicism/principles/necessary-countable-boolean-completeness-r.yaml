@@ -23,4 +23,9 @@ variants:
     in C from finitely many instances of the official form, and conversely; the derivation is on the page
     of Countable Boolean Completeness. Necessitating it and applying K carries the equivalence to the
     boxed forms.
+changes:
+- date: '2026-10-16'
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  summary: Follows Countable Boolean Completeness, whose type of counting is now schematic; the boxed
+    instances range over that type as well.
 lean_def: Classicism.P.NecCountableBooleanCompleteness.schemaIn

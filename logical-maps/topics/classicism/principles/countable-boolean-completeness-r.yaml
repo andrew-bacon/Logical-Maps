@@ -2,8 +2,9 @@ id: countable-boolean-completeness-r
 name: Countable Boolean Completeness
 category: lattice
 statement: Every countable property of entities of a relational type has a least upper bound in that type,
-  where a property is countable when it injects into the natural numbers.
-formal: $\forall X^{\tau t}\, .\,\operatorname{Ctbl}_\tau(X)\to\exists y^\tau\, .\,\operatorname{LUB}_\tau(y,X)\qquad(\tau\ne
+  where a property is countable relative to a type $\sigma$ when it injects into the finite cardinalities
+  of properties of type $\sigma$; one instance for each $\sigma$.
+formal: $\forall X^{\tau t}\, .\,\operatorname{Ctbl}_{\sigma,\tau}(X)\to\exists y^\tau\, .\,\operatorname{LUB}_\tau(y,X)\qquad(\tau\ne
   e)$
 date: '2026-09-20'
 sources:
@@ -15,24 +16,35 @@ references:
   role: formulation
   locator: §3.1, eq. (10), p. 8; Definition 6, p. 13
   note: The source states the principle for property types $\sigma t$ with least upper bounds; the map
-    ranges over every relational type, as its Boolean Completeness does, and takes the source's
-    parameters $\nu$, $0$ and successor to be $(et)t$, $\mathbf{0}_e$ and $\operatorname{Suc}_e$.
+    ranges over every relational type, as its Boolean Completeness does. The source leaves the number type
+    $\nu$, $0$ and successor as parameters; the map takes them to be $(\sigma t)t$, $\mathbf{0}_\sigma$
+    and $\operatorname{Suc}_\sigma$ for every type $\sigma$, a schema in $\sigma$.
 notes: >-
   See Background for $\operatorname{Ctbl}$ and $\operatorname{LUB}$. The restriction of Boolean Completeness
   to countable properties; the least-upper-bound form is used to match the source, and is equivalent in C
   to a greatest-lower-bound form, since the pointwise negation of a countable property is countable. The
   source's hypothesis that the properties form a countably complete Boolean algebra modulo necessary
-  equivalence. It suffices for the Necessity of Arithmetic and is therefore incompatible with Maximalist
-  Classicism.
+  equivalence. Countability is measured at every type $\sigma$: where $\sigma$ has only finitely many
+  members the instances are trivial, so the principle has content whenever some type is infinite, not
+  only when there are infinitely many individuals. It suffices for the Necessity of Arithmetic at each
+  $\sigma$ and is therefore incompatible with Maximalist Classicism.
+changes:
+- date: '2026-10-16'
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  summary: Made the type at which countability is measured schematic. The principle had fixed the source's
+    number type at $(et)t$, so countable meant injectable into the finite cardinalities of individuals,
+    and with finitely many individuals the principle held trivially. The old principle is the instance
+    $\sigma=e$ of the new one, which is therefore stronger; verdicts that the old principle holds because
+    there are few individuals are withdrawn.
 variants:
 - id: glb
   name: Greatest-lower-bound form
   statement: Every countable property of entities of a relational type has a greatest lower bound in that
     type.
-  formal: $\forall X^{\tau t}\, .\,\operatorname{Ctbl}_\tau(X)\to\exists y^\tau\, .\,\operatorname{GLB}_\tau(y,X)\qquad(\tau\ne
+  formal: $\forall X^{\tau t}\, .\,\operatorname{Ctbl}_{\sigma,\tau}(X)\to\exists y^\tau\, .\,\operatorname{GLB}_\tau(y,X)\qquad(\tau\ne
     e)$
   equivalence: 'As for the least-upper-bound form of Boolean Completeness: negation exchanges least upper
     bounds of $X$ and greatest lower bounds of $X^\neg:=\lambda z\, .\,X(\neg_\tau z)$. Negation is a
     bijection between the instances of $X$ and of $X^\neg$, so composing it with an injection into the
-    natural numbers shows that $X^\neg$ is countable iff $X$ is.'
+    natural numbers counted at $\sigma$ shows that $X^\neg$ is countable relative to $\sigma$ iff $X$ is.'
 lean_def: Classicism.P.CountableBooleanCompleteness.schemaIn

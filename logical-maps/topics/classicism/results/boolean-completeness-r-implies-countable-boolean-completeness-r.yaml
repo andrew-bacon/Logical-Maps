@@ -32,3 +32,9 @@ references:
   note: The greatest-lower-bound formulation and its dual.
 notes: The source presents the restriction as immediate. The converse is not expected; the source uses only
   the countable case.
+changes:
+- date: '2026-10-16'
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  summary: >-
+    Countable Boolean Completeness now measures countability at every type $\sigma$. The proof never uses the
+    countability hypothesis, so it covers every instance unchanged.

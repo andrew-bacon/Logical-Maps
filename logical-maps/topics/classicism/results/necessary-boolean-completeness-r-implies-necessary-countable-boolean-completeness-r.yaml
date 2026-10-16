@@ -26,3 +26,9 @@ references:
   locator: §1.5, pp. 16–17
   note: Necessitation of theorems, K and 4.
 notes: Boxed counterpart of boolean-completeness-r-implies-countable-boolean-completeness-r.
+changes:
+- date: '2026-10-16'
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  summary: >-
+    Countable Boolean Completeness now measures countability at every type $\sigma$; the unboxed proof covers
+    every instance, so this one does too, unchanged.
