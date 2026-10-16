@@ -1756,6 +1756,15 @@ def nd_and_strong_actuality_imply_gallin_comprehension : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongActuality.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.GallinExtensionalComprehension.schemaIn
 
+/-- `nd-t-and-bf-t-imply-necessary-nd-t`
+
+ND (type t) ∧ BF (type t) ⇒ □ND (type t) -/
+def nd_t_and_bf_t_imply_necessary_nd_t : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessityOfDistinctnessT.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanT.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecNecessityOfDistinctnessT.schemaIn
+
 /-- `necessary-actuality-and-necessary-bf-imply-necessary-inextensible-comprehension`
 
 □Actuality ∧ □BF ⇒ □Inextensible Comprehension -/
@@ -3618,6 +3627,15 @@ def rigid_comprehension_and_bf_imply_necessary_bf : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Barcan.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcan.schemaIn
 
+/-- `rigid-comprehension-and-bf-t-imply-necessary-bf-t`
+
+Rigid Comprehension ∧ BF (type t) ⇒ □BF (type t) -/
+def rigid_comprehension_and_bf_t_imply_necessary_bf_t : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidComprehension.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanT.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcanT.schemaIn
+
 /-- `rigid-comprehension-implies-tame-rigidity`
 
 Rigid Comprehension ⇒ Tame Rigidity -/
@@ -3876,6 +3894,15 @@ def tame_rigidity_and_bf_relational_imply_necessary_bf_relational : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.TameRigidity.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanRelational.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcanRelational.schemaIn
+
+/-- `tame-rigidity-and-bf-t-imply-necessary-bf-t`
+
+Tame Rigidity ∧ BF (type t) ⇒ □BF (type t) -/
+def tame_rigidity_and_bf_t_imply_necessary_bf_t : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.TameRigidity.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanT.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcanT.schemaIn
 
 /-- `tame-rigidity-and-rigid-power-imply-weakly-rigid-power`  (conjectured)
 
