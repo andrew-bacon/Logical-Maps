@@ -76,6 +76,19 @@ arguments:
     this model, so it is an S5 operator and $\Box_5\le\hat{(3)}\Box$; at $V$ its cluster on $\mathrm{fix}^{VV}_N$
     is the set of surjective block-bijections of $V$ fixing $\star$ and block-injective on $N$, which
     contains arrows moving any given point of $\mathbb N$, so the truth $\mathrm{fix}^{VV}_N$ is not 5-necessary.
+- fails:
+  - countable-boolean-completeness-r
+  - boolean-completeness-t
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-16'
+  choice: free
+  like: paired-individuals-two-object#countable-boolean-completeness-t
+  adapt: >-
+    The arrows are the surjective block-respecting maps, and the evaluation object is $V$; the family
+    consists of arrows $V\to V$, the block $\{\star\}$ is sent to $\star$ in the witnesses, and every
+    arrow used can be made surjective by mapping the infinitely many blocks after those named onto every
+    block.
+
 notes: The surjective paired-individuals model with its other object as the evaluation point. Necessary
   BF holds at every type, yet Two-hat necessity implies ND-necessity fails here, so BF at no type, boxed
   or not, yields that collapse. Built in the conversation of 14 October 2026.

@@ -90,6 +90,28 @@ arguments:
   text: With $Y$ as in the argument for 5-necessity, $k^tz$ is pinned by $k(S)$, a set of individuals
     in the range of $k$, so $\Box(Yz)$ holds for every $z$, while $\Box\forall z\,Yz$ fails at the inclusion
     $\iota$, whose target has the proposition that $\star$ is fixed.
+- id: countable-boolean-completeness-t
+  fails:
+  - countable-boolean-completeness-r
+  - boolean-completeness-t
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-16'
+  choice: free
+  text: >-
+    At $\sigma=\tau=t$, at the evaluation point. Let $A_m$ ($m\ge1$) be the set of arrows $h$ into the
+    evaluation object that are constant on $\{0,\ldots,2m-1\}$ (blocks $0$ to $m-1$ collapsed to one
+    point $c$) with $h(2m)\ne c$, pinned down by $\{0,\ldots,2m\}$. For $S=\{0,\ldots,2K+1\}$, a union
+    of blocks, an arrow lies in the least $S$-pinned superset of $\bigcup_m A_m$ iff it is constant on
+    $S$ or its first change of value is at an even position in $S$: an arrow constant on $S$ agrees on
+    $S$ with a block-respecting arrow that stays constant through block $m-1$ and changes at $2m$, for
+    any $m>K$. The arrow constant on blocks $0$ to $K$ that maps block $K+1$ injectively onto
+    $\{c,\pi c\}$, with $2K+3\mapsto\pi c$, lies in that superset for $S$ but not for
+    $\{0,\ldots,2K+3\}$, so the supersets strictly shrink and the family has no least upper bound, as
+    in the shared argument boolean-completeness-t of the one-object finite-support models. Extensional
+    fullness puts the family in the domain, and with it the relation pairing $A_m$ with the $m$-th
+    numeral at type $t$; the numerals at $t$ are standard by the same fullness, and pairwise distinct
+    since the $A_m$ are infinitely many propositions. So the family is countable relative to $t$.
+
 notes: 'Built in the conversation of 14 October 2026 to settle the question left open on p. 407 of The
   Bounds of Possibility, Appendix D: whether $\Box_5$ is equivalent to $\hat{\hat\Box}$ without the rigidity
   axioms. Actuality fails here, and so do the collapse principles from 5-necessity down; the surjective

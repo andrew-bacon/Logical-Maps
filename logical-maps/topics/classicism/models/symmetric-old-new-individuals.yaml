@@ -202,6 +202,18 @@ arguments:
     So the instances of $X$ are all pinned down by $N$, and their union is in the domain and is the
     least upper bound. The haecceities of the even numbers, which have none, are not countable in
     the model. See the write-up.
+- holds:
+  - necessary-countable-boolean-completeness-r
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-16'
+  choice: free
+  writeup: symmetric-old-new-individuals
+  text: >-
+    The argument for Countable Boolean Completeness at $E$ also works at $O$, the other object
+    reachable from $E$, once a new individual $0'$ is put into the finite set $N$: arrows into $O$
+    that agree on $0'$ are both in $G_O$ or both in $K$, and within each kind the construction of the
+    intermediate arrow goes through, with the fresh points chosen of the same sort. So every closed
+    instance holds at both objects, hence necessarily. See the write-up.
 notes: Found by Claude Fable 5.1 as a countermodel to a principle from another context, and recorded at
   Cian Dorr's request on 6 October 2026. Like the sections-and-projection model it has □Actuality without
   Inextensible Comprehension; unlike it, it has Atomicity at every type, and so separates Atomicity and

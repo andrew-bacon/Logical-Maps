@@ -93,6 +93,18 @@ arguments:
     a point of $N$ lies in every $C_2(\mathrm{fix}^{00}_{N^\prime})$. The argument for the non-surjective
     model carries over, every arrow used in it being surjective or replaceable by a surjective one that
     agrees with it on the finite set in question.'
+- fails:
+  - countable-boolean-completeness-r
+  - boolean-completeness-t
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-16'
+  choice: free
+  like: paired-individuals-two-object#countable-boolean-completeness-t
+  adapt: >-
+    The arrows are the surjective block-respecting maps; every arrow used, the witness to the shrinking
+    included, can be made surjective by mapping the infinitely many blocks after those named onto every
+    block.
+
 notes: 'The surjective variant of the paired-individuals model: necessary BF holds at every type by Classicism,
   Proposition D.6, yet 5-necessity still fails to imply two-hat necessity at the evaluation point and
   $\Box_{\ne}\ne\hat{\hat\Box}$. Built in the conversation of 14 October 2026. The two operators $\Box_{\ne}$
