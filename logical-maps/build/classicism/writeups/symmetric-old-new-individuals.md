@@ -354,10 +354,35 @@ So $J$ is in the domain. At $1_E$, $Y\le Z$ is inclusion at every arrow out of
 $E$, so $J$ is the least upper bound of $X$.
 
 This is the Fraenkel–Mostowski phenomenon: in a permutation model, a set of
-atoms is countable only if it is finite. Whether Countable Boolean
-Completeness also holds at $O$, and so is necessary, is open. Step 2 is the
-obstacle: the arrows into $O$ there are of two kinds, $G_O$ and $K$, and
-$h''$ must be chosen of a suitable kind.
+atoms is countable only if it is finite.
+
+**At $O$, so □Countable Boolean Completeness holds.** The worlds reachable
+from $1_E$ are the arrows into $E$ and into $O$, and a closed sentence holds at
+an arrow iff it holds at the identity of its target. So it remains to run the
+argument at $1_O$, with $G_O$, the permutations preserving old and new, as the
+symmetry group. Step 1 is unchanged. Step 2 fails as stated: the proposition
+$G_O$ is pinned down by $\{0'\}$ and invariant under all of $G_O$, but not
+pinned down by $\emptyset$. Repair it by enlarging $N$ to contain a new
+individual $0'$, which keeps $X$ and $R$ pinned down by $N$, and prove that
+an $x$ pinned down by $M$ and invariant under $\mathrm{Fix}(N)$ is pinned down
+by $(M\cap N)\cup\{0'\}$, a subset of $N$.
+
+Let $h,h'$ be arrows out of $O$ with a common target that agree on
+$(M\cap N)\cup\{0'\}$. If the target is $E$, both are injections into
+$\mathbb N$ and the construction of step 2 applies, with each fresh point
+$p_m$ of the same sort, old or new, as $m$, so that $g$ and $g'$ lie in $G_O$.
+If the target is $O$, then $h$ and $h'$ agree on $0'$, so both send it to a
+new individual or both to an old one: both lie in $G_O$, or both in $K$.
+
+- Both in $K$: the prescribed values of $h''$ are all old, and any injection
+  into the old individuals is in $K$.
+- Both in $G_O$: the prescribed values preserve sort, since $h\circ g$ does and
+  $h'(m)$ has the sort of $m$ and of $p_m$. A finite sort-preserving partial
+  injection extends to a member of $G_O$.
+
+In either case the chain $x(h)=x(h\circ g)=x(h'')=x(h''\circ g')=x(h')$ goes
+through. Step 3 is unchanged. So Countable Boolean Completeness holds at $1_O$
+as well, and every closed instance is necessary at $1_E$.
 
 ## With one individual: □BC and □Rigid Comprehension
 

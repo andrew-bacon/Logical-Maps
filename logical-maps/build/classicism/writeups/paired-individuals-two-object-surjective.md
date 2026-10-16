@@ -12,6 +12,8 @@
 - **Transversal Choice.** Every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
 - **¬ 5-necessity implies two-hat necessity.** Whatever is 5-necessary is two-hat necessary.
 - **¬ Truth implies 5-necessity.** Every truth is 5-necessary: necessary under every S5 operator.
+- **¬ Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable relative to a type $\sigma$ when it injects into the finite cardinalities of properties of type $\sigma$; one instance for each $\sigma$.
+- **¬ Boolean Completeness (type t).** Boolean Completeness (type t) in the displayed closed propositional formulation.
 - **¬ Witnessed Possibility.** For pure-formulas P with free variables among a finite tuple x, and distinct matching nonlogical constants c, a witness to P entails that P at those constants is possible.
 - **¬ Separated Structure.** For each typed nonlogical constant c and closed same-typed terms F,G not containing c, equality after application to c implies equality of F and G.
 - **¬ Independence (signature Σ).** No constant of Sigma is a pure operation applied to other constants: for a closed pure term A and distinct constants c, d_1,…,d_n with n ≥ 0, c differs from A applied to the d’s. With n = 0, no constant denotes a pure entity.
@@ -49,6 +51,10 @@ Let $p_0$ be the proposition that the world is $W_0$, the set of arrows $W_0\to 
 The three-hat operator $\hat{(3)}\Box$ is necessarily B here: at $W_0$, $C_2(\mathrm{fix}^{00}_N)=C_3(\mathrm{fix}^{00}_N)$ is the set of arrows $W_0\to W_0$ injective and block-injective on $N$ (arrows into $V$ drop out at $C_2$ by the argument for $p_0$, and block-bijections, which are surjective, are in every $C_n$), and at $V$ likewise $C_1=C_2$ on $\mathrm{fix}^{VV}_{N}$. So it is an S5 operator, and $\Box_5\le\hat{(3)}\Box$. But $\mathrm{fix}^{00}_N$ is true and not $\hat{(3)}\Box$-necessary, since a block-bijection moving a point of $N$ lies in every $C_2(\mathrm{fix}^{00}_{N^\prime})$. The argument for the non-surjective model carries over, every arrow used in it being surjective or replaceable by a surjective one that agrees with it on the finite set in question.
 
 *Address: `paired-individuals-two-object-surjective#not-all-truths-five-necessary`. By Claude Fable 5.1 (Anthropic), 14 October 2026, at Cian Dorr's direction.*
+
+### Fails Countable Boolean Completeness, Boolean Completeness (type t).
+
+*Like `paired-individuals-two-object#countable-boolean-completeness-t`: The arrows are the surjective block-respecting maps; every arrow used, the witness to the shrinking included, can be made surjective by mapping the infinitely many blocks after those named onto every block. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-16.*
 
 ### Holds □Intensional Choice.
 

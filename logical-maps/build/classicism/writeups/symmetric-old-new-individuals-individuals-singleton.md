@@ -13,6 +13,7 @@
 - **□Rigid Power.** Every closed instance of Rigid Power is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
 - **□Truth implies 5-necessity.** Necessarily, every truth is 5-necessary: necessary under every S5 operator. In C this is the identity $\Box_5=\lambda p\, .\,p$.
 - **Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable relative to a type $\sigma$ when it injects into the finite cardinalities of properties of type $\sigma$; one instance for each $\sigma$.
+- **□Countable Boolean Completeness.** Every closed instance of Countable Boolean Completeness is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
 - **¬ Strong Leibniz Biconditionals (type t).** The type-t instance of the Strong Leibniz Biconditionals: every possible proposition is entailed by a strong world proposition, one that is possible and necessarily entails every proposition or its negation.
 - **¬ Infinity Schema (type t).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
 - **¬ Two-hat necessity implies ND-necessity.** Whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat.
@@ -91,6 +92,12 @@ At $E$ the four propositions are determined by the target, and the strong world 
 ### Holds Countable Boolean Completeness.
 
 At $E$, for every $\sigma$. If $R$ injects $X$ into the numerals at $\sigma$, with $N$ a finite set pinning both, then each instance of $X$ is fixed by every symmetry fixing $N$ pointwise: the symmetry carries the pair of the instance and its numeral to another such pair, and the numeral is fixed. An entity pinned down by $M$ and fixed by those symmetries is pinned down by $M\cap N$. So the instances of $X$ are all pinned down by $N$, and their union is in the domain and is the least upper bound. The haecceities of the even numbers, which have none, are not countable in the model. See the write-up.
+
+*Write-up: [symmetric-old-new-individuals](symmetric-old-new-individuals.html). By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-16.*
+
+### Holds □Countable Boolean Completeness.
+
+The argument for Countable Boolean Completeness at $E$ also works at $O$, the other object reachable from $E$, once a new individual $0'$ is put into the finite set $N$: arrows into $O$ that agree on $0'$ are both in $G_O$ or both in $K$, and within each kind the construction of the intermediate arrow goes through, with the fresh points chosen of the same sort. So every closed instance holds at both objects, hence necessarily. See the write-up.
 
 *Write-up: [symmetric-old-new-individuals](symmetric-old-new-individuals.html). By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-16.*
 

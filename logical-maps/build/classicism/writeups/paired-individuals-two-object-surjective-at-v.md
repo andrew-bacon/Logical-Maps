@@ -11,6 +11,8 @@
 - **Transversal Choice.** Every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
 - **¬ Two-hat necessity implies ND-necessity.** Whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat.
 - **¬ Truth implies 5-necessity.** Every truth is 5-necessary: necessary under every S5 operator.
+- **¬ Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable relative to a type $\sigma$ when it injects into the finite cardinalities of properties of type $\sigma$; one instance for each $\sigma$.
+- **¬ Boolean Completeness (type t).** Boolean Completeness (type t) in the displayed closed propositional formulation.
 - **¬ Witnessed Possibility.** For pure-formulas P with free variables among a finite tuple x, and distinct matching nonlogical constants c, a witness to P entails that P at those constants is possible.
 - **¬ Separated Structure.** For each typed nonlogical constant c and closed same-typed terms F,G not containing c, equality after application to c implies equality of F and G.
 - **¬ Independence (signature Σ).** No constant of Sigma is a pure operation applied to other constants: for a closed pure term A and distinct constants c, d_1,…,d_n with n ≥ 0, c differs from A applied to the d’s. With n = 0, no constant denotes a pure entity.
@@ -42,6 +44,10 @@ At $V$ let $p:=\mathrm{fix}^{VV}_{\{\star\}}$, the true proposition that $\star$
 As in the record evaluated at $W_0$, the three-hat operator $\hat{(3)}\Box$ is necessarily B in this model, so it is an S5 operator and $\Box_5\le\hat{(3)}\Box$; at $V$ its cluster on $\mathrm{fix}^{VV}_N$ is the set of surjective block-bijections of $V$ fixing $\star$ and block-injective on $N$, which contains arrows moving any given point of $\mathbb N$, so the truth $\mathrm{fix}^{VV}_N$ is not 5-necessary.
 
 *Address: `paired-individuals-two-object-surjective-at-v#not-all-truths-five-necessary`. By Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 2026-10-14.*
+
+### Fails Countable Boolean Completeness, Boolean Completeness (type t).
+
+*Like `paired-individuals-two-object#countable-boolean-completeness-t`: The arrows are the surjective block-respecting maps, and the evaluation object is $V$; the family consists of arrows $V\to V$, the block $\{\star\}$ is sent to $\star$ in the witnesses, and every arrow used can be made surjective by mapping the infinitely many blocks after those named onto every block. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-16.*
 
 ### Holds □Intensional Choice.
 

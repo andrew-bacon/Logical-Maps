@@ -935,13 +935,62 @@ is inclusion at every arrow out of <span class="math inline">E</span>,
 so <span class="math inline">J</span> is the least upper bound of <span
 class="math inline">X</span>.</p>
 <p>This is the Fraenkel–Mostowski phenomenon: in a permutation model, a
-set of atoms is countable only if it is finite. Whether Countable
-Boolean Completeness also holds at <span class="math inline">O</span>,
-and so is necessary, is open. Step 2 is the obstacle: the arrows into
-<span class="math inline">O</span> there are of two kinds, <span
-class="math inline">G_O</span> and <span class="math inline">K</span>,
-and <span class="math inline">h&#39;&#39;</span> must be chosen of a
-suitable kind.</p>
+set of atoms is countable only if it is finite.</p>
+<p><strong>At <span class="math inline">O</span>, so □Countable Boolean
+Completeness holds.</strong> The worlds reachable from <span
+class="math inline">1_E</span> are the arrows into <span
+class="math inline">E</span> and into <span
+class="math inline">O</span>, and a closed sentence holds at an arrow
+iff it holds at the identity of its target. So it remains to run the
+argument at <span class="math inline">1_O</span>, with <span
+class="math inline">G_O</span>, the permutations preserving old and new,
+as the symmetry group. Step 1 is unchanged. Step 2 fails as stated: the
+proposition <span class="math inline">G_O</span> is pinned down by <span
+class="math inline">\{0&#39;\}</span> and invariant under all of <span
+class="math inline">G_O</span>, but not pinned down by <span
+class="math inline">\emptyset</span>. Repair it by enlarging <span
+class="math inline">N</span> to contain a new individual <span
+class="math inline">0&#39;</span>, which keeps <span
+class="math inline">X</span> and <span class="math inline">R</span>
+pinned down by <span class="math inline">N</span>, and prove that an
+<span class="math inline">x</span> pinned down by <span
+class="math inline">M</span> and invariant under <span
+class="math inline">\mathrm{Fix}(N)</span> is pinned down by <span
+class="math inline">(M\cap N)\cup\{0&#39;\}</span>, a subset of <span
+class="math inline">N</span>.</p>
+<p>Let <span class="math inline">h,h&#39;</span> be arrows out of <span
+class="math inline">O</span> with a common target that agree on <span
+class="math inline">(M\cap N)\cup\{0&#39;\}</span>. If the target is
+<span class="math inline">E</span>, both are injections into <span
+class="math inline">\mathbb N</span> and the construction of step 2
+applies, with each fresh point <span class="math inline">p_m</span> of
+the same sort, old or new, as <span class="math inline">m</span>, so
+that <span class="math inline">g</span> and <span
+class="math inline">g&#39;</span> lie in <span
+class="math inline">G_O</span>. If the target is <span
+class="math inline">O</span>, then <span class="math inline">h</span>
+and <span class="math inline">h&#39;</span> agree on <span
+class="math inline">0&#39;</span>, so both send it to a new individual
+or both to an old one: both lie in <span class="math inline">G_O</span>,
+or both in <span class="math inline">K</span>.</p>
+<ul>
+<li>Both in <span class="math inline">K</span>: the prescribed values of
+<span class="math inline">h&#39;&#39;</span> are all old, and any
+injection into the old individuals is in <span
+class="math inline">K</span>.</li>
+<li>Both in <span class="math inline">G_O</span>: the prescribed values
+preserve sort, since <span class="math inline">h\circ g</span> does and
+<span class="math inline">h&#39;(m)</span> has the sort of <span
+class="math inline">m</span> and of <span
+class="math inline">p_m</span>. A finite sort-preserving partial
+injection extends to a member of <span
+class="math inline">G_O</span>.</li>
+</ul>
+<p>In either case the chain <span class="math inline">x(h)=x(h\circ
+g)=x(h&#39;&#39;)=x(h&#39;&#39;\circ g&#39;)=x(h&#39;)</span> goes
+through. Step 3 is unchanged. So Countable Boolean Completeness holds at
+<span class="math inline">1_O</span> as well, and every closed instance
+is necessary at <span class="math inline">1_E</span>.</p>
 <h2 id="with-one-individual-bc-and-rigid-comprehension">With one
 individual: □BC and □Rigid Comprehension</h2>
 <p>In the variant with a single individual, the failures of Inextensible

@@ -12,6 +12,8 @@
 - **¬ 5-necessity implies two-hat necessity.** Whatever is 5-necessary is two-hat necessary.
 - **¬ Truth implies 5-necessity.** Every truth is 5-necessary: necessary under every S5 operator.
 - **¬ BF (type t).** BF (type t) in the displayed closed propositional formulation.
+- **¬ Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable relative to a type $\sigma$ when it injects into the finite cardinalities of properties of type $\sigma$; one instance for each $\sigma$.
+- **¬ Boolean Completeness (type t).** Boolean Completeness (type t) in the displayed closed propositional formulation.
 - **¬ Witnessed Possibility.** For pure-formulas P with free variables among a finite tuple x, and distinct matching nonlogical constants c, a witness to P entails that P at those constants is possible.
 - **¬ Separated Structure.** For each typed nonlogical constant c and closed same-typed terms F,G not containing c, equality after application to c implies equality of F and G.
 - **¬ Independence (signature Σ).** No constant of Sigma is a pure operation applied to other constants: for a closed pure term A and distinct constants c, d_1,…,d_n with n ≥ 0, c differs from A applied to the d’s. With n = 0, no constant denotes a pure entity.
@@ -49,6 +51,12 @@ The three-hat operator $\hat{(3)}\Box$ is necessarily B here: at $W_0$, $C_2(\ma
 With $Y$ as in the argument for 5-necessity, $k^tz$ is pinned by $k(S)$, a set of individuals in the range of $k$, so $\Box(Yz)$ holds for every $z$, while $\Box\forall z\,Yz$ fails at the inclusion $\iota$, whose target has the proposition that $\star$ is fixed.
 
 *Address: `paired-individuals-two-object#barcan-t-fails`. By Claude Fable 5.1 (Anthropic), 14 October 2026, at Cian Dorr's direction.*
+
+### Fails Countable Boolean Completeness, Boolean Completeness (type t).
+
+At $\sigma=\tau=t$, at the evaluation point. Let $A_m$ ($m\ge1$) be the set of arrows $h$ into the evaluation object that are constant on $\{0,\ldots,2m-1\}$ (blocks $0$ to $m-1$ collapsed to one point $c$) with $h(2m)\ne c$, pinned down by $\{0,\ldots,2m\}$. For $S=\{0,\ldots,2K+1\}$, a union of blocks, an arrow lies in the least $S$-pinned superset of $\bigcup_m A_m$ iff it is constant on $S$ or its first change of value is at an even position in $S$: an arrow constant on $S$ agrees on $S$ with a block-respecting arrow that stays constant through block $m-1$ and changes at $2m$, for any $m>K$. The arrow constant on blocks $0$ to $K$ that maps block $K+1$ injectively onto $\{c,\pi c\}$, with $2K+3\mapsto\pi c$, lies in that superset for $S$ but not for $\{0,\ldots,2K+3\}$, so the supersets strictly shrink and the family has no least upper bound, as in the shared argument boolean-completeness-t of the one-object finite-support models. Extensional fullness puts the family in the domain, and with it the relation pairing $A_m$ with the $m$-th numeral at type $t$; the numerals at $t$ are standard by the same fullness, and pairwise distinct since the $A_m$ are infinitely many propositions. So the family is countable relative to $t$.
+
+*Address: `paired-individuals-two-object#countable-boolean-completeness-t`. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-16.*
 
 ### Holds □Intensional Choice.
 
