@@ -74,21 +74,23 @@ theorem possible_infinity_e_and_bf_imply_axiom_of_infinity_e :
 least upper bound, the greatest lower bound of its upper bounds (`lub_of_glb_ubs`), the
 countable ones included. -/
 theorem boolean_completeness_r_implies_countable_boolean_completeness_r
-    {τ : Type} [Rel τ] [Order τ] [Pointwise τ] :
-    BooleanCompleteness τ → CountableBooleanCompleteness τ := fun bc X _ =>
+    {σ τ : Type} [Ty σ] [Rel τ] [Order τ] [Pointwise τ] :
+    BooleanCompleteness τ → CountableBooleanCompleteness σ τ := fun bc X _ =>
   (bc (λ z ↦ UB z X)).elim fun y hy => ⟨y, lub_of_glb_ubs X y hy⟩
 
 
 /-- `necessary-countable-boolean-completeness-r-implies-countable-boolean-completeness-r`:
 `T`. -/
 theorem necessary_countable_boolean_completeness_r_implies_countable_boolean_completeness_r
-    {τ : Type} [Rel τ] : NecCountableBooleanCompleteness τ → CountableBooleanCompleteness τ :=
+    {σ τ : Type} [Ty σ] [Rel τ] :
+    NecCountableBooleanCompleteness σ τ → CountableBooleanCompleteness σ τ :=
   box_elim
 /-- `necessary-boolean-completeness-r-implies-necessary-countable-boolean-completeness-r`: the
 unboxed record, necessitated. -/
 theorem necessary_boolean_completeness_r_implies_necessary_countable_boolean_completeness_r
-    {τ : Type} [Rel τ] [Order τ] [Pointwise τ] :
-    NecBooleanCompleteness τ → NecCountableBooleanCompleteness τ :=
-  modal_K _ _ (nec% (boolean_completeness_r_implies_countable_boolean_completeness_r (τ := τ)))
+    {σ τ : Type} [Ty σ] [Rel τ] [Order τ] [Pointwise τ] :
+    NecBooleanCompleteness τ → NecCountableBooleanCompleteness σ τ :=
+  modal_K _ _ (nec% (boolean_completeness_r_implies_countable_boolean_completeness_r
+    (σ := σ) (τ := τ)))
 
 end Classicism.Proofs

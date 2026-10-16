@@ -8,7 +8,7 @@
 
 ## Conclusion
 
-- **Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable when it injects into the natural numbers.
+- **Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable relative to a type $\sigma$ when it injects into the finite cardinalities of properties of type $\sigma$; one instance for each $\sigma$.
 
 ## Proof
 
@@ -17,6 +17,10 @@ Countable Boolean Completeness is the restriction of Boolean Completeness to cou
 ## Notes
 
 The source presents the restriction as immediate. The converse is not expected; the source uses only the countable case.
+
+## Revisions
+
+- **2026-10-16** (Claude Opus 5.5 (Anthropic), at Cian Dorr's direction) — Countable Boolean Completeness now measures countability at every type $\sigma$. The proof never uses the countability hypothesis, so it covers every instance unchanged.
 
 ## Sources
 

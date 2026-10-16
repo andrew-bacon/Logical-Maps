@@ -6,42 +6,45 @@ import Classicism.Certified.Signatures
 # The arithmetical sentences, and Necessity of Arithmetic
 
 Goodsell's *Arithmetic is Necessary*, Definitions 3–8, as the map's Background states them,
-with the paper's `ν`, `0` and successor taken to be `(e → t) → t`, `𝟎_e` and `Suc_e`:
+with the paper's `ν`, `0` and successor taken to be `(σ → t) → t`, `𝟎_σ` and `Suc_σ` at every
+type `σ`:
 
-- the shallow vocabulary, `Arith.zero`, `Arith.suc`, `Arith.N` (`ℕ`, the finite
-  cardinalities of individuals), `Arith.Sum` and `Arith.Prod`, quoted into closed pure terms
-  by `#classicism_quote_term`, each with its reflection checked; and from them `arithI`,
-  `I := ◇I*`, possibly zero is not a successor and successor is injective on numbers;
+- the shallow vocabulary, `Arith.zero σ`, `Arith.suc σ`, `Arith.N σ` (`ℕ_σ`, the finite
+  cardinalities of properties of type `σ`), `Arith.Sum σ` and `Arith.Prod σ`, quoted into pure
+  terms with a type parameter by `#classicism_quote_term`, each with its reflection checked;
+  and from them `arithI σ`, `I_σ := ◇I*_σ`, possibly zero is not a successor and successor is
+  injective on numbers;
 - the **arithmetical formulas** (`AForm k`, in `k` free number variables): atomic `ℕt`,
-  `Sum(t, t', t'')`, `Prod(t, t', t'')` and `t = t'`, whose terms are variables, `𝟎_e` and
+  `Sum(t, t', t'')`, `Prod(t, t', t'')` and `t = t'`, whose terms are variables, zero and
   successors (`ATerm k`), closed under `¬`, `∨`, `∧` and `∀v ∈ ℕ`; read as formulas of the
-  pure language by `AForm.toTerm`;
-- **Necessity of Arithmetic**: `□(I → A) ∨ □(I → ¬A)` for each arithmetical sentence `A`
-  (`AxiomSet.necessityOfArithmetic`), the map's `necessity-of-arithmetic` at every
-  signature by `ofPure`.
+  pure language at a type `σ` by `AForm.toTerm σ`;
+- **Necessity of Arithmetic**: `□(I_σ → A) ∨ □(I_σ → ¬A)` for each closed type `σ` and each
+  arithmetical sentence `A` read at `σ` (`AxiomSet.necessityOfArithmetic`), the map's
+  `necessity-of-arithmetic` at every signature by `ofPure`.
 -/
 
 
 namespace Classicism.Arith
 
-/-- The type of the numbers, `ν := (e → t) → t`. -/
-abbrev ν : Type := (e → Prop) → Prop
+/-- The type of the numbers counted at `σ`, `ν_σ := (σ → t) → t`. -/
+abbrev ν (σ : Type) : Type := (σ → Prop) → Prop
 
-/-- `𝟎_e`. -/
-def zero : ν := ZeroCard e
-/-- `Suc_e`. -/
-def suc : ν → ν := SucCard
-/-- `ℕ`: the finite cardinalities of individuals. -/
-def N : ν → Prop := FiniteCardinality
+/-- `𝟎_σ`. -/
+def zero (σ : Type) [Ty σ] : ν σ := ZeroCard σ
+/-- `Suc_σ`. -/
+def suc (σ : Type) [Ty σ] : ν σ → ν σ := SucCard
+/-- `ℕ_σ`: the finite cardinalities of properties of type `σ`. -/
+def N (σ : Type) [Ty σ] : ν σ → Prop := FiniteCardinality
 
-/-- `Sum(m, n, o)`. -/
-def Sum : ν → ν → ν → Prop := fun m n o =>
-  ∀ R : ν → ν → Prop, R zero m → (∀ i j, N i → N j → R i j → R (suc i) (suc j)) → R n o
+/-- `Sum_σ(m, n, o)`. -/
+def Sum (σ : Type) [Ty σ] : ν σ → ν σ → ν σ → Prop := fun m n o =>
+  ∀ R : ν σ → ν σ → Prop, R (zero σ) m →
+    (∀ i j, N σ i → N σ j → R i j → R (suc σ i) (suc σ j)) → R n o
 
-/-- `Prod(m, n, o)`. -/
-def Prod : ν → ν → ν → Prop := fun m n o =>
-  ∀ R : ν → ν → Prop, R zero zero →
-    (∀ i j k, N i → N j → N k → R i j → Sum m j k → R (suc i) k) → R n o
+/-- `Prod_σ(m, n, o)`. -/
+def Prod (σ : Type) [Ty σ] : ν σ → ν σ → ν σ → Prop := fun m n o =>
+  ∀ R : ν σ → ν σ → Prop, R (zero σ) (zero σ) →
+    (∀ i j k, N σ i → N σ j → N σ k → R i j → Sum σ m j k → R (suc σ i) k) → R n o
 
 
 end Classicism.Arith
@@ -53,18 +56,18 @@ noncomputable section
 
 namespace Classicism.Meta
 
-/-- The type `ν` of the object language. -/
-abbrev Ty.nu : Ty := .rel (.arr (.rel (.arr .e .t)) .t)
+/-- The type `ν_σ` of the object language. -/
+abbrev Ty.nu (σ : Ty) : Ty := .rel (.arr (.rel (.arr σ .t)) .t)
 
-/-- The context of `k` number variables. -/
-abbrev numCtx (k : Nat) : Ctx := List.replicate k Ty.nu
+/-- The context of `k` number variables at `σ`. -/
+abbrev numCtx (σ : Ty) (k : Nat) : Ctx := List.replicate k (Ty.nu σ)
 
 /-- The `i`-th of `k` number variables, innermost first. -/
-noncomputable def numVar : ∀ {k : Nat}, Fin k → Var (numCtx k) Ty.nu
+noncomputable def numVar (σ : Ty) : ∀ {k : Nat}, Fin k → Var (numCtx σ k) (Ty.nu σ)
   | _ + 1, ⟨0, _⟩ => .zero
-  | _ + 1, ⟨i + 1, h⟩ => .succ (numVar ⟨i, Nat.lt_of_succ_lt_succ h⟩)
+  | _ + 1, ⟨i + 1, h⟩ => .succ (numVar σ ⟨i, Nat.lt_of_succ_lt_succ h⟩)
 
-/-- Terms of arithmetic in `k` free variables: variables, `𝟎_e` and successors. -/
+/-- Terms of arithmetic in `k` free variables: variables, zero and successors. -/
 inductive ATerm (k : Nat)
   | var : Fin k → ATerm k
   | zero : ATerm k
@@ -82,41 +85,41 @@ inductive AForm : Nat → Type
   /-- `∀v ∈ ℕ. φ`. -/
   | all {k} : AForm (k + 1) → AForm k
 
-/-- An arithmetical term as a term of the pure language. -/
-noncomputable def ATerm.toTerm {k : Nat} : ATerm k → Term Signature.pure (numCtx k) Ty.nu
-  | .var i => .var (numVar i)
-  | .zero => Arith.zero.term.close
-  | .suc t => .app Arith.suc.term.close t.toTerm
+/-- An arithmetical term as a term of the pure language, counting at `σ`. -/
+noncomputable def ATerm.toTerm (σ : Ty) {k : Nat} : ATerm k → Term Signature.pure (numCtx σ k) (Ty.nu σ)
+  | .var i => .var (numVar σ i)
+  | .zero => (Arith.zero.term σ).close
+  | .suc t => .app (Arith.suc.term σ).close (t.toTerm σ)
 
-/-- An arithmetical formula as a formula of the pure language. -/
-noncomputable def AForm.toTerm : ∀ {k : Nat}, AForm k → Formula Signature.pure (numCtx k)
-  | _, .nat t => .app Arith.N.term.close t.toTerm
-  | _, .sum t u v => .app (.app (.app Arith.Sum.term.close t.toTerm) u.toTerm) v.toTerm
-  | _, .prod t u v => .app (.app (.app Arith.Prod.term.close t.toTerm) u.toTerm) v.toTerm
-  | _, .eq t u => Term.eq' t.toTerm u.toTerm
-  | _, .neg φ => Term.neg φ.toTerm
-  | _, .disj φ ψ => Term.disj φ.toTerm ψ.toTerm
-  | _, .conj φ ψ => Term.conj φ.toTerm ψ.toTerm
-  | _, .all φ => Term.forall' (Term.imp (.app Arith.N.term.close (.var .zero)) φ.toTerm)
+/-- An arithmetical formula as a formula of the pure language, counting at `σ`. -/
+noncomputable def AForm.toTerm (σ : Ty) : ∀ {k : Nat}, AForm k → Formula Signature.pure (numCtx σ k)
+  | _, .nat t => .app (Arith.N.term σ).close (t.toTerm σ)
+  | _, .sum t u v => .app (.app (.app (Arith.Sum.term σ).close (t.toTerm σ)) (u.toTerm σ)) (v.toTerm σ)
+  | _, .prod t u v => .app (.app (.app (Arith.Prod.term σ).close (t.toTerm σ)) (u.toTerm σ)) (v.toTerm σ)
+  | _, .eq t u => Term.eq' (t.toTerm σ) (u.toTerm σ)
+  | _, .neg φ => Term.neg (φ.toTerm σ)
+  | _, .disj φ ψ => Term.disj (φ.toTerm σ) (ψ.toTerm σ)
+  | _, .conj φ ψ => Term.conj (φ.toTerm σ) (ψ.toTerm σ)
+  | _, .all φ => Term.forall' (Term.imp (.app (Arith.N.term σ).close (.var .zero)) (φ.toTerm σ))
 
-/-- `I := ◇I*`, `I* := ∀m n ∈ ℕ. 𝟎_e ≠ Suc_e m ∧ (Suc_e m = Suc_e n → m = n)`: possibly zero is
-not a successor and successor is injective on numbers. Built from the quoted terms. -/
-noncomputable def arithI : Sentence Signature.pure :=
-  let m : Term Signature.pure [Ty.nu, Ty.nu] Ty.nu := .var (.succ .zero)
-  let n : Term Signature.pure [Ty.nu, Ty.nu] Ty.nu := .var .zero
-  let s (t : Term Signature.pure [Ty.nu, Ty.nu] Ty.nu) := Term.app Arith.suc.term.close t
-  let N (t : Term Signature.pure [Ty.nu, Ty.nu] Ty.nu) := Term.app Arith.N.term.close t
+/-- `I_σ := ◇I*_σ`, `I*_σ := ∀m n ∈ ℕ_σ. 𝟎_σ ≠ Suc_σ m ∧ (Suc_σ m = Suc_σ n → m = n)`: possibly
+zero is not a successor and successor is injective on numbers. Built from the quoted terms. -/
+noncomputable def arithI (σ : Ty) : Sentence Signature.pure :=
+  let m : Term Signature.pure [Ty.nu σ, Ty.nu σ] (Ty.nu σ) := .var (.succ .zero)
+  let n : Term Signature.pure [Ty.nu σ, Ty.nu σ] (Ty.nu σ) := .var .zero
+  let s (t : Term Signature.pure [Ty.nu σ, Ty.nu σ] (Ty.nu σ)) := Term.app (Arith.suc.term σ).close t
+  let N (t : Term Signature.pure [Ty.nu σ, Ty.nu σ] (Ty.nu σ)) := Term.app (Arith.N.term σ).close t
   Term.dia (Term.forall' (Term.forall' (Term.imp (N m) (Term.imp (N n)
-    (Term.conj (Term.neg (Term.eq' Arith.zero.term.close (s m)))
+    (Term.conj (Term.neg (Term.eq' (Arith.zero.term σ).close (s m)))
       (Term.imp (Term.eq' (s m) (s n)) (Term.eq' m n)))))))
 
 namespace AxiomSet
 
-/-- **Necessity of Arithmetic**, in the pure language: `□(I → A) ∨ □(I → ¬A)` for each
-arithmetical sentence `A`. -/
+/-- **Necessity of Arithmetic**, in the pure language: `□(I_σ → A) ∨ □(I_σ → ¬A)` for each
+closed type `σ` and each arithmetical sentence `A` read at `σ`. -/
 def necessityOfArithmetic : AxiomSet Signature.pure := fun a =>
-  ∃ A : AForm 0, a = Term.disj (Term.box (Term.imp arithI A.toTerm))
-    (Term.box (Term.imp arithI (Term.neg A.toTerm)))
+  ∃ σ : Ty, σ.Closed ∧ ∃ A : AForm 0, a = Term.disj (Term.box (Term.imp (arithI σ) (A.toTerm σ)))
+    (Term.box (Term.imp (arithI σ) (Term.neg (A.toTerm σ))))
 
 end AxiomSet
 
@@ -127,62 +130,72 @@ theorem closedTypes_close {σ : Ty} {Γ : Ctx} (t : Term Signature.pure [] σ) (
     (t.close : Term Signature.pure Γ σ).closedTypes = true := by
   rw [Term.closedTypes_rename]; exact h
 
-theorem ATerm.closedTypes_toTerm : ∀ {k : Nat} (t : ATerm k), t.toTerm.closedTypes = true
-  | _, .var _ => rfl
-  | _, .zero => by
-    show (Arith.zero.term.close : Term Signature.pure _ _).closedTypes = true
-    exact closedTypes_close _ rfl
+section
+variable {σ : Ty} (hσ : σ.Closed)
+include hσ
+
+theorem Arith.zero_closedTypes : (Arith.zero.term σ).closedTypes = true := by
+  simp [Arith.zero.term, Term.closedTypes, hσ]
+theorem Arith.suc_closedTypes : (Arith.suc.term σ).closedTypes = true := by
+  simp [Arith.suc.term, Term.closedTypes, hσ]
+theorem Arith.N_closedTypes : (Arith.N.term σ).closedTypes = true := by
+  simp [Arith.N.term, Term.closedTypes, hσ]
+theorem Arith.Sum_closedTypes : (Arith.Sum.term σ).closedTypes = true := by
+  simp [Arith.Sum.term, Term.closedTypes, hσ]
+theorem Arith.Prod_closedTypes : (Arith.Prod.term σ).closedTypes = true := by
+  simp [Arith.Prod.term, Term.closedTypes, hσ]
+
+theorem ATerm.closedTypes_toTerm : ∀ {k : Nat} (t : ATerm k), (t.toTerm σ).closedTypes = true
+  | _, .var _ => by simp [ATerm.toTerm, Term.closedTypes, hσ]
+  | _, .zero => closedTypes_close _ (Arith.zero_closedTypes hσ)
   | _, .suc t => by
-    show (Term.app Arith.suc.term.close t.toTerm).closedTypes = true
-    simp only [Term.closedTypes, closedTypes_close _ (rfl : Arith.suc.term.closedTypes = true),
+    simp only [ATerm.toTerm, Term.closedTypes, closedTypes_close _ (Arith.suc_closedTypes hσ),
       ATerm.closedTypes_toTerm t, Bool.and_self]
 
-theorem AForm.closedTypes_toTerm : ∀ {k : Nat} (φ : AForm k), φ.toTerm.closedTypes = true
+theorem AForm.closedTypes_toTerm : ∀ {k : Nat} (φ : AForm k), (φ.toTerm σ).closedTypes = true
   | _, .nat t => by
-    show (Term.app Arith.N.term.close t.toTerm).closedTypes = true
-    simp only [Term.closedTypes, closedTypes_close _ (rfl : Arith.N.term.closedTypes = true),
-      ATerm.closedTypes_toTerm t, Bool.and_self]
+    simp only [AForm.toTerm, Term.closedTypes, closedTypes_close _ (Arith.N_closedTypes hσ),
+      ATerm.closedTypes_toTerm hσ t, Bool.and_self]
   | _, .sum t u v => by
-    show (Term.app (Term.app (Term.app Arith.Sum.term.close t.toTerm) u.toTerm) v.toTerm).closedTypes = true
-    simp only [Term.closedTypes, closedTypes_close _ (rfl : Arith.Sum.term.closedTypes = true),
-      ATerm.closedTypes_toTerm, Bool.and_self]
+    simp only [AForm.toTerm, Term.closedTypes, closedTypes_close _ (Arith.Sum_closedTypes hσ),
+      ATerm.closedTypes_toTerm hσ, Bool.and_self]
   | _, .prod t u v => by
-    show (Term.app (Term.app (Term.app Arith.Prod.term.close t.toTerm) u.toTerm) v.toTerm).closedTypes = true
-    simp only [Term.closedTypes, closedTypes_close _ (rfl : Arith.Prod.term.closedTypes = true),
-      ATerm.closedTypes_toTerm, Bool.and_self]
+    simp only [AForm.toTerm, Term.closedTypes, closedTypes_close _ (Arith.Prod_closedTypes hσ),
+      ATerm.closedTypes_toTerm hσ, Bool.and_self]
   | _, .eq t u => by
-    show (Term.eq' t.toTerm u.toTerm).closedTypes = true
-    simp [Term.closedTypes, ATerm.closedTypes_toTerm]
+    simp [AForm.toTerm, Term.closedTypes, ATerm.closedTypes_toTerm hσ]
   | _, .neg φ => by
-    show (Term.neg φ.toTerm).closedTypes = true
-    simp [Term.closedTypes, AForm.closedTypes_toTerm φ]
+    simp [AForm.toTerm, AForm.closedTypes_toTerm φ]
   | _, .disj φ ψ => by
-    show (Term.disj φ.toTerm ψ.toTerm).closedTypes = true
-    simp [Term.closedTypes, AForm.closedTypes_toTerm φ, AForm.closedTypes_toTerm ψ]
+    simp [AForm.toTerm, AForm.closedTypes_toTerm φ, AForm.closedTypes_toTerm ψ]
   | _, .conj φ ψ => by
-    show (Term.conj φ.toTerm ψ.toTerm).closedTypes = true
-    simp [Term.closedTypes, AForm.closedTypes_toTerm φ, AForm.closedTypes_toTerm ψ]
+    simp [AForm.toTerm, AForm.closedTypes_toTerm φ, AForm.closedTypes_toTerm ψ]
   | _, .all φ => by
-    show (Term.forall' (Term.imp (Term.app Arith.N.term.close (Term.var .zero)) φ.toTerm)).closedTypes = true
-    simp [Term.closedTypes, closedTypes_close _ (rfl : Arith.N.term.closedTypes = true),
-      AForm.closedTypes_toTerm φ]
+    simp [AForm.toTerm, Term.closedTypes, closedTypes_close _ (Arith.N_closedTypes hσ),
+      AForm.closedTypes_toTerm φ, hσ]
 
-theorem arithI_closedTypes : arithI.closedTypes = true := rfl
+theorem arithI_closedTypes : (arithI σ).closedTypes = true := by
+  simp [arithI, Term.closedTypes, closedTypes_close _ (Arith.N_closedTypes hσ),
+    closedTypes_close _ (Arith.suc_closedTypes hσ), closedTypes_close _ (Arith.zero_closedTypes hσ), hσ]
+
+end
 
 open AxiomSet in
-/-- **No Pure Contingency gives Necessity of Arithmetic**: `I → A` and `I → ¬A` are closed pure
-sentences, so each is necessary if true; and by excluded middle on `A` one of them is true. -/
+/-- **No Pure Contingency gives Necessity of Arithmetic**: `I_σ → A` and `I_σ → ¬A` are closed
+pure sentences, so each is necessary if true; and by excluded middle on `A` one of them is
+true. -/
 theorem npc_entails_necessityOfArithmetic :
     noContingency Signature.pure ⟹ necessityOfArithmetic := by
-  rintro _ ⟨A, rfl⟩
-  have hA := A.closedTypes_toTerm
+  rintro _ ⟨σ, hσ, A, rfl⟩
+  have hA := A.closedTypes_toTerm hσ
+  have hI := arithI_closedTypes hσ
   have nc : ∀ p : Sentence Signature.pure, p.closedTypes = true →
       Theorem (C.axioms ∪ noContingency Signature.pure) (Term.imp p (Term.box p)) := fun p hp =>
     Theorem.ax ⟨by simp [Term.closedTypes, hp], p, rfl⟩
-  have h1 := nc (Term.imp arithI A.toTerm) (by simp [Term.closedTypes, hA, arithI_closedTypes])
-  have h2 := nc (Term.imp arithI (Term.neg A.toTerm))
-    (by simp [Term.closedTypes, hA, arithI_closedTypes])
-  refine Derivable.orE (Derivable.em A.toTerm) ?_ ?_
+  have h1 := nc (Term.imp (arithI σ) (A.toTerm σ)) (by simp [Term.closedTypes, hA, hI])
+  have h2 := nc (Term.imp (arithI σ) (Term.neg (A.toTerm σ)))
+    (by simp [Term.closedTypes, hA, hI])
+  refine Derivable.orE (Derivable.em (A.toTerm σ)) ?_ ?_
   · exact Derivable.orI₁ (Derivable.impE (Derivable.weaken₁ h1)
       (Derivable.impI (Derivable.hyp (by simp))))
   · exact Derivable.orI₂ (Derivable.impE (Derivable.weaken₁ h2)

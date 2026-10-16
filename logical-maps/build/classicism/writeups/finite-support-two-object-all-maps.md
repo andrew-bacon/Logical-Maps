@@ -8,7 +8,7 @@
 - **Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **Axiom of Infinity (type t).** There are not finitely many propositions. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **□Relational Choice.** Necessarily, every serial binary relation has a functional subrelation.
-- **Necessity of Arithmetic.** Every arithmetical sentence is either necessarily true or necessarily false, given that possibly zero is not a successor and successor is injective on numbers. One sentence for each arithmetical sentence.
+- **Necessity of Arithmetic.** Every arithmetical sentence is either necessarily true or necessarily false, given that possibly zero is not a successor and successor is injective on numbers, where the numbers are the finite cardinalities of properties of a type $\sigma$. One sentence for each type $\sigma$ and each arithmetical sentence at $\sigma$.
 - **B for sentences of Σ.** The B instance for every closed sentence of the language of the fixed signature Sigma.
 - **□Rigid Power.** Every closed instance of Rigid Power is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
 - **Two-hat necessity implies ND-necessity.** Whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat.
@@ -20,7 +20,7 @@
 - **¬ Atomlessness.** Atomlessness in the displayed closed propositional formulation.
 - **¬ Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **¬ Boolean Completeness (type t).** Boolean Completeness (type t) in the displayed closed propositional formulation.
-- **¬ Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable when it injects into the natural numbers.
+- **¬ Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable relative to a type $\sigma$ when it injects into the finite cardinalities of properties of type $\sigma$; one instance for each $\sigma$.
 - **¬ □BF (type t).** Necessarily, BF (type t) holds, in the displayed closed propositional formulation.
 - **¬ Inextensible Comprehension.** Every relation, including a proposition, is coextensive with a inextensible one.
 - **¬ Vicinity.** There is a true proposition that entails the possibility of each true proposition.
@@ -75,11 +75,15 @@ Any set $F$ of propositions is the extension of the profile $\langle h,p\rangle\
 
 *By Claude Fable 5.1 (Anthropic), 2026-09-25.*
 
+*Revised 2026-10-16 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* Refutes the instance of Countable Boolean Completeness counting at $e$, which the principle, now schematic in that type, includes.
+
 ### Holds Necessity of Arithmetic.
 
 At $W_0$ the finite cardinalities are the standard numerals and $I^*$ is true; at $W_1$ the numerals remain pairwise distinct, because they differ at the arrows back into $W_0$ and identity is necessary, $I^*$ is again true, the numerals are the finite cardinalities by extensional fullness, and $\operatorname{Sum}$ and $\operatorname{Prod}$ are standard, their graphs being in the domain; so every arithmetical sentence has its standard truth value at every world.
 
 *By Claude Fable 5.1 (Anthropic), 2026-09-25.*
+
+*Revised 2026-10-16 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* The Necessity of Arithmetic is now a schema in the type $\sigma$ whose finite cardinalities are the numbers, and the argument covers every $\sigma$ unchanged. At $W_0$ every type has infinitely many entities, so $I^*_\sigma$ is true there, and the numerals at $\sigma$ are standard by the argument for the Axioms of Infinity, whose set of numerals at each type is invariant under every arrow. At $W_1$ the numerals at $\sigma$ still differ at the arrows back into $W_0$, the set of them is in the domain and closed under zero and successor, and the graphs of $\operatorname{Sum}_\sigma$ and $\operatorname{Prod}_\sigma$ are in the domain, as at $e$.
 
 ### Fails □BF (type t).
 

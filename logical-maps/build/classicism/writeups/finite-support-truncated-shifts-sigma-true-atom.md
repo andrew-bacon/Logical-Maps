@@ -20,7 +20,7 @@
 - **No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
 - **Transversal Choice.** Every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
 - **¬ Boolean Completeness.** Every property of entities of a relational type has a greatest lower bound in that type.
-- **¬ Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable when it injects into the natural numbers.
+- **¬ Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable relative to a type $\sigma$ when it injects into the finite cardinalities of properties of type $\sigma$; one instance for each $\sigma$.
 - **¬ Boolean Completeness (type t).** Boolean Completeness (type t) in the displayed closed propositional formulation.
 - **¬ B for sentences of Σ.** The B instance for every closed sentence of the language of the fixed signature Sigma.
 - **¬ No Contingency (signature Σ).** Each closed sentence of the language of the fixed signature Sigma, if true, is necessary. A sentence schema, standing to No Pure Contingency as Possibility Maximalism (signature Σ) stands to Possibility Maximalism (pure).
@@ -100,6 +100,8 @@ At type $e\to t$: the property $E$ whose extension is the family of haecceities 
 *From the group *Finite-support action models on one object*, shared argument `finite-support-one-object#countable-boolean-completeness`. It requires that For some set $A$ of individuals, the strongest persistent property whose extension contains $A$ and which is pinned down by $\{0,\ldots,n\}$ becomes strictly stronger as $n$ grows. Here: With $A$ the even numbers: the strongest persistent property pinned down by $\{0,\ldots,n\}$ whose extension contains them has, at $k_m$, the evens, the odds with $0$, or all of $\mathbb N$ according as $m<n$ is even, $m<n$ is odd, or $m\ge n$. By Claude Fable 5.1 (Anthropic), 2026-09-23.*
 
 *Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* Now builds on the shared argument boolean-completeness instead of on each member's source argument; no change of substance.
+
+*Revised 2026-10-16 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* Refutes the instance of Countable Boolean Completeness counting at $e$, which the principle, now schematic in that type, includes.
 
 ### Fails Boolean Completeness (type t).
 

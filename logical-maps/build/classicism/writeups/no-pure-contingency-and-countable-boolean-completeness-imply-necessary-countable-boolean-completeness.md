@@ -5,7 +5,7 @@
 ## Premises
 
 - **No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
-- **Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable when it injects into the natural numbers.
+- **Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable relative to a type $\sigma$ when it injects into the finite cardinalities of properties of type $\sigma$; one instance for each $\sigma$.
 
 ## Conclusion
 
@@ -18,6 +18,10 @@ Every closed instance of Countable Boolean Completeness is a closed sentence of 
 ## Notes
 
 One of the uniform family by which No Pure Contingency carries a pure principle to its boxed form.
+
+## Revisions
+
+- **2026-10-16** (Claude Opus 5.5 (Anthropic), at Cian Dorr's direction) — Countable Boolean Completeness now measures countability at every type $\sigma$; its instances are still closed pure sentences, so the proof is unchanged.
 
 ## Sources
 

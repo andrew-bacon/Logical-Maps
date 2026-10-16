@@ -22,7 +22,7 @@
 - **¬ Rigid Power.** If a relation is rigid, so is the property of being a rigid relation that entails it.
 - **¬ Rigid Rigidity.** Being rigid is a rigid property of relations, including propositions.
 - **¬ Boolean Completeness.** Every property of entities of a relational type has a greatest lower bound in that type.
-- **¬ Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable when it injects into the natural numbers.
+- **¬ Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable relative to a type $\sigma$ when it injects into the finite cardinalities of properties of type $\sigma$; one instance for each $\sigma$.
 - **¬ Boolean Completeness (type t).** Boolean Completeness (type t) in the displayed closed propositional formulation.
 - **¬ Witnessed Possibility.** For pure-formulas P with free variables among a finite tuple x, and distinct matching nonlogical constants c, a witness to P entails that P at those constants is possible.
 - **¬ Separated Structure.** For each typed nonlogical constant c and closed same-typed terms F,G not containing c, equality after application to c implies equality of F and G.
@@ -108,6 +108,8 @@ At type $e\to t$: the property $E$ whose extension is the family of haecceities 
 *From the group *Finite-support action models on one object*, shared argument `finite-support-one-object#countable-boolean-completeness`. It requires that For some set $A$ of individuals, the strongest persistent property whose extension contains $A$ and which is pinned down by $\{0,\ldots,n\}$ becomes strictly stronger as $n$ grows. Here: With $A$ the even numbers, as for the permutations: at a pair-preserving injection $h$, the strongest persistent property pinned down by a finite $X\supseteq\{0,1\}$ whose extension contains the even numbers has the extension $h(X\cap\text{evens})\cup(\mathbb N\setminus(hX))$, a member of $A$ outside $X$ being sent anywhere outside $hX$ by some pair-preserving injection agreeing with $h$ on $X$; at the identity this strictly shrinks as $X$ grows. By Claude Fable 5.1 (Anthropic), 2026-09-23.*
 
 *Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* Now builds on the shared argument boolean-completeness instead of on each member's source argument; no change of substance.
+
+*Revised 2026-10-16 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* Refutes the instance of Countable Boolean Completeness counting at $e$, which the principle, now schematic in that type, includes.
 
 ### Fails Boolean Completeness (type t).
 

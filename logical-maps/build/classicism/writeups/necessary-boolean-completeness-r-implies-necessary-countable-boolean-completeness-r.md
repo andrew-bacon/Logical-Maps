@@ -18,6 +18,10 @@ The proof of boolean-completeness-r-implies-countable-boolean-completeness-r use
 
 Boxed counterpart of boolean-completeness-r-implies-countable-boolean-completeness-r.
 
+## Revisions
+
+- **2026-10-16** (Claude Opus 5.5 (Anthropic), at Cian Dorr's direction) — Countable Boolean Completeness now measures countability at every type $\sigma$; the unboxed proof covers every instance, so this one does too, unchanged.
+
 ## Sources
 
 - **Dorr 2 Oct** — Cian Dorr, suggestion of 2 October 2026.

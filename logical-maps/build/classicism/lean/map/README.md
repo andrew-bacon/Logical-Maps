@@ -60,11 +60,12 @@ map states it for tuples.
 Since 6 October every principle has one. Two are schemas over syntax written directly:
 General Separated Structure (`generalSeparatedStructure _`, as `P[c̄/x̄] = Q[c̄/x̄] → λx̄. P =
 λx̄. Q`; its docstring says why that is the map's schema up to β), and Necessity of Arithmetic
-(`ofPure necessityOfArithmetic`, over Goodsell's arithmetical sentences `AForm`, in
-`Certified/Arithmetic.lean`). The latter's vocabulary, `𝟎`, `Suc`, `ℕ`, `Sum` and `Prod`, is
-written as shallow definitions and quoted by `#classicism_quote_term`
-(`Tools/QuoteTerm.lean`), which checks each term's reading against its definition as
-`#classicism_quote` does a statement's.
+(`ofPure necessityOfArithmetic`, over Goodsell's arithmetical sentences `AForm`, read at every
+closed type `σ`, in `Certified/Arithmetic.lean`). The latter's vocabulary, `𝟎_σ`, `Suc_σ`,
+`ℕ_σ`, `Sum_σ` and `Prod_σ`, is written as shallow definitions with a type parameter and
+quoted by `#classicism_quote_term` (`Tools/QuoteTerm.lean`), which reads each type parameter
+as a metalogical type and checks each term's reading against its definition, at every such
+type, as `#classicism_quote` does a statement's.
 
 ## The shape of a statement
 
@@ -260,8 +261,9 @@ usually in a line or two (`Models/FullActionModels.lean`, `MapModels.lean`'s `Me
 verdict the engine derives from others is not proved at all. So the six full action models of
 §3 have no arguments of their own left: everything they get beyond the derivation is a topic
 argument, and their `lean.verdicts`, proved one by one before the arguments existed, are
-superseded but kept. `three-numbers`, `intensional-choice-well-ordering` and
-`rigid-power-tight` are the ones without Lean yet. The finite-support models' group meets
+superseded but kept. `intensional-choice-well-ordering` and `rigid-power-tight` are the
+ones without Lean yet (`three-numbers` was withdrawn on 16 October, when Countable Boolean
+Completeness became schematic in the type it counts at). The finite-support models' group meets
 `extensionally-full` (`Premodel.ideal_extFull`: the intension blind to arrows is pinned down by
 `∅`) in Lean.
 
@@ -273,9 +275,7 @@ the map's prose:
 - **`atomicity`:** the Lean lemma `atomicityT_of_singletons` gives Atomicity at `t` only,
   where the argument claims it at every relational type.
 
-Not proved yet for other reasons: `three-numbers` (Countable Boolean Completeness with one
-individual: the finite cardinalities are three, and a countable property's join exists), and
-`intensional-choice-well-ordering` and `rigid-power-tight` (their principles have no
+Not proved yet for other reasons: `intensional-choice-well-ordering` and `rigid-power-tight` (their principles have no
 `lean_def`).
 
 **Models with `Σ` interpreted.** A verdict on a principle relative to the signature is about

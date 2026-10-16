@@ -5,7 +5,7 @@
 ## Premises
 
 - **Maximalism (pure).** Every closed pure identity not provable in C is false. The non-theorem condition is metalinguistic.
-- **Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable when it injects into the natural numbers.
+- **Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable relative to a type $\sigma$ when it injects into the finite cardinalities of properties of type $\sigma$; one instance for each $\sigma$.
 
 ## Conclusion
 
@@ -21,6 +21,7 @@ The source's answer to the question of Classicism, §2.6. It is derivable from t
 
 ## Revisions
 
+- **2026-10-16** (Claude Opus 5.5 (Anthropic), at Cian Dorr's direction) — Countable Boolean Completeness and the Necessity of Arithmetic are now schemata in the type $\sigma$ whose finite cardinalities are the numbers. The premise is stronger than before, and the proof goes through at $\sigma=e$ as before, with $I$ read as $I_e$.
 - **2026-10-08** (Claude Opus 5.5 (Anthropic), at Cian Dorr's direction) — Distinctness Maximalism and Possibility Maximalism unified as Maximalism, with Distinctness the official form and Possibility a variant form; this record's premise changed from the Possibility principle to Maximalism. The proof is unchanged, the two forms being equivalent in C.
 
 ## Sources

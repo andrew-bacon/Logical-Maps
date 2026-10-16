@@ -431,7 +431,14 @@ split monomorphisms, the arrows with a retraction) are the reduced words
 all of whose syllables are powers <span class="math inline">b^i</span>
 or <span class="math inline">s</span>; in particular <span
 class="math inline">b</span>, with retraction <span
-class="math inline">c</span>, has a left inverse and is not a unit.</p>
+class="math inline">c</span>, has a left inverse and is not a unit. Left
+inverses are unique: <span class="math inline">xu=1</span> determines
+the syllables of <span class="math inline">x</span> one by one as the
+left inverses, in their own factors, of the syllables of <span
+class="math inline">u</span> in reverse order, and in each factor a left
+inverse is unique (<span class="math inline">c^k</span> for <span
+class="math inline">b^k</span>, <span class="math inline">s</span> for
+<span class="math inline">s</span>).</p>
 <p><em>Proof.</em> In a reduction of the concatenation <span
 class="math inline">x_1\cdots x_ny_1\cdots y_m</span> to the empty word,
 syllables can only disappear at the junction, two at a time, so <span
@@ -541,6 +548,27 @@ class="math inline">\Box_5</span>-necessary; general argument from a
 non-identity isomorphism in a full model.</li>
 <li><strong>5-necessity implies two-hat necessity holds</strong>, boxed,
 as in every full model.</li>
+<li><strong>Strong Actuality holds</strong>, boxed: the true proposition
+<span class="math inline">\{1\}</span> becomes, under an arrow <span
+class="math inline">u</span>, the set of left inverses of <span
+class="math inline">u</span>, which has at most one member (Lemma 3), so
+it is an atom or empty at every world; in the map this is the general
+argument from unique retractions in a model with the identity
+singletons.</li>
+<li><strong>Rigid Power holds</strong>, boxed: the model is full, so a
+relation is weakly inextensible at a world iff it lies below <span
+class="math inline">k\mapsto k\cdot E</span> over its extension <span
+class="math inline">E</span> there, and the rigid relations are exactly
+the intensions <span class="math inline">k\mapsto k\cdot E</span>; the
+power property of such a relation is then <span
+class="math inline">k\mapsto k\cdot E&#39;</span> for its own extension
+<span class="math inline">E&#39;</span>, hence rigid (the topic’s
+general argument for full models). Tame Rigidity holds boxed in every
+full model, so <strong>Weakly Rigid Power holds</strong>, boxed, by the
+recorded results <span
+class="math inline">\Box\mathrm{TR}+\mathrm{RP}\Rightarrow\mathrm{WRP}</span>
+and <span
+class="math inline">\Box\mathrm{WRP}\Leftrightarrow\Box\mathrm{TR}\wedge\Box\mathrm{RP}</span>.</li>
 <li><strong>Infinity</strong>: with one individual the type-<span
 class="math inline">e</span> Axiom of Infinity fails; with infinitely
 many propositions the type-<span class="math inline">t</span> one

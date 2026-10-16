@@ -8,11 +8,15 @@
 
 ## Conclusion
 
-- **Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable when it injects into the natural numbers.
+- **Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable relative to a type $\sigma$ when it injects into the finite cardinalities of properties of type $\sigma$; one instance for each $\sigma$.
 
 ## Proof
 
 At each admitted closed instance $\phi$, T gives $\Box\phi\to\phi$. Apply this to every instance in the boxed premise, preserving its type and formula side conditions.
+
+## Revisions
+
+- **2026-10-16** (Claude Opus 5.5 (Anthropic), at Cian Dorr's direction) — Countable Boolean Completeness now measures countability at every type $\sigma$; T applies instance by instance, unchanged.
 
 ## Sources
 

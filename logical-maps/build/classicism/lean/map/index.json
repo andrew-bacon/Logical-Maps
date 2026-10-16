@@ -2194,7 +2194,7 @@
   {"proofs":
    [{"name":
      "Classicism.Proofs.necessary_countable_boolean_completeness_r_implies_countable_boolean_completeness_r",
-     "lines": [82, 86],
+     "lines": [82, 87],
      "file": "Classicism/Results/Records/Infinity.lean"}],
    "certificate":
    {"name":
@@ -2234,7 +2234,7 @@
   {"proofs":
    [{"name":
      "Classicism.Proofs.necessary_boolean_completeness_r_implies_necessary_countable_boolean_completeness_r",
-     "lines": [87, 92],
+     "lines": [88, 94],
      "file": "Classicism/Results/Records/Infinity.lean"}],
    "certificate":
    {"name":
@@ -12239,17 +12239,17 @@
   {"dual":
    {"proofs":
     [{"name": "Classicism.P.StrongLeibniz.to_dual",
-      "lines": [163, 169],
+      "lines": [164, 170],
       "file": "Classicism/Principles/Lattice.lean"},
      {"name": "Classicism.P.StrongLeibniz.of_dual",
-      "lines": [171, 177],
+      "lines": [172, 178],
       "file": "Classicism/Principles/Lattice.lean"}],
     "definitions":
     [{"name": "Classicism.P.StrongLeibniz",
-      "lines": [152, 154],
+      "lines": [153, 155],
       "file": "Classicism/Principles/Lattice.lean"},
      {"name": "Classicism.P.StrongLeibnizDual",
-      "lines": [155, 158],
+      "lines": [156, 159],
       "file": "Classicism/Principles/Lattice.lean"}],
     "certificate":
     {"name": "Classicism.Map.strong_leibniz_r.dual",
@@ -12399,17 +12399,17 @@
   {"dual":
    {"proofs":
     [{"name": "Classicism.P.NecStrongLeibniz.to_dual",
-      "lines": [189, 191],
+      "lines": [190, 192],
       "file": "Classicism/Principles/Lattice.lean"},
      {"name": "Classicism.P.NecStrongLeibniz.of_dual",
-      "lines": [192, 194],
+      "lines": [193, 195],
       "file": "Classicism/Principles/Lattice.lean"}],
     "definitions":
     [{"name": "Classicism.P.NecStrongLeibniz",
-      "lines": [181, 182],
+      "lines": [182, 183],
       "file": "Classicism/Principles/Lattice.lean"},
      {"name": "Classicism.P.NecStrongLeibnizDual",
-      "lines": [183, 184],
+      "lines": [184, 185],
       "file": "Classicism/Principles/Lattice.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_strong_leibniz_r.dual",
@@ -13372,7 +13372,7 @@
    "file": "Classicism/Principles/Comprehension.lean"},
   "Classicism.P.Vicinity":
   {"name": "Classicism.P.Vicinity",
-   "lines": [135, 137],
+   "lines": [136, 138],
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.TransversalChoice":
   {"name": "Classicism.P.TransversalChoice",
@@ -13412,15 +13412,15 @@
    "file": "Classicism/Principles/Instances.lean"},
   "Classicism.P.StrongLeibnizDual":
   {"name": "Classicism.P.StrongLeibnizDual",
-   "lines": [155, 158],
+   "lines": [156, 159],
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.StrongLeibniz":
   {"name": "Classicism.P.StrongLeibniz",
-   "lines": [152, 154],
+   "lines": [153, 155],
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.StrongActuality":
   {"name": "Classicism.P.StrongActuality",
-   "lines": [141, 143],
+   "lines": [142, 144],
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.Serial":
   {"name": "Classicism.P.Serial",
@@ -13428,7 +13428,7 @@
    "file": "Classicism/Principles/Choice.lean"},
   "Classicism.P.SWorld":
   {"name": "Classicism.P.SWorld",
-   "lines": [149, 151],
+   "lines": [150, 152],
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.RigidRigidity":
   {"name": "Classicism.P.RigidRigidity",
@@ -13520,7 +13520,7 @@
    "file": "Classicism/Principles/Comprehension.lean"},
   "Classicism.P.NecVicinity":
   {"name": "Classicism.P.NecVicinity",
-   "lines": [138, 139],
+   "lines": [139, 140],
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.NecTransversalChoice":
   {"name": "Classicism.P.NecTransversalChoice",
@@ -13556,15 +13556,15 @@
    "file": "Classicism/Principles/Instances.lean"},
   "Classicism.P.NecStrongLeibnizDual":
   {"name": "Classicism.P.NecStrongLeibnizDual",
-   "lines": [183, 184],
+   "lines": [184, 185],
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.NecStrongLeibniz":
   {"name": "Classicism.P.NecStrongLeibniz",
-   "lines": [181, 182],
+   "lines": [182, 183],
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.NecStrongActuality":
   {"name": "Classicism.P.NecStrongActuality",
-   "lines": [144, 145],
+   "lines": [145, 146],
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.NecRigidRigidity":
   {"name": "Classicism.P.NecRigidRigidity",
@@ -13680,7 +13680,7 @@
    "file": "Classicism/Principles/Extensionality.lean"},
   "Classicism.P.NecCountableBooleanCompleteness":
   {"name": "Classicism.P.NecCountableBooleanCompleteness",
-   "lines": [117, 118],
+   "lines": [117, 119],
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.NecBooleanCompletenessT":
   {"name": "Classicism.P.NecBooleanCompletenessT",
@@ -13732,7 +13732,7 @@
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.NecActuality":
   {"name": "Classicism.P.NecActuality",
-   "lines": [125, 126],
+   "lines": [126, 127],
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.ModalizedRelationalChoice":
   {"name": "Classicism.P.ModalizedRelationalChoice",
@@ -13960,11 +13960,11 @@
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.Actuality":
   {"name": "Classicism.P.Actuality",
-   "lines": [122, 124],
+   "lines": [123, 125],
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.ActualProfile":
   {"name": "Classicism.P.ActualProfile",
-   "lines": [128, 133],
+   "lines": [129, 134],
    "file": "Classicism/Principles/Lattice.lean"}},
  "arguments":
  {"unretracted-arrow/distinctness-necessary-t":

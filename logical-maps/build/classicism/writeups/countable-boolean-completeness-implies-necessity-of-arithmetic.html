@@ -329,26 +329,37 @@ Completeness, which C extends, so every step is available here; T, 4 and
 Logical Equivalence are never used. See Background for the instantiation
 of the source’s <span class="math inline">\nu</span>, <span
 class="math inline">0</span> and successor as <span
-class="math inline">(et)t</span>, <span
-class="math inline">\mathbf{0}_e</span> and <span
-class="math inline">\operatorname{Suc}_e</span>, under which <span
+class="math inline">\nu_\sigma=(\sigma t)t</span>, <span
+class="math inline">\mathbf{0}_\sigma</span> and <span
+class="math inline">\operatorname{Suc}_\sigma</span> at a type <span
+class="math inline">\sigma</span>, under which <span
 class="math inline">\mathbb N</span> is <span
-class="math inline">\operatorname{FiniteCardinality}_e</span>, and for
-<span class="math inline">\operatorname{Ctbl}</span>, <span
+class="math inline">\operatorname{FiniteCardinality}_\sigma</span>, and
+for <span class="math inline">\operatorname{Ctbl}</span>, <span
 class="math inline">I</span>, <span class="math inline">I^*</span>,
 <span class="math inline">\operatorname{Sum}</span>, <span
 class="math inline">\operatorname{Prod}</span> and arithmetical
-sentences. Write <span class="math inline">n^+</span> for <span
-class="math inline">\operatorname{Suc}_e n</span>.</p>
+sentences. Fix <span class="math inline">\sigma</span> throughout and
+drop the subscript from <span class="math inline">\nu</span>, <span
+class="math inline">\mathbb N</span>, <span
+class="math inline">I</span>, <span class="math inline">I^*</span>,
+<span class="math inline">\operatorname{Sum}</span> and <span
+class="math inline">\operatorname{Prod}</span>; the argument derives the
+Necessity of Arithmetic at <span class="math inline">\sigma</span> from
+Countable Boolean Completeness counting at the same <span
+class="math inline">\sigma</span>, and nothing in it depends on which
+type <span class="math inline">\sigma</span> is. Write <span
+class="math inline">n^+</span> for <span
+class="math inline">\operatorname{Suc}_\sigma n</span>.</p>
 <p><strong>Lemma 2 (induction).</strong> Any property that <span
-class="math inline">\mathbf{0}_e</span> has and that is closed under
-successor is had by every number. Immediate from the definition of <span
-class="math inline">\mathbb N</span>.</p>
+class="math inline">\mathbf{0}_\sigma</span> has and that is closed
+under successor is had by every number. Immediate from the definition of
+<span class="math inline">\mathbb N</span>.</p>
 <p><strong>Lemma 3 (numbers are necessarily numbers).</strong> <span
 class="math inline">\forall n\in\mathbb N\, .\,\Box\mathbb N n</span>.
 By Lemma 2 with the property <span class="math inline">\lambda n\,
 .\,\Box\mathbb N n</span>: <span class="math inline">\Box\mathbb
-N\mathbf{0}_e</span> by necessitation, and necessitating <span
+N\mathbf{0}_\sigma</span> by necessitation, and necessitating <span
 class="math inline">\forall n\, .\,\mathbb N n\to\mathbb N n^+</span>
 then applying the converse Barcan formula and K gives <span
 class="math inline">\forall n\, .\,\Box\mathbb N n\to\Box\mathbb N
@@ -356,16 +367,17 @@ n^+</span>. This is Lemma 1 of the write-up for Possibility Maximalism
 (pure) ⇒ Axiom of Infinity (type t).</p>
 <p><strong>Lemma 4.</strong> <span class="math inline">\forall
 m\,n\in\mathbb N\, .\,m\ne n\to\Box(I^*\to m\ne n)</span>. By double
-induction. For <span class="math inline">m=n=\mathbf{0}_e</span> there
-is nothing to show. For <span class="math inline">m=\mathbf{0}_e</span>
-and <span class="math inline">n=i^+</span>, the conclusion follows from
-Lemma 3 and the first conjunct of <span class="math inline">I^*</span>.
-Assuming the result for <span class="math inline">m=k</span> and all
-<span class="math inline">n</span>, take <span
+induction. For <span class="math inline">m=n=\mathbf{0}_\sigma</span>
+there is nothing to show. For <span
+class="math inline">m=\mathbf{0}_\sigma</span> and <span
+class="math inline">n=i^+</span>, the conclusion follows from Lemma 3
+and the first conjunct of <span class="math inline">I^*</span>. Assuming
+the result for <span class="math inline">m=k</span> and all <span
+class="math inline">n</span>, take <span
 class="math inline">m=k^+</span> and induct on <span
 class="math inline">n</span>: the case <span
-class="math inline">n=\mathbf{0}_e</span> is symmetric to the previous
-one, and for <span class="math inline">n=j^+</span> with <span
+class="math inline">n=\mathbf{0}_\sigma</span> is symmetric to the
+previous one, and for <span class="math inline">n=j^+</span> with <span
 class="math inline">i^+\ne j^+</span> we have <span
 class="math inline">i\ne j</span>, so the hypothesis gives <span
 class="math inline">\Box(I^*\to i\ne j)</span>, and the second conjunct
@@ -376,7 +388,7 @@ class="math inline">\Box(I^*\to i\ne j\to i^+\ne j^+)</span>, whence
 Since <span class="math inline">I</span> is <span
 class="math inline">\Diamond I^*</span>, this is <span
 class="math inline">\neg I^*\to\Box\neg I^*</span>. If <span
-class="math inline">m^+=\mathbf{0}_e</span> for some number <span
+class="math inline">m^+=\mathbf{0}_\sigma</span> for some number <span
 class="math inline">m</span>, Lemma 3 and NI make that necessary. If
 <span class="math inline">m^+=n^+</span> with <span
 class="math inline">m\ne n</span> for numbers <span
@@ -413,9 +425,12 @@ Xn)\to\Box\forall n\in\mathbb N\, .\,Xn.
 <p><em>Proof.</em> Let <span class="math inline">\mathbb
 N^{\{\cdot\}}:=\lambda X^{\nu t}\, .\,\exists n\in\mathbb N\,
 .\,X=\{n\}</span>, where <span class="math inline">\{n\}:=\lambda m\,
-.\,n=m</span>. It is countable, through the relation holding between
+.\,n=m</span>. It is countable relative to <span
+class="math inline">\sigma</span>, through the relation holding between
 <span class="math inline">\{n\}</span> and <span
-class="math inline">n</span>, so it has a least upper bound <span
+class="math inline">n</span>, so by the instance of Countable Boolean
+Completeness at <span class="math inline">\sigma</span> and <span
+class="math inline">\tau=\nu t</span> it has a least upper bound <span
 class="math inline">B</span>. As <span class="math inline">B</span> is
 an upper bound, <span class="math inline">\forall n\in\mathbb N\,
 .\,\Box\forall m\, .\,\{n\}m\to Bm</span>, hence <span
@@ -426,8 +441,8 @@ also an upper bound of <span class="math inline">\mathbb
 N^{\{\cdot\}}</span>. Since <span class="math inline">B</span> is least,
 it necessitates that property: <span class="math inline">\Box\forall n\,
 .\,Bn\to Bn^+</span>. Also <span class="math inline">\Box
-B\mathbf{0}_e</span>, since <span
-class="math inline">\{\mathbf{0}_e\}</span> is an instance of <span
+B\mathbf{0}_\sigma</span>, since <span
+class="math inline">\{\mathbf{0}_\sigma\}</span> is an instance of <span
 class="math inline">\mathbb N^{\{\cdot\}}</span>. By Lemma 2 inside the
 box, <span class="math inline">\Box\forall n\, .\,\mathbb N n\to
 Bn</span>. Now let <span class="math inline">X</span> satisfy <span
@@ -468,11 +483,21 @@ class="math inline">A</span>.</p>
 fails it fails necessarily, so the schema is then trivially true; the
 interest is in the case where the axioms of arithmetic are possibly
 satisfied, which on the map’s instantiation means that <span
-class="math inline">\operatorname{Suc}_e</span> is possibly injective on
-finite cardinalities. Maximalist Classicism grants that, since <span
+class="math inline">\operatorname{Suc}_\sigma</span> is possibly
+injective on finite cardinalities, and so in particular that <span
+class="math inline">\sigma</span> possibly has infinitely many members.
+Maximalist Classicism grants that, since <span
 class="math inline">I^*</span> is consistent with C, and it is exactly
 there that the schema bites: see
 possibility-and-necessity-of-arithmetic-incompatible.</p>
+<p>Until 16 October 2026 the map fixed <span
+class="math inline">\sigma=e</span> in both principles. The source’s
+theorem is stated for arbitrary <span class="math inline">\nu</span>,
+<span class="math inline">0</span> and successor, and the proof above is
+its transcription with the subscript <span
+class="math inline">\sigma</span> in place of <span
+class="math inline">e</span>; Countable Boolean Completeness is used
+only at the matching <span class="math inline">\sigma</span>.</p>
 <h2 id="paper-references">Paper references</h2>
 <ul>
 <li><strong>Proof: Arithmetic is Necessary.</strong> Goodsell, Zachary
