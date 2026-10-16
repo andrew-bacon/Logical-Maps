@@ -1,0 +1,33 @@
+id: nd-t-and-bf-t-imply-necessary-nd-t
+premises:
+- distinctness-necessary-t
+- barcan-t
+conclusion: necessary-distinctness-necessary-t
+status: proved
+certificate:
+  source_id: bacon-dorr-classicism
+  produced_by: Andrew Bacon and Cian Dorr
+  recorded_by: Claude Opus 5.5 (Anthropic), 16 October 2026, at Cian Dorr's direction
+  checked_by: []
+  date: '2026-10-16'
+  lean: none
+sources:
+- Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, Proposition 2.4, p. 23.
+source_names:
+- Classicism
+proof: >-
+  The proof of Proposition 2.4 at type $t$. For propositions $p,q$, the classical identity cases, NI and
+  ND (type t) give $\Box(p=q)\lor\Box(p\ne q)$. Using 4, strengthen the second disjunct to
+  $\Box\Box(p\ne q)$; normal modal reasoning yields $\Box(p=q\lor\Box(p\ne q))$, equivalently
+  $\Box(p\ne q\to\Box(p\ne q))$. Generalize over $q$ and apply BF (type t) with
+  $X:=\lambda q\, .\,(p\ne q\to\Box(p\ne q))$, then generalize over $p$ and apply it again with
+  $X:=\lambda p\, .\,\forall q\, .\,(p\ne q\to\Box(p\ne q))$, both of type $t\to t$. The result is the
+  boxed closed instance of ND (type t).
+references:
+- paper: bacon-dorr-classicism
+  role: proof
+  locator: Proposition 2.4, p. 23
+  note: The source states and proves the result across the relational types; this is its type-$t$
+    instance, whose proof uses BF and ND at type $t$ only.
+notes: The type-$t$ counterpart of nd-and-bf-imply-necessary-nd, which the engine cannot instantiate
+  on its own.

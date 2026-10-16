@@ -1,0 +1,32 @@
+id: tame-rigidity-and-bf-t-imply-necessary-bf-t
+premises:
+- tame-rigidity-r
+- barcan-t
+conclusion: necessary-barcan-t
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Claude Fable 5.1 (Anthropic), 3 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), 16 October 2026, at Cian Dorr's direction
+  checked_by: []
+  date: '2026-10-16'
+  lean: none
+sources:
+- Claude Fable 5.1 (Anthropic), Classicism session of 3 October 2026, answering Cian Dorr's question about
+  Tame Rigidity in the coalesced roots.
+source_names:
+- Fable 3 Oct
+proof: >-
+  The proof of tame-rigidity-and-barcan-imply-necessary-barcan at type $t$. Apply Tame Rigidity at type
+  $t\to t$ to $Y:=\lambda p\, .\,\top$. $\operatorname{Persistent}(Y)$ is a theorem, and
+  $\operatorname{WeaklyInextensible}(Y)$ unfolds to $\forall X^{tt}\, .\,(\forall p\, .\,\Box Xp)\to
+  \Box\forall p\, .\,Xp$, which is BF (type t), while $\operatorname{Inextensible}(Y)$ is its
+  necessitation. So BF (type t) makes $Y$ weakly rigid, Tame Rigidity makes it rigid, and its
+  inextensibility is $\Box$BF (type t).
+references:
+- paper: sun-possible-worlds-without-atomicity
+  role: background
+  note: Tame Rigidity.
+notes: The type-$t$ counterpart of tame-rigidity-and-barcan-imply-necessary-barcan and of
+  tame-rigidity-and-bf-relational-imply-necessary-bf-relational, which the engine cannot instantiate on
+  its own.

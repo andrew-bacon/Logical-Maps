@@ -1,0 +1,32 @@
+id: rigid-comprehension-and-bf-t-imply-necessary-bf-t
+premises:
+- rigid-comprehension-r
+- barcan-t
+conclusion: necessary-barcan-t
+status: proved
+certificate:
+  source_id: bacon-dorr-classicism
+  produced_by: Andrew Bacon and Cian Dorr
+  recorded_by: Claude Opus 5.5 (Anthropic), 16 October 2026, at Cian Dorr's direction
+  checked_by: []
+  date: '2026-10-16'
+  lean: none
+sources:
+- Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, Proposition 2.12, p. 30 and n. 43.
+source_names:
+- Classicism
+proof: >-
+  The proof of rigid-comprehension-and-bf-imply-necessary-bf at type $t$. By Rigid Comprehension at
+  type $t\to t$, choose a rigid property $F$ of propositions coextensive with $\lambda p\, .\,p=p$.
+  Persistence gives $\forall p\, .\,\Box Fp$, and BF (type t) gives $\Box\forall p\, .\,Fp$. The
+  inextensibility of $F$ supplies boxed BF (type t) with its quantifiers restricted to $F$, and inside
+  the box everything is $F$, so the restrictions can be removed. This is the boxed closed instance of
+  BF (type t).
+references:
+- paper: bacon-dorr-classicism
+  role: proof
+  locator: Proposition 2.12, p. 30 and n. 43
+  note: The source's argument at one type; at type $t$ it uses BF only at $t$ and Rigid Comprehension
+    only at $t\to t$.
+notes: The type-$t$ counterpart of rigid-comprehension-and-bf-imply-necessary-bf, which the engine cannot
+  instantiate on its own.
