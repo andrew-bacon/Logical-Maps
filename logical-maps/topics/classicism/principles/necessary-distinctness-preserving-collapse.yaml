@@ -29,3 +29,4 @@ variants:
   equivalence: The dual form is derivable from the official form in C and conversely, as on the page of
     Truth implies ND-necessity; necessitating the derivation and applying K carries the equivalence to
     the boxed forms.
+lean_def: Classicism.P.NecDistinctnessPreservingCollapse.schemaIn

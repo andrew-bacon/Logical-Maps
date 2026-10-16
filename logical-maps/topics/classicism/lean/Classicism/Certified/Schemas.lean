@@ -37,6 +37,12 @@ Ty-parameter, also its list form: `P.listQuoted`, the instance at a list of type
   Classicism.P.NecFunctionalChoice Classicism.P.NecRelationalChoice
   Classicism.P.StrongLeibniz Classicism.P.StrongLeibnizT Classicism.P.NecStrongLeibniz
   Classicism.P.NecStrongLeibnizT Classicism.P.DistinctnessPreservingCollapse
+  Classicism.P.NecDistinctnessPreservingCollapse Classicism.P.TruthImpliesFiveNecessity
+  Classicism.P.TruthImpliesTwoHatNecessity Classicism.P.FiveImpliesTwoHatNecessity
+  Classicism.P.FiveImpliesNdNecessity Classicism.P.TwoHatImpliesNdNecessity
+  Classicism.P.NecTruthImpliesFiveNecessity Classicism.P.NecTruthImpliesTwoHatNecessity
+  Classicism.P.NecFiveImpliesTwoHatNecessity Classicism.P.NecFiveImpliesNdNecessity
+  Classicism.P.NecTwoHatImpliesNdNecessity
   Classicism.P.BroadNecessitism Classicism.P.Transversal Classicism.P.NecTransversal
   Classicism.P.TransversalChoice Classicism.P.NecTransversalChoice
   Classicism.P.WeaklyInextensibleComprehension Classicism.P.NecWeaklyInextensibleComprehension

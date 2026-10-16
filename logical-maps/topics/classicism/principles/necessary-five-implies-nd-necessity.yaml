@@ -16,3 +16,4 @@ references:
   locator: Appendix D, pp. 400–409
 notes: Added at the suggestion of Christopher Sun, 14 October 2026. Box the closed sentence; since identity
   of operators in C is necessary coextensiveness, this is the identity $\Box_5=\Box_{\ne}$.
+lean_def: Classicism.P.NecFiveImpliesNdNecessity.schemaIn

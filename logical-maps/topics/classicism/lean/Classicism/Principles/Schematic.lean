@@ -35,4 +35,45 @@ theorem DistinctnessPreservingCollapse.of_dual :
   (em (BoxNe p)).elim (fun h => h) fun hn =>
     absurd hp (d (¬ p) (by show ¬ BoxNe (¬ ¬ p); rw [not_not_eq]; exact hn))
 
+/-! ## Varieties of necessity
+
+The Background's *Hats, two-hat necessity and 5-necessity*: the hat of an operator, two-hat
+necessity (the hat of `□_≠`), S5 operators and 5-necessity, and the principles comparing
+them with truth and with `□_≠`. -/
+
+/-- The hat of an operator: `X̂ := λp. ∃q. q ∧ □(¬X¬q → p)`. -/
+def Hat (X : Prop → Prop) (p : Prop) : Prop := ∃ q : Prop, q ∧ □ (¬ X (¬ q) → p)
+/-- Two-hat necessity `□̂̂`, the hat of `□_≠`. -/
+def BoxHH (p : Prop) : Prop := Hat BoxNe p
+/-- `S5(X)`: necessarily, `X` is N, K and B. -/
+def S5Op (X : Prop → Prop) : Prop :=
+  □ (∀ p : Prop, □ p → X p) ∧ □ (∀ p q : Prop, X (p → q) → X p → X q) ∧
+    □ (∀ p : Prop, p → X (¬ X (¬ p)))
+/-- 5-necessity, `□₅p := ∀X. S5(X) → Xp`: necessity under every S5 operator. -/
+def Box5 (p : Prop) : Prop := ∀ X : Prop → Prop, S5Op X → X p
+
+/-- `truth-implies-five-necessity`: `∀p. p → □₅p`. -/
+def TruthImpliesFiveNecessity : Prop := ∀ p : Prop, p → Box5 p
+/-- `truth-implies-two-hat-necessity`: `∀p. p → □̂̂p`. -/
+def TruthImpliesTwoHatNecessity : Prop := ∀ p : Prop, p → BoxHH p
+/-- `five-implies-two-hat-necessity`: `∀p. □₅p → □̂̂p`. -/
+def FiveImpliesTwoHatNecessity : Prop := ∀ p : Prop, Box5 p → BoxHH p
+/-- `five-implies-nd-necessity`: `∀p. □₅p → □_≠p`. -/
+def FiveImpliesNdNecessity : Prop := ∀ p : Prop, Box5 p → BoxNe p
+/-- `two-hat-implies-nd-necessity`: `∀p. □̂̂p → □_≠p`. -/
+def TwoHatImpliesNdNecessity : Prop := ∀ p : Prop, BoxHH p → BoxNe p
+
+/-- `necessary-distinctness-preserving-collapse`: the principle boxed. -/
+def NecDistinctnessPreservingCollapse : Prop := □ DistinctnessPreservingCollapse
+/-- `necessary-truth-implies-five-necessity`: the principle boxed. -/
+def NecTruthImpliesFiveNecessity : Prop := □ TruthImpliesFiveNecessity
+/-- `necessary-truth-implies-two-hat-necessity`: the principle boxed. -/
+def NecTruthImpliesTwoHatNecessity : Prop := □ TruthImpliesTwoHatNecessity
+/-- `necessary-five-implies-two-hat-necessity`: the principle boxed. -/
+def NecFiveImpliesTwoHatNecessity : Prop := □ FiveImpliesTwoHatNecessity
+/-- `necessary-five-implies-nd-necessity`: the principle boxed. -/
+def NecFiveImpliesNdNecessity : Prop := □ FiveImpliesNdNecessity
+/-- `necessary-two-hat-implies-nd-necessity`: the principle boxed. -/
+def NecTwoHatImpliesNdNecessity : Prop := □ TwoHatImpliesNdNecessity
+
 end Classicism.P
