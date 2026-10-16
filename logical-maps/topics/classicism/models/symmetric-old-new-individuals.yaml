@@ -188,6 +188,20 @@ arguments:
     be brought back into $G_O$), so every truth at $O$, each containing $G_O$, is two-hat necessary. With
     necessary Strong Actuality, $\Box_5=\hat{\hat\Box}$ everywhere, so every truth is 5-necessary at both
     objects.'
+- holds:
+  - countable-boolean-completeness-r
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-16'
+  choice: free
+  writeup: symmetric-old-new-individuals
+  text: >-
+    At $E$, for every $\sigma$. If $R$ injects $X$ into the numerals at $\sigma$, with $N$ a finite
+    set pinning both, then each instance of $X$ is fixed by every symmetry fixing $N$ pointwise: the
+    symmetry carries the pair of the instance and its numeral to another such pair, and the numeral
+    is fixed. An entity pinned down by $M$ and fixed by those symmetries is pinned down by $M\cap N$.
+    So the instances of $X$ are all pinned down by $N$, and their union is in the domain and is the
+    least upper bound. The haecceities of the even numbers, which have none, are not countable in
+    the model. See the write-up.
 notes: Found by Claude Fable 5.1 as a countermodel to a principle from another context, and recorded at
   Cian Dorr's request on 6 October 2026. Like the sections-and-projection model it has □Actuality without
   Inextensible Comprehension; unlike it, it has Atomicity at every type, and so separates Atomicity and

@@ -114,6 +114,25 @@ arguments:
     at both objects, hence necessarily. In general, the haecceity of an actual instance witnesses
     Intensional Choice wherever every arrow out of the object is a symmetry.
 
+- fails:
+  - necessary-countable-boolean-completeness-r
+  - necessary-boolean-completeness-t
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-16'
+  choice: free
+  text: >-
+    At $W_1$, reached from $W_0$, whose symmetry group is trivial, at $\sigma=\tau=t$. Let $A_m$
+    ($m\ge1$) be the set of permutations $h:W_1\to W_1$ with $h0=m$ and $hm=0$, pinned down by
+    $\{0,m\}$ and symmetric, holding at no arrow into $W_0$. An upper bound pinned down by a finite
+    $S$ may omit every arrow into $W_0$, and among arrows into $W_1$ the computation is that of the
+    one-object permutation model: a permutation $\pi$ lies in the least $S$-pinned superset of
+    $\bigcup_m A_m$ iff $\pi0\in S\setminus\{0\}$ and $\pi\pi0=0$, or $\pi0\notin S$ and $0\notin\pi(S)$,
+    and the 3-cycle $(0\ N{+}1\ N{+}2)$ shows these strictly shrink for $S=\{0,\ldots,N\}$. So the
+    family has no least upper bound. It is in the domain, and so is the relation pairing $A_m$ with
+    the $m$-th numeral at type $t$: both are codomain intensions, holding at arrows into $W_1$ as at
+    the identity and of nothing at arrows into $W_0$, so pinned down by $\emptyset$ and symmetric.
+    The numerals at $t$ are standard at $W_1$ by the same fullness, so the family is countable
+    relative to $t$. This uses no individuals, so it holds in every variant.
 notes: >-
   The cited construction is a model of the map’s relational-type framework. The description
   identifies its evaluation point; construction and verification are given at the PDF locations in

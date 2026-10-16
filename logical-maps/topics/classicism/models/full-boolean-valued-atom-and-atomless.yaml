@@ -158,6 +158,17 @@ arguments:
 # sentence on the boxed forms of Actuality, Plenitude and Functional Choice, whose failures are now
 # derived, is dropped.
 
+- fails: [necessary-countable-boolean-completeness-r]
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-16'
+  text: >-
+    At $\sigma=\tau=t$, for the property $X$ of type $t\to t$ in the argument for the failure of
+    $\Box$Boolean Completeness (type $t$). The crisp relation pairing $w_n$ with the $n$-th numeral, and
+    nothing else, is in the full domain; the numerals at $t$ are crisply the standard ones (the argument
+    for the Axiom of Infinity (type $t$)), so $\operatorname{Ctbl}_{t,t}(X)$ has value $1_B$. The
+    instance of Countable Boolean Completeness at $X$ in its greatest-lower-bound form then has the
+    value of $\exists y\, .\,\operatorname{GLB}_t(y,X)$, whose $A$-coordinate is $0_A$, so the closed
+    instance is not necessary.
 notes: >-
   Full verification is in the write-up.
 

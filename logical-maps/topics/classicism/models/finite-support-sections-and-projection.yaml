@@ -139,6 +139,21 @@ arguments:
     than the identity has a retraction ($f_U\circ\pi=e_U$ and $j\circ e_T=e_T$ or $\pi$), so $\Box_{\ne}$
     is already the identity there. (The verdicts this argument also establishes but does not record are
     derived by the engine.)'
+- fails:
+  - countable-boolean-completeness-r
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-16'
+  choice: free
+  text: >-
+    At $\sigma=e$, $\tau=e\to t$. Boolean Completeness fails here by the chain Actuality + Boolean
+    Completeness ⇒ Weak Rigid Comprehension, Tame Rigidity + Weak Rigid Comprehension ⇒ Rigid
+    Comprehension ⇒ Inextensible Comprehension, each step taken for one property $X$, and the first
+    uses Boolean Completeness only for the property $H$ of being the haecceity of an instance of $X$.
+    For the witness $X=\top_e$ at $W_0$ the instances are the individuals $\mathbb N$; the numerals at
+    $e$ are standard there and pairwise distinct, and extensional fullness at $W_0$ puts in the domain
+    $H$ and the relation pairing the haecceity of $n$ with the $n$-th numeral. So $H$ is countable
+    relative to $e$, and a least upper bound of it would give, with Actuality and Tame Rigidity, an
+    inextensible coextension of $\top_e$, which the recorded argument excludes.
 notes: Found on 27 September 2026 in answer to Cian Dorr's question whether Actuality implies Inextensible
   Comprehension, after the observation that Christopher Sun's witness $\lambda\bar z\, .\,\Diamond(w\land
   F\bar z)$ can fail only at worlds from which the actual world is reachable, and only through entities
