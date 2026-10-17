@@ -1,0 +1,85 @@
+id: finite-support-two-object-all-maps-at-singleton
+name: 'Finite-support action model: N and singleton, all maps, evaluated at the singleton'
+certificate:
+  source_id: misc
+  produced_by: Cian Dorr, 16 October 2026 (the re-rooting, to separate Atomicity from □Atomicity), with
+    Claude Opus 5.5 (Anthropic), who wrote the verification
+  recorded_by: Claude Opus 5.5 (Anthropic), 16 October 2026
+  checked_by: []
+  date: '2026-10-16'
+  lean: none
+sources:
+- Cian Dorr, suggestion of 16 October 2026, re-rooting the model of Classicism, Appendix D, p. 79.
+- Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, Appendix D, p. 79, paragraph beginning
+  “One particularly interesting result”.
+source_names:
+- Dorr 16 Oct
+- Classicism
+references:
+- paper: bacon-dorr-classicism
+  role: background
+  locator: Appendix D, p. 79, paragraph beginning “One particularly interesting result”
+  note: The construction, there evaluated at $W_0$.
+group: finite-support-two-object
+settings: {}
+definition: 'The model of finite-support-two-object-all-maps: two objects, $W_0=\mathbb N$ and $W_1=\{0\}$,
+  with all functions between them as arrows, $W_i^\ddagger$ the finite subsets of $W_i$, ideally full.
+  Evaluation point: $W_1$, at its identity arrow. The worlds it sees are its identity and the maps
+  $c_n:0\mapsto n$ into $W_0$.
+
+
+  Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each denotes the
+  top element of its type.'
+meets:
+  sigma-top: This is the interpretation the definition fixes.
+  codomain-intensions: The model is ideally full at both objects, and an intension whose value at an
+    arrow depends only on the arrow's codomain is pinned down by $\emptyset$.
+  extensionally-full: Every intension at $W_1$ is in the domain (see the argument for Atomicity), so any
+    set of tuples is the extension at the identity of one of them.
+arguments:
+- id: full-at-singleton
+  holds:
+  - atomicity-r
+  - boolean-completeness-r
+  - actuality
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-16'
+  choice: free
+  text: >-
+    An arrow out of $W_1$ is fixed by its value at $0$, so any two arrows with a common target that
+    agree on $\{0\}$ are equal, and every intension at $W_1$ is pinned down by $\{0\}$. The model being
+    ideally full, every domain at $W_1$ holds all intensions of its type, ordered by inclusion at each
+    arrow: a complete atomic Boolean algebra. So Atomicity and Boolean Completeness hold at every type,
+    and the singleton of the identity arrow is a true proposition entailing every truth.
+- id: necessary-atomicity-t
+  fails:
+  - necessary-atomicity-t
+  - necessary-boolean-completeness-t
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-16'
+  choice: free
+  text: >-
+    A closed sentence holds at $c_n$ iff it holds at the identity of $W_0$, the evaluation point of
+    finite-support-two-object-all-maps. Boolean Completeness (type t) fails there by that model's
+    argument; and Atomicity (type t) fails there, since BF holds and Inextensible Comprehension fails,
+    while Atomicity (type t) with BF gives $\Box$Actuality, hence Actuality, which with BF gives
+    Inextensible Comprehension. So neither is necessary at $W_1$.
+- id: one-individual
+  fails:
+  - no-pure-contingency-r
+  - barcan-r
+  - infinity-e
+  holds:
+  - possible-infinity-e
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-16'
+  choice: free
+  text: >-
+    At $W_1$ there is one individual, at $c_n$ the natural numbers. The closed pure sentence that there
+    is exactly one individual is true at $W_1$ and false at each $c_n$, so No Pure Contingency fails, as
+    does the Infinity Schema (type e) at $W_1$. BF fails for the haecceity of $0$: it holds necessarily of
+    every individual, but not of every individual at $c_n$. The Axiom of Infinity (type e) holds at $c_n$,
+    by the argument of finite-support-two-object-all-maps, so it is possible.
+notes: 'Suggested by Cian Dorr on 16 October 2026 as a separation of Atomicity from □Atomicity, which no
+  recorded model gave: Atomicity holds at every type at the singleton object, and fails at type t at the
+  worlds into $W_0$. No Lean verification is claimed.'

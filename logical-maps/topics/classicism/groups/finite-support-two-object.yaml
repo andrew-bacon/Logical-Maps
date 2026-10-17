@@ -1,0 +1,23 @@
+id: finite-support-two-object
+name: 'Finitely pinned action models on two objects'
+references:
+- paper: bacon-dorr-classicism
+  role: proof
+  locator: Appendix D, Definitions D.1–D.3 and Proposition D.4, pp. 73–74
+  note: Ideally full action models over any category of sets and functions, with the ideal of finite
+    sets; models of C by Proposition D.4.
+
+# Formed on 16 October 2026 (Claude Opus 5.5, at Cian Dorr's direction) from the two-object ideally
+# full models recorded separately until then, with a re-rooting of the all-maps model added. Each
+# member keeps its own file, id, definition and arguments; nothing is shared yet beyond the framework.
+# The evaluation point is part of each member's definition, not a generated parameter, so re-rootings
+# are members of their own.
+
+definition: >-
+  An ideally full action model in the sense of Classicism, Appendix D, over a category with two
+  objects, each carrying the ideal of finite sets: a model of C by Proposition D.4. The member's
+  construction and evaluation point follow.
+
+parameters: {}
+
+arguments: []

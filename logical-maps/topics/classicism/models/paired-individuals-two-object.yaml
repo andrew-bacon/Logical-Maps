@@ -22,6 +22,8 @@ references:
 - paper: bounds-of-possibility
   role: background
   locator: Appendix D
+group: finite-support-two-object
+settings: {}
 definition: 'A two-object ideally full action model. Fix a fixed-point-free involution $\pi$ on $\mathbb
   N$ (say $2k\leftrightarrow 2k+1$), which partitions $\mathbb N$ into two-element blocks. The objects
   are $W_0$, with individuals $\mathbb N$, and $V$, with individuals $\mathbb N\sqcup\{\star\}$ where
