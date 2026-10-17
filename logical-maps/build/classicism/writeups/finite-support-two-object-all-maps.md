@@ -33,9 +33,13 @@
 
 ## Definition
 
+An ideally full action model in the sense of Classicism, Appendix D, over a category with two objects, each carrying the ideal of finite sets: a model of C by Proposition D.4. The member's construction and evaluation point follow.
+
 Appendix D, p. 79, the paragraph beginning “One particularly interesting result”: two objects, $W_0=\mathbb N$ and $W_1=\{0\}$, with all functions between them as arrows, $W_i^\ddagger$ the finite subsets of $W_i$, and the model ideally full as in Proposition D.5. Evaluation point: $W_0$, at its identity arrow.
 
 Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each denotes the top element of its type.
+
+*A member of the group Finitely pinned action models on two objects, which supplies this definition with the record's settings, and the arguments marked as shared.*
 
 ## Arguments
 

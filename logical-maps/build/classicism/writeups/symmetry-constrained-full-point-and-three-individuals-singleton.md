@@ -5,6 +5,8 @@
 ## Package
 
 - **Atomicity.** Every non-bottom entity of each relational type has an atom below it.
+- **□Atomicity.** Necessarily, every non-bottom entity of each relational type has an atom below it.
+- **□Actuality.** Necessarily, there is a true proposition that entails every true proposition.
 - **Boolean Completeness.** Every property of entities of a relational type has a greatest lower bound in that type.
 - **Rigid Comprehension.** Every relation, including a proposition, is coextensive with a rigid one.
 - **Tame Rigidity.** Every weakly rigid relation, including a proposition, is rigid.
@@ -44,6 +46,12 @@ At $W_0$ there is one individual, and at every world at most three, with literal
 At every type the domain is finite and closed under the pointwise lattice operations, since the union and intersection of symmetric intensions are symmetric; in a finite lattice every nonzero element has an atom below it.
 
 *From the group *Symmetry-constrained full models*, shared argument `symmetry-constrained-full#atomicity`. By Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 2026-10-04.*
+
+### Holds □Atomicity, □Actuality.
+
+At every object $V$ reachable from the evaluation point, not only there. Every domain at $V$ is finite and closed under the pointwise lattice operations, so it is atomic, as in the argument for Atomicity. For Actuality, the orbit of $1_V$ under the symmetry group at $V$, the set of arrows $g\circ1_V$, is a symmetric proposition, so in the domain, and true; and a true symmetric proposition contains $1_V$, hence the whole orbit, so the orbit entails every truth. A closed sentence holds at an arrow into $V$ iff it holds at $1_V$, so Atomicity and Actuality are necessary.
+
+*From the group *Symmetry-constrained full models*, shared argument `symmetry-constrained-full#necessary-atomicity-actuality`. By Cian Dorr, recorded by Claude Opus 5.5 (Anthropic), 2026-10-16.*
 
 ### Holds Boolean Completeness.
 
