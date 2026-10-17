@@ -45,6 +45,7 @@ settings:
   construction: >-
     The arrows are the six permutations of $X$ and the three collapses $c_i$, the constant maps
     with value $i\in X$; they compose as maps, so $c_i\circ h=c_i$ and $g\circ c_i=c_{g(i)}$.
+  objects: one
   individuals: three
   sigma: top
 meets:

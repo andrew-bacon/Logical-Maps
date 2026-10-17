@@ -36,6 +36,7 @@ settings:
   construction: >-
     The arrows are all $27$ maps from $X$ to itself, so that the permutations are arrows and the
     symmetry condition is Dorr's; the collapses are the three constant maps.
+  objects: one
   individuals: three
   sigma: top
 meets:

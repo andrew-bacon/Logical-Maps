@@ -38,3 +38,9 @@ references:
   note: Maximalist Classicism and its possibility form.
 notes: Uses Modalized Relational Choice only at $\sigma=\tau=e$, and Maximalism only at the one sentence $P$,
   whose consistency is witnessed by a model rather than by a principle of the map.
+changes:
+- date: '2026-10-16'
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  summary: >-
+    Now derivable from maximalism-incompatible-with-intensional-choice, Modalized Relational Choice
+    implying Intensional Choice; kept for its own argument and its witness.

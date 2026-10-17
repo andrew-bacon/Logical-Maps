@@ -23,7 +23,7 @@ references:
 # with the symmetric ideally-full models.
 
 definition: >-
-  {{construction}} The individuals are a three-element set $X$ and $G$ is the group of all its
+  {{construction}} The arrows act on a three-element set $X$, and $G$ is the group of all its
   permutations, which are arrows in every member. An intension $D$ of a relational type is
   admitted exactly when it is symmetric: $\langle\bar x,h\rangle\in D$ implies
   $\langle g\cdot\bar x,g\circ h\rangle\in D$ for every $g\in G$, where $g$ acts on individuals
@@ -31,7 +31,7 @@ definition: >-
   $c_i$, the constant map with value $i$, it says that $D(c_{g(i)})=g\cdot D(c_i)$. Every such domain is finite and closed under the operations of C:
   each $g$ is an automorphism of the whole structure, and every parameter transported along a
   collapse is fixed by $G$, so the extension at a collapse of any definable intension is
-  invariant. Evaluation point: the sole object, at the identity arrow.
+  invariant. {{objects}}
 
 
   {{individuals}}
@@ -41,7 +41,30 @@ definition: >-
 
 parameters:
   construction:
-    text: The monoid of arrows on the three individuals, as the member gives it.
+    text: The arrows on the three individuals, as the member gives them.
+  # Added 16 October 2026 (Claude Opus 5.5, at Cian Dorr's direction) for the two-object member;
+  # the conditions of `one` were the group's until then.
+  objects:
+    text: The objects and the evaluation point.
+    values:
+      one:
+        text: >-
+          The member has one object, $X$. Evaluation point: the sole object, at the identity arrow.
+        label: one object
+        meets:
+          one-object-action-model: An action model with a single object.
+          irreversible-arrow: >-
+            A collapse $c$: $l\circ c$ is a collapse for every arrow $l$, so from $c$ no world in $a$ is
+            seen.
+          actual-world-isolated: >-
+            $a$, the orbit of the identity, is in the domain and entails every truth; from a world outside
+            $a$, a non-permutation $h$, every $l\circ h$ is again a non-permutation, outside $a$.
+      two:
+        text: >-
+          The member has two objects, $W_0$ with a single point $x$, and $X$; the arrows are all
+          maps between them, and the symmetry group at $W_0$ is trivial, so the condition bites at
+          the arrows into $X$. Evaluation point: $W_0$, at its identity arrow.
+        label: two objects
   individuals:
     text: What the individuals are. Each member is recorded with the three individuals the arrows
       act on; its variant with a single individual, the arrows still acting on the three-element set
@@ -100,7 +123,6 @@ parameters:
 
 # Conditions of the topic that every member meets.
 meets:
-  one-object-action-model: An action model with a single object.
   rigid-haecceity-disjunctions: >-
     For any set $E$ the intension $k\mapsto k\cdot E$ is symmetric (as in the argument for Rigid
     Comprehension), so in the domain, and it is the smallest symmetric intension containing the
@@ -123,12 +145,6 @@ meets:
     and so its orbit. It is necessary at no world, since every world sees a collapse, which lies
     outside $a$; and a collapse $c$ does not fix it, since $l\circ c$ is a collapse for every $l$,
     so $c\cdot a$ is empty.
-  irreversible-arrow: >-
-    A collapse $c$: $l\circ c$ is a collapse for every arrow $l$, so from $c$ no world in $a$ is
-    seen.
-  actual-world-isolated: >-
-    $a$, the orbit of the identity, is in the domain and entails every truth; from a world outside
-    $a$, a non-permutation $h$, every $l\circ h$ is again a non-permutation, outside $a$.
 
 conditions:
 - id: sigma-apart
@@ -181,6 +197,7 @@ arguments:
     $Y$ is that intension, which is rigid.
 
 - id: barcan-t-collapse
+  when: {objects: one}
   fails: [barcan-t]
   by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
   date: '2026-10-04'
@@ -193,6 +210,7 @@ arguments:
     holds at the identity while $\Box\forall p\, .\,Xp$ fails.
 
 - id: distinctness-necessary-t
+  when: {objects: one}
   fails: [distinctness-necessary-t]
   by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
   date: '2026-10-04'
@@ -211,7 +229,7 @@ arguments:
     $n+1$ pairwise distinct propositions.
 
 - id: axiom-of-infinity-e
-  when: {individuals: three}
+  when: {individuals: three, objects: one}
   fails: [axiom-of-infinity-e, infinity-e, possible-infinity-e]
   by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
   date: '2026-10-04'
@@ -221,6 +239,7 @@ arguments:
     pairwise distinct.
 
 - id: strong-leibniz-t
+  when: {objects: one}
   fails: [strong-leibniz-t]
   by: Claude Opus 5.5 (Anthropic), from Cian Dorr's observation
   date: '2026-10-08'
