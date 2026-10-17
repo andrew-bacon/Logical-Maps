@@ -163,6 +163,19 @@ arguments:
     union and intersection of symmetric intensions are symmetric; in a finite lattice every nonzero
     element has an atom below it.
 
+- id: necessary-atomicity-actuality
+  holds: [necessary-atomicity-r, necessary-actuality]
+  by: Cian Dorr, recorded by Claude Opus 5.5 (Anthropic)
+  date: '2026-10-16'
+  choice: free
+  text: >-
+    At every object $V$ reachable from the evaluation point, not only there. Every domain at $V$ is
+    finite and closed under the pointwise lattice operations, so it is atomic, as in the argument for
+    Atomicity. For Actuality, the orbit of $1_V$ under the symmetry group at $V$, the set of arrows
+    $g\circ1_V$, is a symmetric proposition, so in the domain, and true; and a true symmetric
+    proposition contains $1_V$, hence the whole orbit, so the orbit entails every truth. A closed
+    sentence holds at an arrow into $V$ iff it holds at $1_V$, so Atomicity and Actuality are
+    necessary.
 - id: boolean-completeness
   holds: [boolean-completeness-r]
   by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
