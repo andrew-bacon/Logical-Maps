@@ -5002,7 +5002,7 @@ def finite_support_permutations_individuals_singleton : Prop :=
 /-- `finite-support-sections-and-projection`
 
 Finite-support action model: N and N×2, sections and projection: a witness satisfying 11 principles
-and violating 4. -/
+and violating 5. -/
 def finite_support_sections_and_projection : Prop :=
   ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecActuality.schemaIn ∧
@@ -5019,7 +5019,8 @@ def finite_support_sections_and_projection : Prop :=
     ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.InextensibleComprehension.schemaIn ∧
     ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AtomicityT.schemaIn ∧
     ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.CountableBooleanCompleteness.schemaIn
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.CountableBooleanCompleteness.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Plenitude.schemaIn
 
 /-- `finite-support-truncated-shifts`
 
@@ -5208,7 +5209,7 @@ def finite_support_truncations_individuals_singleton : Prop :=
 
 /-- `finite-support-two-object-all-maps-at-singleton`
 
-Finite-support action model: N and singleton, all maps, evaluated at the singleton: a witness satisfying 8 principles
+Finite-support action model: N and singleton, all maps, evaluated at the singleton: a witness satisfying 9 principles
 and violating 9. -/
 def finite_support_two_object_all_maps_at_singleton : Prop :=
   ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
@@ -5216,6 +5217,7 @@ def finite_support_two_object_all_maps_at_singleton : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BooleanCompleteness.schemaIn ∧
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Actuality.schemaIn ∧
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.PossibleInfinityE.schemaIn ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Plenitude.schemaIn ∧
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecIntensionalChoice.schemaIn ∧
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRelationalChoice.schemaIn ∧
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTransversalChoice.schemaIn ∧
@@ -8563,10 +8565,11 @@ def symmetry_constrained_full_collapse_individuals_singleton_sigma_true_atom : P
 
 /-- `symmetry-constrained-full-point-and-three`
 
-Symmetry-constrained full model: a one-point object and all maps to three individuals: a witness satisfying 9 principles
+Symmetry-constrained full model: a one-point object and all maps to three individuals: a witness satisfying 10 principles
 and violating 11. -/
 def symmetry_constrained_full_point_and_three : Prop :=
   ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Plenitude.schemaIn ∧
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Atomicity.schemaIn ∧
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomicity.schemaIn ∧
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecActuality.schemaIn ∧
@@ -8590,10 +8593,11 @@ def symmetry_constrained_full_point_and_three : Prop :=
 
 /-- `symmetry-constrained-full-point-and-three-individuals-singleton`
 
-Symmetry-constrained full model: a one-point object and all maps to three individuals [one individual]: a witness satisfying 9 principles
+Symmetry-constrained full model: a one-point object and all maps to three individuals [one individual]: a witness satisfying 10 principles
 and violating 9. -/
 def symmetry_constrained_full_point_and_three_individuals_singleton : Prop :=
   ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Plenitude.schemaIn ∧
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Atomicity.schemaIn ∧
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomicity.schemaIn ∧
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecActuality.schemaIn ∧

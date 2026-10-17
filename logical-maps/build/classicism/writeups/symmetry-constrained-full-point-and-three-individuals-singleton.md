@@ -4,6 +4,7 @@
 
 ## Package
 
+- **Plenitude.** Every total single-valued binary relation is represented by an operation. Its output type is relational, as required by the type system.
 - **Atomicity.** Every non-bottom entity of each relational type has an atom below it.
 - **□Atomicity.** Necessarily, every non-bottom entity of each relational type has an atom below it.
 - **□Actuality.** Necessarily, there is a true proposition that entails every true proposition.
@@ -40,6 +41,12 @@ Interpretation of Σ, fixed for this record: every constant of Σ is relational,
 At $W_0$ there is one individual, and at every world at most three, with literal identity, so no two individuals are distinct at the evaluation point and no four are possibly distinct.
 
 *Address: `symmetry-constrained-full-point-and-three-individuals-singleton#infinity-e`. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-16.*
+
+### Holds Plenitude.
+
+ND holds at $W_0$: transport along $h_n$ determines an entity $Y$ at $W_0$ at every world, since $(h_n\cdot Y)_k=Y_{k\circ h_n}$ and $k\circ h_n$ is $1_{W_0}$ for the map back to $W_0$ and $h_m$ for each $m$ as $k$ ranges over the maps on $X$; so distinct entities stay distinct at every world. Given $U$ functional at the identity with values $Z_y$, put $X_k:=\{(k\cdot y,\bar a):\bar a\in (Z_y)_k\}$, well defined by ND, symmetric because each $Z_y$ is, and so in the full domain; and $Xy=Z_y$.
+
+*Address: `symmetry-constrained-full-point-and-three-individuals-singleton#plenitude`. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-16.*
 
 ### Holds Atomicity.
 

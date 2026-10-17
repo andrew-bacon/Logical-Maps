@@ -8,6 +8,7 @@
 - **Boolean Completeness.** Every property of entities of a relational type has a greatest lower bound in that type.
 - **Actuality.** There is a true proposition that entails every true proposition.
 - **Possible Infinity (type e).** Possibly there are not finitely many individuals: the Axiom of Infinity at this type, under a diamond.
+- **Plenitude.** Every total single-valued binary relation is represented by an operation. Its output type is relational, as required by the type system.
 - **□Intensional Choice.** Every closed instance of Intensional Choice is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
 - **□Relational Choice.** Necessarily, every serial binary relation has a functional subrelation.
 - **□Transversal Choice.** Necessarily, every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
@@ -51,6 +52,12 @@ A closed sentence holds at $c_n$ iff it holds at the identity of $W_0$, the eval
 At $W_1$ there is one individual, at $c_n$ the natural numbers. The closed pure sentence that there is exactly one individual is true at $W_1$ and false at each $c_n$, so No Pure Contingency fails, as does the Infinity Schema (type e) at $W_1$. BF fails for the haecceity of $0$: it holds necessarily of every individual, but not of every individual at $c_n$. The Axiom of Infinity (type e) holds at $c_n$, by the argument of finite-support-two-object-all-maps, so it is possible.
 
 *Address: `finite-support-two-object-all-maps-at-singleton#one-individual`. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-16.*
+
+### Holds Plenitude.
+
+ND holds at $W_1$: $(c_n\cdot Y)_k=Y_{k\circ c_n}$, and $k\circ c_n$ is $1_{W_1}$ for the map back to $W_1$ and $c_m$ for each $m$ as $k$ ranges over the maps on $\mathbb N$, so transport along $c_n$ determines $Y$ at every world. Given $U$ functional at the identity with values $Z_y$, put $X_k:=\{(k\cdot y,\bar a):\bar a\in(Z_y)_k\}$, well defined by ND, and in the domain, which at $W_1$ holds every intension (see full-at-singleton); and $Xy=Z_y$.
+
+*Address: `finite-support-two-object-all-maps-at-singleton#plenitude`. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-16.*
 
 ### Holds □Intensional Choice.
 
