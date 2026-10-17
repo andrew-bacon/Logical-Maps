@@ -1,0 +1,131 @@
+id: symmetric-class-reflecting-surjections
+name: 'Symmetric ideally-full model: class-reflecting surjections of infinitely many infinite classes'
+certificate:
+  source_id: misc
+  produced_by: Cian Dorr, 16 October 2026 (the model, with infinitely many infinite classes, arrows
+    collapsing only within a class and symmetries preserving the classes), with Claude Opus 5.5
+    (Anthropic), who fixed the arrows and wrote the verification
+  recorded_by: Claude Opus 5.5 (Anthropic), 16 October 2026
+  checked_by: []
+  date: '2026-10-16'
+  lean: none
+sources:
+- Cian Dorr, construction of 16 October 2026, with Claude Opus 5.5 (Anthropic); verification in the
+  write-up.
+- Cian Dorr, Boolean Completeness does not imply Rigid Comprehension, draft of 30 July 2026, §3 (symmetric
+  ideally-full models), Definitions 15–18, p. 8, and Proposition 20.
+source_names:
+- Dorr 16 Oct
+- BC does not imply RC
+references:
+- paper: dorr-bc-not-rc
+  role: background
+  locator: §3, Definitions 15–18, p. 8; Proposition 20
+  note: The framework of symmetric ideally-full models, which are models of C for every base.
+group: symmetric-ideally-full
+settings:
+  construction: 'A symmetric ideally-full intensional action model over one object, the set of natural
+    numbers, equipped with an equivalence relation $E$ that has infinitely many classes, each infinite.
+    Its arrows are the surjections $h$ of that set that reflect $E$ ($hx\mathrel Ehy$ only if $x\mathrel
+    Ey$), so that an arrow identifies two points only if they are in the same class; these are closed
+    under composition. Its symmetry group is the automorphism group of $E$, the permutations that map
+    classes onto classes. The evaluation point is the identity arrow.'
+  individuals: base
+  sigma: top
+meets:
+  one-object-action-model: 'It has one object (Dorr, draft, §3.1: closed pure terms denote entities fixed
+    by every arrow).'
+  finitely-pinned-domains: A relational domain holds exactly the symmetric intensions pinned down by a
+    finite set, and every individual $n$ is pinned down by $\{n\}$.
+  transposable: '$M=\emptyset$, and for $N$ the property of not belonging to $N$: the transposition of
+    $y$ with another individual of its class outside $N$, which exists since the classes are infinite,
+    maps classes onto classes, so lies in the symmetry group.'
+  surjective-arrows: The arrows are surjections by definition.
+  finite-pinning: Every object carries the ideal of finite sets.
+arguments:
+- id: truth-implies-nd-necessity
+  holds:
+  - distinctness-preserving-collapse
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-16'
+  choice: free
+  writeup: symmetric-class-reflecting-surjections
+  text: >-
+    For finite $N$, let $\delta_N$ be the set of arrows that are injective on $N$ and preserve the
+    pattern of $E$ on $N$. It is symmetric, pinned down by $N$ and true, and $\Diamond\delta_N=\delta_N$:
+    if $kh\in\delta_N$ then $h$ is injective on $N$, and $h$ preserves the pattern because $k$ reflects
+    $E$. Every truth $p$ pinned down by $N$ contains $\delta_N$: an arrow in $\delta_N$ agrees on $N$
+    with a partial isomorphism of $E$, which extends to an automorphism $\sigma$, and $\sigma\in p$ by
+    symmetry. So every truth is ND-necessary, with $\delta_N$ as the witness.
+- id: atomlessness
+  holds:
+  - atomlessness
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-16'
+  choice: free
+  text: >-
+    Let $p$ be possible, pinned down by $N$, containing $h$. Choose $m\ne m^{\prime}$ in a class disjoint
+    from $N$, and let $q$ be the arrows in $p$ that send $m$ and $m^{\prime}$ into one class: symmetric,
+    pinned down by $N\cup\{m,m^{\prime}\}$, and $q\le p$. Arrows agreeing with $h$ on $N$ may send $m$
+    and $m^{\prime}$ into one class not met by $h(N)$, or into two such classes, and both are in $p$;
+    so $q$ is possible and $q\ne p$.
+- id: transversal
+  when: {individuals: base}
+  fails:
+  - transversal-r
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-16'
+  choice: free
+  text: >-
+    At type $e$, as in symmetric-infinite-classes, whose argument uses only the symmetry group, which
+    is the same here. The class of a fixed individual is the extension of a property pinned down by
+    that individual. A classifier pinned down by a finite set cannot choose a representative for the
+    class of an individual in a class disjoint from that set: the representative is fixed by every
+    automorphism fixing the classifier's pinning set and preserving the class, so its least pinning set
+    lies inside the classifier's, and then its extension would be preserved by an automorphism swapping
+    the class with another.
+- id: intensional-choice
+  when: {individuals: base}
+  fails:
+  - intensional-choice-r
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-16'
+  choice: free
+  text: >-
+    At type $e$. The relation $E$ is in the domain (pinned down by $\emptyset$, preserved by the
+    symmetries), so $F:=\lambda y\, .\,y\ne n_0\land y\mathrel E n_0$ is, and it is necessarily
+    instantiated, the classes being infinite at every arrow. Suppose $G\le F$ is necessarily uniquely
+    instantiated, pinned down by a finite $N\ni n_0$. Let $h$ map the class of $n_0$ onto itself,
+    sending $N\cap[n_0]$ to $n_0$, and be the identity on the other classes: an arrow. Then $G_h=\{y\}$
+    with $y\in[n_0]\setminus\{n_0\}$, so $y\notin h(N)$. The transposition $\sigma$ of $y$ with another
+    member of $[n_0]$ outside $h(N)$ is a symmetry fixing $h(N)$ pointwise, so $\sigma\circ h$ agrees
+    with $h$ on $N$ and $G_{\sigma\circ h}=G_h=\{y\}$, while symmetry gives $G_{\sigma\circ h}=\{\sigma
+    y\}$. $\Box$Intensional Choice fails with it, by T.
+- id: modalized-relational-choice
+  when: {individuals: base}
+  fails:
+  - modalized-relational-choice-r
+  by: Cian Dorr and Claude Opus 5.5 (Anthropic)
+  date: '2026-10-16'
+  choice: free
+  writeup: symmetric-class-reflecting-surjections
+  text: >-
+    At $\sigma=\tau=e$, for $U:=\lambda xy\, .\,(x\ne y\land\Diamond x=y)\lor\forall z\, .\,z\ne
+    x\to\Box z\ne x$, a closed term, necessarily serial by a theorem of C. Two individuals are
+    contingently distinct iff they are distinct and in the same class, so the second disjunct is false
+    of every individual at every arrow. A necessarily functional $S\le U$ would then have at the
+    identity a function $f$ sending each individual to a different member of its class. With $N$ a
+    finite set pinning $S$ down, symmetry and pinning give $f(gx)=g(f(x))$ for every automorphism $g$
+    fixing $N$ pointwise; for $x$ in a class disjoint from $N$, the transposition of $f(x)$ with a third
+    member of the class gives $f(x)\ne f(x)$.
+notes: 'Found on 16 October 2026 to show that the closed pure sentence "each individual is contingently
+  distinct from some other, but no functional relation takes each individual to an individual
+  contingently distinct from it" is consistent with C, a premise of
+  maximalism-incompatible-with-modalized-relational-choice. Unlike symmetric-infinite-classes, whose arrows
+  are all surjections, its arrows never merge classes; that makes every truth ND-necessary there, and it
+  separates the Truth-implies-necessity principles from Transversal. The nearest recorded model,
+  symmetric-all-surjections (Base 1), differs from it on Transversal. Left unknown: Boolean Completeness
+  and its countable form (Dorr''s hull conditions fail, since splicing two class-reflecting surjections
+  can merge classes), Inextensible and Weakly Inextensible Comprehension, and the rigidity family (Tame
+  Rigidity, Rigid Power, Rigid Rigidity and their weak forms), whose recorded arguments assume all
+  surjections or section arrows, the latter failing here. No Lean verification is claimed.'
