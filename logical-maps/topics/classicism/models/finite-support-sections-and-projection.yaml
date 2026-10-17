@@ -156,6 +156,20 @@ arguments:
     $H$ and the relation pairing the haecceity of $n$ with the $n$-th numeral. So $H$ is countable
     relative to $e$, and a least upper bound of it would give, with Actuality and Tame Rigidity, an
     inextensible coextension of $\top_e$, which the recorded argument excludes.
+- fails:
+  - plenitude-r
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-16'
+  choice: free
+  text: >-
+    At $\sigma=e$, $\tau=t$. Let $Z_n:=\{f_T:T(n+1)=0\}$, a proposition at $W_0$ pinned down by
+    $\{n+1\}$, and let $U$ hold at the identity of exactly the pairs $\langle n,Z_n\rangle$ and at no
+    arrow into $W_1$: an intension depending only on the codomain, so pinned down by $\emptyset$ and in
+    the domain, and functional at the identity. Suppose $X$ of type $e\to t$, pinned down by a finite
+    $N$, has $Xn=Z_n$ for every $n$. Take $n$ with $n,n+1\notin N$, and $T,T^{\prime}$ differing only at
+    $n+1$, with $T(n+1)=0$. Then $f_T$ and $f_{T^{\prime}}$ agree on $N\cup\{n\}$, so $X_{f_T}=
+    X_{f_{T^{\prime}}}$ and both contain $f_T(n)=f_{T^{\prime}}(n)$ or neither: $Xn$ is true at both or
+    at neither, while $Z_n$ is true at $f_T$ and not at $f_{T^{\prime}}$.
 notes: Found on 27 September 2026 in answer to Cian Dorr's question whether Actuality implies Inextensible
   Comprehension, after the observation that Christopher Sun's witness $\lambda\bar z\, .\,\Diamond(w\land
   F\bar z)$ can fail only at worlds from which the actual world is reachable, and only through entities

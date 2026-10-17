@@ -80,6 +80,18 @@ arguments:
     does the Infinity Schema (type e) at $W_1$. BF fails for the haecceity of $0$: it holds necessarily of
     every individual, but not of every individual at $c_n$. The Axiom of Infinity (type e) holds at $c_n$,
     by the argument of finite-support-two-object-all-maps, so it is possible.
+- id: plenitude
+  holds:
+  - plenitude-r
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-16'
+  choice: free
+  text: >-
+    ND holds at $W_1$: $(c_n\cdot Y)_k=Y_{k\circ c_n}$, and $k\circ c_n$ is $1_{W_1}$ for the map back to
+    $W_1$ and $c_m$ for each $m$ as $k$ ranges over the maps on $\mathbb N$, so transport along $c_n$
+    determines $Y$ at every world. Given $U$ functional at the identity with values $Z_y$, put
+    $X_k:=\{(k\cdot y,\bar a):\bar a\in(Z_y)_k\}$, well defined by ND, and in the domain, which at $W_1$
+    holds every intension (see full-at-singleton); and $Xy=Z_y$.
 notes: 'Suggested by Cian Dorr on 16 October 2026 as a separation of Atomicity from □Atomicity, which no
   recorded model gave: Atomicity holds at every type at the singleton object, and fails at type t at the
   worlds into $W_0$. No Lean verification is claimed.'
