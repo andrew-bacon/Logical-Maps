@@ -19,6 +19,10 @@ Let $U:=\lambda xy\, .\,(x\ne y\land\Diamond x=y)\lor\forall z\, .\,(z\ne x\to\B
 
 Uses Modalized Relational Choice only at $\sigma=\tau=e$, and Maximalism only at the one sentence $P$, whose consistency is witnessed by a model rather than by a principle of the map.
 
+## Revisions
+
+- **2026-10-16** (Claude Opus 5.5 (Anthropic), at Cian Dorr's direction) — Now derivable from maximalism-incompatible-with-intensional-choice, Modalized Relational Choice implying Intensional Choice; kept for its own argument and its witness.
+
 ## Sources
 
 - **Dorr 16 Oct** — Cian Dorr, suggestion of 16 October 2026.

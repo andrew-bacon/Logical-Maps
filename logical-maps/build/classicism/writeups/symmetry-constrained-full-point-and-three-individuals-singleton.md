@@ -1,0 +1,130 @@
+# Symmetry-constrained full model: a one-point object and all maps to three individuals [one individual]
+
+<p class='cert'>Model — Source: Misc.; produced by Claude Opus 5.5 (Anthropic), 16 October 2026, from Cian Dorr's suggestion that a symmetry-constrained full model would witness the consistency premise of maximalism-incompatible-with-intensional-choice; recorded by Claude Opus 5.5 (Anthropic), 16 October 2026, at Cian Dorr's direction.</p>
+
+## Package
+
+- **Atomicity.** Every non-bottom entity of each relational type has an atom below it.
+- **Boolean Completeness.** Every property of entities of a relational type has a greatest lower bound in that type.
+- **Rigid Comprehension.** Every relation, including a proposition, is coextensive with a rigid one.
+- **Tame Rigidity.** Every weakly rigid relation, including a proposition, is rigid.
+- **Rigid Power.** If a relation is rigid, so is the property of being a rigid relation that entails it.
+- **□Rigid Power.** Every closed instance of Rigid Power is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **Transversal Choice.** Every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
+- **¬ Infinity Schema (type e).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
+- **¬ Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
+- **¬ Possible Infinity (type e).** Possibly there are not finitely many individuals: the Axiom of Infinity at this type, under a diamond.
+- **¬ Axiom of Infinity (type t).** There are not finitely many propositions. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
+- **¬ Infinity Schema (type t).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
+- **¬ Witnessed Possibility.** For pure-formulas P with free variables among a finite tuple x, and distinct matching nonlogical constants c, a witness to P entails that P at those constants is possible.
+- **¬ Separated Structure.** For each typed nonlogical constant c and closed same-typed terms F,G not containing c, equality after application to c implies equality of F and G.
+- **¬ Independence (signature Σ).** No constant of Sigma is a pure operation applied to other constants: for a closed pure term A and distinct constants c, d_1,…,d_n with n ≥ 0, c differs from A applied to the d’s. With n = 0, no constant denotes a pure entity.
+- **¬ Maximalism (signature Σ).** The Maximalism schema for the fixed nonlogical signature Σ: every closed identity of its language not provable in C(Σ) is false.
+
+## Definition
+
+The arrows are all maps between $W_0=\{x\}$ and $X$: the identity of $W_0$, the three maps $h_n:x\mapsto n$ into $X$, the map from $X$ to $W_0$, and all $27$ maps from $X$ to itself. The arrows act on a three-element set $X$, and $G$ is the group of all its permutations, which are arrows in every member. An intension $D$ of a relational type is admitted exactly when it is symmetric: $\langle\bar x,h\rangle\in D$ implies $\langle g\cdot\bar x,g\circ h\rangle\in D$ for every $g\in G$, where $g$ acts on individuals as itself and on entities of higher types by relabelling (Dorr's Definition 17). At a collapse $c_i$, the constant map with value $i$, it says that $D(c_{g(i)})=g\cdot D(c_i)$. Every such domain is finite and closed under the operations of C: each $g$ is an automorphism of the whole structure, and every parameter transported along a collapse is fixed by $G$, so the extension at a collapse of any definable intension is invariant. The member has two objects, $W_0$ with a single point $x$, and $X$; the arrows are all maps between them, and the symmetry group at $W_0$ is trivial, so the condition bites at the arrows into $X$. Evaluation point: $W_0$, at its identity arrow.
+
+Individuals, fixed for this record: there is a single individual, which every arrow fixes; the arrows still act on the three-element set $X$, which supplies the symmetry.
+
+Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each denotes the top element of its type.
+
+*A member of the group Symmetry-constrained full models, which supplies this definition with the record's settings, and the arguments marked as shared.*
+
+## Arguments
+
+### Fails Infinity Schema (type e), Axiom of Infinity (type e), Possible Infinity (type e).
+
+At $W_0$ there is one individual, and at every world at most three, with literal identity, so no two individuals are distinct at the evaluation point and no four are possibly distinct.
+
+*Address: `symmetry-constrained-full-point-and-three-individuals-singleton#infinity-e`. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-16.*
+
+### Holds Atomicity.
+
+At every type the domain is finite and closed under the pointwise lattice operations, since the union and intersection of symmetric intensions are symmetric; in a finite lattice every nonzero element has an atom below it.
+
+*From the group *Symmetry-constrained full models*, shared argument `symmetry-constrained-full#atomicity`. By Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 2026-10-04.*
+
+### Holds Boolean Completeness.
+
+The entailment order is the pointwise order on intensions, and the pointwise intersection of any set of symmetric intensions is symmetric and in the domain, so every set has a greatest lower bound at every type.
+
+*From the group *Symmetry-constrained full models*, shared argument `symmetry-constrained-full#boolean-completeness`. By Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 2026-10-04.*
+
+### Holds Rigid Comprehension.
+
+For a set $S$ of tuples at the identity, the intension $Y$ with $Y(h):=h\cdot S$, the transports of the members of $S$ along $h$, is symmetric: relabelling by $g$ the transport of a tuple along $h$ gives its transport along $g\circ h$ (when the permutations are arrows because transport composes; otherwise because $g\cdot(c\cdot z)=c_{g(i)}\cdot z$ for a collapse $c=c_i$ and every admissible $z$, the collapses being absorbed, $l\circ c=l$ for $l\ne1$, and $z$ symmetric). $Y$ is coextensive with $S$, persistent, and inextensible at every world $h$, since any persistent $B$ with $B(h)\supseteq Y(h)$ has $B(k\circ h)\supseteq k\cdot Y(h)= Y(k\circ h)$. So every extension has a rigid coextension, at every type.
+
+*From the group *Symmetry-constrained full models*, shared argument `symmetry-constrained-full#rigid-comprehension`. By Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 2026-10-04.*
+
+### Holds Tame Rigidity.
+
+Let $Y$ be weakly rigid with extension $E$ at the identity. The intension $h\mapsto h\cdot E$ is symmetric, as in the argument for Rigid Comprehension, and satisfies the hypothesis of weak inextensibility, so $Y(h)\subseteq h\cdot E$ for every $h$; persistence gives the converse. So $Y$ is that intension, which is rigid.
+
+*From the group *Symmetry-constrained full models*, shared argument `symmetry-constrained-full#tame-rigidity`. By Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 2026-10-04.*
+
+### Fails Axiom of Infinity (type t), Infinity Schema (type t).
+
+There are finitely many propositions, $n$ say, with literal identity. The numerals are closed terms, so in the domain, and the numeral $n$ holds of the universal property of propositions, so the Axiom of Infinity at type $t$ fails, as does the instance of the schema asking for $n+1$ pairwise distinct propositions.
+
+*From the group *Symmetry-constrained full models*, shared argument `symmetry-constrained-full#axiom-of-infinity-t`. By Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 2026-10-04.*
+
+### Fails Axiom of Infinity (type e), Infinity Schema (type e), Possible Infinity (type e).
+
+No two individuals are distinct, and the numeral $\operatorname{Suc}_e\mathbf{0}_e$ holds of the universal property at type $e$ at every world.
+
+*General argument `arguments/one-individual`. It requires that There is exactly one individual, at every world. Here: The only individual is fixed by every arrow, at the sole object. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-02.*
+
+*Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* Moved from the group finite-support-one-object to the topic.
+
+### Holds Rigid Power, □Rigid Power.
+
+Write $X_0(E)$ for the intension $k\mapsto k\cdot E$. The extension at an arrow $h$ of the power property $\lambda X\, .\,\operatorname{Rigid}(X)\land X\le F$ is the set of rigid $X$ with $X\le h\cdot F$, the bound variable ranging over the domain untransported and the parameter transported. By the condition the rigid relations are the $X_0(E)$, and $X_0(T)\le X_0(S)$ iff $T\subseteq S$; so for rigid $F=X_0(S)$ the power property has extension $\{X_0(T'):T'\subseteq k\cdot S\}$ at $k$, while transporting its extension at the identity along $k$ gives $\{X_0(k\cdot T):T\subseteq S\}$. These coincide, since every $T'\subseteq k\cdot S$ is $k\cdot T$ for $T:=\{s\in S:k\cdot s\in T'\}$. So the power property is itself $X_0$ of its extension, hence rigid, and the same at every reachable object gives the boxed form.
+
+*General argument `arguments/rigid-power-tight`. It requires that At every object reachable from the evaluation point, the rigid relations of each relational type are exactly the intensions $k\mapsto k\cdot E$, the disjunctions of the haecceities of the members of $E$, for $E$ any set of tuples from the domains there; in particular every such intension is in the domain. Here: For any set $E$ the intension $k\mapsto k\cdot E$ is symmetric (as in the argument for Rigid Comprehension), so in the domain, and it is the smallest symmetric intension containing the transports of the members of $E$; so a weakly inextensible relation lies below it over its extension, and a rigid one equals it (as in the argument for Tame Rigidity). By Claude Opus 5.5 (Anthropic), 3 October 2026 (full action models); extended by Claude Fable 5.1 (Anthropic), 4 October 2026, at Cian Dorr's direction.*
+
+*Revised 2026-10-04 by Claude Fable 5.1 (Anthropic), at Cian Dorr's direction:* The argument deferred in extraction.md on 3 October for the full action models, where every intension is present, stated under the condition it actually uses, which the symmetry-constrained full models also meet.
+
+### Fails Witnessed Possibility, Separated Structure, Independence (signature Σ), Maximalism (signature Σ).
+
+Let $c\in\Sigma$ have relational type $\tau$, so $c=\top_\tau$ necessarily. Witnessed Possibility fails for the pure formula $x\ne\top_\tau$, witnessed by $\bot_\tau$ but impossible of $c$; Separated Structure fails since $\lambda x\, .\,x$ and $\lambda x\, .\,\top_\tau$ agree on $c$ and differ; Independence (signature Σ) fails since $c$ denotes what the closed pure term $\top_\tau$ denotes; Distinctness Maximalism (signature Σ) fails since $c=\top_\tau$ is a true identity that C(Σ) does not prove.
+
+*General argument `arguments/sigma-top`. It requires that Every constant of Σ is relational, and each denotes the top element of its type. Here: This is the interpretation. By Claude Fable 5.1 (Anthropic), at Cian Dorr’s request, 2026-09-22.*
+
+*Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* Moved from the group finite-support-one-object to the topic; it uses nothing about the model.
+
+### Holds Countable Boolean Completeness.
+
+*Withdrawn 2026-10-16 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction: Countable Boolean Completeness now measures countability at every type, not only by the finite cardinalities of individuals. The argument shows only the instance counting at $e$; at a type with infinitely many entities a countable property may have infinitely many instances, so the verdict no longer follows.*
+
+The natural numbers are the finite cardinalities at type $e$ (Background, after Goodsell), and with a single individual there are three: $\mathbf{0}_e$, true of the empty property; $\operatorname{Suc}_e\mathbf{0}_e$, true of the universal one; and the empty cardinality, which is $\operatorname{Suc}_e$ of the second and of itself. By extensional fullness the property of being one of these three is in the domain, so it bounds natural numberhood. A countable property therefore has at most three members in its extension, and their join is its least upper bound.
+
+*General argument `arguments/three-numbers`. It requires that There is exactly one individual, at every world. Here: The only individual is fixed by every arrow, at the sole object. It requires that The model is extensionally full at every object: every set of tuples from the domains at an object is the extension, at the identity arrow, of an element of the domain of the matching relational type there. Here: Any set $S$ of tuples at the identity of $W_0$ is the extension there of a symmetric intension: put $S$ at the identity and the empty set at the arrows into $X$. By Claude Opus 5.5 (Anthropic), on Cian Dorr's question whether the failure of Boolean Completeness at type $t$ refutes its countable form here, 2026-10-02.*
+
+*Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* Moved from the group finite-support-one-object to the topic.
+
+### Holds Transversal Choice.
+
+For an equivalence relation at the evaluation point, a transversal of its extension there, chosen in the metatheory, is by extensional fullness the extension of an element of the domain; the equivalence and transversal conditions are unboxed.
+
+*General argument `arguments/transversal-choice-extensionally-full`. It requires that The model is extensionally full at every object: every set of tuples from the domains at an object is the extension, at the identity arrow, of an element of the domain of the matching relational type there. Here: Any set $S$ of tuples at the identity of $W_0$ is the extension there of a symmetric intension: put $S$ at the identity and the empty set at the arrows into $X$. By Cian Dorr (observation); recorded by Claude Fable 5.1 (Anthropic), on a question of Zachary Goodsell, after an observation of Christopher Sun, 2026-09-25.*
+
+*Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* The Relational Choice and Transversal Choice arguments merged into one, stated for every extensionally full model.
+
+*Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* Moved from the group finite-support-one-object to the topic. Its first sentence, deriving extensional fullness from ideal fullness, is now the group's reason for meeting extensionally-full.
+
+
+## Notes
+
+Added on 16 October 2026 as the witness for maximalism-incompatible-with-intensional-choice. At the evaluation point the closed pure sentence "there is exactly one individual, and no necessarily uniquely instantiated property entails being distinct from it if anything is" is true: a necessarily uniquely instantiated $G\le F_x$, with $F_x$ as under collapse-onto-point, would at $h_n$ have its instance $y\in X\setminus\{n\}$ fixed by every permutation fixing $n$, since $\sigma\circ h_n=h_n$; and the transposition of $y$ with the third point moves it. So that sentence is consistent with C. The one-object members cannot witness it: No Pure Contingency holds there, and the sentence is false at the identity. Kept, at Cian Dorr's wish, as an instructive member although it was not added to separate principles. No Lean verification is claimed.
+
+## Sources
+
+- **Opus 16 Oct** — Claude Opus 5.5 (Anthropic), construction and verification of 16 October 2026, on Cian Dorr's suggestion.
+- **BC does not imply RC** — Cian Dorr, Boolean Completeness does not imply Rigid Comprehension, draft of 30 July 2026, Definitions 15–18, p. 8, and Proposition 20.
+
+<p class='cert'>Record: <code>topics/classicism/models/symmetry-constrained-full-point-and-three.yaml</code></p>
+
+## Paper references
+
+- **Background: Boolean Completeness does not imply Rigid Comprehension.** Dorr, Cian. Boolean Completeness does not imply Rigid Comprehension. Unpublished draft in progress, 30 July 2026, 27 pages. All page, proposition and lemma locators for this source refer to that draft. Parts of the draft were drafted with AI assistance; its mathematical claims are attributed to the author. — Definitions 15–18, p. 8; Proposition 20. Symmetric ideally-full models, here with the improper ideal at both objects; Proposition 20, proved in the topic's Lean as symIdeal_isModel for any category of sets, needs only that the symmetries be invertible arrows.
