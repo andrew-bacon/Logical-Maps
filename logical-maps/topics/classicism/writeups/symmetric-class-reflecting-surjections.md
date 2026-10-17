@@ -117,12 +117,61 @@ of maximalism-incompatible-with-modalized-relational-choice.
   points of one class are sent into one class.
 - **The Axiom of Infinity at type $e$ holds**, by the group's argument.
 
+## Weakly Inextensible Comprehension fails
+
+Added later on 16 October, at Cian Dorr's request to see whether the
+arguments for Boolean Completeness and Inextensible Comprehension in
+symmetric-all-surjections (Base 1) carry over. They do not.
+
+- **Boolean Completeness.** Base 1 gets it from Dorr's hull conditions, and
+  (B1) fails here.
+- **Inextensible Comprehension.** Base 1's argument needs a transversal lemma:
+  an arrow $g$ fixing $S$ pointwise has, for the points of a finite $T$,
+  preimages that a symmetry can move them to. When $g$ splits one class over
+  two target classes, the preimages of points in both lie in one class, and no
+  automorphism of $E$ does the job.
+
+In fact both principles fail, through Weakly Inextensible Comprehension at
+type $e\to t$.
+
+Let $X:=\lambda x\, .\,\neg\, x\mathrel E n_0$. It is in the domain, since
+$E$ is. Suppose $Y$ is weakly inextensible, coextensive with $X$, and pinned
+down by a finite $N$.
+
+1. **$Y\le Z^m$ for each $m\in[n_0]$.** Put
+   $Z^m:=\lambda x\, .\,\neg\, x\mathrel E n_0\land\neg\, x\mathrel E m$. Its
+   extension at an arrow $k$ is $\mathbb N\setminus([kn_0]\cup[km])$. If $y$ is
+   an instance of $Y$, so $y\notin[n_0]$, then $ky\notin[kn_0]\cup[km]$ at
+   every arrow $k$, because $k$ reflects $E$. So $Z^m$ holds necessarily of
+   every instance of $Y$, and weak inextensibility gives $Y\le Z^m$.
+2. **An arrow sending part of $[n_0]$ into a fresh class.** Take a class
+   $D\ne[n_0]$ disjoint from $N$, and $m\in[n_0]\setminus N$. Let $k$ be:
+   - on $[n_0]$, a map onto $[n_0]\cup D$ that fixes $N\cap[n_0]$ and sends
+     $m$ into $D$;
+   - the identity on the other classes that meet $N$;
+   - on the remaining classes, which are infinitely many, a map onto the
+     remaining classes other than $D$, class by class.
+
+   Then $k$ is a surjection, the preimage of each class lies in a single
+   class, and $k$ agrees with the identity on $N$.
+3. **The contradiction.** By pinning and step 1,
+   $Y_1=Y_k\subseteq Z^m_k=\mathbb N\setminus([n_0]\cup D)$. But
+   $Y_1=\mathbb N\setminus[n_0]\supseteq D$.
+
+So Weakly Inextensible Comprehension fails. So do Inextensible Comprehension,
+which implies it, and Boolean Completeness, since Boolean Completeness implies
+it too.
+
+The recorded proof of that last implication takes the least upper bound of the
+haecceities of the instances of $X$. That family is not countable in this
+model, so the argument says nothing about Countable Boolean Completeness.
+
 ## Left open
 
-- **Boolean Completeness and its countable form.** Dorr's hull conditions
-  fail. Condition (B1) asks that two arrows agreeing on a finite set be
-  spliced, and splicing two class-reflecting surjections can merge classes.
-- **Inextensible and Weakly Inextensible Comprehension.**
+- **Countable Boolean Completeness.** As in symmetric-old-new-individuals, a
+  countable property's instances are invariant under the symmetries fixing a
+  finite set. The step from invariance to uniform pinning has to deal with
+  arrows that split classes.
 - **The rigidity family:** Tame Rigidity, Rigid Power, Rigid Rigidity and
   their weak forms. Their recorded arguments assume all surjections or section
   arrows. Section arrows fail here: when an arrow splits one class across two

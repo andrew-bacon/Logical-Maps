@@ -118,14 +118,33 @@ arguments:
     finite set pinning $S$ down, symmetry and pinning give $f(gx)=g(f(x))$ for every automorphism $g$
     fixing $N$ pointwise; for $x$ in a class disjoint from $N$, the transposition of $f(x)$ with a third
     member of the class gives $f(x)\ne f(x)$.
+- id: weakly-inextensible-comprehension
+  when: {individuals: base}
+  fails:
+  - weakly-inextensible-comprehension-r
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-16'
+  choice: free
+  writeup: symmetric-class-reflecting-surjections
+  text: >-
+    At type $e\to t$, for $X:=\lambda x\, .\,\neg\, x\mathrel E n_0$, in the domain with $E$. Suppose
+    $Y$ is weakly inextensible, coextensive with $X$ and pinned down by a finite $N$. For $m\in[n_0]$,
+    $Z^m:=\lambda x\, .\,\neg\, x\mathrel E n_0\land\neg\, x\mathrel E m$ holds necessarily of every
+    instance of $Y$, since arrows reflect $E$; so $Y\le Z^m$. Take a class $D\ne[n_0]$ disjoint from $N$
+    and $m\in[n_0]\setminus N$. Some arrow $k$ agrees with the identity on $N$ and maps $[n_0]$ onto
+    $[n_0]\cup D$ with $km\in D$, fixing the other classes that meet $N$ and mapping the remaining
+    classes onto the remaining classes. By pinning $Y_1=Y_k\subseteq Z^m_k=\mathbb N\setminus([n_0]\cup
+    D)$, while $D\subseteq Y_1$. So Weakly Inextensible Comprehension fails, and with it Boolean
+    Completeness and Inextensible Comprehension.
 notes: 'Found on 16 October 2026 to show that the closed pure sentence "each individual is contingently
   distinct from some other, but no functional relation takes each individual to an individual
   contingently distinct from it" is consistent with C, a premise of
   maximalism-incompatible-with-modalized-relational-choice. Unlike symmetric-infinite-classes, whose arrows
   are all surjections, its arrows never merge classes; that makes every truth ND-necessary there, and it
   separates the Truth-implies-necessity principles from Transversal. The nearest recorded model,
-  symmetric-all-surjections (Base 1), differs from it on Transversal. Left unknown: Boolean Completeness
-  and its countable form (Dorr''s hull conditions fail, since splicing two class-reflecting surjections
-  can merge classes), Inextensible and Weakly Inextensible Comprehension, and the rigidity family (Tame
+  symmetric-all-surjections (Base 1), differs from it on Transversal. Boolean Completeness, Inextensible
+  and Weakly Inextensible Comprehension fail (added later on 16 October), the arguments for them in
+  symmetric-all-surjections needing arrows that cannot split a class. Left unknown: Countable Boolean
+  Completeness, and the rigidity family (Tame
   Rigidity, Rigid Power, Rigid Rigidity and their weak forms), whose recorded arguments assume all
   surjections or section arrows, the latter failing here. No Lean verification is claimed.'
