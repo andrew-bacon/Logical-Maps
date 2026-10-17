@@ -1,0 +1,33 @@
+id: strong-possibility-and-infinity-e-incompatible
+premises:
+- strong-possibility-r
+- infinity-e
+conclusion: false
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Cian Dorr, 16 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), 16 October 2026
+  checked_by: []
+  date: '2026-10-16'
+  lean: none
+sources:
+- Cian Dorr, suggestion of 16 October 2026.
+source_names:
+- Dorr 16 Oct
+proof: >-
+  Let $E_1:=\forall x^e y^e\, .\,x=y$, that there is exactly one individual. Lemma (a theorem of C):
+  $\Diamond_{\ne}E_1\to E_1$. If $a\ne b$, the true proposition $r:=(a\ne b)$ has $\Box(\Diamond r\to
+  \neg E_1)$, since by NI $\Diamond(a\ne b)$ implies $a\ne b$; so $\Box_{\ne}\neg E_1$, which is
+  $\neg\Diamond_{\ne}E_1$. Now $E_1$ is a closed pure sentence consistent with Maximalist Classicism: at the
+  root of coalesced-single-individual-root, Maximalism (pure) holds and there is one individual. So
+  Strong Possibility (pure) gives $\Diamond_{\ne}E_1$, hence $E_1$, which contradicts the instance
+  $\exists x_1x_2\, .\,x_1\ne x_2$ of the Infinity Schema (type e).
+references:
+- paper: bacon-dorr-classicism
+  role: background
+  locator: §2.6, p. 42
+  note: Strong Possibility and the distinctness-preserving modality.
+notes: Strong Possibility (pure) thus implies that there is exactly one individual, though no principle
+  of the map says so; with it, it is incompatible with every principle implying the Infinity Schema at
+  type e.

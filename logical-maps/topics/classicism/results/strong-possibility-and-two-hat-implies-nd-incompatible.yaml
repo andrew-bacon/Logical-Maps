@@ -1,0 +1,33 @@
+id: strong-possibility-and-two-hat-implies-nd-incompatible
+premises:
+- strong-possibility-r
+- two-hat-implies-nd-necessity
+conclusion: false
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Cian Dorr, 16 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), 16 October 2026
+  checked_by: []
+  date: '2026-10-16'
+  lean: none
+sources:
+- Cian Dorr, suggestion of 16 October 2026.
+source_names:
+- Dorr 16 Oct
+proof: >-
+  Let $E_1:=\forall x^e y^e\, .\,x=y$ and $T_2:=\exists x^e y^e\, .\,x\ne y$. As in
+  strong-possibility-and-infinity-e-incompatible, $\Diamond_{\ne}E_1\to E_1$ is a theorem of C, and Strong
+  Possibility (pure) gives $E_1$. $T_2$ is also consistent with Maximalist Classicism, being true at the
+  root of coalesced-maximalist-root, where Maximalism (pure) holds; so Strong Possibility gives
+  $\Diamond_{\ne}T_2$. Two-hat necessity implying ND-necessity is, contraposed, $\Diamond_{\ne}p\to
+  \hat{\hat\Diamond}p$, so $\hat{\hat\Diamond}T_2$. Unfolding the hat,
+  $\hat{\hat\Diamond}p$ is $\forall q\, .\,q\to\Diamond(\Diamond_{\ne}q\land p)$; at the truth $q:=E_1$ this
+  gives $\Diamond(\Diamond_{\ne}E_1\land T_2)$. By the necessitated lemma, $\Diamond(E_1\land T_2)$, which
+  is $\Diamond\bot$.
+references:
+- paper: bacon-dorr-classicism
+  role: background
+  locator: §2.6, p. 42
+  note: Strong Possibility and the distinctness-preserving modality.
+notes: The hat and two-hat necessity are as in Background, Hats, two-hat necessity and 5-necessity.
