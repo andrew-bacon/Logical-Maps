@@ -55,7 +55,9 @@ try {
 
   shift('b'); selected(['a', 'b']); // A entails B; both remain selected.
   assert.equal(w.eval('state.selected.type'), 'selection');
-  assert.match(pop.textContent, /Joint consistency.*consistent/s);
+  assert.match(d.getElementById('graph-details-foot').textContent, /Consistent/);
+  assert.equal(pop.querySelector('.selection-list details'), null, 'No summary to open per name');
+  assert.deepEqual([...pop.querySelectorAll('.selection-list button[data-open-principle]')].map(b => b.dataset.openPrinciple), ['a', 'b'], 'Each name is a link to its page');
   shift('c'); selected(['a', 'b', 'c']); // A ∧ C is already drawn inside D.
   assert.ok(node('d').classList.contains('rel-entailed'));
   shift('d'); selected(['a', 'b', 'c', 'd']); // Selecting that equivalent result also works.
@@ -65,8 +67,10 @@ try {
   shift('b'); selected(['a', 'c', 'd', 'e', 'h']);
   assert.ok(!label('b').classList.contains('selection-member'), 'Equivalent labels remain individually selectable');
   pop.querySelector('[data-remove-selection="h"]').click(); selected(['a', 'c', 'd', 'e']);
-  pop.querySelector('details').open = true;
-  assert.match(pop.textContent, /Definition of A/);
+  const nameA = pop.querySelector('.selection-list button[data-open-principle="a"]');
+  nameA.dispatchEvent(new w.FocusEvent('focusin', {bubbles: true}));
+  assert.match(d.getElementById('preview').textContent, /Definition of A/, 'A name shows its statement in the preview');
+  nameA.dispatchEvent(new w.FocusEvent('focusout', {bubbles: true}));
 
   // The existing conjunction is selected as a set, and modifiers toggle that set.
   pointer(d.querySelector('[data-graph-node="j:acd"] circle'));

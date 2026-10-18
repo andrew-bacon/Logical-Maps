@@ -126,15 +126,27 @@ try {
     assert.ok(kind === 'junction' ? Math.abs(Math.hypot(vx,vy)-11)<1e-6 : Math.abs(vx-to.w/2)<1e-6 || Math.abs(vy-to.h/2)<1e-6, 'Endpoint lies on target boundary');
   }
   assert.ok(geometries.some(({geometry:g})=>Math.abs(g.points[2].x-g.points[3].x)>1), 'Arrowheads have non-vertical approach tangents');
-  w.eval("state.tab='graph'; document.querySelectorAll('.edge-g').forEach(e=>e.classList.add('hot')); animateFlow()");
-  assert.ok(doc.querySelectorAll('#flow animateMotion').length > 0);
+  // Highlighting thickens an arrow and dims the rest at once; the moving chevrons, whose
+  // rebuilding relays out the whole diagram, start only after the pointer has lingered.
+  w.eval("state.tab='graph'; hover({result: 'ab-c'})");
+  assert.ok(doc.querySelectorAll('#graph .edge-g.hot').length > 0);
+  assert.ok(doc.querySelectorAll('#graph .edge-g.dim').length > 0);
+  assert.equal(doc.querySelectorAll('#flow animateMotion').length, 0, 'Not yet');
+  assert.ok(w.eval('FLOW_DELAY') > 500 && w.eval('flowTimer') != null, 'They are due after a long rest');
+  w.eval('animateFlow()');
+  assert.ok(doc.querySelectorAll('#flow animateMotion').length > 0, 'Then they run');
   assert.ok(doc.querySelectorAll('#flow animateMotion').length <= 48);
-  click('[data-tab="models"]');
-  assert.equal(doc.querySelectorAll('#flow animateMotion').length, 0);
+  w.eval("hover({node: 'c:c'})");
+  assert.equal(doc.querySelectorAll('#flow animateMotion').length, 0, 'And stop the moment the pointer moves on');
+  w.eval("hover({result: 'ab-c'})");
+  assert.ok(doc.querySelectorAll('.direction-chevron').length > 0, 'Static directions remain throughout');
   const reduced = page(undefined, true);
-  reduced.window.eval("hover({result: 'ab-c'})");
-  assert.equal(reduced.window.document.querySelectorAll('#flow animateMotion').length, 0);
-  assert.ok(reduced.window.document.querySelectorAll('.direction-chevron').length > 0, 'Reduced motion retains static directions');
+  reduced.window.eval("hover({result: 'ab-c'}); animateFlow()");
+  assert.equal(reduced.window.document.querySelectorAll('#flow animateMotion').length, 0, 'Reduced motion never animates');
+  w.eval("hoverSoon({node: 'c:c'})");
+  assert.ok(doc.querySelector('#graph .edge-g.hot'), 'A pointer movement applies only after a rest');
+  w.select(null); w.hover(null);
+  assert.equal(doc.querySelectorAll('#graph .edge-g.hot, #graph .edge-g.dim').length, 0, 'With nothing hovered or selected, nothing is dimmed');
   assert.deepEqual(errors, []);
   console.log('PASS: shared signed controls, default move polarity, exclusivity, URL restore, unknown models, source filters, contextual contraposition, 27 truth-table backgrounds, and arrow geometry.');
 } finally { pages.forEach(p=>p.window.close()); }

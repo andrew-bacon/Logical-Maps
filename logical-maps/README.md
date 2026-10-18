@@ -515,8 +515,10 @@ coloured halves. Open nodes keep their normal fill.
 
 Lattice: a separate Hasse diagram of the conjunctions a chosen handful of
 principles generate. It opens with False and True alone. Two routes carry a choice of principles in:
-**lattice**, on a selection's own controls in the graph's details pane, draws
-the lattice of what is selected and opens this view; **from the graph**, beside
+**Show in Lattice**, in the graph's details pane and in the Theory explorer's
+Assumptions box, draws the lattice of what is selected or assumed, negations
+included, and opens this view; on the lattice itself the pane offers **Hide others**,
+which pares the lattice down to the selection and its conjunctions; **from the graph**, beside
 the Lattice heading, takes whatever the graph is showing, negations included and
 assumptions left out. The graph reads well at seventy principles and the lattice
 at about eight, which is why the two keep separate lists rather than one. Past
@@ -559,7 +561,7 @@ the converse is settled, the model that settles it. The relation shading and
 its legend are the graph's too. The node count grows with the subsets, so the
 view stops at a few hundred and says so.
 
-Graph: implications, ∧ nodes for multi-premise results, stronger principles lower and ⊥ at the bottom; see [Graph layout](#graph-layout). The arrow options (conjecture arrows, conjectures only, unpublished only, implied and trivial arrows, isolated principles) are set aside for now and keep their defaults. Theory explorer: principles use the same categories and ordering as Graph; mark them positive/negative to edit the shared background; models known to fit are listed, those whose status is unknown below. Clicking a model highlights its row and shows its verdicts beside each principle while preserving the model list and shared assumptions. Click a verdict’s evidence link for its sources and write-up. Click a model for its sources, write-up links, and any unknown assumptions. A model's own page sorts every principle by what the model says about it, satisfied, violated or unknown, each group counted; the principle leads the row and its evidence follows. A model records a few properties and the rest follow from them, so the derived verdicts of a group wait behind a closed disclosure rather than burying the recorded ones. Derived verdicts list the supporting implications and show every direct source used. Unknown verdicts remain unknown. Conjectures: current and previously conjectured results and models, with answers computed from the selected evidence and background. Changes: every principle, result and model by date, and every logged revision of a record (its `changes` entries) under the revision's own date; the details button opens the record page, which shows a hand-written write-up in full when one exists (the record's own summary otherwise, or until the write-up loads), with the Lean source when present. Header downloads: **Content bundle (ZIP)** is a complete working copy with topic sources, summaries, viewer, and build tools; **Lean files**, when present, opens the formalisation files. Hover over a link for its contents.
+Graph: implications, ∧ nodes for multi-premise results, stronger principles lower and ⊥ at the bottom; see [Graph layout](#graph-layout). The arrow options (conjecture arrows, conjectures only, unpublished only, implied and trivial arrows, isolated principles) are set aside for now and keep their defaults. Theory explorer: principles use the same categories and ordering as Graph; mark them positive/negative as the explorer's own assumptions, and a principle those assumptions settle opens its derivation in place with **why**; models known to fit are listed, those whose status is unknown below. Clicking a model highlights its row and shows its verdicts beside each principle while preserving the model list and shared assumptions. Click a verdict’s evidence link for its sources and write-up; a derived verdict’s **why** opens its derivation in place. Click a model for its sources, write-up links, and any unknown assumptions. A model's own page sorts every principle by what the model says about it, satisfied, violated or unknown, each group counted; the principle leads the row and its evidence follows. A model records a few properties and the rest follow from them, so the derived verdicts of a group wait behind a closed disclosure rather than burying the recorded ones. A derived verdict’s **why** lists the recorded verdicts it starts from and the implications it goes through, each with its own badges. Unknown verdicts remain unknown. Results: every proved result among the principles the sidebar shows, from the selected sources, grouped by what it concludes with incompatibilities last; a box narrows the list by text found anywhere in a statement (a principle's name also finds the principles whose names contain it) or, when the text names a principle, to the results concluding exactly it or using exactly it; a row opens the result. Nothing is assumed in this list, so the sidebar's background controls do not appear on it. Conjectures: current and previously conjectured results and models, with answers computed from the selected evidence and background. Changes: every principle, result and model by date, and every logged revision of a record (its `changes` entries) under the revision's own date; the details button opens the record page, which shows a hand-written write-up in full when one exists (the record's own summary otherwise, or until the write-up loads), with the Lean source when present. Header downloads: **Content bundle (ZIP)** is a complete working copy with topic sources, summaries, viewer, and build tools; **Lean files**, when present, opens the formalisation files. Hover over a link for its contents.
 
 ### Graph layout
 
@@ -713,12 +715,19 @@ the redundant conjunction of satisfied and violated principles.
 A model's page sorts the principles into three columns, satisfied, violated and
 unknown, with the derived verdicts behind a toggle and no source information. Each
 principle has one control: for a model written as arguments, to the arguments for it;
-for a derived verdict, to how it follows; otherwise to its evidence. The Arguments
+otherwise to its evidence. A derived verdict has a **why** disclosure instead, opening
+its derivation in place: the recorded verdicts it starts from, each linking to its
+argument, then the results it goes through. The Theory explorer uses the same
+disclosure for a principle that follows from, or is ruled out by, what is assumed,
+and its Assumptions box for an assumption the others settle and for each consequence
+it lists; a group's page gives it to each verdict derived in every row, one derivation
+per distinct chain across the rows, and its grid's cell panel shows it open. Each
+assumption in the explorer's box has **negate**, which swaps its sign, and **remove**. The Arguments
 section lists each argument once, in the record's order, headed by the verdicts it
 settles, with who supplied it inside (for a theorem-trawl admission, who found,
 reviewed and admitted it, with the review's report). A hand-written write-up of such a
-model is linked rather than shown in place of its definition. A verdict's pop-up and
-its own page credit its arguments' sources; source filters still act on whole records.
+model is linked rather than shown in place of its definition. A verdict's pop-up
+credits its arguments' sources; source filters still act on whole records.
 
 Isolated principles are packed into compact rows just below the connected
 graph. Showing or hiding them leaves the connected layout intact. If no
@@ -733,7 +742,8 @@ catch-all `misc` source stands on its own, since neither group describes it.
 conjectures view all reach the one control; a Lean-verified arrow is drawn
 thicker than the rest whether or not it is checked. A verdict carries a
 **Lean ✓** badge when everything under it is verified, the model and, for a
-derived verdict, every result in the chain; the consistency line at the foot of
+derived verdict, every result in the chain, which its derivation shows step by step;
+the consistency line at the foot of
 the details pane carries it beside the witness it names.
 Background consequences always use all recorded proved results, including
 hidden arrows. For example, DTU still supplies Simple Expected Utility in a
@@ -777,16 +787,63 @@ the principle into the shared assumptions, assuming it positively unless only
 assumption. In the background, ✓ and ✗ are exclusive. **Return** displays
 the assumed sign on the graph again. Standing topic axioms remain fixed.
 
-Theory explorer edits those same assumptions directly in one principle list.
-There is no separate model-filter package or second background panel. Clicking
-the selected ✓ or ✗ again removes that assumption. Solid buttons show explicit
-assumptions; tinted buttons show consequences. Evidence links sit inline with
-principle names, and the Potential models list retains unverified candidates. Contradictory assumptions show their evidence and suppress
-inferred graph arrows and model matches. Unknown model properties remain unknown.
+The Theory explorer keeps assumptions of its own, apart from the graph's
+background, and edits them directly in one principle list; its package buttons,
+at the foot of the list, say **Assume** rather than Background, and **clear
+assumptions** sits on the list's heading line. Clicking the selected ✓ or ✗ again removes
+that assumption. Solid buttons show explicit assumptions; tinted buttons show
+consequences. An **Assumptions** box heads the model column: it lists what is
+assumed, each with a remove link; flags an assumption that the other
+assumptions already settle (**also follows**, opening to the proof, and naming
+an equivalent assumption when the two settle each other); and counts what
+further follows and what is ruled out, each opening to the list, leaving out
+what the fixed background gives by itself. Contradictory assumptions show their
+evidence in that box and suppress model matches. Evidence links sit inline with
+principle names, and the Potential models list retains unverified candidates.
+Unknown model properties remain unknown.
+
+Wherever principles are listed by name (the three principle lists, the find box,
+the Assumptions box and its lists, the equivalents of a selection, the bundle's
+MAP.md index), a leading symbol such as □ counts after the bare name, so
+□Actuality follows Actuality and precedes Actuality (type t). A principle's page
+lists the results concluding it, fewest premises first, before those using it as
+a premise, by what they conclude, with incompatibilities last.
+
+The line under the Graph and the Lattice carries the relation keys and the actions on
+the selection; the pane below names the selection. With several principles selected the
+pane lists their names, each a link to its page that previews the statement on hover,
+with **negate**, which puts its negation in its place, and **remove**, and offers
+**Show in Theory explorer**, which assumes the selected
+principles there in place of whatever it was assuming; the foot of the pane names one
+model of the selection. A single selected principle keeps its fuller pane.
+
+The line's **Hide** takes the selected principles off the diagram; when one of them is
+not drawn, as after selecting from the sidebar or negating, it reads **Show** instead
+and draws them all.
+
+On the Graph, selecting one or more principles dims every arrow that touches none of
+them and thickens the rest, short of a hover's weight, as hovering a box does for that box alone; hovering takes over while it lasts,
+and the relation shading stays. In the Lattice sidebar a principle's name selects it,
+with a modifier key to extend the selection, as on the graph and in the Graph sidebar.
+On the Lattice the heavy arrows rise from the node the whole selection generates, its
+conjunction, so they follow the selection as it is extended, shrunk or cleared. With a
+selection the Lattice's nodes also take the Graph's colours for their relation to it,
+green for entailed, red for excluded, split for consistent either way, white for open,
+with the same counted legend; with nothing selected the Lattice stays uncoloured, since
+it draws entailment and consistency itself.
+
+Wherever a list names principles (the Graph and Lattice sidebars, the Theory explorer,
+Conjectures), resting the pointer on a name for a moment, or focusing it from the
+keyboard, shows a preview of the principle's statement beside it, with its formal form
+and its equivalents under the background; the preview holds nothing to click and goes
+when the pointer leaves, and never appears on a touch screen. Clicking a name selects
+the principle on the diagrams and in their sidebars, and in Conjectures, whose pop-up
+offers to assume it; in the Theory explorer it opens the principle's page.
 
 Positive assumptions are saved as `?assume=id,id`; negative assumptions use
-`deny=id,id`. Both apply to Graph, Theory explorer and Conjectures. Reloading
-restores them without changing source YAML, proofs, or downloads. **Clear background** removes all removable positive and negative assumptions.
+`deny=id,id`. Both apply to Graph and Conjectures; the Theory explorer's own
+assumptions are saved as `theory` and `theory-deny`. Reloading
+restores them without changing source YAML, proofs, or downloads. **Clear background** removes all removable positive and negative assumptions; **clear assumptions** does the same in the Theory explorer.
 
 Negative assumptions are forbidden facts in the Horn engine. A negative conclusion
 is proved by adjoining its positive counterpart and deriving a conflict. Signed
@@ -797,10 +854,15 @@ have a ¬ prefix and dashed outline. Derived signed arrows use the same proof
 queries, without enumerating truth assignments.
 
 Arrow endpoints meet node boundaries along the curve's tangent. Static chevrons
-show direction even without highlighting. Highlighted connections have native
-SVG chevron motion, capped at 48 moving chevrons, with no per-frame JavaScript.
-Motion stops on pointer leave, tab changes, or a hidden document; reduced-motion
-preferences retain static chevrons only.
+show direction. Highlighting a box or arrow thickens its arrows and dims the rest,
+and applies once the pointer has rested on it for a moment, lifting a moment after
+it leaves, so a pointer crossing the diagram never re-dims every arrow on the way.
+Highlighted arrows also carry native SVG chevron motion, capped at 48 moving chevrons
+with no per-frame JavaScript, but since adding them relays out every arrow, they start
+only after the pointer has lingered on one target for the better part of a second and
+stop the moment it moves on, so a pointer in motion never sees a blink. Motion stops on
+pointer leave, tab changes, or a hidden document; reduced-motion preferences retain
+static chevrons only.
 
 The graph's principle list and background list scroll independently. Moved rows
 reserve their space until the pointer or focus leaves the list, preventing the
@@ -823,7 +885,7 @@ Totality for arbitrary gambles. The source's formulation with Simple EU in
 place of Archimedean Outcomes is equivalent, since Simple EU also implies
 Archimedean Outcomes.
 Basic decision theory has **Background DU** and **Background DTU**
-buttons in both Graph and Theory explorer. They add the chosen package without removing
+buttons in the Graph, and **Assume DU** and **Assume DTU** in the Theory explorer. They add the chosen package without removing
 other assumptions; adding DU does not remove a separately selected Totality.
 These defaults remain removable. An explicit
 `?assume=...` selection overrides them; `?assume=` saves an empty background.

@@ -47,7 +47,7 @@ try {
   assert.deepEqual(json(w, 'state.focus'), ['a', 'b']);
   assert.ok(node('c').classList.contains('rel-entailed')); assert.ok(node('d').classList.contains('rel-entailed'));
   assert.ok(node('e').classList.contains('rel-excluded')); assert.ok(node('v').classList.contains('rel-separated'));
-  assert.equal(d.querySelector('#relation-legend b').textContent, 'A ∧ B');
+  assert.equal(d.getElementById('pop').querySelector('.pop-t').textContent, 'A ∧ B');
   assert.match(d.getElementById('pop').textContent, /Equivalence/);
   assert.ok(d.querySelector('#pop [data-result="abc"]')); assert.ok(d.querySelector('#pop [data-result="ca"]'));
   d.querySelector('#pop [data-graph-connection="abc"]').click();

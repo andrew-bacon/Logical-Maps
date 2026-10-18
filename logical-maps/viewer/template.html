@@ -92,7 +92,25 @@
   .tab .n { color: var(--ink-3); font-size: 12px; margin-left: 4px; font-variant-numeric: tabular-nums; }
   .pane { display: none; min-height: 0; overflow: auto; }
   .pane[data-active="true"] { display: block; }
-  #pane-graph[data-active="true"], #pane-open[data-active="true"] { display: grid; grid-template-columns: var(--sidebar-width, 250px) 9px minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); overflow: hidden; }
+  #pane-graph[data-active="true"], #pane-open[data-active="true"], #pane-theorems[data-active="true"] { display: grid; grid-template-columns: var(--sidebar-width, 250px) 9px minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); overflow: hidden; }
+  #pane-theorems #graph-options, #pane-theorems .graph-hint, #pane-theorems #graph-views, #pane-theorems #graph-principles .heading-note { display: none; }
+  /* The Results tab: its controls, then the results grouped by what they conclude. */
+  .theorems-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0 0 6px; }
+  .theorems-controls .search { width: min(100%, 340px); margin: 0; }
+  .theorems-controls .seg button { width: auto; height: auto; min-height: 26px; padding: 2px 9px; font-size: 12px; white-space: nowrap; }
+  .theorems-controls .seg button:disabled { opacity: .5; cursor: default; }
+  .theorems-count { font: 400 12px var(--mono); color: var(--ink-3); }
+  .theorems-hint { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; white-space: nowrap; }
+  .theorems-hint .lnk { font-size: 11px; }
+  .theorems-group { margin: 10px 0; }
+  .theorems-group > summary { cursor: pointer; font: 600 14px/1.5 var(--sans); padding: 4px 0; }
+  .theorems-group > summary .n { font: 400 12px var(--mono); color: var(--ink-3); margin-left: 6px; }
+  .theorems-group table.results { margin: 2px 0 6px; }
+  .theorems-group table.results td:last-child { white-space: nowrap; text-align: right; }
+  /* The list is of recorded results as they stand, so nothing here is assumed: the sidebar's
+     background controls and dock stay out of the way. */
+  #pane-theorems .pr-actions, #pane-theorems .background-dock, #pane-theorems #background-divider { display: none; }
+  #pane-theorems aside.controls { grid-template-rows: minmax(0, 1fr); }
   #conjecture-options { display: none; }
   #pane-open #conjecture-options { display: block; }
   #pane-open #graph-options, #pane-open .graph-hint { display: none; }
@@ -177,6 +195,8 @@
   .edge-hit { fill: none; stroke: transparent; stroke-width: 12; cursor: pointer; }
   .edge-g.dim .edge { opacity: .18; }
   .edge-g.hot .edge { stroke-width: 3; }
+  /* A selection's own arrows: between the resting width and a hover's, so they read at a distance. */
+  .edge-g.near .edge { stroke-width: 2.4; }
   .node { cursor: pointer; }
   .node rect { fill: var(--node-fill); stroke: var(--node-stroke); stroke-width: 1.2; }
   .node.dim { opacity: .3; }
@@ -238,6 +258,13 @@
   .lat-node.lat-top rect { fill: var(--rel-entailed); }
   .lat-node.lat-bottom text[data-falsity] { fill: var(--indep); font-weight: 700; }
   .lat-node.rel-base rect, .lat-node.rel-base circle { fill: var(--hl); stroke: var(--accent); stroke-width: 2.4; }
+  /* Against a selection, the graph's colours: green entailed, red excluded, split either way. */
+  .lat-node.rel-entailed rect, .lat-node.rel-entailed circle { fill: var(--rel-entailed); }
+  .lat-node.rel-excluded rect, .lat-node.rel-excluded circle { fill: var(--rel-excluded); stroke: var(--indep); }
+  .lat-node.rel-consistent rect, .lat-node.rel-consistent circle { fill: url(#lat-split-consistent); }
+  .lat-node.rel-separated rect, .lat-node.rel-separated circle { fill: url(#lat-split-separated); }
+  .lat-node.rel-independent rect, .lat-node.rel-independent circle { fill: url(#lat-split-independent); }
+  .lat-node.rel-conjectured rect, .lat-node.rel-conjectured circle { fill: url(#lat-hatch-conjectured); }
   .lat-node text[data-principle], .lat-node text[data-falsity], .lat-node text[data-truth] { cursor: pointer; pointer-events: auto; }
   #lat-detail .relation-legend { margin-bottom: 6px; }
   .lat-node.sel rect { stroke: var(--accent); stroke-width: 2.6; }
@@ -331,7 +358,8 @@
   .detail .file { font: 11px var(--mono); color: var(--ink-3); }
   .rel-head { font: 500 11px var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); margin: 10px 0 4px; }
 
-  @media (prefers-reduced-motion: no-preference) { .node rect, .edge { transition: opacity .15s, stroke-width .15s; } }
+  /* No transitions on the arrows: with hundreds of them, animating opacity repaints and animating
+     stroke width relayouts the whole diagram on every frame; the change is instant instead. */
 
   /* additions */
   .pkg-pick { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
@@ -498,10 +526,10 @@
   .detail-close { float: right; margin: 0 0 8px 10px; font-size: 18px; line-height: 1; }
   .selection-list { list-style: none; padding: 0; margin: 12px 0; }
   .selection-list li { display: flex; align-items: baseline; gap: 12px; padding: 6px 0; border-top: 1px solid var(--line); }
-  .selection-list details { flex: 1; min-width: 0; }
-  .selection-list summary { cursor: pointer; font-weight: 600; }
   .selection-list .lnk { flex: none; font-size: 12px; }
+  .selection-list .lnk.name { flex: 1; min-width: 0; font-weight: 600; font-size: 14px; text-align: left; }
   .pop .pop-t { font: 600 15px/1.3 var(--serif); margin-bottom: 2px; }
+  .pop.preview { pointer-events: none; z-index: 30; }
   .pop .pop-t + .pop-t { margin-top: 10px; }
   .pop .pop-s { font: 13.5px/1.45 var(--serif); }
   .pop .formal { font: 12px var(--mono); background: var(--panel-2); padding: 5px 7px; border-radius: 4px; margin-top: 6px; overflow-x: auto; }
@@ -541,6 +569,8 @@
   .pr-actions { display: inline; font-size: 11px; }
   .pr-actions .lnk, .background-row [data-remove-background], .background-row .background-fixed { margin-left: 7px; font-size: 11px; white-space: nowrap; }
   .explorer-actions, .background-presets { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 10px; }
+  .explorer-packages { margin: 14px 0 0; padding-top: 12px; border-top: 1px solid var(--line); }
+  .ex-head #ex-clear { font-size: 11px; }
   .background-presets:empty { display: none; }
   .background-dock .background-presets { margin: 0; flex-shrink: 0; }
   .background-dock .background-presets .btn { padding: 2px 5px; font-size: 11px; }
@@ -555,6 +585,44 @@
   .ex-p.fout, .ex-p.model-out { background: color-mix(in srgb, var(--indep) 10%, transparent); }
   .seg button.auto-positive { color: var(--human); background: color-mix(in srgb, var(--human) 18%, var(--panel)); }
   .seg button.auto-negative { color: var(--indep); background: color-mix(in srgb, var(--indep) 18%, var(--panel)); }
+  /* The Assumptions box heads the model column: the theory's statement above what it yields. */
+  .ex { grid-template-rows: auto 1fr; }
+  .ex > .ex-principles { grid-column: 1; grid-row: 1 / span 2; }
+  .ex > .ex-assumptions { grid-column: 2; grid-row: 1; }
+  .ex > .explorer-models { grid-column: 2; grid-row: 2; }
+  .assumed-list { list-style: none; margin: 0 0 10px; padding: 0; }
+  .assumed-list > li { display: flex; align-items: baseline; gap: 10px; padding: 5px 6px; border-bottom: 1px solid var(--line); font-size: 14px; line-height: 1.55; }
+  .assumed-list > li.in { background: color-mix(in srgb, var(--human) 14%, transparent); }
+  .assumed-list > li.out { background: color-mix(in srgb, var(--indep) 14%, transparent); }
+  .assumed-list .assumed-line { flex: 1; min-width: 0; }
+  .assumed-list .assumed-line > .lnk { display: inline; text-align: left; color: var(--ink); }
+  .assumed-list .assumed-remove { flex: none; font-size: 11px; white-space: nowrap; }
+  /* One disclosure for every derivation: a word that stays on its row, with the triangle
+     turning when open, and the derivation as a boxed block below, the same everywhere. */
+  .why { display: inline; margin-left: 8px; font-size: 11.5px; color: var(--ink-2); }
+  .why > summary { display: inline; list-style: none; cursor: pointer; color: var(--accent); white-space: nowrap; }
+  .why > summary::-webkit-details-marker { display: none; }
+  .why > summary::before { content: '▶'; display: inline-block; margin-right: 4px; font-size: 8px; vertical-align: 1px; transition: transform .12s; }
+  .why[open] > summary::before { transform: rotate(90deg); }
+  .assumed-list .why > summary { color: var(--human); }
+  details.why .why-body { display: block; margin: 5px 0 7px; padding: 6px 10px; background: var(--panel-2); border: 1px solid var(--line-strong); border-radius: 4px; font-size: 12.5px; line-height: 1.45; color: var(--ink-2); }
+  details.why .why-body p { margin: 0 0 4px; }
+  details.why .why-body p + p { margin-top: 8px; }
+  details.why .why-body ol { list-style: decimal; margin: 0 0 0 18px; padding: 0; }
+  details.why .why-body ol > li { display: list-item; margin: 2px 0; padding: 0; font-size: 12.5px; line-height: 1.45; }
+  details.why .why-body .lnk { color: var(--accent); font: inherit; }
+  details.why .why-body .via { color: var(--ink-3); margin-left: 4px; }
+  .principle-line > .model-flag { margin-left: 7px; font-size: 11px; }
+  .ex-p:has(> .principle-line > .why[open]) { align-items: start; }
+  .ex-p:has(> .principle-line > .why[open]) > .seg { margin-top: 2px; }
+  .page .verdict-list .why { margin-left: 6px; }
+  .ex-assumptions .empty { color: var(--ink-3); font-size: 13px; margin: 0 0 10px; }
+  .ex-status { font-size: 12.5px; color: var(--ink-2); margin: 4px 0 18px; }
+  .ex-follow { margin: 2px 0; }
+  .ex-follow > summary { cursor: pointer; }
+  .ex-follow ul { list-style: none; margin: 4px 0 8px 14px; padding: 0; }
+  .ex-follow li { font-size: 13px; line-height: 1.5; }
+  .ex-assumptions .ex-bad { margin: 4px 0 18px; }
   #model-principles .model-category { padding-top: 10px; }
   #model-principles .model-category:not([open]) { padding-bottom: 9px; }
   /* The box stays in reach while the list scrolls under it. */
@@ -657,6 +725,7 @@
   #flow { pointer-events: none; }
   .edge-g.dim .direction-chevron { opacity: .18; }
   .edge-g.hot .direction-chevron { stroke-width: 2.4; }
+  .edge-g.near .direction-chevron { stroke-width: 2.1; }
   @media (prefers-reduced-motion: reduce) { .flow-chevron { display: none; } }
   /* Credit line on a contribute page: the name cycles through the spectrum. */
   #contribute .thanks { font-size: 17px; margin: 0 0 18px; }
@@ -678,6 +747,9 @@
     .tabs { padding: 0 16px; gap: 0 18px; }
     .tab { padding: 10px 0; font-size: 13px; }
     .ex { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+    /* One column: the statement first, then the principles, then the models. */
+    .ex > .ex-principles, .ex > .ex-assumptions, .ex > .explorer-models { grid-column: 1; grid-row: auto; }
+    .ex > .ex-assumptions { order: -1; }
     .list, .page { padding: 18px 16px 32px; }
     .controls-scroll { padding: 12px 10px; }
     .background-dock { padding: 10px; }
@@ -722,6 +794,7 @@
         <button class="tab" role="tab" data-tab="lattice" aria-selected="false">Lattice</button>
         <button class="tab" role="tab" data-tab="graph" aria-selected="true">Graph</button>
         <button class="tab" role="tab" data-tab="models" aria-selected="false">Theory explorer</button>
+        <button class="tab" role="tab" data-tab="theorems" aria-selected="false">Results</button>
         <button class="tab" role="tab" data-tab="open" aria-selected="false">Conjectures</button>
         <button class="tab" role="tab" data-tab="results" aria-selected="false">Changes <span class="n" id="n-results"></span></button>
         <button class="tab" role="tab" data-tab="contribute" aria-selected="false" hidden>Contribute</button>
@@ -810,6 +883,7 @@
       </section>
       <section class="pane" id="pane-models"><div class="list" id="models"></div></section>
       <section class="pane" id="pane-results"><div class="list"><input class="search" id="search" type="search" placeholder="Filter" aria-label="Filter changes"><div id="results"></div></div></section>
+      <section class="pane" id="pane-theorems"><div class="open-content"><div class="list" id="theorems"></div></div></section>
       <section class="pane" id="pane-open"><div class="open-content"><div id="open-warning" class="graph-warning" role="alert" hidden></div><div class="list" id="open"></div></div></section>
       <section class="pane" id="pane-page"><div class="page" id="page"></div></section>
       <section class="pane" id="pane-background"><div class="page prose-page" id="background"></div></section>
@@ -1105,7 +1179,7 @@ const theory = {
 };
 for (const id of theory.negative) theory.positive.delete(id);
 const inTheory = id => theory.positive.has(id) || theory.negative.has(id);
-let theoryE = null, theoryExcluded = new Map();
+let theoryE = null, theoryExcluded = new Map(), theoryRedundant = new Map(), theoryGiven = { facts: new Set(), excluded: new Set() };
 // A handful of categories reads better open; a long list is easier to navigate
 // closed. The threshold counts the topic's own principles, not the ones a
 // reader happens to be showing.
@@ -1136,7 +1210,9 @@ function defaultHidden(view) {
 }
 state.excluded = defaultHidden('graph');
 state.openExcluded = defaultHidden('open'); state.openNegativeShown = new Set();
-const sidebarSets = () => state.tab === 'open' ? [state.openExcluded, state.openNegativeShown] : [state.excluded, state.negativeShown];
+state.theoremsExcluded = defaultHidden('theorems'); state.theoremsNegativeShown = new Set();
+const sidebarSets = () => state.tab === 'open' ? [state.openExcluded, state.openNegativeShown] : state.tab === 'theorems' ? [state.theoremsExcluded, state.theoremsNegativeShown] : [state.excluded, state.negativeShown];
+const theoremShown = id => id === FALSE || !state.theoremsExcluded.has(id);
 const openShown = l => isNegative(l) ? state.openNegativeShown.has(baseId(l)) : !state.openExcluded.has(l);
 let graphRelations = new Map();
 let E = null, EC = null, baseE = null, baseEC = null, A = null, layout = null, backgroundConflicts = [], backgroundExcluded = new Map();
@@ -1198,6 +1274,27 @@ function recomputeTheory() {
   theoryE = new Engine(ids, R.filter(r => r.status === 'proved' && passes(r)), [], [...theory.positive], [...theory.negative]);
   const conflict = theoryE.conflict([]);
   theoryExcluded = new Map(conflict ? [] : ids.map(id => [id, theoryE.excludes([], id)]).filter(([, proof]) => proof));
+  // What the fixed background gives with nothing assumed. The Assumptions box leaves
+  // it out of its counts: no choice of the reader's produced it.
+  theoryGiven = { facts: new Set([...baseE.cl([]).facts].filter(p => p !== FALSE)), excluded: new Set(ids.filter(id => baseE.excludes([], id))) };
+  // An assumption the other assumptions already settle, with its proof, and the
+  // other settled assumptions it would stop following without.
+  theoryRedundant = new Map();
+  if (!conflict) for (const [sign, own] of [['positive', theory.positive], ['negative', theory.negative]]) for (const id of own) {
+    if (topicBackground.includes(id)) continue;
+    const proof = assumptionSettled(id, sign);
+    if (proof) theoryRedundant.set(id, proof);
+  }
+  for (const [id, proof] of theoryRedundant) proof.partners = [...theoryRedundant.keys()].filter(other => other !== id && !assumptionSettled(id, proof.sign, other));
+}
+// The proof that the assumptions other than `id` (and `without`) settle it, or null. A
+// positive assumption follows from the other positive ones; a negative one is settled
+// when its principle, with the others, reaches a contradiction or a denied principle.
+function assumptionSettled(id, sign, without = null) {
+  const positive = [...theory.positive].filter(p => p !== id && p !== without), negative = [...theory.negative].filter(p => p !== id && p !== without);
+  if (sign === 'positive') { const via = baseE.entails(positive, id); return via ? { sign, via, target: id } : null; }
+  const conflict = baseE.conflict([...positive, id], negative);
+  return conflict ? { sign, via: conflict.via, target: conflict.target } : null;
 }
 function pairStatus(a, b) {
   if (isNegative(a) || isNegative(b)) return literalPair(a, b);
@@ -1206,6 +1303,14 @@ function pairStatus(a, b) {
   const c = EC.pair(a, b); return c.status !== 'open' ? { ...c, status: c.status + '?' } : base;
 }
 function name(id) { if (isNegative(id)) return '¬' + name(baseId(id)); return id === TRUE ? "⊤" : id === FALSE ? "⊥" : byPid.get(id)?.name || id; }
+// Alphabetical by name, except that a leading run of symbols (□, ◇, ¬ …) counts for nothing
+// until the rest ties, and then sorts after the bare name: □Actuality comes right after
+// Actuality, and before Actuality (type t).
+function compareNames(a, b) {
+  const symbols = s => s.match(/^[^\p{L}\p{N}]+/u)?.[0] || '', pa = symbols(a), pb = symbols(b);
+  return a.slice(pa.length).localeCompare(b.slice(pb.length)) || pa.localeCompare(pb);
+}
+function byName(x, y) { return compareNames(name(x), name(y)); }
 function esc(s) { return String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
 function renderSubscripts(root) {
   window.renderMapMath?.(root);
@@ -2146,7 +2251,7 @@ function edgeGeometry(e, L) {
   return {points, length, mid, angle, d: `M${start.x},${start.y} C${b.x},${b.y} ${c.x},${c.y} ${end.x},${end.y}`};
 }
 function edgePath(e, L) { return edgeGeometry(e, L).d; }
-function stopFlow() { document.getElementById('flow')?.replaceChildren(); }
+function stopFlow() { clearTimeout(flowTimer); flowTimer = null; document.getElementById('flow')?.replaceChildren(); }
 function animateFlow() {
   stopFlow();
   if (reducedMotion?.matches || document.hidden || state.tab !== 'graph') return;
@@ -2164,11 +2269,15 @@ function animateFlow() {
   }
   layer.innerHTML = html;
 }
-reducedMotion?.addEventListener('change', () => { if (reducedMotion.matches) stopFlow(); else animateFlow(); });
-document.addEventListener('visibilitychange', () => { if (document.hidden) { hover(null); stopFlow(); } });
+// Adding the animations relays out the whole diagram, so they start only once the pointer has
+// lingered on one target well past the rest that applies the highlight, and go the moment it moves on.
+const FLOW_DELAY = 700;
+let flowTimer = null;
+reducedMotion?.addEventListener('change', () => { if (reducedMotion.matches) stopFlow(); else if (hoverItem) animateFlow(); });
+document.addEventListener('visibilitychange', () => { if (document.hidden) hover(null); });
 
 function renderGraph() {
-  stopFlow(); hoverKey = null; graphEdgesByKey.clear();
+  stopFlow(); hoverKey = null; hoverItem = null; graphEdgesByKey.clear();
   const empty = document.getElementById('graph-empty');
   empty.hidden = true;
   const warning = document.getElementById('graph-warning');
@@ -2343,8 +2452,8 @@ function fit() {
   svg.addEventListener('pointermove', ev => { if (!drag) return; const dx = ev.clientX - drag.x, dy = ev.clientY - drag.y; if (Math.abs(dx) + Math.abs(dy) > 3) drag.moved = true; view.tx = drag.tx + dx; view.ty = drag.ty + dy; applyView(); });
   svg.addEventListener('pointerup', () => { if (drag && !drag.moved) handleGraphClick(drag.target, drag.extend); drag = null; });
   svg.addEventListener('wheel', ev => { ev.preventDefault(); const f = Math.exp(-ev.deltaY * 0.0015); const r = svg.getBoundingClientRect(); const mx = ev.clientX - r.left, my = ev.clientY - r.top; view.tx = mx - (mx - view.tx) * f; view.ty = my - (my - view.ty) * f; view.k *= f; applyView(); }, { passive: false });
-  svg.addEventListener('pointermove', ev => { const t = ev.target.closest('.node,.junction,.edge-g'); hover(t ? (t.dataset.falsity ? { node: 'falsity' } : t.dataset.junction ? { node: t.dataset.junction } : t.dataset.class ? { node: t.dataset.class } : { result: t.dataset.connection || t.dataset.edge }) : null); });
-  svg.addEventListener('pointerleave', () => hover(null));
+  svg.addEventListener('pointermove', ev => { const t = ev.target.closest('.node,.junction,.edge-g'); hoverSoon(t ? (t.dataset.falsity ? { node: 'falsity' } : t.dataset.junction ? { node: t.dataset.junction } : t.dataset.class ? { node: t.dataset.class } : { result: t.dataset.connection || t.dataset.edge }) : null); });
+  svg.addEventListener('pointerleave', () => hoverSoon(null));
 })();
 // The principle or conjunction whose relations are currently shaded. It
 // outlives the detail panel, so reading a proof does not drop the selection.
@@ -2382,28 +2491,58 @@ function selectGraphEdge(edge) {
   else if (edge?.r) select({type: 'result', id: edge.r.id, display: edge.display, contraposed: edge.contraposed, premises: edge.premises, conclusion: edge.conclusion});
   else if (edge) select({type: 'pair', a: edge.a, b: edge.b, premises: edge.premises, via: edge.via, conjectured: edge.conjectured});
 }
+let hoverItem = null, hoverTimer = null, hoverPendingKey = null;
+const hoverKeyOf = h => h ? (h.node ? 'node:' + h.node : 'edge:' + h.result) : null;
+// A hover applies once the pointer has rested on its target for a moment, and lifts a moment
+// after it leaves, so a pointer crossing the diagram, or the gaps between its boxes, never
+// re-dims every arrow on the way. The change itself is immediate (hover) for other callers.
+function hoverSoon(h) {
+  const key = hoverKeyOf(h);
+  if (key === hoverKey) { clearTimeout(hoverTimer); hoverTimer = null; hoverPendingKey = null; return; }
+  if (hoverTimer && hoverPendingKey === key) return;
+  clearTimeout(hoverTimer); hoverPendingKey = key;
+  hoverTimer = setTimeout(() => { hoverTimer = null; hoverPendingKey = null; hover(h); }, h ? 120 : 180);
+}
 function hover(h) {
-  const key = h ? (h.node ? 'node:' + h.node : 'edge:' + h.result) : null;
-  if (key === hoverKey) return;
-  hoverKey = key; stopFlow();
+  clearTimeout(hoverTimer); hoverTimer = null; hoverPendingKey = null;
+  const key = hoverKeyOf(h);
+  if (key !== null && key === hoverKey) return;
+  hoverKey = key; hoverItem = h;
+  applyFocus();
+  stopFlow();
+  if (h) flowTimer = setTimeout(animateFlow, FLOW_DELAY);
+}
+// The graph nodes that hold the selected principles.
+function selectionNodes() {
+  if (state.focus == null || !layout) return [];
+  const literals = new Set(expressionLiterals(state.focus));
+  return [...svg.querySelectorAll('.node[data-members]')].filter(n => n.dataset.falsity ? literals.has(FALSE) : n.dataset.members.split(',').some(m => literals.has(m))).map(n => n.dataset.class);
+}
+// What the diagram brings forward: the hovered node or arrow, with everything else dimmed (and,
+// once the pointer has lingered, its arrows' chevrons in motion); else the selected principles, whose arrows stay bright while the rest
+// dim and the boxes keep their shading; else nothing.
+function applyFocus() {
   const nodes = svg.querySelectorAll('.node,.junction'), edges = svg.querySelectorAll('.edge-g');
-  if (!h) { nodes.forEach(n => n.classList.remove('dim', 'hot')); edges.forEach(e => e.classList.remove('dim', 'hot')); return; }
+  const h = hoverItem, selected = h ? [] : selectionNodes();
+  if (!h && !selected.length) { nodes.forEach(n => n.classList.remove('dim', 'hot')); edges.forEach(e => e.classList.remove('dim', 'hot', 'near')); return; }
   const hotNodes = new Set(), hotEdges = new Set();
-  if (h.node) {
-    const focused = new Set([h.node, ...(layout?.byId.get(h.node)?.junctions || []).map(j => j.id)]);
-    focused.forEach(id => hotNodes.add(id));
+  const focusNode = id => {
+    const focused = new Set([id, ...(layout?.byId.get(id)?.junctions || []).map(j => j.id)]);
+    focused.forEach(x => hotNodes.add(x));
     edges.forEach(e => { if (focused.has(e.dataset.from) || focused.has(e.dataset.to)) { hotEdges.add(e.dataset.segment); hotNodes.add(e.dataset.from); hotNodes.add(e.dataset.to); } });
-    // junction: include its other endpoints
-    edges.forEach(e => { if (hotNodes.has(e.dataset.from) && e.dataset.from.startsWith('j:') || hotNodes.has(e.dataset.to) && e.dataset.to.startsWith('j:')) { hotEdges.add(e.dataset.segment); hotNodes.add(e.dataset.from); hotNodes.add(e.dataset.to); } });
-  } else if (h.result) {
+  };
+  if (h?.result) {
     edges.forEach(e => { if (e.dataset.edge === h.result) { hotEdges.add(e.dataset.segment); hotNodes.add(e.dataset.from); hotNodes.add(e.dataset.to); } });
     hotNodes.add('j:' + h.result);
     edges.forEach(e => { if (e.dataset.to.startsWith('j:') && hotNodes.has(e.dataset.to)) { hotEdges.add(e.dataset.segment); hotNodes.add(e.dataset.from); } });
+  } else {
+    (h ? [h.node] : selected).forEach(focusNode);
+    // junction: include its other endpoints
+    edges.forEach(e => { if (hotNodes.has(e.dataset.from) && e.dataset.from.startsWith('j:') || hotNodes.has(e.dataset.to) && e.dataset.to.startsWith('j:')) { hotEdges.add(e.dataset.segment); hotNodes.add(e.dataset.from); hotNodes.add(e.dataset.to); } });
   }
   for (const id of [...hotNodes]) { const parent = layout?.byId.get(id)?.parent; if (parent) hotNodes.add(parent); }
-  nodes.forEach(n => { const id = n.dataset.falsity ? 'falsity' : n.dataset.class || n.dataset.graphNode; n.classList.toggle('hot', hotNodes.has(id)); n.classList.toggle('dim', !hotNodes.has(id)); });
-  edges.forEach(e => { e.classList.toggle('hot', hotEdges.has(e.dataset.segment)); e.classList.toggle('dim', !hotEdges.has(e.dataset.segment)); });
-  animateFlow();
+  nodes.forEach(n => { const id = n.dataset.falsity ? 'falsity' : n.dataset.class || n.dataset.graphNode; n.classList.toggle('hot', !!h && hotNodes.has(id)); n.classList.toggle('dim', !!h && !hotNodes.has(id)); });
+  edges.forEach(e => { const near = hotEdges.has(e.dataset.segment); e.classList.toggle('hot', !!h && near); e.classList.toggle('near', !h && near); e.classList.toggle('dim', !near); });
 }
 const relationClasses = ['rel-base', 'rel-entailed', 'rel-excluded', 'rel-consistent', 'rel-separated', 'rel-independent', 'rel-open', 'rel-conjectured', 'rel-inconsistent'];
 const relationPhrase = {entailed: 'Entailed by selection', excluded: 'Excluded by selection', consistent: 'Consistent with selection', separated: 'Negation is consistent with selection', independent: 'Independent of selection', open: 'Open relative to selection', conjectured: 'Conjectured relation to selection'};
@@ -2507,15 +2646,14 @@ function applySelection() {
     }
     n.querySelector('title').textContent = title;
   });
-  document.querySelectorAll('#pr-filters .principle-name').forEach(button => button.setAttribute('aria-pressed', baseMembers.has(button.dataset.principle)));
+  document.querySelectorAll('#pr-filters .principle-name, #lat-filters .principle-name').forEach(button => button.setAttribute('aria-pressed', baseMembers.has(button.dataset.principle)));
 
   if (implicit || state.tab !== 'graph' || !layout) { legend.hidden = true; setDetailFoot('graph-details-foot', null); return; }
   legend.hidden = false;
-  const fullLabel = expressionName(base);
-  const label = Array.isArray(base) && fullLabel.length > 100 ? `${base.length} selected principles` : fullLabel;
   const key = (kind, label) => `<span class="key ${kind}"><i aria-hidden="true"></i>${label} <span class="n">${counts[kind]}</span></span>`;
   const keys = key('entailed', 'entailed') + key('excluded', 'excluded') + key('consistent', 'consistent') + key('separated', 'negation is consistent');
-  legend.innerHTML = `<b title="${esc(fullLabel)}">${esc(label)}</b>${keys}${selectionToolbar()}`;
+  // The keys and the actions only: the pane below already names the selection.
+  legend.innerHTML = `${keys}${selectionToolbar()}`;
   wireLegendActions(legend);
   setDetailFoot('graph-details-foot', consistencyLine);
 }
@@ -2566,7 +2704,7 @@ function verdictButton(m, c, e, compact = false, showValue = true) {
   return `<button class="verdict" data-verdict="${c}" data-verdict-model="${m.id}" title="View evidence for ${esc(name(c))}" aria-label="${esc(name(c))}: ${e.value ? 'satisfied' : 'violated'}${e.direct ? '' : ', derived'}; view evidence"><span class="model-flag">${flag}</span> ${compact ? '<span class="evidence-link">evidence ↗</span>' : evidenceBadges(e, m, c)}</button>`;
 }
 function principleGroups() {
-  const sorted = [...P].sort((a, b) => a.name.localeCompare(b.name));
+  const sorted = [...P].sort((a, b) => compareNames(a.name, b.name));
   const categories = T.principle_categories || [];
   if (!categories.length) return [{ id: 'all', name: 'Principles', principles: sorted }];
   const groups = categories.map(c => ({ ...c, principles: sorted.filter(p => p.category === c.id) }));
@@ -2618,8 +2756,8 @@ function wireCategories(el) {
   if (!el || el.dataset.categoriesWired) return;
   el.dataset.categoriesWired = '1';
   el.addEventListener('click', ev => {
-    const group = ev.target.closest('summary')?.closest('[data-category]');
-    if (!group) return;
+    const summary = ev.target.closest('summary'), group = summary?.closest('[data-category]');
+    if (!group || summary.parentElement !== group) return;
     // The browser would toggle this one disclosure. Cancel that and go through
     // the shared set instead, so the other lists agree.
     ev.preventDefault();
@@ -2719,7 +2857,7 @@ function exFindOptions(value) {
     const rank = n === q ? 0 : n.startsWith(q) ? 1 : terms.every(t => words.some(w => w.startsWith(t))) ? 2 : 3;
     out.push({ id: p.id, name: p.name, category: g.id === 'all' ? '' : g.name, rank });
   }
-  return out.sort((a, b) => a.rank - b.rank || a.name.length - b.name.length || a.name.localeCompare(b.name));
+  return out.sort((a, b) => a.rank - b.rank || a.name.length - b.name.length || compareNames(a.name, b.name));
 }
 function drawExFind() {
   const input = document.getElementById('ex-find'), list = document.getElementById('ex-find-list');
@@ -2793,6 +2931,83 @@ function wireExFind(el) {
     if (option) pickFound(option.dataset.find);
   });
 }
+// One disclosure for every derivation in the map, opening in place to the facts it starts
+// from and the results it goes through. The Assumptions box's "also follows", the explorer's
+// rows that follow or are ruled out, and a model's derived verdicts all use it.
+function derivationDetails({ key, summary, lead, starts = [], rules = [], parts = null, open = false }) {
+  const step = id => `<li><button class="lnk" data-result="${id}">${resultStmt(byRid.get(id))}</button> ${certBadges(byRid.get(id))}</li>`;
+  const part = p => `<p>${p.lead}</p><ol>${(p.starts || []).map(l => `<li>${l}</li>`).join('')}${(p.rules || []).map(step).join('')}</ol>`;
+  return `<details class="why" data-why="${esc(key)}"${open ? ' open' : ''}><summary>${esc(summary)}</summary><div class="why-body">${(parts || [{ lead, starts, rules }]).map(part).join('')}</div></details>`;
+}
+// The facts a derivation under the explorer's assumptions starts from: what is assumed or
+// denied, the standing background and, for a failure, the principle supposed, first.
+function theoryDerivation(c, value, rules, target = null) {
+  const concluded = new Set(rules.map(id => byRid.get(id).conclusion)), starts = [];
+  for (const id of rules) for (const p of byRid.get(id).premises) if (p !== TRUE && !concluded.has(p) && !starts.includes(p)) starts.push(p);
+  if (!value && target && target !== FALSE && !starts.includes(target)) starts.push(target);
+  if (!value && starts.includes(c)) { starts.splice(starts.indexOf(c), 1); starts.unshift(c); }
+  const line = p => !value && p === c ? `${esc(name(p))} <span class="via">supposed, to derive a contradiction</span>`
+    : !value && p === target ? `✗ ${esc(name(p))} <span class="via">denied</span>`
+    : topicBackground.includes(p) ? `${esc(name(p))} <span class="via">standing background</span>`
+    : theory.positive.has(p) ? `✓ ${esc(name(p))} <span class="via">assumed</span>`
+    : esc(name(p));
+  return { starts: starts.map(line), rules };
+}
+// Why a principle the explorer's assumptions settle follows, or is ruled out.
+function theoryWhy(id, value, key = 'row:' + id) {
+  if (value) {
+    const d = theoryDerivation(id, true, chain(id, theoryE.cl([]).why, theoryE.byId));
+    return derivationDetails({ key, summary: 'why', lead: d.starts.length ? 'Follows from what is assumed.' : 'Holds with nothing assumed.', ...d });
+  }
+  const { target, via } = theoryExcluded.get(id);
+  return derivationDetails({ key, summary: 'why', lead: target === FALSE ? 'Contradicts what is assumed.' : `Gives ${esc(name(target))}, which is denied.`, ...theoryDerivation(id, false, via, target) });
+}
+// Why a model's derived verdict holds: from its recorded properties through the results.
+function modelLead(c, e) { return e.value ? 'Follows from the model’s recorded properties.' : `Supposing ${esc(name(c))} would give ${esc(name(e.contradiction))}, ${e.contradiction === FALSE ? 'a contradiction' : 'which the model violates'}.`; }
+function modelWhy(m, c, e, open = false) {
+  return derivationDetails({ key: `model:${m.id}:${c}`, summary: 'why', lead: modelLead(c, e), starts: derivationStarts(m, c, e), rules: e.rules, open });
+}
+// Why a verdict every row of a group derives: one derivation per distinct chain of results,
+// naming the rows it serves when there is more than one, each shown from its first row.
+function groupWhy(g, rows, c) {
+  const chains = new Map();
+  for (const r of rows) {
+    const e = modelEvidence(r.m, c); if (!e || e.direct) continue;
+    const k = `${e.value}|${e.rules.join(',')}`;
+    if (!chains.has(k)) chains.set(k, { e, r, rows: [] });
+    chains.get(k).rows.push(r);
+  }
+  if (!chains.size) return '';
+  const parts = [...chains.values()].map(({ e, r, rows: rs }) => ({
+    lead: (chains.size > 1 ? `In ${rs.map(x => esc(shortName(g, x.m))).join('; ')}: ` : '') + modelLead(c, e) + (chains.size > 1 ? '' : ' The same in every row.'),
+    starts: derivationStarts(r.m, c, e), rules: e.rules }));
+  return derivationDetails({ key: `group:${g.id}:${c}`, summary: 'why', parts });
+}
+// The theory's statement, heading what it yields: each assumption, removable and
+// flagged when the others already settle it; then what further follows and what is
+// ruled out, beyond what the fixed background gives by itself; or the contradiction.
+function assumptionsBox(conflict, implied) {
+  const assumed = ids.filter(id => inTheory(id) && !topicBackground.includes(id)).sort(byName);
+  const settled = id => {
+    const proof = theoryRedundant.get(id); if (!proof) return '';
+    const mutual = proof.partners.filter(p => theoryRedundant.get(p)?.partners.includes(id));
+    const lead = proof.sign === 'positive' ? 'Follows from the other assumptions.' : proof.target === FALSE ? 'Its principle contradicts the other assumptions.' : `Its principle gives ${esc(name(proof.target))}, which is denied.`;
+    return derivationDetails({ key: 'also:' + id, summary: 'also follows', lead: lead + (mutual.length ? ` Equivalent to ${mutual.map(p => esc(name(p))).join(', ')} given the rest.` : ''), ...theoryDerivation(id, proof.sign === 'positive', proof.via, proof.target) });
+  };
+  const row = id => { const negative = theory.negative.has(id); return `<li class="${negative ? 'out' : 'in'}" data-assumed="${id}"><span class="assumed-line"><button class="lnk" data-principle="${id}">${negative ? '¬' : ''}${esc(name(id))}</button>${settled(id)}</span><button class="lnk assumed-remove" data-flip-assumption="${id}" title="Assume ${negative ? '' : '¬'}${esc(name(id))} instead" aria-label="Assume the ${negative ? 'principle' : 'negation'} of ${esc(name(id))} instead">negate</button><button class="lnk assumed-remove" data-drop-assumption="${id}" aria-label="Remove ${esc(name(id))} from the assumptions">remove</button></li>`; };
+  let h = `<div class="ex-col ex-assumptions" id="ex-assumptions"><h2 class="ex-head">Assumptions <span class="n">${assumed.length}</span>${assumed.length ? '<button class="lnk dim" data-theory-lattice title="Draw the lattice of the conjunctions these assumptions generate.">Show in Lattice</button>' : ''}</h2>`;
+  h += assumed.length ? `<ul class="assumed-list">${assumed.map(row).join('')}</ul>` : '<p class="empty">Nothing assumed. Mark a principle ✓ or ✗, or assume a package.</p>';
+  if (conflict) h += `<div class="ex-bad" role="alert">These assumptions are inconsistent. Clear or change an assumption to compare models.${conflict.via.length ? `<ul>${conflict.via.map(id => `<li><button class="lnk" data-result="${id}">${resultStmt(byRid.get(id))}</button> ${certBadges(byRid.get(id))}</li>`).join('')}</ul>` : ''}</div>`;
+  else {
+    const follow = ids.filter(id => implied.has(id) && !inTheory(id) && !theoryGiven.facts.has(id)).sort(byName);
+    const ruledOut = ids.filter(id => theoryExcluded.has(id) && !inTheory(id) && !theoryGiven.excluded.has(id)).sort(byName);
+    const list = (kind, items, one, many) => items.length
+      ? `<details class="ex-follow" data-ex-list="${kind}"><summary>${items.length} ${items.length === 1 ? one : many}</summary><ul>${items.map(id => `<li><button class="lnk" data-principle="${id}">${esc(name(id))}</button>${theoryWhy(id, kind === 'follow', 'box:' + id)}</li>`).join('')}</ul></details>`
+      : `<div class="ex-follow none">No ${many}</div>`;
+    h += `<div class="ex-status">${list('follow', follow, 'further principle follows', 'further principles follow')}${list('excluded', ruledOut, 'principle ruled out', 'principles ruled out')}</div>`;
+  }
+  return h + '</div>';
+}
 function renderModels() {
   const candidate = byMid.get(state.modelId);
   const inspected = candidate && passes(candidate) && (candidate.status === 'proved' || state.showConj) ? candidate : null;
@@ -2801,7 +3016,9 @@ function renderModels() {
   // A group is inspected through the models of it that fit: those known to, else those that might.
   const igFits = ig ? (() => { const fam = groupFamily(ig.id), known = fam.filter(m => modelFit(m, IN, OUT) === 'known'); return known.length ? known : fam.filter(m => modelFit(m, IN, OUT) === 'potential'); })() : [];
   const conflict = theoryE.conflict([]), implied = conflict ? new Set() : theoryE.cl([]).facts;
-  let h = `<div class="ex"><div class="ex-col"><div class="ex-head">Principles <span class="n">${ids.filter(inTheory).length} assumed</span>${categoryExpander()}</div><div class="explorer-actions">${backgroundPresets.map(p => `<button class="btn small" data-theory-preset="${esc(p.id)}">Background ${esc(p.name)}</button>`).join('')}<button class="btn small" id="ex-clear">clear background</button></div>`;
+  // Clearing sits on the heading line with the category control; the packages, which are
+  // used far less often than the list, wait at its foot.
+  let h = `<div class="ex"><div class="ex-col ex-principles"><div class="ex-head">Principles <span class="n">${ids.filter(inTheory).length} assumed</span>${categoryExpander()}<button class="lnk" id="ex-clear">clear assumptions</button></div>`;
   if (inspected) h += `<div class="inspection-note">Inspecting <b>${esc(inspected.name)}</b> <button class="lnk" id="ex-deselect">clear selection</button></div>`;
   else if (ig) h += `<div class="inspection-note">Inspecting <b>${esc(ig.name)}</b>, ${igFits.length ? `through the ${igFits.length} of its models that ${modelFit(igFits[0], IN, OUT) === 'known' ? 'fit' : 'might fit'}` : 'none of whose models fits these assumptions'} <button class="lnk" id="ex-deselect">clear selection</button></div>`;
   h += `<div class="ex-find"><input class="search" id="ex-find" type="search" role="combobox" placeholder="Find a principle…" aria-label="Find a principle" aria-autocomplete="list" aria-controls="ex-find-list" aria-expanded="false" autocomplete="off" spellcheck="false" value="${esc(exFind.query)}"><ul class="ex-find-list" id="ex-find-list" role="listbox" aria-label="Matching principles" hidden></ul></div>`;
@@ -2819,12 +3036,17 @@ function renderModels() {
       const groupTint = fv ? (fv.h === igFits.length ? 'model-in' : fv.f === igFits.length ? 'model-out' : '') : '';
       const tint = inspected ? evidence ? evidence.value ? 'model-in' : 'model-out' : '' : ig ? groupTint : positive ? 'in' : negative ? 'out' : follows ? 'fin' : ruledOut ? 'fout' : '';
       const groupNote = fv ? `<span class="via family-verdict">${fv.h === igFits.length ? '✓ in all' : fv.f === igFits.length ? '✗ in all' : [fv.h ? fv.h + '✓' : '', fv.f ? fv.f + '✗' : '', fv.u ? fv.u + '?' : ''].filter(Boolean).join(' ')}</span>` : '';
-      h += `<li class="ex-p ${tint}" data-assumption-row="${id}">${assumptionButtons(id, follows, ruledOut, theory.positive, theory.negative)}<div class="principle-line"><button class="lnk" data-principle="${id}">${esc(name(id))}</button>${inspected ? ' ' + verdictButton(inspected, id, evidence, true) : groupNote ? ' ' + groupNote : ''}</div></li>`;
+      // After the name: the inspected model's verdict, a derived one opening to its derivation
+      // in place; a group's tally; or, for a principle the assumptions settle, why.
+      const tail = inspected ? ' ' + (evidence && !evidence.direct ? `<span class="model-flag">${evidence.value ? '✓' : '✗'} derived</span>${modelWhy(inspected, id, evidence)}` : verdictButton(inspected, id, evidence, true))
+        : groupNote ? ' ' + groupNote
+        : follows && !positive ? theoryWhy(id, true) : ruledOut && !negative ? theoryWhy(id, false) : '';
+      h += `<li class="ex-p ${tint}" data-assumption-row="${id}">${assumptionButtons(id, follows, ruledOut, theory.positive, theory.negative)}<div class="principle-line"><button class="lnk" data-principle="${id}">${esc(name(id))}</button>${tail}</div></li>`;
 
     }
     h += '</ul></details>';
   }
-  h += '</div></div><div class="ex-col explorer-models">';
+  h += '</div>' + (backgroundPresets.length ? `<div class="explorer-actions explorer-packages">${backgroundPresets.map(p => `<button class="btn small" data-theory-preset="${esc(p.id)}">Assume ${esc(p.name)}</button>`).join('')}</div>` : '') + '</div>' + assumptionsBox(conflict, implied) + '<div class="ex-col explorer-models">';
   const ms = MODELS.filter(m => passes(m) && (m.status === 'proved' || state.showConj));
   const known = ms.filter(m => modelFit(m, IN, OUT) === 'known'), unknown = ms.filter(m => modelFit(m, IN, OUT) === 'potential');
   // A group is listed once: under Matching when some of its models are known to fit, else under
@@ -2859,7 +3081,7 @@ function renderModels() {
   };
   const row = e => e.g ? groupRow(e) : modelRow(e.m);
 
-  if (conflict) h += `<h2 class="ex-head">Models</h2><div class="ex-bad" role="alert">These assumptions are inconsistent. Clear or change an assumption to compare models.${conflict.via.length ? `<ul>${conflict.via.map(id => `<li><button class="lnk" data-result="${id}">${resultStmt(byRid.get(id))}</button> ${certBadges(byRid.get(id))}</li>`).join('')}</ul>` : ''}</div>`;
+  if (conflict) h += `<h2 class="ex-head">Matching models <span class="n">—</span></h2><ul class="ex-list"><li class="empty">—</li></ul>`;
   else {
     h += `<h2 class="ex-head">Matching models <span class="n">${knownEntries.length}</span></h2><ul class="ex-list">${knownEntries.map(row).join('') || '<li class="empty">No known matching model.</li>'}</ul>`;
     h += `<h2 class="ex-head">Potential models <span class="n">${unknownEntries.length}</span></h2><ul class="ex-list">${unknownEntries.map(row).join('') || '<li class="empty">—</li>'}</ul>`;
@@ -2868,7 +3090,21 @@ function renderModels() {
   const el = document.getElementById('models');
   const focused = el.contains(document.activeElement) ? ['data-assume-positive', 'data-assume-negative'].map(a => [a, document.activeElement.getAttribute(a)]).find(([,id]) => id) : null;
   const finding = document.activeElement?.id === 'ex-find';
+  // The box's open disclosures stay open across a change of assumptions.
+  const disclosure = d => d.dataset.why || 'list:' + d.dataset.exList;
+  const opened = new Set([...el.querySelectorAll('details[open][data-why], details[open][data-ex-list]')].map(disclosure));
   el.innerHTML = h;
+  for (const d of el.querySelectorAll('details[data-why], details[data-ex-list]')) if (opened.has(disclosure(d))) d.open = true;
+  el.querySelectorAll('[data-drop-assumption]').forEach(b => b.addEventListener('click', () => setTheoryAssumption(b.dataset.dropAssumption, null)));
+  el.querySelectorAll('[data-flip-assumption]').forEach(b => b.addEventListener('click', () => setTheoryAssumption(b.dataset.flipAssumption, theory.positive.has(b.dataset.flipAssumption) ? 'negative' : 'positive')));
+  // The lattice of the assumptions, negations included, in place of what it was showing.
+  el.querySelector('[data-theory-lattice]')?.addEventListener('click', () => {
+    lattice.shown = [...[...theory.positive].filter(id => !topicBackground.includes(id)), ...[...theory.negative].map(id => '!' + id)].sort(byName);
+    lattice.selected = null; lattice.builtKey = null;
+    showTab('lattice');
+    renderLatticeFilters(); latticeFit();
+    selectLiterals(lattice.shown);
+  });
   wireExFind(el);
   if (finding) el.querySelector('#ex-find').focus({preventScroll: true});
   wireAssumptions(el, setTheoryAssumption, theory.positive, theory.negative);
@@ -2990,6 +3226,49 @@ function renderResults() {
   renderSubscripts(el);
   el.querySelectorAll('tr[data-id]').forEach(tr => tr.addEventListener('click', () => select({ type: tr.dataset.kind, id: tr.dataset.id })));
   document.getElementById('n-results').textContent = rows.length;
+}
+// ---------------------------------------------------------------- results
+// Every proved result among the principles the sidebar shows, from its sources, grouped by
+// what it concludes, with the incompatibilities last; narrowed by text found anywhere in a
+// statement (so a principle's name also finds the principles whose names contain it), or,
+// when the text names a principle, to the results concluding exactly it or using exactly it.
+const theoremsView = { query: '', role: 'either', closed: new Set() };
+function renderTheorems() {
+  const el = document.getElementById('theorems'); if (!el) return;
+  const q = theoremsView.query.trim(), qf = findText(q);
+  const picked = q ? P.find(p => p.name === q) || P.find(p => findText(p.name) === qf) : null;
+  let rows = R.filter(r => r.status === 'proved' && passes(r) && theoremShown(r.conclusion) && r.premises.every(theoremShown));
+  const exact = picked && theoremsView.role !== 'either';
+  if (exact) rows = rows.filter(r => theoremsView.role === 'conclusion' ? r.conclusion === picked.id : r.premises.includes(picked.id));
+  else if (q) rows = rows.filter(r => findText(resultStmt(r, false).replace(/<[^>]*>/g, '')).includes(qf));
+  const premisesName = r => r.premises.map(name).join(' ∧ ');
+  const groups = new Map();
+  for (const r of rows) (groups.get(r.conclusion) || groups.set(r.conclusion, []).get(r.conclusion)).push(r);
+  const order = [...groups.keys()].sort((a, b) => (a === FALSE) - (b === FALSE) || compareNames(name(a), name(b)));
+  // A group closed by the reader stays closed, even across a narrowing that hides it for a while.
+  const closed = theoremsView.closed;
+  for (const g of el.querySelectorAll('details.theorems-group')) g.open ? closed.delete(g.dataset.conclusion) : closed.add(g.dataset.conclusion);
+  const row = r => `<tr data-result="${r.id}"><td class="stmt">${resultStmt(r)}</td><td>${certBadges(r)}</td></tr>`;
+  let h = `<div class="theorems-controls"><input class="search" id="theorems-find" type="search" list="theorems-principles" placeholder="A principle, or words of a result…" aria-label="Find results" autocomplete="off" spellcheck="false" value="${esc(theoremsView.query)}"><datalist id="theorems-principles">${[...P].sort((a, b) => compareNames(a.name, b.name)).map(p => `<option value="${esc(p.name)}"></option>`).join('')}</datalist>`;
+  const roles = [['either', 'anywhere', 'Results whose statement contains the text, in any principle’s name.'], ['conclusion', 'concluding it', 'Results concluding exactly this principle.'], ['premise', 'using it', 'Results with exactly this principle among their premises.']];
+  h += `<span class="seg theorems-role" role="group" aria-label="How the text narrows the list">${roles.map(([k, l, t]) => `<button data-theorems-role="${k}" title="${esc(t)}" aria-pressed="${theoremsView.role === k}"${picked || k === 'either' ? '' : ' disabled'}>${l}</button>`).join('')}</span>`;
+  h += `<span class="theorems-count">${rows.length} result${rows.length === 1 ? '' : 's'}${exact ? ` ${theoremsView.role === 'conclusion' ? 'concluding' : 'using'} ${esc(picked.name)}` : q ? ` matching “${esc(q)}”` : ''}</span></div>`;
+  const allOpen = order.every(c => !closed.has(c));
+  h += `<p class="hint theorems-hint">Proved results connecting the shown principles, grouped by conclusion.${order.length > 1 ? ` <button class="lnk dim" data-theorems-expand>${allOpen ? 'collapse all' : 'expand all'}</button>` : ''}</p>`;
+  for (const c of order) {
+    const list = groups.get(c).sort((a, b) => a.premises.length - b.premises.length || compareNames(premisesName(a), premisesName(b)));
+    h += `<details class="theorems-group" data-conclusion="${esc(c)}"${closed.has(c) ? '' : ' open'}><summary>${esc(name(c))} <span class="n">${list.length}</span></summary><table class="results"><tbody>${list.map(row).join('')}</tbody></table></details>`;
+  }
+  if (!order.length) h += '<p class="empty">No result fits.</p>';
+  const focused = document.activeElement?.id === 'theorems-find', caret = focused ? document.activeElement.selectionStart : null;
+  el.innerHTML = h; renderSubscripts(el);
+  const input = el.querySelector('#theorems-find');
+  input.addEventListener('input', () => { theoremsView.query = input.value; renderTheorems(); });
+  if (focused) { input.focus({ preventScroll: true }); try { input.setSelectionRange(caret, caret); } catch (_) {} }
+  el.querySelectorAll('[data-theorems-role]').forEach(b => b.addEventListener('click', () => { theoremsView.role = b.dataset.theoremsRole; renderTheorems(); }));
+  // One control opens every group listed, then closes them all.
+  el.querySelector('[data-theorems-expand]')?.addEventListener('click', () => { el.querySelectorAll('details.theorems-group').forEach(g => { g.open = !allOpen; }); renderTheorems(); });
+  el.querySelectorAll('tr[data-result]').forEach(tr => tr.addEventListener('click', () => select({ type: 'result', id: tr.dataset.result })));
 }
 function conjectureEvidence(answer, evidenceBase = baseE, summary = 'Evidence') {
   // The rule chains returned for a witness certify the first matching model.
@@ -3339,6 +3618,7 @@ function derivationStarts(m, c, e) {
   const concluded = new Set(e.rules.map(id => byRid.get(id).conclusion)), starts = [];
   for (const id of e.rules) for (const p of byRid.get(id).premises) if (p !== TRUE && !concluded.has(p) && !starts.includes(p)) starts.push(p);
   if (!e.value && e.contradiction !== FALSE && !starts.includes(e.contradiction)) starts.push(e.contradiction);
+  if (!e.value && starts.includes(c)) { starts.splice(starts.indexOf(c), 1); starts.unshift(c); }
   const recorded = (p, value) => `${value ? '✓' : '✗'} <button class="lnk" data-open-arg="${esc(m.id)}" data-arg-principle="${esc(p)}">${esc(name(p))}</button> <span class="via">${argumentsFor(m, p).length ? 'by its argument in the model' : 'recorded for the model'}</span>`;
   return starts.map(p => !e.value && p === c ? `${esc(name(p))} <span class="via">supposed, to derive a contradiction</span>`
     : !e.value && p === e.contradiction ? recorded(p, false)
@@ -3346,8 +3626,6 @@ function derivationStarts(m, c, e) {
     : topicBackground.includes(p) ? `${esc(name(p))} <span class="via">standing background</span>`
     : `${esc(name(p))}`);
 }
-// The full arguments for one verdict (its own page).
-function argumentRoutes(m, c) { const list = argumentsFor(m, c); return list.length ? `<div class="arguments">${list.map(a => argumentHtml(m, a)).join('')}</div>` : ''; }
 // The model's arguments, each once, in the record's order.
 function argumentsSection(m) {
   const list = (m.arguments || []).map((a, i) => [a, i]);
@@ -3455,7 +3733,7 @@ function groupDetail(g, view, rows) {
   let body;
   if (st === 'u') body = '<p>Nothing recorded or derived settles it.</p>';
   else if (rec) body = `<div class="arguments">${argumentsFor(r.m, c).map(a => argumentHtml(r.m, a).replace('<details class="argument', '<details open class="argument')).join('')}</div>`;
-  else body = `<p>Derived. <button class="lnk" data-verdict-page="${c}" data-verdict-model="${esc(r.m.id)}">How it follows →</button></p>`;
+  else { const e = modelEvidence(r.m, c); body = e ? modelWhy(r.m, c, e, true) : '<p>Derived.</p>'; }
   return `<h3>${esc(name(c))} ${CELL_WORD[st]} in ${label}</h3>${body}<p>${page}</p>`;
 }
 function groupPage(g) {
@@ -3479,7 +3757,7 @@ function groupPage(g) {
   h += `<h2>The same in every row</h2><div class="verdict-columns">${['h', 'f'].map(st => {
     const list = same.filter(c => cellOf(rows[0].m, c)[0] === st), rec = list.filter(recorded), der = list.filter(c => !recorded(c));
     return `<section class="verdict-col"><h3 class="verdict-group">${st === 'h' ? 'Hold' : 'Fail'} <span class="n">${list.length}</span></h3><ul class="verdict-list">${rec.map(c => `<li><button class="lnk" data-principle="${c}">${esc(name(c))}</button></li>`).join('')}</ul>`
-      + (der.length ? `<details class="derived-verdicts"><summary>+ ${der.length} derived</summary><ul class="verdict-list derived">${der.map(c => `<li><button class="lnk" data-principle="${c}">${esc(name(c))}</button></li>`).join('')}</ul></details>` : '') + '</section>';
+      + (der.length ? `<details class="derived-verdicts"><summary>+ ${der.length} derived</summary><ul class="verdict-list derived">${der.map(c => `<li><button class="lnk" data-principle="${c}">${esc(name(c))}</button>${groupWhy(g, rows, c)}</li>`).join('')}</ul></details>` : '') + '</section>';
   }).join('')}</div>`;
   if ((g.arguments || []).length) h += `<h2>Shared arguments</h2><div class="arguments">${(g.arguments || []).map(c => {
     const when = Object.entries(c.when || {}).map(([k, v]) => `${esc(k)} = ${[].concat(v).map(x => esc(valueLabel(g.parameters[k] || {}, x))).join(' or ')}`), req = (c.requires || []).map(esc);
@@ -3531,8 +3809,8 @@ function verdictControl(m, c, e) {
     return `<button class="vc${conj ? ' conj' : ''}" data-jump="${args.map(a => m.arguments.indexOf(a)).join(' ')}" title="${args.length > 1 ? `Its ${args.length} arguments` : 'Its argument'}" aria-label="${esc(name(c))}: ${args.length > 1 ? 'its arguments' : 'its argument'}">↓</button>`;
   }
   if (!e) return '';
-  // A derived verdict goes straight to its derivation page; a pop-up would only point there.
-  if (!e.direct) return `<button class="vc" data-verdict-page="${c}" data-verdict-model="${m.id}" title="How it follows" aria-label="${esc(name(c))}: how it follows">⇐</button>`;
+  // A derived verdict opens its derivation in place.
+  if (!e.direct) return modelWhy(m, c, e);
   return `<button class="vc" data-verdict="${c}" data-verdict-model="${m.id}" title="Its evidence" aria-label="${esc(name(c))}: its evidence">↗</button>`;
 }
 function historyHtml(x) {
@@ -3597,20 +3875,6 @@ function renderPage(sel) {
     h += groupPage(byGid.get(sel.id));
   } else if (sel.type === 'argument') {
     h += generalArgumentPage(byAid.get(sel.id));
-  } else if (sel.type === 'model-verdict') {
-    const m = byMid.get(sel.id), e = modelEvidence(m, sel.principle);
-    h += `<h1><button class="lnk" data-open-model="${m.id}" title="The model's page">${esc(m.name)}</button>: ${esc(name(sel.principle))}</h1>`;
-    if (!e) h += '<p>No evidence is available under the current filters.</p>';
-    else {
-      // A derivation carries no credits of its own: each record it rests on is linked, and credits itself.
-      const status = (leanChecked(e.items) ? '<span class="badge lean verified">Lean ✓</span>' : '') + (e.items.some(x => x.status === 'conjectured') ? '<span class="badge conj">conjecture</span>' : '');
-      h += `<div class="badges">${e.value ? '✓ satisfied' : '✗ violated'} ${e.direct ? evidenceBadges(e, m, sel.principle) : status}</div>`;
-      h += `<p>${e.direct ? 'This assertion is recorded directly for the model' + (argumentsFor(m, sel.principle).length ? ', by the arguments below.' : '.') : e.value ? 'This follows from the model’s recorded properties using the results below.' : `Assuming ${esc(name(sel.principle))} in this model would imply ${esc(name(e.contradiction))}, ${e.contradiction === FALSE ? 'a contradiction' : 'which the model violates'}.`}</p>`;
-      if (e.direct && argumentsFor(m, sel.principle).length) h += `<h2>Arguments</h2>${argumentRoutes(m, sel.principle)}`;
-      if (e.rules.length) h += `<h2>Derivation</h2><ol>${derivationStarts(m, sel.principle, e).map(l => `<li>${l}</li>`).join('')}${e.rules.map(id => `<li><button class="lnk" data-open-result="${id}">${resultStmt(byRid.get(id))}</button></li>`).join('')}</ol>`;
-      if (!e.direct && topicBackground.length) h += `<p>Standing background: ${topicBackground.map(name).map(esc).join(', ')}.</p>`;
-      if (e.direct) h += sourceList(e.items);
-    }
   } else if (sel.type === 'principle') {
     const p = byPid.get(sel.id);
     h += `<h1>${sel.negative ? '¬' : ''}${esc(p.name)}</h1>${sel.negative ? '<p>Negation of the following principle:</p>' : ''}${(p.aliases || []).length ? `<div class="id">${esc(p.aliases.join(', '))}</div>` : ''}<div class="prose statement">${esc(p.statement)}</div>${p.formal ? `<div class="formal">${esc(p.formal)}</div>` : ''}${p.definitions ? `<div class="defs">${fmt(p.definitions)}</div>` : ''}`
@@ -3618,7 +3882,12 @@ function renderPage(sel) {
     if (p.about) h += `<h2>About</h2><div class="prose about">${fmt(p.about)}</div>`;
     h += variantsSection(p);
     if (p.notes) h += `<h2>Notes</h2><div class="prose">${fmt(p.notes)}</div>`;
-    const inR = R.filter(r => r.premises.includes(p.id) || r.conclusion === p.id), inM = MODELS.filter(m => !m.group && (m.satisfies.includes(p.id) || m.violates.includes(p.id)));
+    // The results concluding it first, fewest premises first; then those using it as a
+    // premise, by what they conclude, with the incompatibilities last.
+    const premisesName = r => r.premises.map(name).join(' ∧ ');
+    const concluding = R.filter(r => r.conclusion === p.id).sort((a, b) => a.premises.length - b.premises.length || compareNames(premisesName(a), premisesName(b)));
+    const using = R.filter(r => r.premises.includes(p.id)).sort((a, b) => (a.conclusion === FALSE) - (b.conclusion === FALSE) || compareNames(name(a.conclusion), name(b.conclusion)) || a.premises.length - b.premises.length || compareNames(premisesName(a), premisesName(b)));
+    const inM = MODELS.filter(m => !m.group && (m.satisfies.includes(p.id) || m.violates.includes(p.id)));
     // A group is one row: how many of its models satisfy the principle and how many violate it, and which.
     const groupRows = GROUPS.map(g => {
       const fam = groupFamily(g.id), sat = fam.filter(m => cellOf(m, p.id)[0] === 'h'), vio = fam.filter(m => cellOf(m, p.id)[0] === 'f');
@@ -3626,7 +3895,8 @@ function renderPage(sel) {
       const part = (mark, list) => list.length ? `<div>${mark} ${list.length} of ${fam.length}${fitDescription(g, list) ? ': ' + esc(fitDescription(g, list)) : ''}</div>` : '';
       return `<tr data-open-group-row="${esc(g.id)}"><td class="mono nowrap">${sat.length && vio.length ? '✓✗' : sat.length ? '✓' : '✗'}</td><td class="stmt"><b>${esc(g.name)}</b> <span class="dim">group of ${fam.length} models</span>${part('✓', sat)}${part('✗', vio)}</td><td></td></tr>`;
     }).join('');
-    h += `<h2>Results</h2><table class="results"><tbody>${inR.map(r => `<tr data-result="${r.id}"><td class="stmt">${resultStmt(r)}</td><td>${certBadges(r)}</td></tr>`).join('') || '<tr><td>—</td></tr>'}</tbody></table>`;
+    const resultsTable = rows => `<table class="results"><tbody>${rows.map(r => `<tr data-result="${r.id}"><td class="stmt">${resultStmt(r)}</td><td>${certBadges(r)}</td></tr>`).join('') || '<tr><td>—</td></tr>'}</tbody></table>`;
+    h += `<h2>Results</h2><h3 class="verdict-group">Concluding it <span class="n">${concluding.length}</span></h3>${resultsTable(concluding)}<h3 class="verdict-group">Using it as a premise <span class="n">${using.length}</span></h3>${resultsTable(using)}`;
     h += `<h2>Models</h2><table class="results"><tbody>${groupRows}${inM.map(m => `<tr data-model="${m.id}"><td class="mono nowrap">${m.satisfies.includes(p.id) ? '✓' : '✗'}</td><td class="stmt"><b>${esc(m.name)}</b> &nbsp; ${modelStmt(m)}</td><td>${certBadges(m)}</td></tr>`).join('') || (groupRows ? '' : '<tr><td>—</td></tr>')}</tbody></table>`;
     h += sourceList([p]);
     h += `<div class="file">${esc(p.file)}</div>`;
@@ -3664,7 +3934,7 @@ function jumpToArguments(el, indices) {
 // left: its scroll position and which disclosures were open. Leaving for a tab clears it.
 const pageHistory = [];
 function openPage(sel, back = null) {
-  hover(null); stopFlow();
+  hover(null);
   const pane = document.getElementById('pane-page'), el = document.getElementById('page');
   if (!back && state.page && pane.dataset.active === 'true')
     pageHistory.push({ sel: { ...state.page, jump: undefined }, scroll: pane.scrollTop, open: [...el.querySelectorAll('details')].map(d => d.open) });
@@ -3682,9 +3952,9 @@ function pageBack() {
   if (prev) openPage(prev.sel, prev); else { state.page = null; showTab(state.tab); }
 }
 function showTab(tab) {
-  hover(null); stopFlow();
+  hover(null);
   state.tab = tab; state.page = null; pageHistory.length = 0;
-  if (tab === 'graph' || tab === 'open' || tab === 'lattice') {
+  if (tab === 'graph' || tab === 'open' || tab === 'lattice' || tab === 'theorems') {
     // One sidebar for the three views, so background, source selections,
     // click slots, scrolling and pane sizes are shared rather than duplicated.
     const pane = document.getElementById('pane-' + tab);
@@ -3693,9 +3963,10 @@ function showTab(tab) {
     const details = pane.querySelector('.graph-details');
     if (details) { const divider = document.getElementById('details-divider'); details.before(divider); divider.setAttribute('aria-controls', details.id); }
     const heading = document.getElementById('source-filter-heading');
-    heading.textContent = tab === 'open' ? 'Evidence sources' : 'Arrow sources';
+    heading.textContent = tab === 'open' ? 'Evidence sources' : tab === 'theorems' ? 'Result sources' : 'Arrow sources';
     refreshPrincipleControls();
     heading.title = tab === 'open' ? 'Filter the evidence used to assess conjectures.'
+      : tab === 'theorems' ? 'List the results from these sources alone.'
       : tab === 'lattice' ? 'Draw the lattice from the selected sources alone. Background consequences always use all recorded proofs.'
       : 'Filter displayed arrows. Background consequences always use all recorded proofs.';
   }
@@ -3706,6 +3977,7 @@ function showTab(tab) {
   if (tab === 'graph') fitInitial();
   if (tab === 'lattice') { renderLattice(); latticeFitInitial(); }
   if (tab === 'open') renderLynchpins();
+  if (tab === 'theorems') renderTheorems();
 }
 
 // ---------------------------------------------------------------- detail
@@ -3715,8 +3987,17 @@ function wire(el) {
   el.querySelectorAll('button[data-paper]').forEach(b => b.addEventListener('click', () => openPaper(b.dataset.paper)));
   el.querySelectorAll('button[data-open-principle]').forEach(b => b.addEventListener('click', () => openPage({ type: 'principle', id: b.dataset.openPrinciple })));
   el.querySelectorAll('button[data-graph-connection]').forEach(b => b.addEventListener('click', () => selectGraphEdge(graphEdgesByKey.get(b.dataset.graphConnection))));
-  el.querySelectorAll('button[data-principle]').forEach(b => b.addEventListener('click', ev => select({ type: 'principle', id: b.dataset.principle }, ev.shiftKey || ev.metaKey || ev.ctrlKey)));
+  // A principle's name selects it where selection means something, on the diagrams and in their
+  // sidebars, and in the conjectures, whose pop-up offers to assume it; in the explorer it opens
+  // the principle's page, the preview on hover having already shown the statement.
+  const opensPage = !!el.closest('#pane-models');
+  el.querySelectorAll('button[data-principle]').forEach(b => b.addEventListener('click', ev => opensPage ? openPage({ type: 'principle', id: b.dataset.principle }) : select({ type: 'principle', id: b.dataset.principle }, ev.shiftKey || ev.metaKey || ev.ctrlKey)));
   el.querySelectorAll('button[data-remove-selection]').forEach(b => b.addEventListener('click', () => select({type: 'principle', id: b.dataset.removeSelection}, true)));
+  // One principle of a joint selection gives way to its negation; the rest stay as they are.
+  el.querySelectorAll('button[data-negate-selection]').forEach(b => b.addEventListener('click', () => {
+    const l = b.dataset.negateSelection, premises = [...new Set((state.selected?.premises || []).map(p => p === l ? negate(l) : p))];
+    select(premises.length === 1 ? {type: 'principle', id: premises[0]} : {type: 'selection', premises});
+  }));
   el.querySelectorAll('button[data-selection-action]').forEach(b => b.addEventListener('click', () => applySelectionAction(b.dataset.selectionAction)));
   el.querySelectorAll('button[data-equivalent-show]').forEach(b => b.addEventListener('click', () => toggleEquivalent(b.dataset.equivalentShow)));
   el.querySelectorAll('button[data-equivalent-replace]').forEach(b => b.addEventListener('click', () => replaceWithEquivalent(b.dataset.equivalentReplace)));
@@ -3724,12 +4005,47 @@ function wire(el) {
   // A model's name opens its page: a pop-up would only repeat the name.
   el.querySelectorAll('button[data-model]').forEach(b => b.addEventListener('click', () => openPage({ type: 'model', id: b.dataset.model })));
   el.querySelectorAll('button[data-verdict]').forEach(b => b.addEventListener('click', () => select({ type: 'model-verdict', id: b.dataset.verdictModel, principle: b.dataset.verdict })));
-  el.querySelectorAll('button[data-verdict-page]').forEach(b => b.addEventListener('click', () => openPage({ type: 'model-verdict', id: b.dataset.verdictModel, principle: b.dataset.verdictPage })));
   el.querySelectorAll('button[data-open-arg]').forEach(b => b.addEventListener('click', () => openPage({ type: 'model', id: b.dataset.openArg, jump: b.dataset.argPrinciple })));
   el.querySelectorAll('button[data-open-model]').forEach(b => b.addEventListener('click', () => openPage({ type: 'model', id: b.dataset.openModel })));
   el.querySelectorAll('button[data-open-group]').forEach(b => b.addEventListener('click', () => openPage({ type: 'group', id: b.dataset.openGroup })));
   el.querySelectorAll('button[data-open-argument]').forEach(b => b.addEventListener('click', () => openPage({ type: 'argument', id: b.dataset.openArgument })));
   el.querySelectorAll('button[data-open-result]').forEach(b => b.addEventListener('click', () => openPage({ type: 'result', id: b.dataset.openResult })));
+}
+// A principle's statement at a glance, beside its name, in the lists that name principles:
+// after a short delay on hover, at once on keyboard focus, never on a touch screen, and with
+// nothing in it to click, so it can vanish the moment the pointer leaves.
+const preview = { el: null, timer: null, id: null };
+function previewHtml(id) {
+  const p = byPid.get(id); if (!p) return '';
+  let equivalents = []; try { equivalents = equivalentNames([id]); } catch (_) {}
+  return `<div class="pop-t">${esc(p.name)}</div><div class="pop-s">${esc(p.statement)}</div>${p.formal ? `<div class="formal">${esc(p.formal)}</div>` : ''}${equivalents.length ? `<div class="pop-l">Equivalent under the background: ${equivalents.map(name).map(esc).join(', ')}</div>` : ''}`;
+}
+function showPreview(button, id) {
+  const el = preview.el ||= Object.assign(document.body.appendChild(document.createElement('div')), { id: 'preview', className: 'pop preview' });
+  el.innerHTML = previewHtml(id); renderSubscripts(el); el.hidden = false; preview.id = id;
+  // Beside the name, to its right when there is room, else below it; always on screen.
+  const r = button.getBoundingClientRect(), W = window.innerWidth, H = window.innerHeight;
+  el.style.left = '0px'; el.style.top = '0px';
+  const b = el.getBoundingClientRect();
+  let x = r.right + 12, y = r.top - 8;
+  if (x + b.width > W - 8) { x = Math.max(8, Math.min(r.left, W - b.width - 8)); y = r.bottom + 6; }
+  if (y + b.height > H - 8) y = Math.max(8, H - b.height - 8);
+  el.style.left = x + 'px'; el.style.top = y + 'px';
+}
+function hidePreview() { clearTimeout(preview.timer); preview.timer = null; preview.id = null; if (preview.el) preview.el.hidden = true; }
+function wirePreviews(root) {
+  if (!root || root.dataset.previewsWired) return;
+  root.dataset.previewsWired = '1';
+  const named = ev => { const b = ev.target.closest?.('button[data-principle], button[data-open-principle]'); return b && { el: b, id: b.dataset.principle || b.dataset.openPrinciple }; };
+  root.addEventListener('mouseover', ev => {
+    const b = named(ev); if (!b || window.matchMedia?.('(hover: none)')?.matches) return;
+    if (preview.id === b.id && preview.el && !preview.el.hidden) return;
+    clearTimeout(preview.timer); preview.timer = setTimeout(() => showPreview(b.el, b.id), 350);
+  });
+  root.addEventListener('mouseout', ev => { const b = named(ev); if (b && !b.el.contains(ev.relatedTarget)) hidePreview(); });
+  root.addEventListener('focusin', ev => { const b = named(ev); if (b) showPreview(b.el, b.id); });
+  root.addEventListener('focusout', ev => { if (named(ev)) hidePreview(); });
+  root.addEventListener('click', hidePreview, true);
 }
 function relList(items) { return items.length ? `<ul class="rel">${items.map(([id, via]) => `<li><button data-principle="${id}">${esc(name(id))}</button>${via ? `<span class="via">${via}</span>` : ''}</li>`).join('')}</ul>` : `<div class="empty">—</div>`; }
 function certDl(c) { return `<dl>${c.produced_by ? `<dt>by</dt><dd>${esc(c.produced_by)}</dd>` : ''}${c.recorded_by ? `<dt>recorded by</dt><dd>${esc(c.recorded_by)}</dd>` : ''}${(c.checked_by || []).length ? `<dt>checked</dt><dd>${esc(c.checked_by.join(', '))}</dd>` : ''}${c.lean_ref ? `<dt>Lean</dt><dd class="mono">${esc(c.lean_ref)}</dd>` : ''}${c.date ? `<dt>date</dt><dd>${esc(c.date)}</dd>` : ''}</dl>`; }
@@ -3782,11 +4098,8 @@ function renderDetail() {
   let h = '';
   if (sel.type === 'selection') {
     h += `<div class="pop-t">${esc(expressionName(sel.premises))}</div>`;
-    h += `<ul class="selection-list">${sel.premises.map(literal => {
-      const principle = byPid.get(baseId(literal));
-      return `<li><details><summary>${esc(name(literal))}</summary>${isNegative(literal) ? '<p>Negation of:</p>' : ''}<p>${esc(principle?.statement || name(literal))}</p></details><button class="lnk" data-remove-selection="${esc(literal)}" aria-label="Remove ${esc(name(literal))} from selection">remove</button></li>`;
-    }).join('')}</ul>`;
-    h += statusLine('Joint consistency', consistencyStatus(sel.premises), true);
+    h += `<ul class="selection-list">${sel.premises.map(literal => `<li><button class="lnk name" data-open-principle="${esc(baseId(literal))}">${esc(name(literal))}</button><button class="lnk" data-negate-selection="${esc(literal)}" title="Select ${esc(name(negate(literal)))} in its place" aria-label="Replace ${esc(name(literal))} by its negation">negate</button><button class="lnk" data-remove-selection="${esc(literal)}" aria-label="Remove ${esc(name(literal))} from selection">remove</button></li>`).join('')}</ul>`;
+    h += `<div class="links">${explorerLink(sel.premises)}</div>`;
     h += equivalentList(sel.premises);
 
   } else if (sel.type === 'junction') {
@@ -3833,9 +4146,12 @@ function renderDetail() {
       const exclusion = (state.tab === 'graph' ? graphBackgroundExcluded : state.tab === 'models' ? theoryExcluded : backgroundExcluded).get(mid);
       if (exclusion) h += `<div class="${sel.negative ? 'note' : 'ex-bad'}">${sel.negative ? 'This negation follows from the background' : 'Ruled out by the background'} (⇒ ¬${esc(m.name)}).</div><ul>${exclusion.via.map(id => `<li><button class="lnk" data-result="${id}">${resultStmt(byRid.get(id))}</button> ${certBadges(byRid.get(id))}</li>`).join('')}</ul>`;
     }
-    if (!selectionInLegend()) {
+    // On the diagrams the line carries details and background; the pane still offers the
+    // other views. Elsewhere the pane carries them all.
+    if (selectionInLegend()) h += `<div class="links">${explorerLink([(sel.negative ? '!' : '') + sel.id])}</div>`;
+    else {
       const assumable = !sel.negative && byPid.has(sel.id) && !inBackground(sel.id);
-      h += `<div class="links"><button class="lnk" data-goto="1">details</button>${assumable
+      h += `<div class="links"><button class="lnk" data-goto="1">details</button>${explorerLink([(sel.negative ? '!' : '') + sel.id])}${assumable
         ? `<button class="lnk" data-selection-action="background" title="Assume ${esc(name(sel.id))} throughout, as the sidebar's background control would.">background</button>` : ''}</div>`;
     }
     h += equivalentList([(sel.negative ? '!' : '') + sel.id]);
@@ -3862,7 +4178,8 @@ function renderDetail() {
   }
   el.innerHTML = '<button class="lnk detail-close" aria-label="Close details">×</button>' + h; el.hidden = false; el.scrollTop = 0; wire(el);
   el.querySelector('.detail-close').addEventListener('click', () => { el.hidden = true; });
-  el.querySelector('button[data-goto]')?.addEventListener('click', () => { const e = sel.type === 'model-verdict' && modelEvidence(byMid.get(sel.id), sel.principle); openPage(e && e.direct ? { type: 'model', id: sel.id } : sel); el.hidden = true; });
+  // A verdict's details are on its model's page, where a derived one opens in place.
+  el.querySelector('button[data-goto]')?.addEventListener('click', () => { openPage(sel.type === 'model-verdict' ? { type: 'model', id: sel.id } : sel); el.hidden = true; });
   const anchor = popAt ? { ...popAt } : null;
   const position = () => {
     if (el.parentElement.id === 'graph-details') return;
@@ -3910,6 +4227,7 @@ function select(sel, extend = false) {
   else if (sel.type === 'junction') state.focus = [...layout.byId.get(sel.id).premises];
   else if (sel.type === 'selection') state.focus = [...sel.premises];
   state.selected = sel; renderDetail(); applySelection();
+  if (!hoverItem) applyFocus();
   if (state.tab === 'lattice' && typeof renderLattice === 'function') renderLattice();
 }
 
@@ -3964,7 +4282,7 @@ function equivalentNames(literals) {
   if (!cls || !bases.every(b => cls.includes(b))) return [];
   return cls.filter(b => !bases.includes(b) && byPid.has(b) && !inBackground(b))
     .map(b => (negative ? '!' : '') + b)
-    .sort((x, y) => name(x).localeCompare(name(y)));
+    .sort(byName);
 }
 function equivalentList(literals) {
   const others = selectionInLegend() ? equivalentNames(literals) : [];
@@ -4008,11 +4326,10 @@ function selectionActions(literals) {
   const plural = active.length > 1;
   const button = (kind, label, title) => `<button class="lnk" data-selection-action="${kind}" title="${esc(title)}">${label}</button>`;
   let h = '';
-  if (active.some(literalShown)) h += button('hide', 'Hide', `Take the selected ${plural ? 'principles' : 'principle'} off the diagram, as unchecking ${plural ? 'them' : 'it'} in the sidebar would.`);
+  if (active.some(l => !literalShown(l))) h += button('show', 'Show', `Put the selected ${plural ? 'principles' : 'principle'} on the diagram, as checking ${plural ? 'them' : 'it'} in the sidebar would.`);
+  else h += button('hide', 'Hide', `Take the selected ${plural ? 'principles' : 'principle'} off the diagram, as unchecking ${plural ? 'them' : 'it'} in the sidebar would.`);
   if (active.some(l => !literalShown(negate(l)))) h += button('negate', plural ? 'Add negations' : 'Add negation', `Show the ${plural ? 'negations' : 'negation'} too, as checking ✗ in the sidebar would.`);
   if (active.some(l => !topicBackground.includes(baseId(l)))) h += button('background', 'background', `Assume the selected ${plural ? 'principles' : 'principle'} throughout, as the sidebar's background control would.`);
-  // The lattice wants a handful, and a joint selection is already a handful.
-  if (state.tab === 'graph') h += button('lattice', 'lattice', `Draw the lattice of the conjunctions ${plural ? 'these principles generate' : 'this principle generates'}.`);
   const peers = equivalentPeers(active);
   if (peers.length) h += button('equivalents', 'hide equivalents', `Take ${peers.map(name).join(', ')} off the diagram: the background makes ${peers.length > 1 ? 'them' : 'it'} equivalent to what is selected, so ${peers.length > 1 ? 'they add' : 'it adds'} nothing beside it.`);
   return h;
@@ -4061,9 +4378,31 @@ function syncDetailHint() {
   if (hint) hint.hidden = !!state.selected;
 }
 function repaintGraph() { refreshPrincipleControls(); renderGraph(); fitInitial(); renderLynchpins(); }
+// Select these literals, as a click on each would.
+function selectLiterals(literals) {
+  select(literals.length === 1 ? {type: 'principle', id: literals[0]} : {type: 'selection', premises: literals.slice()});
+}
+// Where else to take the selection: the Theory explorer, as its assumptions in place of whatever
+// it was assuming; and the lattice, drawn from the selection alone (from the graph), or pared
+// down to it (on the lattice itself).
+function explorerLink(literals) {
+  if (!literals.some(l => byPid.has(baseId(l)))) return '';
+  const plural = literals.length > 1;
+  let h = `<button class="lnk" data-selection-action="explorer" title="Assume ${plural ? 'these principles' : 'this principle'} in the Theory explorer, which lists every model that fits and everything that follows.">Show in Theory explorer</button>`;
+  if (state.tab === 'graph') h += `<button class="lnk" data-selection-action="lattice" title="Draw the lattice of the conjunctions ${plural ? 'these principles generate' : 'this principle generates'}.">Show in Lattice</button>`;
+  else if (state.tab === 'lattice') h += `<button class="lnk" data-selection-action="lattice" title="Keep only ${plural ? 'these principles' : 'this principle'} and ${plural ? 'their' : 'its'} conjunctions on the lattice.">Hide others</button>`;
+  return h;
+}
 function applySelectionAction(kind) {
   const sel = state.selected;
   const literals = sel?.type === 'principle' ? [(sel.negative ? '!' : '') + sel.id] : sel?.type === 'selection' ? sel.premises : [];
+  if (kind === 'explorer') {
+    for (const id of [...theory.positive]) if (!topicBackground.includes(id)) theory.positive.delete(id);
+    theory.negative.clear();
+    for (const l of literals) if (byPid.has(baseId(l))) (isNegative(l) ? theory.negative : theory.positive).add(baseId(l));
+    showTab('models'); rerenderTheory();
+    return;
+  }
   const active = literals.filter(l => byPid.has(baseId(l)) && !inBackground(baseId(l)));
   if (!active.length) return;
   const onLattice = state.tab === 'lattice';
@@ -4084,6 +4423,8 @@ function applySelectionAction(kind) {
     lattice.selected = null; lattice.builtKey = null;
     showTab('lattice');
     renderLatticeFilters(); latticeFit();
+    // Selected again on the lattice, so its pane reads as for a selection made there.
+    selectLiterals(active);
     return;
   }
   if (kind === 'equivalents') {
@@ -4099,6 +4440,13 @@ function applySelectionAction(kind) {
     else for (const l of active) isNegative(l) ? state.negativeShown.delete(baseId(l)) : state.excluded.add(baseId(l));
     select(null);
     if (!onLattice) repaintGraph();
+    return;
+  }
+  if (kind === 'show') {
+    if (onLattice) { for (const l of active) if (!lattice.shown.includes(l)) lattice.shown.push(l); }
+    else for (const l of active) isNegative(l) ? state.negativeShown.add(baseId(l)) : state.excluded.delete(baseId(l));
+    if (onLattice) { renderLatticeFilters(); renderLattice(); } else repaintGraph();
+    renderDetail();
     return;
   }
   if (kind === 'negate') {
@@ -4218,7 +4566,7 @@ function renderAll(refit) {
     renderSubscripts(backgroundPage);
     mountPaperCatalogue(); backgroundPage.dataset.ready = 'true';
   }
-  renderGraph(); if (refit) fitInitial(); renderModels(); renderResults(); renderOpen();
+  renderGraph(); if (refit) fitInitial(); renderModels(); renderResults(); renderOpen(); renderTheorems();
   if (state.tab === 'lattice' && typeof renderLattice === 'function') { renderLatticeFilters(); renderLattice(); }
 }
 function resetBackground() {
@@ -4331,7 +4679,7 @@ document.getElementById('fit').addEventListener('click', fit);
   }
   // The sidebar edits the visibility of whichever of the graph and the
   // conjecture lists is open; the other keeps its own.
-  const repaint = () => state.tab === 'open' ? (refreshPrincipleControls(), renderLynchpins()) : repaintGraph();
+  const repaint = () => state.tab === 'open' ? (refreshPrincipleControls(), renderLynchpins()) : state.tab === 'theorems' ? (refreshPrincipleControls(), renderTheorems()) : repaintGraph();
   const toggle = (set, id) => set.has(id) ? set.delete(id) : set.add(id);
   el.querySelectorAll('[data-show-positive]').forEach(b => b.addEventListener('click', () => { toggle(sidebarSets()[0], b.dataset.showPositive); repaint(); }));
   el.querySelectorAll('[data-show-negative]').forEach(b => b.addEventListener('click', () => { toggle(sidebarSets()[1], b.dataset.showNegative); repaint(); }));
@@ -4341,6 +4689,7 @@ document.getElementById('fit').addEventListener('click', fit);
   };
   document.getElementById('pr-reset').addEventListener('click', () => {
     if (state.tab === 'open') { state.openExcluded = defaultHidden('open'); state.openNegativeShown = new Set(); }
+    else if (state.tab === 'theorems') { state.theoremsExcluded = defaultHidden('theorems'); state.theoremsNegativeShown = new Set(); }
     else { state.excluded = defaultHidden('graph'); state.negativeShown = new Set(); }
     repaint();
   });
@@ -4418,7 +4767,7 @@ for (const id of ['graph-flip', 'lat-flip']) document.getElementById(id)?.addEve
 document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => showTab(t.dataset.tab)));
 // Resize without rebuilding either list, so selections, scroll positions and click slots survive.
 (function setupPaneDividers() {
-  const panes = ['graph', 'open', 'lattice'].map(tab => document.getElementById('pane-' + tab));
+  const panes = ['graph', 'open', 'lattice', 'theorems'].map(tab => document.getElementById('pane-' + tab));
   const sidebar = document.getElementById('graph-sidebar');
   const properties = {sidebar: '--sidebar-width', background: '--background-height', details: '--details-height'};
   const storageKey = 'principle-map:pane-sizes:v1';
@@ -4448,7 +4797,7 @@ document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () =>
     if (pane.dataset.active !== 'true') return;
     const previousWidth = current.sidebar, previousDetails = current.details;
     for (const key of Object.keys(handles)) {
-      if (key === 'details' && pane.id === 'pane-open') continue;
+      if (key === 'details' && (pane.id === 'pane-open' || pane.id === 'pane-theorems')) continue;
       const bounds = limits(key), min = Math.min(bounds.min, bounds.max);
       const value = Math.round(Math.max(min, Math.min(bounds.max, saved[key] ?? bounds.initial)));
       current[key] = value;
@@ -4942,6 +5291,8 @@ function latticeDraw(svg) {
   svg.innerHTML = `<defs>
       <marker id="lat-solid" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="var(--ink-2)"/></marker>
       <marker id="lat-open" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0.5,0.5 L9.5,5 L0.5,9.5 z" fill="var(--bg)" stroke="var(--conj)" stroke-width="1.4"/></marker>
+      ${[['consistent', 'var(--rel-entailed)', 'var(--node-fill)'], ['separated', 'var(--node-fill)', 'var(--rel-excluded)'], ['independent', 'var(--rel-entailed)', 'var(--rel-excluded)']].map(([id, upper, lower]) => `<linearGradient id="lat-split-${id}" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1"><stop offset="50%" stop-color="${upper}"/><stop offset="50%" stop-color="${lower}"/></linearGradient>`).join('')}
+      <pattern id="lat-hatch-conjectured" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)"><rect width="6" height="6" fill="var(--node-fill)"/><line x1="0" y1="0" x2="0" y2="6" stroke="var(--conj)" stroke-width="1.2" opacity=".7"/></pattern>
     </defs><g id="lat-vp">${lattice.capped ? '' : lattice.edges.map(edge).join('') + lattice.nodes.map(node).join('')}</g>`;
   latticeApplyView();
   document.getElementById('lat-count').textContent = lattice.capped
@@ -4956,9 +5307,10 @@ function latticeDraw(svg) {
   refreshLatticeControls();
 }
 const latticeRelationClasses = ['rel-base', 'rel-entailed', 'rel-excluded', 'rel-consistent', 'rel-separated', 'rel-independent', 'rel-inconsistent', 'rel-conjectured', 'rel-open'];
-// The lattice draws entailment and consistency itself, so its nodes are not
-// coloured by their relation to the selection, as the graph's are: the selected
-// node is marked, and the arrows rising from it come forward.
+// With a selection, the lattice's nodes take the graph's colours for their relation to
+// it: entailed, excluded, consistent, its negation consistent, both, or open; with none,
+// no colour at all, since the lattice draws entailment and consistency itself. The
+// selected node is marked, and the arrows rising from it come forward.
 function latticeShade(svg) {
   const selected = shadingBase(), implicit = selected == null, base = selected ?? TRUE;
   const baseLiterals = base == null ? [] : expressionLiterals(base);
@@ -4970,7 +5322,12 @@ function latticeShade(svg) {
   const baseKey = base != null && baseLiterals.every(l => lattice.shown.includes(l)) ? latticeKey(latticeClosure(baseLiterals)) : null;
   const isBase = n => !implicit && (sameExpression(base, latticeExpression(n)) || baseKey != null && baseKey === n.key || n.labels.some(l => l.literal && baseMembers.has(l.literal)));
   const selectedEdge = lattice.edges.some(e => e.id === lattice.selected) ? lattice.selected : null;
-  const focusNode = selectedEdge ? null : lattice.byId.get(lattice.selected) || lattice.nodes.find(isBase) || null;
+  // The focus is the node the whole selection generates, its conjunction, however the selection
+  // was made or changed: extending it moves the focus to the new meet, shrinking it back again,
+  // and clearing it clears the focus. Failing such a node, a box that carries one of its names.
+  const focusNode = selectedEdge || implicit ? null
+    : lattice.nodes.find(n => sameExpression(base, latticeExpression(n)) || baseKey != null && baseKey === n.key) || lattice.nodes.find(isBase) || null;
+  if (!selectedEdge) lattice.selected = focusNode?.id ?? null;
   // The nodes the selected one rises to, itself included.
   const above = new Set();
   if (focusNode) {
@@ -4983,10 +5340,23 @@ function latticeShade(svg) {
       for (const m of out.get(n.id) || []) stack.push(m);
     }
   }
+  const baseInconsistent = !implicit && consistencyStatus(baseLiterals).status === 'inconsistent';
+  const counts = {entailed: 0, excluded: 0, consistent: 0, separated: 0};
   for (const el of svg.querySelectorAll('[data-lat-node]')) {
     const n = lattice.byId.get(el.dataset.latNode);
     if (!n) continue;
-    const relation = isBase(n) ? 'rel-base' : '';
+    let relation = '';
+    if (!implicit) {
+      if (baseInconsistent) relation = 'rel-excluded';
+      else if (isBase(n)) relation = 'rel-base';
+      else if (n.inconsistent) relation = 'rel-excluded';
+      else if (n.top) relation = 'rel-entailed';
+      else relation = 'rel-' + selectionRelation(base, latticeExpression(n)).kind;
+      // ⊤ and ⊥ are fixtures of every lattice, so the legend does not count them.
+      const kind = n.top || n.inconsistent ? '' : relation.slice(4);
+      if (kind === 'independent') { counts.consistent++; counts.separated++; }
+      else if (Object.hasOwn(counts, kind)) counts[kind]++;
+    }
     el.classList.remove(...latticeRelationClasses, 'sel');
     if (relation) el.classList.add(relation);
     if (lattice.selected === n.id) el.classList.add('sel');
@@ -5007,15 +5377,17 @@ function latticeShade(svg) {
     if (emphasis) el.classList.add(emphasis);
   }
   applyGraphSearch();
-  renderLatticeLegend(lattice.capped || implicit ? null : base);
+  renderLatticeLegend(lattice.capped || implicit ? null : base, counts);
   document.getElementById('lat-hint').hidden = !!state.selected;
   document.getElementById('lat-hint').textContent = 'Click a principle name, an ∧ or an arrow for its details.';
 }
-function renderLatticeLegend(base) {
+function renderLatticeLegend(base, counts = null) {
   const legend = document.getElementById('lat-legend');
   if (base == null) { legend.hidden = true; setDetailFoot('lat-detail-foot', null); return; }
   legend.hidden = false;
-  legend.innerHTML = `<b>${esc(expressionName(base))}</b>` + selectionToolbar();
+  const key = (kind, label) => `<span class="key ${kind}"><i aria-hidden="true"></i>${label} <span class="n">${counts[kind]}</span></span>`;
+  const keys = counts ? key('entailed', 'entailed') + key('excluded', 'excluded') + key('consistent', 'consistent') + key('separated', 'negation is consistent') : '';
+  legend.innerHTML = keys + selectionToolbar();
   wireLegendActions(legend);
   setDetailFoot('lat-detail-foot', selectionConsistencyLine(consistencyStatus(expressionLiterals(base))));
 }
@@ -5053,7 +5425,7 @@ function latticeToggle(id) {
 function renderLatticeFilters() {
   const el = document.getElementById('lat-filters');
   if (!el) return;
-  const row = p => `<div class="pr-row lat-row${inBackground(p.id) ? ' in-background is-collapsed' : ''}" data-lat-row="${p.id}"><span class="seg graph-choice" role="group" aria-label="Show forms of ${esc(p.name)}"><button data-lat-positive="${p.id}" aria-label="Add ${esc(p.name)}" aria-pressed="false">✓</button><button data-lat-negative="${p.id}" aria-label="Add not ${esc(p.name)}" aria-pressed="false">✗</button></span><span class="sidebar-principle-line"><span class="lat-name">${esc(p.name)}</span><span class="pr-actions"><button class="lnk" data-lat-background="${p.id}" aria-label="Move ${esc(p.name)} to background">background</button></span></span></div>`;
+  const row = p => `<div class="pr-row lat-row${inBackground(p.id) ? ' in-background is-collapsed' : ''}" data-lat-row="${p.id}"><span class="seg graph-choice" role="group" aria-label="Show forms of ${esc(p.name)}"><button data-lat-positive="${p.id}" aria-label="Add ${esc(p.name)}" aria-pressed="false">✓</button><button data-lat-negative="${p.id}" aria-label="Add not ${esc(p.name)}" aria-pressed="false">✗</button></span><span class="sidebar-principle-line"><button class="lnk principle-name" data-principle="${p.id}">${esc(p.name)}</button><span class="pr-actions"><button class="lnk" data-lat-background="${p.id}" aria-label="Move ${esc(p.name)} to background">background</button></span></span></div>`;
   el.innerHTML = principleGroups().map(g => `<details class="pr-category" data-category="${g.id}">${categoryHeader(g, '', `<div class="pr-category-actions"><button class="lnk" data-lat-select="none">hide</button></div>`)}<div class="ctl">${g.principles.map(row).join('')}</div></details>`).join('');
   renderSubscripts(el);
   wireCategories(el);
@@ -5064,6 +5436,9 @@ function renderLatticeFilters() {
   if (!el) return;
   renderLatticeFilters();
   el.addEventListener('click', ev => {
+    // A name selects the principle, with a modifier to extend, as on the graph and its sidebar.
+    const named = ev.target.closest('.principle-name');
+    if (named) { select({ type: 'principle', id: named.dataset.principle }, ev.shiftKey || ev.metaKey || ev.ctrlKey); return; }
     const pos = ev.target.closest('[data-lat-positive]'), neg = ev.target.closest('[data-lat-negative]');
     const bg = ev.target.closest('[data-lat-background]'), bulk = ev.target.closest('[data-lat-select]');
     if (bulk) {
@@ -5282,5 +5657,6 @@ renderAll(true);
 renderLattice();
 requestAnimationFrame(fit);
 // A topic may open on another tab than the graph (topic.yaml default_tab).
+for (const id of ['pr-filters', 'lat-filters', 'models', 'open', 'pop']) wirePreviews(document.getElementById(id));
 if (T.default_tab && T.default_tab !== 'graph') document.querySelector(`.tab[data-tab="${T.default_tab}"]:not([hidden])`)?.click();
 </script>
