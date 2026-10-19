@@ -200,3 +200,45 @@ For rigid $F=X_0(S)$ and $P:=\lambda X\, .\,\operatorname{Rigid}(X)\land X\le F$
 
 So $P=X_0(P_1)$, and $P$ is rigid. The same holds at every object, so both forms of
 Rigid Power hold in every full action model.
+
+## Could the truths of mathematics have been different? (Bacon, 2025 draft)
+
+Read directly on 19 October 2026 (Claude Fable 5.1), from the draft of 9 October 2025 with its
+separately paginated appendix; the paper is published in Philosophical Review 135(3), 2026. Its
+background logic $\mathrm H\Box$ is weaker than C; everything imported is read into C, where its
+Leibniz Biconditionals (§5, p. 23; Figure 2), with world relations in the unboxed sense, are the
+map's Atomicity, now carrying that alias.
+
+| Source | Recorded |
+| --- | --- |
+| Theorem 4.4, p. 19; Appendix C.1, Proposition C.2, Lemma C.1, Theorem C.1 | `c5-implies-necessity-of-arithmetic`, transposed to the map's numbers at each type; it proves □A ∨ □¬A outright. Formalized: the steps of the induction are derived shallow theorems (`lean/Classicism/Results/SentenceSchemas/Arithmetic.lean`) and the induction over arithmetical sentences composes their derivations (`ArithmeticMeta.lean`) |
+| Appendix C.2, Lemma C.6 | `atomicity-and-rigid-comprehension-imply-rigid-power` and its necessitation; the lemma is run with □ for □_N and its conclusion turned into Rigid Power by Tame Rigidity |
+| §6, Intensional Choice; Theorem 6.1, Conjecture 6.1 | Intensional Choice was imported on 3 October 2026; Mathematical Possibilism is not a principle of the map |
+| Appendix B.2, Theorem 5.1 | The Boolean-valued model, imported earlier (`full-boolean-valued-atom-and-atomless`) |
+
+Not imported: the Necessity of Analysis (Theorem 5.2, Corollary 5.1, Appendix C.2 beyond Lemma C.6),
+the map having no principle for analysis; Theorem 4.1 (arithmetical contingency in C, Appendix B.1),
+whose model the map does not need; Theorem 4.3 (second-order logic); n. 59, that S5 with □Rigid
+Comprehension gives the Leibniz Biconditionals, which the engine already derives from
+`necessary-rigid-comprehension-r-implies-necessary-actuality` and
+`c5-and-necessary-actuality-imply-atomicity`; Conjecture 5.1, answered by Barton and Goodsell below.
+
+## Continuum Contingency (Barton and Goodsell, 2026 draft)
+
+Read directly on 19 October 2026 (Claude Fable 5.1), from the draft of 14 October 2026. Its logic
+CR∞ is C with □Rigid Comprehension and an axiom of infinity, CRC∞ adds □Relational Choice, and its
+Atomicity is the map's Atomicity (type t). Its models are action models in the full simple type
+hierarchy; their restrictions to the map's relational types are recorded.
+
+| Source | Recorded |
+| --- | --- |
+| §8, Definition 1, Lemmas 11–19; Theorem 20; Theorem 21 | `stitched-cohen-extension`, the simplest instance: trivial group, the canonical extensional model, Cohen forcing. Rigid Power fails with □Rigid Comprehension, □Relational Choice, □Atomicity (type t) and □Strong Leibniz (type t) |
+| Theorems 3–7 (arithmetic and analysis in CR∞) | The Necessity of Arithmetic in CR∞ is derivable on the map through Countable Boolean Completeness; the analytical results concern no principle of the map |
+
+Not imported: Theorem 9 (the coin-toss theorem) and Theorem 22 (Recombination with continuum
+contingency), Recombination not being a principle of the map; Corollary 23, that CRC∞ is consistent
+with the failure of Atomicity (type t), Christopher Sun's conjecture, which `symmetric-collapse-pair`
+already witnesses for □Rigid Comprehension; Theorem 24 and §10 (iterated contingency). Deferred: the
+Theorem 22 model as a record, which would add Recombination if that principle is ever recorded, and
+the finite-group variants of Theorem 21.
+

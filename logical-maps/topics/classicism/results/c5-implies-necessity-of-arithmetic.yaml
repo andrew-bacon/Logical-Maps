@@ -1,0 +1,49 @@
+id: c5-implies-necessity-of-arithmetic
+premises:
+- necessary-distinctness-necessary-r
+conclusion: necessity-of-arithmetic
+status: proved
+certificate:
+  source_id: bacon-mathematical-contingency
+  produced_by: Andrew Bacon (Theorem 4.4, through Proposition C.2 and Lemma C.1); transposed to the map's
+    formulation by Claude Fable 5.1 (Anthropic), 19 October 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), 19 October 2026
+  checked_by: []
+  date: '2026-10-19'
+  lean: verified
+  lean_ref: Classicism.Map.c5_implies_necessity_of_arithmetic
+sources:
+- Andrew Bacon, Could the truths of mathematics have been different?, draft of 9 October 2025, Theorem 4.4,
+  p. 19; Appendix C.1, Proposition C.2, Lemma C.1 and Theorem C.1, pp. 10–11 of the separately paginated
+  appendix.
+source_names:
+- Could mathematics have been different?
+references:
+- paper: bacon-mathematical-contingency
+  role: origin
+  locator: Theorem 4.4, p. 19; Appendix C.1, pp. 10–11 of the appendix
+  note: Stated for H□.5 and first-order arithmetic over natural-number structures of individuals, through
+    the rigidity in S5 of the canonical structure of numerical quantifiers (Proposition C.2) and an
+    induction on sentences (Lemma C.1); the map's numbers are that canonical structure at each type σ,
+    and the write-up runs the argument on it.
+- paper: goodsell-arithmetic-necessary
+  role: formulation
+  note: The map's formulation of the Necessity of Arithmetic, with the antecedent I_σ, which the S5
+    argument does not need.
+proof: >-
+  See the write-up. In C, numbers are necessarily numbers, and Sum and Prod on numbers are necessary when
+  true, by instantiating their recursive definitions at the necessitated relations
+  $\lambda i\,j\, .\,\Box\operatorname{Sum}(m,i,j)$ and $\lambda i\,j\, .\,\Box\operatorname{Prod}(m,i,j)$.
+  With the dual of B, which C5 supplies, their negations are necessary when true as well: a possible
+  number is possibly necessarily a number, hence a number, and likewise for a possible sum or product.
+  With ND at the type of numbers for identities, and BF at that type for the universal quantifier
+  restricted to numbers, an induction on arithmetical formulas gives $A\to\Box A$ and $\neg A\to\Box\neg A$
+  for every arithmetical sentence $A$. So $\Box A\lor\Box\neg A$, and a fortiori the recorded schema with
+  the antecedent $I_\sigma$.
+notes: >-
+  Beyond C the argument uses only the dual of B, ND and BF at the types $\nu_\sigma=(\sigma t)t$, at the
+  evaluation point, all of which C5 gives; it proves the stronger $\Box A\lor\Box\neg A$. Bacon's Theorem
+  4.3 shows that second-order modal logic with S5 does not prove the result, so the higher-order
+  comprehension behind Lemma 1 of the write-up is essential. Every C5 model on the map already had the
+  Necessity of Arithmetic, through Countable Boolean Completeness or No Pure Contingency; the record adds
+  the implication, which the engine had open.

@@ -6,6 +6,7 @@ import Classicism.Results.SentenceSchemas.WitnessedPossibility
 import Classicism.Results.SentenceSchemas.PossibilityPlus
 import Classicism.Results.SentenceSchemas.Infinity
 import Classicism.Results.SentenceSchemas.Constants
+import Classicism.Results.SentenceSchemas.ArithmeticMeta
 
 /-!
 # The map's results, certified
@@ -1557,6 +1558,10 @@ theorem extensionality_r_implies_intensional_choice_r : Statements.extensionalit
 theorem no_pure_contingency_implies_necessity_of_arithmetic : Statements.no_pure_contingency_implies_necessity_of_arithmetic := by
   map_cert npc_entails_necessityOfArithmetic
 
+/-- `c5-implies-necessity-of-arithmetic` -/
+theorem c5_implies_necessity_of_arithmetic : Statements.c5_implies_necessity_of_arithmetic := by
+  map_cert c5_entails_necessityOfArithmetic
+
 /-- `c5-implies-necessary-rigid-power` -/
 theorem c5_implies_necessary_rigid_power : Statements.c5_implies_necessary_rigid_power := by
   map_cert Meta.c5_implies_necessary_rigid_power
@@ -1776,6 +1781,18 @@ theorem strong_leibniz_t_necessary_rigid_comprehension_and_rigid_power_imply_bf_
 /-- `strong-leibniz-necessary-rigid-comprehension-and-rigid-power-imply-bf-relational` -/
 theorem strong_leibniz_necessary_rigid_comprehension_and_rigid_power_imply_bf_relational : Statements.strong_leibniz_necessary_rigid_comprehension_and_rigid_power_imply_bf_relational := by
   map_cert Meta.strong_leibniz_necessary_rigid_comprehension_and_rigid_power_imply_bf_relational
+
+/-- `atomicity-and-rigid-comprehension-imply-rigid-power` -/
+theorem atomicity_and_rigid_comprehension_imply_rigid_power : Statements.atomicity_and_rigid_comprehension_imply_rigid_power := by
+  map_cert Meta.atomicity_and_rigid_comprehension_imply_rigid_power
+
+/-- `necessary-atomicity-and-necessary-rigid-comprehension-imply-necessary-rigid-power` -/
+theorem necessary_atomicity_and_necessary_rigid_comprehension_imply_necessary_rigid_power : Statements.necessary_atomicity_and_necessary_rigid_comprehension_imply_necessary_rigid_power := by
+  map_cert Meta.necessary_atomicity_and_necessary_rigid_comprehension_imply_necessary_rigid_power
+
+/-- `necessary-strong-leibniz-and-necessary-rigid-comprehension-imply-necessary-bf-relational` -/
+theorem necessary_strong_leibniz_and_necessary_rigid_comprehension_imply_necessary_bf_relational : Statements.necessary_strong_leibniz_and_necessary_rigid_comprehension_imply_necessary_bf_relational := by
+  map_cert Meta.necessary_strong_leibniz_and_necessary_rigid_comprehension_imply_necessary_bf_relational
 
 /-- `modalized-relational-choice-implies-intensional-choice` -/
 theorem modalized_relational_choice_implies_intensional_choice : Statements.modalized_relational_choice_implies_intensional_choice := by

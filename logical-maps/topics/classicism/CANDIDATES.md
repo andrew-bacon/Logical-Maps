@@ -99,8 +99,16 @@ point, from unboxed premises, it gives:
   □BF is recorded, so BF at $v$ is available; Atomicity and Rigid Comprehension
   at $v$ are not.
 
-*Open question:* do unboxed BF + Atomicity + Rigid Comprehension give Rigid Power
-itself? No countermodel is known.
+*Settled 19 October 2026 (Claude Fable 5.1):* they do, and without BF. Lemma C.6 of Bacon's
+*Could the truths of mathematics have been different?* pulls a possible rigid subrelation of $F$,
+singled out by a world property (an atom at the type of the power property), back to an actual
+rigid subrelation identical to it; so Atomicity at $(\bar\sigma t)t$ with Rigid Comprehension at
+$\bar\sigma t$ gives $(W,R,W)$ outright, and Tame Rigidity at $(\bar\sigma t)t$, which Rigid
+Comprehension gives, upgrades the conclusion to $R$: Atomicity + Rigid Comprehension ⇒ Rigid Power
+(`atomicity-and-rigid-comprehension-imply-rigid-power`), and boxed, □Atomicity + □Rigid
+Comprehension ⇒ □Rigid Power, without the □BF of the earlier result. Atomicity at type $t$ does not
+suffice: the stitched forcing model `stitched-cohen-extension` (Barton and Goodsell) has
+□Atomicity (type $t$), □Rigid Comprehension and □Relational Choice, and Rigid Power fails in it.
 
 ## Finiteness of rigid extensions
 

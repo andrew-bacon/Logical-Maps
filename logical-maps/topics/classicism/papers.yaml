@@ -71,11 +71,16 @@ papers:
 - id: bacon-mathematical-contingency
   title: Could the truths of mathematics have been different?
   citation: Bacon, Andrew (2025). Could the truths of mathematics have been different? Draft
-    dated 9 October 2025, with online appendix. The full Boolean-valued construction is in
-    appendix §B.2, pp. 7–9 of the separately paginated appendix (PDF pp. 41–43).
+    dated 9 October 2025, with online appendix; published in Philosophical Review 135(3), 2026,
+    pp. 221–285, as cited by Barton and Goodsell. Locators refer to the draft. The full Boolean-valued
+    construction is in appendix §B.2, pp. 7–9 of the separately paginated appendix (PDF pp. 41–43);
+    Theorem 4.4 and its proof (Appendix C.1) and Lemma C.6 (Appendix C.2) were read directly on
+    19 October 2026.
   url: https://andrew-bacon.github.io/papers/Could%20mathematics%20have%20been%20different.pdf
-  note: Only the Boolean-valued construction and its extensional fullness are used here;
-    the paper’s mathematical-contingency results are not imported. No PDF is redistributed.
+  note: Used here are the Boolean-valued construction and its extensional fullness, Theorem 4.4
+    (the Necessity of Arithmetic in S5) and Lemma C.6 (possible rigid subrelations under a world
+    property are actual), with Intensional Choice from §6. The Necessity of Analysis (Theorem 5.2)
+    is not imported, the map having no principle for analysis. No PDF is redistributed.
 - id: dorr-prop-2-11-counterexample
   title: A counterexample to Proposition 2.11 of 'Classicism'
   citation: >-
@@ -104,3 +109,13 @@ papers:
     OUP corrected proof dated 9 May 2024. Its background logic HS4 (a primitive S4 operator over higher-order
     logic) is read into C by interpreting the primitive box as $\lambda p\, .\,p=\top$, under which every
     theorem of HS4 is a theorem of C.
+- id: barton-goodsell-continuum-contingency
+  title: Continuum Contingency
+  citation: >-
+    Barton, Neil, and Zachary Goodsell. Continuum Contingency. Draft dated 14 October 2026, 47 pages.
+    Stitches a ground model of set theory to the canonical model of a forcing extension to show that
+    Classicism with □Rigid Comprehension, □Relational Choice and an axiom of infinity is consistent with
+    first- and second-order continuum contingency, together with □Atomicity at type t (Theorem 21) or
+    with Recombination (Theorem 22, which refutes Atomicity at type t, Corollary 23); formalizes the
+    coin-toss argument (Theorem 9). Read directly on 19 October 2026; locators refer to this draft.
+  note: Work in progress. No PDF is copied into the topic or its downloads.

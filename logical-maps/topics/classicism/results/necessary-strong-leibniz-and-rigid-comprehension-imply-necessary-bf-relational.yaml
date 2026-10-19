@@ -54,3 +54,9 @@ changes:
     worlds (see the notes). Found while formalizing the proof in Lean; Cian Dorr agreed. The
     summary of the book's argument moved from the proof field to the write-up, where the gap is
     marked.
+- date: '2026-10-19'
+  by: Claude Fable 5.1 (Anthropic)
+  summary: The theorem with □Rigid Comprehension in place of Rigid Comprehension is now proved
+    (necessary-strong-leibniz-and-necessary-rigid-comprehension-imply-necessary-bf-relational), through
+    □Rigid Power from □Atomicity and □Rigid Comprehension and Cian Dorr's argument necessitated. The
+    question as stated, with unboxed Rigid Comprehension, remains open; the statement is unchanged.

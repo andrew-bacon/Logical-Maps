@@ -32,3 +32,11 @@ notes: >-
   No B is used, so this covers settings that the C5 route does not reach. The argument uses BF,
   Atomicity and Rigid Comprehension at every world where weak inextensibility is checked, hence the boxed
   premises; it is a C-proof from those boxed premises, so the conclusion is boxed too.
+changes:
+- date: '2026-10-19'
+  by: Claude Fable 5.1 (Anthropic)
+  summary: □BF is dispensable. Bacon's Lemma C.6 (Could the truths of mathematics have been different?)
+    pulls the possible rigid subrelation back without BF, using an atom at the type of the power property
+    in place of an atom at type t; see atomicity-and-rigid-comprehension-imply-rigid-power and its
+    necessitation necessary-atomicity-and-necessary-rigid-comprehension-imply-necessary-rigid-power, which
+    make this record redundant. The record is kept as the first proof; its statement is unchanged.

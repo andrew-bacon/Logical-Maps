@@ -1,0 +1,62 @@
+id: atomicity-and-rigid-comprehension-imply-rigid-power
+premises:
+- atomicity-r
+- rigid-comprehension-r
+conclusion: rigid-power-r
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Claude Fable 5.1 (Anthropic), 19 October 2026, composing Lemma C.6 of Andrew Bacon's Could
+    the truths of mathematics have been different? with Christopher Sun's lemma that coextensive weakly
+    rigid relations are identical
+  recorded_by: Claude Fable 5.1 (Anthropic), 19 October 2026
+  checked_by: []
+  date: '2026-10-19'
+  lean: verified
+  lean_ref: Classicism.Map.atomicity_and_rigid_comprehension_imply_rigid_power
+sources:
+- Andrew Bacon, Could the truths of mathematics have been different?, draft of 9 October 2025, Appendix C.2,
+  Lemma C.6, pp. 15–16 of the separately paginated appendix; the Leibniz Biconditionals, §5, p. 23, and
+  Appendix A.3, Figure 2.
+- Christopher Sun, Possible Worlds Without Atomicity, draft of September 2026, for the lemma that coextensive
+  weakly rigid relations are identical (rigid-comprehension-implies-tame-rigidity).
+- Original composition of 19 October 2026, written out in the write-up.
+source_names:
+- Could mathematics have been different?
+- Possible Worlds Without Atomicity
+- Claude Fable 5.1 19 Oct
+references:
+- paper: bacon-mathematical-contingency
+  role: proof
+  locator: Appendix C.2, Lemma C.6, pp. 15–16 of the appendix; §5, p. 23
+  note: Lemma C.6 pulls a possible rigid subrelation of a rigid relation, singled out by a world property,
+    back to an actual one identical to it; the paper states it with the relativized necessity □_N and uses
+    it for the Necessity of Analysis. Its Leibniz Biconditionals, with unboxed world relations, are the
+    map's Atomicity.
+- paper: sun-possible-worlds-without-atomicity
+  role: proof
+  note: Coextensive weakly rigid relations are identical, so Rigid Comprehension gives Tame Rigidity; this
+    turns the weak rigidity of the power property into rigidity.
+proof: >-
+  See the write-up. Let $F$ be rigid and $P:=\lambda X\, .\,\operatorname{Rigid}(X)\land X\le F$, of type
+  $(\bar\sigma t)t$. $P$ is persistent in C. Suppose $\forall X\, .\,PX\to\Box\mathcal XX$ while
+  $\lambda X\, .\,PX\land\neg\mathcal XX$ is possibly instantiated; Atomicity at the type of $P$ gives an
+  atom $W$ below it. Bacon's Lemma C.6: Rigid Comprehension supplies a rigid $X$ coextensive with
+  $\lambda\bar x\, .\,F\bar x\land\Box\forall Y\, .\,WY\to Y\bar x$; it lies below $F$, and the weak
+  inextensibility of $X$ and of $F$, with $W$ deciding $\lambda Y\, .\,Y\bar x$ for each actual $\bar x$,
+  make $W$ entail that $Y$ is coextensive with $X$, hence identical to it, coextensive weakly rigid
+  relations being identical. Then $PX$ gives $\Box\mathcal XX$, while $W$ is possible and entails
+  $\neg\mathcal XX$. So $P$ is weakly inextensible, hence weakly rigid, and Tame Rigidity at its type,
+  which Rigid Comprehension gives, makes it rigid.
+notes: >-
+  Atomicity is used at the type $(\bar\sigma t)t$ of the power property, and Rigid Comprehension at
+  $\bar\sigma t$ and at $(\bar\sigma t)t$, all at the evaluation point; BF, B and 5 are not used. This
+  settles the question left open in CANDIDATES.md, whether unboxed BF, Atomicity and Rigid Comprehension
+  give Rigid Power: they do, without BF. Without the last step, Atomicity at $(\bar\sigma t)t$ with Rigid
+  Comprehension at $\bar\sigma t$ makes the power property of every weakly rigid $F$ weakly rigid, the
+  variant $(W,R,W)$ of CANDIDATES.md. The necessitation of the argument is
+  necessary-atomicity-and-necessary-rigid-comprehension-imply-necessary-rigid-power. Since Strong Leibniz
+  gives Atomicity, with strong-leibniz-necessary-rigid-comprehension-and-rigid-power-imply-bf-relational
+  this yields BF at the relational types from Strong Leibniz and □Rigid Comprehension. Atomicity at type
+  $t$ does not suffice, even boxed and with □Rigid Comprehension: Rigid Power fails in the stitched
+  forcing model stitched-cohen-extension.

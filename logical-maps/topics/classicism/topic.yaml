@@ -32,6 +32,9 @@ source_catalog:
 - id: bacon-mathematical-contingency
   name: Could the truths of mathematics have been different? (draft)
   kind: misc
+- id: barton-goodsell-continuum-contingency
+  name: Continuum Contingency (draft)
+  kind: misc
 - id: the-broadest-necessity
   name: The Broadest Necessity
   kind: published-paper
