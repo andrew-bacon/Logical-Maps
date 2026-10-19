@@ -1818,6 +1818,15 @@ def necessary_actuality_and_necessary_bf_t_imply_necessary_strong_actuality : Pr
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcanT.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecStrongActuality.schemaIn
 
+/-- `necessary-actuality-and-necessary-distinctness-preserving-collapse-imply-necessary-inextensible-comprehension`
+
+□Actuality ∧ □Truth implies ND-necessity ⇒ □Inextensible Comprehension -/
+def necessary_actuality_and_necessary_distinctness_preserving_collapse_imply_necessary_inextensible_comprehension : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecActuality.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecDistinctnessPreservingCollapse.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecInextensibleComprehension.schemaIn
+
 /-- `necessary-actuality-and-necessary-two-hat-implies-nd-imply-necessary-strong-actuality`
 
 □Actuality ∧ □Two-hat necessity implies ND-necessity ⇒ □Strong Actuality -/
@@ -2055,6 +2064,14 @@ def necessary_bf_atomicity_and_rigid_comprehension_imply_necessary_rigid_power :
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomicity.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRigidComprehension.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRigidPower.schemaIn
+
+/-- `necessary-boolean-completeness-implies-necessary-weakly-inextensible-comprehension`
+
+□Boolean Completeness ⇒ □Weakly Inextensible Comprehension -/
+def necessary_boolean_completeness_implies_necessary_weakly_inextensible_comprehension : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBooleanCompleteness.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWeaklyInextensibleComprehension.schemaIn
 
 /-- `necessary-boolean-completeness-r-implies-boolean-completeness-r`
 
@@ -2839,6 +2856,15 @@ def necessary_vicinity_and_necessary_barcan_t_imply_necessary_two_hat_implies_nd
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcanT.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTwoHatImpliesNdNecessity.schemaIn
 
+/-- `necessary-vicinity-and-necessary-distinctness-preserving-collapse-imply-necessary-actuality`
+
+□Vicinity ∧ □Truth implies ND-necessity ⇒ □Actuality -/
+def necessary_vicinity_and_necessary_distinctness_preserving_collapse_imply_necessary_actuality : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecVicinity.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecDistinctnessPreservingCollapse.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecActuality.schemaIn
+
 /-- `necessary-vicinity-and-necessary-weakly-inextensible-comprehension-imply-necessary-actuality`
 
 □Vicinity ∧ □Weakly Inextensible Comprehension ⇒ □Actuality -/
@@ -2848,6 +2874,14 @@ def necessary_vicinity_and_necessary_weakly_inextensible_comprehension_imply_nec
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWeaklyInextensibleComprehension.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecActuality.schemaIn
 
+/-- `necessary-vicinity-implies-necessary-five-implies-two-hat`
+
+□Vicinity ⇒ □5-necessity implies two-hat necessity -/
+def necessary_vicinity_implies_necessary_five_implies_two_hat : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecVicinity.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecFiveImpliesTwoHatNecessity.schemaIn
+
 /-- `necessary-vicinity-implies-vicinity`
 
 □Vicinity ⇒ Vicinity -/
@@ -2855,6 +2889,14 @@ def necessary_vicinity_implies_vicinity : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecVicinity.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Vicinity.schemaIn
+
+/-- `necessary-weak-rigid-comprehension-implies-necessary-boolean-completeness`
+
+□Weak Rigid Comprehension ⇒ □Boolean Completeness -/
+def necessary_weak_rigid_comprehension_implies_necessary_boolean_completeness : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWeakRigidComprehension.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBooleanCompleteness.schemaIn
 
 /-- `necessary-weak-rigid-comprehension-implies-necessary-persistent-comprehension`
 
@@ -4111,7 +4153,7 @@ def vicinity_and_weakly_inextensible_comprehension_imply_actuality : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeaklyInextensibleComprehension.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Actuality.schemaIn
 
-/-- `vicinity-implies-five-implies-two-hat`  (conjectured)
+/-- `vicinity-implies-five-implies-two-hat`
 
 Vicinity ⇒ 5-necessity implies two-hat necessity -/
 def vicinity_implies_five_implies_two_hat : Prop :=
