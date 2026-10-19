@@ -49,16 +49,23 @@ try{
   // Each principle has one small control and nothing else: no sources, no marks.
   const item=id=>page.querySelector(`.verdict-columns [data-principle="${id}"]`).closest('li');
   const control=id=>item(id).querySelectorAll('button.vc');
-  assert.deepEqual(['a','b','c','d','e'].map(id=>control(id).length),[1,1,1,1,0],'One control each, none for an open question');
+  assert.deepEqual(['a','b','c','d','e'].map(id=>control(id).length),[1,1,0,0,0],'One control each; a derived verdict has its why instead, an open question nothing');
   assert.equal(control('a')[0].dataset.verdictModel,'m','A recorded verdict of a list-format model goes to its evidence');
   assert.equal(control('a')[0].textContent,'↗');
-  assert.equal(control('c')[0].dataset.verdictPage,'c','A derived one to how it follows');
-  assert.equal(control('c')[0].textContent,'⇐');
-  control('c')[0].click();
-  assert.match(d.getElementById('page').querySelector('h1').textContent,/: /,'⇐ opens the derivation page, not a pop-up');
+  // A derived verdict opens its derivation in place: no page, no pop-up.
+  const why=id=>item(id).querySelector('details.why');
+  assert.deepEqual(['a','b','c','d','e'].map(id=>!!why(id)),[false,false,true,true,false]);
+  assert.equal(why('c').querySelector('summary').textContent,'why');
+  assert.equal(why('c').open,false);
+  const lines=el=>[...el.querySelectorAll('ol li')].map(li=>li.textContent.replace(/\s+/g,' ').trim());
+  assert.match(why('c').textContent,/Follows from the model’s recorded properties/);
+  assert.match(lines(why('c'))[0],/^✓ A recorded for the model/,'The starting point first');
+  assert.match(lines(why('c'))[1],/^A ⇒ C/,'Then the result');
+  assert.match(why('d').textContent,/Supposing D would give B, which the model violates/);
+  assert.deepEqual(lines(why('d')).map(l=>l.split(' ').slice(0,3).join(' ')),['D supposed, to','✗ B recorded','D ⇒ B'],'A failure starts from the supposition and the verdict it clashes with');
+  assert.equal(page.querySelector('h1').textContent,'Fixture model','No page is opened for a derivation');
   assert.ok(d.getElementById('pop').hidden);
-  w.eval('openPage({type:"model", id:"m"})');
-  assert.equal(page.querySelectorAll('.verdict-columns .badge').length,0,'No source information in the columns');
+  assert.equal([...page.querySelectorAll('.verdict-columns .badge')].filter(b=>!b.closest('details.why')).length,0,'No source information in the columns outside a derivation');
   assert.equal(w.getComputedStyle(page.querySelector('.verdict-columns')).display,'grid');
 
   // Lean status and sources stay one click away, on the verdict's own pop-up: a
@@ -85,6 +92,10 @@ try{
   d.querySelector('#models [data-ex-inspect="model"][data-id="m"]').click();
   const explorer=d.querySelector('#model-principles [data-assumption-row="a"] [data-verdict]');
   assert.equal(explorer.querySelector('.model-flag').textContent,'✓','The explorer still shows the verdict itself');
+  const derivedRow=d.querySelector('#model-principles [data-assumption-row="c"]');
+  assert.equal(derivedRow.querySelector('.model-flag').textContent,'✓ derived');
+  assert.equal(derivedRow.querySelector('details.why summary').textContent,'why','And a derived verdict opens its derivation in place there too');
+  assert.match(lines(derivedRow.querySelector('details.why'))[1],/^A ⇒ C/);
 
   assert.deepEqual(errors.map(String),[]);
 }finally{w.close();}
@@ -121,32 +132,29 @@ try{
   const control=id=>item(id).querySelector('button.vc');
   assert.equal(control('a').dataset.jump,'0 4','A recorded verdict goes to each argument for it');
   assert.equal(control('b').dataset.jump,'1 2 4 5','However many there are');
-  assert.equal(control('c').dataset.verdictPage,'c','A derived verdict goes to how it follows');
-  // The derivation starts from the verdicts it uses, each linking back to its argument,
-  // and ← back retraces the pages, then returns to the tab.
+  assert.equal(control('c'),null,'A derived verdict has its why instead');
+  // The derivation opens in place and starts from the verdicts it uses, each linking back
+  // to its argument; the jump to an argument and ← back return to the page, then the tab.
   const pane=d2.getElementById('pane-page');
-  control('c').click();
-  const lines=()=>[...page.querySelectorAll('ol li')].map(li=>li.textContent.replace(/\s+/g,' ').trim());
-  assert.match(lines()[0],/^✓ A by its argument in the model/,'The starting point first');
-  assert.match(lines()[1],/^A ⇒ C/,'Then the result');
+  const why=id=>item(id).querySelector('details.why');
+  const lines=el=>[...el.querySelectorAll('ol li')].map(li=>li.textContent.replace(/\s+/g,' ').trim());
+  assert.match(lines(why('c'))[0],/^✓ A by its argument in the model/,'The starting point first');
+  assert.match(lines(why('c'))[1],/^A ⇒ C/,'Then the result');
   assert.ok(![...page.querySelectorAll('h2')].some(h=>/Paper references|Record provenance|Model evidence/.test(h.textContent)),'No credits on a derivation: its records credit themselves');
-  assert.equal(page.querySelectorAll('.badge.source').length,0);
-  assert.equal(page.querySelector('h1 button[data-open-model]').textContent,'Argument model','The heading links back to the model');
-  page.querySelector('ol li button[data-open-arg]').click();
+  assert.equal([...page.querySelectorAll('.verdict-columns .badge')].filter(b=>!b.closest('details.why')).length,0,'The columns carry no source information outside a derivation');
+  why('c').querySelector('ol li button[data-open-arg]').click();
   assert.ok(page.querySelector('#argument-0').open&&page.querySelector('#argument-4').open,'The link opens the model at its arguments');
   assert.ok(!page.querySelector('#argument-1').open);
+  assert.equal(page.querySelector('h1').textContent,'Argument model','On the model page itself');
   page.querySelector('#page-back').click();
-  assert.match(page.querySelector('h1').textContent,/: C$/,'Back to the derivation');
-  page.querySelector('#page-back').click();
-  assert.equal(page.querySelector('h1').textContent,'Argument model','Back to the model page');
+  assert.equal(page.querySelector('h1').textContent,'Argument model','Back retraces the jump');
   page.querySelector('#page-back').click();
   assert.notEqual(pane.dataset.active,'true','Then back to the tab');
-  w2.eval('openPage({type:"model-verdict", id:"n", principle:"d"})');
-  assert.deepEqual(lines().map(l=>l.split(' ').slice(0,3).join(' ')),['D supposed, to','✗ B by','D ⇒ B'],'A failure starts from the supposition and the verdict it clashes with');
   w2.eval('openPage({type:"model", id:"n"})');
+  assert.deepEqual(lines(why('d')).map(l=>l.split(' ').slice(0,3).join(' ')),['D supposed, to','✗ B by','D ⇒ B'],'A failure starts from the supposition and the verdict it clashes with');
   assert.equal(control('e').dataset.jump,'3','An open question with a conjectured argument goes to it');
   assert.ok(control('e').classList.contains('conj'));
-  assert.equal(page.querySelectorAll('.verdict-columns .badge').length,0,'No source information in the columns');
+  assert.equal([...page.querySelectorAll('.verdict-columns .badge')].filter(b=>!b.closest('details.why')).length,0,'No source information in the columns outside a derivation');
   assert.ok(h2s.indexOf('Principles')<h2s.indexOf('Arguments')&&h2s.indexOf('Arguments')<h2s.indexOf('Notes'));
   assert.ok(!h2s.some(h=>/Paper references|Record provenance/.test(h)),'An argument model credits inside its arguments, not in record-level lists');
   const notesList=[...page.querySelectorAll('h2')].find(h=>h.textContent==='Notes').nextElementSibling.nextElementSibling;
@@ -176,10 +184,9 @@ try{
   assert.ok(history&&!history.open&&/An old change\./.test(history.textContent),'The old log waits behind a toggle');
   assert.match(history.querySelector('summary').textContent,/1 entry$/);
 
-  w2.eval('openPage({type:"model-verdict", id:"n", principle:"b"})');
-  assert.match(page.textContent,/recorded directly for the model, by the arguments below/);
-  assert.equal(page.querySelectorAll('details.argument').length,4,'Its own page shows every argument for the verdict in full');
-  assert.deepEqual([...page.querySelectorAll('.badges .badge')].map(b=>b.textContent),['Paper','Later author','Both author','trawl']);
+  w2.eval('select({type:"model-verdict", id:"n", principle:"b"})');
+  assert.deepEqual([...d2.getElementById('pop').querySelectorAll('.badges .badge')].map(b=>b.textContent),['Paper','Later author','Both author','trawl'],'A recorded verdict’s pop-up credits its arguments');
+  w2.eval('select(null)');
 
   // A hand-written write-up is linked, and does not take the definition's place.
   w2.eval(`byMid.get('n').files={handwritten:true,html:'writeups/n.html'};openPage({type:"model", id:"n"})`);
@@ -207,7 +214,7 @@ try{
   assert.ok(rows.some(tr=>tr.dataset.id==='n-conj'&&tr.textContent.includes('Conjecture restated.')),'A companion\'s changes are its arguments\' revisions');
   assert.ok(rows.some(tr=>tr.dataset.id==='n-conj'&&tr.textContent.includes('2026-01-20')&&!tr.classList.contains('revision')),'And it is dated by its latest argument, not by the model');
   assert.deepEqual(errors2.map(String),[]);
-  console.log('PASS: a model page sorts every principle into three columns, satisfied, violated and unsettled, counts each, gives each principle one control to its evidence or derivation, a derivation that starts from the verdicts it uses and links each to its argument, a back button that retraces the pages, holds the derived verdicts behind a closed toggle, keeps Lean status on the pop-up of a verdict while the explorer list keeps its marks; a model written as arguments shows its definition, then three columns of principles with one control each and no sources, each argument once in record order headed by its verdicts with who supplied it inside (for a trawl argument, who found, reviewed and admitted it), its history behind a toggle, a write-up that does not replace the definition, and its companion.');
+  console.log('PASS: a model page sorts every principle into three columns, satisfied, violated and unsettled, counts each, gives each principle one control to its evidence or arguments and a derived verdict its derivation in place, starting from the verdicts it uses and linking each to its argument, a back button that retraces the pages, holds the derived verdicts behind a closed toggle, keeps Lean status on the pop-up of a verdict while the explorer list keeps its marks; a model written as arguments shows its definition, then three columns of principles with one control each and no sources, each argument once in record order headed by its verdicts with who supplied it inside (for a trawl argument, who found, reviewed and admitted it), its history behind a toggle, a write-up that does not replace the definition, and its companion.');
 }finally{w2.close();}
 
 // A group's member, as the build exports it: its own arguments, then the group's shared arguments
@@ -290,6 +297,15 @@ try{
   page.querySelector('button[data-grow="0"]').click();
   assert.match(page.querySelector('#group-detail').textContent,/the truncations.*Σ top/,'A row name shows the settings');
   assert.ok(page.querySelector('#group-detail button[data-open-model="gm"]'),'And links to the model');
+  // A verdict every row derives opens its derivation in place, as on a model's page.
+  const same=[...page.querySelectorAll('h2')].find(h=>h.textContent==='The same in every row').nextElementSibling;
+  const derivedD=same.querySelector('ul.verdict-list.derived [data-principle="d"]')?.closest('li');
+  assert.ok(derivedD,'D fails in every row by derivation');
+  const groupWhy=derivedD.querySelector('details.why');
+  assert.equal(groupWhy.querySelector('summary').textContent,'why');
+  assert.match(groupWhy.textContent,/Supposing D would give B, which the model violates\. The same in every row\./,'One chain serves every row');
+  assert.deepEqual([...groupWhy.querySelectorAll('ol li')].map(li=>li.textContent.replace(/\s+/g,' ').trim().split(' ').slice(0,3).join(' ')),['D supposed, to','✗ B by','D ⇒ B']);
+  assert.equal(same.querySelector('ul.verdict-list:not(.derived) [data-principle="a"]').closest('li').querySelector('details.why'),null,'A recorded verdict has none');
   page.querySelector('button[data-group-toggle="sigma"]').click();
   assert.deepEqual(rowNames(),['group member']);
   page.querySelector('#page-back').click();

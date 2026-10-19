@@ -96,6 +96,16 @@ def list_topics() -> list[str]:
     return sorted(p.name for p in TOPICS.iterdir() if (p / "topic.yaml").exists())
 
 
+def name_sort_key(s: str) -> tuple:
+    """Alphabetical by name, a leading run of symbols (□, ◇ …) counting after the bare
+    name: □Actuality right after Actuality, before Actuality (type t). The viewer's
+    compareNames orders the same way."""
+    m = _re.match(r"^[^\w]+", s)
+    prefix = m.group() if m else ""
+    rest = s[len(prefix):]
+    return (rest.casefold(), rest, prefix)
+
+
 def load_topic(topic_id: str) -> dict:
     """Load a topic directory into a plain dict. Does not validate."""
     tdir = TOPICS / topic_id
@@ -4051,8 +4061,8 @@ def bundle_open_md(topic_id: str, data: dict, an: dict, lynch=None) -> str:
     by_a = {}
     for a, b in op:
         by_a.setdefault(a, []).append(b)
-    for a in sorted(by_a, key=lambda x: names.get(x, x)):
-        o += [f"- **{names.get(a,a)}** (`{a}`) ⇒ " + ", ".join(names.get(b, b) for b in sorted(by_a[a], key=lambda x: names.get(x, x)))]
+    for a in sorted(by_a, key=lambda x: name_sort_key(names.get(x, x))):
+        o += [f"- **{names.get(a,a)}** (`{a}`) ⇒ " + ", ".join(names.get(b, b) for b in sorted(by_a[a], key=lambda x: name_sort_key(names.get(x, x))))]
     o += [""]
 
     o += ["## 6. Deliberately deferred", "",

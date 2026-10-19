@@ -33,11 +33,11 @@ d.querySelector('[data-source-filter="submission"]').click();assert.equal(d.getE
 d.getElementById('background-reset').click();assert.equal(d.getElementById('graph-warning').hidden,true);
 // Models derive violations from incompatibility even when violates is empty.
 d.querySelector('#models [data-ex-inspect][data-id="m"]').click();
-const verdict=d.querySelector('#models [data-verdict="d"]');assert.match(verdict.textContent,/✗/);
-verdict.click();assert.match(d.getElementById('pop').textContent,/A paper/);assert.match(d.getElementById('pop').textContent,/A submission/);
-d.querySelector('#pop [data-goto]').click();
-assert.match(d.getElementById('page').textContent,/⊥.*contradiction/);
-d.querySelector('[data-source-filter="submission"]').click();assert.equal(d.querySelector('#models [data-verdict="d"]'),null);
+const flag=d.querySelector('#models [data-assumption-row="d"] .model-flag');assert.match(flag.textContent,/✗ derived/);
+// A derived verdict opens its derivation in place: the supposition, the clash, and the result's source.
+const why=d.querySelector('#models [data-assumption-row="d"] details.why');assert.match(why.textContent,/⊥, a contradiction/);
+assert.match(why.textContent,/D supposed, to derive a contradiction/);assert.match(why.textContent,/A submission/);
+d.querySelector('[data-source-filter="submission"]').click();assert.equal(d.querySelector('#models [data-assumption-row="d"] details.why'),null);
 d.querySelector('[data-source-filter="submission"]').click();
 // Explorer assumptions surface the same contradiction and leave the graph alone.
 for(const p of 'abcd')d.querySelector(`#models [data-assume-positive="${p}"]`).click();
@@ -73,9 +73,10 @@ assert.ok(rd.querySelector('#pr-filters [data-show-positive="simple-eu"]'));
 assert.ok(rd.querySelector('#models [data-assume-positive="simple-eu"]').classList.contains('auto-positive'));
 assert.equal(real.window.eval("E.cl([]).facts.has('totality')"),false);
 assert.equal(real.window.eval("backgroundExcluded.has('totality')"),false);
-for(const selector of ['#background-dock [data-background-preset','#models [data-theory-preset']){
- assert.equal(rd.querySelector(`${selector}="du"]`).textContent,'Background DU');
- assert.equal(rd.querySelector(`${selector}="dtu"]`).textContent,'Background DTU');
+// The graph's dock backgrounds a package; the explorer assumes one, in its own words.
+for(const [selector,verb] of [['#background-dock [data-background-preset','Background'],['#models [data-theory-preset','Assume']]){
+ assert.equal(rd.querySelector(`${selector}="du"]`).textContent,`${verb} DU`);
+ assert.equal(rd.querySelector(`${selector}="dtu"]`).textContent,`${verb} DTU`);
 }
 // DU visibly rules out Archimedean Gambles and Countable Sure-Thing.
 for(const id of ['archimedean-gambles','countable-sure-thing']){

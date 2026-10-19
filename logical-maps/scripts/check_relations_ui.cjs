@@ -55,7 +55,8 @@ try{
   assert.equal(node('z').querySelector('title').textContent,'Excluded by selection');
   assert.equal(node('d').querySelector('title').textContent,'Independent of selection');
   assert.equal(legend().hidden,false);
-  assert.equal(legend().querySelector('b').textContent,'A','The legend leads with the selection itself');
+  assert.equal(legend().querySelector('b'),null,'The legend carries the keys and the actions; the pane names the selection');
+  assert.equal(pop().querySelector('.pop-t').textContent,'A');
   assert.doesNotMatch(legend().textContent,/Relative to/,'Without a preamble');
   assert.equal(legend().querySelector('.rel-status'),null,'The consistency report is not on this line');
   assert.match(d.getElementById('graph-details-foot').textContent,/Consistent with the background/,'It is at the foot of the pane');
@@ -92,10 +93,12 @@ try{
   w.handleGraphClick(node('d').querySelector('rect'),true);
   assert.equal(w.eval('state.selected.type'),'selection');
   assert.deepEqual(JSON.parse(w.eval('JSON.stringify(state.focus)')),['a','d']);
-  assert.match(pop().textContent,/A ∧ D[\s\S]*Joint consistency[\s\S]*consistent/);
-  assert.ok(pop().querySelector('button[data-model="m2"]'),'The joint witness is linked');
-  pop().querySelector('button[data-model="m2"]').click();
-  assert.equal(w.eval('state.page && state.page.type+":"+state.page.id'),'model:m2','To its page, with no pop-up in between');
+  assert.match(pop().textContent,/A ∧ D/);
+  assert.equal(pop().querySelector('button[data-model]'),null,'The pane no longer lists the witnesses');
+  assert.match(d.getElementById('graph-details-foot').textContent,/Consistent with the background \(/,'The foot names one');
+  assert.ok(pop().querySelector('[data-selection-action="explorer"]'),'And the pane sends the selection to the explorer');
+  w.openPage({type:'model',id:'m2'});
+  assert.equal(w.eval('state.page && state.page.type+":"+state.page.id'),'model:m2','A model page hides the pop-up');
   assert.equal(pop().hidden,true);
   d.querySelector('#page-back').click();
   w.handleGraphClick(node('a').querySelector('rect'));w.handleGraphClick(node('d').querySelector('rect'),true);
@@ -151,7 +154,7 @@ try{
   w.select({type:'principle',id:'a'});
   assert.equal(w.eval("expressionStatus('a','d').limited"),true);
   w.select({type:'principle',id:'d'},true);
-  assert.match(pop().textContent,/Joint consistency[\s\S]*consistent[\s\S]*outside the selected sources/);
+  assert.match(d.getElementById('graph-details-foot').textContent,/Consistent with the background outside selected sources/);
   d.querySelector('[data-source-filter="submission"]').click();
 
   // Negative literals can join the selection.
@@ -159,7 +162,8 @@ try{
   w.select({type:'principle',id:'a'});
   assert.deepEqual(rel('!d'),['rel-independent'],'M1 and M2 witness both values of ¬D with A');
   w.select({type:'principle',id:'!d'},true);
-  assert.match(pop().textContent,/A ∧ ¬D[\s\S]*consistent/,'M1 witnesses A ∧ ¬D');
+  assert.match(pop().querySelector('.pop-t').textContent,/A ∧ ¬D/);
+  assert.match(d.getElementById('graph-details-foot').textContent,/Consistent with the background/,'M1 witnesses A ∧ ¬D');
 
   // The relation query never uses conjectures as proofs.
   const conjectural={...fixture,results:[...fixture.results,rule('ae',['a'],'e','conjectured')]};
@@ -226,7 +230,7 @@ try{
   real.addBackgroundPreset('dtu');
   real.select({type:'principle',id:'folded-expectation'});
   fixedKeys(real.document);
-  assert.equal(real.document.querySelector('#relation-legend b').textContent,'Folded Expectation');
+  assert.equal(real.document.getElementById('pop').querySelector('.pop-t').textContent,'Folded Expectation');
   assert.ok(real.document.querySelector('#nodes [data-falsity]').classList.contains('rel-excluded'));
   assert.deepEqual(errors.map(String),[]);
   console.log('PASS: fixed four-key legend, False excluded, inconsistent selections exclude every box, unchanged proof status, consistency counts, multiselection, filled arrowheads, filtered witnesses, and Folded Expectation.');
