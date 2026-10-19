@@ -74,6 +74,9 @@ try {
   $('#theorems tr[data-result="a-b"]').click();
   assert.equal(d.getElementById('pop').hidden, false);
   assert.match(d.getElementById('pop').textContent, /A ⇒ B/);
+  // A box or diamond is part of the text searched for: □A does not find A.
+  assert.equal(w.eval('findText("□ Actuality")'), '□actuality');
+  assert.equal(w.eval('findText("A ∧ ◇B")'), 'a ◇b');
   assert.deepEqual(errors, []);
   console.log('PASS: the Results tab lists proved results among the shown principles by conclusion, narrows to a principle in a role or to words, keeps closed groups closed, and opens a result.');
 } finally { w.close(); }

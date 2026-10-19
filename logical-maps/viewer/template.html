@@ -2874,7 +2874,8 @@ function familyVerdict(fits, c) {
 // one chosen is revealed, by opening its category. A category the box opened
 // closes again when the box moves elsewhere; one the reader opened stays.
 const exFind = { query: '', options: [], active: 0, open: false, found: null, opened: new Set() };
-const findText = text => text.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+// Letters and digits, and the modal and negation signs that tell □A, ◇A and ¬A from A.
+const findText = text => text.toLowerCase().replace(/[^\p{L}\p{N}□◇¬]+/gu, ' ').replace(/([□◇¬]) /g, '$1').trim();
 function exFindOptions(value) {
   const q = findText(value);
   if (!q) return [];
