@@ -2,25 +2,52 @@ id: vicinity-implies-five-implies-two-hat
 premises:
 - vicinity
 conclusion: five-implies-two-hat-necessity
-status: conjectured
+status: proved
+was_conjectured: true
 certificate:
   source_id: misc
-  produced_by: Cian Dorr, 14 October 2026
-  recorded_by: Claude Fable 5.1 (Anthropic), 14 October 2026
+  produced_by: Christopher Sun, 19 October 2026, the argument from a strongest 5-necessary proposition; Claude
+    Opus 5.5 (Anthropic), 19 October 2026, the passage to one from the 5-necessity form of Vicinity (also Sun’s);
+    conjectured by Cian Dorr, 14 October 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), 14 October 2026 (the conjecture); Claude Opus 5.5 (Anthropic),
+    19 October 2026 (the proof)
   checked_by: []
   date: '2026-10-14'
   lean: stated
 sources:
-- Cian Dorr and Claude Fable 5.1 (Anthropic), conversation of 14 October 2026 (transcript in the private
-  notes).
+- Cian Dorr and Claude Fable 5.1 (Anthropic), conversation of 14 October 2026 (transcript in the private notes).
+- 'Christopher Sun, handwritten argument sent to Cian Dorr on 19 October 2026 (Proposition: Principal □5 implies
+  ∀p(□5p → two-hat necessity of p)).'
+- Cian Dorr, John Hawthorne, and Juhani Yli-Vakkuri, The Bounds of Possibility, Appendix D, Theorem D9, p.
+  405.
 source_names:
 - Dorr–Claude 14 Oct
-proof: ''
-notes: 'Conjectured by Cian Dorr, 14 October 2026. Actuality suffices (see the proved result), and so
-  does Vicinity with BF at type $t$. Without BF, the two places where the Actuality proof uses the atom
-  resist the Vicinity substitution: the characterization $\hat{\hat\Box}p\leftrightarrow\Box(\hat\Diamond
+- Sun 19 Oct
+- Bounds of Possibility
+references:
+- paper: bounds-of-possibility
+  role: proof
+  locator: Appendix D, Theorem D9, p. 405
+  note: $\Box_5$ materially implies every $\mathrm{NKJF}_{\langle\rangle}$ operator; Sun applies it to an operator built from the strongest
+    5-necessary proposition.
+proof: 'See the write-up. By the 5-necessity form of [[vicinity]], let $t$ be a truth entailing every 5-necessary
+  truth; then $s:=\Diamond_5 t$ is the strongest 5-necessary proposition, by B and 4 for $\Box_5$. Sun: if
+  $\Diamond(\Diamond_{\ne}s\land\neg s)$, the operator $\lambda p\, .\,(\Diamond_{\ne}s\land\neg s)\le p$ is
+  N, K and J but not materially implied by $\Box_5$, so by Theorem D9 of The Bounds of Possibility, Appendix
+  D, it fails $\mathrm F_{\langle\rangle}$; the Barcan formula for $\Box_5$ and the characterization $\Diamond_{\ne}x\leftrightarrow\forall
+  r\, .\,r\to\Diamond(\Diamond r\land x)$ turn the failure into a contradiction. So $\Box(\Diamond_{\ne}s\to
+  s)$, and $s$ witnesses $\hat{\hat\Box}p$ for every 5-necessary $p$.'
+notes: 'Proved by Christopher Sun, 19 October 2026, through Theorem D9 rather than an atom. The notes recorded
+  with the conjecture follow. Conjectured by Cian Dorr, 14 October 2026. Actuality suffices (see the proved
+  result), and so does Vicinity with BF at type $t$. Without BF, the two places where the Actuality proof uses
+  the atom resist the Vicinity substitution: the characterization $\hat{\hat\Box}p\leftrightarrow\Box(\hat\Diamond
   w\to p)$ needs $\Box(\hat\Diamond w\to\hat\Diamond q)$ for an arbitrary true $q$, which is B for $\Box_{\ne}$
-  at $q$; and step 1 of Proposition D19 applies the atom to the truth $\forall z\,\Box(\hat\Diamond w\to
-  Yz)$, which is ND-necessary only if $\Box_{\ne}$ already commutes with $\forall z$. A countermodel would
-  need Vicinity without Actuality at a world where the two-hat cluster is non-principal; the paired-individuals
-  and star-graph models fail Vicinity.'
+  at $q$; and step 1 of Proposition D19 applies the atom to the truth $\forall z\,\Box(\hat\Diamond w\to Yz)$,
+  which is ND-necessary only if $\Box_{\ne}$ already commutes with $\forall z$. A countermodel would need Vicinity
+  without Actuality at a world where the two-hat cluster is non-principal; the paired-individuals and star-graph
+  models fail Vicinity.'
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: Proved, by Christopher Sun’s argument of 19 October 2026 with a first step from the 5-necessity
+    form of Vicinity; status changed from conjectured to proved, with a write-up.

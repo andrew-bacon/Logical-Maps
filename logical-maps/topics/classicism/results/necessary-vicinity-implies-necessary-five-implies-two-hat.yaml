@@ -1,0 +1,20 @@
+id: necessary-vicinity-implies-necessary-five-implies-two-hat
+premises:
+- necessary-vicinity
+conclusion: necessary-five-implies-two-hat-necessity
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Christopher Sun, 19 October 2026 (unboxed form); boxed form recorded by Claude Opus 5.5 (Anthropic),
+    19 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), 19 October 2026
+  checked_by: []
+  date: '2026-10-19'
+  lean: none
+sources:
+- Christopher Sun, handwritten argument sent to Cian Dorr on 19 October 2026.
+source_names:
+- Sun 19 Oct
+proof: The boxed form of [[vicinity-implies-five-implies-two-hat]]. Its proof derives each instance of the
+  conclusion in C from the premise; necessitate the conditional and apply K.
+notes: ''
