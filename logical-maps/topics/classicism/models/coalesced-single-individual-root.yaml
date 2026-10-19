@@ -18,6 +18,7 @@ references:
   locator: §2.6, pp. 41–42 and n. 61; Appendix E, p. 83
 group: coalesced-sums
 settings:
+  root-arrows: distinguished
   construction: 'Take the alternative coalesced-sum root of Appendix E, p. 83: a set of source action
     models complete for C, coalesced at a new root whose individual domain is a singleton, the unique
     root individual being carried by each distinguished arrow to a chosen individual of that component.

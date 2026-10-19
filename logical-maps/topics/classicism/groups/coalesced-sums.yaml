@@ -12,14 +12,38 @@ references:
 # file, id and the arguments that are its alone. Built on 2 October 2026 by Claude Opus 5.5 at
 # Cian Dorr's direction; texts are the members' unless a revision says otherwise. The
 # interpretation of Σ is part of these constructions, so nothing is generated.
+#
+# Revised 19 October 2026 (Claude Opus 5.5, at Cian Dorr's direction): the parameter `root-arrows`
+# added for coalesced-pinned-interpretations-root, whose root has an arrow into every object of every
+# component for every interpretation of a signature, and whose root domains are finitely pinned. The
+# shared arguments that carry a component's counterexample to the root through the distinguished
+# arrow now apply only at `root-arrows: distinguished`.
 
 definition: >-
   {{construction}}
 
 
+  {{root-arrows}}
+
+
   {{domains}}
 
 parameters:
+  root-arrows:
+    text: How the root's arrows reach the components.
+    values:
+      distinguished:
+        text: >-
+          The root has one distinguished arrow to the root of each component, and every arrow from
+          the root into a component factors through it.
+        label: distinguished arrows
+        meets:
+          distinguished-arrows: This is the construction.
+      interpretations:
+        text: >-
+          The root has an arrow to every object of every component, one for each interpretation there
+          of a fixed signature, and the root's individuals are that signature's individual constants.
+        label: interpretation arrows
   construction:
     text: The components, how their individuals and constants meet at the root, and the evaluation
       point, as the member's source gives them.
@@ -45,6 +69,10 @@ conditions:
   text: >-
     The components are a family of action models complete for C: every sentence consistent with C
     is true at the root of some component.
+- id: distinguished-arrows
+  text: >-
+    Every arrow from the root into a component factors through a single distinguished arrow to
+    that component's root.
 - id: free-root-component
   text: >-
     A root entity of a relational type has a root component that is an arbitrary function of the
@@ -52,7 +80,7 @@ conditions:
 
 arguments:
 - id: tame-rigidity-component
-  requires: [complete-components, free-root-component]
+  requires: [complete-components, free-root-component, distinguished-arrows]
   fails: [tame-rigidity-r]
   by: Claude Fable 5.1 (Anthropic), answering Cian Dorr's conjecture
   date: '2026-10-03'
@@ -82,7 +110,7 @@ arguments:
 
 
 - id: rigid-power-component
-  requires: [complete-components, free-root-component]
+  requires: [complete-components, free-root-component, distinguished-arrows]
   fails: [rigid-power-r]
   by: GPT-6 Astra (OpenAI), at Cian Dorr's request; checked and recorded by Claude Opus 5.5 (Anthropic)
   date: '2026-10-11'
@@ -108,7 +136,7 @@ arguments:
     at type $t\to t$.
 
 - id: intensional-choice-component
-  requires: [complete-components]
+  requires: [complete-components, distinguished-arrows]
   fails: [intensional-choice-r]
   by: Claude Fable 5.1 (Anthropic), at Cian Dorr's suggestion
   date: '2026-10-03'
@@ -156,7 +184,7 @@ arguments:
     note: The three members' versions stated once.
 
 - id: barcan-t-component
-  requires: [complete-components]
+  requires: [complete-components, distinguished-arrows]
   fails: [barcan-t]
   by: Cian Dorr, recorded by Claude Fable 5.1 (Anthropic)
   date: '2026-09-22'
@@ -176,7 +204,7 @@ arguments:
     note: The three members' verbatim copies stated once.
 
 - id: atomicity-t-component
-  requires: [complete-components]
+  requires: [complete-components, distinguished-arrows]
   fails: [atomicity-t]
   by: Cian Dorr, recorded by Claude Fable 5.1 (Anthropic)
   date: '2026-09-22'
@@ -192,7 +220,7 @@ arguments:
     note: The three members' verbatim copies stated once.
 
 - id: boolean-completeness-t-component
-  requires: [complete-components]
+  requires: [complete-components, distinguished-arrows]
   fails: [boolean-completeness-t]
   by: Cian Dorr, recorded by Claude Fable 5.1 (Anthropic)
   date: '2026-09-23'

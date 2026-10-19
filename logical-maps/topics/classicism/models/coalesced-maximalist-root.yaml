@@ -18,6 +18,7 @@ references:
   locator: Theorem 3.26, §§3.6, pp. 62–64; Appendix E, pp. 80–83; §2.6, p. 41
 group: coalesced-sums
 settings:
+  root-arrows: distinguished
   construction: Take a coalesced sum of a set of source action models complete for C in the fixed signature,
     evaluated at the new root. See Definition E.2 for the construction.
   domains: fullest

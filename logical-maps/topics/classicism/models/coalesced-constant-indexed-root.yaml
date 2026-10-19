@@ -23,6 +23,7 @@ references:
     the construction is the coalesced sum of Definition E.2.
 group: coalesced-sums
 settings:
+  root-arrows: distinguished
   construction: 'For a signature Σ with countably infinitely many individual constants and at least one
     relational constant, take a set of action models for L(Σ) complete for C(Σ), and coalesce them at
     a new root whose individual domain is the set of individual constants, each constant denoting itself

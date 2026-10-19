@@ -28,6 +28,7 @@ references:
     E.2.
 group: coalesced-sums
 settings:
+  root-arrows: distinguished
   construction: 'Take the full Henkin models $M_n$ with individual domain $\{1,\ldots,n\}$ for every $n\ge1$,
     and add a root world. Individuals are threads $(a_n)_n$ with $a_n\in\{1,\ldots,n\}$. Application is
     componentwise, identity at world $n$ is the identity of $M_n$ and at the root is identity of elements.
