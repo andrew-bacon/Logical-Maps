@@ -13,7 +13,7 @@
 
 ## Proof
 
-The proof of vicinity-and-weakly-inextensible-comprehension-imply-actuality uses no optional hypothesis and a single closed instance $\phi$ of Weakly Inextensible Comprehension (type $t\to t$), so Vicinity $\land\,\phi\to$ Actuality is a theorem of C. Necessitate it and apply K to $\Box$Vicinity and $\Box\phi$, the latter an instance of □Weakly Inextensible Comprehension.
+The proof of [[vicinity-and-weakly-inextensible-comprehension-imply-actuality]] uses no optional hypothesis and a single closed instance $\phi$ of Weakly Inextensible Comprehension (type $t\to t$), so Vicinity $\land\,\phi\to$ Actuality is a theorem of C. Necessitate it and apply K to $\Box$Vicinity and $\Box\phi$, the latter an instance of □Weakly Inextensible Comprehension.
 
 ## Sources
 

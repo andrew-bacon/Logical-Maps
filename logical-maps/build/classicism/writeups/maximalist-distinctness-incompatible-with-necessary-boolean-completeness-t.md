@@ -5,7 +5,7 @@
 ## Premises
 
 - **Maximalism (pure).** Every closed pure identity not provable in C is false. The non-theorem condition is metalinguistic.
-- **□Boolean Completeness (type t).** Every closed instance of Boolean Completeness (type t) is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Boolean Completeness (type t).** Necessarily, every property of propositions has a greatest lower bound.
 
 ## Conclusion
 

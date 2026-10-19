@@ -8,7 +8,7 @@
 
 ## Conclusion
 
-- **Boolean Completeness (type t).** Boolean Completeness (type t) in the displayed closed propositional formulation.
+- **Boolean Completeness (type t).** Every property of propositions has a greatest lower bound.
 
 ## Proof
 

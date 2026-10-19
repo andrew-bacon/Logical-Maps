@@ -14,6 +14,10 @@
 
 Necessitate the recorded implication from Functional Choice to Plenitude, a theorem of C, and apply K.
 
+## Notes
+
+The boxed form of [[functional-choice-r-implies-plenitude-r]].
+
 ## Sources
 
 - **Classicism** — Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.3, pp. 31–33.

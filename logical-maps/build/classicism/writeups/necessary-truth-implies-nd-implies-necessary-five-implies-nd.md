@@ -16,6 +16,8 @@ The chain $\Box\le\Box_{\ne}\le\hat{\hat\Box}\le\Box_5\le\lambda p\, .\,p$ is a 
 
 ## Notes
 
+The boxed form of [[truth-implies-nd-implies-five-implies-nd]].
+
 Boxed form of a composition or decomposition fact for the chain of necessity operators.
 
 ## Sources

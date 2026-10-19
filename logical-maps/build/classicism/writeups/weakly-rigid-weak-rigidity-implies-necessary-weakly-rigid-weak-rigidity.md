@@ -8,7 +8,7 @@
 
 ## Conclusion
 
-- **□Weakly Rigid Weak Rigidity.** Every closed instance of Weakly Rigid Weak Rigidity is necessary. Retain the same type range.
+- **□Weakly Rigid Weak Rigidity.** Necessarily, being weakly rigid is a weakly rigid property of relations, including propositions.
 
 ## Proof
 

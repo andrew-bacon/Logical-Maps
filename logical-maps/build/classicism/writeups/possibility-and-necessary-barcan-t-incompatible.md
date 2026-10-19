@@ -5,7 +5,7 @@
 ## Premises
 
 - **Maximalism (pure).** Every closed pure identity not provable in C is false. The non-theorem condition is metalinguistic.
-- **□BF (type t).** Necessarily, BF (type t) holds, in the displayed closed propositional formulation.
+- **□BF (type t).** Necessarily, if every proposition necessarily has a property, then necessarily every proposition has it.
 
 ## Conclusion
 

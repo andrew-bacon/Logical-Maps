@@ -14,6 +14,10 @@
 
 Necessitate the recorded implication from the Strong Leibniz Biconditionals to Atomicity, which is a theorem of C, and apply K.
 
+## Notes
+
+The boxed form of [[strong-leibniz-r-implies-atomicity-r]].
+
 ## Sources
 
 - **Philosophical Introduction to HOL** — Andrew Bacon, A Philosophical Introduction to Higher-Order Logics, Routledge, 2024, §8.2, p. 170.

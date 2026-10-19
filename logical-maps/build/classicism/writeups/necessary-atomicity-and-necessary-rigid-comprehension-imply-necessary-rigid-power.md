@@ -9,11 +9,11 @@
 
 ## Conclusion
 
-- **□Rigid Power.** Every closed instance of Rigid Power is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Rigid Power.** Necessarily, if a relation is rigid, so is the property of being a rigid relation that entails it.
 
 ## Proof
 
-The argument of atomicity-and-rigid-comprehension-imply-rigid-power is a derivation in C from instances of Atomicity, at the type of the power property, and of Rigid Comprehension, at the type of the relation and at that of its power property. Its necessitation is therefore a theorem of C: at every world where those instances hold, so does the instance of Rigid Power. □Atomicity and □Rigid Comprehension supply them at every world, so every closed instance of Rigid Power is necessary.
+The argument of [[atomicity-and-rigid-comprehension-imply-rigid-power]] is a derivation in C from instances of Atomicity, at the type of the power property, and of Rigid Comprehension, at the type of the relation and at that of its power property. Its necessitation is therefore a theorem of C: at every world where those instances hold, so does the instance of Rigid Power. □Atomicity and □Rigid Comprehension supply them at every world, so every closed instance of Rigid Power is necessary.
 
 ## Notes
 

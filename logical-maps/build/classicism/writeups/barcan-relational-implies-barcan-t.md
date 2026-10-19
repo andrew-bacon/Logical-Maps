@@ -8,7 +8,7 @@
 
 ## Conclusion
 
-- **BF (type t).** BF (type t) in the displayed closed propositional formulation.
+- **BF (type t).** If every proposition necessarily has a property, then necessarily every proposition has it.
 
 ## Proof
 

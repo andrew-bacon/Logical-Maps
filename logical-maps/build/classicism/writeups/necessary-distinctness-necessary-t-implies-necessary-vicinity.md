@@ -4,7 +4,7 @@
 
 ## Premises
 
-- **□ND (type t).** Necessarily, ND (type t) holds, in the displayed closed propositional formulation.
+- **□ND (type t).** Necessarily, distinct propositions are necessarily distinct.
 
 ## Conclusion
 
@@ -13,6 +13,10 @@
 ## Proof
 
 The unboxed argument derives Vicinity from the closed sentence ND (type $t$) in C with no optional hypothesis, so ND (type $t$) → Vicinity is a theorem of C. Necessitate it and apply K.
+
+## Notes
+
+The boxed form of [[distinctness-necessary-t-implies-vicinity]].
 
 ## Sources
 

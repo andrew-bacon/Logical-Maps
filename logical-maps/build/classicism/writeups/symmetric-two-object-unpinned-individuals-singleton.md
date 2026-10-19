@@ -6,15 +6,15 @@
 
 - **□Actuality.** Necessarily, there is a true proposition that entails every true proposition.
 - **□Boolean Completeness.** Necessarily, every property of entities of a relational type has a greatest lower bound in that type.
-- **□Rigid Power.** Every closed instance of Rigid Power is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Rigid Power.** Necessarily, if a relation is rigid, so is the property of being a rigid relation that entails it.
 - **□Truth implies 5-necessity.** Necessarily, every truth is 5-necessary: necessary under every S5 operator. In C this is the identity $\Box_5=\lambda p\, .\,p$.
 - **Axiom of Infinity (type t).** There are not finitely many propositions. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **Boolean Completeness.** Every property of entities of a relational type has a greatest lower bound in that type.
 - **Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
-- **¬ Atomicity (type t).** Atomicity (type t) in the displayed closed propositional formulation.
+- **¬ Atomicity (type t).** Every non-bottom proposition has an atom below it.
 - **¬ □Strong Actuality.** Necessarily, there is a true strong world proposition: a true proposition that necessarily entails every proposition or its negation.
 - **¬ Tame Rigidity.** Every weakly rigid relation, including a proposition, is rigid.
-- **¬ BF (type t).** BF (type t) in the displayed closed propositional formulation.
+- **¬ BF (type t).** If every proposition necessarily has a property, then necessarily every proposition has it.
 - **¬ □Two-hat necessity implies ND-necessity.** Necessarily, whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat. In C this is the identity $\hat{\hat\Box}=\Box_{\ne}$.
 - **¬ Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **¬ Infinity Schema (type e).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.

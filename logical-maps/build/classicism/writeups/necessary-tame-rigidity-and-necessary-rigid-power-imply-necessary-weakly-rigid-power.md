@@ -4,16 +4,20 @@
 
 ## Premises
 
-- **□Tame Rigidity.** Every closed instance of Tame Rigidity is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
-- **□Rigid Power.** Every closed instance of Rigid Power is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Tame Rigidity.** Necessarily, every weakly rigid relation, including a proposition, is rigid.
+- **□Rigid Power.** Necessarily, if a relation is rigid, so is the property of being a rigid relation that entails it.
 
 ## Conclusion
 
-- **□Weakly Rigid Power.** Every closed instance of Weakly Rigid Power is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Weakly Rigid Power.** Necessarily, if a relation is weakly rigid, so is the property of being a weakly rigid relation that entails it.
 
 ## Proof
 
 The argument of necessary-tame-rigidity-and-rigid-power-imply-weakly-rigid-power is a C-proof of each instance of Weakly Rigid Power from the corresponding instances of □Tame Rigidity and Rigid Power. Necessitate that conditional. By 4, each instance of □Tame Rigidity gives its own necessitation, so K with the boxed premise instances gives the boxed conclusion instance. No type quantifier is placed inside the box.
+
+## Notes
+
+The boxed form of [[tame-rigidity-and-rigid-power-imply-weakly-rigid-power]].
 
 ## Sources
 

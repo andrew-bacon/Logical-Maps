@@ -8,7 +8,7 @@
 
 ## Conclusion
 
-- **Atomicity (type t).** Atomicity (type t) in the displayed closed propositional formulation.
+- **Atomicity (type t).** Every non-bottom proposition has an atom below it.
 
 ## Proof
 

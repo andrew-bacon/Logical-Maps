@@ -327,12 +327,12 @@ Result — Source: Classicism (2024); produced by Andrew Bacon and Cian Dorr; re
 </p>
 <h2 id="premises">Premises</h2>
 <ul>
-<li><strong>ND (type t).</strong> ND (type t) in the displayed closed propositional formulation.</li>
-<li><strong>BF (type t).</strong> BF (type t) in the displayed closed propositional formulation.</li>
+<li><strong>ND (type t).</strong> Distinct propositions are necessarily distinct.</li>
+<li><strong>BF (type t).</strong> If every proposition necessarily has a property, then necessarily every proposition has it.</li>
 </ul>
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li><strong>□ND (type t).</strong> Necessarily, ND (type t) holds, in the displayed closed propositional formulation.</li>
+<li><strong>□ND (type t).</strong> Necessarily, distinct propositions are necessarily distinct.</li>
 </ul>
 <h2 id="proof">Proof</h2>
 <p>The proof of Proposition 2.4 at type <span class="math inline">t</span>. For propositions <span class="math inline">p,q</span>, the classical identity cases, NI and ND (type t) give <span class="math inline">\Box(p=q)\lor\Box(p\ne q)</span>. Using 4, strengthen the second disjunct to <span class="math inline">\Box\Box(p\ne q)</span>; normal modal reasoning yields <span class="math inline">\Box(p=q\lor\Box(p\ne q))</span>, equivalently <span class="math inline">\Box(p\ne q\to\Box(p\ne q))</span>. Generalize over <span class="math inline">q</span> and apply BF (type t) with <span class="math inline">X:=\lambda q\, .\,(p\ne q\to\Box(p\ne q))</span>, then generalize over <span class="math inline">p</span> and apply it again with <span class="math inline">X:=\lambda p\, .\,\forall q\, .\,(p\ne q\to\Box(p\ne q))</span>, both of type <span class="math inline">t\to t</span>. The result is the boxed closed instance of ND (type t).</p>

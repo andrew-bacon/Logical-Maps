@@ -12,7 +12,7 @@
 - **No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
 - **No Contingency (signature Σ).** Each closed sentence of the language of the fixed signature Sigma, if true, is necessary. A sentence schema, standing to No Pure Contingency as Possibility Maximalism (signature Σ) stands to Possibility Maximalism (pure).
 - **B for sentences of Σ.** The B instance for every closed sentence of the language of the fixed signature Sigma.
-- **¬ Atomicity (type t).** Atomicity (type t) in the displayed closed propositional formulation.
+- **¬ Atomicity (type t).** Every non-bottom proposition has an atom below it.
 - **¬ Rigid Power.** If a relation is rigid, so is the property of being a rigid relation that entails it.
 - **¬ Tame Rigidity.** Every weakly rigid relation, including a proposition, is rigid.
 - **¬ Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.

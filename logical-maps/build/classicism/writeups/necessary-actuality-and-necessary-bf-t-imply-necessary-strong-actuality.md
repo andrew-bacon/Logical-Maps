@@ -5,7 +5,7 @@
 ## Premises
 
 - **□Actuality.** Necessarily, there is a true proposition that entails every true proposition.
-- **□BF (type t).** Necessarily, BF (type t) holds, in the displayed closed propositional formulation.
+- **□BF (type t).** Necessarily, if every proposition necessarily has a property, then necessarily every proposition has it.
 
 ## Conclusion
 
@@ -14,6 +14,10 @@
 ## Proof
 
 Necessitate the implication from Actuality and BF (type t) to Strong Actuality, a theorem of C; □Actuality and □BF (type t) supply the boxed antecedents, and K distributes.
+
+## Notes
+
+The boxed form of [[actuality-and-bf-t-imply-strong-actuality]].
 
 ## Sources
 

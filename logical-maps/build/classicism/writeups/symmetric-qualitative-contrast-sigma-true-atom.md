@@ -7,11 +7,11 @@
 - **□ND.** Necessarily, distinct things of any type are necessarily distinct.
 - **Actuality.** There is a true proposition that entails every true proposition.
 - **Axiom of Infinity (type t).** There are not finitely many propositions. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
-- **□Intensional Choice.** Every closed instance of Intensional Choice is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Intensional Choice.** Necessarily, if a property is necessarily instantiated, then some property entailing it is necessarily uniquely instantiated.
 - **Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **¬ Atomicity.** Every non-bottom entity of each relational type has an atom below it.
-- **¬ □Countable Boolean Completeness.** Every closed instance of Countable Boolean Completeness is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
-- **¬ □Boolean Completeness (type t).** Every closed instance of Boolean Completeness (type t) is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **¬ □Countable Boolean Completeness.** Necessarily, every countable property of entities of a relational type has a least upper bound in that type, with countability relative to a type $\sigma$ as in Countable Boolean Completeness; one instance for each $\sigma$.
+- **¬ □Boolean Completeness (type t).** Necessarily, every property of propositions has a greatest lower bound.
 - **¬ Relational Choice.** Every serial binary relation has a functional subrelation.
 - **¬ No Contingency (signature Σ).** Each closed sentence of the language of the fixed signature Sigma, if true, is necessary. A sentence schema, standing to No Pure Contingency as Possibility Maximalism (signature Σ) stands to Possibility Maximalism (pure).
 - **¬ Witnessed Possibility.** For pure-formulas P with free variables among a finite tuple x, and distinct matching nonlogical constants c, a witness to P entails that P at those constants is possible.

@@ -11,18 +11,18 @@
 - **Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **Infinity Schema (type e).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
 - **Rigid Power.** If a relation is rigid, so is the property of being a rigid relation that entails it.
-- **□Rigid Power.** Every closed instance of Rigid Power is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Rigid Power.** Necessarily, if a relation is rigid, so is the property of being a rigid relation that entails it.
 - **¬ B for pure sentences.** The B instance for every closed sentence in the pure language.
 - **¬ Infinity Schema (type t).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
 - **¬ Axiom of Infinity (type t).** There are not finitely many propositions. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
-- **¬ Strong Leibniz Biconditionals (type t).** The type-t instance of the Strong Leibniz Biconditionals: every possible proposition is entailed by a strong world proposition, one that is possible and necessarily entails every proposition or its negation.
+- **¬ Strong Leibniz Biconditionals (type t).** Every possible proposition is entailed by a strong world proposition, one that is possible and necessarily entails every proposition or its negation.
 - **¬ Fregean Axiom.** Materially equivalent propositions are identical.
 - **¬ Witnessed Possibility.** For pure-formulas P with free variables among a finite tuple x, and distinct matching nonlogical constants c, a witness to P entails that P at those constants is possible.
 - **¬ Separated Structure.** For each typed nonlogical constant c and closed same-typed terms F,G not containing c, equality after application to c implies equality of F and G.
 - **¬ Independence (signature Σ).** No constant of Sigma is a pure operation applied to other constants: for a closed pure term A and distinct constants c, d_1,…,d_n with n ≥ 0, c differs from A applied to the d’s. With n = 0, no constant denotes a pure entity.
 - **¬ Maximalism (signature Σ).** The Maximalism schema for the fixed nonlogical signature Σ: every closed identity of its language not provable in C(Σ) is false.
 - **¬ Relational Choice.** Every serial binary relation has a functional subrelation.
-- **¬ ND (type t).** ND (type t) in the displayed closed propositional formulation.
+- **¬ ND (type t).** Distinct propositions are necessarily distinct.
 
 ## Definition
 

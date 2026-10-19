@@ -8,7 +8,7 @@
 
 ## Conclusion
 
-- **□Rigid Rigidity.** Every closed instance of Rigid Rigidity is necessary. Retain the same type range.
+- **□Rigid Rigidity.** Necessarily, being rigid is a rigid property of relations, including propositions.
 
 ## Proof
 

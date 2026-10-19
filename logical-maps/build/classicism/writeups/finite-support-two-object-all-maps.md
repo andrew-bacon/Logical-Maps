@@ -10,18 +10,18 @@
 - **□Relational Choice.** Necessarily, every serial binary relation has a functional subrelation.
 - **Necessity of Arithmetic.** Every arithmetical sentence is either necessarily true or necessarily false, given that possibly zero is not a successor and successor is injective on numbers, where the numbers are the finite cardinalities of properties of a type $\sigma$. One sentence for each type $\sigma$ and each arithmetical sentence at $\sigma$.
 - **B for sentences of Σ.** The B instance for every closed sentence of the language of the fixed signature Sigma.
-- **□Rigid Power.** Every closed instance of Rigid Power is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Rigid Power.** Necessarily, if a relation is rigid, so is the property of being a rigid relation that entails it.
 - **Two-hat necessity implies ND-necessity.** Whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat.
 - **□5-necessity implies two-hat necessity.** Necessarily, whatever is 5-necessary is two-hat necessary. In C this is the identity $\Box_5=\hat{\hat\Box}$.
-- **□Intensional Choice.** Every closed instance of Intensional Choice is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Intensional Choice.** Necessarily, if a property is necessarily instantiated, then some property entailing it is necessarily uniquely instantiated.
 - **□Transversal Choice.** Necessarily, every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
 - **Transversal Choice.** Every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
 - **¬ □BF.** Necessarily, the Barcan Formula holds at every type. The predicate formulation closes the formula schema using lambda abstraction.
 - **¬ Atomlessness.** Atomlessness in the displayed closed propositional formulation.
 - **¬ Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
-- **¬ Boolean Completeness (type t).** Boolean Completeness (type t) in the displayed closed propositional formulation.
+- **¬ Boolean Completeness (type t).** Every property of propositions has a greatest lower bound.
 - **¬ Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable relative to a type $\sigma$ when it injects into the finite cardinalities of properties of type $\sigma$; one instance for each $\sigma$.
-- **¬ □BF (type t).** Necessarily, BF (type t) holds, in the displayed closed propositional formulation.
+- **¬ □BF (type t).** Necessarily, if every proposition necessarily has a property, then necessarily every proposition has it.
 - **¬ Inextensible Comprehension.** Every relation, including a proposition, is coextensive with a inextensible one.
 - **¬ Vicinity.** There is a true proposition that entails the possibility of each true proposition.
 - **¬ Weakly Inextensible Comprehension.** Every relation, including a proposition, is coextensive with a weakly inextensible one.

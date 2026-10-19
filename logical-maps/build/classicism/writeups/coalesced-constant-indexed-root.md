@@ -15,9 +15,9 @@
 - **¬ Tame Rigidity.** Every weakly rigid relation, including a proposition, is rigid.
 - **¬ Rigid Power.** If a relation is rigid, so is the property of being a rigid relation that entails it.
 - **¬ Intensional Choice.** If a property is necessarily instantiated, then some property entailing it is necessarily uniquely instantiated.
-- **¬ BF (type t).** BF (type t) in the displayed closed propositional formulation.
-- **¬ Atomicity (type t).** Atomicity (type t) in the displayed closed propositional formulation.
-- **¬ Boolean Completeness (type t).** Boolean Completeness (type t) in the displayed closed propositional formulation.
+- **¬ BF (type t).** If every proposition necessarily has a property, then necessarily every proposition has it.
+- **¬ Atomicity (type t).** Every non-bottom proposition has an atom below it.
+- **¬ Boolean Completeness (type t).** Every property of propositions has a greatest lower bound.
 - **¬ □Vicinity.** Necessarily, there is a true proposition that entails the possibility of each true proposition.
 - **¬ □Weakly Inextensible Comprehension.** Necessarily, every relation, including a proposition, is coextensive with a weakly inextensible one.
 - **¬ □Transversal.** Necessarily, there is a property of properties that picks out exactly one property from each coextension class, that is, exactly one property coextensive with any given property.

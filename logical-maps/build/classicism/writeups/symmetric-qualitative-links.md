@@ -14,7 +14,7 @@
 - **No Contingency (signature Σ).** Each closed sentence of the language of the fixed signature Sigma, if true, is necessary. A sentence schema, standing to No Pure Contingency as Possibility Maximalism (signature Σ) stands to Possibility Maximalism (pure).
 - **B for sentences of Σ.** The B instance for every closed sentence of the language of the fixed signature Sigma.
 - **¬ Rigid Comprehension.** Every relation, including a proposition, is coextensive with a rigid one.
-- **¬ Atomicity (type t).** Atomicity (type t) in the displayed closed propositional formulation.
+- **¬ Atomicity (type t).** Every non-bottom proposition has an atom below it.
 - **¬ Intensional Choice.** If a property is necessarily instantiated, then some property entailing it is necessarily uniquely instantiated.
 - **¬ Rigid Power.** If a relation is rigid, so is the property of being a rigid relation that entails it.
 - **¬ Relational Choice.** Every serial binary relation has a functional subrelation.

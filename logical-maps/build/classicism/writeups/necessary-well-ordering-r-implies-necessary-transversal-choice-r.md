@@ -12,7 +12,7 @@
 
 ## Proof
 
-The argument of well-ordering-r-implies-transversal-choice-r derives the conclusion from the premises in C, with no optional hypothesis, so the corresponding implication between closed instances is a theorem of C. Necessitate it and apply K to the boxed premises. Type ranges stay outside the box.
+The argument of [[well-ordering-r-implies-transversal-choice-r]] derives the conclusion from the premises in C, with no optional hypothesis, so the corresponding implication between closed instances is a theorem of C. Necessitate it and apply K to the boxed premises. Type ranges stay outside the box.
 
 ## Sources
 

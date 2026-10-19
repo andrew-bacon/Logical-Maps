@@ -17,6 +17,8 @@ Necessitate the composition $p\to\Box_5p\to\Box_{\ne}p$ and distribute the box o
 
 ## Notes
 
+The boxed form of [[five-implies-nd-and-truth-implies-five-imply-truth-implies-nd]].
+
 Boxed form of a composition or decomposition fact for the chain of necessity operators.
 
 ## Sources

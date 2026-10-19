@@ -4,19 +4,19 @@
 
 ## Premises
 
-- **□Weak Rigid Comprehension.** Every closed instance of Weak Rigid Comprehension is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Weak Rigid Comprehension.** Necessarily, every relation, including a proposition, is coextensive with a weakly rigid one.
 
 ## Conclusion
 
-- **□Persistent Comprehension.** Every closed instance of Persistent Comprehension is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Persistent Comprehension.** Necessarily, every relation, including a proposition, is coextensive with a persistent one.
 
 ## Proof
 
-The proof of weak-rigid-comprehension-r-implies-persistent-comprehension-r uses its premises only at finitely many closed instances and nothing beyond C. So for each closed instance of the conclusion, C proves the conditional from the corresponding premise instances to it. Necessitate that theorem and apply K with the boxed premise instances. Generalization over the admitted types is metalinguistic; no type quantifier is placed inside the box.
+The proof of [[weak-rigid-comprehension-r-implies-persistent-comprehension-r]] uses its premises only at finitely many closed instances and nothing beyond C. So for each closed instance of the conclusion, C proves the conditional from the corresponding premise instances to it. Necessitate that theorem and apply K with the boxed premise instances. Generalization over the admitted types is metalinguistic; no type quantifier is placed inside the box.
 
 ## Notes
 
-Boxed counterpart of weak-rigid-comprehension-r-implies-persistent-comprehension-r.
+Boxed counterpart of [[weak-rigid-comprehension-r-implies-persistent-comprehension-r]].
 
 ## Sources
 

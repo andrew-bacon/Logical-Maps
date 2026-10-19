@@ -5,7 +5,7 @@
 ## Premises
 
 - **□Relational Choice.** Necessarily, every serial binary relation has a functional subrelation.
-- **□Intensional Choice.** Every closed instance of Intensional Choice is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Intensional Choice.** Necessarily, if a property is necessarily instantiated, then some property entailing it is necessarily uniquely instantiated.
 
 ## Conclusion
 
@@ -13,7 +13,7 @@
 
 ## Proof
 
-The argument of necessary-relational-choice-and-intensional-choice-imply-modalized-relational-choice is a C-proof of each instance from instances of □Relational Choice and Intensional Choice. Necessitate it; by 4 each instance of □Relational Choice gives its own necessitation, and K with the boxed premises gives the boxed conclusion.
+The argument of [[necessary-relational-choice-and-intensional-choice-imply-modalized-relational-choice]] is a C-proof of each instance from instances of □Relational Choice and Intensional Choice. Necessitate it; by 4 each instance of □Relational Choice gives its own necessitation, and K with the boxed premises gives the boxed conclusion.
 
 ## Sources
 

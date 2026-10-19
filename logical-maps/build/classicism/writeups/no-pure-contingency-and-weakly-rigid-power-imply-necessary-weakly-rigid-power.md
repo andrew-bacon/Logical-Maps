@@ -9,7 +9,7 @@
 
 ## Conclusion
 
-- **□Weakly Rigid Power.** Every closed instance of Weakly Rigid Power is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Weakly Rigid Power.** Necessarily, if a relation is weakly rigid, so is the property of being a weakly rigid relation that entails it.
 
 ## Proof
 

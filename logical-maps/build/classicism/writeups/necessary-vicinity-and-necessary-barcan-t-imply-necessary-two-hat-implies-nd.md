@@ -5,7 +5,7 @@
 ## Premises
 
 - **□Vicinity.** Necessarily, there is a true proposition that entails the possibility of each true proposition.
-- **□BF (type t).** Necessarily, BF (type t) holds, in the displayed closed propositional formulation.
+- **□BF (type t).** Necessarily, if every proposition necessarily has a property, then necessarily every proposition has it.
 
 ## Conclusion
 
@@ -16,6 +16,8 @@
 The unboxed result shows that Vicinity and BF at type $t$ give B for $\Box_{\ne}$ at the world of evaluation; under the boxed premises this holds at every world, so $\Box_{\ne}$ is necessarily B, and then Propositions D3, D6 and D11 of The Bounds of Possibility, Appendix D, with fact (A5), give $\Box_{\ne}=\Box_5$ (see the result that collapse propagates upward), in particular the boxed principle.
 
 ## Notes
+
+The boxed form of [[vicinity-and-barcan-t-imply-two-hat-implies-nd]].
 
 Boxed form; the hypotheses are the necessitations of those of the unboxed result.
 

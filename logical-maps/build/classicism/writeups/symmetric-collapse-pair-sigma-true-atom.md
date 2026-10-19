@@ -12,7 +12,7 @@
 - **Boolean Completeness.** Every property of entities of a relational type has a greatest lower bound in that type.
 - **Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
-- **¬ Atomicity (type t).** Atomicity (type t) in the displayed closed propositional formulation.
+- **¬ Atomicity (type t).** Every non-bottom proposition has an atom below it.
 - **¬ Rigid Power.** If a relation is rigid, so is the property of being a rigid relation that entails it.
 - **¬ Rigid Rigidity.** Being rigid is a rigid property of relations, including propositions.
 - **¬ Relational Choice.** Every serial binary relation has a functional subrelation.

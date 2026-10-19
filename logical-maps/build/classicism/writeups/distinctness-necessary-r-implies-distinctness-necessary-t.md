@@ -8,7 +8,7 @@
 
 ## Conclusion
 
-- **ND (type t).** ND (type t) in the displayed closed propositional formulation.
+- **ND (type t).** Distinct propositions are necessarily distinct.
 
 ## Proof
 

@@ -12,7 +12,7 @@
 
 ## Proof
 
-The argument of modalized-relational-choice-implies-relational-choice, necessitated, with K.
+The argument of [[modalized-relational-choice-implies-relational-choice]], necessitated, with K.
 
 ## Sources
 

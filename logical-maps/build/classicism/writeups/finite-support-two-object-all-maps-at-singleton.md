@@ -9,12 +9,12 @@
 - **Actuality.** There is a true proposition that entails every true proposition.
 - **Possible Infinity (type e).** Possibly there are not finitely many individuals: the Axiom of Infinity at this type, under a diamond.
 - **Plenitude.** Every total single-valued binary relation is represented by an operation. Its output type is relational, as required by the type system.
-- **□Intensional Choice.** Every closed instance of Intensional Choice is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Intensional Choice.** Necessarily, if a property is necessarily instantiated, then some property entailing it is necessarily uniquely instantiated.
 - **□Relational Choice.** Necessarily, every serial binary relation has a functional subrelation.
 - **□Transversal Choice.** Necessarily, every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
 - **Transversal Choice.** Every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
-- **¬ □Atomicity (type t).** Every closed instance of Atomicity (type t) is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
-- **¬ □Boolean Completeness (type t).** Every closed instance of Boolean Completeness (type t) is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **¬ □Atomicity (type t).** Necessarily, every non-bottom proposition has an atom below it.
+- **¬ □Boolean Completeness (type t).** Necessarily, every property of propositions has a greatest lower bound.
 - **¬ No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
 - **¬ BF.** The Barcan Formula at every type. The predicate formulation closes the formula schema using lambda abstraction.
 - **¬ Infinity Schema (type e).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.

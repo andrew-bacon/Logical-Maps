@@ -4,11 +4,11 @@
 
 ## Premises
 
-- **□BF (type t).** Necessarily, BF (type t) holds, in the displayed closed propositional formulation.
+- **□BF (type t).** Necessarily, if every proposition necessarily has a property, then necessarily every proposition has it.
 
 ## Conclusion
 
-- **BF (type t).** BF (type t) in the displayed closed propositional formulation.
+- **BF (type t).** If every proposition necessarily has a property, then necessarily every proposition has it.
 
 ## Proof
 

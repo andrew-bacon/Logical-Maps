@@ -16,6 +16,8 @@ Necessitate the proof of the unboxed result: The chain $\Box\le\Box_{\ne}\le\hat
 
 ## Notes
 
+The boxed form of [[five-implies-nd-implies-two-hat-implies-nd]].
+
 Boxed form of the corresponding unboxed result.
 
 ## Sources

@@ -14,6 +14,10 @@
 
 The recorded derivation of Weakly Inextensible Comprehension from Actuality uses no optional hypothesis, so for each closed instance $\phi$ of Weakly Inextensible Comprehension, Actuality $\to\phi$ is a theorem of C. Necessitate it and apply K to $\Box$Actuality.
 
+## Notes
+
+The boxed form of [[actuality-implies-weakly-inextensible-comprehension-r]].
+
 ## Sources
 
 - **Classicism** — Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.3, n. 38, p. 29.

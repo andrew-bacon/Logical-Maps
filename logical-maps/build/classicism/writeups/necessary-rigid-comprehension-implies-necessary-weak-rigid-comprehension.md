@@ -8,11 +8,15 @@
 
 ## Conclusion
 
-- **□Weak Rigid Comprehension.** Every closed instance of Weak Rigid Comprehension is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Weak Rigid Comprehension.** Necessarily, every relation, including a proposition, is coextensive with a weakly rigid one.
 
 ## Proof
 
 The argument of Rigid Comprehension ⇒ Weak Rigid Comprehension (every rigid relation is weakly rigid, by T) uses Rigid Comprehension only at the conclusion's type tuple and nothing beyond C. Necessitate the resulting theorem of C at each closed instance and apply K with the boxed premise instance.
+
+## Notes
+
+The boxed form of [[rigid-comprehension-r-implies-weak-rigid-comprehension-r]].
 
 ## Sources
 

@@ -13,11 +13,11 @@
 - **Tame Rigidity.** Every weakly rigid relation, including a proposition, is rigid.
 - **No Contingency (signature Σ).** Each closed sentence of the language of the fixed signature Sigma, if true, is necessary. A sentence schema, standing to No Pure Contingency as Possibility Maximalism (signature Σ) stands to Possibility Maximalism (pure).
 - **B for sentences of Σ.** The B instance for every closed sentence of the language of the fixed signature Sigma.
-- **¬ Atomicity (type t).** Atomicity (type t) in the displayed closed propositional formulation.
+- **¬ Atomicity (type t).** Every non-bottom proposition has an atom below it.
 - **¬ Rigid Power.** If a relation is rigid, so is the property of being a rigid relation that entails it.
 - **¬ Relational Choice.** Every serial binary relation has a functional subrelation.
 - **¬ BF.** The Barcan Formula at every type. The predicate formulation closes the formula schema using lambda abstraction.
-- **¬ BF (type t).** BF (type t) in the displayed closed propositional formulation.
+- **¬ BF (type t).** If every proposition necessarily has a property, then necessarily every proposition has it.
 - **¬ Intensional Choice.** If a property is necessarily instantiated, then some property entailing it is necessarily uniquely instantiated.
 - **¬ Witnessed Possibility.** For pure-formulas P with free variables among a finite tuple x, and distinct matching nonlogical constants c, a witness to P entails that P at those constants is possible.
 - **¬ Separated Structure.** For each typed nonlogical constant c and closed same-typed terms F,G not containing c, equality after application to c implies equality of F and G.

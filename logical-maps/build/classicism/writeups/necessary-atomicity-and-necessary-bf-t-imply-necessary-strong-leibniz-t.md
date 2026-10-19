@@ -5,7 +5,7 @@
 ## Premises
 
 - **□Atomicity.** Necessarily, every non-bottom entity of each relational type has an atom below it.
-- **□BF (type t).** Necessarily, BF (type t) holds, in the displayed closed propositional formulation.
+- **□BF (type t).** Necessarily, if every proposition necessarily has a property, then necessarily every proposition has it.
 
 ## Conclusion
 

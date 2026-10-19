@@ -12,7 +12,7 @@
 
 ## Proof
 
-Modal Well-Ordering implies its own necessitation by 4, since $\Box\operatorname{WO}(W)$ gives $\Box\Box\operatorname{WO}(W)$; necessitate modal-well-ordering-implies-modalized-relational-choice and apply K.
+Modal Well-Ordering implies its own necessitation by 4, since $\Box\operatorname{WO}(W)$ gives $\Box\Box\operatorname{WO}(W)$; necessitate [[modal-well-ordering-implies-modalized-relational-choice]] and apply K.
 
 ## Notes
 

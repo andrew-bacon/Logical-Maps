@@ -14,6 +14,10 @@
 
 Every boxed instance of BF (relational types) is a boxed instance of BF.
 
+## Notes
+
+The boxed form of [[barcan-r-implies-barcan-relational]].
+
 ## Sources
 
 - **Dorr 11 Oct** — Cian Dorr, suggestion of 11 October 2026.

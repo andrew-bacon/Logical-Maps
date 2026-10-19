@@ -16,6 +16,8 @@ Proposition D21 of The Bounds of Possibility, Appendix D, proves $\forall p(\Box
 
 ## Notes
 
+The boxed form of [[actuality-implies-five-implies-two-hat]].
+
 Appendix D notes that the proof needs only this consequence of the rigidity axioms (Proposition C7). Corollary D23 is the same fact stated as $\hat{\hat{\hat\Box}}\equiv\hat{\hat\Box}$.
 
 ## Sources

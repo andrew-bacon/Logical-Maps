@@ -7,8 +7,8 @@
 - **□Rigid Comprehension.** Necessarily, every relation, including a proposition, is coextensive with a rigid one.
 - **□Relational Choice.** Necessarily, every serial binary relation has a functional subrelation.
 - **Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
-- **□Atomicity (type t).** Every closed instance of Atomicity (type t) is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
-- **□BF (type t).** Necessarily, BF (type t) holds, in the displayed closed propositional formulation.
+- **□Atomicity (type t).** Necessarily, every non-bottom proposition has an atom below it.
+- **□BF (type t).** Necessarily, if every proposition necessarily has a property, then necessarily every proposition has it.
 - **□Truth implies ND-necessity.** Necessarily, every truth is ND-necessary. In C this is the identity $\Box_{\ne}=\lambda p\, .\,p$.
 - **¬ Rigid Power.** If a relation is rigid, so is the property of being a rigid relation that entails it.
 - **¬ Rigid Rigidity.** Being rigid is a rigid property of relations, including propositions.

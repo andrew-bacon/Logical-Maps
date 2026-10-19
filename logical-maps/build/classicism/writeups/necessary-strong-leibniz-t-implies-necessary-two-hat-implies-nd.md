@@ -16,6 +16,8 @@ Necessitate the proof of the unboxed result: under the boxed premise the argumen
 
 ## Notes
 
+The boxed form of [[strong-leibniz-t-implies-two-hat-implies-nd]].
+
 Boxed form; by the collapse-propagation result it makes $\Box_{\ne}$, $\hat{\hat\Box}$ and $\Box_5$ identical.
 
 ## Sources

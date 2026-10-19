@@ -9,7 +9,7 @@
 
 ## Conclusion
 
-- **□Weak Rigid Comprehension.** Every closed instance of Weak Rigid Comprehension is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Weak Rigid Comprehension.** Necessarily, every relation, including a proposition, is coextensive with a weakly rigid one.
 
 ## Proof
 
@@ -17,7 +17,7 @@ The argument of Boolean Completeness + Actuality ⇒ Weak Rigid Comprehension us
 
 ## Notes
 
-The boxed counterpart of completeness-and-actuality-imply-weak-rigid-comprehension, in the uniform pattern of the boxed results of 2 October 2026.
+The boxed counterpart of [[completeness-and-actuality-imply-weak-rigid-comprehension]], in the uniform pattern of the boxed results of 2 October 2026.
 
 ## Sources
 

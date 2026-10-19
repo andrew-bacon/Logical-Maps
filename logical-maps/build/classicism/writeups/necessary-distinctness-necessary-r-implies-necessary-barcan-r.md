@@ -14,6 +14,10 @@
 
 For any target BF instance, the proof of Proposition 2.3 uses finitely many boxed ND instances. By 4 the premise supplies the boxes of those boxed instances. Necessitate the closed conditional proved in Proposition 2.3 and apply K to obtain the boxed target BF instance.
 
+## Notes
+
+The boxed form of [[necessary-nd-implies-bf]].
+
 ## Sources
 
 - **Classicism** — Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, Proposition 2.3, p. 22; Figure 5, p. 23.

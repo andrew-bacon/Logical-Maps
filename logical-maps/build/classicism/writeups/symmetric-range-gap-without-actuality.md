@@ -16,7 +16,7 @@
 - **B for sentences of Σ.** The B instance for every closed sentence of the language of the fixed signature Sigma.
 - **¬ Relational Choice.** Every serial binary relation has a functional subrelation.
 - **¬ BF.** The Barcan Formula at every type. The predicate formulation closes the formula schema using lambda abstraction.
-- **¬ BF (type t).** BF (type t) in the displayed closed propositional formulation.
+- **¬ BF (type t).** If every proposition necessarily has a property, then necessarily every proposition has it.
 - **¬ Intensional Choice.** If a property is necessarily instantiated, then some property entailing it is necessarily uniquely instantiated.
 - **¬ Witnessed Possibility.** For pure-formulas P with free variables among a finite tuple x, and distinct matching nonlogical constants c, a witness to P entails that P at those constants is possible.
 - **¬ Separated Structure.** For each typed nonlogical constant c and closed same-typed terms F,G not containing c, equality after application to c implies equality of F and G.

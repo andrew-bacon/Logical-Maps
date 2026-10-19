@@ -8,11 +8,15 @@
 
 ## Conclusion
 
-- **□Tame Rigidity.** Every closed instance of Tame Rigidity is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Tame Rigidity.** Necessarily, every weakly rigid relation, including a proposition, is rigid.
 
 ## Proof
 
 The argument of Rigid Comprehension ⇒ Tame Rigidity uses Rigid Comprehension only at the conclusion's type tuple and nothing beyond C. So for each closed instance, C proves the conditional from the instance of Rigid Comprehension to the instance of Tame Rigidity. Necessitate that theorem and apply K with the boxed premise instance. Generalization over the admitted types is metalinguistic; no type quantifier is placed inside the box.
+
+## Notes
+
+The boxed form of [[rigid-comprehension-implies-tame-rigidity]].
 
 ## Sources
 

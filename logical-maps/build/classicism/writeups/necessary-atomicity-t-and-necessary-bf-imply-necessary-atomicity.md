@@ -4,7 +4,7 @@
 
 ## Premises
 
-- **□Atomicity (type t).** Every closed instance of Atomicity (type t) is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Atomicity (type t).** Necessarily, every non-bottom proposition has an atom below it.
 - **□BF.** Necessarily, the Barcan Formula holds at every type. The predicate formulation closes the formula schema using lambda abstraction.
 
 ## Conclusion
@@ -13,11 +13,11 @@
 
 ## Proof
 
-The proof of atomicity-t-and-bf-imply-atomicity uses its premises only at finitely many closed instances and nothing beyond C. So for each closed instance of the conclusion, C proves the conditional from the corresponding premise instances to it. Necessitate that theorem and apply K with the boxed premise instances. Generalization over the admitted types is metalinguistic; no type quantifier is placed inside the box.
+The proof of [[atomicity-t-and-bf-imply-atomicity]] uses its premises only at finitely many closed instances and nothing beyond C. So for each closed instance of the conclusion, C proves the conditional from the corresponding premise instances to it. Necessitate that theorem and apply K with the boxed premise instances. Generalization over the admitted types is metalinguistic; no type quantifier is placed inside the box.
 
 ## Notes
 
-Boxed counterpart of atomicity-t-and-bf-imply-atomicity.
+Boxed counterpart of [[atomicity-t-and-bf-imply-atomicity]].
 
 ## Sources
 

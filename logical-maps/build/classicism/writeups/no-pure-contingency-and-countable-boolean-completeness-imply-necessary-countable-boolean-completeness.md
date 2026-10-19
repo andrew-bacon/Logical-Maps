@@ -9,7 +9,7 @@
 
 ## Conclusion
 
-- **□Countable Boolean Completeness.** Every closed instance of Countable Boolean Completeness is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Countable Boolean Completeness.** Necessarily, every countable property of entities of a relational type has a least upper bound in that type, with countability relative to a type $\sigma$ as in Countable Boolean Completeness; one instance for each $\sigma$.
 
 ## Proof
 

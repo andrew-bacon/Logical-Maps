@@ -1,0 +1,22 @@
+# □Vicinity ∧ □Truth implies ND-necessity ⇒ □Actuality
+
+<p class='cert'>Result — Source: Misc.; produced by Cian Dorr, 27 September 2026 (unboxed form); boxed form recorded by Claude Opus 5.5 (Anthropic), 19 October 2026; recorded by Claude Opus 5.5 (Anthropic), 19 October 2026.</p>
+
+## Premises
+
+- **□Vicinity.** Necessarily, there is a true proposition that entails the possibility of each true proposition.
+- **□Truth implies ND-necessity.** Necessarily, every truth is ND-necessary. In C this is the identity $\Box_{\ne}=\lambda p\, .\,p$.
+
+## Conclusion
+
+- **□Actuality.** Necessarily, there is a true proposition that entails every true proposition.
+
+## Proof
+
+The boxed form of [[vicinity-and-distinctness-preserving-collapse-imply-actuality]]. Its proof derives each instance of the conclusion in C from finitely many instances of the premises; necessitate the conditional and apply K.
+
+## Sources
+
+- **Dorr 27 Sep** — Cian Dorr, observation of 27 September 2026.
+
+<p class='cert'>Record: <code>topics/classicism/results/necessary-vicinity-and-necessary-distinctness-preserving-collapse-imply-necessary-actuality.yaml</code></p>

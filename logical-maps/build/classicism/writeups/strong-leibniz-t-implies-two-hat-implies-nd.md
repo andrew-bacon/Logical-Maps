@@ -4,7 +4,7 @@
 
 ## Premises
 
-- **Strong Leibniz Biconditionals (type t).** The type-t instance of the Strong Leibniz Biconditionals: every possible proposition is entailed by a strong world proposition, one that is possible and necessarily entails every proposition or its negation.
+- **Strong Leibniz Biconditionals (type t).** Every possible proposition is entailed by a strong world proposition, one that is possible and necessarily entails every proposition or its negation.
 
 ## Conclusion
 

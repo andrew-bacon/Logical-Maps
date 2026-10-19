@@ -12,7 +12,7 @@
 
 ## Proof
 
-The argument of gallin-comprehension-implies-strong-actuality derives the conclusion from the premise in C, with no optional hypothesis, so the corresponding implication between closed instances is a theorem of C. Necessitate it and apply K to the boxed premise. Type ranges stay outside the box.
+The argument of [[gallin-comprehension-implies-strong-actuality]] derives the conclusion from the premise in C, with no optional hypothesis, so the corresponding implication between closed instances is a theorem of C. Necessitate it and apply K to the boxed premise. Type ranges stay outside the box.
 
 ## Sources
 

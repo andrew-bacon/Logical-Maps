@@ -4,7 +4,7 @@
 
 ## Premises
 
-- **Atomicity (type t).** Atomicity (type t) in the displayed closed propositional formulation.
+- **Atomicity (type t).** Every non-bottom proposition has an atom below it.
 - **Weakly Inextensible Comprehension.** Every relation, including a proposition, is coextensive with a weakly inextensible one.
 
 ## Conclusion

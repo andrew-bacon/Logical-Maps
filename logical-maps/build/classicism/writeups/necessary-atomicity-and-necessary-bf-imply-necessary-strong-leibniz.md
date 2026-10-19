@@ -15,6 +15,10 @@
 
 Necessitate the recorded implication from Atomicity and BF to the Strong Leibniz Biconditionals, a theorem of C, and distribute the box over the conjunction of premises with K.
 
+## Notes
+
+The boxed form of [[atomicity-and-bf-imply-strong-leibniz]].
+
 ## Sources
 
 - **Philosophical Introduction to HOL** — Andrew Bacon, A Philosophical Introduction to Higher-Order Logics, Routledge, 2024, §8.2, Exercise 8.12 and Theorem 8.2, pp. 166, 169–170.

@@ -8,15 +8,15 @@
 
 ## Conclusion
 
-- **□Persistent Comprehension.** Every closed instance of Persistent Comprehension is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Persistent Comprehension.** Necessarily, every relation, including a proposition, is coextensive with a persistent one.
 
 ## Proof
 
-The proof of actuality-implies-persistent-comprehension-r uses its premises only at finitely many closed instances and nothing beyond C. So for each closed instance of the conclusion, C proves the conditional from the corresponding premise instances to it. Necessitate that theorem and apply K with the boxed premise instances. Generalization over the admitted types is metalinguistic; no type quantifier is placed inside the box.
+The proof of [[actuality-implies-persistent-comprehension-r]] uses its premises only at finitely many closed instances and nothing beyond C. So for each closed instance of the conclusion, C proves the conditional from the corresponding premise instances to it. Necessitate that theorem and apply K with the boxed premise instances. Generalization over the admitted types is metalinguistic; no type quantifier is placed inside the box.
 
 ## Notes
 
-Boxed counterpart of actuality-implies-persistent-comprehension-r.
+Boxed counterpart of [[actuality-implies-persistent-comprehension-r]].
 
 ## Sources
 

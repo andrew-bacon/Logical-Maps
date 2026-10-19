@@ -14,6 +14,10 @@
 
 Instantiate the boxed type schema at $\sigma=t$.
 
+## Notes
+
+The boxed form of [[strong-leibniz-r-implies-strong-leibniz-t]].
+
 ## Sources
 
 - **Philosophical Introduction to HOL** — Andrew Bacon, A Philosophical Introduction to Higher-Order Logics, Routledge, 2024, §8.2, pp. 165–166.

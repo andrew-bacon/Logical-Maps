@@ -15,6 +15,10 @@
 
 Necessitate the recorded implication from Relational Choice and Plenitude to Functional Choice, a theorem of C, and distribute the box over the conjunction of premises with K.
 
+## Notes
+
+The boxed form of [[relational-choice-and-plenitude-imply-functional-choice-r]].
+
 ## Sources
 
 - **Classicism** — Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.3, pp. 31–33.

@@ -332,7 +332,7 @@ Result — Source: Misc., Lean <code>Classicism.Map.barcan_and_weakly_rigid_powe
 </ul>
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li><strong>□Tame Rigidity.</strong> Every closed instance of Tame Rigidity is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.</li>
+<li><strong>□Tame Rigidity.</strong> Necessarily, every weakly rigid relation, including a proposition, is rigid.</li>
 </ul>
 <h2 id="proof">Proof</h2>
 <p>Fix the type tuple <span class="math inline">\bar\sigma</span> and put <span class="math inline">T:=\lambda\bar x\, .\,\top</span>. <span class="math inline">T</span> is weakly persistent trivially. It is weakly inextensible: if <span class="math inline">\forall\bar x\, .\,\Box Z\bar x</span>, then BF (iterated over the tuple) gives <span class="math inline">\Box\forall\bar x\, .\,Z\bar x</span>, that is <span class="math inline">T\le Z</span>; for the empty tuple (<span class="math inline">T=\top</span>) no BF is needed. By Weakly Rigid Power, <span class="math inline">P_T:=\lambda Y\, .\,\operatorname{WeaklyRigid}(Y)\land Y\le T</span> is weakly rigid, and Tame Rigidity at type <span class="math inline">(\bar\sigma t)t</span>, which Weakly Rigid Power implies (recorded), makes it rigid, hence persistent: <span class="math inline">\Box\forall Y\, .\,P_TY\to\Box P_TY</span>. Since <span class="math inline">Y\le T</span> holds necessarily for every <span class="math inline">Y</span>, this is <span class="math inline">\Box\forall Y\, .\,\operatorname{WeaklyRigid}(Y)\to\Box\operatorname{WeaklyRigid}(Y)</span>, the instance of □Tame Rigidity at <span class="math inline">\bar\sigma</span>.</p>

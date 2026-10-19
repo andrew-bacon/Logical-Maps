@@ -8,11 +8,15 @@
 
 ## Conclusion
 
-- **□BF (type t).** Necessarily, BF (type t) holds, in the displayed closed propositional formulation.
+- **□BF (type t).** Necessarily, if every proposition necessarily has a property, then necessarily every proposition has it.
 
 ## Proof
 
 Take the type-t instance of the boxed source schema, retaining the whole object-variable closure inside the box.
+
+## Notes
+
+The boxed form of [[barcan-r-implies-barcan-t]].
 
 ## Sources
 

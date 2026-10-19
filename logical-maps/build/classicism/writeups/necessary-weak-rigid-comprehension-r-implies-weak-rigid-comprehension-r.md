@@ -4,7 +4,7 @@
 
 ## Premises
 
-- **□Weak Rigid Comprehension.** Every closed instance of Weak Rigid Comprehension is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Weak Rigid Comprehension.** Necessarily, every relation, including a proposition, is coextensive with a weakly rigid one.
 
 ## Conclusion
 

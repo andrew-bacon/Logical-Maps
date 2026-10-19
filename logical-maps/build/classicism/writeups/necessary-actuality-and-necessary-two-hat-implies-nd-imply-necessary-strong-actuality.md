@@ -17,6 +17,8 @@ Necessitate the proof of the unboxed result: under the boxed premises the argume
 
 ## Notes
 
+The boxed form of [[actuality-and-two-hat-implies-nd-imply-strong-actuality]].
+
 Boxed form.
 
 ## Sources

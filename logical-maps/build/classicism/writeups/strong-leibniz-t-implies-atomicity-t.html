@@ -327,11 +327,11 @@ Result — Source: Philosophical Introduction to HOL (2024), Lean <code>Classici
 </p>
 <h2 id="premises">Premises</h2>
 <ul>
-<li><strong>Strong Leibniz Biconditionals (type t).</strong> The type-t instance of the Strong Leibniz Biconditionals: every possible proposition is entailed by a strong world proposition, one that is possible and necessarily entails every proposition or its negation.</li>
+<li><strong>Strong Leibniz Biconditionals (type t).</strong> Every possible proposition is entailed by a strong world proposition, one that is possible and necessarily entails every proposition or its negation.</li>
 </ul>
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li><strong>Atomicity (type t).</strong> Atomicity (type t) in the displayed closed propositional formulation.</li>
+<li><strong>Atomicity (type t).</strong> Every non-bottom proposition has an atom below it.</li>
 </ul>
 <h2 id="proof">Proof</h2>
 <p>A strong world proposition is an atom: from <span class="math inline">\Box\forall q\, .\,w\le q\lor w\le\neg q</span>, T gives <span class="math inline">\forall q\, .\,w\le q\lor w\le\neg q</span>, and with <span class="math inline">w\ne\bot</span> this is <span class="math inline">\operatorname{Atom}_t(w)</span>. A possible <span class="math inline">p</span> is a non-bottom <span class="math inline">p</span>. So the strong world below <span class="math inline">p</span> is an atom below it.</p>

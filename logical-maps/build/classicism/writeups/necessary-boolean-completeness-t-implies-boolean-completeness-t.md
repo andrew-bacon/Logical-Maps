@@ -4,11 +4,11 @@
 
 ## Premises
 
-- **□Boolean Completeness (type t).** Every closed instance of Boolean Completeness (type t) is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Boolean Completeness (type t).** Necessarily, every property of propositions has a greatest lower bound.
 
 ## Conclusion
 
-- **Boolean Completeness (type t).** Boolean Completeness (type t) in the displayed closed propositional formulation.
+- **Boolean Completeness (type t).** Every property of propositions has a greatest lower bound.
 
 ## Proof
 

@@ -8,11 +8,15 @@
 
 ## Conclusion
 
-- **□ND (type t).** Necessarily, ND (type t) holds, in the displayed closed propositional formulation.
+- **□ND (type t).** Necessarily, distinct propositions are necessarily distinct.
 
 ## Proof
 
 Take the type-t instance of the boxed source schema, retaining the whole object-variable closure inside the box.
+
+## Notes
+
+The boxed form of [[distinctness-necessary-r-implies-distinctness-necessary-t]].
 
 ## Sources
 

@@ -8,11 +8,15 @@
 
 ## Conclusion
 
-- **□BF (type t).** Necessarily, BF (type t) holds, in the displayed closed propositional formulation.
+- **□BF (type t).** Necessarily, if every proposition necessarily has a property, then necessarily every proposition has it.
 
 ## Proof
 
 □BF (type t) is the instance of □BF (relational types) at $\sigma=t$.
+
+## Notes
+
+The boxed form of [[barcan-relational-implies-barcan-t]].
 
 ## Sources
 

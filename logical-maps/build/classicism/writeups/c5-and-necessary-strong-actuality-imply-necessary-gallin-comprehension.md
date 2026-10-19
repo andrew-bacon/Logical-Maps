@@ -13,11 +13,11 @@
 
 ## Proof
 
-The argument of nd-and-strong-actuality-imply-gallin-comprehension is a C-proof of each instance of Gallin Extensional Comprehension from ND and Strong Actuality. Necessitate it and apply K with the boxed premises.
+The argument of [[nd-and-strong-actuality-imply-gallin-comprehension]] is a C-proof of each instance of Gallin Extensional Comprehension from ND and Strong Actuality. Necessitate it and apply K with the boxed premises.
 
 ## Notes
 
-The boxed counterpart of nd-and-strong-actuality-imply-gallin-comprehension.
+The boxed counterpart of [[nd-and-strong-actuality-imply-gallin-comprehension]].
 
 ## Sources
 

@@ -4,7 +4,7 @@
 
 ## Premises
 
-- **□Tame Rigidity.** Every closed instance of Tame Rigidity is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Tame Rigidity.** Necessarily, every weakly rigid relation, including a proposition, is rigid.
 - **Rigid Power.** If a relation is rigid, so is the property of being a rigid relation that entails it.
 
 ## Conclusion

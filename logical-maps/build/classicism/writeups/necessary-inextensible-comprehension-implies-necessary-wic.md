@@ -4,7 +4,7 @@
 
 ## Premises
 
-- **□Inextensible Comprehension.** Every closed instance of Inextensible Comprehension is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Inextensible Comprehension.** Necessarily, every relation, including a proposition, is coextensive with an inextensible one.
 
 ## Conclusion
 
@@ -12,11 +12,11 @@
 
 ## Proof
 
-The proof of inextensible-comprehension-r-implies-weakly-inextensible-comprehension-r uses its premises only at finitely many closed instances and nothing beyond C. So for each closed instance of the conclusion, C proves the conditional from the corresponding premise instances to it. Necessitate that theorem and apply K with the boxed premise instances. Generalization over the admitted types is metalinguistic; no type quantifier is placed inside the box.
+The proof of [[inextensible-comprehension-r-implies-weakly-inextensible-comprehension-r]] uses its premises only at finitely many closed instances and nothing beyond C. So for each closed instance of the conclusion, C proves the conditional from the corresponding premise instances to it. Necessitate that theorem and apply K with the boxed premise instances. Generalization over the admitted types is metalinguistic; no type quantifier is placed inside the box.
 
 ## Notes
 
-Boxed counterpart of inextensible-comprehension-r-implies-weakly-inextensible-comprehension-r.
+Boxed counterpart of [[inextensible-comprehension-r-implies-weakly-inextensible-comprehension-r]].
 
 ## Sources
 

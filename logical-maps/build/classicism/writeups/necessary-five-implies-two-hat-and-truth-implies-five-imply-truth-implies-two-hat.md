@@ -17,6 +17,8 @@ Necessitate the proof of the unboxed result: Compose: $p\to\Box_5p\to\hat{\hat\B
 
 ## Notes
 
+The boxed form of [[five-implies-two-hat-and-truth-implies-five-imply-truth-implies-two-hat]].
+
 Boxed form of the corresponding unboxed result.
 
 ## Sources

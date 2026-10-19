@@ -8,11 +8,11 @@
 
 ## Conclusion
 
-- **□Tame Rigidity.** Every closed instance of Tame Rigidity is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Tame Rigidity.** Necessarily, every weakly rigid relation, including a proposition, is rigid.
 
 ## Proof
 
-The argument of C5 ⇒ Tame Rigidity (c5-implies-tame-rigidity) is a proof in C, for each closed instance, of the conditional from the instances of $\Box$ND it uses to the instance of Tame Rigidity. Necessitate that theorem and apply K: $\Box\Box$ND gives $\Box$Tame Rigidity. And $\Box$ND gives $\Box\Box$ND by 4, a theorem of C. Generalization over the admitted types is metalinguistic; no type quantifier is placed inside the box.
+The argument of C5 ⇒ Tame Rigidity ([[c5-implies-tame-rigidity]]) is a proof in C, for each closed instance, of the conditional from the instances of $\Box$ND it uses to the instance of Tame Rigidity. Necessitate that theorem and apply K: $\Box\Box$ND gives $\Box$Tame Rigidity. And $\Box$ND gives $\Box\Box$ND by 4, a theorem of C. Generalization over the admitted types is metalinguistic; no type quantifier is placed inside the box.
 
 ## Notes
 

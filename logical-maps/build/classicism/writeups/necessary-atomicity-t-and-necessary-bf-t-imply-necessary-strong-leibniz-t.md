@@ -4,8 +4,8 @@
 
 ## Premises
 
-- **□Atomicity (type t).** Every closed instance of Atomicity (type t) is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
-- **□BF (type t).** Necessarily, BF (type t) holds, in the displayed closed propositional formulation.
+- **□Atomicity (type t).** Necessarily, every non-bottom proposition has an atom below it.
+- **□BF (type t).** Necessarily, if every proposition necessarily has a property, then necessarily every proposition has it.
 
 ## Conclusion
 
@@ -13,11 +13,11 @@
 
 ## Proof
 
-The proof of atomicity-t-and-bf-t-imply-strong-leibniz-t uses its premises only at finitely many closed instances and nothing beyond C. So for each closed instance of the conclusion, C proves the conditional from the corresponding premise instances to it. Necessitate that theorem and apply K with the boxed premise instances. Generalization over the admitted types is metalinguistic; no type quantifier is placed inside the box.
+The proof of [[atomicity-t-and-bf-t-imply-strong-leibniz-t]] uses its premises only at finitely many closed instances and nothing beyond C. So for each closed instance of the conclusion, C proves the conditional from the corresponding premise instances to it. Necessitate that theorem and apply K with the boxed premise instances. Generalization over the admitted types is metalinguistic; no type quantifier is placed inside the box.
 
 ## Notes
 
-Boxed counterpart of atomicity-t-and-bf-t-imply-strong-leibniz-t.
+Boxed counterpart of [[atomicity-t-and-bf-t-imply-strong-leibniz-t]].
 
 ## Sources
 

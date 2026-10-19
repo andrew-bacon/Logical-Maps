@@ -8,15 +8,15 @@
 
 ## Conclusion
 
-- **□Boolean Completeness (type t).** Every closed instance of Boolean Completeness (type t) is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Boolean Completeness (type t).** Necessarily, every property of propositions has a greatest lower bound.
 
 ## Proof
 
-The proof of boolean-completeness-r-implies-boolean-completeness-t uses its premises only at finitely many closed instances and nothing beyond C. So for each closed instance of the conclusion, C proves the conditional from the corresponding premise instances to it. Necessitate that theorem and apply K with the boxed premise instances. Generalization over the admitted types is metalinguistic; no type quantifier is placed inside the box.
+The proof of [[boolean-completeness-r-implies-boolean-completeness-t]] uses its premises only at finitely many closed instances and nothing beyond C. So for each closed instance of the conclusion, C proves the conditional from the corresponding premise instances to it. Necessitate that theorem and apply K with the boxed premise instances. Generalization over the admitted types is metalinguistic; no type quantifier is placed inside the box.
 
 ## Notes
 
-Boxed counterpart of boolean-completeness-r-implies-boolean-completeness-t.
+Boxed counterpart of [[boolean-completeness-r-implies-boolean-completeness-t]].
 
 ## Sources
 

@@ -8,11 +8,11 @@
 
 ## Conclusion
 
-- **□Intensional Choice.** Every closed instance of Intensional Choice is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Intensional Choice.** Necessarily, if a property is necessarily instantiated, then some property entailing it is necessarily uniquely instantiated.
 
 ## Proof
 
-If $\Box\operatorname{WO}(R)$, then $\Box\Box\operatorname{WO}(R)$ by 4, so necessarily some relation is necessarily a well-order: Modal Well-Ordering implies its own necessitation. The argument of modal-well-ordering-r-implies-intensional-choice-r derives Intensional Choice from Modal Well-Ordering in C, with no optional hypothesis, so the corresponding implication between closed instances is a theorem of C. Necessitate it and apply K. Type ranges stay outside the box.
+If $\Box\operatorname{WO}(R)$, then $\Box\Box\operatorname{WO}(R)$ by 4, so necessarily some relation is necessarily a well-order: Modal Well-Ordering implies its own necessitation. The argument of [[modal-well-ordering-r-implies-intensional-choice-r]] derives Intensional Choice from Modal Well-Ordering in C, with no optional hypothesis, so the corresponding implication between closed instances is a theorem of C. Necessitate it and apply K. Type ranges stay outside the box.
 
 ## Notes
 

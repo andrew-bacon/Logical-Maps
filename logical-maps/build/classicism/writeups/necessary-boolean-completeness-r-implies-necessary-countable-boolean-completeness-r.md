@@ -8,15 +8,15 @@
 
 ## Conclusion
 
-- **□Countable Boolean Completeness.** Every closed instance of Countable Boolean Completeness is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Countable Boolean Completeness.** Necessarily, every countable property of entities of a relational type has a least upper bound in that type, with countability relative to a type $\sigma$ as in Countable Boolean Completeness; one instance for each $\sigma$.
 
 ## Proof
 
-The proof of boolean-completeness-r-implies-countable-boolean-completeness-r uses its premises only at finitely many closed instances and nothing beyond C. So for each closed instance of the conclusion, C proves the conditional from the corresponding premise instances to it. Necessitate that theorem and apply K with the boxed premise instances. Generalization over the admitted types is metalinguistic; no type quantifier is placed inside the box.
+The proof of [[boolean-completeness-r-implies-countable-boolean-completeness-r]] uses its premises only at finitely many closed instances and nothing beyond C. So for each closed instance of the conclusion, C proves the conditional from the corresponding premise instances to it. Necessitate that theorem and apply K with the boxed premise instances. Generalization over the admitted types is metalinguistic; no type quantifier is placed inside the box.
 
 ## Notes
 
-Boxed counterpart of boolean-completeness-r-implies-countable-boolean-completeness-r.
+Boxed counterpart of [[boolean-completeness-r-implies-countable-boolean-completeness-r]].
 
 ## Revisions
 

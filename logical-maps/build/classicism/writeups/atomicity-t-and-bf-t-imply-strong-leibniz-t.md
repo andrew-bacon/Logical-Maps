@@ -4,12 +4,12 @@
 
 ## Premises
 
-- **Atomicity (type t).** Atomicity (type t) in the displayed closed propositional formulation.
-- **BF (type t).** BF (type t) in the displayed closed propositional formulation.
+- **Atomicity (type t).** Every non-bottom proposition has an atom below it.
+- **BF (type t).** If every proposition necessarily has a property, then necessarily every proposition has it.
 
 ## Conclusion
 
-- **Strong Leibniz Biconditionals (type t).** The type-t instance of the Strong Leibniz Biconditionals: every possible proposition is entailed by a strong world proposition, one that is possible and necessarily entails every proposition or its negation.
+- **Strong Leibniz Biconditionals (type t).** Every possible proposition is entailed by a strong world proposition, one that is possible and necessarily entails every proposition or its negation.
 
 ## Proof
 

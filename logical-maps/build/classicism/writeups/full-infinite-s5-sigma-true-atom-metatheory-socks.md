@@ -14,7 +14,7 @@
 - **□ND.** Necessarily, distinct things of any type are necessarily distinct.
 - **ND.** Distinct things of any type are necessarily distinct.
 - **Rigid Power.** If a relation is rigid, so is the property of being a rigid relation that entails it.
-- **□Rigid Power.** Every closed instance of Rigid Power is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Rigid Power.** Necessarily, if a relation is rigid, so is the property of being a rigid relation that entails it.
 - **Strong Actuality.** There is a true strong world proposition: a true proposition that necessarily entails every proposition or its negation.
 - **□Strong Actuality.** Necessarily, there is a true strong world proposition: a true proposition that necessarily entails every proposition or its negation.
 - **¬ Intensional Choice.** If a property is necessarily instantiated, then some property entailing it is necessarily uniquely instantiated.

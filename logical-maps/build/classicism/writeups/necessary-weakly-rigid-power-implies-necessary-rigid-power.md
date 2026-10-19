@@ -4,15 +4,15 @@
 
 ## Premises
 
-- **□Weakly Rigid Power.** Every closed instance of Weakly Rigid Power is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Weakly Rigid Power.** Necessarily, if a relation is weakly rigid, so is the property of being a weakly rigid relation that entails it.
 
 ## Conclusion
 
-- **□Rigid Power.** Every closed instance of Rigid Power is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Rigid Power.** Necessarily, if a relation is rigid, so is the property of being a rigid relation that entails it.
 
 ## Proof
 
-The argument of weakly-rigid-power-implies-rigid-power is a C-proof of each instance of Rigid Power at $\bar\sigma t$ from the instances of Weakly Rigid Power at $\bar\sigma t$ and $(\bar\sigma t)t$. Necessitate the conditional and apply K with the boxed premise instances. Generalization over the admitted types is metalinguistic; no type quantifier is placed inside the box.
+The argument of [[weakly-rigid-power-implies-rigid-power]] is a C-proof of each instance of Rigid Power at $\bar\sigma t$ from the instances of Weakly Rigid Power at $\bar\sigma t$ and $(\bar\sigma t)t$. Necessitate the conditional and apply K with the boxed premise instances. Generalization over the admitted types is metalinguistic; no type quantifier is placed inside the box.
 
 ## Sources
 

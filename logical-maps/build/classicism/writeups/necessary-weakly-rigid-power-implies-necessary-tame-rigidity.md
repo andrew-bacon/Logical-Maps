@@ -4,15 +4,15 @@
 
 ## Premises
 
-- **□Weakly Rigid Power.** Every closed instance of Weakly Rigid Power is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Weakly Rigid Power.** Necessarily, if a relation is weakly rigid, so is the property of being a weakly rigid relation that entails it.
 
 ## Conclusion
 
-- **□Tame Rigidity.** Every closed instance of Tame Rigidity is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Tame Rigidity.** Necessarily, every weakly rigid relation, including a proposition, is rigid.
 
 ## Proof
 
-The argument of weakly-rigid-power-implies-tame-rigidity uses the premise only at the conclusion's type tuple and nothing beyond C. So for each closed instance, C proves the conditional from the instance of Weakly Rigid Power to the instance of Tame Rigidity. Necessitate that theorem and apply K with the boxed premise instance.
+The argument of [[weakly-rigid-power-implies-tame-rigidity]] uses the premise only at the conclusion's type tuple and nothing beyond C. So for each closed instance, C proves the conditional from the instance of Weakly Rigid Power to the instance of Tame Rigidity. Necessitate that theorem and apply K with the boxed premise instance.
 
 ## Sources
 

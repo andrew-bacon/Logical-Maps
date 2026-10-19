@@ -13,7 +13,7 @@
 
 ## Proof
 
-Necessitate atomicity-and-bf-relational-imply-strong-leibniz, a theorem of C, and distribute the box over the conjunction of premises with K.
+Necessitate [[atomicity-and-bf-relational-imply-strong-leibniz]], a theorem of C, and distribute the box over the conjunction of premises with K.
 
 ## Notes
 

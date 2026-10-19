@@ -4,7 +4,7 @@
 
 ## Premises
 
-- **□ND (type t).** Necessarily, ND (type t) holds, in the displayed closed propositional formulation.
+- **□ND (type t).** Necessarily, distinct propositions are necessarily distinct.
 
 ## Conclusion
 

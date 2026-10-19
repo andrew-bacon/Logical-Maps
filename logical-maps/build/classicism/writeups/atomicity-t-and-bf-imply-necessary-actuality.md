@@ -4,7 +4,7 @@
 
 ## Premises
 
-- **Atomicity (type t).** Atomicity (type t) in the displayed closed propositional formulation.
+- **Atomicity (type t).** Every non-bottom proposition has an atom below it.
 - **BF.** The Barcan Formula at every type. The predicate formulation closes the formula schema using lambda abstraction.
 
 ## Conclusion

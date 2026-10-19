@@ -17,6 +17,8 @@
 
 ## Notes
 
+The boxed form of [[necessary-strong-leibniz-and-rigid-comprehension-imply-necessary-bf-relational]].
+
 Theorem 8.2 of Bacon's book, with □Rigid Comprehension in place of Rigid Comprehension. Rigid Comprehension at other worlds enters twice: in Lemma C.6's pull-back, run at every world for □Rigid Power, and in step (ii) of Dorr's argument. The conjecture with unboxed Rigid Comprehension is untouched: a countermodel to it would have □Strong Leibniz and Rigid Comprehension without □Rigid Comprehension.
 
 ## Sources

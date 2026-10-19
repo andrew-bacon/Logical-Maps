@@ -16,6 +16,8 @@ Use the source’s uniform proof of the unboxed connection at an arbitrary targe
 
 ## Notes
 
+The boxed form of [[barcan-r-implies-functionality-r]].
+
 Instancewise boxed connection stated or used in the cited discussion. The premise is the boxed schema, not an unboxed optional assumption.
 
 ## Sources

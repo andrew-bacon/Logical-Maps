@@ -5,11 +5,11 @@
 ## Premises
 
 - **No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
-- **Atomicity (type t).** Atomicity (type t) in the displayed closed propositional formulation.
+- **Atomicity (type t).** Every non-bottom proposition has an atom below it.
 
 ## Conclusion
 
-- **□Atomicity (type t).** Every closed instance of Atomicity (type t) is necessary. Box the entire object-variable closure; retain the same type range and other schema side conditions.
+- **□Atomicity (type t).** Necessarily, every non-bottom proposition has an atom below it.
 
 ## Proof
 

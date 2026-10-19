@@ -17,6 +17,8 @@ Necessitate the proof of the unboxed result: Compose the two implications: $\Box
 
 ## Notes
 
+The boxed form of [[two-hat-implies-nd-and-five-implies-two-hat-imply-five-implies-nd]].
+
 Boxed form of the corresponding unboxed result.
 
 ## Sources

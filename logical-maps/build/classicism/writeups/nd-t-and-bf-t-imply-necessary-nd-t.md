@@ -4,12 +4,12 @@
 
 ## Premises
 
-- **ND (type t).** ND (type t) in the displayed closed propositional formulation.
-- **BF (type t).** BF (type t) in the displayed closed propositional formulation.
+- **ND (type t).** Distinct propositions are necessarily distinct.
+- **BF (type t).** If every proposition necessarily has a property, then necessarily every proposition has it.
 
 ## Conclusion
 
-- **□ND (type t).** Necessarily, ND (type t) holds, in the displayed closed propositional formulation.
+- **□ND (type t).** Necessarily, distinct propositions are necessarily distinct.
 
 ## Proof
 
