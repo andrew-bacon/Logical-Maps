@@ -1,8 +1,11 @@
 id: atomicity-t
 name: Atomicity (type t)
 category: lattice
-statement: Atomicity (type t) in the displayed closed propositional formulation.
+statement: Every non-bottom proposition has an atom below it.
 formal: $\forall p\, .\,p\le\neg p\lor\exists q\, .\,\operatorname{Atom}_t(q)\land q\le p$
+definitions: 'where $\operatorname{Atom}_t(q):=\forall r\, .\,(r\le q\land r\ne q)\leftrightarrow r\le\neg
+  r$: the propositions strictly below $q$ are exactly the bottom ones, so an atom is not itself bottom;
+  $p\le\neg p$ says that $p$ is bottom.'
 date: '2026-09-17'
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.2, p. 24.
@@ -12,7 +15,12 @@ references:
 - paper: bacon-dorr-classicism
   role: formulation
   locator: §2.2, p. 24
-notes: ''
+notes: The type $t$ instance of [[atomicity-r]].
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the statement now says what the principle says; the notes link to
+    the unrestricted form; definitions of its technical terms added.'
 variants:
 - id: dual
   lean:

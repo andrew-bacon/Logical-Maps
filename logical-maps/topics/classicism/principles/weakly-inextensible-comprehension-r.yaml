@@ -4,6 +4,8 @@ category: comprehension
 statement: Every relation, including a proposition, is coextensive with a weakly inextensible one.
 formal: $\forall X^{\bar\sigma t}\, .\,\exists Y^{\bar\sigma t}\, .\,\operatorname{WeaklyInextensible}(Y)\land(\forall\bar
   z^{\bar\sigma}\, .\,X[\bar z]\leftrightarrow Y[\bar z])$
+definitions: where $\operatorname{WeaklyInextensible}(Y):=\forall X\, .\,(\forall\bar x\, .\,Y[\bar x]\to\Box
+  X[\bar x])\to Y\le X$.
 date: '2026-09-25'
 sources:
 - Cian Dorr, Boolean Completeness does not imply Rigid Comprehension, draft of 30 July 2026, Proposition
@@ -34,4 +36,8 @@ notes: >-
   argument types. The principle follows from Actuality and separately from Boolean Completeness, which
   the recorded models show to be independent of one another, so it is strictly weaker than each. Whether
   it implies the boxed principle, Inextensible Comprehension, is open.
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: definitions of its technical terms added.'
 lean_def: Classicism.P.WeaklyInextensibleComprehension.schemaIn

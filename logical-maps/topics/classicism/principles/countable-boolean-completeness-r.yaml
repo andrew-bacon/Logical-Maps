@@ -6,6 +6,8 @@ statement: Every countable property of entities of a relational type has a least
   of properties of type $\sigma$; one instance for each $\sigma$.
 formal: $\forall X^{\tau t}\, .\,\operatorname{Ctbl}_{\sigma,\tau}(X)\to\exists y^\tau\, .\,\operatorname{LUB}_\tau(y,X)\qquad(\tau\ne
   e)$
+definitions: 'where $\operatorname{LUB}_\tau(y,X):=\forall z^\tau\, .\,(\forall w^\tau\, .\,Xw\to w\le_\tau
+  z)\leftrightarrow y\le_\tau z$: the upper bounds of $X$ are exactly the entities above $y$.'
 date: '2026-09-20'
 sources:
 - Zachary Goodsell, Arithmetic is Necessary, draft of 5 June 2024, §3.1, eq. (10), p. 8; Definition 6, p. 13.
@@ -36,6 +38,10 @@ changes:
     and with finitely many individuals the principle held trivially. The old principle is the instance
     $\sigma=e$ of the new one, which is therefore stronger; verdicts that the old principle holds because
     there are few individuals are withdrawn.
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: definitions of its technical terms added; definitions of the technical
+    terms of its equivalent forms added.'
 variants:
 - id: glb
   name: Greatest-lower-bound form
@@ -46,5 +52,8 @@ variants:
   equivalence: 'As for the least-upper-bound form of Boolean Completeness: negation exchanges least upper
     bounds of $X$ and greatest lower bounds of $X^\neg:=\lambda z\, .\,X(\neg_\tau z)$. Negation is a
     bijection between the instances of $X$ and of $X^\neg$, so composing it with an injection into the
-    natural numbers counted at $\sigma$ shows that $X^\neg$ is countable relative to $\sigma$ iff $X$ is.'
+    natural numbers counted at $\sigma$ shows that $X^\neg$ is countable relative to $\sigma$ iff $X$
+    is.'
+  definitions: 'where $\operatorname{GLB}_\tau(y,X):=\forall z^\tau\, .\,(\forall w^\tau\, .\,Xw\to z\le_\tau
+    w)\leftrightarrow z\le_\tau y$: the lower bounds of $X$ are exactly the entities below $y$.'
 lean_def: Classicism.P.CountableBooleanCompleteness.schemaIn

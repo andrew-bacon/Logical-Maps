@@ -21,11 +21,13 @@ changes:
   by: Claude Opus 5.5 (Anthropic)
   summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
     equivalent forms); the statement is restated as the necessitation of the base statement; the notes
-    now name the base principle with a link, without the boilerplate about closed instances and the box.'
+    now name the base principle with a link, without the boilerplate about closed instances and the box;
+    the equivalent forms are stated as necessitations of the base forms.'
 variants:
 - id: polyadic
   name: Polyadic form
-  statement: Every closed instance of the polyadic form of Intensional Choice is necessary.
+  statement: Necessarily, if a relation is necessarily instantiated, then some relation entailing it is
+    necessarily uniquely instantiated.
   formal: $\Box\forall F^{\bar\sigma t}\, .\,\Box(\exists\bar x^{\bar\sigma}\, .\,F[\bar x])\to\exists
     G^{\bar\sigma t}\, .\,G\le F\land\Box\exists\bar x^{\bar\sigma}\, .\,(G[\bar x]\land\forall\bar y^{\bar\sigma}\,
     .\,G[\bar y]\to\bar y=\bar x)$

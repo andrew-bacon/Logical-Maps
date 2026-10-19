@@ -4,6 +4,8 @@ category: necessity-varieties
 statement: Necessarily, every truth is ND-necessary. In C this is the identity $\Box_{\ne}=\lambda p\,
   .\,p$.
 formal: $\Box\,\forall p\, .\,p\to\Box_{\ne}p$
+definitions: where $\Box_{\ne}p:=\exists q\, .\,q\land\Box(\Diamond q\to p)$ and $\Diamond_{\ne}p:=\neg\Box_{\ne}\neg
+  p$.
 date: '2026-10-14'
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, Appendix E, p. 83 (the unboxed principle,
@@ -26,11 +28,12 @@ changes:
   by: Claude Opus 5.5 (Anthropic)
   summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
     equivalent forms); the notes now name the base principle with a link, without the boilerplate about
-    closed instances and the box.'
+    closed instances and the box; the equivalent forms are stated as necessitations of the base forms;
+    definitions of its technical terms added.'
 variants:
 - id: dual
   name: Dual form
-  statement: Every closed instance of the dual form of Truth implies ND-necessity is necessary.
+  statement: Necessarily, whatever is possible under the distinctness-preserving modality is true.
   formal: $\Box\forall p\, .\,\Diamond_{\ne}p\to p$
   equivalence: The dual form is derivable from the official form in C and conversely, as on the page of
     Truth implies ND-necessity; necessitating the derivation and applying K carries the equivalence to

@@ -5,6 +5,8 @@ statement: Every relation is coextensive with one that is persistent and has a p
   This is the source’s comparison with Gallin’s different rigidity convention.
 formal: $\forall X^{\bar\sigma t}\, .\,\exists Y^{\bar\sigma t}\, .\,\operatorname{Persistent}(Y)\land\operatorname{Persistent}(\neg
   Y)\land(\forall\bar z^{\bar\sigma}\, .\,X[\bar z]\leftrightarrow Y[\bar z])$
+definitions: where $\operatorname{Persistent}(Y):=Y\le\lambda\bar x\, .\,\Box Y[\bar x]$, that is, $\Box\forall\bar
+  x\, .\,Y[\bar x]\to\Box Y[\bar x]$.
 date: '2026-09-17'
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.3, n. 37, p. 28.
@@ -18,4 +20,8 @@ references:
   role: origin
   locator: p. 77, as described in Classicism n. 37
 notes: ''
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: definitions of its technical terms added.'
 lean_def: Classicism.P.GallinExtensionalComprehension.schemaIn

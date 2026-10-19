@@ -3,6 +3,8 @@ name: □Well-Ordering
 category: choice
 statement: Necessarily, every type, including e, is well-ordered by some relation.
 formal: $\Box\exists R^{\sigma\sigma t}\, .\,\operatorname{WO}(R)$
+definitions: 'where $\operatorname{WO}(R)$ says that $R$ well-orders the type: it is transitive, antisymmetric
+  and total (so reflexive), and every instantiated property of type $\sigma t$ has an $R$-least instance.'
 date: '2026-10-08'
 sources:
 - Cian Dorr, suggestion of 8 October 2026.
@@ -15,5 +17,5 @@ changes:
 - date: '2026-10-19'
   by: Claude Opus 5.5 (Anthropic)
   summary: 'At Cian Dorr’s request: the notes now name the base principle with a link, without the boilerplate
-    about closed instances and the box.'
+    about closed instances and the box; definitions of its technical terms added.'
 lean_def: Classicism.P.NecWellOrdering.schemaIn

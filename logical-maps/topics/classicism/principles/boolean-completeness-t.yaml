@@ -1,8 +1,10 @@
 id: boolean-completeness-t
 name: Boolean Completeness (type t)
 category: lattice
-statement: Boolean Completeness (type t) in the displayed closed propositional formulation.
+statement: Every property of propositions has a greatest lower bound.
 formal: $\forall X^{tt}\, .\,\exists p\, .\,\operatorname{GLB}_t(p,X)$
+definitions: 'where $\operatorname{GLB}_t(p,X):=\forall q\, .\,(\forall r\, .\,Xr\to q\le r)\leftrightarrow
+  q\le p$: the lower bounds of $X$ are exactly the propositions entailing $p$.'
 date: '2026-09-17'
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.2, pp. 23–26; Appendix D, n. 92, p.
@@ -13,7 +15,13 @@ references:
 - paper: bacon-dorr-classicism
   role: formulation
   locator: §2.2, pp. 23–26; Appendix D, n. 92, p. 74
-notes: ''
+notes: The type $t$ instance of [[boolean-completeness-r]].
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the statement now says what the principle says; the notes link to
+    the unrestricted form; definitions of its technical terms added; definitions of the technical terms
+    of its equivalent forms added.'
 variants:
 - id: lub
   lean:
@@ -24,4 +32,6 @@ variants:
   statement: Every property of propositions has a least upper bound.
   formal: $\forall X^{tt}\, .\,\exists p\, .\,\operatorname{LUB}_t(p,X)$
   equivalence: The argument for the least-upper-bound form of Boolean Completeness, at type $t$.
+  definitions: 'where $\operatorname{LUB}_t(p,X):=\forall q\, .\,(\forall r\, .\,Xr\to r\le q)\leftrightarrow
+    p\le q$: the upper bounds of $X$ are exactly the propositions entailed by $p$.'
 lean_def: Classicism.P.BooleanCompletenessT.schemaIn

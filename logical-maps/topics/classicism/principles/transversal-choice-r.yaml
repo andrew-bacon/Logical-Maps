@@ -5,6 +5,8 @@ statement: Every equivalence relation, at any type including e, has a transversa
   with exactly one instance in each of its cells.
 formal: $\forall R^{\sigma\sigma t}\, .\,\operatorname{Equiv}(R)\to\exists F^{\sigma t}\, .\,\forall x^\sigma\,
   .\,\exists y^\sigma\, .\,(Rx)y\land Fy\land\forall z^\sigma\, .\,((Rx)z\land Fz)\to y=z$
+definitions: where $\operatorname{Equiv}(R):=\forall x^\sigma\, .\,(Rx)x\land\forall x^\sigma y^\sigma\,
+  .\,(Rx)y\to(Ry)x\land\forall x^\sigma y^\sigma z^\sigma\, .\,(Rx)y\land(Ry)z\to(Rx)z$.
 date: '2026-09-25'
 sources:
 - Christopher Sun, observation communicated by Zachary Goodsell on 25 September 2026, that this formulation
@@ -25,6 +27,10 @@ notes: >-
   $\lambda z\, .\,(Rx)z$. Two members of one cell have coextensive cells, but in C properties are identical
   only when necessarily coextensive; this is what separates the principle from Relational Choice, which
   chooses from each property separately.
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: definitions of its technical terms added.'
 variants:
 - id: polyadic
   lean:

@@ -3,26 +3,33 @@ name: □Boolean Completeness (type t)
 category: lattice
 statement: Necessarily, every property of propositions has a greatest lower bound.
 formal: $\Box\forall X^{tt}\, .\,\exists p\, .\,\operatorname{GLB}_t(p,X)$
+definitions: 'where $\operatorname{GLB}_t(p,X):=\forall q\, .\,(\forall r\, .\,Xr\to q\le r)\leftrightarrow
+  q\le p$: the lower bounds of $X$ are exactly the propositions entailing $p$.'
 date: '2026-10-02'
 sources:
 - Cian Dorr, suggestion of 2 October 2026.
 source_names:
 - Dorr 2 Oct
 references: []
-notes: The necessitated form of [[boolean-completeness-t]].
+notes: The necessitated form of [[boolean-completeness-t]], and the type $t$ instance of [[necessary-boolean-completeness-r]].
 changes:
 - date: '2026-10-19'
   by: Claude Opus 5.5 (Anthropic)
   summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
     equivalent forms); the statement is restated as the necessitation of the base statement; the notes
-    now name the base principle with a link, without the boilerplate about closed instances and the box.'
+    now name the base principle with a link, without the boilerplate about closed instances and the box;
+    the equivalent forms are stated as necessitations of the base forms; the notes link to the unrestricted
+    form; definitions of its technical terms added; definitions of the technical terms of its equivalent
+    forms added.'
 variants:
 - id: lub
   name: Least-upper-bound form
-  statement: Every closed instance of the least-upper-bound form of Boolean Completeness (type t) is necessary.
+  statement: Necessarily, every property of propositions has a least upper bound.
   formal: $\Box\forall X^{tt}\, .\,\exists p\, .\,\operatorname{LUB}_t(p,X)$
   equivalence: Each instance of the least-upper-bound form of Boolean Completeness (type t) is derivable
     in C from finitely many instances of the official form, and conversely; the derivation is on the page
     of Boolean Completeness (type t). Necessitating it and applying K carries the equivalence to the boxed
     forms.
+  definitions: 'where $\operatorname{LUB}_t(p,X):=\forall q\, .\,(\forall r\, .\,Xr\to r\le q)\leftrightarrow
+    p\le q$: the upper bounds of $X$ are exactly the propositions entailed by $p$.'
 lean_def: Classicism.P.NecBooleanCompletenessT.schemaIn

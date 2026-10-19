@@ -20,7 +20,9 @@ changes:
   by: Claude Opus 5.5 (Anthropic)
   summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
     equivalent forms); the statement is restated as the necessitation of the base statement; the notes
-    now name the base principle with a link, without the boilerplate about closed instances and the box.'
+    now name the base principle with a link, without the boilerplate about closed instances and the box;
+    the equivalent forms are stated as necessitations of the base forms; definitions of the technical
+    terms of its equivalent forms added.'
 variants:
 - id: persistent
   lean:
@@ -28,11 +30,15 @@ variants:
     equivalence_ref: Classicism.Map.necessary_weak_rigid_comprehension_r.persistent
     status: verified
   name: Persistent form
-  statement: Every closed instance of the persistent form of Weak Rigid Comprehension is necessary.
+  statement: Necessarily, every relation, including a proposition, is coextensive with one that is persistent
+    and weakly inextensible.
   formal: $\Box\forall X^{\bar\sigma t}\, .\,\exists Y^{\bar\sigma t}\, .\,\operatorname{Persistent}(Y)\land
     \operatorname{WeaklyInextensible}(Y)\land(\forall\bar z^{\bar\sigma}\, .\,X[\bar z]\leftrightarrow
     Y[\bar z])$
   equivalence: Each instance of the persistent form of Weak Rigid Comprehension is derivable in C from
     the official instance at the same type, and conversely; the derivation is on the page of Weak Rigid
     Comprehension. Necessitating it and applying K carries the equivalence to the boxed forms.
+  definitions: where $\operatorname{Persistent}(Y):=Y\le\lambda\bar x\, .\,\Box Y[\bar x]$, that is, $\Box\forall\bar
+    x\, .\,Y[\bar x]\to\Box Y[\bar x]$; and $\operatorname{WeaklyInextensible}(Y):=\forall X\, .\,(\forall\bar
+    x\, .\,Y[\bar x]\to\Box X[\bar x])\to Y\le X$.
 lean_def: Classicism.P.NecWeakRigidComprehension.schemaIn

@@ -10,10 +10,12 @@ sources:
 source_names:
 - Dorr 11 Oct
 references: []
-notes: The necessitated form of [[barcan-relational]].
+notes: The necessitated form of [[barcan-relational]], and the restriction of [[necessary-barcan-r]] to
+  the relational types.
 changes:
 - date: '2026-10-19'
   by: Claude Opus 5.5 (Anthropic)
   summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula; the notes now
-    name the base principle with a link, without the boilerplate about closed instances and the box.'
+    name the base principle with a link, without the boilerplate about closed instances and the box; the
+    notes link to the unrestricted form.'
 lean_def: Classicism.P.NecBarcanRelational.schemaIn

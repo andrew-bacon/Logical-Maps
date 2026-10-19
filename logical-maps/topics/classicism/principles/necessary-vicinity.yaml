@@ -22,11 +22,14 @@ changes:
   by: Claude Opus 5.5 (Anthropic)
   summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
     equivalent forms); the notes now name the base principle with a link, without the boilerplate about
-    closed instances and the box.'
+    closed instances and the box; the equivalent forms are stated as necessitations of the base forms;
+    definitions of the technical terms of its equivalent forms added.'
 variants:
 - id: nd-necessity
   name: ND-necessity form
-  statement: Every closed instance of the ND-necessity form of Vicinity is necessary.
+  statement: Necessarily, there is a truth that entails every ND-necessary truth.
   formal: $\Box\exists p\, .\,p\land\forall q\, .\,\Box_{\ne}q\to p\le q$
   equivalence: The two forms of Vicinity are equivalent in C (see the page of Vicinity); necessitating
     the derivation and applying K carries the equivalence to the boxed forms.
+  definitions: where $\Box_{\ne}p:=\exists q\, .\,q\land\Box(\Diamond q\to p)$ and $\Diamond_{\ne}p:=\neg\Box_{\ne}\neg
+    p$.

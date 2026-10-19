@@ -4,6 +4,8 @@ category: choice
 statement: "Necessarily, every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells."
 formal: $\Box\forall R^{\sigma\sigma t}\, .\,\operatorname{Equiv}(R)\to\exists F^{\sigma t}\, .\,\forall
   x^\sigma\, .\,\exists y^\sigma\, .\,(Rx)y\land Fy\land\forall z^\sigma\, .\,((Rx)z\land Fz)\to y=z$
+definitions: where $\operatorname{Equiv}(R):=\forall x^\sigma\, .\,(Rx)x\land\forall x^\sigma y^\sigma\,
+  .\,(Rx)y\to(Ry)x\land\forall x^\sigma y^\sigma z^\sigma\, .\,(Rx)y\land(Ry)z\to(Rx)z$.
 date: '2026-09-26'
 sources:
 - Christopher Sun, 26 September 2026, in connection with Transversal.
@@ -22,14 +24,15 @@ changes:
   by: Claude Opus 5.5 (Anthropic)
   summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
     equivalent forms); the notes now name the base principle with a link, without the boilerplate about
-    closed instances and the box.'
+    closed instances and the box; the equivalent forms are stated as necessitations of the base forms;
+    definitions of its technical terms added.'
 variants:
 - id: polyadic
   lean:
     ref: Classicism.P.NecTransversalChoice.listSchemaIn
     status: stated
   name: Polyadic form
-  statement: Every closed instance of the polyadic form of Transversal Choice is necessary.
+  statement: Necessarily, every equivalence relation on tuples has a transversal.
   formal: $\Box\forall R^{\bar\sigma\bar\sigma t}\, .\,\operatorname{Equiv}(R)\to\exists F^{\bar\sigma
     t}\, .\,\forall\bar x^{\bar\sigma}\, .\,\exists\bar y^{\bar\sigma}\, .\,(R[\bar x])[\bar y]\land F[\bar
     y]\land\forall\bar z^{\bar\sigma}\, .\,((R[\bar x])[\bar z]\land F[\bar z])\to\bar y=\bar z$

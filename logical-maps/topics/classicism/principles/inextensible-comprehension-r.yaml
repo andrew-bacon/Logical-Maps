@@ -4,6 +4,8 @@ category: comprehension
 statement: Every relation, including a proposition, is coextensive with a inextensible one.
 formal: $\forall X^{\bar\sigma t}\, .\,\exists Y^{\bar\sigma t}\, .\,\operatorname{Inextensible}(Y)\land(\forall\bar
   z^{\bar\sigma}\, .\,X[\bar z]\leftrightarrow Y[\bar z])$
+definitions: where $\operatorname{Inextensible}(Y):=\Box\forall X\, .\,(\forall\bar x\, .\,Y[\bar x]\to\Box
+  X[\bar x])\to Y\le X$.
 date: '2026-09-17'
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.3, n. 38, p. 29.
@@ -14,4 +16,8 @@ references:
   role: formulation
   locator: §2.3, n. 38, p. 29
 notes: ''
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: definitions of its technical terms added.'
 lean_def: Classicism.P.InextensibleComprehension.schemaIn

@@ -6,6 +6,9 @@ statement: 'At each relational type, every possible entity (one distinct from bo
   right-to-left direction is a theorem of C; the principle records the substantive direction.'
 formal: $\forall X^\sigma\, .\,\Diamond_\sigma X\to\exists W^\sigma\, .\,\operatorname{SWorld}_\sigma(W)\land
   W\le_\sigma X\qquad(\sigma\ne e)$
+definitions: 'where $\Diamond_\sigma X:=X\ne\bot_\sigma$ and $\operatorname{SWorld}_\sigma(W):=\Diamond_\sigma
+  W\land\Box\forall Y^\sigma\, .\,W\le_\sigma Y\lor W\le_\sigma\neg_\sigma Y$: a strong world is a possible
+  entity that necessarily entails every entity of its type or its negation.'
 date: '2026-09-22'
 sources:
 - Andrew Bacon, A Philosophical Introduction to Higher-Order Logics, Routledge, 2024, §8.2, pp. 164–166.
@@ -19,6 +22,10 @@ notes: Bacon’s higher-order rendering of the possible-worlds thesis that a pro
   true at some world, with worlds required to settle merely possible propositions too. Definitions in
   Background. The book presents the connection between the Strong Leibniz Biconditionals and BF at relational
   types as new to it (§8.4, p. 177).
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: definitions of its technical terms added.'
 aliases:
 - SL
 variants:

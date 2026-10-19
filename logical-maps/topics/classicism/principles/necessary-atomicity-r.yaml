@@ -4,6 +4,9 @@ category: lattice
 statement: "Necessarily, every non-bottom entity of each relational type has an atom below it."
 formal: $\Box\forall x^\tau\, .\,x\le_\tau\neg_\tau x\lor\exists y^\tau\, .\,\operatorname{Atom}_\tau(y)\land
   y\le_\tau x\qquad(\tau\ne e)$
+definitions: 'where $\operatorname{Atom}_\tau(y):=\forall z^\tau\, .\,(z\le_\tau y\land z\ne y)\leftrightarrow
+  z\le_\tau\neg_\tau z$: the entities strictly below $y$ are exactly the bottom elements of $\tau$, so
+  an atom is not itself bottom; $x\le_\tau\neg_\tau x$ says that $x$ is bottom.'
 date: '2026-09-17'
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.1, pp. 21–23; §§2.2–2.3, pp. 25–34.
@@ -23,7 +26,8 @@ changes:
   by: Claude Opus 5.5 (Anthropic)
   summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
     equivalent forms); the notes now name the base principle with a link, without the boilerplate about
-    closed instances and the box.'
+    closed instances and the box; the equivalent forms are stated as necessitations of the base forms;
+    definitions of its technical terms added.'
 variants:
 - id: dual
   lean:
@@ -31,7 +35,7 @@ variants:
     equivalence_ref: Classicism.Map.necessary_atomicity_r.dual
     status: verified
   name: Dual form
-  statement: Every closed instance of the dual form of Atomicity is necessary.
+  statement: Necessarily, whatever is entailed by every atom of its type is the top element of that type.
   formal: $\Box\forall x^\tau\, .\,(\forall y^\tau\, .\,\operatorname{Atom}_\tau(y)\to y\le_\tau x)\to\neg_\tau
     x\le_\tau x\qquad(\tau\ne e)$
   equivalence: Each instance of the dual form of Atomicity is derivable in C from finitely many instances

@@ -32,8 +32,13 @@ variants:
     $q$ itself witnesses $\Box_{\ne}\Diamond q$ ($\Box_{\ne}$ is J, Proposition D14 of The Bounds of Possibility,
     Appendix D); so $p\le\Diamond q$. Thus Vicinity says that the ND-necessary truths have a true lower
     bound, as Actuality says that all truths do. Form suggested by Cian Dorr, 14 October 2026.'
+  definitions: where $\Box_{\ne}p:=\exists q\, .\,q\land\Box(\Diamond q\to p)$ and $\Diamond_{\ne}p:=\neg\Box_{\ne}\neg
+    p$.
 changes:
 - date: '2026-10-14'
   by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
   summary: 'Added the ND-necessity form as a variant: there is a truth that entails every ND-necessary
     truth.'
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: definitions of the technical terms of its equivalent forms added.'

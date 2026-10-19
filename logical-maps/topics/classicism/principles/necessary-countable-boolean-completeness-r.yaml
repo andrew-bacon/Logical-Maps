@@ -6,6 +6,8 @@ statement: Necessarily, every countable property of entities of a relational typ
   instance for each $\sigma$.
 formal: $\Box\forall X^{\tau t}\, .\,\operatorname{Ctbl}_{\sigma,\tau}(X)\to\exists y^\tau\, .\,\operatorname{LUB}_\tau(y,X)\qquad(\tau\ne
   e)$
+definitions: 'where $\operatorname{LUB}_\tau(y,X):=\forall z^\tau\, .\,(\forall w^\tau\, .\,Xw\to w\le_\tau
+  z)\leftrightarrow y\le_\tau z$: the upper bounds of $X$ are exactly the entities above $y$.'
 date: '2026-10-02'
 sources:
 - Cian Dorr, suggestion of 2 October 2026.
@@ -16,14 +18,16 @@ notes: The necessitated form of [[countable-boolean-completeness-r]].
 variants:
 - id: glb
   name: Greatest-lower-bound form
-  statement: Every closed instance of the greatest-lower-bound form of Countable Boolean Completeness
-    is necessary.
+  statement: Necessarily, every countable property of entities of a relational type has a greatest lower
+    bound in that type.
   formal: $\Box\forall X^{\tau t}\, .\,\operatorname{Ctbl}_{\sigma,\tau}(X)\to\exists y^\tau\, .\,\operatorname{GLB}_\tau(y,X)\qquad(\tau\ne
     e)$
   equivalence: Each instance of the greatest-lower-bound form of Countable Boolean Completeness is derivable
     in C from finitely many instances of the official form, and conversely; the derivation is on the page
     of Countable Boolean Completeness. Necessitating it and applying K carries the equivalence to the
     boxed forms.
+  definitions: 'where $\operatorname{GLB}_\tau(y,X):=\forall z^\tau\, .\,(\forall w^\tau\, .\,Xw\to z\le_\tau
+    w)\leftrightarrow z\le_\tau y$: the lower bounds of $X$ are exactly the entities below $y$.'
 changes:
 - date: '2026-10-16'
   by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
@@ -33,5 +37,7 @@ changes:
   by: Claude Opus 5.5 (Anthropic)
   summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
     equivalent forms); the statement is restated as the necessitation of the base statement; the notes
-    now name the base principle with a link, without the boilerplate about closed instances and the box.'
+    now name the base principle with a link, without the boilerplate about closed instances and the box;
+    the equivalent forms are stated as necessitations of the base forms; definitions of its technical
+    terms added; definitions of the technical terms of its equivalent forms added.'
 lean_def: Classicism.P.NecCountableBooleanCompleteness.schemaIn

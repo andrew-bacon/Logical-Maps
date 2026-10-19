@@ -1,7 +1,8 @@
 id: necessary-barcan-t
 name: □BF (type t)
 category: coarse
-statement: Necessarily, BF holds at type t.
+statement: Necessarily, if every proposition necessarily has a property, then necessarily every proposition
+  has it.
 formal: $\Box\forall X^{tt}\, .\,(\forall p\, .\,\Box Xp)\to\Box(\forall p\, .\,Xp)$
 date: '2026-09-17'
 sources:
@@ -12,7 +13,7 @@ references:
 - paper: bacon-dorr-classicism
   role: formulation
   locator: §2.1, pp. 21–23; §§2.2–2.3, pp. 25–34
-notes: The necessitated form of [[barcan-t]].
+notes: The necessitated form of [[barcan-t]], and the type $t$ instance of [[necessary-barcan-r]].
 changes:
 - date: '2026-10-03'
   by: Claude Opus 5.5 (Anthropic)
@@ -22,7 +23,9 @@ changes:
   by: Claude Opus 5.5 (Anthropic)
   summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
     equivalent forms); the statement is restated as the necessitation of the base statement; the notes
-    now name the base principle with a link, without the boilerplate about closed instances and the box.'
+    now name the base principle with a link, without the boilerplate about closed instances and the box;
+    the equivalent forms are stated as necessitations of the base forms; the statement now says what the
+    principle says; the notes link to the unrestricted form.'
 variants:
 - id: dual
   lean:
@@ -30,7 +33,8 @@ variants:
     equivalence_ref: Classicism.Map.necessary_barcan_t.dual
     status: verified
   name: Dual form
-  statement: Every closed instance of the dual form of BF (type t) is necessary.
+  statement: Necessarily, if possibly some proposition has a property, then some proposition possibly
+    has it.
   formal: $\Box\forall X^{tt}\, .\,\Diamond(\exists p\, .\,Xp)\to\exists p\, .\,\Diamond Xp$
   equivalence: Each instance of the dual form of BF (type t) is derivable in C from finitely many instances
     of the official form, and conversely; the derivation is on the page of BF (type t). Necessitating

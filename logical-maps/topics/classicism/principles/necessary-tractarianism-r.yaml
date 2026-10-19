@@ -23,7 +23,7 @@ changes:
   by: Claude Opus 5.5 (Anthropic)
   summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
     equivalent forms); the notes now name the base principle with a link, without the boilerplate about
-    closed instances and the box.'
+    closed instances and the box; the equivalent forms are stated as necessitations of the base forms.'
 variants:
 - id: polyadic
   lean:
@@ -31,7 +31,7 @@ variants:
     equivalence_ref: Classicism.Map.necessary_tractarianism_r.polyadic
     status: verified
   name: Polyadic form
-  statement: Every closed instance of the polyadic form of Tractarianism is necessary.
+  statement: Necessarily, a proposition entailing every instance of a relation entails its universal generalization.
   formal: $\Box\forall p^t X^{\bar\sigma t}\, .\,(\forall\bar x^{\bar\sigma}\, .\,p\le X[\bar x])\to p\le(\forall\bar
     x^{\bar\sigma}\, .\,X[\bar x])$
   equivalence: Each instance of the polyadic form of Tractarianism is derivable in C from finitely many
@@ -43,7 +43,8 @@ variants:
     equivalence_ref: Classicism.Map.necessary_tractarianism_r.dual
     status: verified
   name: Dual form
-  statement: Every closed instance of the dual form of Tractarianism is necessary.
+  statement: Necessarily, a proposition entailed by every instance of a property is entailed by its existential
+    generalization.
   formal: $\Box\forall p^t X^{\sigma t}\, .\,(\forall x^\sigma\, .\,Xx\le p)\to(\exists x^\sigma\, .\,Xx)\le
     p$
   equivalence: Each instance of the dual form of Tractarianism is derivable in C from finitely many instances
@@ -55,7 +56,8 @@ variants:
     equivalence_ref: Classicism.Map.necessary_tractarianism_r.dual_polyadic
     status: verified
   name: Dual polyadic form
-  statement: Every closed instance of the dual polyadic form of Tractarianism is necessary.
+  statement: Necessarily, a proposition entailed by every instance of a relation is entailed by its existential
+    generalization.
   formal: $\Box\forall p^t X^{\bar\sigma t}\, .\,(\forall\bar x^{\bar\sigma}\, .\,X[\bar x]\le p)\to(\exists\bar
     x^{\bar\sigma}\, .\,X[\bar x])\le p$
   equivalence: Each instance of the dual polyadic form of Tractarianism is derivable in C from finitely

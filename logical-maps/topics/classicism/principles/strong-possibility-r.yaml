@@ -4,6 +4,8 @@ category: schematic
 statement: Each closed pure sentence consistent with Maximalist Classicism is possible under the distinctness-preserving
   modality.
 formal: $\Diamond_{\ne}P\quad(P\text{ closed and pure; }\operatorname{Max}(C)+P\text{ consistent})$
+definitions: where $\Box_{\ne}p:=\exists q\, .\,q\land\Box(\Diamond q\to p)$ and $\Diamond_{\ne}p:=\neg\Box_{\ne}\neg
+  p$.
 date: '2026-09-17'
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.6, p. 42.
@@ -18,4 +20,8 @@ notes: The paper leaves consistency open. The definition of Box_ne and its dual 
   what it adds is possibility under the distinctness-preserving modality. So incompatibilities of the
   form Strong Possibility + □Y are recorded at Possibility Maximalism (pure) and inherited, and the collapse is the
   one recorded principle refuted by the stronger modality alone.
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: definitions of its technical terms added.'
 lean_def: (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.strongPossibility)

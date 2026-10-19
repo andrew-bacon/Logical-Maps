@@ -22,7 +22,7 @@ changes:
   by: Claude Opus 5.5 (Anthropic)
   summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
     equivalent forms); the notes now name the base principle with a link, without the boilerplate about
-    closed instances and the box.'
+    closed instances and the box; the equivalent forms are stated as necessitations of the base forms.'
 variants:
 - id: polyadic
   lean:
@@ -30,7 +30,8 @@ variants:
     equivalence_ref: Classicism.Map.necessary_functionality_r.polyadic
     status: verified
   name: Polyadic form
-  statement: Every closed instance of the polyadic form of Functionality is necessary.
+  statement: Necessarily, operations of several arguments with the same value on every tuple of arguments
+    are identical.
   formal: $\Box\forall X Y^{\bar\sigma\tau}\, .\,(\forall\bar z^{\bar\sigma}\, .\,X[\bar z]=Y[\bar z])\to
     X=Y\qquad(\tau\ne e)$
   equivalence: Each instance of the polyadic form of Functionality is derivable in C from finitely many

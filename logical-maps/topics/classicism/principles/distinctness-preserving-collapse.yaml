@@ -3,6 +3,8 @@ name: Truth implies ND-necessity
 category: necessity-varieties
 statement: Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 formal: $\forall p\, .\,p\to\Box_{\ne}p$
+definitions: where $\Box_{\ne}p:=\exists q\, .\,q\land\Box(\Diamond q\to p)$ and $\Diamond_{\ne}p:=\neg\Box_{\ne}\neg
+  p$.
 date: '2026-09-17'
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, Appendix E, p. 83.
@@ -34,3 +36,6 @@ changes:
   by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
   summary: Renamed from Distinctness-preserving collapse to Truth implies ND-necessity and moved to the
     new category Varieties of necessity; statement reworded, formal statement unchanged.
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: definitions of its technical terms added.'

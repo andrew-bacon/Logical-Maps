@@ -21,14 +21,15 @@ changes:
   by: Claude Opus 5.5 (Anthropic)
   summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
     equivalent forms); the notes now name the base principle with a link, without the boilerplate about
-    closed instances and the box.'
+    closed instances and the box; the equivalent forms are stated as necessitations of the base forms.'
 variants:
 - id: polyadic
   lean:
     ref: Classicism.P.NecTransversal.listSchemaIn
     status: stated
   name: Polyadic form
-  statement: Every closed instance of the polyadic form of Transversal is necessary.
+  statement: Necessarily, there is a property of relations that picks out exactly one relation from each
+    coextension class.
   formal: $\Box\exists F^{(\bar\sigma t)t}\, .\,\forall X^{\bar\sigma t}\, .\,\exists Y^{\bar\sigma t}\,
     .\,FY\land(\forall\bar z^{\bar\sigma}\, .\,X[\bar z]\leftrightarrow Y[\bar z])\land\forall Y'^{\bar\sigma
     t}\, .\,(FY'\land\forall\bar z^{\bar\sigma}\, .\,X[\bar z]\leftrightarrow Y'[\bar z])\to Y'=Y$

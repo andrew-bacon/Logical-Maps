@@ -5,6 +5,7 @@ statement: Every serial binary relation admits a selecting operation. Its output
   required by the type system.
 formal: $\forall U^{\sigma\tau t}\, .\,\operatorname{Serial}(U)\to\exists X^{\sigma\tau}\, .\,\forall
   y\, .\,(Uy)(Xy)\qquad(\tau\ne e)$
+definitions: where $\operatorname{Serial}(U):=\forall x^\sigma\, .\,\exists y^\tau\, .\,(Ux)y$.
 date: '2026-09-17'
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.3, pp. 31–33.
@@ -15,6 +16,10 @@ references:
   role: formulation
   locator: §2.3, pp. 31–33
 notes: ''
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: definitions of its technical terms added.'
 variants:
 - id: polyadic
   lean:

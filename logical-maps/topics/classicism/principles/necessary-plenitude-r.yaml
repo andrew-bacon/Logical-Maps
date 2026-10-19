@@ -4,6 +4,8 @@ category: choice
 statement: "Necessarily, every total single-valued binary relation is represented by an operation. Its output type is relational, as required by the type system."
 formal: $\Box\forall U^{\sigma\tau t}\, .\,\operatorname{Functional}(U)\to\exists X^{\sigma\tau}\, .\,\forall
   y\, .\,(Uy)(Xy)\qquad(\tau\ne e)$
+definitions: where $\operatorname{Functional}(U):=\forall x^\sigma\, .\,\exists y^\tau\, .\,(Ux)y\land\forall
+  z^\tau\, .\,(Ux)z\to y=z$.
 date: '2026-09-17'
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.1, pp. 21–23; §§2.2–2.3, pp. 25–34.
@@ -23,7 +25,8 @@ changes:
   by: Claude Opus 5.5 (Anthropic)
   summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
     equivalent forms); the notes now name the base principle with a link, without the boilerplate about
-    closed instances and the box.'
+    closed instances and the box; the equivalent forms are stated as necessitations of the base forms;
+    definitions of its technical terms added.'
 variants:
 - id: polyadic
   lean:
@@ -31,7 +34,8 @@ variants:
     equivalence_ref: Classicism.Map.necessary_plenitude_r.polyadic
     status: verified
   name: Polyadic form
-  statement: Every closed instance of the polyadic form of Plenitude is necessary.
+  statement: Necessarily, every total single-valued relation from tuples is represented by an operation
+    of several arguments.
   formal: $\Box\forall U^{\bar\sigma\tau t}\, .\,\operatorname{Functional}(U)\to\exists X^{\bar\sigma\tau}\,
     .\,\forall\bar y^{\bar\sigma}\, .\,(U[\bar y])(X[\bar y])\qquad(\tau\ne e)$
   equivalence: Each instance of the polyadic form of Plenitude is derivable in C from finitely many instances

@@ -2,9 +2,16 @@ id: five-implies-two-hat-necessity
 name: 5-necessity implies two-hat necessity
 statement: Whatever is 5-necessary is two-hat necessary.
 formal: $\forall p\, .\,\Box_5 p\to\hat{\hat\Box}p$
+definitions: where $\Box_{\ne}p:=\exists q\, .\,q\land\Box(\Diamond q\to p)$ and $\Diamond_{\ne}p:=\neg\Box_{\ne}\neg
+  p$; and $\hat{\hat\Box}$ is the hat of $\Box_{\ne}$, where $\hat X:=\lambda p\, .\,\exists q\, .\,q\land\Box(\neg
+  X\neg q\to p)$.
 notes: Added at the suggestion of Christopher Sun, 14 October 2026. The converse implication is a theorem
   of C (Background, Hats, two-hat necessity and 5-necessity), so this principle says that the two operators
   are coextensive.
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: definitions of its technical terms added.'
 category: necessity-varieties
 date: '2026-10-14'
 sources:

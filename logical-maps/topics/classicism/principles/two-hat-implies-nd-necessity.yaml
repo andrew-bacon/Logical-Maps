@@ -3,9 +3,16 @@ name: Two-hat necessity implies ND-necessity
 statement: 'Whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees
   with its hat.'
 formal: $\forall p\, .\,\hat{\hat\Box}p\to\Box_{\ne}p$
+definitions: where $\Box_{\ne}p:=\exists q\, .\,q\land\Box(\Diamond q\to p)$ and $\Diamond_{\ne}p:=\neg\Box_{\ne}\neg
+  p$; and $\hat{\hat\Box}$ is the hat of $\Box_{\ne}$, where $\hat X:=\lambda p\, .\,\exists q\, .\,q\land\Box(\neg
+  X\neg q\to p)$.
 notes: Added at the suggestion of Christopher Sun, 14 October 2026. The converse implication is a theorem
   of C (Background, Hats, two-hat necessity and 5-necessity), so this principle says that the two operators
   are coextensive.
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: definitions of its technical terms added.'
 category: necessity-varieties
 date: '2026-10-14'
 sources:

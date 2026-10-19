@@ -30,6 +30,10 @@ notes: >-
   the map's "weakly rigid" meant persistent and weakly inextensible, the persistent form below was this
   principle's official statement, and the present statement was a separate principle, Very Weak Rigid
   Comprehension, retired then at Cian Dorr's direction.
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: definitions of the technical terms of its equivalent forms added.'
 variants:
 - id: persistent
   lean:
@@ -37,16 +41,18 @@ variants:
     equivalence_ref: Classicism.Map.weak_rigid_comprehension_r.persistent
     status: verified
   name: Persistent form
-  statement: Every relation, including a proposition, is coextensive with one that is persistent and
-    weakly inextensible.
+  statement: Every relation, including a proposition, is coextensive with one that is persistent and weakly
+    inextensible.
   formal: $\forall X^{\bar\sigma t}\, .\,\exists Y^{\bar\sigma t}\, .\,\operatorname{Persistent}(Y)\land
     \operatorname{WeaklyInextensible}(Y)\land(\forall\bar z^{\bar\sigma}\, .\,X[\bar z]\leftrightarrow
     Y[\bar z])$
-  equivalence: >-
-    Persistence implies weak persistence by T, so the persistent form implies the official one. The
-    interesting direction: a weakly rigid $Y$ is persistent. Apply its weak inextensibility to
-    $X:=\lambda\bar x\, .\,\Box Y[\bar x]$. The hypothesis $\forall\bar x\, .\,Y[\bar x]\to\Box
-    X[\bar x]$, that is $Y[\bar x]\to\Box\Box Y[\bar x]$, holds by weak persistence and 4; so
-    $Y\le\lambda\bar x\, .\,\Box Y[\bar x]$, which is $\operatorname{Persistent}(Y)$. The same $Y$
-    therefore witnesses both forms.
+  equivalence: 'Persistence implies weak persistence by T, so the persistent form implies the official
+    one. The interesting direction: a weakly rigid $Y$ is persistent. Apply its weak inextensibility to
+    $X:=\lambda\bar x\, .\,\Box Y[\bar x]$. The hypothesis $\forall\bar x\, .\,Y[\bar x]\to\Box X[\bar
+    x]$, that is $Y[\bar x]\to\Box\Box Y[\bar x]$, holds by weak persistence and 4; so $Y\le\lambda\bar
+    x\, .\,\Box Y[\bar x]$, which is $\operatorname{Persistent}(Y)$. The same $Y$ therefore witnesses
+    both forms.'
+  definitions: where $\operatorname{Persistent}(Y):=Y\le\lambda\bar x\, .\,\Box Y[\bar x]$, that is, $\Box\forall\bar
+    x\, .\,Y[\bar x]\to\Box Y[\bar x]$; and $\operatorname{WeaklyInextensible}(Y):=\forall X\, .\,(\forall\bar
+    x\, .\,Y[\bar x]\to\Box X[\bar x])\to Y\le X$.
 lean_def: Classicism.P.WeakRigidComprehension.schemaIn

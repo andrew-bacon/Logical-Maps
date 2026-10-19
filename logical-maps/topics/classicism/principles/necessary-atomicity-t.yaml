@@ -3,23 +3,28 @@ name: □Atomicity (type t)
 category: lattice
 statement: Necessarily, every non-bottom proposition has an atom below it.
 formal: $\Box\forall p\, .\,p\le\neg p\lor\exists q\, .\,\operatorname{Atom}_t(q)\land q\le p$
+definitions: 'where $\operatorname{Atom}_t(q):=\forall r\, .\,(r\le q\land r\ne q)\leftrightarrow r\le\neg
+  r$: the propositions strictly below $q$ are exactly the bottom ones, so an atom is not itself bottom;
+  $p\le\neg p$ says that $p$ is bottom.'
 date: '2026-10-02'
 sources:
 - Cian Dorr, suggestion of 2 October 2026.
 source_names:
 - Dorr 2 Oct
 references: []
-notes: The necessitated form of [[atomicity-t]].
+notes: The necessitated form of [[atomicity-t]], and the type $t$ instance of [[necessary-atomicity-r]].
 changes:
 - date: '2026-10-19'
   by: Claude Opus 5.5 (Anthropic)
   summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
     equivalent forms); the statement is restated as the necessitation of the base statement; the notes
-    now name the base principle with a link, without the boilerplate about closed instances and the box.'
+    now name the base principle with a link, without the boilerplate about closed instances and the box;
+    the equivalent forms are stated as necessitations of the base forms; the notes link to the unrestricted
+    form; definitions of its technical terms added.'
 variants:
 - id: dual
   name: Dual form
-  statement: Every closed instance of the dual form of Atomicity (type t) is necessary.
+  statement: Necessarily, whatever is entailed by every atom is necessary.
   formal: $\Box\forall p\, .\,(\forall q\, .\,\operatorname{Atom}_t(q)\to q\le p)\to\Box p$
   equivalence: Each instance of the dual form of Atomicity (type t) is derivable in C from finitely many
     instances of the official form, and conversely; the derivation is on the page of Atomicity (type t).

@@ -3,6 +3,8 @@ name: □Boolean Completeness
 category: lattice
 statement: "Necessarily, every property of entities of a relational type has a greatest lower bound in that type."
 formal: $\Box\forall X^{\tau t}\, .\,\exists y^\tau\, .\,\operatorname{GLB}_\tau(y,X)\qquad(\tau\ne e)$
+definitions: 'where $\operatorname{GLB}_\tau(y,X):=\forall z^\tau\, .\,(\forall w^\tau\, .\,Xw\to z\le_\tau
+  w)\leftrightarrow z\le_\tau y$: the lower bounds of $X$ are exactly the entities below $y$.'
 date: '2026-09-17'
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.1, pp. 21–23; §§2.2–2.3, pp. 25–34.
@@ -22,7 +24,9 @@ changes:
   by: Claude Opus 5.5 (Anthropic)
   summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
     equivalent forms); the notes now name the base principle with a link, without the boilerplate about
-    closed instances and the box.'
+    closed instances and the box; the equivalent forms are stated as necessitations of the base forms;
+    definitions of its technical terms added; definitions of the technical terms of its equivalent forms
+    added.'
 variants:
 - id: lub
   lean:
@@ -30,10 +34,13 @@ variants:
     equivalence_ref: Classicism.Map.necessary_boolean_completeness_r.lub
     status: verified
   name: Least-upper-bound form
-  statement: Every closed instance of the least-upper-bound form of Boolean Completeness is necessary.
+  statement: Necessarily, every property of entities of a relational type has a least upper bound in that
+    type.
   formal: $\Box\forall X^{\tau t}\, .\,\exists y^\tau\, .\,\operatorname{LUB}_\tau(y,X)\qquad(\tau\ne
     e)$
   equivalence: Each instance of the least-upper-bound form of Boolean Completeness is derivable in C from
     finitely many instances of the official form, and conversely; the derivation is on the page of Boolean
     Completeness. Necessitating it and applying K carries the equivalence to the boxed forms.
+  definitions: 'where $\operatorname{LUB}_\tau(y,X):=\forall z^\tau\, .\,(\forall w^\tau\, .\,Xw\to w\le_\tau
+    z)\leftrightarrow y\le_\tau z$: the upper bounds of $X$ are exactly the entities above $y$.'
 lean_def: Classicism.P.NecBooleanCompleteness.schemaIn

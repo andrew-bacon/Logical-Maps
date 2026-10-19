@@ -3,6 +3,9 @@ name: □5-necessity implies two-hat necessity
 category: necessity-varieties
 statement: Necessarily, whatever is 5-necessary is two-hat necessary. In C this is the identity $\Box_5=\hat{\hat\Box}$.
 formal: $\Box\,\forall p\, .\,\Box_5 p\to\hat{\hat\Box}p$
+definitions: where $\Box_{\ne}p:=\exists q\, .\,q\land\Box(\Diamond q\to p)$ and $\Diamond_{\ne}p:=\neg\Box_{\ne}\neg
+  p$; and $\hat{\hat\Box}$ is the hat of $\Box_{\ne}$, where $\hat X:=\lambda p\, .\,\exists q\, .\,q\land\Box(\neg
+  X\neg q\to p)$.
 date: '2026-10-14'
 sources:
 - Cian Dorr, John Hawthorne, and Juhani Yli-Vakkuri, The Bounds of Possibility, Appendix D, pp. 400–409
@@ -21,5 +24,5 @@ changes:
 - date: '2026-10-19'
   by: Claude Opus 5.5 (Anthropic)
   summary: 'At Cian Dorr’s request: the notes now name the base principle with a link, without the boilerplate
-    about closed instances and the box.'
+    about closed instances and the box; definitions of its technical terms added.'
 lean_def: Classicism.P.NecFiveImpliesTwoHatNecessity.schemaIn

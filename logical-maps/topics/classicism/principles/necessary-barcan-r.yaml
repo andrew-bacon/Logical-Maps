@@ -22,7 +22,7 @@ changes:
   by: Claude Opus 5.5 (Anthropic)
   summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
     equivalent forms); the notes now name the base principle with a link, without the boilerplate about
-    closed instances and the box.'
+    closed instances and the box; the equivalent forms are stated as necessitations of the base forms.'
 variants:
 - id: polyadic
   lean:
@@ -30,7 +30,7 @@ variants:
     equivalence_ref: Classicism.Map.necessary_barcan_r.polyadic
     status: verified
   name: Polyadic form
-  statement: Every closed instance of the polyadic form of BF is necessary.
+  statement: Necessarily, BF holds for relations with any finite number of arguments.
   formal: $\Box\forall X^{\bar\sigma t}\, .\,(\forall\bar x^{\bar\sigma}\, .\,\Box X[\bar x])\to\Box(\forall\bar
     x^{\bar\sigma}\, .\,X[\bar x])$
   equivalence: Each instance of the polyadic form of BF is derivable in C from finitely many instances
@@ -42,7 +42,7 @@ variants:
     equivalence_ref: Classicism.Map.necessary_barcan_r.dual
     status: verified
   name: Dual form
-  statement: Every closed instance of the dual form of BF is necessary.
+  statement: Necessarily, if possibly something has a property, then something possibly has it.
   formal: $\Box\forall X^{\sigma t}\, .\,\Diamond(\exists x^\sigma\, .\,Xx)\to\exists x^\sigma\, .\,\Diamond
     Xx$
   equivalence: Each instance of the dual form of BF is derivable in C from finitely many instances of
@@ -54,7 +54,8 @@ variants:
     equivalence_ref: Classicism.Map.necessary_barcan_r.dual_polyadic
     status: verified
   name: Dual polyadic form
-  statement: Every closed instance of the dual polyadic form of BF is necessary.
+  statement: Necessarily, if possibly some tuple stands in a relation, then some tuple possibly stands
+    in it.
   formal: $\Box\forall X^{\bar\sigma t}\, .\,\Diamond(\exists\bar x^{\bar\sigma}\, .\,X[\bar x])\to\exists\bar
     x^{\bar\sigma}\, .\,\Diamond X[\bar x]$
   equivalence: Each instance of the dual polyadic form of BF is derivable in C from finitely many instances

@@ -22,7 +22,7 @@ changes:
   by: Claude Opus 5.5 (Anthropic)
   summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
     equivalent forms); the notes now name the base principle with a link, without the boilerplate about
-    closed instances and the box.'
+    closed instances and the box; the equivalent forms are stated as necessitations of the base forms.'
 variants:
 - id: dual
   lean:
@@ -30,7 +30,7 @@ variants:
     equivalence_ref: Classicism.Map.necessary_modal_b.dual
     status: verified
   name: Dual form
-  statement: Every closed instance of the dual form of B is necessary.
+  statement: Necessarily, whatever is possibly necessary is true.
   formal: $\Box\forall p\, .\,\Diamond\Box p\to p$
   equivalence: Each instance of the dual form of B is derivable in C from finitely many instances of the
     official form, and conversely; the derivation is on the page of B. Necessitating it and applying K

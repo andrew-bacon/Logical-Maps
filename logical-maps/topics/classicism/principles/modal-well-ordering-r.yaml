@@ -3,6 +3,8 @@ name: Modal Well-Ordering
 category: choice
 statement: Every type, including e, has a relation that is necessarily a well-order of it.
 formal: $\exists R^{\sigma\sigma t}\, .\,\Box\operatorname{WO}(R)$
+definitions: 'where $\operatorname{WO}(R)$ says that $R$ well-orders the type: it is transitive, antisymmetric
+  and total (so reflexive), and every instantiated property of type $\sigma t$ has an $R$-least instance.'
 date: '2026-10-08'
 sources:
 - Cian Dorr, suggestion of 8 October 2026.
@@ -19,7 +21,9 @@ notes: >-
 changes:
 - date: '2026-10-08'
   by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
-  summary: >-
-    □Modal Well-Ordering retired, since Modal Well-Ordering implies it by 4; its result giving □Intensional
-    Choice now starts from Modal Well-Ordering.
+  summary: □Modal Well-Ordering retired, since Modal Well-Ordering implies it by 4; its result giving
+    □Intensional Choice now starts from Modal Well-Ordering.
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: definitions of its technical terms added.'
 lean_def: Classicism.P.ModalWellOrdering.schemaIn

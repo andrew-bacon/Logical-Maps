@@ -4,6 +4,8 @@ category: comprehension
 statement: "Necessarily, every relation is coextensive with one that is persistent and has a persistent pointwise negation."
 formal: $\Box\forall X^{\bar\sigma t}\, .\,\exists Y^{\bar\sigma t}\, .\,\operatorname{Persistent}(Y)\land\operatorname{Persistent}(\neg
   Y)\land(\forall\bar z^{\bar\sigma}\, .\,X[\bar z]\leftrightarrow Y[\bar z])$
+definitions: where $\operatorname{Persistent}(Y):=Y\le\lambda\bar x\, .\,\Box Y[\bar x]$, that is, $\Box\forall\bar
+  x\, .\,Y[\bar x]\to\Box Y[\bar x]$.
 date: '2026-09-20'
 sources:
 - Cian Dorr, suggestion of 20 September 2026.
@@ -22,4 +24,5 @@ changes:
 - date: '2026-10-19'
   by: Claude Opus 5.5 (Anthropic)
   summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula; the notes now
-    name the base principle with a link, without the boilerplate about closed instances and the box.'
+    name the base principle with a link, without the boilerplate about closed instances and the box; definitions
+    of its technical terms added.'
