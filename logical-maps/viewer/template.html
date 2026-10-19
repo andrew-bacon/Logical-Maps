@@ -3261,9 +3261,25 @@ function renderResults() {
 // what it concludes, with the incompatibilities last; narrowed by text found anywhere in a
 // statement (so a principle's name also finds the principles whose names contain it), or,
 // when the text names a principle, to the results concluding exactly it or using exactly it.
-const theoremsView = { query: '', role: 'either', closed: new Set() };
+const theoremsView = { query: '', role: 'either', closed: new Set(), timer: null };
+// The search box and its suggestions are built once and kept: rebuilding them as the reader
+// types would close and reopen the suggestions at every keystroke. Typing redraws only the
+// list, once the typing pauses.
+function theoremsControls(el) {
+  const kept = el.querySelector('.theorems-controls');
+  if (kept) return kept;
+  const roles = [['either', 'anywhere', 'Results whose statement contains the text, in any principle’s name.'], ['conclusion', 'concluding it', 'Results concluding exactly this principle.'], ['premise', 'using it', 'Results with exactly this principle among their premises.']];
+  el.innerHTML = `<div class="theorems-controls"><input class="search" id="theorems-find" type="search" list="theorems-principles" placeholder="A principle, or words of a result…" aria-label="Find results" autocomplete="off" spellcheck="false" value="${esc(theoremsView.query)}"><datalist id="theorems-principles">${[...P].sort((a, b) => compareNames(a.name, b.name)).map(p => `<option value="${esc(p.name)}"></option>`).join('')}</datalist>`
+    + `<span class="seg theorems-role" role="group" aria-label="How the text narrows the list">${roles.map(([k, l, t]) => `<button data-theorems-role="${k}" title="${esc(t)}">${l}</button>`).join('')}</span><span class="theorems-count"></span></div><div class="theorems-list"></div>`;
+  const input = el.querySelector('#theorems-find');
+  input.addEventListener('input', () => { theoremsView.query = input.value; clearTimeout(theoremsView.timer); theoremsView.timer = setTimeout(flushTheorems, 200); });
+  el.querySelectorAll('[data-theorems-role]').forEach(b => b.addEventListener('click', () => { theoremsView.role = b.dataset.theoremsRole; flushTheorems(); }));
+  return el.querySelector('.theorems-controls');
+}
+function flushTheorems() { clearTimeout(theoremsView.timer); theoremsView.timer = null; renderTheorems(); }
 function renderTheorems() {
   const el = document.getElementById('theorems'); if (!el) return;
+  const controls = theoremsControls(el), listEl = el.querySelector('.theorems-list');
   const q = theoremsView.query.trim(), qf = findText(q);
   const picked = q ? P.find(p => p.name === q) || P.find(p => findText(p.name) === qf) : null;
   let rows = R.filter(r => r.status === 'proved' && passes(r) && theoremShown(r.conclusion) && r.premises.every(theoremShown));
@@ -3274,30 +3290,23 @@ function renderTheorems() {
   const groups = new Map();
   for (const r of rows) (groups.get(r.conclusion) || groups.set(r.conclusion, []).get(r.conclusion)).push(r);
   const order = [...groups.keys()].sort((a, b) => (a === FALSE) - (b === FALSE) || compareNames(name(a), name(b)));
+  controls.querySelectorAll('[data-theorems-role]').forEach(b => { b.setAttribute('aria-pressed', String(theoremsView.role === b.dataset.theoremsRole)); b.disabled = !picked && b.dataset.theoremsRole !== 'either'; });
+  controls.querySelector('.theorems-count').textContent = `${rows.length} result${rows.length === 1 ? '' : 's'}${exact ? ` ${theoremsView.role === 'conclusion' ? 'concluding' : 'using'} ${picked.name}` : q ? ` matching “${q}”` : ''}`;
   // A group closed by the reader stays closed, even across a narrowing that hides it for a while.
   const closed = theoremsView.closed;
-  for (const g of el.querySelectorAll('details.theorems-group')) g.open ? closed.delete(g.dataset.conclusion) : closed.add(g.dataset.conclusion);
+  for (const g of listEl.querySelectorAll('details.theorems-group')) g.open ? closed.delete(g.dataset.conclusion) : closed.add(g.dataset.conclusion);
   const row = r => `<tr data-result="${r.id}"><td class="stmt">${resultStmt(r)}</td><td>${certBadges(r)}</td></tr>`;
-  let h = `<div class="theorems-controls"><input class="search" id="theorems-find" type="search" list="theorems-principles" placeholder="A principle, or words of a result…" aria-label="Find results" autocomplete="off" spellcheck="false" value="${esc(theoremsView.query)}"><datalist id="theorems-principles">${[...P].sort((a, b) => compareNames(a.name, b.name)).map(p => `<option value="${esc(p.name)}"></option>`).join('')}</datalist>`;
-  const roles = [['either', 'anywhere', 'Results whose statement contains the text, in any principle’s name.'], ['conclusion', 'concluding it', 'Results concluding exactly this principle.'], ['premise', 'using it', 'Results with exactly this principle among their premises.']];
-  h += `<span class="seg theorems-role" role="group" aria-label="How the text narrows the list">${roles.map(([k, l, t]) => `<button data-theorems-role="${k}" title="${esc(t)}" aria-pressed="${theoremsView.role === k}"${picked || k === 'either' ? '' : ' disabled'}>${l}</button>`).join('')}</span>`;
-  h += `<span class="theorems-count">${rows.length} result${rows.length === 1 ? '' : 's'}${exact ? ` ${theoremsView.role === 'conclusion' ? 'concluding' : 'using'} ${esc(picked.name)}` : q ? ` matching “${esc(q)}”` : ''}</span></div>`;
   const allOpen = order.every(c => !closed.has(c));
-  h += `<p class="hint theorems-hint">Proved results connecting the shown principles, grouped by conclusion.${order.length > 1 ? ` <button class="lnk dim" data-theorems-expand>${allOpen ? 'collapse all' : 'expand all'}</button>` : ''}</p>`;
+  let h = `<p class="hint theorems-hint">Proved results connecting the shown principles, grouped by conclusion.${order.length > 1 ? ` <button class="lnk dim" data-theorems-expand>${allOpen ? 'collapse all' : 'expand all'}</button>` : ''}</p>`;
   for (const c of order) {
     const list = groups.get(c).sort((a, b) => a.premises.length - b.premises.length || compareNames(premisesName(a), premisesName(b)));
     h += `<details class="theorems-group" data-conclusion="${esc(c)}"${closed.has(c) ? '' : ' open'}><summary>${esc(name(c))} <span class="n">${list.length}</span></summary><table class="results"><tbody>${list.map(row).join('')}</tbody></table></details>`;
   }
   if (!order.length) h += '<p class="empty">No result fits.</p>';
-  const focused = document.activeElement?.id === 'theorems-find', caret = focused ? document.activeElement.selectionStart : null;
-  el.innerHTML = h; renderSubscripts(el);
-  const input = el.querySelector('#theorems-find');
-  input.addEventListener('input', () => { theoremsView.query = input.value; renderTheorems(); });
-  if (focused) { input.focus({ preventScroll: true }); try { input.setSelectionRange(caret, caret); } catch (_) {} }
-  el.querySelectorAll('[data-theorems-role]').forEach(b => b.addEventListener('click', () => { theoremsView.role = b.dataset.theoremsRole; renderTheorems(); }));
+  listEl.innerHTML = h; renderSubscripts(listEl);
   // One control opens every group listed, then closes them all.
-  el.querySelector('[data-theorems-expand]')?.addEventListener('click', () => { el.querySelectorAll('details.theorems-group').forEach(g => { g.open = !allOpen; }); renderTheorems(); });
-  el.querySelectorAll('tr[data-result]').forEach(tr => tr.addEventListener('click', () => select({ type: 'result', id: tr.dataset.result })));
+  listEl.querySelector('[data-theorems-expand]')?.addEventListener('click', () => { listEl.querySelectorAll('details.theorems-group').forEach(g => { g.open = !allOpen; }); renderTheorems(); });
+  listEl.querySelectorAll('tr[data-result]').forEach(tr => tr.addEventListener('click', () => select({ type: 'result', id: tr.dataset.result })));
 }
 function conjectureEvidence(answer, evidenceBase = baseE, summary = 'Evidence') {
   // The rule chains returned for a witness certify the first matching model.
