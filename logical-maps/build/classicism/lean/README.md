@@ -345,7 +345,7 @@ Classicism/Models/Monoids.lean          Appendix D, Parts 2 to 8: the seven mono
 Classicism/Models/README.md             the verdict table; the survey of two-object variants and what they would add to the map
 
 Classicism/Results/Records/             the map's records proved in the shallow layer, one theorem per record, a file per topic
-Classicism/Results/SentenceSchemas/     results about the sentence schemas: Distinctness, Possibility, No Pure Contingency and their kin
+Classicism/Results/SentenceSchemas/     results about the sentence schemas: Distinctness, Possibility, No Pure Contingency and their kin, and the Necessity of Arithmetic from C5
 Classicism/Results/Consistency/         consistency and non-entailment facts from the models, which the incompatibilities rest on
 
 Classicism/Tools/Check.lean             #classicism_check and #classicism_audit: the gate

@@ -14,6 +14,10 @@
 
 Equivalent to the claim that a finite count of propositions is necessary whenever it is true. It holds with No Pure Contingency and with BF (type $t$), by the recorded results. If some finite $Z$ holds of $\lambda p\, .\,\top$ then every proposition is one of finitely many, and NI carries each identity across, but collecting them under a box is an instance of BF at type $t$, which C does not prove. A proof would need to bypass that; a countermodel would need a world with finitely many propositions that can see one with more, and must violate both BF (type $t$) and No Pure Contingency.
 
+## Revisions
+
+- **2026-10-19** (Claude Fable 5.1 (Anthropic)) — Refuted by the model full-two-object-chain-free-loop, a full action model whose evaluation object has four propositions and sees, through one arrow, an object with an infinite monoid of endomorphisms and so infinitely many propositions; BF at type t and No Pure Contingency fail there, as the notes anticipated. The record stays a conjecture, as the rules require; its statement is unchanged.
+
 ## Sources
 
 - **Dorr 20 Sep** — Cian Dorr, question of 20 September 2026.
