@@ -1,0 +1,21 @@
+id: necessary-weak-rigid-comprehension-implies-necessary-boolean-completeness
+premises:
+- necessary-weak-rigid-comprehension-r
+conclusion: necessary-boolean-completeness-r
+status: proved
+certificate:
+  source_id: dorr-bc-not-rc
+  produced_by: Cian Dorr (unboxed form); boxed form recorded by Claude Opus 5.5 (Anthropic), 19 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), 19 October 2026
+  checked_by: []
+  date: '2026-10-19'
+  lean: none
+sources:
+- Cian Dorr, Boolean Completeness does not imply Rigid Comprehension, draft of 30 July 2026, footnote on p.
+  12.
+source_names:
+- BC does not imply RC
+proof: The boxed form of [[weak-rigid-comprehension-r-implies-boolean-completeness-r]]. Its proof derives each
+  instance of the conclusion in C from finitely many instances of the premises; necessitate the conditional
+  and apply K.
+notes: ''
