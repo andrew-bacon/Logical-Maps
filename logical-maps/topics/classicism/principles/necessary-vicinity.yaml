@@ -2,14 +2,13 @@ id: necessary-vicinity
 name: □Vicinity
 category: lattice
 statement: Necessarily, there is a true proposition that entails the possibility of each true proposition.
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of Vicinity}$
+formal: $\Box\exists p\, .\,p\land\forall q\, .\,q\to p\le\Diamond q$
 date: '2026-09-27'
 sources:
 - Cian Dorr, suggestion of 27 September 2026.
 source_names:
 - Dorr 27 Sep
-notes: Vicinity has no type parameters, so this is the single sentence $\Box\exists p\, .\,p\land\forall
-  q\, .\,q\to p\le\Diamond q$.
+notes: The necessitated form of [[vicinity]].
 lean_def: Classicism.P.NecVicinity.schemaIn
 changes:
 - date: '2026-10-03'
@@ -19,10 +18,15 @@ changes:
 - date: '2026-10-14'
   by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
   summary: Added the boxed ND-necessity form as a variant, mirroring Vicinity.
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
+    equivalent forms); the notes now name the base principle with a link, without the boilerplate about
+    closed instances and the box.'
 variants:
 - id: nd-necessity
   name: ND-necessity form
   statement: Every closed instance of the ND-necessity form of Vicinity is necessary.
-  formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of the ND-necessity form of Vicinity}$
+  formal: $\Box\exists p\, .\,p\land\forall q\, .\,\Box_{\ne}q\to p\le q$
   equivalence: The two forms of Vicinity are equivalent in C (see the page of Vicinity); necessitating
     the derivation and applying K carries the equivalence to the boxed forms.

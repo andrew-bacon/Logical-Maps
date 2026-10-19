@@ -2,7 +2,7 @@ id: necessary-barcan-r
 name: □BF
 category: coarse
 statement: "Necessarily, the Barcan Formula holds at every type. The predicate formulation closes the formula schema using lambda abstraction."
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of BF}$
+formal: $\Box\forall X^{\sigma t}\, .\,(\forall x^\sigma\, .\,\Box Xx)\to\Box(\forall x^\sigma\, .\,Xx)$
 date: '2026-09-17'
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.1, pp. 21–23; §§2.2–2.3, pp. 25–34.
@@ -12,13 +12,17 @@ references:
 - paper: bacon-dorr-classicism
   role: formulation
   locator: §2.1, pp. 21–23; §§2.2–2.3, pp. 25–34
-notes: Box each fully closed instance of BF. Type quantifiers and formula side conditions remain outside
-  the box.
+notes: The necessitated form of [[barcan-r]].
 changes:
 - date: '2026-10-03'
   by: Claude Opus 5.5 (Anthropic)
   summary: Restated the statement as the necessitation of the base principle's statement, in place of
     a generic description of necessitation; the formal statement is unchanged.
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
+    equivalent forms); the notes now name the base principle with a link, without the boilerplate about
+    closed instances and the box.'
 variants:
 - id: polyadic
   lean:
@@ -27,7 +31,8 @@ variants:
     status: verified
   name: Polyadic form
   statement: Every closed instance of the polyadic form of BF is necessary.
-  formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of the polyadic form of BF}$
+  formal: $\Box\forall X^{\bar\sigma t}\, .\,(\forall\bar x^{\bar\sigma}\, .\,\Box X[\bar x])\to\Box(\forall\bar
+    x^{\bar\sigma}\, .\,X[\bar x])$
   equivalence: Each instance of the polyadic form of BF is derivable in C from finitely many instances
     of the original form, and conversely; the derivations are on the page of the unboxed principle. Necessitating
     them and applying K carries the equivalence to the boxed forms.
@@ -38,7 +43,8 @@ variants:
     status: verified
   name: Dual form
   statement: Every closed instance of the dual form of BF is necessary.
-  formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of the dual form of BF}$
+  formal: $\Box\forall X^{\sigma t}\, .\,\Diamond(\exists x^\sigma\, .\,Xx)\to\exists x^\sigma\, .\,\Diamond
+    Xx$
   equivalence: Each instance of the dual form of BF is derivable in C from finitely many instances of
     the official form, and conversely; the derivation is on the page of BF. Necessitating it and applying
     K carries the equivalence to the boxed forms.
@@ -49,7 +55,8 @@ variants:
     status: verified
   name: Dual polyadic form
   statement: Every closed instance of the dual polyadic form of BF is necessary.
-  formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of the dual polyadic form of BF}$
+  formal: $\Box\forall X^{\bar\sigma t}\, .\,\Diamond(\exists\bar x^{\bar\sigma}\, .\,X[\bar x])\to\exists\bar
+    x^{\bar\sigma}\, .\,\Diamond X[\bar x]$
   equivalence: Each instance of the dual polyadic form of BF is derivable in C from finitely many instances
     of the official form, and conversely; the derivation is on the page of BF. Necessitating it and applying
     K carries the equivalence to the boxed forms.

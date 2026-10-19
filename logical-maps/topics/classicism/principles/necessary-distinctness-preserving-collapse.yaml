@@ -18,14 +18,20 @@ references:
     category.
 aliases:
 - □Distinctness-preserving collapse
-notes: Box the closed sentence Truth implies ND-necessity. Added 14 October 2026 to match the boxed forms
-  of the other collapse principles, at the suggestion of Christopher Sun and Cian Dorr. Equivalent to
-  the conjunction of □5-necessity implies ND-necessity and □Truth implies 5-necessity.
+notes: The necessitated form of [[distinctness-preserving-collapse]]. Added 14 October 2026 to match the
+  boxed forms of the other collapse principles, at the suggestion of Christopher Sun and Cian Dorr. Equivalent
+  to the conjunction of [[necessary-five-implies-nd-necessity]] and [[necessary-truth-implies-five-necessity]].
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
+    equivalent forms); the notes now name the base principle with a link, without the boilerplate about
+    closed instances and the box.'
 variants:
 - id: dual
   name: Dual form
   statement: Every closed instance of the dual form of Truth implies ND-necessity is necessary.
-  formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of the dual form of Truth implies ND-necessity}$
+  formal: $\Box\forall p\, .\,\Diamond_{\ne}p\to p$
   equivalence: The dual form is derivable from the official form in C and conversely, as on the page of
     Truth implies ND-necessity; necessitating the derivation and applying K carries the equivalence to
     the boxed forms.

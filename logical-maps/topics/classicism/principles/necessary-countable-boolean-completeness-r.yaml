@@ -1,24 +1,25 @@
 id: necessary-countable-boolean-completeness-r
 name: □Countable Boolean Completeness
 category: lattice
-statement: Every closed instance of Countable Boolean Completeness is necessary. Box the entire object-variable closure;
-  retain the same type range and other schema side conditions.
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of Countable Boolean Completeness}$
+statement: Necessarily, every countable property of entities of a relational type has a least upper bound
+  in that type, with countability relative to a type $\sigma$ as in Countable Boolean Completeness; one
+  instance for each $\sigma$.
+formal: $\Box\forall X^{\tau t}\, .\,\operatorname{Ctbl}_{\sigma,\tau}(X)\to\exists y^\tau\, .\,\operatorname{LUB}_\tau(y,X)\qquad(\tau\ne
+  e)$
 date: '2026-10-02'
 sources:
 - Cian Dorr, suggestion of 2 October 2026.
 source_names:
 - Dorr 2 Oct
 references: []
-notes: Box each fully closed instance of Countable Boolean Completeness. Type quantifiers and formula side conditions remain
-  outside the box.
+notes: The necessitated form of [[countable-boolean-completeness-r]].
 variants:
 - id: glb
   name: Greatest-lower-bound form
   statement: Every closed instance of the greatest-lower-bound form of Countable Boolean Completeness
     is necessary.
-  formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of the greatest-lower-bound form of
-    Countable Boolean Completeness}$
+  formal: $\Box\forall X^{\tau t}\, .\,\operatorname{Ctbl}_{\sigma,\tau}(X)\to\exists y^\tau\, .\,\operatorname{GLB}_\tau(y,X)\qquad(\tau\ne
+    e)$
   equivalence: Each instance of the greatest-lower-bound form of Countable Boolean Completeness is derivable
     in C from finitely many instances of the official form, and conversely; the derivation is on the page
     of Countable Boolean Completeness. Necessitating it and applying K carries the equivalence to the
@@ -28,4 +29,9 @@ changes:
   by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
   summary: Follows Countable Boolean Completeness, whose type of counting is now schematic; the boxed
     instances range over that type as well.
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
+    equivalent forms); the statement is restated as the necessitation of the base statement; the notes
+    now name the base principle with a link, without the boilerplate about closed instances and the box.'
 lean_def: Classicism.P.NecCountableBooleanCompleteness.schemaIn

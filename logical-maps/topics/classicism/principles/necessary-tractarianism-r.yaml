@@ -2,7 +2,8 @@ id: necessary-tractarianism-r
 name: □Tractarianism
 category: coarse
 statement: "Necessarily, a proposition entailing every instance of a property entails its universal generalization."
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of Tractarianism}$
+formal: $\Box\forall p^t X^{\sigma t}\, .\,(\forall x^\sigma\, .\,p\le Xx)\to p\le(\forall x^\sigma\,
+  .\,Xx)$
 date: '2026-09-17'
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.1, pp. 21–23; §§2.2–2.3, pp. 25–34.
@@ -12,13 +13,17 @@ references:
 - paper: bacon-dorr-classicism
   role: formulation
   locator: §2.1, pp. 21–23; §§2.2–2.3, pp. 25–34
-notes: Box each fully closed instance of Tractarianism. Type quantifiers and formula side conditions remain
-  outside the box.
+notes: The necessitated form of [[tractarianism-r]].
 changes:
 - date: '2026-10-03'
   by: Claude Opus 5.5 (Anthropic)
   summary: Restated the statement as the necessitation of the base principle's statement, in place of
     a generic description of necessitation; the formal statement is unchanged.
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
+    equivalent forms); the notes now name the base principle with a link, without the boilerplate about
+    closed instances and the box.'
 variants:
 - id: polyadic
   lean:
@@ -27,7 +32,8 @@ variants:
     status: verified
   name: Polyadic form
   statement: Every closed instance of the polyadic form of Tractarianism is necessary.
-  formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of the polyadic form of Tractarianism}$
+  formal: $\Box\forall p^t X^{\bar\sigma t}\, .\,(\forall\bar x^{\bar\sigma}\, .\,p\le X[\bar x])\to p\le(\forall\bar
+    x^{\bar\sigma}\, .\,X[\bar x])$
   equivalence: Each instance of the polyadic form of Tractarianism is derivable in C from finitely many
     instances of the original form, and conversely; the derivations are on the page of the unboxed principle.
     Necessitating them and applying K carries the equivalence to the boxed forms.
@@ -38,7 +44,8 @@ variants:
     status: verified
   name: Dual form
   statement: Every closed instance of the dual form of Tractarianism is necessary.
-  formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of the dual form of Tractarianism}$
+  formal: $\Box\forall p^t X^{\sigma t}\, .\,(\forall x^\sigma\, .\,Xx\le p)\to(\exists x^\sigma\, .\,Xx)\le
+    p$
   equivalence: Each instance of the dual form of Tractarianism is derivable in C from finitely many instances
     of the official form, and conversely; the derivation is on the page of Tractarianism. Necessitating
     it and applying K carries the equivalence to the boxed forms.
@@ -49,7 +56,8 @@ variants:
     status: verified
   name: Dual polyadic form
   statement: Every closed instance of the dual polyadic form of Tractarianism is necessary.
-  formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of the dual polyadic form of Tractarianism}$
+  formal: $\Box\forall p^t X^{\bar\sigma t}\, .\,(\forall\bar x^{\bar\sigma}\, .\,X[\bar x]\le p)\to(\exists\bar
+    x^{\bar\sigma}\, .\,X[\bar x])\le p$
   equivalence: Each instance of the dual polyadic form of Tractarianism is derivable in C from finitely
     many instances of the official form, and conversely; the derivation is on the page of Tractarianism.
     Necessitating it and applying K carries the equivalence to the boxed forms.

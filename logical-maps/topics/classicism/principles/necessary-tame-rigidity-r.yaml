@@ -1,9 +1,8 @@
 id: necessary-tame-rigidity-r
 name: □Tame Rigidity
 category: comprehension
-statement: Every closed instance of Tame Rigidity is necessary. Box the entire object-variable closure;
-  retain the same type range and other schema side conditions.
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of Tame Rigidity}$
+statement: Necessarily, every weakly rigid relation, including a proposition, is rigid.
+formal: $\Box\forall F^{\bar\sigma t}\, .\,\operatorname{WeaklyRigid}(F)\to\operatorname{Rigid}(F)$
 date: '2026-10-02'
 sources:
 - Christopher Sun, Possible Worlds Without Atomicity, draft of September 2026.
@@ -12,5 +11,11 @@ source_names:
 references:
 - paper: sun-possible-worlds-without-atomicity
   role: origin
-notes: Box each fully closed instance of Tame Rigidity. Type quantifiers remain outside the box.
+notes: The necessitated form of [[tame-rigidity-r]].
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula; the statement
+    is restated as the necessitation of the base statement; the notes now name the base principle with
+    a link, without the boilerplate about closed instances and the box.'
 lean_def: Classicism.P.NecTameRigidity.schemaIn

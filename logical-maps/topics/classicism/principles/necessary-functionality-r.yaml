@@ -2,7 +2,7 @@ id: necessary-functionality-r
 name: □Functionality
 category: extensionality
 statement: "Necessarily, operations with the same value on every argument are identical. The output type is relational."
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of Functionality}$
+formal: $\Box\forall X Y^{\sigma\tau}\, .\,(\forall z^\sigma\, .\,Xz=Yz)\to X=Y\qquad(\tau\ne e)$
 date: '2026-09-17'
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.1, pp. 21–23; §§2.2–2.3, pp. 25–34.
@@ -12,13 +12,17 @@ references:
 - paper: bacon-dorr-classicism
   role: formulation
   locator: §2.1, pp. 21–23; §§2.2–2.3, pp. 25–34
-notes: Box each fully closed instance of Functionality. Type quantifiers and formula side conditions remain
-  outside the box.
+notes: The necessitated form of [[functionality-r]].
 changes:
 - date: '2026-10-03'
   by: Claude Opus 5.5 (Anthropic)
   summary: Restated the statement as the necessitation of the base principle's statement, in place of
     a generic description of necessitation; the formal statement is unchanged.
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
+    equivalent forms); the notes now name the base principle with a link, without the boilerplate about
+    closed instances and the box.'
 variants:
 - id: polyadic
   lean:
@@ -27,7 +31,8 @@ variants:
     status: verified
   name: Polyadic form
   statement: Every closed instance of the polyadic form of Functionality is necessary.
-  formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of the polyadic form of Functionality}$
+  formal: $\Box\forall X Y^{\bar\sigma\tau}\, .\,(\forall\bar z^{\bar\sigma}\, .\,X[\bar z]=Y[\bar z])\to
+    X=Y\qquad(\tau\ne e)$
   equivalence: Each instance of the polyadic form of Functionality is derivable in C from finitely many
     instances of the original form, and conversely; the derivations are on the page of the unboxed principle.
     Necessitating them and applying K carries the equivalence to the boxed forms.

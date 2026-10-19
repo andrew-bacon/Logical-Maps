@@ -14,6 +14,12 @@ references:
 - paper: bounds-of-possibility
   role: background
   locator: Appendix D, pp. 400–409
-notes: Added at the suggestion of Christopher Sun, 14 October 2026. Box the closed sentence; since identity
-  of operators in C is necessary coextensiveness, this is the identity $\Box_5=\hat{\hat\Box}$.
+notes: The necessitated form of [[five-implies-two-hat-necessity]]. Added at the suggestion of Christopher
+  Sun, 14 October 2026. Since identity of operators in C is necessary coextensiveness, this is the identity
+  $\Box_5=\hat{\hat\Box}$.
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the notes now name the base principle with a link, without the boilerplate
+    about closed instances and the box.'
 lean_def: Classicism.P.NecFiveImpliesTwoHatNecessity.schemaIn

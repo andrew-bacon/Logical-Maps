@@ -1,9 +1,10 @@
 id: necessary-intensional-choice-r
 name: □Intensional Choice
 category: choice
-statement: Every closed instance of Intensional Choice is necessary. Box the entire object-variable closure;
-  retain the same type range and other schema side conditions.
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of Intensional Choice}$
+statement: Necessarily, if a property is necessarily instantiated, then some property entailing it is
+  necessarily uniquely instantiated.
+formal: $\Box\forall F^{\sigma t}\, .\,\Box(\exists x^\sigma\, .\,Fx)\to\exists G^{\sigma t}\, .\,G\le
+  F\land\Box\exists x^\sigma\, .\,(Gx\land\forall y^\sigma\, .\,Gy\to y=x)$
 date: '2026-10-03'
 sources:
 - Cian Dorr, suggestion of 3 October 2026.
@@ -14,13 +15,20 @@ references:
   role: background
   locator: §6, p. 27
   note: Formulation of the unboxed principle.
-notes: Box each fully closed instance of Intensional Choice. Type quantifiers remain outside the box.
+notes: The necessitated form of [[intensional-choice-r]].
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
+    equivalent forms); the statement is restated as the necessitation of the base statement; the notes
+    now name the base principle with a link, without the boilerplate about closed instances and the box.'
 variants:
 - id: polyadic
   name: Polyadic form
   statement: Every closed instance of the polyadic form of Intensional Choice is necessary.
-  formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of the polyadic form of Intensional
-    Choice}$
+  formal: $\Box\forall F^{\bar\sigma t}\, .\,\Box(\exists\bar x^{\bar\sigma}\, .\,F[\bar x])\to\exists
+    G^{\bar\sigma t}\, .\,G\le F\land\Box\exists\bar x^{\bar\sigma}\, .\,(G[\bar x]\land\forall\bar y^{\bar\sigma}\,
+    .\,G[\bar y]\to\bar y=\bar x)$
   equivalence: Each instance of the polyadic form of Intensional Choice is derivable in C from finitely
     many instances of the original form, and conversely; the derivations are on the page of the unboxed
     principle. Necessitating them and applying K carries the equivalence to the boxed forms.

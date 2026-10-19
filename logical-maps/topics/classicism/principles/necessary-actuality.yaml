@@ -2,7 +2,7 @@ id: necessary-actuality
 name: □Actuality
 category: lattice
 statement: "Necessarily, there is a true proposition that entails every true proposition."
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of Actuality}$
+formal: $\Box\exists p\, .\,p\land\forall q\, .\,q\to p\le q$
 date: '2026-09-17'
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.1, pp. 21–23; §§2.2–2.3, pp. 25–34.
@@ -12,11 +12,14 @@ references:
 - paper: bacon-dorr-classicism
   role: formulation
   locator: §2.1, pp. 21–23; §§2.2–2.3, pp. 25–34
-notes: Box each fully closed instance of Actuality. Type quantifiers and formula side conditions remain
-  outside the box.
+notes: The necessitated form of [[actuality]].
 lean_def: Classicism.P.NecActuality.schemaIn
 changes:
 - date: '2026-10-03'
   by: Claude Opus 5.5 (Anthropic)
   summary: Restated the statement as the necessitation of the base principle's statement, in place of
     a generic description of necessitation; the formal statement is unchanged.
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula; the notes now
+    name the base principle with a link, without the boilerplate about closed instances and the box.'

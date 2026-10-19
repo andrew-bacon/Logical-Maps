@@ -1,23 +1,26 @@
 id: necessary-boolean-completeness-t
 name: □Boolean Completeness (type t)
 category: lattice
-statement: Every closed instance of Boolean Completeness (type t) is necessary. Box the entire object-variable closure;
-  retain the same type range and other schema side conditions.
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of Boolean Completeness (type t)}$
+statement: Necessarily, every property of propositions has a greatest lower bound.
+formal: $\Box\forall X^{tt}\, .\,\exists p\, .\,\operatorname{GLB}_t(p,X)$
 date: '2026-10-02'
 sources:
 - Cian Dorr, suggestion of 2 October 2026.
 source_names:
 - Dorr 2 Oct
 references: []
-notes: Box each fully closed instance of Boolean Completeness (type t). Type quantifiers and formula side conditions remain
-  outside the box.
+notes: The necessitated form of [[boolean-completeness-t]].
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
+    equivalent forms); the statement is restated as the necessitation of the base statement; the notes
+    now name the base principle with a link, without the boilerplate about closed instances and the box.'
 variants:
 - id: lub
   name: Least-upper-bound form
   statement: Every closed instance of the least-upper-bound form of Boolean Completeness (type t) is necessary.
-  formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of the least-upper-bound form of Boolean
-    Completeness (type t)}$
+  formal: $\Box\forall X^{tt}\, .\,\exists p\, .\,\operatorname{LUB}_t(p,X)$
   equivalence: Each instance of the least-upper-bound form of Boolean Completeness (type t) is derivable
     in C from finitely many instances of the official form, and conversely; the derivation is on the page
     of Boolean Completeness (type t). Necessitating it and applying K carries the equivalence to the boxed

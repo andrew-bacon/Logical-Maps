@@ -2,7 +2,8 @@ id: necessary-functional-choice-r
 name: □Functional Choice
 category: choice
 statement: "Necessarily, every serial binary relation admits a selecting operation. Its output type is relational, as required by the type system."
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of Functional Choice}$
+formal: $\Box\forall U^{\sigma\tau t}\, .\,\operatorname{Serial}(U)\to\exists X^{\sigma\tau}\, .\,\forall
+  y\, .\,(Uy)(Xy)\qquad(\tau\ne e)$
 date: '2026-09-22'
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.3, pp. 31–33.
@@ -19,12 +20,18 @@ references:
   locator: §8.4, pp. 175–176
   note: □Functional Choice is the principle valid in the Gallin and Williamson models, from which Bacon
     and Dorr derive S5, the Strong Leibniz Biconditionals, Rigid Comprehension and Boolean Completeness.
-notes: Added with □Relational Choice; the Gallin–Williamson principle in the map’s vocabulary.
+notes: The necessitated form of [[functional-choice-r]]. Added with [[necessary-relational-choice-r]];
+  the Gallin–Williamson principle in the map’s vocabulary.
 changes:
 - date: '2026-10-03'
   by: Claude Opus 5.5 (Anthropic)
   summary: Restated the statement as the necessitation of the base principle's statement, in place of
     a generic description of necessitation; the formal statement is unchanged.
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
+    equivalent forms); the notes now name the base principle with a link, without the boilerplate about
+    closed instances and the box.'
 variants:
 - id: polyadic
   lean:
@@ -33,8 +40,8 @@ variants:
     status: verified
   name: Polyadic form
   statement: Every closed instance of the polyadic form of Functional Choice is necessary.
-  formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of the polyadic form of Functional
-    Choice}$
+  formal: $\Box\forall U^{\bar\sigma\tau t}\, .\,\operatorname{Serial}(U)\to\exists X^{\bar\sigma\tau}\,
+    .\,\forall\bar y^{\bar\sigma}\, .\,(U[\bar y])(X[\bar y])\qquad(\tau\ne e)$
   equivalence: Each instance of the polyadic form of Functional Choice is derivable in C from finitely
     many instances of the original form, and conversely; the derivations are on the page of the unboxed
     principle. Necessitating them and applying K carries the equivalence to the boxed forms.

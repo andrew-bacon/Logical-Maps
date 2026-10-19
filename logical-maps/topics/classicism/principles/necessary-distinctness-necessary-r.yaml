@@ -2,7 +2,7 @@ id: necessary-distinctness-necessary-r
 name: □ND
 category: coarse
 statement: "Necessarily, distinct things of any type are necessarily distinct."
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of ND}$
+formal: $\Box\forall x y^\sigma\, .\,x\ne y\to\Box(x\ne y)$
 date: '2026-09-17'
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.1, pp. 21–23; §§2.2–2.3, pp. 25–34.
@@ -12,13 +12,17 @@ references:
 - paper: bacon-dorr-classicism
   role: formulation
   locator: §2.1, pp. 21–23; §§2.2–2.3, pp. 25–34
-notes: Box each fully closed instance of ND. Type quantifiers and formula side conditions remain outside
-  the box.
+notes: The necessitated form of [[distinctness-necessary-r]].
 changes:
 - date: '2026-10-03'
   by: Claude Opus 5.5 (Anthropic)
   summary: Restated the statement as the necessitation of the base principle's statement, in place of
     a generic description of necessitation; the formal statement is unchanged.
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
+    equivalent forms); the notes now name the base principle with a link, without the boilerplate about
+    closed instances and the box.'
 variants:
 - id: polyadic
   lean:
@@ -27,7 +31,7 @@ variants:
     status: verified
   name: Polyadic form
   statement: Every closed instance of the polyadic form of ND is necessary.
-  formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of the polyadic form of ND}$
+  formal: $\Box\forall\bar x\,\bar y^{\bar\sigma}\, .\,\bar x\ne\bar y\to\Box(\bar x\ne\bar y)$
   equivalence: Each instance of the polyadic form of ND is derivable in C from finitely many instances
     of the original form, and conversely; the derivations are on the page of the unboxed principle. Necessitating
     them and applying K carries the equivalence to the boxed forms.
@@ -38,7 +42,7 @@ variants:
     status: verified
   name: Dual form
   statement: Every closed instance of the dual form of ND is necessary.
-  formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of the dual form of ND}$
+  formal: $\Box\forall x y^\sigma\, .\,\Diamond(x=y)\to x=y$
   equivalence: Each instance of the dual form of ND is derivable in C from finitely many instances of
     the official form, and conversely; the derivation is on the page of ND. Necessitating it and applying
     K carries the equivalence to the boxed forms.
@@ -49,7 +53,7 @@ variants:
     status: verified
   name: Dual polyadic form
   statement: Every closed instance of the dual polyadic form of ND is necessary.
-  formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of the dual polyadic form of ND}$
+  formal: $\Box\forall\bar x\,\bar y^{\bar\sigma}\, .\,\Diamond(\bar x=\bar y)\to\bar x=\bar y$
   equivalence: Each instance of the dual polyadic form of ND is derivable in C from finitely many instances
     of the official form, and conversely; the derivation is on the page of ND. Necessitating it and applying
     K carries the equivalence to the boxed forms.

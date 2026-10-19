@@ -1,15 +1,20 @@
 id: necessary-persistent-comprehension-r
 name: □Persistent Comprehension
 category: comprehension
-statement: Every closed instance of Persistent Comprehension is necessary. Box the entire object-variable closure;
-  retain the same type range and other schema side conditions.
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of Persistent Comprehension}$
+statement: Necessarily, every relation, including a proposition, is coextensive with a persistent one.
+formal: $\Box\forall X^{\bar\sigma t}\, .\,\exists Y^{\bar\sigma t}\, .\,\operatorname{Persistent}(Y)\land(\forall\bar
+  z^{\bar\sigma}\, .\,X[\bar z]\leftrightarrow Y[\bar z])$
 date: '2026-10-02'
 sources:
 - Cian Dorr, suggestion of 2 October 2026.
 source_names:
 - Dorr 2 Oct
 references: []
-notes: Box each fully closed instance of Persistent Comprehension. Type quantifiers and formula side conditions remain
-  outside the box.
+notes: The necessitated form of [[persistent-comprehension-r]].
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula; the statement
+    is restated as the necessitation of the base statement; the notes now name the base principle with
+    a link, without the boilerplate about closed instances and the box.'
 lean_def: Classicism.P.NecPersistentComprehension.schemaIn

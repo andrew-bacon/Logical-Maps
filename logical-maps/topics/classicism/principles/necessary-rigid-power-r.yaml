@@ -1,14 +1,21 @@
 id: necessary-rigid-power-r
 name: □Rigid Power
 category: comprehension
-statement: Every closed instance of Rigid Power is necessary. Box the entire object-variable closure;
-  retain the same type range and other schema side conditions.
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of Rigid Power}$
+statement: Necessarily, if a relation is rigid, so is the property of being a rigid relation that entails
+  it.
+formal: $\Box\forall F^{\bar\sigma t}\, .\,\operatorname{Rigid}(F)\to\operatorname{Rigid}(\lambda X^{\bar\sigma
+  t}\, .\,\operatorname{Rigid}(X)\land X\le F)$
 date: '2026-10-03'
 sources:
 - Cian Dorr, suggestion of 3 October 2026.
 source_names:
 - Dorr 3 Oct
 references: []
-notes: Box each fully closed instance of Rigid Power. Type quantifiers remain outside the box.
+notes: The necessitated form of [[rigid-power-r]].
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula; the statement
+    is restated as the necessitation of the base statement; the notes now name the base principle with
+    a link, without the boilerplate about closed instances and the box.'
 lean_def: Classicism.P.NecRigidPower.schemaIn

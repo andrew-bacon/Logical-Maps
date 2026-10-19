@@ -1,9 +1,9 @@
 id: necessary-weak-rigid-comprehension-r
 name: □Weak Rigid Comprehension
 category: comprehension
-statement: Every closed instance of Weak Rigid Comprehension is necessary. Box the entire object-variable
-  closure; retain the same type range and other schema side conditions.
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of Weak Rigid Comprehension}$
+statement: Necessarily, every relation, including a proposition, is coextensive with a weakly rigid one.
+formal: $\Box\forall X^{\bar\sigma t}\, .\,\exists Y^{\bar\sigma t}\, .\,\operatorname{WeaklyRigid}(Y)\land(\forall\bar
+  z^{\bar\sigma}\, .\,X[\bar z]\leftrightarrow Y[\bar z])$
 date: '2026-10-02'
 sources:
 - Cian Dorr, suggestion of 2 October 2026.
@@ -14,8 +14,13 @@ references:
   role: background
   locator: Proposition 1, p. 2; p. 12
   note: Formulation of the unboxed principle.
-notes: Box each fully closed instance of Weak Rigid Comprehension. Type quantifiers remain outside the
-  box.
+notes: The necessitated form of [[weak-rigid-comprehension-r]].
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
+    equivalent forms); the statement is restated as the necessitation of the base statement; the notes
+    now name the base principle with a link, without the boilerplate about closed instances and the box.'
 variants:
 - id: persistent
   lean:
@@ -24,8 +29,9 @@ variants:
     status: verified
   name: Persistent form
   statement: Every closed instance of the persistent form of Weak Rigid Comprehension is necessary.
-  formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of the persistent form of Weak Rigid
-    Comprehension}$
+  formal: $\Box\forall X^{\bar\sigma t}\, .\,\exists Y^{\bar\sigma t}\, .\,\operatorname{Persistent}(Y)\land
+    \operatorname{WeaklyInextensible}(Y)\land(\forall\bar z^{\bar\sigma}\, .\,X[\bar z]\leftrightarrow
+    Y[\bar z])$
   equivalence: Each instance of the persistent form of Weak Rigid Comprehension is derivable in C from
     the official instance at the same type, and conversely; the derivation is on the page of Weak Rigid
     Comprehension. Necessitating it and applying K carries the equivalence to the boxed forms.

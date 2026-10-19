@@ -2,22 +2,27 @@ id: necessary-transversal-choice-r
 name: □Transversal Choice
 category: choice
 statement: "Necessarily, every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells."
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of Transversal Choice}$
+formal: $\Box\forall R^{\sigma\sigma t}\, .\,\operatorname{Equiv}(R)\to\exists F^{\sigma t}\, .\,\forall
+  x^\sigma\, .\,\exists y^\sigma\, .\,(Rx)y\land Fy\land\forall z^\sigma\, .\,((Rx)z\land Fz)\to y=z$
 date: '2026-09-26'
 sources:
 - Christopher Sun, 26 September 2026, in connection with Transversal.
 source_names:
 - Sun 26 Sep
 references: []
-notes: >-
-  Box each fully closed instance of Transversal Choice. Type quantifiers remain outside the box. Unlike
-  Transversal Choice itself, this makes the transversal condition hold at every accessible world, for
-  every relation that is an equivalence relation there.
+notes: The necessitated form of [[transversal-choice-r]]. Unlike Transversal Choice itself, this makes
+  the transversal condition hold at every accessible world, for every relation that is an equivalence
+  relation there.
 changes:
 - date: '2026-10-03'
   by: Claude Opus 5.5 (Anthropic)
   summary: Restated the statement as the necessitation of the base principle's statement, in place of
     a generic description of necessitation; the formal statement is unchanged.
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
+    equivalent forms); the notes now name the base principle with a link, without the boilerplate about
+    closed instances and the box.'
 variants:
 - id: polyadic
   lean:
@@ -25,8 +30,9 @@ variants:
     status: stated
   name: Polyadic form
   statement: Every closed instance of the polyadic form of Transversal Choice is necessary.
-  formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of the polyadic form of Transversal
-    Choice}$
+  formal: $\Box\forall R^{\bar\sigma\bar\sigma t}\, .\,\operatorname{Equiv}(R)\to\exists F^{\bar\sigma
+    t}\, .\,\forall\bar x^{\bar\sigma}\, .\,\exists\bar y^{\bar\sigma}\, .\,(R[\bar x])[\bar y]\land F[\bar
+    y]\land\forall\bar z^{\bar\sigma}\, .\,((R[\bar x])[\bar z]\land F[\bar z])\to\bar y=\bar z$
   equivalence: Each instance of the polyadic form of Transversal Choice is derivable in C from finitely
     many instances of the original form, and conversely; the derivations are on the page of the unboxed
     principle. Necessitating them and applying K carries the equivalence to the boxed forms.

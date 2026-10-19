@@ -2,7 +2,8 @@ id: necessary-rigid-comprehension-r
 name: □Rigid Comprehension
 category: comprehension
 statement: "Necessarily, every relation, including a proposition, is coextensive with a rigid one."
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of Rigid Comprehension}$
+formal: $\Box\forall X^{\bar\sigma t}\, .\,\exists Y^{\bar\sigma t}\, .\,\operatorname{Rigid}(Y)\land(\forall\bar
+  z^{\bar\sigma}\, .\,X[\bar z]\leftrightarrow Y[\bar z])$
 date: '2026-09-17'
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.1, pp. 21–23; §§2.2–2.3, pp. 25–34.
@@ -12,11 +13,14 @@ references:
 - paper: bacon-dorr-classicism
   role: formulation
   locator: §2.1, pp. 21–23; §§2.2–2.3, pp. 25–34
-notes: Box each fully closed instance of Rigid Comprehension. Type quantifiers and formula side conditions
-  remain outside the box.
+notes: The necessitated form of [[rigid-comprehension-r]].
 lean_def: Classicism.P.NecRigidComprehension.schemaIn
 changes:
 - date: '2026-10-03'
   by: Claude Opus 5.5 (Anthropic)
   summary: Restated the statement as the necessitation of the base principle's statement, in place of
     a generic description of necessitation; the formal statement is unchanged.
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula; the notes now
+    name the base principle with a link, without the boilerplate about closed instances and the box.'

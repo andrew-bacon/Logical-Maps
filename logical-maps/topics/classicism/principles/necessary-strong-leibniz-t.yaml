@@ -2,8 +2,7 @@ id: necessary-strong-leibniz-t
 name: □Strong Leibniz Biconditionals (type t)
 category: lattice
 statement: "Necessarily, every possible proposition is entailed by a strong world proposition, one that is possible and necessarily entails every proposition or its negation."
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of Strong Leibniz Biconditionals (type
-  t)}$
+formal: $\Box\forall p\, .\,\Diamond p\to\exists w\, .\,\operatorname{SWorld}_t(w)\land w\le p$
 date: '2026-09-22'
 sources:
 - Andrew Bacon, A Philosophical Introduction to Higher-Order Logics, Routledge, 2024, §8.2, pp. 164–166.
@@ -13,7 +12,7 @@ references:
 - paper: bacon-2024-book
   role: formulation
   locator: §8.2, pp. 164–166
-notes: ''
+notes: The necessitated form of [[strong-leibniz-t]].
 aliases:
 - □SL (type t)
 changes:
@@ -21,6 +20,11 @@ changes:
   by: Claude Opus 5.5 (Anthropic)
   summary: Restated the statement as the necessitation of the base principle's statement, in place of
     a generic description of necessitation; the formal statement is unchanged.
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
+    equivalent forms); the notes now name the base principle with a link, without the boilerplate about
+    closed instances and the box.'
 variants:
 - id: dual
   lean:
@@ -29,8 +33,7 @@ variants:
     status: verified
   name: Dual form
   statement: Every closed instance of the dual form of Strong Leibniz Biconditionals (type t) is necessary.
-  formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of the dual form of Strong Leibniz
-    Biconditionals (type t)}$
+  formal: $\Box\forall p\, .\,(\forall w\, .\,\operatorname{SWorld}_t(w)\to w\le p)\to\Box p$
   equivalence: Each instance of the dual form of Strong Leibniz Biconditionals (type t) is derivable in
     C from finitely many instances of the official form, and conversely; the derivation is on the page
     of Strong Leibniz Biconditionals (type t). Necessitating it and applying K carries the equivalence

@@ -2,7 +2,7 @@ id: necessary-boolean-completeness-r
 name: □Boolean Completeness
 category: lattice
 statement: "Necessarily, every property of entities of a relational type has a greatest lower bound in that type."
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of Boolean Completeness}$
+formal: $\Box\forall X^{\tau t}\, .\,\exists y^\tau\, .\,\operatorname{GLB}_\tau(y,X)\qquad(\tau\ne e)$
 date: '2026-09-17'
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.1, pp. 21–23; §§2.2–2.3, pp. 25–34.
@@ -12,13 +12,17 @@ references:
 - paper: bacon-dorr-classicism
   role: formulation
   locator: §2.1, pp. 21–23; §§2.2–2.3, pp. 25–34
-notes: Box each fully closed instance of Boolean Completeness. Type quantifiers and formula side conditions
-  remain outside the box.
+notes: The necessitated form of [[boolean-completeness-r]].
 changes:
 - date: '2026-10-03'
   by: Claude Opus 5.5 (Anthropic)
   summary: Restated the statement as the necessitation of the base principle's statement, in place of
     a generic description of necessitation; the formal statement is unchanged.
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
+    equivalent forms); the notes now name the base principle with a link, without the boilerplate about
+    closed instances and the box.'
 variants:
 - id: lub
   lean:
@@ -27,8 +31,8 @@ variants:
     status: verified
   name: Least-upper-bound form
   statement: Every closed instance of the least-upper-bound form of Boolean Completeness is necessary.
-  formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of the least-upper-bound form of Boolean
-    Completeness}$
+  formal: $\Box\forall X^{\tau t}\, .\,\exists y^\tau\, .\,\operatorname{LUB}_\tau(y,X)\qquad(\tau\ne
+    e)$
   equivalence: Each instance of the least-upper-bound form of Boolean Completeness is derivable in C from
     finitely many instances of the official form, and conversely; the derivation is on the page of Boolean
     Completeness. Necessitating it and applying K carries the equivalence to the boxed forms.

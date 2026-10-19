@@ -2,7 +2,8 @@ id: necessary-gallin-extensional-comprehension-r
 name: □Gallin Extensional Comprehension
 category: comprehension
 statement: "Necessarily, every relation is coextensive with one that is persistent and has a persistent pointwise negation."
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of Gallin Extensional Comprehension}$
+formal: $\Box\forall X^{\bar\sigma t}\, .\,\exists Y^{\bar\sigma t}\, .\,\operatorname{Persistent}(Y)\land\operatorname{Persistent}(\neg
+  Y)\land(\forall\bar z^{\bar\sigma}\, .\,X[\bar z]\leftrightarrow Y[\bar z])$
 date: '2026-09-20'
 sources:
 - Cian Dorr, suggestion of 20 September 2026.
@@ -10,11 +11,15 @@ sources:
 source_names:
 - Dorr 20 Sep
 - Classicism
-notes: Box each fully closed instance of Gallin Extensional Comprehension. Type quantifiers and formula side
-  conditions remain outside the box. Recorded to match the boxed forms of the other comprehension principles.
+notes: The necessitated form of [[gallin-extensional-comprehension-r]]. Recorded to match the boxed forms
+  of the other comprehension principles.
 lean_def: Classicism.P.NecGallinExtensionalComprehension.schemaIn
 changes:
 - date: '2026-10-03'
   by: Claude Opus 5.5 (Anthropic)
   summary: Restated the statement as the necessitation of the base principle's statement, in place of
     a generic description of necessitation; the formal statement is unchanged.
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula; the notes now
+    name the base principle with a link, without the boilerplate about closed instances and the box.'

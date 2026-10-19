@@ -2,13 +2,18 @@ id: necessary-barcan-relational
 name: □BF (relational types)
 category: coarse
 statement: Necessarily, BF holds at every relational type.
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of BF (relational types)}$
+formal: $\Box\forall X^{\sigma t}\, .\,(\forall x^\sigma\, .\,\Box Xx)\to\Box(\forall x^\sigma\, .\,Xx)\qquad(\sigma\ne
+  e)$
 date: '2026-10-11'
 sources:
 - Cian Dorr, suggestion of 11 October 2026.
 source_names:
 - Dorr 11 Oct
 references: []
-notes: Box each fully closed instance of BF (relational types). Type quantifiers and the type restriction
-  remain outside the box.
+notes: The necessitated form of [[barcan-relational]].
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula; the notes now
+    name the base principle with a link, without the boilerplate about closed instances and the box.'
 lean_def: Classicism.P.NecBarcanRelational.schemaIn

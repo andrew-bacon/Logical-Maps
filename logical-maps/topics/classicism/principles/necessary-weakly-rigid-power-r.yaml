@@ -1,15 +1,22 @@
 id: necessary-weakly-rigid-power-r
 name: □Weakly Rigid Power
 category: comprehension
-statement: Every closed instance of Weakly Rigid Power is necessary. Box the entire object-variable closure;
-  retain the same type range and other schema side conditions.
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of Weakly Rigid Power}$
+statement: Necessarily, if a relation is weakly rigid, so is the property of being a weakly rigid relation
+  that entails it.
+formal: $\Box\forall F^{\bar\sigma t}\, .\,\operatorname{WeaklyRigid}(F)\to\operatorname{WeaklyRigid}(\lambda
+  X^{\bar\sigma t}\, .\,\operatorname{WeaklyRigid}(X)\land X\le F)$
 date: '2026-10-10'
 sources:
 - Cian Dorr, suggestion of 10 October 2026.
 source_names:
 - Dorr 10 Oct
 references: []
-notes: Box each fully closed instance of Weakly Rigid Power. Type quantifiers remain outside the box. It
-  is equivalent to the conjunction of □Tame Rigidity and □Rigid Power.
+notes: The necessitated form of [[weakly-rigid-power-r]]. It is equivalent to the conjunction of [[necessary-tame-rigidity-r]]
+  and [[necessary-rigid-power-r]].
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula; the statement
+    is restated as the necessitation of the base statement; the notes now name the base principle with
+    a link, without the boilerplate about closed instances and the box.'
 lean_def: Classicism.P.NecWeaklyRigidPower.schemaIn

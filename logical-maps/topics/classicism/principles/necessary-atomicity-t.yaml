@@ -1,23 +1,26 @@
 id: necessary-atomicity-t
 name: □Atomicity (type t)
 category: lattice
-statement: Every closed instance of Atomicity (type t) is necessary. Box the entire object-variable closure;
-  retain the same type range and other schema side conditions.
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of Atomicity (type t)}$
+statement: Necessarily, every non-bottom proposition has an atom below it.
+formal: $\Box\forall p\, .\,p\le\neg p\lor\exists q\, .\,\operatorname{Atom}_t(q)\land q\le p$
 date: '2026-10-02'
 sources:
 - Cian Dorr, suggestion of 2 October 2026.
 source_names:
 - Dorr 2 Oct
 references: []
-notes: Box each fully closed instance of Atomicity (type t). Type quantifiers and formula side conditions remain
-  outside the box.
+notes: The necessitated form of [[atomicity-t]].
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
+    equivalent forms); the statement is restated as the necessitation of the base statement; the notes
+    now name the base principle with a link, without the boilerplate about closed instances and the box.'
 variants:
 - id: dual
   name: Dual form
   statement: Every closed instance of the dual form of Atomicity (type t) is necessary.
-  formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of the dual form of Atomicity (type
-    t)}$
+  formal: $\Box\forall p\, .\,(\forall q\, .\,\operatorname{Atom}_t(q)\to q\le p)\to\Box p$
   equivalence: Each instance of the dual form of Atomicity (type t) is derivable in C from finitely many
     instances of the official form, and conversely; the derivation is on the page of Atomicity (type t).
     Necessitating it and applying K carries the equivalence to the boxed forms.

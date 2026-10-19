@@ -2,7 +2,8 @@ id: necessary-extensionality-r
 name: □Extensionality
 category: extensionality
 statement: "Necessarily, at each relational type, coextensive relations are identical, including in the nullary propositional case."
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of Extensionality}$
+formal: $\Box\forall X Y^{\bar\sigma t}\, .\,(\forall\bar z^{\bar\sigma}\, .\,X[\bar z]\leftrightarrow
+  Y[\bar z])\to X=Y$
 date: '2026-09-17'
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.1, pp. 21–23; §§2.2–2.3, pp. 25–34.
@@ -12,11 +13,14 @@ references:
 - paper: bacon-dorr-classicism
   role: formulation
   locator: §2.1, pp. 21–23; §§2.2–2.3, pp. 25–34
-notes: Box each fully closed instance of Extensionality. Type quantifiers and formula side conditions
-  remain outside the box.
+notes: The necessitated form of [[extensionality-r]].
 lean_def: Classicism.P.NecExtensionality.schemaIn
 changes:
 - date: '2026-10-03'
   by: Claude Opus 5.5 (Anthropic)
   summary: Restated the statement as the necessitation of the base principle's statement, in place of
     a generic description of necessitation; the formal statement is unchanged.
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula; the notes now
+    name the base principle with a link, without the boilerplate about closed instances and the box.'

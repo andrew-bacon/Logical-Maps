@@ -9,8 +9,11 @@ sources:
 source_names:
 - Dorr 8 Oct
 references: []
-notes: >-
-  The necessitation of Well-Ordering; the instances are closed, and type quantifiers remain outside the
-  box. The well-order may differ from world to world. Modal Well-Ordering, which asks for one relation
-  that is necessarily a well-order, implies it.
+notes: The necessitated form of [[well-ordering-r]]. The well-order may differ from world to world. [[modal-well-ordering-r]],
+  which asks for one relation that is necessarily a well-order, implies it.
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the notes now name the base principle with a link, without the boilerplate
+    about closed instances and the box.'
 lean_def: Classicism.P.NecWellOrdering.schemaIn

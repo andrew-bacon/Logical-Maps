@@ -1,14 +1,19 @@
 id: necessary-rigid-rigidity-r
 name: □Rigid Rigidity
 category: comprehension
-statement: Every closed instance of Rigid Rigidity is necessary. Retain the same type range.
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of Rigid Rigidity}$
+statement: Necessarily, being rigid is a rigid property of relations, including propositions.
+formal: $\Box\operatorname{Rigid}(\lambda X^{\bar\sigma t}\, .\,\operatorname{Rigid}(X))$
 date: '2026-10-10'
 sources:
 - Cian Dorr, suggestion of 10 October 2026.
 source_names:
 - Dorr 10 Oct
 references: []
-notes: >-
-  Type quantifiers remain outside the box. Equivalent to Rigid Rigidity, by T and 4.
+notes: The necessitated form of [[rigid-rigidity-r]], and equivalent to it by T and 4.
+changes:
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula; the statement
+    is restated as the necessitation of the base statement; the notes now name the base principle with
+    a link, without the boilerplate about closed instances and the box.'
 lean_def: Classicism.P.NecRigidRigidity.schemaIn

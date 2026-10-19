@@ -2,19 +2,26 @@ id: necessary-transversal-r
 name: □Transversal
 category: choice
 statement: "Necessarily, there is a property of properties that picks out exactly one property from each coextension class, that is, exactly one property coextensive with any given property."
-formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of Transversal}$
+formal: $\Box\exists F^{(\sigma t)t}\, .\,\forall X^{\sigma t}\, .\,\exists Y^{\sigma t}\, .\,FY\land(\forall
+  z^\sigma\, .\,Xz\leftrightarrow Yz)\land\forall Y'^{\sigma t}\, .\,(FY'\land\forall z^\sigma\, .\,Xz\leftrightarrow
+  Y'z)\to Y'=Y$
 date: '2026-09-26'
 sources:
 - Christopher Sun, 26 September 2026.
 source_names:
 - Sun 26 Sep
 references: []
-notes: Box each fully closed instance of Transversal. Type quantifiers remain outside the box.
+notes: The necessitated form of [[transversal-r]].
 changes:
 - date: '2026-10-03'
   by: Claude Opus 5.5 (Anthropic)
   summary: Restated the statement as the necessitation of the base principle's statement, in place of
     a generic description of necessitation; the formal statement is unchanged.
+- date: '2026-10-19'
+  by: Claude Opus 5.5 (Anthropic)
+  summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
+    equivalent forms); the notes now name the base principle with a link, without the boilerplate about
+    closed instances and the box.'
 variants:
 - id: polyadic
   lean:
@@ -22,7 +29,9 @@ variants:
     status: stated
   name: Polyadic form
   statement: Every closed instance of the polyadic form of Transversal is necessary.
-  formal: $\Box\phi\quad\text{for each closed instance }\phi\text{ of the polyadic form of Transversal}$
+  formal: $\Box\exists F^{(\bar\sigma t)t}\, .\,\forall X^{\bar\sigma t}\, .\,\exists Y^{\bar\sigma t}\,
+    .\,FY\land(\forall\bar z^{\bar\sigma}\, .\,X[\bar z]\leftrightarrow Y[\bar z])\land\forall Y'^{\bar\sigma
+    t}\, .\,(FY'\land\forall\bar z^{\bar\sigma}\, .\,X[\bar z]\leftrightarrow Y'[\bar z])\to Y'=Y$
   equivalence: Each instance of the polyadic form of Transversal is derivable in C from finitely many
     instances of the original form, and conversely; the derivations are on the page of the unboxed principle.
     Necessitating them and applying K carries the equivalence to the boxed forms.
