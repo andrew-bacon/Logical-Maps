@@ -23,13 +23,26 @@ changes:
   summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
     equivalent forms); the notes now name the base principle with a link, without the boilerplate about
     closed instances and the box; the equivalent forms are stated as necessitations of the base forms;
-    definitions of the technical terms of its equivalent forms added.'
+    definitions of the technical terms of its equivalent forms added; added the boxed two-hat necessity
+    and 5-necessity forms.'
 variants:
 - id: nd-necessity
   name: ND-necessity form
   statement: Necessarily, there is a truth that entails every ND-necessary truth.
   formal: $\Box\exists p\, .\,p\land\forall q\, .\,\Box_{\ne}q\to p\le q$
-  equivalence: The two forms of Vicinity are equivalent in C (see the page of Vicinity); necessitating
-    the derivation and applying K carries the equivalence to the boxed forms.
+  equivalence: The forms of Vicinity are equivalent in C (see [[vicinity]]); necessitating the derivation
+    and applying K carries the equivalence to the boxed forms.
   definitions: where $\Box_{\ne}p:=\exists q\, .\,q\land\Box(\Diamond q\to p)$ and $\Diamond_{\ne}p:=\neg\Box_{\ne}\neg
     p$.
+- id: two-hat-necessity
+  name: Two-hat necessity form
+  statement: Necessarily, there is a truth that entails every two-hat necessary truth.
+  formal: $\Box\exists p\, .\,p\land\forall q\, .\,\hat{\hat\Box}q\to p\le q$
+  equivalence: The forms of Vicinity are equivalent in C (see [[vicinity]]); necessitating the derivation
+    and applying K carries the equivalence to the boxed forms.
+- id: five-necessity
+  name: 5-necessity form
+  statement: Necessarily, there is a truth that entails every 5-necessary truth.
+  formal: $\Box\exists p\, .\,p\land\forall q\, .\,\Box_5 q\to p\le q$
+  equivalence: The forms of Vicinity are equivalent in C (see [[vicinity]]); necessitating the derivation
+    and applying K carries the equivalence to the boxed forms.

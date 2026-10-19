@@ -8,9 +8,11 @@ sources:
 - Christopher Sun, 27 September 2026, who recognised the principle's interest by showing that together
   with Weakly Inextensible Comprehension it implies Actuality.
 - Cian Dorr, formulation and name, 27 September 2026.
+- Christopher Sun, argument sent to Cian Dorr on 19 October 2026, for the 5-necessity form.
 source_names:
 - Sun 27 Sep
 - Dorr 27 Sep
+- Sun 19 Oct
 references:
 - paper: bacon-dorr-classicism
   role: background
@@ -34,6 +36,32 @@ variants:
     bound, as Actuality says that all truths do. Form suggested by Cian Dorr, 14 October 2026.'
   definitions: where $\Box_{\ne}p:=\exists q\, .\,q\land\Box(\Diamond q\to p)$ and $\Diamond_{\ne}p:=\neg\Box_{\ne}\neg
     p$.
+- id: two-hat-necessity
+  name: Two-hat necessity form
+  statement: There is a truth that entails every two-hat necessary truth.
+  formal: $\exists p\, .\,p\land\forall q\, .\,\hat{\hat\Box}q\to p\le q$
+  equivalence: Since $\Box_{\ne}\le\hat{\hat\Box}\le\Box_5$ in C (Background, Hats, two-hat necessity
+    and 5-necessity), this form follows from the 5-necessity form and implies the ND-necessity form, and
+    both of those are equivalent to Vicinity. Form suggested by Cian Dorr, 19 October 2026.
+- id: five-necessity
+  name: 5-necessity form
+  statement: There is a truth that entails every 5-necessary truth.
+  formal: $\exists p\, .\,p\land\forall q\, .\,\Box_5 q\to p\le q$
+  equivalence: 'Right to left: $\Box_{\ne}\le\Box_5$ in C (Background), so such a truth entails every
+    ND-necessary truth, which is the ND-necessity form. Left to right (Christopher Sun, 19 October 2026):
+    let $v$ witness Vicinity, and put $s:=v\land\forall r\, .\,r\to v\le\Diamond r$, which is true. Suppose
+    $\Box_5p$ and $\Diamond(s\land\neg p)$, and let $O:=\lambda r\, .\,(s\land\neg p)\le r$. $O$ is N
+    and K, and J: for true $q$, $s\le v\le\Diamond q$. $\Box_5$ materially implies every $\mathrm{NKJF}_{\langle\rangle}$
+    operator (The Bounds of Possibility, Appendix D, Theorem D9, whose definition of $\Box_5$ is necessarily
+    equivalent to the map’s), and $\neg Op$; so $O$ is not $\mathrm F_{\langle\rangle}$: for some $X^{tt}$,
+    $\forall r\, .\,O(Xr)$ but $\Diamond\exists q\, .\,s\land\neg p\land\neg Xq$. At such a world, with
+    such a $q$, $v$ holds, and since $s$ does, $v\le\Diamond(s\land\neg p\land\neg Xq)$. Actually $v\land\forall
+    r\, .\,O(Xr)$ is true, so by Vicinity $v\le\Diamond(v\land\forall r\, .\,O(Xr))$, and the chosen world
+    sees a world where $v$ and $O(Xq)$ hold. There $v\le\Diamond(s\land\neg p\land\neg Xq)$ still holds,
+    by 4, so $\Diamond(s\land\neg p\land\neg Xq)$, contradicting $O(Xq)$, that is $\Box(s\land\neg p\to
+    Xq)$. So $s$ entails every 5-necessary proposition. This is the second half of Sun’s proof that if
+    the $\hat\Box$-necessary propositions are exactly those entailed by some proposition, so are the 5-necessary
+    ones; the first half shows that $s$, built from such a $v$, is itself 5-necessary.'
 changes:
 - date: '2026-10-14'
   by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
@@ -41,4 +69,6 @@ changes:
     truth.'
 - date: '2026-10-19'
   by: Claude Opus 5.5 (Anthropic)
-  summary: 'At Cian Dorr’s request: definitions of the technical terms of its equivalent forms added.'
+  summary: 'At Cian Dorr’s request: definitions of the technical terms of its equivalent forms added;
+    added the two-hat necessity form (suggested by Cian Dorr) and the 5-necessity form (Christopher Sun’s
+    argument), 19 October 2026.'
