@@ -17,4 +17,4 @@ sources:
 source_names:
 - Dorr 6 Oct
 proof: 'Necessitate the implication from Actuality and BF (type t) to Strong Actuality, a theorem of C; □Actuality and □BF (type t) supply the boxed antecedents, and K distributes.'
-notes: ''
+notes: The boxed form of [[actuality-and-bf-t-imply-strong-actuality]].

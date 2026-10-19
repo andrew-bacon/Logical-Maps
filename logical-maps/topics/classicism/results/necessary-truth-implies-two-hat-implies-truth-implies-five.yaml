@@ -20,4 +20,7 @@ proof: 'Necessitate the proof of the unboxed result: The chain $\Box\le\Box_{\ne
   $\Box\le\hat\Box=\Box_{\ne}$, $\hat{\hat\Box}\le\Box_5$ is Proposition D21 of The Bounds of Possibility,
   Appendix D, right to left, and $\Box_5$ is T. So $p\to\hat{\hat\Box}p\to\Box_5p$. The chain is a theorem,
   so its instances are necessary, and K distributes.'
-notes: Boxed form of the corresponding unboxed result.
+notes: 'The boxed form of [[truth-implies-two-hat-implies-truth-implies-five]].
+
+
+  Boxed form of the corresponding unboxed result.'

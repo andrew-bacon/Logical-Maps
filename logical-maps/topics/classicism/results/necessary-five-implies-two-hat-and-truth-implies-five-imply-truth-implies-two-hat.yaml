@@ -18,4 +18,7 @@ source_names:
 - Dorr–Claude 14 Oct
 proof: 'Necessitate the proof of the unboxed result: Compose: $p\to\Box_5p\to\hat{\hat\Box}p$. The chain
   is a theorem, so its instances are necessary, and K distributes.'
-notes: Boxed form of the corresponding unboxed result.
+notes: 'The boxed form of [[five-implies-two-hat-and-truth-implies-five-imply-truth-implies-two-hat]].
+
+
+  Boxed form of the corresponding unboxed result.'

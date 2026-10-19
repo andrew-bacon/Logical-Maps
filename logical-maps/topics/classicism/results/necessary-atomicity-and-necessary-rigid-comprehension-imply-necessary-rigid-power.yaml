@@ -24,7 +24,7 @@ references:
   role: proof
   locator: Appendix C.2, Lemma C.6
 proof: >-
-  The argument of atomicity-and-rigid-comprehension-imply-rigid-power is a derivation in C from instances
+  The argument of [[atomicity-and-rigid-comprehension-imply-rigid-power]] is a derivation in C from instances
   of Atomicity, at the type of the power property, and of Rigid Comprehension, at the type of the relation
   and at that of its power property. Its necessitation is therefore a theorem of C: at every world where
   those instances hold, so does the instance of Rigid Power. □Atomicity and □Rigid Comprehension supply

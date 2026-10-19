@@ -20,4 +20,4 @@ references:
 - paper: bacon-2024-book
   role: proof
   locator: §8.2, pp. 165–166
-notes: ''
+notes: The boxed form of [[strong-leibniz-r-implies-strong-leibniz-t]].

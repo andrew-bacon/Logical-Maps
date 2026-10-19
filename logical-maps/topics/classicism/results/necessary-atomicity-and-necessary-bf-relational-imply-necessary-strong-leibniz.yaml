@@ -17,7 +17,7 @@ sources:
 source_names:
 - Dorr 11 Oct
 proof: >-
-  Necessitate atomicity-and-bf-relational-imply-strong-leibniz, a theorem of C, and distribute the box
+  Necessitate [[atomicity-and-bf-relational-imply-strong-leibniz]], a theorem of C, and distribute the box
   over the conjunction of premises with K.
 references:
 - paper: bacon-2024-book

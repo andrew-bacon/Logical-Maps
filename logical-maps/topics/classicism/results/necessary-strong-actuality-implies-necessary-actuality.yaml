@@ -16,4 +16,4 @@ sources:
 source_names:
 - Dorr 6 Oct
 proof: 'The implication from Strong Actuality to Actuality is a theorem of C between closed sentences; necessitate it and distribute by K.'
-notes: ''
+notes: The boxed form of [[strong-actuality-implies-actuality]].

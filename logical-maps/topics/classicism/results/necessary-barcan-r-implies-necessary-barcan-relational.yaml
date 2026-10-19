@@ -18,4 +18,4 @@ source_names:
 proof: >-
   Every boxed instance of BF (relational types) is a boxed instance of BF.
 references: []
-notes: ''
+notes: The boxed form of [[barcan-r-implies-barcan-relational]].

@@ -16,7 +16,7 @@ sources:
 source_names:
 - Dorr 11 Oct
 proof: >-
-  The argument of modalized-relational-choice-implies-relational-choice, necessitated, with K.
+  The argument of [[modalized-relational-choice-implies-relational-choice]], necessitated, with K.
 references:
 - paper: bacon-dorr-classicism
   role: background

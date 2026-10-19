@@ -16,7 +16,7 @@ sources:
 source_names:
 - Dorr 2 Oct
 proof: >-
-  The proof of actuality-implies-persistent-comprehension-r uses its premises only at finitely many closed instances and nothing beyond C.
+  The proof of [[actuality-implies-persistent-comprehension-r]] uses its premises only at finitely many closed instances and nothing beyond C.
   So for each closed instance of the conclusion, C proves the conditional from the corresponding premise
   instances to it. Necessitate that theorem and apply K with the boxed premise instances.
   Generalization over the admitted types is metalinguistic; no type quantifier is placed inside the box.
@@ -25,4 +25,4 @@ references:
   role: background
   locator: §1.5, pp. 16–17
   note: Necessitation of theorems, K and 4.
-notes: Boxed counterpart of actuality-implies-persistent-comprehension-r.
+notes: Boxed counterpart of [[actuality-implies-persistent-comprehension-r]].

@@ -17,4 +17,7 @@ source_names:
 - Dorr–Claude 14 Oct
 proof: The chain $\Box\le\Box_{\ne}\le\hat{\hat\Box}\le\Box_5\le\lambda p\, .\,p$ is a theorem of C (Background),
   so its instances are necessary and K distributes. Necessarily, $p\to\Box_{\ne}p\to\Box_5p$.
-notes: Boxed form of a composition or decomposition fact for the chain of necessity operators.
+notes: 'The boxed form of [[truth-implies-nd-implies-truth-implies-five]].
+
+
+  Boxed form of a composition or decomposition fact for the chain of necessity operators.'

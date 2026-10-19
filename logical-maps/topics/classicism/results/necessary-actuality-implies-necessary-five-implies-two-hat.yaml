@@ -29,5 +29,8 @@ proof: Proposition D21 of The Bounds of Possibility, Appendix D, proves $\forall
   D20 and Proposition D19, only Actuality ($\exists w\,W@w$) at the world of evaluation, and needs it
   at every world accessible from the actual one in order to obtain $\Box$NKJF$_{\langle\rangle}\hat{\hat\Box}$;
   $\Box$Actuality supplies exactly that. Necessitating gives the boxed principle.
-notes: Appendix D notes that the proof needs only this consequence of the rigidity axioms (Proposition
-  C7). Corollary D23 is the same fact stated as $\hat{\hat{\hat\Box}}\equiv\hat{\hat\Box}$.
+notes: 'The boxed form of [[actuality-implies-five-implies-two-hat]].
+
+
+  Appendix D notes that the proof needs only this consequence of the rigidity axioms (Proposition C7). Corollary
+  D23 is the same fact stated as $\hat{\hat{\hat\Box}}\equiv\hat{\hat\Box}$.'

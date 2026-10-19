@@ -16,7 +16,7 @@ sources:
 source_names:
 - Dorr 11 Oct
 proof: >-
-  The argument of modalized-relational-choice-implies-intensional-choice is a C-proof of each instance
+  The argument of [[modalized-relational-choice-implies-intensional-choice]] is a C-proof of each instance
   of Intensional Choice from an instance of Modalized Relational Choice. Necessitate it and apply K.
 references:
 - paper: bacon-dorr-classicism

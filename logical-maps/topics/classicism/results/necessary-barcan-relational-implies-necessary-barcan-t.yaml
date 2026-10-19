@@ -18,4 +18,4 @@ source_names:
 proof: >-
   □BF (type t) is the instance of □BF (relational types) at $\sigma=t$.
 references: []
-notes: ''
+notes: The boxed form of [[barcan-relational-implies-barcan-t]].

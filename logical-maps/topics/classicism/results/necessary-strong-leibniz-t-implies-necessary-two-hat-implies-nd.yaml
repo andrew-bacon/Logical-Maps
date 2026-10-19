@@ -17,5 +17,7 @@ source_names:
 - Dorr 14 Oct
 proof: 'Necessitate the proof of the unboxed result: under the boxed premise the argument holds at every
   world, so the conclusion is necessary.'
-notes: Boxed form; by the collapse-propagation result it makes $\Box_{\ne}$, $\hat{\hat\Box}$ and $\Box_5$
-  identical.
+notes: 'The boxed form of [[strong-leibniz-t-implies-two-hat-implies-nd]].
+
+
+  Boxed form; by the collapse-propagation result it makes $\Box_{\ne}$, $\hat{\hat\Box}$ and $\Box_5$ identical.'

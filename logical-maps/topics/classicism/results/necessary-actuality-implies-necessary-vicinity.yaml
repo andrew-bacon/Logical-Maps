@@ -18,3 +18,4 @@ source_names:
 proof: >-
   The argument of the unboxed result derives Vicinity from Actuality in C, with no optional hypothesis,
   so Actuality → Vicinity is a theorem of C. Necessitate it and apply K to $\Box$Actuality.
+notes: The boxed form of [[actuality-implies-vicinity]].

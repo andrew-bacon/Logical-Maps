@@ -16,7 +16,7 @@ sources:
 source_names:
 - Dorr 10 Oct
 proof: >-
-  The argument of weakly-rigid-power-implies-tame-rigidity uses the premise only at the conclusion's type
+  The argument of [[weakly-rigid-power-implies-tame-rigidity]] uses the premise only at the conclusion's type
   tuple and nothing beyond C. So for each closed instance, C proves the conditional from the instance of
   Weakly Rigid Power to the instance of Tame Rigidity. Necessitate that theorem and apply K with the boxed
   premise instance.

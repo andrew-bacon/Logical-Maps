@@ -23,4 +23,4 @@ references:
 - paper: bacon-2024-book
   role: proof
   locator: §8.2, Exercise 8.12 and Theorem 8.2, pp. 166, 169–170
-notes: ''
+notes: The boxed form of [[atomicity-and-bf-imply-strong-leibniz]].

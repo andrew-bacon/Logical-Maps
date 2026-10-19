@@ -16,4 +16,4 @@ sources:
 source_names:
 - Dorr 6 Oct
 proof: 'The implication from the Strong Leibniz Biconditionals (type $t$) to Strong Actuality is a theorem of C between closed sentences (the type-$t$ principle has no type parameters); necessitate it and distribute by K.'
-notes: ''
+notes: The boxed form of [[strong-leibniz-t-implies-strong-actuality]].

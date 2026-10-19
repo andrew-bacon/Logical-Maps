@@ -17,9 +17,9 @@ sources:
 source_names:
 - Dorr 11 Oct
 proof: >-
-  The argument of nd-and-strong-actuality-imply-gallin-comprehension is a C-proof of each instance of
+  The argument of [[nd-and-strong-actuality-imply-gallin-comprehension]] is a C-proof of each instance of
   Gallin Extensional Comprehension from ND and Strong Actuality. Necessitate it and apply K with the
   boxed premises.
 references: []
 notes: >-
-  The boxed counterpart of nd-and-strong-actuality-imply-gallin-comprehension.
+  The boxed counterpart of [[nd-and-strong-actuality-imply-gallin-comprehension]].

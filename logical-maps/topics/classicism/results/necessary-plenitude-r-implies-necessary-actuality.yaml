@@ -23,5 +23,8 @@ references:
 - paper: bacon-dorr-classicism
   role: proof
   locator: Proposition 2.15; §2.3, p. 33
-notes: Instancewise boxed connection stated or used in the cited discussion. The premise is the boxed
-  schema, not an unboxed optional assumption.
+notes: 'The boxed form of [[plenitude-r-implies-actuality]].
+
+
+  Instancewise boxed connection stated or used in the cited discussion. The premise is the boxed schema, not
+  an unboxed optional assumption.'

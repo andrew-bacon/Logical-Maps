@@ -18,7 +18,7 @@ source_names:
 - Dorr 20 Sep
 - Classicism
 proof: >-
-  The recorded proof of gallin-comprehension-implies-nd derives each closed instance of ND at a type
+  The recorded proof of [[gallin-comprehension-implies-nd]] derives each closed instance of ND at a type
   $\sigma$ from the closed instance of Gallin Extensional Comprehension at $\lambda x^\sigma\, .\,x=a$,
   using only theorems of C, so the conditional from that instance to the ND instance is a theorem of C.
   C is closed under necessitation, and K carries the box across the conditional; the boxed premise supplies

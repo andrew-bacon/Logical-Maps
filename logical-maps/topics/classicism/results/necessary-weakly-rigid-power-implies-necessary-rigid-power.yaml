@@ -16,7 +16,7 @@ sources:
 source_names:
 - Dorr 10 Oct
 proof: >-
-  The argument of weakly-rigid-power-implies-rigid-power is a C-proof of each instance of Rigid Power at
+  The argument of [[weakly-rigid-power-implies-rigid-power]] is a C-proof of each instance of Rigid Power at
   $\bar\sigma t$ from the instances of Weakly Rigid Power at $\bar\sigma t$ and $(\bar\sigma t)t$.
   Necessitate the conditional and apply K with the boxed premise instances. Generalization over the
   admitted types is metalinguistic; no type quantifier is placed inside the box.

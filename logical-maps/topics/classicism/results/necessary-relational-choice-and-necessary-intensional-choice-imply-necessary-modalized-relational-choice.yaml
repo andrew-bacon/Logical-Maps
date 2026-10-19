@@ -17,7 +17,7 @@ sources:
 source_names:
 - Dorr 11 Oct
 proof: >-
-  The argument of necessary-relational-choice-and-intensional-choice-imply-modalized-relational-choice
+  The argument of [[necessary-relational-choice-and-intensional-choice-imply-modalized-relational-choice]]
   is a C-proof of each instance from instances of □Relational Choice and Intensional Choice.
   Necessitate it; by 4 each instance of □Relational Choice gives its own necessitation, and K with the
   boxed premises gives the boxed conclusion.

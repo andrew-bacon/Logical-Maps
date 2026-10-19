@@ -28,4 +28,7 @@ proof: The unboxed result shows that Vicinity and BF at type $t$ give B for $\Bo
   of evaluation; under the boxed premises this holds at every world, so $\Box_{\ne}$ is necessarily B,
   and then Propositions D3, D6 and D11 of The Bounds of Possibility, Appendix D, with fact (A5), give
   $\Box_{\ne}=\Box_5$ (see the result that collapse propagates upward), in particular the boxed principle.
-notes: Boxed form; the hypotheses are the necessitations of those of the unboxed result.
+notes: 'The boxed form of [[vicinity-and-barcan-t-imply-two-hat-implies-nd]].
+
+
+  Boxed form; the hypotheses are the necessitations of those of the unboxed result.'

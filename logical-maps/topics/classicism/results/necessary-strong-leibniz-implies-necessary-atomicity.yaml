@@ -21,4 +21,4 @@ references:
 - paper: bacon-2024-book
   role: proof
   locator: §8.2, p. 170
-notes: ''
+notes: The boxed form of [[strong-leibniz-r-implies-atomicity-r]].
