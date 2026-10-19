@@ -1345,7 +1345,36 @@ function renderSubscripts(root) {
     fragment.append(node.data.slice(end)); node.replaceWith(fragment);
   }
 }
-function fmt(s) { return esc(s.trim()).split(/\n\s*\n/).join('<br><br>'); }
+// [[id]] or [[id|text]] in a record's prose links to the record with that id: a result,
+// principle, model, group or general argument (validated by `pmap.py validate`).
+const CROSS_REF = /\[\[([a-z0-9]+(?:-[a-z0-9]+)*)(?:\|([^\]]*))?\]\]/g;
+function fmt(s) { return esc(s.trim()).split(/\n\s*\n/).join('<br><br>').replace(CROSS_REF, (_, id, text) => crossRef(id, text)); }
+// A link to a record's page, labelled by `text` (already escaped) or else by the record itself.
+function crossRef(id, text) {
+  const link = (attr, label) => `<button class="lnk xref" data-${attr}="${esc(id)}">${text || label}</button>`;
+  if (byRid.has(id)) return link('open-result', resultStmt(byRid.get(id)));
+  if (byPid.has(id)) return link('open-principle', esc(name(id)));
+  if (byMid.has(id)) return link('open-model', esc(byMid.get(id).name));
+  if (byGid.has(id)) return link('open-group', esc(byGid.get(id).name));
+  if (byAid.has(id)) return link('open-argument', esc(id));
+  return text || esc(id);
+}
+// The records whose prose cross-references a given id, found once for all ids.
+let crossRefIndex = null;
+function referencedBy(id) {
+  if (!crossRefIndex) {
+    crossRefIndex = new Map();
+    const text = v => typeof v === 'string' ? v : Array.isArray(v) ? v.map(text).join('\n') : v && typeof v === 'object' ? Object.values(v).map(text).join('\n') : '';
+    for (const x of [...R, ...P, ...MODELS.filter(m => !m.companion_of), ...GROUPS, ...GENERAL])
+      for (const ref of new Set([...text(x).matchAll(CROSS_REF)].map(m => m[1])))
+        if (ref !== x.id) crossRefIndex.set(ref, [...(crossRefIndex.get(ref) || []), x.id]);
+  }
+  return crossRefIndex.get(id) || [];
+}
+function referencedBySection(id) {
+  const refs = referencedBy(id);
+  return refs.length ? `<h2>Referenced by</h2><ul class="src">${refs.map(r => `<li>${crossRef(r)}</li>`).join('')}</ul>` : '';
+}
 
 // ---------------------------------------------------------------- layout
 // Signed queries stay within Horn logic: negative assumptions forbid facts.
@@ -3829,6 +3858,7 @@ function renderPage(sel) {
     h += `<h2>Premises</h2><ul class="plist">${r.premises.map(pstmt).join('') || '<li>⊤</li>'}</ul><h2>Conclusion</h2><ul class="plist">${pstmt(r.conclusion)}</ul>`;
     h += `<div class="record-summary">${writeupNote(r)}${r.proof ? `<h2>Proof</h2><div class="prose">${fmt(r.proof)}</div>` : ''}</div>`;
     if (r.notes) h += `<h2>Notes</h2><div class="prose">${fmt(r.notes)}</div>`;
+    h += referencedBySection(r.id);
     h += sourceList([r]);
     h += `<div class="file">${esc(r.file)}</div>`;
   } else if (sel.type === 'model') {
@@ -3869,12 +3899,13 @@ function renderPage(sel) {
     if (notes || refs.length) h += `<h2>Notes</h2>${notes}${refs.length ? paperReferenceList(refs) : ''}`;
     h += historyHtml(m);
     if ((m.checks || []).length) h += `<h2>Checks</h2><ul class="src">${m.checks.map(x => `<li class="mono">${esc(x)}</li>`).join('')}</ul>`;
+    h += referencedBySection(m.id);
     if (!m.arguments) h += sourceList([m]);
     h += `<div class="file">${esc(m.file)}</div>`;
   } else if (sel.type === 'group') {
-    h += groupPage(byGid.get(sel.id));
+    h += groupPage(byGid.get(sel.id)) + referencedBySection(sel.id);
   } else if (sel.type === 'argument') {
-    h += generalArgumentPage(byAid.get(sel.id));
+    h += generalArgumentPage(byAid.get(sel.id)) + referencedBySection(sel.id);
   } else if (sel.type === 'principle') {
     const p = byPid.get(sel.id);
     h += `<h1>${sel.negative ? '¬' : ''}${esc(p.name)}</h1>${sel.negative ? '<p>Negation of the following principle:</p>' : ''}${(p.aliases || []).length ? `<div class="id">${esc(p.aliases.join(', '))}</div>` : ''}<div class="prose statement">${esc(p.statement)}</div>${p.formal ? `<div class="formal">${esc(p.formal)}</div>` : ''}${p.definitions ? `<div class="defs">${fmt(p.definitions)}</div>` : ''}`
@@ -3898,6 +3929,7 @@ function renderPage(sel) {
     const resultsTable = rows => `<table class="results"><tbody>${rows.map(r => `<tr data-result="${r.id}"><td class="stmt">${resultStmt(r)}</td><td>${certBadges(r)}</td></tr>`).join('') || '<tr><td>—</td></tr>'}</tbody></table>`;
     h += `<h2>Results</h2><h3 class="verdict-group">Concluding it <span class="n">${concluding.length}</span></h3>${resultsTable(concluding)}<h3 class="verdict-group">Using it as a premise <span class="n">${using.length}</span></h3>${resultsTable(using)}`;
     h += `<h2>Models</h2><table class="results"><tbody>${groupRows}${inM.map(m => `<tr data-model="${m.id}"><td class="mono nowrap">${m.satisfies.includes(p.id) ? '✓' : '✗'}</td><td class="stmt"><b>${esc(m.name)}</b> &nbsp; ${modelStmt(m)}</td><td>${certBadges(m)}</td></tr>`).join('') || (groupRows ? '' : '<tr><td>—</td></tr>')}</tbody></table>`;
+    h += referencedBySection(p.id);
     h += sourceList([p]);
     h += `<div class="file">${esc(p.file)}</div>`;
   }

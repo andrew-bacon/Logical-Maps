@@ -87,6 +87,14 @@ KaTeX 0.18.7 supports standard mathematical LaTeX commands; see its
 code remain literal. Graph labels retain their existing plain-text notation.
 The same renderer handles details opened after selection and fetched write-ups.
 
+### Cross-references
+
+In a record's prose (proofs, notes, descriptions, definitions, arguments), `[[id]]`
+links to the page of the result, principle, model, group or general argument with
+that id, labelled by its statement or name; `[[id|text]]` labels it `text`. Each page
+lists the records that refer to it under **Referenced by**. `validate` rejects an id
+that names no record. Write-ups do not yet resolve the syntax.
+
 The scripts, stylesheet, WOFF2 fonts and MIT licence live in
 `viewer/vendor/katex/` and are copied into each export's `math/` directory.
 Publish/copy the complete topic directory for offline use. Single-file `--out`

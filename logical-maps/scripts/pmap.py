@@ -226,6 +226,19 @@ TIERS = ("bronze", "silver", "gold")
 
 import re as _re
 SLOT = _re.compile(r"\{\{\s*([a-z0-9]+(?:-[a-z0-9]+)*)\s*\}\}")
+# A cross-reference in a record's prose, [[id]] or [[id|text]]: a link to the record with that id.
+CROSS_REF = _re.compile(r"\[\[([a-z0-9]+(?:-[a-z0-9]+)*)(?:\|[^\]]*)?\]\]")
+
+
+def _prose_text(value) -> str:
+    """Every string in a record, outside its loader's `_` fields, joined: where cross-references can occur."""
+    if isinstance(value, str):
+        return value
+    if isinstance(value, dict):
+        return "\n".join(_prose_text(v) for k, v in value.items() if not str(k).startswith("_"))
+    if isinstance(value, list):
+        return "\n".join(_prose_text(v) for v in value)
+    return ""
 
 
 def value_entry(param: dict, value: str) -> dict:
@@ -2098,6 +2111,15 @@ def validate_topic(topic_id: str, *, quiet=False) -> bool:
         for ref in refs if isinstance(refs, list) else []:
             if isinstance(ref, dict) and isinstance(ref.get("paper"), str) and ref["paper"] not in paper_ids:
                 errors.append(f"{item['_file']}: unknown paper '{ref['paper']}'")
+    # [[id]] or [[id|text]] in a record's prose links to another record of the topic.
+    records = data["principles"] + data["results"] + data["models"] + data.get("groups", []) + data.get("general_arguments", [])
+    linkable = {x.get("id") for x in records}
+    for item in records:
+        if item.get("_companion_of"):
+            continue
+        for ref in sorted(set(CROSS_REF.findall(_prose_text(item)))):
+            if ref not in linkable:
+                errors.append(f"{item['_file']}: unknown cross-reference [[{ref}]]")
 
     ids = set()
     categories = data["topic"].get("principle_categories", [])
