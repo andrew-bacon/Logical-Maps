@@ -1,6 +1,6 @@
 // NODE_PATH=/path/to/node_modules node scripts/check_core_questions_ui.cjs
-// The Conjectures tab's Core Questions: the ranked questions that pmap.py marks as core (one
-// premise; A ∧ B ⊢ ⊥; A ∧ B ⊢ C with C ⊢ A and C ⊢ B established), in their core order with their
+// The Conjectures tab's Core Questions: the ranked questions that pmap.py marks as core (no
+// premise or one; A ∧ B ⊢ ⊥; A ∧ B ⊢ C with C ⊢ A and C ⊢ B established), in their core order with their
 // core scores, under the High-Value Questions, with their own settled share.
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {JSDOM,VirtualConsole}=require('jsdom');
@@ -19,7 +19,7 @@ const rows=[
   row({premises:['b','d'],conclusion:'false',yes:1,no:1,score:1,rank:5,auto_rank:5,auto_claim:'entails',core_yes:1,core_no:1,core_score:1,core_rank:3})];
 // Bits a,b,c,d = 0..3. Group masks: [premises, conclusions, settled, consistency, core conclusions].
 const selection={principles:['a','b','c','d'],groups:[
-  [[],'0xf','0xf',null,'0x0'],
+  [[],'0xf','0xf',null,'0xf'],
   [['d'],'0x7','0x4','open','0x7'],[['b','d'],'0x1','0x0','open','0x0'],
   [['a','b'],'0xc','0x8','refuted','0x4'],[['a','d'],'0x4','0x0','refuted','0x0']]};
 const progress={background:null,name:null,principles:[],negative:[],premises:2,questions:18,settled:9,open:9,core:{questions:10,settled:4,open:6},selection};
@@ -38,9 +38,9 @@ try{
   assert.equal(hv.querySelector('summary').textContent.trim(),'High-Value Questions','renamed');
   assert.equal(core.querySelector('summary').textContent.trim(),'Core Questions');
   assert.equal(hv.nextElementSibling,core,'immediately below the High-Value Questions');
-  assert.match(core.querySelector('.hint').textContent,/^Core Questions correspond to implications of the form \(a\) A ⊢ C.*\(b\) A ∧ B ⊢ ⊥.*\(c\) A ∧ B ⊢ C, where C ⊢ A and C ⊢ B are already established\. Open Core Questions are ranked by how many other Core Questions both answers would settle/);
+  assert.match(core.querySelector('.hint').textContent,/^Core Questions correspond to implications of the form \(a\) ⊢ C, with no premises; \(b\) A ⊢ C.*\(c\) A ∧ B ⊢ ⊥.*\(d\) A ∧ B ⊢ C, where C ⊢ A and C ⊢ B are already established\. Open Core Questions are ranked by how many other Core Questions both answers would settle/);
   assert.equal(core.open,false,'starts collapsed');
-  assert.equal(d.getElementById('open-core-progress').textContent,'3 (37%) of 8 Core Questions are settled.','its own settled share, from the core masks');
+  assert.equal(d.getElementById('open-core-progress').textContent,'7 (58%) of 12 Core Questions are settled.','its own settled share, from the core masks');
   assert.equal(d.getElementById('open-progress').textContent,'8 (53%) of 15 questions with up to two premises are settled.');
   open('open-core');
   assert.deepEqual(keys('open-core'),['q|d|a','q|a+b|c','q|b+d|false'],'only the core questions, in core order');
@@ -52,7 +52,7 @@ try{
   w.eval(`state.openExcluded.add("d"); renderLynchpins()`);
   open('open-core');
   assert.deepEqual(keys('open-core'),['q|a+b|c']);
-  assert.equal(d.getElementById('open-core-progress').textContent,'1 (50%) of 2 Core Questions are settled.');
+  assert.equal(d.getElementById('open-core-progress').textContent,'4 (80%) of 5 Core Questions are settled.');
   assert.deepEqual(errors.map(String),[]);
   console.log('PASS: Core Questions sit below the renamed High-Value Questions, list only core questions in core order with core scores, and give their own settled share over the shown principles.');
 }finally{w.close();}

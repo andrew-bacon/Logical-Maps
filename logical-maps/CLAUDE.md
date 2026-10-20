@@ -70,7 +70,7 @@ and reports unless it is asked for by name.
   an exclusion or a fitting model; a model check is scored the same way. A row that a
   recorded conjecture asks about carries that record (a bronze star and a details
   link; silver or gold when the record sets `tier`). The viewer's sections are
-  "High-Value Questions", "Core Questions" (one premise; A ∧ B ⇒ ⊥; A ∧ B ⇒ C
+  "High-Value Questions", "Core Questions" (no premise or one; A ∧ B ⇒ ⊥; A ∧ B ⇒ C
   with C ⇒ A and C ⇒ B established; ranked by the other core questions an answer
   settles, as `core_rank`, `core_yes`, `core_no` on the stored rows) and
   "Conjectures". `Lynchpins`

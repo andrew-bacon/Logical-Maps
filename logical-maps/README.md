@@ -680,7 +680,7 @@ two answers would settle. If each answer is as likely as the map leaves room
 for it, inversely to how much it would settle, that is the number of other
 questions an answer is expected to settle, so a question that only matters if
 it comes out the implausible way sinks. **Core Questions**, below it, keeps only
-the implications of the form A ⊢ C (one premise, C a principle or ⊥), A ∧ B ⊢ ⊥,
+the implications of the form ⊢ C (no premises), A ⊢ C (one premise, C a principle or ⊥), A ∧ B ⊢ ⊥,
 or A ∧ B ⊢ C where C ⊢ A and C ⊢ B are already established (whether C is
 equivalent to A ∧ B), with no model checks; it ranks them in the same way by how
 many other core questions each answer would settle, and gives their own settled

@@ -3353,7 +3353,7 @@ function renderOpen() {
   warning.innerHTML = inconsistent ? `<h2>Background is inconsistent</h2><p>These assumptions cannot all hold together. Conjecture resolutions are unavailable until the conflicting assumptions are removed.</p>${conjectureEvidence({via: backgroundConflicts[0].via, models: []})}<p>This check uses proved results under the current evidence filters.</p>` : allConflict ? `<h2>Additional evidence shows the background is inconsistent</h2><p>Verdicts from the selected evidence cannot establish which questions remain open with all recorded evidence.</p>${conjectureEvidence({via: allConflict.via, models: []}, allEvidenceBaseE, 'Background conflict with all recorded evidence')}` : '';
   wire(warning);
   let h = `<details id="lynchpins"${state.lynchpins ? ' open' : ''}><summary>High-Value Questions</summary><p class="hint">Open questions ranked by how much both answers would settle, the harmonic mean of if yes and if no. <span id="open-progress" hidden></span></p><div class="lynchpin-body"></div></details>`;
-  h += `<details id="open-core"${state.core ? ' open' : ''}><summary>Core Questions</summary><p class="hint">Core Questions correspond to implications of the form (a) A ⊢ C, with a single premise (C a principle or ⊥); (b) A ∧ B ⊢ ⊥; or (c) A ∧ B ⊢ C, where C ⊢ A and C ⊢ B are already established. Open Core Questions are ranked by how many other Core Questions both answers would settle, the harmonic mean of if yes and if no. <span id="open-core-progress" hidden></span></p><div class="lynchpin-body"></div></details>`;
+  h += `<details id="open-core"${state.core ? ' open' : ''}><summary>Core Questions</summary><p class="hint">Core Questions correspond to implications of the form (a) ⊢ C, with no premises; (b) A ⊢ C, with a single premise (C a principle or ⊥); (c) A ∧ B ⊢ ⊥; or (d) A ∧ B ⊢ C, where C ⊢ A and C ⊢ B are already established. Open Core Questions are ranked by how many other Core Questions both answers would settle, the harmonic mean of if yes and if no. <span id="open-core-progress" hidden></span></p><div class="lynchpin-body"></div></details>`;
   h += `<details id="open-recorded"${state.recorded ? ' open' : ''}><summary>Conjectures</summary><div class="lynchpin-body"></div></details>`;
   h += `<details id="open-auto"${state.auto ? ' open' : ''}><summary>Automatically Generated Conjectures</summary><p class="hint">Questions ranked by how many questions would be settled by a negative result.</p><div class="lynchpin-body"></div></details>`;
   const el = document.getElementById('open'); el.innerHTML = h;
@@ -3393,8 +3393,8 @@ function shownProgress(p) {
     const asked = consistency !== null ? 1 : 0, done = consistency === 'proved' || consistency === 'refuted' ? 1 : 0;
     questions += count(BigInt(conclusions) & mask) + asked;
     settled += count(BigInt(resolved) & mask) + done;
-    // Core: every question with one premise, and with two its consistency and the conclusions already known to entail both.
-    if (core !== undefined && premises.length) {
+    // Core: every question with no premise or one, and with two its consistency and the conclusions already known to entail both.
+    if (core !== undefined) {
       coreQ += count(BigInt(core) & mask) + asked;
       coreS += count(BigInt(resolved) & BigInt(core) & mask) + done;
     }
