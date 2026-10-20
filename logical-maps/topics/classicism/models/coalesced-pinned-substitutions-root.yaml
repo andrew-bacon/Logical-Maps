@@ -161,6 +161,18 @@ arguments:
     contains every transport along $b$, that is, everything. So by Proposition D8 of The Bounds of
     Possibility $\Box_5$ implies two-hat necessity. The truth $\mathrm{fix}_{\{c\}}$ is not two-hat necessary,
     every $\delta_S$ containing a bijection moving $c$, so not 5-necessary.
+- id: strong-possibility
+  fails:
+  - strong-possibility-signature-r
+  by: Cian Dorr, recorded by Claude Opus 5.5 (Anthropic)
+  date: '2026-10-19'
+  choice: free
+  text: >-
+    Actuality is a closed sentence of $\Sigma$ consistent with Maximalist Classicism for $\Sigma$, both
+    holding at the root of coalesced-maximalist-root. By collapse-at-root, $\Box_{\ne}p$ holds at $W_0$
+    iff $p$ contains $\delta_S$ for some finite $S$, a set of maps of the constants, all with target
+    $W_0$; Actuality fails at $W_0$, hence at every map, so $\neg$Actuality contains every $\delta_S$ and
+    $\Diamond_{\ne}$Actuality fails.
 notes: 'A variant of coalesced-pinned-interpretations-root, suggested by Cian Dorr on 19 October 2026: the
   substitutions of constants make Actuality fail, as in the finitely pinned model on all maps, while
   Maximalism and BF still hold. The argument that it is a model of C is that of the original with the maps
