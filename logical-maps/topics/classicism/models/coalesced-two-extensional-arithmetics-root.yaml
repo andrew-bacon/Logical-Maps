@@ -22,9 +22,9 @@ references:
 group: coalesced-sums
 settings:
   root-arrows: distinguished
-  construction: 'Let $T$ be C with Extensionality and $I^*$ (zero is not a successor and successor is
-    injective on the finite cardinalities of individuals). $T$ holds in the full standard model on
-    $\mathbb N$, so $T+\operatorname{Con}(T)$ is consistent, and by Gödel''s second incompleteness
+  construction: 'Let $T$ be C with Extensionality, Well-Ordering at every type and $I^*$ (zero is not a
+    successor and successor is injective on the finite cardinalities of individuals). $T$ holds in the
+    full standard model on $\mathbb N$, by choice in the metatheory, so $T+\operatorname{Con}(T)$ is consistent, and by Gödel''s second incompleteness
     theorem so is $T+\neg\operatorname{Con}(T)$. Take one-world Henkin models $M_1$ of
     $T+\operatorname{Con}(T)$ and $M_2$ of $T+\neg\operatorname{Con}(T)$, as action models with one object
     and only its identity arrow, and coalesce them at a new root as in Definition E.2. The root''s
@@ -74,7 +74,64 @@ arguments:
     The closed pure sentence $\exists p\, .\,p\land\Diamond\neg p$ is true at the root, where the
     proposition true only at the root is contingent, and false at each component world, which sees only
     itself; so it is not possible there, and B for it fails at the root.
+- id: infinity
+  holds:
+  - infinity-e
+  - possible-infinity-e
+  fails:
+  - axiom-of-infinity-t
+  - infinity-t
+  - possible-infinity-t
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-19'
+  choice: free
+  text: >-
+    Each component is one-world and extensional, so it has exactly two propositions, and the root,
+    whose propositions are a truth value at the root with one of each component's, has eight; so there are
+    finitely many propositions at every world. The root individuals are the pairs from two infinite
+    domains, with literal identity, so any number of them are distinct. $T$ proves the Axiom of Infinity
+    at type $e$: if a finite cardinality $n$ held of the universal property, $\operatorname{Suc}n$ and
+    $\operatorname{Suc}\operatorname{Suc}n$ would both be the empty cardinality, by Extensionality, while
+    $n\ne\operatorname{Suc}n$, against $I^*$; so it holds at the component worlds and is possible at the
+    root.
+- id: boolean-completeness-t
+  holds:
+  - boolean-completeness-t
+  - necessary-boolean-completeness-t
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-19'
+  choice: free
+  text: The propositions form a finite Boolean algebra at every world, so every family has a greatest lower
+    bound.
+- id: one-world-components
+  holds:
+  - necessary-distinctness-preserving-collapse
+  - tame-rigidity-r
+  - necessary-tame-rigidity-r
+  - necessary-intensional-choice-r
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-19'
+  choice: uses
+  text: >-
+    At a one-world component $\Box$ is idle. Every truth is ND-necessary there, with $\top$ as witness;
+    every relation is weakly persistent and weakly inextensible, so Tame Rigidity holds there trivially;
+    and Intensional Choice holds, the singleton of a chosen instance being definable. At the root, a
+    weakly rigid relation is rigid, since Rigid is weak rigidity at every world and the other worlds are
+    the components; and Truth implies ND-necessity holds there already.
+- id: well-ordering
+  holds:
+  - modal-well-ordering-r
+  - necessary-well-ordering-r
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-19'
+  choice: uses
+  text: >-
+    Each component satisfies Well-Ordering, being a model of $T$. For a type $\sigma$, let $R$ have as
+    root part a well-ordering of the root's entities of type $\sigma$, chosen in the metatheory, and as
+    component parts well-orderings in the components; the root domains being fullest, $R$ is in the
+    domain, and it well-orders the type at every world, every root property of type $\sigma t$ having a
+    root part that is a subset of the root's entities.
 notes: 'Suggested by Cian Dorr on 19 October 2026 as a small model of the boxed Strong Leibniz Biconditionals
   and □BF without the Necessity of Arithmetic. The root has three atoms, the singletons of its three worlds,
-  all strong worlds. The components are one-world extensional Henkin models, and nothing about choice in them
-  is assumed. No Lean verification is claimed.'
+  all strong worlds. The components are one-world extensional Henkin models, and they satisfy Well-Ordering
+  at every type, so that the choice principles hold at every world. No Lean verification is claimed.'
