@@ -682,9 +682,10 @@ questions an answer is expected to settle, so a question that only matters if
 it comes out the implausible way sinks. **Core Questions**, below it, keeps only
 the implications of the form ⊢ C (no premises), A ⊢ C (one premise, C a principle or ⊥), A ∧ B ⊢ ⊥,
 or A ∧ B ⊢ C where C ⊢ A and C ⊢ B are already established (whether C is
-equivalent to A ∧ B), with no model checks; it ranks them in the same way by how
-many other core questions each answer would settle, and gives their own settled
-share. A group of equivalent questions is core when one of its forms is.
+equivalent to A ∧ B), with no model checks; it ranks them by the geometric mean of how many core
+questions each answer would settle, the question itself included, so that a
+question one of whose answers would settle much still rises; and it gives their
+own settled share. A group of equivalent questions is core when one of its forms is.
 **Automatically Generated Conjectures**
 lists the same questions by their larger side, each stated as the answer to
 expect: ⊢ when a refutation would settle more, ⊬ when a proof would, with "if

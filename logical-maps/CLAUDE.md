@@ -71,8 +71,8 @@ and reports unless it is asked for by name.
   recorded conjecture asks about carries that record (a bronze star and a details
   link; silver or gold when the record sets `tier`). The viewer's sections are
   "High-Value Questions", "Core Questions" (no premise or one; A ∧ B ⇒ ⊥; A ∧ B ⇒ C
-  with C ⇒ A and C ⇒ B established; ranked by the other core questions an answer
-  settles, as `core_rank`, `core_yes`, `core_no` on the stored rows) and
+  with C ⇒ A and C ⇒ B established; ranked by the geometric mean of the core
+  questions each answer settles, itself included, as `core_rank`, `core_yes`, `core_no` on the stored rows) and
   "Conjectures". `Lynchpins`
   in `scripts/pmap.py` is the only implementation: `build` stores its full rankings and
   settled share per background preset in `data.json` (also `derived.json` and the

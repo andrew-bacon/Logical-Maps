@@ -915,8 +915,8 @@ class Lynchpins:
     The core questions are those with no premise (whether c is a theorem of the background), those
     with one premise (S ⇒ c, c a principle or False), those of the form A ∧ B ⇒ False, and those of
     the form A ∧ B ⇒ C where C ⇒ A and C ⇒ B are already established: whether C is equivalent to
-    A ∧ B. They are scored by the other open core
-    questions an answer would settle, and ranked by those scores.
+    A ∧ B. Each answer is scored by the open core questions it would settle, the question itself
+    included, and a question by the geometric mean of the two.
     """
 
     def __init__(self, data: dict, background=(), negative_background=()):
@@ -1452,8 +1452,9 @@ class Lynchpins:
             for i, group in enumerate(central):
                 for r in group:
                     r["rank"] = i + 1
-            # The core questions: a group is core when one of its equivalent forms is. Each is
-            # scored by the other open core questions an answer settles, and ranked by those scores.
+            # The core questions: a group is core when one of its equivalent forms is. Each answer is
+            # scored by the open core questions it settles, the question itself included (so at least
+            # 1), and the question by the geometric mean of the two.
             core = [g for g in central if any(self._is_core(r) for r in g)]
             for g in core:
                 S, c = tuple(g[0]["premises"]), g[0]["conclusion"]
@@ -1461,8 +1462,8 @@ class Lynchpins:
                 y = self.with_rule(S, c, (j, c), both=True)[1]
                 n = self.with_model(S, [c] if c != FALSE else [], (j, c), both=True)[1]
                 for r in g:
-                    r["core_yes"], r["core_no"] = y, n
-                    r["core_score"] = round(2 * y * n / (y + n), 1) if y + n else 0.0
+                    r["core_yes"], r["core_no"] = y + 1, n + 1
+                    r["core_score"] = round(((y + 1) * (n + 1)) ** 0.5, 2)
             core.sort(key=lambda g: (-g[0]["core_score"], -min(g[0]["core_yes"], g[0]["core_no"]), -max(g[0]["core_yes"], g[0]["core_no"]), *name(g[0])))
             for i, group in enumerate(core):
                 for r in group:
@@ -4994,9 +4995,10 @@ def selftest():
     agree_core(Lc)
     crows = [r for r in Lc.rank(top=None)["rows"] if r.get("core_rank") is not None]
     assert crows and all(Lc._is_core(r) or any(Lc._is_core({**r, "premises": S}) for S in r.get("premise_sets", [])) for r in crows)
-    chm = lambda r: 2 * r["core_yes"] * r["core_no"] / (r["core_yes"] + r["core_no"]) if r["core_yes"] + r["core_no"] else 0
+    chm = lambda r: (r["core_yes"] * r["core_no"]) ** 0.5
+    assert all(min(r["core_yes"], r["core_no"]) >= 1 for r in crows), "an answer settles at least the question itself"
     crows.sort(key=lambda r: r["core_rank"])
-    assert [r["core_rank"] for r in crows] == list(range(1, len(crows) + 1)) and crows == sorted(crows, key=lambda r: (-chm(r), -min(r["core_yes"], r["core_no"]))), "core questions: by the harmonic mean of their core scores"
+    assert [r["core_rank"] for r in crows] == list(range(1, len(crows) + 1)) and crows == sorted(crows, key=lambda r: (-chm(r), -min(r["core_yes"], r["core_no"]))), "core questions: by the geometric mean of their core scores"
     assert not any(r["kind"] == "check" for r in crows), "model checks are not core questions"
     ranked = L.rank(top=3)
     top, auto = ranked["rows"], ranked["auto"]
