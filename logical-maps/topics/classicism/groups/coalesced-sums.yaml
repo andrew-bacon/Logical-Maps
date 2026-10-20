@@ -39,11 +39,26 @@ parameters:
         label: distinguished arrows
         meets:
           distinguished-arrows: This is the construction.
+          actual-world-isolated: >-
+            The singleton root proposition, true at the root's identity arrow and nowhere in a
+            component, is in the domain and entails every truth; the components have no arrows back
+            to the root (Classicism, Appendix E, p. 83, on the distinctness-preserving collapse).
       interpretations:
         text: >-
           The root has an arrow to every object of every component, one for each interpretation there
           of a fixed signature, and the root's individuals are that signature's individual constants.
         label: interpretation arrows
+        meets:
+          actual-world-isolated: >-
+            The singleton root proposition, true at the root's identity arrow and nowhere in a
+            component, is in the domain and entails every truth; the components have no arrows back
+            to the root (Classicism, Appendix E, p. 83, on the distinctness-preserving collapse).
+      interpretations-and-substitutions:
+        text: >-
+          As for interpretation arrows, and the root has besides an arrow to itself for every
+          type-preserving map of the signature's constants to themselves, acting on the root's
+          individuals and composing with the interpretation arrows by precomposition.
+        label: interpretation and substitution arrows
   construction:
     text: The components, how their individuals and constants meet at the root, and the evaluation
       point, as the member's source gives them.
@@ -58,11 +73,6 @@ parameters:
         arguments.
 
 # Conditions of the topic that every member meets.
-meets:
-  actual-world-isolated: >-
-    The singleton root proposition, true at the root's identity arrow and nowhere in a component, is
-    in the domain and entails every truth; the components have no arrows back to the root
-    (Classicism, Appendix E, p. 83, on the distinctness-preserving collapse).
 
 conditions:
 - id: complete-components
@@ -172,6 +182,7 @@ arguments:
       all-finite-domains member every component satisfies Relational Choice.
 
 - id: actuality-singleton-root
+  requires: [actual-world-isolated]
   holds: [actuality]
   source: {paper: bacon-dorr-classicism, locator: 'Appendix E, p. 83'}
   by: Andrew Bacon and Cian Dorr

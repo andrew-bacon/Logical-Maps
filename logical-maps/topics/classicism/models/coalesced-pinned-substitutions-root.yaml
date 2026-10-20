@@ -1,0 +1,103 @@
+id: coalesced-pinned-substitutions-root
+name: 'Coalesced sum: interpretation and substitution arrows, finitely pinned root'
+certificate:
+  source_id: misc
+  produced_by: Cian Dorr, 19 October 2026 (the construction, a variant of coalesced-pinned-interpretations-root
+    with substitutions of constants as further root arrows), with Claude Opus 5.5 (Anthropic), who wrote the
+    verification
+  recorded_by: Claude Opus 5.5 (Anthropic), 19 October 2026
+  checked_by: []
+  date: '2026-10-19'
+  lean: none
+sources:
+- Cian Dorr, construction of 19 October 2026, with Claude Opus 5.5 (Anthropic); verification in the
+  write-up.
+- Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, Appendix D, Definitions D.1–D.3 and
+  Proposition D.4, pp. 73–74; Appendix E, Definition E.2, pp. 80–83.
+source_names:
+- Dorr 19 Oct
+- Classicism
+references:
+- paper: bacon-dorr-classicism
+  role: background
+  locator: Appendix D, Definitions D.1–D.3, Proposition D.4, pp. 73–74; Appendix E, Definition E.2,
+    pp. 80–83
+  note: The finitely pinned domains of Appendix D, with finite sets of constants in place of finite sets
+    of individuals, over the components of a coalesced sum as in Appendix E.
+group: coalesced-sums
+settings:
+  root-arrows: interpretations-and-substitutions
+  construction: 'As in coalesced-pinned-interpretations-root, with further arrows from $W_0$ to itself: one for
+    every type-preserving map $f$ of the constants of $\Sigma^+$ to themselves, the identity among them.
+    $f$ acts on the individuals at $W_0$ as on constants; maps compose with each other as functions, and
+    $\langle V,I\rangle\circ f=\langle V,I\circ f\rangle$. Evaluation point: $W_0$, at its identity arrow.
+    Interpretation of Σ, fixed for this record: each constant $c$ of Σ denotes $\hat c$, with transport
+    $I(c)$ along $\langle V,I\rangle$ and $\widehat{f(c)}$ along $f$, and empty extension at every map.'
+  domains:
+    text: 'An entity at $W_0$ of a relational type is an intension over the arrows out of $W_0$ that is
+      pinned down by a finite set $S$ of constants of $\Sigma^+$ (two arrows $\langle V,I\rangle$,
+      $\langle V,I^{\prime}\rangle$ with $I{\restriction}S=I^{\prime}{\restriction}S$, or two maps of the
+      constants agreeing on $S$, give it the same value) and whose transport along every arrow $\langle
+      V,I\rangle$ is in the domain of $V$ in its component. Transport along a map $f$ keeps an entity in
+      the domain: it is pinned down by $f(S)$, and its transports are transports of the original.'
+meets:
+  complete-components: The models in $A$ are complete for C($\Sigma$), so in particular for C.
+arguments:
+- id: barcan
+  holds:
+  - barcan-r
+  by: Cian Dorr, recorded by Claude Opus 5.5 (Anthropic)
+  date: '2026-10-19'
+  choice: free
+  writeup: coalesced-pinned-substitutions-root
+  text: >-
+    At every type, in the form $\Diamond\exists x\, .\,Fx\to\exists x\, .\,\Diamond Fx$, for $F$ pinned
+    down by a finite $S$. A witness $y$ at an arrow $\langle V,I\rangle$ is handled as in
+    coalesced-pinned-interpretations-root, by a fresh constant $c$ with $I^{\prime}(c)=y$. A witness $y$
+    at a map $f$ is an entity at $W_0$, pinned down by some finite $S_y$: let $g$ send $S_y$ to fresh
+    constants outside $S$, and $f^{\prime}$ agree with $f$ on $S$ and send them back, so that
+    $f^{\prime}\circ g$ fixes $S_y$. Then $F$ holds at $f^{\prime}$ of $y=f^{\prime}\cdot(g\cdot y)$, so
+    $\Diamond F(g\cdot y)$.
+- id: maximalism
+  holds:
+  - distinctness-signature-r
+  by: Cian Dorr, recorded by Claude Opus 5.5 (Anthropic)
+  date: '2026-10-19'
+  choice: free
+  writeup: coalesced-pinned-substitutions-root
+  text: >-
+    A closed sentence of $\Sigma$ holds at $\langle V,I\rangle$ iff it holds at $V$ in its component
+    under the restriction of $I$ to $\Sigma$, the constants of $\Sigma$ denoting the entities $\hat c$.
+    Every $\Sigma$-sentence consistent with C($\Sigma$) holds at the root of some model in $A$ under some
+    interpretation, which extends to $\Sigma^+$, so it is possible at $W_0$: Maximalism for $\Sigma$ in its
+    possibility form, and with it the pure form.
+- id: possibility-plus
+  holds:
+  - possibility-plus-signature-r
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-19'
+  choice: free
+  text: >-
+    The individuals at $W_0$ are the individual constants of $\Sigma^+$, none of them in $\Sigma$. Let
+    $P$ be a $\Sigma$-formula with free individual variables among $\bar x$, consistent with C($\Sigma$),
+    and $\bar c$ pairwise distinct individual constants. Some model in $A$ has $P$ true at its root $V$
+    of some $\bar a$ under some interpretation of $\Sigma$; let $I$ extend it with $I(\bar c)=\bar a$,
+    possibly identifying constants. Then $\langle V,I\rangle\cdot\bar c=\bar a$, so $P(\bar c)$ holds at
+    $\langle V,I\rangle$ and $\Diamond P(\bar c)$ at $W_0$: Possibility+ for $\Sigma$, and with it the
+    pure form.
+- id: actuality
+  fails:
+  - actuality
+  by: Cian Dorr, recorded by Claude Opus 5.5 (Anthropic)
+  date: '2026-10-19'
+  choice: free
+  text: >-
+    A true proposition pinned down by a finite $S$ contains every map of the constants fixing $S$
+    pointwise, since such a map agrees with the identity on $S$. For a constant $c\notin S$ the set of
+    maps fixing $S\cup\{c\}$, together with no arrow into a component, is a truth not entailed by it: a
+    map fixing $S$ and moving $c$ separates them. So no truth entails every truth, as in the all-maps
+    finitely pinned model.
+notes: 'A variant of coalesced-pinned-interpretations-root, suggested by Cian Dorr on 19 October 2026: the
+  substitutions of constants make Actuality fail, as in the finitely pinned model on all maps, while
+  Maximalism and BF still hold. The argument that it is a model of C is that of the original with the maps
+  added (see the write-up) and has not been checked by a second reader. No Lean verification is claimed.'
