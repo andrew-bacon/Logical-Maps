@@ -286,6 +286,18 @@
     "lines": [1681, 1683],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
+  "strong-leibniz-weak-rigid-comprehension-and-relational-choice-imply-intensional-choice":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.strong_leibniz_weak_rigid_comprehension_and_relational_choice_imply_intensional_choice",
+     "lines": [1249, 1347],
+     "file": "Classicism/Results/Records/Choice.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.strong_leibniz_weak_rigid_comprehension_and_relational_choice_imply_intensional_choice",
+    "lines": [1777, 1779],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
   "strong-leibniz-t-necessary-rigid-comprehension-and-rigid-power-imply-bf-t":
   {"proofs":
    [{"name": "Classicism.slt_nrc_rp_bft",
@@ -294,7 +306,7 @@
    "certificate":
    {"name":
     "Classicism.Map.strong_leibniz_t_necessary_rigid_comprehension_and_rigid_power_imply_bf_t",
-    "lines": [1777, 1779],
+    "lines": [1781, 1783],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "strong-leibniz-t-implies-strong-actuality":
@@ -359,7 +371,7 @@
    "certificate":
    {"name":
     "Classicism.Map.strong_leibniz_necessary_rigid_comprehension_and_rigid_power_imply_bf_relational",
-    "lines": [1781, 1783],
+    "lines": [1785, 1787],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "strong-actuality-implies-actuality":
@@ -991,7 +1003,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_modalized_relational_choice_imply_necessary_modalized_relational_choice",
-    "lines": [1825, 1827],
+    "lines": [1829, 1831],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-intensional-choice-imply-necessary-intensional-choice":
@@ -1613,7 +1625,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_strong_leibniz_and_necessary_rigid_comprehension_imply_necessary_bf_relational",
-    "lines": [1793, 1795],
+    "lines": [1797, 1799],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-strong-actuality-implies-strong-actuality":
@@ -1771,7 +1783,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_relational_choice_and_necessary_intensional_choice_imply_necessary_modalized_relational_choice",
-    "lines": [1821, 1823],
+    "lines": [1825, 1827],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-relational-choice-and-intensional-choice-imply-modalized-relational-choice":
@@ -1783,7 +1795,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_relational_choice_and_intensional_choice_imply_modalized_relational_choice",
-    "lines": [1805, 1807],
+    "lines": [1809, 1811],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-plenitude-r-implies-plenitude-r":
@@ -1884,7 +1896,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_modalized_relational_choice_r_implies_modalized_relational_choice_r",
-    "lines": [1809, 1811],
+    "lines": [1813, 1815],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-modalized-relational-choice-implies-necessary-relational-choice":
@@ -1896,7 +1908,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_modalized_relational_choice_implies_necessary_relational_choice",
-    "lines": [1817, 1819],
+    "lines": [1821, 1823],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-modalized-relational-choice-implies-necessary-intensional-choice":
@@ -1908,7 +1920,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_modalized_relational_choice_implies_necessary_intensional_choice",
-    "lines": [1813, 1815],
+    "lines": [1817, 1819],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-modal-five-implies-necessary-modal-b":
@@ -2477,7 +2489,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_atomicity_and_necessary_rigid_comprehension_imply_necessary_rigid_power",
-    "lines": [1789, 1791],
+    "lines": [1793, 1795],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atomicity-and-necessary-bf-t-imply-necessary-strong-leibniz-t":
@@ -2641,7 +2653,7 @@
    "certificate":
    {"name":
     "Classicism.Map.modalized_relational_choice_implies_relational_choice",
-    "lines": [1801, 1803],
+    "lines": [1805, 1807],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "modalized-relational-choice-implies-intensional-choice":
@@ -2653,7 +2665,7 @@
    "certificate":
    {"name":
     "Classicism.Map.modalized_relational_choice_implies_intensional_choice",
-    "lines": [1797, 1799],
+    "lines": [1801, 1803],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "modal-well-ordering-r-implies-necessary-well-ordering-r":
@@ -2700,7 +2712,7 @@
    "certificate":
    {"name":
     "Classicism.Map.modal_well_ordering_implies_necessary_modalized_relational_choice",
-    "lines": [1833, 1835],
+    "lines": [1837, 1839],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "modal-well-ordering-implies-modalized-relational-choice":
@@ -2712,7 +2724,7 @@
    "certificate":
    {"name":
     "Classicism.Map.modal_well_ordering_implies_modalized_relational_choice",
-    "lines": [1829, 1831],
+    "lines": [1833, 1835],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "modal-freedom-signature-r-implies-no-pure-contingency-r":
@@ -3780,7 +3792,7 @@
    "certificate":
    {"name":
     "Classicism.Map.atomicity_and_rigid_comprehension_imply_rigid_power",
-    "lines": [1785, 1787],
+    "lines": [1789, 1791],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atomicity-and-bf-relational-imply-strong-leibniz":
