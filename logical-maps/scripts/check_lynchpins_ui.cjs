@@ -116,7 +116,7 @@ try {
   assert.ok(det().querySelector('.hint').textContent.startsWith('Open questions ranked by how much both answers would settle'));
   assert.ok(det().querySelector('.hint').contains(progress()),'the settled share sits in the description');
   // Three peer dropdowns in one format, all collapsed at first.
-  assert.equal(det().querySelector('summary').textContent.trim(),'Central Questions');
+  assert.equal(det().querySelector('summary').textContent.trim(),'High-Value Questions');
   assert.equal(auto().querySelector('summary').textContent.trim(),'Automatically Generated Conjectures');
   assert.equal(recorded().querySelector('summary').textContent.trim(),'Conjectures','no count on the dropdown');
   assert.ok(det().compareDocumentPosition(recorded())&dom.window.Node.DOCUMENT_POSITION_FOLLOWING,'central questions, then the conjectures');

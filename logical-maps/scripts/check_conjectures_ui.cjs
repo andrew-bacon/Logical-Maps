@@ -118,7 +118,7 @@ try {
   assert.equal(doc.querySelector('[data-tab="open"]').textContent.trim(),'Conjectures','the tab carries no count');
   assert.equal(doc.getElementById('open-recorded').open,false,'the dropdown starts collapsed');
   assert.equal(doc.querySelector('#open-recorded > summary').textContent.trim(),'Conjectures');
-  assert.equal(doc.querySelector('#lynchpins > summary').textContent.trim(),'Central Questions');
+  assert.equal(doc.querySelector('#lynchpins > summary').textContent.trim(),'High-Value Questions');
   assert.equal(doc.querySelector('#open-auto > summary').textContent.trim(),'Automatically Generated Conjectures');
   openSection(dom,'open-recorded');
   assert.deepEqual(keys(dom),['q|b|a','q|a|b','q|b|false'],'open conjectures only, by central rank');

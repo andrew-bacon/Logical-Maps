@@ -675,11 +675,17 @@ details does not cover or resize the graph. The panel lists selected principles 
 definitions and individual remove buttons.
 
 The Conjectures tab shares the background controls. Its sections collapse:
-**Central Questions** ranks open questions by the harmonic mean of what the
+**High-Value Questions** ranks open questions by the harmonic mean of what the
 two answers would settle. If each answer is as likely as the map leaves room
 for it, inversely to how much it would settle, that is the number of other
 questions an answer is expected to settle, so a question that only matters if
-it comes out the implausible way sinks. **Automatically Generated Conjectures**
+it comes out the implausible way sinks. **Core Questions**, below it, keeps only
+the implications of the form A ⊢ C (one premise, C a principle or ⊥), A ∧ B ⊢ ⊥,
+or A ∧ B ⊢ C where C ⊢ A and C ⊢ B are already established (whether C is
+equivalent to A ∧ B), with no model checks; it ranks them in the same way by how
+many other core questions each answer would settle, and gives their own settled
+share. A group of equivalent questions is core when one of its forms is.
+**Automatically Generated Conjectures**
 lists the same questions by their larger side, each stated as the answer to
 expect: ⊢ when a refutation would settle more, ⊬ when a proof would, with "if
 yes" and "if no" what confirming or refuting that conjecture would settle. A question is S ⊢ c, whether S entails c, for S at
@@ -701,7 +707,7 @@ with more than two premises is listed the same way, marked as such. **Show
 resolved** is off by default, hiding the settled ones. A sparse map, too open to
 rank, still lists and scores its conjectures. Verdicts come from proved
 evidence under the background and never from conjectures; a model witnesses a
-conjecture's flags, not its proposed construction. The Central Questions description gives the share of
+conjecture's flags, not its proposed construction. The High-Value Questions description gives the share of
 implication questions with up to two premises settled: S ⊢ c for S at most two
 principle classes and c a class or False, counted only when no smaller premise
 set already proves or excludes c, and settled alike by a proof, an exclusion or

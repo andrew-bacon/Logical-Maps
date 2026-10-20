@@ -911,6 +911,11 @@ class Lynchpins:
     question is scored by the other open questions that a proof of it, or its weakest
     countermodel, would settle. Deciding an unknown principle in a recorded model is scored the
     same way, since a model fact settles questions exactly as a proof does.
+
+    The core questions are those with one premise (S ⇒ c, c a principle or False), those of the
+    form A ∧ B ⇒ False, and those of the form A ∧ B ⇒ C where C ⇒ A and C ⇒ B are already
+    established: whether C is equivalent to A ∧ B. They are scored by the other open core
+    questions an answer would settle, and ranked by those scores.
     """
 
     def __init__(self, data: dict, background=(), negative_background=()):
@@ -1011,7 +1016,7 @@ class Lynchpins:
         self.sets, self.qmask, self.settled, self.qfalse = [], [], [], []
         self.wit = [(self._mask(E.holds[m["id"]]), self._mask(E.fails[m["id"]])) for m in self.witnesses]
         if self.inconsistent:
-            self.openmask, self.openq, self.T = [], [], {}
+            self.openmask, self.openq, self.T, self.coremask = [], [], {}, []
             return
         single = {a: self._cl((a,)) for a in atoms}
         inconsistent = sum(bit[a] for a in atoms if single[a] & BAD)
@@ -1074,6 +1079,15 @@ class Lynchpins:
             self.settled.append(s)
             self.qfalse.append("refuted" if held else "open")
         self.openmask = [g & ~s for g, s in zip(self.qmask, self.settled)]
+        # Core conclusions per set: every conclusion of one premise; of two premises a and b,
+        # those c already known to entail both (c ⇒ a and c ⇒ b). Consistency questions with one
+        # or two premises are core too (see _total and progress).
+        down = {a: 0 for a in atoms}  # down[a]: the conclusions known to entail a
+        for c, F in single.items():
+            for low in self._bits(F & ALL):
+                down[self.id_of[low]] |= bit[c]
+        self.coremask = [g if len(S) == 1 else g & down[S[0]] & down[S[1]] if len(S) == 2 else 0
+                         for (S, _, _), g in zip(self.sets, self.qmask)]
         for j, (S, pm, F) in enumerate(self.sets):
             if len(S) < 2:
                 for low in self._bits(self.openmask[j]):
@@ -1116,13 +1130,19 @@ class Lynchpins:
             by[len(S)][1] += self._count(s) + (st in ("proved", "refuted"))
         questions, settled = sum(q for q, _ in by), sum(x for _, x in by)
         out = {"premises": PROGRESS_PREMISES, "questions": questions, "settled": settled, "open": questions - settled, "by_premises": by}
+        cq = cs = 0
+        for (S, _, _), g, s, st, cm in zip(self.sets, self.qmask, self.settled, self.qfalse, self.coremask):
+            if S:
+                cq += self._count(cm) + (st is not None)
+                cs += self._count(s & cm) + (st in ("proved", "refuted"))
+        out["core"] = {"questions": cq, "settled": cs, "open": cq - cs}
         if include_selection:
             # Each group is [premises, question-conclusion mask, settled-conclusion
-            # mask, consistency status]. Hex strings preserve masks beyond 53 bits
+            # mask, consistency status, core-conclusion mask]. Hex strings preserve masks beyond 53 bits
             # in JavaScript; their bit positions follow the principle IDs below.
             out["selection"] = {"principles": self.ids, "groups": [
-                [list(S), hex(g), hex(s), st]
-                for (S, _, _), g, s, st in zip(self.sets, self.qmask, self.settled, self.qfalse)
+                [list(S), hex(g), hex(s), st, hex(cm)]
+                for (S, _, _), g, s, st, cm in zip(self.sets, self.qmask, self.settled, self.qfalse, self.coremask)
             ]}
         if self.inconsistent:
             out["inconsistent_background"] = True
@@ -1139,16 +1159,21 @@ class Lynchpins:
         out += [self.set_index[b, a] for a, b in combinations(atoms, 2) if (b, a) in self.set_index]
         return out
 
-    def _total(self, newly, newfalse, skip):
+    def _total(self, newly, newfalse, skip, both=False):
+        """Open questions newly settled; with both, also the open core questions among them."""
         if skip is not None:
             j, c = skip
             if c == FALSE:
                 newfalse.discard(j)
             elif j in newly:
                 newly[j] &= ~self.bit[c]
-        return sum(self._count(m & self.openmask[j]) for j, m in newly.items()) + sum(1 for j in newfalse if self.qfalse[j] == "open")
+        consistency = sum(1 for j in newfalse if self.qfalse[j] == "open")  # all have a premise: core
+        n = sum(self._count(m & self.openmask[j]) for j, m in newly.items()) + consistency
+        if not both:
+            return n
+        return n, sum(self._count(m & self.openmask[j] & self.coremask[j]) for j, m in newly.items()) + consistency
 
-    def with_rule(self, premises, conclusion, skip=None) -> int:
+    def with_rule(self, premises, conclusion, skip=None, both=False):
         """Other open questions settled by adding the Horn rule premises ⇒ conclusion."""
         bit, BAD, c = self.bit, self.BAD, conclusion
         S = tuple(premises)
@@ -1197,14 +1222,14 @@ class Lynchpins:
             elif NF:
                 for j in self.base[i]:
                     newly[j] = newly.get(j, 0) | (self.openmask[j] & NF)
-        return self._total(newly, newfalse, skip)
+        return self._total(newly, newfalse, skip, both)
 
-    def with_model(self, satisfies, violates, skip=None) -> int:
+    def with_model(self, satisfies, violates, skip=None, both=False):
         """Other open questions settled by a model satisfying `satisfies` and violating `violates`."""
         V = self.BAD | self._mask(violates)
         H = self._cl(satisfies)
         if H & V:
-            return 0  # not a model
+            return (0, 0) if both else 0  # not a model
         Fm = 0
         for low in self._bits(self.ALL & ~H):
             if self._ext(H, self.id_of[low]) & V:
@@ -1213,7 +1238,7 @@ class Lynchpins:
         for j in self._subsets_of(H):
             newly[j] = self.openmask[j] & Fm
             newfalse.add(j)
-        return self._total(newly, newfalse, skip)
+        return self._total(newly, newfalse, skip, both)
 
     # -- recorded conjectures ------------------------------------------------
     def question_of(self, ids, conclusion):
@@ -1343,6 +1368,12 @@ class Lynchpins:
             rows += [{"kind": "check", "model": m["id"], "principle": self.id_of[low]} for low in self._bits(self.ALL & ~H & ~Fm)]
         return rows
 
+    def _is_core(self, r):
+        if r["kind"] != "question" or not r["premises"]:
+            return False
+        S, c = tuple(r["premises"]), r["conclusion"]
+        return len(S) == 1 or c == FALSE or bool(self.coremask[self.set_index[S]] & self.bit[c])
+
     def _score(self, r):
         if r["kind"] == "check":
             m = next(m for m in self.witnesses if m["id"] == r["model"])
@@ -1421,6 +1452,21 @@ class Lynchpins:
             for i, group in enumerate(central):
                 for r in group:
                     r["rank"] = i + 1
+            # The core questions: a group is core when one of its equivalent forms is. Each is
+            # scored by the other open core questions an answer settles, and ranked by those scores.
+            core = [g for g in central if any(self._is_core(r) for r in g)]
+            for g in core:
+                S, c = tuple(g[0]["premises"]), g[0]["conclusion"]
+                j = self.set_index[S]
+                y = self.with_rule(S, c, (j, c), both=True)[1]
+                n = self.with_model(S, [c] if c != FALSE else [], (j, c), both=True)[1]
+                for r in g:
+                    r["core_yes"], r["core_no"] = y, n
+                    r["core_score"] = round(2 * y * n / (y + n), 1) if y + n else 0.0
+            core.sort(key=lambda g: (-g[0]["core_score"], -min(g[0]["core_yes"], g[0]["core_no"]), -max(g[0]["core_yes"], g[0]["core_no"]), *name(g[0])))
+            for i, group in enumerate(core):
+                for r in group:
+                    r["core_rank"] = i + 1
             self._ranked, self._auto = central, auto
         if self._recorded_rows is None:  # attach once: the rows are shared, and rank() is asked more than once per build
             self._recorded_rows = self._recorded(rows)
@@ -4899,7 +4945,7 @@ def selftest():
     assert L.with_rule(("p", "s"), FALSE, (ps, FALSE)) == 5, "p ∧ s ⇒ ⊥ makes p ∧ s ⇒ r moot and excludes s ⇒ p, q ∧ s ⇒ p, r ∧ s ⇒ p and p ∧ r ⇒ s"
     assert L.with_model(("p", "s"), [], (ps, FALSE)) == 2, "a model of p ∧ s also shows s and q ∧ s consistent"
 
-    def brute(L, rule=None, models=None, skip=None):
+    def brute(L, rule=None, models=None, skip=None, keep=lambda S, c: True):
         results = L.results + ([{"id": "h", "premises": list(rule[0]), "conclusion": rule[1]}] if rule else [])
         E = Engine(L.ids, results, L.models if models is None else models, L.background, L.negative)
         wit = [(E.holds[m["id"]], E.fails[m["id"]]) for m in E.models if m["id"] not in E.model_conflicts]
@@ -4907,7 +4953,7 @@ def selftest():
         cl = lambda S: E.cl(S)[0]
         refuted = lambda S, c: any(set(S) <= H and (c == FALSE or c in F) for H, F in wit)
         settled = lambda S, c: (bad(S) if c == FALSE else (c in cl(S) or bad([*S, c]))) or refuted(S, c)
-        return sum(1 for q in L.open_questions() if q != skip and settled(*q))
+        return sum(1 for q in L.open_questions() if q != skip and keep(*q) and settled(*q))
 
     def agree(L):
         for S, c in L.open_questions():
@@ -4922,6 +4968,36 @@ def selftest():
                 assert L.with_model([*m["satisfies"], c], m["violates"]) == brute(L, models=[*others, M(m["id"], [*m["satisfies"], c], m["violates"])]), (m["id"], c)
                 assert L.with_model(m["satisfies"], [*m["violates"], c]) == brute(L, models=[*others, M(m["id"], m["satisfies"], [*m["violates"], c])]), (m["id"], c)
     agree(L)
+
+    # Core questions: one premise; A ∧ B ⇒ ⊥; A ∧ B ⇒ C with C ⇒ A and C ⇒ B established.
+    def core_q(L, S, c):
+        return len(S) == 1 or (len(S) == 2 and (c == FALSE or {*S} <= L.E.cl([c])[0]))
+
+    def agree_core(L):
+        for j, (S, _, _) in enumerate(L.sets):
+            for c in L.proper:
+                if L.qmask[j] & L.bit[c]:
+                    assert bool(L.coremask[j] & L.bit[c]) == core_q(L, S, c), (S, c, "core mask")
+        keep = lambda S, c: core_q(L, S, c)
+        for S, c in L.open_questions():
+            j, V = L.set_index[S], [c] if c != FALSE else []
+            assert L.with_rule(S, c, (j, c), both=True)[1] == brute(L, rule=(S, c), skip=(S, c), keep=keep), (S, c, "core rule")
+            assert L.with_model(S, V, (j, c), both=True)[1] == brute(L, models=[*L.models, M("x", list(S), V)], skip=(S, c), keep=keep), (S, c, "core model")
+        p = L.progress()["core"]
+        qs = [(S, c) for (S, _, _), g, st in zip(L.sets, L.qmask, L.qfalse) for c in [*(x for x in L.proper if g & L.bit[x]), *([FALSE] if st is not None else [])] if core_q(L, S, c)]
+        assert p["questions"] == len(qs) and p["open"] == sum(1 for q in L.open_questions() if core_q(L, *q)), "core progress counts the core questions"
+    agree_core(L)
+    core_ly = {"topic": ly["topic"], "principles": [P(x) for x in "abcd"],
+               "results": [R("c-a", ["c"], "a"), R("c-b", ["c"], "b")], "models": [M("m", ["a"], ["d"])]}
+    Lc = Lynchpins(core_ly)
+    assert core_q(Lc, ("a", "b"), "c") and not core_q(Lc, ("a", "d"), "c"), "a ∧ b ⇒ c is core since c ⇒ a and c ⇒ b"
+    agree_core(Lc)
+    crows = [r for r in Lc.rank(top=None)["rows"] if r.get("core_rank") is not None]
+    assert crows and all(Lc._is_core(r) or any(Lc._is_core({**r, "premises": S}) for S in r.get("premise_sets", [])) for r in crows)
+    chm = lambda r: 2 * r["core_yes"] * r["core_no"] / (r["core_yes"] + r["core_no"]) if r["core_yes"] + r["core_no"] else 0
+    crows.sort(key=lambda r: r["core_rank"])
+    assert [r["core_rank"] for r in crows] == list(range(1, len(crows) + 1)) and crows == sorted(crows, key=lambda r: (-chm(r), -min(r["core_yes"], r["core_no"]))), "core questions: by the harmonic mean of their core scores"
+    assert not any(r["kind"] == "check" for r in crows), "model checks are not core questions"
     ranked = L.rank(top=3)
     top, auto = ranked["rows"], ranked["auto"]
     hm = lambda r: 2 * r["yes"] * r["no"] / (r["yes"] + r["no"]) if r["yes"] + r["no"] else 0
@@ -5114,8 +5190,13 @@ def selftest():
         for shown in (set(L.ids), set(), set(L.ids[:1]), set(L.ids[::2]), set(L.ids) - {L.ids[-1]}):
             mask = sum(1 << i for i, pid in enumerate(selection["principles"]) if pid in shown)
             groups = [g for g in selection["groups"] if set(g[0]) <= shown]
-            total = sum(L._count(int(g, 16) & mask) + (st is not None) for _, g, s, st in groups)
-            done = sum(L._count(int(s, 16) & mask) + (st in ("proved", "refuted")) for _, g, s, st in groups)
+            total = sum(L._count(int(g, 16) & mask) + (st is not None) for _, g, s, st, _cm in groups)
+            done = sum(L._count(int(s, 16) & mask) + (st in ("proved", "refuted")) for _, g, s, st, _cm in groups)
+            # The viewer counts the core questions the same way, from the core masks.
+            ctotal = sum(L._count(int(cm, 16) & mask) + (st is not None) for S, g, s, st, cm in groups if S)
+            cdone = sum(L._count(int(s, 16) & int(cm, 16) & mask) + (st in ("proved", "refuted")) for S, g, s, st, cm in groups if S)
+            if shown == set(L.ids):
+                assert (ctotal, cdone) == (p["core"]["questions"], p["core"]["settled"]), "core share from the selection"
             assert (total, done) == brute_progress(L, shown), (shown, total, done)
         return p
     # Settled share: 4 theorem questions, 16 with one premise, 13 with two (p ∧ q is redundant);
@@ -5123,7 +5204,8 @@ def selftest():
     pr = same_share(L)
     assert (pr["questions"], pr["settled"], pr["by_premises"]) == (33, 6, [[4, 1], [16, 5], [13, 0]]), pr
     assert same_share(Lynchpins(ly, background=["p"]))["questions"] == 7, "under p only r, s and r ∧ s remain"
-    assert same_share(Lynchpins({**ly, "results": [], "models": []})) == {"premises": PROGRESS_PREMISES, "questions": 38, "settled": 0, "open": 38, "by_premises": [[4, 0], [16, 0], [18, 0]]}
+    assert same_share(Lynchpins({**ly, "results": [], "models": []})) == {"premises": PROGRESS_PREMISES, "questions": 38, "settled": 0, "open": 38, "by_premises": [[4, 0], [16, 0], [18, 0]],
+                                                                       "core": {"questions": 22, "settled": 0, "open": 22}}
     rich = {"topic": {"id": "t", "title": "t", "framework": "", "background": ["bg"]},
             "principles": [P(x) for x in "bg a b c d e f g".split()],
             "results": [R("r1", ["a"], "b"), R("r2", ["b"], "a"), R("r3", ["a", "c"], "d"), R("r6", ["e"], "c"), R("x", ["d", "e"], FALSE), R("g", ["g"], "e")],
