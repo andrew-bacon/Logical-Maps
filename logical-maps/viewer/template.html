@@ -329,6 +329,10 @@
   .list h3 { font: 600 16px var(--serif); margin: 18px 0 8px; }
   .list h3:first-child { margin-top: 0; }
   .list p.hint { color: var(--ink-3); font-size: 12.5px; max-width: 65ch; margin: 0 0 12px; }
+  /* The question lists' descriptions use the full width; their counts sit on a line of their own. */
+  #lynchpins > p.hint, #open-core > p.hint { max-width: none; }
+  #open-progress, #open-core-progress { display: block; margin-top: 2px; }
+  #open-progress[hidden], #open-core-progress[hidden] { display: none; }
 
   /* badges */
   .badge { display: inline-block; padding: 2px 7px; border-radius: 4px; font: 500 11px var(--sans); letter-spacing: .02em; color: var(--badge-ink); white-space: nowrap; }
@@ -3420,8 +3424,10 @@ function renderProgress() {
   core.hidden = !c;
   if (!c) { core.textContent = ''; return; }
   if (!c.questions) { core.textContent = '0 Core Questions are shown.'; return; }
-  const cpct = c.open ? Math.min(99, Math.floor(100 * c.settled / c.questions)) : 100;
-  core.textContent = `${c.settled.toLocaleString('en-US')} (${cpct}%) of ${c.questions.toLocaleString('en-US')} Core Questions are settled.`;
+  // The open ones, with a decimal: the share left is small, and it moves in small steps.
+  const share = 100 * c.open / c.questions;
+  const cpct = c.open && share < 0.1 ? '<0.1' : c.open < c.questions && share > 99.9 ? '>99.9' : share.toFixed(1).replace(/\.0$/, '');
+  core.textContent = `${c.open.toLocaleString('en-US')} (${cpct}%) of ${c.questions.toLocaleString('en-US')} Core Questions are open.`;
 }
 const SETTLED = new Set(['proved', 'refuted', 'excluded', 'consistent', 'inconsistent']);
 function rankedTable(rep, rows, mode = 'questions') {

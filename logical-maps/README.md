@@ -684,8 +684,9 @@ the implications of the form ⊢ C (no premises), A ⊢ C (one premise, C a prin
 or A ∧ B ⊢ C where C ⊢ A and C ⊢ B are already established (whether C is
 equivalent to A ∧ B), with no model checks; it ranks them by the geometric mean of how many core
 questions each answer would settle, the question itself included, so that a
-question one of whose answers would settle much still rises; and it gives their
-own settled share. A group of equivalent questions is core when one of its forms is.
+question one of whose answers would settle much still rises; and it says how many
+of them are open, with the share to a tenth of a percent. Both descriptions use
+the full width, with their counts on a line of their own. A group of equivalent questions is core when one of its forms is.
 **Automatically Generated Conjectures**
 lists the same questions by their larger side, each stated as the answer to
 expect: ⊢ when a refutation would settle more, ⊬ when a proof would, with "if
