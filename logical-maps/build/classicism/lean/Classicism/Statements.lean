@@ -3930,6 +3930,16 @@ def strong_leibniz_t_necessary_rigid_comprehension_and_rigid_power_imply_bf_t : 
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidPower.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanT.schemaIn
 
+/-- `strong-leibniz-weak-rigid-comprehension-and-relational-choice-imply-intensional-choice`
+
+Strong Leibniz Biconditionals ∧ Weak Rigid Comprehension ∧ Relational Choice ⇒ Intensional Choice -/
+def strong_leibniz_weak_rigid_comprehension_and_relational_choice_imply_intensional_choice : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongLeibniz.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeakRigidComprehension.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RelationalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.IntensionalChoice.schemaIn
+
 /-- `strong-possibility-and-distinctness-preserving-collapse-incompatible`
 
 Strong Possibility (pure) ∧ Truth implies ND-necessity ⇒ ⊥ -/

@@ -1205,4 +1205,145 @@ theorem modal_well_ordering_implies_necessary_modalized_relational_choice {σ τ
   modal_K _ _ (nec% (modal_well_ordering_implies_modalized_relational_choice (σ := σ) (τ := τ)))
     (box_modal_well_ordering h)
 
+
+/-! ### Strong Leibniz, Weak Rigid Comprehension and Relational Choice (20 October 2026) -/
+
+/-- An atom of type `t` is not `⊥`. -/
+theorem atom_ne_false (w : Prop) (hw : Atom w) : w ≠ False := fun e =>
+  not_le_neg_of_atom hw (le_neg_of_eq_false w e)
+
+/-- Distinct atoms of type `t` are incompatible: their meet lies below each, so it is that
+atom or `⊥`, and it is not both atoms. -/
+theorem box_not_and_of_atoms (w w' : Prop) (hw : Atom w) (hw' : Atom w') (hne : w ≠ w') :
+    □ (¬ (w ∧ w')) :=
+  (atom_le_or_le_neg w w' hw).elim
+    (fun h₁ => (atom_le_or_le_neg w' w hw').elim
+      (fun h₂ => (hne (le_antisymm_prop w w' h₁ h₂)).elim)
+      (fun h₂ => modal_K _ _ (nec% (fun (h : w' → ¬ w) (hc : w ∧ w') => h hc.2 hc.1))
+        ((le_iff_prop _ _).1 h₂)))
+    (fun h₁ => modal_K _ _ (nec% (fun (h : w → ¬ w') (hc : w ∧ w') => h hc.1 hc.2))
+      ((le_iff_prop _ _).1 h₁))
+
+/-- A property deciding every property has at most one instance: given an instance `y`, it
+is below `λu. u = y` or below its negation, and the second is refuted by `y`. -/
+theorem unique_of_decides {σ : Type} [Ty σ] (X : σ → Prop)
+    (h : ∀ Y : σ → Prop, X ≤ Y ∨ X ≤ ¬ Y) : ∀ y z, X y → X z → z = y := fun y z hy hz =>
+  (h (fun u => u = y)).elim
+    (fun hle => incl_of_le hle z hz)
+    (fun hle => (incl_of_le hle y hy rfl).elim)
+
+/-- The pair lemma: weak inextensibility carries a relation that holds necessarily between
+any two actual instances to any two instances at any world. Fix an actual `b`: weak
+inextensibility for `λa. Z a b` gives `R ≤ λa. Z a b`, necessary by `4`; then weak
+inextensibility for `λb. □∀a. R a → Z a b`, and `T`. -/
+theorem box_pairs_of_weaklyInextensible {α : Type} [Ty α] (R : α → Prop)
+    (hR : WeaklyInextensible R) (Z : α → α → Prop) (h : ∀ a b, R a → R b → □ (Z a b)) :
+    □ (∀ a b, R a → R b → Z a b) :=
+  have hb : ∀ b, R b → □ (□ (∀ a, R a → Z a b)) := fun b hRb =>
+    modal_four _ (hR (fun a => Z a b) fun a hRa => h a b hRa hRb)
+  modal_K _ _
+    (nec% (fun (H : ∀ b, R b → □ (∀ a, R a → Z a b)) (a b : α) (ha : R a) (hb : R b) =>
+      box_elim (H b hb) a ha))
+    (hR (fun b => □ (∀ a, R a → Z a b)) hb)
+
+/-- `strong-leibniz-weak-rigid-comprehension-and-relational-choice-imply-intensional-choice`
+(Cian Dorr's construction). For each atom `w` of type `t`, Relational Choice picks a strong
+world `X_w` of type `σt` below `λy. w ∧ Fy`; Weak Rigid Comprehension gives a weakly rigid `R`
+coextensive with the property of being some `X_w`; and `G := λy. ∃X. RX ∧ Xy`. Weak
+inextensibility carries to every world that each instance of `R` is below `F` and has at most
+one instance, and, by the pair lemma, that two instances of `R` are identical or not both
+instantiated, since distinct atoms are incompatible. -/
+theorem strong_leibniz_weak_rigid_comprehension_and_relational_choice_imply_intensional_choice
+    {σ : Type} [Ty σ] :
+    StrongLeibniz Prop → StrongLeibniz (σ → Prop) →
+      WeakRigidComprehension ((σ → Prop) → Prop) → RelationalChoice Prop (σ → Prop) →
+        IntensionalChoice σ := by
+  intro sl₀ sl₁ wrc rc F hF
+  -- Atomicity at `t`, as in `strong-leibniz-t-implies-atomicity-t`.
+  have at₀ : Atomicity Prop := fun x => (em (x ≤ ¬ x)).elim Or.inl fun hx =>
+    (sl₀ x fun e => hx (le_neg_of_eq_false x e)).elim fun w hw =>
+      Or.inr ⟨w, atom_of_decides w ⟨hw.1.1, box_elim hw.1.2⟩, hw.2⟩
+  -- Each atom `w` is related to the strong worlds of type `σt` below `λy. w ∧ Fy`.
+  have hser : Serial (λ (w : Prop) (X : σ → Prop) ↦
+      Atom w → SWorld X ∧ X ≤ (λ y ↦ w ∧ F y)) := by
+    intro w
+    em_cases hw : Atom w
+    · have hne : (λ y ↦ w ∧ F y) ≠ Rel.bot (σ → Prop) := fun e => by
+        have h₁ : □ (∀ y, w ∧ F y → False) := by
+          rw [show (∀ y, w ∧ F y → False) = (∀ y : σ, Rel.bot (σ → Prop) y → False) from
+            congrArg (λ (P : σ → Prop) ↦ ∀ y, P y → False) e]
+          exact nec% (fun (y : σ) (h : False) => h)
+        have h₂ : □ (¬ w) := modal_K _ _ (modal_K _ _
+          (nec% (fun (h : ∀ y, w ∧ F y → False) (hx : ∃ x, F x) (hw : w) =>
+            hx.elim fun x hx => h x ⟨hw, hx⟩)) h₁) hF
+        exact atom_ne_false w hw (eq_false_of_le_neg w ((le_iff_prop _ _).2
+          (modal_K _ _ (nec% (fun (h : ¬ w) (hw : w) => (h hw).elim)) h₂)))
+      obtain ⟨X, hX, hle⟩ := sl₁ _ hne
+      exact ⟨X, fun _ => ⟨hX, hle⟩⟩
+    · obtain ⟨X, -⟩ := existence_rel (τ := σ → Prop)
+      exact ⟨X, fun h => (hw h).elim⟩
+  obtain ⟨V, hVf, hVU⟩ := rc _ hser
+  obtain ⟨R, ⟨hRp, hRi⟩, hco⟩ := wrc (λ X ↦ ∃ w, Atom w ∧ V w X)
+  have hco' : ∀ X, R X ↔ ∃ w, Atom w ∧ V w X := fun X => (hco X).symm
+  -- What an actual instance of `R` is: a strong world below `λy. w ∧ Fy` for an atom `w`.
+  have hinst : ∀ X, R X → ∃ w, Atom w ∧ V w X ∧ SWorld X ∧ □ (∀ y, X y → w ∧ F y) :=
+    fun X hX => ((hco' X).1 hX).elim fun w ⟨hw, hV⟩ =>
+      ⟨w, hw, hV, (hVU w X hV hw).1, (le_iff _ _).1 (hVU w X hV hw).2⟩
+  -- (a) Necessarily, each instance of `R` is below `F` and has at most one instance.
+  have ha : □ (∀ X, R X → (∀ y, X y → F y) ∧ (∀ y z, X y → X z → z = y)) :=
+    hRi (λ X ↦ (∀ y, X y → F y) ∧ (∀ y z, X y → X z → z = y)) fun X hX =>
+      (hinst X hX).elim fun w ⟨_, _, hS, hle⟩ =>
+        modal_K _ _ (modal_K _ _
+          (nec% (fun (h₁ : ∀ y, X y → w ∧ F y) (h₂ : ∀ Y : σ → Prop, X ≤ Y ∨ X ≤ ¬ Y) =>
+            (⟨fun y hy => (h₁ y hy).2, unique_of_decides X h₂⟩ :
+              (∀ y, X y → F y) ∧ (∀ y z, X y → X z → z = y)))) hle) hS.2
+  -- (b) Necessarily, two instances of `R` are identical or not both instantiated.
+  have hb : □ (∀ a b, R a → R b → a = b ∨ ¬ ((∃ y, a y) ∧ ∃ z, b z)) :=
+    box_pairs_of_weaklyInextensible R hRi _ fun a b ha hb =>
+      (hinst a ha).elim fun w ⟨hw, hVa, _, hla⟩ => (hinst b hb).elim fun w' ⟨hw', hVb, _, hlb⟩ =>
+        (em (w = w')).elim
+          (fun e => by
+            subst e
+            have hab : a = b := (hVf w).elim fun c ⟨_, hu⟩ => (hu a hVa).symm.trans (hu b hVb)
+            exact modal_K _ _
+              (nec% (fun (h : a = b) => (Or.inl h : a = b ∨ ¬ ((∃ y, a y) ∧ ∃ z, b z))))
+              (necessity_of_identity a b hab))
+          (fun hne => modal_K _ _ (modal_K _ _ (modal_K _ _
+            (nec% (fun (h₀ : ¬ (w ∧ w')) (h₁ : ∀ y, a y → w ∧ F y) (h₂ : ∀ y, b y → w' ∧ F y) =>
+              (Or.inr (fun ⟨⟨y, hy⟩, ⟨z, hz⟩⟩ => h₀ ⟨(h₁ y hy).1, (h₂ z hz).1⟩) :
+                a = b ∨ ¬ ((∃ y, a y) ∧ ∃ z, b z))))
+            (box_not_and_of_atoms w w' hw hw' hne)) hla) hlb)
+  refine ⟨λ y ↦ ∃ X, R X ∧ X y, ?_, ?_⟩
+  · -- `G ≤ F`, from (a).
+    exact le_of_box_incl (modal_K _ _
+      (nec% (fun (H : ∀ X, R X → (∀ y, X y → F y) ∧ (∀ y z, X y → X z → z = y)) (y : σ)
+          (hy : ∃ X, R X ∧ X y) => hy.elim fun X ⟨hX, hXy⟩ => (H X hX).1 y hXy)) ha)
+  · -- Every atom entails that `G` is instantiated, so it necessarily is.
+    have hex : □ (∃ y, ∃ X, R X ∧ X y) := (neg_le_iff_box _).1
+      (Atomicity.to_dual at₀ _ fun w hw => (atom_le_or_le_neg w _ hw).elim id fun hn => by
+        obtain ⟨X, hV, -⟩ := hVf w
+        have hRX : R X := (hco' X).2 ⟨w, hw, hV⟩
+        have hS : SWorld X := (hVU w X hV hw).1
+        have hle : □ (∀ y, X y → w ∧ F y) := (le_iff _ _).1 (hVU w X hV hw).2
+        have hbot : □ (X ⊆ Rel.bot (σ → Prop)) := modal_K _ _ (modal_K _ _ (modal_K _ _
+          (nec% (fun (h₁ : w → ¬ ∃ y, ∃ X, R X ∧ X y) (h₂ : R X) (h₃ : ∀ y, X y → w ∧ F y) =>
+              (fun (y : σ) (hy : X y) => ((h₁ (h₃ y hy).1 ⟨y, X, h₂, hy⟩).elim :
+                Rel.bot (σ → Prop) y) : X ⊆ Rel.bot (σ → Prop))))
+          ((le_iff_prop _ _).1 hn)) (hRp X hRX)) hle
+        exact (hS.1 (le_antisymm_arrow X _ (le_of_box_incl hbot) (bot_le_arrow X))).elim)
+    -- Necessarily at most one instance: (b), then (a).
+    have huniq : □ (∀ y z, (∃ X, R X ∧ X y) → (∃ X, R X ∧ X z) → z = y) :=
+      modal_K _ _ (modal_K _ _
+        (nec% (fun (H₁ : ∀ a b, R a → R b → a = b ∨ ¬ ((∃ y, a y) ∧ ∃ z, b z))
+            (H₂ : ∀ X, R X → (∀ y, X y → F y) ∧ (∀ y z, X y → X z → z = y)) (y z : σ)
+            (hy : ∃ X, R X ∧ X y) (hz : ∃ X, R X ∧ X z) =>
+          hy.elim fun a ⟨ha, hay⟩ => hz.elim fun b ⟨hb, hbz⟩ =>
+            (H₁ a b ha hb).elim (fun e => (H₂ a ha).2 y z hay ((congrFun e z).mpr hbz))
+              (fun hn => (hn ⟨⟨y, hay⟩, ⟨z, hbz⟩⟩).elim))) hb) ha
+    exact modal_K _ _ (modal_K _ _
+      (nec% (fun (h₁ : ∃ y, ∃ X, R X ∧ X y)
+          (h₂ : ∀ y z, (∃ X, R X ∧ X y) → (∃ X, R X ∧ X z) → z = y) =>
+        (h₁.elim fun x hx => ⟨x, hx, fun y hy => h₂ x y hx hy⟩ :
+          ∃ x, (∃ X, R X ∧ X x) ∧ ∀ y, (∃ X, R X ∧ X y) → y = x))) hex) huniq
+
 end Classicism.Proofs
