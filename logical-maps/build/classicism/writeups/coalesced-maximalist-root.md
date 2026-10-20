@@ -90,7 +90,7 @@ The functionality of a subrelation is evaluated at the root’s identity arrow o
 
 The singleton root proposition witnesses Actuality.
 
-*Source: Classicism, Appendix E, p. 83. From the group *Coalesced sums at a new root*, shared argument `coalesced-sums#actuality-singleton-root`. By Andrew Bacon and Cian Dorr, 2026-09-17.*
+*Source: Classicism, Appendix E, p. 83. From the group *Coalesced sums at a new root*, shared argument `coalesced-sums#actuality-singleton-root`. It requires that The actual-world proposition $a$ is in the domain and entails every truth, and no world outside $a$ sees a world in $a$. Here: The singleton root proposition, true at the root's identity arrow and nowhere in a component, is in the domain and entails every truth; the components have no arrows back to the root (Classicism, Appendix E, p. 83, on the distinctness-preserving collapse). By Andrew Bacon and Cian Dorr, 2026-09-17.*
 
 *Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* The three members' versions stated once.
 
