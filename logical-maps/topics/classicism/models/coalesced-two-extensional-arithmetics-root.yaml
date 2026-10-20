@@ -1,0 +1,80 @@
+id: coalesced-two-extensional-arithmetics-root
+name: 'Coalesced sum of two extensional models disagreeing about arithmetic'
+certificate:
+  source_id: misc
+  produced_by: Cian Dorr, 19 October 2026 (the construction), with Claude Opus 5.5 (Anthropic), who wrote
+    the verification
+  recorded_by: Claude Opus 5.5 (Anthropic), 19 October 2026
+  checked_by: []
+  date: '2026-10-19'
+  lean: none
+sources:
+- Cian Dorr, construction of 19 October 2026, with Claude Opus 5.5 (Anthropic).
+- Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, Appendix E, Definition E.2, pp. 80–83.
+source_names:
+- Dorr 19 Oct
+- Classicism
+references:
+- paper: bacon-dorr-classicism
+  role: background
+  locator: Appendix E, Definition E.2, pp. 80–83
+  note: The coalesced sum, here of two components.
+group: coalesced-sums
+settings:
+  root-arrows: distinguished
+  construction: 'Let $T$ be C with Extensionality and $I^*$ (zero is not a successor and successor is
+    injective on the finite cardinalities of individuals). $T$ holds in the full standard model on
+    $\mathbb N$, so $T+\operatorname{Con}(T)$ is consistent, and by Gödel''s second incompleteness
+    theorem so is $T+\neg\operatorname{Con}(T)$. Take one-world Henkin models $M_1$ of
+    $T+\operatorname{Con}(T)$ and $M_2$ of $T+\neg\operatorname{Con}(T)$, as action models with one object
+    and only its identity arrow, and coalesce them at a new root as in Definition E.2. The root''s
+    individuals are the pairs of an individual of $M_1$ and one of $M_2$. Evaluation point: the root.
+    Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each denotes the
+    top element of its type.'
+  domains: fullest
+meets:
+  free-root-component: The root domains are as full as compatibility allows.
+  sigma-top: This is the interpretation the construction fixes.
+arguments:
+- id: arithmetic
+  fails:
+  - necessity-of-arithmetic
+  by: Cian Dorr, recorded by Claude Opus 5.5 (Anthropic)
+  date: '2026-10-19'
+  choice: free
+  text: >-
+    At type $e$. The root sees three worlds: itself and the two component worlds, each of which sees
+    only itself. $I^*$ holds in both components, so $I$ holds at both component worlds and at the root.
+    The arithmetical sentence $A:=\operatorname{Con}(T)$ holds at the world of $M_1$ and fails at that of
+    $M_2$, so neither $\Box(I\to A)$ nor $\Box(I\to\neg A)$ holds at the root.
+- id: strong-leibniz
+  holds:
+  - necessary-strong-leibniz-r
+  - necessary-strong-leibniz-t
+  - necessary-barcan-r
+  by: Cian Dorr, recorded by Claude Opus 5.5 (Anthropic)
+  date: '2026-10-19'
+  choice: free
+  text: >-
+    At every relational type the root domain contains, for each world and each tuple there, the entity
+    true of that tuple at that world and of nothing else: the root component is free, and each component
+    contains the singleton of each of its tuples, definable from them. Such an entity lies below every
+    entity or below its negation, and necessarily so, since its transport to a component world is that
+    singleton or $\bot$; so it is a strong world, and every nonzero entity has one below it. In the one-world
+    components the same holds trivially. For BF, the root individuals are pairs, so each component
+    individual is the image of a root individual, and likewise at every type, root entities being
+    families of component entities; the components, with one world each, satisfy BF.
+- id: pure-b
+  fails:
+  - pure-b-r
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-19'
+  choice: free
+  text: >-
+    The closed pure sentence $\exists p\, .\,p\land\Diamond\neg p$ is true at the root, where the
+    proposition true only at the root is contingent, and false at each component world, which sees only
+    itself; so it is not possible there, and B for it fails at the root.
+notes: 'Suggested by Cian Dorr on 19 October 2026 as a small model of the boxed Strong Leibniz Biconditionals
+  and □BF without the Necessity of Arithmetic. The root has three atoms, the singletons of its three worlds,
+  all strong worlds. The components are one-world extensional Henkin models, and nothing about choice in them
+  is assumed. No Lean verification is claimed.'
