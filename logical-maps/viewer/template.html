@@ -77,6 +77,9 @@
   .ctl-spacer { visibility: hidden; pointer-events: none; }
   .graph-hint { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ink-3); margin: 4px 0 8px; }
   .search { width: min(100%, 320px); margin: 0 0 12px; padding: 6px 8px; border: 1px solid var(--line-strong); border-radius: 3px; background: var(--panel); }
+  .changes-controls { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin: 0 0 12px; }
+  .changes-controls .search { margin: 0; }
+  .minor-toggle { color: var(--ink-2); font-size: 13px; white-space: nowrap; cursor: pointer; }
   .legend-note { color: var(--ink-3); font-size: 12px; }
   .framework { font-size: 12.5px; color: var(--ink-2); }
   .framework p { margin: 0 0 6px; }
@@ -882,7 +885,7 @@
         </div>
       </section>
       <section class="pane" id="pane-models"><div class="list" id="models"></div></section>
-      <section class="pane" id="pane-results"><div class="list"><input class="search" id="search" type="search" placeholder="Filter" aria-label="Filter changes"><div id="results"></div></div></section>
+      <section class="pane" id="pane-results"><div class="list"><div class="changes-controls"><input class="search" id="search" type="search" placeholder="Filter" aria-label="Filter changes"><label class="minor-toggle" title="Housekeeping that leaves what a record says unchanged"><input type="checkbox" id="show-minor"> minor changes <span class="n" id="n-minor"></span></label></div><div id="results"></div></div></section>
       <section class="pane" id="pane-theorems"><div class="open-content"><div class="list" id="theorems"></div></div></section>
       <section class="pane" id="pane-open"><div class="open-content"><div id="open-warning" class="graph-warning" role="alert" hidden></div><div class="list" id="open"></div></div></section>
       <section class="pane" id="pane-page"><div class="page" id="page"></div></section>
@@ -1169,7 +1172,7 @@ const sourceColor = s => {
   return `var(--source-${sourceHues[s.id] || sourcePalette[hash % sourcePalette.length]})`;
 };
 const sourceMarker = s => 'source-' + sourceCatalog.indexOf(s);
-const state = { allowed: new Set(sourceCatalog.map(s => s.id)), leanOnly: false, showConj: false, conjectureOnly: false, unpublishedOnly: false, reduced: true, trivial: false, focus: null, showResolved: backgroundParams.get('resolved') === '1', lynchpins: false, recorded: false, auto: false, showIso: true, selected: null, modelId: null, groupId: null, openGroups: new Set(), variantsOpen: new Map(), tab: 'graph', search: '', excluded: new Set(), negativeShown: new Set(), collapsed: new Set(), flipped: false };
+const state = { allowed: new Set(sourceCatalog.map(s => s.id)), showMinor: false, leanOnly: false, showConj: false, conjectureOnly: false, unpublishedOnly: false, reduced: true, trivial: false, focus: null, showResolved: backgroundParams.get('resolved') === '1', lynchpins: false, recorded: false, auto: false, showIso: true, selected: null, modelId: null, groupId: null, openGroups: new Set(), variantsOpen: new Map(), tab: 'graph', search: '', excluded: new Set(), negativeShown: new Set(), collapsed: new Set(), flipped: false };
 // The theory explorer keeps its own assumptions, apart from the graph's
 // background, so trying out a theory there leaves the graph as it was.
 const theoryParam = (key, fallback) => backgroundParams.has(key) ? (backgroundParams.get(key) || '').split(',').filter(id => byPid.has(id)) : fallback;
@@ -3251,8 +3254,10 @@ function renderResults() {
     .sort((a, b) => dateOf(b).localeCompare(dateOf(a)));
   // One row per record at its certificate date, plus one row per logged revision at
   // the revision's own date: later additions to a record are changes too.
-  const rows = items.flatMap(x => [{ date: dateOf(x), x }, ...[...(x.changes || []), ...(x.history || []), ...laterArguments(x)].map(change => ({ date: String(change.date || ''), x, change }))])
-    .sort((a, b) => b.date.localeCompare(a.date));
+  // A minor change (housekeeping: rewording, formatting, cross-references) waits behind its checkbox.
+  const all = items.flatMap(x => [{ date: dateOf(x), x }, ...[...(x.changes || []), ...(x.history || []), ...laterArguments(x)].map(change => ({ date: String(change.date || ''), x, change }))]);
+  const minor = all.filter(r => r.change?.minor).length;
+  const rows = all.filter(r => state.showMinor || !r.change?.minor).sort((a, b) => b.date.localeCompare(a.date));
   let h = `<table class="results changes"><tbody>`;
   for (const { date, x, change } of rows) {
     const k = kindOf(x);
@@ -3262,13 +3267,15 @@ function renderResults() {
       : k === 'principle' ? `${title} &nbsp; ${esc(x.statement)}` : k === 'result' ? title : `${title} &nbsp; ${modelStmt(x)}`;
     const by = change ? esc(change.by || '') : k === 'principle' ? '' : esc(x.certificate.produced_by || '');
     const badge = change ? `<span class="badge ${k === 'model' ? 'indep' : 'kind'} revised">revised ${k}</span>` : `<span class="badge ${k === 'model' ? 'indep' : 'kind'}">${x.status === 'conjectured' ? 'conjecture' : k}</span>`;
-    h += `<tr data-kind="${k}" data-id="${x.id}" class="${[k !== 'principle' && !passes(x) ? 'filtered' : '', change ? 'revision' : ''].join(' ').trim()}"><td class="mono nowrap">${esc(date)}</td><td>${badge}</td><td class="stmt">${stmt}</td><td>${k === 'principle' ? '' : certBadges(x)}</td><td class="mono">${by}</td></tr>`;
+    h += `<tr data-kind="${k}" data-id="${x.id}" class="${[k !== 'principle' && !passes(x) ? 'filtered' : '', change ? 'revision' : '', change?.minor ? 'minor' : ''].join(' ').trim()}"><td class="mono nowrap">${esc(date)}</td><td>${badge}</td><td class="stmt">${stmt}</td><td>${k === 'principle' ? '' : certBadges(x)}</td><td class="mono">${by}</td></tr>`;
   }
   h += '</tbody></table>';
   const el = document.getElementById('results'); el.innerHTML = h;
   renderSubscripts(el);
   el.querySelectorAll('tr[data-id]').forEach(tr => tr.addEventListener('click', () => select({ type: tr.dataset.kind, id: tr.dataset.id })));
   document.getElementById('n-results').textContent = rows.length;
+  document.getElementById('n-minor').textContent = minor;
+  document.getElementById('show-minor').closest('label').hidden = !minor && !state.showMinor;
 }
 // ---------------------------------------------------------------- results
 // Every proved result among the principles the sidebar shows, from its sources, grouped by
@@ -4799,6 +4806,7 @@ document.getElementById('fit').addEventListener('click', fit);
 document.getElementById('search').addEventListener('input', e => {
   state.search = e.target.value; renderResults();
 });
+document.getElementById('show-minor').addEventListener('change', e => { state.showMinor = e.target.checked; renderResults(); });
 function runGraphSearch(value) {
   const normalize = text => text.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
   const query = normalize(value);

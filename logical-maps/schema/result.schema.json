@@ -552,7 +552,7 @@
   },
   "changes": {
    "type": "array",
-   "description": "Dated revision log. Append an entry whenever a record gains content after its certificate date (new verified properties, an added proof, a corrected statement). The Changes tab lists each entry under its own date; certificate.date stays the record's original date.",
+   "description": "Dated revision log. Append an entry whenever a record gains content after its certificate date (new verified properties, an added proof, a corrected statement). The Changes tab lists each entry under its own date; certificate.date stays the record's original date. Mark housekeeping minor.",
    "items": {
     "type": "object",
     "additionalProperties": false,
@@ -573,6 +573,10 @@
       "type": "string",
       "minLength": 1,
       "description": "What changed and why, in one or two sentences."
+     },
+     "minor": {
+      "type": "boolean",
+      "description": "Housekeeping that leaves what the record says unchanged: rewording, formatting, cross-references, certificates of facts the map derives. The Changes tab hides minor entries unless asked; the record keeps them."
      }
     }
    }

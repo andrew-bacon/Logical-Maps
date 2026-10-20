@@ -3696,7 +3696,7 @@ def _change_lines(item: dict, names: dict, indent: str = "", key: str = "changes
     """Markdown bullet per logged revision, newest first."""
     out = []
     for ch in sorted(item.get(key) or [], key=lambda c: str(c.get("date", "")), reverse=True):
-        bits = [" ".join(str(ch.get("summary", "")).split())]
+        bits = (["(minor)"] if ch.get("minor") else []) + [" ".join(str(ch.get("summary", "")).split())]
         if ch.get("satisfies"):
             bits.append("Now satisfies: " + ", ".join(names.get(x, x) for x in ch["satisfies"]) + ".")
         if ch.get("violates"):

@@ -204,6 +204,10 @@ When you (an AI) add or edit a result or model:
   append an entry to its `changes` list: `date`, `by`, `summary`, and for models
   the newly verified `satisfies`/`violates` ids. The Changes tab lists each entry
   under its own date. Never move `certificate.date`; it is the record's origin.
+  Mark an entry `minor: true` when it leaves what the record says unchanged —
+  rewording, formatting, cross-references, dropping certificates of derived
+  facts — so the Changes tab hides it unless asked. A cleanup that changes no
+  record's content needs no entry at all.
 - Independences are recorded as models (`models/<id>.yaml`), never as results.
   For a model, list every principle you have actually verified in `satisfies`
   and `violates` — the engine derives the rest and lists what is unknown. Add a
