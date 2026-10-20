@@ -85,29 +85,9 @@ theorem distinctness_necessary_r : Statements.Models.finite_support_permutations
   verdict_holds M <|
     holdsAx_indexed.2 fun σ _ => holdsSentence_of_box _ M (Perms.box_nd σ)
 
-theorem necessary_distinctness_necessary_r : Statements.Models.finite_support_permutations.necessary_distinctness_necessary_r :=
-  verdict_holds M <|
-    holdsAx_indexed.2 fun σ _ => Perms.box_nd σ
-
-theorem barcan_r : Statements.Models.finite_support_permutations.barcan_r :=
-  verdict_holds M <|
-    holdsAx_indexed.2 fun σ _ => holdsSentence_of_box _ M (Perms.box_bf σ)
-
-theorem necessary_barcan_r : Statements.Models.finite_support_permutations.necessary_barcan_r :=
-  verdict_holds M <|
-    holdsAx_indexed.2 fun σ _ => Perms.box_bf σ
-
 theorem atomlessness : Statements.Models.finite_support_permutations.atomlessness :=
   verdict_holds M <|
     holdsAx_eq.2 Perms.atomlessness
-
-theorem actuality : Statements.Models.finite_support_permutations.actuality :=
-  verdict_fails M <|
-    not_holdsAx_of rfl (Perms.not_actuality)
-
-theorem atomicity_t : Statements.Models.finite_support_permutations.atomicity_t :=
-  verdict_fails M <|
-    not_holdsAx_of rfl (Perms.not_atomicityT)
 
 theorem boolean_completeness_r : Statements.Models.finite_support_permutations.boolean_completeness_r :=
   verdict_fails M <|
@@ -119,11 +99,6 @@ namespace finite_support_monotone_surjections
 
 local notation "M" => Classicism.Meta.Intensional.MonoidModel.model_isModel Classicism.Meta.Intensional.Monoids.monoSurj
 
-theorem necessary_barcan_r : Statements.Models.finite_support_monotone_surjections.necessary_barcan_r :=
-  verdict_holds M <|
-    holdsAx_indexed.2 fun σ hσ => holdsSentence_box_of_npc M
-      (P.Barcan.schema_closedTypes _ ⟨σ, hσ, rfl⟩) (Monoids.MonoSurj.bf σ)
-
 theorem atomlessness : Statements.Models.finite_support_monotone_surjections.atomlessness :=
   verdict_holds M <|
     holdsAx_eq.2 Monoids.MonoSurj.atomlessness
@@ -131,18 +106,6 @@ theorem atomlessness : Statements.Models.finite_support_monotone_surjections.ato
 theorem distinctness_necessary_r : Statements.Models.finite_support_monotone_surjections.distinctness_necessary_r :=
   verdict_fails M <|
     not_holdsAx_of ⟨.e, trivial, rfl⟩ (Monoids.MonoSurj.not_nd_e)
-
-theorem necessary_distinctness_necessary_r : Statements.Models.finite_support_monotone_surjections.necessary_distinctness_necessary_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.e, trivial, rfl⟩ (fun h => Monoids.MonoSurj.not_nd_e (holdsSentence_of_box _ M h))
-
-theorem actuality : Statements.Models.finite_support_monotone_surjections.actuality :=
-  verdict_fails M <|
-    not_holdsAx_of rfl (Monoids.MonoSurj.not_actuality)
-
-theorem atomicity_t : Statements.Models.finite_support_monotone_surjections.atomicity_t :=
-  verdict_fails M <|
-    not_holdsAx_of rfl (Monoids.MonoSurj.not_atomicityT)
 
 theorem boolean_completeness_r : Statements.Models.finite_support_monotone_surjections.boolean_completeness_r :=
   verdict_fails M <|
@@ -158,26 +121,6 @@ theorem atomlessness : Statements.Models.finite_support_monotone_maps.atomlessne
   verdict_holds M <|
     holdsAx_eq.2 Monoids.Mono.atomlessness
 
-theorem distinctness_necessary_r : Statements.Models.finite_support_monotone_maps.distinctness_necessary_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.e, trivial, rfl⟩ (Monoids.Mono.not_nd_e)
-
-theorem necessary_distinctness_necessary_r : Statements.Models.finite_support_monotone_maps.necessary_distinctness_necessary_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.e, trivial, rfl⟩ (fun h => Monoids.Mono.not_nd_e (holdsSentence_of_box _ M h))
-
-theorem necessary_barcan_r : Statements.Models.finite_support_monotone_maps.necessary_barcan_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.e, trivial, rfl⟩ (fun h => Monoids.Mono.not_bf_e (holdsSentence_of_box _ M h))
-
-theorem actuality : Statements.Models.finite_support_monotone_maps.actuality :=
-  verdict_fails M <|
-    not_holdsAx_of rfl (Monoids.Mono.not_actuality)
-
-theorem atomicity_t : Statements.Models.finite_support_monotone_maps.atomicity_t :=
-  verdict_fails M <|
-    not_holdsAx_of rfl (Monoids.Mono.not_atomicityT)
-
 theorem boolean_completeness_r : Statements.Models.finite_support_monotone_maps.boolean_completeness_r :=
   verdict_fails M <|
     not_holdsAx_of ⟨.arr .e .t, by simp, rfl⟩ (Monoids.Mono.not_bc)
@@ -187,18 +130,6 @@ end finite_support_monotone_maps
 namespace finite_support_identity_or_collapse
 
 local notation "M" => Classicism.Meta.Intensional.MonoidModel.model_isModel Classicism.Meta.Intensional.Monoids.mono01
-
-theorem distinctness_necessary_r : Statements.Models.finite_support_identity_or_collapse.distinctness_necessary_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.e, trivial, rfl⟩ (Monoids.Mono01.not_nd_e)
-
-theorem necessary_distinctness_necessary_r : Statements.Models.finite_support_identity_or_collapse.necessary_distinctness_necessary_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.e, trivial, rfl⟩ (fun h => Monoids.Mono01.not_nd_e (holdsSentence_of_box _ M h))
-
-theorem necessary_barcan_r : Statements.Models.finite_support_identity_or_collapse.necessary_barcan_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.e, trivial, rfl⟩ (fun h => Monoids.Mono01.not_bf_e (holdsSentence_of_box _ M h))
 
 theorem boolean_completeness_r : Statements.Models.finite_support_identity_or_collapse.boolean_completeness_r :=
   verdict_fails M <|
@@ -210,19 +141,6 @@ namespace finite_support_identity_or_collapse_surjections
 
 local notation "M" => Classicism.Meta.Intensional.MonoidModel.model_isModel Classicism.Meta.Intensional.Monoids.monoSurj01
 
-theorem necessary_barcan_r : Statements.Models.finite_support_identity_or_collapse_surjections.necessary_barcan_r :=
-  verdict_holds M <|
-    holdsAx_indexed.2 fun σ hσ => holdsSentence_box_of_npc M
-      (P.Barcan.schema_closedTypes _ ⟨σ, hσ, rfl⟩) (Monoids.MonoSurj01.bf σ)
-
-theorem distinctness_necessary_r : Statements.Models.finite_support_identity_or_collapse_surjections.distinctness_necessary_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.e, trivial, rfl⟩ (Monoids.MonoSurj01.not_nd_e)
-
-theorem necessary_distinctness_necessary_r : Statements.Models.finite_support_identity_or_collapse_surjections.necessary_distinctness_necessary_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.e, trivial, rfl⟩ (fun h => Monoids.MonoSurj01.not_nd_e (holdsSentence_of_box _ M h))
-
 theorem boolean_completeness_r : Statements.Models.finite_support_identity_or_collapse_surjections.boolean_completeness_r :=
   verdict_fails M <|
     not_holdsAx_of ⟨.arr .e .t, by simp, rfl⟩ (Monoids.MonoSurj01.not_bc)
@@ -232,26 +150,6 @@ end finite_support_identity_or_collapse_surjections
 namespace finite_support_truncations
 
 local notation "M" => Classicism.Meta.Intensional.MonoidModel.model_isModel Classicism.Meta.Intensional.Monoids.truncs
-
-theorem atomicity_t : Statements.Models.finite_support_truncations.atomicity_t :=
-  verdict_holds M <|
-    holdsAx_eq.2 Monoids.Truncs.atomicityT
-
-theorem distinctness_necessary_r : Statements.Models.finite_support_truncations.distinctness_necessary_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.e, trivial, rfl⟩ (Monoids.Truncs.not_nd_e)
-
-theorem necessary_distinctness_necessary_r : Statements.Models.finite_support_truncations.necessary_distinctness_necessary_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.e, trivial, rfl⟩ (fun h => Monoids.Truncs.not_nd_e (holdsSentence_of_box _ M h))
-
-theorem barcan_r : Statements.Models.finite_support_truncations.barcan_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.e, trivial, rfl⟩ (Monoids.Truncs.not_bf_e)
-
-theorem necessary_barcan_r : Statements.Models.finite_support_truncations.necessary_barcan_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.e, trivial, rfl⟩ (fun h => Monoids.Truncs.not_bf_e (holdsSentence_of_box _ M h))
 
 theorem actuality : Statements.Models.finite_support_truncations.actuality :=
   verdict_fails M <|
@@ -267,25 +165,9 @@ namespace finite_support_dyadic_roundings
 
 local notation "M" => Classicism.Meta.Intensional.MonoidModel.model_isModel Classicism.Meta.Intensional.Monoids.pow2
 
-theorem atomicity_t : Statements.Models.finite_support_dyadic_roundings.atomicity_t :=
-  verdict_holds M <|
-    holdsAx_eq.2 Monoids.Pow2.atomicityT
-
-theorem distinctness_necessary_r : Statements.Models.finite_support_dyadic_roundings.distinctness_necessary_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.e, trivial, rfl⟩ (Monoids.Pow2.not_nd_e)
-
-theorem necessary_distinctness_necessary_r : Statements.Models.finite_support_dyadic_roundings.necessary_distinctness_necessary_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.e, trivial, rfl⟩ (fun h => Monoids.Pow2.not_nd_e (holdsSentence_of_box _ M h))
-
 theorem barcan_r : Statements.Models.finite_support_dyadic_roundings.barcan_r :=
   verdict_fails M <|
     not_holdsAx_of ⟨.e, trivial, rfl⟩ (Monoids.Pow2.not_bf_e)
-
-theorem necessary_barcan_r : Statements.Models.finite_support_dyadic_roundings.necessary_barcan_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.e, trivial, rfl⟩ (fun h => Monoids.Pow2.not_bf_e (holdsSentence_of_box _ M h))
 
 theorem boolean_completeness_r : Statements.Models.finite_support_dyadic_roundings.boolean_completeness_r :=
   verdict_fails M <|
@@ -296,23 +178,6 @@ end finite_support_dyadic_roundings
 namespace finite_support_truncated_shifts
 
 local notation "M" => Classicism.Meta.Intensional.MonoidModel.model_isModel Classicism.Meta.Intensional.Monoids.shifts
-
-theorem necessary_barcan_r : Statements.Models.finite_support_truncated_shifts.necessary_barcan_r :=
-  verdict_holds M <|
-    holdsAx_indexed.2 fun σ hσ => holdsSentence_box_of_npc M
-      (P.Barcan.schema_closedTypes _ ⟨σ, hσ, rfl⟩) (Monoids.Shifts.bf σ)
-
-theorem atomicity_t : Statements.Models.finite_support_truncated_shifts.atomicity_t :=
-  verdict_holds M <|
-    holdsAx_eq.2 Monoids.Shifts.atomicityT
-
-theorem distinctness_necessary_r : Statements.Models.finite_support_truncated_shifts.distinctness_necessary_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.e, trivial, rfl⟩ (Monoids.Shifts.not_nd_e)
-
-theorem necessary_distinctness_necessary_r : Statements.Models.finite_support_truncated_shifts.necessary_distinctness_necessary_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.e, trivial, rfl⟩ (fun h => Monoids.Shifts.not_nd_e (holdsSentence_of_box _ M h))
 
 theorem boolean_completeness_r : Statements.Models.finite_support_truncated_shifts.boolean_completeness_r :=
   verdict_fails M <|
@@ -333,186 +198,6 @@ theorem necessary_barcan_r : Statements.Models.finite_support_two_object_all_map
     not_holdsAx_of ⟨.e, trivial, rfl⟩ (ContingentBarcan.not_box_bf_e)
 
 end finite_support_two_object_all_maps
-
-namespace full_idempotent_monoid
-
-local notation "M" => MSet.model_isModel Idem
-
-theorem distinctness_necessary_r : Statements.Models.full_idempotent_monoid.distinctness_necessary_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.rel .t, by simp, rfl⟩ (Idem.not_nd_t)
-
-theorem necessary_distinctness_necessary_r : Statements.Models.full_idempotent_monoid.necessary_distinctness_necessary_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.rel .t, by simp, rfl⟩ (fun h => Idem.not_nd_t (holdsSentence_of_box _ M h))
-
-theorem necessary_distinctness_necessary_t : Statements.Models.full_idempotent_monoid.necessary_distinctness_necessary_t :=
-  verdict_fails M <|
-    not_holdsAx_of rfl (fun h => Idem.not_nd_t (holdsSentence_of_box _ M h))
-
-theorem barcan_r : Statements.Models.full_idempotent_monoid.barcan_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.rel .t, by simp, rfl⟩ (Idem.not_bf_t)
-
-theorem necessary_barcan_r : Statements.Models.full_idempotent_monoid.necessary_barcan_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.rel .t, by simp, rfl⟩ (fun h => Idem.not_bf_t (holdsSentence_of_box _ M h))
-
-theorem barcan_t : Statements.Models.full_idempotent_monoid.barcan_t :=
-  verdict_fails M <|
-    not_holdsAx_of rfl (Idem.not_bf_t)
-
-theorem necessary_barcan_t : Statements.Models.full_idempotent_monoid.necessary_barcan_t :=
-  verdict_fails M <|
-    not_holdsAx_of rfl (fun h => Idem.not_bf_t (holdsSentence_of_box _ M h))
-
-theorem necessary_fregean_axiom : Statements.Models.full_idempotent_monoid.necessary_fregean_axiom :=
-  verdict_fails M <|
-    not_holdsAx_of rfl (fun h => Idem.not_fregean (holdsSentence_of_box _ M h))
-
-end full_idempotent_monoid
-
-namespace full_involution_group
-
-local notation "M" => MSet.model_isModel Invol
-
-theorem distinctness_necessary_r : Statements.Models.full_involution_group.distinctness_necessary_r :=
-  verdict_holds M <|
-    holdsAx_indexed.2 fun σ _ => holdsSentence_of_box _ M (Invol.box_nd σ)
-
-theorem distinctness_necessary_t : Statements.Models.full_involution_group.distinctness_necessary_t :=
-  verdict_holds M <|
-    holdsAx_eq.2 (holdsSentence_of_box _ M (Invol.box_nd (.rel .t)))
-
-theorem necessary_distinctness_necessary_t : Statements.Models.full_involution_group.necessary_distinctness_necessary_t :=
-  verdict_holds M <|
-    holdsAx_eq.2 (Invol.box_nd (.rel .t))
-
-theorem barcan_r : Statements.Models.full_involution_group.barcan_r :=
-  verdict_holds M <|
-    holdsAx_indexed.2 fun σ _ => holdsSentence_of_box _ M (Invol.box_bf σ)
-
-theorem barcan_t : Statements.Models.full_involution_group.barcan_t :=
-  verdict_holds M <|
-    holdsAx_eq.2 (holdsSentence_of_box _ M (Invol.box_bf (.rel .t)))
-
-theorem necessary_barcan_t : Statements.Models.full_involution_group.necessary_barcan_t :=
-  verdict_holds M <|
-    holdsAx_eq.2 (Invol.box_bf (.rel .t))
-
-theorem necessary_fregean_axiom : Statements.Models.full_involution_group.necessary_fregean_axiom :=
-  verdict_fails M <|
-    not_holdsAx_of rfl (fun h => Invol.not_fregean (holdsSentence_of_box _ M h))
-
-end full_involution_group
-
-namespace full_surjection_monoid
-
-local notation "M" => Classicism.Meta.Intensional.MSet.model_isModel Classicism.Meta.Intensional.FullActionModels.surj
-
-theorem distinctness_necessary_r : Statements.Models.full_surjection_monoid.distinctness_necessary_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.rel .t, by simp, rfl⟩ (Classicism.Meta.Intensional.FullActionModels.surj_not_nd_t)
-
-theorem necessary_distinctness_necessary_r : Statements.Models.full_surjection_monoid.necessary_distinctness_necessary_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.rel .t, by simp, rfl⟩ (fun h => Classicism.Meta.Intensional.FullActionModels.surj_not_nd_t (holdsSentence_of_box _ M h))
-
-theorem necessary_distinctness_necessary_t : Statements.Models.full_surjection_monoid.necessary_distinctness_necessary_t :=
-  verdict_fails M <|
-    not_holdsAx_of rfl (fun h => Classicism.Meta.Intensional.FullActionModels.surj_not_nd_t (holdsSentence_of_box _ M h))
-
-theorem necessary_fregean_axiom : Statements.Models.full_surjection_monoid.necessary_fregean_axiom :=
-  verdict_fails M <|
-    not_holdsAx_of rfl (fun h => Classicism.Meta.Intensional.FullActionModels.surj_not_fregean (holdsSentence_of_box _ M h))
-
-end full_surjection_monoid
-
-namespace full_permutation_group_infinite_set
-
-local notation "M" => Classicism.Meta.Intensional.MSet.model_isModel (Equiv.Perm ℕ)
-
-theorem distinctness_necessary_r : Statements.Models.full_permutation_group_infinite_set.distinctness_necessary_r :=
-  verdict_holds M <|
-    holdsAx_indexed.2 fun σ _ => holdsSentence_of_box _ M (Classicism.Meta.Intensional.FullActionModels.perm_box_nd σ)
-
-theorem distinctness_necessary_t : Statements.Models.full_permutation_group_infinite_set.distinctness_necessary_t :=
-  verdict_holds M <|
-    holdsAx_eq.2 (holdsSentence_of_box _ M (Classicism.Meta.Intensional.FullActionModels.perm_box_nd (.rel .t)))
-
-theorem necessary_distinctness_necessary_t : Statements.Models.full_permutation_group_infinite_set.necessary_distinctness_necessary_t :=
-  verdict_holds M <|
-    holdsAx_eq.2 (Classicism.Meta.Intensional.FullActionModels.perm_box_nd (.rel .t))
-
-theorem barcan_r : Statements.Models.full_permutation_group_infinite_set.barcan_r :=
-  verdict_holds M <|
-    holdsAx_indexed.2 fun σ _ => holdsSentence_of_box _ M (Classicism.Meta.Intensional.FullActionModels.perm_box_bf σ)
-
-theorem barcan_t : Statements.Models.full_permutation_group_infinite_set.barcan_t :=
-  verdict_holds M <|
-    holdsAx_eq.2 (holdsSentence_of_box _ M (Classicism.Meta.Intensional.FullActionModels.perm_box_bf (.rel .t)))
-
-theorem necessary_barcan_t : Statements.Models.full_permutation_group_infinite_set.necessary_barcan_t :=
-  verdict_holds M <|
-    holdsAx_eq.2 (Classicism.Meta.Intensional.FullActionModels.perm_box_bf (.rel .t))
-
-theorem necessary_fregean_axiom : Statements.Models.full_permutation_group_infinite_set.necessary_fregean_axiom :=
-  verdict_fails M <|
-    not_holdsAx_of rfl (fun h => Classicism.Meta.Intensional.FullActionModels.perm_not_fregean (holdsSentence_of_box _ M h))
-
-end full_permutation_group_infinite_set
-
-namespace full_two_object_chain
-
-local notation "M" => Classicism.Meta.Intensional.FullActionModels.unitModel_isModel _
-
-theorem distinctness_necessary_r : Statements.Models.full_two_object_chain.distinctness_necessary_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.rel .t, by simp, rfl⟩ (Classicism.Meta.Intensional.FullActionModels.chain_not_nd_t)
-
-theorem necessary_distinctness_necessary_r : Statements.Models.full_two_object_chain.necessary_distinctness_necessary_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.rel .t, by simp, rfl⟩ (fun h => Classicism.Meta.Intensional.FullActionModels.chain_not_nd_t (holdsSentence_of_box _ M h))
-
-theorem necessary_distinctness_necessary_t : Statements.Models.full_two_object_chain.necessary_distinctness_necessary_t :=
-  verdict_fails M <|
-    not_holdsAx_of rfl (fun h => Classicism.Meta.Intensional.FullActionModels.chain_not_nd_t (holdsSentence_of_box _ M h))
-
-theorem necessary_fregean_axiom : Statements.Models.full_two_object_chain.necessary_fregean_axiom :=
-  verdict_fails M <|
-    not_holdsAx_of rfl (fun h => Classicism.Meta.Intensional.FullActionModels.chain_not_fregean (holdsSentence_of_box _ M h))
-
-end full_two_object_chain
-
-namespace full_two_object_retract
-
-local notation "M" => Classicism.Meta.Intensional.FullActionModels.unitModel_isModel _
-
-theorem distinctness_necessary_t : Statements.Models.full_two_object_retract.distinctness_necessary_t :=
-  verdict_holds M <|
-    holdsAx_eq.2 (Classicism.Meta.Intensional.FullActionModels.retract_nd (.rel .t))
-
-theorem barcan_r : Statements.Models.full_two_object_retract.barcan_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.rel .t, by simp, rfl⟩ (Classicism.Meta.Intensional.FullActionModels.retract_not_bf_t)
-
-theorem necessary_barcan_r : Statements.Models.full_two_object_retract.necessary_barcan_r :=
-  verdict_fails M <|
-    not_holdsAx_of ⟨.rel .t, by simp, rfl⟩ (fun h => Classicism.Meta.Intensional.FullActionModels.retract_not_bf_t (holdsSentence_of_box _ M h))
-
-theorem barcan_t : Statements.Models.full_two_object_retract.barcan_t :=
-  verdict_fails M <|
-    not_holdsAx_of rfl (Classicism.Meta.Intensional.FullActionModels.retract_not_bf_t)
-
-theorem necessary_barcan_t : Statements.Models.full_two_object_retract.necessary_barcan_t :=
-  verdict_fails M <|
-    not_holdsAx_of rfl (fun h => Classicism.Meta.Intensional.FullActionModels.retract_not_bf_t (holdsSentence_of_box _ M h))
-
-theorem necessary_fregean_axiom : Statements.Models.full_two_object_retract.necessary_fregean_axiom :=
-  verdict_fails M <|
-    not_holdsAx_of rfl (fun h => Classicism.Meta.Intensional.FullActionModels.retract_not_fregean (holdsSentence_of_box _ M h))
-
-end full_two_object_retract
 
 namespace symmetric_two_object_unpinned
 

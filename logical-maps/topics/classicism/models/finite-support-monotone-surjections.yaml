@@ -207,23 +207,11 @@ lean:
   meets:
     d6-surjective: Classicism.Meta.Intensional.MonoidModel.d6Surjective_of_surjective _ fun k => k.2.2
   verdicts:
-  - holds: necessary-barcan-r
-    ref: Classicism.Map.Models.finite_support_monotone_surjections.necessary_barcan_r
-    status: verified
   - holds: atomlessness
     ref: Classicism.Map.Models.finite_support_monotone_surjections.atomlessness
     status: verified
   - fails: distinctness-necessary-r
     ref: Classicism.Map.Models.finite_support_monotone_surjections.distinctness_necessary_r
-    status: verified
-  - fails: necessary-distinctness-necessary-r
-    ref: Classicism.Map.Models.finite_support_monotone_surjections.necessary_distinctness_necessary_r
-    status: verified
-  - fails: actuality
-    ref: Classicism.Map.Models.finite_support_monotone_surjections.actuality
-    status: verified
-  - fails: atomicity-t
-    ref: Classicism.Map.Models.finite_support_monotone_surjections.atomicity_t
     status: verified
   - fails: boolean-completeness-r
     ref: Classicism.Map.Models.finite_support_monotone_surjections.boolean_completeness_r

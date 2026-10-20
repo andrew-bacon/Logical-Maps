@@ -203,16 +203,3 @@ lean:
     extensionally-full: Classicism.Meta.Intensional.Premodel.Full.extFull _ (Classicism.Meta.Intensional.MSet.model_full Classicism.Meta.Intensional.FullActionModels.surj)
     one-individual: Classicism.Map.Meets.mset_one_individual Classicism.Meta.Intensional.FullActionModels.surj
     one-object-action-model: Classicism.Meta.Intensional.Premodel.oneObject_of_subsingleton _
-  verdicts:
-  - fails: distinctness-necessary-r
-    ref: Classicism.Map.Models.full_surjection_monoid.distinctness_necessary_r
-    status: verified
-  - fails: necessary-distinctness-necessary-r
-    ref: Classicism.Map.Models.full_surjection_monoid.necessary_distinctness_necessary_r
-    status: verified
-  - fails: necessary-distinctness-necessary-t
-    ref: Classicism.Map.Models.full_surjection_monoid.necessary_distinctness_necessary_t
-    status: verified
-  - fails: necessary-fregean-axiom
-    ref: Classicism.Map.Models.full_surjection_monoid.necessary_fregean_axiom
-    status: verified

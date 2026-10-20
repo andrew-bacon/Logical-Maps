@@ -188,15 +188,6 @@ lean:
     collapse-unpinned: Classicism.Map.Meets.finite_support_identity_or_collapse_surjections.collapse_unpinned
     d6-surjective: Classicism.Meta.Intensional.MonoidModel.d6Surjective_of_surjective _ fun k => k.2.2.1
   verdicts:
-  - holds: necessary-barcan-r
-    ref: Classicism.Map.Models.finite_support_identity_or_collapse_surjections.necessary_barcan_r
-    status: verified
-  - fails: distinctness-necessary-r
-    ref: Classicism.Map.Models.finite_support_identity_or_collapse_surjections.distinctness_necessary_r
-    status: verified
-  - fails: necessary-distinctness-necessary-r
-    ref: Classicism.Map.Models.finite_support_identity_or_collapse_surjections.necessary_distinctness_necessary_r
-    status: verified
   - fails: boolean-completeness-r
     ref: Classicism.Map.Models.finite_support_identity_or_collapse_surjections.boolean_completeness_r
     status: verified

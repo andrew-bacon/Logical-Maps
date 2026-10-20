@@ -209,23 +209,8 @@ lean:
   - holds: distinctness-necessary-r
     ref: Classicism.Map.Models.finite_support_permutations.distinctness_necessary_r
     status: verified
-  - holds: necessary-distinctness-necessary-r
-    ref: Classicism.Map.Models.finite_support_permutations.necessary_distinctness_necessary_r
-    status: verified
-  - holds: barcan-r
-    ref: Classicism.Map.Models.finite_support_permutations.barcan_r
-    status: verified
-  - holds: necessary-barcan-r
-    ref: Classicism.Map.Models.finite_support_permutations.necessary_barcan_r
-    status: verified
   - holds: atomlessness
     ref: Classicism.Map.Models.finite_support_permutations.atomlessness
-    status: verified
-  - fails: actuality
-    ref: Classicism.Map.Models.finite_support_permutations.actuality
-    status: verified
-  - fails: atomicity-t
-    ref: Classicism.Map.Models.finite_support_permutations.atomicity_t
     status: verified
   - fails: boolean-completeness-r
     ref: Classicism.Map.Models.finite_support_permutations.boolean_completeness_r

@@ -125,22 +125,3 @@ lean:
     extensionally-full: Classicism.Meta.Intensional.Premodel.Full.extFull _ (Classicism.Meta.Intensional.FullActionModels.unitModel_full
       _)
     one-individual: Classicism.Meta.Intensional.FullActionModels.unitModel_one_individual _
-  verdicts:
-  - holds: distinctness-necessary-t
-    ref: Classicism.Map.Models.full_two_object_retract.distinctness_necessary_t
-    status: verified
-  - fails: barcan-r
-    ref: Classicism.Map.Models.full_two_object_retract.barcan_r
-    status: verified
-  - fails: necessary-barcan-r
-    ref: Classicism.Map.Models.full_two_object_retract.necessary_barcan_r
-    status: verified
-  - fails: barcan-t
-    ref: Classicism.Map.Models.full_two_object_retract.barcan_t
-    status: verified
-  - fails: necessary-barcan-t
-    ref: Classicism.Map.Models.full_two_object_retract.necessary_barcan_t
-    status: verified
-  - fails: necessary-fregean-axiom
-    ref: Classicism.Map.Models.full_two_object_retract.necessary_fregean_axiom
-    status: verified

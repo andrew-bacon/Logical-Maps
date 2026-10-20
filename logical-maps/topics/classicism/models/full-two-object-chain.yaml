@@ -132,16 +132,3 @@ lean:
     one-individual: Classicism.Meta.Intensional.FullActionModels.unitModel_one_individual _
     finitely-many-propositions: Classicism.Meta.Intensional.FullActionModels.chain_finitely_many_propositions
     actual-world-isolated: Classicism.Meta.Intensional.FullActionModels.chain_actual_world_isolated
-  verdicts:
-  - fails: distinctness-necessary-r
-    ref: Classicism.Map.Models.full_two_object_chain.distinctness_necessary_r
-    status: verified
-  - fails: necessary-distinctness-necessary-r
-    ref: Classicism.Map.Models.full_two_object_chain.necessary_distinctness_necessary_r
-    status: verified
-  - fails: necessary-distinctness-necessary-t
-    ref: Classicism.Map.Models.full_two_object_chain.necessary_distinctness_necessary_t
-    status: verified
-  - fails: necessary-fregean-axiom
-    ref: Classicism.Map.Models.full_two_object_chain.necessary_fregean_axiom
-    status: verified

@@ -137,25 +137,3 @@ lean:
     extensionally-full: Classicism.Meta.Intensional.Premodel.Full.extFull _ (Classicism.Meta.Intensional.MSet.model_full (Equiv.Perm ℕ))
     one-individual: Classicism.Map.Meets.mset_one_individual (Equiv.Perm ℕ)
     one-object-action-model: Classicism.Meta.Intensional.Premodel.oneObject_of_subsingleton _
-  verdicts:
-  - holds: distinctness-necessary-r
-    ref: Classicism.Map.Models.full_permutation_group_infinite_set.distinctness_necessary_r
-    status: verified
-  - holds: distinctness-necessary-t
-    ref: Classicism.Map.Models.full_permutation_group_infinite_set.distinctness_necessary_t
-    status: verified
-  - holds: necessary-distinctness-necessary-t
-    ref: Classicism.Map.Models.full_permutation_group_infinite_set.necessary_distinctness_necessary_t
-    status: verified
-  - holds: barcan-r
-    ref: Classicism.Map.Models.full_permutation_group_infinite_set.barcan_r
-    status: verified
-  - holds: barcan-t
-    ref: Classicism.Map.Models.full_permutation_group_infinite_set.barcan_t
-    status: verified
-  - holds: necessary-barcan-t
-    ref: Classicism.Map.Models.full_permutation_group_infinite_set.necessary_barcan_t
-    status: verified
-  - fails: necessary-fregean-axiom
-    ref: Classicism.Map.Models.full_permutation_group_infinite_set.necessary_fregean_axiom
-    status: verified

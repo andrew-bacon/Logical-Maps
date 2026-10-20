@@ -199,18 +199,6 @@ lean:
     actual-world-pinned: Classicism.Meta.Intensional.MonoidModel.actualWorldPinned_of_onePinned _ Classicism.Meta.Intensional.Monoids.Shifts.onePinned
     d6-surjective: Classicism.Meta.Intensional.MonoidModel.d6Surjective_of_surjective _ Classicism.Meta.Intensional.Monoids.Shifts.surj
   verdicts:
-  - holds: necessary-barcan-r
-    ref: Classicism.Map.Models.finite_support_truncated_shifts.necessary_barcan_r
-    status: verified
-  - holds: atomicity-t
-    ref: Classicism.Map.Models.finite_support_truncated_shifts.atomicity_t
-    status: verified
-  - fails: distinctness-necessary-r
-    ref: Classicism.Map.Models.finite_support_truncated_shifts.distinctness_necessary_r
-    status: verified
-  - fails: necessary-distinctness-necessary-r
-    ref: Classicism.Map.Models.finite_support_truncated_shifts.necessary_distinctness_necessary_r
-    status: verified
   - fails: boolean-completeness-r
     ref: Classicism.Map.Models.finite_support_truncated_shifts.boolean_completeness_r
     status: verified

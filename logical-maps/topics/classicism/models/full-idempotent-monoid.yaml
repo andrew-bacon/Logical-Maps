@@ -200,28 +200,3 @@ lean:
     extensionally-full: Classicism.Meta.Intensional.Premodel.Full.extFull _ (Classicism.Meta.Intensional.MSet.model_full Classicism.Meta.Intensional.Idem)
     actual-world-isolated: Classicism.Map.Meets.full_idempotent_monoid.actual_world_isolated
     one-object-action-model: Classicism.Meta.Intensional.Premodel.oneObject_of_subsingleton _
-  verdicts:
-  - fails: distinctness-necessary-r
-    ref: Classicism.Map.Models.full_idempotent_monoid.distinctness_necessary_r
-    status: verified
-  - fails: necessary-distinctness-necessary-r
-    ref: Classicism.Map.Models.full_idempotent_monoid.necessary_distinctness_necessary_r
-    status: verified
-  - fails: necessary-distinctness-necessary-t
-    ref: Classicism.Map.Models.full_idempotent_monoid.necessary_distinctness_necessary_t
-    status: verified
-  - fails: barcan-r
-    ref: Classicism.Map.Models.full_idempotent_monoid.barcan_r
-    status: verified
-  - fails: necessary-barcan-r
-    ref: Classicism.Map.Models.full_idempotent_monoid.necessary_barcan_r
-    status: verified
-  - fails: barcan-t
-    ref: Classicism.Map.Models.full_idempotent_monoid.barcan_t
-    status: verified
-  - fails: necessary-barcan-t
-    ref: Classicism.Map.Models.full_idempotent_monoid.necessary_barcan_t
-    status: verified
-  - fails: necessary-fregean-axiom
-    ref: Classicism.Map.Models.full_idempotent_monoid.necessary_fregean_axiom
-    status: verified

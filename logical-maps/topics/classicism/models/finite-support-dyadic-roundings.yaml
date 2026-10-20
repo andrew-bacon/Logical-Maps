@@ -244,20 +244,8 @@ lean:
   meets:
     actual-world-pinned: Classicism.Meta.Intensional.MonoidModel.actualWorldPinned_of_onePinned _ Classicism.Meta.Intensional.Monoids.Pow2.onePinned
   verdicts:
-  - holds: atomicity-t
-    ref: Classicism.Map.Models.finite_support_dyadic_roundings.atomicity_t
-    status: verified
-  - fails: distinctness-necessary-r
-    ref: Classicism.Map.Models.finite_support_dyadic_roundings.distinctness_necessary_r
-    status: verified
-  - fails: necessary-distinctness-necessary-r
-    ref: Classicism.Map.Models.finite_support_dyadic_roundings.necessary_distinctness_necessary_r
-    status: verified
   - fails: barcan-r
     ref: Classicism.Map.Models.finite_support_dyadic_roundings.barcan_r
-    status: verified
-  - fails: necessary-barcan-r
-    ref: Classicism.Map.Models.finite_support_dyadic_roundings.necessary_barcan_r
     status: verified
   - fails: boolean-completeness-r
     ref: Classicism.Map.Models.finite_support_dyadic_roundings.boolean_completeness_r

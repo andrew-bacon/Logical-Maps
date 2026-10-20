@@ -226,21 +226,6 @@ lean:
   - holds: atomlessness
     ref: Classicism.Map.Models.finite_support_monotone_maps.atomlessness
     status: verified
-  - fails: distinctness-necessary-r
-    ref: Classicism.Map.Models.finite_support_monotone_maps.distinctness_necessary_r
-    status: verified
-  - fails: necessary-distinctness-necessary-r
-    ref: Classicism.Map.Models.finite_support_monotone_maps.necessary_distinctness_necessary_r
-    status: verified
-  - fails: necessary-barcan-r
-    ref: Classicism.Map.Models.finite_support_monotone_maps.necessary_barcan_r
-    status: verified
-  - fails: actuality
-    ref: Classicism.Map.Models.finite_support_monotone_maps.actuality
-    status: verified
-  - fails: atomicity-t
-    ref: Classicism.Map.Models.finite_support_monotone_maps.atomicity_t
-    status: verified
   - fails: boolean-completeness-r
     ref: Classicism.Map.Models.finite_support_monotone_maps.boolean_completeness_r
     status: verified

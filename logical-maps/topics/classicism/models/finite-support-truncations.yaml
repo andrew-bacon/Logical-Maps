@@ -215,21 +215,6 @@ history:
 lean:
   param: Classicism.Meta.Intensional.Monoids.truncs
   verdicts:
-  - holds: atomicity-t
-    ref: Classicism.Map.Models.finite_support_truncations.atomicity_t
-    status: verified
-  - fails: distinctness-necessary-r
-    ref: Classicism.Map.Models.finite_support_truncations.distinctness_necessary_r
-    status: verified
-  - fails: necessary-distinctness-necessary-r
-    ref: Classicism.Map.Models.finite_support_truncations.necessary_distinctness_necessary_r
-    status: verified
-  - fails: barcan-r
-    ref: Classicism.Map.Models.finite_support_truncations.barcan_r
-    status: verified
-  - fails: necessary-barcan-r
-    ref: Classicism.Map.Models.finite_support_truncations.necessary_barcan_r
-    status: verified
   - fails: actuality
     ref: Classicism.Map.Models.finite_support_truncations.actuality
     status: verified

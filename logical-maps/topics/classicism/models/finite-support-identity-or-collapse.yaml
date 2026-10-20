@@ -215,15 +215,6 @@ lean:
     collapse-unpinned: Classicism.Map.Meets.finite_support_identity_or_collapse.collapse_unpinned
     positive-preserving: Classicism.Map.Meets.finite_support_identity_or_collapse.positive_preserving
   verdicts:
-  - fails: distinctness-necessary-r
-    ref: Classicism.Map.Models.finite_support_identity_or_collapse.distinctness_necessary_r
-    status: verified
-  - fails: necessary-distinctness-necessary-r
-    ref: Classicism.Map.Models.finite_support_identity_or_collapse.necessary_distinctness_necessary_r
-    status: verified
-  - fails: necessary-barcan-r
-    ref: Classicism.Map.Models.finite_support_identity_or_collapse.necessary_barcan_r
-    status: verified
   - fails: boolean-completeness-r
     ref: Classicism.Map.Models.finite_support_identity_or_collapse.boolean_completeness_r
     status: verified
