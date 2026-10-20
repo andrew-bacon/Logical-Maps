@@ -4372,7 +4372,7 @@ def coalesced_maximalist_root : Prop :=
 
 /-- `coalesced-pinned-interpretations-root`
 
-Coalesced sum: interpretation arrows into every component object, finitely pinned root: a witness satisfying 6 principles
+Coalesced sum: interpretation arrows into every component object, finitely pinned root: a witness satisfying 7 principles
 and violating 3. -/
 def coalesced_pinned_interpretations_root : Prop :=
   ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
@@ -4382,6 +4382,31 @@ def coalesced_pinned_interpretations_root : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RelationalChoice.schemaIn ∧
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Actuality.schemaIn ∧
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.DistinctnessPreservingCollapse.schemaIn ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.TransversalChoice.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecVicinity.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWeaklyInextensibleComprehension.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTransversal.schemaIn
+
+/-- `coalesced-pinned-substitutions-root`
+
+Coalesced sum: interpretation and substitution arrows, finitely pinned root: a witness satisfying 7 principles
+and violating 10. -/
+def coalesced_pinned_substitutions_root : Prop :=
+  ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Barcan.schemaIn ∧
+    Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.distinctnessC _) ∧
+    Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.possibilityPlusSig _) ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Atomlessness.schemaIn ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.TwoHatImpliesNdNecessity.schemaIn ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.FiveImpliesTwoHatNecessity.schemaIn ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.TransversalChoice.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Actuality.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.DistinctnessPreservingCollapse.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Vicinity.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeaklyInextensibleComprehension.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BooleanCompletenessT.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.TruthImpliesFiveNecessity.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.strongPossibility _) ∧
     ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecVicinity.schemaIn ∧
     ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWeaklyInextensibleComprehension.schemaIn ∧
     ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTransversal.schemaIn
