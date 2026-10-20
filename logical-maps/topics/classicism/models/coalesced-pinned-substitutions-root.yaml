@@ -42,6 +42,9 @@ settings:
       the domain: it is pinned down by $f(S)$, and its transports are transports of the original.'
 meets:
   complete-components: The models in $A$ are complete for C($\Sigma$), so in particular for C.
+  extensionally-full: Any set $R$ of tuples at the identity is the extension there of the entity with
+    value $R$ at every map of the constants and empty at every arrow into a component; it is pinned
+    down by $\emptyset$, and its transports into the components are empty, so they land.
 arguments:
 - id: barcan
   holds:
@@ -97,6 +100,67 @@ arguments:
     maps fixing $S\cup\{c\}$, together with no arrow into a component, is a truth not entailed by it: a
     map fixing $S$ and moving $c$ separates them. So no truth entails every truth, as in the all-maps
     finitely pinned model.
+- id: as-in-all-maps
+  fails:
+  - distinctness-preserving-collapse
+  - vicinity
+  - weakly-inextensible-comprehension-r
+  - boolean-completeness-t
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-19'
+  choice: free
+  text: >-
+    The arguments of finite-support-two-object-all-maps carry over, the maps of the constants playing
+    the part of the maps of $\mathbb N$, with every proposition used containing no arrow into a
+    component, so that its transports there are empty and land. Truth implies ND-necessity: the
+    transposition of two constants $c,d$ is invertible, so it sees every truth, while the true
+    proposition that $c$ is fixed is false there. Vicinity: a truth pinned down by $S$ contains a map
+    fixing $S$ that collapses two individual constants outside $S$; that they are distinct is true and
+    possible at no world seen from there. Weakly Inextensible Comprehension at type $t\to t$: as there,
+    for the propositions $p_c$ that the individual constant $c$ is fixed, the test property $X$ being
+    defined at the maps as there and as the property of being $\bot$ at the arrows into components,
+    which is definable and so lands. Boolean Completeness at type $t$: enumerate the individual
+    constants and take the propositions $A_m$ that a map is constant on the first $2m$ of them and first
+    changes value at the next, whose least pinned covers strictly shrink; the property with that family
+    as its value at every map and empty at the components is in the domain.
+- id: atomlessness
+  holds:
+  - atomlessness
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-19'
+  choice: free
+  text: >-
+    Let $p$ be possible, pinned down by a finite $S$. If $p$ contains a map $f$, the maps in $p$
+    agreeing with $f$ at a fresh individual constant $c$ form a possible proposition below $p$, pinned
+    down by $S\cup\{c\}$ and landing (it has no arrow into a component), and a map agreeing with $f$
+    on $S$ and not at $c$ shows that it is not $p$. Otherwise $p$ contains some $\langle V,I\rangle$;
+    for a fresh constant $c$ of type $t$, the members of $p$ whose interpretation sends $c$ to $\top$
+    form a proposition pinned down by $S\cup\{c\}$ whose transports are the conjunctions of those of
+    $p$ with the propositions that the interpretation of $c$ is $\top$, so it lands; it is possible and
+    below $p$, and an interpretation agreeing with $I$ on $S$ and sending $c$ to $\bot$ shows it is not
+    $p$. The atom of finite-support-two-object-all-maps, at its singleton object, has no counterpart.
+- id: collapse-at-root
+  holds:
+  - two-hat-implies-nd-necessity
+  - five-implies-two-hat-necessity
+  fails:
+  - truth-implies-five-necessity
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-19'
+  choice: free
+  text: >-
+    As in collapse-at-root of finite-support-two-object-all-maps. Write $\mathrm{fix}_S$ for the maps of
+    the constants fixing the finite set $S$ pointwise, the least truth pinned down by $S$, and $\delta_S$
+    for the maps injective on $S$. $\Diamond\,\mathrm{fix}_S=\delta_S$: no composite with an arrow into a
+    component is a map, and a map injective on $S$ is undone on $S$ by another. At a map $k$,
+    $\Diamond_{\ne}$ of the transport of $\mathrm{fix}_S$ holds iff $k\in\delta_S$, and at an arrow into a
+    component that transport is $\bot$; so $\hat\Diamond\,\mathrm{fix}_S=\delta_S$ too, and $\Box_{\ne}$ and
+    $\hat{\hat\Box}$ coincide, each holding of exactly the propositions containing some $\delta_S$. BF at
+    type $t$ holds for $\hat{\hat\Box}$: an arrow in $\delta_N$ agrees on any pinning set with a bijection
+    $b$ of the constants, and an entity pinned down there has at it the value it has at $b$, which
+    contains every transport along $b$, that is, everything. So by Proposition D8 of The Bounds of
+    Possibility $\Box_5$ implies two-hat necessity. The truth $\mathrm{fix}_{\{c\}}$ is not two-hat necessary,
+    every $\delta_S$ containing a bijection moving $c$, so not 5-necessary.
 notes: 'A variant of coalesced-pinned-interpretations-root, suggested by Cian Dorr on 19 October 2026: the
   substitutions of constants make Actuality fail, as in the finitely pinned model on all maps, while
   Maximalism and BF still hold. The argument that it is a model of C is that of the original with the maps

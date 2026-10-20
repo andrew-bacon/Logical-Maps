@@ -43,6 +43,9 @@ settings:
       unconstrained.'
 meets:
   complete-components: The models in $A$ are complete for C($\Sigma$), so in particular for C.
+  extensionally-full: Any set $R$ of tuples at the identity is the extension there of the entity with
+    value $R$ at the identity and empty at every arrow into a component, which is pinned down by
+    $\emptyset$ and whose transports are empty.
   free-root-component: The value of a root entity at the identity arrow is unconstrained, the identity
     being the only arrow into $W_0$, so no pinning condition bears on it.
 arguments:
