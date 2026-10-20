@@ -131,7 +131,255 @@ arguments:
     component parts well-orderings in the components; the root domains being fullest, $R$ is in the
     domain, and it well-orders the type at every world, every root property of type $\sigma t$ having a
     root part that is a subset of the root's entities.
+- id: rigid-power
+  fails:
+  - rigid-power-r
+  - necessary-rigid-power-r
+  - weakly-rigid-power-r
+  - necessary-weakly-rigid-power-r
+  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's request
+  date: '2026-10-20'
+  choice: free
+  text: >-
+    Throughout, $M_1$ and $M_2$ are the two one-world extensional Henkin components, with
+    $M_1\models\operatorname{Con}(T)$ and $M_2\models\neg\operatorname{Con}(T)$, and $D^\sigma_r$,
+    $D^\sigma_1$, $D^\sigma_2$ are the domains of type $\sigma$ at the root and at the components.
+    From the root three worlds are accessible, the root itself and the two components; from a
+    component only itself. Since $M_i$ is extensional and one-world, an entity of $M_i$ of type
+    $\bar\sigma t$ is identified with its extension, a set of $\bar\sigma$-tuples of $M_i$, and a
+    set $S$ of $\bar\sigma$-tuples of $M_i$ is called internal in $M_i$ when $S\in D^{\bar\sigma
+    t}_i$, that is, when it is the extension of an entity of $M_i$; every set definable in $M_i$
+    with parameters is internal in $M_i$, by comprehension. The word always refers to one of the two
+    components, named each time; at the root one speaks only of root entities and their root
+    extensions. A root individual is a pair $(a_1,a_2)$ with $a_i\in D^e_i$, transported to $a_i$
+    along the distinguished arrow $d_i$. A root entity of a relational type $\bar\sigma t$ is a
+    triple $Y=(Y_o,Y_1,Y_2)$: $Y_o$, its root extension, is an arbitrary set of root
+    $\bar\sigma$-tuples, and $Y_i\in D^{\bar\sigma t}_i$, its $M_i$-component, is its transport
+    along $d_i$; the root domains being fullest, every such triple is in $D^{\bar\sigma t}_r$. For a
+    root tuple $\bar x$ let $\pi_i\bar x$ be the tuple of $M_i$-components of its entries, and for a
+    set $S$ of root tuples let $\pi_i[S]:=\{\pi_i\bar x:\bar x\in S\}$, a set of $\bar\sigma$-tuples
+    of $M_i$ that need not be internal in $M_i$. For any $n\in D^\sigma_1$ and $m\in D^\sigma_2$
+    some root entity $x$ of type $\sigma$ has $\pi_1x=n$ and $\pi_2x=m$: the pair $(n,m)$ when
+    $\sigma=e$, the triple $(\emptyset,n,m)$ otherwise.
+
+    Six facts about the semantics are used. (a) At the root, $\Box\varphi$ holds iff $\varphi$ holds
+    at the root, at $M_1$ and at $M_2$, root parameters replaced by their components. (b)
+    Quantifiers at the root range over the root domains, at $M_i$ over those of $M_i$. (c) At the
+    root $Y\bar x$ holds iff $\bar x\in Y_o$; at $M_i$, after transport, iff $\pi_i\bar x\in Y_i$.
+    (d) So $Y\le Z$, that is $\Box\forall\bar x\, .\,Y\bar x\to Z\bar x$, holds at the root iff
+    $Y_o\subseteq Z_o$, $Y_1\subseteq Z_1$ and $Y_2\subseteq Z_2$. (e) Transport commutes with
+    denotation: the $M_i$-component of the root entity denoted by $\lambda X\, .\,\varphi(X,\bar F)$
+    with root parameters $\bar F$ is the entity of $M_i$ denoted by $\lambda X\, .\,\varphi(X,\bar
+    F_i)$. (f) In the one-world model $M_i$ the box is idle, so every entity $Y$ of $M_i$ is weakly
+    persistent ($Y\bar x\to\Box Y\bar x$ reduces to $Y\bar x\to Y\bar x$) and weakly inextensible
+    ($\forall X\, .\,(\forall\bar x\, .\,Y\bar x\to\Box X\bar x)\to Y\le X$ reduces to $\forall X\,
+    .\,Y\subseteq X\to Y\subseteq X$); hence every entity of $M_i$ is weakly rigid and, the box
+    being idle, rigid.
+
+    Rigidity at the root. $\operatorname{Rigid}(Y)$ is $\Box\operatorname{WeaklyRigid}(Y)$; at the
+    root, by (a), it says that $Y$ is weakly rigid at the root and that $Y_i$ is weakly rigid in
+    $M_i$ for each $i$, and the latter holds by (f). So $Y$ is rigid at the root iff it is weakly
+    persistent and weakly inextensible there. Weak persistence at the root, $\forall\bar x\,
+    .\,Y\bar x\to\Box Y\bar x$, asks of each root tuple $\bar x\in Y_o$ that $Y\bar x$ hold at the
+    root (trivial), at $M_1$ ($\pi_1\bar x\in Y_1$) and at $M_2$ ($\pi_2\bar x\in Y_2$); so it holds
+    iff $\pi_1[Y_o]\subseteq Y_1$ and $\pi_2[Y_o]\subseteq Y_2$. Weak inextensibility at the root,
+    $\forall X\, .\,(\forall\bar x\, .\,Y\bar x\to\Box X\bar x)\to Y\le X$ with $X=(X_o,X_1,X_2)$
+    ranging over root entities, has the hypothesis $Y_o\subseteq X_o$, $\pi_1[Y_o]\subseteq X_1$,
+    $\pi_2[Y_o]\subseteq X_2$ and, by (d), the conclusion $Y_o\subseteq X_o$, $Y_1\subseteq X_1$,
+    $Y_2\subseteq X_2$. The three parts of $X$ being independent, this is a separate condition on
+    each component: given $X_1\in D^{\bar\sigma t}_1$ containing $\pi_1[Y_o]$, the root entity
+    $(Y_o,X_1,\top_2)$ satisfies the hypothesis, so $Y_1\subseteq X_1$ is required, and likewise for
+    $M_2$; conversely the two component conditions give the conclusion for every $X$ satisfying the
+    hypothesis. So weak inextensibility at the root holds iff for $i=1,2$, $Y_i\subseteq X_i$ for
+    every $X_i$ internal in $M_i$ with $X_i\supseteq\pi_i[Y_o]$. Together: $Y$ is rigid at the root
+    iff for each $i$, $Y_i$ is a set internal in $M_i$ that contains $\pi_i[Y_o]$ and is contained
+    in every set internal in $M_i$ that contains $\pi_i[Y_o]$; that is, $Y_i$ is the least internal
+    superset of $\pi_i[Y_o]$ in $M_i$.
+
+    Lemma. Let $M$ be a one-world extensional model and $S$ any set of $\bar\sigma$-tuples of $M$,
+    internal or not; call an $X$ internal in $M$ a least internal superset of $S$ if $S\subseteq X$
+    and $X\subseteq X'$ for every $X'$ internal in $M$ with $S\subseteq X'$. If $S$ has a least
+    internal superset $X$, then $X=S$; so $S$ has a least internal superset iff $S$ is itself
+    internal in $M$, and then that superset is $S$. Proof: suppose $X$ is a least internal superset
+    of $S$ but $X\not\subseteq S$, and pick $\bar a\in X\setminus S$. The haecceity $\lambda\bar y\,
+    .\,\bar y=\bar a$ is internal in $M$ by comprehension with the parameter $\bar a$, hence so is
+    $X':=X\land\neg(\lambda\bar y\, .\,\bar y=\bar a)$, which as a set is $X\setminus\{\bar a\}$. As
+    $\bar a\notin S$, still $S\subseteq X'$; by leastness $X\subseteq X'$, so $\bar a\in X'$, which
+    is absurd. So $X=S$, and $S$ is internal. Conversely an internal $S$ is its own least internal
+    superset. The point is that an internal set strictly above $S$ is never the least one above $S$:
+    it can be shrunk by a point while staying above $S$. Applying the lemma with $S=\pi_i[Y_o]$
+    gives the criterion (Rig): a root entity $Y=(Y_o,Y_1,Y_2)$ of type $\bar\sigma t$ is rigid at
+    the root iff for each $i=1,2$, (1) $\pi_i[Y_o]$ is internal in $M_i$ and (2) $Y_i=\pi_i[Y_o]$. A
+    rigid root entity is thus determined by its root extension, and a set $S$ of root tuples is the
+    root extension of a rigid root entity iff $\pi_1[S]$ is internal in $M_1$ and $\pi_2[S]$ is
+    internal in $M_2$, the rigid entity then being $(S,\pi_1[S],\pi_2[S])$.
+
+    The power property. Rigid Power at type $\bar\sigma t$ is $\forall F\,
+    .\,\operatorname{Rigid}(F)\to\operatorname{Rigid}(P_F)$ with $P_F:=\lambda X^{\bar\sigma t}\,
+    .\,\operatorname{Rigid}(X)\land X\le F$, a root entity of type $(\bar\sigma t)t$; at the root,
+    by (b), it says that $P_F$ is rigid at the root for every root entity $F$ that is rigid at the
+    root. For such an $F$, the root extension $(P_F)_o$ is the set of root entities $X$ that are
+    rigid at the root with $X\le F$ at the root; by (Rig) such an $X$ is $(E,\pi_1[E],\pi_2[E])$ for
+    a set $E$ of root tuples with both projections internal, and by (d) $X\le F$ says $E\subseteq
+    F_o$ together with $\pi_i[E]\subseteq F_i$, which is automatic since $F_i=\pi_i[F_o]$; so
+    $(P_F)_o$ consists of the $(E,\pi_1[E],\pi_2[E])$ with $E\subseteq F_o$, $\pi_1[E]$ internal in
+    $M_1$ and $\pi_2[E]$ internal in $M_2$. The $M_i$-component $(P_F)_i$ is, by (e), the entity of
+    $M_i$ denoted by $\lambda X\, .\,\operatorname{Rigid}(X)\land X\le F_i$, and by (f) every entity
+    of $M_i$ is rigid, so $(P_F)_i=\mathcal P_i(F_i):=\{X_i\in D^{\bar\sigma t}_i: X_i\subseteq
+    F_i\}$, the internal power set of $F_i$, itself internal in $M_i$ as the extension of $\lambda
+    X\, .\,X\le F_i$. Now apply (Rig) to $P_F$ at type $(\bar\sigma t)t$. The projection
+    $\pi_i[(P_F)_o]$ is the set of the $\pi_i[E]$ for $E\subseteq F_o$ with both projections
+    internal, the set of $M_i$-components of rigid subrelations of $F$; each member is an internal
+    subset of $\pi_i[F_o]=F_i$, so $\pi_i[(P_F)_o]\subseteq\mathcal P_i(F_i)=(P_F)_i$ always. Hence
+    the criterion (RP): for a root entity $F$ rigid at the root, $P_F$ is rigid at the root iff for
+    each $i=1,2$, (1) $\pi_i[(P_F)_o]$ is internal in $M_i$ and (2) $(P_F)_i=\pi_i[(P_F)_o]$, which
+    by the inclusion just noted says that every $A\subseteq F_i$ internal in $M_i$ is $\pi_i[E]$ for
+    some $E\subseteq F_o$ whose other projection $\pi_j[E]$ is internal in $M_j$. Clause (2) implies
+    clause (1), $(P_F)_i$ being internal, so (RP) comes down to clause (2): Rigid Power holds at the
+    root iff for every rigid $F$ and each component, every internal subrelation of $F$'s component
+    there is the component of a rigid subrelation of $F$. To refute it one exhibits a rigid $F$, an
+    $i$ and an $A\subseteq F_i$ internal in $M_i$ that is $\pi_i[E]$ for no $E\subseteq F_o$ with
+    $\pi_j[E]$ internal in $M_j$.
+
+    The witness, at type $\nu t$ with $\nu:=(et)t$, the type of finite cardinalities of individuals.
+    Let $N_i\subseteq D^\nu_i$ be the set of finite cardinalities of $M_i$, the extension in $M_i$
+    of $\lambda n\, .\,\forall\mathcal C\, .\,\mathcal C0\land\forall m\,(\mathcal Cm\to\mathcal
+    C(\operatorname{Suc}m))\to\mathcal Cn$ with $\mathcal C$ ranging over $D^{\nu t}_i$; it is
+    internal in $M_i$. Write $\bar k^{M_i}\in D^\nu_i$ for the denotation of $\operatorname{Suc}^k0$
+    in $M_i$ and $\operatorname{Std}_i:=\{\bar k^{M_i}:k\in\mathbb N\}$ for the standard numbers of
+    $M_i$; $\operatorname{Std}_i\subseteq N_i$, each $\bar k^{M_i}$ lying in every inductive class,
+    and the $\bar k^{M_i}$ are pairwise distinct by $I^*$. Claim 1: $\operatorname{Std}_2$ is not
+    internal in $M_2$. Since $M_2\models\neg\operatorname{Con}(T)$ there is $n_0\in N_2$ that $M_2$
+    takes to code a $T$-proof of $\bot$; $n_0$ is not standard, since $T$ decides every bounded
+    arithmetical statement about standard numerals, so that if $n_0$ were $\bar k^{M_2}$ then $k$
+    would really code a $T$-proof of $\bot$, and there is none, $T$ having a model. If
+    $\operatorname{Std}_2$ were internal in $M_2$ it would be an inductive class in the sense of
+    $M_2$, containing $\bar 0^{M_2}$ and closed under $\operatorname{Suc}$, and so would contain
+    $n_0$ by the definition of $N_2$; it does not.
+
+    Define $\psi:N_1\to\operatorname{Std}_2$ by $\psi(\bar k^{M_1}):=\bar k^{M_2}$ for $k\in\mathbb
+    N$ and $\psi(n):=\bar 0^{M_2}$ for $n\in N_1\setminus\operatorname{Std}_1$ (the second clause
+    matters only if $M_1$ has nonstandard numbers; $M_1$ might have been taken to be the full
+    standard model on $\mathbb N$, which satisfies $T+\operatorname{Con}(T)$, and then
+    $N_1=\operatorname{Std}_1$); $\psi$ is onto $\operatorname{Std}_2$ and uses no choice. Let
+    $F:=(F_o,\top_1,\top_2)$ be the root entity of type $\nu t$ whose $M_i$-components are the
+    universal properties of $M_i$, with extensions $D^\nu_i$, and whose root extension $F_o$ is the
+    set of $x\in D^\nu_r$ such that either $x_1\in N_1$ and $x_2=\psi(x_1)$, or $x_1\notin N_1$,
+    where $x_1$ and $x_2$ are the $M_1$- and $M_2$-components of $x$: either the $M_1$-component is
+    a finite cardinality of $M_1$ and the $M_2$-component is the standard number of $M_2$ that
+    $\psi$ assigns to it, or the $M_1$-component is not a finite cardinality and the $M_2$-component
+    is anything. Claim 2: $F$ is rigid at the root. By (Rig) it suffices that $\pi_1[F_o]=D^\nu_1$
+    and $\pi_2[F_o]=D^\nu_2$, these being internal as the extensions of $\top_1$ and $\top_2$. For
+    the first, let $n\in D^\nu_1$: if $n\in N_1$, the root entity $x:=(\emptyset,n,\psi(n))$, with
+    empty root extension, is in $D^\nu_r$ (fullest domains) and in the first part of $F_o$, with
+    $x_1=n$; if $n\notin N_1$, $x:=(\emptyset,n,m)$ for any $m\in D^\nu_2$ is in the second part.
+    For the second, let $m\in D^\nu_2$: the second part of $F_o$ supplies $x:=(\emptyset,n,m)$
+    provided $M_1$ has some $n\notin N_1$, an entity of type $\nu$ that is not a finite cardinality.
+    It does: $\top_\nu$, the property holding of every property of individuals. For $0$ holds only
+    of the empty property, while $\operatorname{Suc}m$ holds only of nonempty properties, holding of
+    $A$ iff some $x$ with $Ax$ has $m(\lambda y\, .\,Ay\land y\ne x)$; so the class of those $n$
+    that do not hold both of the empty property and of some nonempty property contains $0$, is
+    closed under $\operatorname{Suc}$ and is internal in $M_1$, hence contains every member of
+    $N_1$; and $\top_\nu$ holds of the empty property and of any singleton.
+
+    Claim 3: $P_F$ is not rigid at the root. Take $i=1$ and $A:=N_1$, internal in $M_1$ and a subset
+    of $F_1=D^\nu_1$, so that $A\in\mathcal P_1(F_1)=(P_F)_1$. By clause (2) of (RP), $P_F$ is rigid
+    at the root only if $N_1=\pi_1[E]$ for some $E\subseteq F_o$ with $\pi_2[E]$ internal in $M_2$.
+    But if $E\subseteq F_o$ has $\pi_1[E]=N_1$, every $x\in E$ has $x_1\in N_1$, so lies in the
+    first part of $F_o$ with $x_2=\psi(x_1)$; hence $\pi_2[E]=\psi[N_1]=\operatorname{Std}_2$, not
+    internal in $M_2$ by Claim 1. So $N_1$ lies in $(P_F)_1$ but not in $\pi_1[(P_F)_o]$, clause (2)
+    of (RP) fails for $F$ at $i=1$, and $P_F$ is not rigid at the root. Unwound, the failing
+    instance of inextensibility is this: let $H:=(\top,H_1,\top_2)$ be the root entity of type $(\nu
+    t)t$ with $H_1:=\lambda X\, .\,\neg(X=N_1)$, internal in $M_1$. Then $\forall X\, .\,P_FX\to\Box
+    HX$ holds at the root, since for $X$ rigid with $X\le F$, $HX$ holds trivially at the root and
+    at $M_2$, and at $M_1$ it says $X_1\ne N_1$, which holds because $X_1=\pi_1[X_o]$ with
+    $X_o\subseteq F_o$ and $\pi_2[X_o]=X_2$ internal in $M_2$, which Claim 3 shows incompatible with
+    $\pi_1[X_o]=N_1$; but $P_F\le H$ fails at $M_1$, where $(P_F)_1=\mathcal P_1(\top_1)$ holds of
+    $N_1$ and $H_1$ does not. So Rigid Power fails at the root at type $((et)t)t$. The boxed form
+    fails with it, $\Box$ at the root reaching only the root and the components, where Rigid Power
+    holds trivially by (f). And since at the root weak rigidity is rigidity and in the components
+    both are trivial, $F$ is weakly rigid and $\lambda X\, .\,\operatorname{WeaklyRigid}(X)\land
+    X\le F$ is the same root entity as $P_F$, so Weakly Rigid Power and its boxed form fail too.
+
+    The obstacle in one line. The set $S$ of root entities $x$ of type $\nu$ with $x_1=\bar k^{M_1}$
+    and $x_2=\bar k^{M_2}$ for some $k\in\mathbb N$, the entities that are the same standard number
+    in both components, is the root extension of plenty of root entities of type $\nu t$, namely of
+    $(S,Y_1,Y_2)$ for any $Y_1\in D^{\nu t}_1$ and $Y_2\in D^{\nu t}_2$, the root domains being
+    fullest; but by (Rig) none of them is rigid, since $\pi_2[S]=\operatorname{Std}_2$ is not
+    internal in $M_2$. There is no rigid root relation whose root extension is "same standard number
+    in both components". The witness $F$ is this non-rigid relation padded until it is rigid, on the
+    number side so that $\pi_1$ sees every finite cardinality of $M_1$ and on the non-number side so
+    that $\pi_2$ sees all of $D^\nu_2$, and $N_1$ is the internal subset of $F_1$ that could only
+    come from the unpadded part. A rigid relation can be thin enough, a graph, that the rigid
+    subrelations below it are forced to have non-internal projections.
+
+    Which types, and how the filling in of the construction matters. The same bookkeeping gives the
+    criterion (Crit): Rigid Power at type $\bar\sigma t$ fails at the root iff for some $j\ne i$
+    there is a set $B$ of $\bar\sigma$-tuples of $M_j$, not internal in $M_j$, with
+    $|B|\le|D^{\bar\sigma}_i|$. For the one direction, fix a tuple $\bar x_0$ of $M_i$ and a
+    surjection $\psi:D^{\bar\sigma}_i\setminus\{\bar x_0\}\to B$, let $F_o$ be the set of root
+    tuples $\bar x$ with either $\pi_i\bar x\ne\bar x_0$ and $\pi_j\bar x=\psi(\pi_i\bar x)$, or
+    $\pi_i\bar x=\bar x_0$, and let $F:=(F_o,\top,\top)$; then $\pi_i[F_o]=D^{\bar\sigma}_i$ and
+    $\pi_j[F_o]=D^{\bar\sigma}_j$, the tuples with $\pi_i\bar x=\bar x_0$ pairing $\bar x_0$ with
+    every tuple of $M_j$, so $F$ is rigid by (Rig); and $A:=D^{\bar\sigma}_i\setminus\{\bar x_0\}$,
+    internal in $M_i$ as $\top$ minus a haecceity, is $\pi_i[E]$ only for $E\subseteq F_o$ avoiding
+    $\bar x_0$, whose $\pi_j[E]=\psi[A]=B$ is not internal in $M_j$. For the other direction, which
+    uses choice, suppose clause (2) of (RP) fails for some rigid $F$, $i$ and $A\subseteq F_i$;
+    choose for each $a\in A$ one $\bar x^a\in F_o$ with $\pi_i\bar x^a=a$, possible as
+    $A\subseteq\pi_i[F_o]$, and let $E$ be the set of these; then $\pi_i[E]=A$, so $B:=\pi_j[E]$ is
+    not internal in $M_j$, and $|B|\le|A|\le|D^{\bar\sigma}_i|$. Consequences: with countable Henkin
+    components, which is what the Henkin construction gives, $D^{et}_2$ is countable while $\mathcal
+    P(D^e_2)$ is not, so some set $B$ of individuals of $M_2$ is not internal in $M_2$ and
+    $|B|\le\aleph_0=|D^e_1|$; Rigid Power fails already at type $e\to t$, and in general at every
+    type at which either component is not full. With $M_1$ the full standard model on $\mathbb N$,
+    Rigid Power at $e\to t$ fails iff $M_2$ has a countable set of individuals not internal in
+    $M_2$, as it does if $M_2$ is countable. Rigid Power could hold at $e\to t$ only if every
+    non-internal set of individuals of either component outnumbered the individuals of the other.
+    Both components cannot be full at type $et$: if $M_2$ were full at $et$ and at $eet$, an
+    internal bijection between $A$ and $B$ would be true equinumerosity and the absence of an
+    internal injection of $A$ into a proper subset of itself true finiteness, so the class of those
+    $n$ that hold of something, hold only of finite properties and are closed under equinumerosity
+    would be internal and inductive, every finite cardinality of $M_2$ would be the property of
+    having exactly $k$ members for a true $k$, and $M_2$ would satisfy $\operatorname{Con}(T)$. A
+    filling in with Rigid Power at $e\to t$ would thus need $M_2$ full at $et$ but not at $eet$,
+    with uncountably many individuals and every countable set of them internal; whether $T$ has such
+    a model has not been checked. Whatever the filling in, the failure at $((et)t)t$ remains, using
+    only the countable non-internal set $\operatorname{Std}_2$ and the infinitude of $D^\nu_1$.
+- id: rigid-rigidity
+  holds:
+  - rigid-rigidity-r
+  - necessary-rigid-rigidity-r
+  - weakly-rigid-weak-rigidity-r
+  - necessary-weakly-rigid-weak-rigidity-r
+  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's request
+  date: '2026-10-20'
+  choice: free
+  text: >-
+    In the notation of the argument rigid-power. Rigid Rigidity at type $\bar\sigma t$ is
+    $\operatorname{Rigid}(\lambda X\, .\,\operatorname{Rigid}(X))$, which is
+    $\operatorname{Rigid}(P_\top)$ for the root entity $\top$ whose root extension is the set of all
+    root $\bar\sigma$-tuples and whose components are $\top_1$ and $\top_2$; it is rigid by (Rig),
+    since $\pi_i[\top_o]=D^{\bar\sigma}_i$ is internal in $M_i$. Check clause (2) of (RP) for
+    $\top$: given $A\subseteq D^{\bar\sigma}_i$ internal in $M_i$, let $E$ be the set of root tuples
+    $\bar x$ with $\pi_i\bar x\in A$; then $\pi_i[E]=A$, and $\pi_j[E]$ is $D^{\bar\sigma}_j$ if
+    $A\ne\emptyset$, every tuple of $M_j$ pairing with some member of $A$, and $\emptyset$ if
+    $A=\emptyset$, either way internal in $M_j$. So $P_\top$ is rigid at the root, at every type. In
+    each component every entity is rigid by (f), so $\lambda X\, .\,\operatorname{Rigid}(X)$ is
+    rigid there trivially, and the boxed form holds at the root by (a). At the root, $\lambda X\,
+    .\,\operatorname{WeaklyRigid}(X)$ has the same root extension as $\lambda X\,
+    .\,\operatorname{Rigid}(X)$, weak rigidity and rigidity coinciding there, and the same
+    components, everything, by (f); so it is the same root entity, and it is weakly rigid, being
+    rigid. In the components it is weakly rigid trivially. So Weakly Rigid Weak Rigidity and its
+    boxed form hold.
 notes: 'Suggested by Cian Dorr on 19 October 2026 as a small model of the boxed Strong Leibniz Biconditionals
   and □BF without the Necessity of Arithmetic. The root has three atoms, the singletons of its three worlds,
   all strong worlds. The components are one-world extensional Henkin models, and they satisfy Well-Ordering
   at every type, so that the choice principles hold at every world. No Lean verification is claimed.'
+history:
+- date: '2026-10-20'
+  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's request
+  summary: Added the arguments rigid-power and rigid-rigidity, settling the eight verdicts the engine
+    had left open. Rigid Power, Weakly Rigid Power and their boxed forms fail at the root at type
+    $((et)t)t$ in every filling in of the construction, the standard numbers of $M_2$ not being
+    internal there; Rigid Rigidity, Weakly Rigid Weak Rigidity and their boxed forms hold at every
+    type.
