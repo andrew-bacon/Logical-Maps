@@ -15,3 +15,12 @@ source_names:
 - Large models handout
 notes: >-
   Uses the handout's strict smallness convention (finite or strictly fewer propositions), attributed there to the body of Could the truths of mathematics have been different?. It does not use the appendix's non-strict reading, no bigger than the propositions. The two readings are not identified. No Lean verification is claimed.
+
+references:
+- paper: bacon-modalized-domains-2026
+  role: formulation
+  locator: §6.1, p. 27
+changes:
+- date: '2026-10-21'
+  by: OpenAI Codex
+  summary: Linked the existing strict-smallness formulation to Modalized Domains §6.1; statement unchanged.

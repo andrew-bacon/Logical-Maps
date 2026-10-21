@@ -119,3 +119,12 @@ papers:
     with Recombination (Theorem 22, which refutes Atomicity at type t, Corollary 23); formalizes the
     coin-toss argument (Theorem 9). Read directly on 19 October 2026; locators refer to this draft.
   note: Work in progress. No PDF is copied into the topic or its downloads.
+
+- id: bacon-modalized-domains-2026
+  title: Modalized Domains on Possibility Frames
+  citation: Andrew Bacon and Claude Opus 5.5 (Anthropic), Modalized Domains on Possibility Frames, draft
+    of 20 October 2026.
+  url: https://andrew-bacon.github.io/techdoc/modalized-domains.pdf
+  note: The first-page authorship note credits Bacon with the framework and proposed applications, and
+    Claude Opus 5.5 with the write-up and verification. This contribution records the pure-language applications
+    in §§4–6; §7 involving E is excluded.
