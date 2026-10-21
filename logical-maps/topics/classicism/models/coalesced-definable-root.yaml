@@ -1,0 +1,182 @@
+id: coalesced-definable-root
+name: 'Coalesced sum: interpretation arrows into every component object, definable root'
+certificate:
+  source_id: misc
+  produced_by: Cian Dorr, 20 October 2026 (the construction), with Claude Fable 5.1 (Anthropic), who wrote
+    the verification
+  recorded_by: Claude Fable 5.1 (Anthropic), 20 October 2026
+  checked_by: []
+  date: '2026-10-20'
+  lean: none
+sources:
+- Cian Dorr, construction of 20 October 2026, with Claude Fable 5.1 (Anthropic).
+- Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, Appendix E, Definition E.2, pp. 80–83.
+source_names:
+- Dorr 20 Oct
+- Classicism
+references:
+- paper: bacon-dorr-classicism
+  role: background
+  locator: Appendix E, Definition E.2, pp. 80–83
+  note: The coalesced sum, here with an arrow for every individual of every component object and with
+    the root domains cut down to the definable intensions.
+group: coalesced-sums
+settings:
+  root-arrows: interpretations
+  construction: 'Fix a set $A$ of action models complete for C, with disjoint objects and arrows, and the
+    signature $\Sigma_0=\{d\}$ with one constant $d$ of type $e$. Add an object $W_0$. Its arrows out
+    are its identity and, for each object $V$ of a model in $A$ and each individual $a$ at $V$, an arrow
+    $\langle V,a\rangle$ into $V$, the interpretation of $\Sigma_0$ sending $d$ to $a$; an arrow $k$ of
+    the component composes with it to give $\langle V^{\prime},k\cdot a\rangle$. The only individual at
+    $W_0$ is $d$, and $\langle V,a\rangle$ sends it to $a$. Evaluation point: $W_0$, at its identity
+    arrow. Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each denotes
+    the top element of its type, the root entity with the closed term $\lambda\bar x\, .\,\top$ and
+    full extension at the identity.'
+  domains:
+    text: 'An entity at $W_0$ of a relational type is an intension over the arrows out of $W_0$ for which
+      there is a closed term $t$ of $\mathcal L(\Sigma_0)$ whose interpretation at $V$ under $d\mapsto a$
+      is its value at $\langle V,a\rangle$, for every arrow $\langle V,a\rangle$; its value at the
+      identity is unconstrained. Its transport along $\langle V,a\rangle$ is then the entity $t$ denotes
+      at $V$, so it lands in the component domain.'
+meets:
+  complete-components: The models in $A$ are complete for C.
+  free-root-component: The value of a root entity at the identity arrow is unconstrained, the identity
+    being the only arrow into $W_0$.
+  sigma-top: This is the interpretation the construction fixes.
+arguments:
+- id: maximalism
+  holds:
+  - distinctness-schema-r
+  - possibility-plus-r
+  by: Cian Dorr, recorded by Claude Fable 5.1 (Anthropic)
+  date: '2026-10-20'
+  choice: free
+  writeup: coalesced-definable-root
+  text: >-
+    A closed pure sentence holds at $\langle V,a\rangle$ iff it holds at $V$ in its component. Every pure
+    sentence consistent with C holds at the root of some model in $A$, so it is possible at $W_0$:
+    Maximalism (pure) in its possibility form. For Possibility+ (pure), the only individual at $W_0$ is
+    $d$, so an instance with two or more distinct individual variables has a false antecedent, and for
+    one variable $x$ a consistent pure $P(x)$ holds of some individual $a$ at the root $V$ of some model
+    in $A$; then $P(d)$ holds at $\langle V,a\rangle$, since $\langle V,a\rangle$ sends $d$ to $a$.
+- id: barcan
+  fails:
+  - barcan-r
+  - barcan-t
+  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-20'
+  choice: free
+  writeup: coalesced-definable-root
+  text: >-
+    At type $e$: $\Diamond\exists x\, .\,x\ne d$ holds at $W_0$, some component having two individuals,
+    but the only individual at $W_0$ is $d$ and $\Diamond(d\ne d)$ fails. At type $t$, in the form
+    $\Diamond\exists p\, .\,Xp\to\exists p\, .\,\Diamond Xp$: let $X$ be the root property denoted by
+    $\lambda p\, .\,\operatorname{Atom}(p)\land\exists q\, .\,(\operatorname{Atom}(q)\land q\ne p)\land
+    \Box\mathrm{ND}\land\mathrm{Atomicity}\land\forall x\forall y\, .\,x=y$. Its instantiation is
+    consistent with C (the full S5 model over the two-element group with one individual), so
+    $\Diamond\exists p\, .\,Xp$ holds at $W_0$. A root proposition $p$ has a closed sentence $t$ of
+    $\mathcal L(\Sigma_0)$ as its value at every arrow into a component. At a world $w$ where
+    $\Box\mathrm{ND}$, Atomicity and $\forall x\forall y\, .\,x=y$ hold there is necessarily exactly one
+    individual (BF follows from $\Box$ND, and $x=y\to\Box\,x=y$), so $t$ and the pure sentence
+    $\forall x\, .\,t[x/d]$ are the same proposition at $w$, which is not contingent there by the
+    recorded result $\Box$ND + Atomicity (type $t$) ⇒ No Pure Contingency; being S5 ($\Box$ND gives 5),
+    it is $\top$ or $\bot$ at $w$, and neither is an atom beside another atom. So $Xp$ holds at no world
+    seen from $W_0$ (at $W_0$ itself $\Box$ND fails, by the argument nd), and $\exists p\, .\,\Diamond Xp$
+    fails.
+- id: nd
+  fails:
+  - distinctness-necessary-r
+  - distinctness-necessary-t
+  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-20'
+  choice: free
+  text: >-
+    The root propositions with the term $\bot$ and the two values at the identity are distinct at $W_0$,
+    since the value at the identity of a root property of propositions is unconstrained and so some root
+    property separates them, and they coincide at every arrow into a component. So two distinct
+    propositions are possibly identical.
+- id: lindenbaum
+  fails:
+  - atomicity-t
+  - atomicity-r
+  - boolean-completeness-t
+  - countable-boolean-completeness-r
+  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-20'
+  choice: free
+  writeup: coalesced-definable-root
+  text: >-
+    Two root propositions false at the identity, with sentences $t$ and $t^{\prime}$, are identical iff
+    $t\leftrightarrow t^{\prime}$ holds at every object of every model in $A$ under every interpretation
+    of $d$, which by completeness is iff it is a theorem of C($\Sigma_0$); and the first entails the
+    second iff $t\to t^{\prime}$ is a theorem. So those propositions form the Lindenbaum algebra of
+    C($\Sigma_0$), a countable Boolean algebra without atoms: every consistent $t$ has a consistent proper
+    strengthening, such as $t$ with a sentence fixing a number of propositions that $t$ leaves open. The
+    root propositions are this algebra with a truth value at the identity adjoined. Atomicity fails at
+    type $t$, every nonzero proposition false at the identity lacking an atom below it, and so at all
+    relational types. Boolean Completeness at type $t$ fails since a countable atomless Boolean algebra is
+    not complete, and Countable Boolean Completeness since it is not even countably complete, a strictly
+    decreasing sequence without a greatest lower bound being available there; any family of root
+    propositions is the value at the identity of a root property, the value at the identity being
+    unconstrained.
+- id: one-individual-at-root
+  fails:
+  - infinity-e
+  - axiom-of-infinity-e
+  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-20'
+  choice: free
+  text: >-
+    The only individual at $W_0$ is $d$, so there are not two distinct individuals, and the universal
+    property of individuals has the finite cardinality one.
+- id: well-ordering
+  holds:
+  - well-ordering-r
+  - transversal-choice-r
+  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-20'
+  choice: uses
+  text: >-
+    Both principles are evaluated at the identity of $W_0$ alone, where the quantified relations range over
+    root entities with arbitrary values at the identity. For Well-Ordering at a type $\sigma$, let $R$
+    have at the identity a well-ordering of the root entities of type $\sigma$, chosen in the metatheory,
+    and the term $\bot$ elsewhere; every root property of that type has as its value at the identity a set
+    of those entities, so $R$ well-orders the type there. For Transversal Choice, the transversal of an
+    equivalence relation at the identity has a choice of one member of each class as its value there and
+    the term $\bot$ elsewhere.
+- id: tame-rigidity
+  fails:
+  - tame-rigidity-r
+  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-20'
+  choice: free
+  text: >-
+    At type $e\to t$. Let $Y$ be the root property with the term $\lambda x\, .\,\top$ and the value
+    $\{d\}$ at the identity. It is weakly persistent, $Y$ holding of $d$ at every arrow. It is weakly
+    inextensible at $W_0$: a root property $X$ with $\Box Xd$ holds of $d$ at the identity and, its term
+    holding at $\langle V,a\rangle$ of $a$, of every individual at every component world, so $Y\le X$. But
+    its transport into a component is the universal property of individuals, which is weakly inextensible at
+    a world only if BF at type $e$ holds there, and some component refutes BF at its root, the components
+    being complete for C. So $Y$ is weakly rigid but not rigid.
+- id: strong-possibility
+  fails:
+  - strong-possibility-r
+  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
+  date: '2026-10-20'
+  choice: free
+  text: >-
+    The root proposition $a$ with the term $\bot$ and the value true at the identity is a truth possible
+    only at the identity, no arrow leading back into $W_0$. So $\Box_{\ne}p$, which is $\exists q\, .\,
+    q\land\Box(\Diamond q\to p)$, holds of every truth $p$ with $q:=a$, and $\Diamond_{\ne}P$ holds at
+    $W_0$ iff $P$ does. The closed pure sentence $\neg$Actuality is consistent with Maximalist Classicism,
+    both holding at the root of coalesced-pinned-substitutions-root, and it is false at $W_0$, so it is not
+    $\Diamond_{\ne}$-possible.
+notes: 'Built on 20 October 2026, at Cian Dorr''s suggestion, as a coalesced root whose entities are exactly
+  the ones definable by closed terms, uniformly across the components, so that every root entity is
+  pure-definable at every component world where there is one individual. Its purpose is the closed pure
+  sentence Ψ, "nothing is possibly a contingent proposition at a world where □ND, Atomicity and $\forall
+  x\forall y\, .\,x=y$ hold", which holds at the root (see the write-up): Ψ is consistent with Maximalist
+  Classicism, the premise of maximalism-signature-incompatible-with-strong-possibility-pure. Maximalism
+  for Σ fails here only because Σ is interpreted at the top; interpreting its constants by closed terms of
+  a larger $\Sigma_0$ would give Maximalism for Σ but lose Ψ. That it is a model of C is argued in the
+  write-up; no second reader has checked it, and no Lean verification is claimed.'

@@ -1,0 +1,61 @@
+id: maximalism-signature-incompatible-with-strong-possibility-pure
+premises:
+- distinctness-signature-r
+- strong-possibility-r
+conclusion: false
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Cian Dorr, 20 October 2026, with two amendments by Claude Fable 5.1 (Anthropic), who verified
+    the consistency premise in coalesced-definable-root
+  recorded_by: Claude Fable 5.1 (Anthropic), 20 October 2026
+  checked_by: []
+  date: '2026-10-20'
+  lean: stated
+sources:
+- Cian Dorr, argument of 20 October 2026.
+- Claude Fable 5.1 (Anthropic), 20 October 2026, for the amendments and the model witnessing the consistency
+  premise (coalesced-definable-root).
+source_names:
+- Dorr 20 Oct
+- Fable 20 Oct
+proof: >-
+  Suppose $\Sigma$ has a constant $c$ of type $t$. Let C5 be $\Box$ND and let $F:=\lambda p\, .\,
+  (\Diamond p\land\Diamond\neg p)\land\mathrm{C5}\land\mathrm{Atomicity}\land\forall x\forall y\, .\,
+  x=y$, a closed pure term of type $tt$: being contingent while $\Box$ND, Atomicity and "there is exactly
+  one individual" hold. Let $\Psi:=\forall p\, .\,\neg\Diamond F(p)$, closed and pure.
+
+  (1) $\Psi$ is consistent with Maximalist Classicism (pure): it holds at the evaluation point of
+  coalesced-definable-root, which satisfies Maximalism (pure) (see its write-up). In brief: at that root
+  $\Box$ND fails, so nothing is $F$ there; and at a world where the side conditions of $F$ hold there is
+  necessarily exactly one individual, so the sentence defining a root proposition is there the same
+  proposition as a pure sentence, which is not contingent by $\Box$ND + Atomicity (type $t$) ⇒ No Pure
+  Contingency.
+
+  (2) Strong Possibility (pure) therefore gives $\Diamond_{\ne}\Psi$, that is $\forall q\, .\,q\to\Diamond(
+  \Diamond q\land\Psi)$. Suppose $\Diamond F(p_0)$ for some $p_0$. With $q:=\Diamond F(p_0)$ there is a
+  world $w$ at which $\Psi$ and $\Diamond\Diamond F(p_0)$ hold, hence $\Diamond F(p_0)$ by 4; but $\Psi$
+  at $w$, instantiated at $p_0$, says $\neg\Diamond F(p_0)$. So $\forall p\, .\,\neg\Diamond F(p)$.
+
+  (3) $F(c)$ is a closed sentence of $\mathcal L(\Sigma)$ consistent with C($\Sigma$): the full S5 model
+  over the two-element group with one individual, with $c$ true at one world and false at the other,
+  satisfies it. Maximalism for $\Sigma$, in its possibility form, gives $\Diamond F(c)$, contradicting (2)
+  at $p:=c$.
+
+  If the constant of $\Sigma$ has a relational type $\bar\sigma t$ instead, replace "contingent" in $F$
+  by "contingently universal", $(X\ne\top\land\Diamond X=\top)\lor(X=\top\land\Diamond X\ne\top)$: for
+  a closed term $X=\top$ is the closed sentence $\forall\bar x\, .\,X\bar x$, non-contingent by the same
+  route, and $F(c)$ is satisfied by the same two-world model with $c$ universal at one world only.
+references:
+- paper: bacon-dorr-classicism
+  role: background
+  locator: §2.6, pp. 41–42
+  note: Maximalist Classicism, its possibility form, and the distinctness-preserving modality.
+notes: >-
+  Uses Maximalism for $\Sigma$ at the one sentence $F(c)$, and Strong Possibility (pure) at the one
+  sentence $\Psi$, whose consistency with Maximalist Classicism is witnessed by a model rather than by a
+  principle of the map. The conjunct $\forall x\forall y\, .\,x=y$ in $F$ is an amendment: without it the
+  consistency of $\Psi$ would need every closed sentence with the individual constant of the model's
+  signature, not only the pure ones, to be non-contingent under $\Box$ND + Atomicity. The argument does not
+  reach Strong Possibility for $\Sigma$, whose consistency premise is stronger; whether Maximalism for
+  $\Sigma$ is compatible with it stays open.
