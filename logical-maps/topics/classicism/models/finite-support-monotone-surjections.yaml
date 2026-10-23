@@ -6,7 +6,7 @@ certificate:
   recorded_by: OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026
   checked_by: []
   date: '2026-09-17'
-  lean: stated
+  lean: none
   # migration: the `trawl` block moves to
   # provenance/admission-c0a37bbe6b6c45cc985428b174812564.yaml, which holds the blocks of the eight
   # records admitted together: this record's discovery and evidence in its entry, and the
@@ -40,6 +40,8 @@ settings:
   sigma: top
 
 meets:
+  non-injective-arrow: >-
+    The monotone surjection sending $0$ and $1$ to $0$ and $m\ge2$ to $m-1$.
   factorizable-arrows: >-
     Given $h$, $N\subseteq[0,n]$ and $S\subseteq[0,s]$, take $N^{\prime\prime}:=[0,n^{\prime\prime}]$ with
     $n^{\prime\prime}\ge s$ and $h(n^{\prime\prime})\ge n$. For $k^{\prime}$ agreeing with $kh$ there and

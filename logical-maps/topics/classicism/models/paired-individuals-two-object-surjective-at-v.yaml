@@ -7,7 +7,7 @@ certificate:
   recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026
   checked_by: []
   date: '2026-10-14'
-  lean: stated
+  lean: none
 sources:
 - Cian Dorr and Claude Fable 5.1 (Anthropic), conversation of 14 October 2026 (transcript in the private
   notes).
@@ -43,6 +43,14 @@ definition: 'A two-object ideally full action model. Fix a fixed-point-free invo
   Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each denotes the
   top element of its type.'
 meets:
+  finitely-pinned-domains: >-
+    Ideally full with the ideal of finite sets: every intension pinned down by a finite set is in
+    the domain, and every entity in a domain is one.
+  infinitely-many-propositions: >-
+    The propositions at $V$ include, for each $n$, the set of arrows sending $0$ to $2n$.
+  non-injective-arrow: >-
+    The surjective block-respecting map of $V$ collapsing the block $\{0,1\}$ onto $\star$ and
+    mapping the remaining blocks onto all the blocks of $\mathbb N$ is an arrow out of $V$.
   sigma-top: This is the interpretation the definition fixes.
   codomain-intensions: The model is ideally full with the ideal of finite sets and no symmetry group,
     so every intension pinned down by the empty set, i.e. whose value at an arrow depends only on the

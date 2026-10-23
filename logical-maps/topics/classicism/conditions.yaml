@@ -181,3 +181,14 @@ conditions:
     the model has no symmetry group).
 - id: nonidentity-isomorphism
   text: Some invertible arrow out of the evaluation object is not its identity.
+- id: finitely-many-arrows-everywhere
+  text: Out of every object reachable from the evaluation point there are finitely many arrows.
+- id: finitely-many-individuals-everywhere
+  text: There are finitely many individuals at every object reachable from the evaluation point.
+- id: non-injective-arrow
+  text: Some arrow out of the evaluation object sends two distinct points of the set the arrows act on to one
+    point.
+- id: exact-collapses-of-every-size
+  text: For every $n\ge2$ there are a set $N$ of $n$ points of the set the arrows act on and an arrow out of
+    the evaluation object that is constant on $N$ and injective off $N$, with its values off $N$ different
+    from its value on $N$.

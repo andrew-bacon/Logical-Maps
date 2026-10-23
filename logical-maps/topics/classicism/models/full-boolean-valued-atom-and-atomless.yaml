@@ -7,7 +7,7 @@ certificate:
   recorded_by: OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 27 September 2026
   checked_by: []
   date: '2026-09-27'
-  lean: stated
+  lean: none
 sources:
 - Andrew Bacon, Could the truths of mathematics have been different?, draft of 9 October 2025, online
   appendix §B.2, pp. 7–9 (PDF pp. 41–43), especially the construction on p. 7 and the extensional-fullness
@@ -181,6 +181,27 @@ arguments:
     of them if $a=0_A$ and infinitely many otherwise. No proposition has exactly four, so Forcing
     Possibilism fails.
 
+- fails: [analytic-necessitism]
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
+  date: '2026-10-23'
+  choice: free
+  text: >-
+    At type $t$, for the algebra fixed in the definition. Here $\Box p$ is $p=\top$, so a property
+    $X$ of type $t\to t$ satisfies $\Box\forall x\,.\,(Xx\to\Box Xx)\land(\neg Xx\to\Box\neg Xx)$
+    with first coordinate $1$ only if $X$ is crisp, taking the values $\top$ and $\bot$ alone, and
+    likewise for relations; so a rigid real number structure $\mathfrak R$ is crisp, the check of a
+    structure $(S,\le,+,\times,0,1,N)$ of the ground model, and $\Box\operatorname{Real}_t(\mathfrak
+    R)$ asks that $\operatorname{Real}_t(\mathfrak R)$ have value $\top$, in particular
+    $\rho$-coordinate $1_A$. That fails: $A$, the regular open algebra of the real line, is the
+    Cohen algebra, and forcing with it adds a real $r$; the $A$-valued subproperty of $S$ naming the
+    lower Dedekind cut of $r$ in $S$ is in the full domain and is bounded, but has no least upper
+    bound in $S$ with positive value, since $[\![r=\check s]\!]=0$ for every ground real $s$. So the
+    consequent of Analytic Necessitism is false at the evaluation point. Its antecedent is true: $B$
+    has the cardinality of the continuum, the crisp characteristic functions of a set $S\subseteq B$
+    in bijection with the reals and of its order, sum, product and natural numbers are in the full
+    domains, and $\operatorname{Real}_t$ of this structure has $\pi$-coordinate $1$, every bounded
+    crisp subset of $S$ having a least upper bound in it; so $\exists\mathfrak
+    R\,.\,\operatorname{Real}_t(\mathfrak R)$ is not $\bot$ and its possibility is $\top$.
 notes: >-
   Full verification is in the write-up.
 

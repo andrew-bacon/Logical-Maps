@@ -8,7 +8,7 @@ certificate:
   recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 8 October 2026
   checked_by: []
   date: '2026-10-07'
-  lean: stated
+  lean: none
 sources:
 - >-
   Cian Dorr, suggestion of 7 October 2026, in conversation with Claude Opus 5.5 (Anthropic): the
@@ -38,6 +38,8 @@ settings:
   sigma: top
 
 meets:
+  non-injective-arrow: >-
+    The collapses send $0$ and $1$ to one number.
   factorizable-arrows: >-
     Take $N^{\prime\prime}:=S\cup\{0,1\}$ and, enlarging $N$, assume $\{0,1\}\cup
     h(N^{\prime\prime})\subseteq N$; then $k^{\prime}$, $k^{\prime\prime}$ and $j$ below are collapses iff

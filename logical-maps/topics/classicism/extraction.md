@@ -263,3 +263,43 @@ already witnesses for □Rigid Comprehension; Theorem 24 and §10 (iterated cont
 Theorem 22 model as a record, which would add Recombination if that principle is ever recorded, and
 the finite-group variants of Theorem 21.
 
+
+## Model verdicts on the analysis principles (23 October 2026)
+
+**23 October 2026 (Claude Fable 5.1, prompted by Zachary Goodsell).** The Mathematical contingency
+principles added on 23 October (Analytic Necessitism, its second-order form, the Necessity of
+Analysis and of Second-Order Analysis, the Non-contingency of the Continuum Hypothesis) were tagged
+across the models by general arguments rather than record by record: `second-order-analysis-extensionally-full`
+(every extensionally full model has the Necessity of Second-Order Analysis, all its real number
+structures being the real numbers with full second-order semantics); `analysis-finite-everywhere`
+(finitely many arrows and individuals at every reachable object: no real number structure is
+possible, so the necessitist principles hold vacuously), under the new conditions
+`finitely-many-arrows-everywhere` and `finitely-many-individuals-everywhere`; and four arguments
+for the failure of Analytic Necessitism in full action models with an infinite type, from
+`unretracted-arrow` or `noninvertible-retracted-arrow`, resting on one lemma: an instance of a rigid
+carrier is determined by its transport along any arrow, and in a full model no entity of a
+relational type is determined by its transport along an arrow without a retraction. The same lemma
+runs in the finitely pinned models when some arrow identifies two points (new condition
+`non-injective-arrow`, the argument `analytic-necessitism-collapsing-arrow-pinned`) and in the
+symmetric ideally-full models (new condition `exact-collapses-of-every-size`, which also supplies
+the real number structure of type $tt$ from the orbits of the propositions "the arrow is constant
+on $N$", the argument `analytic-necessitism-exact-collapses-symmetric`). Own arguments: the
+permutation model, where every arrow is invertible, has Second-Order Analytic Necessitism at every
+type (write-up `finite-support-permutations.md`); the free-loop chain, the ultralimit fork, the
+Boolean-valued model (the Cohen algebra adds a real, so no crisp structure is necessarily complete)
+and the two re-rooted or sectioned two-object pinned models fail Analytic Necessitism.
+
+Left unknown, 25 models: the coalesced sums (their roots see components of every kind, so a
+rigid real number structure at the root needs a case analysis of the components), Bacon's
+modalized cloud models and the lottery and Cohen idempotent-sum models (where the principles
+belong to his own analysis of CH), the two-object symmetric models (old-new individuals,
+qualitative contrast, two-object unpinned, whose arrows out of the evaluation object are
+injective, so the lemma gives nothing and Analytic Necessitism may well hold) and qualitative
+links (its surjective relation-preserving maps collapse companions and links along with points,
+so `exact-collapses-of-every-size` fails as worded, though the argument should adapt).
+
+A side effect: a verdict on a principle without a Lean definition removes a model's generated Lean
+statement, so the certificates of 40 models went from `lean: stated` to `lean: none` (three of
+them, with Forcing Possibilism verdicts from the previous session, had already lost their
+statements). If that is unwanted, the alternative is to let `lean_coverage` state a model over its
+Lean-definable verdicts only.

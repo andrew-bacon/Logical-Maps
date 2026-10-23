@@ -1,0 +1,21 @@
+id: analytic-necessitism-noninvertible-retracted-arrow
+requires: [full-action-model, noninvertible-retracted-arrow, infinitely-many-propositions]
+choice: free
+fails: [analytic-necessitism]
+by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
+date: '2026-10-23'
+text: >-
+  Let $h\colon w\to v$ be an arrow out of the evaluation object $w$ with a retraction $j$ but no
+  inverse. Then $e:=h\circ j$ is an idempotent arrow out of $v$ other than its identity, since
+  $e=1_v$ would make $h$ invertible, and $e$ has no retraction: $i\circ e=1_v$ would give $e=i\circ
+  e\circ e=1_v$. Suppose $\mathfrak R$ were a rigid real number structure at $w$ at a relational
+  type, necessarily a real number structure (Background, Analysis). Its boxed clauses hold at $h$
+  and along the arrows after $h$, which are arrows out of $w$; so at $v$ the instances $X_h$ of its
+  carrier form a complete ordered field, and for $x\in X_h$ and any $y$ at $v$ with $e\cdot y=e\cdot
+  x$, persistence gives $e\cdot y\in X_{e\circ h}$, inextensibility $y\in X_h$, and necessary
+  distinctness $y=x$. But, the model being full at $v$ and $e$ having no retraction, no entity of a
+  relational type at $v$ is determined by its transport along $e$, as in the argument
+  analytic-necessitism-unretracted-arrow: its value at the identity of $v$ is free. So $X_h$ is
+  empty, a contradiction. The antecedent of Analytic Necessitism holds at the relational type $ttt$,
+  as in that argument, the propositions at $w$ being infinitely many. So Analytic Necessitism fails.
+  No choice is used.

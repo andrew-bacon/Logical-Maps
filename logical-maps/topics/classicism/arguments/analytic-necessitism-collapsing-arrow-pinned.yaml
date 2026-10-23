@@ -1,0 +1,30 @@
+id: analytic-necessitism-collapsing-arrow-pinned
+requires: [finitely-pinned-domains, extensionally-full, infinitely-many-propositions, non-injective-arrow]
+choice: free
+fails: [analytic-necessitism]
+by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
+date: '2026-10-23'
+text: >-
+  Let $k$ be an arrow out of the evaluation object $w$ with $ka=kb$ for two distinct points $a$ and
+  $b$ of the set the arrows act on, and let $q$ be the set of arrows $j$ out of $w$ with $ja\ne jb$.
+  It contains the identity, is pinned down by $\{a,b\}$, is symmetric (an arrow separates $a$ from
+  $b$ iff its composite with a permutation of the points does), and contains no arrow $j\circ k$.
+  Let $\tau$ be $tt$, or $tttt$ in the case noted below. No entity $x$ of type $\tau$ at $w$ is
+  determined by its transport along $k$: let $y$ agree with $x$ except at the arrows in $q$, where
+  the top entity of the argument type of $\tau$ is added to its value or removed from it. Then $y$
+  is pinned down by a finite set along with $x$, is symmetric if $x$ is, so is in the domain; it
+  differs from $x$ and has $k\cdot y=k\cdot x$, transport along $k$ reading only the values at the
+  arrows after $k$. If $\mathfrak R$ were a rigid real number structure at $w$ of type $\tau$,
+  necessarily a real number structure, with carrier $X$ (Background, Analysis), an instance $x$ of
+  $X$ and $y$ as above would give $k\cdot y=k\cdot x\in X_k$ by persistence, $Xy$ by
+  inextensibility, and $k\cdot y\ne k\cdot x$ by the necessary distinctness of the instances: so $X$
+  has no instance. The antecedent of Analytic Necessitism holds, however, at type $\tau$. The
+  propositions are infinitely many and, in the recorded instances, include a copy of the natural
+  numbers, so by extensional fullness the entities of type $tt$, which include one with any set of
+  propositions as extension at the identity, include a copy of the sets of natural numbers and so of
+  the reals, whose order, sum, product and natural numbers are the extensions at the identity of
+  relations in the domain; the structure is complete, every subset of its carrier being the
+  extension of a subproperty, so $\exists\mathfrak R\,.\,\operatorname{Real}_{tt}(\mathfrak R)$
+  holds at $w$. (Should the propositions be infinite without including a copy of the natural
+  numbers, the same holds at type $tttt$, the sets of sets of propositions being Dedekind-infinite
+  in ZF.) So Analytic Necessitism fails. No choice is used.

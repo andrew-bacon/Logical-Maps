@@ -6,7 +6,7 @@ certificate:
   recorded_by: OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026
   checked_by: []
   date: '2026-09-17'
-  lean: stated
+  lean: none
   # migration: the `trawl` block moves to
   # provenance/admission-c0a37bbe6b6c45cc985428b174812564.yaml, which holds the blocks of the eight
   # records admitted together: this record's discovery and evidence in its entry, and the
@@ -47,6 +47,8 @@ settings:
   sigma: top
 
 meets:
+  non-injective-arrow: >-
+    The rounding $f_2$ sends $0$ and $1$ to $0$.
   arrows-finitely-determined: >-
     Each $\{f_n\}$ is pinned down by a finite set: $f_n$ is the only arrow sending $n$ to $n$ and $n-1$ to $0$.
   actual-world-pinned: >-

@@ -6,7 +6,7 @@ certificate:
   recorded_by: OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026
   checked_by: []
   date: '2026-09-17'
-  lean: stated
+  lean: none
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §3.5, p. 59, fourth paragraph; p. 61.
 source_names:
@@ -21,6 +21,8 @@ settings:
   individuals: singleton
   sigma: top
 meets:
+  finitely-many-arrows-everywhere: >-
+    Two arrows out of $W_0$ and one out of $W_1$.
   fewer-propositions-after: $W_0$ has four propositions and $W_1$, after which there is only itself, two.
   nonidentity-arrow: The arrow $W_0\to W_1$.
   unretracted-arrow: There is no arrow from $W_1$ back to $W_0$.

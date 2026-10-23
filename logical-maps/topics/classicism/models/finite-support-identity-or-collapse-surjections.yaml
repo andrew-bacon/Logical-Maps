@@ -6,7 +6,7 @@ certificate:
   recorded_by: OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026
   checked_by: []
   date: '2026-09-17'
-  lean: stated
+  lean: none
   # migration: the `trawl` block moves to
   # provenance/admission-c0a37bbe6b6c45cc985428b174812564.yaml, which holds the blocks of the eight
   # records admitted together: this record's discovery and evidence in its entry, and the
@@ -42,6 +42,8 @@ settings:
   sigma: top
 
 meets:
+  non-injective-arrow: >-
+    Every arrow other than the identity sends $0$ and $1$ to one number.
   factorizable-arrows: >-
     If $h$ is the identity, take $N^{\prime\prime}:=N\cup S$, $k^{\prime\prime}:=1$ and $j:=k^{\prime}$.
     Otherwise $h$ collapses $0$ and $1$; take $N^{\prime\prime}$ as for the monotone surjections, with

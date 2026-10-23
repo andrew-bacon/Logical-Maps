@@ -1,0 +1,34 @@
+id: analytic-necessitism-exact-collapses-symmetric
+requires: [one-object-action-model, symmetric-domains, finitely-pinned-domains, exact-collapses-of-every-size]
+choice: free
+fails: [analytic-necessitism]
+by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
+date: '2026-10-23'
+text: >-
+  Write $G$ for the symmetry group, which acts on the propositions by transport, $g\cdot
+  p=\{j:j\circ g\in p\}$. For a finite set $N$ of points let $E_N$ be the set of arrows constant on
+  $N$: a proposition in the domain, symmetric and pinned down by $N$, with $g\cdot E_N=E_{g(N)}$.
+  Take for each $n\ge2$ a set $N_n$ of $n$ points and an arrow $j_n$ constant on $N_n$, injective
+  off $N_n$ and taking other values there (the condition), so that the fibres of $j_n$ are $N_n$ and
+  singletons. The orbits $O_n$ of the $E_{N_n}$ under $G$ are pairwise distinct: $E_{N_n}=E_N$ with
+  $N=g(N_m)$ puts $j_n$ in $E_N$, so $N\subseteq N_n$, and puts $j_m\circ g^{-1}$, an arrow whose
+  fibres are $N$ and singletons, in $E_{N_n}$, so $N_n\subseteq N$. For $A\subseteq\mathbb N$ the
+  union $S_A$ of the $O_n$ with $n\in A$ is a $G$-invariant set of propositions, and $A\mapsto S_A$
+  is injective: there are continuum many $G$-invariant sets of propositions, in explicit bijection
+  with the reals. Each $S_A$ is the value of a constant intension $Y_A$ of type $tt$, symmetric
+  because $S_A$ is $G$-invariant, pinned down by the empty set, so in the domain, and fixed by
+  transport along every arrow. The constant intensions whose values are the set of the $Y_A$, the
+  order, sum and product of the reals carried over to it, and its natural numbers, with the $Y_A$
+  standing for $0$ and $1$, are symmetric, their values being made of fixed entities, and in the
+  domain; they form a real number structure of type $tt$ at the evaluation point, complete since
+  every bounded set of its elements has a least upper bound among them. So the antecedent of
+  Analytic Necessitism holds at type $tt$. Its consequent fails there. Let $k$ be an arrow with
+  $ka=kb$ for distinct points $a$ and $b$ (the condition at $n=2$) and $q$ the set of arrows $j$
+  with $ja\ne jb$: symmetric, pinned down by $\{a,b\}$, containing the identity and no arrow $j\circ
+  k$. For $x$ of type $tt$ in the domain let $y$ agree with $x$ except at the arrows in $q$, where
+  the top proposition is added to its value or removed from it: $y$ is symmetric and pinned down by
+  a finite set, so in the domain, differs from $x$, and has $k\cdot y=k\cdot x$. If $\mathfrak R$
+  were a rigid real number structure of type $tt$, necessarily a real number structure, with carrier
+  $X$ (Background, Analysis), an instance $x$ and this $y$ would give $k\cdot y=k\cdot x\in X_k$ by
+  persistence, $Xy$ by inextensibility and $k\cdot y\ne k\cdot x$ by necessary distinctness: $X$ has
+  no instance. So Analytic Necessitism fails. No choice is used.

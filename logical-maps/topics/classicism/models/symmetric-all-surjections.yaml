@@ -6,7 +6,7 @@ certificate:
   recorded_by: Claude Opus 5 (Anthropic), prompted by Cian Dorr, 19 September 2026
   checked_by: []
   date: '2026-09-19'
-  lean: stated
+  lean: none
 sources:
 - Cian Dorr, Boolean Completeness does not imply Rigid Comprehension, draft of 30 July 2026, §3.1, p.
   9 (base); Proposition 22, p. 11; Proposition 23, p. 12; Theorem 36, p. 18; Corollary 37 and Remark 38,
@@ -36,6 +36,9 @@ settings:
   individuals: base
   sigma: top
 meets:
+  exact-collapses-of-every-size: >-
+    For any $n\ge2$ points, the surjection sending them to one of them and the remaining points
+    bijectively onto the others.
   all-surjection-arrows: The arrows are all the surjections of $\mathbb N$.
   section-arrows: Given $k$, $N$ and $T$, let $k^{\prime}$ agree with $k$ on $N$, send distinct fresh
     points $x_t\notin N$ to $t$ for $t\in T$, and extend it to a surjection; let $\sigma$ be any surjection

@@ -6,7 +6,7 @@ certificate:
   recorded_by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 19 October 2026
   checked_by: []
   date: '2026-10-19'
-  lean: stated
+  lean: none
 sources:
 - Original construction of 19 October 2026, to settle the recorded conjecture
   possible-infinity-t-implies-axiom-of-infinity-t; the full action model on the category described, which
@@ -56,6 +56,21 @@ arguments:
   text: >-
     The closed pure sentence that there are exactly four propositions is true at $W_0$ and false at
     $W_1$, which sees only itself; so it is not necessarily possible, and B fails for it.
+- fails: [analytic-necessitism]
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
+  date: '2026-10-23'
+  choice: free
+  text: >-
+    At $W_0$, at type $tt$. The propositions at $W_1$ are the sets of the arrows $s^n$, continuum
+    many, and an entity of type $tt$ at $W_0$ assigns any set of them to $h$ and any set of the four
+    propositions at $W_0$ to the identity; so the entities of type $tt$ at $W_0$ include a copy of
+    the reals and, the model being full, there is a real number structure of type $tt$ at $W_0$,
+    complete since every subset of its carrier is the extension of a subproperty. A rigid one,
+    necessarily a real number structure, is impossible: $h$ has no retraction, so, as in the general
+    argument analytic-necessitism-unretracted-arrow, no entity of type $tt$ at $W_0$ is determined
+    by its transport along $h$, its value at the identity being free, while the instances of a rigid
+    carrier would have to be. With infinitely many individuals the general argument applies as it
+    stands; this one covers the single individual, where the infinite type lies at $W_1$.
 notes: >-
   The two-object chain with an infinite monoid of endomorphisms at the second object. It is recorded to
   refute the conjecture possible-infinity-t-implies-axiom-of-infinity-t: the evaluation object has four

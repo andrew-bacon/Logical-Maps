@@ -6,7 +6,7 @@ certificate:
   recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 11 October 2026
   checked_by: []
   date: '2026-10-11'
-  lean: stated
+  lean: none
 sources:
 - Cian Dorr, suggestion of 11 October 2026, in conversation with Claude Opus 5.5 (Anthropic).
 source_names:
@@ -25,6 +25,10 @@ definition: 'A full action model over two objects $W_0$ and $W_1$, with one noni
   Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each denotes the
   top element of its type.'
 meets:
+  finitely-many-arrows-everywhere: >-
+    Two arrows out of $W_0$ and one out of $W_1$.
+  finitely-many-individuals-everywhere: >-
+    One individual at $W_0$ and two at $W_1$.
   full-model: Every intension of every relational type is present at every object.
   full-action-model: An action model, full at every object.
   codomain-intensions: The domains are full at every object.

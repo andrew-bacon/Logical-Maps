@@ -6,7 +6,7 @@ certificate:
   recorded_by: OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026
   checked_by: []
   date: '2026-09-17'
-  lean: stated
+  lean: none
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, Appendix D, Proposition D.5, part 1, pp.
   74–76; p. 79 (No Pure Contingency).
@@ -100,6 +100,22 @@ arguments:
       Cut to its type $t\to t$ part; the type $e\to t$ part duplicated the group's shared argument
       weakly-inextensible-comprehension, which applies here.
 
+- holds: [second-order-analytic-necessitism]
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
+  date: '2026-10-23'
+  choice: free
+  writeup: finite-support-permutations
+  text: >-
+    At every type, so Analytic Necessitism holds too. At type $e$ the antecedent fails, the
+    individuals being countable or one. At a relational type $\sigma$ the entities pinned down by
+    $\{0\}$ are continuum many; choose a set $X_1$ of them in bijection with the reals and let $X_k$
+    be its transport $k\cdot X_1$, and likewise for the order, sum, product and natural numbers of
+    the reals carried over to $X_1$ and for the represented powers, the rigid relations with a given
+    extension among the instances. Every arrow being a permutation, transport is injective and
+    reversible, so these intensions are rigid, with necessarily distinct instances, and they are
+    pinned down by $\{0\}$, their value at $k$ depending only on $k0$; at every arrow the structure
+    has the same instances and relations as at the identity, so it is necessarily a real number
+    structure with represented powers of every arity (write-up).
 notes: >-
   The cited construction is a model of the map’s relational-type framework. The description
   identifies its evaluation point; construction and verification are given at the PDF locations in

@@ -6,7 +6,7 @@ certificate:
   recorded_by: OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026
   checked_by: []
   date: '2026-09-17'
-  lean: stated
+  lean: none
   # migration: the `trawl` block moves to
   # provenance/admission-c0a37bbe6b6c45cc985428b174812564.yaml, which holds the blocks of the eight
   # records admitted together: this record's discovery and evidence in its entry, and the
@@ -40,6 +40,8 @@ settings:
   individuals: singleton
   sigma: top
 meets:
+  finitely-many-arrows-everywhere: >-
+    There is one object, with two arrows out of it.
   nonepic-arrow: >-
     $1\cdot k=k\cdot k$, with $1\ne k$.
   nonidentity-arrow: >-

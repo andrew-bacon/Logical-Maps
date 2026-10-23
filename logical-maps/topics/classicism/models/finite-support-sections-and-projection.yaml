@@ -8,7 +8,7 @@ certificate:
   - Cian Dorr, informal review, 2026-09-27
   - Christopher Sun, informal review, 2026-09-27
   date: '2026-09-27'
-  lean: stated
+  lean: none
 sources:
 - Original construction and verification by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 27 September 2026; see the write-up.
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, Appendix D, Definitions D.1–D.3, pp. 73–74
@@ -170,6 +170,28 @@ arguments:
     $n+1$, with $T(n+1)=0$. Then $f_T$ and $f_{T^{\prime}}$ agree on $N\cup\{n\}$, so $X_{f_T}=
     X_{f_{T^{\prime}}}$ and both contain $f_T(n)=f_{T^{\prime}}(n)$ or neither: $Xn$ is true at both or
     at neither, while $Z_n$ is true at $f_T$ and not at $f_{T^{\prime}}$.
+- fails: [analytic-necessitism]
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
+  date: '2026-10-23'
+  choice: free
+  text: >-
+    At $W_0$, at type $tt$. The propositions at $W_0$ are countably infinite, a set of sections
+    belonging to one according to the restrictions of their functions $T$ to some finite set, with
+    the identity free; so the entities of type $tt$ at $W_0$ assigning any set of them to the
+    identity and nothing to the sections, pinned down by $\{0\}$, are continuum many, and with the
+    intensions for the order, sum, product and natural numbers of the reals carried over, pinned
+    down in the same way, they form a real number structure of type $tt$ at $W_0$, complete since
+    every subset of its carrier is the extension of a subproperty. Suppose $\mathfrak R$ were a
+    rigid one, necessarily a real number structure, with carrier $X$, and let $f:=f_T$ for the zero
+    function $T$. Its boxed clauses hold at $f$ and along the arrows after it, and $X_f$, its
+    instances at $W_1$, is a complete ordered field there. But no entity $x$ of type $tt$ at $W_1$
+    is determined by its transport along $\pi$: the singleton of the identity of $W_1$ is pinned
+    down by $\{(0,0),(0,1)\}$, the identity being the only arrow out of $W_1$ that separates them,
+    and no arrow after $\pi$ is the identity, so the entity $y$ agreeing with $x$ except at the
+    identity, where the top proposition is added or removed, is in the domain, differs from $x$, and
+    has $\pi\cdot y=\pi\cdot x$; for $x\in X_f$ persistence gives $\pi\cdot y\in X_{\pi\circ f}$,
+    inextensibility $y\in X_f$, and necessary distinctness $\pi\cdot y\ne\pi\cdot x$. So $X_f$ is
+    empty, a contradiction, and Analytic Necessitism fails.
 notes: Found on 27 September 2026 in answer to Cian Dorr's question whether Actuality implies Inextensible
   Comprehension, after the observation that Christopher Sun's witness $\lambda\bar z\, .\,\Diamond(w\land
   F\bar z)$ can fail only at worlds from which the actual world is reachable, and only through entities

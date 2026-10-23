@@ -9,7 +9,7 @@ certificate:
   recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 28 September 2026
   checked_by: []
   date: '2026-09-27'
-  lean: stated
+  lean: none
 sources:
 - Cian Dorr, construction idea of 27 September 2026, with Claude Opus 5.5 (Anthropic); verification in
   the write-up.
@@ -34,6 +34,9 @@ settings:
   individuals: base
   sigma: top
 meets:
+  exact-collapses-of-every-size: >-
+    The arrows are all the surjections: for any $n\ge2$ points, the one sending them to one of them
+    and the remaining points bijectively onto the others.
   all-surjection-arrows: The arrows are all the surjections of $\mathbb N$, as in Base 1.
   section-arrows: 'As in symmetric-all-surjections, the arrows being all the surjections: let $k^{\prime}$
     agree with $k$ on $N$ and send distinct fresh points $x_t\notin N$ to $t\in T$, and let $\sigma$ be

@@ -25,6 +25,10 @@ parameters:
     text: The individuals and the gluing, as the member's write-up gives them.
 
 meets:
+  unretracted-arrow: >-
+    A non-identity element of the free monoid has no left inverse, so no arrow retracts it.
+  infinitely-many-propositions: >-
+    The arrows are infinitely many and the model is full, so every set of them is a proposition.
   codomain-intensions: >-
     The domains are full at every object.
   full-model: >-

@@ -6,7 +6,7 @@ certificate:
   recorded_by: OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026
   checked_by: []
   date: '2026-09-17'
-  lean: stated
+  lean: none
   # migration: the `trawl` block moves to
   # provenance/admission-c0a37bbe6b6c45cc985428b174812564.yaml, which holds the blocks of the eight
   # records admitted together: this record's discovery and evidence in its entry, and the
@@ -42,6 +42,8 @@ settings:
   sigma: top
 
 meets:
+  non-injective-arrow: >-
+    Every arrow other than the identity sends $0$ and $1$ to one number.
   # uniformly-pinned-rigidity revised 9 October 2026 (Claude Opus 5.5, at Cian Dorr's direction):
   # stated for weakly rigid relations, which the argument only uses, and the comparison union taken
   # over $[0,s'+1]$, where every agreeing arrow jumps.

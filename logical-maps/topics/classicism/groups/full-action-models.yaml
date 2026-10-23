@@ -52,6 +52,7 @@ parameters:
         label: one individual
         meets:
           one-individual: There is a single individual at every object.
+          finitely-many-individuals-everywhere: There is a single individual at every object.
           homogeneous-individuals: There is only one individual.
       fixed-infinite:
         text: >-

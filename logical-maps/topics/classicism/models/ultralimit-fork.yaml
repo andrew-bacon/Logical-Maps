@@ -8,7 +8,7 @@ certificate:
   recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 1 October 2026
   checked_by: []
   date: '2026-10-01'
-  lean: stated
+  lean: none
 sources:
 - Branden Fitelson, with Claude (Anthropic) and GPT-6 Astra (OpenAI), prompted by Cian Dorr, A proposed counterexample to Proposition
   2.11, note communicated to Cian Dorr, 1 October 2026; Isabelle/HOL verification at github.com/fitelson/hom-isabelle,
@@ -148,5 +148,20 @@ arguments:
     are full), so $\Box_{\ne}p$ holds at an identity iff $p$ contains $\Diamond\{1\}=\{1\}$, i.e. iff
     $p$ is true: $\Box_{\ne}$ is the identity operator at every object, hence so are $\hat{\hat\Box}$
     and $\Box_5$, and every truth is 5-necessary everywhere.'
+- fails: [analytic-necessitism]
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
+  date: '2026-10-23'
+  choice: free
+  text: >-
+    At the root, at type $t$. A root proposition is any choice of truth values at $o$, $s$ and the
+    $n$s, so the root propositions are continuum many, and the root being extensionally full there
+    is a real number structure of propositions at it: its carrier, order, sum, product and natural
+    numbers are the extensions at $o$ of root entities, and every subset of the carrier is the
+    extension of a subproperty, so it is complete. A rigid one, necessarily a real number structure,
+    is impossible: transport along $h_1$ reads only a proposition's value at $1$, and the root
+    proposition differing from $p$ at $o$ alone is in the domain, so no proposition is determined by
+    its transport along $h_1$; but an instance $x$ of a rigid carrier $X$ is, since for $y$ with
+    $h_1\cdot y=h_1\cdot x$ persistence gives $h_1\cdot y\in X_{h_1}$, inextensibility $Xy$, and
+    necessary distinctness $y=x$.
 notes: 'It is a model: the limit condition commutes with every finite operation, so every term denotes
   in the domains (write-up, Lemma 2).'

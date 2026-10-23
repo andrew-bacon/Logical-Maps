@@ -6,7 +6,7 @@ certificate:
   recorded_by: OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026
   checked_by: []
   date: '2026-09-17'
-  lean: stated
+  lean: none
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, Appendix D, p. 79, paragraph beginning
   “One particularly interesting result”.
@@ -27,6 +27,14 @@ definition: 'Appendix D, p. 79, the paragraph beginning “One particularly inte
   Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each denotes the
   top element of its type.'
 meets:
+  finitely-pinned-domains: >-
+    Ideally full with the ideal of finite sets: every intension pinned down by a finite set is in
+    the domain, and every entity in a domain is one.
+  infinitely-many-propositions: >-
+    The propositions at $W_0$ include, for each $n$, the set of arrows sending $0$ to $n$.
+  non-injective-arrow: >-
+    Any non-injective map of $\mathbb N$, say the constant map with value $0$, is an arrow out of
+    $W_0$.
   codomain-intensions: The model is ideally full at both objects, and an intension whose value at an arrow
     depends only on the arrow's codomain is pinned down by $\emptyset$ (Appendix D, the remark after Definition
     D.3).

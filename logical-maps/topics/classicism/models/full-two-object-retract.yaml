@@ -6,7 +6,7 @@ certificate:
   recorded_by: OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026
   checked_by: []
   date: '2026-09-17'
-  lean: stated
+  lean: none
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §3.5, p. 59, fifth paragraph and n. 81;
   p. 61.
@@ -22,6 +22,8 @@ settings:
   individuals: singleton
   sigma: top
 meets:
+  finitely-many-arrows-everywhere: >-
+    Two arrows out of $W_0$ and three out of $W_1$.
   nonepic-arrow: $1\circ h=k\circ h$, with $1\ne k$.
   returning-arrow: $h$, which $j$ retracts.
   unique-retractions-everywhere: Out of $W_0$, the identity has only itself as retraction and $h$ only

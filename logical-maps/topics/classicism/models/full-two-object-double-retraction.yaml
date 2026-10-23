@@ -28,6 +28,8 @@ settings:
   individuals: singleton
   sigma: top
 meets:
+  finitely-many-arrows-everywhere: >-
+    Two arrows out of $W_0$ and five out of $W_1$.
   nonepic-arrow: $j_1\circ h=j_2\circ h$, with $j_1\ne j_2$.
   returning-arrow: $h$, which $j_1$ retracts.
   retractions: The arrows out of $W_0$ are its identity and $h$, which $j_1$ retracts.

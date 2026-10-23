@@ -1,0 +1,24 @@
+id: second-order-analysis-extensionally-full
+requires: [extensionally-full]
+choice: free
+holds: [necessity-of-second-order-analysis]
+by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
+date: '2026-10-23'
+text: >-
+  Let $v$ be any object reachable from the evaluation point and $\mathfrak R$ a real number
+  structure at $v$ (Background, Analysis). Its completeness is tested against the subproperties of
+  its carrier present at $v$, and by extensional fullness every subset of the carrier's extension
+  there is the extension at the identity of one of them; so the carrier, with the extensions of
+  $\le$, $+$ and $\times$, is a complete ordered field in the sense of the metatheory and, by
+  Huntington's theorem, a theorem of ZF, is isomorphic to the real numbers. For the same reason the
+  extension of $N$, the least subproperty containing $0$ and closed under adding $1$, is its set of
+  natural numbers, that set being the extension of a subproperty. A second-order analytical sentence
+  $A(\mathfrak R)$ quantifies over the relations among entities of the structure's type at $v$,
+  applied to the structure's elements, and their extensions at the identity are all the relations on
+  the carrier, again by extensional fullness. So $A(\mathfrak R)$ holds at $v$ exactly when $A$
+  holds in the real numbers under full second-order semantics, which depends neither on $v$ nor on
+  $\mathfrak R$. Hence $\Box\forall\mathfrak R\,.\,\operatorname{Real}_\sigma(\mathfrak R)\to
+  A(\mathfrak R)$ holds when $A$ is true of the reals and $\Box\forall\mathfrak
+  R\,.\,\operatorname{Real}_\sigma(\mathfrak R)\to\neg A(\mathfrak R)$ when it is false: every
+  instance of the Necessity of Second-Order Analysis holds, and with it the Necessity of Analysis
+  and the Non-contingency of the Continuum Hypothesis, as recorded. No choice is used.

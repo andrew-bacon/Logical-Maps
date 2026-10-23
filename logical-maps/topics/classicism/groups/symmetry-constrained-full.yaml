@@ -123,6 +123,12 @@ parameters:
 
 # Conditions of the topic that every member meets.
 meets:
+  finitely-many-arrows-everywhere: >-
+    The arrows are maps among the three-element set $X$ and, in the two-object member, the one-point
+    $W_0$: finitely many out of every object.
+  finitely-many-individuals-everywhere: >-
+    The individuals are the three elements of $X$ or one, and in the two-object member the single
+    point of $W_0$.
   rigid-haecceity-disjunctions: >-
     For any set $E$ the intension $k\mapsto k\cdot E$ is symmetric (as in the argument for Rigid
     Comprehension), so in the domain, and it is the smallest symmetric intension containing the

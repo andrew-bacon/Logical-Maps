@@ -6,7 +6,7 @@ certificate:
   recorded_by: OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026
   checked_by: []
   date: '2026-09-17'
-  lean: stated
+  lean: none
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, Appendix D, Proposition D.5, part 3, pp.
   74, 77; n. 96; p. 79 (No Pure Contingency).
@@ -26,6 +26,8 @@ settings:
       fixes $0$, pinned down by $\{0\}$; every other constant of Σ is relational and denotes the top element
       of its type.'
 meets:
+  non-injective-arrow: >-
+    The constant map with value $0$ is monotone.
   uniformly-pinned-rigidity: 'Let $Y$ be weakly rigid, pinned down by $S=[0,s]$, with extension $E$ at
     the identity. Pinning and weak persistence give $Y(k)\supseteq k_2\cdot E$ for every $k_2$ agreeing
     with $k$ on $S$, and weak inextensibility, tested on the intension $k\mapsto\bigcup\{k_2\cdot E:k_2\text{
