@@ -38,6 +38,13 @@ settings:
   sigma: top
 meets:
   arbitrary-infinite-set: The monoid is that of the surjections of any infinite set.
+  continuum-many-arrows:
+    when: {metatheory: [choice, no-countable-choice-reals]}
+    text: >-
+      Once the infinite set contains the natural numbers (by choice, or because it is $\mathbb N$ in
+      the variant without countable choice), a set $C$ of natural numbers is sent to the surjection
+      that swaps $2n$ and $2n+1$ for each $n\in C$ and fixes everything else, a bijection; distinct
+      sets give distinct surjections. With socks the set need contain no copy of the natural numbers.
   numbered-returning-arrows: >-
     $h_0$ the identity and $h_n$ a transposition, a surjection that is its own retraction: of $0$ and
     $n$ when the infinite set is $\mathbb N$ (with choice, or in the variant without countable

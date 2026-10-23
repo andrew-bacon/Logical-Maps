@@ -1,0 +1,21 @@
+id: forcing-possibilism-continuum-arrows
+requires: [full-action-model, continuum-many-arrows]
+choice: free
+fails: [forcing-possibilism]
+by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
+date: '2026-10-23'
+text: >-
+  In a full action model the propositions at the evaluation object are all the sets of arrows out of
+  it, so the algebra of propositions is atomic, the singletons being its atoms, and it has $2^{|A|}$
+  elements for $A$ the set of those arrows. Since the sets of natural numbers inject into $A$, the
+  sets of sets of natural numbers inject into the propositions. Take the regular-open algebra $B$ of
+  Cantor space: a complete atomless Boolean algebra in ZF, of the size of the continuum, which
+  therefore injects into the propositions while the propositions do not inject into it (Cantor), so
+  that, realised as a property of propositions with its order as a relation among them, both present
+  since the model is full, it is an internal complete Boolean algebra that is small. Forcing
+  Possibilism would give a proposition $p\ne\top$ whose entailment algebra is isomorphic to $B$. But
+  the entailment algebra below a nonzero proposition is atomic, every nonempty set of arrows
+  including a singleton, and the one below $\bot$ has one element; neither is isomorphic to an
+  infinite atomless algebra. So Forcing Possibilism fails. No choice is used: the injection into the
+  arrows is given by the condition, and Cantor's theorem and the completeness of the regular-open
+  algebra hold in ZF.

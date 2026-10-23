@@ -80,6 +80,9 @@ conditions:
 - id: infinitely-many-individuals
   text: There are infinitely many individuals at the evaluation world.
   lean: Classicism.Meta.Intensional.Premodel.InfinitelyManyIndividuals
+- id: continuum-many-arrows
+  text: 'The continuum injects into the arrows out of the evaluation object: there is an injection from the
+    sets of natural numbers into them, given outright, without choice.'
 - id: infinitely-many-propositions
   text: There are infinitely many propositions at the evaluation world.
   lean: Classicism.Meta.Intensional.Premodel.InfinitelyManyPropositions

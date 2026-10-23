@@ -169,6 +169,18 @@ arguments:
     instance of Countable Boolean Completeness at $X$ in its greatest-lower-bound form then has the
     value of $\exists y\, .\,\operatorname{GLB}_t(y,X)$, whose $A$-coordinate is $0_A$, so the closed
     instance is not necessary.
+- fails: [forcing-possibilism]
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
+  date: '2026-10-23'
+  text: >-
+    The four-element Boolean algebra is finite, hence small, and present internally on any four
+    propositions with the right order, the model being full. Forcing Possibilism would give a
+    proposition $p\ne\top$ with exactly four propositions entailing it. In $B=\mathbf 2\times A$ the
+    propositions below $(0,a)$ are the $(0,b)$ with $b\le a$, one of them if $a=0_A$ and infinitely many
+    otherwise, $A$ being atomless; and those below $(1,a)$ are the $(\varepsilon,b)$ with $b\le a$, two
+    of them if $a=0_A$ and infinitely many otherwise. No proposition has exactly four, so Forcing
+    Possibilism fails.
+
 notes: >-
   Full verification is in the write-up.
 

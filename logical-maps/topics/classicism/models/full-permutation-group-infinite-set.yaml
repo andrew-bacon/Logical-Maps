@@ -54,6 +54,9 @@ settings:
   individuals: singleton
   sigma: top
 meets:
+  continuum-many-arrows: >-
+    With $X$ enumerated, a set $C$ of natural numbers is sent to the permutation that swaps $x_{2n}$
+    and $x_{2n+1}$ for each $n\in C$ and fixes the rest; distinct sets give distinct permutations.
   numbered-returning-arrows: >-
     With $X$ enumerated as $x_0,x_1,\ldots$, $h_0$ the identity and $h_n$ the transposition of $x_0$ and $x_n$, its own retraction.
   returning-arrow: >-
