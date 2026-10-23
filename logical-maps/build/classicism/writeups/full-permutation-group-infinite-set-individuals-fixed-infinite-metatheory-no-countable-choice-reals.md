@@ -21,6 +21,7 @@
 - **¬ Intensional Choice.** If a property is necessarily instantiated, then some property entailing it is necessarily uniquely instantiated.
 - **¬ Relational Choice.** Every serial binary relation has a functional subrelation.
 - **¬ Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
+- **¬ Forcing Possibilism.** Every complete Boolean algebra that is finite or has strictly fewer elements than there are propositions is isomorphic to the entailment algebra below some proposition other than top.
 - **¬ Fregean Axiom.** Materially equivalent propositions are identical.
 - **¬ Witnessed Possibility.** For pure-formulas P with free variables among a finite tuple x, and distinct matching nonlogical constants c, a witness to P entails that P at those constants is possible.
 - **¬ Separated Structure.** For each typed nonlogical constant c and closed same-typed terms F,G not containing c, equality after application to c implies equality of F and G.
@@ -58,6 +59,12 @@ Let $(A_n)$ be the family with no choice function. For a set $C$ of natural numb
 Let $p:=\{1\}$, in the domain since the model is full, and true. Any witness $q$ for $\Box_{\ne}p$ is true, so contains the identity; under an arrow $i\ne 1$ with a retraction $r$, the arrow $r\circ i=1$ makes $\Diamond q$ true, while $p$ is false. So no true $q$ has $\Box(\Diamond q\to p)$. (The surjection monoid's own argument of 23 September, stated once.)
 
 *General argument `arguments/dpc-returning-arrow`. It requires that The model is full: at each object, the domain of each relational type contains every intension of that type. Here: Every intension of every relational type is present at every object (Classicism, §3.5, p. 59). It requires that Some arrow out of the evaluation object other than its identity has a retraction: an arrow back after which it composes to the identity. Here: Any permutation other than the identity, which its inverse retracts. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-06.*
+
+### Fails Forcing Possibilism.
+
+In a full action model the propositions at the evaluation object are all the sets of arrows out of it, so the algebra of propositions is atomic, the singletons being its atoms, and it has $2^{|A|}$ elements for $A$ the set of those arrows. Since the sets of natural numbers inject into $A$, the sets of sets of natural numbers inject into the propositions. Take the regular-open algebra $B$ of Cantor space: a complete atomless Boolean algebra in ZF, of the size of the continuum, which therefore injects into the propositions while the propositions do not inject into it (Cantor), so that, realised as a property of propositions with its order as a relation among them, both present since the model is full, it is an internal complete Boolean algebra that is small. Forcing Possibilism would give a proposition $p\ne\top$ whose entailment algebra is isomorphic to $B$. But the entailment algebra below a nonzero proposition is atomic, every nonempty set of arrows including a singleton, and the one below $\bot$ has one element; neither is isomorphic to an infinite atomless algebra. So Forcing Possibilism fails. No choice is used: the injection into the arrows is given by the condition, and Cantor's theorem and the completeness of the regular-open algebra hold in ZF.
+
+*General argument `arguments/forcing-possibilism-continuum-arrows`. It requires that The model is a full action model: an action model (Classicism, Appendix D) that is full at every object. Here: An action model, full at every object (Classicism, §3.5, p. 59; Appendix D). It requires that The continuum injects into the arrows out of the evaluation object: there is an injection from the sets of natural numbers into them, given outright, without choice. Here: With $X$ enumerated, a set $C$ of natural numbers is sent to the permutation that swaps $x_{2n}$ and $x_{2n+1}$ for each $n\in C$ and fixes the rest; distinct sets give distinct permutations. By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-23.*
 
 ### Holds □Atomicity.
 
