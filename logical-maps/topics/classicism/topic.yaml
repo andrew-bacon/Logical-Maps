@@ -112,6 +112,11 @@ background_presets:
   category: schematic
   principles:
   - distinctness-schema-r
+- id: necessary-rigid-comprehension
+  name: □Rigid Comprehension
+  category: comprehension
+  principles:
+  - necessary-rigid-comprehension-r
 
 lattice_views:
 - id: modality-rigid-comprehension
