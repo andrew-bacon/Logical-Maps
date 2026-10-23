@@ -77,6 +77,9 @@
   .ctl-spacer { visibility: hidden; pointer-events: none; }
   .graph-hint { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ink-3); margin: 4px 0 8px; }
   .search { width: min(100%, 320px); margin: 0 0 12px; padding: 6px 8px; border: 1px solid var(--line-strong); border-radius: 3px; background: var(--panel); }
+  .changes-controls { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin: 0 0 12px; }
+  .changes-controls .search { margin: 0; }
+  .minor-toggle { color: var(--ink-2); font-size: 13px; white-space: nowrap; cursor: pointer; }
   .legend-note { color: var(--ink-3); font-size: 12px; }
   .framework { font-size: 12.5px; color: var(--ink-2); }
   .framework p { margin: 0 0 6px; }
@@ -326,6 +329,10 @@
   .list h3 { font: 600 16px var(--serif); margin: 18px 0 8px; }
   .list h3:first-child { margin-top: 0; }
   .list p.hint { color: var(--ink-3); font-size: 12.5px; max-width: 65ch; margin: 0 0 12px; }
+  /* The question lists' descriptions use the full width; their counts sit on a line of their own. */
+  #lynchpins > p.hint, #open-core > p.hint { max-width: none; }
+  #open-progress, #open-core-progress { display: block; margin-top: 2px; }
+  #open-progress[hidden], #open-core-progress[hidden] { display: none; }
 
   /* badges */
   .badge { display: inline-block; padding: 2px 7px; border-radius: 4px; font: 500 11px var(--sans); letter-spacing: .02em; color: var(--badge-ink); white-space: nowrap; }
@@ -882,7 +889,7 @@
         </div>
       </section>
       <section class="pane" id="pane-models"><div class="list" id="models"></div></section>
-      <section class="pane" id="pane-results"><div class="list"><input class="search" id="search" type="search" placeholder="Filter" aria-label="Filter changes"><div id="results"></div></div></section>
+      <section class="pane" id="pane-results"><div class="list"><div class="changes-controls"><input class="search" id="search" type="search" placeholder="Filter" aria-label="Filter changes"><label class="minor-toggle" title="Housekeeping that leaves what a record says unchanged"><input type="checkbox" id="show-minor"> minor changes <span class="n" id="n-minor"></span></label></div><div id="results"></div></div></section>
       <section class="pane" id="pane-theorems"><div class="open-content"><div class="list" id="theorems"></div></div></section>
       <section class="pane" id="pane-open"><div class="open-content"><div id="open-warning" class="graph-warning" role="alert" hidden></div><div class="list" id="open"></div></div></section>
       <section class="pane" id="pane-page"><div class="page" id="page"></div></section>
@@ -1169,7 +1176,7 @@ const sourceColor = s => {
   return `var(--source-${sourceHues[s.id] || sourcePalette[hash % sourcePalette.length]})`;
 };
 const sourceMarker = s => 'source-' + sourceCatalog.indexOf(s);
-const state = { allowed: new Set(sourceCatalog.map(s => s.id)), leanOnly: false, showConj: false, conjectureOnly: false, unpublishedOnly: false, reduced: true, trivial: false, focus: null, showResolved: backgroundParams.get('resolved') === '1', lynchpins: false, recorded: false, auto: false, showIso: true, selected: null, modelId: null, groupId: null, openGroups: new Set(), variantsOpen: new Map(), tab: 'graph', search: '', excluded: new Set(), negativeShown: new Set(), collapsed: new Set(), flipped: false };
+const state = { allowed: new Set(sourceCatalog.map(s => s.id)), showMinor: false, leanOnly: false, showConj: false, conjectureOnly: false, unpublishedOnly: false, reduced: true, trivial: false, focus: null, showResolved: backgroundParams.get('resolved') === '1', lynchpins: false, core: false, recorded: false, auto: false, showIso: true, selected: null, modelId: null, groupId: null, openGroups: new Set(), variantsOpen: new Map(), tab: 'graph', search: '', excluded: new Set(), negativeShown: new Set(), collapsed: new Set(), flipped: false };
 // The theory explorer keeps its own assumptions, apart from the graph's
 // background, so trying out a theory there leaves the graph as it was.
 const theoryParam = (key, fallback) => backgroundParams.has(key) ? (backgroundParams.get(key) || '').split(',').filter(id => byPid.has(id)) : fallback;
@@ -1345,7 +1352,36 @@ function renderSubscripts(root) {
     fragment.append(node.data.slice(end)); node.replaceWith(fragment);
   }
 }
-function fmt(s) { return esc(s.trim()).split(/\n\s*\n/).join('<br><br>'); }
+// [[id]] or [[id|text]] in a record's prose links to the record with that id: a result,
+// principle, model, group or general argument (validated by `pmap.py validate`).
+const CROSS_REF = /\[\[([a-z0-9]+(?:-[a-z0-9]+)*)(?:\|([^\]]*))?\]\]/g;
+function fmt(s) { return esc(s.trim()).split(/\n\s*\n/).join('<br><br>').replace(CROSS_REF, (_, id, text) => crossRef(id, text)); }
+// A link to a record's page, labelled by `text` (already escaped) or else by the record itself.
+function crossRef(id, text) {
+  const link = (attr, label) => `<button class="lnk xref" data-${attr}="${esc(id)}">${text || label}</button>`;
+  if (byRid.has(id)) return link('open-result', resultStmt(byRid.get(id)));
+  if (byPid.has(id)) return link('open-principle', esc(name(id)));
+  if (byMid.has(id)) return link('open-model', esc(byMid.get(id).name));
+  if (byGid.has(id)) return link('open-group', esc(byGid.get(id).name));
+  if (byAid.has(id)) return link('open-argument', esc(id));
+  return text || esc(id);
+}
+// The records whose prose cross-references a given id, found once for all ids.
+let crossRefIndex = null;
+function referencedBy(id) {
+  if (!crossRefIndex) {
+    crossRefIndex = new Map();
+    const text = v => typeof v === 'string' ? v : Array.isArray(v) ? v.map(text).join('\n') : v && typeof v === 'object' ? Object.values(v).map(text).join('\n') : '';
+    for (const x of [...R, ...P, ...MODELS.filter(m => !m.companion_of), ...GROUPS, ...GENERAL])
+      for (const ref of new Set([...text(x).matchAll(CROSS_REF)].map(m => m[1])))
+        if (ref !== x.id) crossRefIndex.set(ref, [...(crossRefIndex.get(ref) || []), x.id]);
+  }
+  return crossRefIndex.get(id) || [];
+}
+function referencedBySection(id) {
+  const refs = referencedBy(id);
+  return refs.length ? `<h2>Referenced by</h2><ul class="src">${refs.map(r => `<li>${crossRef(r)}</li>`).join('')}</ul>` : '';
+}
 
 // ---------------------------------------------------------------- layout
 // Signed queries stay within Horn logic: negative assumptions forbid facts.
@@ -2845,7 +2881,8 @@ function familyVerdict(fits, c) {
 // one chosen is revealed, by opening its category. A category the box opened
 // closes again when the box moves elsewhere; one the reader opened stays.
 const exFind = { query: '', options: [], active: 0, open: false, found: null, opened: new Set() };
-const findText = text => text.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+// Letters and digits, and the modal and negation signs that tell □A, ◇A and ¬A from A.
+const findText = text => text.toLowerCase().replace(/[^\p{L}\p{N}□◇¬]+/gu, ' ').replace(/([□◇¬]) /g, '$1').trim();
 function exFindOptions(value) {
   const q = findText(value);
   if (!q) return [];
@@ -3141,9 +3178,22 @@ function renderModels() {
 }
 
 function certBadges(r) {
-  const c = r.certificate;
-  return `${sourceBadge(sourceOf(r))}${c.lean === 'verified' ? '<span class="badge lean verified">Lean ✓</span>' : ''}${r.status === 'conjectured' ? '<span class="badge conj">conjecture</span>' : ''}`;
+  const c = r.certificate, n = leanVerdicts(r).length;
+  const lean = c.lean === 'verified' ? '<span class="badge lean verified">Lean ✓</span>'
+    : n ? `<span class="badge lean" title="${n} of its verdicts proved in Lean">Lean: ${n} verdict${n === 1 ? '' : 's'}</span>` : '';
+  return `${sourceBadge(sourceOf(r))}${lean}${r.status === 'conjectured' ? '<span class="badge conj">conjecture</span>' : ''}`;
 }
+// A model's verdicts proved one by one in Lean (its record's lean.verdicts), once verified.
+const leanVerdicts = m => ((m.lean || {}).verdicts || []).filter(v => v.status === 'verified');
+const leanVerdict = (m, c) => leanVerdicts(m).find(v => (v.holds || v.fails) === c);
+// In a verdict's evidence: its Lean links, and the argument that gives it, if one does.
+const leanVerdictLinks = (m, c) => {
+  const v = leanVerdict(m, c);
+  if (!v) return '';
+  const via = !v.via ? '' : ` <span class="dim">by ${v.via.group ? `the group’s argument ${esc(v.via.argument)}` : `the argument <button class="lnk" data-open-argument="${esc(v.via.argument)}">${esc(v.via.argument)}</button>`}</span>`;
+  return `<div class="links">${['<span class="badge lean verified">Lean ✓</span>', ...leanLinkTags(v.lean_links)].join(' ')}${via}</div>`;
+};
+
 // Abbreviate only equivalent positive conjunctions. These are presentation
 // aliases: the original records and the engines' premise arrays stay intact.
 // baseE uses proved, source-filtered rules and the fixed topic framework;
@@ -3208,8 +3258,10 @@ function renderResults() {
     .sort((a, b) => dateOf(b).localeCompare(dateOf(a)));
   // One row per record at its certificate date, plus one row per logged revision at
   // the revision's own date: later additions to a record are changes too.
-  const rows = items.flatMap(x => [{ date: dateOf(x), x }, ...[...(x.changes || []), ...(x.history || []), ...laterArguments(x)].map(change => ({ date: String(change.date || ''), x, change }))])
-    .sort((a, b) => b.date.localeCompare(a.date));
+  // A minor change (housekeeping: rewording, formatting, cross-references) waits behind its checkbox.
+  const all = items.flatMap(x => [{ date: dateOf(x), x }, ...[...(x.changes || []), ...(x.history || []), ...laterArguments(x)].map(change => ({ date: String(change.date || ''), x, change }))]);
+  const minor = all.filter(r => r.change?.minor).length;
+  const rows = all.filter(r => state.showMinor || !r.change?.minor).sort((a, b) => b.date.localeCompare(a.date));
   let h = `<table class="results changes"><tbody>`;
   for (const { date, x, change } of rows) {
     const k = kindOf(x);
@@ -3219,22 +3271,40 @@ function renderResults() {
       : k === 'principle' ? `${title} &nbsp; ${esc(x.statement)}` : k === 'result' ? title : `${title} &nbsp; ${modelStmt(x)}`;
     const by = change ? esc(change.by || '') : k === 'principle' ? '' : esc(x.certificate.produced_by || '');
     const badge = change ? `<span class="badge ${k === 'model' ? 'indep' : 'kind'} revised">revised ${k}</span>` : `<span class="badge ${k === 'model' ? 'indep' : 'kind'}">${x.status === 'conjectured' ? 'conjecture' : k}</span>`;
-    h += `<tr data-kind="${k}" data-id="${x.id}" class="${[k !== 'principle' && !passes(x) ? 'filtered' : '', change ? 'revision' : ''].join(' ').trim()}"><td class="mono nowrap">${esc(date)}</td><td>${badge}</td><td class="stmt">${stmt}</td><td>${k === 'principle' ? '' : certBadges(x)}</td><td class="mono">${by}</td></tr>`;
+    h += `<tr data-kind="${k}" data-id="${x.id}" class="${[k !== 'principle' && !passes(x) ? 'filtered' : '', change ? 'revision' : '', change?.minor ? 'minor' : ''].join(' ').trim()}"><td class="mono nowrap">${esc(date)}</td><td>${badge}</td><td class="stmt">${stmt}</td><td>${k === 'principle' ? '' : certBadges(x)}</td><td class="mono">${by}</td></tr>`;
   }
   h += '</tbody></table>';
   const el = document.getElementById('results'); el.innerHTML = h;
   renderSubscripts(el);
   el.querySelectorAll('tr[data-id]').forEach(tr => tr.addEventListener('click', () => select({ type: tr.dataset.kind, id: tr.dataset.id })));
   document.getElementById('n-results').textContent = rows.length;
+  document.getElementById('n-minor').textContent = minor;
+  document.getElementById('show-minor').closest('label').hidden = !minor && !state.showMinor;
 }
 // ---------------------------------------------------------------- results
 // Every proved result among the principles the sidebar shows, from its sources, grouped by
 // what it concludes, with the incompatibilities last; narrowed by text found anywhere in a
 // statement (so a principle's name also finds the principles whose names contain it), or,
 // when the text names a principle, to the results concluding exactly it or using exactly it.
-const theoremsView = { query: '', role: 'either', closed: new Set() };
+const theoremsView = { query: '', role: 'either', closed: new Set(), timer: null };
+// The search box and its suggestions are built once and kept: rebuilding them as the reader
+// types would close and reopen the suggestions at every keystroke. Typing redraws only the
+// list, once the typing pauses.
+function theoremsControls(el) {
+  const kept = el.querySelector('.theorems-controls');
+  if (kept) return kept;
+  const roles = [['either', 'anywhere', 'Results whose statement contains the text, in any principle’s name.'], ['conclusion', 'concluding it', 'Results concluding exactly this principle.'], ['premise', 'using it', 'Results with exactly this principle among their premises.']];
+  el.innerHTML = `<div class="theorems-controls"><input class="search" id="theorems-find" type="search" list="theorems-principles" placeholder="A principle, or words of a result…" aria-label="Find results" autocomplete="off" spellcheck="false" value="${esc(theoremsView.query)}"><datalist id="theorems-principles">${[...P].sort((a, b) => compareNames(a.name, b.name)).map(p => `<option value="${esc(p.name)}"></option>`).join('')}</datalist>`
+    + `<span class="seg theorems-role" role="group" aria-label="How the text narrows the list">${roles.map(([k, l, t]) => `<button data-theorems-role="${k}" title="${esc(t)}">${l}</button>`).join('')}</span><span class="theorems-count"></span></div><div class="theorems-list"></div>`;
+  const input = el.querySelector('#theorems-find');
+  input.addEventListener('input', () => { theoremsView.query = input.value; clearTimeout(theoremsView.timer); theoremsView.timer = setTimeout(flushTheorems, 200); });
+  el.querySelectorAll('[data-theorems-role]').forEach(b => b.addEventListener('click', () => { theoremsView.role = b.dataset.theoremsRole; flushTheorems(); }));
+  return el.querySelector('.theorems-controls');
+}
+function flushTheorems() { clearTimeout(theoremsView.timer); theoremsView.timer = null; renderTheorems(); }
 function renderTheorems() {
   const el = document.getElementById('theorems'); if (!el) return;
+  const controls = theoremsControls(el), listEl = el.querySelector('.theorems-list');
   const q = theoremsView.query.trim(), qf = findText(q);
   const picked = q ? P.find(p => p.name === q) || P.find(p => findText(p.name) === qf) : null;
   let rows = R.filter(r => r.status === 'proved' && passes(r) && theoremShown(r.conclusion) && r.premises.every(theoremShown));
@@ -3245,30 +3315,23 @@ function renderTheorems() {
   const groups = new Map();
   for (const r of rows) (groups.get(r.conclusion) || groups.set(r.conclusion, []).get(r.conclusion)).push(r);
   const order = [...groups.keys()].sort((a, b) => (a === FALSE) - (b === FALSE) || compareNames(name(a), name(b)));
+  controls.querySelectorAll('[data-theorems-role]').forEach(b => { b.setAttribute('aria-pressed', String(theoremsView.role === b.dataset.theoremsRole)); b.disabled = !picked && b.dataset.theoremsRole !== 'either'; });
+  controls.querySelector('.theorems-count').textContent = `${rows.length} result${rows.length === 1 ? '' : 's'}${exact ? ` ${theoremsView.role === 'conclusion' ? 'concluding' : 'using'} ${picked.name}` : q ? ` matching “${q}”` : ''}`;
   // A group closed by the reader stays closed, even across a narrowing that hides it for a while.
   const closed = theoremsView.closed;
-  for (const g of el.querySelectorAll('details.theorems-group')) g.open ? closed.delete(g.dataset.conclusion) : closed.add(g.dataset.conclusion);
+  for (const g of listEl.querySelectorAll('details.theorems-group')) g.open ? closed.delete(g.dataset.conclusion) : closed.add(g.dataset.conclusion);
   const row = r => `<tr data-result="${r.id}"><td class="stmt">${resultStmt(r)}</td><td>${certBadges(r)}</td></tr>`;
-  let h = `<div class="theorems-controls"><input class="search" id="theorems-find" type="search" list="theorems-principles" placeholder="A principle, or words of a result…" aria-label="Find results" autocomplete="off" spellcheck="false" value="${esc(theoremsView.query)}"><datalist id="theorems-principles">${[...P].sort((a, b) => compareNames(a.name, b.name)).map(p => `<option value="${esc(p.name)}"></option>`).join('')}</datalist>`;
-  const roles = [['either', 'anywhere', 'Results whose statement contains the text, in any principle’s name.'], ['conclusion', 'concluding it', 'Results concluding exactly this principle.'], ['premise', 'using it', 'Results with exactly this principle among their premises.']];
-  h += `<span class="seg theorems-role" role="group" aria-label="How the text narrows the list">${roles.map(([k, l, t]) => `<button data-theorems-role="${k}" title="${esc(t)}" aria-pressed="${theoremsView.role === k}"${picked || k === 'either' ? '' : ' disabled'}>${l}</button>`).join('')}</span>`;
-  h += `<span class="theorems-count">${rows.length} result${rows.length === 1 ? '' : 's'}${exact ? ` ${theoremsView.role === 'conclusion' ? 'concluding' : 'using'} ${esc(picked.name)}` : q ? ` matching “${esc(q)}”` : ''}</span></div>`;
   const allOpen = order.every(c => !closed.has(c));
-  h += `<p class="hint theorems-hint">Proved results connecting the shown principles, grouped by conclusion.${order.length > 1 ? ` <button class="lnk dim" data-theorems-expand>${allOpen ? 'collapse all' : 'expand all'}</button>` : ''}</p>`;
+  let h = `<p class="hint theorems-hint">Proved results connecting the shown principles, grouped by conclusion.${order.length > 1 ? ` <button class="lnk dim" data-theorems-expand>${allOpen ? 'collapse all' : 'expand all'}</button>` : ''}</p>`;
   for (const c of order) {
     const list = groups.get(c).sort((a, b) => a.premises.length - b.premises.length || compareNames(premisesName(a), premisesName(b)));
     h += `<details class="theorems-group" data-conclusion="${esc(c)}"${closed.has(c) ? '' : ' open'}><summary>${esc(name(c))} <span class="n">${list.length}</span></summary><table class="results"><tbody>${list.map(row).join('')}</tbody></table></details>`;
   }
   if (!order.length) h += '<p class="empty">No result fits.</p>';
-  const focused = document.activeElement?.id === 'theorems-find', caret = focused ? document.activeElement.selectionStart : null;
-  el.innerHTML = h; renderSubscripts(el);
-  const input = el.querySelector('#theorems-find');
-  input.addEventListener('input', () => { theoremsView.query = input.value; renderTheorems(); });
-  if (focused) { input.focus({ preventScroll: true }); try { input.setSelectionRange(caret, caret); } catch (_) {} }
-  el.querySelectorAll('[data-theorems-role]').forEach(b => b.addEventListener('click', () => { theoremsView.role = b.dataset.theoremsRole; renderTheorems(); }));
+  listEl.innerHTML = h; renderSubscripts(listEl);
   // One control opens every group listed, then closes them all.
-  el.querySelector('[data-theorems-expand]')?.addEventListener('click', () => { el.querySelectorAll('details.theorems-group').forEach(g => { g.open = !allOpen; }); renderTheorems(); });
-  el.querySelectorAll('tr[data-result]').forEach(tr => tr.addEventListener('click', () => select({ type: 'result', id: tr.dataset.result })));
+  listEl.querySelector('[data-theorems-expand]')?.addEventListener('click', () => { listEl.querySelectorAll('details.theorems-group').forEach(g => { g.open = !allOpen; }); renderTheorems(); });
+  listEl.querySelectorAll('tr[data-result]').forEach(tr => tr.addEventListener('click', () => select({ type: 'result', id: tr.dataset.result })));
 }
 function conjectureEvidence(answer, evidenceBase = baseE, summary = 'Evidence') {
   // The rule chains returned for a witness certify the first matching model.
@@ -3293,12 +3356,13 @@ function renderOpen() {
   warning.hidden = !inconsistent && !allConflict;
   warning.innerHTML = inconsistent ? `<h2>Background is inconsistent</h2><p>These assumptions cannot all hold together. Conjecture resolutions are unavailable until the conflicting assumptions are removed.</p>${conjectureEvidence({via: backgroundConflicts[0].via, models: []})}<p>This check uses proved results under the current evidence filters.</p>` : allConflict ? `<h2>Additional evidence shows the background is inconsistent</h2><p>Verdicts from the selected evidence cannot establish which questions remain open with all recorded evidence.</p>${conjectureEvidence({via: allConflict.via, models: []}, allEvidenceBaseE, 'Background conflict with all recorded evidence')}` : '';
   wire(warning);
-  let h = `<details id="lynchpins"${state.lynchpins ? ' open' : ''}><summary>Central Questions</summary><p class="hint">Open questions ranked by how much both answers would settle, the harmonic mean of if yes and if no. <span id="open-progress" hidden></span></p><div class="lynchpin-body"></div></details>`;
+  let h = `<details id="lynchpins"${state.lynchpins ? ' open' : ''}><summary>High-Value Questions</summary><p class="hint">Open questions ranked by how much both answers would settle, the harmonic mean of if yes and if no. <span id="open-progress" hidden></span></p><div class="lynchpin-body"></div></details>`;
+  h += `<details id="open-core"${state.core ? ' open' : ''}><summary>Core Questions</summary><p class="hint">Core Questions correspond to implications of the form (a) ⊢ C, with no premises; (b) A ⊢ C, with a single premise (C a principle or ⊥); (c) A ∧ B ⊢ ⊥; or (d) A ∧ B ⊢ C, where C ⊢ A and C ⊢ B are already established. Open Core Questions are ranked by how many Core Questions both answers would settle, the geometric mean of if yes and if no. <span id="open-core-progress" hidden></span></p><div class="lynchpin-body"></div></details>`;
   h += `<details id="open-recorded"${state.recorded ? ' open' : ''}><summary>Conjectures</summary><div class="lynchpin-body"></div></details>`;
   h += `<details id="open-auto"${state.auto ? ' open' : ''}><summary>Automatically Generated Conjectures</summary><p class="hint">Questions ranked by how many questions would be settled by a negative result.</p><div class="lynchpin-body"></div></details>`;
   const el = document.getElementById('open'); el.innerHTML = h;
   wire(el);
-  for (const [id, key] of [['lynchpins', 'lynchpins'], ['open-auto', 'auto'], ['open-recorded', 'recorded']]) {
+  for (const [id, key] of [['lynchpins', 'lynchpins'], ['open-core', 'core'], ['open-auto', 'auto'], ['open-recorded', 'recorded']]) {
     const det = document.getElementById(id);
     det.addEventListener('toggle', () => { state[key] = det.open; renderLynchpins(); });
   }
@@ -3327,13 +3391,19 @@ function shownProgress(p) {
   // No proof search or rescoring: masks encode conclusions per premise group.
   const mask = p.selection.principles.reduce((m, id, i) => openShown(id) ? m | (1n << BigInt(i)) : m, 0n);
   const count = bits => { let n = 0; for (; bits; bits &= bits - 1n) n++; return n; };
-  let questions = 0, settled = 0;
-  for (const [premises, conclusions, resolved, consistency] of p.selection.groups) {
+  let questions = 0, settled = 0, coreQ = 0, coreS = 0;
+  for (const [premises, conclusions, resolved, consistency, core] of p.selection.groups) {
     if (!premises.every(openShown)) continue;
-    questions += count(BigInt(conclusions) & mask) + (consistency !== null ? 1 : 0);
-    settled += count(BigInt(resolved) & mask) + (consistency === 'proved' || consistency === 'refuted' ? 1 : 0);
+    const asked = consistency !== null ? 1 : 0, done = consistency === 'proved' || consistency === 'refuted' ? 1 : 0;
+    questions += count(BigInt(conclusions) & mask) + asked;
+    settled += count(BigInt(resolved) & mask) + done;
+    // Core: every question with no premise or one, and with two its consistency and the conclusions already known to entail both.
+    if (core !== undefined) {
+      coreQ += count(BigInt(core) & mask) + asked;
+      coreS += count(BigInt(resolved) & BigInt(core) & mask) + done;
+    }
   }
-  return {...p, questions, settled, open: questions - settled};
+  return {...p, questions, settled, open: questions - settled, core: p.core ? {questions: coreQ, settled: coreS, open: coreQ - coreS} : undefined};
 }
 function renderProgress() {
   // Share of implication questions with up to two premises settled under this
@@ -3343,11 +3413,21 @@ function renderProgress() {
   const el = document.getElementById('open-progress'); if (!el) return;
   const p = state.tab === 'open' && !backgroundConflicts.length && allEvidenceE.conflict([]) === null ? shownProgress(storedProgress()) : null;
   el.hidden = !p;
-  if (el.hidden) { el.textContent = ''; return; }
-  if (!p.questions) { el.textContent = '0 questions with up to two premises are shown.'; el.title = ''; return; }
+  const coreEl = document.getElementById('open-core-progress');
+  if (el.hidden) { el.textContent = ''; if (coreEl) { coreEl.hidden = true; coreEl.textContent = ''; } return; }
+  if (!p.questions) { el.textContent = '0 questions with up to two premises are shown.'; el.title = ''; if (coreEl) { coreEl.hidden = true; coreEl.textContent = ''; } return; }
   const pct = p.open ? Math.min(99, Math.floor(100 * p.settled / p.questions)) : 100;
-  el.textContent = `${pct}% of ${p.questions.toLocaleString('en-US')} questions with up to ${p.premises === 2 ? 'two' : p.premises} premises are settled.`;
+  el.textContent = `${p.settled.toLocaleString('en-US')} (${pct}%) of ${p.questions.toLocaleString('en-US')} questions with up to ${p.premises === 2 ? 'two' : p.premises} premises are settled.`;
   el.title = `${p.settled} of ${p.questions} questions S ⊢ c, with S at most ${p.premises} principle classes and c a class or ⊥, are proved, excluded or refuted by a model under this background, using all recorded proved evidence. Counts include only shown principles, using statuses computed at build time for this background.`;
+  const core = document.getElementById('open-core-progress'), c = p.core;
+  if (!core) return;
+  core.hidden = !c;
+  if (!c) { core.textContent = ''; return; }
+  if (!c.questions) { core.textContent = '0 Core Questions are shown.'; return; }
+  // The open ones, with a decimal: the share left is small, and it moves in small steps.
+  const share = 100 * c.open / c.questions;
+  const cpct = c.open && share < 0.1 ? '<0.1' : c.open < c.questions && share > 99.9 ? '>99.9' : share.toFixed(1).replace(/\.0$/, '');
+  core.textContent = `${c.open.toLocaleString('en-US')} (${cpct}%) of ${c.questions.toLocaleString('en-US')} Core Questions are open.`;
 }
 const SETTLED = new Set(['proved', 'refuted', 'excluded', 'consistent', 'inconsistent']);
 function rankedTable(rep, rows, mode = 'questions') {
@@ -3358,9 +3438,9 @@ function rankedTable(rep, rows, mode = 'questions') {
   // model. As an automatically generated one, it reads as the answer to expect: ⊬ when a
   // proof would be the bigger surprise. Either way the scores are turned to what confirming
   // or refuting the conjecture would settle.
-  const conjectures = mode !== 'questions';
+  const conjectures = mode === 'recorded' || mode === 'auto';
   const denies = r => mode === 'recorded' ? r.claim === 'not' : mode === 'auto' ? r.auto_claim === 'not' : false;
-  const rankOf = r => mode === 'auto' ? r.auto_rank : r.rank;
+  const rankOf = r => mode === 'auto' ? r.auto_rank : mode === 'core' ? r.core_rank : r.rank;
   const premiseText = S => S.map(pb).join(' ∧ ') || esc(name(TRUE));
   const premises = r => r.premise_sets?.length > 1
     ? `<span class="equivalent-premises" title="Equivalent under the background">${r.premise_sets.map(S => S.length > 1 ? `(${premiseText(S)})` : premiseText(S)).join(' or ')}</span>`
@@ -3379,9 +3459,15 @@ function rankedTable(rep, rows, mode = 'questions') {
   const star = r => r.tier ? `<span class="star iridescent ${esc(r.tier)}" title="${esc(r.tier)}: a recorded conjecture asks this question${r.tier === 'bronze' ? '' : ', ranked by importance and difficulty'}">★</span>` : '';
   const status = r => r.status && r.status !== 'open' ? ` <span class="status">${r.status === 'outside' ? 'more than two premises' : esc(r.verdict || r.status)}</span>` : '';
   const num = x => x === null || x === undefined ? '—' : x;
-  const scores = r => denies(r) ? [r.no, r.yes] : [r.yes, r.no];
+  const scores = r => mode === 'core' ? [r.core_yes, r.core_no] : denies(r) ? [r.no, r.yes] : [r.yes, r.no];
   return `<table class="results lynchpin"><thead><tr><th class="num">${mode === 'auto' ? '“If no” rank' : 'Rank'}</th><th>${conjectures ? 'Conjecture' : 'Question'}</th><th class="num">if yes</th><th class="num">if no</th></tr></thead><tbody>${
     rows.map(r => `<tr data-lynchpin="${esc(key(r))}"${r.tier ? ` data-starred="${esc(r.tier)}"` : ''}${r.status && r.status !== 'open' ? ` data-status="${esc(r.status)}"` : ''}${denies(r) ? ' data-claim="not"' : ''}><td class="num rank">${num(rankOf(r))}</td><td class="stmt">${star(r)}${stmt(r)}${status(r)}${links(r) ? ` <span class="links">${links(r)}</span>` : ''}</td><td class="num">${num(scores(r)[0])}</td><td class="num">${num(scores(r)[1])}</td></tr>`).join('')}</tbody></table>`;
+}
+// The core questions are the ranked rows that carry a core rank (Lynchpins.rank), in that order.
+const coreRanked = new WeakMap();
+function coreRows(rep) {
+  if (!coreRanked.has(rep)) coreRanked.set(rep, (rep.rows || []).filter(r => r.core_rank != null).sort((a, b) => a.core_rank - b.core_rank));
+  return coreRanked.get(rep);
 }
 function renderLynchpins() {
   renderProgress();
@@ -3401,7 +3487,7 @@ function renderLynchpins() {
     const conclusions = (r.conclusions || [r.conclusion]).filter(shown);
     return conclusions.length ? {...r, premises: premise_sets[0], premise_sets, conclusion: conclusions[0], conclusions} : null;
   };
-  for (const [id, key] of [['lynchpins', 'rows'], ['open-auto', 'auto'], ['open-recorded', 'recorded']]) {
+  for (const [id, key] of [['lynchpins', 'rows'], ['open-core', 'core'], ['open-auto', 'auto'], ['open-recorded', 'recorded']]) {
     const el = document.getElementById(id); if (!el) continue;
     const body = el.querySelector('.lynchpin-body');
     if (!el.open || state.tab !== 'open') { body.innerHTML = ''; continue; }
@@ -3414,7 +3500,7 @@ function renderLynchpins() {
       continue;
     }
     if (rep.inconsistent_background) { body.innerHTML = '<p class="note">Unavailable while the background is inconsistent.</p>'; continue; }
-    const eligible = key === 'recorded' ? (rep.recorded || []).filter(r => state.showResolved || !SETTLED.has(r.status)) : (rep[key] || []);
+    const eligible = key === 'recorded' ? (rep.recorded || []).filter(r => state.showResolved || !SETTLED.has(r.status)) : key === 'core' ? coreRows(rep) : (rep[key] || []);
     const matching = eligible.map(shownQuestion).filter(Boolean);
     // Keep the full rankings in the export: hidden principles must not consume
     // any of the 30 places. Recorded conjectures remain an uncapped catalogue.
@@ -3558,10 +3644,27 @@ function argumentSource(m, a) { return a.by ? null : sourceOf(m); }
 function shortAuthor(by) { return String(by || '').split(/ \(|[,;]/)[0].trim(); }
 function trawlChain(m, a) { return a.provenance ? (PROVENANCE.get(a.provenance)?.records || {})[m.companion_of || m.id] || null : null; }
 const isoDay = t => String(t || '').slice(0, 10);
-function argumentTags(a) {
+function argumentTags(a, m) {
+  const forModel = m && leanForArgument(m, a).length;
   return (a.standing === 'conjectured' ? `<span class="badge conj">conjecture${a.tier ? ' · ' + esc(a.tier) : ''}</span>` : '')
-    + (a.withdrawn ? '<span class="badge withdrawn">withdrawn</span>' : '');
+    + (a.withdrawn ? '<span class="badge withdrawn">withdrawn</span>' : '')
+    + (forModel ? '<span class="badge lean verified" title="Proved in Lean for this model">Lean ✓</span>'
+      : leanArgument(a).length ? '<span class="badge lean verified" title="Proved in Lean, for every model meeting its conditions">Lean ✓</span>' : '');
 }
+// The model's Lean certificates of the verdicts an argument gives it.
+const leanForArgument = (m, a) => [...(a.holds || []), ...(a.fails || [])].map(c => leanVerdict(m, c)).filter(Boolean);
+const leanModelLine = (m, a) => {
+  const ls = leanForArgument(m, a);
+  return ls.length ? `<p class="note lean-argument">Proved in Lean for this model: ${ls.map(v => (v.holds ? '✓ ' : '✗ ') + esc(name(v.holds || v.fails))
+    + ((v.lean_links || []).length ? ' (' + leanLinkTags(v.lean_links).join(' · ') + ')' : '')).join('; ')}.</p>` : '';
+};
+// A general argument's verdicts proved in Lean, for every model meeting its conditions.
+const leanArgument = a => (a.lean || []).filter(e => e.status === 'verified');
+const leanArgumentLine = a => {
+  const ls = leanArgument(a);
+  return ls.length ? `<p class="note lean-argument">Proved in Lean: ${ls.map(e => (e.holds ? '✓ ' : '✗ ') + esc(name(e.holds || e.fails))
+    + ((e.lean_links || []).length ? ' (' + leanLinkTags(e.lean_links).join(' · ') + ')' : '')).join('; ')}.</p>` : '';
+};
 // Who and when, without repeating a date the name already gives ("…, 20 September 2026").
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 function withDate(by, date) {
@@ -3601,10 +3704,11 @@ function argumentHtml(m, a, i) {
   ].filter(Boolean).join(' ');
   // A shared argument applies to a member through the conditions it requires; say why the member meets each.
   const conditions = (a.conditions || []).map(c => `<div class="note condition"><b>Requires:</b> ${fmt(c.text || '')}${c.reason ? ` <b>Here:</b> ${fmt(c.reason)}` : ''}</div>`).join('');
-  return `<details class="argument${a.withdrawn ? ' withdrawn' : ''}"${i === undefined ? '' : ` id="argument-${i}"`}><summary><span class="argument-verdicts">${marks}</span> ${argumentTags(a)}</summary>`
+  return `<details class="argument${a.withdrawn ? ' withdrawn' : ''}"${i === undefined ? '' : ` id="argument-${i}"`}><summary><span class="argument-verdicts">${marks}</span> ${argumentTags(a, m)}</summary>`
     + (a.text ? `<div class="prose reading">${fmt(a.text)}</div>` : '')
     + ((a.adapt || '').trim() ? `<div class="prose reading">${fmt(a.adapt)}</div>` : '')
     + conditions
+    + (leanModelLine(m, a) || leanArgumentLine(a))
     + creditHtml(m, a)
     + (meta ? `<p class="note">${meta}</p>` : '')
     + (a.revisions || []).map(r => `<p class="note">Revised ${esc(r.date)}${r.by ? ' by ' + esc(r.by) : ''}: ${esc(r.note)}</p>`).join('')
@@ -3829,6 +3933,7 @@ function renderPage(sel) {
     h += `<h2>Premises</h2><ul class="plist">${r.premises.map(pstmt).join('') || '<li>⊤</li>'}</ul><h2>Conclusion</h2><ul class="plist">${pstmt(r.conclusion)}</ul>`;
     h += `<div class="record-summary">${writeupNote(r)}${r.proof ? `<h2>Proof</h2><div class="prose">${fmt(r.proof)}</div>` : ''}</div>`;
     if (r.notes) h += `<h2>Notes</h2><div class="prose">${fmt(r.notes)}</div>`;
+    h += referencedBySection(r.id);
     h += sourceList([r]);
     h += `<div class="file">${esc(r.file)}</div>`;
   } else if (sel.type === 'model') {
@@ -3869,12 +3974,13 @@ function renderPage(sel) {
     if (notes || refs.length) h += `<h2>Notes</h2>${notes}${refs.length ? paperReferenceList(refs) : ''}`;
     h += historyHtml(m);
     if ((m.checks || []).length) h += `<h2>Checks</h2><ul class="src">${m.checks.map(x => `<li class="mono">${esc(x)}</li>`).join('')}</ul>`;
+    h += referencedBySection(m.id);
     if (!m.arguments) h += sourceList([m]);
     h += `<div class="file">${esc(m.file)}</div>`;
   } else if (sel.type === 'group') {
-    h += groupPage(byGid.get(sel.id));
+    h += groupPage(byGid.get(sel.id)) + referencedBySection(sel.id);
   } else if (sel.type === 'argument') {
-    h += generalArgumentPage(byAid.get(sel.id));
+    h += generalArgumentPage(byAid.get(sel.id)) + referencedBySection(sel.id);
   } else if (sel.type === 'principle') {
     const p = byPid.get(sel.id);
     h += `<h1>${sel.negative ? '¬' : ''}${esc(p.name)}</h1>${sel.negative ? '<p>Negation of the following principle:</p>' : ''}${(p.aliases || []).length ? `<div class="id">${esc(p.aliases.join(', '))}</div>` : ''}<div class="prose statement">${esc(p.statement)}</div>${p.formal ? `<div class="formal">${esc(p.formal)}</div>` : ''}${p.definitions ? `<div class="defs">${fmt(p.definitions)}</div>` : ''}`
@@ -3898,6 +4004,7 @@ function renderPage(sel) {
     const resultsTable = rows => `<table class="results"><tbody>${rows.map(r => `<tr data-result="${r.id}"><td class="stmt">${resultStmt(r)}</td><td>${certBadges(r)}</td></tr>`).join('') || '<tr><td>—</td></tr>'}</tbody></table>`;
     h += `<h2>Results</h2><h3 class="verdict-group">Concluding it <span class="n">${concluding.length}</span></h3>${resultsTable(concluding)}<h3 class="verdict-group">Using it as a premise <span class="n">${using.length}</span></h3>${resultsTable(using)}`;
     h += `<h2>Models</h2><table class="results"><tbody>${groupRows}${inM.map(m => `<tr data-model="${m.id}"><td class="mono nowrap">${m.satisfies.includes(p.id) ? '✓' : '✗'}</td><td class="stmt"><b>${esc(m.name)}</b> &nbsp; ${modelStmt(m)}</td><td>${certBadges(m)}</td></tr>`).join('') || (groupRows ? '' : '<tr><td>—</td></tr>')}</tbody></table>`;
+    h += referencedBySection(p.id);
     h += sourceList([p]);
     h += `<div class="file">${esc(p.file)}</div>`;
   }
@@ -4157,7 +4264,7 @@ function renderDetail() {
     h += equivalentList([(sel.negative ? '!' : '') + sel.id]);
   } else if (sel.type === 'model-verdict') {
     const m = byMid.get(sel.id), e = modelEvidence(m, sel.principle);
-    h += `<div class="pop-t">${esc(m.name)}</div><div class="pop-s">${esc(name(sel.principle))}: ${e ? e.value ? '✓ satisfied' : '✗ violated' : '? unknown'}</div>`;
+    h += `<div class="pop-t">${esc(m.name)}</div><div class="pop-s">${esc(name(sel.principle))}: ${e ? e.value ? '✓ satisfied' : '✗ violated' : '? unknown'}</div>${leanVerdictLinks(m, sel.principle)}`;
     if (e) h += `<div class="badges">${evidenceBadges(e, m, sel.principle)}</div><div class="pop-l">${e.direct ? 'Recorded directly for the model.' : 'Derived from the model and the recorded implications.'}</div>${sourceSummary(e.items)}<div class="links"><button class="lnk" data-goto="1">details</button></div>`;
   } else {
     const x = sel.type === 'result' ? byRid.get(sel.id) : byMid.get(sel.id);
@@ -4726,6 +4833,7 @@ document.getElementById('fit').addEventListener('click', fit);
 document.getElementById('search').addEventListener('input', e => {
   state.search = e.target.value; renderResults();
 });
+document.getElementById('show-minor').addEventListener('change', e => { state.showMinor = e.target.checked; renderResults(); });
 function runGraphSearch(value) {
   const normalize = text => text.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
   const query = normalize(value);

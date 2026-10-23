@@ -87,6 +87,14 @@ KaTeX 0.18.7 supports standard mathematical LaTeX commands; see its
 code remain literal. Graph labels retain their existing plain-text notation.
 The same renderer handles details opened after selection and fetched write-ups.
 
+### Cross-references
+
+In a record's prose (proofs, notes, descriptions, definitions, arguments), `[[id]]`
+links to the page of the result, principle, model, group or general argument with
+that id, labelled by its statement or name; `[[id|text]]` labels it `text`. Each page
+lists the records that refer to it under **Referenced by**. `validate` rejects an id
+that names no record. Write-ups do not yet resolve the syntax.
+
 The scripts, stylesheet, WOFF2 fonts and MIT licence live in
 `viewer/vendor/katex/` and are copied into each export's `math/` directory.
 Publish/copy the complete topic directory for offline use. Single-file `--out`
@@ -150,8 +158,9 @@ gives `lean: {model, verdicts}`: a Lean term for the model, and a list of entrie
 generated statement, `Models.<model>.<principle>`, in `ModelStatements.lean`, from the
 topic's `lean.verdict` templates (`holds`, `fails`, with `{model}` and `{def}`; `imports`;
 and a `relative` conjunct for principles in `relative_categories`). Validation requires each
-such verdict to be one the map already gives the model. The record covers that model alone:
-a group's generated variants do not inherit it.
+such verdict to be one the map already gives the model. The viewer counts the verified ones
+on the model's badge and shows each on the argument that gives it. The record covers that model alone: a
+group's generated variants do not inherit it.
 
 General arguments are formalised the same way, so that a model's verdicts follow in Lean
 along the route the map gives them:
@@ -171,7 +180,8 @@ along the route the map gives them:
   conditions, by applying the argument's certificate. A verdict the record lists itself
   takes precedence.
 - **Status:** `lean-check` audits the argument and derived certificates with the rest. The
-  build marks them verified when they are in the index on the allowed axioms.
+  build marks them verified when they are in the index on the allowed axioms. The viewer
+  marks an argument proved in Lean, and says which argument gives each derived verdict.
 
 `pmap lean-check` builds the library and audits wrapper proofs at the generated
 statement types. Failed elaboration, `sorryAx`, and nonstandard axioms are rejected. The `lean` certificate field is `none`,
@@ -561,7 +571,7 @@ the converse is settled, the model that settles it. The relation shading and
 its legend are the graph's too. The node count grows with the subsets, so the
 view stops at a few hundred and says so.
 
-Graph: implications, ∧ nodes for multi-premise results, stronger principles lower and ⊥ at the bottom; see [Graph layout](#graph-layout). The arrow options (conjecture arrows, conjectures only, unpublished only, implied and trivial arrows, isolated principles) are set aside for now and keep their defaults. Theory explorer: principles use the same categories and ordering as Graph; mark them positive/negative as the explorer's own assumptions, and a principle those assumptions settle opens its derivation in place with **why**; models known to fit are listed, those whose status is unknown below. Clicking a model highlights its row and shows its verdicts beside each principle while preserving the model list and shared assumptions. Click a verdict’s evidence link for its sources and write-up; a derived verdict’s **why** opens its derivation in place. Click a model for its sources, write-up links, and any unknown assumptions. A model's own page sorts every principle by what the model says about it, satisfied, violated or unknown, each group counted; the principle leads the row and its evidence follows. A model records a few properties and the rest follow from them, so the derived verdicts of a group wait behind a closed disclosure rather than burying the recorded ones. A derived verdict’s **why** lists the recorded verdicts it starts from and the implications it goes through, each with its own badges. Unknown verdicts remain unknown. Results: every proved result among the principles the sidebar shows, from the selected sources, grouped by what it concludes with incompatibilities last; a box narrows the list by text found anywhere in a statement (a principle's name also finds the principles whose names contain it) or, when the text names a principle, to the results concluding exactly it or using exactly it; a row opens the result. Nothing is assumed in this list, so the sidebar's background controls do not appear on it. Conjectures: current and previously conjectured results and models, with answers computed from the selected evidence and background. Changes: every principle, result and model by date, and every logged revision of a record (its `changes` entries) under the revision's own date; the details button opens the record page, which shows a hand-written write-up in full when one exists (the record's own summary otherwise, or until the write-up loads), with the Lean source when present. Header downloads: **Content bundle (ZIP)** is a complete working copy with topic sources, summaries, viewer, and build tools; **Lean files**, when present, opens the formalisation files. Hover over a link for its contents.
+Graph: implications, ∧ nodes for multi-premise results, stronger principles lower and ⊥ at the bottom; see [Graph layout](#graph-layout). The arrow options (conjecture arrows, conjectures only, unpublished only, implied and trivial arrows, isolated principles) are set aside for now and keep their defaults. Theory explorer: principles use the same categories and ordering as Graph; mark them positive/negative as the explorer's own assumptions, and a principle those assumptions settle opens its derivation in place with **why**; models known to fit are listed, those whose status is unknown below. Clicking a model highlights its row and shows its verdicts beside each principle while preserving the model list and shared assumptions. Click a verdict’s evidence link for its sources and write-up; a derived verdict’s **why** opens its derivation in place. Click a model for its sources, write-up links, and any unknown assumptions. A model's own page sorts every principle by what the model says about it, satisfied, violated or unknown, each group counted; the principle leads the row and its evidence follows. A model records a few properties and the rest follow from them, so the derived verdicts of a group wait behind a closed disclosure rather than burying the recorded ones. A derived verdict’s **why** lists the recorded verdicts it starts from and the implications it goes through, each with its own badges. Unknown verdicts remain unknown. Results: every proved result among the principles the sidebar shows, from the selected sources, grouped by what it concludes with incompatibilities last; a box narrows the list by text found anywhere in a statement (a principle's name also finds the principles whose names contain it) or, when the text names a principle, to the results concluding exactly it or using exactly it; a row opens the result. Nothing is assumed in this list, so the sidebar's background controls do not appear on it. Conjectures: current and previously conjectured results and models, with answers computed from the selected evidence and background. Changes: every principle, result and model by date, and every logged revision of a record (its `changes` entries) under the revision's own date; an entry marked `minor: true` (housekeeping that leaves what the record says unchanged) is hidden unless **minor changes** is checked, which shows how many there are, while the record's page and the bundle keep it; the details button opens the record page, which shows a hand-written write-up in full when one exists (the record's own summary otherwise, or until the write-up loads), with the Lean source when present. Header downloads: **Content bundle (ZIP)** is a complete working copy with topic sources, summaries, viewer, and build tools; **Lean files**, when present, opens the formalisation files. Hover over a link for its contents.
 
 ### Graph layout
 
@@ -665,11 +675,19 @@ details does not cover or resize the graph. The panel lists selected principles 
 definitions and individual remove buttons.
 
 The Conjectures tab shares the background controls. Its sections collapse:
-**Central Questions** ranks open questions by the harmonic mean of what the
+**High-Value Questions** ranks open questions by the harmonic mean of what the
 two answers would settle. If each answer is as likely as the map leaves room
 for it, inversely to how much it would settle, that is the number of other
 questions an answer is expected to settle, so a question that only matters if
-it comes out the implausible way sinks. **Automatically Generated Conjectures**
+it comes out the implausible way sinks. **Core Questions**, below it, keeps only
+the implications of the form ⊢ C (no premises), A ⊢ C (one premise, C a principle or ⊥), A ∧ B ⊢ ⊥,
+or A ∧ B ⊢ C where C ⊢ A and C ⊢ B are already established (whether C is
+equivalent to A ∧ B), with no model checks; it ranks them by the geometric mean of how many core
+questions each answer would settle, the question itself included, so that a
+question one of whose answers would settle much still rises; and it says how many
+of them are open, with the share to a tenth of a percent. Both descriptions use
+the full width, with their counts on a line of their own. A group of equivalent questions is core when one of its forms is.
+**Automatically Generated Conjectures**
 lists the same questions by their larger side, each stated as the answer to
 expect: ⊢ when a refutation would settle more, ⊬ when a proof would, with "if
 yes" and "if no" what confirming or refuting that conjecture would settle. A question is S ⊢ c, whether S entails c, for S at
@@ -691,7 +709,7 @@ with more than two premises is listed the same way, marked as such. **Show
 resolved** is off by default, hiding the settled ones. A sparse map, too open to
 rank, still lists and scores its conjectures. Verdicts come from proved
 evidence under the background and never from conjectures; a model witnesses a
-conjecture's flags, not its proposed construction. The Central Questions description gives the share of
+conjecture's flags, not its proposed construction. The High-Value Questions description gives the share of
 implication questions with up to two premises settled: S ⊢ c for S at most two
 principle classes and c a class or False, counted only when no smaller premise
 set already proves or excludes c, and settled alike by a proof, an exclusion or

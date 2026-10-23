@@ -59,7 +59,7 @@ and reports unless it is asked for by name.
   host's 25 MiB per file, and `decodePayload` in `viewer/template.html` restores it exactly;
   change the two together. The bundle's `data.json` is not encoded.
 - `python3 scripts/pmap.py status` — counts, open pairs, redundancies.
-- `python3 scripts/pmap.py lynchpins` — the central questions, open questions ranked by
+- `python3 scripts/pmap.py lynchpins` — the high-value questions, open questions ranked by
   the harmonic mean of what either answer would settle (the expected settlement when an
   answer is as likely as the map leaves room for it), then the same questions by their
   larger side as automatically generated conjectures stated as the answer to expect,
@@ -70,13 +70,16 @@ and reports unless it is asked for by name.
   an exclusion or a fitting model; a model check is scored the same way. A row that a
   recorded conjecture asks about carries that record (a bronze star and a details
   link; silver or gold when the record sets `tier`). The viewer's sections are
-  "Central Questions" and "Conjectures". `Lynchpins`
+  "High-Value Questions", "Core Questions" (no premise or one; A ∧ B ⇒ ⊥; A ∧ B ⇒ C
+  with C ⇒ A and C ⇒ B established; ranked by the geometric mean of the core
+  questions each answer settles, itself included, as `core_rank`, `core_yes`, `core_no` on the stored rows) and
+  "Conjectures". `Lynchpins`
   in `scripts/pmap.py` is the only implementation: `build` stores its full rankings and
   settled share per background preset in `data.json` (also `derived.json` and the
   bundle's OPEN-QUESTIONS.md §2, which skip a sparse map with over three quarters of
   its questions open), and the viewer's Conjectures tab only looks them up, so an
   ad-hoc background shows none. The viewer filters by shown principles before
-  taking the top 30 central questions and automatic conjectures; recorded
+  taking the top 30 high-value questions, core questions and automatic conjectures; recorded
   conjectures are uncapped. Premise combinations provably equivalent under the
   background, and consequents equivalent given those premises, share one ranked
   row, displayed with “or”. Hidden alternatives are omitted; a group remains if
@@ -204,6 +207,10 @@ When you (an AI) add or edit a result or model:
   append an entry to its `changes` list: `date`, `by`, `summary`, and for models
   the newly verified `satisfies`/`violates` ids. The Changes tab lists each entry
   under its own date. Never move `certificate.date`; it is the record's origin.
+  Mark an entry `minor: true` when it leaves what the record says unchanged —
+  rewording, formatting, cross-references, dropping certificates of derived
+  facts — so the Changes tab hides it unless asked. A cleanup that changes no
+  record's content needs no entry at all.
 - Independences are recorded as models (`models/<id>.yaml`), never as results.
   For a model, list every principle you have actually verified in `satisfies`
   and `violates` — the engine derives the rest and lists what is unknown. Add a
@@ -213,7 +220,7 @@ When you (an AI) add or edit a result or model:
   the conjectured model record. List only the proposed new verdicts in this
   block and retain the full package in the usual `satisfies`/`violates` lists.
   These assertions appear as model checks in Conjectures and carry the same
-  star in Central Questions. Evidence from a different model cannot resolve
+  star in High-Value Questions. Evidence from a different model cannot resolve
   a check of the named model.
 
 ## Editing data

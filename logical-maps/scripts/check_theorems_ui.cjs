@@ -19,7 +19,7 @@ const dom = new JSDOM(template.replace('/*__PMAP_DATA__*/null', () => JSON.strin
 const w = dom.window, d = w.document;
 const $ = s => d.querySelector(s), $$ = s => [...d.querySelectorAll(s)];
 const groups = () => $$('#theorems details.theorems-group').map(g => [g.dataset.conclusion, [...g.querySelectorAll('tr[data-result]')].map(tr => tr.dataset.result)]);
-const type = value => { const input = $('#theorems-find'); input.value = value; input.dispatchEvent(new w.Event('input', {bubbles: true})); };
+const type = value => { const input = $('#theorems-find'); input.value = value; input.dispatchEvent(new w.Event('input', {bubbles: true})); w.flushTheorems(); };
 try {
   $('.tab[data-tab="theorems"]').click();
   assert.equal(d.getElementById('pane-theorems').dataset.active, 'true');
@@ -37,7 +37,9 @@ try {
   // Text anywhere in a statement; the exact roles wait for a principle's name.
   assert.ok($$('[data-theorems-role]:not([data-theorems-role="either"])').every(b => b.disabled), 'The exact roles wait for a principle');
   assert.equal($('[data-theorems-role="either"]').disabled, false);
+  const box = $('#theorems-find');
   type('B');
+  assert.equal($('#theorems-find'), box, 'Typing keeps the search box, so its suggestions are not rebuilt at each keystroke');
   assert.deepEqual(groups(), [['b', ['a-b']], ['c', ['b-c']]], 'Anywhere: the text in any name');
   assert.match($('#theorems .theorems-count').textContent, /2 results matching “B”/);
   $('[data-theorems-role="conclusion"]').click();
@@ -72,6 +74,9 @@ try {
   $('#theorems tr[data-result="a-b"]').click();
   assert.equal(d.getElementById('pop').hidden, false);
   assert.match(d.getElementById('pop').textContent, /A ⇒ B/);
+  // A box or diamond is part of the text searched for: □A does not find A.
+  assert.equal(w.eval('findText("□ Actuality")'), '□actuality');
+  assert.equal(w.eval('findText("A ∧ ◇B")'), 'a ◇b');
   assert.deepEqual(errors, []);
   console.log('PASS: the Results tab lists proved results among the shown principles by conclusion, narrows to a principle in a role or to words, keeps closed groups closed, and opens a result.');
 } finally { w.close(); }
