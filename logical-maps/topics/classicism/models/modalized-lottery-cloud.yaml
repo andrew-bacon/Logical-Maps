@@ -1,0 +1,42 @@
+id: modalized-lottery-cloud
+name: 'Modalized domains: lottery cloud'
+certificate:
+  source_id: bacon-modalized-domains-2026
+  produced_by: Andrew Bacon and Claude Opus 5.5 (Anthropic)
+  recorded_by: OpenAI Codex, 21 October 2026
+  checked_by: []
+  date: '2026-10-21'
+  lean: none
+sources:
+- Andrew Bacon and Claude Opus 5.5 (Anthropic), Modalized Domains on Possibility Frames, draft of 20 October
+  2026, Theorem C; Theorem 6.8 and Corollary 6.9, p. 29.
+source_names:
+- Modalized Domains (2026)
+references:
+- paper: bacon-modalized-domains-2026
+  role: proof
+  locator: Theorem C; Theorem 6.8 and Corollary 6.9, p. 29
+group: modalized-atomless-cloud
+settings:
+  family: Fix a strong limit cardinal μ>ω with cf(μ)=ω. Use one representative of every nontrivial complete
+    Boolean algebra of cardinality <μ (Definition 6.4).
+arguments:
+- text: At the root all relations on the identity classes are realized, so internal complete Boolean algebras
+    and relation-based cardinal comparisons are external ones (Lemmas 6.6–6.7). For strong limit μ of
+    countable cofinality, |RO(F)|=2^μ=μ^ω. Pierce’s theorem |C|^ω=|C| excludes complete Boolean algebras
+    of size in [μ,2^μ). Every algebra that is finite or strictly smaller than the propositions therefore
+    has size <μ. It occurs as a lottery factor and is realized below its component proposition; the degenerate
+    algebra is realized below bottom. A root relation witnesses the isomorphism.
+  source:
+    paper: bacon-modalized-domains-2026
+    locator: Theorem 6.8 and Corollary 6.9, p. 29
+  by: Andrew Bacon and Claude Opus 5.5 (Anthropic)
+  date: '2026-10-21'
+  holds:
+  - mathematical-possibilism
+notes: There are 2^μ propositions at the root and 2^ℵ₀ rigid properties of individuals up to root identity.
+  Choosing μ above any prescribed cardinal gives the unbounded-size assertion of Corollary 6.9. MP uses
+  finite or strictly smaller, not the non-strict reading; it is not asserted necessary. This model implements
+  the paper’s full modalized-domain semantics. The earlier lottery-algebra-actual-point entry is preserved
+  as the distinct handout presentation; their shared proposition algebra alone is not an identification
+  of their higher-type domains.

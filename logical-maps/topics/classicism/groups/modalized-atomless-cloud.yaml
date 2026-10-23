@@ -1,0 +1,74 @@
+id: modalized-atomless-cloud
+name: 'Modalized domains: atomless cloud'
+definition: Work in ZFC. {{family}} Take the disjoint union of the nonzero parts of these complete Boolean
+  algebras, with refinement given by their Boolean orders, and adjoin a refinement-isolated root r. The
+  root sees every point and each cloud point sees its refinements. Use the full modalized-domain model
+  of Definitions 2.1–2.10 and 4.1, with constant individual domain ω and literal individual identity.
+  At t use all regular-open propositions; at function types use the full underlying function sets with
+  the partial equivalence relations of Definition 2.2. Quantification uses existing entities at all refinements,
+  as in §2.3. Evaluate at r. Interpret any relational signature constants as top; no signature verdict
+  is recorded.
+parameters:
+  family:
+    text: A nonempty family of nontrivial complete Boolean algebras, containing an atomless factor.
+references:
+- paper: bacon-modalized-domains-2026
+  role: proof
+  locator: Definitions 2.1–2.10 and 4.1; Theorem 4.4
+arguments:
+- text: The frame is a world–cloud frame. At transparent cloud points every relation is rigid. At the
+    isolated root, the check-closure of an actual extension is a coextensive rigid relation (Definition
+    3.11 and Theorem 3.12). Thus RC holds at every point, and each boxed instance is valid.
+  source:
+    paper: bacon-modalized-domains-2026
+    locator: Theorem 3.12, pp. 17–18; Theorem 4.4(b), p. 21
+  by: Andrew Bacon and Claude Opus 5.5 (Anthropic)
+  date: '2026-10-21'
+  holds:
+  - necessary-rigid-comprehension-r
+  id: rigid-comprehension
+- text: Theorem 3.14 selects witnesses on a maximal antichain of decided cloud pieces and mixes their
+    identity profiles. At a world, choose one actual witness; the world part and the cloud mixture together
+    form a necessarily uniquely instantiated subrelation of the given necessarily instantiated relation.
+    Hence IC and its necessitation are valid. The proof uses ZFC.
+  source:
+    paper: bacon-modalized-domains-2026
+    locator: Theorem 3.14, pp. 18–19; Theorem 4.4(b), p. 21
+  by: Andrew Bacon and Claude Opus 5.5 (Anthropic)
+  date: '2026-10-21'
+  holds:
+  - necessary-intensional-choice-r
+  id: intensional-choice
+- text: 'Lemma 4.3 proves no new entities at any type: at a cloud point x a relation can be cut down to
+    the regular-open closure of the principal downset of x, yielding an entity existing at the root and
+    identical to the original at x. Proposition 3.16 therefore gives BF and □BF at every type. This uses
+    the paper’s variable-domain quantifiers, not a fixed-domain meet calculation.'
+  source:
+    paper: bacon-modalized-domains-2026
+    locator: Lemma 4.3 and Theorem 4.4(b), pp. 20–21
+  by: Andrew Bacon and Claude Opus 5.5 (Anthropic)
+  date: '2026-10-21'
+  holds:
+  - necessary-barcan-r
+  id: barcan
+- text: The component proposition for an atomless factor is nonzero. At the root, propositional identity
+    is literal and entailment is inclusion, so its lower interval is the atomless factor algebra. It therefore
+    has no propositional atom below it.
+  source:
+    paper: bacon-modalized-domains-2026
+    locator: Theorem 4.4(d), p. 21
+  by: Andrew Bacon and Claude Opus 5.5 (Anthropic)
+  date: '2026-10-21'
+  fails:
+  - atomicity-t
+  id: non-atomicity
+- text: The top proposition S and the cloud S minus {r} are distinct at the root, but identical at every
+    cloud point. They witness failure of ND at type t.
+  source:
+    paper: bacon-modalized-domains-2026
+    locator: Theorem 4.4(c), p. 21
+  by: Andrew Bacon and Claude Opus 5.5 (Anthropic)
+  date: '2026-10-21'
+  fails:
+  - distinctness-necessary-t
+  id: distinctness

@@ -1,0 +1,26 @@
+id: mathematical-possibilism
+name: Mathematical Possibilism
+category: lattice
+statement: Every complete Boolean algebra that is finite or has strictly fewer elements than there are propositions is isomorphic to the entailment algebra below some proposition other than top.
+formal: >-
+  $\forall X^{\sigma t}\,\forall R^{\sigma\sigma t}\, .\,
+  (\operatorname{CBA}(X,R)\land(\operatorname{Fin}(X)\lor X\prec\lambda p^t.\top))
+  \to\exists p^t\, .\,p\ne\top\land (X,R)\cong(\lambda q^t.\,q\le p,\le)$
+definitions: |-
+  CBA says that R partially orders the Xs as a Boolean algebra and every property of Xs has a least upper bound. Fin means Dedekind finiteness, expressed with binary relations representing injections. X ≺ Y means that an injective relation from X to Y exists and none exists from Y to X; this is defined across the two carrier types. Isomorphism is witnessed by a binary relation giving an order-preserving and order-reflecting bijection. All these quantifiers are unboxed. Degenerate one-element Boolean algebras are allowed, represented by p = bottom. Type σ ranges over the map's admitted types, including e.
+date: '2026-10-19'
+sources:
+- Andrew Bacon, Arbitrarily Large Models of Classicism with BoxRigid Comprehension, Intensional Choice and Mathematical Possibilism, handout supplied 19 October 2026, §1 and §9.
+source_names:
+- Large models handout
+notes: >-
+  Uses the handout's strict smallness convention (finite or strictly fewer propositions), attributed there to the body of Could the truths of mathematics have been different?. It does not use the appendix's non-strict reading, no bigger than the propositions. The two readings are not identified. No Lean verification is claimed.
+
+references:
+- paper: bacon-modalized-domains-2026
+  role: formulation
+  locator: §6.1, p. 27
+changes:
+- date: '2026-10-21'
+  by: OpenAI Codex
+  summary: Linked the existing strict-smallness formulation to Modalized Domains §6.1; statement unchanged.
