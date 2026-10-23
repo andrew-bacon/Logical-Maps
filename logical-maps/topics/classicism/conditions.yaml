@@ -192,3 +192,5 @@ conditions:
   text: For every $n\ge2$ there are a set $N$ of $n$ points of the set the arrows act on and an arrow out of
     the evaluation object that is constant on $N$ and injective off $N$, with its values off $N$ different
     from its value on $N$.
+- id: countably-many-arrows
+  text: The arrows out of the evaluation object are countably many, in bijection with the natural numbers.

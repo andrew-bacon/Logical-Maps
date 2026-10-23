@@ -37,6 +37,9 @@ settings:
   individuals: base
   sigma: top
 meets:
+  finitely-pinned-domains: >-
+    Both objects carry the ideal of finite sets: the domains hold every symmetric intension pinned
+    down by a finite set, and every entity in them is one.
   transposable: '$M=\emptyset$, and for $N$ the property of not belonging to $N$, at $E$, where the domain
     is symmetric and finitely pinned: the transposition of $y$ with another individual of $E$ outside
     $N$ lies in its symmetry group.'

@@ -202,6 +202,20 @@ arguments:
     domains, and $\operatorname{Real}_t$ of this structure has $\pi$-coordinate $1$, every bounded
     crisp subset of $S$ having a least upper bound in it; so $\exists\mathfrak
     R\,.\,\operatorname{Real}_t(\mathfrak R)$ is not $\bot$ and its possibility is $\top$.
+- holds: [arithmetic-necessitism]
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
+  date: '2026-10-23'
+  choice: free
+  text: >-
+    At every type. The numerals are crisp entities, and the crisp characteristic function of the set
+    of numerals at $\sigma$ is in the full domain and inductive with value $\top$, so $\mathbb
+    N_\sigma$ is crisp, with the numerals as its instances. Here $\Box p$ is $p=\top$, so
+    persistence, $\Box\forall n\,.\,\mathbb N_\sigma n\to\Box\mathbb N_\sigma n$, has value $\top$;
+    inextensibility, $\Box\forall X\,.\,(\forall n\,.\,\mathbb N_\sigma n\to\Box Xn)\to\mathbb
+    N_\sigma\le X$, has value $\top$, since for each $X$ both sides of the implication are
+    $\bigwedge_n[\![Xn=\top]\!]$ over the numerals $n$; and distinct numerals are necessarily
+    distinct, identity being crisp. So $\mathbb N_\sigma$ is rigid with necessarily distinct
+    instances, whether or not $\Box I^*_\sigma$ holds.
 notes: >-
   Full verification is in the write-up.
 

@@ -49,6 +49,9 @@ definition: 'Let $\mathcal C$ be the category of the two-object retract with two
   is contingent; and every arrow into $W_1$ factors through $h$, whose transports never yield the true
   atom of $W_1$, so Possibly Witnessed Possibility fails.'
 meets:
+  countably-many-arrows: >-
+    The arrows of $\mathcal D$ are the reduced alternating words in the finitely many non-identity
+    arrows of $\mathcal C$ and the countably many generators of $F$: countably many.
   full-model: Every intension of every relational type is present at both objects.
   full-action-model: A full action model with two objects.
   codomain-intensions: The domains are full.

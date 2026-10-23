@@ -44,6 +44,9 @@ definition: 'Let $M:=F_\infty * E * B * \mathbb Z_2$ be the free product of mono
   $e$ is a non-epic arrow, so BF fails; $b$ is retracted by $c$ but not invertible, so ND-necessity and
   two-hat necessity come apart; $s$ is a non-identity unit, so some truth is not 5-necessary.'
 meets:
+  countably-many-arrows: >-
+    The arrows are the reduced alternating words in the finitely many non-identity arrows of the
+    retract category and the countably many generators of the free monoid: countably many.
   one-object-action-model: It has one object.
   full-model: Every intension of every relational type is present.
   full-action-model: A full action model with one object.

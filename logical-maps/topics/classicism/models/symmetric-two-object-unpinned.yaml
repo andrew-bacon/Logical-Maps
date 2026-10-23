@@ -6,7 +6,7 @@ certificate:
   recorded_by: Claude Opus 5 (Anthropic), prompted by Cian Dorr, 19 September 2026
   checked_by: []
   date: '2026-09-19'
-  lean: stated
+  lean: none
 sources:
 - Cian Dorr, Boolean Completeness does not imply Rigid Comprehension, draft of 30 July 2026, Definition
   39, p. 19; Proposition 40 and Proposition 41, p. 20; Remark 42, p. 21.
@@ -31,6 +31,9 @@ settings:
   individuals: base
   sigma: top
 meets:
+  finitely-pinned-domains: >-
+    The first object, the evaluation point, carries the ideal of finite sets, so its domains hold
+    every symmetric intension pinned down by a finite set, and every entity in them is one.
   collapse-onto-point: Take $F:=\lambda x\, .\,x\ne a$, so $p\notin F_h$. $h$ is a function from the first
     object to the second that is constant on $N\cup\{a\}$; the symmetry group of the second object is
     all permutations.

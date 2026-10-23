@@ -32,6 +32,9 @@ definition: An ideally full finitely pinned action model over a two-object categ
   $e_T\circ e_U=e_T$ and $\pi\circ e_T=\pi$. The evaluation point is the identity of $W_0$; every world
   reachable from it can return to it through $\pi$.
 meets:
+  finitely-pinned-domains: >-
+    Ideally full with the ideal of finite sets at both objects: every intension pinned down by a
+    finite set is in the domain, and every entity in a domain is one.
   codomain-intensions: The model is ideally full at both objects, and an intension whose value at an arrow
     depends only on the arrow's codomain is pinned down by $\emptyset$ (Appendix D, the remark after Definition
     D.3).

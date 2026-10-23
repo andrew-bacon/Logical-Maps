@@ -42,9 +42,6 @@ settings:
       the domain: it is pinned down by $f(S)$, and its transports are transports of the original.'
 meets:
   complete-components: The models in $A$ are complete for C($\Sigma$), so in particular for C.
-  extensionally-full: Any set $R$ of tuples at the identity is the extension there of the entity with
-    value $R$ at every map of the constants and empty at every arrow into a component; it is pinned
-    down by $\emptyset$, and its transports into the components are empty, so they land.
 arguments:
 - id: barcan
   holds:
@@ -173,6 +170,17 @@ arguments:
     iff $p$ contains $\delta_S$ for some finite $S$, a set of maps of the constants, all with target
     $W_0$; Actuality fails at $W_0$, hence at every map, so $\neg$Actuality contains every $\delta_S$ and
     $\Diamond_{\ne}$Actuality fails.
+- holds: [transversal-choice-r]
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
+  date: '2026-10-23'
+  choice: uses
+  text: >-
+    At the root, by the general argument transversal-choice-extensionally-full, which uses
+    extensional fullness at the evaluation point alone: any set of tuples at the identity is the
+    extension there of the entity with that value at the identity and empty at every arrow into a
+    component, pinned down by $\emptyset$. The components, any action models complete for
+    C($\Sigma$), need not be extensionally full, so the model does not meet the condition
+    extensionally-full, which asks for it at every object.
 notes: 'A variant of coalesced-pinned-interpretations-root, suggested by Cian Dorr on 19 October 2026: the
   substitutions of constants make Actuality fail, as in the finitely pinned model on all maps, while
   Maximalism and BF still hold. The argument that it is a model of C is that of the original with the maps

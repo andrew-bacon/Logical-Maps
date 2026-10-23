@@ -277,3 +277,30 @@ arguments:
   - date: '2026-10-02'
     by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
     note: The three members' verbatim copies stated once; "By the same argument" became a reference to pure-sentences-possible.
+- id: arithmetic-necessitism-complete-components
+  requires: [complete-components]
+  holds: [arithmetic-necessitism]
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
+  date: '2026-10-23'
+  choice: free
+  text: >-
+    Vacuously, at every type $\sigma$. The negation of $I^*_\sigma$, that zero is a successor or
+    successor is not injective on the numbers at $\sigma$, is a pure sentence consistent with C: it
+    holds in the full model with one world, one individual and two propositions, where every type is
+    finite and the finite cardinalities beyond the size of the type coincide. So it is possible at
+    the root (pure-sentences-possible), the antecedent $\Box I^*_\sigma$ fails there, and the
+    instance of Arithmetic Necessitism at $\sigma$ is true.
+- id: necessity-of-analysis-complete-components
+  requires: [complete-components]
+  fails: [necessity-of-analysis]
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
+  date: '2026-10-23'
+  choice: uses
+  text: >-
+    The negation of an instance of the Necessity of Analysis is a closed pure sentence consistent
+    with C: at the root of coalesced-two-extensional-arithmetics-root, with $\sigma$ and $A$ as in
+    that model's argument, both $\Diamond\exists\mathfrak
+    R\,.\,(\operatorname{Real}_\sigma(\mathfrak R)\land A(\mathfrak R))$ and
+    $\Diamond\exists\mathfrak R\,.\,(\operatorname{Real}_\sigma(\mathfrak R)\land\neg A(\mathfrak
+    R))$ hold. So it is possible at the root (pure-sentences-possible), and since arrows compose,
+    what is possibly possible is possible: both conjuncts hold at the root, and the instance fails.

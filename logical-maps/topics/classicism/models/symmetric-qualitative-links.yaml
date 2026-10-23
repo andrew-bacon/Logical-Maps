@@ -6,7 +6,7 @@ certificate:
   recorded_by: Claude Opus 5 (Anthropic), prompted by Cian Dorr, 19 September 2026
   checked_by: []
   date: '2026-09-19'
-  lean: stated
+  lean: none
 sources:
 - Cian Dorr, Boolean Completeness does not imply Rigid Comprehension, draft of 30 July 2026, §8, pp. 23–26;
   Definition 47 and Lemma 48, p. 24; Proposition 49, p. 25; Proposition 50, p. 26.
@@ -39,6 +39,9 @@ settings:
   individuals: base
   sigma: top
 meets:
+  finitely-pinned-domains: >-
+    The domains hold every symmetric intension pinned down by a finite set (finite-pinning), and
+    every entity in them is one.
   one-object-action-model: >-
     It has one object (Dorr, draft, §3.1: closed pure terms denote entities fixed by every arrow).
   transposable: >-

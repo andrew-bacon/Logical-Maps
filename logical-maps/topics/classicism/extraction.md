@@ -303,3 +303,41 @@ statement, so the certificates of 40 models went from `lean: stated` to `lean: n
 them, with Forcing Possibilism verdicts from the previous session, had already lost their
 statements). If that is unwanted, the alternative is to let `lean_coverage` state a model over its
 Lean-definable verdicts only.
+
+**Arithmetic Necessitism, the same day.** Settled in every model. The map's inextensibility is Dorr's:
+a property may not gain instances beyond the transports of its old ones. Since the numerals are
+closed terms, which transport to numerals, $\mathbb N_\sigma$ is rigid wherever the numbers at every
+reachable object are exactly the numerals, that is, wherever some property has the numerals as its
+extension there; persistence and necessary distinctness are theorems of C given $\Box I^*_\sigma$.
+Two general arguments give that: `arithmetic-necessitism-extensionally-full` and
+`arithmetic-necessitism-finitely-pinned` (the constant intension of numerals is pinned down by the
+empty set and symmetric). The complete coalesced sums have the principle vacuously, $\neg I^*_\sigma$
+being a pure sentence consistent with C and so possible at the root (shared argument
+`arithmetic-necessitism-complete-components`); the Boolean-valued model has it because
+$\mathbb N_\sigma$ is crisp. The one failure is coalesced-two-extensional-arithmetics-root: in its
+component $M_2\models\neg\operatorname{Con}(T)$ the least inductive property has a nonstandard
+member $c$, and the root entity whose $M_2$-part is $x<c$ necessarily holds of every root number
+without containing $c$. So Arithmetic Necessitism is not a theorem of C; whether C5 proves it stays
+open, the countermodel not being S5.
+
+A correction made on the way: coalesced-pinned-interpretations-root and -substitutions-root were
+tagged `extensionally-full`, whose text and Lean definition ask for fullness at every object, on a
+reason that covers the root alone; their components are any action models complete for C($\Sigma$).
+The tag is removed, the one verdict it carried (Transversal Choice at the root) is kept by an own
+argument, and the Necessity of Second-Order Analysis, which the general argument had given them
+unjustifiably, is unknown for them again.
+
+**The top-ranked questions afterwards.** They had become uniform: the Necessity of Second-Order
+Analysis in the coalesced sums, and its pairing with Maximalism and Possibility+. Three cheap
+additions settle them. The two-arithmetics root refutes the Necessity of Analysis itself, at the type
+of Dedekind cuts over the numbers at $e$: its components disagree on the analytical sentence that some
+number codes a proof of a contradiction from their theory. That makes the negation of an instance a
+pure sentence consistent with C, so every complete coalesced sum refutes the principle
+(`necessity-of-analysis-complete-components`) and Pure Maximalism is inconsistent with it
+(`maximalism-incompatible-with-necessity-of-analysis`), hence with the Necessity of Second-Order
+Analysis and Analytic Necessitism, in every maximalist form. And Forcing Possibilism holds in a full
+action model with countably many arrows (new condition `countably-many-arrows`), the small complete
+Boolean algebras being the finite ones: the glued free-monoid models and their relatives. Forcing
+Possibilism in the finitely pinned and symmetric models, where entailment algebras need not be atomic,
+and in the full S5 model over an arbitrary infinite world set, where the answer depends on the set, is
+left open, as are the analysis principles in the cloud models and the two-object symmetric models.

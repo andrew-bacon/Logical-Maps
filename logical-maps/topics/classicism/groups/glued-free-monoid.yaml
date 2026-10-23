@@ -25,6 +25,8 @@ parameters:
     text: The individuals and the gluing, as the member's write-up gives them.
 
 meets:
+  countably-many-arrows: >-
+    The arrows are the finite sequences of natural numbers.
   unretracted-arrow: >-
     A non-identity element of the free monoid has no left inverse, so no arrow retracts it.
   infinitely-many-propositions: >-

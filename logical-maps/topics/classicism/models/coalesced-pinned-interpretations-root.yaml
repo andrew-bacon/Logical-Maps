@@ -43,9 +43,6 @@ settings:
       unconstrained.'
 meets:
   complete-components: The models in $A$ are complete for C($\Sigma$), so in particular for C.
-  extensionally-full: Any set $R$ of tuples at the identity is the extension there of the entity with
-    value $R$ at the identity and empty at every arrow into a component, which is pinned down by
-    $\emptyset$ and whose transports are empty.
   free-root-component: The value of a root entity at the identity arrow is unconstrained, the identity
     being the only arrow into $W_0$, so no pinning condition bears on it.
 arguments:
@@ -91,6 +88,17 @@ arguments:
     possibly identifying constants. Then $\langle V,I\rangle\cdot\bar c=\bar a$, so $P(\bar c)$ holds at
     $\langle V,I\rangle$ and $\Diamond P(\bar c)$ at $W_0$: Possibility+ for $\Sigma$, and with it the
     pure form.
+- holds: [transversal-choice-r]
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
+  date: '2026-10-23'
+  choice: uses
+  text: >-
+    At the root, by the general argument transversal-choice-extensionally-full, which uses
+    extensional fullness at the evaluation point alone: any set of tuples at the identity is the
+    extension there of the entity with that value at the identity and empty at every arrow into a
+    component, pinned down by $\emptyset$. The components, any action models complete for
+    C($\Sigma$), need not be extensionally full, so the model does not meet the condition
+    extensionally-full, which asks for it at every object.
 notes: 'Built on 19 October 2026 to show that Maximalism (pure, and for Σ) is consistent with BF, which no
   recorded model did. The construction is Cian Dorr''s; the condition that transports land in the component
   domains, without which a transport could leave a component''s domain, was added in discussion. That it is

@@ -7,7 +7,7 @@ certificate:
   recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 19 October 2026
   checked_by: []
   date: '2026-10-19'
-  lean: stated
+  lean: none
 sources:
 - Cian Dorr, construction of 19 October 2026, with Claude Opus 5.5 (Anthropic).
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, Appendix E, Definition E.2, pp. 80–83.
@@ -371,6 +371,48 @@ arguments:
     components, everything, by (f); so it is the same root entity, and it is weakly rigid, being
     rigid. In the components it is weakly rigid trivially. So Weakly Rigid Weak Rigidity and its
     boxed form hold.
+- fails: [arithmetic-necessitism]
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
+  date: '2026-10-23'
+  choice: free
+  text: >-
+    At type $e$: inextensibility of $\mathbb N_e$ fails at the root. The antecedent $\Box I^*_e$
+    holds, $I^*$ being an axiom of $T$, true in both components, and true at the root, where the
+    numbers are the standard numerals, the root parts of entities being free, and the individuals
+    are infinitely many. In $M_2$, which satisfies $\neg\operatorname{Con}(T)$, the numbers at $e$,
+    the instances of the least inductive property in the Henkin domain, include a nonstandard number
+    $c$, one coding a proof of a contradiction from $T$, since no standard numeral does; so no
+    property of $M_2$ has exactly the standard numerals as its extension, such a property being
+    inductive. The property $\lambda x\,.\,x<c$ of $M_2$, definable from $c$ by the order on
+    numbers, holds of every standard numeral and not of $c$. Let $X$ be the root entity whose root
+    part is the set of root numerals, whose $M_1$-part is the numbers of $M_1$ and whose $M_2$-part
+    is $\lambda x\,.\,x<c$. Every number at the root necessarily has $X$: at the root it is a root
+    numeral, and along the distinguished arrows it becomes the corresponding numeral of $M_1$ or of
+    $M_2$, numerals being closed terms. But $\mathbb N_e\le X$ fails, since at $M_2$ the number $c$
+    lacks $X$. So $\mathbb N_e$ is not inextensible and Arithmetic Necessitism fails, although the
+    persistence of $\mathbb N_e$ and the necessary distinctness of the numbers hold, as in every
+    model of C with $\Box I^*_e$. This is the failure the principle's notes anticipate: at $M_2$ no
+    property has exactly the numerals as its extension, so the least inductive property gains
+    members there.
+- fails: [necessity-of-analysis]
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
+  date: '2026-10-23'
+  choice: uses
+  text: >-
+    At the type $\sigma:=((et)t)t$ of properties of the numbers at $e$. In each component, a model
+    of $T$ and so of C with $I^*_e$, there is a real number structure of type $\sigma$: the Dedekind
+    cuts over the numbers at $e$, with the rationals coded as numbers, form a complete ordered
+    field, completeness holding by comprehension since the union of a bounded family of cuts is a
+    cut, and its least inductive subproperty is the image of the numbers, so its arithmetic is the
+    component's. Let $A$ be the first-order analytical sentence $\exists n\in
+    N\,.\,\operatorname{Proof}_T(n,\bot)$, written with $N$, $+$ and $\times$. In $M_2$, which
+    satisfies $\neg\operatorname{Con}(T)$, every real number structure makes $A$ true, and in $M_1$,
+    which satisfies $\operatorname{Con}(T)$, every one makes it false, the real number structures at
+    a world all being isomorphic there. The root reaches both components, so neither
+    $\Box\forall\mathfrak R\,.\,\operatorname{Real}_\sigma(\mathfrak R)\to A(\mathfrak R)$ nor
+    $\Box\forall\mathfrak R\,.\,\operatorname{Real}_\sigma(\mathfrak R)\to\neg A(\mathfrak R)$ holds
+    at the root: the Necessity of Analysis fails, and with it the Necessity of Second-Order Analysis
+    and Analytic Necessitism, which imply it.
 notes: 'Suggested by Cian Dorr on 19 October 2026 as a small model of the boxed Strong Leibniz Biconditionals
   and □BF without the Necessity of Arithmetic. The root has three atoms, the singletons of its three worlds,
   all strong worlds. The components are one-world extensional Henkin models, and they satisfy Well-Ordering
