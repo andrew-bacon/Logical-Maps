@@ -1,6 +1,6 @@
 # Symmetric ideally-full model: old and new individuals
 
-This model was found by Claude Fable 5.1 (Anthropic) on 6 October 2026, in
+This model was found by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr on 6 October 2026, in
 a session with Cian Dorr, as a countermodel to a principle from another
 context. It satisfies □Strong Actuality and refutes Inextensible
 Comprehension. Claude Opus 5.5 (Anthropic) added the remaining verdicts the

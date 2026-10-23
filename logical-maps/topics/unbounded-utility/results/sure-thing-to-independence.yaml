@@ -13,7 +13,7 @@ certificate:
   produced_by: Zachary Goodsell (cited paper)
   checked_by: []
   date: '2026-09-08'
-  recorded_by: GPT-6 (Codex), 2026-09-08; transcription and random-variable formulation
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-08; transcription and random-variable formulation
 proof: |-
   Source reduction, §3.2: in the original DTU framework, Stochastic Dominance yields Stochastic Equivalence. Preferences therefore descend to laws. Every law and its conditional realizations are available by Prospect Richness, and the paper identifies Sure-Thing in this quotient with von Neumann–Morgenstern Independence. Pull this implication back along X↦$L(X)$. The full original DTU assumptions are retained; a weaker converse for arbitrary incomplete orders has not been extracted.
 sources:

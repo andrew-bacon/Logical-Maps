@@ -15,7 +15,7 @@ references:
 notes: The type $t$ instance of [[distinctness-necessary-r]].
 changes:
 - date: '2026-10-19'
-  by: Claude Opus 5.5 (Anthropic)
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   summary: 'At Cian Dorr’s request: the statement now says what the principle says; the notes link to
     the unrestricted form.'
 variants:

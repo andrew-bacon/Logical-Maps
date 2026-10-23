@@ -6,9 +6,9 @@ conclusion: 'false'
 status: proved
 certificate:
   source_id: misc
-  produced_by: Claude Fable 5.1 (Anthropic), 23 September 2026, adapting the recorded pure-language proof;
+  produced_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 23 September 2026, adapting the recorded pure-language proof;
     the observation prompting the pass is Cian Dorr’s
-  recorded_by: Claude Fable 5.1 (Anthropic), 23 September 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 23 September 2026
   checked_by: []
   date: '2026-09-23'
   lean: stated

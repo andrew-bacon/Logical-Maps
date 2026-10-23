@@ -15,7 +15,7 @@ certificate:
   produced_by: Zachary Goodsell (cited paper)
   checked_by: []
   date: '2026-09-08'
-  recorded_by: GPT-6 (Codex), 2026-09-08; transcription and random-variable formulation
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-08; transcription and random-variable formulation
 proof: |-
   Source-stated implication, §3, p. 23: adding $L^{1}$ Continuity to DTU yields Expected Utility. Stochastic Equivalence makes the quotient ordering on laws well-defined; the remaining premises give exactly the source’s DTU, with the surjectivity part of its Simple EU supplied separately by Rich Outcomes. The $L^{1}$ translation write-up establishes that the random-variable continuity axiom implies the source’s metric continuity. Apply the stated theorem and pull its expected-utility comparison back to X,Y. The source does not supply an expanded proof of the underlying implication; this is a theorem application and translation, not a new proof of that theorem.
 sources:

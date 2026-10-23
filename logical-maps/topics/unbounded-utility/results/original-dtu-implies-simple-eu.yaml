@@ -13,7 +13,7 @@ certificate:
   produced_by: Zachary Goodsell (cited paper)
   checked_by: []
   date: '2026-09-08'
-  recorded_by: GPT-6 (Codex), 2026-09-08; transcription and random-variable formulation
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-08; transcription and random-variable formulation
 proof: Goodsell §3.2 gives the finite-lottery representation consequence of the original DTU axioms. Stochastic
   Dominance includes law invariance; Sure-Thing becomes Independence on laws. Restrict to finite gambles
   and use the outcome mixture calibrations to obtain the normalized vNM utility representation. Prospect

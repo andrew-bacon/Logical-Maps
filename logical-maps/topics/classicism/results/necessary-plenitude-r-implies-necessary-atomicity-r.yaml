@@ -6,8 +6,8 @@ status: proved
 certificate:
   source_id: bacon-dorr-classicism
   produced_by: Andrew Bacon and Dorr’s Proposition on Plenitude and Atomicity; boxed form recorded by
-    Claude Fable 5.1 (Anthropic), 22 September 2026
-  recorded_by: Claude Fable 5.1 (Anthropic), 22 September 2026
+    Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026
   checked_by: []
   date: '2026-09-22'
   lean: verified

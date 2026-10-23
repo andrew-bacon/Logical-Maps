@@ -8,7 +8,7 @@ certificate:
   source_id: possibility-in-intuitionistic-higher-order-logic
   lean: none
   produced_by: Zachary Goodsell; proof transcribed and expanded from the manuscript
-  recorded_by: Codex (GPT-6), manuscript transcription
+  recorded_by: Codex (GPT-6), prompted by Zachary Goodsell, manuscript transcription
   checked_by: []
   date: '2026-09-13'
 proof: |-

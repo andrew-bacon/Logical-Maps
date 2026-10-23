@@ -1,0 +1,22 @@
+id: second-order-analytic-necessitism-implies-analytic-necessitism
+premises:
+- second-order-analytic-necessitism
+conclusion: analytic-necessitism
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 23 October 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 23 October 2026
+  checked_by: []
+  date: '2026-10-23'
+  lean: none
+sources:
+- Immediate from the definitions; recorded 23 October 2026.
+source_names:
+- Claude Fable 5.1 23 Oct
+proof: >-
+  An instance of Second-Order Analytic Necessitism at $\sigma$ (for any $n$) asserts, under the same
+  antecedent, a rigid real number structure $\mathfrak R$ with $\Box\operatorname{Real}_\sigma(\mathfrak R)$
+  together with represented powers; dropping the powers gives the instance of Analytic Necessitism at
+  $\sigma$.
+notes: ''

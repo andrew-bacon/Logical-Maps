@@ -27,7 +27,7 @@ certificate:
   lean: none
   produced_by: Zachary Goodsell (continuous clipping construction); GPT-6 (Codex) (geometric-cutoff specialization
     and additional verifications)
-  recorded_by: GPT-6 (Codex), 2026-09-09
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-09
   checked_by: []
   date: '2026-09-09'
 description: |-
@@ -36,9 +36,9 @@ sources:
 - 'Zachary Goodsell, Decision theory unbound, Noûs 58 (2024), 669–695; online 2023; DOI 10.1111/nous.12473,
   Appendix B, Definition 3, Lemma 6 and proof of Theorem 3, pp. 691–692; Theorems 7–10, pp. 693–695: underlying
   continuous clipping construction and original scale-failure strategy.'
-- 'GPT-6 (Codex), 9 September 2026, writeups/geometric-continuous-ultrafilter.md: geometric-cutoff specialization,
+- 'GPT-6 (Codex), prompted by Zachary Goodsell, 9 September 2026, writeups/geometric-continuous-ultrafilter.md: geometric-cutoff specialization,
   explicit alternating-St-Petersburg witness, and additional CDF-area/L¹/folded-expectation verifications.'
-- 'Claude (Fable 5.1), Logical Maps, 23 September 2026: failure of Comonotonic Sum Invariance (half-Cauchy common summand) in writeups/geometric-continuous-ultrafilter.md; diagnostic checks/comonotonic_witnesses.py.'
+- 'Claude (Fable 5.1), prompted by Zachary Goodsell, Logical Maps, 23 September 2026: failure of Comonotonic Sum Invariance (half-Cauchy common summand) in writeups/geometric-continuous-ultrafilter.md; diagnostic checks/comonotonic_witnesses.py.'
 - 'AI-generated report communicated by Branden Fitelson, Unbounded Utility: Five Top-Ranked Open Conjectures
   Resolved, 30 September 2026, §4(b), p. 3. AI (Claude agents; model versions unspecified), communicated
   by Branden Fitelson. Proof expanded and informally checked by GPT-6 (Codex), 2 October 2026.'
@@ -55,26 +55,26 @@ checks:
 - topics/unbounded-utility/checks/fitelson_report.py
 changes:
 - date: '2026-09-23'
-  by: Claude (Fable 5.1)
+  by: Claude (Fable 5.1), prompted by Zachary Goodsell
   summary: >-
     Comonotonic Sum Invariance shown to fail (write-up section “Failure of Comonotonic Sum Invariance”). A standard Cauchy C is indifferent to sure 0, but with the common comonotonic summand Z = max(C,0) the clipped gap at cutoff 4ⁿ is 2∫_{4ⁿ/2}^{4ⁿ} P(C>x)dx → (2 ln 2)/π, so 0 + Z ≻ C + Z.
   violates:
   - comonotonic-sum-consistency
 - date: '2026-09-24'
-  by: Claude (Fable 5.1)
+  by: Claude (Fable 5.1), prompted by Zachary Goodsell
   summary: >-
     Rational Scale Invariance shown to fail: the explicit scaling reversal (write-up section “Explicit failures of scale, alternating evaluation and uniqueness”) is a doubling, A ∼ −1/3 ≻ −1/2 while 2A ∼ −4/3 ≺ −1, so the pair (A, −1/2) fails invariance at the rational factor 2. The same doubling refutes Integer Affine Preservation: A ≻ −1/2 is not carried to 2A ≽ −1.
   violates:
   - rational-scale-invariance
   - integer-affine-preservation
 - date: '2026-09-24'
-  by: Claude (Fable 5.1)
+  by: Claude (Fable 5.1), prompted by Zachary Goodsell
   summary: >-
     Uniqueness of Negative Self-Similarity (integer ratios) shown to fail: the recorded uniqueness witness uses p = 1/2, a = 2, b = 0 and Z = −2, with A ∼ −1/3 and −1/2 both fixed values.
   violates:
   - integer-negative-self-similarity
 - date: '2026-10-02'
-  by: AI (Claude agents; model versions unspecified), communicated by Branden Fitelson; GPT-6 (Codex),
+  by: AI (Claude agents; model versions unspecified), communicated by Branden Fitelson; GPT-6 (Codex), prompted by Zachary Goodsell,
     proof expansion and informal verification, 2026-10-02
   summary: 'A single copula exchanging adjacent quarters works for every marginal pair: on each quarter
     one quantile is bounded, so dominated convergence makes clipped addition additive up to an error tending
@@ -82,10 +82,10 @@ changes:
     original construction attribution and date are preserved. The previous record was Lean stated; the
     expanded statement is not Lean-checked.'
 - date: '2026-10-03'
-  by: GPT-6 (Codex), classification of the previously recorded AI shuffle proof communicated by Branden Fitelson
+  by: GPT-6 (Codex), prompted by Zachary Goodsell, classification of the previously recorded AI shuffle proof communicated by Branden Fitelson
   summary: 'The same fixed adjacent-quarter shuffle is nonindependent: its joint CDF at (1/4,1/4) is zero rather than 1/16. The existing full invariance proof therefore also verifies Existential Nonindependent Copula Sum Invariance; no new construction or original-author attribution is claimed.'
 - date: '2026-10-11'
-  by: Claude (Fable 5.1)
+  by: Claude (Fable 5.1), prompted by Zachary Goodsell
   summary: >-
     The two existential copula principles were removed from the map, so their flags are retired here; the fixed quarter-shuffle argument in the write-up remains as history. Uninteractive Sum Invariance is now derived for this model from its Relative Expectation, Mixture Independence and Stochastic Equivalence flags by the recorded result relative-independence-equivalence-imply-uninteractive-sum. Relative Expectation is flagged: for E|X − Y| < ∞ the clipped difference is bounded by |X − Y| and converges pointwise to X − Y, so v_X − v_Y → E[X − Y] by dominated convergence, and the tolerance-based comparison is decided by its sign (shared clipping proof, writeups/calibrated-geometric-continuous-ultrafilter.md, section “Area, relative expectation, continuity and shifts”).
   satisfies:

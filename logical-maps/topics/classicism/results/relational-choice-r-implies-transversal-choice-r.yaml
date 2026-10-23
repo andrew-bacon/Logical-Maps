@@ -6,8 +6,8 @@ status: conjectured
 certificate:
   source_id: misc
   produced_by: Christopher Sun, observation that the implication is claimed without proof, communicated
-    by Zachary Goodsell on 25 September 2026; analysis by Claude Fable 5.1 (Anthropic), 25 September 2026
-  recorded_by: Claude Fable 5.1 (Anthropic), 25 September 2026
+    by Zachary Goodsell on 25 September 2026; analysis by Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 25 September 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 25 September 2026
   checked_by: []
   date: '2026-09-25'
   lean: stated

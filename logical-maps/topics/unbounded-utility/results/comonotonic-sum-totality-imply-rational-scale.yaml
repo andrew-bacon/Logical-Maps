@@ -12,13 +12,13 @@ certificate:
   produced_by: Zachary Goodsell (iterated-addition argument) and Claude (Fable 5.1) (comonotonic copies, cancellation step and write-up), 2026-09-24
   checked_by: []
   date: '2026-09-24'
-  recorded_by: Claude (Fable 5.1), 2026-09-24
+  recorded_by: Claude (Fable 5.1), prompted by Zachary Goodsell, 2026-09-24
 proof: |-
   By Stochastic Equivalence replace Y by its comonotonic copy $Y^\dagger=Q_Y(U)$ on a uniform U with $X=Q_X(U)$; all comparisons below are unchanged. For an integer $k\ge 1$ put $W_j=jX+(k-j)Y^\dagger$ for $0\le j\le k$ (Rich Outcomes supplies these gambles). Then $W_{j+1}=X+Z_j$ and $W_j=Y^\dagger+Z_j$ with $Z_j=jX+(k-j-1)Y^\dagger$ comonotonic with both, so by Comonotonic Sum Invariance $W_{j+1}\succeq W_j$ iff $X\succeq Y$. Chaining, $X\succeq Y$ gives $kX\succeq kY$, and $X\succ Y$ gives $kX\succ kY$ (if $kY\succeq kX$, transitivity along the chain would give $W_0\succeq W_1$, contradicting $Y\not\succeq X$). Cancellation: if $kX\succeq kY$ but $X\not\succeq Y$, Totality gives $Y\succ X$, hence $kY\succ kX$, a contradiction. So $X\succeq Y$ iff $kX\succeq kY$ for every positive integer k. For $a=m/n$ apply this twice: $X\succeq Y$ iff $mX\succeq mY$ iff $n(aX)\succeq n(aY)$ iff $aX\succeq aY$. The write-up gives the details and shows that each premise is used.
 sources:
 - 'Zachary Goodsell, Logical Maps session, 24 September 2026: claim that Comonotonic Sum Invariance implies
   Positive Affine Invariance, with the doubling argument 2A = A + A ≽ B + A ≽ B + B = 2B for the scale step.'
-- 'Claude (Fable 5.1), Logical Maps, 24 September 2026: comonotonic-copy reduction, strict chain, Totality
+- 'Claude (Fable 5.1), prompted by Zachary Goodsell, Logical Maps, 24 September 2026: comonotonic-copy reduction, strict chain, Totality
   cancellation step and the rational-factor assembly, in writeups/comonotonic-sum-totality-imply-rational-scale.md.'
 - Zachary Goodsell, Unbounded Utility and Background Risk, 5 June 2026, unpublished manuscript marked “do not
   cite” and erroneous; §6.2, p. 18; definitions on pp. 3–4

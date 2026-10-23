@@ -8,7 +8,7 @@ certificate:
   source_id: misc
   produced_by: Claude Fable 5.1 (Anthropic), 4 October 2026, from a suggestion of Cian Dorr; the unboxed
     argument is Cian Dorr's (Boolean Completeness does not imply Rigid Comprehension, Proposition 1)
-  recorded_by: Claude Fable 5.1 (Anthropic), 4 October 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 4 October 2026
   checked_by: []
   date: '2026-10-04'
   lean: verified

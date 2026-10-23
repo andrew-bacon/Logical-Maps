@@ -18,7 +18,7 @@ certificate:
     reduced-premise Lévy theorem)
   checked_by: []
   date: '2026-09-09'
-  recorded_by: GPT-6 (Codex), 2026-09-09; original proposal retained, now settled by the recorded Lévy proof
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-09; original proposal retained, now settled by the recorded Lévy proof
 proof: Independent Sum Invariance entails Independent Sum Preservation. The other premises include Rich Outcomes,
   Stochastic Dominance, Mixture Independence and Symmetric Gambles Are Neutral. Apply levy-refutes-neutral-independent-preservation
   to obtain False. The new proof uses a specified positive index-1/2 Lévy law and an intermediate symmetric
@@ -29,7 +29,7 @@ sources:
   of a stable-distribution obstruction'
 - Zachary Goodsell, Unbounded Utility and Background Risk, 5 June 2026, unpublished manuscript marked “do not
   cite” and erroneous; §4, pp. 10–14 (withdrawn consistency argument)
-- 'GPT-6 (Codex), 9 September 2026, writeups/levy-refutes-neutral-independent-preservation.md: complete reduced-premise
+- 'GPT-6 (Codex), prompted by Zachary Goodsell, 9 September 2026, writeups/levy-refutes-neutral-independent-preservation.md: complete reduced-premise
   proof of Goodsell’s stable-law obstruction.'
 source_names:
 - Goodsell proposal 9 Sep

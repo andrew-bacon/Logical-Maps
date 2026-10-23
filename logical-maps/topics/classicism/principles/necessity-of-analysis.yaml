@@ -1,0 +1,52 @@
+id: necessity-of-analysis
+name: Necessity of Analysis
+category: mathematical-contingency
+statement: >-
+  Every first-order analytical sentence is either true in every real number structure in every possible
+  world or false in every real number structure in every possible world. One sentence for each type
+  $\sigma$ and each first-order analytical sentence.
+formal: >-
+  $\Box\forall\mathfrak R\, .\,\operatorname{Real}_\sigma(\mathfrak R)\to A(\mathfrak R)\;\lor\;
+  \Box\forall\mathfrak R\, .\,\operatorname{Real}_\sigma(\mathfrak R)\to\neg A(\mathfrak R)\quad
+  (A\text{ a first-order analytical sentence})$
+definitions: >-
+  See Background, Analysis: a real number structure at $\sigma$ is a complete ordered field on a property
+  of type $\sigma t$ together with its natural numbers $N$, and a first-order analytical sentence is built
+  from the field relations, $N$ and identity, with quantifiers over the field's elements. Any two real
+  number structures are isomorphic in the non-modal fragment, so within a world all of them agree on
+  $A$; the schema says that the worlds with a continuum agree too. It quantifies over all real number
+  structures rather than fixing the reals as rigid properties of numbers, so it assumes neither Rigid
+  Comprehension nor choice, and its instances at a type with no real number structure in any world are
+  trivially true.
+date: '2026-10-23'
+sources:
+- Andrew Bacon, Could the truths of mathematics have been different?, draft of 9 October 2025, §5, p. 20,
+  the schema The Necessity of Analysis, and n. 49.
+- Neil Barton and Zachary Goodsell, Continuum Contingency, draft of 14 October 2026, §5.7 (analytical
+  sentences) and §5.9, Theorem 7.
+source_names:
+- Could mathematics have been different?
+- Continuum Contingency
+references:
+- paper: bacon-mathematical-contingency
+  role: origin
+  locator: §5, p. 20; n. 49; Theorems 5.1 and 5.2, Corollary 5.1
+  note: Bacon's schema, with his first-order real number structures, which carry the naturals predicate.
+    Without $N$ the first-order language is that of real closed fields, and Tarski's elimination of
+    quantifiers makes every instance a theorem (n. 49); with it the first-order analytical sentences have
+    the strength of second-order arithmetic.
+- paper: barton-goodsell-continuum-contingency
+  role: related
+  locator: §5.7; §5.9, Theorem 7
+  note: Their first-order analytical sentences quantify over the rigid properties of natural numbers, the
+    reals of their setting with Rigid Comprehension; under Rigid Comprehension the two readings agree.
+notes: >-
+  The sentence-level counterpart of Analytic Necessitism, which implies it
+  ([[analytic-necessitism-implies-necessity-of-analysis]]); weaker than Necessity of Second-Order
+  Analysis, which covers the continuum hypothesis. Whether C5 proves it is open: the proof of
+  [[c5-implies-necessity-of-arithmetic]] uses BF at the type of numbers, and nothing comparable controls
+  new extensions of properties of numbers, over which first-order analytical sentences quantify through
+  the reals. It fails in a stitched forcing model whose ground model satisfies $V=L$, where "every real
+  is constructible" changes truth value; over a ground model with enough large cardinals projective truth
+  is forcing-invariant, so such a model keeps this principle while refuting Analytic Necessitism. Neither
+  variant is recorded yet.

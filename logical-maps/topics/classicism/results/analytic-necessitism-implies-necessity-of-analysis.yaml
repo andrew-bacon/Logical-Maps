@@ -1,0 +1,53 @@
+id: analytic-necessitism-implies-necessity-of-analysis
+premises:
+- analytic-necessitism
+conclusion: necessity-of-analysis
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 23 October 2026, after Theorem 7 of Barton and Goodsell's
+    Continuum Contingency and Lemmas C.1 and C.3 of Bacon's Could the truths of mathematics have been
+    different?
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 23 October 2026
+  checked_by: []
+  date: '2026-10-23'
+  lean: none
+sources:
+- Neil Barton and Zachary Goodsell, Continuum Contingency, draft of 14 October 2026, §5.9, Theorem 7, whose
+  induction this runs on an arbitrary rigid real number structure instead of the rigid properties of
+  naturals.
+- Andrew Bacon, Could the truths of mathematics have been different?, draft of 9 October 2025, Appendix
+  C.1, Lemma C.1, and Appendix C.2, Lemma C.3 (categoricity across structures and types).
+- Original composition of 23 October 2026, written out in the write-up.
+source_names:
+- Continuum Contingency
+- Could mathematics have been different?
+- Claude Fable 5.1 23 Oct
+references:
+- paper: barton-goodsell-continuum-contingency
+  role: proof
+  locator: §5.9, Theorem 7
+  note: The induction on analytical formulas, there for the reals as rigid properties of naturals under
+    Rigid Comprehension; here the quantifier restrictor is the given rigid structure's domain.
+- paper: bacon-mathematical-contingency
+  role: proof
+  locator: Appendix C.2, Lemma C.3; Appendix C.1, Lemma C.1
+  note: Huntington's theorem with the invariance of analytical sentences under isomorphism, which turns the
+    non-contingency of the given structure's truths into the schema over all real number structures.
+proof: >-
+  See the write-up. If no real number structure at $\sigma$ is possible, both disjuncts of the instance
+  hold vacuously. Otherwise Analytic Necessitism gives a rigid real number structure $\mathfrak R$ with
+  necessarily distinct elements and $\Box\operatorname{Real}_\sigma(\mathfrak R)$. By induction on
+  first-order analytical formulas with parameters from $X$, each is necessary if true and impossible if
+  false at those parameters: atomic facts by the persistence of the rigid relations and, for their
+  negations, by inextensibility applied to the relation of differing from the given tuple, which every
+  actual instance necessarily does; identity by the necessity of identity and necessary distinctness;
+  connectives in C; a universal quantifier over $X$ by inextensibility of $X$ at the matrix, and its
+  negation by persistence. So $\Box A(\mathfrak R)$ or $\Box\neg A(\mathfrak R)$. Necessarily every real
+  number structure at $\sigma$ is isomorphic to $\mathfrak R$ and agrees with it on $A$ (Huntington's
+  theorem and isomorphism invariance, theorems of the non-modal fragment), which gives the disjunct.
+notes: >-
+  Uses K, T and 4 only, through the boxes carried by persistence and inextensibility; neither B, BF,
+  Rigid Comprehension nor choice. The rigidity of $\le$, $+$, $\times$ and $N$ is used in the atomic
+  case, and the necessary distinctness of the elements for the negative atomic facts; the second-order
+  case is [[second-order-analytic-necessitism-implies-necessity-of-second-order-analysis]].

@@ -4,7 +4,7 @@ certificate:
   source_id: misc
   produced_by: Cian Dorr, 19 October 2026 (the construction), with Claude Opus 5.5 (Anthropic), who added
     the condition that transports land in the component domains and wrote the verification
-  recorded_by: Claude Opus 5.5 (Anthropic), 19 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 19 October 2026
   checked_by: []
   date: '2026-10-19'
   lean: stated

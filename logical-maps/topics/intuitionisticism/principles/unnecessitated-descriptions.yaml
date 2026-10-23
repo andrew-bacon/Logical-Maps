@@ -6,7 +6,7 @@ formal: |-
   For every $\sigma ,\tau : \forall R:\sigma \tau t. ((\forall x:\sigma . \exists !y:\tau . R x y) \to \exists f:\sigma \tau . \forall x:\sigma . R x (f x))$
 category: higher-order
 sources:
-- Codex (GPT-6), connecting-principle formulation, 2026-09-13.
+- Codex (GPT-6), prompted by Zachary Goodsell, connecting-principle formulation, 2026-09-13.
 - Zachary Goodsell, Possibility in Intuitionistic Higher-Order Logic (21 August 2026), §7.1, Eq. (86),
   p. 46.
 source_names:

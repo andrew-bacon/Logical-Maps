@@ -106,7 +106,7 @@ status: conjectured
 certificate:
   source_id: misc
   lean: none
-  produced_by: "Name of the person or agent proposing this claim"
+  produced_by: "Name of the person proposing this claim, or the agent and who prompted it"
   checked_by: []
 proof: ""
 sources: ["Identify the proposal or original argument here."]
@@ -139,7 +139,7 @@ status: conjectured
 certificate:
   source_id: misc
   lean: none
-  produced_by: "Name of the proposer"
+  produced_by: "Name of the proposer, or the agent and who prompted it"
   checked_by: []
 sources: ["Identify the proposed construction here."]
 source_names: [Original proposal]

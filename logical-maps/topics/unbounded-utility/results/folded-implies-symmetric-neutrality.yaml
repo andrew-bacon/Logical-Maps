@@ -10,7 +10,7 @@ certificate:
   produced_by: Zachary Goodsell (cited paper)
   checked_by: []
   date: '2026-09-08'
-  recorded_by: GPT-6 (Codex), 2026-09-08; transcription and random-variable formulation
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-08; transcription and random-variable formulation
 proof: |-
   For a symmetric real $\operatorname{law}, h_X(t)=0$ almost everywhere, so $F(X)=0$. The zero constant also has folded value zero; apply Folded Expectation.
 sources:

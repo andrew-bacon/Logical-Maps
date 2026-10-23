@@ -11,7 +11,7 @@ certificate:
   produced_by: Cian Dorr (the construction, with Rigid Comprehension), 3 October 2026; restriction to
     atoms, atom-wise uniqueness argument and weakening to Weak Rigid Comprehension by Claude Opus 5.5
     (Anthropic), 3 October 2026
-  recorded_by: Claude Opus 5.5 (Anthropic), 3 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 3 October 2026
   checked_by: []
   date: '2026-10-03'
   lean: verified

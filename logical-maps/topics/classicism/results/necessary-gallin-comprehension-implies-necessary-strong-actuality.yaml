@@ -5,8 +5,8 @@ conclusion: necessary-strong-actuality
 status: proved
 certificate:
   source_id: misc
-  produced_by: Claude Opus 5.5 (Anthropic), 9 October 2026, necessitating the unboxed argument
-  recorded_by: Claude Opus 5.5 (Anthropic), 9 October 2026
+  produced_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 9 October 2026, necessitating the unboxed argument
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 9 October 2026
   checked_by: []
   date: '2026-10-09'
   lean: verified

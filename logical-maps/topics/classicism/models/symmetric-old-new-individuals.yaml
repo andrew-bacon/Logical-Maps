@@ -2,13 +2,13 @@ id: symmetric-old-new-individuals
 name: 'Symmetric ideally-full model: old and new individuals'
 certificate:
   source_id: misc
-  produced_by: Claude Fable 5.1 (Anthropic), 6 October 2026, in a session with Cian Dorr; further verdicts
+  produced_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 6 October 2026, in a session with Cian Dorr; further verdicts
     by Claude Opus 5.5 (Anthropic), the same day
-  recorded_by: Claude Opus 5.5 (Anthropic), 6 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 6 October 2026
   checked_by: []
   date: '2026-10-06'
 sources:
-- Claude Fable 5.1 (Anthropic), 6 October 2026, in a session with Cian Dorr, as a countermodel to a principle
+- Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 6 October 2026, in a session with Cian Dorr, as a countermodel to a principle
   (“Frex*”) from another context; it satisfies □Strong Actuality and refutes Inextensible Comprehension.
 - Claude Opus 5.5 (Anthropic), 6 October 2026, at Cian Dorr's direction; the corrected argument for the
   failure of Inextensible Comprehension, and the verdicts on ND, Atomicity, Boolean Completeness, BF and
@@ -48,7 +48,7 @@ meets:
 arguments:
 - holds:
   - necessary-strong-actuality
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   date: '2026-10-06'
   writeup: symmetric-old-new-individuals
   text: 'At $E$ the arrows to $E$ form a true strong world: along an arrow to $E$ it becomes itself, along

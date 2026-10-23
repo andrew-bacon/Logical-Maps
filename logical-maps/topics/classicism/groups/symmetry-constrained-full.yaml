@@ -254,7 +254,7 @@ arguments:
 - id: strong-leibniz-t
   when: {objects: one}
   fails: [strong-leibniz-t]
-  by: Claude Opus 5.5 (Anthropic), from Cian Dorr's observation
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, from Cian Dorr's observation
   date: '2026-10-08'
   text: >-
     The constant maps form one orbit of the symmetry group, so the proposition $C$ that the arrow is

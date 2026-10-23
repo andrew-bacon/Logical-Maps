@@ -2,7 +2,7 @@ id: relational-choice-full-boxed
 requires: [full-action-model]
 choice: uses
 holds: [necessary-relational-choice-r]
-by: Claude Fable 5.1 (Anthropic)
+by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
 date: '2026-09-22'
 text: >-
   The truncation of a full action model at any arrow is again a full action model, its domains at

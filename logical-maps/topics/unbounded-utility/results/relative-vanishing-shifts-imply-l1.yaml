@@ -8,8 +8,8 @@ status: proved
 certificate:
   source_id: misc
   lean: stated
-  produced_by: GPT-6 (Codex)
-  recorded_by: GPT-6 (Codex), 2026-09-09
+  produced_by: GPT-6 (Codex), prompted by Zachary Goodsell
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-09
   checked_by: []
   date: '2026-09-09'
 proof: |-

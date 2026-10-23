@@ -1,0 +1,42 @@
+id: arithmetic-necessitism
+name: Arithmetic Necessitism
+category: mathematical-contingency
+statement: >-
+  Given that necessarily zero is not a successor and successor is injective on numbers, the numbers at
+  $\sigma$ form a rigid property with necessarily distinct instances. One sentence for each type $\sigma$.
+formal: >-
+  $\Box I^*_\sigma\to\operatorname{Rigid}(\mathbb N_\sigma)\land
+  \forall m\,n\in\mathbb N_\sigma\, .\,m\ne n\to\Box\,m\ne n$
+definitions: >-
+  See Background for $I^*_\sigma$, $\mathbb N_\sigma$ and $\operatorname{Rigid}$. The numbers are the
+  finite cardinalities of properties of type $\sigma$, so, unlike Analytic Necessitism, no existential
+  quantifier over structures is needed: the principle is about the canonical numbers themselves. The
+  antecedent is Barton and Goodsell's axiom of Infinity at $\sigma$, eq. (22); where it fails the
+  instance is trivial.
+date: '2026-10-23'
+aliases:
+- First-Order Arithmetic Necessitism (Barton and Goodsell 2026)
+sources:
+- Neil Barton and Zachary Goodsell, Continuum Contingency, draft of 14 October 2026, §5.8, eq. (29), and
+  Theorem 3, there attributed to Goodsell 2021.
+- Zachary Goodsell, Arithmetic is Necessary, draft of 5 June 2024, for the numbers as finite cardinalities.
+source_names:
+- Continuum Contingency
+- Arithmetic is Necessary
+references:
+- paper: barton-goodsell-continuum-contingency
+  role: origin
+  locator: §5.8, eq. (29); Theorem 3
+  note: Their First-Order Arithmetic Necessitism, with the naturals as the Fregean numerical relations on
+    properties of individuals; the map's numbers at $\sigma=e$ are those cardinalities.
+- paper: goodsell-arithmetic-necessary
+  role: formulation
+  note: The numbers $\mathbb N_\sigma$, $\mathbf 0_\sigma$, $\operatorname{Suc}_\sigma$ and $I^*_\sigma$.
+notes: >-
+  The entity-level counterpart of the Necessity of Arithmetic: not only are the truths of arithmetic
+  fixed, the numbers are a necessary existent with fixed membership. Provable with □Rigid Comprehension
+  ([[necessary-rigid-comprehension-implies-arithmetic-necessitism]], Barton and Goodsell's Theorem 3).
+  The Necessity of Arithmetic holds in C5 ([[c5-implies-necessity-of-arithmetic]]); whether C5 gives this
+  principle is open. What could fail is inextensibility: numbers are necessarily numbers in C, but at a
+  world where no property has exactly the numerals as its extension, $\mathbb N_\sigma$, the least
+  inductive property, gains members there.

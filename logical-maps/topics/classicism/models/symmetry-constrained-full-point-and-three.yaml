@@ -2,7 +2,7 @@ id: symmetry-constrained-full-point-and-three
 name: 'Symmetry-constrained full model: a one-point object and all maps to three individuals'
 certificate:
   source_id: misc
-  produced_by: Claude Opus 5.5 (Anthropic), 16 October 2026, from Cian Dorr's suggestion that a
+  produced_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 16 October 2026, from Cian Dorr's suggestion that a
     symmetry-constrained full model would witness the consistency premise of
     maximalism-incompatible-with-intensional-choice
   recorded_by: Claude Opus 5.5 (Anthropic), 16 October 2026, at Cian Dorr's direction
@@ -10,7 +10,7 @@ certificate:
   date: '2026-10-16'
   lean: stated
 sources:
-- Claude Opus 5.5 (Anthropic), construction and verification of 16 October 2026, on Cian Dorr's
+- Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, construction and verification of 16 October 2026, on Cian Dorr's
   suggestion.
 - Cian Dorr, Boolean Completeness does not imply Rigid Comprehension, draft of 30 July 2026, Definitions
   15–18, p. 8, and Proposition 20.

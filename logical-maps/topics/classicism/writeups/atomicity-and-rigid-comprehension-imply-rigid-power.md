@@ -1,6 +1,6 @@
 # Atomicity and Rigid Comprehension imply Rigid Power
 
-Composed by Claude Fable 5.1 (Anthropic), 19 October 2026, from Lemma C.6 of Andrew Bacon,
+Composed by Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 19 October 2026, from Lemma C.6 of Andrew Bacon,
 *Could the truths of mathematics have been different?* (draft of 9 October 2025, Appendix C.2,
 pp. 15–16 of the separately paginated appendix), and the lemma, from Christopher Sun's *Possible
 Worlds Without Atomicity*, that coextensive weakly rigid relations are identical (the proof of

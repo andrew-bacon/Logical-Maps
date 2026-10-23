@@ -20,7 +20,7 @@ notes: >-
   does not yet witness with a model.
 changes:
 - date: '2026-09-19'
-  by: Claude Opus 5 (Anthropic)
+  by: Claude Opus 5 (Anthropic), prompted by Cian Dorr
   summary: >-
     Renamed from “Infinity (type e)” to mark it as the schema, now that the quantified Axiom of Infinity
     (type e) is recorded separately. The id, the statement and every connection are unchanged.

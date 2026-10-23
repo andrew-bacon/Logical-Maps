@@ -28,7 +28,7 @@ certificate:
   lean: none
   produced_by: Zachary Goodsell (construction and source non-implication); GPT-6 (Codex) (explicit specialization
     and additional property calculations)
-  recorded_by: GPT-6 (Codex), 2026-09-09
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-09
   checked_by: []
   date: '2026-09-09'
 description: |-
@@ -37,13 +37,13 @@ sources:
 - Zachary Goodsell, Symmetries of value, Noûs 60 (2026), 16–37; DOI 10.1111/nous.12549, Theorem 1, p.
   24. Already states the failure of affine-symmetry implications under DTU, including with L¹ Continuity
   and Relative Expectation, and cites Decision theory unbound, Remark 3, for the reflection countermodel.
-- GPT-6 (Codex), explicit source-model specialization and additional calculations, 9 September 2026; writeups/asymmetric-continuous-ultrafilter.md,
+- GPT-6 (Codex), prompted by Zachary Goodsell, explicit source-model specialization and additional calculations, 9 September 2026; writeups/asymmetric-continuous-ultrafilter.md,
   in response to Zachary Goodsell's request to investigate consequences and countermodels from DU.
 - Zachary Goodsell, Decision theory unbound, Noûs 58 (2024), 669–695; online 2023; DOI 10.1111/nous.12473,
   Appendix B, Definition 3, Lemma 6 and proof of Theorem 3, pp. 691–692; Remark 3 and Corollary 3, pp.
   692–693. Source of the clipped-expectation ultrafilter, continuous quotient, and asymmetric-cutoff strategy,
   including the possibility of assigning nonzero values to symmetric gambles.
-- 'Claude (Fable 5.1), Logical Maps, 23 September 2026: failure of Comonotonic Sum Invariance (half-Cauchy common summand) in writeups/asymmetric-continuous-ultrafilter.md; diagnostic checks/comonotonic_witnesses.py.'
+- 'Claude (Fable 5.1), prompted by Zachary Goodsell, Logical Maps, 23 September 2026: failure of Comonotonic Sum Invariance (half-Cauchy common summand) in writeups/asymmetric-continuous-ultrafilter.md; diagnostic checks/comonotonic_witnesses.py.'
 - 'AI-generated report communicated by Branden Fitelson, Unbounded Utility: Five Top-Ranked Open Conjectures
   Resolved, 30 September 2026, §4(b), p. 3. AI (Claude agents; model versions unspecified), communicated
   by Branden Fitelson. Proof expanded and informally checked by GPT-6 (Codex), 2 October 2026.'
@@ -61,19 +61,19 @@ checks:
 - topics/unbounded-utility/checks/fitelson_report.py
 changes:
 - date: '2026-09-23'
-  by: Claude (Fable 5.1)
+  by: Claude (Fable 5.1), prompted by Zachary Goodsell
   summary: >-
     Comonotonic Sum Invariance shown to fail (write-up section “Failure of Comonotonic Sum Invariance”). Y = C − ln(2)/π is indifferent to sure 0, but with the common comonotonic summand Z = max(C,0) the clipped gap between 0 + Z and Y + Z tends to (2 ln 2)/π, so 0 + Z ≻ Y + Z.
   violates:
   - comonotonic-sum-consistency
 - date: '2026-09-24'
-  by: Claude (Fable 5.1)
+  by: Claude (Fable 5.1), prompted by Zachary Goodsell
   summary: >-
     Uniqueness of Negative Self-Similarity (integer ratios) shown to fail: the recorded uniqueness witness uses p = 1/2, a = 2, b = 0 and Z = 0, with C₁ ≻ 0 both fixed values.
   violates:
   - integer-negative-self-similarity
 - date: '2026-10-02'
-  by: AI (Claude agents; model versions unspecified), communicated by Branden Fitelson; GPT-6 (Codex),
+  by: AI (Claude agents; model versions unspecified), communicated by Branden Fitelson; GPT-6 (Codex), prompted by Zachary Goodsell,
     proof expansion and informal verification, 2026-10-02
   summary: 'A single copula exchanging adjacent quarters works for every marginal pair: on each quarter
     one quantile is bounded, so dominated convergence makes clipped addition additive up to an error tending
@@ -81,10 +81,10 @@ changes:
     original construction attribution and date are preserved. The previous record was Lean stated; the
     expanded statement is not Lean-checked.'
 - date: '2026-10-03'
-  by: GPT-6 (Codex), classification of the previously recorded AI shuffle proof communicated by Branden Fitelson
+  by: GPT-6 (Codex), prompted by Zachary Goodsell, classification of the previously recorded AI shuffle proof communicated by Branden Fitelson
   summary: 'The same fixed adjacent-quarter shuffle is nonindependent: its joint CDF at (1/4,1/4) is zero rather than 1/16. The existing full invariance proof therefore also verifies Existential Nonindependent Copula Sum Invariance; no new construction or original-author attribution is claimed.'
 - date: '2026-10-11'
-  by: Claude (Fable 5.1)
+  by: Claude (Fable 5.1), prompted by Zachary Goodsell
   summary: >-
     The two existential copula principles were removed from the map, so their flags are retired here; the fixed quarter-shuffle argument in the write-up remains as history. Uninteractive Sum Invariance is now derived for this model from its Relative Expectation, Mixture Independence and Stochastic Equivalence flags by the recorded result relative-independence-equivalence-imply-uninteractive-sum.
 references:

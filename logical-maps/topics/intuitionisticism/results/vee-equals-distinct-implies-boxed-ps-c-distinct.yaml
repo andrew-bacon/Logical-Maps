@@ -6,14 +6,14 @@ status: proved
 certificate:
   source_id: misc
   lean: none
-  produced_by: Codex (GPT-6), connecting proof
-  recorded_by: Codex (GPT-6)
+  produced_by: Codex (GPT-6), prompted by Zachary Goodsell, connecting proof
+  recorded_by: Codex (GPT-6), prompted by Zachary Goodsell
   checked_by: []
   date: '2026-09-13'
 proof: |-
   Theorem 6 proves $\Box \operatorname{PSc}(\Diamond _\lor )$. Substitute the selected identity $\Diamond _\lor =(\ne \bot )$ inside that whole boxed sentence by Leibniz’s Law.
 sources:
-- Codex (GPT-6), connecting proof vee-equals-distinct-implies-boxed-ps-c-distinct, 2026-09-13.
+- Codex (GPT-6), prompted by Zachary Goodsell, connecting proof vee-equals-distinct-implies-boxed-ps-c-distinct, 2026-09-13.
 - Zachary Goodsell, Possibility in Intuitionistic Higher-Order Logic (21 August 2026), §§4.2–4.5, pp.
   18–27 (definitions/background).
 source_names:

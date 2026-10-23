@@ -6,14 +6,14 @@ status: proved
 certificate:
   source_id: misc
   lean: none
-  produced_by: Codex (GPT-6), 13 September 2026
-  recorded_by: Codex (GPT-6), manuscript transcription
+  produced_by: Codex (GPT-6), prompted by Zachary Goodsell, 13 September 2026
+  recorded_by: Codex (GPT-6), prompted by Zachary Goodsell, manuscript transcription
   checked_by: []
   date: '2026-09-13'
 proof: |-
   The paired PSd theorem for $\Box _{2},\Diamond _{2}$ is proved in II. Substitute the selected operator identity $\Box _{2}=\Box$ into this entire quantified sentence using Leibniz’s Law. Both occurrences of the paired necessity become $\Box$, giving the original absolute-necessity PSd condition for $\Diamond _{2}$.
 sources:
-- Codex (GPT-6), connecting proof recorded 13 September 2026 in necessities-equal-gives-absolute-ps-d-two.
+- Codex (GPT-6), prompted by Zachary Goodsell, connecting proof recorded 13 September 2026 in necessities-equal-gives-absolute-ps-d-two.
 - Zachary Goodsell, Possibility in Intuitionistic Higher-Order Logic (21 August 2026), §4.5, Theorems
   14–18, pp. 25–27.
 source_names:

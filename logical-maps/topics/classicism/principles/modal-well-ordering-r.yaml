@@ -24,6 +24,6 @@ changes:
   summary: □Modal Well-Ordering retired, since Modal Well-Ordering implies it by 4; its result giving
     □Intensional Choice now starts from Modal Well-Ordering.
 - date: '2026-10-19'
-  by: Claude Opus 5.5 (Anthropic)
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   summary: 'At Cian Dorr’s request: definitions of its technical terms added.'
 lean_def: Classicism.P.ModalWellOrdering.schemaIn

@@ -14,12 +14,12 @@ certificate:
   produced_by: Zachary Goodsell (claim) and Claude (Fable 5.1) (reduction to cancellation and obstruction analysis), 2026-09-24
   checked_by: []
   date: '2026-09-24'
-  recorded_by: Claude (Fable 5.1), 2026-09-24
+  recorded_by: Claude (Fable 5.1), prompted by Zachary Goodsell, 2026-09-24
 proof: ''
 sources:
 - 'Zachary Goodsell, Logical Maps session, 24 September 2026: claim that under DU Comonotonic Sum Invariance preserves
   weak and strict order under positive rational affine maps.'
-- 'Claude (Fable 5.1), Logical Maps, 24 September 2026: the integer case comonotonic-sum-implies-integer-affine-preservation
+- 'Claude (Fable 5.1), prompted by Zachary Goodsell, Logical Maps, 24 September 2026: the integer case comonotonic-sum-implies-integer-affine-preservation
   and the reduction of the remainder to integer cancellation; the unit-threshold model shows Mixture Independence
   is needed.'
 source_names:

@@ -1,6 +1,6 @@
 # ⊤ ⇒ T (□)
 
-<p class='cert'>Result — Source: The Broadest Necessity; produced by Andrew Bacon; intuitionistic proof as presented by Zachary Goodsell; recorded by Codex (GPT-6), manuscript transcription.</p>
+<p class='cert'>Result — Source: The Broadest Necessity; produced by Andrew Bacon; intuitionistic proof as presented by Zachary Goodsell; recorded by Codex (GPT-6), prompted by Zachary Goodsell, manuscript transcription.</p>
 
 ## Premises
 

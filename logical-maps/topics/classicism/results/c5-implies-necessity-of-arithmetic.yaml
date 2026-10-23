@@ -6,8 +6,8 @@ status: proved
 certificate:
   source_id: bacon-mathematical-contingency
   produced_by: Andrew Bacon (Theorem 4.4, through Proposition C.2 and Lemma C.1); transposed to the map's
-    formulation by Claude Fable 5.1 (Anthropic), 19 October 2026
-  recorded_by: Claude Fable 5.1 (Anthropic), 19 October 2026
+    formulation by Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 19 October 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 19 October 2026
   checked_by: []
   date: '2026-10-19'
   lean: verified

@@ -6,8 +6,8 @@ status: proved
 certificate:
   source_id: misc
   lean: none
-  produced_by: Codex (GPT-6), connecting proof
-  recorded_by: Codex (GPT-6)
+  produced_by: Codex (GPT-6), prompted by Zachary Goodsell, connecting proof
+  recorded_by: Codex (GPT-6), prompted by Zachary Goodsell
   checked_by: []
   date: '2026-09-13'
 proof: |-
@@ -15,7 +15,7 @@ proof: |-
 
   This proves the closed implication $E\to \operatorname{PSd}(\Diamond _\lor )$. Identity implies its own $\Box$ by substituting equals into the reflexivity theorem, so $E\to \Box E$. Necessitate the closed implication and apply K to obtain $\Box \operatorname{PSd}(\Diamond _\lor )$.
 sources:
-- Codex (GPT-6), connecting proof necessities-equal-implies-boxed-ps-d-vee, 2026-09-13.
+- Codex (GPT-6), prompted by Zachary Goodsell, connecting proof necessities-equal-implies-boxed-ps-d-vee, 2026-09-13.
 - Zachary Goodsell, Possibility in Intuitionistic Higher-Order Logic (21 August 2026), §§4.2–4.5, pp.
   18–27 (definitions/background).
 source_names:

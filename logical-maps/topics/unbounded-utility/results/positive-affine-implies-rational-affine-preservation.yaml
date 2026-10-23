@@ -10,7 +10,7 @@ certificate:
   checked_by:
   - GPT-6 (Codex), informal mathematical review, 2026-09-25; weak and strict preservation and common chart scope
   date: '2026-09-25'
-  recorded_by: DeepSeek (deepseek-flash), 2026-09-25; curated and attribution corrected by GPT-6 (Codex), 2026-09-25
+  recorded_by: DeepSeek (deepseek-flash), 2026-09-25; curated and attribution corrected by GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-25
 
   trawl:
     quarantine_id: quarantine-0113be29928e4d2fbf33c5d150b87c73
@@ -104,7 +104,7 @@ certificate:
     admission:
       id: admission-89ba44a12e494abd93251f7c762eb26b
       at: '2026-09-25T12:59:35.164588+00:00'
-      by: GPT-6 (Codex)
+      by: GPT-6 (Codex), prompted by Zachary Goodsell
       base_commit: 7c928c4eb396a15e2b0b0226e4e753898870e7ca
       candidate_sha256: 73a897931c276776a05614c06b0aac53ac94adb27374457b0119a653a4441805
       review_id: review-efb0a17ef88845e0be4e03df2f93c5bb
@@ -120,7 +120,7 @@ proof: |-
   quantified over by Positive Affine Invariance. No additional assumption is
   required.
 sources:
-- 'DeepSeek (deepseek-flash), theorem trawl, 25 September 2026: omitted definitional bridge proposed in checkpoint-4efdb29afea94da583b8df9975e053e4; actual model and edit time established by the runner audit. Informally reviewed and curated by GPT-6 (Codex), 25 September 2026.'
+- 'DeepSeek (deepseek-flash), theorem trawl, 25 September 2026: omitted definitional bridge proposed in checkpoint-4efdb29afea94da583b8df9975e053e4; actual model and edit time established by the runner audit. Informally reviewed and curated by GPT-6 (Codex), prompted by Zachary Goodsell, 25 September 2026.'
 - 'Logical Maps principle records positive-affine-invariance and rational-affine-preservation, statements and utility-chart scope; direct definitions used in this proof.'
 source_names:
 - DeepSeek trawl; GPT-6 review 25 Sep

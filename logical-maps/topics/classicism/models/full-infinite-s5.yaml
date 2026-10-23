@@ -3,7 +3,7 @@ name: 'Full action model: infinite S5'
 certificate:
   source_id: misc
   produced_by: Cian Dorr, 7 October 2026
-  recorded_by: Claude Opus 5.5 (Anthropic), 7 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 7 October 2026
   checked_by: []
   date: '2026-10-07'
 sources:
@@ -70,7 +70,7 @@ arguments:
 - fails: [intensional-choice-r, relational-choice-r]
   when: {metatheory: socks}
   choice: free
-  by: Claude Opus 5.5 (Anthropic), after Cian Dorr's construction of 7 October 2026
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, after Cian Dorr's construction of 7 October 2026
   date: '2026-10-08'
   text: >-
     At type $t$, with the worlds the union $W$ of the socks. The propositions at a world are the

@@ -1,6 +1,6 @@
 # ⊤ ⇒ Modalized functionality
 
-<p class='cert'>Result — Source: Classicism; produced by Andrew Bacon and Cian Dorr (modalized-functionality result, as credited by Goodsell); Codex (GPT-6), alternative syntactic proof; recorded by Codex (GPT-6).</p>
+<p class='cert'>Result — Source: Classicism; produced by Andrew Bacon and Cian Dorr (modalized-functionality result, as credited by Goodsell); Codex (GPT-6), prompted by Zachary Goodsell, alternative syntactic proof; recorded by Codex (GPT-6), prompted by Zachary Goodsell.</p>
 
 ## Premises
 

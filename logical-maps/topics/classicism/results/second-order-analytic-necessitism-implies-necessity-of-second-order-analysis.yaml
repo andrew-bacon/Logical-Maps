@@ -1,0 +1,48 @@
+id: second-order-analytic-necessitism-implies-necessity-of-second-order-analysis
+premises:
+- second-order-analytic-necessitism
+conclusion: necessity-of-second-order-analysis
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 23 October 2026, after Theorem 7 of Barton and Goodsell's
+    Continuum Contingency and Lemmas C.1 and C.3 and Proposition C.3 of Bacon's Could the truths of mathematics have been
+    different?
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 23 October 2026
+  checked_by: []
+  date: '2026-10-23'
+  lean: none
+sources:
+- Neil Barton and Zachary Goodsell, Continuum Contingency, draft of 14 October 2026, §5.9, Theorem 7, the
+  second-order case.
+- Andrew Bacon, Could the truths of mathematics have been different?, draft of 9 October 2025, Appendix
+  C.2, Proposition C.3 (Analytic Extensionality) and Lemma C.3.
+- Original composition of 23 October 2026, written out in the write-up.
+source_names:
+- Continuum Contingency
+- Could mathematics have been different?
+- Claude Fable 5.1 23 Oct
+references:
+- paper: barton-goodsell-continuum-contingency
+  role: proof
+  locator: §5.9, Theorem 7
+- paper: bacon-mathematical-contingency
+  role: proof
+  locator: Appendix C.2, Proposition C.3 and Lemma C.3
+  note: Analytical formulas do not distinguish relations that agree on the structure's elements, which
+    lets the represented powers stand in for all relations; and categoricity across structures.
+proof: >-
+  See the write-up. Take the rigid structure $\mathfrak R$ and represented powers
+  $\mathcal P_1,\dots,\mathcal P_n$ given by the premise for the arities occurring in the sentence $A$.
+  Extend the induction of analytic-necessitism-implies-necessity-of-analysis to second-order formulas
+  whose relation parameters are instances of the $\mathcal P_k$: such a parameter is rigid and holds only
+  of tuples from $X$, so its atomic facts are necessary if true and impossible if false as before; a
+  relation quantifier $\forall R\,\psi(R)$ is necessarily equivalent to $\forall R\in\mathcal P_k\,\psi(R)$,
+  because necessarily every relation agrees on $X$-tuples with an instance of $\mathcal P_k$ and $\psi$
+  cannot distinguish relations so agreeing (Analytic Extensionality), and the restricted quantifier is
+  handled by the rigidity of $\mathcal P_k$ as the quantifier over $X$ was. Categoricity for
+  second-order analytical sentences finishes as in the first-order case.
+notes: >-
+  Every second-order analytical sentence uses finitely many arities, so the instance of the premise with
+  $n$ the largest of them suffices. With [[necessity-of-second-order-analysis-implies-non-contingency-of-ch]]
+  this gives the Non-contingency of the Continuum Hypothesis from Second-Order Analytic Necessitism.

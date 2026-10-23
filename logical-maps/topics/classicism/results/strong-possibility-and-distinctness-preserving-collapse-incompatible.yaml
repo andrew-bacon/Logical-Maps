@@ -7,8 +7,8 @@ status: proved
 certificate:
   source_id: bacon-dorr-classicism
   produced_by: Andrew Bacon and Cian Dorr; stated as a result at Cian Dorr’s suggestion, 22 September
-    2026, with the proof written out by Claude Fable 5.1 (Anthropic)
-  recorded_by: Claude Fable 5.1 (Anthropic), 22 September 2026
+    2026, with the proof written out by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026
   checked_by: []
   date: '2026-09-22'
   lean: stated

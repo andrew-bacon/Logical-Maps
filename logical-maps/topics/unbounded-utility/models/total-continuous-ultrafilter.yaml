@@ -25,13 +25,13 @@ certificate:
   produced_by: Zachary Goodsell (cited paper); Claude (Fable 5.1) (failure of Comonotonic Sum Invariance, 23 September 2026)
   checked_by: []
   date: '2026-09-08'
-  recorded_by: GPT-6 (Codex), 2026-09-08; transcription and random-variable formulation
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-08; transcription and random-variable formulation
 description: |-
   Take all real-valued random variables and a cobounded ultrafilter U. Define $X\succeq Y$ iff for every $\epsilon >0, \{t:E[c_t(X)]\ge E[c_t(Y)]- \epsilon \}\in U$. This is the continuous-hyperreal quotient ordering in the proof of Theorem 3. Its EU, shift, reflection, and failed scale claims are given in Appendix B; see the accompanying write-up. Consequently Expected Utility does not imply Positive Affine Invariance, even with DTU.
 sources:
 - Goodsell, Decision theory unbound, Noûs 58 (2024), 669–695; online 2023; DOI 10.1111/nous.12473, Appendix
   B, Lemma 6 and proof of Theorem 3, p. 691; Theorems 7, 8 and 10, pp. 693–695
-- 'Claude (Fable 5.1), Logical Maps, 23 September 2026: failure of Comonotonic Sum Invariance (half-Cauchy common summand) in writeups/total-continuous-ultrafilter.md; diagnostic checks/comonotonic_witnesses.py.'
+- 'Claude (Fable 5.1), prompted by Zachary Goodsell, Logical Maps, 23 September 2026: failure of Comonotonic Sum Invariance (half-Cauchy common summand) in writeups/total-continuous-ultrafilter.md; diagnostic checks/comonotonic_witnesses.py.'
 - 'AI-generated report communicated by Branden Fitelson, Unbounded Utility: Five Top-Ranked Open Conjectures
   Resolved, 30 September 2026, §4(b), p. 3. AI (Claude agents; model versions unspecified), communicated
   by Branden Fitelson. Proof expanded and informally checked by GPT-6 (Codex), 2 October 2026.'
@@ -46,20 +46,20 @@ checks:
 - topics/unbounded-utility/checks/fitelson_report.py
 changes:
 - date: '2026-09-23'
-  by: Claude (Fable 5.1)
+  by: Claude (Fable 5.1), prompted by Zachary Goodsell
   summary: >-
     Comonotonic Sum Invariance shown to fail (write-up section “Failure of Comonotonic Sum Invariance”). A standard Cauchy C is indifferent to sure 0, but with the common comonotonic summand Z = max(C,0), C_+ = 0 + Z is strictly better than C + Z: the clipped gap is 2∫_{t/2}^{t} P(C>x)dx, positive for every t and tending to (2 ln 2)/π.
   violates:
   - comonotonic-sum-consistency
 - date: '2026-09-24'
-  by: Claude (Fable 5.1)
+  by: Claude (Fable 5.1), prompted by Zachary Goodsell
   summary: >-
     Rational Scale Invariance shown to fail with the same evidence as Scale Invariance: the source’s Theorem 10 (Decision theory unbound, pp. 693–695) compares μ with μ₂, the law of 2X, so the recorded scale failure is at the rational factor 2. Source-attributed, with the audit caveats of the scale flag; the factor was confirmed by the author in the Logical Maps session of 24 September 2026. The same doubling refutes Integer Affine Preservation: μ ≻ ν is not carried to 2μ ≽ 2ν.
   violates:
   - rational-scale-invariance
   - integer-affine-preservation
 - date: '2026-10-02'
-  by: AI (Claude agents; model versions unspecified), communicated by Branden Fitelson; GPT-6 (Codex),
+  by: AI (Claude agents; model versions unspecified), communicated by Branden Fitelson; GPT-6 (Codex), prompted by Zachary Goodsell,
     proof expansion and informal verification, 2026-10-02
   summary: 'A single copula exchanging adjacent quarters works for every marginal pair: on each quarter
     one quantile is bounded, so dominated convergence makes clipped addition additive up to an error tending
@@ -67,10 +67,10 @@ changes:
     original construction attribution and date are preserved. The previous record was Lean stated; the
     expanded statement is not Lean-checked.'
 - date: '2026-10-03'
-  by: GPT-6 (Codex), classification of the previously recorded AI shuffle proof communicated by Branden Fitelson
+  by: GPT-6 (Codex), prompted by Zachary Goodsell, classification of the previously recorded AI shuffle proof communicated by Branden Fitelson
   summary: 'The same fixed adjacent-quarter shuffle is nonindependent: its joint CDF at (1/4,1/4) is zero rather than 1/16. The existing full invariance proof therefore also verifies Existential Nonindependent Copula Sum Invariance; no new construction or original-author attribution is claimed.'
 - date: '2026-10-11'
-  by: Claude (Fable 5.1)
+  by: Claude (Fable 5.1), prompted by Zachary Goodsell
   summary: >-
     The two existential copula principles were removed from the map, so their flags are retired here; the fixed quarter-shuffle argument in the write-up remains as history. Uninteractive Sum Invariance is now derived for this model from its Relative Expectation, Mixture Independence and Stochastic Equivalence flags by the recorded result relative-independence-equivalence-imply-uninteractive-sum. Relative Expectation is flagged: for E|X − Y| < ∞ the clipped difference is bounded by |X − Y| and converges pointwise to X − Y, so v_X − v_Y → E[X − Y] by dominated convergence, and the tolerance-based comparison is decided by its sign (shared clipping proof, writeups/calibrated-geometric-continuous-ultrafilter.md, section “Area, relative expectation, continuity and shifts”).
   satisfies:

@@ -40,7 +40,7 @@ notes: 'The type $t$ instance of [[strong-leibniz-r]]. Broken out as its own pri
   strong-worlds-one-object-action-models proof and the full-idempotent-monoid change history.'
 changes:
 - date: '2026-10-19'
-  by: Claude Opus 5.5 (Anthropic)
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   summary: 'At Cian Dorr’s request: the statement now says what the principle says; the notes link to
     the unrestricted form; definitions of its technical terms added.'
 aliases:

@@ -4255,6 +4255,9 @@ def bundle_readme_md(topic_id: str, data: dict, an: dict) -> str:
          "- Use `misc` for original proofs, one-off prompts and user suggestions. Citing a paper's "
          "definitions does **not** make that paper the source of your new proof.",
          "- `produced_by` credits the mathematics; `recorded_by` credits transcription only.",
+         "- Name the person who prompted an AI beside it wherever it is credited, "
+         "`Claude Opus 5.5 (Anthropic), prompted by Cian Dorr`, even when they contributed nothing "
+         "substantive.",
          "- Leave `checked_by: []` unless a named person actually checked it. A human-authored "
          "source does not mean a human checked this database's translation of it.",
          "- Never invent an author, a date, a page or a submission label. If you are unsure of a "

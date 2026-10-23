@@ -28,11 +28,11 @@ aliases:
 - Leibniz Biconditionals (Bacon 2025)
 changes:
 - date: '2026-09-22'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Added the alias Weak Leibniz Biconditionals and a reference to Bacon’s 2024 book; the statement
     is unchanged.
 - date: '2026-10-19'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
   summary: Added the alias Leibniz Biconditionals (Bacon 2025). In Could the truths of mathematics have
     been different? (§5, p. 23; Appendix A.3, Figure 2) the Leibniz Biconditionals quantify over world
     relations in the unboxed sense, so they are this principle; the statement is unchanged.

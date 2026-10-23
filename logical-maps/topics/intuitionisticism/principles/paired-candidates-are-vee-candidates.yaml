@@ -6,7 +6,7 @@ formal: |-
   $\forall P:tt. \operatorname{Possibility}_{2}(P) \to \operatorname{Possibility}_\lor (P)$
 category: candidate-laws
 sources:
-- Codex (GPT-6), connecting-principle formulation, 2026-09-13.
+- Codex (GPT-6), prompted by Zachary Goodsell, connecting-principle formulation, 2026-09-13.
 - Zachary Goodsell, Possibility in Intuitionistic Higher-Order Logic (21 August 2026), §4.5, Eqs. (48)–(54),
   p. 25.
 source_names:

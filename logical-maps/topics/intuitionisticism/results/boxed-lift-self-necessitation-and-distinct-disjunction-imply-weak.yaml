@@ -7,8 +7,8 @@ status: proved
 certificate:
   source_id: misc
   lean: none
-  produced_by: Codex (GPT-6), connecting proof
-  recorded_by: Codex (GPT-6)
+  produced_by: Codex (GPT-6), prompted by Zachary Goodsell, connecting proof
+  recorded_by: Codex (GPT-6), prompted by Zachary Goodsell
   checked_by: []
   date: '2026-09-13'
 proof: The recorded proof self-necessitation-and-distinct-disjunction-imply-weak is an assumption-free
@@ -17,7 +17,7 @@ proof: The recorded proof self-necessitation-and-distinct-disjunction-imply-weak
   K once per premise to obtain the box of the entire conclusion. All object-language quantifiers stay
   inside their original boxes; no unboxed assumption is necessitated.
 sources:
-- Codex (GPT-6), connecting proof boxed-lift-self-necessitation-and-distinct-disjunction-imply-weak, 2026-09-13.
+- Codex (GPT-6), prompted by Zachary Goodsell, connecting proof boxed-lift-self-necessitation-and-distinct-disjunction-imply-weak, 2026-09-13.
 - Zachary Goodsell, Possibility in Intuitionistic Higher-Order Logic (21 August 2026), §§4.2–4.5, pp.
   18–27 (definitions/background).
 source_names:

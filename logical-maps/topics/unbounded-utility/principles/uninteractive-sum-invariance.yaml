@@ -9,7 +9,7 @@ tags:
 - background-risk
 sources:
 - 'Zachary Goodsell, Logical Maps session, 6 October 2026: proposed an invariance of the ordering under addition when the tails of the added variables avoid each other, as a simplification of the existential copula principles; formulated with the integrable-overlap condition and checked in the truncation ultrafilter models by Claude (Opus 5.5), 6 October 2026.'
-- 'Claude (Fable 5.1), Logical Maps session, 10–11 October 2026: equivalence with Relative Expectation under Mixture Independence and Stochastic Equivalence, recorded as relative-independence-equivalence-imply-uninteractive-sum and uninteractive-sum-equivalence-imply-relative.'
+- 'Claude (Fable 5.1), prompted by Zachary Goodsell, Logical Maps session, 10–11 October 2026: equivalence with Relative Expectation under Mixture Independence and Stochastic Equivalence, recorded as relative-independence-equivalence-imply-uninteractive-sum and uninteractive-sum-equivalence-imply-relative.'
 source_names:
 - Goodsell uninteractive addition proposal 6 Oct
 - Claude RET equivalence 10–11 Oct

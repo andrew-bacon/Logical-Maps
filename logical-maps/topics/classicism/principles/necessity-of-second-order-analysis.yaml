@@ -1,0 +1,43 @@
+id: necessity-of-second-order-analysis
+name: Necessity of Second-Order Analysis
+category: mathematical-contingency
+statement: >-
+  Every second-order analytical sentence is either true in every real number structure in every
+  possible world or false in every real number structure in every possible world. One sentence for each
+  type $\sigma$ and each second-order analytical sentence.
+formal: >-
+  $\Box\forall\mathfrak R\, .\,\operatorname{Real}_\sigma(\mathfrak R)\to A(\mathfrak R)\;\lor\;
+  \Box\forall\mathfrak R\, .\,\operatorname{Real}_\sigma(\mathfrak R)\to\neg A(\mathfrak R)\quad
+  (A\text{ a second-order analytical sentence})$
+definitions: >-
+  See Background, Analysis. A second-order analytical sentence may quantify over relations of any finite
+  arity among the type's entities, applied to the structure's elements; the continuum hypothesis is one.
+  Bacon restricts the second-order quantifiers to rigid properties, which makes no difference under
+  Rigid Comprehension (his Proposition C.3, Analytic Extensionality); the unrestricted reading is used
+  so that the schema assumes nothing about rigidity.
+date: '2026-10-23'
+sources:
+- Andrew Bacon, Could the truths of mathematics have been different?, draft of 9 October 2025, §5,
+  pp. 20–22, and Appendix C.2, Theorem C.2 with Proposition C.3.
+- Neil Barton and Zachary Goodsell, Continuum Contingency, draft of 14 October 2026, §5.7 and §5.9.
+source_names:
+- Could mathematics have been different?
+- Continuum Contingency
+references:
+- paper: bacon-mathematical-contingency
+  role: origin
+  locator: §5, pp. 20–22; Appendix C.2, Theorem C.2, Proposition C.3
+- paper: barton-goodsell-continuum-contingency
+  role: related
+  locator: §5.7; §5.9
+  note: Their second-order analytical sentences, with classes of reals as rigid properties of reals.
+notes: >-
+  Contains the Necessity of Analysis and the Non-contingency of the Continuum Hypothesis
+  ([[necessity-of-second-order-analysis-implies-non-contingency-of-ch]]). Bacon's Theorem 5.2 derives it
+  from Atomicity at every type and □Rigid Comprehension
+  ([[atomicity-and-necessary-rigid-comprehension-imply-necessity-of-second-order-analysis]]), and his
+  Corollary 5.1 from C5 and □Rigid Comprehension, which the map derives through □Actuality and
+  Atomicity. His Theorem 5.1 gives a model of C5 with Rigid Comprehension, not necessitated, in which
+  the continuum hypothesis is structurally contingent, and the stitched forcing models of Barton and
+  Goodsell with a forcing that changes the continuum hypothesis refute it under □Rigid Comprehension;
+  neither verdict is recorded yet.

@@ -5,14 +5,14 @@ status: proved
 certificate:
   source_id: misc
   lean: none
-  produced_by: Codex (GPT-6), 13 September 2026
-  recorded_by: Codex (GPT-6), manuscript transcription
+  produced_by: Codex (GPT-6), prompted by Zachary Goodsell, 13 September 2026
+  recorded_by: Codex (GPT-6), prompted by Zachary Goodsell, manuscript transcription
   checked_by: []
   date: '2026-09-13'
 proof: |-
   If $p=\top$ and N is any qualified $\operatorname{Necessity}_{2}$, its necessary normality implies $N\top$. Substitution gives Np. Quantify N and then discharge and generalize p.
 sources:
-- Codex (GPT-6), connecting proof recorded 13 September 2026 in ii-implies-necessity-entails-two.
+- Codex (GPT-6), prompted by Zachary Goodsell, connecting proof recorded 13 September 2026 in ii-implies-necessity-entails-two.
 - Zachary Goodsell, Possibility in Intuitionistic Higher-Order Logic (21 August 2026), §4.5, Eqs. (51),
   (55), p. 25.
 source_names:

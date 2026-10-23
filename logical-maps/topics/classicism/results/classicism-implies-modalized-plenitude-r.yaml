@@ -7,7 +7,7 @@ certificate:
   produced_by: Cian Dorr, 28 September 2026 (the principle, and the witness $\lambda x\, .\,\forall p\,
     .\,(Ux)p\to p$ for output type t); Claude Opus 5.5 (Anthropic), 28 September 2026, the generalization
     to all relational output types and the written proof
-  recorded_by: Claude Opus 5.5 (Anthropic), 28 September 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 28 September 2026
   checked_by: []
   date: '2026-09-28'
   lean: verified

@@ -1,6 +1,6 @@
 # $\Diamond_\infty$ = ◇₂ ∧ PSd (◇₂) ⇒ PSd ($\Diamond_\infty$)
 
-<p class='cert'>Result — Source: Misc.; produced by Codex (GPT-6), 13 September 2026; recorded by Codex (GPT-6), manuscript transcription.</p>
+<p class='cert'>Result — Source: Misc.; produced by Codex (GPT-6), prompted by Zachary Goodsell, 13 September 2026; recorded by Codex (GPT-6), prompted by Zachary Goodsell, manuscript transcription.</p>
 
 ## Premises
 

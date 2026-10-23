@@ -8,8 +8,8 @@ status: proved
 certificate:
   source_id: misc
   lean: none
-  produced_by: Claude (Fable 5.1)
-  recorded_by: Claude (Fable 5.1), 2026-10-11
+  produced_by: Claude (Fable 5.1), prompted by Zachary Goodsell
+  recorded_by: Claude (Fable 5.1), prompted by Zachary Goodsell, 2026-10-11
   checked_by: []
   date: '2026-10-11'
 proof: |-

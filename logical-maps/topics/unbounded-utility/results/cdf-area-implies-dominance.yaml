@@ -9,7 +9,7 @@ certificate:
   produced_by: Zachary Goodsell (unpublished manuscript)
   checked_by: []
   date: '2026-09-09'
-  recorded_by: GPT-6 (Codex), 2026-09-09; extraction and random-variable translation
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-09; extraction and random-variable translation
 proof: |-
   Under stochastic dominance, $S_X\ge S_Y$ pointwise, so $A_{-}=0$ and $A_{+}\ge 0$. This forces $X \succeq Y$. If some threshold is strictly improved, one-sided continuity makes d positive on an interval, giving $A_{+}>0$, possibly infinite; then $Y \succeq X$ is false. Equality of laws gives two zero areas.
 sources:

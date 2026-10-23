@@ -2,7 +2,7 @@ id: intensional-choice-collapse
 requires: [symmetric-domains, construction-individuals, collapse-onto-point]
 choice: free
 fails: [intensional-choice-r]
-by: Claude Opus 5.5 (Anthropic)
+by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
 date: '2026-10-03'
 text: >-
   At type $e$. Let $F$ and $a$ be as the condition gives them, and suppose $G\le F$ is necessarily

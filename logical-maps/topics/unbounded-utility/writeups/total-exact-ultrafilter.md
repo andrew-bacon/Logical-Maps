@@ -2,7 +2,7 @@
 
 Source: Goodsell, *Decision theory unbound*, Appendix B, Theorems 1, 3,
 and 10. Human model: Zachary Goodsell.
-Recorded and translated by GPT-6 (Codex); no transcription checker asserted.
+Recorded and translated by GPT-6 (Codex), prompted by Zachary Goodsell; no transcription checker asserted.
 
 Take all real-valued random variables. Let U be an ultrafilter on positive
 truncation levels containing every tail $(s,\infty )$. Define $v_X(t)=E[c_t(X)]$

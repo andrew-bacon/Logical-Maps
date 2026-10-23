@@ -1,0 +1,65 @@
+id: analytic-necessitism
+name: Analytic Necessitism
+category: mathematical-contingency
+statement: >-
+  If there could be a real number structure, there is a rigid one that is necessarily a real number
+  structure: a rigid property with necessarily distinct instances, with rigid order, addition,
+  multiplication and natural numbers, which necessarily form a complete ordered field. One sentence for
+  each type $\sigma$.
+formal: >-
+  $\Diamond\exists\mathfrak R\, .\,\operatorname{Real}_\sigma(\mathfrak R)\;\to\;
+  \exists\mathfrak R\, .\,\operatorname{RigidStr}(\mathfrak R)\land\Box\operatorname{Real}_\sigma(\mathfrak R)$
+definitions: >-
+  See Background, Analysis, for real number structures and $\operatorname{RigidStr}$: $X$, $\le$, $+$,
+  $\times$ and $N$ rigid in the map's sense (persistent and inextensible, each with its leading box) and
+  the instances of $X$ necessarily distinct.
+date: '2026-10-23'
+aliases:
+- First-Order Continuum Necessitism (Barton and Goodsell 2026)
+- Inextensibility of Reals (Barton and Goodsell 2026)
+sources:
+- Neil Barton and Zachary Goodsell, Continuum Contingency, draft of 14 October 2026, §5.8, eqs. (30)–(32),
+  Theorems 4–5, and §5.9, Theorem 7.
+- Andrew Bacon, Could the truths of mathematics have been different?, draft of 9 October 2025, §5,
+  p. 24, and Appendix C.2, the rigid and inflexible real number structures of Lemmas C.4–C.7.
+- Formulation without Rigid Comprehension by Zachary Goodsell, 23 October 2026, recorded by Claude Fable
+  5.1 (Anthropic).
+source_names:
+- Continuum Contingency
+- Could mathematics have been different?
+- Goodsell 23 Oct
+references:
+- paper: barton-goodsell-continuum-contingency
+  role: origin
+  locator: §5.8, eqs. (30)–(32); §5.9
+  note: Their First-Order Continuum Necessitism says that the reals, the rigid properties of natural
+    numbers, are a rigid property with necessarily distinct instances; persistence and necessary
+    distinctness being theorems there, its content is the Inextensibility of Reals, eq. (32). Rigid
+    properties of numbers represent every set of numbers only under Rigid Comprehension, which their
+    setting assumes.
+- paper: bacon-mathematical-contingency
+  role: related
+  locator: §5, p. 24; Appendix C.2, Lemmas C.4–C.7
+  note: Bacon's rigid and inflexible real number structures, with the rigidity of the canonical reals and
+    of their power as the route to the Necessity of Analysis.
+about: >-
+  The entity-level counterpart of the Necessity of Analysis: not only are the truths of analysis fixed,
+  the continuum itself is a necessary existent with a fixed membership and structure. Asking for some
+  rigid real number structure, rather than for the rigidity of the reals defined as rigid properties of
+  numbers, keeps the principle a definite claim in every theory extending C: under Rigid Comprehension it
+  says what Barton and Goodsell's principle says, and without Rigid Comprehension it is simply false
+  wherever no rigid continuum exists. The antecedent makes it trivially true at types that cannot carry
+  a continuum; where a continuum is merely possible it demands an actual rigid one. The relations must be
+  rigid as well as the domain: a rigid domain alone could carry differently threaded field structures at
+  different worlds, which code different sets of naturals and so differ on first-order analytical
+  sentences.
+notes: >-
+  Implies the Necessity of Analysis ([[analytic-necessitism-implies-necessity-of-analysis]]), by the
+  induction of Barton and Goodsell's Theorem 7 run on the given structure; the two come apart over a
+  ground model with enough large cardinals, where new reals can appear while projective truth is
+  forcing-invariant. Under □Rigid Comprehension and necessary infinity at $\sigma$, the instance at the
+  type of properties of numbers is Rigid Power at $\mathbb N_\sigma$: Rigid Power says that the rigid
+  properties of numbers cannot acquire new members, and the field structure on them is definable and
+  rigid. A record of that implication waits on a principle of necessary infinity, which the map does not
+  yet have. Fails in [[stitched-cohen-extension]], where the ground model's reals are no longer complete
+  at the extension.

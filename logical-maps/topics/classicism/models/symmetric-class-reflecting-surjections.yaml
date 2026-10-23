@@ -5,7 +5,7 @@ certificate:
   produced_by: Cian Dorr, 16 October 2026 (the model, with infinitely many infinite classes, arrows
     collapsing only within a class and symmetries preserving the classes), with Claude Opus 5.5
     (Anthropic), who fixed the arrows and wrote the verification
-  recorded_by: Claude Opus 5.5 (Anthropic), 16 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 16 October 2026
   checked_by: []
   date: '2026-10-16'
   lean: stated

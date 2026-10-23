@@ -12,7 +12,7 @@ certificate:
     (sum-invariance presentation)
   checked_by: []
   date: '2026-09-09'
-  recorded_by: GPT-6 (Codex), 2026-09-09; extraction and random-variable translation
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-09; extraction and random-variable translation
 proof: |-
   Let P,Q each have St Petersburg $\operatorname{law} P(P=2^{n})=2^{-n}, n\ge 1$, coupled antitonically so exactly one equals 2. Dominance supplies Stochastic Equivalence, hence $P\sim Q$. Full Sum Invariance with common summand P would give $2P\sim P+Q$. But $P+Q$ has the law of $2P+2$: for $n\ge 2$ it takes $2^{n}+2$ with probability $2^{1- n}$. This strictly stochastically dominates the law of 2P, contradicting the asserted indifference. Rich Outcomes and standing prospect richness supply the variables and sums.
 sources:

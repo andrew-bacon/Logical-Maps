@@ -68,7 +68,7 @@ changes:
   summary: 'Added the ND-necessity form as a variant: there is a truth that entails every ND-necessary
     truth.'
 - date: '2026-10-19'
-  by: Claude Opus 5.5 (Anthropic)
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   summary: 'At Cian Dorr’s request: definitions of the technical terms of its equivalent forms added;
     added the two-hat necessity form (suggested by Cian Dorr) and the 5-necessity form (Christopher Sun’s
     argument), 19 October 2026.'

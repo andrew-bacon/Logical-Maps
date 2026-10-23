@@ -1,0 +1,46 @@
+id: non-contingency-of-ch
+name: Non-contingency of the Continuum Hypothesis
+category: mathematical-contingency
+statement: >-
+  Either necessarily every real number structure satisfies the continuum hypothesis, or necessarily
+  every real number structure falsifies it: that every subproperty of the continuum either injects into
+  the natural numbers or is in bijection with the continuum. One sentence for each type $\sigma$.
+formal: >-
+  $\Box\forall\mathfrak R\, .\,\operatorname{Real}_\sigma(\mathfrak R)\to\operatorname{CH}(\mathfrak R)
+  \;\lor\;\Box\forall\mathfrak R\, .\,\operatorname{Real}_\sigma(\mathfrak R)\to
+  \neg\operatorname{CH}(\mathfrak R)$
+definitions: >-
+  See Background, Analysis, for $\operatorname{CH}(\mathfrak R)$, with injections and bijections as
+  relations. This is the instance of the Necessity of Second-Order Analysis at the continuum hypothesis,
+  kept apart because the sources treat it on its own. Which way it fails, true but possibly false or
+  false but possibly true, is a matter of models, not of the principle.
+date: '2026-10-23'
+sources:
+- Andrew Bacon, Could the truths of mathematics have been different?, draft of 9 October 2025, §5,
+  pp. 21–22 (Conjecture 5.1, Theorem 5.1), and §6, Theorem 6.1.
+- Neil Barton and Zachary Goodsell, Continuum Contingency, draft of 14 October 2026, §5.6, eq. (27), §5.9,
+  and Theorems 20–24.
+source_names:
+- Could mathematics have been different?
+- Continuum Contingency
+references:
+- paper: bacon-mathematical-contingency
+  role: origin
+  locator: §5, pp. 21–22; §6, Theorem 6.1
+  note: Bacon's structural contingency of the continuum hypothesis is the failure of this principle.
+- paper: barton-goodsell-continuum-contingency
+  role: formulation
+  locator: §5.6, eq. (27); §5.9; §§8–9, Theorems 20–24
+  note: Their formulation of CH for the reals as rigid properties of naturals; here it is read in any
+    real number structure.
+notes: >-
+  Follows from the Necessity of Second-Order Analysis
+  ([[necessity-of-second-order-analysis-implies-non-contingency-of-ch]]) and so, by Bacon's Theorem 5.2,
+  from Atomicity with □Rigid Comprehension. Bacon's Theorem 6.1, that □Rigid Comprehension, Intensional
+  Choice and Forcing Possibilism refute it, is recorded as a conjecture until its proof appears
+  ([[necessary-rigid-comprehension-intensional-choice-and-forcing-possibilism-incompatible-with-non-contingency-of-ch]]).
+  The stitched model on the map ([[stitched-cohen-extension]]) adds a single Cohen real, which leaves the
+  truth value of the continuum hypothesis unchanged, so it says nothing about this principle; the
+  variants of Barton and Goodsell's Theorem 20 that add $\aleph_2$ Cohen reals or collapse the continuum
+  refute it in either direction, as does Bacon's Theorem 5.1 model of C5 with Rigid Comprehension. None
+  is recorded yet.

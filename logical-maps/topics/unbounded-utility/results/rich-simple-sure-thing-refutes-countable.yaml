@@ -13,7 +13,7 @@ certificate:
     (strengthened version recorded here)
   checked_by: []
   date: '2026-09-08'
-  recorded_by: GPT-6 (Codex), 2026-09-08; transcription and random-variable formulation
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-08; transcription and random-variable formulation
 proof: |-
   Use the strengthened St Petersburg contradiction from §2.3. Simple EU supplies Restricted Totality, Restricted Stochastic Equivalence and finite conditional EU calculations. With independent sequences of fair tosses let A be first-toss St Petersburg, B the same starting at toss 2, and C an independent St Petersburg variable. Conditional on $B=2^n, A$ is a fair mixture of 2 and $2^{n+1}$, so its conditional expected value exceeds B by 1; Countable Sure-Thing would give $A\succ B$. Partition the A,C space by the maximum of their finite stopping times. On each cell they are simple and their restricted laws coincide, so Countable Sure-Thing would give $A\sim C$. Repeat for B,C to get $B\sim C$, contradicting Preordering. Null sets can be assigned a finite outcome without changing the simple-law comparisons.
 sources:

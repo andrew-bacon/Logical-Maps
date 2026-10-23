@@ -6,9 +6,9 @@ conclusion: necessary-strong-leibniz-t
 status: proved
 certificate:
   source_id: bacon-2024-book
-  produced_by: Andrew Bacon; boxed type-t form recorded by Claude Fable 5.1 (Anthropic), 22 September
+  produced_by: Andrew Bacon; boxed type-t form recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September
     2026
-  recorded_by: Claude Fable 5.1 (Anthropic), 22 September 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026
   checked_by: []
   date: '2026-09-22'
   lean: verified

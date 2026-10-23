@@ -37,5 +37,5 @@ changes:
   summary: Renamed from Distinctness-preserving collapse to Truth implies ND-necessity and moved to the
     new category Varieties of necessity; statement reworded, formal statement unchanged.
 - date: '2026-10-19'
-  by: Claude Opus 5.5 (Anthropic)
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   summary: 'At Cian Dorr’s request: definitions of its technical terms added.'

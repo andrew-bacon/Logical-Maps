@@ -2,15 +2,15 @@ id: ultralimit-fork
 name: 'Action model: a fork with an ultralimit world'
 certificate:
   source_id: misc
-  produced_by: Branden Fitelson, with Claude (Anthropic) and GPT-6 Astra (OpenAI), equally involved, construction
+  produced_by: Branden Fitelson, with Claude (Anthropic) and GPT-6 Astra (OpenAI), prompted by Cian Dorr, equally involved, construction
     and Isabelle/HOL verification, 1 October 2026; Cian Dorr, with Claude Opus 5.5 (Anthropic), the presentation
     as an intensional action model, 1 October 2026
-  recorded_by: Claude Opus 5.5 (Anthropic), 1 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 1 October 2026
   checked_by: []
   date: '2026-10-01'
   lean: stated
 sources:
-- Branden Fitelson, with Claude (Anthropic) and GPT-6 Astra (OpenAI), A proposed counterexample to Proposition
+- Branden Fitelson, with Claude (Anthropic) and GPT-6 Astra (OpenAI), prompted by Cian Dorr, A proposed counterexample to Proposition
   2.11, note communicated to Cian Dorr, 1 October 2026; Isabelle/HOL verification at github.com/fitelson/hom-isabelle,
   commit 4042cc0, Applications/2.11.
 - 'Cian Dorr, with Claude Opus 5.5 (Anthropic), A counterexample to Proposition 2.11 of ''Classicism'':
@@ -85,7 +85,7 @@ arguments:
     step of n. 42, part (iv), which the write-up runs inside the model (§5).
 - holds:
   - necessary-intensional-choice-r
-  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's suggestion
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, at Cian Dorr's suggestion
   date: '2026-10-03'
   text: 'At the root: given $F$ with $\Box\exists x\, .\,Fx$, let $G$ pick the least element of $F$ at
     $o$, $s$ and each $n$, under fixed well-orderings, the same ordering of $M^\sigma$ at every $n$. The

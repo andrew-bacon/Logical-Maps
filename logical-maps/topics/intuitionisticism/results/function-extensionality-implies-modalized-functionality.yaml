@@ -6,14 +6,14 @@ status: proved
 certificate:
   source_id: misc
   lean: none
-  produced_by: Codex (GPT-6), connecting proof
-  recorded_by: Codex (GPT-6)
+  produced_by: Codex (GPT-6), prompted by Zachary Goodsell, connecting proof
+  recorded_by: Codex (GPT-6), prompted by Zachary Goodsell
   checked_by: []
   date: '2026-09-13'
 proof: |-
   Fix arbitrary $\sigma ,\tau$ and $f,g:\sigma \to \tau$. Under $\Box \forall x.fx=gx, T$ gives $\forall x.fx=gx$. Use the selected function-extensionality instance at exactly these $\sigma ,\tau$ to get $f=g$. Discharge, generalize f,g, and then observe that $\sigma ,\tau$ were arbitrary. This supplies every target instance.
 sources:
-- Codex (GPT-6), connecting proof function-extensionality-implies-modalized-functionality, 2026-09-13.
+- Codex (GPT-6), prompted by Zachary Goodsell, connecting proof function-extensionality-implies-modalized-functionality, 2026-09-13.
 - Zachary Goodsell, Possibility in Intuitionistic Higher-Order Logic (21 August 2026), §5.2, Eq. (70),
   p. 32 (definitions/background).
 source_names:

@@ -21,6 +21,6 @@ notes: >-
   2026). Relational Choice is enough only if it implies Transversal Choice, which is open.
 changes:
 - date: '2026-10-19'
-  by: Claude Opus 5.5 (Anthropic)
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   summary: 'At Cian Dorr’s request: definitions of its technical terms added.'
 lean_def: Classicism.P.WellOrdering.schemaIn

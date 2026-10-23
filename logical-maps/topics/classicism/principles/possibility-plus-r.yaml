@@ -19,7 +19,7 @@ notes: The consistency and purity restrictions are inherited from Possibility Ma
   says this strengthens; the shortened display on p. 41 must not be read as admitting contradictory P.
 changes:
 - date: '2026-09-22'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Displayed the schema’s side conditions inside the math block, at Cian Dorr’s request; the statement
     is unchanged. Renamed from “Possibility+” to mark it as the pure-language version, now that Possibility+
     (signature Σ) is recorded; id and connections unchanged.

@@ -5,8 +5,8 @@ conclusion: gallin-extensional-comprehension-r
 status: proved
 certificate:
   source_id: misc
-  produced_by: Claude Fable 5.1 (Anthropic), 20 September 2026
-  recorded_by: Claude Fable 5.1 (Anthropic), 20 September 2026
+  produced_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026
   checked_by: []
   date: '2026-09-20'
   lean: verified

@@ -15,7 +15,7 @@ certificate:
   produced_by: Zachary Goodsell (cited paper)
   checked_by: []
   date: '2026-09-08'
-  recorded_by: GPT-6 (Codex), 2026-09-08; transcription and random-variable formulation
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-08; transcription and random-variable formulation
 proof: |-
   Theorem 4. If $D=u(X)- u(Y)$ has finite range, work with the diluted variables $M_{1/2}(X,0), M_{1/2}(Y,0)$. Partition into the finitely many values of D. Transfer each constant difference to the zero branch by Theorem 3. Finite mixture substitution leaves $M_{1/2}(Y,D)$ in place of $M_{1/2}(X,0)$. Independence and Simple EU reduce the comparison to $E[D]\ge 0$. Law invariance permits each rearrangement of branches.
 sources:

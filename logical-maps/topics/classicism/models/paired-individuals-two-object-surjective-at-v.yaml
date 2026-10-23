@@ -4,7 +4,7 @@ name: 'Paired-individuals two-object model: surjective block-respecting maps, ev
 certificate:
   source_id: misc
   produced_by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 14 October 2026
-  recorded_by: Claude Fable 5.1 (Anthropic), 14 October 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026
   checked_by: []
   date: '2026-10-14'
   lean: stated

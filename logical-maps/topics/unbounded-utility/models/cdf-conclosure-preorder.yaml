@@ -21,7 +21,7 @@ certificate:
   source_id: unpublished-background-risk
   lean: stated
   produced_by: Zachary Goodsell (CDF-area construction and conclosure); GPT-6 (Codex) (construction-stage extraction and property audit)
-  recorded_by: GPT-6 (Codex)
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell
   checked_by:
   - GPT-6 (Codex), informal review, 2026-09-25; only the partial self-similarity analysis added in the dated change below
   date: '2026-09-09'
@@ -119,7 +119,7 @@ certificate:
     admission:
       id: admission-89ba44a12e494abd93251f7c762eb26b
       at: '2026-09-25T12:59:35.164588+00:00'
-      by: GPT-6 (Codex)
+      by: GPT-6 (Codex), prompted by Zachary Goodsell
       base_commit: 7c928c4eb396a15e2b0b0226e4e753898870e7ca
       candidate_sha256: 73a897931c276776a05614c06b0aac53ac94adb27374457b0119a653a4441805
       review_id: review-efb0a17ef88845e0be4e03df2f93c5bb
@@ -128,9 +128,9 @@ description: |-
   Use all real outcomes with identity utility. In the vector space of survival differences, let $C=\{v$: integral$(v_-)$ is finite and integral$(v_+)$ is at least integral$(v_-)\}$ be Goodsell's CDF-area cone. Define $\operatorname{Sat}(C)=\{v: T_\xi v$ belongs to C for some probability law xi}, where $T_\xi$ is convolution by xi, and set $X \ge  Y$ iff $S_X-S_Y$ belongs to $\operatorname{Sat}(C)$. This is Goodsell's conclosure, stopped before the total-extension step. The previously recorded commutation and strict-preservation argument makes it a cone extending the area comparisons strictly and invariant in both directions under every independent convolution. Reflection of the survival difference conjugates xi to its reflected law; positive affine changes conjugate xi to its positively scaled law. The area cone is invariant under these changes, so the conclosure inherits reflection anti-invariance and positive affine invariance. It fails Symmetric Neutrality by the completed Levy obstruction. Since a comparable symmetric gamble in any law-invariant reflection-anti-invariant preorder must be indifferent to zero, this model must also fail Totality. It is consequently a model of DU, but not DTU: Totality is the additional DTU axiom.
 sources:
 - 'Zachary Goodsell, Unbounded Utility and Background Risk, 5 June 2026 (unpublished), sections 3-4, pages 7-14: CDF-area construction and conclosure. Supplied manuscript marked do not cite and erroneous in its symmetric total-extension claim.'
-- 'GPT-6 (Codex), 9 September 2026, writeups/conjectured-total-independent-sum-extension.md, sections 1-3: previously recorded cone-language description and strictness-preservation proof for Goodsell conclosure.'
-- 'GPT-6 (Codex), 9 September 2026, writeups/cdf-conclosure-preorder.md: extraction of the intermediate model, conjugation proofs for its inherited symmetries, and incompleteness from the completed Goodsell Levy obstruction.'
-- 'DeepSeek (deepseek-flash), theorem trawl, 25 September 2026: partial fixed-point analysis, corrected and informally reviewed by GPT-6 (Codex), same date; writeups/cdf-conclosure-preorder.md, Partial self-similarity analysis. Original checkpoint checkpoint-4efdb29afea94da583b8df9975e053e4.'
+- 'GPT-6 (Codex), prompted by Zachary Goodsell, 9 September 2026, writeups/conjectured-total-independent-sum-extension.md, sections 1-3: previously recorded cone-language description and strictness-preservation proof for Goodsell conclosure.'
+- 'GPT-6 (Codex), prompted by Zachary Goodsell, 9 September 2026, writeups/cdf-conclosure-preorder.md: extraction of the intermediate model, conjugation proofs for its inherited symmetries, and incompleteness from the completed Goodsell Levy obstruction.'
+- 'DeepSeek (deepseek-flash), theorem trawl, 25 September 2026: partial fixed-point analysis, corrected and informally reviewed by GPT-6 (Codex), prompted by Zachary Goodsell, same date; writeups/cdf-conclosure-preorder.md, Partial self-similarity analysis. Original checkpoint checkpoint-4efdb29afea94da583b8df9975e053e4.'
 source_names:
 - Unbounded Utility and Background Risk (unpublished)
 - GPT-6 conclosure proof details 9 Sep
@@ -162,7 +162,7 @@ references:
     cite and erroneous in its symmetric total-extension claim'
 changes:
 - date: '2026-09-25'
-  by: DeepSeek (deepseek-flash), partial analysis; GPT-6 (Codex), correction and informal review
+  by: DeepSeek (deepseek-flash), partial analysis; GPT-6 (Codex), prompted by Zachary Goodsell, correction and informal review
   summary: >-
     Added a scoped partial analysis of alternating St Petersburg versus -1/2:
     no strict comparison is possible, and convolution kernels with lower tail

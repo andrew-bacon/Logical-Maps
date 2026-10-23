@@ -1,6 +1,6 @@
 # □($\Diamond_\infty$ = ◇₂) ⇒ □Spouse ($\Diamond_\infty$)
 
-<p class='cert'>Result — Source: Misc.; produced by Codex (GPT-6), connecting proof; recorded by Codex (GPT-6).</p>
+<p class='cert'>Result — Source: Misc.; produced by Codex (GPT-6), prompted by Zachary Goodsell, connecting proof; recorded by Codex (GPT-6), prompted by Zachary Goodsell.</p>
 
 ## Premises
 

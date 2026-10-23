@@ -8,14 +8,14 @@ certificate:
   source_id: misc
   lean: verified
   lean_ref: UnboundedUtility.Proofs.preservation_cancellation_imply_independent_sum
-  produced_by: GPT-6 (Codex)
+  produced_by: GPT-6 (Codex), prompted by Zachary Goodsell
   checked_by: []
   date: '2026-09-09'
-  recorded_by: GPT-6 (Codex), 2026-09-09; extraction and random-variable translation
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-09; extraction and random-variable translation
 proof: Weak preservation gives the forward implication and cancellation the reverse. Together these are precisely
   Independent Sum Invariance.
 sources:
-- GPT-6 (Codex), original connecting proof recorded 9 September 2026 in this project
+- GPT-6 (Codex), prompted by Zachary Goodsell, original connecting proof recorded 9 September 2026 in this project
 - Zachary Goodsell, Unbounded Utility and Background Risk, 5 June 2026, unpublished manuscript marked “do not
   cite” and erroneous; Lemma 1, p. 8
 source_names:

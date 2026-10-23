@@ -6,8 +6,8 @@ status: proved
 certificate:
   source_id: misc
   lean: none
-  produced_by: Codex (GPT-6), connecting proof
-  recorded_by: Codex (GPT-6)
+  produced_by: Codex (GPT-6), prompted by Zachary Goodsell, connecting proof
+  recorded_by: Codex (GPT-6), prompted by Zachary Goodsell
   checked_by: []
   date: '2026-09-13'
 proof: |-
@@ -15,7 +15,7 @@ proof: |-
 
   The selected premise is boxed and implies its own box. Thus necessitating the discharged argument and using K yields $\Box \forall p.(\Diamond _\lor p\leftrightarrow p\ne \bot )$. Apply the predicate intensionality lemma to obtain the identity of the two operators.
 sources:
-- Codex (GPT-6), connecting proof boxed-ps-c-distinct-implies-vee-equals-distinct, 2026-09-13.
+- Codex (GPT-6), prompted by Zachary Goodsell, connecting proof boxed-ps-c-distinct-implies-vee-equals-distinct, 2026-09-13.
 - Zachary Goodsell, Possibility in Intuitionistic Higher-Order Logic (21 August 2026), §§4.2–4.5, pp.
   18–27 (definitions/background).
 source_names:

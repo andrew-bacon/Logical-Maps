@@ -11,7 +11,7 @@ certificate:
   produced_by: Zachary Goodsell (unpublished manuscript)
   checked_by: []
   date: '2026-09-09'
-  recorded_by: GPT-6 (Codex), 2026-09-09; extraction and random-variable translation
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-09; extraction and random-variable translation
 proof: |-
   Let P have St Petersburg law and S have the symmetric mixture $\frac{1}{2} P+\frac{1}{2} (- P)$. Write ⊕Anti for the law of the antitonic sum. Since P has $\operatorname{law} \frac{1}{2} \delta _{2}+\frac{1}{2} (2P)$, pairing opposite quantiles gives S⊕Anti $P = \frac{1}{2} (P+2)+\frac{1}{2} P$, which strictly stochastically dominates $P=0$⊕Anti P. Antitonic Sum Invariance would therefore give $S \succ 0$ (both weak directions allow strict cancellation). Applying it again with common summand of law S gives S⊕Anti $S \succ 0$⊕Anti S. Symmetry of the quantiles makes the left $\operatorname{law} \delta _{0}$ and the right law S, so $0 \succ S, a$ contradiction. Dominance supplies Stochastic Equivalence for every law identity used. This does not assume Symmetric Neutrality or Totality.
 sources:

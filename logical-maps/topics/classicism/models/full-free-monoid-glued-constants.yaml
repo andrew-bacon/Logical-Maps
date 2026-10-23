@@ -3,8 +3,8 @@ name: 'Full action model: free monoid on countably many generators, glued consta
 certificate:
   source_id: bacon-2020
   produced_by: Andrew Bacon; gluing theorem and type-e domain supplied, and all listed properties verified,
-    by Claude Fable 5.1 (Anthropic), 22 September 2026 (see the write-up)
-  recorded_by: Claude Fable 5.1 (Anthropic), 22 September 2026
+    by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026 (see the write-up)
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026
   checked_by: []
   date: '2026-09-22'
   lean: stated
@@ -16,7 +16,7 @@ sources:
   Theorem 18.5 and Exercise 18.23, pp. 405–410.
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §3.4–3.5, pp. 55–61 (full action models
   and the principles they validate); Appendix E, pp. 80–83 (truncations).
-- Claude Fable 5.1 (Anthropic), verification of 22 September 2026 (see the write-up).
+- Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, verification of 22 September 2026 (see the write-up).
 source_names:
 - Logical Combinatorialism
 - Philosophical Introduction to HOL
@@ -102,12 +102,12 @@ was_conjectured: true
 # The old `changes` log, verbatim and frozen.
 history:
 - date: '2026-09-22'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Replaced the type-e domain. A copy of the powerset of M is not isomorphic to the product of
     its children’s domains under truncation, so the coalesced sum of copies of the frame would not return
     the frame; the thread domain is. The record remains conjectured.
 - date: '2026-09-22'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: 'Promoted to proved with a full write-up: the gluing theorem is derived from the book’s coalesced
     sums and the frame’s self-similarity, with a branch-indexed type-e domain. Verified the listed principles;
     added the Strong Leibniz Biconditionals, their necessitation and the Axiom of Infinity at type e.
@@ -130,22 +130,22 @@ history:
   - modal-b
   - distinctness-schema-r
 - date: '2026-09-22'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Removed the interpretation of Bacon’s Pure and Fun predicates and every principle stated with
     them, following Zachary Goodsell’s decision of 21 September 2026 that such predicates lie outside
     the map’s vocabulary. The pure and signature assertions are unchanged.
 - date: '2026-09-22'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Boxed the Relational Choice claim; see the notes.
   satisfies:
   - necessary-relational-choice-r
 - date: '2026-09-23'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Recorded the Distinctness-preserving collapse; see the notes.
   satisfies:
   - distinctness-preserving-collapse
 - date: '2026-09-25'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
   summary: 'Added Transversal Choice, by the argument recorded for Relational Choice: a full model contains
     every intension, in particular one whose extension at the evaluation point is a transversal, chosen in the
     metatheory, of the extension there of an equivalence relation; the equivalence and transversal conditions

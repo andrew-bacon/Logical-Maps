@@ -2,7 +2,7 @@
 
 The proof follows Jonathan Lewin, "A Simple Proof of Zorn's Lemma",
 *American Mathematical Monthly* 98 (1991), pp. 353–354. It is translated into
-C and adapted to preorders by Claude Opus 5.5 (Anthropic), 8 October 2026, at
+C and adapted to preorders by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 8 October 2026, at
 Cian Dorr's suggestion. Lewin's sets become properties, unions become
 existential quantifications, and his choice function becomes a functional
 relation. The translation is faithful except at four points. At each of them

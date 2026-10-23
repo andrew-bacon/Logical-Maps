@@ -23,7 +23,7 @@ references:
 notes: ''
 changes:
 - date: '2026-09-22'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Added a reference to Logical Combinatorialism; the statement is unchanged.
 variants:
 - id: dual

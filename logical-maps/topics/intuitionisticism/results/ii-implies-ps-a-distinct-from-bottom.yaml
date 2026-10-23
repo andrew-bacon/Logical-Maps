@@ -5,14 +5,14 @@ status: proved
 certificate:
   source_id: misc
   lean: none
-  produced_by: Codex (GPT-6), 13 September 2026
-  recorded_by: Codex (GPT-6), manuscript transcription
+  produced_by: Codex (GPT-6), prompted by Zachary Goodsell, 13 September 2026
+  recorded_by: Codex (GPT-6), prompted by Zachary Goodsell, manuscript transcription
   checked_by: []
   date: '2026-09-13'
 proof: |-
   Given $\Box (p\to q)$ and $p\ne \bot$, suppose $q=\bot$. Substitution turns the boxed implication into $\Box \neg p$, hence $p=\bot$ by footnote 5, a contradiction. Thus $q\ne \bot$. Discharge and generalize p,q.
 sources:
-- Codex (GPT-6), connecting proof recorded 13 September 2026 in ii-implies-ps-a-distinct-from-bottom.
+- Codex (GPT-6), prompted by Zachary Goodsell, connecting proof recorded 13 September 2026 in ii-implies-ps-a-distinct-from-bottom.
 - Zachary Goodsell, Possibility in Intuitionistic Higher-Order Logic (21 August 2026), §3.1, definition
   of ≠⊥, p. 8; §3.2, footnote 5, p. 10.
 source_names:

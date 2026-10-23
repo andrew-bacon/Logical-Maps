@@ -6,9 +6,9 @@ conclusion: inextensible-comprehension-r
 status: proved
 certificate:
   source_id: misc
-  produced_by: Christopher Sun (the witness and the argument), 26 September 2026; Claude Fable 5.1 (Anthropic)
+  produced_by: Christopher Sun (the witness and the argument), 26 September 2026; Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
     supplied the boxed form of the BF hypothesis
-  recorded_by: Claude Fable 5.1 (Anthropic), 26 September 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 26 September 2026
   checked_by: []
   date: '2026-09-26'
   lean: verified

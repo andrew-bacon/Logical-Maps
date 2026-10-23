@@ -6,8 +6,8 @@ certificate:
   source_id: classicism-2024
   lean: none
   produced_by: Andrew Bacon and Cian Dorr (modalized-functionality result, as credited by Goodsell); Codex
-    (GPT-6), alternative syntactic proof
-  recorded_by: Codex (GPT-6)
+    (GPT-6, prompted by Zachary Goodsell), alternative syntactic proof
+  recorded_by: Codex (GPT-6), prompted by Zachary Goodsell
   checked_by: []
   date: '2026-09-13'
 proof: |-
@@ -26,7 +26,7 @@ sources:
   credited in Goodsell, §5.2, p. 32.
 - Zachary Goodsell, Possibility in Intuitionistic Higher-Order Logic (21 August 2026), §5.2, Eq. (70),
   p. 32.
-- Codex (GPT-6), alternative syntactic proof of every type instance, 2026-09-13.
+- Codex (GPT-6), prompted by Zachary Goodsell, alternative syntactic proof of every type instance, 2026-09-13.
 source_names:
 - Classicism
 - Possibility in Intuitionistic Higher-Order Logic

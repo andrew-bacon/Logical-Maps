@@ -28,10 +28,10 @@ notes: >-
   argument; Raa = Fa implies F is the reflexivization of R.
 changes:
 - date: '2026-09-22'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Added direct locators in Logical Combinatorialism; the statement is unchanged.
 - date: '2026-09-22'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Displayed the schema’s side conditions inside the math block, at Cian Dorr’s request; the statement
     is unchanged.
 variants:

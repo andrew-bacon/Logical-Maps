@@ -15,7 +15,7 @@ notes: The necessitated form of [[well-ordering-r]]. The well-order may differ f
   which asks for one relation that is necessarily a well-order, implies it.
 changes:
 - date: '2026-10-19'
-  by: Claude Opus 5.5 (Anthropic)
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   summary: 'At Cian Dorr’s request: the notes now name the base principle with a link, without the boilerplate
     about closed instances and the box; definitions of its technical terms added.'
 lean_def: Classicism.P.NecWellOrdering.schemaIn

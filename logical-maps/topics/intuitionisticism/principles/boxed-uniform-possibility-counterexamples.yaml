@@ -6,7 +6,7 @@ formal: |-
   $\Box (\forall f:tt. (\operatorname{PSb}(f) \land \operatorname{PSc}(f)) \to \exists p:t. (\neg f p \land p \ne \bot ))$
 category: candidate-laws
 sources:
-- Codex (GPT-6), connecting-principle formulation, 2026-09-13.
+- Codex (GPT-6), prompted by Zachary Goodsell, connecting-principle formulation, 2026-09-13.
 - Zachary Goodsell, Possibility in Intuitionistic Higher-Order Logic (21 August 2026), §4.1, Theorem 5(ii),
   Eq. (27), p. 17.
 source_names:

@@ -23,7 +23,7 @@ notes: The necessitated form of [[truth-implies-two-hat-necessity]]. Added at th
   $\hat{\hat\Box}=\lambda p\, .\,p$.
 changes:
 - date: '2026-10-19'
-  by: Claude Opus 5.5 (Anthropic)
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   summary: 'At Cian Dorr’s request: the notes now name the base principle with a link, without the boilerplate
     about closed instances and the box; definitions of its technical terms added.'
 lean_def: Classicism.P.NecTruthImpliesTwoHatNecessity.schemaIn

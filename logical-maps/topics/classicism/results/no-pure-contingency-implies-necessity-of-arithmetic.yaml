@@ -5,14 +5,14 @@ conclusion: necessity-of-arithmetic
 status: proved
 certificate:
   source_id: misc
-  produced_by: Claude Fable 5.1 (Anthropic), 20 September 2026
-  recorded_by: Claude Fable 5.1 (Anthropic), 20 September 2026
+  produced_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026
   checked_by: []
   date: '2026-09-20'
   lean: verified
   lean_ref: Classicism.Map.no_pure_contingency_implies_necessity_of_arithmetic
 sources:
-- Claude Fable 5.1 (Anthropic), 20 September 2026.
+- Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026.
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.2, p. 27 (No Pure Contingency).
 source_names:
 - Fable 20 Sep

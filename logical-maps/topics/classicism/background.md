@@ -133,6 +133,46 @@ successors of terms, by $\neg$, $\lor$, $\land$ and quantifiers
 $\forall v\in\mathbb N_\sigma$. These are Definitions 3–8 of Goodsell's
 draft. Where the type is fixed by context the subscript $\sigma$ is dropped.
 
+**Analysis.** A *real number structure* at a type $\sigma$ is a tuple
+$\mathfrak R=(X^{\sigma t},\le^{\sigma\sigma t},+^{\sigma\sigma\sigma t},
+\times^{\sigma\sigma\sigma t},0^\sigma,1^\sigma,N^{\sigma t})$ such that
+$\le$, $+$ and $\times$ hold only of instances of $X$, $X$ with them and
+with $0$ and $1$ is a complete ordered field, $+$ and $\times$ being
+functional on $X$ and every subproperty of $X$ with an upper bound in $X$
+having a least upper bound in $X$, and $N$ is the least subproperty of $X$
+containing $0$ and closed under adding $1$; write
+$\operatorname{Real}_\sigma(\mathfrak R)$. Any two real number structures,
+at one type or at two, are isomorphic (Huntington), a theorem of the
+non-modal fragment. A *first-order analytical sentence* is a closed formula
+in the variables of a real number structure built from the atomic formulas
+$x\le y$, $+(x,y,z)$, $\times(x,y,z)$, $Nx$ and $x=y$, whose terms are
+variables of type $\sigma$, $0$ and $1$, by $\neg$, $\lor$, $\land$ and
+quantifiers $\forall v\in X$; a *second-order analytical sentence* may also
+use variables $R$ for relations of any finite arity among entities of type
+$\sigma$, in atomic formulas $R\bar x$ and unrestricted quantifiers
+$\forall R$. For a sentence $A$, $A(\mathfrak R)$ is its reading in
+$\mathfrak R$. These follow Barton and Goodsell, *Continuum Contingency*,
+§5.7, with the structure's elements in place of their rigid properties of
+numbers, and Bacon's second-order analysis (*Could the truths of mathematics
+have been different?*, Appendix C.2) without his restriction of the
+second-order quantifiers to rigid properties, which makes no difference
+under Rigid Comprehension (his Proposition C.3). The *continuum hypothesis*
+$\operatorname{CH}(\mathfrak R)$ is the second-order analytical sentence
+$\forall Y^{\sigma t}\, .\,(\forall x\, .\,Yx\to Xx)\to
+(Y\precsim N\lor Y\approx X)$, where $Y\precsim Z$ says that some relation
+is an injection from the $Y$s into the $Z$s and $Y\approx Z$ that some
+relation is a bijection between them. A real number structure is *rigid*,
+$\operatorname{RigidStr}(\mathfrak R)$, when $X$, $\le$, $+$, $\times$ and
+$N$ are rigid and the instances of $X$ are necessarily distinct,
+$\forall x\,y\in X\, .\,x\ne y\to\Box\,x\ne y$. A *represented power* of
+arity $k$ for $X$, $\operatorname{RepPower}_k(\mathcal P,X)$, is a rigid
+property $\mathcal P$ of rigid $k$-ary relations holding only of tuples of
+instances of $X$, such that necessarily every $k$-ary relation agrees on
+such tuples with an instance of $\mathcal P$:
+$\operatorname{Rigid}(\mathcal P)\land
+(\forall S\, .\,\mathcal PS\to\operatorname{Rigid}(S)\land\forall\bar y\, .\,S\bar y\to\textstyle\bigwedge_iXy_i)\land
+\Box\forall R\,\exists S\, .\,\mathcal PS\land\forall\bar x\in X\, .\,(S\bar x\leftrightarrow R\bar x)$.
+
 The schematic $\sigma$ is what lets the principles say what they intend
 whatever the size of a given type. Where $\sigma$ necessarily has only
 finitely many members, $\mathbb N_\sigma$ is finite, a property countable

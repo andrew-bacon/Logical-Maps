@@ -32,7 +32,7 @@ notes: >-
   Comprehension, retired then at Cian Dorr's direction.
 changes:
 - date: '2026-10-19'
-  by: Claude Opus 5.5 (Anthropic)
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   summary: 'At Cian Dorr’s request: definitions of the technical terms of its equivalent forms added.'
 variants:
 - id: persistent

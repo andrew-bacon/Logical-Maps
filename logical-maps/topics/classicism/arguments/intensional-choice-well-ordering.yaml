@@ -2,7 +2,7 @@ id: intensional-choice-well-ordering
 requires: [codomain-intensions]
 choice: uses
 holds: [necessary-intensional-choice-r]
-by: Claude Fable 5.1 (Anthropic), at Cian Dorr's suggestion
+by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, at Cian Dorr's suggestion
 date: '2026-10-03'
 text: >-
   For each object $U$ and type $\sigma$ fix a well-ordering $<_U$ of the domain $D^\sigma_U$, and let

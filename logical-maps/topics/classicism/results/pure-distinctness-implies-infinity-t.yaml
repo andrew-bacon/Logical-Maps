@@ -6,7 +6,7 @@ status: proved
 certificate:
   source_id: misc
   produced_by: Cian Dorr, suggestion of 19 September 2026
-  recorded_by: Claude Opus 5 (Anthropic), 19 September 2026
+  recorded_by: Claude Opus 5 (Anthropic), prompted by Cian Dorr, 19 September 2026
   checked_by: []
   date: '2026-09-19'
   lean: stated
@@ -58,7 +58,7 @@ notes: >-
   numeral-by-numeral argument recorded here.
 changes:
 - date: '2026-09-20'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: >-
     Noted that the schema-only limitation is a limitation of this argument, not of Maximalist Classicism:
     the new record pure-possibility-implies-axiom-of-infinity-t reaches the Axiom of Infinity at type t.

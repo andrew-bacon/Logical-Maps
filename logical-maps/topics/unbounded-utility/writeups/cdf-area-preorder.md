@@ -20,7 +20,7 @@ both signed areas infinite.
 **unpublished, marked “do not cite”, and erroneous**. This local provenance
 record does not endorse its withdrawn consistency theorem. The construction
 is Goodsell’s; the explicit area, Tonelli, and counterexample details below
-were recorded by GPT-6 (Codex), 9 September 2026. No separate checker or Lean
+were recorded by GPT-6 (Codex), prompted by Zachary Goodsell, 9 September 2026. No separate checker or Lean
 verification is claimed.
 
 ## Construction

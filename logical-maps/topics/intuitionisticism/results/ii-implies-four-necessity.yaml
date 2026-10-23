@@ -6,7 +6,7 @@ certificate:
   source_id: the-broadest-necessity
   lean: none
   produced_by: Andrew Bacon; intuitionistic proof as presented by Zachary Goodsell
-  recorded_by: Codex (GPT-6), manuscript transcription
+  recorded_by: Codex (GPT-6), prompted by Zachary Goodsell, manuscript transcription
   checked_by: []
   date: '2026-09-13'
 proof: |-

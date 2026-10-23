@@ -6,14 +6,14 @@ status: proved
 certificate:
   source_id: misc
   lean: none
-  produced_by: Codex (GPT-6), connecting proof
-  recorded_by: Codex (GPT-6)
+  produced_by: Codex (GPT-6), prompted by Zachary Goodsell, connecting proof
+  recorded_by: Codex (GPT-6), prompted by Zachary Goodsell
   checked_by: []
   date: '2026-09-13'
 proof: |-
   Fix p and assume $\Box _{2}p$. Necessitate the closed intuitionistic theorem $p\to (p\leftrightarrow \top )$ using the proved empty-context $\Box _{2}$ rule, and use K for $\Box _{2}$ to obtain $\Box _{2}(p\leftrightarrow \top )$. Instantiate the selected $\Box _{2}$-intensionalism sentence at $p,\top$ to infer $p=\top$, namely $\Box p$. Discharge and generalize p.
 sources:
-- Codex (GPT-6), connecting proof two-intensionalism-implies-reverse-necessity, 2026-09-13.
+- Codex (GPT-6), prompted by Zachary Goodsell, connecting proof two-intensionalism-implies-reverse-necessity, 2026-09-13.
 - Zachary Goodsell, Possibility in Intuitionistic Higher-Order Logic (21 August 2026), §§4.2–4.5, pp.
   18–27 (definitions/background).
 source_names:

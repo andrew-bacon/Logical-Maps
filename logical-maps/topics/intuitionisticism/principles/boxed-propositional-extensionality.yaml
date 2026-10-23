@@ -6,7 +6,7 @@ formal: |-
   $\Box (\forall p,q:t. (p \leftrightarrow q) \to (p = q))$
 category: higher-order
 sources:
-- Codex (GPT-6), connecting-principle formulation, 2026-09-13.
+- Codex (GPT-6), prompted by Zachary Goodsell, connecting-principle formulation, 2026-09-13.
 - Zachary Goodsell, Possibility in Intuitionistic Higher-Order Logic (21 August 2026), §5.5, p. 37.
 source_names:
 - Codex connecting formulations, 13 Sep 2026

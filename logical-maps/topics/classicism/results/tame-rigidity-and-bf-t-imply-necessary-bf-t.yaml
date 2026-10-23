@@ -6,7 +6,7 @@ conclusion: necessary-barcan-t
 status: proved
 certificate:
   source_id: misc
-  produced_by: Claude Fable 5.1 (Anthropic), 3 October 2026
+  produced_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 3 October 2026
   recorded_by: Claude Opus 5.5 (Anthropic), 16 October 2026, at Cian Dorr's direction
   checked_by: []
   date: '2026-10-16'

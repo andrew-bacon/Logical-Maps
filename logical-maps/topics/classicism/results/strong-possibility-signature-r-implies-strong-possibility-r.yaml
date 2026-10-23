@@ -6,7 +6,7 @@ status: conjectured
 certificate:
   source_id: misc
   produced_by: Cian Dorr, suggestion of 22 September 2026
-  recorded_by: Claude Fable 5.1 (Anthropic), 22 September 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026
   checked_by: []
   date: '2026-09-22'
   lean: stated

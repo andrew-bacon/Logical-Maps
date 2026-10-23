@@ -148,7 +148,7 @@ arguments:
 - id: intensional-choice-component
   requires: [complete-components, distinguished-arrows]
   fails: [intensional-choice-r]
-  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's suggestion
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, at Cian Dorr's suggestion
   date: '2026-10-03'
   text: >-
     The type-$e$ instance of Intensional Choice fails in a model of C (symmetric-all-surjections),
@@ -267,7 +267,7 @@ arguments:
 - id: transversal-boxed
   requires: [complete-components]
   fails: [necessary-transversal-r]
-  by: Claude Opus 5.5 (Anthropic)
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   date: '2026-09-28'
   text: >-
     Every pure sentence consistent with C is possible at the root (pure-sentences-possible): the

@@ -3,7 +3,7 @@
 Theorem 4.4 of Andrew Bacon, *Could the truths of mathematics have been different?* (draft of
 9 October 2025, p. 19; proved as Theorem C.1 in Appendix C.1, pp. 10–11 of the separately paginated
 appendix, through Proposition C.2 and Lemma C.1), transposed to the map's formulation of the
-Necessity of Arithmetic, which follows Goodsell (Background). Transposition by Claude Fable 5.1
+Necessity of Arithmetic, which follows Goodsell (Background). Transposition by Claude Fable 5.1, prompted by Zachary Goodsell
 (Anthropic), 19 October 2026. Lean-verified the same day: the steps below are derived shallow
 theorems (`lean/Classicism/Results/SentenceSchemas/Arithmetic.lean`), and the induction on
 arithmetical sentences composes their derivations (`ArithmeticMeta.lean`,

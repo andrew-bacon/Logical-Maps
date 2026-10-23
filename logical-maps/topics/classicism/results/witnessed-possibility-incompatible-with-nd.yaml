@@ -6,9 +6,9 @@ conclusion: false
 status: proved
 certificate:
   source_id: bacon-2020
-  produced_by: Andrew Bacon; adapted to Witnessed Possibility and the map's signature by Claude Fable 5.1
+  produced_by: Andrew Bacon; adapted to Witnessed Possibility and the map's signature by Claude Fable 5.1, prompted by Cian Dorr
     (Anthropic), 19 September 2026, at the suggestion of Cian Dorr
-  recorded_by: Claude Fable 5.1 (Anthropic), 19 September 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 19 September 2026
   checked_by: []
   date: '2026-09-19'
   lean: verified

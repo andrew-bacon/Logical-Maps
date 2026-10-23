@@ -6,7 +6,7 @@ status: proved
 certificate:
   source_id: misc
   produced_by: DeepSeek (deepseek-flash), theorem trawl, 25 September 2026
-  recorded_by: OpenAI Codex (GPT-6), curation and informal mathematical review, 25 September 2026
+  recorded_by: OpenAI Codex (GPT-6), prompted by Zachary Goodsell, curation and informal mathematical review, 25 September 2026
   checked_by: []
   date: '2026-09-25'
   lean: verified
@@ -104,7 +104,7 @@ certificate:
     admission:
       id: admission-c0a37bbe6b6c45cc985428b174812564
       at: '2026-09-25T19:01:48.376481+00:00'
-      by: OpenAI Codex (GPT-6)
+      by: OpenAI Codex (GPT-6), prompted by Zachary Goodsell
       base_commit: a7bbaecf6f282ac27ea1ee52e3e75721bead6318
       candidate_sha256: 9606da02aacb03dd1288524d8db1acc60c184a60afede465c2759d333382e52a
       review_id: review-b1d4be27f1d9472d8b87f930303b0a51

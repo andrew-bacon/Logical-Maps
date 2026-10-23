@@ -34,7 +34,7 @@ changes:
   summary: Follows Countable Boolean Completeness, whose type of counting is now schematic; the boxed
     instances range over that type as well.
 - date: '2026-10-19'
-  by: Claude Opus 5.5 (Anthropic)
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula (and so do the
     equivalent forms); the statement is restated as the necessitation of the base statement; the notes
     now name the base principle with a link, without the boilerplate about closed instances and the box;

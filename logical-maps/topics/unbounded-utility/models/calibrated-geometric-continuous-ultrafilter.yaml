@@ -25,7 +25,7 @@ certificate:
   lean: none
   produced_by: Unspecified Claude agents (AI-generated specialization and witnesses, communicated by Branden
     Fitelson); Zachary Goodsell (underlying clipping method)
-  recorded_by: GPT-6 (Codex), proof expansion and informal verification, 2026-10-02
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, proof expansion and informal verification, 2026-10-02
   checked_by: []
   date: '2026-10-02'
 description: Use identity real utility and a free ultrafilter on positive integers. Clip at a_n=(7/4)4^n on
@@ -42,7 +42,7 @@ sources:
 - 'Zachary Goodsell, Decision theory unbound, Noûs 58 (2024), 669–695, DOI 10.1111/nous.12473, Appendix B,
   Definition 3, Lemma 6 and Remark 3: underlying continuous clipped-expectation construction and asymmetric
   cutoffs.'
-- 'GPT-6 (Codex), 2 October 2026: full proof expansion and informal check in writeups/calibrated-geometric-continuous-ultrafilter.md,
+- 'GPT-6 (Codex), prompted by Zachary Goodsell, 2 October 2026: full proof expansion and informal check in writeups/calibrated-geometric-continuous-ultrafilter.md,
   including its shared clipping and shuffle-copula proof.'
 source_names:
 - AI report via Branden Fitelson
@@ -63,9 +63,9 @@ references:
   locator: Appendix B, Definition 3, Lemma 6 and Remark 3
 changes:
 - date: '2026-10-03'
-  by: GPT-6 (Codex), classification of the previously recorded AI shuffle proof communicated by Branden Fitelson
+  by: GPT-6 (Codex), prompted by Zachary Goodsell, classification of the previously recorded AI shuffle proof communicated by Branden Fitelson
   summary: 'The same fixed adjacent-quarter shuffle is nonindependent: its joint CDF at (1/4,1/4) is zero rather than 1/16. The existing full invariance proof therefore also verifies Existential Nonindependent Copula Sum Invariance; no new construction or original-author attribution is claimed.'
 - date: '2026-10-11'
-  by: Claude (Fable 5.1)
+  by: Claude (Fable 5.1), prompted by Zachary Goodsell
   summary: >-
     The two existential copula principles were removed from the map, so their flags are retired here; the fixed quarter-shuffle argument in the write-up remains as history. Uninteractive Sum Invariance is now derived for this model from its Relative Expectation, Mixture Independence and Stochastic Equivalence flags by the recorded result relative-independence-equivalence-imply-uninteractive-sum.

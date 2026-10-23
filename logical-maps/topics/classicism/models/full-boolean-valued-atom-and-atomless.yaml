@@ -2,9 +2,9 @@ id: full-boolean-valued-atom-and-atomless
 name: 'Full Boolean-valued model: one atom and an atomless component'
 certificate:
   source_id: bacon-mathematical-contingency
-  produced_by: Andrew Bacon (underlying Boolean-valued construction); OpenAI Codex (GPT-6), 27 September
+  produced_by: Andrew Bacon (underlying Boolean-valued construction); OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 27 September
     2026 (singleton-base specialization and verification of the recorded choice and atomicity claims)
-  recorded_by: OpenAI Codex (GPT-6), 27 September 2026
+  recorded_by: OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 27 September 2026
   checked_by: []
   date: '2026-09-27'
   lean: stated
@@ -12,7 +12,7 @@ sources:
 - Andrew Bacon, Could the truths of mathematics have been different?, draft of 9 October 2025, online
   appendix §B.2, pp. 7–9 (PDF pp. 41–43), especially the construction on p. 7 and the extensional-fullness
   observation following Lemma B.3 on p. 9.
-- OpenAI Codex (GPT-6), 27 September 2026. Specialization to a singleton individual domain and an arbitrary
+- OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 27 September 2026. Specialization to a singleton individual domain and an arbitrary
   complete atomless component; verification of Functional Choice, the failure of Atomicity, and the exact
   Boolean values of the choice counterinstance. Full proof in the write-up.
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §§1.1–1.3 and §§2.1–2.3 (background logic,
@@ -90,7 +90,7 @@ arguments:
     with no atom below it, refuting Atomicity at type $t$ and the full schema.
 
 - holds: [necessary-intensional-choice-r]
-  by: Claude Fable 5.1 (Anthropic), at Cian Dorr's suggestion
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, at Cian Dorr's suggestion
   date: '2026-10-03'
   text: >-
     Here $\Box p$ is $p=\top$, so $\Box\exists x\, .\,Fx$ says $\bigvee_{x\in D_\sigma}F(x)=1_B$. Well-order
@@ -187,7 +187,7 @@ notes: >-
 # The old `changes` log, verbatim and frozen.
 history:
 - date: '2026-09-27'
-  by: OpenAI Codex (GPT-6)
+  by: OpenAI Codex (GPT-6), prompted by Zachary Goodsell
   summary: Identified Bacon’s earlier Boolean-valued construction at the user’s request, corrected the
     source attribution, and shortened the description to match the source-based model records. Distinguished
     the singleton-base specialization and the explicit choice calculation; added the extensional-fullness

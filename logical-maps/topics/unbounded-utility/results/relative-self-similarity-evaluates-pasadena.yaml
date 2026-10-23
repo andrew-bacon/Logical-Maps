@@ -11,13 +11,13 @@ certificate:
   source_id: misc
   lean: stated
   produced_by: Zachary Goodsell (Highland Park and Q constructions); GPT-6 (Codex) (negative-self-similarity factorization and explicit couplings)
-  recorded_by: GPT-6 (Codex), 2026-09-09
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-09
   checked_by: []
   date: '2026-09-09'
 proof: |-
   For Pasadena P, replace the negative payoff $-4^k/(2k)$ by $-4^k/(2k-1)$ to obtain Highland Park H. The actual pointwise difference P-H is nonnegative and has expectation $\ln 2$. Write H in law as $M_{2/3}(Q,-2Q)$, where Q takes $2^{2k-1}/(2k-1)$ with probability $3/4^k$. Couple Q with S of $\operatorname{law} M_{1/4}(4Q,0)$ by sending its first atom to zero and its kth atom, $k\ge 2$, to four times its (k-1)st value. The difference has absolute expectation 3 and expectation zero, so Relative Expectation gives $Q\sim S$. Substitute this comparison into the Q branch of H and regroup: $H\sim M_{1/2}(-2H,0)$. Zero solves the same fixed-value equation. Negative Self-Similarity yields $H\sim 0$. Relative Expectation gives $P\sim H+\ln 2; a$ half-mixture shift transfer, itself an integrable zero-mean comparison, and Independence give $H+\ln 2\sim \ln 2$. All distributional replacements are licensed by Stochastic Equivalence.
 sources:
-- 'GPT-6 (Codex), 9 September 2026, writeups/relative-self-similarity-evaluates-pasadena.md: factorization through negative self-similarity and explicit integrable couplings.'
+- 'GPT-6 (Codex), prompted by Zachary Goodsell, 9 September 2026, writeups/relative-self-similarity-evaluates-pasadena.md: factorization through negative self-similarity and explicit integrable couplings.'
 - 'Zachary Goodsell, Symmetries of value, Noûs 60 (2026), 16–37, DOI 10.1111/nous.12549, Theorem 11, pp. 32–33: Pasadena, Highland Park, and Q constructions and relative-expectation identities.'
 source_names:
 - GPT-6 factorization 9 Sep

@@ -6,13 +6,13 @@ status: proved
 certificate:
   source_id: misc
   produced_by: Cian Dorr, suggestion of 20 September 2026
-  recorded_by: Claude Fable 5.1 (Anthropic), 20 September 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026
   checked_by: []
   date: '2026-09-20'
   lean: stated
 sources:
 - Cian Dorr, suggestion of 20 September 2026.
-- Claude Fable 5.1 (Anthropic), coalesced-sum model of 20 September 2026 (see coalesced-all-finite-individual-domains).
+- Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, coalesced-sum model of 20 September 2026 (see coalesced-all-finite-individual-domains).
 source_names:
 - Dorr 20 Sep
 - Fable 20 Sep

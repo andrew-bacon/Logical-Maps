@@ -29,10 +29,10 @@ references:
     complete Boolean algebra, hence every small forcing, is realised below some proposition.
 changes:
 - date: '2026-10-21'
-  by: OpenAI Codex
+  by: OpenAI Codex, prompted by Andrew Bacon
   summary: Linked the existing strict-smallness formulation to Modalized Domains §6.1; statement unchanged.
 - date: '2026-10-23'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
   summary: Renamed Forcing Possibilism, with Bacon's Mathematical Possibilism as an alias, and placed in
     the new category Mathematical contingency. Up to forcing equivalence, forcing notions are the complete
     Boolean algebras, so the principle says that every small forcing is broadly possible; the statement is

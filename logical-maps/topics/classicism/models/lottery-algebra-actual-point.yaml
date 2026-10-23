@@ -3,13 +3,13 @@ name: 'Lottery algebra: isolated actual point'
 certificate:
   source_id: misc
   produced_by: Andrew Bacon
-  recorded_by: OpenAI Codex, 19 October 2026
+  recorded_by: OpenAI Codex, prompted by Andrew Bacon, 19 October 2026
   checked_by: []
   date: '2026-10-19'
   lean: none
 sources:
 - Andrew Bacon, Arbitrarily Large Models of Classicism with BoxRigid Comprehension, Intensional Choice and Mathematical Possibilism, handout supplied 19 October 2026, §§2–8.
-- OpenAI Codex, supplementary arguments for Barcan, non-atomicity and Actuality, 19 October 2026, accompanying write-up.
+- OpenAI Codex, prompted by Andrew Bacon, supplementary arguments for Barcan, non-atomicity and Actuality, 19 October 2026, accompanying write-up.
 source_names:
 - Large models handout
 - Supplementary arguments
@@ -27,12 +27,12 @@ arguments:
   text: >-
     Handout §8: |A| = 2^μ and μ^ω = 2^μ. Pierce's theorem says |C|^ω = |C| for every infinite complete Boolean algebra, so no such algebra has cardinality in [μ,2^μ). At ∗ identity is literal and every relation on the type domains is represented by an actual extension. Thus internal complete Boolean algebras and cardinal comparisons are external ones. Every small C has cardinality < μ and is some B_i up to isomorphism; its copy is the interval below W_i, a proper proposition. A one-element algebra is the interval below bottom. The isomorphism is an available actual relation.
 - holds: [necessary-barcan-r]
-  by: OpenAI Codex
+  by: OpenAI Codex, prompted by Andrew Bacon
   date: '2026-10-19'
   text: >-
     Necessity preserves arbitrary meets and quantifiers range over fixed D^σ. Therefore ⟦∀x □Fx⟧ = ⋀_x □Fx = □⋀_x Fx = ⟦□∀x Fx⟧. Every closed BF instance has value top, as does its box.
 - fails: [atomicity-r]
-  by: OpenAI Codex
+  by: OpenAI Codex, prompted by Andrew Bacon
   date: '2026-10-19'
   text: >-
     The lottery contains an atomless complete Boolean algebra, for example the completion of countable Cohen forcing, whose cardinality is at most 2^ω < μ. Its component proposition W_i is nonzero, and the interval below W_i at ∗ is isomorphic to that atomless algebra. Thus no propositional atom lies below W_i. Failure at t refutes the schema.

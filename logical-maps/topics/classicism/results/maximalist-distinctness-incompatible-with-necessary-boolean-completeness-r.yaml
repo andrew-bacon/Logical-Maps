@@ -7,7 +7,7 @@ status: proved
 certificate:
   source_id: bacon-dorr-classicism
   produced_by: Andrew Bacon and Cian Dorr
-  recorded_by: OpenAI Codex (GPT-6), 17 September 2026
+  recorded_by: OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026
   checked_by: []
   date: '2026-09-17'
   lean: verified
@@ -30,5 +30,5 @@ notes: >-
   possibility-and-countable-boolean-completeness-incompatible.
 changes:
 - date: '2026-09-20'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Cross-referenced the unboxed incompatibility now recorded from Goodsell's draft.

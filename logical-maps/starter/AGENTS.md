@@ -29,7 +29,10 @@ a new topic when the user requests one. `topics/example/` is a tutorial;
   origins and formulations from proofs; explain adaptations explicitly.
   Adding a reference never verifies a claim or changes its direct source.
 - Credit the mathematical author in `produced_by` and transcription in
-  `recorded_by`. Leave `checked_by: []` unless the user identifies an actual checker.
+  `recorded_by`. Name the person who prompted an AI beside it wherever it is
+  credited, `Claude Opus 5.5 (Anthropic), prompted by Cian Dorr`, even when they
+  contributed nothing substantive. Leave `checked_by: []` unless the user
+  identifies an actual checker.
 - Preserve existing published and human-authored mathematical content. Add a
   note or a new record when a correction would change a claim or proof.
 - Never use a conjecture as proof evidence, or a missing arrow as non-implication.

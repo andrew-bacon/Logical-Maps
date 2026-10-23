@@ -2,7 +2,7 @@
 
 **Source and work accounting.** The paired-reflection argument is Zachary
 Goodsell's *Symmetries of value*, Theorem 3, pp. 25–26. The contribution here is
-a small premise reduction and an explicit cancellation proof, recorded by GPT-6
+a small premise reduction and an explicit cancellation proof, recorded by GPT-6, prompted by Zachary Goodsell
 (Codex), 9 September 2026. No independent checker or Lean certification is asserted.
 
 Assume Rich Outcomes, Stochastic Equivalence, Simple EU, Mixture Independence,

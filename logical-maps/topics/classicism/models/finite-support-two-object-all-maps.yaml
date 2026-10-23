@@ -3,7 +3,7 @@ name: 'Finite-support action model: N and singleton, all maps'
 certificate:
   source_id: bacon-dorr-classicism
   produced_by: Andrew Bacon and Cian Dorr
-  recorded_by: OpenAI Codex (GPT-6), 17 September 2026
+  recorded_by: OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026
   checked_by: []
   date: '2026-09-17'
   lean: stated
@@ -46,7 +46,7 @@ arguments:
     holds without $\Box$BF.
 - fails:
   - atomlessness
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   date: '2026-09-19'
   text: The closed sentence that there is exactly one individual denotes the singleton of the unique map
     to $W_1$, a nonempty proposition with no nonempty proper subproposition.
@@ -63,7 +63,7 @@ arguments:
     of the universal property at either type.
 - fails:
   - distinctness-preserving-collapse
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   date: '2026-09-23'
   text: The transposition of $5$ and $6$ is an arrow with an inverse, so for any true $q$ the composite
     of a member of $q$ with the inverse carries the transposition into $q$, making $\Diamond q$ true there,
@@ -84,7 +84,7 @@ arguments:
 - fails:
   - boolean-completeness-t
   - countable-boolean-completeness-r
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   date: '2026-09-25'
   text: 'Any set $F$ of propositions is the extension of the profile $\langle h,p\rangle\mapsto\{i : i\cdot
     p\in F\}$, and for $F$ the family of propositions $A_m$ that a map $W_0\to W_0$ is constant on $\{0,\ldots,2m-1\}$
@@ -100,7 +100,7 @@ arguments:
       now schematic in that type, includes.
 - holds:
   - necessity-of-arithmetic
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   date: '2026-09-25'
   text: At $W_0$ the finite cardinalities are the standard numerals and $I^*$ is true; at $W_1$ the numerals
     remain pairwise distinct, because they differ at the arrows back into $W_0$ and identity is necessary,
@@ -119,7 +119,7 @@ arguments:
       $\operatorname{Sum}_\sigma$ and $\operatorname{Prod}_\sigma$ are in the domain, as at $e$.
 - fails:
   - necessary-barcan-t
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   date: '2026-09-25'
   text: 'At $W_1$ the arrow $c_n\colon W_1\to W_0$ picking $n$ sends a proposition $q$ to $\{j : c_{j(n)}\in
     q\}$ (with the arrow to $W_1$ added when $q$ contains $1_{W_1}$), a proposition pinned down by $\{n\}$,
@@ -129,7 +129,7 @@ arguments:
 - id: inextensible-comprehension
   fails:
   - inextensible-comprehension-r
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   date: '2026-09-25'
   text: 'At type $t\to t$, for the family $E$ of propositions $p_n$ that $n$ is fixed: for $Y$ inextensible
     with extension $E$ pinned down by the finite set $S$, pick $k\notin S$ and let $X$, pinned down by
@@ -139,7 +139,7 @@ arguments:
     extension of $X$ omits $p_k$.'
 - holds:
   - signature-b-r
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   date: '2026-09-25'
   text: A closed $\Sigma$-sentence denotes what $P(d,\ldots,d)$ denotes for a pure $P$ and the individual
     $d$, and from any world some arrow into $W_0$ carries the current image of $d$ back to $d$, as all
@@ -221,7 +221,7 @@ notes: The cited construction is a model of the map’s relational-type framewor
 was_conjectured: true
 history:
 - date: '2026-09-17'
-  by: OpenAI Codex (GPT-6)
+  by: OpenAI Codex (GPT-6), prompted by Zachary Goodsell
   summary: Adopted the source’s relational type system at the user’s request. The cited construction now
     directly supplies the recorded model; the former type-extension obligation is removed.
   satisfies:
@@ -229,11 +229,11 @@ history:
   violates:
   - necessary-barcan-r
 - date: '2026-09-19'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Added the failure of Atomlessness at N, witnessed by the proposition that there is exactly
     one individual, which is the singleton of the arrow to {0}. Original observation; not in the source.
 - date: '2026-09-20'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Added both Axioms of Infinity at Cian Dorr's direction. The individuals are the natural numbers
     and identity at the evaluation arrow is literal, so no numeral counts them. The propositions that
     a given individual is fixed by the arrow, one for each individual, are pairwise distinct and each
@@ -244,7 +244,7 @@ history:
   - axiom-of-infinity-e
   - axiom-of-infinity-t
 - date: '2026-09-22'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Fixed an interpretation of Σ (relational constants as top, individual constants as one fixed
     individual) and recorded the signature schemata it refutes, at Cian Dorr’s request.
   violates:
@@ -253,12 +253,12 @@ history:
   - independence-signature-r
   - distinctness-signature-r
 - date: '2026-09-23'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Expanded the description from Appendix D; settled the Distinctness-preserving collapse.
   violates:
   - distinctness-preserving-collapse
 - date: '2026-09-23'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: 'Added Relational Choice and its necessitation at Cian Dorr’s direction: ideally full models
     are extensionally full at every object, and choice in the metatheory supplies the functional subrelation;
     see the notes.'
@@ -266,7 +266,7 @@ history:
   - relational-choice-r
   - necessary-relational-choice-r
 - date: '2026-09-25'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
   summary: 'Added Transversal Choice, by the argument recorded for Relational Choice: the model is extensionally
     full at every object, so for an equivalence relation at the evaluation point a transversal of its
     extension there, chosen in the metatheory, is the extension of an element pinned down by the empty
@@ -275,13 +275,13 @@ history:
   satisfies:
   - transversal-choice-r
 - date: '2026-09-23'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Recorded the failure of Atomicity (type t), and with it of the Strong Leibniz Biconditionals;
     see the notes.
   violates:
   - atomicity-t
 - date: '2026-09-25'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Settled Actuality, Atomicity (type t), Boolean Completeness (type t), Countable Boolean Completeness,
     □BF (type t) and Inextensible Comprehension as failing, and Necessity of Arithmetic, B for pure sentences
     and B for sentences of Σ as holding, with the arguments in the notes.
@@ -297,7 +297,7 @@ history:
   - necessary-barcan-t
   - inextensible-comprehension-r
 - date: '2026-09-25'
-  by: Claude Opus 5.5 (Anthropic)
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   summary: Merged the two sets of arguments recorded on 23 and 25 September into one, keeping the 23 September
     argument for Atomicity (type t).
 - date: '2026-09-27'

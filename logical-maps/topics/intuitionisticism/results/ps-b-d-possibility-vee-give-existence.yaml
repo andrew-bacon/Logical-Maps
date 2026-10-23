@@ -7,14 +7,14 @@ status: proved
 certificate:
   source_id: misc
   lean: none
-  produced_by: Codex (GPT-6), 13 September 2026
-  recorded_by: Codex (GPT-6), manuscript transcription
+  produced_by: Codex (GPT-6), prompted by Zachary Goodsell, 13 September 2026
+  recorded_by: Codex (GPT-6), prompted by Zachary Goodsell, manuscript transcription
   checked_by: []
   date: '2026-09-13'
 proof: |-
   Use the defined operator $\Diamond _\lor$ as the witness f in the existential formula.
 sources:
-- Codex (GPT-6), connecting proof recorded 13 September 2026 in ps-b-d-possibility-vee-give-existence.
+- Codex (GPT-6), prompted by Zachary Goodsell, connecting proof recorded 13 September 2026 in ps-b-d-possibility-vee-give-existence.
 - Zachary Goodsell, Possibility in Intuitionistic Higher-Order Logic (21 August 2026), §4.1, Theorem 5(i),
   p. 17.
 source_names:

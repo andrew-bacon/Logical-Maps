@@ -6,7 +6,7 @@ formal: |-
   $\Box (\forall p:t. \neg \Diamond _\lor (p) \to \Box \neg p)$
 category: possibility-vee
 sources:
-- Codex (GPT-6), connecting-principle formulation, 2026-09-13.
+- Codex (GPT-6), prompted by Zachary Goodsell, connecting-principle formulation, 2026-09-13.
 - Zachary Goodsell, Possibility in Intuitionistic Higher-Order Logic (21 August 2026), §3.2, Eq. (17),
   p. 11; §4.1, p. 17.
 source_names:

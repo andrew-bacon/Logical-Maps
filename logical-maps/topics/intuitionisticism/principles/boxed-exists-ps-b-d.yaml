@@ -6,7 +6,7 @@ formal: |-
   $\Box (\exists f:tt. \operatorname{PSb}(f) \land \operatorname{PSd}(f))$
 category: candidate-laws
 sources:
-- Codex (GPT-6), connecting-principle formulation, 2026-09-13.
+- Codex (GPT-6), prompted by Zachary Goodsell, connecting-principle formulation, 2026-09-13.
 - Zachary Goodsell, Possibility in Intuitionistic Higher-Order Logic (21 August 2026), §4.1, Theorem 5(i),
   Eq. (26), pp. 16–17.
 source_names:

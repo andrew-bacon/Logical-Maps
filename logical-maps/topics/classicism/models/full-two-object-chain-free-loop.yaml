@@ -2,8 +2,8 @@ id: full-two-object-chain-free-loop
 name: 'Full action model: two-object chain with a free loop at the second object'
 certificate:
   source_id: misc
-  produced_by: Claude Fable 5.1 (Anthropic), 19 October 2026
-  recorded_by: Claude Fable 5.1 (Anthropic), 19 October 2026
+  produced_by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 19 October 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 19 October 2026
   checked_by: []
   date: '2026-10-19'
   lean: stated

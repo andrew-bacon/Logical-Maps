@@ -7,8 +7,8 @@ conclusion: necessary-rigid-power-r
 status: proved
 certificate:
   source_id: misc
-  produced_by: Claude Opus 5.5 (Anthropic), 3 October 2026
-  recorded_by: Claude Opus 5.5 (Anthropic), 3 October 2026
+  produced_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 3 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 3 October 2026
   checked_by: []
   date: '2026-10-03'
   lean: verified
@@ -34,7 +34,7 @@ notes: >-
   premises; it is a C-proof from those boxed premises, so the conclusion is boxed too.
 changes:
 - date: '2026-10-19'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
   summary: □BF is dispensable. Bacon's Lemma C.6 (Could the truths of mathematics have been different?)
     pulls the possible rigid subrelation back without BF, using an atom at the type of the power property
     in place of an atom at type t; see atomicity-and-rigid-comprehension-imply-rigid-power and its

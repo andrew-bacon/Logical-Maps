@@ -24,7 +24,7 @@ notes: Bacon’s higher-order rendering of the possible-worlds thesis that a pro
   types as new to it (§8.4, p. 177).
 changes:
 - date: '2026-10-19'
-  by: Claude Opus 5.5 (Anthropic)
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   summary: 'At Cian Dorr’s request: definitions of its technical terms added.'
 aliases:
 - SL

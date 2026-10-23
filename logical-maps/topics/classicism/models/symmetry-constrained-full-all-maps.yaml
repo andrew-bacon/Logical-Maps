@@ -5,7 +5,7 @@ certificate:
   produced_by: Cian Dorr (the construction and the failure of Intensional Choice, 4 October 2026);
     Claude Fable 5.1 (Anthropic) (the counting of propositions, the repair of the type-$t$ witness,
     and the other verdicts, 4 October 2026)
-  recorded_by: Claude Fable 5.1 (Anthropic), 4 October 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 4 October 2026
   checked_by: []
   date: '2026-10-04'
   lean: stated
@@ -46,7 +46,7 @@ arguments:
 
 - id: intensional-choice-t
   fails: [intensional-choice-r]
-  by: Claude Fable 5.1 (Anthropic), repairing a witness proposed by Cian Dorr
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, repairing a witness proposed by Cian Dorr
   date: '2026-10-04'
   text: >-
     At type $t$, for properties of propositions, so also in the variant with one individual. A

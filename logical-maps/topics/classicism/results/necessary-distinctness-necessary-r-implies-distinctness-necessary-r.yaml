@@ -5,8 +5,8 @@ conclusion: distinctness-necessary-r
 status: proved
 certificate:
   source_id: misc
-  produced_by: OpenAI Codex (GPT-6), 17 September 2026
-  recorded_by: OpenAI Codex (GPT-6), 17 September 2026
+  produced_by: OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026
+  recorded_by: OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026
   checked_by: []
   date: '2026-09-17'
   lean: verified

@@ -12,7 +12,7 @@ certificate:
   lean: stated
   produced_by: Zachary Goodsell (stable-law obstruction proposal); GPT-6 (Codex) (specified witness and proof
     completion)
-  recorded_by: GPT-6 (Codex)
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell
   checked_by: []
   date: '2026-09-09'
 proof: |-
@@ -20,7 +20,7 @@ proof: |-
 sources:
 - 'Zachary Goodsell, project conversation, 9 September 2026: proposal that neutral symmetric stable-law mixtures
   yield an obstruction after adding a common independent stable variable.'
-- 'GPT-6 (Codex), 9 September 2026, writeups/levy-refutes-neutral-independent-preservation.md: explicit positive
+- 'GPT-6 (Codex), prompted by Zachary Goodsell, 9 September 2026, writeups/levy-refutes-neutral-independent-preservation.md: explicit positive
   index-1/2 Levy witness, mixture reduction, strict tail comparison, and premise reduction.'
 - 'NIST Digital Library of Mathematical Functions, equation 7.7.8, https://dlmf.nist.gov/7.7.E8: Gaussian integral
   used to check the Laplace transform; mathematical identity only, not a source for this decision-theoretic

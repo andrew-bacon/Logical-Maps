@@ -15,7 +15,7 @@ requirement that the indicated transformed outcomes are available.
 
 The bridge was found by DeepSeek (`deepseek-flash`) during the theorem trawl
 on 25 September 2026 and informally checked and admitted to the local database
-by GPT-6 (Codex) that day. The original proposal's Claude attribution was
+by GPT-6 (Codex), prompted by Zachary Goodsell that day. The original proposal's Claude attribution was
 corrected using the runner's API audit. The mathematical source is this
 elementary argument from the recorded definitions, rather than a claim of
 new literature research. No Lean verification is claimed. Structured

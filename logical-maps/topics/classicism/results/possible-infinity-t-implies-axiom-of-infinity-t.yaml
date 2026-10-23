@@ -6,7 +6,7 @@ status: conjectured
 certificate:
   source_id: misc
   produced_by: Cian Dorr, question of 20 September 2026
-  recorded_by: Claude Fable 5.1 (Anthropic), 20 September 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026
   checked_by: []
   date: '2026-09-20'
   lean: stated
@@ -25,7 +25,7 @@ notes: >-
   can see one with more, and must violate both BF (type $t$) and No Pure Contingency.
 changes:
 - date: '2026-10-19'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
   summary: Refuted by the model full-two-object-chain-free-loop, a full action model whose evaluation
     object has four propositions and sees, through one arrow, an object with an infinite monoid of
     endomorphisms and so infinitely many propositions; BF at type t and No Pure Contingency fail there,

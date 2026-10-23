@@ -3,7 +3,7 @@ name: 'Full action model: two-object retract'
 certificate:
   source_id: bacon-dorr-classicism
   produced_by: Andrew Bacon and Cian Dorr
-  recorded_by: OpenAI Codex (GPT-6), 17 September 2026
+  recorded_by: OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026
   checked_by: []
   date: '2026-09-17'
   lean: stated
@@ -45,7 +45,7 @@ notes: The cited construction is a model of the map’s relational-type framewor
 was_conjectured: true
 history:
 - date: '2026-09-17'
-  by: OpenAI Codex (GPT-6)
+  by: OpenAI Codex (GPT-6), prompted by Zachary Goodsell
   summary: Adopted the source’s relational type system at the user’s request. The cited construction now
     directly supplies the recorded model; the former type-extension obligation is removed.
   satisfies:
@@ -58,14 +58,14 @@ history:
   - necessary-distinctness-necessary-t
   - no-pure-contingency-r
 - date: '2026-09-20'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Added Relational Choice at Cian Dorr's direction. With choice in the metatheory a serial relation
     has a functional subrelation, and a full model contains every intension, so that subrelation is in
     the domain; see Classicism, p. 61, on the principles common to full models.
   satisfies:
   - relational-choice-r
 - date: '2026-09-22'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Fixed an interpretation of Σ (relational constants as top, individual constants as one fixed
     individual) and recorded the signature schemata it refutes, at Cian Dorr’s request.
   violates:
@@ -74,22 +74,22 @@ history:
   - independence-signature-r
   - distinctness-signature-r
 - date: '2026-09-22'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Added the failure of Strong Leibniz Biconditionals (type t) at W0; see the notes.
   violates:
   - strong-leibniz-t
 - date: '2026-09-22'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Boxed the Relational Choice claim; see the notes.
   satisfies:
   - necessary-relational-choice-r
 - date: '2026-09-23'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Recorded the Distinctness-preserving collapse; see the notes.
   violates:
   - distinctness-preserving-collapse
 - date: '2026-09-25'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
   summary: 'Added Transversal Choice, by the argument recorded for Relational Choice: a full model contains
     every intension, in particular one whose extension at the evaluation point is a transversal, chosen
     in the metatheory, of the extension there of an equivalence relation; the equivalence and transversal
@@ -98,7 +98,7 @@ history:
   satisfies:
   - transversal-choice-r
 - date: '2026-09-25'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Added Gallin Extensional Comprehension at W0, and the failure of the Infinity Schema and of
     Possible Infinity at type t; see the notes.
   satisfies:

@@ -235,7 +235,7 @@ arguments:
 - id: tame-rigidity
   requires: [arrows-finitely-determined]
   holds: [tame-rigidity-r]
-  by: Claude Opus 5.5 (Anthropic)
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   date: '2026-10-02'
   text: >-
     Write a relation $Y$ as its intension $k\mapsto Y_k$. Then $Y\bar a$ holds at $k$ iff
@@ -332,7 +332,7 @@ arguments:
   requires: [collapse-unpinned]
   fails: [atomicity-r, atomicity-t]
   source: {paper: bacon-dorr-classicism, locator: 'Proposition D.5(4), p. 78'}
-  by: Claude Fable 5.1 (Anthropic), from the source's remark
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, from the source's remark
   date: '2026-09-23'
   text: >-
     The only finitely pinned singleton is that of the identity, and every atom is a finitely
@@ -393,7 +393,7 @@ arguments:
   when: {individuals: naturals}
   requires: [unbounded-haecceities]
   fails: [countable-boolean-completeness-r]
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   date: '2026-09-23'
   text: >-
     At type $e\to t$: the property $E$ whose extension is the family of haecceities of the members
@@ -412,7 +412,7 @@ arguments:
 - id: boolean-completeness-t
   requires: [no-least-pinned-cover]
   fails: [boolean-completeness-t]
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   date: '2026-09-25'
   text: >-
     The source (n. 92) conjectures this but does not show it. Any set $F$ of propositions is the
@@ -471,7 +471,7 @@ arguments:
     inextensible.
   revisions:
   - date: '2026-09-25'
-    by: Claude Opus 5.5 (Anthropic)
+    by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
     note: Merged with the 25 September version; the argument already refutes the weak form, which was added.
   - date: '2026-10-02'
     by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction

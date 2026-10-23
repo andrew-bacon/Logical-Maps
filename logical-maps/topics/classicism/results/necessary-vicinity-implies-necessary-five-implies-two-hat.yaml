@@ -5,9 +5,9 @@ conclusion: necessary-five-implies-two-hat-necessity
 status: proved
 certificate:
   source_id: misc
-  produced_by: Christopher Sun, 19 October 2026 (unboxed form); boxed form recorded by Claude Opus 5.5 (Anthropic),
+  produced_by: Christopher Sun, 19 October 2026 (unboxed form); boxed form recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr,
     19 October 2026
-  recorded_by: Claude Opus 5.5 (Anthropic), 19 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 19 October 2026
   checked_by: []
   date: '2026-10-19'
   lean: stated

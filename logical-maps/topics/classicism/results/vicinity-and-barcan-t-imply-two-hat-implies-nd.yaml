@@ -6,9 +6,9 @@ conclusion: two-hat-implies-nd-necessity
 status: proved
 certificate:
   source_id: bounds-of-possibility
-  produced_by: Claude Fable 5.1 (Anthropic), 14 October 2026, from Proposition D18 of The Bounds of Possibility,
+  produced_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026, from Proposition D18 of The Bounds of Possibility,
     Appendix D; Vicinity in place of Actuality suggested by Christopher Sun
-  recorded_by: Claude Fable 5.1 (Anthropic), 14 October 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026
   checked_by: []
   date: '2026-10-14'
   lean: stated

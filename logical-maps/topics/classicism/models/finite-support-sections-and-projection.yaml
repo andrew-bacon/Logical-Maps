@@ -2,15 +2,15 @@ id: finite-support-sections-and-projection
 name: 'Finite-support action model: N and N×2, sections and projection'
 certificate:
   source_id: misc
-  produced_by: Claude Opus 5.5 (Anthropic), 27 September 2026, in a session with Cian Dorr
-  recorded_by: Claude Opus 5.5 (Anthropic), 27 September 2026
+  produced_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 27 September 2026, in a session with Cian Dorr
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 27 September 2026
   checked_by:
   - Cian Dorr, informal review, 2026-09-27
   - Christopher Sun, informal review, 2026-09-27
   date: '2026-09-27'
   lean: stated
 sources:
-- Original construction and verification by Claude Opus 5.5 (Anthropic), 27 September 2026; see the write-up.
+- Original construction and verification by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 27 September 2026; see the write-up.
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, Appendix D, Definitions D.1–D.3, pp. 73–74
   (ideally full action models); p. 79 (a two-object example of the same kind).
 source_names:

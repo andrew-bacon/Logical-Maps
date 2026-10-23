@@ -12,7 +12,7 @@ source_names:
 notes: The necessitated form of [[strong-actuality]].
 changes:
 - date: '2026-10-19'
-  by: Claude Opus 5.5 (Anthropic)
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   summary: 'At Cian Dorr’s request: the formal statement now displays the boxed formula; the notes now
     name the base principle with a link, without the boilerplate about closed instances and the box.'
 lean_def: Classicism.P.NecStrongActuality.schemaIn

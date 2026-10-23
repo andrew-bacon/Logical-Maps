@@ -2,7 +2,7 @@
 
 Source: Goodsell, *Decision theory unbound*, Theorem 2, pp. 683–685;
 Theorems 7 and 9, p. 693. Human model: Zachary Goodsell.
-Recorded and translated by GPT-6 (Codex); no transcription checker asserted.
+Recorded and translated by GPT-6 (Codex), prompted by Zachary Goodsell; no transcription checker asserted.
 
 Take $O=\mathbb{R}$, all measurable random variables, and
 

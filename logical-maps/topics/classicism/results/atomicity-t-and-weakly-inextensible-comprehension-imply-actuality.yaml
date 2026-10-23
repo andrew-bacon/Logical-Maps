@@ -6,10 +6,10 @@ conclusion: actuality
 status: proved
 certificate:
   source_id: misc
-  produced_by: Claude Opus 5.5 (Anthropic), the argument from Atomicity (type t) and Boolean Completeness,
+  produced_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, the argument from Atomicity (type t) and Boolean Completeness,
     1 October 2026; Cian Dorr, the observation that it needs only Weak Inextensible Comprehension, and
     the streamlined proof, 1 October 2026
-  recorded_by: Claude Opus 5.5 (Anthropic), 1 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 1 October 2026
   checked_by: []
   date: '2026-10-01'
   lean: verified

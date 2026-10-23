@@ -15,12 +15,12 @@ certificate:
   produced_by: Zachary Goodsell (question) and Claude (Fable 5.1) (formulation and obstruction analysis), 2026-09-24
   checked_by: []
   date: '2026-09-24'
-  recorded_by: Claude (Fable 5.1), 2026-09-24
+  recorded_by: Claude (Fable 5.1), prompted by Zachary Goodsell, 2026-09-24
 proof: ''
 sources:
 - 'Zachary Goodsell, Logical Maps session, 24 September 2026: claim that Comonotonic Sum Invariance implies
   Positive Affine Invariance, with the passage from rational to real factors left open.'
-- 'Claude (Fable 5.1), Logical Maps, 24 September 2026: precise DTU formulation, and the two models showing
+- 'Claude (Fable 5.1), prompted by Zachary Goodsell, Logical Maps, 24 September 2026: precise DTU formulation, and the two models showing
   which premises the rational-factor proof cannot spare; see writeups/lexicographic-hamel-tie-break.md.'
 source_names:
 - Goodsell question 24 Sep

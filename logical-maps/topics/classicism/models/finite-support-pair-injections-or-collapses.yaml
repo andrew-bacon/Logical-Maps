@@ -5,7 +5,7 @@ certificate:
   produced_by: Cian Dorr (the construction, and the expectation that Vicinity holds and Actuality
     fails, 7 October 2026); Claude Opus 5.5 (Anthropic) (closure under composition, the other
     verdicts, and the failure of Rigid Power, 7 October 2026)
-  recorded_by: Claude Opus 5.5 (Anthropic), 8 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 8 October 2026
   checked_by: []
   date: '2026-10-07'
   lean: stated
@@ -67,7 +67,7 @@ meets:
 arguments:
 
 - holds: [vicinity]
-  by: Claude Opus 5.5 (Anthropic), confirming Cian Dorr's expectation
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, confirming Cian Dorr's expectation
   date: '2026-10-07'
   text: >-
     The witness is the proposition $p:=\{h : h0\ne h1\}$, the pair-preserving injections, pinned
@@ -78,7 +78,7 @@ arguments:
     reach a $q$-world: $p\le\Diamond q$.
 
 - holds: [barcan-r]
-  by: Claude Opus 5.5 (Anthropic)
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   date: '2026-10-07'
   text: >-
     At every type. Every arrow agrees on any finite set with a surjective arrow: a pair-preserving
@@ -89,7 +89,7 @@ arguments:
     and so, by pinning, $\langle a,k\rangle\in X$.
 
 - holds: [atomlessness]
-  by: Claude Opus 5.5 (Anthropic)
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   date: '2026-10-07'
   text: >-
     Every arrow can be changed at a point outside any finite set without leaving its class (a
@@ -99,7 +99,7 @@ arguments:
 
 - fails: [rigid-power-r]
   when: {individuals: naturals}
-  by: Claude Opus 5.5 (Anthropic)
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   date: '2026-10-07'
   text: >-
     At type $e\to t$, with $F:=\top$. Write $Z_k$ for the extension of a property $Z$ at the arrow

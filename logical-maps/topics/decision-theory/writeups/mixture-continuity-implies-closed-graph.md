@@ -1,6 +1,6 @@
 # Transitivity ∧ Independence ∧ Mixture continuity ⇒ Closed-graph continuity
 
-<p class='cert'>Result — ai; produced by Claude Fable 5.1 (Cowork session), 2026-09-08. Not yet checked.</p>
+<p class='cert'>Result — ai; produced by Claude Fable 5.1 (Cowork session), prompted by Zachary Goodsell, 2026-09-08. Not yet checked.</p>
 
 **Claim.** If $\succcurlyeq$ is reflexive and transitive, satisfies independence, and has closed sections $\{\lambda : \lambda p + (1-\lambda) q \succcurlyeq r\}$ and $\{\lambda : r \succcurlyeq \lambda p + (1-\lambda) q\}$, then $\{(p,q) : p \succcurlyeq q\}$ is closed in $\Delta(X)^2$.
 

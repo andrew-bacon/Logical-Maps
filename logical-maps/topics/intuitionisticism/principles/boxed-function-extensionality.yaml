@@ -6,7 +6,7 @@ formal: |-
   For every $\sigma ,\tau : \Box (\forall f,g:\sigma \tau . (\forall x:\sigma . f x = g x) \to (f = g))$
 category: higher-order
 sources:
-- Codex (GPT-6), connecting-principle formulation, 2026-09-13.
+- Codex (GPT-6), prompted by Zachary Goodsell, connecting-principle formulation, 2026-09-13.
 - Zachary Goodsell, Possibility in Intuitionistic Higher-Order Logic (21 August 2026), §3.1, footnote
   4, p. 8.
 source_names:

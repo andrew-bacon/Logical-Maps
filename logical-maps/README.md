@@ -280,7 +280,10 @@ keep the exact author/model, date, and supporting references in the write-up.
 Citing a paper's definitions does not make it the source of a new proof.
 
 `produced_by` credits the mathematical author and `recorded_by` credits the
-transcription. `checked_by` records actual checks. Every result/model needs
+transcription. An AI credited anywhere is named together with the person who
+prompted it, `Claude Opus 5.5 (Anthropic), prompted by Cian Dorr`, whether or not
+that person contributed to the content; a person credited in the same entry for the
+mathematics or the construction is taken to be the prompter unless another is named. `checked_by` records actual checks. Every result/model needs
 nonempty `sources`, with optional parallel `source_names` for short labels.
 `status: conjectured` is displayed but never used as proved evidence. Source
 filters recompute evidence-based verdicts from the surviving records. On the

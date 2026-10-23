@@ -7,8 +7,8 @@ conclusion: modal-well-ordering-r
 status: proved
 certificate:
   source_id: misc
-  produced_by: Claude Opus 5.5 (Anthropic), 7 October 2026, filling in an argument sketched by Cian Dorr (the rigid family of initial segments, and the conjecture that it is necessarily well-ordered by inclusion)
-  recorded_by: Claude Opus 5.5 (Anthropic), 8 October 2026
+  produced_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 7 October 2026, filling in an argument sketched by Cian Dorr (the rigid family of initial segments, and the conjecture that it is necessarily well-ordered by inclusion)
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 8 October 2026
   checked_by: []
   date: '2026-10-07'
   lean: verified

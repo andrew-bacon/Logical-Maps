@@ -16,7 +16,7 @@ certificate:
   source_id: misc
   lean: stated
   produced_by: Zachary Goodsell (area construction and broader comonotonic consistency question); GPT-6 (Codex) (precise total CDF-area extension candidate)
-  recorded_by: GPT-6 (Codex)
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell
   checked_by: []
   date: '2026-09-09'
 description: >-
@@ -36,8 +36,8 @@ description: >-
   continuity or negative verdict is asserted for this candidate.
 sources:
 - 'Zachary Goodsell, Unbounded Utility and Background Risk, unpublished manuscript, 5 June 2026, §3, pp. 7–8, and discussion before Theorem 7 and Theorem 7, pp. 19–20: CDF-area construction, its comonotonic invariance, and the broader unresolved consistency question.'
-- 'GPT-6 (Codex), 9 September 2026, proposed total-extension package and obstacle analysis in writeups/conjectured-total-comonotonic-area-extension.md.'
-- 'Claude (Fable 5.1), Logical Maps, 23 September 2026: killing lemma and an explicit forced comparison, section “A necessary condition: forced comparisons of both-infinite pairs” of the write-up; diagnostic checks/comonotonic_witnesses.py.'
+- 'GPT-6 (Codex), prompted by Zachary Goodsell, 9 September 2026, proposed total-extension package and obstacle analysis in writeups/conjectured-total-comonotonic-area-extension.md.'
+- 'Claude (Fable 5.1), prompted by Zachary Goodsell, Logical Maps, 23 September 2026: killing lemma and an explicit forced comparison, section “A necessary condition: forced comparisons of both-infinite pairs” of the write-up; diagnostic checks/comonotonic_witnesses.py.'
 source_names:
 - Unbounded Utility and Background Risk (unpublished)
 - GPT-6 conjecture 9 Sep
@@ -71,7 +71,7 @@ checks:
 - topics/unbounded-utility/checks/comonotonic_witnesses.py
 changes:
 - date: '2026-09-23'
-  by: Claude (Fable 5.1)
+  by: Claude (Fable 5.1), prompted by Zachary Goodsell
   summary: >-
     Necessary condition added (write-up section “A necessary condition: forced comparisons of both-infinite pairs”): under Stochastic Equivalence, Stochastic Dominance, Mixture Independence and the preservation half of Comonotonic Sum Invariance, a pair whose survival difference d admits comonotonic shears d^{Z_i} and weights with d + Σ q_i d^{Z_i} ≤ 0, ≠ 0, cannot satisfy X ≽ Y. An explicit both-infinite pair with two step-function shears is exhibited, so the sought total extension must rank it Y ≻ X although CDF-Area Extension is silent on it. The conjecture itself is unchanged.
 - date: '2026-09-23'

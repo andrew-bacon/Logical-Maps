@@ -216,8 +216,21 @@ map's Atomicity, now carrying that alias.
 | §6, Intensional Choice; Theorem 6.1, Conjecture 6.1 | Intensional Choice was imported on 3 October 2026. Mathematical Possibilism joined the map on 23 October 2026 as `forcing-possibilism` (Forcing Possibilism, with Bacon's name as an alias), through Bacon's own contribution of the lottery-algebra model and the modalized-domain models (*Modalized Domains on Possibility Frames*, Bacon and Claude Opus 5.5, draft of 20 October 2026, in `papers.yaml`); that model, with □Rigid Comprehension and □Intensional Choice, settles Conjecture 6.1 in C. Theorem 6.1 (□RC, Intensional Choice and the principle make CH contingent) is not yet recorded: its proof is not in the draft or the handout |
 | Appendix B.2, Theorem 5.1 | The Boolean-valued model, imported earlier (`full-boolean-valued-atom-and-atomless`) |
 
-Not imported: the Necessity of Analysis (Theorem 5.2, Corollary 5.1, Appendix C.2 beyond Lemma C.6),
-the map having no principle for analysis; Theorem 4.1 (arithmetical contingency in C, Appendix B.1),
+Imported on 23 October 2026, with the principles of the category Mathematical contingency
+(`necessity-of-analysis`, `necessity-of-second-order-analysis`, `non-contingency-of-ch`,
+`analytic-necessitism`, `second-order-analytic-necessitism`, `arithmetic-necessitism`, all formulated
+without Rigid Comprehension by quantifying over real number structures or asking for a rigid one):
+Theorem 5.2 (Theorem C.2) as
+`atomicity-and-necessary-rigid-comprehension-imply-necessity-of-second-order-analysis`, with Corollary
+5.1 derivable from it; Theorem 6.1 as the conjecture
+`necessary-rigid-comprehension-intensional-choice-and-forcing-possibilism-incompatible-with-non-contingency-of-ch`,
+its proof not being in the draft; Lemmas C.1 and C.3 and Proposition C.3 in the proofs of
+`analytic-necessitism-implies-necessity-of-analysis` and its second-order form. Not yet recorded:
+Theorem 5.1's model of C5 with Rigid Comprehension in which CH is structurally contingent (Appendix
+B.2 with an infinite individual domain; `full-boolean-valued-atom-and-atomless` is its singleton
+specialization), which would refute `non-contingency-of-ch`.
+
+Not imported: Theorem 4.1 (arithmetical contingency in C, Appendix B.1),
 whose model the map does not need; Theorem 4.3 (second-order logic); n. 59, that S5 with □Rigid
 Comprehension gives the Leibniz Biconditionals, which the engine already derives from
 `necessary-rigid-comprehension-r-implies-necessary-actuality` and
@@ -233,10 +246,15 @@ hierarchy; their restrictions to the map's relational types are recorded.
 | Source | Recorded |
 | --- | --- |
 | §8, Definition 1, Lemmas 11–19; Theorem 20; Theorem 21 | `stitched-cohen-extension`, the simplest instance: trivial group, the canonical extensional model, Cohen forcing. Rigid Power fails with □Rigid Comprehension, □Relational Choice, □Atomicity (type t) and □Strong Leibniz (type t) |
-| Theorems 3–7 (arithmetic and analysis in CR∞) | The Necessity of Arithmetic in CR∞ is derivable on the map through Countable Boolean Completeness; the analytical results concern no principle of the map |
+| Theorem 3 (First-Order Arithmetic Necessitism, Goodsell 2021) | `arithmetic-necessitism`, the principle at every type with their Infinity as antecedent; the theorem is `necessary-rigid-comprehension-implies-arithmetic-necessitism` (23 October 2026) |
+| §5.8, eqs. (30)–(33) (first- and second-order Continuum Necessitism, Inextensibility of Reals) | `analytic-necessitism` and `second-order-analytic-necessitism`, formulated without Rigid Comprehension as the existence of a rigid real number structure, with represented powers for the second order; their principles are the instances at the reals as rigid properties of naturals, which represent all sets of naturals under Rigid Comprehension |
+| §5.7, §5.9, Theorem 7 (analytical sentences; necessitism gives non-contingency) | `necessity-of-analysis`, `necessity-of-second-order-analysis`, `non-contingency-of-ch`, over all real number structures; Theorem 7 as `analytic-necessitism-implies-necessity-of-analysis` and `second-order-analytic-necessitism-implies-necessity-of-second-order-analysis` |
+| Theorem 20 (continuum contingency in CRC∞) | `stitched-cohen-extension` now also fails `analytic-necessitism`; the variants that change CH, and a ground model $V=L$ for a first-order analytical sentence, are not recorded |
 
 Not imported: Theorem 9 (the coin-toss theorem) and Theorem 22 (Recombination with continuum
-contingency), Recombination not being a principle of the map; Corollary 23, that CRC∞ is consistent
+contingency), Recombination not being a principle of the map, its strength depending on Rigid
+Comprehension; Theorem 8 (first-order continuum necessitism with a well-ordering of the reals makes CH
+necessary if true), a one-directional claim with no principle to carry it; Corollary 23, that CRC∞ is consistent
 with the failure of Atomicity (type t), Christopher Sun's conjecture, which `symmetric-collapse-pair`
 already witnesses for □Rigid Comprehension; Theorem 24 and §10 (iterated contingency). Deferred: the
 Theorem 22 model as a record, which would add Recombination if that principle is ever recorded, and

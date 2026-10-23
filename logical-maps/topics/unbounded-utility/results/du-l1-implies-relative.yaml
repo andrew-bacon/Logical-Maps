@@ -11,15 +11,15 @@ status: proved
 certificate:
   source_id: misc
   lean: stated
-  produced_by: GPT-6 (Codex)
-  recorded_by: GPT-6 (Codex), 2026-09-09
+  produced_by: GPT-6 (Codex), prompted by Zachary Goodsell
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-09
   checked_by: []
   date: '2026-09-09'
 proof: |-
   The existing finite-lottery representation argument derives Simple EU from Rich Outcomes, Archimedean Outcomes, Stochastic Dominance and Independence. For any bounded utility variable V, upward finite quantizations $Q_n$ satisfy $Q_n\sim E Q_n$ by Simple $\operatorname{EU}, Q_n\ge V$ by dominance, and $E Q_n\ge E V$. Thus $Q_n\ge E V$ and the sure $E Q_n\ge V$. Their two upper-section L1 limits give $V\sim E V$. Now let $D=X-Y$ be integrable with mean $m\ge 0$. On $E_n=\{|X|\le n,|Y|\le n\}$, with $p_n=P(E_n)>0$, quantize X upward within 1/n to a finite-valued $q_n$ and set $c_n=(E[(q_n-Y)1_{E_n}]-m)/p_n$. Define $Z_n=q_n-c_n$ on $E_n$ and $Z_n=Y$ elsewhere. Its changed conditional branch has mean at least that of Y, by $m/p_n$; bounded EU, law invariance and Independence therefore give $Z_n\ge Y$. At $p_n=1$ bounded EU gives this directly. Moreover $E|Z_n-X|\le 2E[|D|1_{E_n^{c}}]+2/n$ tends to zero, so upper L1 gives $X\ge Y$. If $m>0$, replace Y on a sufficiently small positive-probability event where Y is bounded by a strictly better sure outcome. The resulting Y' strictly dominates Y and has $0<E(Y'-Y)<m$. The weak result gives $X\ge Y'$, hence $X>Y$. For $m=0$ apply the weak result in both directions; for $m<0$ interchange the variables. This proves the Relative Expectation biconditional without Totality, Shift Invariance, lower-section continuity or assumed full Expected Utility.
 sources:
-- 'GPT-6 (Codex), Logical Maps, 9 September 2026; user-inspired DU premise audit and connecting proof in writeups/du-l1-implies-relative.md.'
-- 'GPT-6 (Codex), Logical Maps, 9 September 2026; prior conditional-truncation proof in writeups/eu-independence-l1-imply-relative.md and finite-lottery proof in writeups/rich-archimedean-dominance-independence-imply-simple-eu.md.'
+- 'GPT-6 (Codex), prompted by Zachary Goodsell, Logical Maps, 9 September 2026; user-inspired DU premise audit and connecting proof in writeups/du-l1-implies-relative.md.'
+- 'GPT-6 (Codex), prompted by Zachary Goodsell, Logical Maps, 9 September 2026; prior conditional-truncation proof in writeups/eu-independence-l1-imply-relative.md and finite-lottery proof in writeups/rich-archimedean-dominance-independence-imply-simple-eu.md.'
 - 'Zachary Goodsell, Symmetries of value, Noûs 60 (2026), 16–37, DOI 10.1111/nous.12549, §3 p. 23 (upper-section L1 Continuity and the DTU consequence for Expected Utility), pp. 26–27 (Relative Expectation and Corollary 5 in the symmetry setting).'
 - 'Zachary Goodsell, Decision theory unbound, Noûs 58 (2024), 669–695, DOI 10.1111/nous.12473, §3.2 pp. 678–681 and §3.3 pp. 681–682 (finite expected utility and the DU/DTU distinction).'
 source_names:

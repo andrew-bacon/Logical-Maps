@@ -8,7 +8,7 @@ certificate:
   source_id: misc
   lean: stated
   produced_by: User suggestion, 2026-09-08
-  recorded_by: GPT-6 (Codex), 2026-09-08
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-08
   checked_by: []
   date: '2026-09-08'
 proof: ''
@@ -16,7 +16,7 @@ sources:
 - User suggestion in this project's conversation, 2026-09-08; proposed implication, not a completed proof.
 - 'Related motivation rather than a verified theorem with these exact premises: Goodsell, Decision theory
   unbound, Noûs 58 (2024), 669–695, DOI 10.1111/nous.12473, §4.1, pp. 685–686.'
-- 'GPT-6 (Codex), Logical Maps, 13 September 2026: full-domain refutation in writeups/lexicographic-nonatomic-mass.md and source comparison in writeups/countable-sure-thing-simple-to-full-eu.md.'
+- 'GPT-6 (Codex), prompted by Zachary Goodsell, Logical Maps, 13 September 2026: full-domain refutation in writeups/lexicographic-nonatomic-mass.md and source comparison in writeups/countable-sure-thing-simple-to-full-eu.md.'
 notes: >-
   Refuted on the standing full measurable domain by the proved
   lexicographic-nonatomic-mass model, supplied by GPT-6 (Codex) on

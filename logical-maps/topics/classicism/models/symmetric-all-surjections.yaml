@@ -3,7 +3,7 @@ name: 'Symmetric ideally-full model: all surjections of N (Base 1)'
 certificate:
   source_id: dorr-bc-not-rc
   produced_by: Cian Dorr
-  recorded_by: Claude Opus 5 (Anthropic), 19 September 2026
+  recorded_by: Claude Opus 5 (Anthropic), prompted by Cian Dorr, 19 September 2026
   checked_by: []
   date: '2026-09-19'
   lean: stated
@@ -11,7 +11,7 @@ sources:
 - Cian Dorr, Boolean Completeness does not imply Rigid Comprehension, draft of 30 July 2026, §3.1, p.
   9 (base); Proposition 22, p. 11; Proposition 23, p. 12; Theorem 36, p. 18; Corollary 37 and Remark 38,
   p. 19.
-- GPT-6 (OpenAI Codex), proposed least-support witness for Transversal, 30 September 2026, at Zachary
+- GPT-6 (OpenAI Codex), prompted by Cian Dorr, proposed least-support witness for Transversal, 30 September 2026, at Zachary
   Goodsell's request; checked by Claude Opus 5.5 (Anthropic) and Cian Dorr, 1 October 2026.
 source_names:
 - BC does not imply RC
@@ -76,7 +76,7 @@ arguments:
 - id: inextensible-comprehension
   holds:
   - inextensible-comprehension-r
-  by: Claude Opus 5.5 (Anthropic), checked by Cian Dorr
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, checked by Cian Dorr
   date: '2026-09-27'
   text: 'At every relational type. It extends the earlier observations at types $t$ and $e\to t$ and the
     case $X=\lambda p\, .\,p$ at type $t\to t$, which are instances. Worlds are the arrows $h$, and $h$
@@ -121,7 +121,7 @@ arguments:
 - id: transversal
   holds:
   - transversal-r
-  by: Claude Opus 5.5 (Anthropic), checked by Cian Dorr, verifying GPT-6's proposed least-support witness
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, checked by Cian Dorr, verifying GPT-6, prompted by Cian Dorr's proposed least-support witness
     of 30 September
   date: '2026-10-01'
   text: At every type. Write $A_h$ for the extension of a property $A$ at the arrow $h$; transport gives
@@ -152,7 +152,7 @@ notes: 'This is the draft''s headline separation. Boolean Completeness holds whi
   is not obvious is how to say in the object language that $X$ is minimally pinned down by the $Y$s.'
 history:
 - date: '2026-09-20'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Added both Axioms of Infinity at Cian Dorr's direction. The individuals are the natural numbers
     and identity at the identity arrow is literal, so no numeral counts them. The propositions that a
     given individual is fixed by the arrow, one for each individual, are pairwise distinct, symmetric
@@ -163,7 +163,7 @@ history:
   - axiom-of-infinity-e
   - axiom-of-infinity-t
 - date: '2026-09-22'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Fixed an interpretation of Σ (relational constants as top, individual constants as one fixed
     individual) and recorded the signature schemata it refutes, at Cian Dorr’s request.
   violates:
@@ -172,14 +172,14 @@ history:
   - independence-signature-r
   - distinctness-signature-r
 - date: '2026-09-23'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Re-fixed the interpretation of Σ so as to settle No Contingency (signature Σ) and B for sentences
     of Σ, at Cian Dorr’s request; see the notes.
   satisfies:
   - no-contingency-signature-r
   - signature-b-r
 - date: '2026-09-23'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: 'Recorded the failure of Relational Choice, at types (e→t) and e: a functional subrelation
     of the serial relation pairing each property with its members would be symmetric and finitely pinned,
     and a symmetry fixing its pinning set would carry its choice for the property of lying outside that
@@ -188,11 +188,11 @@ history:
   violates:
   - relational-choice-r
 - date: '2026-09-23'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: 'Noted why Inextensible Comprehension is left unknown: its type-t and type-(e→t) instances
     hold here, so the failure of Actuality does not sharpen to it at those types.'
 - date: '2026-09-27'
-  by: Claude Opus 5.5 (Anthropic), checked by Cian Dorr
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, checked by Cian Dorr
   summary: 'Recorded Inextensible Comprehension at every relational type: the witness for X pinned down
     by S is the conjunction of X with the proposition that S is uncollapsed, and a transversal lemma using
     surjectivity and the full permutation group shows it inextensible. Replaces the note that left it
@@ -204,7 +204,7 @@ history:
   summary: Linked the separate bronze-tier conjecture symmetric-all-surjections-transversal and its proposed
     least-support argument. The established satisfies and violates lists are unchanged.
 - date: '2026-10-01'
-  by: Claude Opus 5.5 (Anthropic), checked by Cian Dorr
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, checked by Cian Dorr
   summary: Recorded Transversal and its necessitation at every type, verifying GPT-6's proposed least-support
     witness of 30 September; see the notes. The separate conjectured record symmetric-all-surjections-transversal
     is retired. Added the open question whether the classifier is denoted by a closed term.

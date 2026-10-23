@@ -27,7 +27,7 @@ checks:
 - topics/unbounded-utility/checks/comonotonic_witnesses.py
 changes:
 - date: '2026-09-15'
-  by: Claude (Fable 5.1)
+  by: Claude (Fable 5.1), prompted by Zachary Goodsell
   summary: Shift Invariance shown to fail (write-up section “Failure of Shift Invariance”). A symmetric
     Laplace gamble X is indifferent to sure 0, but for b>0 the shifted pair is strictly ordered, X+b ≺ b,
     because the shifted clipping window cuts more upper than lower tail. Positive Affine Invariance fails with it.
@@ -35,7 +35,7 @@ changes:
   - shift-invariance
   - positive-affine-invariance
 - date: '2026-09-23'
-  by: Claude (Fable 5.1)
+  by: Claude (Fable 5.1), prompted by Zachary Goodsell
   summary: >-
     Explicit Comonotonic Sum Invariance failure added (write-up section “Failure of Comonotonic Sum Invariance”); the flag was previously derived from the shift failure. A standard Cauchy C is indifferent to sure 0, but with the common comonotonic summand Z = max(C,0) the gap v_{0+Z}(t) − v_{C+Z}(t) = 2∫_{t/2}^{t} P(C>x)dx is positive for every t, so 0 + Z ≻ C + Z.
   violates:
@@ -46,14 +46,14 @@ certificate:
   produced_by: Zachary Goodsell (cited paper); Claude (Fable 5.1) (failure of Shift Invariance, 15 September 2026; explicit failure of Comonotonic Sum Invariance, 23 September 2026)
   checked_by: []
   date: '2026-09-08'
-  recorded_by: GPT-6 (Codex), 2026-09-08; transcription and random-variable formulation
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-08; transcription and random-variable formulation
 description: |-
   Take all real-valued random variables and let $c_t(x)=\max (- t,\min (x,t))$. Define $X\succeq Y$ iff $\exists s\forall t>s E[c_t(X)]\ge E[c_t(Y)]$. The full construction, verification, and explicit witnesses are in the accompanying write-up. This is the incomplete DU model from Decision theory unbound, Theorem 2; it fails the additional Totality axiom of DTU. It witnesses consistency of the unbounded framework and failure of full EU despite finite EU.
 sources:
 - Goodsell, Decision theory unbound, Noûs 58 (2024), 669–695; online 2023; DOI 10.1111/nous.12473, Theorem
   2, pp. 683–685; Theorems 7 and 9, p. 693
-- 'Claude (Fable 5.1), Logical Maps, 15 September 2026: explicit failure of Shift Invariance (symmetric Laplace witness) in writeups/eventual-clipped-expectation.md.'
-- 'Claude (Fable 5.1), Logical Maps, 23 September 2026: failure of Comonotonic Sum Invariance (half-Cauchy common summand) in writeups/eventual-clipped-expectation.md; diagnostic checks/comonotonic_witnesses.py.'
+- 'Claude (Fable 5.1), prompted by Zachary Goodsell, Logical Maps, 15 September 2026: explicit failure of Shift Invariance (symmetric Laplace witness) in writeups/eventual-clipped-expectation.md.'
+- 'Claude (Fable 5.1), prompted by Zachary Goodsell, Logical Maps, 23 September 2026: failure of Comonotonic Sum Invariance (half-Cauchy common summand) in writeups/eventual-clipped-expectation.md; diagnostic checks/comonotonic_witnesses.py.'
 notes: Clipping sends tails to ±t; it is not deletion of tail mass. Shift Invariance fails by the Laplace
   witness in the write-up (Claude, Fable 5.1, 15 September 2026); this failure is an addition to the source
   model, not a claim of the paper. Positive Affine Invariance fails with it.

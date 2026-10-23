@@ -19,6 +19,6 @@ notes: 'The restriction of [[barcan-r]] to the relational types, between BF and 
   BF (type t) implies it is open; every model on the map that satisfies BF (type t) satisfies BF.'
 changes:
 - date: '2026-10-19'
-  by: Claude Opus 5.5 (Anthropic)
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   summary: 'At Cian Dorr’s request: the notes link to the unrestricted form.'
 lean_def: Classicism.P.BarcanRelational.schemaIn

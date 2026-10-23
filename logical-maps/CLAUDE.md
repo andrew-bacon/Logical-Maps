@@ -141,6 +141,17 @@ When you (an AI) add or edit a result or model:
   old records, but new records should use `source_id`.
 - `produced_by` credits the author of the mathematical content; `recorded_by`
   separately credits transcription or translation.
+- Whenever an AI is credited, in `produced_by`, `recorded_by`, the `by` of an
+  argument, change, revision or history entry, a `sources` entry, or the
+  authorship line of a write-up, name the person who prompted it as well, even
+  when that person contributed nothing substantive: `Claude Opus 5.5
+  (Anthropic), prompted by Cian Dorr`. A model's name alone says which tool was
+  used, not who directed the work. When the prompter is already credited in the
+  same entry for a contribution (`Cian Dorr (the construction), with Claude
+  Opus 5.5 (Anthropic)`), that credit suffices; when the prompter is someone
+  else, say so. Older entries write `at Cian Dorr's direction` or `from a
+  suggestion of Cian Dorr`, which count. Attributions written before this rule
+  were completed from the Git author of each line on 23 October 2026.
 - Keep `checked_by: []` unless the user supplies an actual checker. A human
   literature source does not mean a human has checked the database translation.
 - Every result and model must have a nonempty `sources` list. Give the paper,

@@ -6,9 +6,9 @@ conclusion: necessary-barcan-relational
 status: proved
 certificate:
   source_id: misc
-  produced_by: Claude Fable 5.1 (Anthropic), 19 October 2026, from Cian Dorr's argument of 11 October 2026
+  produced_by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 19 October 2026, from Cian Dorr's argument of 11 October 2026
     and Bacon's Lemma C.6
-  recorded_by: Claude Fable 5.1 (Anthropic), 19 October 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 19 October 2026
   checked_by: []
   date: '2026-10-19'
   lean: verified

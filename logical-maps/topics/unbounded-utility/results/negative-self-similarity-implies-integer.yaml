@@ -6,14 +6,14 @@ status: proved
 certificate:
   source_id: misc
   lean: none
-  produced_by: Claude (Fable 5.1), 2026-09-24
+  produced_by: Claude (Fable 5.1), prompted by Zachary Goodsell, 2026-09-24
   checked_by: []
   date: '2026-09-24'
-  recorded_by: Claude (Fable 5.1), 2026-09-24
+  recorded_by: Claude (Fable 5.1), prompted by Zachary Goodsell, 2026-09-24
 proof: |-
   Restrict the real ratio $a>0$ to positive integers.
 sources:
-- 'Claude (Fable 5.1), 2026-09-24: immediate restriction recorded in topics/unbounded-utility/results/negative-self-similarity-implies-integer.yaml
+- 'Claude (Fable 5.1), prompted by Zachary Goodsell, 2026-09-24: immediate restriction recorded in topics/unbounded-utility/results/negative-self-similarity-implies-integer.yaml
   (proof field).'
 source_names:
 - Claude generated 24 Sep

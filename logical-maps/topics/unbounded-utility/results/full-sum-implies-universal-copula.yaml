@@ -7,14 +7,14 @@ certificate:
   source_id: misc
   lean: verified
   lean_ref: UnboundedUtility.Proofs.full_sum_implies_universal_copula
-  produced_by: GPT-6 (Codex)
-  recorded_by: GPT-6 (Codex), 2026-09-09
+  produced_by: GPT-6 (Codex), prompted by Zachary Goodsell
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-09
   checked_by: []
   date: '2026-09-09'
 proof: |-
   Fix any copula C and any eligible triple whose two pairs admit C. Full Sum Invariance applies to this triple regardless of dependence and supplies the required biconditional. Since C was arbitrary, $\operatorname{SC}(C)$ holds for every copula.
 sources:
-- GPT-6 (Codex), original copula sum consistency definitions and connecting proofs recorded in this project,
+- GPT-6 (Codex), prompted by Zachary Goodsell, original copula sum consistency definitions and connecting proofs recorded in this project,
   9 September 2026, implementing Zachary Goodsell’s proposal.
 - Zachary Goodsell, project TODO.md copula-sum proposal and request to add universal/existential variants,
   9 September 2026; precise definitions recorded by GPT-6 (Codex).

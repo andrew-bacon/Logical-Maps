@@ -2,7 +2,7 @@ id: rigid-power-tight
 requires: [rigid-haecceity-disjunctions]
 choice: free
 holds: [rigid-power-r, necessary-rigid-power-r]
-by: Claude Opus 5.5 (Anthropic), 3 October 2026 (full action models); extended by Claude Fable 5.1
+by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 3 October 2026 (full action models); extended by Claude Fable 5.1, prompted by Cian Dorr
   (Anthropic), 4 October 2026, at Cian Dorr's direction
 date: '2026-10-04'
 text: >-

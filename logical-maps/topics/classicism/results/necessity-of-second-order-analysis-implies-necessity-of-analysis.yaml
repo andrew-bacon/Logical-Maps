@@ -1,0 +1,21 @@
+id: necessity-of-second-order-analysis-implies-necessity-of-analysis
+premises:
+- necessity-of-second-order-analysis
+conclusion: necessity-of-analysis
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 23 October 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 23 October 2026
+  checked_by: []
+  date: '2026-10-23'
+  lean: none
+sources:
+- Immediate from the definitions; recorded 23 October 2026.
+source_names:
+- Claude Fable 5.1 23 Oct
+proof: >-
+  Every first-order analytical sentence is a second-order analytical sentence, one without relation
+  variables, so each instance of the Necessity of Analysis is an instance of the Necessity of
+  Second-Order Analysis.
+notes: ''

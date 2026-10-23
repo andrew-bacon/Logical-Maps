@@ -5,9 +5,9 @@ conclusion: necessary-weakly-inextensible-comprehension-r
 status: proved
 certificate:
   source_id: misc
-  produced_by: Claude Fable 5.1 (Anthropic), 25 September 2026 (unboxed form); boxed form recorded by Claude
+  produced_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 September 2026 (unboxed form); boxed form recorded by Claude
     Opus 5.5 (Anthropic), 19 October 2026
-  recorded_by: Claude Opus 5.5 (Anthropic), 19 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 19 October 2026
   checked_by: []
   date: '2026-10-19'
   lean: stated

@@ -4,12 +4,12 @@ certificate:
   source_id: barton-goodsell-continuum-contingency
   produced_by: Neil Barton and Zachary Goodsell (the construction, □Rigid Comprehension, Relational Choice,
     the infinite individual domain, □Atomicity at type t and the failure of Rigid Power at the reals,
-    Lemmas 15–19 and Theorems 20–21); Claude Fable 5.1 (Anthropic), 19 October 2026 (the remaining
+    Lemmas 15–19 and Theorems 20–21); Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 19 October 2026 (the remaining
     verdicts, in the map's terms)
-  recorded_by: Claude Fable 5.1 (Anthropic), 19 October 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 19 October 2026
   checked_by: []
   date: '2026-10-19'
-  lean: stated
+  lean: none
 sources:
 - Neil Barton and Zachary Goodsell, Continuum Contingency, draft of 14 October 2026, §7.1 (V-decisive
   forcing), §7.2 (BBK and action models, the canonical extensional model), §8 (the stitching construction,
@@ -114,7 +114,7 @@ arguments:
     itself, Rigid Rigidity fails at type $et$.
 
 - holds: [necessary-barcan-t]
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
   date: '2026-10-19'
   text: >-
     Both propositions of $C_0$ are transports of root propositions, so a property of propositions at
@@ -122,7 +122,7 @@ arguments:
     at $C_0$, which sees only itself, BF is trivial.
 
 - holds: [necessary-distinctness-preserving-collapse]
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
   date: '2026-10-19'
   text: >-
     At the root let $q$ be the proposition true at the root alone. $\Diamond q$ is true at the root and
@@ -130,7 +130,7 @@ arguments:
     At $C_0$, where necessity is truth, $\top$ witnesses $\Box_{\ne}p$ for every truth $p$.
 
 - fails: [barcan-relational]
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
   date: '2026-10-19'
   text: >-
     By the weak homogeneity of Cohen forcing, a real of $V[G]$ definable there from parameters in $V$
@@ -141,7 +141,7 @@ arguments:
     BF fails at type $et$.
 
 - fails: [intensional-choice-r]
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
   date: '2026-10-19'
   text: >-
     At type $(et)t$. Let $F$ be the root property of properties of individuals whose root extension is
@@ -151,11 +151,29 @@ arguments:
     homogeneity of the forcing forbids.
 
 - fails: [infinity-t]
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
   date: '2026-10-19'
   text: >-
     The root has four propositions, so the instance of the schema asking for five pairwise distinct
     ones fails.
+
+- fails: [analytic-necessitism]
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
+  date: '2026-10-23'
+  text: >-
+    At type $et$, at the root. A real number structure exists there: the rigid properties of individuals
+    are the pairs $(E,E)$ with $E\subseteq\mathbb N$ in $V$, the reals of $V$ as sets of naturals, and
+    the field relations on them, defined from membership by arithmetical formulas, are root relations
+    (a function in $V$ with the corresponding definable $C_0$-relation); completeness at the root holds
+    because every root property of these is a set in $V$. Now let $\mathfrak R$ be any rigid real number
+    structure at $et$ with necessarily distinct elements. At the root it is a complete ordered field, so
+    by categoricity its domain $X$ is in bijection with the reals of $V$ and its rationals are a
+    countable dense subfield. Its root extension is a set $E$ in $V$ and, $X$ being rigid, its
+    $C_0$-extension is $h[E]=E$, the same reals. At $C_0$ every property is available, in particular the
+    cut in the rationals of $X$ of the Cohen real, a bounded subproperty of $X$ with no least upper bound
+    in $E$, a least upper bound being a real of $V$ equal to the Cohen real. So $X$ is not complete at
+    $C_0$, $\Box\operatorname{Real}_{et}(\mathfrak R)$ fails, and the instance fails: a real number
+    structure is possible, indeed actual, and no rigid one is necessarily a real number structure.
 
 notes: >-
   Verdicts the engine derives, checked directly. □Well-Ordering: a well-ordering in $V$ of a root

@@ -34,7 +34,7 @@ certificate:
   checked_by:
   - GPT-6 (Codex), informal review, 2026-09-25; only the five failures added in the dated change below
   date: '2026-09-09'
-  recorded_by: GPT-6 (Codex), 2026-09-09; extraction and random-variable translation
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-09; extraction and random-variable translation
 
   trawl:
     quarantine_id: quarantine-0113be29928e4d2fbf33c5d150b87c73
@@ -129,7 +129,7 @@ certificate:
     admission:
       id: admission-89ba44a12e494abd93251f7c762eb26b
       at: '2026-09-25T12:59:35.164588+00:00'
-      by: GPT-6 (Codex)
+      by: GPT-6 (Codex), prompted by Zachary Goodsell
       base_commit: 7c928c4eb396a15e2b0b0226e4e753898870e7ca
       candidate_sha256: 73a897931c276776a05614c06b0aac53ac94adb27374457b0119a653a4441805
       review_id: review-efb0a17ef88845e0be4e03df2f93c5bb
@@ -140,9 +140,9 @@ description: |-
 sources:
 - Zachary Goodsell, Unbounded Utility and Background Risk, 5 June 2026, unpublished manuscript marked “do not
   cite” and erroneous; §3, pp. 7–8; Theorems 6–7, pp. 19–20
-- GPT-6 (Codex), original connecting proofs recorded 9 September 2026 in this project; explicit quantile-area/Tonelli
+- GPT-6 (Codex), prompted by Zachary Goodsell, original connecting proofs recorded 9 September 2026 in this project; explicit quantile-area/Tonelli
   details, Cauchy witnesses, and the L1 closure proof in writeups/cdf-area-preorder.md
-- 'DeepSeek (deepseek-flash), theorem trawl, 25 September 2026: five further failures of this exact model; proofs corrected and informally reviewed by GPT-6 (Codex), same date, in writeups/cdf-area-preorder.md, Further failures found by the theorem trawl. Checkpoint checkpoint-4efdb29afea94da583b8df9975e053e4.'
+- 'DeepSeek (deepseek-flash), theorem trawl, 25 September 2026: five further failures of this exact model; proofs corrected and informally reviewed by GPT-6 (Codex), prompted by Zachary Goodsell, same date, in writeups/cdf-area-preorder.md, Further failures found by the theorem trawl. Checkpoint checkpoint-4efdb29afea94da583b8df9975e053e4.'
 - 'AI-generated report communicated by Branden Fitelson, Unbounded Utility: Five Top-Ranked Open Conjectures
   Resolved, 30 September 2026, §§2 and 5(a), p. 2. AI (Claude agents; model versions unspecified), communicated
   by Branden Fitelson. Proof expanded and informally checked by GPT-6 (Codex), 2 October 2026.'
@@ -167,7 +167,7 @@ references:
   locator: §§2 and 5(a), p. 2
 changes:
 - date: '2026-09-25'
-  by: DeepSeek (deepseek-flash), discovery; GPT-6 (Codex), corrected proof and informal review
+  by: DeepSeek (deepseek-flash), discovery; GPT-6 (Codex), prompted by Zachary Goodsell, corrected proof and informal review
   summary: >-
     Added five failures witnessed by alternating St Petersburg versus -1/2,
     and by Pasadena and Arroyo versus ln 2: both signed areas diverge.
@@ -185,7 +185,7 @@ changes:
   - pasadena-value
   - arroyo-value
 - date: '2026-10-02'
-  by: AI (Claude agents; model versions unspecified), communicated by Branden Fitelson; GPT-6 (Codex),
+  by: AI (Claude agents; model versions unspecified), communicated by Branden Fitelson; GPT-6 (Codex), prompted by Zachary Goodsell,
     proof expansion and informal verification, 2026-10-02
   summary: 'Independent Sum Cancellation fails: two atomic laws have both signed survival areas infinite,
     but convolution by the symmetric noise with tail (1+r)^(-1/2) makes their survival difference nonnegative

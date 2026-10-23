@@ -14,7 +14,7 @@ certificate:
   produced_by: Zachary Goodsell (cited paper)
   checked_by: []
   date: '2026-09-08'
-  recorded_by: GPT-6 (Codex), 2026-09-08; transcription and random-variable formulation
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-08; transcription and random-variable formulation
 proof: |-
   Let $H=M_{1/2}(X,- X)$. Its reflected law equals its own law, so $H\sim - H$. If $H\succ 0$, reflection gives $- H\prec 0$, contradiction; likewise if $H\prec 0$. Totality gives $H\sim 0$. If X itself has symmetric law, Stochastic Equivalence gives $- X\sim X$ and $H\sim X$, since the mixture then has X’s law. Thus $X\sim 0$.
 sources:

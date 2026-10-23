@@ -7,13 +7,13 @@ status: proved
 certificate:
   source_id: goodsell-arithmetic-necessary
   produced_by: Zachary Goodsell
-  recorded_by: Claude Fable 5.1 (Anthropic), 20 September 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026
   checked_by: []
   date: '2026-09-20'
   lean: stated
 sources:
 - Zachary Goodsell, Arithmetic is Necessary, draft of 5 June 2024, §6, Theorem 11 and n. 14, pp. 24–26.
-- Claude Fable 5.1 (Anthropic), 20 September 2026, for the consistency of C with $I$ (full-henkin-infinite-base).
+- Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026, for the consistency of C with $I$ (full-henkin-infinite-base).
 source_names:
 - Arithmetic is Necessary
 - Fable 20 Sep

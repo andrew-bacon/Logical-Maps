@@ -2,13 +2,13 @@ id: full-permutation-group-infinite-set
 name: 'Full action model: permutations of an infinite set'
 certificate:
   source_id: misc
-  produced_by: Claude Fable 5.1 (Anthropic), 23 September 2026
-  recorded_by: Claude Fable 5.1 (Anthropic), 23 September 2026
+  produced_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 23 September 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 23 September 2026
   checked_by: []
   date: '2026-09-23'
   lean: stated
 sources:
-- Claude Fable 5.1 (Anthropic), construction and verification of 23 September 2026, at Cian Dorr’s suggestion
+- Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, construction and verification of 23 September 2026, at Cian Dorr’s suggestion
   (see the write-up).
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §3.5, pp. 58–59 (full M-set models, Proposition
   3.24, No Pure Contingency); p. 61 and n. 84 (principles of full models).
@@ -95,7 +95,7 @@ arguments:
   when: {sigma: true-atom}
   choice: free
   writeup: full-permutation-group-one-individual
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   date: '2026-09-23'
   text: >-
     The two tuples of constants are disjoint, so one of the two sentences contains no designated

@@ -6,14 +6,14 @@ status: proved
 certificate:
   source_id: misc
   lean: none
-  produced_by: Codex (GPT-6), connecting proof
-  recorded_by: Codex (GPT-6)
+  produced_by: Codex (GPT-6), prompted by Zachary Goodsell, connecting proof
+  recorded_by: Codex (GPT-6), prompted by Zachary Goodsell
   checked_by: []
   date: '2026-09-13'
 proof: |-
   Apply the standing theorem $\Box A\to A$ to the entire displayed sentence, with all of its quantifiers inside A.
 sources:
-- Codex (GPT-6), connecting proof unbox-impossibility-necessary-falsehood-distinct-from-bottom, 2026-09-13.
+- Codex (GPT-6), prompted by Zachary Goodsell, connecting proof unbox-impossibility-necessary-falsehood-distinct-from-bottom, 2026-09-13.
 - Zachary Goodsell, Possibility in Intuitionistic Higher-Order Logic (21 August 2026), §3.2, Theorem 1,
   p. 9 (definitions/background).
 source_names:

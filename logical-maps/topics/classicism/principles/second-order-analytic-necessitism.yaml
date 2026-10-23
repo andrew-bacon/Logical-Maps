@@ -1,0 +1,51 @@
+id: second-order-analytic-necessitism
+name: Second-Order Analytic Necessitism
+category: mathematical-contingency
+statement: >-
+  If there could be a real number structure, there is a rigid one, necessarily a real number structure,
+  together with represented powers of every arity up to $n$: rigid properties of rigid relations among
+  the structure's elements that necessarily represent every relation on them. One sentence for each type
+  $\sigma$ and each $n\ge1$.
+formal: >-
+  $\Diamond\exists\mathfrak R\, .\,\operatorname{Real}_\sigma(\mathfrak R)\;\to\;
+  \exists\mathfrak R\,\mathcal P_1\cdots\mathcal P_n\, .\,\operatorname{RigidStr}(\mathfrak R)\land
+  \Box\operatorname{Real}_\sigma(\mathfrak R)\land\textstyle\bigwedge_{k\le n}
+  \operatorname{RepPower}_k(\mathcal P_k,X)$
+definitions: >-
+  See Background, Analysis, for $\operatorname{RigidStr}$ and $\operatorname{RepPower}_k$. A
+  represented power of arity $k$ is a rigid property of rigid $k$-ary relations among the structure's
+  elements such that, necessarily, every $k$-ary relation agrees on those elements with one of them. A
+  rigid continuum does not fix which of its subproperties and relations exist; this adds that they too
+  are fixed.
+date: '2026-10-23'
+aliases:
+- Second-Order Continuum Necessitism (Barton and Goodsell 2026)
+sources:
+- Neil Barton and Zachary Goodsell, Continuum Contingency, draft of 14 October 2026, §5.8, eqs. (33)–(35),
+  Theorem 6, and §5.9, Theorem 7.
+- Formulation without Rigid Comprehension by Zachary Goodsell and Claude Fable 5.1 (Anthropic), 23 October
+  2026.
+source_names:
+- Continuum Contingency
+- Goodsell and Claude Fable 5.1 23 Oct
+references:
+- paper: barton-goodsell-continuum-contingency
+  role: origin
+  locator: §5.8, eqs. (33)–(35); §5.9, Theorem 7
+  note: Their Second-Order Continuum Necessitism adds to the first-order principle that the property of
+    rigid properties of reals is rigid with necessarily distinct instances; under Rigid Comprehension that
+    property is a represented power of arity one, and relations reduce to properties by pairing.
+about: >-
+  The entity-level counterpart of the Necessity of Second-Order Analysis. Representation is asked up to
+  agreement on the structure's elements, which is all that analytical sentences can see (Bacon's
+  Proposition C.3); the arities are bounded in each instance so that each instance is a single sentence,
+  and a second-order analytical sentence uses only finitely many.
+notes: >-
+  Implies Analytic Necessitism ([[second-order-analytic-necessitism-implies-analytic-necessitism]]) and
+  the Necessity of Second-Order Analysis
+  ([[second-order-analytic-necessitism-implies-necessity-of-second-order-analysis]]), hence the
+  Non-contingency of the Continuum Hypothesis. Bacon's proof of his Theorem 5.2 shows, from Atomicity at
+  every type and □Rigid Comprehension, that the canonical real number structure and the property of its
+  rigid subproperties are rigid, which is this principle at the type of the canonical reals; whether
+  those premises give it at every type is not settled by that argument. Fails in
+  [[stitched-cohen-extension]], with Analytic Necessitism.

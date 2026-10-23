@@ -9,7 +9,7 @@ certificate:
   produced_by: Christopher Sun, 19 October 2026, the argument from a strongest 5-necessary proposition; Claude
     Opus 5.5 (Anthropic), 19 October 2026, the passage to one from the 5-necessity form of Vicinity (also Sun’s);
     conjectured by Cian Dorr, 14 October 2026
-  recorded_by: Claude Fable 5.1 (Anthropic), 14 October 2026 (the conjecture); Claude Opus 5.5 (Anthropic),
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026 (the conjecture); Claude Opus 5.5 (Anthropic), prompted by Cian Dorr,
     19 October 2026 (the proof)
   checked_by: []
   date: '2026-10-14'
@@ -48,6 +48,6 @@ notes: 'Proved by Christopher Sun, 19 October 2026, through Theorem D9 rather th
   models fail Vicinity.'
 changes:
 - date: '2026-10-19'
-  by: Claude Opus 5.5 (Anthropic)
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   summary: Proved, by Christopher Sun’s argument of 19 October 2026 with a first step from the 5-necessity
     form of Vicinity; status changed from conjectured to proved, with a write-up.

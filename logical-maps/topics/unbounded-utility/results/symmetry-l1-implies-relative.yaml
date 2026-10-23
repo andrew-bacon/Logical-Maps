@@ -16,7 +16,7 @@ certificate:
   produced_by: Zachary Goodsell (cited paper)
   checked_by: []
   date: '2026-09-08'
-  recorded_by: GPT-6 (Codex), 2026-09-08; transcription and random-variable formulation
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-08; transcription and random-variable formulation
 proof: |-
   Corollary 5. Approximate an integrable difference $u(X)- u(Y)$ in $L^{1}$ by simple differences, apply Theorem 4, and use $L^{1}$ continuity to pass to the limit. This is recorded with the full source context DTU+Sym; the equivalence between its law metric and this topic’s random-variable continuity requires Stochastic Equivalence.
 sources:

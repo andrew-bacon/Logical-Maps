@@ -6,14 +6,14 @@ status: proved
 certificate:
   source_id: misc
   lean: none
-  produced_by: Codex (GPT-6), connecting proof
-  recorded_by: Codex (GPT-6)
+  produced_by: Codex (GPT-6), prompted by Zachary Goodsell, connecting proof
+  recorded_by: Codex (GPT-6), prompted by Zachary Goodsell
   checked_by: []
   date: '2026-09-13'
 proof: |-
   Assume p. Then $p\leftrightarrow \top$. Instantiate the selected extensionality sentence at $p,\top$ to obtain $p=\top$, hence $\Box p$. Discharge and generalize p.
 sources:
-- Codex (GPT-6), connecting proof propositional-extensionality-implies-self-necessitation, 2026-09-13.
+- Codex (GPT-6), prompted by Zachary Goodsell, connecting proof propositional-extensionality-implies-self-necessitation, 2026-09-13.
 - Zachary Goodsell, Possibility in Intuitionistic Higher-Order Logic (21 August 2026), §2.1, p. 5; §5.5,
   p. 37 (definitions/background).
 source_names:

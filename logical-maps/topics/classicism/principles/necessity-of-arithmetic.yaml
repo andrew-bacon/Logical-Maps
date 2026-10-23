@@ -36,7 +36,7 @@ changes:
     Completeness; the principle had fixed it at $e$. The old principle is the instance $\sigma=e$ of the
     new one.
 - date: '2026-10-23'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
   minor: true
   summary: Moved from the category Possibility and pure schemata to the new category Mathematical
     contingency; the statement is unchanged.

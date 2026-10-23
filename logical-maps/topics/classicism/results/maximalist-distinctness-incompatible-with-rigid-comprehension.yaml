@@ -8,7 +8,7 @@ was_conjectured: true
 certificate:
   source_id: goodsell-arithmetic-necessary
   produced_by: Zachary Goodsell
-  recorded_by: OpenAI Codex (GPT-6), 17 September 2026; proof supplied by Claude Fable 5.1 (Anthropic), 20 September
+  recorded_by: OpenAI Codex (GPT-6), prompted by Cian Dorr, 17 September 2026; proof supplied by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September
     2026, from Goodsell's draft
   checked_by: []
   date: '2026-09-17'
@@ -41,7 +41,7 @@ notes: >-
   Boolean Completeness, Countable Boolean Completeness and the Necessity of Arithmetic.
 changes:
 - date: '2026-09-20'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: >-
     Promoted from conjectured to proved with the proof from Goodsell, Arithmetic is Necessary, Theorem 11
     and the remark following it; source changed from the personal communication to that draft. Statement

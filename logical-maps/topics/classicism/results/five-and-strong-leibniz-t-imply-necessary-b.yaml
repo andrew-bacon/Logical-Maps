@@ -6,8 +6,8 @@ conclusion: necessary-modal-b
 status: proved
 certificate:
   source_id: misc
-  produced_by: Claude Opus 5.5 (Anthropic), 8 October 2026, from Cian Dorr's sketch (the true strong world entails each truth and is necessarily possible)
-  recorded_by: Claude Opus 5.5 (Anthropic), 8 October 2026
+  produced_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 8 October 2026, from Cian Dorr's sketch (the true strong world entails each truth and is necessarily possible)
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 8 October 2026
   checked_by: []
   date: '2026-10-08'
   lean: verified

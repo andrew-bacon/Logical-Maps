@@ -7,8 +7,8 @@ status: proved
 certificate:
   source_id: goodsell-yli-vakkuri-unpublished
   produced_by: Zachary Goodsell and Juhani Yli-Vakkuri (theorem); proof by Cian Dorr, 23 September 2026,
-    with permission from Zachary Goodsell, written out by Claude Fable 5.1 (Anthropic)
-  recorded_by: OpenAI Codex (GPT-6), 17 September 2026
+    with permission from Zachary Goodsell, written out by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
+  recorded_by: OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026
   checked_by: []
   date: '2026-09-17'
   lean: stated
@@ -48,7 +48,7 @@ notes: Reported by the source as a theorem of Goodsell and Yli-Vakkuri, without 
 was_conjectured: true
 changes:
 - date: '2026-09-23'
-  by: Claude Fable 5.1 (Anthropic)
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: 'Promoted from conjectured to proved with a hand-written write-up of Cian Dorr’s proof (with
     permission from Zachary Goodsell): two distinct atoms are exchanged by a Boolean automorphism, extended
     by conjugation to all types, which fixes every closed pure term.'

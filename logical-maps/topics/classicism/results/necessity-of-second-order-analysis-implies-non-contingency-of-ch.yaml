@@ -1,0 +1,29 @@
+id: necessity-of-second-order-analysis-implies-non-contingency-of-ch
+premises:
+- necessity-of-second-order-analysis
+conclusion: non-contingency-of-ch
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 23 October 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 23 October 2026
+  checked_by: []
+  date: '2026-10-23'
+  lean: none
+sources:
+- Immediate from the definitions; recorded 23 October 2026. The formulation of the continuum hypothesis as
+  a second-order analytical sentence follows Neil Barton and Zachary Goodsell, Continuum Contingency,
+  draft of 14 October 2026, §5.6, eq. (27), and §5.7.
+source_names:
+- Claude Fable 5.1 23 Oct
+references:
+- paper: barton-goodsell-continuum-contingency
+  role: formulation
+  locator: §5.6, eq. (27); §5.7
+proof: >-
+  $\operatorname{CH}(\mathfrak R)$, that every subproperty of $X$ injects into $N$ or is in bijection
+  with $X$, is a second-order analytical sentence (Background, Analysis): its quantifiers range over
+  elements of $X$, over subproperties of $X$ and over the relations witnessing injections and
+  bijections. The Non-contingency of the Continuum Hypothesis at $\sigma$ is the instance of the
+  Necessity of Second-Order Analysis at $\sigma$ and that sentence.
+notes: ''

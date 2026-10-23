@@ -9,14 +9,14 @@ status: proved
 certificate:
   source_id: misc
   lean: stated
-  produced_by: GPT-6 (Codex), connecting argument using the recorded quantile-area method
-  recorded_by: GPT-6 (Codex), 2026-09-09
+  produced_by: GPT-6 (Codex), prompted by Zachary Goodsell, connecting argument using the recorded quantile-area method
+  recorded_by: GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-09
   checked_by: []
   date: '2026-09-09'
 proof: |-
   Archimedean Outcomes supplies a total chart, measurable by the background convention; Rich Outcomes supplies all intermediate utility levels. Dominance entails Stochastic Equivalence. Quantile couple A,B with the marginal laws of X,Y. Nested threshold events and Tonelli give $E[(A- B)_{+}]=A_{+}$ and $E[(A- B)_{-}]=A_{-}$, the two survival-difference areas. If both are finite, Relative Expectation compares A,B exactly by $A_{+}- A_{-}$, and equivalence transfers the result to X,Y. If $A_{+}=\infty$ and $A_{-}<\infty$, put $D=A- B$ and $Z_N=B+\min (D_{+},N)- D_{-}$. Then $Z_N\le A, E|Z_N- B|<\infty$, and $E[Z_N- B]$ tends to $+\infty$. For some N, Relative Expectation gives $Z_N\succ B$; weak Dominance gives $A\succeq Z_N$, hence $A\succ B$. Swap the variables for the other one-infinite case. These exhaust the cases required by CDF-Area Extension.
 sources:
-- 'GPT-6 (Codex), 9 September 2026, writeups/relative-dominance-imply-cdf-area.md: quantile-coupling converse
+- 'GPT-6 (Codex), prompted by Zachary Goodsell, 9 September 2026, writeups/relative-dominance-imply-cdf-area.md: quantile-coupling converse
   to the existing area-to-relative implication, with one-sided truncation for a single infinite area.'
 - 'Zachary Goodsell, Unbounded Utility and Background Risk, 5 June 2026 (unpublished), §3, pp. 7–8: source
   of the CDF-area comparison. The existing project writeups/cdf-area-preorder.md and results/cdf-area-implies-relative.yaml

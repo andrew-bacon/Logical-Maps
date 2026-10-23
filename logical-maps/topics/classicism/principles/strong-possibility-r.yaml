@@ -22,6 +22,6 @@ notes: The paper leaves consistency open. The definition of Box_ne and its dual 
   one recorded principle refuted by the stronger modality alone.
 changes:
 - date: '2026-10-19'
-  by: Claude Opus 5.5 (Anthropic)
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   summary: 'At Cian Dorr’s request: definitions of its technical terms added.'
 lean_def: (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.strongPossibility)
