@@ -8,6 +8,7 @@
 - **Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **Relational Choice.** Every serial binary relation has a functional subrelation.
 - **Actuality.** There is a true proposition that entails every true proposition.
+- **Arithmetic Necessitism.** Given that necessarily zero is not a successor and successor is injective on numbers, the numbers at $\sigma$ form a rigid property with necessarily distinct instances. One sentence for each type $\sigma$.
 - **Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **¬ Possibility+ (pure).** The strengthened Possibility Maximalism schema for pure C-consistent formulas whose only free variables are the displayed individual variables; include the empty tuple.
 - **¬ □Two-hat necessity implies ND-necessity.** Necessarily, whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat. In C this is the identity $\hat{\hat\Box}=\Box_{\ne}$.
@@ -22,6 +23,7 @@
 - **¬ □Vicinity.** Necessarily, there is a true proposition that entails the possibility of each true proposition.
 - **¬ □Weakly Inextensible Comprehension.** Necessarily, every relation, including a proposition, is coextensive with a weakly inextensible one.
 - **¬ □Transversal.** Necessarily, there is a property of properties that picks out exactly one property from each coextension class, that is, exactly one property coextensive with any given property.
+- **¬ Necessity of Analysis.** Every first-order analytical sentence is either true in every real number structure in every possible world or false in every real number structure in every possible world. One sentence for each type $\sigma$ and each first-order analytical sentence.
 
 ## Definition
 
@@ -133,6 +135,18 @@ Every pure sentence consistent with C is possible at the root (pure-sentences-po
 *From the group *Coalesced sums at a new root*, shared argument `coalesced-sums#transversal-boxed`. It requires that The components are a family of action models complete for C: every sentence consistent with C is true at the root of some component. Here: The source action models are a set complete for C. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-09-28.*
 
 *Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* The three members' verbatim copies stated once; "By the same argument" became a reference to pure-sentences-possible.
+
+### Holds Arithmetic Necessitism.
+
+Vacuously, at every type $\sigma$. The negation of $I^*_\sigma$, that zero is a successor or successor is not injective on the numbers at $\sigma$, is a pure sentence consistent with C: it holds in the full model with one world, one individual and two propositions, where every type is finite and the finite cardinalities beyond the size of the type coincide. So it is possible at the root (pure-sentences-possible), the antecedent $\Box I^*_\sigma$ fails there, and the instance of Arithmetic Necessitism at $\sigma$ is true.
+
+*From the group *Coalesced sums at a new root*, shared argument `coalesced-sums#arithmetic-necessitism-complete-components`. It requires that The components are a family of action models complete for C: every sentence consistent with C is true at the root of some component. Here: The source action models are a set complete for C. By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-23.*
+
+### Fails Necessity of Analysis.
+
+The negation of an instance of the Necessity of Analysis is a closed pure sentence consistent with C: at the root of coalesced-two-extensional-arithmetics-root, with $\sigma$ and $A$ as in that model's argument, both $\Diamond\exists\mathfrak R\,.\,(\operatorname{Real}_\sigma(\mathfrak R)\land A(\mathfrak R))$ and $\Diamond\exists\mathfrak R\,.\,(\operatorname{Real}_\sigma(\mathfrak R)\land\neg A(\mathfrak R))$ hold. So it is possible at the root (pure-sentences-possible), and since arrows compose, what is possibly possible is possible: both conjuncts hold at the root, and the instance fails.
+
+*From the group *Coalesced sums at a new root*, shared argument `coalesced-sums#necessity-of-analysis-complete-components`. It requires that The components are a family of action models complete for C: every sentence consistent with C is true at the root of some component. Here: The source action models are a set complete for C. By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-23.*
 
 ### Holds Truth implies ND-necessity.
 
