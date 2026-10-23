@@ -962,20 +962,27 @@ class Lynchpins:
         return self._mask(self.E.cl(S)[0])
 
     def _ext(self, F, c):
-        """Closure of the closed set F together with c: only a rule that c completes can add more."""
+        """Closure of the closed set F together with c, by forward chaining from c alone: F being
+        closed, only a rule that a new atom completes can fire, so the rules are indexed by their
+        premise atoms and each new atom is checked against its rules. Memoised on (F, c)."""
         bit = self.bit
         if c == FALSE:
             return F | bit[FALSE]
-        if F & bit[c]:
+        cb = bit[c]
+        if F & cb:
             return F
         key = (F, c)
-        if key not in self._ext_cache:
-            if any(pm & ~(F | bit[c]) == 0 for pm in self.by_prem.get(c, ())):
-                seed = [self.id_of[b] for b in self._bits(F)] + [c]
-                self._ext_cache[key] = self._mask(closure(seed, self.E.rules, self.E.background)[0])
-            else:
-                self._ext_cache[key] = F | bit[c]
-        return self._ext_cache[key]
+        X = self._ext_cache.get(key)
+        if X is None:
+            X = F | cb
+            stack, rules_by_atom = [c], self.rules_by_atom
+            while stack:
+                for pm, kb, k in rules_by_atom.get(stack.pop(), ()):
+                    if not X & kb and pm & ~X == 0:
+                        X |= kb
+                        stack.append(k)
+            self._ext_cache[key] = X
+        return X
 
     @staticmethod
     def _bits(m):
@@ -984,9 +991,8 @@ class Lynchpins:
             m ^= low
             yield low
 
-    @staticmethod
-    def _count(m):
-        return bin(m).count("1")
+    # Popcount: int.bit_count on Python 3.10 and later, the string count before.
+    _count = staticmethod(int.bit_count) if hasattr(int, "bit_count") else staticmethod(lambda m: bin(m).count("1"))
 
     def _universe(self):
         """Enumerate the questions, their status, and the closures the scores need."""
@@ -997,11 +1003,16 @@ class Lynchpins:
         self.BAD = BAD = bit[FALSE] | sum(bit[v] for v in self.negative if v in bit)
         self.ALL = ALL = sum(bit[a] for a in atoms)
         self._ext_cache = {}
-        self.by_prem = {}
-        for _, prem, _c in E.rules:
+        # Memo tables for the scores (with_rule, with_model): what each depends on is the
+        # conclusion, a witness or a closure, not the question being scored, so it is computed
+        # once per engine instead of once per question. Filled lazily.
+        self._refutes, self._witness_ext, self._witness_nf, self._subsets, self._ext_by = {}, {}, {}, {}, {}
+        self.by_prem, self.rules_by_atom = {}, {}
+        for _, prem, concl in E.rules:
             pm = self._mask(prem)
             for x in prem:
                 self.by_prem.setdefault(x, []).append(pm)
+                self.rules_by_atom.setdefault(x, []).append((pm, bit[concl], concl))
         # Premises from which False or a denied principle can be reached: only a rule
         # concluding one of these can turn a question into an exclusion.
         toward, grow = {x for x in self.ids if bit[x] & BAD}, True
@@ -1115,6 +1126,24 @@ class Lynchpins:
             self.trig.append(tr)
             self.base.append([j for j, (S, pm, F) in enumerate(self.sets) if pm & ~H == 0])
             self.vmask.append(BAD | self._mask(m["violates"]))
+        # The scores accumulate the questions an answer settles as one mask over openq, so that a
+        # witness or an exclusion contributes with a few big-integer operations instead of a loop:
+        # qset[j] the questions of set j, qbit[j][cb] the one with conclusion cb, qcon[cb] all with
+        # conclusion cb, coreq the core ones, openfalse the consistency questions still open, and
+        # per witness the questions of the sets it holds and those its failures settle.
+        self.qidx = {q: k for k, q in enumerate(self.openq)}
+        self.qset, self.qbit, self.qcon, self.coreq = [0] * len(self.sets), [dict() for _ in self.sets], {}, 0
+        for k, (j, low) in enumerate(self.openq):
+            kb = 1 << k
+            self.qset[j] |= kb
+            self.qbit[j][low] = kb
+            self.qcon[low] = self.qcon.get(low, 0) | kb
+            if self.coremask[j] & low:
+                self.coreq |= kb
+        self.openfalse = sum(1 << j for j, st in enumerate(self.qfalse) if st == "open")
+        self.base_q = [sum(self.qset[j] for j in b) for b in self.base]
+        self.concF = [self._conc(Fm) for _, Fm in self.wit]
+        self._subq_cache = {}
 
     # -- status -------------------------------------------------------------
     def open_questions(self):
@@ -1150,34 +1179,107 @@ class Lynchpins:
 
     # -- answers ------------------------------------------------------------
     def _subsets_of(self, H):
-        """Indices of the premise sets a model holding H holds."""
-        from itertools import combinations
-        atoms = [self.id_of[low] for low in self._bits(H & self.ALL)]
-        out = [0]
-        out += [self.set_index[(a,)] for a in atoms if (a,) in self.set_index]
-        out += [self.set_index[a, b] for a, b in combinations(atoms, 2) if (a, b) in self.set_index]
-        out += [self.set_index[b, a] for a, b in combinations(atoms, 2) if (b, a) in self.set_index]
+        """Indices of the premise sets a model holding H holds; memoised on H."""
+        out = self._subsets.get(H)
+        if out is None:
+            from itertools import combinations
+            atoms = [self.id_of[low] for low in self._bits(H & self.ALL)]
+            out = [0]
+            out += [self.set_index[(a,)] for a in atoms if (a,) in self.set_index]
+            out += [self.set_index[a, b] for a, b in combinations(atoms, 2) if (a, b) in self.set_index]
+            out += [self.set_index[b, a] for a, b in combinations(atoms, 2) if (b, a) in self.set_index]
+            self._subsets[H] = out
+        return out
+
+    def _refuted_by(self, c):
+        """The open questions (as a mask over openq) whose closure with their conclusion hits a
+        denied principle once c is added: the questions a rule concluding c would exclude. Depends
+        on c alone."""
+        mask = self._refutes.get(c)
+        if mask is None:
+            BAD, T, ext = self.BAD, self.T, self._ext
+            bits = bytearray(len(self.openq) // 8 + 1)   # built as bytes: one big integer at the end
+            for k, (j, cb) in enumerate(self.openq):
+                if ext(T[j, cb], c) & BAD:
+                    bits[k >> 3] |= 1 << (k & 7)
+            mask = self._refutes[c] = int.from_bytes(bits, "little")
+        return mask
+
+    def _witness_under(self, i, c):
+        """For witness i and conclusion c: its closure with c, and the unknown conclusions it would
+        have to fail once the rule holds (those whose adjunction, closed with c, hits what it
+        violates). Depend on the witness and c alone."""
+        key = (i, c)
+        out = self._witness_nf.get(key)
+        if out is None:
+            H, Fm = self.wit[i]
+            ext, vmask, id_of = self._ext, self.vmask[i], self.id_of
+            NF = 0
+            for low in self._bits(self.ALL & ~H & ~Fm):
+                if ext(ext(H, id_of[low]), c) & vmask:
+                    NF |= low
+            out = (ext(H, c), NF)
+            self._witness_nf[key] = out
+        return out
+
+    def _extensions_of(self, H):
+        """[(bit of p, closure of H with p)] for the principles p outside the closed set H; memoised."""
+        out = self._ext_by.get(H)
+        if out is None:
+            ext, id_of = self._ext, self.id_of
+            out = [(low, ext(H, id_of[low])) for low in self._bits(self.ALL & ~H)]
+            self._ext_by[H] = out
+        return out
+
+    def _conc(self, M):
+        """The open questions whose conclusion lies in the mask M."""
+        out, qcon = 0, self.qcon
+        for low in self._bits(M):
+            out |= qcon.get(low, 0)
+        return out
+
+    def _settled_in(self, j, X):
+        """The open questions of set j whose conclusion lies in the closure mask X."""
+        out, qb = 0, self.qbit[j]
+        for low in self._bits(X & self.openmask[j]):
+            out |= qb[low]
+        return out
+
+    def _subsets_q(self, H):
+        """For a model holding H: the questions of the premise sets it holds, and those sets as a
+        mask over set indices; memoised on H."""
+        out = self._subq_cache.get(H)
+        if out is None:
+            qs = ss = 0
+            for j in self._subsets_of(H):
+                qs |= self.qset[j]
+                ss |= 1 << j
+            out = (qs, ss)
+            self._subq_cache[H] = out
         return out
 
     def _total(self, newly, newfalse, skip, both=False):
-        """Open questions newly settled; with both, also the open core questions among them."""
+        """Open questions newly settled, from a mask over openq and a mask of sets whose consistency
+        question is settled; with both, also the open core questions among them."""
         if skip is not None:
             j, c = skip
             if c == FALSE:
-                newfalse.discard(j)
-            elif j in newly:
-                newly[j] &= ~self.bit[c]
-        consistency = sum(1 for j in newfalse if self.qfalse[j] == "open")  # all have a premise: core
-        n = sum(self._count(m & self.openmask[j]) for j, m in newly.items()) + consistency
+                newfalse &= ~(1 << j)
+            else:
+                k = self.qidx.get((j, self.bit[c]))
+                if k is not None:
+                    newly &= ~(1 << k)
+        consistency = self._count(newfalse & self.openfalse)  # all have a premise: core
+        n = self._count(newly) + consistency
         if not both:
             return n
-        return n, sum(self._count(m & self.openmask[j] & self.coremask[j]) for j, m in newly.items()) + consistency
+        return n, self._count(newly & self.coreq) + consistency
 
     def with_rule(self, premises, conclusion, skip=None, both=False):
         """Other open questions settled by adding the Horn rule premises ⇒ conclusion."""
         bit, BAD, c = self.bit, self.BAD, conclusion
         S = tuple(premises)
-        newly, newfalse = {}, set()
+        newly = newfalse = 0
         js = -1
         for x in S:
             js &= self.sets_with[x]
@@ -1186,42 +1288,32 @@ class Lynchpins:
             j = low.bit_length() - 1
             X = self._ext(self.sets[j][2], c)
             if X & BAD:
-                newly[j] = self.openmask[j]
-                newfalse.add(j)
+                newly |= self.qset[j]
+                newfalse |= low
             else:
-                newly[j] = self.openmask[j] & X
+                newly |= self._settled_in(j, X)
         if c == FALSE or c in self.toward_bad:
             ks = -1
             for x in S:
                 ks &= self.tidx[x]
             ks &= (1 << len(self.openq)) - 1
-            for low in self._bits(ks):
-                j, cb = self.openq[low.bit_length() - 1]
-                if newly.get(j, 0) & cb:
-                    continue
-                if self._ext(self.T[j, cb], c) & BAD:
-                    newly[j] = newly.get(j, 0) | cb
+            newly |= ks & self._refuted_by(c)
         pmS = sum(bit[x] for x in S)
         for i, (H, Fm) in enumerate(self.wit):
             grew = pmS & ~H == 0
-            H2 = self._ext(H, c) if grew else H
+            H2, NFc = self._witness_under(i, c) if grew else (H, None)
             if H2 & self.vmask[i]:
                 continue  # no longer a model under the rule; impossible for an open question
             D = self.ALL & ~H & ~Fm
             for x in S:
                 D &= self.trig[i][x]
-            NF = 0
-            for low in self._bits(D):
-                if self._ext(self._ext(H, self.id_of[low]), c) & self.vmask[i]:
-                    NF |= low
+            NF = (NFc if NFc is not None else self._witness_under(i, c)[1]) & D
             if H2 != H:
-                F2 = Fm | NF
-                for j in self._subsets_of(H2):
-                    newly[j] = newly.get(j, 0) | (self.openmask[j] & F2)
-                    newfalse.add(j)
+                qs, ss = self._subsets_q(H2)
+                newly |= qs & (self.concF[i] | self._conc(NF))
+                newfalse |= ss
             elif NF:
-                for j in self.base[i]:
-                    newly[j] = newly.get(j, 0) | (self.openmask[j] & NF)
+                newly |= self.base_q[i] & self._conc(NF)
         return self._total(newly, newfalse, skip, both)
 
     def with_model(self, satisfies, violates, skip=None, both=False):
@@ -1231,14 +1323,11 @@ class Lynchpins:
         if H & V:
             return (0, 0) if both else 0  # not a model
         Fm = 0
-        for low in self._bits(self.ALL & ~H):
-            if self._ext(H, self.id_of[low]) & V:
+        for low, X in self._extensions_of(H):
+            if X & V:
                 Fm |= low
-        newly, newfalse = {}, set()
-        for j in self._subsets_of(H):
-            newly[j] = self.openmask[j] & Fm
-            newfalse.add(j)
-        return self._total(newly, newfalse, skip, both)
+        qs, ss = self._subsets_q(H)
+        return self._total(qs & self._conc(Fm), ss, skip, both)
 
     # -- recorded conjectures ------------------------------------------------
     def question_of(self, ids, conclusion):
@@ -1436,6 +1525,9 @@ class Lynchpins:
         refutation would settle more, ⊬ when a proof would. With score_all false, only the recorded
         conjectures are scored and nothing is ranked: what a sparse map still gets.
         """
+        full = getattr(self, "_full_rank", None)   # ranked already, in a worker process
+        if full is not None and score_all:
+            return full if top is None else {**full, "rows": full["rows"][:top], "auto": full["auto"][:top]}
         if self._rows is None:
             self._rows = self._question_rows()
         rows = self._rows
@@ -1487,13 +1579,18 @@ PROGRESS_PREMISES = 2  # the settled share counts implication questions with up 
 _PROGRESS_CACHE: dict = {}
 
 
+def _engines_key(data: dict) -> str:
+    """What the engines, and so the rankings, depend on: the records' logical content."""
+    return json.dumps([data["topic"].get("id"), data["topic"].get("background", []), data["topic"].get("background_presets", []),
+                       [p["id"] for p in data["principles"]],
+                       [(r["id"], sorted(r["premises"]), r["conclusion"], r["status"]) for r in data["results"]],
+                       [(m["id"], sorted(m["satisfies"]), sorted(m["violates"]), m["status"], m.get("model_check")) for m in data["models"]]],
+                      sort_keys=True, default=str)
+
+
 def _engines(data: dict) -> list:
     """(background id, name, Lynchpins) under the topic background and each preset, cached on the records."""
-    key = json.dumps([data["topic"].get("id"), data["topic"].get("background", []), data["topic"].get("background_presets", []),
-                      [p["id"] for p in data["principles"]],
-                      [(r["id"], sorted(r["premises"]), r["conclusion"], r["status"]) for r in data["results"]],
-                      [(m["id"], sorted(m["satisfies"]), sorted(m["violates"]), m["status"], m.get("model_check")) for m in data["models"]]],
-                     sort_keys=True, default=str)
+    key = _engines_key(data)
     if key not in _PROGRESS_CACHE:
         if data["topic"].get("draft"):
             _PROGRESS_CACHE.clear()
@@ -1529,9 +1626,84 @@ def lynchpin_report(data: dict, *, sparse_ok: bool = True, top: int | None = 50)
     share = _open_share(engines[0][2].progress())
     skipped = (f"{share:.0%} of the questions are open, so the map is too sparse for lynchpins to mean anything"
                if not sparse_ok and share > LYNCHPIN_MAX_OPEN else None)
+    if skipped is None:
+        _load_cached_rankings(data, engines)
+        _rank_in_parallel([L for _, _, L in engines])
+        _save_cached_rankings(data, engines)
     return {"skipped": skipped,
             "reports": [{"background": bid, "name": name, "principles": L.background, "negative": [], **L.rank(top, score_all=skipped is None)}
                         for bid, name, L in engines]}
+
+
+# The rankings depend only on the records the engines are keyed on and on this file, so a build
+# whose records have not changed since the last one reads them back instead of scoring again;
+# an edit to a write-up, the viewer or a note then costs no ranking time. The cache lives in
+# .cache/rankings/, outside the exports and ignored by Git.
+RANKINGS_CACHE = ROOT / ".cache" / "rankings"
+
+
+def _rankings_key(data: dict) -> str:
+    import hashlib
+    key = json.dumps([_engines_key(data), hashlib.sha256(Path(__file__).read_bytes()).hexdigest()], sort_keys=True, default=str)
+    return hashlib.sha256(key.encode("utf-8")).hexdigest()
+
+
+def _load_cached_rankings(data: dict, engines: list) -> None:
+    path = RANKINGS_CACHE / f"{data['topic'].get('id')}-{_rankings_key(data)}.json"
+    if not path.exists():
+        return
+    try:
+        cached = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return
+    if cached.get("backgrounds") != [bid for bid, _, _ in engines]:
+        return
+    for (bid, _, L), full in zip(engines, cached["full"]):
+        if getattr(L, "_full_rank", None) is None and L._ranked is None:
+            L._full_rank = full
+
+
+def _save_cached_rankings(data: dict, engines: list) -> None:
+    fulls = [getattr(L, "_full_rank", None) or L.rank(top=None) for _, _, L in engines]
+    try:
+        RANKINGS_CACHE.mkdir(parents=True, exist_ok=True)
+        for old in RANKINGS_CACHE.glob(f"{data['topic'].get('id')}-*.json"):
+            old.unlink()
+        (RANKINGS_CACHE / f"{data['topic'].get('id')}-{_rankings_key(data)}.json").write_text(
+            json.dumps({"backgrounds": [bid for bid, _, _ in engines], "full": fulls}, ensure_ascii=False, default=str), encoding="utf-8")
+    except OSError:
+        pass
+
+
+_PARALLEL_ENGINES: list | None = None
+
+
+def _rank_worker(i: int) -> dict:
+    return _PARALLEL_ENGINES[i].rank(top=None)
+
+
+def _rank_in_parallel(engines: list) -> None:
+    """Score the open questions of every background at once, one forked process per background,
+    when there is more than one to do and the machine can fork: scoring is pure Python over bit
+    sets and takes minutes per background, and the backgrounds are independent. Each engine then
+    serves its ranking from `_full_rank`. PMAP_JOBS=1 keeps it serial."""
+    import multiprocessing, os
+    global _PARALLEL_ENGINES
+    todo = [L for L in engines if getattr(L, "_full_rank", None) is None and L._ranked is None]
+    jobs = int(os.environ.get("PMAP_JOBS") or (os.cpu_count() or 1))
+    if len(todo) < 2 or jobs < 2 or not hasattr(os, "fork"):
+        return
+    _PARALLEL_ENGINES = todo
+    try:
+        with multiprocessing.get_context("fork").Pool(min(jobs, len(todo))) as pool:
+            results = pool.map(_rank_worker, range(len(todo)))
+    except Exception as e:  # pragma: no cover - the serial path then does the work
+        print(f"  parallel ranking unavailable ({e}); ranking serially", file=sys.stderr)
+        return
+    finally:
+        _PARALLEL_ENGINES = None
+    for L, result in zip(todo, results):
+        L._full_rank = result
 
 
 def progress_text(p: dict) -> str:
@@ -2371,9 +2543,11 @@ def validate_topic(topic_id: str, *, quiet=False) -> bool:
 # Build
 # ----------------------------------------------------------------------------
 
-def export_json(topic_id: str) -> dict:
-    data = load_topic(topic_id)
-    an = analyse(data)
+def export_json(topic_id: str, *, data: dict | None = None, an: dict | None = None) -> dict:
+    """The topic's records and analysis. A build passes the data and analysis it already has, so
+    the rankings, which cost minutes, are computed once per build."""
+    data = data if data is not None else load_topic(topic_id)
+    an = an if an is not None else analyse(data)
     clean = lambda d: {k: v for k, v in d.items() if not k.startswith("_")}
     return {
         "topic": data["topic"],
@@ -2428,9 +2602,11 @@ def literature_md(data: dict, prefix: str = "") -> str:
     return "\n".join(lines)
 
 
-def enriched_payload(topic_id: str, downloads: dict) -> dict:
-    """export_json plus the topic's prose, so a downloaded data.json is self-explaining."""
-    payload = export_json(topic_id)
+def enriched_payload(topic_id: str, downloads: dict, *, base: dict | None = None) -> dict:
+    """export_json plus the topic's prose, so a downloaded data.json is self-explaining. With `base`,
+    an export already made, a deep copy of it is enriched instead of a fresh export."""
+    import copy
+    payload = copy.deepcopy(base) if base is not None else export_json(topic_id)
     site = site_config()
     if topic_id in site.get("maps", []):
         payload["navigation"] = [
@@ -2969,6 +3145,7 @@ def build_topic(topic_id: str, out: Path | None = None, *, fragment: bool = Fals
         validate_topic(topic_id)
         sys.exit(f"{topic_id}: fix validation errors before building")
     data = load_topic(topic_id)
+    an = analyse(data)
     outdir = BUILD / topic_id
     outdir.mkdir(parents=True, exist_ok=True)
     write_math_assets(outdir)
@@ -2996,7 +3173,8 @@ def build_topic(topic_id: str, out: Path | None = None, *, fragment: bool = Fals
                         ignore=shutil.ignore_patterns(*IGNORE))
         render_lean_index(data, lean_dir, outdir / "lean")
         downloads["lean"] = "lean/"
-    payload = enriched_payload(topic_id, downloads)
+    base = export_json(topic_id, data=data, an=an)   # the rankings, once
+    payload = enriched_payload(topic_id, downloads, base=base)
     for item in payload["results"] + payload["models"]:
         item["files"] = files.get(item["id"], {})
     lean_links = lean_source_links(topic_id, data)
@@ -3047,7 +3225,7 @@ def build_topic(topic_id: str, out: Path | None = None, *, fragment: bool = Fals
     # Compact: the website host serves no file over 25 MiB, and indentation alone added half again.
     viewer_payload = compact_viewer_payload(payload)
     (outdir / "data.json").write_text(json.dumps(viewer_payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    bundle_topic(topic_id)
+    bundle_topic(topic_id, data=data, an=an, base=base)
     html = TEMPLATE.read_text(encoding="utf-8").replace("<!--__PMAP_THEME__-->", theme_head(topic_id, math_path=None if out else 'math'))
     blob = json.dumps(viewer_payload, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     html = html.replace("/*__PMAP_DATA__*/null", blob)
@@ -4438,11 +4616,12 @@ def bundle_derived_json(data: dict, an: dict, lynch=None) -> dict:
     }
 
 
-def bundle_topic(topic_id: str) -> Path:
-    """Write build/<topic>/<topic>-map.zip — a self-contained working copy."""
+def bundle_topic(topic_id: str, *, data: dict | None = None, an: dict | None = None, base: dict | None = None) -> Path:
+    """Write build/<topic>/<topic>-map.zip — a self-contained working copy. A build passes its data,
+    analysis and export so that nothing is analysed or ranked a second time."""
     import shutil, tempfile
-    data = load_topic(topic_id)
-    an = analyse(data)
+    data = data if data is not None else load_topic(topic_id)
+    an = an if an is not None else analyse(data)
     lynch = lynchpin_report(data, sparse_ok=False)
     outdir = BUILD / topic_id
     outdir.mkdir(parents=True, exist_ok=True)
@@ -4473,7 +4652,7 @@ def bundle_topic(topic_id: str) -> Path:
         (root / "MAP.md").write_text(bundle_map_md(topic_id, data, an), encoding="utf-8")
         (root / "OPEN-QUESTIONS.md").write_text(bundle_open_md(topic_id, data, an, lynch), encoding="utf-8")
         (root / "data.json").write_text(json.dumps(
-            enriched_payload(topic_id, {"json": "data.json", "derived": "derived.json"}),
+            enriched_payload(topic_id, {"json": "data.json", "derived": "derived.json"}, base=base),
             indent=1, ensure_ascii=False), encoding="utf-8")
         (root / "derived.json").write_text(json.dumps(bundle_derived_json(data, an, lynch), indent=1, ensure_ascii=False), encoding="utf-8")
         (root / "Makefile").write_text(

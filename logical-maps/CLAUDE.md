@@ -54,6 +54,10 @@ and reports unless it is asked for by name.
 
 - `python3 scripts/pmap.py validate` — must pass before any commit.
 - `python3 scripts/pmap.py build` — regenerates `build/<topic>/index.html`,
+  ranking the open questions once per build and the background presets in parallel
+  processes (`PMAP_JOBS=1` for serial), and reading the rankings back from
+  `.cache/rankings/` when the records' logical content and `pmap.py` are unchanged
+  since the last build; it also regenerates
   `data.json`, write-ups, and downloadable topic files. The viewer's payload (the page and
   `build/<topic>/data.json`) is size-encoded by `compact_viewer_payload` to stay under the
   host's 25 MiB per file, and `decodePayload` in `viewer/template.html` restores it exactly;

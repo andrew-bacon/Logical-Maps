@@ -222,7 +222,10 @@ Imported on 23 October 2026, with the principles of the category Mathematical co
 without Rigid Comprehension by quantifying over real number structures or asking for a rigid one):
 Theorem 5.2 (Theorem C.2) as
 `atomicity-and-necessary-rigid-comprehension-imply-necessity-of-second-order-analysis`, with Corollary
-5.1 derivable from it; Theorem 6.1 as the conjecture
+5.1 derivable from it and strengthened to the entity level, without Atomicity, as
+`c5-and-necessary-rigid-comprehension-imply-second-order-analytic-necessitism` (so □Plenitude and
+Extensionality give Analytic Necessitism on the map); No Pure Contingency gives the schema directly
+(`no-pure-contingency-implies-necessity-of-second-order-analysis`); Theorem 6.1 as the conjecture
 `necessary-rigid-comprehension-intensional-choice-and-forcing-possibilism-incompatible-with-non-contingency-of-ch`,
 its proof not being in the draft; Lemmas C.1 and C.3 and Proposition C.3 in the proofs of
 `analytic-necessitism-implies-necessity-of-analysis` and its second-order form. Not yet recorded:

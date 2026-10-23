@@ -1,0 +1,51 @@
+id: c5-and-necessary-rigid-comprehension-imply-second-order-analytic-necessitism
+premises:
+- necessary-distinctness-necessary-r
+- necessary-rigid-comprehension-r
+conclusion: second-order-analytic-necessitism
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Zachary Goodsell (the connection from □Plenitude, 23 October 2026); proof by Claude Fable 5.1
+    (Anthropic), prompted by Zachary Goodsell, after the S5 part of Bacon's Corollary 5.1
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 23 October 2026
+  checked_by: []
+  date: '2026-10-23'
+  lean: none
+sources:
+- Original connecting proof of 23 October 2026, written out in the write-up.
+- Andrew Bacon, Could the truths of mathematics have been different?, draft of 9 October 2025, Corollary 5.1
+  and Appendix C.2, for the sentence-level conclusion under the same premises and the rigidification
+  of real number structures.
+source_names:
+- Claude Fable 5.1 23 Oct
+- Could mathematics have been different?
+references:
+- paper: bacon-mathematical-contingency
+  role: related
+  locator: Corollary 5.1; Appendix C.2
+  note: Bacon derives the Necessity of Second-Order Analysis from 5 and □Rigid Comprehension through the
+    rigidity of the canonical reals and of their power, using the Leibniz Biconditionals to carry
+    completeness to other worlds. Under S5 the original world stays accessible, so completeness need not
+    be carried, and the conclusion is the entity-level principle at every type.
+proof: >-
+  See the write-up. C5 gives B, 5, ND and BF at every type. Suppose a real number structure at $\sigma$
+  is possible, at a world $w$. □Rigid Comprehension at $w$ gives rigid relations coextensive there with
+  its domain, order, addition, multiplication and natural numbers; rigidity is necessary if true, so by
+  B and 5 these relations are rigid at the actual world too, with necessarily distinct instances by ND.
+  Every first-order fact about rigid relations with necessarily distinct instances is non-contingent
+  (the induction of analytic-necessitism-implies-necessity-of-analysis), so the field axioms, true of
+  the rigidified structure at $w$, hold at the actual world and necessarily. Completeness at any world
+  $u$: a bounded subproperty of the domain has, by Rigid Comprehension at $u$, a rigid coextension; that
+  it has a least upper bound in the domain is a first-order fact about rigid relations, true at $w$ by
+  the completeness of the original structure, hence necessary, hence true at $u$ by B. So the
+  rigidified structure is necessarily a real number structure. Its represented powers: the property of
+  rigid relations holding only of tuples of its instances is persistent since rigidity is necessary if
+  true, and inextensible by BF, rigidity being non-contingent under 5; Rigid Comprehension at each
+  world represents every relation on the domain by one of them.
+notes: >-
+  Hence □Plenitude gives Second-Order Analytic Necessitism, Analytic Necessitism, the Necessity of
+  Second-Order Analysis and the Non-contingency of the Continuum Hypothesis, since □Plenitude gives C5
+  and □Rigid Comprehension on the map; Extensionality reaches them through □Plenitude. Bacon's Corollary
+  5.1 is the sentence-level consequence. Atomicity is not used: with S5 the world of the given structure
+  stays accessible, so completeness is read off there instead of being carried by Rigid Power.
