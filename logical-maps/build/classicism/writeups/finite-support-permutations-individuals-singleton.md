@@ -6,12 +6,14 @@
 
 - **ND.** Distinct things of any type are necessarily distinct.
 - **Atomlessness.** Atomlessness in the displayed closed propositional formulation.
+- **Second-Order Analytic Necessitism.** If there could be a real number structure, there is a rigid one, necessarily a real number structure, together with represented powers of every arity up to $n$: rigid properties of rigid relations among the structure's elements that necessarily represent every relation on them. One sentence for each type $\sigma$ and each $n\ge1$.
 - **Axiom of Infinity (type t).** There are not finitely many propositions. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **Infinity Schema (type t).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
 - **□Intensional Choice.** Necessarily, if a property is necessarily instantiated, then some property entailing it is necessarily uniquely instantiated.
 - **□Relational Choice.** Necessarily, every serial binary relation has a functional subrelation.
 - **□Transversal Choice.** Necessarily, every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
 - **No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
+- **Necessity of Second-Order Analysis.** Every second-order analytical sentence is either true in every real number structure in every possible world or false in every real number structure in every possible world. One sentence for each type $\sigma$ and each second-order analytical sentence.
 - **Transversal Choice.** Every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
 - **No Contingency (signature Σ).** Each closed sentence of the language of the fixed signature Sigma, if true, is necessary. A sentence schema, standing to No Pure Contingency as Possibility Maximalism (signature Σ) stands to Possibility Maximalism (pure).
 - **B for sentences of Σ.** The B instance for every closed sentence of the language of the fixed signature Sigma.
@@ -53,6 +55,12 @@ At type $t\to t$, for the family $E$ of propositions $p_n$ that $n$ is fixed: fo
 *Revised 2026-09-25 by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr:* Merged the two sets of arguments recorded on 23 and 25 September into one: the simpler 25 September argument for Inextensible Comprehension, which also refutes the weak form, replaces the 23 September one.
 
 *Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* Cut to its type $t\to t$ part; the type $e\to t$ part duplicated the group's shared argument weakly-inextensible-comprehension, which applies here.
+
+### Holds Second-Order Analytic Necessitism.
+
+At every type, so Analytic Necessitism holds too. At type $e$ the antecedent fails, the individuals being countable or one. At a relational type $\sigma$ the entities pinned down by $\{0\}$ are continuum many; choose a set $X_1$ of them in bijection with the reals and let $X_k$ be its transport $k\cdot X_1$, and likewise for the order, sum, product and natural numbers of the reals carried over to $X_1$ and for the represented powers, the rigid relations with a given extension among the instances. Every arrow being a permutation, transport is injective and reversible, so these intensions are rigid, with necessarily distinct instances, and they are pinned down by $\{0\}$, their value at $k$ depending only on $k0$; at every arrow the structure has the same instances and relations as at the identity, so it is necessarily a real number structure with represented powers of every arity (write-up).
+
+*Write-up: [finite-support-permutations](finite-support-permutations.html). By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-23.*
 
 ### Holds Axiom of Infinity (type t).
 
@@ -109,6 +117,12 @@ No two individuals are distinct, and the numeral $\operatorname{Suc}_e\mathbf{0}
 *General argument `arguments/one-individual`. It requires that There is exactly one individual, at every world. Here: The only individual is fixed by every arrow, at the sole object. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-02.*
 
 *Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* Moved from the group finite-support-one-object to the topic.
+
+### Holds Necessity of Second-Order Analysis.
+
+Let $v$ be any object reachable from the evaluation point and $\mathfrak R$ a real number structure at $v$ (Background, Analysis). Its completeness is tested against the subproperties of its carrier present at $v$, and by extensional fullness every subset of the carrier's extension there is the extension at the identity of one of them; so the carrier, with the extensions of $\le$, $+$ and $\times$, is a complete ordered field in the sense of the metatheory and, by Huntington's theorem, a theorem of ZF, is isomorphic to the real numbers. For the same reason the extension of $N$, the least subproperty containing $0$ and closed under adding $1$, is its set of natural numbers, that set being the extension of a subproperty. A second-order analytical sentence $A(\mathfrak R)$ quantifies over the relations among entities of the structure's type at $v$, applied to the structure's elements, and their extensions at the identity are all the relations on the carrier, again by extensional fullness. So $A(\mathfrak R)$ holds at $v$ exactly when $A$ holds in the real numbers under full second-order semantics, which depends neither on $v$ nor on $\mathfrak R$. Hence $\Box\forall\mathfrak R\,.\,\operatorname{Real}_\sigma(\mathfrak R)\to A(\mathfrak R)$ holds when $A$ is true of the reals and $\Box\forall\mathfrak R\,.\,\operatorname{Real}_\sigma(\mathfrak R)\to\neg A(\mathfrak R)$ when it is false: every instance of the Necessity of Second-Order Analysis holds, and with it the Necessity of Analysis and the Non-contingency of the Continuum Hypothesis, as recorded. No choice is used.
+
+*General argument `arguments/second-order-analysis-extensionally-full`. It requires that The model is extensionally full at every object: every set of tuples from the domains at an object is the extension, at the identity arrow, of an element of the domain of the matching relational type there. Here: The model is ideally full, hence extensionally full at every object (Appendix D, the remark after Definition D.3): for any set $R$ of tuples from the domains at an object $V$, the intension that assigns to every arrow out of $V$ into an object $U$ a fixed set $R_U$ of tuples from $U$’s domains, with $R_V=R$, is pinned down by $\emptyset$, so it is the intension of an element of $V^{\bar\sigma\to t}$ with extension $R$ at $1_V$. By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-23.*
 
 ### Fails Witnessed Possibility, Separated Structure, Independence (signature Σ), Maximalism (signature Σ).
 

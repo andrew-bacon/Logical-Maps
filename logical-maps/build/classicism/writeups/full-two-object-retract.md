@@ -4,6 +4,9 @@
 
 ## Package
 
+- **Analytic Necessitism.** If there could be a real number structure, there is a rigid one that is necessarily a real number structure: a rigid property with necessarily distinct instances, with rigid order, addition, multiplication and natural numbers, which necessarily form a complete ordered field. One sentence for each type $\sigma$.
+- **Second-Order Analytic Necessitism.** If there could be a real number structure, there is a rigid one, necessarily a real number structure, together with represented powers of every arity up to $n$: rigid properties of rigid relations among the structure's elements that necessarily represent every relation on them. One sentence for each type $\sigma$ and each $n\ge1$.
+- **Necessity of Second-Order Analysis.** Every second-order analytical sentence is either true in every real number structure in every possible world or false in every real number structure in every possible world. One sentence for each type $\sigma$ and each second-order analytical sentence.
 - **Gallin Extensional Comprehension.** Every relation is coextensive with one that is persistent and has a persistent pointwise negation. This is the source’s comparison with Gallin’s different rigidity convention.
 - **□Truth implies 5-necessity.** Necessarily, every truth is 5-necessary: necessary under every S5 operator. In C this is the identity $\Box_5=\lambda p\, .\,p$.
 - **□Atomicity.** Necessarily, every non-bottom entity of each relational type has an atom below it.
@@ -46,6 +49,12 @@ Metatheory, fixed for this record: the axiom of choice is used freely, as in ord
 *A member of the group Full action models, which supplies this definition with the record's settings, and the arguments marked as shared.*
 
 ## Arguments
+
+### Holds Analytic Necessitism, Second-Order Analytic Necessitism, Necessity of Second-Order Analysis.
+
+Every type is finite at every object $v$ reachable from the evaluation point, by induction on types: the individuals at $v$ are finitely many by hypothesis, the propositions at $v$ are sets of the finitely many arrows out of it, and an entity of a relational type $\bar\sigma t$ at $v$ is an intension assigning to each of those arrows a set of tuples of entities of types $\bar\sigma$ at its target, which is reachable too, so that finitely many values are available at each arrow. An ordered field has infinitely many elements, its $0$, $1$, $1+1,\ldots$ being pairwise distinct, so no real number structure exists at any reachable object, at any type. The antecedents $\Diamond\exists\mathfrak R\,.\,\operatorname{Real}_\sigma(\mathfrak R)$ of Analytic Necessitism and of Second-Order Analytic Necessitism are therefore false at every type, and both hold; and $\Box\forall\mathfrak R\,.\,\operatorname{Real}_\sigma(\mathfrak R)\to A(\mathfrak R)$ holds for every sentence $A$, so the Necessity of Second-Order Analysis holds, with the Necessity of Analysis and the Non-contingency of the Continuum Hypothesis. No choice is used.
+
+*General argument `arguments/analysis-finite-everywhere`. It requires that Out of every object reachable from the evaluation point there are finitely many arrows. Here: Two arrows out of $W_0$ and three out of $W_1$. It requires that There are finitely many individuals at every object reachable from the evaluation point. Here: There is a single individual at every object. By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-23.*
 
 ### Holds Gallin Extensional Comprehension.
 
@@ -160,6 +169,12 @@ Write $X_0(E)$ for the intension $k\mapsto k\cdot E$. The extension at an arrow 
 *General argument `arguments/rigid-power-tight`. It requires that At every object reachable from the evaluation point, the rigid relations of each relational type are exactly the intensions $k\mapsto k\cdot E$, the disjunctions of the haecceities of the members of $E$, for $E$ any set of tuples from the domains there; in particular every such intension is in the domain. Here: Every intension is present, so for any set $E$ the intension $k\mapsto k\cdot E$ is in the domain, and a relation is weakly inextensible at a world iff it lies below that intension over its extension there, since that is the smallest intension satisfying the hypothesis; with persistence, a rigid relation equals it (the argument deferred in extraction.md, 3 October 2026). By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 3 October 2026 (full action models); extended by Claude Fable 5.1, prompted by Cian Dorr (Anthropic), 4 October 2026, at Cian Dorr's direction.*
 
 *Revised 2026-10-04 by Claude Fable 5.1 (Anthropic), at Cian Dorr's direction:* The argument deferred in extraction.md on 3 October for the full action models, where every intension is present, stated under the condition it actually uses, which the symmetry-constrained full models also meet.
+
+### Holds Necessity of Second-Order Analysis.
+
+Let $v$ be any object reachable from the evaluation point and $\mathfrak R$ a real number structure at $v$ (Background, Analysis). Its completeness is tested against the subproperties of its carrier present at $v$, and by extensional fullness every subset of the carrier's extension there is the extension at the identity of one of them; so the carrier, with the extensions of $\le$, $+$ and $\times$, is a complete ordered field in the sense of the metatheory and, by Huntington's theorem, a theorem of ZF, is isomorphic to the real numbers. For the same reason the extension of $N$, the least subproperty containing $0$ and closed under adding $1$, is its set of natural numbers, that set being the extension of a subproperty. A second-order analytical sentence $A(\mathfrak R)$ quantifies over the relations among entities of the structure's type at $v$, applied to the structure's elements, and their extensions at the identity are all the relations on the carrier, again by extensional fullness. So $A(\mathfrak R)$ holds at $v$ exactly when $A$ holds in the real numbers under full second-order semantics, which depends neither on $v$ nor on $\mathfrak R$. Hence $\Box\forall\mathfrak R\,.\,\operatorname{Real}_\sigma(\mathfrak R)\to A(\mathfrak R)$ holds when $A$ is true of the reals and $\Box\forall\mathfrak R\,.\,\operatorname{Real}_\sigma(\mathfrak R)\to\neg A(\mathfrak R)$ when it is false: every instance of the Necessity of Second-Order Analysis holds, and with it the Necessity of Analysis and the Non-contingency of the Continuum Hypothesis, as recorded. No choice is used.
+
+*General argument `arguments/second-order-analysis-extensionally-full`. It requires that The model is extensionally full at every object: every set of tuples from the domains at an object is the extension, at the identity arrow, of an element of the domain of the matching relational type there. Here: A full model contains every intension, so in particular one with any given extension at the identity. By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-23.*
 
 ### Fails Witnessed Possibility, Separated Structure, Independence (signature Σ), Maximalism (signature Σ).
 

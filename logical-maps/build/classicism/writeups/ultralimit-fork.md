@@ -14,8 +14,10 @@
 - **Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **Axiom of Infinity (type t).** There are not finitely many propositions. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **Infinity Schema (type t).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
+- **Necessity of Second-Order Analysis.** Every second-order analytical sentence is either true in every real number structure in every possible world or false in every real number structure in every possible world. One sentence for each type $\sigma$ and each second-order analytical sentence.
 - **Transversal Choice.** Every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
 - **¬ Rigid Comprehension.** Every relation, including a proposition, is coextensive with a rigid one.
+- **¬ Analytic Necessitism.** If there could be a real number structure, there is a rigid one that is necessarily a real number structure: a rigid property with necessarily distinct instances, with rigid order, addition, multiplication and natural numbers, which necessarily form a complete ordered field. One sentence for each type $\sigma$.
 - **¬ B for pure sentences.** The B instance for every closed sentence in the pure language.
 - **¬ Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **¬ Infinity Schema (type e).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
@@ -77,6 +79,12 @@ The category is a poset: no non-identity arrow has a retraction. The actual-worl
 
 *Address: `ultralimit-fork#five-necessity-is-truth`. By Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 2026-10-14.*
 
+### Fails Analytic Necessitism.
+
+At the root, at type $t$. A root proposition is any choice of truth values at $o$, $s$ and the $n$s, so the root propositions are continuum many, and the root being extensionally full there is a real number structure of propositions at it: its carrier, order, sum, product and natural numbers are the extensions at $o$ of root entities, and every subset of the carrier is the extension of a subproperty, so it is complete. A rigid one, necessarily a real number structure, is impossible: transport along $h_1$ reads only a proposition's value at $1$, and the root proposition differing from $p$ at $o$ alone is in the domain, so no proposition is determined by its transport along $h_1$; but an instance $x$ of a rigid carrier $X$ is, since for $y$ with $h_1\cdot y=h_1\cdot x$ persistence gives $h_1\cdot y\in X_{h_1}$, inextensibility $Xy$, and necessary distinctness $y=x$.
+
+*By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-23.*
+
 ### Holds Truth implies ND-necessity.
 
 For a true $p$, $a\le p$, since $a$ entails every truth. Take $q:=a$ in the definition of $\Box_{\ne}p$: at a world in $a$, $p$ holds; at a world outside $a$, $\Diamond a$ fails. So every truth is $\Box_{\ne}$-necessary.
@@ -104,6 +112,12 @@ No two individuals are distinct, and the numeral $\operatorname{Suc}_e\mathbf{0}
 *General argument `arguments/one-individual`. It requires that There is exactly one individual, at every world. Here: The definition fixes one individual, at every world. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-02.*
 
 *Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* Moved from the group finite-support-one-object to the topic.
+
+### Holds Necessity of Second-Order Analysis.
+
+Let $v$ be any object reachable from the evaluation point and $\mathfrak R$ a real number structure at $v$ (Background, Analysis). Its completeness is tested against the subproperties of its carrier present at $v$, and by extensional fullness every subset of the carrier's extension there is the extension at the identity of one of them; so the carrier, with the extensions of $\le$, $+$ and $\times$, is a complete ordered field in the sense of the metatheory and, by Huntington's theorem, a theorem of ZF, is isomorphic to the real numbers. For the same reason the extension of $N$, the least subproperty containing $0$ and closed under adding $1$, is its set of natural numbers, that set being the extension of a subproperty. A second-order analytical sentence $A(\mathfrak R)$ quantifies over the relations among entities of the structure's type at $v$, applied to the structure's elements, and their extensions at the identity are all the relations on the carrier, again by extensional fullness. So $A(\mathfrak R)$ holds at $v$ exactly when $A$ holds in the real numbers under full second-order semantics, which depends neither on $v$ nor on $\mathfrak R$. Hence $\Box\forall\mathfrak R\,.\,\operatorname{Real}_\sigma(\mathfrak R)\to A(\mathfrak R)$ holds when $A$ is true of the reals and $\Box\forall\mathfrak R\,.\,\operatorname{Real}_\sigma(\mathfrak R)\to\neg A(\mathfrak R)$ when it is false: every instance of the Necessity of Second-Order Analysis holds, and with it the Necessity of Analysis and the Non-contingency of the Continuum Hypothesis, as recorded. No choice is used.
+
+*General argument `arguments/second-order-analysis-extensionally-full`. It requires that The model is extensionally full at every object: every set of tuples from the domains at an object is the extension, at the identity arrow, of an element of the domain of the matching relational type there. Here: At the root an element's extension at $o$ is unconstrained, so every set of tuples is the extension there of an element of the domain; the domains at $s$, $u$ and each $n$ are full. By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-23.*
 
 ### Fails Witnessed Possibility, Separated Structure, Independence (signature Σ), Maximalism (signature Σ).
 
