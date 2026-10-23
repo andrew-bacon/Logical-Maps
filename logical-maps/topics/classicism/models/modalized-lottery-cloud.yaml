@@ -10,8 +10,12 @@ certificate:
 sources:
 - Andrew Bacon and Claude Opus 5.5 (Anthropic), Modalized Domains on Possibility Frames, draft of 20 October
   2026, Theorem C; Theorem 6.8 and Corollary 6.9, p. 29.
+- Andrew Bacon, Arbitrarily Large Models of Classicism with □Rigid Comprehension, Intensional Choice and
+  Mathematical Possibilism, handout supplied 19 October 2026, §§2–8, the same frame and proposition algebra with
+  constant domains, recorded until 23 October 2026 as lottery-algebra-actual-point.
 source_names:
 - Modalized Domains (2026)
+- Large models handout
 references:
 - paper: bacon-modalized-domains-2026
   role: proof
@@ -37,6 +41,12 @@ arguments:
 notes: There are 2^μ propositions at the root and 2^ℵ₀ rigid properties of individuals up to root identity.
   Choosing μ above any prescribed cardinal gives the unbounded-size assertion of Corollary 6.9. MP uses
   finite or strictly smaller, not the non-strict reading; it is not asserted necessary. This model implements
-  the paper’s full modalized-domain semantics. The earlier lottery-algebra-actual-point entry is preserved
-  as the distinct handout presentation; their shared proposition algebra alone is not an identification
-  of their higher-type domains.
+  the paper’s full modalized-domain semantics. Bacon’s handout of 19 October 2026 presents the same frame,
+  proposition algebra and individuals with constant domains, the functions self-related at every point, and
+  quantifiers as meets and joins over them; it was recorded until 23 October 2026 as the separate model
+  lottery-algebra-actual-point, with the same verdicts, and was folded into this record by Zachary Goodsell’s
+  decision. The two are believed elementarily equivalent, since the handout’s domains are the root-existing
+  entities of this model, every entity existing at a cloud point is identical there to a root-existing one
+  (Lemma 4.3), and both models’ root-existing relations are, up to identity, the pairs of an actual
+  extension and an extensional cloud profile, so every formula denotes the same proposition in both (argument
+  by Claude Fable 5.1, prompted by Zachary Goodsell, 23 October 2026, not independently checked).

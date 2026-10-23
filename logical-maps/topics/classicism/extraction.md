@@ -341,3 +341,10 @@ Boolean algebras being the finite ones: the glued free-monoid models and their r
 Possibilism in the finitely pinned and symmetric models, where entailment algebras need not be atomic,
 and in the full S5 model over an arbitrary infinite world set, where the answer depends on the set, is
 left open, as are the analysis principles in the cloud models and the two-object symmetric models.
+
+**Fold, the same day.** `lottery-algebra-actual-point`, Bacon's handout presentation of the lottery
+frame with constant domains, was folded into `modalized-lottery-cloud` at Zachary Goodsell's decision:
+same frame, propositions, individuals and verdicts, and believed elementarily equivalent (the handout's
+domains are the modalized model's root-existing entities, which by its Lemma 4.3 are all it ever sees).
+The handout is now a second source of the cloud record; the folded record and its write-up remain in the
+history before this date.
