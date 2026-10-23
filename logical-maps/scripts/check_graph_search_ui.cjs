@@ -10,7 +10,7 @@ const dom = new JSDOM(fs.readFileSync(path.join(root, 'viewer/template.html'), '
   url: 'https://maps.example/', runScripts: 'dangerously', pretendToBeVisual: true, virtualConsole: vc,
 });
 const w = dom.window, doc = w.document, input = doc.getElementById('graph-search');
-const search = q => { input.value = q; input.dispatchEvent(new w.Event('input', {bubbles: true})); };
+const search = q => { input.value = q; input.dispatchEvent(new w.Event('input', {bubbles: true})); w.flushGraphSearch(); };
 const graphMatch = () => doc.querySelector('#graph .node.search-current');
 const status = () => doc.getElementById('graph-search-status').textContent;
 try {

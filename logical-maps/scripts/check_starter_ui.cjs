@@ -20,7 +20,7 @@ try {
     }
     d.querySelector('[data-tab="graph"]').click();
     const input = d.getElementById('graph-search'); input.value = 'reflexive';
-    input.dispatchEvent(new dom.window.Event('input', {bubbles: true}));
+    input.dispatchEvent(new dom.window.Event('input', {bubbles: true})); dom.window.flushGraphSearch?.();
     if (topic === 'my-map') {
       assert.equal(d.querySelectorAll('#graph .node').length, 1);
       assert.equal(d.querySelector('#graph [data-constant="truth"]').textContent, '⊤');

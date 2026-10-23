@@ -116,7 +116,7 @@ try{
   click(summary('graph','one'));
   assert.deepEqual(state('graph'),['one:closed','two:closed'],'Both closed again');
   const input=d.getElementById('graph-search');
-  input.value='Beta 3'; input.dispatchEvent(new w.Event('input',{bubbles:true}));
+  input.value='Beta 3'; input.dispatchEvent(new w.Event('input',{bubbles:true})); w.flushGraphSearch();
   assert.ok(d.querySelector('[data-pr-row="beta3"]').classList.contains('search-current'),'The search finds the row');
   assert.deepEqual(state('graph'),['one:closed','two:open'],'And opens the category it is in, leaving the other closed');
 

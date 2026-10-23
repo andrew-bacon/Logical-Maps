@@ -80,6 +80,9 @@
   .changes-controls { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin: 0 0 12px; }
   .changes-controls .search { margin: 0; }
   .minor-toggle { color: var(--ink-2); font-size: 13px; white-space: nowrap; cursor: pointer; }
+  .changes-summary { color: var(--ink-2); font-size: 13px; margin: 4px 0 8px; }
+  table.changes tr.new td.mono { font-weight: 600; }
+  .changes-more { margin: 10px 0; }
   .legend-note { color: var(--ink-3); font-size: 12px; }
   .framework { font-size: 12.5px; color: var(--ink-2); }
   .framework p { margin: 0 0 6px; }
@@ -889,7 +892,7 @@
         </div>
       </section>
       <section class="pane" id="pane-models"><div class="list" id="models"></div></section>
-      <section class="pane" id="pane-results"><div class="list"><div class="changes-controls"><input class="search" id="search" type="search" placeholder="Filter" aria-label="Filter changes"><label class="minor-toggle" title="Housekeeping that leaves what a record says unchanged"><input type="checkbox" id="show-minor"> minor changes <span class="n" id="n-minor"></span></label></div><div id="results"></div></div></section>
+      <section class="pane" id="pane-results"><div class="list"><div class="changes-controls"><input class="search" id="search" type="search" placeholder="Filter" aria-label="Filter changes"><label class="minor-toggle" title="Housekeeping that leaves what a record says unchanged"><input type="checkbox" id="show-minor"> minor changes <span class="n" id="n-minor"></span></label></div><div class="changes-summary" id="changes-summary"></div><div id="results"></div></div></section>
       <section class="pane" id="pane-theorems"><div class="open-content"><div class="list" id="theorems"></div></div></section>
       <section class="pane" id="pane-open"><div class="open-content"><div id="open-warning" class="graph-warning" role="alert" hidden></div><div class="list" id="open"></div></div></section>
       <section class="pane" id="pane-page"><div class="page" id="page"></div></section>
@@ -3252,32 +3255,77 @@ function laterArguments(x) {
   ]).filter(ch => ch.date > since);
 }
 function kindOf(x) { return x.satisfies ? 'model' : x.premises ? 'result' : 'principle'; }
-function renderResults() {
-  const q = state.search.trim().toLowerCase();
-  const items = [...P, ...R, ...MODELS].filter(x => !q || [JSON.stringify(x), x.premises ? resultStmt(x, false) : x.satisfies ? modelStmt(x, false) : ''].join(' ').toLowerCase().includes(q))
-    .sort((a, b) => dateOf(b).localeCompare(dateOf(a)));
-  // One row per record at its certificate date, plus one row per logged revision at
-  // the revision's own date: later additions to a record are changes too.
-  // A minor change (housekeeping: rewording, formatting, cross-references) waits behind its checkbox.
-  const all = items.flatMap(x => [{ date: dateOf(x), x }, ...[...(x.changes || []), ...(x.history || []), ...laterArguments(x)].map(change => ({ date: String(change.date || ''), x, change }))]);
-  const minor = all.filter(r => r.change?.minor).length;
-  const rows = all.filter(r => state.showMinor || !r.change?.minor).sort((a, b) => b.date.localeCompare(a.date));
-  let h = `<table class="results changes"><tbody>`;
-  for (const { date, x, change } of rows) {
-    const k = kindOf(x);
-    const title = k === 'principle' ? `<b>${esc(x.name)}</b>` : k === 'result' ? resultStmt(x) : `<b>${esc(x.name)}</b>`;
-    const stmt = change
-      ? `${title} &nbsp; ${esc(change.summary || '')}${(change.satisfies || []).length ? ` <span class="revision-list">Now satisfies: ${change.satisfies.map(name).map(esc).join(', ')}.</span>` : ''}${(change.violates || []).length ? ` <span class="revision-list">Now violates: ${change.violates.map(name).map(esc).join(', ')}.</span>` : ''}`
-      : k === 'principle' ? `${title} &nbsp; ${esc(x.statement)}` : k === 'result' ? title : `${title} &nbsp; ${modelStmt(x)}`;
-    const by = change ? esc(change.by || '') : k === 'principle' ? '' : esc(x.certificate.produced_by || '');
-    const badge = change ? `<span class="badge ${k === 'model' ? 'indep' : 'kind'} revised">revised ${k}</span>` : `<span class="badge ${k === 'model' ? 'indep' : 'kind'}">${x.status === 'conjectured' ? 'conjecture' : k}</span>`;
-    h += `<tr data-kind="${k}" data-id="${x.id}" class="${[k !== 'principle' && !passes(x) ? 'filtered' : '', change ? 'revision' : '', change?.minor ? 'minor' : ''].join(' ').trim()}"><td class="mono nowrap">${esc(date)}</td><td>${badge}</td><td class="stmt">${stmt}</td><td>${k === 'principle' ? '' : certBadges(x)}</td><td class="mono">${by}</td></tr>`;
+// ---------------------------------------------------------------- changes
+// The rows are built once: one per record at its certificate date, plus one per logged revision at
+// the revision's own date, since later additions to a record are changes too. A minor change
+// (housekeeping: rewording, formatting, cross-references) waits behind its checkbox. The search
+// box shares the Results tab's mechanism: the query and each record's text go through findText,
+// a record's text is computed once, and typing redraws the list when it pauses. A long list comes
+// in pages. The tab's number is what is new: the rows dated since the reader's previous visit,
+// remembered in this browser, or in the last seven days on a first visit or without storage.
+const changesView = { timer: null, limit: 0, text: new Map() };
+const CHANGES_PAGE = 300;
+const isoDate = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+const longDate = iso => { const [y, m, d] = iso.split('-').map(Number); return `${d} ${['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][m - 1]} ${y}`; };
+const lastVisit = (() => {
+  const key = `logical-maps:${T.id}:last-visit`, now = new Date();
+  let since = null;
+  try { since = localStorage.getItem(key); localStorage.setItem(key, isoDate(now)); } catch (_) { /* Counting also works when storage is unavailable. */ }
+  if (/^\d{4}-\d{2}-\d{2}$/.test(since || '')) return { since, label: `since your last visit on ${longDate(since)}` };
+  const weekAgo = new Date(now); weekAgo.setDate(now.getDate() - 6);
+  return { since: isoDate(weekAgo), label: 'in the last 7 days' };
+})();
+function changesRows() {
+  // Rebuilt at each render, since a record's revisions can grow while the page is open; it is
+  // the per-record search text and the drawing that cost, not this.
+  return [...P, ...R, ...MODELS]
+    .flatMap(x => [{ date: dateOf(x), x }, ...[...(x.changes || []), ...(x.history || []), ...laterArguments(x)].map(change => ({ date: String(change.date || ''), x, change }))])
+    .sort((a, b) => b.date.localeCompare(a.date));
+}
+function changesText(x) {
+  let text = changesView.text.get(x);
+  if (text === undefined) {
+    text = findText(JSON.stringify(x) + ' ' + (x.premises ? resultStmt(x, false) : x.satisfies ? modelStmt(x, false) : ''));
+    changesView.text.set(x, text);
   }
+  return text;
+}
+function changesRowHtml({ date, x, change }) {
+  const k = kindOf(x);
+  const title = k === 'principle' ? `<b>${esc(x.name)}</b>` : k === 'result' ? resultStmt(x) : `<b>${esc(x.name)}</b>`;
+  const stmt = change
+    ? `${title} &nbsp; ${esc(change.summary || '')}${(change.satisfies || []).length ? ` <span class="revision-list">Now satisfies: ${change.satisfies.map(name).map(esc).join(', ')}.</span>` : ''}${(change.violates || []).length ? ` <span class="revision-list">Now violates: ${change.violates.map(name).map(esc).join(', ')}.</span>` : ''}`
+    : k === 'principle' ? `${title} &nbsp; ${esc(x.statement)}` : k === 'result' ? title : `${title} &nbsp; ${modelStmt(x)}`;
+  const by = change ? esc(change.by || '') : k === 'principle' ? '' : esc(x.certificate.produced_by || '');
+  const badge = change ? `<span class="badge ${k === 'model' ? 'indep' : 'kind'} revised">revised ${k}</span>` : `<span class="badge ${k === 'model' ? 'indep' : 'kind'}">${x.status === 'conjectured' ? 'conjecture' : k}</span>`;
+  const cls = [k !== 'principle' && !passes(x) ? 'filtered' : '', change ? 'revision' : '', change?.minor ? 'minor' : '', date >= lastVisit.since ? 'new' : ''].join(' ').trim();
+  return `<tr data-kind="${k}" data-id="${x.id}" class="${cls}"><td class="mono nowrap">${esc(date)}</td><td>${badge}</td><td class="stmt">${stmt}</td><td>${k === 'principle' ? '' : certBadges(x)}</td><td class="mono">${by}</td></tr>`;
+}
+function scheduleChanges() { clearTimeout(changesView.timer); changesView.timer = setTimeout(flushChanges, 200); }
+function flushChanges() {
+  if (changesView.timer === null) return;
+  clearTimeout(changesView.timer); changesView.timer = null; changesView.limit = CHANGES_PAGE; renderResults();
+}
+function renderResults() {
+  if (!changesView.limit) changesView.limit = CHANGES_PAGE;
+  const qf = findText(state.search);
+  const all = changesRows();
+  const matching = qf ? all.filter(r => changesText(r.x).includes(qf)) : all;
+  const minor = matching.filter(r => r.change?.minor).length;
+  const rows = matching.filter(r => state.showMinor || !r.change?.minor);
+  const fresh = all.filter(r => !r.change?.minor && r.date >= lastVisit.since).length;
+  const shown = rows.slice(0, changesView.limit);
+  let h = `<table class="results changes"><tbody>`;
+  for (const row of shown) h += changesRowHtml(row);
   h += '</tbody></table>';
+  const rest = rows.length - shown.length;
+  if (rest > 0) h += `<button class="changes-more" id="changes-more">Show the next ${Math.min(CHANGES_PAGE, rest)} of ${rest} more</button>`;
   const el = document.getElementById('results'); el.innerHTML = h;
   renderSubscripts(el);
   el.querySelectorAll('tr[data-id]').forEach(tr => tr.addEventListener('click', () => select({ type: tr.dataset.kind, id: tr.dataset.id })));
-  document.getElementById('n-results').textContent = rows.length;
+  el.querySelector('#changes-more')?.addEventListener('click', () => { changesView.limit += CHANGES_PAGE; renderResults(); });
+  document.getElementById('n-results').textContent = fresh;
+  document.getElementById('changes-summary').textContent = `${fresh} ${fresh === 1 ? 'change' : 'changes'} ${lastVisit.label} · ${rows.length} ${qf ? 'matching' : 'in all'}`;
   document.getElementById('n-minor').textContent = minor;
   document.getElementById('show-minor').closest('label').hidden = !minor && !state.showMinor;
 }
@@ -3565,14 +3613,21 @@ function mountPaperCatalogue() {
     catalogue = backgroundPage.querySelector('#paper-catalogue');
   }
   catalogue.innerHTML = '<input class="search" id="paper-search" type="search" placeholder="Find a paper, author or principle…" aria-label="Search literature"><div id="papers"></div>';
-  document.getElementById('paper-search').addEventListener('input', renderPapers);
+  document.getElementById('paper-search').addEventListener('input', schedulePapers);
   renderPapers();
 }
+const papersPending = { timer: null };
+function schedulePapers() { clearTimeout(papersPending.timer); papersPending.timer = setTimeout(flushPapers, 200); }
+function flushPapers() {
+  if (papersPending.timer === null) return;
+  clearTimeout(papersPending.timer); papersPending.timer = null; renderPapers();
+}
 function renderPapers() {
-  const query = document.getElementById('paper-search').value.trim().toLowerCase();
+  clearTimeout(papersPending.timer); papersPending.timer = null;
+  const query = findText(document.getElementById('paper-search').value);
   const records = [...DATA.principles, ...DATA.results, ...DATA.models];
   const linked = paper => records.filter(x => (x.references || []).some(ref => ref.paper === paper.id));
-  const matching = papers.filter(p => [p.title, p.citation, p.note || '', ...linked(p).flatMap(x => [x.name || x.id, ...(x.aliases || [])])].join(' ').toLowerCase().includes(query));
+  const matching = papers.filter(p => !query || findText([p.title, p.citation, p.note || '', ...linked(p).flatMap(x => [x.name || x.id, ...(x.aliases || [])])].join(' ')).includes(query));
   const el = document.getElementById('papers');
   const renderPaper = p => {
     const items = linked(p);
@@ -4830,12 +4885,23 @@ document.getElementById('fit').addEventListener('click', fit);
   };
   refreshPrincipleControls();
 })();
-document.getElementById('search').addEventListener('input', e => {
-  state.search = e.target.value; renderResults();
-});
-document.getElementById('show-minor').addEventListener('change', e => { state.showMinor = e.target.checked; renderResults(); });
+document.getElementById('search').addEventListener('input', e => { state.search = e.target.value; scheduleChanges(); });
+document.getElementById('show-minor').addEventListener('change', e => { state.showMinor = e.target.checked; changesView.limit = CHANGES_PAGE; renderResults(); });
+// Typing schedules the search, which redraws the graph or lattice to reveal matches; it runs once
+// the typing pauses, or at once from the keyboard shortcuts and the checks (flushGraphSearch).
+const graphSearchPending = { timer: null, value: '' };
+function scheduleGraphSearch(value) {
+  graphSearchPending.value = value; clearTimeout(graphSearchPending.timer);
+  graphSearchPending.timer = setTimeout(flushGraphSearch, 200);
+}
+function flushGraphSearch() {
+  if (graphSearchPending.timer === null) return;
+  clearTimeout(graphSearchPending.timer); graphSearchPending.timer = null;
+  runGraphSearch(graphSearchPending.value);
+}
 function runGraphSearch(value) {
-  const normalize = text => text.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+  clearTimeout(graphSearchPending.timer); graphSearchPending.timer = null;
+  const normalize = findText;
   const query = normalize(value);
   const terms = query.split(/\s+/);
   // Matches are stepped through in the order the category lists show them.
@@ -4852,7 +4918,7 @@ function runGraphSearch(value) {
   applyGraphSearch(true);
 }
 for (const box of searchBoxes()) {
-  box.addEventListener('input', e => runGraphSearch(e.target.value));
+  box.addEventListener('input', e => scheduleGraphSearch(e.target.value));
   box.addEventListener('keydown', e => {
     if (e.key === 'Enter' && graphSearch.matches.size) {
       e.preventDefault();

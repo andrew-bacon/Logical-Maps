@@ -27,9 +27,9 @@ try {
   const graph = w.eval('JSON.stringify(buildGraph())');
   d.querySelector('[data-tab="background"]').click();
   const search = d.getElementById('paper-search');
-  search.value = 'Independent Sum Consistency'; search.dispatchEvent(new w.Event('input'));
+  search.value = 'Independent Sum Consistency'; search.dispatchEvent(new w.Event('input')); w.flushPapers();
   assert.ok(d.getElementById('paper-wilkinson-2025'), 'Principle aliases find their papers');
-  search.value = 'nothing matches this'; search.dispatchEvent(new w.Event('input'));
+  search.value = 'nothing matches this'; search.dispatchEvent(new w.Event('input')); w.flushPapers();
   assert.equal(d.querySelectorAll('.paper-entry').length, 0);
   w.openPaper('wilkinson-2025');
   assert.equal(search.value, '');

@@ -112,7 +112,8 @@ and reports unless it is asked for by name.
   `check_lattice_ui.cjs` guards the separate lattice view, and
   `check_categories_ui.cjs` the collapsible principle categories shared by the
   graph sidebar, the lattice sidebar and the theory explorer, and
-  `check_model_verdicts_ui.cjs` the verdict grouping on a model's page.
+  `check_model_verdicts_ui.cjs` the verdict grouping on a model's page, and
+  `check_changes_count_ui.cjs` the Changes tab's count, search and paging.
   `check_hasse_layout_ui.cjs` and `check_relations_ui.cjs` guard the graph
   layout convention (⊥ is the floor, arrows ascend, ∧ below its premises) and
   the relation shading and comparison readouts. Keep those invariants.
@@ -217,7 +218,8 @@ When you (an AI) add or edit a result or model:
   newly verified property of a model, an added proof, a corrected statement),
   append an entry to its `changes` list: `date`, `by`, `summary`, and for models
   the newly verified `satisfies`/`violates` ids. The Changes tab lists each entry
-  under its own date. Never move `certificate.date`; it is the record's origin.
+  under its own date, and its badge counts the entries since the visitor's last
+  visit (the last 7 days on a first visit). Never move `certificate.date`; it is the record's origin.
   Mark an entry `minor: true` when it leaves what the record says unchanged —
   rewording, formatting, cross-references, dropping certificates of derived
   facts — so the Changes tab hides it unless asked. A cleanup that changes no

@@ -463,7 +463,7 @@ try{
   // The search reads the same as the graph's, over the same principles.
   w.eval('lattice.shown=["a"];lattice.builtKey=null;renderLattice();');
   const finder=d.getElementById('lat-search'), status=()=>d.getElementById('lat-search-status').textContent;
-  const type=value=>{finder.value=value;finder.dispatchEvent(new w.Event('input',{bubbles:true}));};
+  const type=value=>{finder.value=value;finder.dispatchEvent(new w.Event('input',{bubbles:true}));w.flushGraphSearch();};
   type('c');
   assert.equal(d.querySelector('#lat-filters .lat-row.search-current')?.dataset.latRow,'c','It finds the row in the sidebar');
   assert.match(status(),/1 of 1/,'And says where it is');

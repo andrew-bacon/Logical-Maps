@@ -23,12 +23,13 @@ try{
   assert.equal(toggle.checked,false,'Minor changes start hidden');
   assert.ok(!rows().some(r=>/Reworded|Linked/.test(r)),'Minor entries are not listed');
   assert.ok(rows().some(r=>/Corrected the statement/.test(r)),'Other entries are');
-  assert.equal(d.getElementById('n-results').textContent,String(rows().length),'The tab counts what it shows');
+  assert.equal(d.getElementById('n-results').textContent,'0','The badge counts what is new, and these fixtures are old');
+  assert.match(d.getElementById('changes-summary').textContent,new RegExp(rows().length+' in all$'),'The summary gives the total shown');
   assert.equal(d.getElementById('n-minor').textContent,'2','The checkbox says how many it hides');
   toggle.checked=true;toggle.dispatchEvent(new w.Event('change',{bubbles:true}));
   assert.ok(rows().some(r=>/Reworded the notes/.test(r))&&rows().some(r=>/Linked the boxed form/.test(r)),'Checking it lists them');
   assert.equal(d.querySelectorAll('#results tr.minor').length,2,'Marked as minor');
-  assert.equal(d.getElementById('n-results').textContent,String(rows().length));
+  assert.match(d.getElementById('changes-summary').textContent,new RegExp(rows().length+' in all$'));
   assert.deepEqual(errors.map(String),[]);
   console.log('PASS: the Changes tab hides minor changes entries unless asked, says how many, and counts what it shows.');
 }finally{w.close();}
