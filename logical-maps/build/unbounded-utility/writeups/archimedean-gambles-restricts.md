@@ -1,6 +1,6 @@
 # Archimedean Gambles ⇒ Archimedean Outcomes
 
-<p class='cert'>Result — Source: Misc., Lean `UnboundedUtility.Proofs.archimedean_gambles_restricts`; produced by GPT-6 (Codex), 2026-09-08; recorded by GPT-6 (Codex), 2026-09-08; transcription and random-variable formulation.</p>
+<p class='cert'>Result — Source: Misc., Lean `UnboundedUtility.Proofs.archimedean_gambles_restricts`; produced by GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-08; recorded by GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-08; transcription and random-variable formulation.</p>
 
 ## Premises
 
@@ -21,7 +21,7 @@ Source-based result or immediate restriction/composition. Premises are sufficien
 ## Sources
 
 - **Symmetries of Value** — Goodsell, Symmetries of value, Noûs 60 (2026), 16–37; DOI 10.1111/nous.12549, p. 22, footnote 3
-- **GPT-6 generated 8 Sep** — GPT-6 (Codex), 2026-09-08: elementary connecting proof in topics/unbounded-utility/results/archimedean-gambles-restricts.yaml (proof field), using the cited paper’s definitions; not a separately stated paper theorem.
+- **GPT-6 generated 8 Sep** — GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-08: elementary connecting proof in topics/unbounded-utility/results/archimedean-gambles-restricts.yaml (proof field), using the cited paper’s definitions; not a separately stated paper theorem.
 
 <p class='cert'>Record: <code>topics/unbounded-utility/results/archimedean-gambles-restricts.yaml</code></p>
 

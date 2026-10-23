@@ -1,6 +1,6 @@
 # Axiom of Infinity (type e) ⇒ Infinity Schema (type e)
 
-<p class='cert'>Result — Source: Misc.; produced by Claude Opus 5 (Anthropic), 19 September 2026, from the formulation suggested by Cian Dorr; recorded by Claude Opus 5 (Anthropic), 19 September 2026.</p>
+<p class='cert'>Result — Source: Misc.; produced by Claude Opus 5 (Anthropic), prompted by Cian Dorr, 19 September 2026, from the formulation suggested by Cian Dorr; recorded by Claude Opus 5 (Anthropic), prompted by Cian Dorr, 19 September 2026.</p>
 
 ## Premises
 

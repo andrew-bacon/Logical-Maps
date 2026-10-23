@@ -1,6 +1,6 @@
 # ⊤ ⇒ NI
 
-<p class='cert'>Result — Source: Necessity of identity (historical), Lean `Classicism.Map.classicism_implies_identity_necessary_r`; produced by W. V. Quine (historical attribution in Classicism p. 22); recorded by OpenAI Codex (GPT-6), 17 September 2026.</p>
+<p class='cert'>Result — Source: Necessity of identity (historical), Lean `Classicism.Map.classicism_implies_identity_necessary_r`; produced by W. V. Quine (historical attribution in Classicism p. 22); recorded by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026.</p>
 
 ## Premises
 

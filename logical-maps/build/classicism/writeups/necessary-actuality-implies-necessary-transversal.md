@@ -1,6 +1,6 @@
 # □Actuality ⇒ □Transversal
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_actuality_implies_necessary_transversal`; produced by Christopher Sun, 26 September 2026 (the unboxed argument); recorded by Claude Opus 5.5 (Anthropic), 28 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_actuality_implies_necessary_transversal`; produced by Christopher Sun, 26 September 2026 (the unboxed argument); recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 28 September 2026.</p>
 
 ## Premises
 

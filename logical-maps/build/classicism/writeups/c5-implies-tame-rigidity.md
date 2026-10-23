@@ -1,6 +1,6 @@
 # □ND ⇒ Tame Rigidity
 
-<p class='cert'>Result — Source: Possible Worlds Without Atomicity (draft), Lean `Classicism.Map.c5_implies_tame_rigidity`; produced by Christopher Sun; recorded by Claude Opus 5.5 (Anthropic), 2 October 2026.</p>
+<p class='cert'>Result — Source: Possible Worlds Without Atomicity (draft), Lean `Classicism.Map.c5_implies_tame_rigidity`; produced by Christopher Sun; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2 October 2026.</p>
 
 ## Premises
 

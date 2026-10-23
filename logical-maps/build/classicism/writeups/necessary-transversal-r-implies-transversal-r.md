@@ -1,6 +1,6 @@
 # □Transversal ⇒ Transversal
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_transversal_r_implies_transversal_r`; produced by Claude Opus 5.5 (Anthropic), 28 September 2026; recorded by Claude Opus 5.5 (Anthropic), 28 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_transversal_r_implies_transversal_r`; produced by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 28 September 2026; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 28 September 2026.</p>
 
 ## Premises
 

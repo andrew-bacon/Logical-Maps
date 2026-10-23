@@ -1,6 +1,6 @@
 # B for pure sentences ∧ Maximalism (pure) ⇒ ⊥
 
-<p class='cert'>Result — Source: Philosophical Introduction to HOL (2024), Lean `Classicism.Map.pure_b_and_pure_possibility_incompatible`; produced by Andrew Bacon; set as Exercise 8.19, solution written out by Claude Fable 5.1 (Anthropic), 22 September 2026; recorded by Claude Fable 5.1 (Anthropic), 22 September 2026.</p>
+<p class='cert'>Result — Source: Philosophical Introduction to HOL (2024), Lean `Classicism.Map.pure_b_and_pure_possibility_incompatible`; produced by Andrew Bacon; set as Exercise 8.19, solution written out by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026.</p>
 
 ## Premises
 

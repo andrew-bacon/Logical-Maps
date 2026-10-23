@@ -1,6 +1,6 @@
 # Maximalism (pure) ∧ □Boolean Completeness ⇒ ⊥
 
-<p class='cert'>Result — Source: Classicism (2024), Lean `Classicism.Map.maximalist_distinctness_incompatible_with_necessary_boolean_completeness_r`; produced by Andrew Bacon and Cian Dorr; recorded by OpenAI Codex (GPT-6), 17 September 2026.</p>
+<p class='cert'>Result — Source: Classicism (2024), Lean `Classicism.Map.maximalist_distinctness_incompatible_with_necessary_boolean_completeness_r`; produced by Andrew Bacon and Cian Dorr; recorded by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026.</p>
 
 ## Premises
 
@@ -21,7 +21,7 @@ Goodsell, Arithmetic is Necessary, answers the question left open at the source'
 
 ## Revisions
 
-- **2026-09-20** (Claude Fable 5.1 (Anthropic)) — Cross-referenced the unboxed incompatibility now recorded from Goodsell's draft.
+- **2026-09-20** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Cross-referenced the unboxed incompatibility now recorded from Goodsell's draft.
 
 ## Sources
 

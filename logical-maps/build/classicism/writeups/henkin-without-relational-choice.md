@@ -1,6 +1,6 @@
 # Henkin model: base without a choice function
 
-<p class='cert'>Model — Source: Classicism (2024); produced by Andrew Bacon and Cian Dorr; recorded by OpenAI Codex (GPT-6), 17 September 2026.</p>
+<p class='cert'>Model — Source: Classicism (2024); produced by Andrew Bacon and Cian Dorr; recorded by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026.</p>
 
 ## Package
 
@@ -30,7 +30,7 @@ Refer to note 46; its set-theoretic hypothesis is part of the construction.
 
 A serial relation on a finite set has a functional subrelation in ZF, so the individual domain is infinite, and in the full extensional construction the finite cardinalities are the standard numerals, none of which holds of an infinite universal property.
 
-*By Claude Fable 5.1 (Anthropic), 2026-09-25.*
+*By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 2026-09-25.*
 
 ### Fails Witnessed Possibility, Separated Structure, Independence (signature Σ), Maximalism (signature Σ).
 
@@ -49,9 +49,9 @@ The cited construction is a model of the map’s relational-type framework. The 
 
 The record's revision log before it was written as arguments.
 
-- **2026-09-25** (Claude Fable 5.1 (Anthropic)) — Added the Axiom of Infinity (type e); see the notes. Now satisfies: Axiom of Infinity (type e).
-- **2026-09-22** (Claude Fable 5.1 (Anthropic)) — Fixed an interpretation of Σ (relational constants as top, individual constants as one fixed individual) and recorded the signature schemata it refutes, at Cian Dorr’s request. Now violates: Witnessed Possibility, Separated Structure, Independence (signature Σ), Maximalism (signature Σ).
-- **2026-09-17** (OpenAI Codex (GPT-6)) — Adopted the source’s relational type system at the user’s request. The cited construction now directly supplies the recorded model; the former type-extension obligation is removed. Now satisfies: Extensionality. Now violates: Relational Choice.
+- **2026-09-25** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Added the Axiom of Infinity (type e); see the notes. Now satisfies: Axiom of Infinity (type e).
+- **2026-09-22** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Fixed an interpretation of Σ (relational constants as top, individual constants as one fixed individual) and recorded the signature schemata it refutes, at Cian Dorr’s request. Now violates: Witnessed Possibility, Separated Structure, Independence (signature Σ), Maximalism (signature Σ).
+- **2026-09-17** (OpenAI Codex (GPT-6), prompted by Zachary Goodsell) — Adopted the source’s relational type system at the user’s request. The cited construction now directly supplies the recorded model; the former type-extension obligation is removed. Now satisfies: Extensionality. Now violates: Relational Choice.
 
 ## Sources
 

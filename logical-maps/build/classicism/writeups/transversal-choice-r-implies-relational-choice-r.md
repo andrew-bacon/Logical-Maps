@@ -1,6 +1,6 @@
 # Transversal Choice ⇒ Relational Choice
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.transversal_choice_r_implies_relational_choice_r`; produced by Claude Fable 5.1 (Anthropic), 25 September 2026, on a question of Zachary Goodsell after an observation of Christopher Sun; recorded by Claude Fable 5.1 (Anthropic), 25 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.transversal_choice_r_implies_relational_choice_r`; produced by Claude Fable 5.1 (Anthropic), 25 September 2026, on a question of Zachary Goodsell after an observation of Christopher Sun; recorded by Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 25 September 2026.</p>
 
 ## Premises
 

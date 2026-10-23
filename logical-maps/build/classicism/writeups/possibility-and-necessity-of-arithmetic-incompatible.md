@@ -1,6 +1,6 @@
 # Maximalism (pure) ∧ Necessity of Arithmetic ⇒ ⊥
 
-<p class='cert'>Result — Source: Arithmetic is Necessary (2024 draft); produced by Zachary Goodsell; recorded by Claude Fable 5.1 (Anthropic), 20 September 2026.</p>
+<p class='cert'>Result — Source: Arithmetic is Necessary (2024 draft); produced by Zachary Goodsell; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026.</p>
 
 ## Premises
 
@@ -27,7 +27,7 @@ The source's theorem is general: the maximalization of any recursively enumerabl
 ## Sources
 
 - **Arithmetic is Necessary** — Zachary Goodsell, Arithmetic is Necessary, draft of 5 June 2024, §6, Theorem 11 and n. 14, pp. 24–26.
-- **Fable 20 Sep** — Claude Fable 5.1 (Anthropic), 20 September 2026, for the consistency of C with $I$ (full-henkin-infinite-base).
+- **Fable 20 Sep** — Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026, for the consistency of C with $I$ (full-henkin-infinite-base).
 
 <p class='cert'>Record: <code>topics/classicism/results/possibility-and-necessity-of-arithmetic-incompatible.yaml</code></p>
 

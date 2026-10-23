@@ -1,6 +1,6 @@
 # Possibility+ (pure) ⇒ Maximalism (pure)
 
-<p class='cert'>Result — Source: Classicism (2024), Lean `Classicism.Map.possibility_plus_r_implies_possibility_schema_r`; produced by Andrew Bacon and Cian Dorr; recorded by OpenAI Codex (GPT-6), 17 September 2026.</p>
+<p class='cert'>Result — Source: Classicism (2024), Lean `Classicism.Map.possibility_plus_r_implies_possibility_schema_r`; produced by Andrew Bacon and Cian Dorr; recorded by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026.</p>
 
 ## Premises
 

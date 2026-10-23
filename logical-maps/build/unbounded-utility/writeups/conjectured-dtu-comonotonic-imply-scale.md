@@ -1,6 +1,6 @@
 # Rich Outcomes ∧ Archimedean Outcomes ∧ Totality ∧ Stochastic Equivalence ∧ Stochastic Dominance ∧ Mixture Independence ∧ Comonotonic Sum Invariance ⇒ Scale Invariance
 
-<p class='cert'>Conjecture — Source: Misc.; produced by Zachary Goodsell (question) and Claude (Fable 5.1) (formulation and obstruction analysis), 2026-09-24; recorded by Claude (Fable 5.1), 2026-09-24.</p>
+<p class='cert'>Conjecture — Source: Misc.; produced by Zachary Goodsell (question) and Claude (Fable 5.1) (formulation and obstruction analysis), 2026-09-24; recorded by Claude (Fable 5.1), prompted by Zachary Goodsell, 2026-09-24.</p>
 
 ## Premises
 
@@ -23,6 +23,6 @@ Does DTU with Comonotonic Sum Invariance give Scale Invariance for every real fa
 ## Sources
 
 - **Goodsell question 24 Sep** — Zachary Goodsell, Logical Maps session, 24 September 2026: claim that Comonotonic Sum Invariance implies Positive Affine Invariance, with the passage from rational to real factors left open.
-- **Claude formulation 24 Sep** — Claude (Fable 5.1), Logical Maps, 24 September 2026: precise DTU formulation, and the two models showing which premises the rational-factor proof cannot spare; see writeups/lexicographic-hamel-tie-break.md.
+- **Claude formulation 24 Sep** — Claude (Fable 5.1), prompted by Zachary Goodsell, Logical Maps, 24 September 2026: precise DTU formulation, and the two models showing which premises the rational-factor proof cannot spare; see writeups/lexicographic-hamel-tie-break.md.
 
 <p class='cert'>Record: <code>topics/unbounded-utility/results/conjectured-dtu-comonotonic-imply-scale.yaml</code></p>

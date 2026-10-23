@@ -1,6 +1,6 @@
 # Truth implies ND-necessity ∧ ND ⇒ Fregean Axiom
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.distinctness_preserving_collapse_and_nd_imply_fregean_axiom`; produced by Cian Dorr, suggestion of 23 September 2026; proof written out by Claude Fable 5.1 (Anthropic), 23 September 2026; recorded by Claude Fable 5.1 (Anthropic), 23 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.distinctness_preserving_collapse_and_nd_imply_fregean_axiom`; produced by Cian Dorr, suggestion of 23 September 2026; proof written out by Claude Fable 5.1 (Anthropic), 23 September 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 23 September 2026.</p>
 
 ## Premises
 

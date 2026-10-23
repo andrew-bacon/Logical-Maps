@@ -1,6 +1,6 @@
 # Spouse ($\Diamond_\vee$) ⇒ $\Diamond_\vee$ = ◇₂
 
-<p class='cert'>Result — Source: Misc.; produced by User proposal; proof by Codex (GPT-6); recorded by Codex (GPT-6).</p>
+<p class='cert'>Result — Source: Misc.; produced by User proposal; proof by Codex (GPT-6), prompted by Zachary Goodsell; recorded by Codex (GPT-6), prompted by Zachary Goodsell.</p>
 
 ## Premises
 

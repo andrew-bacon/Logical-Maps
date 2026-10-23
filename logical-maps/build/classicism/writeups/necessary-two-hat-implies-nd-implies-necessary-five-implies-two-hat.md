@@ -1,6 +1,6 @@
 # □Two-hat necessity implies ND-necessity ⇒ □5-necessity implies two-hat necessity
 
-<p class='cert'>Result — Source: The Bounds of Possibility (2021); produced by Claude Fable 5.1 (Anthropic), 14 October 2026, combining Propositions D3, D6, D11 and D14 and fact (A5) of The Bounds of Possibility, Appendix D; recorded by Claude Fable 5.1 (Anthropic), 14 October 2026.</p>
+<p class='cert'>Result — Source: The Bounds of Possibility (2021); produced by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026, combining Propositions D3, D6, D11 and D14 and fact (A5) of The Bounds of Possibility, Appendix D; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
 
 ## Premises
 

@@ -1,6 +1,6 @@
 # □Boolean Completeness ⇒ Boolean Completeness
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_boolean_completeness_r_implies_boolean_completeness_r`; produced by OpenAI Codex (GPT-6), 17 September 2026; recorded by OpenAI Codex (GPT-6), 17 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_boolean_completeness_r_implies_boolean_completeness_r`; produced by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026; recorded by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026.</p>
 
 ## Premises
 

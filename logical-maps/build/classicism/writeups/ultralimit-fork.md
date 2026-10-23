@@ -1,6 +1,6 @@
 # Action model: a fork with an ultralimit world
 
-<p class='cert'>Model — Source: Misc.; produced by Branden Fitelson, with Claude (Anthropic) and GPT-6 Astra (OpenAI), equally involved, construction and Isabelle/HOL verification, 1 October 2026; Cian Dorr, with Claude Opus 5.5 (Anthropic), the presentation as an intensional action model, 1 October 2026; recorded by Claude Opus 5.5 (Anthropic), 1 October 2026.</p>
+<p class='cert'>Model — Source: Misc.; produced by Branden Fitelson, with Claude (Anthropic) and GPT-6 Astra (OpenAI), prompted by Cian Dorr, equally involved, construction and Isabelle/HOL verification, 1 October 2026; Cian Dorr, with Claude Opus 5.5 (Anthropic), the presentation as an intensional action model, 1 October 2026; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 1 October 2026.</p>
 
 ## Package
 
@@ -35,25 +35,25 @@ An intensional action model with one individual. The objects are the root $o$, $
 
 At the root, the map sending an element to its extensions at $o$, $s$ and the $n$s is an order isomorphism onto a product of powerset algebras, the extension at $u$ being recomputed as the limit. So every family has a meet and a join, computed coordinatewise except at $u$, and every nonzero element lies above an atom with one tuple in one free coordinate. The other worlds carry finite full powerset algebras. Hence Boolean Completeness and Atomicity hold at every world and every relational type.
 
-*By Branden Fitelson, with Claude (Anthropic) and GPT-6 Astra (OpenAI), equally involved, construction and Isabelle/HOL verification, 1 October 2026; Cian Dorr, with Claude Opus 5.5 (Anthropic), the presentation as an intensional action model, 1 October 2026.*
+*By Branden Fitelson, with Claude (Anthropic) and GPT-6 Astra (OpenAI), prompted by Cian Dorr, equally involved, construction and Isabelle/HOL verification, 1 October 2026; Cian Dorr, with Claude Opus 5.5 (Anthropic), the presentation as an intensional action model, 1 October 2026.*
 
 ### Holds □BF.
 
 Every arrow acts surjectively at every type, so BF holds at every world (write-up, Proposition 4).
 
-*By Branden Fitelson, with Claude (Anthropic) and GPT-6 Astra (OpenAI), equally involved, construction and Isabelle/HOL verification, 1 October 2026; Cian Dorr, with Claude Opus 5.5 (Anthropic), the presentation as an intensional action model, 1 October 2026.*
+*By Branden Fitelson, with Claude (Anthropic) and GPT-6 Astra (OpenAI), prompted by Cian Dorr, equally involved, construction and Isabelle/HOL verification, 1 October 2026; Cian Dorr, with Claude Opus 5.5 (Anthropic), the presentation as an intensional action model, 1 October 2026.*
 
 ### Fails Rigid Comprehension.
 
 At type $t\to t$ (write-up, Theorem 6). Let $A_0$ be the root propositions false at $s$ and at $u$, and $X$ the property with extension $A_0$ at the root and empty extensions elsewhere. A persistent property coextensive with $X$ contains both truth values at every world $n$, since members of $A_0$ take both values there; the limit condition then puts the true proposition in its extension at $u$. Rigidity at the root forces its extension at $s$ to be the proposition false at $s$ and $u$, and rigidity at $s$, tested against that proposition's haecceity, forbids the true proposition at $u$. The least upper bound of the haecceities of the $X$s, the candidate rigid coextension in the proof of Proposition 2.11, is weakly rigid but fails the rigidity condition at $s$. The model therefore refutes Proposition 2.11 (necessary-atomicity-completeness-bf-imply-rigid-comprehension); the gap is the normalization step of n. 42, part (iv), which the write-up runs inside the model (§5).
 
-*By Branden Fitelson, with Claude (Anthropic) and GPT-6 Astra (OpenAI), equally involved, construction and Isabelle/HOL verification, 1 October 2026; Cian Dorr, with Claude Opus 5.5 (Anthropic), the presentation as an intensional action model, 1 October 2026.*
+*By Branden Fitelson, with Claude (Anthropic) and GPT-6 Astra (OpenAI), prompted by Cian Dorr, equally involved, construction and Isabelle/HOL verification, 1 October 2026; Cian Dorr, with Claude Opus 5.5 (Anthropic), the presentation as an intensional action model, 1 October 2026.*
 
 ### Holds □Intensional Choice.
 
 At the root: given $F$ with $\Box\exists x\, .\,Fx$, let $G$ pick the least element of $F$ at $o$, $s$ and each $n$, under fixed well-orderings, the same ordering of $M^\sigma$ at every $n$. The sets $\{n : G(n)=\{a\}\}$ for $a\in M^\sigma$ partition the positive integers into finitely many pieces, so exactly one is in $\mathcal U$, say for $a_0$; then $\lim_{\mathcal U}G(n)=\{a_0\}$, and $a_0\in F(u)=\lim_{\mathcal U}F(n)$. Setting $G(u):=\{a_0\}$ puts $G$ in the root domain, with $G\le F$ and every extension a singleton. At $s$, $u$ and the $n$ the domains are full, and the well-ordering argument (arguments/intensional-choice-well-ordering) applies there, so the boxed form holds too.
 
-*By Claude Fable 5.1 (Anthropic), at Cian Dorr's suggestion, 2026-10-03.*
+*By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, at Cian Dorr's suggestion, 2026-10-03.*
 
 ### Holds □Rigid Power.
 
@@ -81,7 +81,7 @@ The category is a poset: no non-identity arrow has a retraction. The actual-worl
 
 For a true $p$, $a\le p$, since $a$ entails every truth. Take $q:=a$ in the definition of $\Box_{\ne}p$: at a world in $a$, $p$ holds; at a world outside $a$, $\Diamond a$ fails. So every truth is $\Box_{\ne}$-necessary.
 
-*General argument `arguments/dpc-isolated-actual-world`. It requires that The actual-world proposition $a$ is in the domain and entails every truth, and no world outside $a$ sees a world in $a$. Here: The proposition true at $o$ alone (false at $s$, at every $n$, and so in the limit at $u$) is in the root domain and entails every truth, every true proposition being true at $o$; no world other than $o$ sees $o$. By Claude Fable 5.1 (Anthropic), 2026-09-23.*
+*General argument `arguments/dpc-isolated-actual-world`. It requires that The actual-world proposition $a$ is in the domain and entails every truth, and no world outside $a$ sees a world in $a$. Here: The proposition true at $o$ alone (false at $s$, at every $n$, and so in the limit at $u$) is in the root domain and entails every truth, every true proposition being true at $o$; no world other than $o$ sees $o$. By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 2026-09-23.*
 
 *Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* The finite-support, symmetric and full action models' copies (eight records) stated once for the topic; what varied, why no world outside the actual world sees back into it, is each record's reason for meeting actual-world-isolated.
 
@@ -140,7 +140,7 @@ It is a model: the limit condition commutes with every finite operation, so ever
 
 ## Sources
 
-- **Fitelson 1 Oct** — Branden Fitelson, with Claude (Anthropic) and GPT-6 Astra (OpenAI), A proposed counterexample to Proposition 2.11, note communicated to Cian Dorr, 1 October 2026; Isabelle/HOL verification at github.com/fitelson/hom-isabelle, commit 4042cc0, Applications/2.11.
+- **Fitelson 1 Oct** — Branden Fitelson, with Claude (Anthropic) and GPT-6 Astra (OpenAI), prompted by Cian Dorr, A proposed counterexample to Proposition 2.11, note communicated to Cian Dorr, 1 October 2026; Isabelle/HOL verification at github.com/fitelson/hom-isabelle, commit 4042cc0, Applications/2.11.
 - **Intensional write-up 1 Oct** — Cian Dorr, with Claude Opus 5.5 (Anthropic), A counterexample to Proposition 2.11 of 'Classicism': Fitelson's model, as an intensional action model, draft of 1 October 2026, sources/prop-2-11-counterexample.pdf.
 
 <p class='cert'>Record: <code>topics/classicism/models/ultralimit-fork.yaml</code></p>

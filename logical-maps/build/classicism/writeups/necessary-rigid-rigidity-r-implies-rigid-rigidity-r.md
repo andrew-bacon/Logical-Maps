@@ -1,6 +1,6 @@
 # □Rigid Rigidity ⇒ Rigid Rigidity
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_rigid_rigidity_r_implies_rigid_rigidity_r`; produced by Claude Opus 5.5 (Anthropic), 10 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), 10 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_rigid_rigidity_r_implies_rigid_rigidity_r`; produced by Claude Opus 5.5 (Anthropic), 10 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 10 October 2026.</p>
 
 ## Premises
 

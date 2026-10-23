@@ -1,6 +1,6 @@
 # Gallin Extensional Comprehension ∧ BF ⇒ Weak Rigid Comprehension
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.gallin_comprehension_and_bf_imply_weak_rigid_comprehension`; produced by Cian Dorr, suggestion of 20 September 2026; proof by Claude Fable 5.1 (Anthropic), 20 September 2026; recorded by Claude Fable 5.1 (Anthropic), 20 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.gallin_comprehension_and_bf_imply_weak_rigid_comprehension`; produced by Cian Dorr, suggestion of 20 September 2026; proof by Claude Fable 5.1 (Anthropic), 20 September 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026.</p>
 
 ## Premises
 

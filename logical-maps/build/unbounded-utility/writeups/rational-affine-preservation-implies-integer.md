@@ -1,6 +1,6 @@
 # Rational Affine Preservation ⇒ Integer Affine Preservation
 
-<p class='cert'>Result — Source: Misc.; produced by Claude (Fable 5.1), 2026-09-24; recorded by Claude (Fable 5.1), 2026-09-24.</p>
+<p class='cert'>Result — Source: Misc.; produced by Claude (Fable 5.1), prompted by Zachary Goodsell, 2026-09-24; recorded by Claude (Fable 5.1), prompted by Zachary Goodsell, 2026-09-24.</p>
 
 ## Premises
 
@@ -20,6 +20,6 @@ Immediate restriction. Premises are sufficient; minimality is not claimed. No tr
 
 ## Sources
 
-- **Claude generated 24 Sep** — Claude (Fable 5.1), 2026-09-24: immediate restriction recorded in topics/unbounded-utility/results/rational-affine-preservation-implies-integer.yaml (proof field).
+- **Claude generated 24 Sep** — Claude (Fable 5.1), prompted by Zachary Goodsell, 2026-09-24: immediate restriction recorded in topics/unbounded-utility/results/rational-affine-preservation-implies-integer.yaml (proof field).
 
 <p class='cert'>Record: <code>topics/unbounded-utility/results/rational-affine-preservation-implies-integer.yaml</code></p>

@@ -1,6 +1,6 @@
 # Maximalism (pure) ∧ Rigid Comprehension ⇒ ⊥
 
-<p class='cert'>Result — Source: Arithmetic is Necessary (2024 draft); produced by Zachary Goodsell; recorded by OpenAI Codex (GPT-6), 17 September 2026; proof supplied by Claude Fable 5.1 (Anthropic), 20 September 2026, from Goodsell's draft.</p>
+<p class='cert'>Result — Source: Arithmetic is Necessary (2024 draft); produced by Zachary Goodsell; recorded by OpenAI Codex (GPT-6), prompted by Cian Dorr, 17 September 2026; proof supplied by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026, from Goodsell's draft.</p>
 
 ## Premises
 
@@ -21,7 +21,7 @@ Recorded on 17 September 2026 as a reported theorem awaiting a supplied proof. T
 
 ## Revisions
 
-- **2026-09-20** (Claude Fable 5.1 (Anthropic)) — Promoted from conjectured to proved with the proof from Goodsell, Arithmetic is Necessary, Theorem 11 and the remark following it; source changed from the personal communication to that draft. Statement unchanged.
+- **2026-09-20** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Promoted from conjectured to proved with the proof from Goodsell, Arithmetic is Necessary, Theorem 11 and the remark following it; source changed from the personal communication to that draft. Statement unchanged.
 
 ## Sources
 

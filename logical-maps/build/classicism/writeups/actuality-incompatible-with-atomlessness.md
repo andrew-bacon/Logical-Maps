@@ -1,6 +1,6 @@
 # Actuality ∧ Atomlessness ⇒ ⊥
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.actuality_incompatible_with_atomlessness`; produced by Claude Fable 5.1 (Anthropic), 19 September 2026, at the suggestion of Cian Dorr; recorded by Claude Fable 5.1 (Anthropic), 19 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.actuality_incompatible_with_atomlessness`; produced by Claude Fable 5.1 (Anthropic), 19 September 2026, at the suggestion of Cian Dorr; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 19 September 2026.</p>
 
 ## Premises
 

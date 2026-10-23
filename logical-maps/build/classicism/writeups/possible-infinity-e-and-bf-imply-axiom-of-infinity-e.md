@@ -1,6 +1,6 @@
 # Possible Infinity (type e) ∧ BF ⇒ Axiom of Infinity (type e)
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.possible_infinity_e_and_bf_imply_axiom_of_infinity_e`; produced by Cian Dorr, suggestion of 20 September 2026; proof by Claude Fable 5.1 (Anthropic), 20 September 2026; recorded by Claude Fable 5.1 (Anthropic), 20 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.possible_infinity_e_and_bf_imply_axiom_of_infinity_e`; produced by Cian Dorr, suggestion of 20 September 2026; proof by Claude Fable 5.1 (Anthropic), 20 September 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026.</p>
 
 ## Premises
 

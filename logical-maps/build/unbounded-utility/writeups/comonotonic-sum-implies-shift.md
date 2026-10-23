@@ -1,6 +1,6 @@
 # Comonotonic Sum Invariance ⇒ Shift Invariance
 
-<p class='cert'>Result — Source: Misc.; produced by GPT-6 (Codex); recorded by GPT-6 (Codex), 2026-09-09; extraction and random-variable translation.</p>
+<p class='cert'>Result — Source: Misc.; produced by GPT-6 (Codex), prompted by Zachary Goodsell; recorded by GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-09; extraction and random-variable translation.</p>
 
 ## Premises
 
@@ -16,7 +16,7 @@ Choose Z to be the constant utility b. A constant is independent of every pair a
 
 ## Sources
 
-- **GPT-6 generated 9 Sep** — GPT-6 (Codex), original connecting proof recorded 9 September 2026 in this project
+- **GPT-6 generated 9 Sep** — GPT-6 (Codex), prompted by Zachary Goodsell, original connecting proof recorded 9 September 2026 in this project
 - **Unbounded Utility and Background Risk (unpublished)** — Zachary Goodsell, Unbounded Utility and Background Risk, 5 June 2026, unpublished manuscript marked “do not cite” and erroneous; §6.2, p. 18; definitions on pp. 3–4
 
 <p class='cert'>Record: <code>topics/unbounded-utility/results/comonotonic-sum-implies-shift.yaml</code></p>

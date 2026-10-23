@@ -1,6 +1,6 @@
 # Strong Leibniz Biconditionals (type t) ⇒ Atomicity (type t)
 
-<p class='cert'>Result — Source: Philosophical Introduction to HOL (2024), Lean `Classicism.Map.strong_leibniz_t_implies_atomicity_t`; produced by Andrew Bacon; type-t instance recorded by Claude Fable 5.1 (Anthropic), 22 September 2026; recorded by Claude Fable 5.1 (Anthropic), 22 September 2026.</p>
+<p class='cert'>Result — Source: Philosophical Introduction to HOL (2024), Lean `Classicism.Map.strong_leibniz_t_implies_atomicity_t`; produced by Andrew Bacon; type-t instance recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026.</p>
 
 ## Premises
 

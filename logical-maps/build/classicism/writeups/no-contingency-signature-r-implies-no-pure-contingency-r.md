@@ -1,6 +1,6 @@
 # No Contingency (signature Σ) ⇒ No Pure Contingency
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_contingency_signature_r_implies_no_pure_contingency_r`; produced by Cian Dorr, suggestion of 22 September 2026; proof written out by Claude Fable 5.1 (Anthropic), 22 September 2026; recorded by Claude Fable 5.1 (Anthropic), 22 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_contingency_signature_r_implies_no_pure_contingency_r`; produced by Cian Dorr, suggestion of 22 September 2026; proof written out by Claude Fable 5.1 (Anthropic), 22 September 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026.</p>
 
 ## Premises
 

@@ -1,6 +1,6 @@
 # □Functional Choice ⇒ □Plenitude
 
-<p class='cert'>Result — Source: Classicism (2024), Lean `Classicism.Map.necessary_functional_choice_r_implies_necessary_plenitude_r`; produced by Andrew Bacon and Cian Dorr; boxed form recorded by Claude Fable 5.1 (Anthropic), 22 September 2026; recorded by Claude Fable 5.1 (Anthropic), 22 September 2026.</p>
+<p class='cert'>Result — Source: Classicism (2024), Lean `Classicism.Map.necessary_functional_choice_r_implies_necessary_plenitude_r`; produced by Andrew Bacon and Cian Dorr; boxed form recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026.</p>
 
 ## Premises
 

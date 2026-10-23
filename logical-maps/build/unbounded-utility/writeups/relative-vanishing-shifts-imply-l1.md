@@ -1,6 +1,6 @@
 # Rich Outcomes ∧ Relative Expectation ∧ Continuity under Vanishing Shifts ⇒ L¹ Continuity (random variables)
 
-<p class='cert'>Result — Source: Misc.; produced by GPT-6 (Codex); recorded by GPT-6 (Codex), 2026-09-09.</p>
+<p class='cert'>Result — Source: Misc.; produced by GPT-6 (Codex), prompted by Zachary Goodsell; recorded by GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-09.</p>
 
 ## Premises
 

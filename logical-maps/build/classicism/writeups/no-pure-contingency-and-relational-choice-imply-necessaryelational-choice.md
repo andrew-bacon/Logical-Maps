@@ -1,6 +1,6 @@
 # No Pure Contingency ∧ Relational Choice ⇒ □Relational Choice
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_pure_contingency_and_relational_choice_imply_necessaryelational_choice`; produced by Cian Dorr, suggestion of 22 September 2026; proof by the pattern of the recorded No Pure Contingency arrows, written out by Claude Fable 5.1 (Anthropic), 22 September 2026; recorded by Claude Fable 5.1 (Anthropic), 22 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_pure_contingency_and_relational_choice_imply_necessaryelational_choice`; produced by Cian Dorr, suggestion of 22 September 2026; proof by the pattern of the recorded No Pure Contingency arrows, written out by Claude Fable 5.1 (Anthropic), 22 September 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026.</p>
 
 ## Premises
 

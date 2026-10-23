@@ -1,6 +1,6 @@
 # Witnessed Possibility ∧ ND ⇒ ⊥
 
-<p class='cert'>Result — Source: Logical Combinatorialism, Lean `Classicism.Map.witnessed_possibility_incompatible_with_nd`; produced by Andrew Bacon; adapted to Witnessed Possibility and the map's signature by Claude Fable 5.1 (Anthropic), 19 September 2026, at the suggestion of Cian Dorr; recorded by Claude Fable 5.1 (Anthropic), 19 September 2026.</p>
+<p class='cert'>Result — Source: Logical Combinatorialism, Lean `Classicism.Map.witnessed_possibility_incompatible_with_nd`; produced by Andrew Bacon; adapted to Witnessed Possibility and the map's signature by Claude Fable 5.1, prompted by Cian Dorr (Anthropic), 19 September 2026, at the suggestion of Cian Dorr; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 19 September 2026.</p>
 
 ## Premises
 

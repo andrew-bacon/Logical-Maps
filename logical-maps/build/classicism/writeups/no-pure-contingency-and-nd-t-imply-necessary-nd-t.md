@@ -1,6 +1,6 @@
 # No Pure Contingency ∧ ND (type t) ⇒ □ND (type t)
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_pure_contingency_and_nd_t_imply_necessary_nd_t`; produced by Cian Dorr, suggestion of 20 September 2026; recorded by Claude Opus 5 (Anthropic), 20 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_pure_contingency_and_nd_t_imply_necessary_nd_t`; produced by Cian Dorr, suggestion of 20 September 2026; recorded by Claude Opus 5 (Anthropic), prompted by Cian Dorr, 20 September 2026.</p>
 
 ## Premises
 

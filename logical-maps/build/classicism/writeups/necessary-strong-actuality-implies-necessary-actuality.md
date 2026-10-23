@@ -1,6 +1,6 @@
 # □Strong Actuality ⇒ □Actuality
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_strong_actuality_implies_necessary_actuality`; produced by Cian Dorr, 6 October 2026 (statement); proof written out by Claude Opus 5.5 (Anthropic); recorded by Claude Opus 5.5 (Anthropic), 6 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_strong_actuality_implies_necessary_actuality`; produced by Cian Dorr, 6 October 2026 (statement); proof written out by Claude Opus 5.5 (Anthropic); recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 6 October 2026.</p>
 
 ## Premises
 

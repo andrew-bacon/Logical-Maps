@@ -1,6 +1,6 @@
 # Modalized Relational Choice ⇒ Relational Choice
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.modalized_relational_choice_implies_relational_choice`; produced by Cian Dorr, 11 October 2026; recorded by Claude Opus 5.5 (Anthropic), 11 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.modalized_relational_choice_implies_relational_choice`; produced by Cian Dorr, 11 October 2026; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 11 October 2026.</p>
 
 ## Premises
 

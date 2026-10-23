@@ -1,6 +1,6 @@
 # Weakly Rigid Weak Rigidity ⇒ □Tame Rigidity
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.weakly_rigid_weak_rigidity_implies_necessary_tame_rigidity`; produced by Cian Dorr, 10 October 2026; recorded by Claude Opus 5.5 (Anthropic), 10 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.weakly_rigid_weak_rigidity_implies_necessary_tame_rigidity`; produced by Cian Dorr, 10 October 2026; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 10 October 2026.</p>
 
 ## Premises
 

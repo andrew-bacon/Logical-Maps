@@ -1,6 +1,6 @@
 # □5 ⇒ 5
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_modal_five_implies_modal_five`; produced by OpenAI Codex (GPT-6), 17 September 2026; recorded by OpenAI Codex (GPT-6), 17 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_modal_five_implies_modal_five`; produced by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026; recorded by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026.</p>
 
 ## Premises
 

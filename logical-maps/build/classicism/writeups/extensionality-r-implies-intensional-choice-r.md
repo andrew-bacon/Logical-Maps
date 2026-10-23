@@ -1,6 +1,6 @@
 # Extensionality ⇒ Intensional Choice
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.extensionality_r_implies_intensional_choice_r`; produced by Claude Opus 5.5 (Anthropic), 3 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), 3 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.extensionality_r_implies_intensional_choice_r`; produced by Claude Opus 5.5 (Anthropic), 3 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 3 October 2026.</p>
 
 ## Premises
 

@@ -1,6 +1,6 @@
 # Possibility+ (signature Σ) ⇒ Possibility+ (pure)
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.possibility_plus_signature_r_implies_possibility_plus_r`; produced by Claude Fable 5.1 (Anthropic), 22 September 2026; recorded by Claude Fable 5.1 (Anthropic), 22 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.possibility_plus_signature_r_implies_possibility_plus_r`; produced by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026.</p>
 
 ## Premises
 

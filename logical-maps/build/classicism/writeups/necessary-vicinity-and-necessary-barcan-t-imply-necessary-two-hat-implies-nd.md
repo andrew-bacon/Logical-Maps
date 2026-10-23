@@ -1,6 +1,6 @@
 # □Vicinity ∧ □BF (type t) ⇒ □Two-hat necessity implies ND-necessity
 
-<p class='cert'>Result — Source: The Bounds of Possibility (2021); produced by Claude Fable 5.1 (Anthropic), 14 October 2026, from Propositions D3, D6, D11 and D18 of The Bounds of Possibility, Appendix D; Vicinity in place of Actuality suggested by Christopher Sun; recorded by Claude Fable 5.1 (Anthropic), 14 October 2026.</p>
+<p class='cert'>Result — Source: The Bounds of Possibility (2021); produced by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026, from Propositions D3, D6, D11 and D18 of The Bounds of Possibility, Appendix D; Vicinity in place of Actuality suggested by Christopher Sun; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
 
 ## Premises
 

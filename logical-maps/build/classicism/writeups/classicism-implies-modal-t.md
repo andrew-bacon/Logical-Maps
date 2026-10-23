@@ -1,6 +1,6 @@
 # ⊤ ⇒ T
 
-<p class='cert'>Result — Source: The Broadest Necessity, Lean `Classicism.Map.classicism_implies_modal_t`; produced by Andrew Bacon (source credits the S4 result to Bacon 2018); recorded by OpenAI Codex (GPT-6), 17 September 2026.</p>
+<p class='cert'>Result — Source: The Broadest Necessity, Lean `Classicism.Map.classicism_implies_modal_t`; produced by Andrew Bacon (source credits the S4 result to Bacon 2018); recorded by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026.</p>
 
 ## Premises
 

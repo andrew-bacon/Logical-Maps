@@ -1,6 +1,6 @@
 # Maximalism (signature Σ) ⇒ Witnessed Possibility
 
-<p class='cert'>Result — Source: Logical Combinatorialism; produced by Andrew Bacon; recorded by OpenAI Codex (GPT-6), 17 September 2026.</p>
+<p class='cert'>Result — Source: Logical Combinatorialism; produced by Andrew Bacon; recorded by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026.</p>
 
 ## Premises
 

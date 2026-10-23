@@ -1,6 +1,6 @@
 # Universal Copula Sum Invariance ⇒ Comonotonic Sum Invariance
 
-<p class='cert'>Result — Source: Misc.; produced by GPT-6 (Codex); recorded by GPT-6 (Codex), 2026-09-09.</p>
+<p class='cert'>Result — Source: Misc.; produced by GPT-6 (Codex), prompted by Zachary Goodsell; recorded by GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-09.</p>
 
 ## Premises
 
@@ -16,7 +16,7 @@ Use the diagonal copula, the law of (U,U) for uniform U, with $H(u,v)=\min (u,v)
 
 ## Sources
 
-- **GPT-6 generated 9 Sep** — GPT-6 (Codex), original copula sum consistency definitions and connecting proofs recorded in this project, 9 September 2026, implementing Zachary Goodsell’s proposal.
+- **GPT-6 generated 9 Sep** — GPT-6 (Codex), prompted by Zachary Goodsell, original copula sum consistency definitions and connecting proofs recorded in this project, 9 September 2026, implementing Zachary Goodsell’s proposal.
 - **Zach Goodsell proposal 9 Sep** — Zachary Goodsell, project TODO.md copula-sum proposal and request to add universal/existential variants, 9 September 2026; precise definitions recorded by GPT-6 (Codex).
 
 <p class='cert'>Record: <code>topics/unbounded-utility/results/universal-copula-implies-comonotonic.yaml</code></p>

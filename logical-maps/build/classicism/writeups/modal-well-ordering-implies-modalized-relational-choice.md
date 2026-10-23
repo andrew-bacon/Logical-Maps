@@ -1,6 +1,6 @@
 # Modal Well-Ordering ⇒ Modalized Relational Choice
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.modal_well_ordering_implies_modalized_relational_choice`; produced by Claude Opus 5.5 (Anthropic), 11 October 2026, answering a question of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), 11 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.modal_well_ordering_implies_modalized_relational_choice`; produced by Claude Opus 5.5 (Anthropic), 11 October 2026, answering a question of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 11 October 2026.</p>
 
 ## Premises
 

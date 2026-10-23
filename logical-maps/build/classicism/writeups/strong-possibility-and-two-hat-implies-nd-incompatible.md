@@ -1,6 +1,6 @@
 # Strong Possibility (pure) ∧ Two-hat necessity implies ND-necessity ⇒ ⊥
 
-<p class='cert'>Result — Source: Misc.; produced by Cian Dorr, 16 October 2026; recorded by Claude Opus 5.5 (Anthropic), 16 October 2026.</p>
+<p class='cert'>Result — Source: Misc.; produced by Cian Dorr, 16 October 2026; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 16 October 2026.</p>
 
 ## Premises
 

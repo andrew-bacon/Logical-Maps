@@ -1,6 +1,6 @@
 # Atomicity ⇒ Atomicity (type t)
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.atomicity_r_implies_atomicity_t`; produced by OpenAI Codex (GPT-6), 17 September 2026; recorded by OpenAI Codex (GPT-6), 17 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.atomicity_r_implies_atomicity_t`; produced by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026; recorded by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026.</p>
 
 ## Premises
 

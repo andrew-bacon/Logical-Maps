@@ -1,6 +1,6 @@
 # No Pure Contingency ⇒ Necessity of Arithmetic
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_pure_contingency_implies_necessity_of_arithmetic`; produced by Claude Fable 5.1 (Anthropic), 20 September 2026; recorded by Claude Fable 5.1 (Anthropic), 20 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_pure_contingency_implies_necessity_of_arithmetic`; produced by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026.</p>
 
 ## Premises
 
@@ -24,7 +24,7 @@ Immediate, and consistent with the recorded incompatibility of No Pure Contingen
 
 ## Sources
 
-- **Fable 20 Sep** — Claude Fable 5.1 (Anthropic), 20 September 2026.
+- **Fable 20 Sep** — Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026.
 - **Classicism** — Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.2, p. 27 (No Pure Contingency).
 
 <p class='cert'>Record: <code>topics/classicism/results/no-pure-contingency-implies-necessity-of-arithmetic.yaml</code></p>

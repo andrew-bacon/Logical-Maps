@@ -1,6 +1,6 @@
 # Expected Utility ⇒ Simple Expected Utility
 
-<p class='cert'>Result — Source: Misc., Lean `UnboundedUtility.Proofs.expected_utility_implies_simple`; produced by GPT-6 (Codex), 2026-09-08; recorded by GPT-6 (Codex), 2026-09-08; transcription and random-variable formulation.</p>
+<p class='cert'>Result — Source: Misc., Lean `UnboundedUtility.Proofs.expected_utility_implies_simple`; produced by GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-08; recorded by GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-08; transcription and random-variable formulation.</p>
 
 ## Premises
 
@@ -21,7 +21,7 @@ Source-based result or immediate restriction/composition. Premises are sufficien
 ## Sources
 
 - **Decision Theory Unbound** — Goodsell, Decision theory unbound, Noûs 58 (2024), 669–695; online 2023; DOI 10.1111/nous.12473, §4.1, p. 685
-- **GPT-6 generated 8 Sep** — GPT-6 (Codex), 2026-09-08: elementary connecting proof in topics/unbounded-utility/results/expected-utility-implies-simple.yaml (proof field), using the cited paper’s definitions; not a separately stated paper theorem.
+- **GPT-6 generated 8 Sep** — GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-08: elementary connecting proof in topics/unbounded-utility/results/expected-utility-implies-simple.yaml (proof field), using the cited paper’s definitions; not a separately stated paper theorem.
 
 <p class='cert'>Record: <code>topics/unbounded-utility/results/expected-utility-implies-simple.yaml</code></p>
 

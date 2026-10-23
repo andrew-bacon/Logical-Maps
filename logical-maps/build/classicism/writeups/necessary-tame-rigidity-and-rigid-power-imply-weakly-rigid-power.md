@@ -1,6 +1,6 @@
 # □Tame Rigidity ∧ Rigid Power ⇒ Weakly Rigid Power
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_tame_rigidity_and_rigid_power_imply_weakly_rigid_power`; produced by Claude Opus 5.5 (Anthropic), 10 October 2026, checking a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), 10 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_tame_rigidity_and_rigid_power_imply_weakly_rigid_power`; produced by Claude Opus 5.5 (Anthropic), 10 October 2026, checking a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 10 October 2026.</p>
 
 ## Premises
 

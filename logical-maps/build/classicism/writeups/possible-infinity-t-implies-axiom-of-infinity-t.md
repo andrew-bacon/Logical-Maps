@@ -1,6 +1,6 @@
 # Possible Infinity (type t) ⇒ Axiom of Infinity (type t)
 
-<p class='cert'>Conjecture — Source: Misc.; produced by Cian Dorr, question of 20 September 2026; recorded by Claude Fable 5.1 (Anthropic), 20 September 2026.</p>
+<p class='cert'>Conjecture — Source: Misc.; produced by Cian Dorr, question of 20 September 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026.</p>
 
 ## Premises
 
@@ -16,7 +16,7 @@ Equivalent to the claim that a finite count of propositions is necessary wheneve
 
 ## Revisions
 
-- **2026-10-19** (Claude Fable 5.1 (Anthropic)) — Refuted by the model full-two-object-chain-free-loop, a full action model whose evaluation object has four propositions and sees, through one arrow, an object with an infinite monoid of endomorphisms and so infinitely many propositions; BF at type t and No Pure Contingency fail there, as the notes anticipated. The record stays a conjecture, as the rules require; its statement is unchanged.
+- **2026-10-19** (Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell) — Refuted by the model full-two-object-chain-free-loop, a full action model whose evaluation object has four propositions and sees, through one arrow, an object with an infinite monoid of endomorphisms and so infinitely many propositions; BF at type t and No Pure Contingency fail there, as the notes anticipated. The record stays a conjecture, as the rules require; its statement is unchanged.
 
 ## Sources
 

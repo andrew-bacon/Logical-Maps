@@ -1,6 +1,6 @@
 # □ND ⇒ BF
 
-<p class='cert'>Result — Source: Prior / Lemmon on BF, Lean `Classicism.Map.necessary_nd_implies_bf`; produced by A. N. Prior; E. J. Lemmon (simplified proof); recorded by OpenAI Codex (GPT-6), 17 September 2026.</p>
+<p class='cert'>Result — Source: Prior / Lemmon on BF, Lean `Classicism.Map.necessary_nd_implies_bf`; produced by A. N. Prior; E. J. Lemmon (simplified proof); recorded by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026.</p>
 
 ## Premises
 

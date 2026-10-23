@@ -1,6 +1,6 @@
 # No Pure Contingency ∧ Transversal Choice ⇒ □Transversal Choice
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_pure_contingency_and_transversal_choice_imply_necessary_transversal_choice`; produced by Claude Opus 5.5 (Anthropic), 28 September 2026; recorded by Claude Opus 5.5 (Anthropic), 28 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_pure_contingency_and_transversal_choice_imply_necessary_transversal_choice`; produced by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 28 September 2026; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 28 September 2026.</p>
 
 ## Premises
 

@@ -1,6 +1,6 @@
 # Rich Outcomes ∧ Stochastic Equivalence ∧ Comonotonic Sum Invariance ⇒ Integer Affine Preservation
 
-<p class='cert'>Result — Source: Misc.; produced by Zachary Goodsell (iterated-addition argument) and Claude (Fable 5.1) (comonotonic copies and strict chain), 2026-09-24; recorded by Claude (Fable 5.1), 2026-09-24.</p>
+<p class='cert'>Result — Source: Misc.; produced by Zachary Goodsell (iterated-addition argument) and Claude (Fable 5.1) (comonotonic copies and strict chain), 2026-09-24; recorded by Claude (Fable 5.1), prompted by Zachary Goodsell, 2026-09-24.</p>
 
 ## Premises
 
@@ -23,7 +23,7 @@ Original connecting proof; neither Totality nor Mixture Independence is used, so
 ## Sources
 
 - **Goodsell argument 24 Sep** — Zachary Goodsell, Logical Maps session, 24 September 2026: the doubling argument 2A = A + A ≽ B + A ≽ B + B = 2B and the request to record preservation of weak and strict order under positive rational affine maps.
-- **Claude proof 24 Sep** — Claude (Fable 5.1), Logical Maps, 24 September 2026: comonotonic-copy reduction and strict chain, §§2–3 of writeups/comonotonic-sum-totality-imply-rational-scale.md.
+- **Claude proof 24 Sep** — Claude (Fable 5.1), prompted by Zachary Goodsell, Logical Maps, 24 September 2026: comonotonic-copy reduction and strict chain, §§2–3 of writeups/comonotonic-sum-totality-imply-rational-scale.md.
 - **Unbounded Utility and Background Risk (unpublished)** — Zachary Goodsell, Unbounded Utility and Background Risk, 5 June 2026, unpublished manuscript marked “do not cite” and erroneous; §6.2, p. 18; definitions on pp. 3–4
 
 <p class='cert'>Record: <code>topics/unbounded-utility/results/comonotonic-sum-implies-integer-affine-preservation.yaml</code></p>

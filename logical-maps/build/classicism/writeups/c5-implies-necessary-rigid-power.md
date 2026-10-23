@@ -1,6 +1,6 @@
 # □ND ⇒ □Rigid Power
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.c5_implies_necessary_rigid_power`; produced by Claude Opus 5.5 (Anthropic), 3 October 2026, answering Cian Dorr's question whether C5 suffices; recorded by Claude Opus 5.5 (Anthropic), 3 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.c5_implies_necessary_rigid_power`; produced by Claude Opus 5.5 (Anthropic), 3 October 2026, answering Cian Dorr's question whether C5 suffices; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 3 October 2026.</p>
 
 ## Premises
 

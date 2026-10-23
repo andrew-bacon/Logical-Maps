@@ -3,7 +3,7 @@
 Assume Actuality and Distinctness-preserving collapse, with the map's fixed
 type range. The conclusion is Inextensible Comprehension: every relation is
 coextensive with an inextensible one, where inextensibility carries its
-leading box. This is an original connecting proof by Claude Fable 5.1
+leading box. This is an original connecting proof by Claude Fable 5.1, prompted by Cian Dorr
 (Anthropic), 25 September 2026, at Cian Dorr's direction. It has no
 independent checker or Lean verification recorded. The witness is the one
 note 38 of Bacon and Dorr, *Classicism* (16 May 2023 draft, p. 29) uses

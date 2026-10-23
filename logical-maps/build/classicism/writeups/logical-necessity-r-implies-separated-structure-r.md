@@ -1,6 +1,6 @@
 # Logical Necessity ⇒ Separated Structure
 
-<p class='cert'>Result — Source: Logical Combinatorialism; produced by Andrew Bacon; the schematic derivation was written out by Claude Fable 5.1 (Anthropic), 22 September 2026; recorded by Claude Fable 5.1 (Anthropic), 22 September 2026.</p>
+<p class='cert'>Result — Source: Logical Combinatorialism; produced by Andrew Bacon; the schematic derivation was written out by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026.</p>
 
 ## Premises
 

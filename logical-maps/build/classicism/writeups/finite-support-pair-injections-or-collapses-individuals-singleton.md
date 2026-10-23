@@ -1,6 +1,6 @@
 # Finite-support action model: pair-preserving injections and pair collapses of N [one individual]
 
-<p class='cert'>Model — Source: Misc.; produced by Cian Dorr (the construction, and the expectation that Vicinity holds and Actuality fails, 7 October 2026); Claude Opus 5.5 (Anthropic) (closure under composition, the other verdicts, and the failure of Rigid Power, 7 October 2026); recorded by Claude Opus 5.5 (Anthropic), 8 October 2026.</p>
+<p class='cert'>Model — Source: Misc.; produced by Cian Dorr (the construction, and the expectation that Vicinity holds and Actuality fails, 7 October 2026); Claude Opus 5.5 (Anthropic) (closure under composition, the other verdicts, and the failure of Rigid Power, 7 October 2026); recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 8 October 2026.</p>
 
 ## Package
 
@@ -43,19 +43,19 @@ Interpretation of Σ, fixed for this record: every constant of Σ is relational,
 
 The witness is the proposition $p:=\{h : h0\ne h1\}$, the pair-preserving injections, pinned down by $\{0,1\}$ and true. Let $q$ be true, pinned down by a finite $N$, and let $k$ be a pair-preserving injection. The inverse of $k$ on $k[N\cup\{0,1\}]$ maps $\{0,1\}$ onto itself and every other point outside $\{0,1\}$, so it extends to a pair-preserving injection $j$. Then $j\circ k$ agrees with the identity on $N$, so $j\circ k\in q$. Hence every $p$-world can reach a $q$-world: $p\le\Diamond q$.
 
-*By Claude Opus 5.5 (Anthropic), confirming Cian Dorr's expectation, 2026-10-07.*
+*By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, confirming Cian Dorr's expectation, 2026-10-07.*
 
 ### Holds BF.
 
 At every type. Every arrow agrees on any finite set with a surjective arrow: a pair-preserving injection with a permutation preserving $\{0,1\}$, a collapse with a surjective collapse. So, as for the monoid of all functions (Appendix D, Part 3), if $\forall y\,\Box Xy$ holds while $X$, pinned down by $N$, omits $\langle a,k\rangle$, take $j$ surjective agreeing with $k$ on $N$, so that $a=j\cdot b$ for some $b$ by pulling back along $j$; then $\langle a,j\rangle\in X$, and so, by pinning, $\langle a,k\rangle\in X$.
 
-*By Claude Opus 5.5 (Anthropic), 2026-10-07.*
+*By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-07.*
 
 ### Holds Atomlessness.
 
 Every arrow can be changed at a point outside any finite set without leaving its class (a collapse anywhere outside $\{0,1\}$; a pair-preserving injection by sending a fresh point to a value outside its range), so no singleton is finitely pinned, and every nonempty proposition pinned down by $S$ is split by the value of its arrows at a point outside $S$.
 
-*By Claude Opus 5.5 (Anthropic), 2026-10-07.*
+*By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-07.*
 
 ### Fails Rigid Power.
 
@@ -81,7 +81,7 @@ The propositions that a given number is fixed by the arrow, one for each number,
 
 The source (n. 92) conjectures this but does not show it. Any set $F$ of propositions is the extension at the identity of an element of the domain at type $t\to t$, namely the profile $\langle h,p\rangle\mapsto\{i : i\cdot p\in F\}$: it is natural, independent of $h$ and so pinned down by the empty set, and each of its values is pinned down by the pinning set of $p$, since $i\cdot p$ depends only on the values of $i$ there. A least upper bound of $F$ under entailment is a least finitely pinned superset of $\bigcup F$, and it exists only if the least $S$-pinned superset of $\bigcup F$ stops shrinking as the finite set $S$ grows. So the family $F$ of the condition has no least upper bound, and, taking pointwise negations, the family of complements has no greatest lower bound.
 
-*From the group *Finite-support action models on one object*, shared argument `finite-support-one-object#boolean-completeness-t`. It requires that Some family $F$ of propositions has no least finitely pinned superset of its union $\bigcup F$. Here: As for the permutations, with $2$ in place of $0$: let $F$ be the family of propositions $\{h : h2=m,\ hm=2\}$ ($m\ge3$), each pinned down by $\{2,m\}$. A pair-preserving injection $h$ belongs to the least superset of $\bigcup F$ pinned down by $S=\{0,\ldots,N\}$ iff either $h2\in S\setminus\{0,1,2\}$ and $h(h2)=2$, or $h2\notin S$ and $2\notin h(S)$; the $3$-cycle $(2\ N{+}1\ N{+}2)$, which fixes $0$ and $1$, satisfies the second clause for $S$ but neither for $\{0,\ldots,N+1\}$, so these supersets strictly shrink. By Claude Fable 5.1 (Anthropic), 2026-09-25.*
+*From the group *Finite-support action models on one object*, shared argument `finite-support-one-object#boolean-completeness-t`. It requires that Some family $F$ of propositions has no least finitely pinned superset of its union $\bigcup F$. Here: As for the permutations, with $2$ in place of $0$: let $F$ be the family of propositions $\{h : h2=m,\ hm=2\}$ ($m\ge3$), each pinned down by $\{2,m\}$. A pair-preserving injection $h$ belongs to the least superset of $\bigcup F$ pinned down by $S=\{0,\ldots,N\}$ iff either $h2\in S\setminus\{0,1,2\}$ and $h(h2)=2$, or $h2\notin S$ and $2\notin h(S)$; the $3$-cycle $(2\ N{+}1\ N{+}2)$, which fixes $0$ and $1$, satisfies the second clause for $S$ but neither for $\{0,\ldots,N+1\}$, so these supersets strictly shrink. By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 2026-09-25.*
 
 *Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* The seven members' copies stated once, each member's family moved to the condition no-least-pinned-cover; the truncations' separate argument of 23 September, by Claude Fable 5.1 prompted by Cian Dorr, is now its witness, its own proof that the family is in the domain giving way to the profile above. The trawl's second arguments for the same verdict (25 September, DeepSeek, reviewed by OpenAI Codex) were dropped.
 
@@ -101,7 +101,7 @@ As for individuals (the argument infinitely-many-individuals), at type $t$: the 
 
 For each object $U$ and type $\sigma$ fix a well-ordering $<_U$ of the domain $D^\sigma_U$, and let $W$ be the intension of type $\sigma\to\sigma\to t$ with $W(h):={<_{\operatorname{cod}h}}$. Its value depends only on the arrow's codomain, so by the condition it is in the domain, and at every world its extension well-orders that world's type-$\sigma$ domain. Given $F$ with $\Box\exists x\, .\,Fx$, put $G:=\lambda x\, .\,Fx\land\forall y\, .\,(Fy\to\neg Wyx)$, the $W$-least $F$. It is definable from $F$ and $W$, so in the domain; $G\le F$, and its extension at every arrow is the singleton of the least element of $F$'s. So Intensional Choice holds, and the same at every reachable object gives $\Box$Intensional Choice. Cian Dorr's observation that such models are qualitatively full, made precise.
 
-*General argument `arguments/intensional-choice-well-ordering`. It requires that At every object reachable from the evaluation point, the domain contains every intension whose value at an arrow depends only on the arrow's codomain. Here: With one object such an intension is constant, so it is pinned down by $\emptyset$, and the domain holds every finitely pinned intension. By Claude Fable 5.1 (Anthropic), at Cian Dorr's suggestion, 2026-10-03.*
+*General argument `arguments/intensional-choice-well-ordering`. It requires that At every object reachable from the evaluation point, the domain contains every intension whose value at an arrow depends only on the arrow's codomain. Here: With one object such an intension is constant, so it is pinned down by $\emptyset$, and the domain holds every finitely pinned intension. By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, at Cian Dorr's suggestion, 2026-10-03.*
 
 ### Holds □Relational Choice, □Transversal Choice.
 

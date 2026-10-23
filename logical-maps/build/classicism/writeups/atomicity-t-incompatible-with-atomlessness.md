@@ -1,6 +1,6 @@
 # Atomicity (type t) ∧ Atomlessness ⇒ ⊥
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.atomicity_t_incompatible_with_atomlessness`; produced by OpenAI Codex (GPT-6), 17 September 2026; recorded by OpenAI Codex (GPT-6), 17 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.atomicity_t_incompatible_with_atomlessness`; produced by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026; recorded by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026.</p>
 
 ## Premises
 

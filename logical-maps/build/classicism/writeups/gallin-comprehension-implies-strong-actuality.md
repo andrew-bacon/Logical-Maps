@@ -1,6 +1,6 @@
 # Gallin Extensional Comprehension ⇒ Strong Actuality
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.gallin_comprehension_implies_strong_actuality`; produced by Claude Opus 5.5 (Anthropic), 9 October 2026, on Cian Dorr's hunch that the recorded verdicts of full-two-object-double-retraction settle Gallin Extensional Comprehension through a missing result; recorded by Claude Opus 5.5 (Anthropic), 9 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.gallin_comprehension_implies_strong_actuality`; produced by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 9 October 2026, on Cian Dorr's hunch that the recorded verdicts of full-two-object-double-retraction settle Gallin Extensional Comprehension through a missing result; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 9 October 2026.</p>
 
 ## Premises
 

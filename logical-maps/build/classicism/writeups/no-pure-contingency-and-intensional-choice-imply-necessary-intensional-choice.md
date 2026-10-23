@@ -1,6 +1,6 @@
 # No Pure Contingency ∧ Intensional Choice ⇒ □Intensional Choice
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_pure_contingency_and_intensional_choice_imply_necessary_intensional_choice`; produced by Claude Opus 5.5 (Anthropic), 3 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), 3 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_pure_contingency_and_intensional_choice_imply_necessary_intensional_choice`; produced by Claude Opus 5.5 (Anthropic), 3 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 3 October 2026.</p>
 
 ## Premises
 

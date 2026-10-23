@@ -1,6 +1,6 @@
 # Uninteractive Sum Invariance ⇒ Shift Invariance
 
-<p class='cert'>Result — Source: Misc.; produced by Claude (Opus 5.5); recorded by Claude (Fable 5.1), 2026-10-11.</p>
+<p class='cert'>Result — Source: Misc.; produced by Claude (Opus 5.5), prompted by Zachary Goodsell; recorded by Claude (Fable 5.1), prompted by Zachary Goodsell, 2026-10-11.</p>
 
 ## Premises
 

@@ -1,6 +1,6 @@
 # Maximalism (pure) ∧ Modalized Relational Choice ⇒ ⊥
 
-<p class='cert'>Result — Source: Misc.; produced by Cian Dorr, 16 October 2026; the consistency premise verified by Claude Opus 5.5 (Anthropic) in symmetric-class-reflecting-surjections; recorded by Claude Opus 5.5 (Anthropic), 16 October 2026.</p>
+<p class='cert'>Result — Source: Misc.; produced by Cian Dorr, 16 October 2026; the consistency premise verified by Claude Opus 5.5 (Anthropic) in symmetric-class-reflecting-surjections; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 16 October 2026.</p>
 
 ## Premises
 
@@ -26,7 +26,7 @@ Uses Modalized Relational Choice only at $\sigma=\tau=e$, and Maximalism only at
 ## Sources
 
 - **Dorr 16 Oct** — Cian Dorr, suggestion of 16 October 2026.
-- **Opus 16 Oct** — Claude Opus 5.5 (Anthropic), 16 October 2026, for the model witnessing the consistency premise (symmetric-class-reflecting-surjections).
+- **Opus 16 Oct** — Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 16 October 2026, for the model witnessing the consistency premise (symmetric-class-reflecting-surjections).
 
 <p class='cert'>Record: <code>topics/classicism/results/maximalism-incompatible-with-modalized-relational-choice.yaml</code></p>
 

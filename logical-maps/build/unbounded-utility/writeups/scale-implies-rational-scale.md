@@ -1,6 +1,6 @@
 # Scale Invariance ⇒ Rational Scale Invariance
 
-<p class='cert'>Result — Source: Misc.; produced by Claude (Fable 5.1), 2026-09-24; recorded by Claude (Fable 5.1), 2026-09-24.</p>
+<p class='cert'>Result — Source: Misc.; produced by Claude (Fable 5.1), prompted by Zachary Goodsell, 2026-09-24; recorded by Claude (Fable 5.1), prompted by Zachary Goodsell, 2026-09-24.</p>
 
 ## Premises
 
@@ -20,7 +20,7 @@ Immediate restriction. Premises are sufficient; minimality is not claimed. No tr
 
 ## Sources
 
-- **Claude generated 24 Sep** — Claude (Fable 5.1), 2026-09-24: immediate restriction recorded in topics/unbounded-utility/results/scale-implies-rational-scale.yaml (proof field), using the cited paper’s definition; not a separately stated paper theorem.
+- **Claude generated 24 Sep** — Claude (Fable 5.1), prompted by Zachary Goodsell, 2026-09-24: immediate restriction recorded in topics/unbounded-utility/results/scale-implies-rational-scale.yaml (proof field), using the cited paper’s definition; not a separately stated paper theorem.
 - **Symmetries of Value** — Goodsell, Symmetries of value, Noûs 60 (2026), 16–37; DOI 10.1111/nous.12549, §3, p. 24
 
 <p class='cert'>Record: <code>topics/unbounded-utility/results/scale-implies-rational-scale.yaml</code></p>

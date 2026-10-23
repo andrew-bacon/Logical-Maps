@@ -1,6 +1,6 @@
 # □Boolean Completeness ∧ □Actuality ⇒ □Weak Rigid Comprehension
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_completeness_and_necessary_actuality_imply_necessary_weak_rigid_comprehension`; produced by Claude Fable 5.1 (Anthropic), 4 October 2026, from a suggestion of Cian Dorr; the unboxed argument is Cian Dorr's (Boolean Completeness does not imply Rigid Comprehension, Proposition 1); recorded by Claude Fable 5.1 (Anthropic), 4 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_completeness_and_necessary_actuality_imply_necessary_weak_rigid_comprehension`; produced by Claude Fable 5.1 (Anthropic), 4 October 2026, from a suggestion of Cian Dorr; the unboxed argument is Cian Dorr's (Boolean Completeness does not imply Rigid Comprehension, Proposition 1); recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 4 October 2026.</p>
 
 ## Premises
 

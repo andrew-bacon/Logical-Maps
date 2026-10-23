@@ -1,6 +1,6 @@
 # Actuality ⇒ Vicinity
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.actuality_implies_vicinity`; produced by Cian Dorr, 27 September 2026 (noted as obvious when Vicinity was introduced); recorded by Claude Opus 5.5 (Anthropic), 27 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.actuality_implies_vicinity`; produced by Cian Dorr, 27 September 2026 (noted as obvious when Vicinity was introduced); recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 27 September 2026.</p>
 
 ## Premises
 

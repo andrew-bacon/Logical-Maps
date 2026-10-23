@@ -1,6 +1,6 @@
 # □Persistent Comprehension ⇒ □Actuality
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_persistent_comprehension_implies_necessary_actuality`; produced by Claude Opus 5.5 (Anthropic), 2 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), 2 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_persistent_comprehension_implies_necessary_actuality`; produced by Claude Opus 5.5 (Anthropic), 2 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2 October 2026.</p>
 
 ## Premises
 

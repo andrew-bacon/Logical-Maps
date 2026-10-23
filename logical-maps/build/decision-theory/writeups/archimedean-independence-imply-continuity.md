@@ -1,6 +1,6 @@
 # Transitivity ∧ Independence ∧ Archimedean ⇒ Mixture continuity
 
-<p class='cert'>Conjecture — Source: Misc.; produced by Claude Fable 5.1 (Cowork session).</p>
+<p class='cert'>Conjecture — Source: Misc.; produced by Claude Fable 5.1 (Cowork session), prompted by Zachary Goodsell.</p>
 
 ## Premises
 

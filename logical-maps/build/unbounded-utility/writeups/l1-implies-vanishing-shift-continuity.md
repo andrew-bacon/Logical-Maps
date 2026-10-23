@@ -1,6 +1,6 @@
 # L¹ Continuity (random variables) ⇒ Continuity under Vanishing Shifts
 
-<p class='cert'>Result — Source: Misc., Lean `UnboundedUtility.Proofs.l1_implies_vanishing_shift_continuity`; produced by GPT-6 (Codex); recorded by GPT-6 (Codex), 2026-09-09.</p>
+<p class='cert'>Result — Source: Misc., Lean `UnboundedUtility.Proofs.l1_implies_vanishing_shift_continuity`; produced by GPT-6 (Codex), prompted by Zachary Goodsell; recorded by GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-09.</p>
 
 ## Premises
 

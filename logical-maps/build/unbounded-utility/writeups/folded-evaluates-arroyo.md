@@ -3,7 +3,7 @@
 **Source and work accounting.** Zachary Goodsell's *Symmetries of value*,
 pp. 29–30, explicitly states that Arroyo has folded expectation \(\ln2\), and
 Theorem 8 gives its evaluation. The unshifted tail calculation below was
-supplied by GPT-6 (Codex), 9 September 2026, to expose the smaller sufficient
+supplied by GPT-6 (Codex), prompted by Zachary Goodsell, 9 September 2026, to expose the smaller sufficient
 package. It is a source extraction with a small calculation and premise audit,
 not a new discovery of Arroyo's value. No independent checker or Lean
 certification is asserted.

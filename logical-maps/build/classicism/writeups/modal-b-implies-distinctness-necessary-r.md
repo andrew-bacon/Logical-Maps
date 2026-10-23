@@ -1,6 +1,6 @@
 # B ⇒ ND
 
-<p class='cert'>Result — Source: Prior, Formal Logic, Lean `Classicism.Map.modal_b_implies_distinctness_necessary_r`; produced by A. N. Prior; recorded by OpenAI Codex (GPT-6), 17 September 2026.</p>
+<p class='cert'>Result — Source: Prior, Formal Logic, Lean `Classicism.Map.modal_b_implies_distinctness_necessary_r`; produced by A. N. Prior; recorded by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026.</p>
 
 ## Premises
 

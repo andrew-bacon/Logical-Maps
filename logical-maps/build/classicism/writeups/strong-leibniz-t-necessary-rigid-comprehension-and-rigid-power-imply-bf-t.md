@@ -1,6 +1,6 @@
 # Strong Leibniz Biconditionals (type t) ∧ □Rigid Comprehension ∧ Rigid Power ⇒ BF (type t)
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.strong_leibniz_t_necessary_rigid_comprehension_and_rigid_power_imply_bf_t`; produced by Cian Dorr, 11 October 2026; steps (i) and (ii) made precise by Claude Opus 5.5 (Anthropic); recorded by Claude Opus 5.5 (Anthropic), 11 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.strong_leibniz_t_necessary_rigid_comprehension_and_rigid_power_imply_bf_t`; produced by Cian Dorr, 11 October 2026; steps (i) and (ii) made precise by Claude Opus 5.5 (Anthropic); recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 11 October 2026.</p>
 
 ## Premises
 

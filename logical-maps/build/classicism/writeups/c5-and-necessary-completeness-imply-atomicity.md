@@ -1,6 +1,6 @@
 # □ND ∧ □Boolean Completeness ⇒ Atomicity
 
-<p class='cert'>Result — Source: Classicism (2024), Lean `Classicism.Map.c5_and_necessary_completeness_imply_atomicity`; produced by Andrew Bacon and Cian Dorr; recorded by OpenAI Codex (GPT-6), 17 September 2026.</p>
+<p class='cert'>Result — Source: Classicism (2024), Lean `Classicism.Map.c5_and_necessary_completeness_imply_atomicity`; produced by Andrew Bacon and Cian Dorr; recorded by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026.</p>
 
 ## Premises
 

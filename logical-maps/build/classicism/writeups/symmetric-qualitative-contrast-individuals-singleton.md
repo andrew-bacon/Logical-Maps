@@ -1,6 +1,6 @@
 # Symmetric ideally-full model: qualitative contrast (Appendix D precursor) [one individual]
 
-<p class='cert'>Model — Source: Classicism (2024); produced by Andrew Bacon and Cian Dorr; recorded by OpenAI Codex (GPT-6), 17 September 2026.</p>
+<p class='cert'>Model — Source: Classicism (2024); produced by Andrew Bacon and Cian Dorr; recorded by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026.</p>
 
 ## Package
 
@@ -49,7 +49,7 @@ The propositions that the arrow leads to $W_1$ and sends a given individual to i
 
 At every type. (i) An element $a$ of an ideally full domain at $W_0$ is fixed by every permutation fixing its pinning set $T$ pointwise, since $(g\cdot a)(k)=a(k\circ g)$ and $k\circ g$ agrees with $k$ on $T$. (ii) The arrows into $W_0$ are exactly the symmetries, so $F(h)=h\cdot F(1)$ for them. Given $F$ at $W_0$, pick $a\in F(1)$ with pinning set $T$ and let $G(h):=\{h\cdot a\}$ for $h$ into $W_0$: the haecceity of $a$, inside $F(h)$ by (ii), symmetric, and pinned down by $T$ by (i). For $h$ into $W_1$ there is no symmetry constraint, $G_{W_1}$ being trivial, so let $G(h)$ be the least element of $F(h)$ under a fixed well-ordering, which depends only on $h$ on $F$'s pinning set. The combined $G$ is in the domain, entails $F$, and has singleton extensions. At $W_1$ the same two moves work: the arrows $W_1\to W_0$ are one orbit $h=g\circ h_0$, where $G(h):=\{g\cdot a_0\}$ for some $a_0\in F(h_0)$, and the arrows $W_1\to W_1$ are unconstrained. So Intensional Choice holds at both objects, hence necessarily. In general, the haecceity of an actual instance witnesses Intensional Choice wherever every arrow out of the object is a symmetry.
 
-*By Claude Fable 5.1 (Anthropic), at Cian Dorr's suggestion, 2026-10-03.*
+*By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, at Cian Dorr's suggestion, 2026-10-03.*
 
 ### Fails □Countable Boolean Completeness, □Boolean Completeness (type t).
 
@@ -82,19 +82,19 @@ The cited construction is a model of the map’s relational-type framework. The 
 
 The record's revision log before it was written as arguments.
 
-- **2026-09-24** (OpenAI Codex (GPT-6)) — Resolved the choice questions by the finite-support transposition argument in the accompanying write-up. Relational Choice fails already for selection from two-element properties of individuals; haecceity coding gives an admitted relational-output counterinstance to Functional Choice. The original construction and its source attribution are unchanged; these choice verifications are new. Now violates: Relational Choice, Functional Choice.
-- **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Expanded the description from Appendix D; settled the Distinctness-preserving collapse. Now violates: Truth implies ND-necessity.
-- **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Noted why Relational Choice is left unknown: the construction goes beyond ideal fullness, so the extensional-fullness argument used for the other Appendix D models does not apply as stated.
-- **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Relabelled as a symmetric ideally-full model, the precursor of the draft’s construction, at Cian Dorr’s direction; the id changed from finite-support-qualitative-contrast, which nothing referenced.
-- **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Recorded the failure of Relational Choice, at types (e→t) and e: a functional subrelation of the serial relation pairing each property with its members would be symmetric and finitely pinned, and a symmetry fixing its pinning set would carry its choice for the property of lying outside that set to a second choice. Cian Dorr’s observation that a choice cannot be finitely pinned; argument in the notes. Now violates: Relational Choice.
-- **2026-09-22** (Claude Fable 5.1 (Anthropic)) — Fixed an interpretation of Σ (relational constants as top, individual constants as one fixed individual) and recorded the signature schemata it refutes, at Cian Dorr’s request. Now violates: Witnessed Possibility, Separated Structure, Independence (signature Σ), Maximalism (signature Σ).
-- **2026-09-20** (Claude Fable 5.1 (Anthropic)) — Added both Axioms of Infinity at Cian Dorr's direction. The individuals are the natural numbers and identity at the evaluation arrow is literal, so no numeral counts them. The propositions that a given individual is fixed by the arrow, one for each individual, are pairwise distinct and each has that individual as finite support, so there are infinitely many propositions. The set of numerals at each type is invariant under every arrow, hence has empty support and lies in the domain, so finite cardinality is standard and no finite cardinality holds of the universal property at either type. Now satisfies: Axiom of Infinity (type e), Axiom of Infinity (type t).
-- **2026-09-17** (OpenAI Codex (GPT-6)) — Adopted the source’s relational type system at the user’s request. The cited construction now directly supplies the recorded model; the former type-extension obligation is removed. Now satisfies: □ND, Actuality. Now violates: □Actuality, Atomicity.
+- **2026-09-24** (OpenAI Codex (GPT-6), prompted by Zachary Goodsell) — Resolved the choice questions by the finite-support transposition argument in the accompanying write-up. Relational Choice fails already for selection from two-element properties of individuals; haecceity coding gives an admitted relational-output counterinstance to Functional Choice. The original construction and its source attribution are unchanged; these choice verifications are new. Now violates: Relational Choice, Functional Choice.
+- **2026-09-23** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Expanded the description from Appendix D; settled the Distinctness-preserving collapse. Now violates: Truth implies ND-necessity.
+- **2026-09-23** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Noted why Relational Choice is left unknown: the construction goes beyond ideal fullness, so the extensional-fullness argument used for the other Appendix D models does not apply as stated.
+- **2026-09-23** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Relabelled as a symmetric ideally-full model, the precursor of the draft’s construction, at Cian Dorr’s direction; the id changed from finite-support-qualitative-contrast, which nothing referenced.
+- **2026-09-23** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Recorded the failure of Relational Choice, at types (e→t) and e: a functional subrelation of the serial relation pairing each property with its members would be symmetric and finitely pinned, and a symmetry fixing its pinning set would carry its choice for the property of lying outside that set to a second choice. Cian Dorr’s observation that a choice cannot be finitely pinned; argument in the notes. Now violates: Relational Choice.
+- **2026-09-22** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Fixed an interpretation of Σ (relational constants as top, individual constants as one fixed individual) and recorded the signature schemata it refutes, at Cian Dorr’s request. Now violates: Witnessed Possibility, Separated Structure, Independence (signature Σ), Maximalism (signature Σ).
+- **2026-09-20** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Added both Axioms of Infinity at Cian Dorr's direction. The individuals are the natural numbers and identity at the evaluation arrow is literal, so no numeral counts them. The propositions that a given individual is fixed by the arrow, one for each individual, are pairwise distinct and each has that individual as finite support, so there are infinitely many propositions. The set of numerals at each type is invariant under every arrow, hence has empty support and lies in the domain, so finite cardinality is standard and no finite cardinality holds of the universal property at either type. Now satisfies: Axiom of Infinity (type e), Axiom of Infinity (type t).
+- **2026-09-17** (OpenAI Codex (GPT-6), prompted by Zachary Goodsell) — Adopted the source’s relational type system at the user’s request. The cited construction now directly supplies the recorded model; the former type-extension obligation is removed. Now satisfies: □ND, Actuality. Now violates: □Actuality, Atomicity.
 
 ## Sources
 
 - **Classicism** — Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, Appendix D, p. 79, final construction (two copies of N).
-- **GPT-6 proof 24 Sep** — OpenAI Codex (GPT-6), 24 September 2026. Finite-support transposition proof that Relational Choice and Functional Choice fail at W0, following the user’s suggestion to transfer Plenitude countermodels to Functional Choice; see the accompanying write-up.
+- **GPT-6 proof 24 Sep** — OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 24 September 2026. Finite-support transposition proof that Relational Choice and Functional Choice fail at W0, following the user’s suggestion to transfer Plenitude countermodels to Functional Choice; see the accompanying write-up.
 
 <p class='cert'>Record: <code>topics/classicism/models/symmetric-qualitative-contrast.yaml</code></p>
 

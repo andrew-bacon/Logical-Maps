@@ -1,6 +1,6 @@
 # ND ∧ Strong Actuality ⇒ Gallin Extensional Comprehension
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.nd_and_strong_actuality_imply_gallin_comprehension`; produced by Cian Dorr, 11 October 2026; checked by Claude Opus 5.5 (Anthropic); recorded by Claude Opus 5.5 (Anthropic), 11 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.nd_and_strong_actuality_imply_gallin_comprehension`; produced by Cian Dorr, 11 October 2026; checked by Claude Opus 5.5 (Anthropic); recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 11 October 2026.</p>
 
 ## Premises
 

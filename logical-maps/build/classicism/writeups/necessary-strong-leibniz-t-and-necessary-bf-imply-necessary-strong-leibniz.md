@@ -1,6 +1,6 @@
 # □Strong Leibniz Biconditionals (type t) ∧ □BF ⇒ □Strong Leibniz Biconditionals
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_strong_leibniz_t_and_necessary_bf_imply_necessary_strong_leibniz`; produced by Cian Dorr, question of 23 September 2026; proof written out by Claude Fable 5.1 (Anthropic); recorded by Claude Fable 5.1 (Anthropic), 23 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_strong_leibniz_t_and_necessary_bf_imply_necessary_strong_leibniz`; produced by Cian Dorr, question of 23 September 2026; proof written out by Claude Fable 5.1 (Anthropic); recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 23 September 2026.</p>
 
 ## Premises
 

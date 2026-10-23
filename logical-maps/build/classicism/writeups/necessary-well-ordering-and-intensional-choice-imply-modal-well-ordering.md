@@ -1,6 +1,6 @@
 # □Well-Ordering ∧ Intensional Choice ⇒ Modal Well-Ordering
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_well_ordering_and_intensional_choice_imply_modal_well_ordering`; produced by Cian Dorr, 8 October 2026; recorded by Claude Opus 5.5 (Anthropic), 8 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_well_ordering_and_intensional_choice_imply_modal_well_ordering`; produced by Cian Dorr, 8 October 2026; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 8 October 2026.</p>
 
 ## Premises
 

@@ -1,6 +1,6 @@
 # □ND ∧ □Strong Actuality ⇒ □Gallin Extensional Comprehension
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.c5_and_necessary_strong_actuality_imply_necessary_gallin_comprehension`; produced by Claude Opus 5.5 (Anthropic), 11 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), 11 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.c5_and_necessary_strong_actuality_imply_necessary_gallin_comprehension`; produced by Claude Opus 5.5 (Anthropic), 11 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 11 October 2026.</p>
 
 ## Premises
 

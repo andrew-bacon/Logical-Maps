@@ -1,6 +1,6 @@
 # 5 ∧ Strong Leibniz Biconditionals (type t) ⇒ □B
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.five_and_strong_leibniz_t_imply_necessary_b`; produced by Claude Opus 5.5 (Anthropic), 8 October 2026, from Cian Dorr's sketch (the true strong world entails each truth and is necessarily possible); recorded by Claude Opus 5.5 (Anthropic), 8 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.five_and_strong_leibniz_t_imply_necessary_b`; produced by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 8 October 2026, from Cian Dorr's sketch (the true strong world entails each truth and is necessarily possible); recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 8 October 2026.</p>
 
 ## Premises
 

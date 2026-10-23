@@ -1,6 +1,6 @@
 # Axiom of Infinity (type t) ⇒ Possible Infinity (type t)
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.axiom_of_infinity_t_implies_possible_infinity_t`; produced by Cian Dorr, suggestion of 20 September 2026; recorded by Claude Fable 5.1 (Anthropic), 20 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.axiom_of_infinity_t_implies_possible_infinity_t`; produced by Cian Dorr, suggestion of 20 September 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026.</p>
 
 ## Premises
 

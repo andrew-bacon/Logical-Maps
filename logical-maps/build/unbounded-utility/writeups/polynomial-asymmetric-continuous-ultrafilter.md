@@ -5,7 +5,7 @@ continuous clipping construction from *Decision theory unbound*, Appendix B,
 Definition 3, Lemma 6, Remark 3 and Corollary 3, pp. 691–693. Its compatibility
 with DTU, Relative Expectation and $L^{1}$ Continuity while failing reflection is
 already recorded in *Symmetries of value*, Theorem 1, p. 24. The work supplied
-by GPT-6 (Codex), 9 September 2026, is the cutoff choice and the explicit
+by GPT-6 (Codex), prompted by Zachary Goodsell, 9 September 2026, is the cutoff choice and the explicit
 Pasadena/Arroyo evaluations below, with verification of inherited properties.
 This is a model specialization, not a new invention of asymmetric clipping
 or a claim of priority in the literature. No independent checker or Lean

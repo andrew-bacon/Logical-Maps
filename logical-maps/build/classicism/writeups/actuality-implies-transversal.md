@@ -1,6 +1,6 @@
 # Actuality ⇒ Transversal
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.actuality_implies_transversal`; produced by Christopher Sun (the claim and the witness), 26 September 2026; recorded by Claude Opus 5.5 (Anthropic), 28 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.actuality_implies_transversal`; produced by Christopher Sun (the claim and the witness), 26 September 2026; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 28 September 2026.</p>
 
 ## Premises
 

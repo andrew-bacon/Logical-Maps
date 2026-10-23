@@ -1,6 +1,6 @@
 # Maximalism (pure) ⇒ Possible Infinity (type t)
 
-<p class='cert'>Result — Source: Misc.; produced by Cian Dorr, suggestion of 20 September 2026; recorded by Claude Fable 5.1 (Anthropic), 20 September 2026.</p>
+<p class='cert'>Result — Source: Misc.; produced by Cian Dorr, suggestion of 20 September 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026.</p>
 
 ## Premises
 
@@ -25,6 +25,6 @@ Possibility Maximalism (pure) also gives the Axiom of Infinity at type $t$ itsel
 ## Sources
 
 - **Dorr 20 Sep** — Cian Dorr, suggestion of 20 September 2026.
-- **Fable 20 Sep** — Claude Fable 5.1 (Anthropic), coalesced-sum model of 20 September 2026 (see coalesced-all-finite-individual-domains).
+- **Fable 20 Sep** — Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, coalesced-sum model of 20 September 2026 (see coalesced-all-finite-individual-domains).
 
 <p class='cert'>Record: <code>topics/classicism/results/possibility-schema-r-implies-possible-infinity-t.yaml</code></p>

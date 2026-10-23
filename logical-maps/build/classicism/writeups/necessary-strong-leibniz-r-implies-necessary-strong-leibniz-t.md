@@ -1,6 +1,6 @@
 # □Strong Leibniz Biconditionals ⇒ □Strong Leibniz Biconditionals (type t)
 
-<p class='cert'>Result — Source: Philosophical Introduction to HOL (2024), Lean `Classicism.Map.necessary_strong_leibniz_r_implies_necessary_strong_leibniz_t`; produced by Andrew Bacon; instance recorded by Claude Fable 5.1 (Anthropic), 22 September 2026; recorded by Claude Fable 5.1 (Anthropic), 22 September 2026.</p>
+<p class='cert'>Result — Source: Philosophical Introduction to HOL (2024), Lean `Classicism.Map.necessary_strong_leibniz_r_implies_necessary_strong_leibniz_t`; produced by Andrew Bacon; instance recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026.</p>
 
 ## Premises
 

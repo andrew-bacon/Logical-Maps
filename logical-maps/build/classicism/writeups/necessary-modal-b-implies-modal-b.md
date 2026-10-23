@@ -1,6 +1,6 @@
 # □B ⇒ B
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_modal_b_implies_modal_b`; produced by OpenAI Codex (GPT-6), 17 September 2026; recorded by OpenAI Codex (GPT-6), 17 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_modal_b_implies_modal_b`; produced by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026; recorded by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026.</p>
 
 ## Premises
 

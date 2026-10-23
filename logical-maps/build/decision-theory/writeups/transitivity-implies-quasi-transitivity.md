@@ -1,6 +1,6 @@
 # Transitivity ⇒ Quasi-transitivity
 
-<p class='cert'>Result — Source: Misc.; produced by Claude Fable 5.1 (Cowork session).</p>
+<p class='cert'>Result — Source: Misc.; produced by Claude Fable 5.1 (Cowork session), prompted by Zachary Goodsell.</p>
 
 ## Premises
 

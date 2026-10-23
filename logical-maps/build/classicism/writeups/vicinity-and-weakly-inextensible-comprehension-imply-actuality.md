@@ -1,6 +1,6 @@
 # Vicinity ∧ Weakly Inextensible Comprehension ⇒ Actuality
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.vicinity_and_weakly_inextensible_comprehension_imply_actuality`; produced by Christopher Sun (the claim and the witness), 27 September 2026; Claude Opus 5.5 (Anthropic), the written proof, reconstructed from Sun's witness at Cian Dorr's request and checked by him; recorded by Claude Opus 5.5 (Anthropic), 27 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.vicinity_and_weakly_inextensible_comprehension_imply_actuality`; produced by Christopher Sun (the claim and the witness), 27 September 2026; Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, the written proof, reconstructed from Sun's witness at Cian Dorr's request and checked by him; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 27 September 2026.</p>
 
 ## Premises
 

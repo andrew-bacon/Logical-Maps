@@ -1,6 +1,6 @@
 # Rich Outcomes ∧ Stochastic Equivalence ∧ Mixture Independence ∧ Relative Expectation ∧ Uniqueness of Negative Self-Similarity (integer ratios) ⇒ Pasadena = ln 2
 
-<p class='cert'>Result — Source: Misc.; produced by Zachary Goodsell (Highland Park and Q constructions); GPT-6 (Codex) (negative-self-similarity factorization and explicit couplings); Claude (Fable 5.1) (integer-ratio premise audit), 2026-09-24; recorded by Claude (Fable 5.1), 2026-09-24.</p>
+<p class='cert'>Result — Source: Misc.; produced by Zachary Goodsell (Highland Park and Q constructions); GPT-6 (Codex) (negative-self-similarity factorization and explicit couplings); Claude (Fable 5.1) (integer-ratio premise audit), 2026-09-24; recorded by Claude (Fable 5.1), prompted by Zachary Goodsell, 2026-09-24.</p>
 
 ## Premises
 
@@ -26,7 +26,7 @@ Premise audit of relative-self-similarity-evaluates-pasadena, which stays record
 
 ## Sources
 
-- **GPT-6 adaptation 9 Sep, Claude audit 24 Sep** — GPT-6 (Codex), 9 September 2026: the factorization through the uniqueness principle and the explicit couplings, in writeups/relative-self-similarity-evaluates-pasadena.md; Claude (Fable 5.1), 24 September 2026: the observation that only the ratio 2 is used.
+- **GPT-6 adaptation 9 Sep, Claude audit 24 Sep** — GPT-6 (Codex), prompted by Zachary Goodsell, 9 September 2026: the factorization through the uniqueness principle and the explicit couplings, in writeups/relative-self-similarity-evaluates-pasadena.md; Claude (Fable 5.1), 24 September 2026: the observation that only the ratio 2 is used.
 - **Symmetries of Value** — Goodsell, Symmetries of value, Noûs 60 (2026), 16–37; DOI 10.1111/nous.12549, Theorem 11, pp. 32–33
 
 <p class='cert'>Record: <code>topics/unbounded-utility/results/integer-self-similarity-relative-evaluates-pasadena.yaml</code></p>

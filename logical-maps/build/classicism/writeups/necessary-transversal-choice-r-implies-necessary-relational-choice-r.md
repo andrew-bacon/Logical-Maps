@@ -1,6 +1,6 @@
 # □Transversal Choice ⇒ □Relational Choice
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_transversal_choice_r_implies_necessary_relational_choice_r`; produced by Claude Fable 5.1 (Anthropic), 25 September 2026 (the unboxed argument); necessitated by Claude Opus 5.5 (Anthropic), 28 September 2026; recorded by Claude Opus 5.5 (Anthropic), 28 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_transversal_choice_r_implies_necessary_relational_choice_r`; produced by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 September 2026 (the unboxed argument); necessitated by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 28 September 2026; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 28 September 2026.</p>
 
 ## Premises
 

@@ -1,7 +1,7 @@
 # Clipped expectation: continuous ultrafilter dominance [−4ⁿ, 4ⁿ]
 
 Source: **Misc.** Construction by Zachary Goodsell; specialization and the additional
-proofs below by GPT-6 (Codex), 9 September 2026. No independent checker or Lean
+proofs below by GPT-6 (Codex), prompted by Zachary Goodsell, 9 September 2026. No independent checker or Lean
 verification is asserted.
 
 **Original work: model adaptation and direct verification.** We reuse the continuous

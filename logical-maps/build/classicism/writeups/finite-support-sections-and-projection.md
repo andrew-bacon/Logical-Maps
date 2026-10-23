@@ -1,7 +1,7 @@
 # Finite-support action model: N and N×2, sections and projection
 
 This model shows that Actuality, and even □Actuality, does not imply
-Inextensible Comprehension. It was found by Claude Opus 5.5 (Anthropic) on
+Inextensible Comprehension. It was found by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr on
 27 September 2026, in a session with Cian Dorr, and checked informally the
 same day by Cian Dorr and Christopher Sun. No Lean verification is claimed.
 

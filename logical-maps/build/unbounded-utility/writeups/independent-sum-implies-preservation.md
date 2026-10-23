@@ -1,6 +1,6 @@
 # Independent Sum Invariance ⇒ Independent Sum Preservation
 
-<p class='cert'>Result — Source: Misc., Lean `UnboundedUtility.Proofs.independent_sum_implies_preservation`; produced by GPT-6 (Codex); recorded by GPT-6 (Codex), 2026-09-09; extraction and random-variable translation.</p>
+<p class='cert'>Result — Source: Misc., Lean `UnboundedUtility.Proofs.independent_sum_implies_preservation`; produced by GPT-6 (Codex), prompted by Zachary Goodsell; recorded by GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-09; extraction and random-variable translation.</p>
 
 ## Premises
 
@@ -16,7 +16,7 @@ Take the forward weak implication. If $X \succ Y$ but $Y+Z \succeq X+Z$, the rev
 
 ## Sources
 
-- **GPT-6 generated 9 Sep** — GPT-6 (Codex), original connecting proof recorded 9 September 2026 in this project
+- **GPT-6 generated 9 Sep** — GPT-6 (Codex), prompted by Zachary Goodsell, original connecting proof recorded 9 September 2026 in this project
 - **Unbounded Utility and Background Risk (unpublished)** — Zachary Goodsell, Unbounded Utility and Background Risk, 5 June 2026, unpublished manuscript marked “do not cite” and erroneous; §1–2; Lemma 1, p. 8
 
 <p class='cert'>Record: <code>topics/unbounded-utility/results/independent-sum-implies-preservation.yaml</code></p>

@@ -1,6 +1,6 @@
 # Stitched forcing model: ground-model root with a Cohen extension at its one other world
 
-<p class='cert'>Model — Source: Continuum Contingency (draft); produced by Neil Barton and Zachary Goodsell (the construction, □Rigid Comprehension, Relational Choice, the infinite individual domain, □Atomicity at type t and the failure of Rigid Power at the reals, Lemmas 15–19 and Theorems 20–21); Claude Fable 5.1 (Anthropic), 19 October 2026 (the remaining verdicts, in the map's terms); recorded by Claude Fable 5.1 (Anthropic), 19 October 2026.</p>
+<p class='cert'>Model — Source: Continuum Contingency (draft); produced by Neil Barton and Zachary Goodsell (the construction, □Rigid Comprehension, Relational Choice, the infinite individual domain, □Atomicity at type t and the failure of Rigid Power at the reals, Lemmas 15–19 and Theorems 20–21); Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 19 October 2026 (the remaining verdicts, in the map's terms); recorded by Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 19 October 2026.</p>
 
 ## Package
 
@@ -15,6 +15,7 @@
 - **¬ BF (relational types).** The Barcan Formula at every relational type, that is, at every type other than e.
 - **¬ Intensional Choice.** If a property is necessarily instantiated, then some property entailing it is necessarily uniquely instantiated.
 - **¬ Infinity Schema (type t).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
+- **¬ Analytic Necessitism.** If there could be a real number structure, there is a rigid one that is necessarily a real number structure: a rigid property with necessarily distinct instances, with rigid order, addition, multiplication and natural numbers, which necessarily form a complete ordered field. One sentence for each type $\sigma$.
 - **¬ B for pure sentences.** The B instance for every closed sentence in the pure language.
 - **¬ Possible Infinity (type t).** Possibly there are not finitely many propositions: the Axiom of Infinity at this type, under a diamond.
 - **¬ Witnessed Possibility.** For pure-formulas P with free variables among a finite tuple x, and distinct matching nonlogical constants c, a witness to P entails that P at those constants is possible.
@@ -34,61 +35,67 @@ Interpretation of Σ, fixed for this record: every constant of Σ is relational,
 
 Lemma 16 of the source, in the map's terms. Write a root relation as the pair of its root extension $E$, a set in $V$ of root tuples, and its $C_0$-extension $g$, a definable relation of $C_0$; transport along $h$ sends it to $g$, and $h[E]$, the set of $C_0$-components of the members of $E$, is definable from the set in $V$ of their names. The relation is persistent iff $h[E]\subseteq g$. It is weakly inextensible iff $g\subseteq h[E]$: the root relation with root extension $E$ and $C_0$-extension $h[E]$ necessarily holds of every member of $E$, so weak inextensibility gives $g\subseteq h[E]$; conversely, a root relation that necessarily holds of each member of $E$ has root extension including $E$ and $C_0$-extension including $h[E]$. So a root relation is weakly rigid iff $g=h[E]$, and then rigid, since at $C_0$, which sees only itself, every relation is rigid. Hence $(E,g)$ is coextensive with the rigid $(E,h[E])$, and Rigid Comprehension holds at the root; at $C_0$ it holds trivially.
 
-*By Neil Barton and Zachary Goodsell (the construction, □Rigid Comprehension, Relational Choice, the infinite individual domain, □Atomicity at type t and the failure of Rigid Power at the reals, Lemmas 15–19 and Theorems 20–21); Claude Fable 5.1 (Anthropic), 19 October 2026 (the remaining verdicts, in the map's terms).*
+*By Neil Barton and Zachary Goodsell (the construction, □Rigid Comprehension, Relational Choice, the infinite individual domain, □Atomicity at type t and the failure of Rigid Power at the reals, Lemmas 15–19 and Theorems 20–21); Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 19 October 2026 (the remaining verdicts, in the map's terms).*
 
 ### Holds □Relational Choice.
 
 Lemma 17 of the source. A serial root relation $U$ has, by choice in $V$, a functional subrelation $E_S$ of its root extension; the root relation with root extension $E_S$ and the $C_0$-extension of $U$ is in the domain, lies within $U$ at the root and is functional there, which is all the unboxed principle asks. At $C_0$, $V[G]$ supplies a functional subrelation of any serial relation, and the full domain contains it.
 
-*By Neil Barton and Zachary Goodsell (the construction, □Rigid Comprehension, Relational Choice, the infinite individual domain, □Atomicity at type t and the failure of Rigid Power at the reals, Lemmas 15–19 and Theorems 20–21); Claude Fable 5.1 (Anthropic), 19 October 2026 (the remaining verdicts, in the map's terms).*
+*By Neil Barton and Zachary Goodsell (the construction, □Rigid Comprehension, Relational Choice, the infinite individual domain, □Atomicity at type t and the failure of Rigid Power at the reals, Lemmas 15–19 and Theorems 20–21); Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 19 October 2026 (the remaining verdicts, in the map's terms).*
 
 ### Holds Axiom of Infinity (type e).
 
 The individuals are the natural numbers at both objects (Lemma 15 of the source). At the root the finite cardinalities of type $(et)t$ are the numerals $\operatorname{Suc}^k\mathbf 0$: the root property of cardinalities whose root extension is the set of numerals, with the corresponding definable property at $C_0$, holds of $\mathbf 0$ and is closed under successor, so every finite cardinality is a numeral; and the $k$-th numeral holds of a root property of individuals iff its root extension has exactly $k$ members, which the universal property has not.
 
-*By Neil Barton and Zachary Goodsell (the construction, □Rigid Comprehension, Relational Choice, the infinite individual domain, □Atomicity at type t and the failure of Rigid Power at the reals, Lemmas 15–19 and Theorems 20–21); Claude Fable 5.1 (Anthropic), 19 October 2026 (the remaining verdicts, in the map's terms).*
+*By Neil Barton and Zachary Goodsell (the construction, □Rigid Comprehension, Relational Choice, the infinite individual domain, □Atomicity at type t and the failure of Rigid Power at the reals, Lemmas 15–19 and Theorems 20–21); Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 19 October 2026 (the remaining verdicts, in the map's terms).*
 
 ### Holds □Atomicity (type t).
 
 Theorem 21 of the source, with the trivial group. The root has four propositions, the pairs of a truth value at the root and one at $C_0$, ordered coordinatewise, and $C_0$ has two; both algebras are finite, hence atomic.
 
-*By Neil Barton and Zachary Goodsell (the construction, □Rigid Comprehension, Relational Choice, the infinite individual domain, □Atomicity at type t and the failure of Rigid Power at the reals, Lemmas 15–19 and Theorems 20–21); Claude Fable 5.1 (Anthropic), 19 October 2026 (the remaining verdicts, in the map's terms).*
+*By Neil Barton and Zachary Goodsell (the construction, □Rigid Comprehension, Relational Choice, the infinite individual domain, □Atomicity at type t and the failure of Rigid Power at the reals, Lemmas 15–19 and Theorems 20–21); Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 19 October 2026 (the remaining verdicts, in the map's terms).*
 
 ### Fails Rigid Power, Rigid Rigidity.
 
 Lemma 19 of the source, with the universal property of individuals in place of the natural numbers. Let $F:=\lambda x^e\, .\,\top$; it is rigid, its root extension being $\mathbb N$ and its $C_0$-extension $h[\mathbb N]=\mathbb N$. Its power property $P:=\lambda X^{et}\, .\,\operatorname{Rigid}(X)\land X\le F$ is $\lambda X\, .\,\operatorname{Rigid}(X)$, as $X\le F$ is a theorem. By the criterion in the argument for Rigid Comprehension, the rigid root properties of individuals are the pairs $(E,E)$ with $E\subseteq\mathbb N$ in $V$, whose $C_0$-components are the reals of $V$, while at $C_0$ every property is rigid, so the $C_0$-extension of $P$ is the whole power set of $\mathbb N$ in $V[G]$. The root property of properties with the root extension of $P$ and $C_0$-extension $\mathcal P(\mathbb N)^V$, definable from that parameter, necessarily holds of every root instance of $P$, but not, at $C_0$, of the Cohen real, which is rigid there. So $P$ is not weakly inextensible: Rigid Power fails at type $(et)t$ and, $P$ being rigidity itself, Rigid Rigidity fails at type $et$.
 
-*By Neil Barton and Zachary Goodsell (the construction, □Rigid Comprehension, Relational Choice, the infinite individual domain, □Atomicity at type t and the failure of Rigid Power at the reals, Lemmas 15–19 and Theorems 20–21); Claude Fable 5.1 (Anthropic), 19 October 2026 (the remaining verdicts, in the map's terms).*
+*By Neil Barton and Zachary Goodsell (the construction, □Rigid Comprehension, Relational Choice, the infinite individual domain, □Atomicity at type t and the failure of Rigid Power at the reals, Lemmas 15–19 and Theorems 20–21); Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 19 October 2026 (the remaining verdicts, in the map's terms).*
 
 ### Holds □BF (type t).
 
 Both propositions of $C_0$ are transports of root propositions, so a property of propositions at the root that necessarily holds of every root proposition holds at $C_0$ of both propositions there; at $C_0$, which sees only itself, BF is trivial.
 
-*By Claude Fable 5.1 (Anthropic), 2026-10-19.*
+*By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-19.*
 
 ### Holds □Truth implies ND-necessity.
 
 At the root let $q$ be the proposition true at the root alone. $\Diamond q$ is true at the root and false at $C_0$, so for any truth $p$, $\Box(\Diamond q\to p)$ holds, and $q$ witnesses $\Box_{\ne}p$. At $C_0$, where necessity is truth, $\top$ witnesses $\Box_{\ne}p$ for every truth $p$.
 
-*By Claude Fable 5.1 (Anthropic), 2026-10-19.*
+*By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-19.*
 
 ### Fails BF (relational types).
 
 By the weak homogeneity of Cohen forcing, a real of $V[G]$ definable there from parameters in $V$ lies in $V$; so the $C_0$-components of the root properties of individuals are exactly the reals of $V$, and the Cohen real $c$ is the component of none. The root property of properties of individuals whose root extension is everything and whose $C_0$-extension is $\mathcal P(\mathbb N)^V$ necessarily holds of every root property of individuals, but $c$ does not fall under it at $C_0$: BF fails at type $et$.
 
-*By Claude Fable 5.1 (Anthropic), 2026-10-19.*
+*By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-19.*
 
 ### Fails Intensional Choice.
 
 At type $(et)t$. Let $F$ be the root property of properties of individuals whose root extension is a single root property and whose $C_0$-extension is the reals of $V[G]$ not in $V$. It is necessarily instantiated. A property $G\le F$ that is necessarily uniquely instantiated would have a one-element $C_0$-extension $\{c\}$, definable from parameters in $V$, with $c$ a new real, which the weak homogeneity of the forcing forbids.
 
-*By Claude Fable 5.1 (Anthropic), 2026-10-19.*
+*By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-19.*
 
 ### Fails Infinity Schema (type t).
 
 The root has four propositions, so the instance of the schema asking for five pairwise distinct ones fails.
 
-*By Claude Fable 5.1 (Anthropic), 2026-10-19.*
+*By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-19.*
+
+### Fails Analytic Necessitism.
+
+At type $et$, at the root. A real number structure exists there: the rigid properties of individuals are the pairs $(E,E)$ with $E\subseteq\mathbb N$ in $V$, the reals of $V$ as sets of naturals, and the field relations on them, defined from membership by arithmetical formulas, are root relations (a function in $V$ with the corresponding definable $C_0$-relation); completeness at the root holds because every root property of these is a set in $V$. Now let $\mathfrak R$ be any rigid real number structure at $et$ with necessarily distinct elements. At the root it is a complete ordered field, so by categoricity its domain $X$ is in bijection with the reals of $V$ and its rationals are a countable dense subfield. Its root extension is a set $E$ in $V$ and, $X$ being rigid, its $C_0$-extension is $h[E]=E$, the same reals. At $C_0$ every property is available, in particular the cut in the rationals of $X$ of the Cohen real, a bounded subproperty of $X$ with no least upper bound in $E$, a least upper bound being a real of $V$ equal to the Cohen real. So $X$ is not complete at $C_0$, $\Box\operatorname{Real}_{et}(\mathfrak R)$ fails, and the instance fails: a real number structure is possible, indeed actual, and no rigid one is necessarily a real number structure.
+
+*By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-23.*
 
 ### Fails B for pure sentences.
 

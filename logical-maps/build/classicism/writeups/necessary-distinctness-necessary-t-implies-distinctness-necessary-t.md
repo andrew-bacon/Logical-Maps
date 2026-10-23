@@ -1,6 +1,6 @@
 # □ND (type t) ⇒ ND (type t)
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_distinctness_necessary_t_implies_distinctness_necessary_t`; produced by OpenAI Codex (GPT-6), 17 September 2026; recorded by OpenAI Codex (GPT-6), 17 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_distinctness_necessary_t_implies_distinctness_necessary_t`; produced by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026; recorded by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026.</p>
 
 ## Premises
 

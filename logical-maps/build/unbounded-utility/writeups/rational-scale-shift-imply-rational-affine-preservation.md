@@ -1,6 +1,6 @@
 # Rich Outcomes ∧ Rational Scale Invariance ∧ Shift Invariance ⇒ Rational Affine Preservation
 
-<p class='cert'>Result — Source: Misc.; produced by Claude (Fable 5.1), 2026-09-24; recorded by Claude (Fable 5.1), 2026-09-24.</p>
+<p class='cert'>Result — Source: Misc.; produced by Claude (Fable 5.1), prompted by Zachary Goodsell, 2026-09-24; recorded by Claude (Fable 5.1), prompted by Zachary Goodsell, 2026-09-24.</p>
 
 ## Premises
 
@@ -22,7 +22,7 @@ Immediate composition. Premises are sufficient; minimality is not claimed. No tr
 
 ## Sources
 
-- **Claude generated 24 Sep** — Claude (Fable 5.1), 2026-09-24: elementary composition recorded in topics/unbounded-utility/results/rational-scale-shift-imply-rational-affine-preservation.yaml (proof field), following the pattern of shift-scale-imply-positive-affine.
+- **Claude generated 24 Sep** — Claude (Fable 5.1), prompted by Zachary Goodsell, 2026-09-24: elementary composition recorded in topics/unbounded-utility/results/rational-scale-shift-imply-rational-affine-preservation.yaml (proof field), following the pattern of shift-scale-imply-positive-affine.
 - **Symmetries of Value** — Goodsell, Symmetries of value, Noûs 60 (2026), 16–37; DOI 10.1111/nous.12549, §3, p. 24
 
 <p class='cert'>Record: <code>topics/unbounded-utility/results/rational-scale-shift-imply-rational-affine-preservation.yaml</code></p>

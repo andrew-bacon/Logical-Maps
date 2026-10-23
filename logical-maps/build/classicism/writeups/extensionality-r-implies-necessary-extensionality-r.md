@@ -1,6 +1,6 @@
 # Extensionality ⇒ □Extensionality
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.extensionality_r_implies_necessary_extensionality_r`; produced by Cian Dorr, suggestion of 19 September 2026; recorded by Claude Opus 5 (Anthropic), 19 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.extensionality_r_implies_necessary_extensionality_r`; produced by Cian Dorr, suggestion of 19 September 2026; recorded by Claude Opus 5 (Anthropic), prompted by Cian Dorr, 19 September 2026.</p>
 
 ## Premises
 

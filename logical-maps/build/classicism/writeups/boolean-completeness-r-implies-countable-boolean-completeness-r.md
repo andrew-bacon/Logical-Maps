@@ -1,6 +1,6 @@
 # Boolean Completeness ⇒ Countable Boolean Completeness
 
-<p class='cert'>Result — Source: Arithmetic is Necessary (2024 draft), Lean `Classicism.Map.boolean_completeness_r_implies_countable_boolean_completeness_r`; produced by Zachary Goodsell; recorded by Claude Fable 5.1 (Anthropic), 20 September 2026.</p>
+<p class='cert'>Result — Source: Arithmetic is Necessary (2024 draft), Lean `Classicism.Map.boolean_completeness_r_implies_countable_boolean_completeness_r`; produced by Zachary Goodsell; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026.</p>
 
 ## Premises
 

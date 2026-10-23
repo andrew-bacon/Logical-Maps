@@ -1,6 +1,6 @@
 # Rich Outcomes ∧ Simple Expected Utility ∧ Stochastic Dominance ∧ Archimedean Gambles ⇒ ⊥
 
-<p class='cert'>Result — Source: Misc.; produced by Zachary Goodsell (St Petersburg argument); GPT-6 (Codex), explicit reduction of the sufficient premises; recorded by GPT-6 (Codex), 2026-09-09.</p>
+<p class='cert'>Result — Source: Misc.; produced by Zachary Goodsell (St Petersburg argument); GPT-6 (Codex), explicit reduction of the sufficient premises; recorded by GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-09.</p>
 
 ## Premises
 
@@ -23,7 +23,7 @@ This is the existing Goodsell argument with its sufficient assumptions made expl
 
 ## Sources
 
-- **GPT-6 premise audit 9 Sep** — GPT-6 (Codex), project premise audit, 9 September 2026: the St Petersburg proof recorded in dtu-refutes-archimedean-gambles uses only Rich Outcomes, Simple EU, and Stochastic Dominance. This record makes that sufficient subpackage explicit.
+- **GPT-6 premise audit 9 Sep** — GPT-6 (Codex), prompted by Zachary Goodsell, project premise audit, 9 September 2026: the St Petersburg proof recorded in dtu-refutes-archimedean-gambles uses only Rich Outcomes, Simple EU, and Stochastic Dominance. This record makes that sufficient subpackage explicit.
 - **Symmetries of Value** — Zachary Goodsell, Symmetries of value, Noûs 60 (2026), 16–37; DOI 10.1111/nous.12549, §3, p. 22: St Petersburg obstruction to Archimedean Gambles.
 
 <p class='cert'>Record: <code>topics/unbounded-utility/results/rich-simple-dominance-refutes-archimedean-gambles.yaml</code></p>

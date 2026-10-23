@@ -10,7 +10,7 @@ Rich Outcomes and Archimedean Outcomes **alone** do not give this result.
 **Source and contribution.** Goodsell's *Decision theory unbound*, §3.2,
 pp. 678–681, supplies the utility calibration and finite-lottery representation;
 §3.3, pp. 681–682, distinguishes DU from DTU. This is a small proof adaptation
-and premise audit by GPT-6 (Codex), 9 September 2026, writing out why global
+and premise audit by GPT-6 (Codex), prompted by Zachary Goodsell, 9 September 2026, writing out why global
 Totality is unnecessary in the mixture formulation. The original
 source-attributed representation record is retained. No literature priority,
 independent certification or Lean verification is claimed.

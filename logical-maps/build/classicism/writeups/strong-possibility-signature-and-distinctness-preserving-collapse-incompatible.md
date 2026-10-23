@@ -1,6 +1,6 @@
 # Strong Possibility (signature Σ) ∧ Truth implies ND-necessity ⇒ ⊥
 
-<p class='cert'>Result — Source: Misc.; produced by Claude Fable 5.1 (Anthropic), 23 September 2026, adapting the recorded pure-language proof; the observation prompting the pass is Cian Dorr’s; recorded by Claude Fable 5.1 (Anthropic), 23 September 2026.</p>
+<p class='cert'>Result — Source: Misc.; produced by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 23 September 2026, adapting the recorded pure-language proof; the observation prompting the pass is Cian Dorr’s; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 23 September 2026.</p>
 
 ## Premises
 

@@ -1,6 +1,6 @@
 # Witnessed Possibility ∧ No Pure Contingency ⇒ Logical Necessity
 
-<p class='cert'>Result — Source: Logical Combinatorialism, Lean `Classicism.Map.witnessed_possibility_and_no_pure_contingency_imply_logical_necessity`; produced by Andrew Bacon; recorded by OpenAI Codex (GPT-6), 17 September 2026.</p>
+<p class='cert'>Result — Source: Logical Combinatorialism, Lean `Classicism.Map.witnessed_possibility_and_no_pure_contingency_imply_logical_necessity`; produced by Andrew Bacon; recorded by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026.</p>
 
 ## Premises
 

@@ -1,6 +1,6 @@
 # Rich Outcomes ∧ Totality ∧ Mixture Independence ∧ Integer Affine Preservation ∧ Reflection Anti-Invariance ⇒ Uniqueness of Negative Self-Similarity (integer ratios)
 
-<p class='cert'>Result — Source: Misc.; produced by Zachary Goodsell (observation that integer preservation with a negation anti-invariance suffices) and Claude (Fable 5.1) (proof), 2026-09-24; recorded by Claude (Fable 5.1), 2026-09-24.</p>
+<p class='cert'>Result — Source: Misc.; produced by Zachary Goodsell (observation that integer preservation with a negation anti-invariance suffices) and Claude (Fable 5.1) (proof), 2026-09-24; recorded by Claude (Fable 5.1), prompted by Zachary Goodsell, 2026-09-24.</p>
 
 ## Premises
 
@@ -25,7 +25,7 @@ Original connecting proof, a premise refinement of totality-independence-negativ
 ## Sources
 
 - **Goodsell observation 24 Sep** — Zachary Goodsell, Logical Maps session, 24 September 2026: the observation that Integer Affine Preservation with a negation anti-invariance already gives the alternating St Petersburg evaluation and related results.
-- **Claude proof 24 Sep** — Claude (Fable 5.1), Logical Maps, 24 September 2026: proof in topics/unbounded-utility/results/totality-independence-integer-affine-reflection-imply-integer-self-similarity.yaml (proof field), adapting the recorded reduced-premise argument.
+- **Claude proof 24 Sep** — Claude (Fable 5.1), prompted by Zachary Goodsell, Logical Maps, 24 September 2026: proof in topics/unbounded-utility/results/totality-independence-integer-affine-reflection-imply-integer-self-similarity.yaml (proof field), adapting the recorded reduced-premise argument.
 - **Symmetries of Value** — Goodsell, Symmetries of value, Noûs 60 (2026), 16–37; DOI 10.1111/nous.12549, Theorem 10, pp. 30–31
 
 <p class='cert'>Record: <code>topics/unbounded-utility/results/totality-independence-integer-affine-reflection-imply-integer-self-similarity.yaml</code></p>

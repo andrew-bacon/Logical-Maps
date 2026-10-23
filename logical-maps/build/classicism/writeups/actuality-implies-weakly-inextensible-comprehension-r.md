@@ -1,6 +1,6 @@
 # Actuality ⇒ Weakly Inextensible Comprehension
 
-<p class='cert'>Result — Source: Classicism (2024), Lean `Classicism.Map.actuality_implies_weakly_inextensible_comprehension_r`; produced by Andrew Bacon and Cian Dorr; recorded by OpenAI Codex (GPT-6), 17 September 2026; conclusion corrected by Claude Fable 5.1 (Anthropic), 25 September 2026.</p>
+<p class='cert'>Result — Source: Classicism (2024), Lean `Classicism.Map.actuality_implies_weakly_inextensible_comprehension_r`; produced by Andrew Bacon and Cian Dorr; recorded by OpenAI Codex (GPT-6), prompted by Cian Dorr, 17 September 2026; conclusion corrected by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 September 2026.</p>
 
 ## Premises
 

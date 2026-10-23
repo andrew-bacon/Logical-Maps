@@ -1,6 +1,6 @@
 # Tame Rigidity ∧ Rigid Power ⇒ Weakly Rigid Power
 
-<p class='cert'>Conjecture — Source: Misc.; produced by Cian Dorr, question of 10 October 2026; recorded by Claude Opus 5.5 (Anthropic), 10 October 2026.</p>
+<p class='cert'>Conjecture — Source: Misc.; produced by Cian Dorr, question of 10 October 2026; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 10 October 2026.</p>
 
 ## Premises
 

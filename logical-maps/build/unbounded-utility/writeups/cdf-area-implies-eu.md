@@ -1,6 +1,6 @@
 # CDF-Area Extension ⇒ Expected Utility
 
-<p class='cert'>Result — Source: Unbounded Utility and Background Risk (unpublished); produced by Zachary Goodsell (unpublished manuscript); recorded by GPT-6 (Codex), 2026-09-09; extraction and random-variable translation.</p>
+<p class='cert'>Result — Source: Unbounded Utility and Background Risk (unpublished); produced by Zachary Goodsell (unpublished manuscript); recorded by GPT-6 (Codex), prompted by Zachary Goodsell, 2026-09-09; extraction and random-variable translation.</p>
 
 ## Premises
 

@@ -1,6 +1,6 @@
 # Comonotonic Sum Invariance ⇒ Comonotonic Sum Preservation
 
-<p class='cert'>Result — Source: Misc.; produced by GPT-6 (Codex); recorded by GPT-6 (Codex).</p>
+<p class='cert'>Result — Source: Misc.; produced by GPT-6 (Codex), prompted by Zachary Goodsell; recorded by GPT-6 (Codex), prompted by Zachary Goodsell.</p>
 
 ## Premises
 

@@ -1,6 +1,6 @@
 # □Strong Leibniz Biconditionals ∧ □Rigid Comprehension ⇒ □BF (relational types)
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_strong_leibniz_and_necessary_rigid_comprehension_imply_necessary_bf_relational`; produced by Claude Fable 5.1 (Anthropic), 19 October 2026, from Cian Dorr's argument of 11 October 2026 and Bacon's Lemma C.6; recorded by Claude Fable 5.1 (Anthropic), 19 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_strong_leibniz_and_necessary_rigid_comprehension_imply_necessary_bf_relational`; produced by Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 19 October 2026, from Cian Dorr's argument of 11 October 2026 and Bacon's Lemma C.6; recorded by Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 19 October 2026.</p>
 
 ## Premises
 

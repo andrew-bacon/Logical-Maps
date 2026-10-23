@@ -8,7 +8,7 @@ $\varphi_\tau$. Applying this argument separately at every relational type
 gives the conclusion schema. No metalinguistic type quantifier moves inside
 the box, and no necessitation of an optional premise is used.
 
-Proposed by DeepSeek (`deepseek-flash`) and independently reviewed by OpenAI Codex (GPT-6), 25 September 2026. This is an immediate application of T, not a new literature theorem. Exact discovery and review provenance are in the record. No Lean verification.
+Proposed by DeepSeek (`deepseek-flash`) and independently reviewed by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 25 September 2026. This is an immediate application of T, not a new literature theorem. Exact discovery and review provenance are in the record. No Lean verification.
 
 ## Paper references
 

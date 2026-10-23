@@ -1,6 +1,6 @@
 # Maximalism (pure) ∧ Intensional Choice ⇒ ⊥
 
-<p class='cert'>Result — Source: Misc.; produced by Cian Dorr, 16 October 2026; the consistency premise verified by Claude Opus 5.5 (Anthropic) in symmetry-constrained-full-point-and-three; recorded by Claude Opus 5.5 (Anthropic), 16 October 2026.</p>
+<p class='cert'>Result — Source: Misc.; produced by Cian Dorr, 16 October 2026; the consistency premise verified by Claude Opus 5.5 (Anthropic) in symmetry-constrained-full-point-and-three; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 16 October 2026.</p>
 
 ## Premises
 
@@ -22,7 +22,7 @@ Uses Intensional Choice only at type $e$. Since Modalized Relational Choice impl
 ## Sources
 
 - **Dorr 16 Oct** — Cian Dorr, suggestion of 16 October 2026.
-- **Opus 16 Oct** — Claude Opus 5.5 (Anthropic), 16 October 2026, for the model witnessing the consistency premise (symmetry-constrained-full-point-and-three).
+- **Opus 16 Oct** — Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 16 October 2026, for the model witnessing the consistency premise (symmetry-constrained-full-point-and-three).
 
 <p class='cert'>Record: <code>topics/classicism/results/maximalism-incompatible-with-intensional-choice.yaml</code></p>
 

@@ -1,6 +1,6 @@
 # Symmetric ideally-full model: old and new individuals [one individual]
 
-<p class='cert'>Model — Source: Misc.; produced by Claude Fable 5.1 (Anthropic), 6 October 2026, in a session with Cian Dorr; further verdicts by Claude Opus 5.5 (Anthropic), the same day; recorded by Claude Opus 5.5 (Anthropic), 6 October 2026.</p>
+<p class='cert'>Model — Source: Misc.; produced by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 6 October 2026, in a session with Cian Dorr; further verdicts by Claude Opus 5.5 (Anthropic), the same day; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 6 October 2026.</p>
 
 ## Package
 
@@ -42,7 +42,7 @@ Interpretation of Σ, fixed for this record: every constant of Σ is relational,
 
 At $E$ the arrows to $E$ form a true strong world: along an arrow to $E$ it becomes itself, along an arrow to $O$ the set of arrows from $O$ to $E$, an atom. At $O$, $G_O$ is one: along a member of $G_O$ it becomes itself, along a member of $K$ or an arrow to $E$ the empty set. Both objects are reachable from $E$.
 
-*Write-up: [symmetric-old-new-individuals](symmetric-old-new-individuals.html). By Claude Fable 5.1 (Anthropic), 2026-10-06.*
+*Write-up: [symmetric-old-new-individuals](symmetric-old-new-individuals.html). By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 2026-10-06.*
 
 ### Holds ND.
 
@@ -130,7 +130,7 @@ Found by Claude Fable 5.1 as a countermodel to a principle from another context,
 
 ## Sources
 
-- **Fable 5.1, 6 Oct** — Claude Fable 5.1 (Anthropic), 6 October 2026, in a session with Cian Dorr, as a countermodel to a principle (“Frex*”) from another context; it satisfies □Strong Actuality and refutes Inextensible Comprehension.
+- **Fable 5.1, 6 Oct** — Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 6 October 2026, in a session with Cian Dorr, as a countermodel to a principle (“Frex*”) from another context; it satisfies □Strong Actuality and refutes Inextensible Comprehension.
 - **Opus 5.5, 6 Oct** — Claude Opus 5.5 (Anthropic), 6 October 2026, at Cian Dorr's direction; the corrected argument for the failure of Inextensible Comprehension, and the verdicts on ND, Atomicity, Boolean Completeness, BF and the Strong Leibniz Biconditionals; see the write-up.
 - **BC does not imply RC** — Cian Dorr, Boolean Completeness does not imply Rigid Comprehension, draft of 30 July 2026, Definitions 15–18, p. 8; Proposition 20 (symmetric ideally-full models are models of C).
 

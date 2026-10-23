@@ -1,6 +1,6 @@
 # B for sentences of Σ ∧ Witnessed Possibility ⇒ ⊥
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.signature_b_and_witnessed_possibility_incompatible`; produced by Cian Dorr, suggestion of 22 September 2026; proof written out by Claude Fable 5.1 (Anthropic), 22 September 2026; recorded by Claude Fable 5.1 (Anthropic), 22 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.signature_b_and_witnessed_possibility_incompatible`; produced by Cian Dorr, suggestion of 22 September 2026; proof written out by Claude Fable 5.1 (Anthropic), 22 September 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026.</p>
 
 ## Premises
 

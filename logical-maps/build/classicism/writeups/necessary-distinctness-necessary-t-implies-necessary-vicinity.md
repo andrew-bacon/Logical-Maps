@@ -1,6 +1,6 @@
 # □ND (type t) ⇒ □Vicinity
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_distinctness_necessary_t_implies_necessary_vicinity`; produced by Claude Opus 5.5 (Anthropic), 27 September 2026; recorded by Claude Opus 5.5 (Anthropic), 27 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_distinctness_necessary_t_implies_necessary_vicinity`; produced by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 27 September 2026; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 27 September 2026.</p>
 
 ## Premises
 

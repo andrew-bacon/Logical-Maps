@@ -1,6 +1,6 @@
 # Rigid Rigidity ⇒ □BF
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.rigid_rigidity_implies_necessary_barcan`; produced by Cian Dorr, 10 October 2026 (unboxed form); boxed by Claude Opus 5.5 (Anthropic), 10 October 2026; recorded by Claude Opus 5.5 (Anthropic), 10 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.rigid_rigidity_implies_necessary_barcan`; produced by Cian Dorr, 10 October 2026 (unboxed form); boxed by Claude Opus 5.5 (Anthropic), 10 October 2026; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 10 October 2026.</p>
 
 ## Premises
 

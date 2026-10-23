@@ -1,6 +1,6 @@
 # Strong Leibniz Biconditionals (type t) ⇒ □Actuality
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.strong_leibniz_t_implies_necessary_actuality`; produced by Cian Dorr, 26 September 2026; the omission was noticed by Branden Fitelson; recorded by Claude Fable 5.1 (Anthropic), 26 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.strong_leibniz_t_implies_necessary_actuality`; produced by Cian Dorr, 26 September 2026; the omission was noticed by Branden Fitelson; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 26 September 2026.</p>
 
 ## Premises
 

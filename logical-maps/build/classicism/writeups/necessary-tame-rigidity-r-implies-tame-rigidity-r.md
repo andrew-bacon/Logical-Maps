@@ -1,6 +1,6 @@
 # □Tame Rigidity ⇒ Tame Rigidity
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_tame_rigidity_r_implies_tame_rigidity_r`; produced by Claude Opus 5.5 (Anthropic), 2 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), 2 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_tame_rigidity_r_implies_tame_rigidity_r`; produced by Claude Opus 5.5 (Anthropic), 2 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2 October 2026.</p>
 
 ## Premises
 

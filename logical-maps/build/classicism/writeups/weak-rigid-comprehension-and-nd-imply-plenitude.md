@@ -1,6 +1,6 @@
 # Weak Rigid Comprehension ∧ ND ⇒ Plenitude
 
-<p class='cert'>Result — Source: Classicism (2024), Lean `Classicism.Map.weak_rigid_comprehension_and_nd_imply_plenitude`; produced by Andrew Bacon and Cian Dorr; recorded by OpenAI Codex (GPT-6), 17 September 2026.</p>
+<p class='cert'>Result — Source: Classicism (2024), Lean `Classicism.Map.weak_rigid_comprehension_and_nd_imply_plenitude`; produced by Andrew Bacon and Cian Dorr; recorded by OpenAI Codex (GPT-6), prompted by Cian Dorr, 17 September 2026.</p>
 
 ## Premises
 

@@ -1,6 +1,6 @@
 # Full Henkin model: countably infinite individual domain
 
-<p class='cert'>Model — Source: Misc.; produced by Claude Fable 5.1 (Anthropic), 20 September 2026; recorded by Claude Fable 5.1 (Anthropic), 20 September 2026.</p>
+<p class='cert'>Model — Source: Misc.; produced by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026.</p>
 
 ## Package
 
@@ -24,13 +24,13 @@ Interpretation of Σ, fixed for this record: every constant of Σ is relational,
 
 Because every domain is full, $\operatorname{FiniteCardinality}_\sigma$ holds exactly of the values of the numerals $\operatorname{Suc}_\sigma^k\mathbf{0}_\sigma$: the characteristic function of that set is in the domain and is inductive. At type $e$ the $k$-th numeral says that there are exactly $k$ individuals, which is false for every $k$, so the Axiom of Infinity at type $e$ holds, and with it the schema.
 
-*By Claude Fable 5.1 (Anthropic), 20 September 2026.*
+*By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026.*
 
 ### Holds Fregean Axiom, Functional Choice.
 
 The remaining positive assertions hold as in every two-valued full model: each boxed principle reduces to its unboxed form; coextensive relations are identical, so Extensionality, the Fregean axiom and its modalized form hold; every relation is persistent, inextensible and Gallin-extensional, giving the comprehension principles; Actuality holds with top as the actual world; each relational type is the complete atomic Boolean algebra of subsets of a domain, giving Atomicity and Boolean Completeness; Tractarianism is a tautology; ND holds outright, giving C5; every closed sentence is non-contingent; and the choice principles hold because every function between domains is present, using choice in the metatheory to select from a serial relation on an infinite domain.
 
-*By Claude Fable 5.1 (Anthropic), 20 September 2026.*
+*By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026.*
 
 ### Fails Witnessed Possibility, Separated Structure, Independence (signature Σ), Maximalism (signature Σ).
 
@@ -49,10 +49,10 @@ Explicit specialization of the source's standard Henkin construction to an infin
 
 The record's revision log before it was written as arguments.
 
-- **2026-09-22** (Claude Fable 5.1 (Anthropic)) — Added the Strong Leibniz Biconditionals and their necessitation. Box is truth in this model, so a strong world is an atom and the principle reduces to Atomicity, which holds; boxed principles reduce to their unboxed forms. Now satisfies: Strong Leibniz Biconditionals, □Strong Leibniz Biconditionals.
-- **2026-09-22** (Claude Fable 5.1 (Anthropic)) — Added No Contingency (signature Σ) and B for sentences of Σ: Box is truth in this model, so every closed sentence, whatever the constants denote, is necessary if true and necessarily possible if true. Now satisfies: No Contingency (signature Σ), B for sentences of Σ.
-- **2026-09-22** (Claude Fable 5.1 (Anthropic)) — Fixed an interpretation of Σ (relational constants as top, individual constants as one fixed individual) and recorded the signature schemata it refutes, at Cian Dorr’s request. Now violates: Witnessed Possibility, Separated Structure, Independence (signature Σ), Maximalism (signature Σ).
-- **2026-09-22** (Claude Fable 5.1 (Anthropic)) — Boxed the two Choice claims. Now satisfies: □Relational Choice, □Functional Choice.
+- **2026-09-22** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Added the Strong Leibniz Biconditionals and their necessitation. Box is truth in this model, so a strong world is an atom and the principle reduces to Atomicity, which holds; boxed principles reduce to their unboxed forms. Now satisfies: Strong Leibniz Biconditionals, □Strong Leibniz Biconditionals.
+- **2026-09-22** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Added No Contingency (signature Σ) and B for sentences of Σ: Box is truth in this model, so every closed sentence, whatever the constants denote, is necessary if true and necessarily possible if true. Now satisfies: No Contingency (signature Σ), B for sentences of Σ.
+- **2026-09-22** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Fixed an interpretation of Σ (relational constants as top, individual constants as one fixed individual) and recorded the signature schemata it refutes, at Cian Dorr’s request. Now violates: Witnessed Possibility, Separated Structure, Independence (signature Σ), Maximalism (signature Σ).
+- **2026-09-22** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Boxed the two Choice claims. Now satisfies: □Relational Choice, □Functional Choice.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # Vicinity ∧ Truth implies ND-necessity ⇒ Actuality
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.vicinity_and_distinctness_preserving_collapse_imply_actuality`; produced by Cian Dorr, 27 September 2026; recorded by Claude Opus 5.5 (Anthropic), 27 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.vicinity_and_distinctness_preserving_collapse_imply_actuality`; produced by Cian Dorr, 27 September 2026; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 27 September 2026.</p>
 
 ## Premises
 

@@ -1,6 +1,6 @@
 # Coalesced sum: maximalist root
 
-<p class='cert'>Model — Source: Classicism (2024); produced by Andrew Bacon and Cian Dorr; recorded by OpenAI Codex (GPT-6), 17 September 2026.</p>
+<p class='cert'>Model — Source: Classicism (2024); produced by Andrew Bacon and Cian Dorr; recorded by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026.</p>
 
 ## Package
 
@@ -76,7 +76,7 @@ For $p\in D$ let $\widehat p$ be the root proposition false at the root, with $m
 
 The type-$e$ instance of Intensional Choice fails in a model of C (symmetric-all-surjections), so its negation is consistent with C and some component $M$ refutes it at its root $M_0$: some $F$ in $M_0$'s domain is necessarily instantiated and no $G\le F$ there is necessarily uniquely instantiated. As in barcan-t-component, the thread $F^{\prime}$ that is universal at the root and in every other component and is carried onto $F$ by the distinguished arrow to $M_0$ is in the root domain, and it is necessarily instantiated. A root $G\le F^{\prime}$ that is necessarily uniquely instantiated would be carried onto such a $G$ for $F$ at $M_0$, every arrow from the root into $M$ factoring through the distinguished one. So the unboxed principle fails at the root.
 
-*From the group *Coalesced sums at a new root*, shared argument `coalesced-sums#intensional-choice-component`. It requires that The components are a family of action models complete for C: every sentence consistent with C is true at the root of some component. Here: The source action models are a set complete for C. It requires that Every arrow from the root into a component factors through a single distinguished arrow to that component's root. Here: This is the construction. By Claude Fable 5.1 (Anthropic), at Cian Dorr's suggestion, 2026-10-03.*
+*From the group *Coalesced sums at a new root*, shared argument `coalesced-sums#intensional-choice-component`. It requires that The components are a family of action models complete for C: every sentence consistent with C is true at the root of some component. Here: The source action models are a set complete for C. It requires that Every arrow from the root into a component factors through a single distinguished arrow to that component's root. Here: This is the construction. By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, at Cian Dorr's suggestion, 2026-10-03.*
 
 ### Holds Relational Choice.
 
@@ -130,7 +130,7 @@ The components are complete for C and a closed pure sentence at the distinguishe
 
 Every pure sentence consistent with C is possible at the root (pure-sentences-possible): the negation of the type-$e$ instance of Transversal is a pure sentence consistent with C, since it holds in symmetric-infinite-classes, so it is possible at the root.
 
-*From the group *Coalesced sums at a new root*, shared argument `coalesced-sums#transversal-boxed`. It requires that The components are a family of action models complete for C: every sentence consistent with C is true at the root of some component. Here: The source action models are a set complete for C. By Claude Opus 5.5 (Anthropic), 2026-09-28.*
+*From the group *Coalesced sums at a new root*, shared argument `coalesced-sums#transversal-boxed`. It requires that The components are a family of action models complete for C: every sentence consistent with C is true at the root of some component. Here: The source action models are a set complete for C. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-09-28.*
 
 *Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* The three members' verbatim copies stated once; "By the same argument" became a reference to pure-sentences-possible.
 
@@ -138,7 +138,7 @@ Every pure sentence consistent with C is possible at the root (pure-sentences-po
 
 For a true $p$, $a\le p$, since $a$ entails every truth. Take $q:=a$ in the definition of $\Box_{\ne}p$: at a world in $a$, $p$ holds; at a world outside $a$, $\Diamond a$ fails. So every truth is $\Box_{\ne}$-necessary.
 
-*General argument `arguments/dpc-isolated-actual-world`. It requires that The actual-world proposition $a$ is in the domain and entails every truth, and no world outside $a$ sees a world in $a$. Here: The singleton root proposition, true at the root's identity arrow and nowhere in a component, is in the domain and entails every truth; the components have no arrows back to the root (Classicism, Appendix E, p. 83, on the distinctness-preserving collapse). By Claude Fable 5.1 (Anthropic), 2026-09-23.*
+*General argument `arguments/dpc-isolated-actual-world`. It requires that The actual-world proposition $a$ is in the domain and entails every truth, and no world outside $a$ sees a world in $a$. Here: The singleton root proposition, true at the root's identity arrow and nowhere in a component, is in the domain and entails every truth; the components have no arrows back to the root (Classicism, Appendix E, p. 83, on the distinctness-preserving collapse). By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 2026-09-23.*
 
 *Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* The finite-support, symmetric and full action models' copies (eight records) stated once for the topic; what varied, why no world outside the actual world sees back into it, is each record's reason for meeting actual-world-isolated.
 
@@ -151,15 +151,15 @@ The cited construction is a model of the map’s relational-type framework. The 
 
 The record's revision log before it was written as arguments.
 
-- **2026-09-28** (Claude Opus 5.5 (Anthropic)) — Recorded the failure of □Transversal: every pure sentence consistent with C is possible at the root, and symmetric-infinite-classes refutes Transversal at type e. Now violates: □Transversal.
+- **2026-09-28** (Claude Opus 5.5 (Anthropic), prompted by Cian Dorr) — Recorded the failure of □Transversal: every pure sentence consistent with C is possible at the root, and symmetric-infinite-classes refutes Transversal at type e. Now violates: □Transversal.
 - **2026-09-27** (Claude Opus 5.5 (Anthropic), at Cian Dorr's request) — Recorded the failure of □Vicinity and □Weakly Inextensible Comprehension; argument in the notes. Now violates: □Vicinity, □Weakly Inextensible Comprehension.
-- **2026-09-25** (Claude Fable 5.1 (Anthropic)) — Added Transversal Choice at the root, by the argument recorded for Relational Choice: a root entity has an arbitrary root component, so take the property whose root component is a transversal, chosen in the metatheory, of the root component of an equivalence relation at the root, with empty component parts; the equivalence and transversal conditions are all evaluated at the root's identity arrow. Recorded on a question of Zachary Goodsell, after an observation of Christopher Sun. Now satisfies: Transversal Choice.
-- **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Corrected the Boolean Completeness claim from the type-t instance to the type schema, since no component is known to refute it at type t; added the failure of Countable Boolean Completeness by the same transfer. Now violates: Boolean Completeness, Countable Boolean Completeness.
+- **2026-09-25** (Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell) — Added Transversal Choice at the root, by the argument recorded for Relational Choice: a root entity has an arbitrary root component, so take the property whose root component is a transversal, chosen in the metatheory, of the root component of an equivalence relation at the root, with empty component parts; the equivalence and transversal conditions are all evaluated at the root's identity arrow. Recorded on a question of Zachary Goodsell, after an observation of Christopher Sun. Now satisfies: Transversal Choice.
+- **2026-09-23** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Corrected the Boolean Completeness claim from the type-t instance to the type schema, since no component is known to refute it at type t; added the failure of Countable Boolean Completeness by the same transfer. Now violates: Boolean Completeness, Countable Boolean Completeness.
 - **2026-09-23** (Cian Dorr, recorded by Claude Fable 5.1 (Anthropic)) — Restored the failure of Boolean Completeness (type t), now that a component refuting it at type t is on the map; see the notes. Now violates: Boolean Completeness (type t).
 - **2026-09-22** (Cian Dorr, recorded by Claude Fable 5.1 (Anthropic)) — Added the failure of BF and of BF (type t) at the root, by transporting a component’s counterexample to BF along the distinguished arrow; see the notes. Now violates: BF, BF (type t).
 - **2026-09-22** (Cian Dorr, recorded by Claude Fable 5.1 (Anthropic)) — Settled Atomicity (type t), Boolean Completeness (type t) and Possibility+ (pure) as failing and the Axiom of Infinity (type e) and Relational Choice as holding, with the arguments in the notes; Cian Dorr’s observations, with Relational Choice corrected in direction. Now satisfies: Axiom of Infinity (type e), Relational Choice. Now violates: Atomicity (type t), Possibility+ (pure).
-- **2026-09-22** (Claude Fable 5.1 (Anthropic)) — Recorded the failure of □Relational Choice, already argued in the notes. Now violates: □Relational Choice.
-- **2026-09-17** (OpenAI Codex (GPT-6)) — Adopted the source’s relational type system at the user’s request. The cited construction now directly supplies the recorded model; the former type-extension obligation is removed. Now satisfies: Maximalism (signature Σ), Actuality, Truth implies ND-necessity. Now violates: Strong Possibility (pure), ND.
+- **2026-09-22** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Recorded the failure of □Relational Choice, already argued in the notes. Now violates: □Relational Choice.
+- **2026-09-17** (OpenAI Codex (GPT-6), prompted by Zachary Goodsell) — Adopted the source’s relational type system at the user’s request. The cited construction now directly supplies the recorded model; the former type-extension obligation is removed. Now satisfies: Maximalism (signature Σ), Actuality, Truth implies ND-necessity. Now violates: Strong Possibility (pure), ND.
 
 ## Sources
 

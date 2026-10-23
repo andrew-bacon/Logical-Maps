@@ -1,6 +1,6 @@
 # B ⇒ B for pure sentences
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.modal_b_implies_pure_b_r`; produced by OpenAI Codex (GPT-6), 17 September 2026; recorded by OpenAI Codex (GPT-6), 17 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.modal_b_implies_pure_b_r`; produced by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026; recorded by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026.</p>
 
 ## Premises
 

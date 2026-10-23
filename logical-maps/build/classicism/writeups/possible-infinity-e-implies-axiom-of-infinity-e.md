@@ -1,6 +1,6 @@
 # Possible Infinity (type e) ⇒ Axiom of Infinity (type e)
 
-<p class='cert'>Conjecture — Source: Misc.; produced by Cian Dorr, question of 20 September 2026; recorded by Claude Fable 5.1 (Anthropic), 20 September 2026.</p>
+<p class='cert'>Conjecture — Source: Misc.; produced by Cian Dorr, question of 20 September 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026.</p>
 
 ## Premises
 

@@ -1,6 +1,6 @@
 # □Countable Boolean Completeness ⇒ Countable Boolean Completeness
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_countable_boolean_completeness_r_implies_countable_boolean_completeness_r`; produced by Claude Opus 5.5 (Anthropic), 2 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), 2 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_countable_boolean_completeness_r_implies_countable_boolean_completeness_r`; produced by Claude Opus 5.5 (Anthropic), 2 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2 October 2026.</p>
 
 ## Premises
 

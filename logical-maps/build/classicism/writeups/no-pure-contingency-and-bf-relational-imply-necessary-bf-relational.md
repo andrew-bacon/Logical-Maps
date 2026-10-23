@@ -1,6 +1,6 @@
 # No Pure Contingency ∧ BF (relational types) ⇒ □BF (relational types)
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_pure_contingency_and_bf_relational_imply_necessary_bf_relational`; produced by Claude Opus 5.5 (Anthropic), 11 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), 11 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_pure_contingency_and_bf_relational_imply_necessary_bf_relational`; produced by Claude Opus 5.5 (Anthropic), 11 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 11 October 2026.</p>
 
 ## Premises
 

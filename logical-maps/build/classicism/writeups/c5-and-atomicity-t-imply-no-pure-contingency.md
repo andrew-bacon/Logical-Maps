@@ -1,6 +1,6 @@
 # □ND ∧ Atomicity (type t) ⇒ No Pure Contingency
 
-<p class='cert'>Result — Source: Goodsell / Yli-Vakkuri (unpublished); produced by Zachary Goodsell and Juhani Yli-Vakkuri (theorem); proof by Cian Dorr, 23 September 2026, with permission from Zachary Goodsell, written out by Claude Fable 5.1 (Anthropic); recorded by Claude Fable 5.1 (Anthropic), 23 September 2026.</p>
+<p class='cert'>Result — Source: Goodsell / Yli-Vakkuri (unpublished); produced by Zachary Goodsell and Juhani Yli-Vakkuri (theorem); proof by Cian Dorr, 23 September 2026, with permission from Zachary Goodsell, written out by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 23 September 2026.</p>
 
 ## Premises
 

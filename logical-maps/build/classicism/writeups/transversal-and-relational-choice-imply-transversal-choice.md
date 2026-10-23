@@ -1,6 +1,6 @@
 # Transversal ∧ Relational Choice ⇒ Transversal Choice
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.transversal_and_relational_choice_imply_transversal_choice`; produced by Christopher Sun (the claim and the argument), 26 September 2026; recorded by Claude Opus 5.5 (Anthropic), 28 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.transversal_and_relational_choice_imply_transversal_choice`; produced by Christopher Sun (the claim and the argument), 26 September 2026; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 28 September 2026.</p>
 
 ## Premises
 

@@ -1,6 +1,6 @@
 # ⊤ ⇒ CBF
 
-<p class='cert'>Result — Source: Classicism (2024), Lean `Classicism.Map.classicism_implies_converse_barcan_r`; produced by Andrew Bacon and Cian Dorr; recorded by OpenAI Codex (GPT-6), 17 September 2026.</p>
+<p class='cert'>Result — Source: Classicism (2024), Lean `Classicism.Map.classicism_implies_converse_barcan_r`; produced by Andrew Bacon and Cian Dorr; recorded by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026.</p>
 
 ## Premises
 

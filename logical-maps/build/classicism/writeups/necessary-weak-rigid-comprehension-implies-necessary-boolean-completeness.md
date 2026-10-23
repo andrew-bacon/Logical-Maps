@@ -1,6 +1,6 @@
 # □Weak Rigid Comprehension ⇒ □Boolean Completeness
 
-<p class='cert'>Result — Source: BC does not imply RC (draft); produced by Cian Dorr (unboxed form); boxed form recorded by Claude Opus 5.5 (Anthropic), 19 October 2026; recorded by Claude Opus 5.5 (Anthropic), 19 October 2026.</p>
+<p class='cert'>Result — Source: BC does not imply RC (draft); produced by Cian Dorr (unboxed form); boxed form recorded by Claude Opus 5.5 (Anthropic), 19 October 2026; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 19 October 2026.</p>
 
 ## Premises
 

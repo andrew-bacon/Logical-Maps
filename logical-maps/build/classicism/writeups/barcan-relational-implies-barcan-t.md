@@ -1,6 +1,6 @@
 # BF (relational types) ⇒ BF (type t)
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.barcan_relational_implies_barcan_t`; produced by Claude Opus 5.5 (Anthropic), 11 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), 11 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.barcan_relational_implies_barcan_t`; produced by Claude Opus 5.5 (Anthropic), 11 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 11 October 2026.</p>
 
 ## Premises
 

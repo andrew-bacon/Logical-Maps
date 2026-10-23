@@ -1,6 +1,6 @@
 # Logical Necessity ⇒ Modal Freedom (signature Σ)
 
-<p class='cert'>Result — Source: Logical Combinatorialism; produced by Andrew Bacon; recorded by Claude Fable 5.1 (Anthropic), 22 September 2026.</p>
+<p class='cert'>Result — Source: Logical Combinatorialism; produced by Andrew Bacon; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026.</p>
 
 ## Premises
 

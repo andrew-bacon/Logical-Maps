@@ -1,6 +1,6 @@
 # Symmetric ideally-full model: automorphisms of infinitely many infinite classes [one individual]
 
-<p class='cert'>Model — Source: Misc.; produced by Cian Dorr, 27 September 2026 (the idea of a symmetric finitely pinned model whose symmetry group is the automorphism group of a rich qualitative structure, in which each new pinned point makes new infinite-coinfinite extensions available), with Claude Opus 5.5 (Anthropic), who chose the structure and wrote the verification; recorded by Claude Opus 5.5 (Anthropic), 28 September 2026.</p>
+<p class='cert'>Model — Source: Misc.; produced by Cian Dorr, 27 September 2026 (the idea of a symmetric finitely pinned model whose symmetry group is the automorphism group of a rich qualitative structure, in which each new pinned point makes new infinite-coinfinite extensions available), with Claude Opus 5.5 (Anthropic), who chose the structure and wrote the verification; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 28 September 2026.</p>
 
 ## Package
 

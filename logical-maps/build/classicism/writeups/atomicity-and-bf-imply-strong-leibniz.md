@@ -1,6 +1,6 @@
 # Atomicity ∧ BF ⇒ Strong Leibniz Biconditionals
 
-<p class='cert'>Result — Source: Philosophical Introduction to HOL (2024), Lean `Classicism.Map.atomicity_and_bf_imply_strong_leibniz`; produced by Andrew Bacon; set as Exercise 8.12, solution written out by Claude Fable 5.1 (Anthropic), 22 September 2026; recorded by Claude Fable 5.1 (Anthropic), 22 September 2026.</p>
+<p class='cert'>Result — Source: Philosophical Introduction to HOL (2024), Lean `Classicism.Map.atomicity_and_bf_imply_strong_leibniz`; produced by Andrew Bacon; set as Exercise 8.12, solution written out by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026.</p>
 
 ## Premises
 

@@ -1,6 +1,6 @@
 # Finite-support action model: N and singleton, all maps
 
-<p class='cert'>Model — Source: Classicism (2024); produced by Andrew Bacon and Cian Dorr; recorded by OpenAI Codex (GPT-6), 17 September 2026.</p>
+<p class='cert'>Model — Source: Classicism (2024); produced by Andrew Bacon and Cian Dorr; recorded by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026.</p>
 
 ## Package
 
@@ -53,7 +53,7 @@ BF holds at $W_0$, since every map agrees on any finite set with a surjection, a
 
 The closed sentence that there is exactly one individual denotes the singleton of the unique map to $W_1$, a nonempty proposition with no nonempty proper subproposition.
 
-*By Claude Fable 5.1 (Anthropic), 2026-09-19.*
+*By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 2026-09-19.*
 
 ### Holds Axiom of Infinity (type e), Axiom of Infinity (type t).
 
@@ -65,7 +65,7 @@ The individuals are the natural numbers and identity at the evaluation arrow is 
 
 The transposition of $5$ and $6$ is an arrow with an inverse, so for any true $q$ the composite of a member of $q$ with the inverse carries the transposition into $q$, making $\Diamond q$ true there, while the true proposition that $5$ is fixed is false there.
 
-*By Claude Fable 5.1 (Anthropic), 2026-09-23.*
+*By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 2026-09-23.*
 
 ### Holds □Relational Choice.
 
@@ -77,7 +77,7 @@ The model is ideally full, hence extensionally full at every object (Appendix D,
 
 Any set $F$ of propositions is the extension of the profile $\langle h,p\rangle\mapsto\{i : i\cdot p\in F\}$, and for $F$ the family of propositions $A_m$ that a map $W_0\to W_0$ is constant on $\{0,\ldots,2m-1\}$ and first changes value at $2m$, the least superset of $\bigcup F$ pinned down by $\{0,\ldots,N\}$, the maps whose first change is at an even position or beyond $N$, strictly shrinks as $N$ grows, so $F$ has no least upper bound. The family is countable in the model's sense, the relation pairing $A_m$ with the numeral $m$ being in the domain by extensional fullness, so Countable Boolean Completeness fails too.
 
-*By Claude Fable 5.1 (Anthropic), 2026-09-25.*
+*By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 2026-09-25.*
 
 *Revised 2026-10-16 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* Refutes the instance of Countable Boolean Completeness counting at $e$, which the principle, now schematic in that type, includes.
 
@@ -85,7 +85,7 @@ Any set $F$ of propositions is the extension of the profile $\langle h,p\rangle\
 
 At $W_0$ the finite cardinalities are the standard numerals and $I^*$ is true; at $W_1$ the numerals remain pairwise distinct, because they differ at the arrows back into $W_0$ and identity is necessary, $I^*$ is again true, the numerals are the finite cardinalities by extensional fullness, and $\operatorname{Sum}$ and $\operatorname{Prod}$ are standard, their graphs being in the domain; so every arithmetical sentence has its standard truth value at every world.
 
-*By Claude Fable 5.1 (Anthropic), 2026-09-25.*
+*By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 2026-09-25.*
 
 *Revised 2026-10-16 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* The Necessity of Arithmetic is now a schema in the type $\sigma$ whose finite cardinalities are the numbers, and the argument covers every $\sigma$ unchanged. At $W_0$ every type has infinitely many entities, so $I^*_\sigma$ is true there, and the numerals at $\sigma$ are standard by the argument for the Axioms of Infinity, whose set of numerals at each type is invariant under every arrow. At $W_1$ the numerals at $\sigma$ still differ at the arrows back into $W_0$, the set of them is in the domain and closed under zero and successor, and the graphs of $\operatorname{Sum}_\sigma$ and $\operatorname{Prod}_\sigma$ are in the domain, as at $e$.
 
@@ -93,19 +93,19 @@ At $W_0$ the finite cardinalities are the standard numerals and $I^*$ is true; a
 
 At $W_1$ the arrow $c_n\colon W_1\to W_0$ picking $n$ sends a proposition $q$ to $\{j : c_{j(n)}\in q\}$ (with the arrow to $W_1$ added when $q$ contains $1_{W_1}$), a proposition pinned down by $\{n\}$, so the proposition that $0$ and $1$ are collapsed is in no such image; the profile holding at $\langle h,d\rangle$ iff $h=1_{W_1}$ or $d$ is in the image of $h$, pinned down by $\{0\}$, is necessary of every proposition at $W_1$ but not universal at the world $c_0$.
 
-*By Claude Fable 5.1 (Anthropic), 2026-09-25.*
+*By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 2026-09-25.*
 
 ### Fails Inextensible Comprehension.
 
 At type $t\to t$, for the family $E$ of propositions $p_n$ that $n$ is fixed: for $Y$ inextensible with extension $E$ pinned down by the finite set $S$, pick $k\notin S$ and let $X$, pinned down by $S_X:=S\cup\{k\}$, hold at an arrow $h$ into $W_0$ exactly of the propositions $\{i : i(m)=n\}$ with $n\notin S_X$ and of the propositions $\{i : i(h(n))=n\}$ with $n\in S_X$; $X$ is necessary of every $p_n$, so $Y\le X$, yet at a map $h$ fixing $S$ pointwise and moving $k$, where $h\cdot Y=Y$, the extension of $X$ omits $p_k$.
 
-*Address: `finite-support-two-object-all-maps#inextensible-comprehension`. By Claude Fable 5.1 (Anthropic), 2026-09-25.*
+*Address: `finite-support-two-object-all-maps#inextensible-comprehension`. By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 2026-09-25.*
 
 ### Holds B for sentences of Σ.
 
 A closed $\Sigma$-sentence denotes what $P(d,\ldots,d)$ denotes for a pure $P$ and the individual $d$, and from any world some arrow into $W_0$ carries the current image of $d$ back to $d$, as all maps are arrows.
 
-*By Claude Fable 5.1 (Anthropic), 2026-09-25.*
+*By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 2026-09-25.*
 
 ### Fails Vicinity.
 
@@ -138,7 +138,7 @@ Write $\mathrm{fix}_N$ for the arrows agreeing with the identity on the finite s
 
 For each object $U$ and type $\sigma$ fix a well-ordering $<_U$ of the domain $D^\sigma_U$, and let $W$ be the intension of type $\sigma\to\sigma\to t$ with $W(h):={<_{\operatorname{cod}h}}$. Its value depends only on the arrow's codomain, so by the condition it is in the domain, and at every world its extension well-orders that world's type-$\sigma$ domain. Given $F$ with $\Box\exists x\, .\,Fx$, put $G:=\lambda x\, .\,Fx\land\forall y\, .\,(Fy\to\neg Wyx)$, the $W$-least $F$. It is definable from $F$ and $W$, so in the domain; $G\le F$, and its extension at every arrow is the singleton of the least element of $F$'s. So Intensional Choice holds, and the same at every reachable object gives $\Box$Intensional Choice. Cian Dorr's observation that such models are qualitatively full, made precise.
 
-*General argument `arguments/intensional-choice-well-ordering`. It requires that At every object reachable from the evaluation point, the domain contains every intension whose value at an arrow depends only on the arrow's codomain. Here: The model is ideally full at both objects, and an intension whose value at an arrow depends only on the arrow's codomain is pinned down by $\emptyset$ (Appendix D, the remark after Definition D.3). By Claude Fable 5.1 (Anthropic), at Cian Dorr's suggestion, 2026-10-03.*
+*General argument `arguments/intensional-choice-well-ordering`. It requires that At every object reachable from the evaluation point, the domain contains every intension whose value at an arrow depends only on the arrow's codomain. Here: The model is ideally full at both objects, and an intension whose value at an arrow depends only on the arrow's codomain is pinned down by $\emptyset$ (Appendix D, the remark after Definition D.3). By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, at Cian Dorr's suggestion, 2026-10-03.*
 
 ### Holds □Relational Choice, □Transversal Choice.
 
@@ -174,16 +174,16 @@ The cited construction is a model of the map’s relational-type framework. The 
 The record's revision log before it was written as arguments.
 
 - **2026-09-27** (Claude Opus 5.5 (Anthropic), at Cian Dorr's request) — Recorded the failure of Vicinity and of Weakly Inextensible Comprehension; arguments in the notes. Now violates: Vicinity, Weakly Inextensible Comprehension.
-- **2026-09-25** (Claude Fable 5.1 (Anthropic)) — Added Transversal Choice, by the argument recorded for Relational Choice: the model is extensionally full at every object, so for an equivalence relation at the evaluation point a transversal of its extension there, chosen in the metatheory, is the extension of an element pinned down by the empty set; the equivalence and transversal conditions are unboxed. Recorded on a question of Zachary Goodsell, after an observation of Christopher Sun. Now satisfies: Transversal Choice.
-- **2026-09-25** (Claude Fable 5.1 (Anthropic)) — Settled Actuality, Atomicity (type t), Boolean Completeness (type t), Countable Boolean Completeness, □BF (type t) and Inextensible Comprehension as failing, and Necessity of Arithmetic, B for pure sentences and B for sentences of Σ as holding, with the arguments in the notes. Now satisfies: B for pure sentences, B for sentences of Σ, Necessity of Arithmetic. Now violates: Actuality, Atomicity (type t), Boolean Completeness (type t), Countable Boolean Completeness, □BF (type t), Inextensible Comprehension.
-- **2026-09-25** (Claude Opus 5.5 (Anthropic)) — Merged the two sets of arguments recorded on 23 and 25 September into one, keeping the 23 September argument for Atomicity (type t).
-- **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Expanded the description from Appendix D; settled the Distinctness-preserving collapse. Now violates: Truth implies ND-necessity.
-- **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Added Relational Choice and its necessitation at Cian Dorr’s direction: ideally full models are extensionally full at every object, and choice in the metatheory supplies the functional subrelation; see the notes. Now satisfies: Relational Choice, □Relational Choice.
-- **2026-09-23** (Claude Fable 5.1 (Anthropic)) — Recorded the failure of Atomicity (type t), and with it of the Strong Leibniz Biconditionals; see the notes. Now violates: Atomicity (type t).
-- **2026-09-22** (Claude Fable 5.1 (Anthropic)) — Fixed an interpretation of Σ (relational constants as top, individual constants as one fixed individual) and recorded the signature schemata it refutes, at Cian Dorr’s request. Now violates: Witnessed Possibility, Separated Structure, Independence (signature Σ), Maximalism (signature Σ).
-- **2026-09-20** (Claude Fable 5.1 (Anthropic)) — Added both Axioms of Infinity at Cian Dorr's direction. The individuals are the natural numbers and identity at the evaluation arrow is literal, so no numeral counts them. The propositions that a given individual is fixed by the arrow, one for each individual, are pairwise distinct and each has that individual as finite support, so there are infinitely many propositions. The set of numerals at each type is invariant under every arrow, hence has empty support and lies in the domain, so finite cardinality is standard and no finite cardinality holds of the universal property at either type. Now satisfies: Axiom of Infinity (type e), Axiom of Infinity (type t).
-- **2026-09-19** (Claude Fable 5.1 (Anthropic)) — Added the failure of Atomlessness at N, witnessed by the proposition that there is exactly one individual, which is the singleton of the arrow to {0}. Original observation; not in the source.
-- **2026-09-17** (OpenAI Codex (GPT-6)) — Adopted the source’s relational type system at the user’s request. The cited construction now directly supplies the recorded model; the former type-extension obligation is removed. Now satisfies: BF. Now violates: □BF.
+- **2026-09-25** (Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell) — Added Transversal Choice, by the argument recorded for Relational Choice: the model is extensionally full at every object, so for an equivalence relation at the evaluation point a transversal of its extension there, chosen in the metatheory, is the extension of an element pinned down by the empty set; the equivalence and transversal conditions are unboxed. Recorded on a question of Zachary Goodsell, after an observation of Christopher Sun. Now satisfies: Transversal Choice.
+- **2026-09-25** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Settled Actuality, Atomicity (type t), Boolean Completeness (type t), Countable Boolean Completeness, □BF (type t) and Inextensible Comprehension as failing, and Necessity of Arithmetic, B for pure sentences and B for sentences of Σ as holding, with the arguments in the notes. Now satisfies: B for pure sentences, B for sentences of Σ, Necessity of Arithmetic. Now violates: Actuality, Atomicity (type t), Boolean Completeness (type t), Countable Boolean Completeness, □BF (type t), Inextensible Comprehension.
+- **2026-09-25** (Claude Opus 5.5 (Anthropic), prompted by Cian Dorr) — Merged the two sets of arguments recorded on 23 and 25 September into one, keeping the 23 September argument for Atomicity (type t).
+- **2026-09-23** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Expanded the description from Appendix D; settled the Distinctness-preserving collapse. Now violates: Truth implies ND-necessity.
+- **2026-09-23** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Added Relational Choice and its necessitation at Cian Dorr’s direction: ideally full models are extensionally full at every object, and choice in the metatheory supplies the functional subrelation; see the notes. Now satisfies: Relational Choice, □Relational Choice.
+- **2026-09-23** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Recorded the failure of Atomicity (type t), and with it of the Strong Leibniz Biconditionals; see the notes. Now violates: Atomicity (type t).
+- **2026-09-22** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Fixed an interpretation of Σ (relational constants as top, individual constants as one fixed individual) and recorded the signature schemata it refutes, at Cian Dorr’s request. Now violates: Witnessed Possibility, Separated Structure, Independence (signature Σ), Maximalism (signature Σ).
+- **2026-09-20** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Added both Axioms of Infinity at Cian Dorr's direction. The individuals are the natural numbers and identity at the evaluation arrow is literal, so no numeral counts them. The propositions that a given individual is fixed by the arrow, one for each individual, are pairwise distinct and each has that individual as finite support, so there are infinitely many propositions. The set of numerals at each type is invariant under every arrow, hence has empty support and lies in the domain, so finite cardinality is standard and no finite cardinality holds of the universal property at either type. Now satisfies: Axiom of Infinity (type e), Axiom of Infinity (type t).
+- **2026-09-19** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Added the failure of Atomlessness at N, witnessed by the proposition that there is exactly one individual, which is the singleton of the arrow to {0}. Original observation; not in the source.
+- **2026-09-17** (OpenAI Codex (GPT-6), prompted by Zachary Goodsell) — Adopted the source’s relational type system at the user’s request. The cited construction now directly supplies the recorded model; the former type-extension obligation is removed. Now satisfies: BF. Now violates: □BF.
 
 ## Sources
 

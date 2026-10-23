@@ -1,6 +1,6 @@
 # No Pure Contingency ∧ Actuality ⇒ □Actuality
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_pure_contingency_and_actuality_imply_necessary_actuality`; produced by Cian Dorr, suggestion of 20 September 2026; recorded by Claude Opus 5 (Anthropic), 20 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_pure_contingency_and_actuality_imply_necessary_actuality`; produced by Cian Dorr, suggestion of 20 September 2026; recorded by Claude Opus 5 (Anthropic), prompted by Cian Dorr, 20 September 2026.</p>
 
 ## Premises
 

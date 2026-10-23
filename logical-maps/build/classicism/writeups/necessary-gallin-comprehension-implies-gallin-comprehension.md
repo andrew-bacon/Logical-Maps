@@ -1,6 +1,6 @@
 # □Gallin Extensional Comprehension ⇒ Gallin Extensional Comprehension
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_gallin_comprehension_implies_gallin_comprehension`; produced by Claude Fable 5.1 (Anthropic), 20 September 2026; recorded by Claude Fable 5.1 (Anthropic), 20 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_gallin_comprehension_implies_gallin_comprehension`; produced by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026.</p>
 
 ## Premises
 

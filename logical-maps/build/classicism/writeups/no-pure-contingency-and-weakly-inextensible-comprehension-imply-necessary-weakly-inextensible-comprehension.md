@@ -1,6 +1,6 @@
 # No Pure Contingency ∧ Weakly Inextensible Comprehension ⇒ □Weakly Inextensible Comprehension
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_pure_contingency_and_weakly_inextensible_comprehension_imply_necessary_weakly_inextensible_comprehension`; produced by Cian Dorr, suggestion of 27 September 2026; recorded by Claude Opus 5.5 (Anthropic), 27 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_pure_contingency_and_weakly_inextensible_comprehension_imply_necessary_weakly_inextensible_comprehension`; produced by Cian Dorr, suggestion of 27 September 2026; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 27 September 2026.</p>
 
 ## Premises
 

@@ -1,6 +1,6 @@
 # Symmetry-constrained full model: permutations and collapses on three individuals [one individual]
 
-<p class='cert'>Model — Source: Misc.; produced by Cian Dorr (the construction and the failure of Intensional Choice, 3 and 4 October 2026); Claude Fable 5.1 (Anthropic) (verification that it is a model of C and the other verdicts, 4 October 2026); recorded by Claude Fable 5.1 (Anthropic), 4 October 2026.</p>
+<p class='cert'>Model — Source: Misc.; produced by Cian Dorr (the construction and the failure of Intensional Choice, 3 and 4 October 2026); Claude Fable 5.1 (Anthropic) (verification that it is a model of C and the other verdicts, 4 October 2026); recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 4 October 2026.</p>
 
 ## Package
 
@@ -94,13 +94,13 @@ There are finitely many propositions, $n$ say, with literal identity. The numera
 
 The constant maps form one orbit of the symmetry group, so the proposition $C$ that the arrow is constant (for individuals $a,b,c$, the proposition that $a=b=c$) is an atom: it is possible, and a symmetric proposition contains all the constant maps or none. It is not a strong world. At a constant map $c_i$, every composite $l\circ c_i$ is constant, so $C$ transported there is $\top$; and $\top$ there lies neither below the proposition $P$ that the arrow is a permutation nor below its negation, both being possible. As an atom, $C$ has no possible proposition below it but itself, so no strong world lies below it, and the type-$t$ Strong Leibniz Biconditionals fail.
 
-*From the group *Symmetry-constrained full models*, shared argument `symmetry-constrained-full#strong-leibniz-t`. By Claude Opus 5.5 (Anthropic), from Cian Dorr's observation, 2026-10-08.*
+*From the group *Symmetry-constrained full models*, shared argument `symmetry-constrained-full#strong-leibniz-t`. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, from Cian Dorr's observation, 2026-10-08.*
 
 ### Holds Truth implies ND-necessity.
 
 For a true $p$, $a\le p$, since $a$ entails every truth. Take $q:=a$ in the definition of $\Box_{\ne}p$: at a world in $a$, $p$ holds; at a world outside $a$, $\Diamond a$ fails. So every truth is $\Box_{\ne}$-necessary.
 
-*General argument `arguments/dpc-isolated-actual-world`. It requires that The actual-world proposition $a$ is in the domain and entails every truth, and no world outside $a$ sees a world in $a$. Here: $a$, the orbit of the identity, is in the domain and entails every truth; from a world outside $a$, a non-permutation $h$, every $l\circ h$ is again a non-permutation, outside $a$. By Claude Fable 5.1 (Anthropic), 2026-09-23.*
+*General argument `arguments/dpc-isolated-actual-world`. It requires that The actual-world proposition $a$ is in the domain and entails every truth, and no world outside $a$ sees a world in $a$. Here: $a$, the orbit of the identity, is in the domain and entails every truth; from a world outside $a$, a non-permutation $h$, every $l\circ h$ is again a non-permutation, outside $a$. By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 2026-09-23.*
 
 *Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* The finite-support, symmetric and full action models' copies (eight records) stated once for the topic; what varied, why no world outside the actual world sees back into it, is each record's reason for meeting actual-world-isolated.
 
@@ -124,7 +124,7 @@ No two individuals are distinct, and the numeral $\operatorname{Suc}_e\mathbf{0}
 
 Write $X_0(E)$ for the intension $k\mapsto k\cdot E$. The extension at an arrow $h$ of the power property $\lambda X\, .\,\operatorname{Rigid}(X)\land X\le F$ is the set of rigid $X$ with $X\le h\cdot F$, the bound variable ranging over the domain untransported and the parameter transported. By the condition the rigid relations are the $X_0(E)$, and $X_0(T)\le X_0(S)$ iff $T\subseteq S$; so for rigid $F=X_0(S)$ the power property has extension $\{X_0(T'):T'\subseteq k\cdot S\}$ at $k$, while transporting its extension at the identity along $k$ gives $\{X_0(k\cdot T):T\subseteq S\}$. These coincide, since every $T'\subseteq k\cdot S$ is $k\cdot T$ for $T:=\{s\in S:k\cdot s\in T'\}$. So the power property is itself $X_0$ of its extension, hence rigid, and the same at every reachable object gives the boxed form.
 
-*General argument `arguments/rigid-power-tight`. It requires that At every object reachable from the evaluation point, the rigid relations of each relational type are exactly the intensions $k\mapsto k\cdot E$, the disjunctions of the haecceities of the members of $E$, for $E$ any set of tuples from the domains there; in particular every such intension is in the domain. Here: For any set $E$ the intension $k\mapsto k\cdot E$ is symmetric (as in the argument for Rigid Comprehension), so in the domain, and it is the smallest symmetric intension containing the transports of the members of $E$; so a weakly inextensible relation lies below it over its extension, and a rigid one equals it (as in the argument for Tame Rigidity). By Claude Opus 5.5 (Anthropic), 3 October 2026 (full action models); extended by Claude Fable 5.1 (Anthropic), 4 October 2026, at Cian Dorr's direction.*
+*General argument `arguments/rigid-power-tight`. It requires that At every object reachable from the evaluation point, the rigid relations of each relational type are exactly the intensions $k\mapsto k\cdot E$, the disjunctions of the haecceities of the members of $E$, for $E$ any set of tuples from the domains there; in particular every such intension is in the domain. Here: For any set $E$ the intension $k\mapsto k\cdot E$ is symmetric (as in the argument for Rigid Comprehension), so in the domain, and it is the smallest symmetric intension containing the transports of the members of $E$; so a weakly inextensible relation lies below it over its extension, and a rigid one equals it (as in the argument for Tame Rigidity). By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 3 October 2026 (full action models); extended by Claude Fable 5.1, prompted by Cian Dorr (Anthropic), 4 October 2026, at Cian Dorr's direction.*
 
 *Revised 2026-10-04 by Claude Fable 5.1 (Anthropic), at Cian Dorr's direction:* The argument deferred in extraction.md on 3 October for the full action models, where every intension is present, stated under the condition it actually uses, which the symmetry-constrained full models also meet.
 

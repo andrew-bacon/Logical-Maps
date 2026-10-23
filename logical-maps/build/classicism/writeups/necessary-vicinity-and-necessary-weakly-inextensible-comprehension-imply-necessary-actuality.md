@@ -1,6 +1,6 @@
 # □Vicinity ∧ □Weakly Inextensible Comprehension ⇒ □Actuality
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_vicinity_and_necessary_weakly_inextensible_comprehension_imply_necessary_actuality`; produced by Christopher Sun (the unboxed result), 27 September 2026; Claude Opus 5.5 (Anthropic), the boxed form; recorded by Claude Opus 5.5 (Anthropic), 27 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_vicinity_and_necessary_weakly_inextensible_comprehension_imply_necessary_actuality`; produced by Christopher Sun (the unboxed result), 27 September 2026; Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, the boxed form; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 27 September 2026.</p>
 
 ## Premises
 

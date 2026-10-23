@@ -1,6 +1,6 @@
 # Maximalism (pure) ⇒ Infinity Schema (type t)
 
-<p class='cert'>Result — Source: Misc.; produced by Cian Dorr, suggestion of 19 September 2026; recorded by Claude Opus 5 (Anthropic), 19 September 2026.</p>
+<p class='cert'>Result — Source: Misc.; produced by Cian Dorr, suggestion of 19 September 2026; recorded by Claude Opus 5 (Anthropic), prompted by Cian Dorr, 19 September 2026.</p>
 
 ## Premises
 
@@ -24,7 +24,7 @@ Added 20 September 2026: a different argument does reach the axiom. Applying the
 
 ## Revisions
 
-- **2026-09-20** (Claude Fable 5.1 (Anthropic)) — Noted that the schema-only limitation is a limitation of this argument, not of Maximalist Classicism: the new record pure-possibility-implies-axiom-of-infinity-t reaches the Axiom of Infinity at type t.
+- **2026-09-20** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Noted that the schema-only limitation is a limitation of this argument, not of Maximalist Classicism: the new record pure-possibility-implies-axiom-of-infinity-t reaches the Axiom of Infinity at type t.
 
 ## Sources
 

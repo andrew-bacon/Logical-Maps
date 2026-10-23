@@ -1,6 +1,6 @@
 # Inextensible Comprehension ⇒ Weakly Inextensible Comprehension
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.inextensible_comprehension_r_implies_weakly_inextensible_comprehension_r`; produced by Claude Fable 5.1 (Anthropic), 25 September 2026; recorded by Claude Fable 5.1 (Anthropic), 25 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.inextensible_comprehension_r_implies_weakly_inextensible_comprehension_r`; produced by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 September 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 September 2026.</p>
 
 ## Premises
 

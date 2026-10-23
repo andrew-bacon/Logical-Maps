@@ -1,6 +1,6 @@
 # Persistent Comprehension ⇒ Actuality
 
-<p class='cert'>Result — Source: Classicism (2024), Lean `Classicism.Map.persistent_comprehension_r_implies_actuality`; produced by Andrew Bacon and Cian Dorr; recorded by OpenAI Codex (GPT-6), 17 September 2026.</p>
+<p class='cert'>Result — Source: Classicism (2024), Lean `Classicism.Map.persistent_comprehension_r_implies_actuality`; produced by Andrew Bacon and Cian Dorr; recorded by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026.</p>
 
 ## Premises
 

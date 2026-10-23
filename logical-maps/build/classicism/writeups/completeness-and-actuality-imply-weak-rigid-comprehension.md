@@ -1,6 +1,6 @@
 # Boolean Completeness ∧ Actuality ⇒ Weak Rigid Comprehension
 
-<p class='cert'>Result — Source: BC does not imply RC (draft), Lean `Classicism.Map.completeness_and_actuality_imply_weak_rigid_comprehension`; produced by Cian Dorr; recorded by Claude Opus 5 (Anthropic), 19 September 2026.</p>
+<p class='cert'>Result — Source: BC does not imply RC (draft), Lean `Classicism.Map.completeness_and_actuality_imply_weak_rigid_comprehension`; produced by Cian Dorr; recorded by Claude Opus 5 (Anthropic), prompted by Cian Dorr, 19 September 2026.</p>
 
 ## Premises
 

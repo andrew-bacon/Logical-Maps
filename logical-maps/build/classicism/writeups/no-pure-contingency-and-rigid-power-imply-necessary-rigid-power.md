@@ -1,6 +1,6 @@
 # No Pure Contingency ∧ Rigid Power ⇒ □Rigid Power
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_pure_contingency_and_rigid_power_imply_necessary_rigid_power`; produced by Claude Opus 5.5 (Anthropic), 3 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), 3 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_pure_contingency_and_rigid_power_imply_necessary_rigid_power`; produced by Claude Opus 5.5 (Anthropic), 3 October 2026, from a suggestion of Cian Dorr; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 3 October 2026.</p>
 
 ## Premises
 

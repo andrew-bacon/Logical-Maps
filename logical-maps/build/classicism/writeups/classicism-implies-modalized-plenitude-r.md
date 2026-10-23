@@ -1,6 +1,6 @@
 # ⊤ ⇒ Modalized Plenitude
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.classicism_implies_modalized_plenitude_r`; produced by Cian Dorr, 28 September 2026 (the principle, and the witness $\lambda x\, .\,\forall p\, .\,(Ux)p\to p$ for output type t); Claude Opus 5.5 (Anthropic), 28 September 2026, the generalization to all relational output types and the written proof; recorded by Claude Opus 5.5 (Anthropic), 28 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.classicism_implies_modalized_plenitude_r`; produced by Cian Dorr, 28 September 2026 (the principle, and the witness $\lambda x\, .\,\forall p\, .\,(Ux)p\to p$ for output type t); Claude Opus 5.5 (Anthropic), 28 September 2026, the generalization to all relational output types and the written proof; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 28 September 2026.</p>
 
 ## Premises
 

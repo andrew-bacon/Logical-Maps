@@ -1,6 +1,6 @@
 # Atomicity (type t) ∧ BF (type t) ⇒ Strong Leibniz Biconditionals (type t)
 
-<p class='cert'>Result — Source: Philosophical Introduction to HOL (2024), Lean `Classicism.Map.atomicity_t_and_bf_t_imply_strong_leibniz_t`; produced by Andrew Bacon; set as Exercise 8.12, type-t instance written out by Claude Fable 5.1 (Anthropic), 22 September 2026; recorded by Claude Fable 5.1 (Anthropic), 22 September 2026.</p>
+<p class='cert'>Result — Source: Philosophical Introduction to HOL (2024), Lean `Classicism.Map.atomicity_t_and_bf_t_imply_strong_leibniz_t`; produced by Andrew Bacon; set as Exercise 8.12, type-t instance written out by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026.</p>
 
 ## Premises
 

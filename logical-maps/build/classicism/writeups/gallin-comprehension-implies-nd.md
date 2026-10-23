@@ -1,6 +1,6 @@
 # Gallin Extensional Comprehension ⇒ ND
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.gallin_comprehension_implies_nd`; produced by Cian Dorr, 20 September 2026; recorded by Claude Opus 5 (Anthropic), 20 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.gallin_comprehension_implies_nd`; produced by Cian Dorr, 20 September 2026; recorded by Claude Opus 5 (Anthropic), prompted by Cian Dorr, 20 September 2026.</p>
 
 ## Premises
 

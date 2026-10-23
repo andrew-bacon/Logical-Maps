@@ -1,6 +1,6 @@
 # No Pure Contingency ∧ Gallin Extensional Comprehension ⇒ □Gallin Extensional Comprehension
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_pure_contingency_and_gallin_comprehension_imply_necessary_gallin_comprehension`; produced by Cian Dorr, suggestion of 20 September 2026; recorded by Claude Fable 5.1 (Anthropic), 20 September 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_pure_contingency_and_gallin_comprehension_imply_necessary_gallin_comprehension`; produced by Cian Dorr, suggestion of 20 September 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026.</p>
 
 ## Premises
 

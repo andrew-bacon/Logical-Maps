@@ -1,6 +1,6 @@
 # □Atomicity ∧ □Rigid Comprehension ⇒ □Rigid Power
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_atomicity_and_necessary_rigid_comprehension_imply_necessary_rigid_power`; produced by Claude Fable 5.1 (Anthropic), 19 October 2026, necessitating atomicity-and-rigid-comprehension-imply-rigid-power; recorded by Claude Fable 5.1 (Anthropic), 19 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_atomicity_and_necessary_rigid_comprehension_imply_necessary_rigid_power`; produced by Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 19 October 2026, necessitating atomicity-and-rigid-comprehension-imply-rigid-power; recorded by Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 19 October 2026.</p>
 
 ## Premises
 

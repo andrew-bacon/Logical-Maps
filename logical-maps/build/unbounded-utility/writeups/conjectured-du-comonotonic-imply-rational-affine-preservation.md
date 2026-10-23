@@ -1,6 +1,6 @@
 # Rich Outcomes ∧ Archimedean Outcomes ∧ Stochastic Equivalence ∧ Stochastic Dominance ∧ Mixture Independence ∧ Comonotonic Sum Invariance ⇒ Rational Affine Preservation
 
-<p class='cert'>Conjecture — Source: Misc.; produced by Zachary Goodsell (claim) and Claude (Fable 5.1) (reduction to cancellation and obstruction analysis), 2026-09-24; recorded by Claude (Fable 5.1), 2026-09-24.</p>
+<p class='cert'>Conjecture — Source: Misc.; produced by Zachary Goodsell (claim) and Claude (Fable 5.1) (reduction to cancellation and obstruction analysis), 2026-09-24; recorded by Claude (Fable 5.1), prompted by Zachary Goodsell, 2026-09-24.</p>
 
 ## Premises
 
@@ -22,6 +22,6 @@ Does DU with Comonotonic Sum Invariance preserve weak and strict comparisons und
 ## Sources
 
 - **Goodsell claim 24 Sep** — Zachary Goodsell, Logical Maps session, 24 September 2026: claim that under DU Comonotonic Sum Invariance preserves weak and strict order under positive rational affine maps.
-- **Claude reduction 24 Sep** — Claude (Fable 5.1), Logical Maps, 24 September 2026: the integer case comonotonic-sum-implies-integer-affine-preservation and the reduction of the remainder to integer cancellation; the unit-threshold model shows Mixture Independence is needed.
+- **Claude reduction 24 Sep** — Claude (Fable 5.1), prompted by Zachary Goodsell, Logical Maps, 24 September 2026: the integer case comonotonic-sum-implies-integer-affine-preservation and the reduction of the remainder to integer cancellation; the unit-threshold model shows Mixture Independence is needed.
 
 <p class='cert'>Record: <code>topics/unbounded-utility/results/conjectured-du-comonotonic-imply-rational-affine-preservation.yaml</code></p>

@@ -4,7 +4,7 @@ Conjectured by Cian Dorr, 14 October 2026. Proved by Christopher Sun, in a handw
 sent to Cian Dorr on 19 October 2026: he showed that if there is a strongest 5-necessary
 proposition, every 5-necessary proposition is two-hat necessary, and, from the 5-necessity form
 of Vicinity, the latter is his argument recorded on the page of Vicinity. The passage from that
-form to a strongest 5-necessary proposition (Step 1) was added by Claude Opus 5.5 (Anthropic) when
+form to a strongest 5-necessary proposition (Step 1) was added by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr when
 recording it, 19 October 2026.
 
 ## Facts used

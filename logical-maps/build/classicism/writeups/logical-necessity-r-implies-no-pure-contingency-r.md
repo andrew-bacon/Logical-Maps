@@ -1,6 +1,6 @@
 # Logical Necessity ⇒ No Pure Contingency
 
-<p class='cert'>Result — Source: Logical Combinatorialism, Lean `Classicism.Map.logical_necessity_r_implies_no_pure_contingency_r`; produced by Andrew Bacon; recorded by OpenAI Codex (GPT-6), 17 September 2026.</p>
+<p class='cert'>Result — Source: Logical Combinatorialism, Lean `Classicism.Map.logical_necessity_r_implies_no_pure_contingency_r`; produced by Andrew Bacon; recorded by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 17 September 2026.</p>
 
 ## Premises
 

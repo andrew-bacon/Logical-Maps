@@ -1,6 +1,6 @@
 # Symmetric ideally-full model: class-reflecting surjections of infinitely many infinite classes [one individual]
 
-<p class='cert'>Model — Source: Misc.; produced by Cian Dorr, 16 October 2026 (the model, with infinitely many infinite classes, arrows collapsing only within a class and symmetries preserving the classes), with Claude Opus 5.5 (Anthropic), who fixed the arrows and wrote the verification; recorded by Claude Opus 5.5 (Anthropic), 16 October 2026.</p>
+<p class='cert'>Model — Source: Misc.; produced by Cian Dorr, 16 October 2026 (the model, with infinitely many infinite classes, arrows collapsing only within a class and symmetries preserving the classes), with Claude Opus 5.5 (Anthropic), who fixed the arrows and wrote the verification; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 16 October 2026.</p>
 
 ## Package
 

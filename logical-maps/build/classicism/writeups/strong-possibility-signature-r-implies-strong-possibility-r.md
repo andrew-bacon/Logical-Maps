@@ -1,6 +1,6 @@
 # Strong Possibility (signature Σ) ⇒ Strong Possibility (pure)
 
-<p class='cert'>Conjecture — Source: Misc.; produced by Cian Dorr, suggestion of 22 September 2026; recorded by Claude Fable 5.1 (Anthropic), 22 September 2026.</p>
+<p class='cert'>Conjecture — Source: Misc.; produced by Cian Dorr, suggestion of 22 September 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026.</p>
 
 ## Premises
 
