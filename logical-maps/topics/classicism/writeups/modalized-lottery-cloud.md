@@ -28,7 +28,7 @@ The component proposition for an atomless factor is nonzero. At the root, propos
 
 The top proposition S and the cloud S minus {r} are distinct at the root, but identical at every cloud point. They witness failure of ND at type t. Source: Theorem 4.4(c), p. 21.
 
-### Holds: mathematical-possibilism
+### Holds: forcing-possibilism
 
 At the root all relations on the identity classes are realized, so internal complete Boolean algebras and relation-based cardinal comparisons are external ones (Lemmas 6.6–6.7). For strong limit μ of countable cofinality, |RO(F)|=2^μ=μ^ω. Pierce’s theorem |C|^ω=|C| excludes complete Boolean algebras of size in [μ,2^μ). Every algebra that is finite or strictly smaller than the propositions therefore has size <μ. It occurs as a lottery factor and is realized below its component proposition; the degenerate algebra is realized below bottom. A root relation witnesses the isomorphism. Source: Theorem 6.8 and Corollary 6.9, p. 29.
 

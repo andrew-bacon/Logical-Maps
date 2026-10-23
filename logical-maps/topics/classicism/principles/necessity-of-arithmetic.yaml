@@ -1,6 +1,6 @@
 id: necessity-of-arithmetic
 name: Necessity of Arithmetic
-category: schematic
+category: mathematical-contingency
 statement: Every arithmetical sentence is either necessarily true or necessarily false, given that possibly
   zero is not a successor and successor is injective on numbers, where the numbers are the finite
   cardinalities of properties of a type $\sigma$. One sentence for each type $\sigma$ and each arithmetical
@@ -35,4 +35,9 @@ changes:
   summary: Made the type whose finite cardinalities are the numbers schematic, as for Countable Boolean
     Completeness; the principle had fixed it at $e$. The old principle is the instance $\sigma=e$ of the
     new one.
+- date: '2026-10-23'
+  by: Claude Fable 5.1 (Anthropic)
+  minor: true
+  summary: Moved from the category Possibility and pure schemata to the new category Mathematical
+    contingency; the statement is unchanged.
 lean_def: (Classicism.Meta.AxiomSet.ofPure Classicism.Meta.AxiomSet.necessityOfArithmetic)

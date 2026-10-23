@@ -23,7 +23,7 @@ arguments:
   choice: uses
   text: >-
     Handout §7: refine the cloud join of the F-witnesses by a maximal antichain and select a witness x_k on each piece b_k. The profile g(y) = ⋁_k (b_k ∧ ε(x_k,y)) is extensional, lies below F, and selects a unique witness locally on each piece. At ∗ choose a singleton actual extension when F is actually instantiated. Decoupling combines these choices; if F is necessarily instantiated, the resulting G is necessarily uniquely instantiated and entails F. In the cloud the same local argument proves IC on the support of its antecedent. IC has value top, so □IC does also.
-- holds: [mathematical-possibilism]
+- holds: [forcing-possibilism]
   text: >-
     Handout §8: |A| = 2^μ and μ^ω = 2^μ. Pierce's theorem says |C|^ω = |C| for every infinite complete Boolean algebra, so no such algebra has cardinality in [μ,2^μ). At ∗ identity is literal and every relation on the type domains is represented by an actual extension. Thus internal complete Boolean algebras and cardinal comparisons are external ones. Every small C has cardinality < μ and is some B_i up to isomorphism; its copy is the interval below W_i, a proper proposition. A one-element algebra is the interval below bottom. The isomorphism is an available actual relation.
 - holds: [necessary-barcan-r]

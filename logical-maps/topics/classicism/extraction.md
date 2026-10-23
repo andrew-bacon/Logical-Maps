@@ -213,7 +213,7 @@ map's Atomicity, now carrying that alias.
 | --- | --- |
 | Theorem 4.4, p. 19; Appendix C.1, Proposition C.2, Lemma C.1, Theorem C.1 | `c5-implies-necessity-of-arithmetic`, transposed to the map's numbers at each type; it proves □A ∨ □¬A outright. Formalized: the steps of the induction are derived shallow theorems (`lean/Classicism/Results/SentenceSchemas/Arithmetic.lean`) and the induction over arithmetical sentences composes their derivations (`ArithmeticMeta.lean`) |
 | Appendix C.2, Lemma C.6 | `atomicity-and-rigid-comprehension-imply-rigid-power` and its necessitation; the lemma is run with □ for □_N and its conclusion turned into Rigid Power by Tame Rigidity |
-| §6, Intensional Choice; Theorem 6.1, Conjecture 6.1 | Intensional Choice was imported on 3 October 2026; Mathematical Possibilism is not a principle of the map |
+| §6, Intensional Choice; Theorem 6.1, Conjecture 6.1 | Intensional Choice was imported on 3 October 2026. Mathematical Possibilism joined the map on 23 October 2026 as `forcing-possibilism` (Forcing Possibilism, with Bacon's name as an alias), through Bacon's own contribution of the lottery-algebra model and the modalized-domain models (*Modalized Domains on Possibility Frames*, Bacon and Claude Opus 5.5, draft of 20 October 2026, in `papers.yaml`); that model, with □Rigid Comprehension and □Intensional Choice, settles Conjecture 6.1 in C. Theorem 6.1 (□RC, Intensional Choice and the principle make CH contingent) is not yet recorded: its proof is not in the draft or the handout |
 | Appendix B.2, Theorem 5.1 | The Boolean-valued model, imported earlier (`full-boolean-valued-atom-and-atomless`) |
 
 Not imported: the Necessity of Analysis (Theorem 5.2, Corollary 5.1, Appendix C.2 beyond Lemma C.6),

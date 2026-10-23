@@ -33,7 +33,7 @@ arguments:
   by: Andrew Bacon and Claude Opus 5.5 (Anthropic)
   date: '2026-10-21'
   holds:
-  - mathematical-possibilism
+  - forcing-possibilism
 notes: There are 2^μ propositions at the root and 2^ℵ₀ rigid properties of individuals up to root identity.
   Choosing μ above any prescribed cardinal gives the unbounded-size assertion of Corollary 6.9. MP uses
   finite or strictly smaller, not the non-strict reading; it is not asserted necessary. This model implements

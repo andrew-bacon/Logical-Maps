@@ -78,6 +78,8 @@ principle_categories:
   name: Choice and Plenitude
 - id: infinity
   name: Infinity
+- id: mathematical-contingency
+  name: Mathematical contingency
 - id: schematic
   name: Possibility and pure schemata
 - id: necessity-varieties

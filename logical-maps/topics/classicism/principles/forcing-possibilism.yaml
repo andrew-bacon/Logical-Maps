@@ -1,6 +1,6 @@
-id: mathematical-possibilism
-name: Mathematical Possibilism
-category: lattice
+id: forcing-possibilism
+name: Forcing Possibilism
+category: mathematical-contingency
 statement: Every complete Boolean algebra that is finite or has strictly fewer elements than there are propositions is isomorphic to the entailment algebra below some proposition other than top.
 formal: >-
   $\forall X^{\sigma t}\,\forall R^{\sigma\sigma t}\, .\,
@@ -16,11 +16,24 @@ source_names:
 notes: >-
   Uses the handout's strict smallness convention (finite or strictly fewer propositions), attributed there to the body of Could the truths of mathematics have been different?. It does not use the appendix's non-strict reading, no bigger than the propositions. The two readings are not identified. No Lean verification is claimed.
 
+aliases:
+- Mathematical Possibilism (Bacon 2025)
 references:
 - paper: bacon-modalized-domains-2026
   role: formulation
   locator: §6.1, p. 27
+- paper: bacon-mathematical-contingency
+  role: origin
+  locator: §6, p. 27; Appendix A.3, Figure 2
+  note: Bacon's Mathematical Possibilism. The map's name records what the principle says, that every small
+    complete Boolean algebra, hence every small forcing, is realised below some proposition.
 changes:
 - date: '2026-10-21'
   by: OpenAI Codex
   summary: Linked the existing strict-smallness formulation to Modalized Domains §6.1; statement unchanged.
+- date: '2026-10-23'
+  by: Claude Fable 5.1 (Anthropic)
+  summary: Renamed Forcing Possibilism, with Bacon's Mathematical Possibilism as an alias, and placed in
+    the new category Mathematical contingency. Up to forcing equivalence, forcing notions are the complete
+    Boolean algebras, so the principle says that every small forcing is broadly possible; the statement is
+    unchanged.
