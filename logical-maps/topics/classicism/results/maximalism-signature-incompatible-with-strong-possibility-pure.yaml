@@ -8,13 +8,13 @@ certificate:
   source_id: misc
   produced_by: Cian Dorr, 20 October 2026, with two amendments by Claude Fable 5.1 (Anthropic), who verified
     the consistency premise in coalesced-definable-root
-  recorded_by: Claude Fable 5.1 (Anthropic), 20 October 2026
+  recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 October 2026
   checked_by: []
   date: '2026-10-20'
   lean: stated
 sources:
 - Cian Dorr, argument of 20 October 2026.
-- Claude Fable 5.1 (Anthropic), 20 October 2026, for the amendments and the model witnessing the consistency
+- Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 October 2026, for the amendments and the model witnessing the consistency
   premise (coalesced-definable-root).
 source_names:
 - Dorr 20 Oct
@@ -59,3 +59,16 @@ notes: >-
   signature, not only the pure ones, to be non-contingent under $\Box$ND + Atomicity. The argument does not
   reach Strong Possibility for $\Sigma$, whose consistency premise is stronger; whether Maximalism for
   $\Sigma$ is compatible with it stays open.
+
+
+  A different proof was given later and independently by GPT-6 Astra (OpenAI), prompted by Daniel Kodsi,
+  22–23 October 2026: Maximalism for $\Sigma$ splits the proposition that there is exactly one individual
+  and the Fregean Axiom holds, refuting its atomhood, whose consistency with Maximalist Classicism (pure)
+  Astra shows with a separate model; Strong Possibility (pure) then makes that atomhood true. With this
+  incompatibility the map excludes [[strong-possibility-signature-r-implies-strong-possibility-r]] unless
+  Strong Possibility for $\Sigma$ is inconsistent.
+changes:
+- date: '2026-10-24'
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+  summary: Noted the later independent proof by GPT-6 Astra (OpenAI), prompted by Daniel Kodsi.
+  minor: true
