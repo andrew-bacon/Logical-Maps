@@ -11,7 +11,8 @@ certificate:
   recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026
   checked_by: []
   date: '2026-10-14'
-  lean: stated
+  lean: verified
+  lean_ref: Classicism.Map.necessary_vicinity_and_necessary_barcan_t_imply_necessary_two_hat_implies_nd
 sources:
 - Cian Dorr, John Hawthorne, and Juhani Yli-Vakkuri, The Bounds of Possibility, Appendix D, Propositions
   D3, D6, D11, D18.
@@ -32,3 +33,8 @@ notes: 'The boxed form of [[vicinity-and-barcan-t-imply-two-hat-implies-nd]].
 
 
   Boxed form; the hypotheses are the necessitations of those of the unboxed result.'
+changes:
+- date: '2026-10-20'
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's request
+  summary: Lean certificate added. It takes a simpler route than the proof above, necessitating the
+    unboxed result and applying K, so Appendix D is not needed for this record.

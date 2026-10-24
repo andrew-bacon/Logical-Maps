@@ -10,7 +10,8 @@ certificate:
   recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026
   checked_by: []
   date: '2026-10-14'
-  lean: stated
+  lean: verified
+  lean_ref: Classicism.Map.necessary_two_hat_implies_nd_implies_necessary_five_implies_two_hat
 sources:
 - Cian Dorr, John Hawthorne, and Juhani Yli-Vakkuri, The Bounds of Possibility, Appendix D, Propositions
   D3, D6, D11, D14 and fact (A5), pp. 402–406.
@@ -32,3 +33,9 @@ proof: 'Write $X:=\Box_{\ne}$, which is necessarily N, K and J (Proposition D14 
 notes: 'Collapse propagates upward: once an operator in the hat tower equals its own hat, everything above
   it up to $\Box_5$ is identical. The same argument shows that the boxed principle is equivalent to each
   of: $\Box_{\ne}$ is necessarily B; $\Box_{\ne}$ necessarily satisfies BF at type $t$; $\Box_{\ne}=\Box_5$.'
+changes:
+- date: '2026-10-20'
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's request
+  summary: Lean certificate added, by a shorter route than the proof above. Under the premise,
+    Proposition D11 makes ND-necessity necessarily B, so it is an S5 operator in the map's sense
+    and the map's 5-necessity is below it; Propositions D3 and D6 and fact (A5) are not needed.

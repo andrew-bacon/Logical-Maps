@@ -12,7 +12,8 @@ certificate:
   recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026
   checked_by: []
   date: '2026-10-14'
-  lean: stated
+  lean: verified
+  lean_ref: Classicism.Map.actuality_and_two_hat_implies_nd_imply_strong_actuality
 sources:
 - Cian Dorr, argument of 14 October 2026, communicated in conversation with Claude Fable 5.1 (Anthropic)
   and checked there (transcript in the private notes).

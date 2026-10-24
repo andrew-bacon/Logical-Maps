@@ -9,7 +9,8 @@ certificate:
   recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026
   checked_by: []
   date: '2026-10-14'
-  lean: stated
+  lean: verified
+  lean_ref: Classicism.Map.necessary_five_implies_nd_necessity_implies_five_implies_nd_necessity
 sources:
 - Cian Dorr and Claude Fable 5.1 (Anthropic), conversation of 14 October 2026 (transcript in the private
   notes).

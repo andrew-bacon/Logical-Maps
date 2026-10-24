@@ -1838,4 +1838,157 @@ theorem modal_well_ordering_implies_modalized_relational_choice : Statements.mod
 theorem modal_well_ordering_implies_necessary_modalized_relational_choice : Statements.modal_well_ordering_implies_necessary_modalized_relational_choice := by
   map_cert Proofs.modal_well_ordering_implies_necessary_modalized_relational_choice.entails
 
+/-- `five-implies-nd-implies-two-hat-implies-nd` -/
+theorem five_implies_nd_implies_two_hat_implies_nd : Statements.five_implies_nd_implies_two_hat_implies_nd := by
+  map_cert Proofs.five_implies_nd_implies_two_hat_implies_nd.entails
+
+/-- `truth-implies-nd-implies-five-implies-nd` -/
+theorem truth_implies_nd_implies_five_implies_nd : Statements.truth_implies_nd_implies_five_implies_nd := by
+  map_cert Proofs.truth_implies_nd_implies_five_implies_nd.entails
+
+/-- `truth-implies-nd-implies-truth-implies-five` -/
+theorem truth_implies_nd_implies_truth_implies_five : Statements.truth_implies_nd_implies_truth_implies_five := by
+  map_cert Proofs.truth_implies_nd_implies_truth_implies_five.entails
+
+/-- `truth-implies-two-hat-implies-five-implies-two-hat` -/
+theorem truth_implies_two_hat_implies_five_implies_two_hat : Statements.truth_implies_two_hat_implies_five_implies_two_hat := by
+  map_cert Proofs.truth_implies_two_hat_implies_five_implies_two_hat.entails
+
+/-- `truth-implies-two-hat-implies-truth-implies-five` -/
+theorem truth_implies_two_hat_implies_truth_implies_five : Statements.truth_implies_two_hat_implies_truth_implies_five := by
+  map_cert Proofs.truth_implies_two_hat_implies_truth_implies_five.entails
+
+/-- `five-implies-nd-implies-five-implies-two-hat` -/
+theorem five_implies_nd_implies_five_implies_two_hat : Statements.five_implies_nd_implies_five_implies_two_hat := by
+  map_cert Proofs.five_implies_nd_implies_five_implies_two_hat.entails
+
+/-- `five-implies-nd-and-truth-implies-five-imply-truth-implies-nd` -/
+theorem five_implies_nd_and_truth_implies_five_imply_truth_implies_nd : Statements.five_implies_nd_and_truth_implies_five_imply_truth_implies_nd := by
+  map_cert Proofs.five_implies_nd_and_truth_implies_five_imply_truth_implies_nd.entails
+
+/-- `five-implies-two-hat-and-truth-implies-five-imply-truth-implies-two-hat` -/
+theorem five_implies_two_hat_and_truth_implies_five_imply_truth_implies_two_hat : Statements.five_implies_two_hat_and_truth_implies_five_imply_truth_implies_two_hat := by
+  map_cert Proofs.five_implies_two_hat_and_truth_implies_five_imply_truth_implies_two_hat.entails
+
+/-- `two-hat-implies-nd-and-five-implies-two-hat-imply-five-implies-nd` -/
+theorem two_hat_implies_nd_and_five_implies_two_hat_imply_five_implies_nd : Statements.two_hat_implies_nd_and_five_implies_two_hat_imply_five_implies_nd := by
+  map_cert Proofs.two_hat_implies_nd_and_five_implies_two_hat_imply_five_implies_nd.entails
+
+/-- `necessary-distinctness-necessary-t-implies-necessary-two-hat-implies-nd` -/
+theorem necessary_distinctness_necessary_t_implies_necessary_two_hat_implies_nd : Statements.necessary_distinctness_necessary_t_implies_necessary_two_hat_implies_nd := by
+  map_cert Proofs.necessary_distinctness_necessary_t_implies_necessary_two_hat_implies_nd.entails
+
+/-- `necessary-five-implies-nd-implies-two-hat-implies-nd` -/
+theorem necessary_five_implies_nd_implies_two_hat_implies_nd : Statements.necessary_five_implies_nd_implies_two_hat_implies_nd := by
+  map_cert Proofs.necessary_five_implies_nd_implies_two_hat_implies_nd.entails
+
+/-- `necessary-truth-implies-nd-implies-necessary-five-implies-nd` -/
+theorem necessary_truth_implies_nd_implies_necessary_five_implies_nd : Statements.necessary_truth_implies_nd_implies_necessary_five_implies_nd := by
+  map_cert Proofs.necessary_truth_implies_nd_implies_necessary_five_implies_nd.entails
+
+/-- `necessary-truth-implies-nd-implies-necessary-truth-implies-five` -/
+theorem necessary_truth_implies_nd_implies_necessary_truth_implies_five : Statements.necessary_truth_implies_nd_implies_necessary_truth_implies_five := by
+  map_cert Proofs.necessary_truth_implies_nd_implies_necessary_truth_implies_five.entails
+
+/-- `necessary-truth-implies-two-hat-implies-five-implies-two-hat` -/
+theorem necessary_truth_implies_two_hat_implies_five_implies_two_hat : Statements.necessary_truth_implies_two_hat_implies_five_implies_two_hat := by
+  map_cert Proofs.necessary_truth_implies_two_hat_implies_five_implies_two_hat.entails
+
+/-- `necessary-truth-implies-two-hat-implies-truth-implies-five` -/
+theorem necessary_truth_implies_two_hat_implies_truth_implies_five : Statements.necessary_truth_implies_two_hat_implies_truth_implies_five := by
+  map_cert Proofs.necessary_truth_implies_two_hat_implies_truth_implies_five.entails
+
+/-- `necessary-five-implies-nd-implies-five-implies-two-hat` -/
+theorem necessary_five_implies_nd_implies_five_implies_two_hat : Statements.necessary_five_implies_nd_implies_five_implies_two_hat := by
+  map_cert Proofs.necessary_five_implies_nd_implies_five_implies_two_hat.entails
+
+/-- `necessary-five-implies-nd-and-necessary-truth-implies-five-imply-necessary-truth-implies-nd` -/
+theorem necessary_five_implies_nd_and_necessary_truth_implies_five_imply_necessary_truth_implies_nd : Statements.necessary_five_implies_nd_and_necessary_truth_implies_five_imply_necessary_truth_implies_nd := by
+  map_cert Proofs.necessary_five_implies_nd_and_necessary_truth_implies_five_imply_necessary_truth_implies_nd.entails
+
+/-- `necessary-five-implies-two-hat-and-truth-implies-five-imply-truth-implies-two-hat` -/
+theorem necessary_five_implies_two_hat_and_truth_implies_five_imply_truth_implies_two_hat : Statements.necessary_five_implies_two_hat_and_truth_implies_five_imply_truth_implies_two_hat := by
+  map_cert Proofs.necessary_five_implies_two_hat_and_truth_implies_five_imply_truth_implies_two_hat.entails
+
+/-- `necessary-two-hat-implies-nd-and-five-implies-two-hat-imply-five-implies-nd` -/
+theorem necessary_two_hat_implies_nd_and_five_implies_two_hat_imply_five_implies_nd : Statements.necessary_two_hat_implies_nd_and_five_implies_two_hat_imply_five_implies_nd := by
+  map_cert Proofs.necessary_two_hat_implies_nd_and_five_implies_two_hat_imply_five_implies_nd.entails
+
+/-- `necessary-truth-implies-five-necessity-implies-truth-implies-five-necessity` -/
+theorem necessary_truth_implies_five_necessity_implies_truth_implies_five_necessity : Statements.necessary_truth_implies_five_necessity_implies_truth_implies_five_necessity := by
+  map_cert Proofs.necessary_truth_implies_five_necessity_implies_truth_implies_five_necessity.entails
+
+/-- `necessary-truth-implies-two-hat-necessity-implies-truth-implies-two-hat-necessity` -/
+theorem necessary_truth_implies_two_hat_necessity_implies_truth_implies_two_hat_necessity : Statements.necessary_truth_implies_two_hat_necessity_implies_truth_implies_two_hat_necessity := by
+  map_cert Proofs.necessary_truth_implies_two_hat_necessity_implies_truth_implies_two_hat_necessity.entails
+
+/-- `necessary-five-implies-two-hat-necessity-implies-five-implies-two-hat-necessity` -/
+theorem necessary_five_implies_two_hat_necessity_implies_five_implies_two_hat_necessity : Statements.necessary_five_implies_two_hat_necessity_implies_five_implies_two_hat_necessity := by
+  map_cert Proofs.necessary_five_implies_two_hat_necessity_implies_five_implies_two_hat_necessity.entails
+
+/-- `necessary-five-implies-nd-necessity-implies-five-implies-nd-necessity` -/
+theorem necessary_five_implies_nd_necessity_implies_five_implies_nd_necessity : Statements.necessary_five_implies_nd_necessity_implies_five_implies_nd_necessity := by
+  map_cert Proofs.necessary_five_implies_nd_necessity_implies_five_implies_nd_necessity.entails
+
+/-- `necessary-two-hat-implies-nd-necessity-implies-two-hat-implies-nd-necessity` -/
+theorem necessary_two_hat_implies_nd_necessity_implies_two_hat_implies_nd_necessity : Statements.necessary_two_hat_implies_nd_necessity_implies_two_hat_implies_nd_necessity := by
+  map_cert Proofs.necessary_two_hat_implies_nd_necessity_implies_two_hat_implies_nd_necessity.entails
+
+/-- `vicinity-and-barcan-t-imply-two-hat-implies-nd` -/
+theorem vicinity_and_barcan_t_imply_two_hat_implies_nd : Statements.vicinity_and_barcan_t_imply_two_hat_implies_nd := by
+  map_cert Proofs.vicinity_and_barcan_t_imply_two_hat_implies_nd.entails
+
+/-- `necessary-vicinity-and-necessary-barcan-t-imply-necessary-two-hat-implies-nd` -/
+theorem necessary_vicinity_and_necessary_barcan_t_imply_necessary_two_hat_implies_nd : Statements.necessary_vicinity_and_necessary_barcan_t_imply_necessary_two_hat_implies_nd := by
+  map_cert Proofs.necessary_vicinity_and_necessary_barcan_t_imply_necessary_two_hat_implies_nd.entails
+
+/-- `strong-leibniz-t-implies-two-hat-implies-nd` -/
+theorem strong_leibniz_t_implies_two_hat_implies_nd : Statements.strong_leibniz_t_implies_two_hat_implies_nd := by
+  map_cert Proofs.strong_leibniz_t_implies_two_hat_implies_nd.entails
+
+/-- `necessary-strong-leibniz-t-implies-necessary-two-hat-implies-nd` -/
+theorem necessary_strong_leibniz_t_implies_necessary_two_hat_implies_nd : Statements.necessary_strong_leibniz_t_implies_necessary_two_hat_implies_nd := by
+  map_cert Proofs.necessary_strong_leibniz_t_implies_necessary_two_hat_implies_nd.entails
+
+/-- `no-pure-contingency-and-truth-implies-five-necessity-imply-necessary-truth-implies-five-necessity` -/
+theorem no_pure_contingency_and_truth_implies_five_necessity_imply_necessary_truth_implies_five_necessity : Statements.no_pure_contingency_and_truth_implies_five_necessity_imply_necessary_truth_implies_five_necessity := by
+  map_cert npc_truthImpliesFive_entails_nec
+
+/-- `no-pure-contingency-and-truth-implies-two-hat-necessity-imply-necessary-truth-implies-two-hat-necessity` -/
+theorem no_pure_contingency_and_truth_implies_two_hat_necessity_imply_necessary_truth_implies_two_hat_necessity : Statements.no_pure_contingency_and_truth_implies_two_hat_necessity_imply_necessary_truth_implies_two_hat_necessity := by
+  map_cert npc_truthImpliesTwoHat_entails_nec
+
+/-- `no-pure-contingency-and-five-implies-two-hat-necessity-imply-necessary-five-implies-two-hat-necessity` -/
+theorem no_pure_contingency_and_five_implies_two_hat_necessity_imply_necessary_five_implies_two_hat_necessity : Statements.no_pure_contingency_and_five_implies_two_hat_necessity_imply_necessary_five_implies_two_hat_necessity := by
+  map_cert npc_fiveImpliesTwoHat_entails_nec
+
+/-- `no-pure-contingency-and-five-implies-nd-necessity-imply-necessary-five-implies-nd-necessity` -/
+theorem no_pure_contingency_and_five_implies_nd_necessity_imply_necessary_five_implies_nd_necessity : Statements.no_pure_contingency_and_five_implies_nd_necessity_imply_necessary_five_implies_nd_necessity := by
+  map_cert npc_fiveImpliesNd_entails_nec
+
+/-- `no-pure-contingency-and-two-hat-implies-nd-necessity-imply-necessary-two-hat-implies-nd-necessity` -/
+theorem no_pure_contingency_and_two_hat_implies_nd_necessity_imply_necessary_two_hat_implies_nd_necessity : Statements.no_pure_contingency_and_two_hat_implies_nd_necessity_imply_necessary_two_hat_implies_nd_necessity := by
+  map_cert npc_twoHatImpliesNd_entails_nec
+
+/-- `actuality-implies-five-implies-two-hat` -/
+theorem actuality_implies_five_implies_two_hat : Statements.actuality_implies_five_implies_two_hat := by
+  map_cert Proofs.actuality_implies_five_implies_two_hat.entails
+
+/-- `necessary-actuality-implies-necessary-five-implies-two-hat` -/
+theorem necessary_actuality_implies_necessary_five_implies_two_hat : Statements.necessary_actuality_implies_necessary_five_implies_two_hat := by
+  map_cert Proofs.necessary_actuality_implies_necessary_five_implies_two_hat.entails
+
+/-- `necessary-two-hat-implies-nd-implies-necessary-five-implies-two-hat` -/
+theorem necessary_two_hat_implies_nd_implies_necessary_five_implies_two_hat : Statements.necessary_two_hat_implies_nd_implies_necessary_five_implies_two_hat := by
+  map_cert Proofs.necessary_two_hat_implies_nd_implies_necessary_five_implies_two_hat.entails
+
+/-- `actuality-and-two-hat-implies-nd-imply-strong-actuality` -/
+theorem actuality_and_two_hat_implies_nd_imply_strong_actuality : Statements.actuality_and_two_hat_implies_nd_imply_strong_actuality := by
+  map_cert Proofs.actuality_and_two_hat_implies_nd_imply_strong_actuality.entails
+
+/-- `necessary-actuality-and-necessary-two-hat-implies-nd-imply-necessary-strong-actuality` -/
+theorem necessary_actuality_and_necessary_two_hat_implies_nd_imply_necessary_strong_actuality : Statements.necessary_actuality_and_necessary_two_hat_implies_nd_imply_necessary_strong_actuality := by
+  map_cert Proofs.necessary_actuality_and_necessary_two_hat_implies_nd_imply_necessary_strong_actuality.entails
+
+
 end Classicism.Map
