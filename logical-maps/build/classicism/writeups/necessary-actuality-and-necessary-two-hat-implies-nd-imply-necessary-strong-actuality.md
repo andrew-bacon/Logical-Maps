@@ -1,6 +1,6 @@
 # □Actuality ∧ □Two-hat necessity implies ND-necessity ⇒ □Strong Actuality
 
-<p class='cert'>Result — Source: Misc.; produced by Cian Dorr, 14 October 2026 (with 5-necessity implies ND-necessity as the second premise); weakened to Two-hat necessity implies ND-necessity, and checked, by Claude Fable 5.1 (Anthropic) the same day; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_actuality_and_necessary_two_hat_implies_nd_imply_necessary_strong_actuality`; produced by Cian Dorr, 14 October 2026 (with 5-necessity implies ND-necessity as the second premise); weakened to Two-hat necessity implies ND-necessity, and checked, by Claude Fable 5.1 (Anthropic) the same day; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
 
 ## Premises
 

@@ -1,0 +1,29 @@
+import Classicism.Results.Research.RigidityClosureResearchFiniteCertificates
+import Classicism.Results.Research.RigidityClosureResearchJoins
+import Classicism.Certified.Schemas
+
+#classicism_audit Classicism.Results.Research.RigidityClosureResearchJoins
+#classicism_types_audit Classicism.Results.Research.RigidityClosureResearchJoins
+
+#classicism_schema Classicism.Research.RigidityClosure.SingletonJoinCharacterization
+  Classicism.Research.RigidityClosure.RepresentedJoinPersistence
+  Classicism.Research.RigidityClosure.RepresentedJoinWeakInextensibility
+  Classicism.Research.RigidityClosure.RepresentedJoinWeakRigidity
+  Classicism.Research.RigidityClosure.RigidJoinClosure
+
+#classicism_derive Classicism.Research.RigidityClosure.rigid_iff_necessary_singleton_join
+  Classicism.Research.RigidityClosure.nd_singleton_join_coext
+
+#classicism_certify Classicism.Research.RigidityClosure.singleton_join_characterization
+  Classicism.Research.RigidityClosure.represented_join_persistence
+  Classicism.Research.RigidityClosure.represented_join_weak_inextensibility
+  Classicism.Research.RigidityClosure.represented_join_weak_rigidity
+  Classicism.Research.RigidityClosure.tame_implies_rigid_join_closure
+  Classicism.Research.RigidityClosure.rigid_join_closure_implies_tame
+  Classicism.Research.RigidityClosure.nd_bc_weak_comprehension
+
+#check Classicism.Research.RigidityClosure.singleton_join_characterization.listRule
+#check Classicism.Research.RigidityClosure.represented_join_weak_rigidity.listRule
+#check Classicism.Research.RigidityClosure.tame_implies_rigid_join_closure.listRule
+#check Classicism.Research.RigidityClosure.rigid_join_closure_implies_tame.listRule
+#print axioms Classicism.Research.RigidityClosure.represented_join_weak_rigidity.listRule

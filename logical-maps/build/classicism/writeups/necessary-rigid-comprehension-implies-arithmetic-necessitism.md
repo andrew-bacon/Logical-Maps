@@ -16,7 +16,11 @@ Assume $\Box$Rigid Comprehension and $\Box I^*_\sigma$. Persistence of $\mathbb 
 
 ## Notes
 
-Rigid Comprehension is used at every world, for the rigid coextension of $\mathbb N_\sigma$ there, so the premise is its necessitation; the antecedent $\Box I^*_\sigma$ of the principle is their axiom of Infinity. Whether the conclusion holds without Rigid Comprehension, in C5 say, is open; see the principle's notes.
+Rigid Comprehension is used at every world, for the rigid coextension of $\mathbb N_\sigma$ there, so the premise is its necessitation; the antecedent $\Box I^*_\sigma$ of the principle is their axiom of Infinity. Without Rigid Comprehension the conclusion holds in C5 ([[c5-implies-arithmetic-necessitism]]).
+
+## Revisions
+
+- **2026-10-24** (Claude Opus 5.5 (Anthropic), prompted by Cian Dorr) — (minor) Notes updated: C5 gives Arithmetic Necessitism ([[c5-implies-arithmetic-necessitism]]).
 
 ## Sources
 

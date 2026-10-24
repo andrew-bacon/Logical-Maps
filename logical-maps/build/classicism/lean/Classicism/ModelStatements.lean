@@ -11,6 +11,7 @@ import Classicism.Semantics.Interpretations
 import Classicism.Models.SymmetricFull
 import Classicism.Models.SymmetricIdeal
 import Classicism.Models.PairInjCollapse
+import Classicism.Models.OldNewBase
 
 /-!
 # Generated statements: models' verdicts
@@ -107,6 +108,18 @@ def Models.finite_support_two_object_all_maps.barcan_r : Prop :=
 /-- `finite-support-two-object-all-maps`: □BF fails. -/
 def Models.finite_support_two_object_all_maps.necessary_barcan_r : Prop :=
   (Classicism.Meta.Intensional.ContingentBarcan.model).IsModel ∧ ¬ (Classicism.Meta.Intensional.ContingentBarcan.model).HoldsAx Classicism.P.NecBarcan.schemaIn
+
+/-- `symmetric-old-new-individuals`: ND holds. -/
+def Models.symmetric_old_new_individuals.distinctness_necessary_r : Prop :=
+  (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.OldNew.base)).IsModel ∧ (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.OldNew.base)).HoldsAx Classicism.P.NecessityOfDistinctness.schemaIn
+
+/-- `symmetric-old-new-individuals`: Boolean Completeness holds. -/
+def Models.symmetric_old_new_individuals.boolean_completeness_r : Prop :=
+  (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.OldNew.base)).IsModel ∧ (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.OldNew.base)).HoldsAx Classicism.P.BooleanCompleteness.schemaIn
+
+/-- `symmetric-old-new-individuals`: □Boolean Completeness fails. -/
+def Models.symmetric_old_new_individuals.necessary_boolean_completeness_r : Prop :=
+  (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.OldNew.base)).IsModel ∧ ¬ (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.OldNew.base)).HoldsAx Classicism.P.NecBooleanCompleteness.schemaIn
 
 /-- `symmetric-two-object-unpinned`: □Boolean Completeness holds. -/
 def Models.symmetric_two_object_unpinned.necessary_boolean_completeness_r : Prop :=
@@ -895,6 +908,10 @@ def Models.symmetric_infinite_classes.independence_signature_r : Prop :=
 /-- `symmetric-infinite-classes`: No Contingency (signature Σ) holds. -/
 def Models.symmetric_infinite_classes.no_contingency_signature_r : Prop :=
   (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.SymIdeal.Base.toSym Classicism.Meta.Intensional.SymIdeal.infClasses)) (Classicism.Meta.Intensional.SymBase.model_isModel (Classicism.Meta.Intensional.SymIdeal.Base.toSym Classicism.Meta.Intensional.SymIdeal.infClasses))).Admitted ∧ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.SymIdeal.Base.toSym Classicism.Meta.Intensional.SymIdeal.infClasses)) (Classicism.Meta.Intensional.SymBase.model_isModel (Classicism.Meta.Intensional.SymIdeal.Base.toSym Classicism.Meta.Intensional.SymIdeal.infClasses))).IsModel ∧ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.SymIdeal.Base.toSym Classicism.Meta.Intensional.SymIdeal.infClasses)) (Classicism.Meta.Intensional.SymBase.model_isModel (Classicism.Meta.Intensional.SymIdeal.Base.toSym Classicism.Meta.Intensional.SymIdeal.infClasses))).HoldsAx (Classicism.Meta.AxiomSet.noContingency _)
+
+/-- `symmetric-old-new-individuals`: Independence (signature Σ) fails. -/
+def Models.symmetric_old_new_individuals.independence_signature_r : Prop :=
+  (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.OldNew.base)) (Classicism.Meta.Intensional.SymBase.model_isModel (Classicism.Meta.Intensional.OldNew.base))).Admitted ∧ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.OldNew.base)) (Classicism.Meta.Intensional.SymBase.model_isModel (Classicism.Meta.Intensional.OldNew.base))).IsModel ∧ ¬ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.OldNew.base)) (Classicism.Meta.Intensional.SymBase.model_isModel (Classicism.Meta.Intensional.OldNew.base))).HoldsAx (Classicism.Meta.AxiomSet.independence _)
 
 /-- `symmetric-qualitative-contrast`: Axiom of Infinity (type e) holds. -/
 def Models.symmetric_qualitative_contrast.axiom_of_infinity_e : Prop :=

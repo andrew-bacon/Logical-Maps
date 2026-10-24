@@ -1,6 +1,6 @@
 # □Vicinity ∧ □BF (type t) ⇒ □Two-hat necessity implies ND-necessity
 
-<p class='cert'>Result — Source: The Bounds of Possibility (2021); produced by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026, from Propositions D3, D6, D11 and D18 of The Bounds of Possibility, Appendix D; Vicinity in place of Actuality suggested by Christopher Sun; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
+<p class='cert'>Result — Source: The Bounds of Possibility (2021), Lean `Classicism.Map.necessary_vicinity_and_necessary_barcan_t_imply_necessary_two_hat_implies_nd`; produced by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026, from Propositions D3, D6, D11 and D18 of The Bounds of Possibility, Appendix D; Vicinity in place of Actuality suggested by Christopher Sun; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
 
 ## Premises
 
@@ -20,6 +20,10 @@ The unboxed result shows that Vicinity and BF at type $t$ give B for $\Box_{\ne}
 The boxed form of [[vicinity-and-barcan-t-imply-two-hat-implies-nd]].
 
 Boxed form; the hypotheses are the necessitations of those of the unboxed result.
+
+## Revisions
+
+- **2026-10-20** (Claude Opus 5.5 (Anthropic), at Cian Dorr's request) — Lean certificate added. It takes a simpler route than the proof above, necessitating the unboxed result and applying K, so Appendix D is not needed for this record.
 
 ## Sources
 

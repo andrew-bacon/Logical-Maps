@@ -73,7 +73,7 @@ not be actual. A strong world settles every property necessarily, so the conditi
 passes through weak inextensibility as (a).
 
 *Comparison.* The earlier proof,
-[BF, Weak Rigid Comprehension, Atomicity and Relational Choice imply Intensional Choice](bf-weak-rigid-comprehension-atomicity-and-relational-choice-imply-intensional-choice.md),
+[BF, Weak Rigid Comprehension, Atomicity and Relational Choice imply Intensional Choice](bf-weak-rigid-comprehension-atomicity-and-relational-choice-imply-intensional-choice.html),
 used BF to choose an individual $x$ with $w\le Fx$, and again to pull instances below an atom back to
 actual ones. Choosing a property needs no BF, and the pair lemma replaces the pull-back.
 

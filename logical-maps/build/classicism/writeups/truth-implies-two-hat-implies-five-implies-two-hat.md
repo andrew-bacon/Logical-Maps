@@ -1,6 +1,6 @@
 # Truth implies two-hat necessity ⇒ 5-necessity implies two-hat necessity
 
-<p class='cert'>Result — Source: Misc.; produced by Claude Fable 5.1 (Anthropic), 14 October 2026, at Cian Dorr's direction; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.truth_implies_two_hat_implies_five_implies_two_hat`; produced by Claude Fable 5.1 (Anthropic), 14 October 2026, at Cian Dorr's direction; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
 
 ## Premises
 

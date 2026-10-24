@@ -281,31 +281,87 @@ the proposition $G_O$ lacks $X$.
 and its only nonzero part is itself. Along $\iota$ it becomes $G_O\cup K$,
 which $G_O$ neither contains nor excludes. So it is not a strong world.
 
-## Boolean Completeness fails at $e\to t$
+## Boolean Completeness holds at $E$ and fails at $O$
 
-For $n\in\mathbb N$, let $\eta_n:=\{\langle k(n),k\rangle\}$ be the haecceity
-of $n$. Suppose $L$, pinned down by $N$, were the least upper bound of the
-$\eta_n$ for even $n$.
+*Corrected 24 October 2026.* This section previously argued that Boolean
+Completeness fails at $E$ at $e\to t$, using the haecceities of the even
+numbers. That family is not a property in the model: a property pinned down by
+a finite $N$ has an extension invariant under the symmetries fixing $N$, and
+the set of even numbers is not. Boolean Completeness holds at $E$ at every
+type, and fails at $O$. The corrected arguments are by GPT-6 Astra (OpenAI),
+prompted by Daniel Kodsi, 22 October 2026, checked and written out by Claude
+Opus 5.5 (Anthropic), prompted by Cian Dorr.
 
-Take an odd $m\notin N$ and an even $n\notin N$, and a permutation $g$ that
-fixes $N$ pointwise and sends $m$ to $n$. We have $\langle n,1_E\rangle\in L$.
-By symmetry, $\langle m,g^{-1}\rangle\in L$, and by pinning,
-$\langle m,1_E\rangle\in L$.
+Write $\iota:E\to O$ for the inclusion into the old individuals, and for a
+finite $S\subseteq\mathbb N$ let $\mathrm{Fix}_E(S)$ be the permutations of
+$\mathbb N$ fixing $S$ pointwise, and $\mathrm{Fix}_O(\iota S)$ the members of
+$G_O$ fixing $\iota S$ pointwise. Each permutation acts on the tuple domains by
+transport.
 
-But $\{\langle x,k\rangle : x\ne k(m)\}$ is an upper bound of the $\eta_n$ for
-even $n$, pinned down by $\{m\}$, and it omits $\langle m,1_E\rangle$. This
-contradicts the leastness of $L$.
+**Entities at $E$ are pairs.** Fix a relational type $\tau$. An entity $F$ of
+type $\tau$ at $E$, pinned down by $S$, is determined by
 
-So Boolean Completeness fails at $e\to t$ (base individuals). It still holds
-at $t$, where the algebras are finite.
+$$
+A_F:=F_{1_E},\qquad B_F:=F_\iota ,
+$$
+
+with $A_F$ invariant under $\mathrm{Fix}_E(S)$ and $B_F$ under
+$\mathrm{Fix}_O(\iota S)$. For an arrow $h:E\to E$, extend $h|_S$ to a
+permutation $g$; then $F_h=F_g=gA_F$. For $h:E\to O$, whose range is old,
+extend the partial injection $\iota s\mapsto h(s)$ to some $\gamma\in G_O$; then
+$F_h=F_{\gamma\iota}=\gamma B_F$. Conversely, any pair $(A,B)$ invariant under
+$\mathrm{Fix}_E(S)$ and $\mathrm{Fix}_O(\iota S)$ for some finite $S$ defines, by
+these formulas, a symmetric intension pinned down by $S$, so an entity at $E$.
+Using one extending symmetry for two entities at once,
+
+$$
+F\le G\iff A_F\subseteq A_G\ \text{and}\ B_F\subseteq B_G .
+$$
+
+**Joins at $E$.** Let $X$ be a property of type $\tau t$ at $E$, pinned down
+by $N$, and put
+
+$$
+A^*:=\bigcup\{A_F:X_{1_E}(F)\},\qquad B^*:=\bigcup\{B_F:X_{1_E}(F)\}.
+$$
+
+A symmetry $g\in\mathrm{Fix}_E(N)$ sends $(A_F,B_F)$ to $(gA_F,\hat gB_F)$, where
+$\hat g$ acts as $g$ on old individuals and trivially on new ones, and it
+permutes the instances of $X$. So $A^*$ is invariant under $\mathrm{Fix}_E(N)$,
+and $B^*$ under the old-coordinate symmetries fixing $\iota N$. Each $B_F$ is
+pinned down by old points, so it is invariant under all permutations of the new
+individuals, and so is $B^*$. These two kinds of permutation generate
+$\mathrm{Fix}_O(\iota N)$. So $(A^*,B^*)$ is an entity $J$, and by the order
+criterion $J$ is the least upper bound of the instances of $X$. So Boolean
+Completeness holds at $E$, at every relational type.
+
+**Failure at $O$.** Let $D$ be the property of individuals that holds of every
+individual at arrows into $E$ and of the old individuals at arrows into $O$; it
+is symmetric and pinned down by $\emptyset$. At $1_O$ the property
+
+$$
+X:=\lambda F^{et}\, .\,\exists x\, .\,Dx\land F=\lambda y\, .\,y=x
+$$
+
+has as instances the haecceities $\eta_a$ of the old individuals $a$. Suppose
+$L$, pinned down by a finite $S$, were their least upper bound. Take an old
+$n\notin S$, a new $m\notin S$, and an injection $h:O\to E$. Some injection
+$h':O\to E$ agrees with $h$ on $S$ and has $h'(n)=h(m)$. As $\eta_n\le L$,
+$L_{h'}$ contains $h'(n)=h(m)$, and by pinning so does $L_h$. But
+$\lambda y\, .\,y\ne m$ is an upper bound of every $\eta_a$ with $a$ old, and its
+extension at $h$ omits $h(m)$. This contradicts the leastness of $L$. So
+Boolean Completeness fails at $O$ at $e\to t$, and as $O$ is reachable from $E$,
+□Boolean Completeness fails.
+
+With ND, this model shows that ND and Boolean Completeness together do not imply
+Inextensible Comprehension, Rigid Comprehension or Tame Rigidity.
 
 ## Countable Boolean Completeness holds at $E$
 
 Added by Claude Opus 5.5 (Anthropic) on 16 October 2026, at Cian Dorr's
-direction. Although Boolean Completeness fails at $E$, its countable
-restriction holds there, for countability relative to every type $\sigma$.
-The family of haecceities above is infinite but not countable in the model:
-no injection of it into the numerals is in the domain.
+direction. It holds there for countability relative to every type $\sigma$.
+(This section was written when Boolean Completeness was believed to fail at
+$E$; since it holds, the argument is now needed only at $O$, below.)
 
 Write $k\cdot x$ for the transport of an entity $x$ along an arrow $k$, so
 that $\langle\bar a,h\rangle\in k\cdot x$ iff $\langle\bar a,h\circ k\rangle\in
@@ -387,8 +443,8 @@ as well, and every closed instance is necessary at $1_E$.
 ## With one individual: □BC and □Rigid Comprehension
 
 In the variant with a single individual, the failures of Inextensible
-Comprehension and of Boolean Completeness above disappear. Both used
-individuals: the parameter $0'$, and haecceities of infinitely many numbers.
+Comprehension and of Boolean Completeness at $O$ above disappear. Both used
+individuals: the parameter $0'$, and haecceities of infinitely many old individuals.
 
 Call the following four classes of arrows the *kinds*:
 

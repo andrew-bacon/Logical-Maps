@@ -1,0 +1,19 @@
+import Classicism.Results.Research.RigidityClosureResearchNullaryCertificates
+import Classicism.Results.Research.RigidityClosureResearchBounded
+import Classicism.Certified.Schemas
+
+#classicism_audit Classicism.Results.Research.RigidityClosureResearchBounded
+#classicism_types_audit Classicism.Results.Research.RigidityClosureResearchBounded
+#classicism_schema Classicism.Research.RigidityClosure.BoundedTamePropagation
+#classicism_certify Classicism.Research.RigidityClosure.weak_power_bounded_propagation
+  Classicism.Research.RigidityClosure.tame_power_bounded_implies_weak_power
+  Classicism.Research.RigidityClosure.nd_bounded_propagation
+  Classicism.Research.RigidityClosure.nd_tame_power_implies_weak_power
+  Classicism.Proofs.weakly_rigid_power_implies_tame_rigidity
+  Classicism.Proofs.weakly_rigid_power_implies_rigid_power
+#classicism_entails Classicism.Research.RigidityClosure.weak_power_bounded_propagation
+  Classicism.Research.RigidityClosure.tame_power_bounded_implies_weak_power
+  Classicism.Proofs.weakly_rigid_power_implies_tame_rigidity
+  Classicism.Proofs.weakly_rigid_power_implies_rigid_power
+#check Classicism.Research.RigidityClosure.nd_tame_power_implies_weak_power.listRule
+#print axioms Classicism.Research.RigidityClosure.nd_tame_power_implies_weak_power.listRule

@@ -1,6 +1,6 @@
 # Strong Leibniz Biconditionals (type t) ⇒ Two-hat necessity implies ND-necessity
 
-<p class='cert'>Result — Source: Misc.; produced by Cian Dorr, 14 October 2026; checked step by step by Claude Fable 5.1 (Anthropic) the same day; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.strong_leibniz_t_implies_two_hat_implies_nd`; produced by Cian Dorr, 14 October 2026; checked step by step by Claude Fable 5.1 (Anthropic) the same day; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
 
 ## Premises
 

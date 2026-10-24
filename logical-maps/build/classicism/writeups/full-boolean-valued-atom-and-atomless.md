@@ -10,9 +10,10 @@ $$
 The underlying construction is Andrew Bacon's, *Could the truths of
 mathematics have been different?*, draft of 9 October 2025, online appendix
 §B.2, pp. 7–9 (PDF pp. 41–43). This record specializes the individual domain
-to a singleton and allows any nontrivial complete atomless component. Bacon
-uses an infinite individual domain and a particular regular-open algebra
-for his continuum-hypothesis argument; those features are not needed here.
+to a singleton. Bacon works in ZFC + CH with the algebra adding $\aleph_2$
+Cohen reals, so that CH is contingent. The record keeps his algebra when CH
+holds and uses its dual when CH fails, so CH is contingent in ZFC alone
+(Section 8).
 
 The choice and atomicity verifications below were written out by OpenAI
 Codex (GPT-6), 27 September 2026. The comparison with the recorded
@@ -20,8 +21,19 @@ Plenitude countermodel is in Section 7.
 
 ## 1. Interpretation and designated truth
 
-Work in ZFC. Let $A$ be a nontrivial complete atomless Boolean algebra, for
-example the regular-open algebra of the real line. Put
+Work in ZFC. Let $A$ be a nontrivial complete atomless Boolean algebra.
+Sections 1–7 hold for every such $A$. The record fixes it by cases on the
+continuum hypothesis in $V$:
+
+$$
+A:=\begin{cases}\operatorname{RO}(\operatorname{Add}(\omega,\omega_2))&\text{if CH holds},\\
+\operatorname{RO}(\operatorname{Col}(\omega_1,2^{\aleph_0})\times\operatorname{Add}(\omega,1))&\text{if CH fails.}\end{cases}
+$$
+
+In both cases forcing with $A$ adds a Cohen real, which the failures of
+□Boolean Completeness (type $t$), □Countable Boolean Completeness and
+Analytic Necessitism use (until 24 October 2026 $A$ was the regular open
+algebra of the real line, a single Cohen real). Put
 
 $$
 B=\mathbf{2}\times A,\qquad a=(1,0_A),\qquad b=(0,1_A).
@@ -257,7 +269,7 @@ existential truth does have a witness.
 
 ## 7. Comparison with the recorded Plenitude countermodel
 
-The [qualitative-contrast model](symmetric-qualitative-contrast.md), the
+The [qualitative-contrast model](symmetric-qualitative-contrast.html), the
 final construction of *Classicism*, Appendix D, p. 79, already refutes
 C5 plus Plenitude implying Atomicity. It also satisfies Boolean
 Completeness and Rigid Comprehension.
@@ -277,7 +289,45 @@ extensional fullness is available. Bacon's Boolean-valued construction
 provides that fullness at the designated atom, so the present model gives
 the corresponding counterexample with Functional Choice.
 
-## 8. Check and attribution
+## 8. The continuum hypothesis is contingent
+
+Added 24 October 2026 by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr,
+who chose the algebra by cases on CH; the argument is Bacon's (§B.2,
+Lemmas B.1–B.4).
+
+Write $\pi,\rho$ for the coordinate projections of $B=\mathbf 2\times A$.
+For a sentence without $\Box$:
+
+- its $\pi$-coordinate is its truth in the full standard model over the same
+  domains, by extensional fullness at the atom (Bacon, after Lemma B.3);
+- its $\rho$-coordinate is its value in $V^A$, with each domain read as a
+  ground set and relations on it ranging over all names for subsets of it.
+
+A real number structure exists on a subset of $D_t=B$ in $V$, since
+$|B|\ge2^{\aleph_0}$, and in $V^A$, since $|B|\ge(2^{\aleph_0})^{V^A}$. In the
+first case $|B|=\aleph_2^{\aleph_0}=\aleph_2$ by CH, which is the continuum
+of $V^A$, the forcing being ccc; in the second the collapse makes
+$2^{\aleph_0}$ of $V$ the $\aleph_1$ of $V^A$, and $V^A$ satisfies CH, since
+adding one Cohen real after the collapse preserves it. Real number structures
+are unique up to isomorphism, so with
+$\varphi_{\mathrm{CH}}:=\forall\mathfrak R\, .\,\operatorname{Real}_t(\mathfrak R)\to\operatorname{CH}(\mathfrak R)$
+and $\varphi_{\neg\mathrm{CH}}$ likewise,
+
+$$
+[\![\varphi_{\mathrm{CH}}]\!]=\bigl([\mathrm{CH}]^V,\ [\![\mathrm{CH}]\!]^{V^A}\bigr),\qquad
+[\![\varphi_{\neg\mathrm{CH}}]\!]=\bigl([\neg\mathrm{CH}]^V,\ [\![\neg\mathrm{CH}]\!]^{V^A}\bigr).
+$$
+
+CH takes opposite values in $V$ and $V^A$, so each of these is $(1,0_A)$ or
+$(0,1_A)$, and neither is $\top$. Since $\Box p$ is $p=\top$, both disjuncts
+of Non-contingency of CH at type $t$ are $\bot$, and the principle fails. So
+does the Necessity of Second-Order Analysis, which implies it.
+
+The Necessity of Analysis is not settled this way: whether first-order
+analytical truths can differ between $V$ and $V^A$ is not decided by ZFC (they
+can if $V=L$; they cannot under projective absoluteness).
+
+## 9. Check and attribution
 
 Run from `logical-maps/`:
 
@@ -302,6 +352,6 @@ verification is recorded.
 
 ## Paper references
 
-- **Proof: [Could the truths of mathematics have been different?](https://andrew-bacon.github.io/papers/Could%20mathematics%20have%20been%20different.pdf).** Bacon, Andrew (2025). Could the truths of mathematics have been different? Draft dated 9 October 2025, with online appendix; published in Philosophical Review 135(3), 2026, pp. 221–285, as cited by Barton and Goodsell. Locators refer to the draft. The full Boolean-valued construction is in appendix §B.2, pp. 7–9 of the separately paginated appendix (PDF pp. 41–43); Theorem 4.4 and its proof (Appendix C.1) and Lemma C.6 (Appendix C.2) were read directly on 19 October 2026. — Online appendix §B.2, pp. 7–9 (PDF pp. 41–43). Source of the full Boolean-valued construction with a designated atom and an atomless component. This record uses a singleton individual domain and an arbitrary complete atomless algebra; it does not import the source’s continuum-hypothesis claims. The explicit Functional Choice and boxed-choice calculations are supplied in the write-up.
+- **Proof: [Could the truths of mathematics have been different?](https://andrew-bacon.github.io/papers/Could%20mathematics%20have%20been%20different.pdf).** Bacon, Andrew (2025). Could the truths of mathematics have been different? Draft dated 9 October 2025, with online appendix; published in Philosophical Review 135(3), 2026, pp. 221–285, as cited by Barton and Goodsell. Locators refer to the draft. The full Boolean-valued construction is in appendix §B.2, pp. 7–9 of the separately paginated appendix (PDF pp. 41–43); Theorem 4.4 and its proof (Appendix C.1) and Lemma C.6 (Appendix C.2) were read directly on 19 October 2026. — Online appendix §B.2, pp. 7–9 (PDF pp. 41–43). Source of the full Boolean-valued construction with a designated atom and an atomless component. This record uses a singleton individual domain, and Bacon's algebra when CH holds and its evident dual when CH fails, so that CH is contingent without assuming CH. The explicit Functional Choice and boxed-choice calculations are supplied in the write-up.
 - **Background: Classicism.** Bacon, Andrew, and Cian Dorr (2024). Classicism. In Peter Fritz and Nicholas K. Jones (eds), Higher-Order Metaphysics, Oxford University Press, pp. 109–190. The map was built from the draft dated 16 May 2023, 87 pages, which does not differ materially from the published version; all page, proposition and footnote locators in this map refer to that draft's numbering. — §§1.1–1.3 and §§2.1–2.3. Definitions of C and the principles, including Functional Choice as Plenitude plus Relational Choice.
 - **Related: Classicism.** Bacon, Andrew, and Cian Dorr (2024). Classicism. In Peter Fritz and Nicholas K. Jones (eds), Higher-Order Metaphysics, Oxford University Press, pp. 109–190. The map was built from the draft dated 16 May 2023, 87 pages, which does not differ materially from the published version; all page, proposition and footnote locators in this map refer to that draft's numbering. — Appendix D, p. 79, final construction (two copies of N). The recorded qualitative-contrast model satisfies C5 and Plenitude but fails Atomicity. Its additional symmetry condition prevents extensional fullness at the evaluation object and forces both choice principles to fail.

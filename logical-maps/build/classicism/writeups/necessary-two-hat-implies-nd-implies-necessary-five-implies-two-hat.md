@@ -1,6 +1,6 @@
 # □Two-hat necessity implies ND-necessity ⇒ □5-necessity implies two-hat necessity
 
-<p class='cert'>Result — Source: The Bounds of Possibility (2021); produced by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026, combining Propositions D3, D6, D11 and D14 and fact (A5) of The Bounds of Possibility, Appendix D; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
+<p class='cert'>Result — Source: The Bounds of Possibility (2021), Lean `Classicism.Map.necessary_two_hat_implies_nd_implies_necessary_five_implies_two_hat`; produced by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026, combining Propositions D3, D6, D11 and D14 and fact (A5) of The Bounds of Possibility, Appendix D; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
 
 ## Premises
 
@@ -17,6 +17,10 @@ Write $X:=\Box_{\ne}$, which is necessarily N, K and J (Proposition D14 of The B
 ## Notes
 
 Collapse propagates upward: once an operator in the hat tower equals its own hat, everything above it up to $\Box_5$ is identical. The same argument shows that the boxed principle is equivalent to each of: $\Box_{\ne}$ is necessarily B; $\Box_{\ne}$ necessarily satisfies BF at type $t$; $\Box_{\ne}=\Box_5$.
+
+## Revisions
+
+- **2026-10-20** (Claude Opus 5.5 (Anthropic), at Cian Dorr's request) — Lean certificate added, by a shorter route than the proof above. Under the premise, Proposition D11 makes ND-necessity necessarily B, so it is an S5 operator in the map's sense and the map's 5-necessity is below it; Propositions D3 and D6 and fact (A5) are not needed.
 
 ## Sources
 

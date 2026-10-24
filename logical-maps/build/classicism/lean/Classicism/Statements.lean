@@ -689,6 +689,15 @@ def atomicity_and_rigid_comprehension_imply_rigid_power : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidComprehension.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidPower.schemaIn
 
+/-- `atomicity-and-rigid-comprehension-imply-weakly-rigid-power`
+
+Atomicity ∧ Rigid Comprehension ⇒ Weakly Rigid Power -/
+def atomicity_and_rigid_comprehension_imply_weakly_rigid_power : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Atomicity.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidComprehension.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeaklyRigidPower.schemaIn
+
 /-- `atomicity-r-implies-atomicity-t`
 
 Atomicity ⇒ Atomicity (type t) -/
@@ -1168,6 +1177,15 @@ def distinctness_necessary_r_implies_distinctness_necessary_t : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessityOfDistinctness.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessityOfDistinctnessT.schemaIn
 
+/-- `distinctness-necessary-t-and-inextensible-comprehension-imply-weakly-rigid-power`
+
+ND (type t) ∧ Inextensible Comprehension ⇒ Weakly Rigid Power -/
+def distinctness_necessary_t_and_inextensible_comprehension_imply_weakly_rigid_power : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessityOfDistinctnessT.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.InextensibleComprehension.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeaklyRigidPower.schemaIn
+
 /-- `distinctness-necessary-t-implies-modal-five`
 
 ND (type t) ⇒ 5 -/
@@ -1495,6 +1513,24 @@ def maximalism_incompatible_with_modalized_relational_choice : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.distinctnessC) →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalizedRelationalChoice.schemaIn →
+    ¬ Classicism.Meta.AxiomSet.Consistent Ax
+
+/-- `maximalism-signature-incompatible-with-strong-possibility-pure`
+
+Maximalism (signature Σ) ∧ Strong Possibility (pure) ⇒ ⊥ -/
+def maximalism_signature_incompatible_with_strong_possibility_pure : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.distinctnessC _) →
+    Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.strongPossibility) →
+    ¬ Classicism.Meta.AxiomSet.Consistent Ax
+
+/-- `maximalist-distinctness-incompatible-with-atomicity-t`
+
+Maximalism (pure) ∧ Atomicity (type t) ⇒ ⊥ -/
+def maximalist_distinctness_incompatible_with_atomicity_t : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.distinctnessC) →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AtomicityT.schemaIn →
     ¬ Classicism.Meta.AxiomSet.Consistent Ax
 
 /-- `maximalist-distinctness-incompatible-with-nd`
@@ -3669,6 +3705,15 @@ def pure_possibility_implies_axiom_of_infinity_t : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.distinctnessC) →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AxiomOfInfinityT.schemaIn
 
+/-- `relational-choice-and-boolean-completeness-imply-actuality`
+
+Relational Choice ∧ Boolean Completeness ⇒ Actuality -/
+def relational_choice_and_boolean_completeness_imply_actuality : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RelationalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BooleanCompleteness.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Actuality.schemaIn
+
 /-- `relational-choice-and-boolean-completeness-imply-transversal-choice`  (conjectured)
 
 Relational Choice ∧ Boolean Completeness ⇒ Transversal Choice -/
@@ -3861,6 +3906,24 @@ def strong_actuality_implies_actuality : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongActuality.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Actuality.schemaIn
+
+/-- `strong-leibniz-and-rigid-comprehension-imply-necessary-rigid-comprehension`
+
+Strong Leibniz Biconditionals ∧ Rigid Comprehension ⇒ □Rigid Comprehension -/
+def strong_leibniz_and_rigid_comprehension_imply_necessary_rigid_comprehension : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongLeibniz.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidComprehension.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRigidComprehension.schemaIn
+
+/-- `strong-leibniz-and-rigid-comprehension-imply-necessary-strong-leibniz`
+
+Strong Leibniz Biconditionals ∧ Rigid Comprehension ⇒ □Strong Leibniz Biconditionals -/
+def strong_leibniz_and_rigid_comprehension_imply_necessary_strong_leibniz : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongLeibniz.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidComprehension.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecStrongLeibniz.schemaIn
 
 /-- `strong-leibniz-necessary-rigid-comprehension-and-rigid-power-imply-bf-relational`
 

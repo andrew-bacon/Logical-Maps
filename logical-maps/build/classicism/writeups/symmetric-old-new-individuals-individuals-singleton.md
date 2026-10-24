@@ -8,6 +8,7 @@
 - **ND.** Distinct things of any type are necessarily distinct.
 - **□Atomicity.** Necessarily, every non-bottom entity of each relational type has an atom below it.
 - **□Boolean Completeness (type t).** Necessarily, every property of propositions has a greatest lower bound.
+- **Boolean Completeness.** Every property of entities of a relational type has a greatest lower bound in that type.
 - **□Boolean Completeness.** Necessarily, every property of entities of a relational type has a greatest lower bound in that type.
 - **□Rigid Comprehension.** Necessarily, every relation, including a proposition, is coextensive with a rigid one.
 - **□Rigid Power.** Necessarily, if a relation is rigid, so is the property of being a rigid relation that entails it.
@@ -69,6 +70,12 @@ The propositions at $E$ are four and those at $O$ eight, finite Boolean algebras
 
 *By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-06.*
 
+### Holds Boolean Completeness.
+
+At $E$, every relational type. An entity $F$ pinned down by a finite $S$ is determined by the pair $(F_{1_E},F_\iota)$, $\iota$ the inclusion into the old individuals, invariant under the symmetries fixing $S$ and $\iota S$; every such pair is an entity, and the order is componentwise inclusion. For a property pinned down by $N$, the componentwise unions of its instances are invariant under the symmetries fixing $N$, and the second under all permutations of the new individuals, so they form an entity, the least upper bound.
+
+*Write-up: [symmetric-old-new-individuals](symmetric-old-new-individuals.html). Address: `symmetric-old-new-individuals-individuals-singleton#boolean-completeness-root`. By GPT-6 Astra (OpenAI), prompted by Daniel Kodsi; checked and recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-24.*
+
 ### Holds □Boolean Completeness, □Rigid Comprehension.
 
 With one individual every entity is fixed by every symmetry, and is a union of finitely many classes, one for each kind of arrow (to $E$, from $E$ to $O$, in $G_O$, in $K$) and tuple of arguments; by induction on types, so every domain is finite and complete. Transport along an arrow then depends only on its kind, and the kind of a composite on the kinds of its factors, so the intension whose extension at $h$ is $X$'s extension at the identity transported along $h$ is a union of classes, in the domain; it is persistent and inextensible, at both objects.
@@ -95,6 +102,8 @@ At $E$ the four propositions are determined by the target, and the strong world 
 At $E$, for every $\sigma$. If $R$ injects $X$ into the numerals at $\sigma$, with $N$ a finite set pinning both, then each instance of $X$ is fixed by every symmetry fixing $N$ pointwise: the symmetry carries the pair of the instance and its numeral to another such pair, and the numeral is fixed. An entity pinned down by $M$ and fixed by those symmetries is pinned down by $M\cap N$. So the instances of $X$ are all pinned down by $N$, and their union is in the domain and is the least upper bound. The haecceities of the even numbers, which have none, are not countable in the model. See the write-up.
 
 *Write-up: [symmetric-old-new-individuals](symmetric-old-new-individuals.html). By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-16.*
+
+*Revised 2026-10-24 by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr:* The remark about the haecceities of the even numbers is moot. They are not a property in the model at all, and Boolean Completeness holds at $E$ (boolean-completeness-root).
 
 ### Holds □Countable Boolean Completeness.
 
@@ -140,6 +149,7 @@ Found by Claude Fable 5.1 as a countermodel to a principle from another context,
 - **Fable 5.1, 6 Oct** — Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 6 October 2026, in a session with Cian Dorr, as a countermodel to a principle (“Frex*”) from another context; it satisfies □Strong Actuality and refutes Inextensible Comprehension.
 - **Opus 5.5, 6 Oct** — Claude Opus 5.5 (Anthropic), 6 October 2026, at Cian Dorr's direction; the corrected argument for the failure of Inextensible Comprehension, and the verdicts on ND, Atomicity, Boolean Completeness, BF and the Strong Leibniz Biconditionals; see the write-up.
 - **BC does not imply RC** — Cian Dorr, Boolean Completeness does not imply Rigid Comprehension, draft of 30 July 2026, Definitions 15–18, p. 8; Proposition 20 (symmetric ideally-full models are models of C).
+- **Astra (Kodsi) 22 Oct** — GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, Old/new model, Boolean Completeness and the rigidity separation, research note of 22 October 2026 (unpaginated), in Daniel Kodsi's submission of 24 October 2026 (branch classicism-results-2026-10-24 of github.com/dkodsi/Logical-Maps); the correction of Boolean Completeness.
 
 <p class='cert'>Record: <code>topics/classicism/models/symmetric-old-new-individuals.yaml</code></p>
 

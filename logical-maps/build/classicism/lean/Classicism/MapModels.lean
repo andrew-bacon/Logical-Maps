@@ -2,6 +2,7 @@ import Classicism.ModelStatements
 import Classicism.Results.Consistency.Consistency
 import Classicism.Models.Conditions
 import Classicism.Models.FullActionModels
+import Classicism.Models.OldNewComplete
 import Mathlib.Data.Fintype.Powerset
 import Mathlib.Data.Finite.Sigma
 import Mathlib.Data.Finite.Prod
@@ -211,6 +212,27 @@ theorem necessary_boolean_completeness_r :
       (holdsAx_indexed.2 fun ρ _ => SymBase.holds_box_bc_lub (SymIdeal.two_hasLUBs ρ))
 
 end symmetric_two_object_unpinned
+
+namespace symmetric_old_new_individuals
+
+/-! The old/new model in Lean (`Models/OldNew*.lean`), ported 24 October 2026 from Daniel
+Kodsi's submission; proofs by GPT-6 Astra (OpenAI), prompted by Daniel Kodsi. -/
+
+theorem distinctness_necessary_r :
+    Statements.Models.symmetric_old_new_individuals.distinctness_necessary_r :=
+  verdict_holds OldNew.isModel OldNew.holds_nd_schema
+
+theorem boolean_completeness_r :
+    Statements.Models.symmetric_old_new_individuals.boolean_completeness_r :=
+  verdict_holds OldNew.isModel OldNew.holds_bc_schema
+
+/-- Boolean Completeness fails at `et` at the object `O`, which the evaluation point reaches. -/
+theorem necessary_boolean_completeness_r :
+    Statements.Models.symmetric_old_new_individuals.necessary_boolean_completeness_r :=
+  verdict_fails OldNew.isModel <|
+    not_holdsAx_of ⟨OldNew.et, ⟨trivial, trivial⟩, rfl⟩ OldNew.root_not_box_bc_et
+
+end symmetric_old_new_individuals
 
 namespace finite_support_pair_injections_or_collapses
 

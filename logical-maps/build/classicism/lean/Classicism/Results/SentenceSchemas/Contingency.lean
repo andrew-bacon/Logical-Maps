@@ -150,6 +150,38 @@ theorem npc_fregean_entails_box :
     npc Signature.pure ∪ P.FregeanAxiom.schema ⟹ AxiomSet.box P.FregeanAxiom.schema :=
   npc_union_entails_box_pure P.FregeanAxiom.schema_closedTypes
 
+/-! ### The varieties of necessity (20 October 2026) -/
+
+/-- `no-pure-contingency-and-truth-implies-five-necessity-imply-necessary-truth-implies-five-necessity`. -/
+theorem npc_truthImpliesFive_entails_nec :
+    npc Signature.pure ∪ P.TruthImpliesFiveNecessity.schema ⟹ P.NecTruthImpliesFiveNecessity.schema := by
+  rintro a rfl
+  exact npc_union_entails_box_pure P.TruthImpliesFiveNecessity.schema_closedTypes _ (AxiomSet.mem_box rfl)
+
+/-- `no-pure-contingency-and-truth-implies-two-hat-necessity-imply-necessary-truth-implies-two-hat-necessity`. -/
+theorem npc_truthImpliesTwoHat_entails_nec :
+    npc Signature.pure ∪ P.TruthImpliesTwoHatNecessity.schema ⟹ P.NecTruthImpliesTwoHatNecessity.schema := by
+  rintro a rfl
+  exact npc_union_entails_box_pure P.TruthImpliesTwoHatNecessity.schema_closedTypes _ (AxiomSet.mem_box rfl)
+
+/-- `no-pure-contingency-and-five-implies-two-hat-necessity-imply-necessary-five-implies-two-hat-necessity`. -/
+theorem npc_fiveImpliesTwoHat_entails_nec :
+    npc Signature.pure ∪ P.FiveImpliesTwoHatNecessity.schema ⟹ P.NecFiveImpliesTwoHatNecessity.schema := by
+  rintro a rfl
+  exact npc_union_entails_box_pure P.FiveImpliesTwoHatNecessity.schema_closedTypes _ (AxiomSet.mem_box rfl)
+
+/-- `no-pure-contingency-and-five-implies-nd-necessity-imply-necessary-five-implies-nd-necessity`. -/
+theorem npc_fiveImpliesNd_entails_nec :
+    npc Signature.pure ∪ P.FiveImpliesNdNecessity.schema ⟹ P.NecFiveImpliesNdNecessity.schema := by
+  rintro a rfl
+  exact npc_union_entails_box_pure P.FiveImpliesNdNecessity.schema_closedTypes _ (AxiomSet.mem_box rfl)
+
+/-- `no-pure-contingency-and-two-hat-implies-nd-necessity-imply-necessary-two-hat-implies-nd-necessity`. -/
+theorem npc_twoHatImpliesNd_entails_nec :
+    npc Signature.pure ∪ P.TwoHatImpliesNdNecessity.schema ⟹ P.NecTwoHatImpliesNdNecessity.schema := by
+  rintro a rfl
+  exact npc_union_entails_box_pure P.TwoHatImpliesNdNecessity.schema_closedTypes _ (AxiomSet.mem_box rfl)
+
 /-! ### Restrictions -/
 
 /-- `no-contingency-signature-r-implies-no-pure-contingency-r`. -/

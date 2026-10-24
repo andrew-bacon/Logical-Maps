@@ -1,0 +1,19 @@
+import Classicism.Results.Research.InextensiblePower
+import Classicism.Tools.Check
+import Classicism.Tools.TypeSystem
+import Classicism.Tools.Translate
+import Classicism.Tools.Schema
+import Classicism.Certified.Schemas
+
+#classicism_audit Classicism.Results.Research.InextensiblePower
+#classicism_types_audit Classicism.Results.Research.InextensiblePower
+#classicism_derive Classicism.Research.InextensiblePower.nd_persistent_false
+  Classicism.Research.InextensiblePower.missing_point_sealed
+  Classicism.Research.InextensiblePower.gap_persistent
+  Classicism.Research.InextensiblePower.separated_coextension_eq
+  Classicism.Research.InextensiblePower.separated_coextension_rigid
+  Classicism.Research.InextensiblePower.weaklyRigid_square
+  Classicism.Research.InextensiblePower.weaklyRigid_separated
+#classicism_certify Classicism.Research.InextensiblePower.nd_ic_tame
+#print axioms Classicism.Research.InextensiblePower.separated_coextension_eq.derivable
+#print axioms Classicism.Research.InextensiblePower.nd_ic_tame.rule
