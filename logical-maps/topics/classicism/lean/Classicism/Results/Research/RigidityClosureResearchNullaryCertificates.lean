@@ -1,0 +1,21 @@
+import Classicism.Results.Research.RigidityClosureResearchTupleLawsCertificates
+import Classicism.Results.Research.RigidityClosureResearchNullary
+import Classicism.Certified.Schemas
+
+#classicism_audit Classicism.Results.Research.RigidityClosureResearchNullary
+#classicism_types_audit Classicism.Results.Research.RigidityClosureResearchNullary
+#classicism_derive Classicism.Research.RigidityClosure.weaklyRigid_prop_iff
+  Classicism.Research.RigidityClosure.rigid_prop_iff
+  Classicism.Research.RigidityClosure.nullary_tame
+  Classicism.Research.RigidityClosure.nullary_necessary_tame
+  Classicism.Research.RigidityClosure.nullary_weak_power
+  Classicism.Research.RigidityClosure.nullary_rigid_power
+  Classicism.Research.RigidityClosure.nullary_necessary_weak_power
+  Classicism.Research.RigidityClosure.nullary_necessary_rigid_power
+  Classicism.Research.RigidityClosure.nullary_rigid_rigidity
+  Classicism.Research.RigidityClosure.nullary_weak_rigid_weak_rigidity
+#classicism_derive Classicism.Research.RigidityClosure.nullary_rigid_comprehension
+  Classicism.Research.RigidityClosure.nullary_weak_rigid_comprehension
+  Classicism.Research.RigidityClosure.nullary_necessary_rigid_comprehension
+#print axioms Classicism.Research.RigidityClosure.nullary_weak_power.derivable
+#print axioms Classicism.Research.RigidityClosure.nullary_rigid_power.derivable

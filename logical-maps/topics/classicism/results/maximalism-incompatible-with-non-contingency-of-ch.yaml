@@ -1,0 +1,46 @@
+id: maximalism-incompatible-with-non-contingency-of-ch
+premises:
+- distinctness-schema-r
+- non-contingency-of-ch
+conclusion: false
+status: proved
+certificate:
+  source_id: misc
+  produced_by: GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 23 October 2026 (the result, through a coalesced
+    sum of components disagreeing about CH); the proof recorded here, through full-boolean-valued-atom-and-atomless,
+    by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 24 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 24 October 2026
+  checked_by: []
+  date: '2026-10-24'
+  lean: none
+sources:
+- GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, Maximalism is incompatible with Non-contingency of CH, 23 October
+  2026 (unpaginated), in Daniel Kodsi's submission of 24 October 2026 (branch classicism-results-2026-10-24 of
+  github.com/dkodsi/Logical-Maps).
+- Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 24 October 2026, from the failure of Non-contingency of CH
+  at the evaluation point of full-boolean-valued-atom-and-atomless.
+source_names:
+- Astra (Kodsi) 23 Oct
+- Opus 24 Oct
+proof: >-
+  Let $P$ be the negation of the instance of Non-contingency of CH at type $t$,
+  $\Diamond\neg\forall\mathfrak R\, .\,(\operatorname{Real}_t(\mathfrak R)\to\operatorname{CH}(\mathfrak R))\land
+  \Diamond\neg\forall\mathfrak R\, .\,(\operatorname{Real}_t(\mathfrak R)\to\neg\operatorname{CH}(\mathfrak R))$,
+  a closed pure sentence. $P$ is consistent with C: it is true at the evaluation point of
+  full-boolean-valued-atom-and-atomless, where CH takes opposite values in the two coordinates (the model's
+  argument ch-contingent). So C does not prove $P=\bot$, and Maximalism (pure) gives $P\ne\bot$, that is
+  $\Diamond P$. By 4, $\Diamond\Diamond$ implies $\Diamond$, so both conjuncts of $P$ hold, and the instance
+  of Non-contingency of CH fails.
+references:
+- paper: bacon-dorr-classicism
+  role: background
+  locator: §2.6, p. 41
+  note: Maximalist Classicism and its possibility form.
+- paper: bacon-mathematical-contingency
+  role: background
+  locator: Online appendix §B.2, Lemmas B.1–B.4, pp. 7–9
+  note: The Boolean-valued construction in which CH is contingent.
+notes: >-
+  Maximalism is used at the one sentence $P$, whose consistency is witnessed by a model, as in
+  [[maximalism-incompatible-with-necessity-of-analysis]]. The witnessing model is defined by cases on CH in
+  the ambient set theory, so the argument needs only ZFC.

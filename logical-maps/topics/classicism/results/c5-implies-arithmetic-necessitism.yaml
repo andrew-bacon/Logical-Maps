@@ -1,0 +1,32 @@
+id: c5-implies-arithmetic-necessitism
+premises:
+- necessary-distinctness-necessary-r
+conclusion: arithmetic-necessitism
+status: proved
+certificate:
+  source_id: misc
+  produced_by: GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 23 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 24 October 2026
+  checked_by: []
+  date: '2026-10-24'
+  lean: none
+sources:
+- GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, proof sketch in the record c5-implies-arithmetic-necessitism
+  of 23 October 2026, in Daniel Kodsi's submission of 24 October 2026 (branch classicism-results-2026-10-24 of
+  github.com/dkodsi/Logical-Maps).
+source_names:
+- Astra (Kodsi) 23 Oct
+proof: >-
+  See the write-up. Numberhood is persistent: $\lambda n\, .\,\Box\mathbb Nn$ holds of zero and is closed
+  under successor, so the least inductive property is included in it, a theorem of C that can be
+  necessitated. Under C5, B makes non-numbers necessarily non-numbers, so
+  $\forall n\, .\,\mathbb Nn\to\Box Xn$ gives $\forall n\, .\,\Box(\mathbb Nn\to Xn)$, and BF gives
+  $\mathbb N\le X$, at every world. Necessary distinctness of numbers is ND at their type.
+references:
+- paper: bacon-dorr-classicism
+  role: background
+  locator: Propositions 2.2 and 2.3, p. 22
+  note: ND at $t$ gives B; □ND gives BF.
+notes: >-
+  Settles whether C5 gives Arithmetic Necessitism, left open in the principle's notes. The antecedent
+  $\Box I^*_\sigma$ is not used.

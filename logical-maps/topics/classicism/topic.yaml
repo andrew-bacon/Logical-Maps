@@ -202,6 +202,7 @@ lean:
     - Classicism.Models.SymmetricFull
     - Classicism.Models.SymmetricIdeal
     - Classicism.Models.PairInjCollapse
+    - Classicism.Models.OldNewBase
     holds: ({model}).IsModel ∧ ({model}).HoldsAx {def}
     fails: ({model}).IsModel ∧ ¬ ({model}).HoldsAx {def}
     relative_categories: [signature]

@@ -15,10 +15,14 @@ sources:
   the Strong Leibniz Biconditionals; see the write-up.
 - Cian Dorr, Boolean Completeness does not imply Rigid Comprehension, draft of 30 July 2026, Definitions
   15–18, p. 8; Proposition 20 (symmetric ideally-full models are models of C).
+- GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, Old/new model, Boolean Completeness and the rigidity separation,
+  research note of 22 October 2026 (unpaginated), in Daniel Kodsi's submission of 24 October 2026 (branch
+  classicism-results-2026-10-24 of github.com/dkodsi/Logical-Maps); the correction of Boolean Completeness.
 source_names:
 - Fable 5.1, 6 Oct
 - Opus 5.5, 6 Oct
 - BC does not imply RC
+- Astra (Kodsi) 22 Oct
 references:
 - paper: dorr-bc-not-rc
   role: background
@@ -116,6 +120,38 @@ arguments:
   text: 'The haecceities of the even numbers have no least upper bound: one pinned down by $N$ would,
     by a symmetry fixing $N$, hold at the identity of an odd $m\notin N$, while the property of differing
     from the image of $m$ is an upper bound that does not.'
+  withdrawn:
+    date: '2026-10-24'
+    by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, after GPT-6 Astra (OpenAI), prompted by Daniel Kodsi
+    reason: The haecceities of the even numbers are not a property in the model, since the set of even numbers
+      is invariant under no group of symmetries fixing a finite set; Boolean Completeness holds at $E$ (argument
+      boolean-completeness-root).
+- id: boolean-completeness-root
+  holds:
+  - boolean-completeness-r
+  by: GPT-6 Astra (OpenAI), prompted by Daniel Kodsi; checked and recorded by Claude Opus 5.5 (Anthropic),
+    prompted by Cian Dorr
+  date: '2026-10-24'
+  writeup: symmetric-old-new-individuals
+  text: 'At $E$, every relational type. An entity $F$ pinned down by a finite $S$ is determined by the pair
+    $(F_{1_E},F_\iota)$, $\iota$ the inclusion into the old individuals, invariant under the symmetries fixing
+    $S$ and $\iota S$; every such pair is an entity, and the order is componentwise inclusion. For a property
+    pinned down by $N$, the componentwise unions of its instances are invariant under the symmetries fixing
+    $N$, and the second under all permutations of the new individuals, so they form an entity, the least
+    upper bound.'
+- id: boolean-completeness-fails-at-o
+  fails:
+  - necessary-boolean-completeness-r
+  when:
+    individuals: base
+  by: GPT-6 Astra (OpenAI), prompted by Daniel Kodsi; checked and recorded by Claude Opus 5.5 (Anthropic),
+    prompted by Cian Dorr
+  date: '2026-10-24'
+  writeup: symmetric-old-new-individuals
+  text: 'At $O$, at $e\to t$: the haecceities of the old individuals, a property pinned down by $\emptyset$,
+    have no least upper bound. If $L$, pinned down by $S$, were one, take an old $n\notin S$, a new $m\notin S$
+    and $h:O\to E$, and $h''$ agreeing with $h$ on $S$ with $h''(n)=h(m)$; then $L_h$ contains $h(m)$, which
+    the upper bound $\lambda y\, .\,y\ne m$ omits.'
 - holds:
   - necessary-boolean-completeness-r
   - necessary-rigid-comprehension-r
@@ -205,6 +241,11 @@ arguments:
     So the instances of $X$ are all pinned down by $N$, and their union is in the domain and is the
     least upper bound. The haecceities of the even numbers, which have none, are not countable in
     the model. See the write-up.
+  revisions:
+  - date: '2026-10-24'
+    by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+    note: The remark about the haecceities of the even numbers is moot. They are not a property in the model
+      at all, and Boolean Completeness holds at $E$ (boolean-completeness-root).
 - holds:
   - necessary-countable-boolean-completeness-r
   by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
@@ -217,6 +258,18 @@ arguments:
     that agree on $0'$ are both in $G_O$ or both in $K$, and within each kind the construction of the
     intermediate arrow goes through, with the fresh points chosen of the same sort. So every closed
     instance holds at both objects, hence necessarily. See the write-up.
+lean:
+  param: Classicism.Meta.Intensional.OldNew.base
+  verdicts:
+  - holds: distinctness-necessary-r
+    ref: Classicism.Map.Models.symmetric_old_new_individuals.distinctness_necessary_r
+    status: verified
+  - holds: boolean-completeness-r
+    ref: Classicism.Map.Models.symmetric_old_new_individuals.boolean_completeness_r
+    status: verified
+  - fails: necessary-boolean-completeness-r
+    ref: Classicism.Map.Models.symmetric_old_new_individuals.necessary_boolean_completeness_r
+    status: verified
 notes: Found by Claude Fable 5.1 as a countermodel to a principle from another context, and recorded at
   Cian Dorr's request on 6 October 2026. Like the sections-and-projection model it has □Actuality without
   Inextensible Comprehension; unlike it, it has Atomicity at every type, and so separates Atomicity and

@@ -51,5 +51,10 @@ proof: >-
 notes: >-
   Rigid Comprehension is used at every world, for the rigid coextension of $\mathbb N_\sigma$ there, so the
   premise is its necessitation; the antecedent $\Box I^*_\sigma$ of the principle is their axiom of
-  Infinity. Whether the conclusion holds without Rigid Comprehension, in C5 say, is open; see the
-  principle's notes.
+  Infinity. Without Rigid Comprehension the conclusion holds in C5
+  ([[c5-implies-arithmetic-necessitism]]).
+changes:
+- date: '2026-10-24'
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+  summary: 'Notes updated: C5 gives Arithmetic Necessitism ([[c5-implies-arithmetic-necessitism]]).'
+  minor: true

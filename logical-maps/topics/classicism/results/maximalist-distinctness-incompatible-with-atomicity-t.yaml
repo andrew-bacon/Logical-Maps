@@ -1,0 +1,41 @@
+id: maximalist-distinctness-incompatible-with-atomicity-t
+premises:
+- distinctness-schema-r
+- atomicity-t
+conclusion: false
+status: proved
+certificate:
+  source_id: misc
+  produced_by: GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 22–23 October 2026; coding simplified by
+    Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 24 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 24 October 2026
+  checked_by: []
+  date: '2026-10-24'
+  lean: stated
+sources:
+- 'GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, Pure Maximalism and unboxed Atomicity: the canonical
+  countable-generator proof, research note of 22–23 October 2026, §§1–11 (unpaginated), in Daniel Kodsi''s
+  submission of 24 October 2026 (branch classicism-results-2026-10-24 of github.com/dkodsi/Logical-Maps).'
+- 'T. Jech and S. Shelah, A complete Boolean algebra that has no proper atomless complete subalgebra, Journal
+  of Algebra 182 (1996), pp. 748–755, Theorem, p. 749 (rigidity of the algebra used).'
+source_names:
+- Astra (Kodsi) 22–23 Oct
+- Jech–Shelah 1996
+proof: >-
+  See the write-up. For a closed $F^{tt}$ let
+  $S_F:=\forall p\, .\,p\ne\bot\to(p\land Fp\ne\bot\land p\land\neg Fp\ne\bot)$. Atomicity (type $t$)
+  proves $S_F=\bot$: an atom $w\le S_F$ gives $\Box(w\to(w\land Fw\ne\bot\land w\land\neg Fw\ne\bot))$,
+  so by $\Diamond w$ and the necessity of identity both $w\land Fw\ne\bot$ and $w\land\neg Fw\ne\bot$,
+  contradicting atomhood. In the full Boolean-valued model over the rigid complete algebra
+  $\operatorname{RO}(\mathbb P)$ of Jech and Shelah, higher-order logic interprets third-order arithmetic,
+  in which $\operatorname{RO}(\mathbb P)$ and its cylinders are definable; rigidity makes the definable
+  isomorphism with this copy the identity, so a closed pure $F$ denotes the map sending $p$ to the first
+  cylinder that splits it. Then $S_F$ has value $1$, so $C\nvdash S_F=\bot$, and Maximalism (pure)
+  gives $S_F\ne\bot$.
+references: []
+notes: >-
+  Settles the question whether Maximalism (pure) is consistent with Atomicity (type $t$); it makes
+  [[maximalist-distinctness-incompatible-with-necessary-atomicity-t]] a consequence. Rigidity of the
+  algebra is what makes a splitter pure-definable: an automorphism of the algebra extends to the full
+  model and fixes every closed pure term. The model used also satisfies C5, so the same argument refutes
+  Atomicity (type $t$) with Maximalism relative to C5.

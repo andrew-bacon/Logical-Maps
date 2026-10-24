@@ -7,6 +7,10 @@ import Classicism.Results.SentenceSchemas.PossibilityPlus
 import Classicism.Results.SentenceSchemas.Infinity
 import Classicism.Results.SentenceSchemas.Constants
 import Classicism.Results.SentenceSchemas.ArithmeticMeta
+import Classicism.Certified.Research
+import Classicism.Results.Research.RigidityClosureResearchAtomicPowerCertificates
+import Classicism.Results.Research.ModalPropagationCertificates.StableLeibniz
+import Classicism.Results.Research.ModalPropagationCertificates.BoxedComprehension
 
 /-!
 # The map's results, certified
@@ -1990,5 +1994,48 @@ theorem actuality_and_two_hat_implies_nd_imply_strong_actuality : Statements.act
 theorem necessary_actuality_and_necessary_two_hat_implies_nd_imply_necessary_strong_actuality : Statements.necessary_actuality_and_necessary_two_hat_implies_nd_imply_necessary_strong_actuality := by
   map_cert Proofs.necessary_actuality_and_necessary_two_hat_implies_nd_imply_necessary_strong_actuality.entails
 
+
+/-! ### Ported from Daniel Kodsi's submission (24 October 2026)
+
+Proofs by GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, in `Results/Research/`; certified
+there by the map's own pipeline. -/
+
+/-- `relational-choice-and-boolean-completeness-imply-actuality` -/
+theorem relational_choice_and_boolean_completeness_imply_actuality : Statements.relational_choice_and_boolean_completeness_imply_actuality := by
+  map_cert _root_.Classicism.Research.Choice.choice_completeness_actuality_sharp.entails
+
+/-- `strong-leibniz-and-rigid-comprehension-imply-necessary-strong-leibniz` -/
+theorem strong_leibniz_and_rigid_comprehension_imply_necessary_strong_leibniz : Statements.strong_leibniz_and_rigid_comprehension_imply_necessary_strong_leibniz := by
+  map_cert (AxiomSet.Entails.mono_right (schema_subset_args _)
+    _root_.Classicism.Research.SealedWorldCover.sl_rc_implies_necessary_strong_leibniz.listEntails)
+
+/-- `strong-leibniz-and-rigid-comprehension-imply-necessary-rigid-comprehension` -/
+theorem strong_leibniz_and_rigid_comprehension_imply_necessary_rigid_comprehension : Statements.strong_leibniz_and_rigid_comprehension_imply_necessary_rigid_comprehension := by
+  map_cert (
+    have sl := AxiomSet.Entails.union_left P.StrongLeibniz.schema P.RigidComprehension.schema
+    have rc := AxiomSet.Entails.union_right P.StrongLeibniz.schema P.RigidComprehension.schema
+    have hs := AxiomSet.Entails.union (AxiomSet.Entails.union (AxiomSet.Entails.union
+      (AxiomSet.Entails.union sl sl) sl) sl) sl
+    have hr := AxiomSet.Entails.union (AxiomSet.Entails.union (AxiomSet.Entails.union
+      (AxiomSet.Entails.union hs rc) rc) rc) rc
+    AxiomSet.Entails.mono_right (schema_subset_args _) (AxiomSet.Entails.trans hr
+      _root_.Classicism.Research.ModalPropagationConsequences.sl_rc_necessary_comprehension.listEntails))
+
+/-- `atomicity-and-rigid-comprehension-imply-weakly-rigid-power` -/
+theorem atomicity_and_rigid_comprehension_imply_weakly_rigid_power : Statements.atomicity_and_rigid_comprehension_imply_weakly_rigid_power := by
+  map_cert (AxiomSet.Entails.mono_right (schema_subset_args _)
+    _root_.Classicism.Research.RigidityClosure.atomicity_rc_implies_weak_power.listEntails)
+
+/-- `distinctness-necessary-t-and-inextensible-comprehension-imply-weakly-rigid-power`: the
+certified rule has ND at every type as its premise, recovered from ND at `t` through 5 and B. -/
+theorem distinctness_necessary_t_and_inextensible_comprehension_imply_weakly_rigid_power : Statements.distinctness_necessary_t_and_inextensible_comprehension_imply_weakly_rigid_power := by
+  map_cert (
+    have ndt := AxiomSet.Entails.union_left P.NecessityOfDistinctnessT.schema P.InextensibleComprehension.schema
+    have ic := AxiomSet.Entails.union_right P.NecessityOfDistinctnessT.schema P.InextensibleComprehension.schema
+    have nd := AxiomSet.Entails.trans ndt (AxiomSet.Entails.trans
+      Proofs.distinctness_necessary_t_implies_modal_five.entails (AxiomSet.Entails.trans
+        Proofs.modal_five_implies_modal_b.entails Proofs.modal_b_implies_distinctness_necessary_r.entails))
+    AxiomSet.Entails.mono_right (schema_subset_args _) (AxiomSet.Entails.trans (AxiomSet.Entails.union nd ic)
+      _root_.Classicism.Research.InextensiblePower.nd_ic_weaklyRigidPower.listEntails))
 
 end Classicism.Map

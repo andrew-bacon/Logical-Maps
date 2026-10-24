@@ -1,0 +1,5 @@
+import Classicism.Results.Research.ModalPropagationCertificates.StableLeibniz
+import Classicism.Certified.Schemas
+
+#classicism_certify Classicism.Research.ModalPropagationConsequences.sl_rc_necessary_barcan_relational
+#classicism_entails Classicism.Research.ModalPropagationConsequences.sl_rc_necessary_barcan_relational

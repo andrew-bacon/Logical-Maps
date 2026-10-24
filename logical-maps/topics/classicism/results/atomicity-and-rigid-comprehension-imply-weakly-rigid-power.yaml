@@ -1,0 +1,37 @@
+id: atomicity-and-rigid-comprehension-imply-weakly-rigid-power
+premises:
+- atomicity-r
+- rigid-comprehension-r
+conclusion: weakly-rigid-power-r
+status: proved
+certificate:
+  source_id: misc
+  produced_by: GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 22 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 24 October 2026
+  checked_by: []
+  date: '2026-10-24'
+  lean: verified
+  lean_ref: Classicism.Map.atomicity_and_rigid_comprehension_imply_weakly_rigid_power
+sources:
+- GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, Modal principles in Maximalist Classicism, research note of
+  22 October 2026, §16 (unpaginated), in Daniel Kodsi's submission of 24 October 2026 (branch
+  classicism-results-2026-10-24 of github.com/dkodsi/Logical-Maps).
+source_names:
+- Astra (Kodsi) 22 Oct
+proof: >-
+  See the write-up. For weakly rigid $F$, let $P:=\lambda Y\, .\,\operatorname{WeaklyRigid}(Y)\land Y\le F$.
+  Rigid Comprehension makes each weakly rigid $Y$ rigid (coextensive weakly rigid relations are
+  identical), so $P$ is weakly persistent. For an atom $W\le P$, a rigid coextension $X$ of
+  $\lambda\bar x\, .\,F[\bar x]\land\Box\forall Y\, .\,WY\to Y[\bar x]$ satisfies $PX$ and
+  $\Box\forall Y\, .\,WY\to Y=X$; only the weak rigidity of $Y$ at the later world is needed. If
+  $\forall Y\, .\,PY\to\Box ZY$ but $P\not\le Z$, an atom below $\lambda Y\, .\,PY\land\neg ZY$ yields a
+  contradiction.
+references:
+- paper: bacon-mathematical-contingency
+  role: background
+  locator: Appendix C.2, Lemma C.6, pp. 15–16 of the separately paginated appendix
+  note: The atom pullback, adapted to weakly rigid relations.
+notes: >-
+  Uses Rigid Comprehension at $\tau$ and Atomicity at $\tau t$ for Weakly Rigid Power at $\tau$. It
+  subsumes [[atomicity-and-rigid-comprehension-imply-rigid-power]] through
+  [[weakly-rigid-power-implies-rigid-power]], which however uses Weakly Rigid Power at the higher type.

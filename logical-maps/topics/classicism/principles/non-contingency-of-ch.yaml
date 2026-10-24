@@ -43,4 +43,11 @@ notes: >-
   truth value of the continuum hypothesis unchanged, so it says nothing about this principle; the
   variants of Barton and Goodsell's Theorem 20 that add $\aleph_2$ Cohen reals or collapse the continuum
   refute it in either direction, as does Bacon's Theorem 5.1 model of C5 with Rigid Comprehension. None
-  is recorded yet.
+  of these is recorded yet. It fails in [[full-boolean-valued-atom-and-atomless]], Bacon's Boolean-valued
+  model of §B.2 with the algebra chosen by cases on CH, and it is incompatible with Maximalism
+  ([[maximalism-incompatible-with-non-contingency-of-ch]]).
+changes:
+- date: '2026-10-24'
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+  summary: 'Notes updated: a recorded countermodel and the incompatibility with Maximalism.'
+  minor: true

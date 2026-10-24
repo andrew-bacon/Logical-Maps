@@ -1,0 +1,35 @@
+id: relational-choice-and-boolean-completeness-imply-actuality
+premises:
+- relational-choice-r
+- boolean-completeness-r
+conclusion: actuality
+status: proved
+certificate:
+  source_id: misc
+  produced_by: GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 22 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 24 October 2026
+  checked_by: []
+  date: '2026-10-24'
+  lean: verified
+  lean_ref: Classicism.Map.relational_choice_and_boolean_completeness_imply_actuality
+sources:
+- GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, Relational Choice and Boolean Completeness imply Actuality,
+  research note of 22 October 2026, §§1–2 and 7 (unpaginated), in Daniel Kodsi's submission of 24 October
+  2026 (branch classicism-results-2026-10-24 of github.com/dkodsi/Logical-Maps).
+source_names:
+- Astra (Kodsi) 22 Oct
+proof: >-
+  See the write-up. Boolean Completeness at $tt$ gives: a pairwise disjoint property of propositions
+  whose join is true has a true member (join the haecceities $\lambda z\, .\,z=a$ of the members at
+  $tt$; if $J$ is that join, $Jx\land Jy$ entails that $x=y$ or $x\land y=\bot$, and a true $q$ with
+  $Jq$ exists by the truth of the join). If Actuality fails, the false propositions have join
+  $\top$. Relational Choice from $t$ to $t$ chooses, for each $b$ below the join, a false proposition
+  not below $b$; the Bourbaki–Witt tower of $b\mapsto b\lor s(b)$ yields pairwise disjoint false
+  increments with join $\top$, a contradiction.
+references: []
+notes: >-
+  The instances used are Relational Choice from $t$ to $t$ and Boolean Completeness at $tt$, which
+  implies it at $t$; all unboxed. With [[actuality-implies-transversal]] and
+  [[transversal-and-relational-choice-imply-transversal-choice]] this settles the conjecture
+  [[relational-choice-and-boolean-completeness-imply-transversal-choice]]. The Bourbaki–Witt lemma is
+  in Background, *General lemmas*.

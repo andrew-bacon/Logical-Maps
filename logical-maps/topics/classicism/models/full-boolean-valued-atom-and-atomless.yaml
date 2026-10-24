@@ -26,8 +26,8 @@ references:
   role: proof
   locator: Online appendix §B.2, pp. 7–9 (PDF pp. 41–43)
   note: Source of the full Boolean-valued construction with a designated atom and an atomless component.
-    This record uses a singleton individual domain and an arbitrary complete atomless algebra; it does
-    not import the source’s continuum-hypothesis claims. The explicit Functional Choice and boxed-choice
+    This record uses a singleton individual domain, and Bacon's algebra when CH holds and its evident
+    dual when CH fails, so that CH is contingent without assuming CH. The explicit Functional Choice and boxed-choice
     calculations are supplied in the write-up.
 - paper: bacon-dorr-classicism
   role: background
@@ -46,6 +46,9 @@ checks:
 # migration: the definition is the old description up to its verdict sentences.
 # 3 October 2026, at Cian Dorr's direction: its second paragraph fixes $A$ (Claude Fable 5.1's
 # suggestion), and its third interprets Σ, which the record had left uninterpreted.
+# 24 October 2026, at Cian Dorr's direction: $A$, fixed until then as the regular open algebra of the
+# real line (one Cohen real, which leaves CH unchanged), is now chosen by cases on CH, restoring the
+# purpose of Bacon's §B.2; every verdict recorded before then is unaffected (see the revisions below).
 meets:
   sigma-top: This is the interpretation the definition fixes.
   one-individual: >-
@@ -59,10 +62,13 @@ definition: >-
   its first coordinate is $1$.
 
 
-  For concreteness, $A$ is fixed as the regular open algebra of the real line. Other choices of $A$
-  can be put to interesting uses; for the principles on the map the choice matters, as far as is
-  known, only to $\Box$Boolean Completeness (type $t$), whose failure below uses a real that forcing
-  with $A$ adds.
+  $A$ is fixed by cases on the continuum hypothesis in the ambient set theory. If CH holds, $A$ is
+  $\operatorname{RO}(\operatorname{Add}(\omega,\omega_2))$, the algebra adding $\aleph_2$ Cohen reals,
+  as in Bacon's §B.2; if CH fails, $A$ is
+  $\operatorname{RO}(\operatorname{Col}(\omega_1,2^{\aleph_0})\times\operatorname{Add}(\omega,1))$, which
+  collapses the continuum to $\aleph_1$ and adds one Cohen real. Either way forcing with $A$ adds a
+  Cohen real, $A$ has at least continuum many elements, and CH takes the opposite value in $V^A$ to
+  its value in $V$.
 
 
   Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each denotes
@@ -149,10 +155,15 @@ arguments:
     $w_n:=(0,\neg a_n)$, choose $c_n\in A$, and let $X$ of type $t\to t$ have $\rho X(w_n)=c_n$ and
     $0$ elsewhere. With $s$ the fuzzy subset of $\omega$ given by the $c_n$, a direct computation
     gives $\rho[\![\exists y\, .\,\operatorname{GLB}_t(y,X)]\!]=\bigvee_{U\subseteq\omega}[\![s=\check
-    U]\!]$, the value of "$s$ is a ground set". The regular open algebra of $\mathbb R$ adds a Cohen
-    real; taking the $c_n$ to be its coordinates, $[\![s=\check U]\!]=0_A$ for every $U$, so the closed
+    U]\!]$, the value of "$s$ is a ground set". Forcing with $A$ adds a Cohen real; taking the $c_n$ to
+    be its coordinates, $[\![s=\check U]\!]=0_A$ for every $U$, so the closed
     instance of Boolean Completeness (type $t$) has value exactly $a$: true, and not necessary. Whether
     it is necessary for an algebra adding no reals is open.
+  revisions:
+  - date: '2026-10-24'
+    by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+    note: The argument used only that forcing with $A$ adds a Cohen real, which the algebras now fixed by
+      cases on CH both do; the text names that property instead of the regular open algebra of the real line.
 
 # migration: the old description's last sentence, then the old notes whole. The description's
 # sentence on the boxed forms of Actuality, Plenitude and Functional Choice, whose failures are now
@@ -192,16 +203,43 @@ arguments:
     likewise for relations; so a rigid real number structure $\mathfrak R$ is crisp, the check of a
     structure $(S,\le,+,\times,0,1,N)$ of the ground model, and $\Box\operatorname{Real}_t(\mathfrak
     R)$ asks that $\operatorname{Real}_t(\mathfrak R)$ have value $\top$, in particular
-    $\rho$-coordinate $1_A$. That fails: $A$, the regular open algebra of the real line, is the
-    Cohen algebra, and forcing with it adds a real $r$; the $A$-valued subproperty of $S$ naming the
+    $\rho$-coordinate $1_A$. That fails: forcing with $A$ adds a real $r$; the $A$-valued subproperty of $S$ naming the
     lower Dedekind cut of $r$ in $S$ is in the full domain and is bounded, but has no least upper
     bound in $S$ with positive value, since $[\![r=\check s]\!]=0$ for every ground real $s$. So the
     consequent of Analytic Necessitism is false at the evaluation point. Its antecedent is true: $B$
-    has the cardinality of the continuum, the crisp characteristic functions of a set $S\subseteq B$
+    has at least continuum many elements, the crisp characteristic functions of a set $S\subseteq B$
     in bijection with the reals and of its order, sum, product and natural numbers are in the full
     domains, and $\operatorname{Real}_t$ of this structure has $\pi$-coordinate $1$, every bounded
     crisp subset of $S$ having a least upper bound in it; so $\exists\mathfrak
     R\,.\,\operatorname{Real}_t(\mathfrak R)$ is not $\bot$ and its possibility is $\top$.
+  revisions:
+  - date: '2026-10-24'
+    by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+    note: The argument used only that forcing with $A$ adds a real and that $B$ has at least continuum many
+      elements, true of the algebras now fixed by cases on CH; the text says so instead of naming the
+      regular open algebra of the real line.
+- id: ch-contingent
+  fails: [non-contingency-of-ch]
+  by: Cian Dorr (the choice of algebra by cases on CH, after Bacon's §B.2), with Claude Opus 5.5 (Anthropic)
+  date: '2026-10-24'
+  writeup: full-boolean-valued-atom-and-atomless
+  source:
+    paper: bacon-mathematical-contingency
+    locator: Online appendix §B.2, Lemmas B.1–B.4, pp. 7–9
+  text: >-
+    At type $t$. Write $\pi,\rho$ for the coordinate projections of $B=\mathbf 2\times A$. By extensional
+    fullness the $\pi$-coordinate of a box-free sentence is its truth in the full standard model over
+    the same domains, and the $\rho$-coordinate its value in $V^A$, relations on a ground set ranging
+    over all names for subsets of it. Both $V$ and $V^A$ have a real number structure on a subset of
+    $D_t=B$: $|B|\ge2^{\aleph_0}$, and $|B|\ge(2^{\aleph_0})^{V^A}$, which is $\aleph_2$ in the first
+    case (where $|B|=\aleph_2^{\aleph_0}=\aleph_2$, by CH) and $\aleph_1$ in the second. Real number structures are unique up to
+    isomorphism, so $\exists\mathfrak R\, .\,\operatorname{Real}_t(\mathfrak R)\land\operatorname{CH}(\mathfrak R)$
+    has $\pi$-coordinate $1$ iff CH holds in $V$ and $\rho$-coordinate $1_A$ iff CH holds in $V^A$, and
+    likewise for $\neg\operatorname{CH}$, the value otherwise being $0$. CH takes opposite values in $V$
+    and $V^A$, so each of $\forall\mathfrak R\, .\,\operatorname{Real}_t(\mathfrak R)\to\operatorname{CH}(\mathfrak R)$
+    and $\forall\mathfrak R\, .\,\operatorname{Real}_t(\mathfrak R)\to\neg\operatorname{CH}(\mathfrak R)$ is
+    $(1,0_A)$ or $(0,1_A)$, not $\top$. As $\Box p$ is $p=\top$, both disjuncts of Non-contingency of CH
+    are $\bot$.
 - holds: [arithmetic-necessitism]
   by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
   date: '2026-10-23'
@@ -220,9 +258,10 @@ notes: >-
   Full verification is in the write-up.
 
 
-  The source uses an infinite individual domain and a particular regular-open algebra for its
-  analysis of the continuum hypothesis. Neither feature is needed for this counterexample; the
-  recorded specialization requires only ZFC. For an extensionally full model in ZFC, Relational
+  The source uses an infinite individual domain, ZFC + CH, and the algebra adding $\aleph_2$ Cohen
+  reals, to make CH contingent. The record keeps that algebra when CH holds and uses its dual when CH
+  fails, so it requires only ZFC; the singleton individual domain does no harm, the real number
+  structures living at type $t$. For an extensionally full model in ZFC, Relational
   Choice follows by representing a set-theoretic functional subrelation, and Plenitude then gives
   Functional Choice. The qualitative-contrast model of Classicism does not meet this fullness
   condition: its finite-support and symmetry restrictions exclude the needed selector. In the

@@ -138,7 +138,7 @@ $\mathfrak R=(X^{\sigma t},\le^{\sigma\sigma t},+^{\sigma\sigma\sigma t},
 \times^{\sigma\sigma\sigma t},0^\sigma,1^\sigma,N^{\sigma t})$ such that
 $\le$, $+$ and $\times$ hold only of instances of $X$, $X$ with them and
 with $0$ and $1$ is a complete ordered field, $+$ and $\times$ being
-functional on $X$ and every subproperty of $X$ with an upper bound in $X$
+functional on $X$ and every nonempty subproperty of $X$ with an upper bound in $X$
 having a least upper bound in $X$, and $N$ is the least subproperty of $X$
 containing $0$ and closed under adding $1$; write
 $\operatorname{Real}_\sigma(\mathfrak R)$. Any two real number structures,
@@ -419,3 +419,81 @@ The singleton-root coalesced model still awaits an expansion to the fixed
 nonlogical signature; its record explains this separate obligation.
 Two results reported without proofs in the draft retain pending verification status.
 No record claims an independent human check or Lean verification.
+
+## General lemmas
+
+**The Bourbaki–Witt fixed-point lemma.** Work at any type $\sigma$, including
+$e$. Let $X^{\sigma t}$ be a property, $R^{\sigma\sigma t}$ a relation, and
+$F^{\sigma\sigma t}$ a relation, written $x\preccurlyeq y$ for $(Rx)y$ and
+$x\prec y$ for $x\preccurlyeq y\land x\ne y$. For properties $Z,Y$ of type $\sigma t$ write $Z\subseteq Y$ for $\forall x\, .\,Zx\to Yx$ (actual inclusion, not $\le$). For $Z\subseteq X$ put
+
+$$
+\begin{aligned}
+\operatorname{UB}(s,Z)&:=Xs\land\forall z\, .\,Zz\to z\preccurlyeq s,\\
+\operatorname{Sup}(s,Z)&:=\operatorname{UB}(s,Z)\land\forall u\, .\,\operatorname{UB}(u,Z)\to s\preccurlyeq u.
+\end{aligned}
+$$
+
+Assume, at the evaluation point:
+
+1. $R$ partially orders $X$: it is reflexive on $X$, and
+   $\operatorname{Trans}(R,X)$ and $\operatorname{Antisymm}(R,X)$;
+2. every chain has a supremum in $X$: $\forall Z\, .\,Z\subseteq X\land
+   \operatorname{TotalOrder}(R,Z)\to\exists s\, .\,\operatorname{Sup}(s,Z)$;
+3. $F$ is a progressive function on $X$: for every $x$ with $Xx$ there is
+   exactly one $y$ with $(Fx)y$, written $f(x)$, and $Xf(x)$ and
+   $x\preccurlyeq f(x)$.
+
+Call $Y^{\sigma t}$ *closed* if $Y\subseteq X$,
+$\forall x\, .\,Yx\to Yf(x)$, and $\forall Z\,s\, .\,Z\subseteq Y\land
+\operatorname{TotalOrder}(R,Z)\land\operatorname{Sup}(s,Z)\to Ys$. Let
+
+$$
+M:=\lambda x\, .\,\forall Y\, .\,\operatorname{Closed}(Y)\to Yx
+$$
+
+be the least closed property (the *tower*). Then:
+
+- (a) $M$ is closed, and $M\subseteq Y$ for every closed $Y$;
+- (b) for all $b,c$ with $Mb$ and $Mc$: $c\preccurlyeq b$ or $f(b)\preccurlyeq c$.
+  In particular $M$ is a chain, and $b\prec c$ implies $f(b)\preccurlyeq c$;
+- (c) the supremum $m$ of $M$ satisfies $Mm$ and $f(m)=m$.
+
+No choice principle is used, and the lemma holds at the evaluation point
+only; it is a theorem schema of C, so it can be necessitated when its
+hypotheses hold necessarily.
+
+*Proof.* (a) is immediate from the definition of $M$. Call $c$ a *pivot* if
+$Mc$ and $\forall b\, .\,Mb\land b\prec c\to f(b)\preccurlyeq c$.
+
+*Claim 1.* If $c$ is a pivot, then for every $b$ with $Mb$: $b\preccurlyeq c$ or
+$f(c)\preccurlyeq b$. Put $M_c:=\lambda b\, .\,Mb\land(b\preccurlyeq c\lor
+f(c)\preccurlyeq b)$. It is closed:
+
+- if $b\prec c$ then $f(b)\preccurlyeq c$, as $c$ is a pivot; if $b=c$ then
+  $f(c)\preccurlyeq f(b)$; if $f(c)\preccurlyeq b$ then
+  $f(c)\preccurlyeq b\preccurlyeq f(b)$;
+- if $Z\subseteq M_c$ is a chain with supremum $s$: either $z\preccurlyeq c$ for
+  every $z$ with $Zz$, and then $s\preccurlyeq c$; or $f(c)\preccurlyeq z
+  \preccurlyeq s$ for some such $z$.
+
+In each case the new member is in $M$, since $M$ is closed. So $M\subseteq M_c$ by (a).
+
+*Claim 2.* Every $c$ with $Mc$ is a pivot. The pivots form a closed property:
+
+- if $c$ is a pivot and $Mb$, $b\prec f(c)$, then by Claim 1 $b\preccurlyeq c$
+  (the alternative $f(c)\preccurlyeq b$ would give $b=f(c)$); so either
+  $b\prec c$ and $f(b)\preccurlyeq c\preccurlyeq f(c)$, or $b=c$ and
+  $f(b)=f(c)$;
+- if $Z$ is a chain of pivots with supremum $s$, and $Mb$, $b\prec s$, then
+  $Ms$, since $M$ is closed, and some $z$ with $Zz$ has $z\not\preccurlyeq b$ (else $s\preccurlyeq b$).
+  By Claim 1 for $z$, $b\preccurlyeq z$ or $f(z)\preccurlyeq b$; the second would
+  give $z\preccurlyeq f(z)\preccurlyeq b$. So $b\prec z$, and
+  $f(b)\preccurlyeq z\preccurlyeq s$.
+
+Claims 1 and 2 give (b). For (c), $M$ is a chain included in $X$, so it has a
+supremum $m$; $Mm$ since $M$ is closed, so $Mf(m)$, so
+$f(m)\preccurlyeq m\preccurlyeq f(m)$, and $f(m)=m$. $\square$
+
+The tower also supports induction: to show that every member of $M$ has a
+property, show that the members of $M$ having it form a closed property.

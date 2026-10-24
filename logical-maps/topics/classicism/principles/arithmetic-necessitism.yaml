@@ -36,7 +36,12 @@ notes: >-
   The entity-level counterpart of the Necessity of Arithmetic: not only are the truths of arithmetic
   fixed, the numbers are a necessary existent with fixed membership. Provable with □Rigid Comprehension
   ([[necessary-rigid-comprehension-implies-arithmetic-necessitism]], Barton and Goodsell's Theorem 3).
-  The Necessity of Arithmetic holds in C5 ([[c5-implies-necessity-of-arithmetic]]); whether C5 gives this
-  principle is open. What could fail is inextensibility: numbers are necessarily numbers in C, but at a
-  world where no property has exactly the numerals as its extension, $\mathbb N_\sigma$, the least
-  inductive property, gains members there.
+  It also holds in C5 ([[c5-implies-arithmetic-necessitism]]), where B and BF make the persistent
+  property of being a number inextensible. Without such help what can fail is inextensibility: numbers are
+  necessarily numbers in C, but at a world where no property has exactly the numerals as its extension,
+  $\mathbb N_\sigma$, the least inductive property, gains members there.
+changes:
+- date: '2026-10-24'
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+  summary: 'Notes updated: C5 gives Arithmetic Necessitism ([[c5-implies-arithmetic-necessitism]]).'
+  minor: true

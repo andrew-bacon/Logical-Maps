@@ -1,0 +1,29 @@
+import Classicism.Results.Research.RigidityClosureResearchJoinsCertificates
+import Classicism.Results.Research.RigidityClosureResearchClassification
+import Classicism.Certified.Schemas
+
+#classicism_audit Classicism.Results.Research.RigidityClosureResearchClassification
+#classicism_types_audit Classicism.Results.Research.RigidityClosureResearchClassification
+
+#classicism_certify Classicism.Research.RigidityClosure.nd_bc_ic_implies_rc
+  Classicism.Research.RigidityClosure.nd_bc_tame_implies_rc
+  Classicism.Research.RigidityClosure.nd_bc_weak_power_implies_rc
+  Classicism.Research.RigidityClosure.nd_higher_rc_implies_weak_power
+  Classicism.Research.RigidityClosure.c5_implies_weak_complement
+  Classicism.Research.RigidityClosure.c5_implies_rigid_complement
+
+#classicism_certify Classicism.Proofs.rigid_comprehension_r_implies_inextensible_comprehension_r
+  Classicism.Proofs.rigid_comprehension_implies_tame_rigidity
+
+#classicism_entails Classicism.Research.RigidityClosure.nd_bc_ic_implies_rc
+  Classicism.Research.RigidityClosure.nd_bc_tame_implies_rc
+  Classicism.Research.RigidityClosure.nd_bc_weak_power_implies_rc
+  Classicism.Research.RigidityClosure.nd_higher_rc_implies_weak_power
+  Classicism.Proofs.rigid_comprehension_r_implies_inextensible_comprehension_r
+  Classicism.Proofs.rigid_comprehension_implies_tame_rigidity
+
+#check Classicism.Research.RigidityClosure.nd_bc_ic_implies_rc.listEntails
+#check Classicism.Research.RigidityClosure.nd_bc_tame_implies_rc.listEntails
+#check Classicism.Research.RigidityClosure.nd_bc_weak_power_implies_rc.listEntails
+#check Classicism.Research.RigidityClosure.nd_higher_rc_implies_weak_power.listEntails
+#print axioms Classicism.Research.RigidityClosure.nd_higher_rc_implies_weak_power.listRule
