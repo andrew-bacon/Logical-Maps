@@ -1,0 +1,30 @@
+id: atomlessness-incompatible-with-forcing-possibilism
+premises:
+- atomlessness
+- forcing-possibilism
+conclusion: false
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 25 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 25 October 2026
+  checked_by: []
+  date: '2026-10-25'
+  lean: none
+sources:
+- Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, argument of 25 October 2026 (the proof below).
+source_names:
+- Opus 25 Oct
+proof: >-
+  Apply Forcing Possibilism at $\sigma=t$ to the two-element algebra: $X:=\lambda p\, .\,p=\bot\lor p=\top$
+  and $R:=\lambda p\,q\, .\,Xp\land Xq\land p\le q$. In C, $\bot\ne\top$, so $X$ has exactly two instances;
+  $R$ orders them as a Boolean algebra, every property of instances of $X$ has a least upper bound among
+  them, and every injective relation from $X$ to itself is onto, so $X$ is Dedekind finite. Forcing
+  Possibilism then gives $p\ne\top$ and an order isomorphism between $(X,R)$ and the propositions entailing
+  $p$, ordered by $\le$. So exactly two propositions entail $p$: $\bot$ and $p$, with $p\ne\bot$. Then $p$ is
+  possible, and every $q\le p$ with $q\ne p$ is $\bot$, so no possible $q$ is strictly below $p$, contrary
+  to Atomlessness.
+references: []
+notes: >-
+  More generally, Forcing Possibilism applied to the finite algebras makes, for each $n$, some proposition
+  other than $\top$ the join of exactly $n$ atoms; the two-element case is all this record uses.

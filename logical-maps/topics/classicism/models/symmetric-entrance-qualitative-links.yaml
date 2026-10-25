@@ -1,0 +1,94 @@
+id: symmetric-entrance-qualitative-links
+name: 'Symmetric ideally-full model: a one-point entrance to the qualitative-links tail'
+certificate:
+  source_id: misc
+  produced_by: GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 22 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 24 October 2026
+  checked_by: []
+  date: '2026-10-24'
+  lean: none
+sources:
+- GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, A fixed-point entrance model, Tame Rigidity without □Tame
+  Rigidity, research note of 22 October 2026, §§1–6 (unpaginated), in Daniel Kodsi's submission of 24 October
+  2026 (branch classicism-results-2026-10-24 of github.com/dkodsi/Logical-Maps).
+- Cian Dorr, Boolean Completeness does not imply Rigid Comprehension, draft of 30 July 2026, Definitions 15–18,
+  p. 8; Proposition 20.
+source_names:
+- Astra (Kodsi) 22 Oct
+- BC does not imply RC
+references:
+- paper: dorr-bc-not-rc
+  role: background
+  locator: Definitions 15–18, p. 8; Proposition 20
+  note: Symmetric ideally-full models, of which this is one.
+group: symmetric-ideally-full
+settings:
+  construction: 'A symmetric ideally-full model on two objects. The tail $B$ has the pinning base, arrows and
+    symmetry group of symmetric-qualitative-links, together with one further point $d$, fixed by every arrow
+    and every symmetry and in the image of no other point. The entrance $A$ has pinning base $\{*\}$, trivial
+    symmetry group and the ideal of finite sets, and one arrow $i:A\to B$, sending $*$ to $d$, so that
+    $m\circ i=i$ for every arrow $m$ out of $B$; there are no arrows from $B$ to $A$. Evaluation point: $1_A$.'
+  individuals: base
+  sigma: top
+meets:
+  finite-pinning: Both objects carry the ideal of finite sets.
+  symmetry-group-pinned: The symmetry group at $A$ is its identity alone, pinned down by $\varnothing$.
+  actuality-contingent: The proposition true at $A$ only is the strongest truth; its transport along $i$ is
+    $\bot$, so it is necessary at no world and $i$ does not fix it.
+arguments:
+- holds: [rigid-comprehension-r]
+  choice: free
+  writeup: symmetric-entrance-qualitative-links
+  text: >-
+    The entities at $A$ are the pairs $(E,S)$ of an extension $E$ at $1_A$ and a $G$-invariant extension $S$
+    at $i$, and transport along $i$ gives the constant intension $S$, fixed by every arrow. So $(E,i\cdot E)$
+    is persistent and weakly inextensible at $A$ and at $B$: a rigid coextension of any relation with
+    extension $E$.
+- holds: [atomicity-r]
+  choice: free
+  writeup: symmetric-entrance-qualitative-links
+  text: >-
+    The entities at $A$ of each relational type form the complete atomic algebra of pairs of a set of
+    tuples at $A$ and a union of $G$-orbits of tuples at $B$.
+- holds: [relational-choice-r]
+  choice: uses
+  writeup: symmetric-entrance-qualitative-links
+  text: >-
+    A graph chosen in the metatheory, paired with the empty set, is an entity at $A$.
+- holds: [weakly-rigid-power-r]
+  choice: free
+  writeup: symmetric-entrance-qualitative-links
+  text: >-
+    For weakly rigid $F=(E,i\cdot E)$, a weakly rigid relation below its transport at $B$ is the constant
+    intension of a set $D$ of transported tuples, which is the transport of $(E_D,i\cdot E_D)$ for
+    $E_D:=\{\bar x\in E:i\cdot\bar x\in D\}$. So the weak power property of $F$ is the pair of its extension
+    and that extension's transport, and is rigid.
+- holds: [necessary-strong-actuality]
+  choice: free
+  writeup: symmetric-entrance-qualitative-links
+  text: >-
+    The proposition true at $A$ only is a strong true atom there, its transport being $\bot$; at $B$ the
+    tail's strong true atom serves.
+- fails: [necessary-tame-rigidity-r]
+  when: {individuals: singleton}
+  choice: free
+  writeup: symmetric-entrance-qualitative-links
+  text: >-
+    With one individual, $d$ is a pinning point only, so the domains at $B$ are those of
+    symmetric-qualitative-links-individuals-singleton, which fails Tame Rigidity at $(t\to t)\to t$ (the
+    argument tame-rigidity of symmetric-qualitative-links), and $B$ is reachable from $A$.
+- fails: [barcan-t, distinctness-necessary-t, strong-leibniz-t]
+  choice: free
+  writeup: symmetric-entrance-qualitative-links
+  text: >-
+    With $r$ the proposition true at $A$ only: every proposition $p$ at $A$ necessarily satisfies
+    $r\lor p=\top\lor p=\bot$, its transport being $\top$ or $\bot$, but a contingent proposition of the
+    tail does not, so BF at $t$ fails; $r\ne\bot$ while their transports agree; and $\neg r$ is an atom whose
+    transport $\top$ is split at $B$, so no strong world lies below it.
+notes: >-
+  With one individual: Rigid Comprehension, Weakly Rigid Power, Atomicity, Relational Choice and □Strong
+  Actuality do not make Tame Rigidity necessary. With the base individuals $d$ is an individual of the tail
+  too, and whether □Tame Rigidity fails is open. The construction works for any one-object symmetric ideally-full tail with one
+  individual: the entrance has these principles and fails the necessitation of whatever fails in the tail.
+  No Lean verification is claimed here; Astra's submission includes a Lean certificate for this model,
+  not yet connected to the record.

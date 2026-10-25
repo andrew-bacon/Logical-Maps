@@ -1,0 +1,114 @@
+id: coalesced-two-extensional-ch-models-root
+name: 'Coalesced sum of two extensional models disagreeing about CH'
+certificate:
+  source_id: misc
+  produced_by: Cian Dorr (the two-component coalesced construction, 19 October 2026); the choice of components
+    disagreeing about CH by GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 23 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 24 October 2026
+  checked_by: []
+  date: '2026-10-24'
+  lean: none
+sources:
+- GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, Coalesced sum of two extensional models disagreeing about CH,
+  23 October 2026, §§1–3 (unpaginated), in Daniel Kodsi's submission of 24 October 2026 (branch
+  classicism-results-2026-10-24 of github.com/dkodsi/Logical-Maps).
+- Cian Dorr, construction of 19 October 2026 (coalesced-two-extensional-arithmetics-root), with Claude Opus 5.5
+  (Anthropic).
+- Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, Appendix E, Definition E.2, pp. 80–83.
+source_names:
+- Astra (Kodsi) 23 Oct
+- Dorr 19 Oct
+- Classicism
+references:
+- paper: bacon-dorr-classicism
+  role: background
+  locator: Appendix E, Definition E.2, pp. 80–83
+  note: The coalesced sum, here of two components.
+group: coalesced-sums
+settings:
+  root-arrows: distinguished
+  construction: 'Assume $\operatorname{Con}(\mathrm{ZFC})$ in the metatheory, so that there are models
+    $N_+\models\mathrm{ZFC}+\mathrm{CH}$ and $N_-\models\mathrm{ZFC}+\neg\mathrm{CH}$. From each $N$ form the
+    one-world extensional Henkin model whose individuals are $N$''s reals and whose domain of each relational
+    type is the externalization of the corresponding set of $N$''s finite type hierarchy over its reals.
+    Coalesce the two at a new root as in Definition E.2. The root''s individuals are the pairs of an individual
+    of each component. Evaluation point: the root. Interpretation of Σ, fixed for this record: every constant
+    of Σ is relational, and each denotes the top element of its type.'
+  domains: fullest
+meets:
+  free-root-component: The root domains are as full as compatibility allows.
+  sigma-top: This is the interpretation the construction fixes.
+arguments:
+- id: ch
+  fails:
+  - non-contingency-of-ch
+  choice: free
+  writeup: coalesced-two-extensional-ch-models-root
+  text: >-
+    At type $e$. The components' real fields are real number structures of type $e$, since the map's
+    quantifiers over relations range there over the components' own sets; one satisfies CH and the other
+    does not. So at the root, $\Box\forall\mathfrak R\, .\,(\operatorname{Real}_e(\mathfrak R)\to
+    \operatorname{CH}(\mathfrak R))$ fails at the world of $N_-$, and the boxed negative form at the world
+    of $N_+$.
+- holds:
+  - necessary-strong-leibniz-r
+  - necessary-strong-leibniz-t
+  - necessary-barcan-r
+  choice: free
+  like: coalesced-two-extensional-arithmetics-root#strong-leibniz
+  adapt: The components are one-world extensional Henkin models, each containing the singletons of its tuples.
+- fails:
+  - pure-b-r
+  choice: free
+  like: coalesced-two-extensional-arithmetics-root#pure-b
+  adapt: Unchanged.
+- holds:
+  - infinity-e
+  - possible-infinity-e
+  fails:
+  - axiom-of-infinity-t
+  - infinity-t
+  - possible-infinity-t
+  choice: free
+  like: coalesced-two-extensional-arithmetics-root#infinity
+  adapt: The components' individuals are the reals of models of ZFC, infinite in those models, so the Axiom of
+    Infinity at $e$ holds in each component and is possible at the root.
+- holds:
+  - boolean-completeness-t
+  - necessary-boolean-completeness-t
+  choice: free
+  like: coalesced-two-extensional-arithmetics-root#boolean-completeness-t
+  adapt: Unchanged.
+- holds:
+  - necessary-distinctness-preserving-collapse
+  - tame-rigidity-r
+  - necessary-tame-rigidity-r
+  - necessary-intensional-choice-r
+  choice: free
+  like: coalesced-two-extensional-arithmetics-root#one-world-components
+  adapt: Unchanged; the singleton of an instance is definable in a model of ZFC.
+- holds:
+  - modal-well-ordering-r
+  - necessary-well-ordering-r
+  choice: uses
+  like: coalesced-two-extensional-arithmetics-root#well-ordering
+  adapt: Each component satisfies Well-Ordering at every type, $N_\pm$ well-ordering each set of its type
+    hierarchy.
+- holds:
+  - rigid-rigidity-r
+  - necessary-rigid-rigidity-r
+  - weakly-rigid-weak-rigidity-r
+  - necessary-weakly-rigid-weak-rigidity-r
+  choice: free
+  like: coalesced-two-extensional-arithmetics-root#rigid-rigidity
+  adapt: With $M_{N_+}$ and $M_{N_-}$ in place of $M_1$ and $M_2$; the criteria (Rig) and (RP) of the argument
+    rigid-power use only that the components are one-world and extensional.
+notes: >-
+  A boxed package of Atomicity, BF, Strong Leibniz and the rigidity schemata, with Modal Well-Ordering and
+  □Intensional Choice, does not give Non-contingency of CH. Unlike the arithmetic version, nothing is
+  claimed about the Necessity of Arithmetic, Arithmetic Necessitism, the Necessity of Analysis or Rigid
+  Power, which depended on the components' disagreeing about arithmetic: $N_+$ and $N_-$ need not.
+  The construction assumes $\operatorname{Con}(\mathrm{ZFC})$, so, like the forcing construction of
+  [[stitched-cohen-extension]], what it establishes is consistency relative to ZFC. A construction in ZFC
+  alone would need components obtained otherwise, for instance from Boolean ultrapowers; that has not been
+  checked.
