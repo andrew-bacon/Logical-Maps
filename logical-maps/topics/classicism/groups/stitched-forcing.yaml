@@ -26,6 +26,9 @@ definition: >-
   {{forcing}}
 
 
+  {{universe}}
+
+
   Let $C_0$ be the canonical extensional model of $V[G]$ (§7.2.5): one object with its identity arrow,
   the natural numbers as individuals, two propositions, and at each relational type every function of
   $V[G]$ between the lower domains, so that its relations of a type are, up to extension, all the
@@ -52,6 +55,25 @@ definition: >-
 parameters:
   forcing:
     text: The forcing $P$, as the member gives it.
+  # Added 25 October 2026 (Claude Opus 5.5, prompted by Cian Dorr): each member is recorded over an
+  # arbitrary ground model; its variant over L is generated.
+  universe:
+    text: The ground model. Each member is recorded over an arbitrary ground model of ZFC; its variant
+      over $L$ is generated.
+    generate: true
+    default: zfc
+    values:
+      zfc:
+        text: >-
+          Ground model, fixed for this record: $V$ is an arbitrary model of ZFC.
+        label: over any ground model
+      constructible:
+        text: >-
+          Ground model, fixed for this record: $V$ is Gödel's constructible universe, so that $V[G]=L[G]$;
+          that is, the construction is carried out over $L$, which ZFC proves to be a model of ZFC +
+          $V=L$, so this adds nothing to what the construction presupposes. In particular
+          $V\models\mathrm{CH}$.
+        label: over L
 
 conditions:
 - id: adds-a-real
@@ -287,3 +309,22 @@ arguments:
     $\mathcal P(\mathbb N)$ at $C_0$). When $P$ changes CH, at type $et$ some real number structure
     satisfies CH at one object and some falsifies it at the other, and the root sees both, so neither
     disjunct holds at the root.
+
+- id: necessity-of-analysis-constructible
+  when: {universe: constructible}
+  requires: [adds-a-real]
+  fails: [necessity-of-analysis]
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+  date: '2026-10-25'
+  text: >-
+    At type $et$, for the analytical sentence $\Phi$ saying that every real is constructible: membership
+    of a real in $L$ is $\Sigma^1_2$ (Shoenfield), so $\Phi$ is $\Pi^1_3$, a first-order analytical
+    sentence in any real number structure, whose natural numbers code sets of naturals by its reals.
+    Real number structures exist at type $et$ at both objects (see the argument for the failure of
+    Analytic Necessitism). At $C_0$, the full extensional model of $L[G]$, every real number structure
+    has the reals of $L[G]$, among them a real not in $L$, and Shoenfield absoluteness makes the
+    $\Sigma^1_2$ definition of constructibility mean the same in $L[G]$; so $\Phi$ fails in every real
+    number structure there. At the root every set in $L$ of root tuples is the root extension of a root
+    relation, whatever its $C_0$-extension, so the root read at the root is the full hierarchy of $L$
+    over its domains, and $\Phi$ holds in every real number structure there, as it does in $L$. The
+    root sees both objects, so neither disjunct of the instance holds there.

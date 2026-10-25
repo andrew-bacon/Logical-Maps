@@ -49,30 +49,34 @@ checks:
 # 24 October 2026, at Cian Dorr's direction: $A$, fixed until then as the regular open algebra of the
 # real line (one Cohen real, which leaves CH unchanged), is now chosen by cases on CH, restoring the
 # purpose of Bacon's §B.2; every verdict recorded before then is unaffected (see the revisions below).
+# 25 October 2026, prompted by Cian Dorr: the record joins the group full-boolean-valued, its
+# definition, unchanged, becoming its setting for `construction`; its variant built in L is generated.
 meets:
   sigma-top: This is the interpretation the definition fixes.
   one-individual: >-
     $D_e=\{*\}$.
-definition: >-
-  A singleton-base specialization of Bacon’s full Boolean-valued construction in §B.2. Work in
-  ZFC, let $A$ be a nontrivial complete atomless Boolean algebra, and set $B=\mathbf{2}\times A$,
-  $D_e=\{*\}$, $D_t=B$, and $D_{\sigma\to\tau}=D_\tau^{D_\sigma}$ for every admitted function
-  type. Use ordinary application and abstraction, Boolean connectives, quantifiers given by meets
-  and joins, and crisp equality. Evaluation point: the atom $a=(1,0_A)$; a proposition is true iff
-  its first coordinate is $1$.
+group: full-boolean-valued
+settings:
+  construction: >-
+    A singleton-base specialization of Bacon’s full Boolean-valued construction in §B.2. Work in
+    ZFC, let $A$ be a nontrivial complete atomless Boolean algebra, and set $B=\mathbf{2}\times A$,
+    $D_e=\{*\}$, $D_t=B$, and $D_{\sigma\to\tau}=D_\tau^{D_\sigma}$ for every admitted function
+    type. Use ordinary application and abstraction, Boolean connectives, quantifiers given by meets
+    and joins, and crisp equality. Evaluation point: the atom $a=(1,0_A)$; a proposition is true iff
+    its first coordinate is $1$.
 
 
-  $A$ is fixed by cases on the continuum hypothesis in the ambient set theory. If CH holds, $A$ is
-  $\operatorname{RO}(\operatorname{Add}(\omega,\omega_2))$, the algebra adding $\aleph_2$ Cohen reals,
-  as in Bacon's §B.2; if CH fails, $A$ is
-  $\operatorname{RO}(\operatorname{Col}(\omega_1,2^{\aleph_0})\times\operatorname{Add}(\omega,1))$, which
-  collapses the continuum to $\aleph_1$ and adds one Cohen real. Either way forcing with $A$ adds a
-  Cohen real, $A$ has at least continuum many elements, and CH takes the opposite value in $V^A$ to
-  its value in $V$.
+    $A$ is fixed by cases on the continuum hypothesis in the ambient set theory. If CH holds, $A$ is
+    $\operatorname{RO}(\operatorname{Add}(\omega,\omega_2))$, the algebra adding $\aleph_2$ Cohen reals,
+    as in Bacon's §B.2; if CH fails, $A$ is
+    $\operatorname{RO}(\operatorname{Col}(\omega_1,2^{\aleph_0})\times\operatorname{Add}(\omega,1))$, which
+    collapses the continuum to $\aleph_1$ and adds one Cohen real. Either way forcing with $A$ adds a
+    Cohen real, $A$ has at least continuum many elements, and CH takes the opposite value in $V^A$ to
+    its value in $V$.
 
 
-  Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each denotes
-  the top element of its type.
+    Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each denotes
+    the top element of its type.
 
 arguments:
 
