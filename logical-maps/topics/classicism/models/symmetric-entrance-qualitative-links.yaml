@@ -28,7 +28,7 @@ settings:
     and every symmetry and in the image of no other point. The entrance $A$ has pinning base $\{*\}$, trivial
     symmetry group and the ideal of finite sets, and one arrow $i:A\to B$, sending $*$ to $d$, so that
     $m\circ i=i$ for every arrow $m$ out of $B$; there are no arrows from $B$ to $A$. Evaluation point: $1_A$.'
-  individuals: base
+  individuals: singleton
   sigma: top
 meets:
   finite-pinning: Both objects carry the ideal of finite sets.
@@ -70,7 +70,6 @@ arguments:
     The proposition true at $A$ only is a strong true atom there, its transport being $\bot$; at $B$ the
     tail's strong true atom serves.
 - fails: [necessary-tame-rigidity-r]
-  when: {individuals: singleton}
   choice: free
   writeup: symmetric-entrance-qualitative-links
   text: >-
@@ -86,9 +85,9 @@ arguments:
     tail does not, so BF at $t$ fails; $r\ne\bot$ while their transports agree; and $\neg r$ is an atom whose
     transport $\top$ is split at $B$, so no strong world lies below it.
 notes: >-
-  With one individual: Rigid Comprehension, Weakly Rigid Power, Atomicity, Relational Choice and □Strong
-  Actuality do not make Tame Rigidity necessary. With the base individuals $d$ is an individual of the tail
-  too, and whether □Tame Rigidity fails is open. The construction works for any one-object symmetric ideally-full tail with one
+  Rigid Comprehension, Weakly Rigid Power, Atomicity, Relational Choice and □Strong Actuality do not make
+  Tame Rigidity necessary. Recorded with one individual, as built; the base at $A$ being the single point
+  $*$, the group's variant with the base as individuals is not generated. The construction works for any one-object symmetric ideally-full tail with one
   individual: the entrance has these principles and fails the necessitation of whatever fails in the tail.
   No Lean verification is claimed here; Astra's submission includes a Lean certificate for this model,
   not yet connected to the record.

@@ -32,6 +32,12 @@ definition: An ideally full finitely pinned action model over a two-object categ
   $e_T\circ e_U=e_T$ and $\pi\circ e_T=\pi$. The evaluation point is the identity of $W_0$; every world
   reachable from it can return to it through $\pi$.
 meets:
+  full-continuum-everywhere: >-
+    The domains contain every intension whose value depends only on the arrow's codomain, and there are
+    infinitely many propositions at $W_0$ and at $W_1$. So the intensions of type $tt$ with value an
+    arbitrary set of propositions at each codomain are continuum many, and every set of tuples of them is
+    the extension at the object of the intension, again depending only on the codomain, whose value at an
+    arrow is the set of the tuples' transports along it.
   finitely-pinned-domains: >-
     Ideally full with the ideal of finite sets at both objects: every intension pinned down by a
     finite set is in the domain, and every entity in a domain is one.

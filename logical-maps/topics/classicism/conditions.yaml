@@ -194,3 +194,7 @@ conditions:
     from its value on $N$.
 - id: countably-many-arrows
   text: The arrows out of the evaluation object are countably many, in bijection with the natural numbers.
+- id: full-continuum-everywhere
+  text: At every object $v$ reachable from the evaluation point, either every type has finitely many entities
+    at $v$, or there is a set $D$ of continuum many entities of one type at $v$ such that, for each $k\ge1$,
+    every set of $k$-tuples from $D$ is the extension at $v$ of an entity in the domain there.

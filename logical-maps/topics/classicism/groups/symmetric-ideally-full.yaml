@@ -46,6 +46,9 @@ parameters:
           Individuals, fixed for this record: the individuals at each object are the base the
           construction describes, and the arrows act on them as on the base.
         label: individuals the base
+        # Revised 25 October 2026 (Claude Opus 5.5, prompted by Cian Dorr): generated only for a member
+        # whose base at the evaluation object is infinite, as this value's meets assume.
+        requires: [infinite-base]
         meets:
           infinitely-many-individuals: The base is infinite.
           construction-individuals: The individuals are the base, acted on as the construction says.
@@ -91,6 +94,25 @@ meets:
   symmetric-domains: >-
     The relational domains hold exactly the symmetric intensions pinned down by a finite set
     (Dorr, draft, Definitions 15–18).
+  # Added 25 October 2026 (Claude Opus 5.5, prompted by Cian Dorr), for the general argument
+  # second-order-analysis-full-continuum.
+  full-continuum-everywhere:
+    requires: [infinitely-many-orbits-everywhere]
+    text: >-
+      At a reachable object $v$, let $\tau$ be a type with infinitely many orbits there, and for a set $A$ of
+      them let $Y_A$ be the intension of type $\tau t$ whose value at an arrow into $v$ is the union of the
+      orbits in $A$ and at other arrows is empty: symmetric, the values being invariant, and pinned down by
+      $\emptyset$, so in the domain; its transport along any arrow depends only on the arrow's codomain.
+      The $Y_A$ are continuum many and pairwise distinct at $v$. For a set $T$ of $k$-tuples of them, the
+      intension whose value at an arrow $h$ is the set of transports along $h$ of the tuples in $T$ depends
+      only on $h$'s codomain, is symmetric, each such transport being fixed by the target's symmetries, and
+      is pinned down by $\emptyset$; its extension at $v$ is $T$.
+  infinitely-many-orbits-everywhere:
+    requires: [one-object-action-model, infinitely-many-individuals]
+    text: >-
+      For a finite set $N$ of individuals, the property of being one of them, $h\mapsto h(N)$, is symmetric
+      and pinned down by $N$; symmetries preserve the size of $N$, so these properties lie in infinitely many
+      orbits at the one object.
 
 
 # The group in Lean (Classicism/Models/SymBase.lean): its parameter is a base, Dorr's Definition 15.
@@ -102,6 +124,13 @@ lean:
   settings: {individuals: base}
 
 conditions:
+- id: infinitely-many-orbits-everywhere
+  text: >-
+    At every object reachable from the evaluation point, the entities of some relational type there fall
+    into infinitely many orbits under that object's symmetry group.
+- id: infinite-base
+  text: >-
+    The pinning base at the evaluation object is infinite.
 - id: transposable
   text: >-
     For each finite set $N$ of individuals at the evaluation object, some property $A$ in the

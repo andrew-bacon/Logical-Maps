@@ -4,10 +4,9 @@ Construction and verification by GPT-6 Astra (OpenAI), prompted by Daniel Kodsi,
 22 October 2026; checked and rewritten for the map by Claude Opus 5.5
 (Anthropic), prompted by Cian Dorr, 24 October 2026.
 
-The model is a member of the group of symmetric ideally-full models, recorded with the
-base as its individuals; Astra's construction, with one individual at each object, is its
-generated one-individual variant. Everything below holds for both, except the failure of
-□Tame Rigidity (§5), which is proved for the one-individual variant only.
+The model is a member of the group of symmetric ideally-full models, recorded with one
+individual at each object, as Astra built it. (The group's variant with the base as
+individuals is not generated: the base at the evaluation object is the single point $*$.)
 
 At its evaluation point this model satisfies Atomicity, Rigid Comprehension (hence
 Boolean Completeness and Tame Rigidity), Relational Choice, Weakly Rigid Power (hence
@@ -32,14 +31,8 @@ domain at $B$, are as in that model.
 one arrow $i:A\to B$, sending $*$ to $d$. Then $m\circ i=i$ for every $m\in M$, there are
 no arrows from $B$ to $A$, and the only arrow from $A$ to itself is its identity.
 
-*Individuals.* In the recorded model they are the pinning bases, so $*$ at $A$ and the
-tail's points together with $d$ at $B$, and $i$ sends $*$ to $d$. In the one-individual
-variant there is one individual at each object, and $d$ is a pinning point only. Every
-relational constant of Σ denotes the top element of its type. Evaluation point: $1_A$.
-
-In §§1–4 a tuple transported along $i$ consists of transported entities and, in the
-recorded model, the individual $d$, all fixed by every arrow out of $B$; that is all the
-arguments use.
+There is one individual at each object, and $d$ is a pinning point only. Every relational
+constant of Σ denotes the top element of its type. Evaluation point: $1_A$.
 
 ## 1. The entities at $A$
 
@@ -109,11 +102,10 @@ $T_B(D)=i\cdot T_A(E_D)$ for $E_D:=\{\bar x\in E:i\cdot\bar x\in D\}$.
 So the extension of $P_F$ at $i$ is the image of its extension at $1_A$: $P_F$ is
 $T_A$ of its extension, rigid by Lemma 1, and so weakly rigid.
 
-## 5. □Tame Rigidity fails (one individual)
+## 5. □Tame Rigidity fails
 
-With one individual, the tail fails Tame Rigidity at type $(t\to t)\to t$, by the argument recorded for the
-qualitative-links model with one individual. With the base individuals, $d$ is an individual
-of the tail as well, and whether Tame Rigidity fails there is open. The domains at $B$ are those of that model,
+The tail fails Tame Rigidity at type $(t\to t)\to t$, by the argument recorded for the
+qualitative-links model with one individual. The domains at $B$ are those of that model,
 $d$ being a pinning point only, and the entrance adds no arrow out of $B$, so the same relation refutes Tame Rigidity at
 $B$. As $B$ is reachable from $A$, □Tame Rigidity fails at $A$.
 

@@ -41,6 +41,11 @@ settings:
   individuals: base
   sigma: top
 meets:
+  infinitely-many-orbits-everywhere:
+    when: {individuals: base}
+    text: >-
+      At $E$ and at $O$, the only objects, the properties of being one of a finite set of individuals lie in
+      infinitely many orbits under the symmetry group, which preserves the size of the set.
   finitely-pinned-domains: >-
     Both objects carry the ideal of finite sets: the domains hold every symmetric intension pinned
     down by a finite set, and every entity in them is one.
