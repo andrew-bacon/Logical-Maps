@@ -203,6 +203,8 @@ lean:
     - Classicism.Models.SymmetricIdeal
     - Classicism.Models.PairInjCollapse
     - Classicism.Models.OldNewBase
+    - Classicism.Models.FiniteCompressionBase
+    - Classicism.Models.FixedPointEntranceModel
     holds: ({model}).IsModel ∧ ({model}).HoldsAx {def}
     fails: ({model}).IsModel ∧ ¬ ({model}).HoldsAx {def}
     relative_categories: [signature]

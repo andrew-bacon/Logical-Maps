@@ -12,6 +12,8 @@ import Classicism.Models.SymmetricFull
 import Classicism.Models.SymmetricIdeal
 import Classicism.Models.PairInjCollapse
 import Classicism.Models.OldNewBase
+import Classicism.Models.FiniteCompressionBase
+import Classicism.Models.FixedPointEntranceModel
 
 /-!
 # Generated statements: models' verdicts
@@ -108,6 +110,30 @@ def Models.finite_support_two_object_all_maps.barcan_r : Prop :=
 /-- `finite-support-two-object-all-maps`: □BF fails. -/
 def Models.finite_support_two_object_all_maps.necessary_barcan_r : Prop :=
   (Classicism.Meta.Intensional.ContingentBarcan.model).IsModel ∧ ¬ (Classicism.Meta.Intensional.ContingentBarcan.model).HoldsAx Classicism.P.NecBarcan.schemaIn
+
+/-- `symmetric-entrance-qualitative-links`: Relational Choice holds. -/
+def Models.symmetric_entrance_qualitative_links.relational_choice_r : Prop :=
+  (Classicism.Meta.Intensional.FixedPointEntrance.Qualitative.model).IsModel ∧ (Classicism.Meta.Intensional.FixedPointEntrance.Qualitative.model).HoldsAx Classicism.P.RelationalChoice.schemaIn
+
+/-- `symmetric-entrance-qualitative-links`: BF (type t) fails. -/
+def Models.symmetric_entrance_qualitative_links.barcan_t : Prop :=
+  (Classicism.Meta.Intensional.FixedPointEntrance.Qualitative.model).IsModel ∧ ¬ (Classicism.Meta.Intensional.FixedPointEntrance.Qualitative.model).HoldsAx Classicism.P.BarcanT.schemaIn
+
+/-- `symmetric-entrance-qualitative-links`: BF (relational types) fails. -/
+def Models.symmetric_entrance_qualitative_links.barcan_relational : Prop :=
+  (Classicism.Meta.Intensional.FixedPointEntrance.Qualitative.model).IsModel ∧ ¬ (Classicism.Meta.Intensional.FixedPointEntrance.Qualitative.model).HoldsAx Classicism.P.BarcanRelational.schemaIn
+
+/-- `symmetric-finite-compression-entrance`: Tame Rigidity holds. -/
+def Models.symmetric_finite_compression_entrance.tame_rigidity_r : Prop :=
+  (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.FiniteCompression.base Classicism.Meta.Intensional.FiniteCompression.A)).IsModel ∧ (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.FiniteCompression.base Classicism.Meta.Intensional.FiniteCompression.A)).HoldsAx Classicism.P.TameRigidity.schemaIn
+
+/-- `symmetric-finite-compression-entrance`: Rigid Power holds. -/
+def Models.symmetric_finite_compression_entrance.rigid_power_r : Prop :=
+  (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.FiniteCompression.base Classicism.Meta.Intensional.FiniteCompression.A)).IsModel ∧ (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.FiniteCompression.base Classicism.Meta.Intensional.FiniteCompression.A)).HoldsAx Classicism.P.RigidPower.schemaIn
+
+/-- `symmetric-finite-compression-entrance`: Weakly Rigid Power fails. -/
+def Models.symmetric_finite_compression_entrance.weakly_rigid_power_r : Prop :=
+  (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.FiniteCompression.base Classicism.Meta.Intensional.FiniteCompression.A)).IsModel ∧ ¬ (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.FiniteCompression.base Classicism.Meta.Intensional.FiniteCompression.A)).HoldsAx Classicism.P.WeaklyRigidPower.schemaIn
 
 /-- `symmetric-old-new-individuals`: ND holds. -/
 def Models.symmetric_old_new_individuals.distinctness_necessary_r : Prop :=
@@ -880,6 +906,14 @@ def Models.symmetric_collapse_pair.independence_signature_r : Prop :=
 /-- `symmetric-collapse-pair`: No Contingency (signature Σ) holds. -/
 def Models.symmetric_collapse_pair.no_contingency_signature_r : Prop :=
   (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.SymIdeal.Base.toSym Classicism.Meta.Intensional.SymIdeal.collapsePair)) (Classicism.Meta.Intensional.SymBase.model_isModel (Classicism.Meta.Intensional.SymIdeal.Base.toSym Classicism.Meta.Intensional.SymIdeal.collapsePair))).Admitted ∧ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.SymIdeal.Base.toSym Classicism.Meta.Intensional.SymIdeal.collapsePair)) (Classicism.Meta.Intensional.SymBase.model_isModel (Classicism.Meta.Intensional.SymIdeal.Base.toSym Classicism.Meta.Intensional.SymIdeal.collapsePair))).IsModel ∧ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.SymIdeal.Base.toSym Classicism.Meta.Intensional.SymIdeal.collapsePair)) (Classicism.Meta.Intensional.SymBase.model_isModel (Classicism.Meta.Intensional.SymIdeal.Base.toSym Classicism.Meta.Intensional.SymIdeal.collapsePair))).HoldsAx (Classicism.Meta.AxiomSet.noContingency _)
+
+/-- `symmetric-entrance-qualitative-links`: Independence (signature Σ) fails. -/
+def Models.symmetric_entrance_qualitative_links.independence_signature_r : Prop :=
+  (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.FixedPointEntrance.Qualitative.model) (Classicism.Meta.Intensional.FixedPointEntrance.Qualitative.isModel)).Admitted ∧ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.FixedPointEntrance.Qualitative.model) (Classicism.Meta.Intensional.FixedPointEntrance.Qualitative.isModel)).IsModel ∧ ¬ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.FixedPointEntrance.Qualitative.model) (Classicism.Meta.Intensional.FixedPointEntrance.Qualitative.isModel)).HoldsAx (Classicism.Meta.AxiomSet.independence _)
+
+/-- `symmetric-finite-compression-entrance`: Independence (signature Σ) fails. -/
+def Models.symmetric_finite_compression_entrance.independence_signature_r : Prop :=
+  (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.FiniteCompression.base Classicism.Meta.Intensional.FiniteCompression.A)) (Classicism.Meta.Intensional.SymBase.model_isModel (Classicism.Meta.Intensional.FiniteCompression.base Classicism.Meta.Intensional.FiniteCompression.A))).Admitted ∧ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.FiniteCompression.base Classicism.Meta.Intensional.FiniteCompression.A)) (Classicism.Meta.Intensional.SymBase.model_isModel (Classicism.Meta.Intensional.FiniteCompression.base Classicism.Meta.Intensional.FiniteCompression.A))).IsModel ∧ ¬ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.FiniteCompression.base Classicism.Meta.Intensional.FiniteCompression.A)) (Classicism.Meta.Intensional.SymBase.model_isModel (Classicism.Meta.Intensional.FiniteCompression.base Classicism.Meta.Intensional.FiniteCompression.A))).HoldsAx (Classicism.Meta.AxiomSet.independence _)
 
 /-- `symmetric-infinite-classes`: Relational Choice fails. -/
 def Models.symmetric_infinite_classes.relational_choice_r : Prop :=

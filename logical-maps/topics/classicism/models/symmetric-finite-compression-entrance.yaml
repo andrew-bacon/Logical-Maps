@@ -6,7 +6,7 @@ certificate:
   recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 25 October 2026
   checked_by: []
   date: '2026-10-25'
-  lean: none
+  lean: stated
 sources:
 - GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, Tame Rigidity and Rigid Power without Weakly Rigid Power,
   research note of 23 October 2026, §§2–9 (unpaginated), in Daniel Kodsi's submission of 24 October 2026
@@ -80,11 +80,23 @@ arguments:
   text: >-
     At type $e$. Every individual at $A$ necessarily falls under the rigid property $F$ with extension
     $h[N]$ at every arrow $h$, but after an entrance the labels are individuals outside it.
+lean:
+  param: Classicism.Meta.Intensional.FiniteCompression.base Classicism.Meta.Intensional.FiniteCompression.A
+  verdicts:
+  - holds: tame-rigidity-r
+    ref: Classicism.Map.Models.symmetric_finite_compression_entrance.tame_rigidity_r
+    status: verified
+  - holds: rigid-power-r
+    ref: Classicism.Map.Models.symmetric_finite_compression_entrance.rigid_power_r
+    status: verified
+  - fails: weakly-rigid-power-r
+    ref: Classicism.Map.Models.symmetric_finite_compression_entrance.weakly_rigid_power_r
+    status: verified
 notes: >-
   Tame Rigidity and Rigid Power do not imply Weakly Rigid Power, answering the question of 10 October 2026
   ([[tame-rigidity-and-rigid-power-imply-weakly-rigid-power]]) negatively. The source also characterizes
   Weakly Rigid Power as Tame Rigidity plus Rigid Power plus a bounded future-tameness condition, every
   future weakly rigid subrelation of an actual rigid bound being rigid; that characterization is not
-  recorded. Astra's submission includes a Lean certificate for this model
-  (Classicism.Meta.Intensional.FiniteCompression), not yet connected to the record. The group's variant
+  recorded. The Lean certificates of Tame Rigidity, Rigid Power and the failure of Weakly
+  Rigid Power are Astra's (Classicism.Meta.Intensional.FiniteCompression), ported from the submission. The group's variant
   with one individual is generated; no argument above applies to it.

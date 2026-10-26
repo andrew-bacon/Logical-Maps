@@ -6,7 +6,7 @@ certificate:
   recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 24 October 2026
   checked_by: []
   date: '2026-10-24'
-  lean: none
+  lean: stated
 sources:
 - GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, A fixed-point entrance model, Tame Rigidity without □Tame
   Rigidity, research note of 22 October 2026, §§1–6 (unpaginated), in Daniel Kodsi's submission of 24 October
@@ -84,10 +84,24 @@ arguments:
     $r\lor p=\top\lor p=\bot$, its transport being $\top$ or $\bot$, but a contingent proposition of the
     tail does not, so BF at $t$ fails; $r\ne\bot$ while their transports agree; and $\neg r$ is an atom whose
     transport $\top$ is split at $B$, so no strong world lies below it.
+lean:
+  model: Classicism.Meta.Intensional.FixedPointEntrance.Qualitative.model
+  is_model: Classicism.Meta.Intensional.FixedPointEntrance.Qualitative.isModel
+  verdicts:
+  - holds: relational-choice-r
+    ref: Classicism.Map.Models.symmetric_entrance_qualitative_links.relational_choice_r
+    status: verified
+  - fails: barcan-t
+    ref: Classicism.Map.Models.symmetric_entrance_qualitative_links.barcan_t
+    status: verified
+  - fails: barcan-relational
+    ref: Classicism.Map.Models.symmetric_entrance_qualitative_links.barcan_relational
+    status: verified
 notes: >-
   Rigid Comprehension, Weakly Rigid Power, Atomicity, Relational Choice and □Strong Actuality do not make
   Tame Rigidity necessary. Recorded with one individual, as built; the base at $A$ being the single point
   $*$, the group's variant with the base as individuals is not generated. The construction works for any one-object symmetric ideally-full tail with one
   individual: the entrance has these principles and fails the necessitation of whatever fails in the tail.
-  No Lean verification is claimed here; Astra's submission includes a Lean certificate for this model,
-  not yet connected to the record.
+  Lean certificates of Relational Choice and of the failures of BF at $t$ and at the relational types are
+  Astra's (Classicism.Meta.Intensional.FixedPointEntrance.Qualitative), ported from the submission; the
+  rigidity verdicts are not formalized there.

@@ -8,6 +8,7 @@ import Classicism.Results.SentenceSchemas.Infinity
 import Classicism.Results.SentenceSchemas.Constants
 import Classicism.Results.SentenceSchemas.ArithmeticMeta
 import Classicism.Certified.Research
+import Classicism.Results.Research.NPCC5Atomicity
 import Classicism.Results.Research.RigidityClosureResearchAtomicPowerCertificates
 import Classicism.Results.Research.ModalPropagationCertificates.StableLeibniz
 import Classicism.Results.Research.ModalPropagationCertificates.BoxedComprehension
@@ -2020,6 +2021,15 @@ theorem strong_leibniz_and_rigid_comprehension_imply_necessary_rigid_comprehensi
       (AxiomSet.Entails.union hs rc) rc) rc) rc
     AxiomSet.Entails.mono_right (schema_subset_args _) (AxiomSet.Entails.trans hr
       _root_.Classicism.Research.ModalPropagationConsequences.sl_rc_necessary_comprehension.listEntails))
+
+/-- `c5-and-atomicity-t-imply-no-pure-contingency` (ported 25 October 2026) -/
+theorem c5_and_atomicity_t_imply_no_pure_contingency : Statements.c5_and_atomicity_t_imply_no_pure_contingency :=
+  _root_.Classicism.Meta.Research.NPC.c5_and_atomicity_t_imply_no_pure_contingency
+
+/-- `c5-and-atomicity-imply-no-pure-contingency`, through Atomicity ⇒ Atomicity (type t) -/
+theorem c5_and_atomicity_imply_no_pure_contingency : Statements.c5_and_atomicity_imply_no_pure_contingency := by
+  intro Sig hS Ax hnd hat
+  exact c5_and_atomicity_t_imply_no_pure_contingency hS Ax hnd (atomicity_r_implies_atomicity_t hS Ax hat)
 
 /-- `atomicity-and-rigid-comprehension-imply-weakly-rigid-power` -/
 theorem atomicity_and_rigid_comprehension_imply_weakly_rigid_power : Statements.atomicity_and_rigid_comprehension_imply_weakly_rigid_power := by
