@@ -51,3 +51,10 @@ changes:
   by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   summary: 'Notes updated: a recorded countermodel and the incompatibility with Maximalism.'
   minor: true
+
+- date: '2026-10-27'
+  by: OpenAI Codex, prompted by Andrew Bacon
+  summary: >-
+    Added [[non-contingency-of-cardinal-ch]] and the two conjectured bridge directions
+    [[cardinal-to-structural-ch-noncontingency]] and [[structural-to-cardinal-ch-noncontingency]],
+    with explicit candidate assumptions. The existing Forcing Possibilism conjecture remains unchanged.

@@ -1,0 +1,35 @@
+id: forcing-possibilism-inaccessible
+name: Forcing Possibilism (inaccessible bound)
+category: mathematical-contingency
+statement: 'Every complete Boolean algebra whose carrier embeds into a proper initial segment of a strongly
+  inaccessible well-order is isomorphic to a principal interval of the entailment algebra of propositions.
+  This is one instance of a schema: other interpretations of Small generate other Forcing Possibilism
+  principles.'
+formal: $\forall K^{\kappa t}\,\forall L^{\kappa\kappa t}\, .\,\operatorname{Inacc}(K,L)\to\forall B^{\tau
+  t}\,\forall E^{\tau\tau t}\, .\,(\operatorname{CBA}(B,E)\land\operatorname{Small}_{K,L}(B))\to\exists
+  p^t\,\exists F^{\tau t t}\, .\,\operatorname{OrderIso}(F;B,E;\lambda q^t.\,q\le p,\le)$
+definitions: $\operatorname{Small}_{K,L}(B):=\exists a^\kappa\, .\,Ka\land B\precsim K_{<a}$, where $K_{<a}:=\lambda
+  x.\,Kx\land(Lx)a$ and $L$ is strict. Inacc says that $(K,L)$ is an initial well-ordered cardinal larger
+  than the number carrier $N$, regular (every subcarrier of strictly smaller cardinality is bounded),
+  and a strong limit (the rigid power of each proper initial segment embeds into another proper initial
+  segment). See Background, Cardinal CH and bounded forcing, for the exact clauses. CBA means a partial
+  order on B with all carrier-relative suprema and infima, finite distributivity, endpoints and complements.
+  F is a relational order isomorphism, and $q\le p$ means $\Box(q\to p)$. Type variables remain schematic;
+  all displayed object quantifiers are unboxed.
+date: '2026-10-27'
+sources:
+- Andrew Bacon, CH contingency formalization and repository proposal, 27 October 2026, with OpenAI Codex;
+  checkpoint 140, natural_CH_contingency_closedBounds.
+source_names:
+- Bacon / Codex CH project
+references:
+- paper: bacon-ch-general-forcing
+  role: formulation
+  note: The inaccessible-bound version and carrier conventions used in the accompanying formalization.
+notes: The general pattern is $\mathrm{FP}[\mathrm{Small}]:\ \forall B,E\, .\,\operatorname{CBA}(B,E)\land\mathrm{Small}(B)\to\exists
+  p\, .\,(B,E)\cong(\downarrow p,\le)$. Changing Small changes the principle; equivalence between variants
+  is not assumed. This entry permits $p=\top$, as does MPAt in the formalization; the existing [[forcing-possibilism]]
+  uses strict size relative to propositions and requires $p\ne\top$. Neither difference is silently erased.
+  This schema does not assert existence of an inaccessible carrier. The CH application assumes one fixed
+  $(K,L)$ and uses this schema at both completion types. See Background for the conditional theorem and
+  certification status.

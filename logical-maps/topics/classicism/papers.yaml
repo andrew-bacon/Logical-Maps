@@ -56,6 +56,8 @@ papers:
   note: Work in progress. No PDF is copied into the topic or its downloads.
 - id: goodsell-arithmetic-necessary
   title: Arithmetic is Necessary
+  url: https://philpapers.org/archive/GOOAIN.pdf
+  note: Published in Journal of Philosophical Logic 53 (2024), pp. 1145–1159, DOI 10.1007/s10992-024-09760-9. Existing locators retain the 5 June 2024 draft numbering.
   citation: Goodsell, Zachary William Lee. Arithmetic is Necessary. Draft dated 5 June 2024, 28 pages. Derives
     the necessity of arithmetic in the logic HKC (H plus K plus Countable Boolean Completeness) and shows
     that Boolean Completeness is inconsistent with the maximalization of any recursively enumerable extension
@@ -128,3 +130,14 @@ papers:
   note: The first-page authorship note credits Bacon with the framework and proposed applications, and
     Claude Opus 5.5 with the write-up and verification. This contribution records the pure-language applications
     in §§4–6; §7 involving E is excluded.
+
+- id: bacon-ch-general-forcing
+  title: CH contingency via general forcing
+  citation: >-
+    Andrew Bacon, CH_contingency_general_forcing (working manuscript), with the accompanying
+    Classicism CH formalization developed by OpenAI Codex, prompted by Andrew Bacon, October 2026.
+    The repository additions of 27 October use checkpoint 140 and its explicit hypotheses.
+  url: https://andrew-bacon.github.io/techdoc/CH_contingency_general_forcing.pdf
+  note: >-
+    The current cardinal/order-type endpoint does not construct a real-number structure.
+    The real-structure bridge is recorded as conjectural. No PDF is redistributed.

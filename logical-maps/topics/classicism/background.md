@@ -352,6 +352,161 @@ equivalent. Theorems of C: $\Box\le\Box_{\ne}\le\hat{\hat\Box}\le\Box_5\le\lambd
 necessarily N, K, T and 4, and $\Box_5$ is an S5 operator; and if $\Box_{\ne}$ or
 $\hat{\hat\Box}$ is identical to its own hat, it is identical to $\Box_5$.
 
+## Cardinal CH and bounded forcing
+
+*Added 27 October 2026 by OpenAI Codex, prompted by Andrew Bacon.*
+
+The cardinal formulation avoids constructing a real-number structure. To match
+checkpoint 140 of the CH formalization, fix $\nu=(et)t$ and use the
+**at-least** number carrier:
+
+$$
+\begin{aligned}
+z&:=\lambda A^{et}.\top,\\
+N&:=\lambda n^\nu.\forall Z^{\nu t}.\,
+ \bigl(Zz\land\forall m^\nu.\,Zm\to Z(\operatorname{Suc}_e m)\bigr)\to Zn,\\
+\mathcal P_r(A)&:=\lambda U.\,\operatorname{Rigid}(U)\land U\subseteq A,\\
+S&:=\mathcal P_r(N),\\
+C_N&:=\forall X^{(\nu t)t}.\,X\subseteq S\to(X\precsim N\lor X\approx S).
+\end{aligned}
+$$
+
+The successor is the cardinal successor defined above, but the starting
+property $z$ holds of every property, rather than just the empty ones. Thus
+$N$ is `LowerNat`, not definitionally `FiniteCardinality`.
+$A\subseteq B$ means current pointwise inclusion; $A\precsim B$ and
+$A\approx B$ have relational injection and bijection witnesses.
+[[cardinal-continuum-hypothesis]] asserts $C_N$;
+[[non-contingency-of-cardinal-ch]] asserts $\Box C_N\lor\Box\neg C_N$.
+The contingency conclusion is $\Diamond C_N\land\Diamond\neg C_N$.
+
+**The smallness parameter.** Forcing Possibilism has the general form
+
+$$
+\mathrm{FP}[\mathrm{Small}]:\quad
+\forall B,E.\,\operatorname{CBA}(B,E)\land\mathrm{Small}(B)
+\to\exists p.\,(B,E)\cong(\lambda q.\,q\le p,\le).
+$$
+
+Changing the meaning of Small produces a different principle. For example,
+one may use size strictly below the propositions, size bounded by the
+hereditarily rigid entities of a type, or size bounded by a specified
+inaccessible carrier. No equivalence between these alternatives is being
+assumed. The choice of whether to require $p\ne\top$ is a further parameter.
+The existing [[forcing-possibilism]] retains its original smallness and
+proper-interval requirements. The new [[forcing-possibilism-inaccessible]]
+uses the following clauses, with $L$ a **strict** well-order:
+
+$$
+\begin{aligned}
+K_{<a}&:=\lambda x.\,Kx\land(Lx)a,\\
+A\prec B&:=(A\precsim B)\land\neg(B\precsim A),\\
+\operatorname{Small}_{K,L}(B)&:=\exists a.\,Ka\land B\precsim K_{<a}.
+\end{aligned}
+$$
+
+$\operatorname{Inacc}(K,L)$ is the conjunction of:
+
+- $L$ strictly well-orders $K$, and no $K_{<a}$ admits an injection of $K$;
+- $N\prec K$;
+- for every $X\subseteq K$ with $X\prec K$, there is $a\in K$ such that
+  every $x\in X$ satisfies $(Lx)a$;
+- for each $a\in K$ there is $b\in K$ with
+  $\mathcal P_r(K_{<a})\precsim K_{<b}$.
+
+These are the carrier-relative initial-cardinal, uncountability, regularity
+and strong-limit clauses used by the formalization. This is a definition,
+not an assertion that such a carrier exists. The new FP schema applies
+at each pair of admitted types $\kappa,\tau$, with the type variables outside
+object-language quantification. It permits the top interval and the
+degenerate one-element Boolean algebra.
+
+**Conditional contingency theorem.** Fix one $(K,L)$ satisfying Inacc.
+Assume [[forcing-possibilism-inaccessible]],
+[[necessary-rigid-comprehension-r]], [[intensional-choice-r]],
+[[necessary-lower-peano-e]], and $\operatorname{Rigid}(N)$.
+Then
+
+$$
+\bigl(\Diamond(S\approx H(N))\land\Diamond\neg(S\approx H(N))\bigr)
+\land\bigl(\Diamond C_N\land\Diamond\neg C_N\bigr).
+$$
+
+Here $H(N)$ is the Hartogs carrier of order types of well-orders on
+subcarriers of $N$. This gives the order-type formulation as well as the
+subset-cardinal formulation. The proof uses two instances of FP, at the
+regular-open completions of the countable collapse and Cohen conditions,
+with the **same** $(K,L)$. The collapse gives the positive possibility;
+Cohen forcing on the double-Hartogs index gives the negative possibility.
+The cardinal comparison and preservation arguments then deliver the two
+conclusions. Both regular-open completions and both Hartogs closed-segment
+bounds are constructed in the checked development.
+
+The exact formal endpoint is
+`Classicism.MathematicalContingency.natural_CH_contingency_closedBounds`
+in `ClosedBoundsCH.lean`, checkpoint 140. Its full RC and IC hypotheses are
+finite instances of the displayed schemata. It retains the explicit premise
+`Rigid (@LowerNat e _)`. The checkpoint has 728 passing certificate targets
+out of 743; 15 historical targets remain pending, separately from the checked
+dependencies of this endpoint. This repository update records the mathematical
+interface; it does not import that separate certificate archive or label any
+new map result `lean: verified`.
+
+**Rigidity citation.** Zachary Goodsell, *Arithmetic is Necessary*,
+[author's draft](https://philpapers.org/archive/GOOAIN.pdf), §5,
+Lemmas 3 and 8, supplies the relevant arithmetic argument. Lemma 3 proves
+persistence of numberhood. Lemma 8 proves
+
+$$
+\forall X^{\nu t}.\,
+ (\forall n^\nu.\,Nn\to\Box Xn)\to
+ \Box\forall n^\nu.\,Nn\to Xn.
+$$
+
+The argument concerns the least successor-closed property containing a
+specified zero, so it applies with the $z$ and successor used here; it does
+not require identifying at-least and exact-cardinality predicates.
+Lemma 8 uses Countable Boolean Completeness. Under boxed Rigid Comprehension,
+Boolean Completeness (hence its countable restriction) is available
+necessarily. Necessitating the conditional derivation and applying that
+boxed hypothesis supplies the leading box needed for the map's
+Inextensible clause. Necessitating Lemma 3 supplies Persistent. Together
+these yield Rigid(N). Thus Goodsell provides a literature justification for
+this premise under the stated background assumptions. This is distinct from
+a checked Lean derivation of `Rigid LowerNat`; that final formal integration
+remains outstanding. The map's existing write-up
+[[countable-boolean-completeness-implies-necessity-of-arithmetic]] gives the
+lemma-by-lemma argument. Published reference: *Journal of Philosophical Logic*
+53 (2024), 1145–1159, DOI 10.1007/s10992-024-09760-9; lemma locators here use
+the 5 June 2024 draft.
+
+**Conjectured real-structure bridge.** Under boxed Rigid Comprehension,
+Intensional Choice and the specified necessary Peano conditions, conjecture
+that [[non-contingency-of-cardinal-ch]] is equivalent to
+[[non-contingency-of-ch]]. The two directions are separate conjectured result
+records, not proof edges. The assumptions are candidates, not a proved
+sufficient or minimal package. In particular, the structural principle is a
+schema over real-carrier types, whereas $C_N$ uses the fixed carrier above.
+
+A sufficient route is to establish, for every real-carrier type $\sigma$,
+
+$$
+\Box\forall\mathfrak R.\,
+\operatorname{Real}_\sigma(\mathfrak R)\to
+ (\operatorname{CH}(\mathfrak R)\leftrightarrow C_N),
+$$
+
+and, at one specified sufficiently high type $\rho$,
+$\Box\exists\mathfrak R.\operatorname{Real}_\rho(\mathfrak R)$.
+The first transfers either necessary truth value of $C_N$ to every real
+structure. Conversely, specialize structural non-contingency to $\rho$;
+necessary existence and comparison give either $\Box C_N$ or
+$\Box\neg C_N$. This also identifies the negations, the corresponding
+contingency claims. The outstanding work is the real-structure construction
+and the **necessary** comparisons of its natural and continuum carriers
+with $N$ and $S$. A current-world bijection does not suffice, and omitting
+existence would allow the structural statement to hold vacuously.
+
 ## Conventions
 
 **Type scope.** A formula containing type variables ($\sigma$, $\tau$, $\bar\sigma$)

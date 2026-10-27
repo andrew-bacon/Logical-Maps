@@ -37,3 +37,10 @@ changes:
     the new category Mathematical contingency. Up to forcing equivalence, forcing notions are the complete
     Boolean algebras, so the principle says that every small forcing is broadly possible; the statement is
     unchanged.
+
+- date: '2026-10-27'
+  by: OpenAI Codex, prompted by Andrew Bacon
+  summary: >-
+    Added a cross-reference to [[forcing-possibilism-inaccessible]]. Forcing Possibilism is a family
+    obtained by varying Small; this entry retains its original strict-propositional-size convention
+    and proper-interval requirement. No equivalence with the new variant is assumed.
