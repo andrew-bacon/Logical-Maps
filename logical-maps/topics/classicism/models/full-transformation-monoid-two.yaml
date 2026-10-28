@@ -1,0 +1,47 @@
+id: full-transformation-monoid-two
+name: 'Full action model: all transformations of two individuals'
+certificate:
+  source_id: bacon-substitution-structures-2019
+  produced_by: Andrew Bacon (source construction); additional verdict arguments identified below
+  recorded_by: OpenAI Codex, prompted by Andrew Bacon
+  checked_by: []
+  date: '2026-10-28'
+  lean: none
+sources:
+- Andrew Bacon, Substitution Structures (2019), §5.3, author-hosted draft of 10 January 2019, pp. 45–47;
+  natural D^D action on p. 46.
+- 'Additional verdicts: OpenAI Codex, prompted by Andrew Bacon, 28 October 2026; shared group arguments
+  and the accompanying write-up.'
+source_names:
+- Substitution Structures
+- Codex, prompted by Bacon
+references:
+- paper: bacon-substitution-structures-2019
+  role: origin
+  locator: §5.3, pp. 45–47, especially the D^D example on p. 46
+- paper: bacon-dorr-classicism
+  role: background
+  locator: §3.5, pp. 58–61; Appendix D
+  note: Translation to relational action-model intensions and general full-model verdicts.
+group: full-transformation-monoid
+settings:
+  carrier: Take $X=\{0,1\}$.
+meets:
+  finitely-many-arrows-everywhere: There are four transformations of a two-element set.
+  finitely-many-individuals-everywhere: There are two individuals at the sole object.
+  finitely-many-propositions: There are 16 subsets of the four-element monoid.
+  finitely-many-propositions-everywhere: There is one object, with 16 propositions.
+  retracted-arrows-invertible-everywhere: On a finite set a map with a left inverse is bijective.
+arguments:
+- id: finite-individuals
+  fails:
+  - infinity-e
+  text: At the sole object there are exactly two individuals, at every arrow. Extensional fullness gives
+    ordinary finite cardinal arithmetic, so the Axiom of Infinity fails; the third instance of the infinity
+    schema fails, and no arrow reaches an infinite individual domain.
+  by: OpenAI Codex, prompted by Andrew Bacon
+  date: '2026-10-28'
+  choice: free
+notes: The full model validates necessary Atomicity at all relational types (full-atomicity), as well
+  as necessary Rigid Comprehension. It does not refute Atomicity. Its natural action on individuals is
+  essential to the type-e Barcan counterexample.

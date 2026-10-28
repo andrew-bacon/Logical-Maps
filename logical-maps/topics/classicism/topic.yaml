@@ -8,6 +8,9 @@ framework: 'The fixed base is Bacon and Dorr’s Classicism (C) in their relatio
   assumptions does not satisfy it.'
 background: []
 source_catalog:
+- id: bacon-substitution-structures-2019
+  name: Substitution Structures (2019)
+  kind: published-paper
 - id: bacon-modalized-domains-2026
   name: Modalized Domains (2026)
   kind: misc

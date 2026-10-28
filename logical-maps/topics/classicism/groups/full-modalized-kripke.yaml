@@ -1,0 +1,18 @@
+id: full-modalized-kripke
+name: Full modalized domains on Kripke frames
+definition: Work in ZFC on the pointed reflexive transitive frame {{frame}}. {{domains}} Evaluate at its
+  designated world. At type $t$ use $\mathcal P(W)$, with every proposition existing everywhere and $p\sim_w
+  q$ iff $p\cap R(w)=q\cap R(w)$. Implication is Boolean implication, and quantifiers range over the entities
+  existing at the evaluation world. Interpret every relational constant of Σ as top. Restrict the construction
+  to the map's relational types. The constant-domain and expanding-domain function-space constructions
+  are distinguished below.
+parameters:
+  frame:
+    text: A pointed reflexive transitive Kripke frame.
+  domains:
+    text: The individual modalized domain and the choice of full function spaces.
+references:
+- paper: the-broadest-necessity
+  role: proof
+  locator: Theorem 5.1; §§7.3–7.5, Definitions 7.7–7.14 and Corollary 7.6; draft pp. 24, 37–42
+arguments: []

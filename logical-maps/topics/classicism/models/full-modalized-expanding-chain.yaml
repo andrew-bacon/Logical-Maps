@@ -1,0 +1,53 @@
+id: full-modalized-expanding-chain
+name: 'Full modalized domains: two-world chain with expanding individuals'
+certificate:
+  source_id: the-broadest-necessity
+  produced_by: Andrew Bacon (source construction); additional verdict arguments identified below
+  recorded_by: OpenAI Codex, prompted by Andrew Bacon
+  checked_by: []
+  date: '2026-10-28'
+  lean: none
+sources:
+- Andrew Bacon, The Broadest Necessity (2018), author-hosted draft of 25 July 2017, §§7.3–7.5, pp. 37–42.
+- Concrete instances and explicit witnesses recorded by OpenAI Codex, prompted by Andrew Bacon, 28 October
+  2026.
+source_names:
+- The Broadest Necessity
+- Codex, prompted by Bacon
+references:
+- paper: the-broadest-necessity
+  role: proof
+  locator: Theorem 5.1; §§7.3–7.5, Definitions 7.7–7.14 and Corollary 7.6; draft pp. 24, 37–42
+group: full-modalized-kripke
+settings:
+  frame: $W=\{w,v\}$ with the reflexive closure of $wRv$, designated world $w$
+  domains: 'Use outer individual set $\{a,b\}$, with identity PERs on $D_e(w)=\{a\}$ and $D_e(v)=\{a,b\}$.
+    Use the full expanding function spaces of Definition 7.14: a function exists at a world when it preserves
+    the PERs at every accessible world, and two functions are identical there when their values agree
+    on related arguments at every accessible world.'
+arguments:
+- id: brouwer
+  text: Let $W=\{w,v\}$, with $wRv$ but not $vRw$, and let $p=\{w\}$. At $w$, $p$ is true. At $v$, $\Diamond
+    p$ is false, since $v$ sees only $v$. Hence $p\to\Box\Diamond p$ fails at $w$. Proposition 7.4 identifies
+    the defined box with the frame modality; the same identity-separation argument works for the expanding-domain
+    instance with total propositional domain.
+  by: OpenAI Codex, prompted by Andrew Bacon
+  date: '2026-10-28'
+  choice: free
+  fails:
+  - modal-b
+- id: barcan-e
+  text: Let $H:et$ have $H(a)=W$ and $H(b)=\varnothing$. It preserves individual identity wherever its
+    arguments exist, so exists already at $w$. At $w$ every existing individual is necessarily H, but
+    at $v$ the new individual b is not H. Thus $\forall x^e\, .\,\Box Hx$ holds and $\Box\forall x^e\,
+    .\,Hx$ fails. Functionality and Tractarianism fail by the recorded implications to BF; their direct
+    witnesses are in the write-up.
+  by: OpenAI Codex, prompted by Andrew Bacon
+  date: '2026-10-28'
+  choice: free
+  fails:
+  - barcan-r
+notes: The propositional domain is total at both worlds. This avoids the quantifier-admissibility problem
+  discussed at the end of §7.5; the write-up checks admissibility for this instance. The source outlines
+  the expanding construction; the finite instance and detailed witnesses are a transcription/application,
+  not a numbered theorem claimed for the paper.

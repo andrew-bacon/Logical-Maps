@@ -30,7 +30,10 @@ papers:
 - id: the-broadest-necessity
   title: The Broadest Necessity
   citation: Bacon, Andrew (2018). The Broadest Necessity. Journal of Philosophical Logic 47(5), 733–783.
-    As credited in Classicism, §1.5.
+    As credited in Classicism, §1.5. Read directly for the additions of 28 October 2026.
+    Locators for those additions refer to the author-hosted draft dated 25 July 2017,
+    not the published pagination. Theorem 5.1, p. 24; §§7.3–7.5, pp. 37–42.
+  url: https://andrew-bacon.github.io/papers/The%20Broadest%20Necessity.pdf
 - id: necessity-of-identity
   title: On a Derivation of the Necessity of Identity
   citation: Burgess, John P. (2014). On a Derivation of the Necessity of Identity. Synthese 191(7). Historical
@@ -128,3 +131,13 @@ papers:
   note: The first-page authorship note credits Bacon with the framework and proposed applications, and
     Claude Opus 5.5 with the write-up and verification. This contribution records the pure-language applications
     in §§4–6; §7 involving E is excluded.
+
+- id: bacon-substitution-structures-2019
+  title: Substitution Structures
+  citation: >-
+    Bacon, Andrew (2019). Substitution Structures. Journal of Philosophical Logic 48(6),
+    1017–1075. DOI 10.1007/s10992-019-09505-z. Locators refer to the author-hosted
+    draft dated 10 January 2019: §4 (M-set function spaces), and §5.3, pp. 45–47
+    (Boolean full M-set models; the full transformation monoid example on p. 46).
+  url: https://andrew-bacon.github.io/papers/Substitution%20Structures.pdf
+  note: The construction is source-reported; the map's additional verdicts are identified separately. No PDF is redistributed.
