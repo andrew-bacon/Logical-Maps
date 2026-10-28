@@ -16,3 +16,4 @@ notes: 'The type $t$ instance of [[self-atoms-are-atoms-r]]. Bridge principle (C
   A self-atom need not be an atom: in the full model over the free monoid on $a,b$ the proposition $\{a,b\}$
   becomes the actual-world proposition under either generator, but $\{a\}$ lies strictly below it. With
   Self-Atomicity it gives Atomicity; 5 implies it.'
+lean_def: Classicism.P.SelfAtomsAreAtomsT.schemaIn

@@ -13,3 +13,4 @@ sources:
 source_names:
 - Dorr 25 Oct
 notes: The boxed form of [[self-atoms-are-atoms-t]], and the type $t$ instance of [[necessary-self-atoms-are-atoms-r]].
+lean_def: Classicism.P.NecSelfAtomsAreAtomsT.schemaIn

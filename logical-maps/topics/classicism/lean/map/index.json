@@ -11865,7 +11865,7 @@
       "lines": [174, 176],
       "file": "Classicism/Principles/Coarse.lean"},
      {"name": "Classicism.P.TractarianismDual.listQuoted",
-      "lines": [70, 70],
+      "lines": [75, 75],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.tractarianism_r.dual_polyadic",
@@ -12025,7 +12025,7 @@
       "lines": [195, 196],
       "file": "Classicism/Principles/Coarse.lean"},
      {"name": "Classicism.P.NecTractarianismDual.listQuoted",
-      "lines": [71, 71],
+      "lines": [76, 76],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_tractarianism_r.dual_polyadic",
@@ -12265,7 +12265,7 @@
       "lines": [116, 117],
       "file": "Classicism/Principles/Coarse.lean"},
      {"name": "Classicism.P.NecNecessityOfDistinctnessDual.listQuoted",
-      "lines": [69, 69],
+      "lines": [74, 74],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_distinctness_necessary_r.dual_polyadic",
@@ -12368,7 +12368,7 @@
       "lines": [154, 155],
       "file": "Classicism/Principles/Coarse.lean"},
      {"name": "Classicism.P.NecBarcanDual.listQuoted",
-      "lines": [70, 70],
+      "lines": [75, 75],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_barcan_r.dual_polyadic",
@@ -12427,7 +12427,7 @@
       "lines": [60, 65],
       "file": "Classicism/Principles/Choice.lean"},
      {"name": "Classicism.P.ModalizedPlenitude.listQuoted",
-      "lines": [49, 49],
+      "lines": [54, 54],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.modalized_plenitude_r.polyadic",
@@ -12743,7 +12743,7 @@
       "lines": [99, 100],
       "file": "Classicism/Principles/Coarse.lean"},
      {"name": "Classicism.P.NecessityOfDistinctnessDual.listQuoted",
-      "lines": [69, 69],
+      "lines": [74, 74],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.distinctness_necessary_r.dual_polyadic",
@@ -12804,7 +12804,7 @@
       "lines": [67, 68],
       "file": "Classicism/Principles/Base.lean"},
      {"name": "Classicism.P.ConverseBarcanDual.listQuoted",
-      "lines": [67, 67],
+      "lines": [72, 72],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.converse_barcan_r.dual_polyadic",
@@ -12842,7 +12842,7 @@
       "lines": [94, 95],
       "file": "Classicism/Principles/Base.lean"},
      {"name": "Classicism.P.BroadNecessitism.listQuoted",
-      "lines": [46, 46],
+      "lines": [51, 51],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.broad_necessitism_r.polyadic",
@@ -12946,7 +12946,7 @@
       "lines": [133, 134],
       "file": "Classicism/Principles/Coarse.lean"},
      {"name": "Classicism.P.BarcanDual.listQuoted",
-      "lines": [70, 70],
+      "lines": [75, 75],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.barcan_r.dual_polyadic",
@@ -13137,6 +13137,34 @@
   {"name": "Classicism.P.Serial",
    "lines": [20, 21],
    "file": "Classicism/Principles/Choice.lean"},
+  "Classicism.P.SelfAtomsAreStrongAtomsT":
+  {"name": "Classicism.P.SelfAtomsAreStrongAtomsT",
+   "lines": [150, 151],
+   "file": "Classicism/Principles/Instances.lean"},
+  "Classicism.P.SelfAtomsAreStrongAtoms":
+  {"name": "Classicism.P.SelfAtomsAreStrongAtoms",
+   "lines": [228, 229],
+   "file": "Classicism/Principles/Lattice.lean"},
+  "Classicism.P.SelfAtomsAreAtomsT":
+  {"name": "Classicism.P.SelfAtomsAreAtomsT",
+   "lines": [146, 147],
+   "file": "Classicism/Principles/Instances.lean"},
+  "Classicism.P.SelfAtomsAreAtoms":
+  {"name": "Classicism.P.SelfAtomsAreAtoms",
+   "lines": [223, 224],
+   "file": "Classicism/Principles/Lattice.lean"},
+  "Classicism.P.SelfAtomicityT":
+  {"name": "Classicism.P.SelfAtomicityT",
+   "lines": [138, 139],
+   "file": "Classicism/Principles/Instances.lean"},
+  "Classicism.P.SelfAtomicity":
+  {"name": "Classicism.P.SelfAtomicity",
+   "lines": [212, 214],
+   "file": "Classicism/Principles/Lattice.lean"},
+  "Classicism.P.SelfAtom":
+  {"name": "Classicism.P.SelfAtom",
+   "lines": [208, 210],
+   "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.SAtom":
   {"name": "Classicism.P.SAtom",
    "lines": [150, 152],
@@ -13292,6 +13320,30 @@
   "Classicism.P.NecStrongActuality":
   {"name": "Classicism.P.NecStrongActuality",
    "lines": [145, 146],
+   "file": "Classicism/Principles/Lattice.lean"},
+  "Classicism.P.NecSelfAtomsAreStrongAtomsT":
+  {"name": "Classicism.P.NecSelfAtomsAreStrongAtomsT",
+   "lines": [152, 153],
+   "file": "Classicism/Principles/Instances.lean"},
+  "Classicism.P.NecSelfAtomsAreStrongAtoms":
+  {"name": "Classicism.P.NecSelfAtomsAreStrongAtoms",
+   "lines": [230, 231],
+   "file": "Classicism/Principles/Lattice.lean"},
+  "Classicism.P.NecSelfAtomsAreAtomsT":
+  {"name": "Classicism.P.NecSelfAtomsAreAtomsT",
+   "lines": [148, 149],
+   "file": "Classicism/Principles/Instances.lean"},
+  "Classicism.P.NecSelfAtomsAreAtoms":
+  {"name": "Classicism.P.NecSelfAtomsAreAtoms",
+   "lines": [225, 226],
+   "file": "Classicism/Principles/Lattice.lean"},
+  "Classicism.P.NecSelfAtomicityT":
+  {"name": "Classicism.P.NecSelfAtomicityT",
+   "lines": [140, 141],
+   "file": "Classicism/Principles/Instances.lean"},
+  "Classicism.P.NecSelfAtomicity":
+  {"name": "Classicism.P.NecSelfAtomicity",
+   "lines": [215, 216],
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.NecRigidRigidity":
   {"name": "Classicism.P.NecRigidRigidity",
@@ -13457,6 +13509,22 @@
   {"name": "Classicism.P.NecBarcan",
    "lines": [154, 155],
    "file": "Classicism/Principles/Coarse.lean"},
+  "Classicism.P.NecAtomsAreStrongAtomsT":
+  {"name": "Classicism.P.NecAtomsAreStrongAtomsT",
+   "lines": [156, 157],
+   "file": "Classicism/Principles/Instances.lean"},
+  "Classicism.P.NecAtomsAreStrongAtoms":
+  {"name": "Classicism.P.NecAtomsAreStrongAtoms",
+   "lines": [235, 236],
+   "file": "Classicism/Principles/Lattice.lean"},
+  "Classicism.P.NecAtomsAreSelfAtomsT":
+  {"name": "Classicism.P.NecAtomsAreSelfAtomsT",
+   "lines": [144, 145],
+   "file": "Classicism/Principles/Instances.lean"},
+  "Classicism.P.NecAtomsAreSelfAtoms":
+  {"name": "Classicism.P.NecAtomsAreSelfAtoms",
+   "lines": [220, 221],
+   "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.NecAtomicityT":
   {"name": "Classicism.P.NecAtomicityT",
    "lines": [131, 132],
@@ -13545,6 +13613,10 @@
   {"name": "Classicism.P.IntensionalChoice",
    "lines": [90, 93],
    "file": "Classicism/Principles/Choice.lean"},
+  "Classicism.P.Instantiated":
+  {"name": "Classicism.P.Instantiated",
+   "lines": [206, 207],
+   "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.InextensibleComprehension":
   {"name": "Classicism.P.InextensibleComprehension",
    "lines": [33, 35],
@@ -13697,6 +13769,22 @@
   {"name": "Classicism.P.AxiomOfInfinity",
    "lines": [17, 20],
    "file": "Classicism/Principles/Infinity.lean"},
+  "Classicism.P.AtomsAreStrongAtomsT":
+  {"name": "Classicism.P.AtomsAreStrongAtomsT",
+   "lines": [154, 155],
+   "file": "Classicism/Principles/Instances.lean"},
+  "Classicism.P.AtomsAreStrongAtoms":
+  {"name": "Classicism.P.AtomsAreStrongAtoms",
+   "lines": [233, 234],
+   "file": "Classicism/Principles/Lattice.lean"},
+  "Classicism.P.AtomsAreSelfAtomsT":
+  {"name": "Classicism.P.AtomsAreSelfAtomsT",
+   "lines": [142, 143],
+   "file": "Classicism/Principles/Instances.lean"},
+  "Classicism.P.AtomsAreSelfAtoms":
+  {"name": "Classicism.P.AtomsAreSelfAtoms",
+   "lines": [218, 219],
+   "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.Atomlessness":
   {"name": "Classicism.P.Atomlessness",
    "lines": [86, 88],

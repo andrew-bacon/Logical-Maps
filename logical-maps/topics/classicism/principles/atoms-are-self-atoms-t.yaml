@@ -16,3 +16,4 @@ notes: 'The type $t$ instance of [[atoms-are-self-atoms-r]]. Bridge principle (C
   atoms stay atoms wherever they hold. With Atomicity it gives Self-Atomicity, and it follows from [[atoms-are-strong-atoms-r]].
   In a full action model it says that no non-identity arrow $m$ has $m\circ k=k$ for an arrow $k$ out
   of the evaluation object.'
+lean_def: Classicism.P.AtomsAreSelfAtomsT.schemaIn

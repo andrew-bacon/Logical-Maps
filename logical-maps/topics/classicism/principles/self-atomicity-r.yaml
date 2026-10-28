@@ -23,3 +23,4 @@ notes: 'Cian Dorr’s weakening of Strong Atomicity (25 October 2026): a strong 
   by every self-atom is necessary, is equivalent as for Atomicity.'
 aliases:
 - Self-Atomism
+lean_def: Classicism.P.SelfAtomicity.schemaIn

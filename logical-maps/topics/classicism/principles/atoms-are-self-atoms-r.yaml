@@ -18,3 +18,4 @@ source_names:
 notes: 'Bridge principle (Cian Dorr, 25 October 2026): atoms stay atoms wherever they hold. With Atomicity
   it gives Self-Atomicity, and it follows from [[atoms-are-strong-atoms-r]]. In a full action model it
   says that no non-identity arrow $m$ has $m\circ k=k$ for an arrow $k$ out of the evaluation object.'
+lean_def: Classicism.P.AtomsAreSelfAtoms.schemaIn

@@ -16,3 +16,4 @@ sources:
 source_names:
 - Dorr 25 Oct
 notes: The boxed form of [[self-atomicity-r]].
+lean_def: Classicism.P.NecSelfAtomicity.schemaIn

@@ -19,3 +19,4 @@ notes: 'The type $t$ instance of [[self-atomicity-r]]. Cian Dorr’s weakening o
   of Atomicity in both directions; the bridge principles [[atoms-are-self-atoms-r]], [[self-atoms-are-atoms-r]],
   [[self-atoms-are-strong-atoms-r]] and [[atoms-are-strong-atoms-r]] connect the three notions. The
   dual form, that whatever is entailed by every self-atom is necessary, is equivalent as for Atomicity.'
+lean_def: Classicism.P.SelfAtomicityT.schemaIn
