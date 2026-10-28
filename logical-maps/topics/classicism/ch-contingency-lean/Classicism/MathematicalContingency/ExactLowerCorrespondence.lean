@@ -134,14 +134,16 @@ def ExactLowerBijection (σ : Type) [Ty σ] : Prop :=
     (∀ e, FiniteCardinality e → ∃ l, R e l) ∧
     (∀ l, LowerNat l → ∃ e, R e l) ∧
     (∀ e l l', R e l → R e l' → l = l') ∧
-    (∀ e e' l, R e l → R e' l → e = e')
+    (∀ e e' l, R e l → R e' l → e = e') ∧
+    R (ZeroCard σ) (AtLeastZero σ) ∧
+    (∀ e l, R e l → R (SucCard e) (SucCard l))
 
 /-- Main result. Neither a function term nor a natural-number carrier
     is assumed to exist: the bijection is witnessed by a binary relation. -/
 theorem exactLowerBijection_of_peano
     (he : ExactPeano σ) (hl : LowerPeano σ) :
     ExactLowerBijection σ := by
-  refine ⟨ExactLowerPair, ?_, ?_, ?_, ?_, ?_⟩
+  refine ⟨ExactLowerPair, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩
   · intro e l h
     exact ⟨exactLowerPair_exact e l h, exactLowerPair_lower e l h⟩
   · exact exactLowerPair_total_exact
@@ -150,6 +152,9 @@ theorem exactLowerBijection_of_peano
     exact (exactLowerPair_right_unique he e l h l' h').symm
   · intro e e' l h h'
     exact (exactLowerPair_left_unique hl e l h e' h').symm
+  · exact exactLowerPair_zero
+  · intro e l h
+    exact exactLowerPair_suc e l h
 
 /-- When the lower arithmetic axiom is boxed, it supplies lower Peano by T. -/
 theorem exactLowerBijection_of_draft_box_infinity
