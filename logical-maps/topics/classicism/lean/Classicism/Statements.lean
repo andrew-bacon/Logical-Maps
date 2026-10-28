@@ -3517,6 +3517,15 @@ def necessary_two_hat_implies_nd_necessity_implies_two_hat_implies_nd_necessity 
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTwoHatImpliesNdNecessity.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.TwoHatImpliesNdNecessity.schemaIn
 
+/-- `necessary-vicinity-and-necessary-atomicity-t-imply-necessary-actuality`
+
+□Vicinity ∧ □Atomicity (type t) ⇒ □Actuality -/
+def necessary_vicinity_and_necessary_atomicity_t_imply_necessary_actuality : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecVicinity.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomicityT.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecActuality.schemaIn
+
 /-- `necessary-vicinity-and-necessary-barcan-t-imply-necessary-two-hat-implies-nd`
 
 □Vicinity ∧ □BF (type t) ⇒ □Two-hat necessity implies ND-necessity -/
@@ -5127,6 +5136,15 @@ def two_hat_implies_nd_and_five_implies_two_hat_imply_five_implies_nd : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.TwoHatImpliesNdNecessity.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.FiveImpliesTwoHatNecessity.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.FiveImpliesNdNecessity.schemaIn
+
+/-- `vicinity-and-atomicity-t-imply-actuality`
+
+Vicinity ∧ Atomicity (type t) ⇒ Actuality -/
+def vicinity_and_atomicity_t_imply_actuality : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Vicinity.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AtomicityT.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Actuality.schemaIn
 
 /-- `vicinity-and-barcan-t-imply-five-implies-two-hat`
 
