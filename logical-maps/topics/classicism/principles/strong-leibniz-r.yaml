@@ -1,6 +1,6 @@
 id: strong-leibniz-r
 name: Strong Leibniz Biconditionals
-category: lattice
+category: more-boolean-structure
 statement: 'At each relational type, every possible entity (one distinct from bottom) is entailed by a
   strong world: a possible entity that necessarily entails every entity of the type or its negation. The
   right-to-left direction is a theorem of C; the principle records the substantive direction.'

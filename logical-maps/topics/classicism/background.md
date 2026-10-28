@@ -319,6 +319,28 @@ Strong Leibniz Biconditionals replace $\operatorname{WWorld}$ by
 $\operatorname{SWorld}$. In both, the right-to-left direction is a theorem of C. The type-$t$ instance
 of the strong form is recorded separately, as is done for Atomicity.
 
+**Self-atoms.** A *self-atom* (Cian Dorr, 25 October 2026) is a possible entity
+that is necessarily an atom whenever it is instantiated:
+
+$$
+\operatorname{SAtom}_\sigma(X):=\Diamond_\sigma X\land
+  \Box\bigl(\exists\bar x\, .\,X\bar x\to\operatorname{Atom}_\sigma(X)\bigr),
+\qquad
+\operatorname{SAtom}_t(p):=\Diamond p\land\Box\bigl(p\to\operatorname{Atom}_t(p)\bigr).
+$$
+
+At type $t$, since $p\land\operatorname{Atom}_t(p)$ is equivalent in C to
+$p\land\forall q\, .\,q\to p\le q$, a self-atom is a possible proposition that
+entails that it is the actual world. A strong world is an atom at every world,
+a self-atom an atom at every world where it holds, an atom an atom at the
+evaluation point; a strong world is a self-atom and a true atom is a
+self-atom, but a self-atom need not be an atom. Self-Atomicity replaces
+$\operatorname{SWorld}$ in the Strong Leibniz Biconditionals by
+$\operatorname{SAtom}$, and the four *bridge principles* say that atoms are
+self-atoms, that self-atoms are atoms, that self-atoms are strong worlds, and
+that atoms are strong worlds; the last is what the Strong Leibniz Biconditionals
+add to Atomicity.
+
 Strong Possibility uses the distinctness-preserving modality of §2.6, p. 42:
 
 $$

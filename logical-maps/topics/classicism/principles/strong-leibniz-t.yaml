@@ -1,6 +1,6 @@
 id: strong-leibniz-t
 name: Strong Leibniz Biconditionals (type t)
-category: lattice
+category: more-boolean-structure
 statement: Every possible proposition is entailed by a strong world proposition, one that is possible
   and necessarily entails every proposition or its negation.
 formal: $\forall p\, .\,\Diamond p\to\exists w\, .\,\operatorname{SWorld}_t(w)\land w\le p$

@@ -1,6 +1,6 @@
 id: strong-actuality
 name: Strong Actuality
-category: lattice
+category: more-boolean-structure
 statement: 'There is a true strong world proposition: a true proposition that necessarily entails every
   proposition or its negation.'
 formal: $\exists p\, .\,p\land\Box\forall q\, .\,p\le q\lor p\le\neg q$

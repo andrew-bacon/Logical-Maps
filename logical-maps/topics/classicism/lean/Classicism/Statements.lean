@@ -4368,32 +4368,6 @@ def zorn_r_implies_well_ordering_r : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Zorn.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WellOrdering.schemaIn
 
-/-- `coalesced-all-finite-individual-domains`
-
-Coalesced sum: root over all finite individual domains: a witness satisfying 13 principles
-and violating 6. -/
-def coalesced_all_finite_individual_domains : Prop :=
-  ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AxiomOfInfinityE.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AxiomOfInfinityT.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Barcan.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecStrongLeibnizT.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AtomicityT.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BooleanCompletenessT.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRelationalChoice.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRigidComprehension.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecIntensionalChoice.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTruthImpliesFiveNecessity.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RelationalChoice.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Actuality.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.DistinctnessPreservingCollapse.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessityOfDistinctness.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.signatureB) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.witnessedPossibility _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.separatedStructure _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.independence _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.distinctnessC _)
-
 /-- `full-henkin-infinite-base`
 
 Full Henkin model: countably infinite individual domain: a witness satisfying 3 principles
@@ -4431,79 +4405,6 @@ def henkin_without_relational_choice : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Extensionality.schemaIn ∧
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AxiomOfInfinityE.schemaIn ∧
     ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RelationalChoice.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.witnessedPossibility _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.separatedStructure _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.independence _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.distinctnessC _)
-
-/-- `modalized-cohen-cloud`
-
-Modalized domains: Cohen cloud: a witness satisfying 3 principles
-and violating 2. -/
-def modalized_cohen_cloud : Prop :=
-  ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRigidComprehension.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecIntensionalChoice.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcan.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AtomicityT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessityOfDistinctnessT.schemaIn
-
-/-- `modalized-cohen-idempotent-sum`
-
-Modalized domains: Cohen–idempotent rooted sum: a witness satisfying 2 principles
-and violating 3. -/
-def modalized_cohen_idempotent_sum : Prop :=
-  ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRigidComprehension.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecIntensionalChoice.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AtomicityT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessityOfDistinctnessT.schemaIn
-
-/-- `symmetric-entrance-qualitative-links`
-
-Symmetric ideally-full model: a one-point entrance to the qualitative-links tail: a witness satisfying 6 principles
-and violating 11. -/
-def symmetric_entrance_qualitative_links : Prop :=
-  ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidComprehension.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Atomicity.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RelationalChoice.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeaklyRigidPower.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecStrongActuality.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Actuality.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTameRigidity.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessityOfDistinctnessT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongLeibnizT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AxiomOfInfinityE.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.infinityE) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.PossibleInfinityE.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.witnessedPossibility _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.separatedStructure _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.independence _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.distinctnessC _)
-
-/-- `symmetric-entrance-qualitative-links-sigma-true-atom`
-
-Symmetric ideally-full model: a one-point entrance to the qualitative-links tail [Σ true atom]: a witness satisfying 6 principles
-and violating 12. -/
-def symmetric_entrance_qualitative_links_sigma_true_atom : Prop :=
-  ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidComprehension.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Atomicity.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RelationalChoice.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeaklyRigidPower.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecStrongActuality.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Actuality.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTameRigidity.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessityOfDistinctnessT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongLeibnizT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AxiomOfInfinityE.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.infinityE) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.PossibleInfinityE.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.noContingency _) ∧
     ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.witnessedPossibility _) ∧
     ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.separatedStructure _) ∧
     ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.independence _) ∧
