@@ -1,0 +1,50 @@
+id: full-modalized-kripke-chain
+name: 'Full modalized domains: two-world chain'
+certificate:
+  source_id: the-broadest-necessity
+  produced_by: Andrew Bacon (source construction); additional verdict arguments identified below
+  recorded_by: OpenAI Codex, prompted by Andrew Bacon
+  checked_by: []
+  date: '2026-10-28'
+  lean: none
+sources:
+- Andrew Bacon, The Broadest Necessity (2018), author-hosted draft of 25 July 2017, §§7.3–7.5, pp. 37–42.
+- Concrete instances and explicit witnesses recorded by OpenAI Codex, prompted by Andrew Bacon, 28 October
+  2026.
+source_names:
+- The Broadest Necessity
+- Codex, prompted by Bacon
+references:
+- paper: the-broadest-necessity
+  role: proof
+  locator: Theorem 5.1; §§7.3–7.5, Definitions 7.7–7.14 and Corollary 7.6; draft pp. 24, 37–42
+group: full-modalized-kripke
+settings:
+  frame: $W=\{w,v\}$ with the reflexive closure of $wRv$, designated world $w$
+  domains: 'The individual domain is the singleton $\{a\}$ at both worlds, with literal identity. Use
+    the full constant-domain construction of Definitions 7.7–7.11: every higher-type element preserves
+    the modalized equivalences at every world.'
+arguments:
+- id: brouwer
+  text: Let $W=\{w,v\}$, with $wRv$ but not $vRw$, and let $p=\{w\}$. At $w$, $p$ is true. At $v$, $\Diamond
+    p$ is false, since $v$ sees only $v$. Hence $p\to\Box\Diamond p$ fails at $w$. Proposition 7.4 identifies
+    the defined box with the frame modality; the same identity-separation argument works for the expanding-domain
+    instance with total propositional domain.
+  by: OpenAI Codex, prompted by Andrew Bacon
+  date: '2026-10-28'
+  choice: free
+  fails:
+  - modal-b
+  writeup: classicism-s4-upper-bound
+- id: functionality
+  text: Corollary 7.5 proves Functionality at each world of the constant-domain construction, hence its
+    necessitation. This includes every admitted input type, including e. The map derives BF and Tractarianism
+    from it.
+  by: OpenAI Codex, prompted by Andrew Bacon
+  date: '2026-10-28'
+  choice: free
+  holds:
+  - necessary-functionality-r
+notes: This is a concrete B countermodel, not a single model refuting every S4 non-theorem. The family-level
+  S4 upper bound and countermodel transfer are recorded in Background and the linked write-up. Full modalized
+  domains here do not mean the repository condition full-action-model.

@@ -1,0 +1,58 @@
+id: full-transformation-monoid
+name: 'Full action models: all transformations with their natural action'
+definition: Work in ZFC. {{carrier}} Let $M=X^X$ with composition. There is one object, $D_e=X$ with $f\cdot
+  x=f(x)$, and $D_t=\mathcal P(M)$ with $f\cdot p=\{g:g\circ f\in p\}$. Take full M-set exponentials at
+  the admitted function types, equivalently all relational intensions. Evaluate at the identity transformation.
+  Every constant of Σ is relational and denotes top. There is no finite-support or symmetry restriction.
+parameters:
+  carrier:
+    text: A set with at least two elements; cardinality assumptions are fixed by each member.
+references:
+- paper: bacon-substitution-structures-2019
+  role: origin
+  locator: §5.3, pp. 45–47, especially the D^D example on p. 46
+- paper: bacon-dorr-classicism
+  role: background
+  locator: §3.5, pp. 58–61; Appendix D
+  note: Translation to relational action-model intensions and general full-model verdicts.
+meets:
+  full-model: Every intension of each relational type is present.
+  full-action-model: The full Boolean M-set construction restricted to relational types is the full one-object
+    action model.
+  one-object-action-model: The category has one object and endomorphism monoid X^X.
+  extensionally-full: Arbitrary extensions at the identity are values of full intensions.
+  codomain-intensions: All intensions are present.
+  identity-singletons: The singleton of the identity transformation belongs to the full powerset domain.
+  nonidentity-arrow: A constant map is not the identity, since X has at least two elements.
+  unretracted-arrow: 'A constant map k cannot have a left inverse: h composed with k is constant.'
+  nonepic-arrow: For k constant at a, the distinct maps identity and k agree after k.
+  returning-arrow: A transposition of two elements is a nonidentity invertible transformation.
+  nonidentity-isomorphism: A transposition is its own inverse.
+  sigma-top: Every constant of Σ is relational and denotes top.
+arguments:
+- id: barcan-at-e-and-t
+  text: For $\sigma=e,t$, let $H_\sigma$ have extension $\operatorname{im}(f_\sigma)$ at arrow f. Fullness
+    supplies this intension. Every root entity x necessarily satisfies H, since $f_\sigma(x)$ belongs
+    to that image. For a constant map k, the image at e is a singleton, so some individual at the target
+    is missing. At t, every $k\cdot p$ gives the same truth value to the identity and k, since $1\circ
+    k=k\circ k=k$; thus $\{1\}$ is outside the image. Therefore BF fails separately at e and t. The quantified
+    H at the root exists by fullness.
+  by: OpenAI Codex, prompted by Andrew Bacon
+  date: '2026-10-28'
+  choice: free
+  fails:
+  - barcan-t
+  - barcan-r
+  writeup: full-transformation-monoid
+- id: actuality-and-completeness
+  text: At the sole object, $\{1\}$ is the strongest true proposition. Every relational entailment algebra
+    is the full powerset of its arrow/argument tuples, so arbitrary intersections give greatest lower
+    bounds of the extension of any internal family. The same descriptions apply at the target of every
+    arrow, yielding the boxed principles. These are direct fullness arguments, not extra verdicts attributed
+    to Substitution Structures.
+  by: OpenAI Codex, prompted by Andrew Bacon
+  date: '2026-10-28'
+  choice: free
+  holds:
+  - necessary-actuality
+  - necessary-boolean-completeness-r

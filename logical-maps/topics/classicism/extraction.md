@@ -348,3 +348,22 @@ same frame, propositions, individuals and verdicts, and believed elementarily eq
 domains are the modalized model's root-existing entities, which by its Lemma 4.3 are all it ever sees).
 The handout is now a second source of the cloud record; the folded record and its write-up remain in the
 history before this date.
+
+## The Broadest Necessity and Substitution Structures (28 October 2026)
+
+Read directly by OpenAI Codex, prompted by Andrew Bacon. Locators refer to
+Bacon's author-hosted drafts (25 July 2017 and 10 January 2019 respectively),
+with the published years 2018 and 2019 retained in the bibliography.
+
+| Source | Recorded |
+| --- | --- |
+| The Broadest Necessity, Theorem 5.1; §7.4, Corollary 7.6 | S4 upper bound in Background and `writeups/classicism-s4-upper-bound.md`; explicit HFE-to-C translation, no new object-language node |
+| §§7.3–7.4 | `full-modalized-kripke` family and `full-modalized-kripke-chain`: concrete nonsymmetric countermodel to B, with boxed Functionality |
+| §7.5, Definitions 7.12–7.14 | `full-modalized-expanding-chain`: individual-domain expansion, B and BF-at-e failures; Functionality and Tractarianism failures derived; quantifier admissibility checked for the concrete instance |
+| Substitution Structures, §5.3, pp. 45–47, especially p. 46 | `full-transformation-monoid` family and its two-element and natural-number instances, with the natural individual action |
+
+The transformation-model entries reuse general full-action arguments and
+supply explicit BF witnesses at e and t. Additional deductions are credited
+separately from the source construction. Fullness gives boxed Atomicity,
+not its failure. No finite-support restriction, signature-fundamentality
+claim, or new Lean proof is introduced. Unknown verdicts are left unknown.
