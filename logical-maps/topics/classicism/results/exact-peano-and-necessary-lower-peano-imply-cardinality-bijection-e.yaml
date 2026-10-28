@@ -23,8 +23,9 @@ proof: 'Define the relation R by simultaneous induction: R(e,l) if every binary 
   under the at-least Peano conditions, the dual induction proves the exact partner is unique. Since □LowerPeano
   implies LowerPeano by modal T, R is the desired bijection. The written Lean proofs are ExactLower.exactLowerBijection_of_necessary_lower_peano
   and MathematicalContingency.exactLowerBijection_of_draft_box_infinity.'
-notes: The theorem is an object-language implication involving only relational quantifiers, not meta-level
-  natural numbers or choice functions. Its two new Lean modules are submitted for compilation and proof checking.
-  The result must not be marked Lean verified until Zach's map-level statement-generation/derivation auditor
-  has checked its exact statement. The premise exact-peano-e is explicit and is not yet discharged by the CH
-  formalization.
+notes: >-
+  Preserved as the original, weaker theorem. The extra exact-peano-e premise is now discharged by
+  [[necessary-lower-peano-implies-exact-peano-e]], and the stronger single-premise result is
+  [[necessary-lower-peano-implies-cardinality-bijection-e]]. The original declarations and proofs remain
+  unchanged. All these are relational object-language statements, not claims indexed by metalinguistic
+  natural numbers. Map-level lean status remains none pending the exact generated-statement audit.
