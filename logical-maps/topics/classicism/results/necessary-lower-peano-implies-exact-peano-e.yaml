@@ -29,6 +29,8 @@ proof: >-
 notes: >-
   No exact-Peano, Choice, Barcan or Rigid Comprehension premise is added. The native theorem is
   Classicism.ExactLower.exactPeano_of_box_lowerPeano, in Results/Research/ExactLowerPeanoTransfer.lean;
-  the checkpoint copy has namespace Classicism.MathematicalContingency. Compilation and the Classicism
-  admissibility/type audits are distinct from the map's generated-statement certification; lean remains
-  none until that separate audit is performed. This is not an identification with individual infinity.
+  the checkpoint copy has namespace Classicism.MathematicalContingency. The native object-language
+  derivation and schema entailment are in Classicism/Certified/ExactLower.lean, and the certificate at
+  the generated map statement is in Classicism/MapExactLower.lean. The unchanged pmap lean-check
+  classicism --update command verified this record in run 40756833756 on 28 October 2026; see
+  lean/map/exact-lower-audit.json. This is not an identification with individual infinity.

@@ -29,4 +29,6 @@ notes: >-
   Classicism.ExactLower.exactLowerBijection_of_box_lowerPeano; the checkpoint counterpart has namespace
   Classicism.MathematicalContingency. The boxed theorem states that necessarily a bijection exists, not
   that one fixed rigid graph has been obtained. It does not by itself discharge Rigid LowerNat, transfer
-  all arithmetic operations or construct a real-number structure. Map-level lean status remains none.
+  all arithmetic operations or construct a real-number structure. The native object-language certificate
+  and exact generated map statement passed pmap lean-check classicism --update in run 40756833756;
+  see lean/map/exact-lower-audit.json. This record's verified status was written by that auditor.

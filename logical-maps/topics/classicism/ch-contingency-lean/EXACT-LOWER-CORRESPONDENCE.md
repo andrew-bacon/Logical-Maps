@@ -54,17 +54,34 @@ The graph relates the two zeros and is closed under simultaneous successor,
 in addition to being total and one-to-one in both directions. No primitive
 natural-number index, function choice, RC, IC or BF premise is introduced.
 
-## Verification boundary
+## Verification completed for the three map arrows
 
-The modules invoke both `#classicism_check` and `#classicism_types` on every
-new lemma. CI run 40752908468 is the first targeted run of the new transfer
-modules; the checkpoint job successfully compiled them and passed both audits.
-Consult that run for the final native-job status. Source dependencies may use
-build caches; this is not a claim to rebuild the entire checkpoint from scratch.
+CI run 40752908468 passed both targeted Lean builds and the Classicism
+admissibility/type audits for the transfer proof. Native object-language
+certification then passed in run 40756304227: all three fixed-e map implications
+have C-minus derivations and schema entailments, using only `propext` and
+`Quot.sound` in their Lean axiom reports.
 
-The map records remain `lean: none`. Compiling these proofs and passing the
-Classicism gate/type audits is not the separate object-language derivation and
-map-generated-statement certification required by `pmap lean-check`.
+The final native map audit passed in fork run 40756833756. It ran the unchanged
+command `python3 scripts/pmap.py lean-check classicism --update`, checked the
+certificates against the statements generated from the actual map records,
+and published the resulting metadata in commit
+`7d69e1cee3fbc09d5f56ec8434a7a01b5750a399`. The three results now have
+`certificate.lean: verified`:
+
+- `necessary-lower-peano-implies-exact-peano-e`
+- `necessary-lower-peano-implies-cardinality-bijection-e`
+- `exact-peano-and-necessary-lower-peano-imply-cardinality-bijection-e`.
+
+The native files `Classicism/Certified/ExactLower.lean` and
+`Classicism/MapExactLower.lean` contain the object-language and exact
+map-statement certificates respectively. The machine-written evidence is
+`../lean/map/exact-lower-audit.json`; the native map index includes all three
+certificate references and source locations. This is not a claim that the
+entire standalone checkpoint was rebuilt from scratch.
+
+These records are eligible for the site's Lean badge when the source is
+merged and the website rebuilt. No generated website exports are committed.
 
 ## Not asserted
 
@@ -72,3 +89,4 @@ This result does not by itself derive strong rigidity of LowerNat, produce a
 single rigid graph valid everywhere, transport every arithmetic operation, or
 construct a real-number structure. The boxed conclusion says necessarily a
 bijection exists. No converse ExactPeano -> LowerPeano is claimed here.
+The full CH-contingency map arrow is not certified by this arithmetic audit.
