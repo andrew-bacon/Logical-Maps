@@ -1,0 +1,28 @@
+id: bounded-ch-forcing-setup
+name: Bounded CH forcing setup (two algebra instances)
+category: mathematical-contingency
+statement: At a fixed admissible carrier type κ, a shared strongly inaccessible well-order (K,L) exists
+  and the exact two forcing-possibilism instances, boxed Rigid Comprehension instances and unboxed Intensional
+  Choice instances required by checkpoint 140 hold.
+formal: $\exists K^{\kappa t}\exists L^{\kappa\kappa t}\, .\,\mathrm{MPAt}_{B_+}(K,L)\land\mathrm{MPAt}_{B_-}(K,L)\land\operatorname{StronglyInaccessible}(K,L)\land\operatorname{NaturalPositiveRC}\land\operatorname{NaturalNegativeRC}\land\Box\operatorname{RC}_{B_-}\land\operatorname{NaturalCHChoice}$
+definitions: This is BoundedCHForcingSetup κ in the separate checkpoint-140 MapBridge.lean. B₊ is the
+  countable-bit regular-open carrier and B₋ the double-Hartogs Cohen carrier. NaturalPositiveRC and NaturalNegativeRC
+  are the exact finite bundles of boxed RC instances in the Lean files of those names. NaturalCHChoice
+  is the conjunction of three displayed unboxed IC instances in NaturalCHContingency.lean. κ is schematic,
+  not quantified over as a type. This principle does not include Necessary Peano conditions or rigidity
+  of LowerNat, which are kept as separate map premises.
+date: '2026-10-28'
+sources:
+- Andrew Bacon, CH-contingency Lean formalization (checkpoint 140, 27 October 2026), map bridge prepared
+  by OpenAI GPT-6, prompted by Andrew Bacon, 28 October 2026.
+source_names:
+- Bacon / Codex CH project
+references:
+- paper: bacon-ch-general-forcing
+  role: background
+  note: The mathematical forcing argument and finite-instance assumptions; Lean checkpoint 140 provides
+    the certified conditional endpoint.
+notes: 'This is a deliberately precise finite-instance package. It does not follow from the standalone
+  forcing-possibilism-inaccessible entry alone: that universal conditional principle does not assert that
+  an inaccessible size witness exists. No equivalence between different Small conventions is assumed.
+  Both MP instances share K,L.'
