@@ -98,7 +98,7 @@ arguments:
   - necessary-self-atomicity-t
   fails:
   - self-atoms-are-atoms-t
-  - self-atoms-are-strong-worlds-t
+  - self-atoms-are-strong-atoms-t
   by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026
   date: '2026-10-25'
   choice: free
@@ -108,7 +108,7 @@ arguments:
     $N$ is pinned down by $N$, and a collapse $m$ has $m\circ k^{\prime}\in q$, for $k^{\prime}\in q$,
     only if it fixes $k^{\prime}(N)\supseteq\{0,1\}$ pointwise, which no collapse does; so the transport
     of $q$ along each member is $\{1\}$, and $q$ is a self-atom, not an atom. So Self-atoms are atoms
-    (type t) fails, and with it Self-atoms are strong worlds (type t). Self-Atomicity (type t) holds,
+    (type t) fails, and with it Self-atoms are strong atoms (type t). Self-Atomicity (type t) holds,
     and necessarily, there being one object: a possible proposition contains $1$, and then $\{1\}$, or
     a collapse $k$, and then, being pinned down by some $N$, the self-atom built from $k$ and $N\cup\{0,y\}$.
     The relational form is the argument that follows.'

@@ -9,7 +9,7 @@ certificate:
   date: '2026-10-25'
   lean: none
 sources:
-- Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, survey of the Strong Leibniz results under Self-Atomicity,
+- Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, survey of Strong Atomicity results under Self-Atomicity,
   25 October 2026 (session transcript).
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §3.5, pp. 58–61 (full action models).
 source_names:
@@ -56,8 +56,8 @@ arguments:
     is a left multiple of the other, $U$ having only its identity, so $\{g_1,g_2\}$ is a self-atom at
     $V$ (its transport along either is $\{1_U\}$) that is not an atom. So Self-atoms are atoms (type t)
     fails at $V$, and its boxed form fails at $W_0$.'
-notes: 'Built to separate Self-Atomicity from the Strong Leibniz Biconditionals: every arrow is fixed
+notes: 'Built to separate Self-Atomicity from Strong Atomicity: every arrow is fixed
   only by the identity, so every singleton is a self-atom, but $h$ is not epic. With □Atomicity, □Actuality,
   □Strong Actuality, □Rigid Comprehension and Rigid Power all holding, it shows that no result deriving
-  BF, or the Strong Leibniz Biconditionals, from them can replace the latter by Self-Atomicity with any
+  BF, or Strong Atomicity, from them can replace the latter by Self-Atomicity with any
   of those added. Self-atoms are atoms holds at $W_0$ but not at $V$.'

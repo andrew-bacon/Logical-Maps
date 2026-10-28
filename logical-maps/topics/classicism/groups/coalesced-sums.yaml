@@ -310,7 +310,7 @@ arguments:
   - two-actual-components
   fails:
   - self-atoms-are-atoms-t
-  - self-atoms-are-strong-worlds-t
+  - self-atoms-are-strong-atoms-t
   by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026
   date: '2026-10-25'
   choice: free
@@ -320,7 +320,7 @@ arguments:
     becomes $a_N$, and a true atom is a self-atom, as it entails every truth, including the truth that
     it entails every truth; likewise at $M$; and at the root it is false. It is not an atom, since the
     root proposition with component $a_N$ alone lies strictly below it. So Self-atoms are atoms (type
-    t) fails at the root, and with it Self-atoms are strong worlds (type t).'
+    t) fails at the root, and with it Self-atoms are strong atoms (type t).'
 
 - id: self-atomicity-component
   requires:

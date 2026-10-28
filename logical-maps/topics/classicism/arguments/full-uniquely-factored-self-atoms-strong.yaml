@@ -4,7 +4,7 @@ requires:
 - comparable-free-arrows
 - uniquely-factored-free-arrows
 holds:
-- self-atoms-are-strong-worlds-r
+- self-atoms-are-strong-atoms-r
 choice: free
 by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026
 date: '2026-10-25'
@@ -12,4 +12,4 @@ text: 'By full-comparable-free-arrows-self-atoms a self-atom at the evaluation o
   k,\bar a\rangle\}$ with $k$ fixed only by the identity. Its transport along any arrow $h$ out of the
   evaluation object is $\{\langle m,\bar a\rangle : m\circ h=k\}$, which has at most one pair since $k$
   factors through $h$ in at most one way; a set of at most one pair lies below every entity at $h$’s target
-  or its negation. So the self-atom is a strong world.'
+  or its negation. So the self-atom is a strong atom.'

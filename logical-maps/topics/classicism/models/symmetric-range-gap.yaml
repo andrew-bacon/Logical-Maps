@@ -92,20 +92,20 @@ meets:
 arguments:
 - holds:
   - necessary-atoms-are-self-atoms-r
-  - necessary-atoms-are-strong-worlds-r
+  - necessary-atoms-are-strong-atoms-r
   by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026
   date: '2026-10-25'
   choice: free
   text: The symmetric propositions over the arrows omitting $d$ refine, two such arrows agreeing with
     a given one on a finite $N$ differing in kernel beyond it, which post-composition with permutations
     preserves; so no atom contains an arrow omitting $d$, and the symmetry group $G$, pinned down by $\{d\}$,
-    is the only atom. It is a self-atom and a strong world (the argument for Self-atoms are atoms). An
+    is the only atom. It is a self-atom and a strong atom (the argument for Self-atoms are atoms). An
     atom of a relational type has an atom as its existential projection, so sits over $G$, and symmetry
-    with pinning makes it the orbit of a single pair, a self-atom and a strong world. One object, so both
+    with pinning makes it the orbit of a single pair, a self-atom and a strong atom. One object, so both
     principles hold at every world and every type.
 - holds:
   - necessary-self-atoms-are-atoms-r
-  - necessary-self-atoms-are-strong-worlds-r
+  - necessary-self-atoms-are-strong-atoms-r
   fails:
   - self-atomicity-t
   by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026
@@ -117,10 +117,10 @@ arguments:
     up to symmetry. Let $h$ fix $k(N)$, which omits $d$, pointwise and send every other individual to
     one fixed individual other than $d$: $h$ is an arrow omitting $d$, not in $G$, and $h\circ k$ agrees
     with $k$ on $N$, so lies in $q$. So the transport of $q$ along $k$ contains $h$, while it should be
-    the atom $G$. Hence every self-atom lies inside $G$, and is $G$, an atom; and $G$ is a strong world,
+    the atom $G$. Hence every self-atom lies inside $G$, and is $G$, an atom; and $G$ is a strong atom,
     its transport along an arrow omitting $d$ being empty and along a permutation being $G$. A self-atom
     of a relational type has a self-atom as its existential projection, so sits over $G$, and symmetry
-    with the transport condition makes it the orbit of a single pair, an atom and a strong world. One
+    with the transport condition makes it the orbit of a single pair, an atom and a strong atom. One
     object, so all this holds at every world. Self-Atomicity (type t) fails: the proposition of the arrows
     omitting $d$ is pinned down by $\{d\}$, possible, and has no self-atom below it.'
 
@@ -242,7 +242,7 @@ history:
   - barcan-t
 - date: '2026-09-23'
   by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
-  summary: Recorded the failure of Atomicity (type t), and with it of the Strong Leibniz Biconditionals;
+  summary: Recorded the failure of Atomicity (type t), and with it of Strong Atomicity;
     see the notes.
   violates:
   - atomicity-t

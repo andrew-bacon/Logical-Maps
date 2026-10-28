@@ -102,7 +102,7 @@ arguments:
   - necessary-self-atomicity-t
   fails:
   - self-atoms-are-atoms-t
-  - self-atoms-are-strong-worlds-t
+  - self-atoms-are-strong-atoms-t
   by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026
   date: '2026-10-25'
   choice: free
@@ -115,7 +115,7 @@ arguments:
     $G\circ k^{\prime}\subseteq q$. So the transport of $q$ along each of its members is $G$, and $q$
     is a self-atom. It is not an atom: the arrows agreeing with $k$ on a larger finite set, up to symmetry,
     form a proper nonempty symmetric pinned part. So Self-atoms are atoms (type t) fails, and with it
-    Self-atoms are strong worlds (type t). Self-Atomicity (type t) holds, and necessarily, there being
+    Self-atoms are strong atoms (type t). Self-Atomicity (type t) holds, and necessarily, there being
     one object: a possible proposition $p$, pinned down by $N$, contains some arrow; if a permutation,
     $p\supseteq G$, a self-atom; if a collapser $k$, $p$ contains the self-atom built from $k$ and a finite
     $N^{\prime}\supseteq N$ with $k(N^{\prime})\supseteq\{a,b\}$. The relational form is the argument that follows.'

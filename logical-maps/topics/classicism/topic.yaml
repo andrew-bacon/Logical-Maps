@@ -122,16 +122,16 @@ background_presets:
 
 lattice_views:
 - id: self-atoms
-  name: Self-atoms and strong worlds
-  description: 'Atomicity, Self-Atomicity, the Strong Leibniz Biconditionals, and the four bridge principles between atoms, self-atoms and strong worlds.'
+  name: Self-atoms and strong atoms
+  description: 'Atomicity, Self-Atomicity, Strong Atomicity, and the four bridge principles between atoms, self-atoms and strong atoms.'
   principles:
   - atomicity-r
   - self-atomicity-r
-  - strong-leibniz-r
+  - strong-atomicity-r
   - atoms-are-self-atoms-r
   - self-atoms-are-atoms-r
-  - self-atoms-are-strong-worlds-r
-  - atoms-are-strong-worlds-r
+  - self-atoms-are-strong-atoms-r
+  - atoms-are-strong-atoms-r
 - id: modality-rigid-comprehension
   name: Modality and rigid comp.
   default: true
@@ -183,7 +183,7 @@ lattice_views:
   - boolean-completeness-r
   - weak-rigid-comprehension-r
   - rigid-comprehension-r
-  - strong-leibniz-r
+  - strong-atomicity-r
 lean_lib: Classicism
 lean:
   index:

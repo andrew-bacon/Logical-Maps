@@ -4,7 +4,7 @@ requires:
 - comparable-free-arrows-everywhere
 - uniquely-factored-free-arrows-everywhere
 holds:
-- necessary-self-atoms-are-strong-worlds-r
+- necessary-self-atoms-are-strong-atoms-r
 choice: free
 by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026
 date: '2026-10-25'

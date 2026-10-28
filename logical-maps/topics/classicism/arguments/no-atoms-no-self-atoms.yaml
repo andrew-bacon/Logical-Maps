@@ -3,9 +3,9 @@ requires:
 - no-atoms-anywhere
 holds:
 - necessary-atoms-are-self-atoms-r
-- necessary-atoms-are-strong-worlds-r
+- necessary-atoms-are-strong-atoms-r
 - necessary-self-atoms-are-atoms-r
-- necessary-self-atoms-are-strong-worlds-r
+- necessary-self-atoms-are-strong-atoms-r
 fails:
 - self-atomicity-t
 choice: free

@@ -9,7 +9,7 @@ certificate:
   date: '2026-10-25'
   lean: none
 sources:
-- Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, survey of the Strong Leibniz results under Self-Atomicity,
+- Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, survey of Strong Atomicity results under Self-Atomicity,
   25 October 2026 (session transcript).
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, Appendix D, Definitions D.1–D.3 and Proposition
   D.4, pp. 73–74.
@@ -43,19 +43,19 @@ arguments:
 - holds:
   - necessary-self-atomicity-r
   - necessary-atoms-are-self-atoms-r
-  - necessary-atoms-are-strong-worlds-r
+  - necessary-atoms-are-strong-atoms-r
   by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026
   date: '2026-10-25'
   choice: free
   text: 'At $W_0$ an entity of a relational type is a pinned intension $I$, a set of pairs $\langle k,\bar
     a\rangle$. Its pairs at $1_{W_0}$ form singletons $\{\langle1,\bar a\rangle\}$, each pinned down by
-    $\varnothing$ (its transport along every $k_u$ is empty), which are atoms, self-atoms and strong worlds,
+    $\varnothing$ (its transport along every $k_u$ is empty), which are atoms, self-atoms and strong atoms,
     the transport being empty. Its pairs at arrows $k_u$ form sets $\{\langle k_u,b_u\rangle : u\in C\}$
     with $C$ clopen and $b_u$ depending on finitely many coordinates of $u$; such a set is pinned, and
     it is a self-atom, since at each $k_u$ it becomes $\{\langle1_V,b_u\rangle\}$, an atom of the full
     domain at $V$. So every possible entity at $W_0$ has a self-atom below it. No atom lies over the $k_u$:
     a nonempty pinned set over a cylinder splits by a further coordinate. So at $W_0$ the atoms are the
-    singletons at $1_{W_0}$, which are self-atoms and strong worlds. At $V$ the domain is full with one
+    singletons at $1_{W_0}$, which are self-atoms and strong atoms. At $V$ the domain is full with one
     arrow, so all three principles hold there; hence all three are necessary.'
 - fails:
   - atomicity-t
@@ -87,4 +87,4 @@ arguments:
 notes: 'Built to show that Self-Atomicity does not imply Atomicity, even with Actuality, Strong Actuality
   and BF (type t): a root whose propositions are the clopen sets of Cantor space, each point of which
   is a terminal world. Every nonempty clopen set is a self-atom, becoming the actual-world proposition
-  at each of its points, but none is an atom. The Strong Leibniz Biconditionals (type t) fail with Atomicity.'
+  at each of its points, but none is an atom. Strong Atomicity (type t) fails with Atomicity.'

@@ -26,4 +26,4 @@ proof: 'Let $X^{\bar\sigma t}\ne\bot$. As in the recorded [[atomicity-t-and-bf-i
   $X$.'
 notes: The lift of Self-Atomicity from type $t$ to every relational type under BF, on the pattern of [[atomicity-t-and-bf-imply-atomicity]];
   BF is used at the argument types, to pass from a possible relation to a possible instance. Atoms are
-  strong worlds needs no such lift, since BF at relational types gives it outright ([[barcan-relational-implies-atoms-are-strong-worlds-r]]).
+  strong atoms needs no such lift, since BF at relational types gives it outright ([[barcan-relational-implies-atoms-are-strong-atoms-r]]).

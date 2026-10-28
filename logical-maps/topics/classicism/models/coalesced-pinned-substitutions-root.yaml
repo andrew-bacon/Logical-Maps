@@ -45,11 +45,11 @@ meets:
 arguments:
 - fails:
   - self-atoms-are-atoms-t
-  - self-atoms-are-strong-worlds-t
+  - self-atoms-are-strong-atoms-t
   by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026
   date: '2026-10-25'
   choice: free
-  text: 'Self-atoms are atoms (type t) fails at the root, and with it Self-atoms are strong worlds (type
+  text: 'Self-atoms are atoms (type t) fails at the root, and with it Self-atoms are strong atoms (type
     t). Some component has an object $V$ satisfying Actuality, with true atom $a_V$, since the components
     are complete and Actuality is consistent with C(Σ); and $a_V$ is a self-atom, so for an arrow $m$
     out of $V$ its transport is $a_V$ exactly when $m\in a_V$ (then $a_V$ is the true atom at $m$’s target,

@@ -30,5 +30,5 @@ proof: 'Let $X^{\bar\sigma t}\ne\bot$. As in the recorded [[atomicity-t-and-bf-i
   $\exists\bar y\, .\,Z\bar y\le w$ the projection of $Z$ is bottom, so $Z=\bot$ and $X=A_w$, an atom.'
 notes: The lift of Self-atoms are atoms from type $t$ to every relational type under BF, on the pattern
   of [[atomicity-t-and-bf-imply-atomicity]]; BF is used at the argument types, to pass from a possible
-  relation to a possible instance. Atoms are strong worlds needs no such lift, since BF at relational
-  types gives it outright ([[barcan-relational-implies-atoms-are-strong-worlds-r]]).
+  relation to a possible instance. Atoms are strong atoms needs no such lift, since BF at relational
+  types gives it outright ([[barcan-relational-implies-atoms-are-strong-atoms-r]]).

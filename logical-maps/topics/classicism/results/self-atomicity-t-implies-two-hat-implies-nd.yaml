@@ -12,7 +12,7 @@ certificate:
   lean: none
 sources:
 - Cian Dorr, the notion of a self-atom and the bridge principles, 25 October 2026; the proof by Claude
-  Fable 5.1 (Anthropic) the same day, from the survey of the Strong Leibniz results that Cian Dorr requested
+  Fable 5.1 (Anthropic) the same day, from the survey of Strong Atomicity results that Cian Dorr requested
   (session transcript of 25 October 2026).
 source_names:
 - Dorr 25 Oct
@@ -28,6 +28,6 @@ proof: 'Let $w$ be the true atom, which Actuality supplies ([[self-atomicity-t-i
   p)$. Finally, for every true $q$, $w\le q$, and $\Diamond_{\ne}$ is monotone under necessary implication
   ($\Box_{\ne}$ is necessarily N and K), so $\Diamond_{\ne}w\le\Diamond_{\ne}q$ and $\Diamond(\Diamond_{\ne}q\land
   p)$: that is $\hat{\hat\Diamond}p$.'
-notes: 'Strengthens [[strong-leibniz-t-implies-two-hat-implies-nd]]: that proof uses the strong world
+notes: 'Strengthens [[strong-atomicity-t-implies-two-hat-implies-nd]]: that proof uses the strong atom
   $v$ only through the clause that wherever $v$ holds it entails every truth there, which is the self-atom
-  clause, and its true strong world only as the true atom.'
+  clause, and its true strong atom only as the true atom.'

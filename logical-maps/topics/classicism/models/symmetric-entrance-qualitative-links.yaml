@@ -38,12 +38,12 @@ meets:
 arguments:
 - holds:
   - self-atoms-are-atoms-r
-  - self-atoms-are-strong-worlds-r
+  - self-atoms-are-strong-atoms-r
   fails:
   - atoms-are-self-atoms-t
   - self-atomicity-t
   - necessary-self-atoms-are-atoms-t
-  - necessary-self-atoms-are-strong-worlds-t
+  - necessary-self-atoms-are-strong-atoms-t
   by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026
   date: '2026-10-25'
   choice: free
@@ -53,12 +53,12 @@ arguments:
     $\{i\}$ being possible with no self-atom below it. No self-atom at $A$ has a pair at $i$, for the
     same reason: its transport along $i$ would be the constant intension of a set of tuples at $B$ over
     all arrows out of $B$, which has a proper nonzero part over any nonzero proper proposition of $B$.
-    So the self-atoms at $A$ sit over $1_A$ with one tuple, are atoms, and are strong worlds, their transport
-    along $i$ being empty: Self-atoms are atoms and Self-atoms are strong worlds hold at $A$, at every
+    So the self-atoms at $A$ sit over $1_A$ with one tuple, are atoms, and are strong atoms, their transport
+    along $i$ being empty: Self-atoms are atoms and Self-atoms are strong atoms hold at $A$, at every
     type. At $B$, the tail of symmetric-qualitative-links with the fixed point $d$, the self-atom of that
     model built from a collapsing arrow $k$ and a finite $N$ with $k(N)\supseteq\{0,1\}$ is again a self-atom
     that is not an atom, $d$ being fixed by every arrow and every symmetry; so Self-atoms are atoms (type
-    t) and Self-atoms are strong worlds (type t) fail at $B$, which $i$ reaches, and their boxed forms
+    t) and Self-atoms are strong atoms (type t) fail at $B$, which $i$ reaches, and their boxed forms
     fail at $A$.'
 - holds: [rigid-comprehension-r]
   choice: free
@@ -100,14 +100,14 @@ arguments:
     With one individual, $d$ is a pinning point only, so the domains at $B$ are those of
     symmetric-qualitative-links-individuals-singleton, which fails Tame Rigidity at $(t\to t)\to t$ (the
     argument tame-rigidity of symmetric-qualitative-links), and $B$ is reachable from $A$.
-- fails: [barcan-t, distinctness-necessary-t, strong-leibniz-t]
+- fails: [barcan-t, distinctness-necessary-t, strong-atomicity-t]
   choice: free
   writeup: symmetric-entrance-qualitative-links
   text: >-
     With $r$ the proposition true at $A$ only: every proposition $p$ at $A$ necessarily satisfies
     $r\lor p=\top\lor p=\bot$, its transport being $\top$ or $\bot$, but a contingent proposition of the
     tail does not, so BF at $t$ fails; $r\ne\bot$ while their transports agree; and $\neg r$ is an atom whose
-    transport $\top$ is split at $B$, so no strong world lies below it.
+    transport $\top$ is split at $B$, so no strong atom lies below it.
 lean:
   model: Classicism.Meta.Intensional.FixedPointEntrance.Qualitative.model
   is_model: Classicism.Meta.Intensional.FixedPointEntrance.Qualitative.isModel

@@ -44,10 +44,10 @@ meets:
 arguments:
 - holds:
   - necessary-self-atoms-are-atoms-r
-  - necessary-self-atoms-are-strong-worlds-r
+  - necessary-self-atoms-are-strong-atoms-r
   fails:
   - necessary-atoms-are-self-atoms-t
-  - necessary-atoms-are-strong-worlds-t
+  - necessary-atoms-are-strong-atoms-t
   by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026
   date: '2026-10-25'
   choice: free
@@ -55,14 +55,14 @@ arguments:
     At $W_1$ every proposition is pinned down by $\{0\}$, so the domain is full and the atoms are the
     singletons. $\{c_n\}$ is not a self-atom: its transport along $c_n$ is the set of maps $m$ of $\mathbb
     N$ with $m(n)=n$, pinned down by $\{n\}$ but not an atom. So Atoms are self-atoms (type t), and with
-    it Atoms are strong worlds (type t), fail at $W_1$, which $!$ reaches, and their boxed forms fail
+    it Atoms are strong atoms (type t), fail at $W_1$, which $!$ reaches, and their boxed forms fail
     at $W_0$. No self-atom contains an arrow into $W_0$ at either object, since its transport along that
     arrow would be an atom containing $1_{W_0}$ and Actuality fails at $W_0$; so the self-atoms are $\{1_{W_1}\}$
     at $W_1$ and $\{!\}$ at $W_0$, the latter pinned down by $\varnothing$ and an atom. Both are strong
-    worlds: $\{!\}$ becomes $\{1_{W_1}\}$ under $!$ and $\{!\}$ under any map of $\mathbb N$, and $\{1_{W_1}\}$
+    atoms: $\{!\}$ becomes $\{1_{W_1}\}$ under $!$ and $\{!\}$ under any map of $\mathbb N$, and $\{1_{W_1}\}$
     becomes $\{!\}$ under $c_n$. A self-atom of a relational type has a self-atom as its existential projection,
     so sits over one of these, with one tuple, by the transport condition; so it is an atom and a strong
-    world. Hence Self-atoms are atoms and Self-atoms are strong worlds hold at both objects, at every
+    atom. Hence Self-atoms are atoms and Self-atoms are strong atoms hold at both objects, at every
     type.'
 - holds:
   - barcan-r
@@ -306,7 +306,7 @@ history:
   - transversal-choice-r
 - date: '2026-09-23'
   by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
-  summary: Recorded the failure of Atomicity (type t), and with it of the Strong Leibniz Biconditionals;
+  summary: Recorded the failure of Atomicity (type t), and with it of Strong Atomicity;
     see the notes.
   violates:
   - atomicity-t

@@ -61,9 +61,9 @@ arguments:
   date: '2026-10-25'
   choice: free
   text: At $W_0$ the true atom is $\{1_{W_0}\}$, whose transport along $c_i$ is $\{!\}$, the one arrow
-    $X\to W_0$; so it is a strong world. At $X$ the true atom is the orbit $P$ of the permutations, whose
+    $X\to W_0$; so it is a strong atom. At $X$ the true atom is the orbit $P$ of the permutations, whose
     transport along a collapse or along $!$ is empty and along a permutation is $P$; so it is a strong
-    world too. Hence Strong Actuality holds at every object.
+    atom too. Hence Strong Actuality holds at every object.
 - id: infinity-e
   fails:
   - infinity-e

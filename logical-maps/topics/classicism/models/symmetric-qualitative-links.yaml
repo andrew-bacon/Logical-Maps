@@ -94,7 +94,7 @@ arguments:
   - necessary-self-atomicity-t
   fails:
   - self-atoms-are-atoms-t
-  - self-atoms-are-strong-worlds-t
+  - self-atoms-are-strong-atoms-t
   by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026
   date: '2026-10-25'
   choice: free
@@ -106,7 +106,7 @@ arguments:
     no collapsing arrow does, so $g\circ m$ and $m$ are symmetries; conversely $G\circ h\subseteq q$.
     So the transport of $q$ along each of its members is $G$, and $q$ is a self-atom. By the recorded
     argument that Atomicity (type t) fails, every nonzero pinned part of $C$ splits, so $q$ is not an
-    atom: Self-atoms are atoms (type t) fails, and with it Self-atoms are strong worlds (type t). Self-Atomicity
+    atom: Self-atoms are atoms (type t) fails, and with it Self-atoms are strong atoms (type t). Self-Atomicity
     (type t) holds, and necessarily, there being one object: a possible proposition pinned down by $N$
     contains a symmetry, and then $G$, or a collapsing arrow $k$, and then the self-atom built from $k$
     and a finite $N^{\prime}\supseteq N$ with $k(N^{\prime})\supseteq\{0,1\}$. The relational form is the argument that follows.'
