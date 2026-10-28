@@ -1,0 +1,48 @@
+name: Check isolated CH contingency bridge
+
+on:
+  pull_request:
+    paths:
+      - 'logical-maps/topics/classicism/ch-contingency-lean/**'
+      - 'logical-maps/topics/classicism/principles/**'
+      - 'logical-maps/topics/classicism/results/**'
+      - '.github/workflows/check-ch-bridge.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  static-map-bridge:
+    name: Match conditional result to its map record
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install pyyaml
+      - run: python logical-maps/topics/classicism/ch-contingency-lean/check_map_bridge.py
+
+  isolated-lean-certificate:
+    name: Replay isolated object-language CH bridge
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      LEAN_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: logical-maps/topics/classicism/ch-contingency-lean
+          auto-config: 'false'
+          build: 'true'
+          build-args: 'Diagnostics.MapBridgeImportCheck'
+          test: 'false'
+          use-mathlib-cache: 'false'
+          use-github-cache: 'true'
+      - name: Explain certification scope
+        run: |
+          echo "Checks the checkpoint project's exact MapBridge derivation."
+          echo "Does not run pmap lean-check classicism and must not set Lean verified."
