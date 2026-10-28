@@ -4422,6 +4422,24 @@ def full_henkin_singleton_base : Prop :=
     ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.independence _) ∧
     ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.distinctnessC _)
 
+/-- `full-modalized-expanding-chain`
+
+Full modalized domains: two-world chain with expanding individuals: a witness satisfying 0 principles
+and violating 2. -/
+def full_modalized_expanding_chain : Prop :=
+  ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalB.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Barcan.schemaIn
+
+/-- `full-modalized-kripke-chain`
+
+Full modalized domains: two-world chain: a witness satisfying 1 principles
+and violating 1. -/
+def full_modalized_kripke_chain : Prop :=
+  ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecFunctionality.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalB.schemaIn
+
 /-- `henkin-without-relational-choice`
 
 Henkin model: base without a choice function: a witness satisfying 2 principles
