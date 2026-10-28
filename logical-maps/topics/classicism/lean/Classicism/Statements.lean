@@ -1,5 +1,6 @@
 import Classicism.Certified.Signatures
 import Classicism.Certified.Arithmetic
+import Classicism.Certified.ExactLowerSchemas
 
 /-!
 # Generated statements
@@ -110,6 +111,14 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 /-- Principle definition check: `distinctness-signature-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   (Classicism.Meta.AxiomSet.distinctnessC _)
+
+/-- Principle definition check: `exact-lower-finite-cardinality-bijection-e`. -/
+example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
+  Classicism.P.ExactLowerBijectionE.schemaIn
+
+/-- Principle definition check: `exact-peano-e`. -/
+example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
+  Classicism.P.ExactPeanoE.schemaIn
 
 /-- Principle definition check: `existence-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
@@ -318,6 +327,10 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 /-- Principle definition check: `necessary-intensional-choice-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.NecIntensionalChoice.schemaIn
+
+/-- Principle definition check: `necessary-lower-peano-e`. -/
+example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
+  Classicism.P.NecessaryLowerPeanoE.schemaIn
 
 /-- Principle definition check: `necessary-modal-b`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
@@ -1441,6 +1454,15 @@ def distinctness_signature_r_implies_separated_structure_r : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.distinctnessC _) →
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.separatedStructure _)
+
+/-- `exact-peano-and-necessary-lower-peano-imply-cardinality-bijection-e`
+
+Peano separation for exact finite cardinalities (type e) ∧ Necessary Peano conditions (at-least numbers) ⇒ Exact/at-least finite-cardinality correspondence (type e) -/
+def exact_peano_and_necessary_lower_peano_imply_cardinality_bijection_e : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ExactPeanoE.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessaryLowerPeanoE.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ExactLowerBijectionE.schemaIn
 
 /-- `extensionality-r-implies-actuality`
 
@@ -2802,6 +2824,22 @@ def necessary_intensional_choice_r_implies_intensional_choice_r : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecIntensionalChoice.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.IntensionalChoice.schemaIn
+
+/-- `necessary-lower-peano-implies-cardinality-bijection-e`
+
+Necessary Peano conditions (at-least numbers) ⇒ Exact/at-least finite-cardinality correspondence (type e) -/
+def necessary_lower_peano_implies_cardinality_bijection_e : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessaryLowerPeanoE.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ExactLowerBijectionE.schemaIn
+
+/-- `necessary-lower-peano-implies-exact-peano-e`
+
+Necessary Peano conditions (at-least numbers) ⇒ Peano separation for exact finite cardinalities (type e) -/
+def necessary_lower_peano_implies_exact_peano_e : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessaryLowerPeanoE.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ExactPeanoE.schemaIn
 
 /-- `necessary-modal-b-implies-modal-b`
 

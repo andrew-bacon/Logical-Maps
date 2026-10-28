@@ -10,7 +10,8 @@ certificate:
   recorded_by: OpenAI GPT-6, prompted by Andrew Bacon
   checked_by: []
   date: '2026-10-28'
-  lean: none
+  lean: verified
+  lean_ref: Classicism.Map.exact_peano_and_necessary_lower_peano_imply_cardinality_bijection_e
 sources:
 - Andrew Bacon, exact/at-least cardinality comparison formalized with OpenAI GPT-6, 28 October 2026, in the
   CH checkpoint and Logical-Maps Lean projects.

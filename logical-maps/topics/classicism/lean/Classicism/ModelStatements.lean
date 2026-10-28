@@ -1,5 +1,6 @@
 import Classicism.Certified.Signatures
 import Classicism.Certified.Arithmetic
+import Classicism.Certified.ExactLowerSchemas
 import Classicism.Semantics.IntensionalTheory
 import Classicism.Models.Permutations
 import Classicism.Models.Monoids

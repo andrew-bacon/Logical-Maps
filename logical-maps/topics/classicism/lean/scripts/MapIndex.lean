@@ -1,4 +1,5 @@
 import Classicism.Map
+import Classicism.MapExactLower
 import Classicism.MapModels
 import Classicism.MapDerived
 import Classicism.Tools.MapIndex

@@ -21,3 +21,4 @@ references:
 notes: Kept explicit to match the checked theorem. It is not silently identified with the repository's
   unboxed exact-cardinality [[axiom-of-infinity-e]], or with that axiom's necessitation; the comparison
   is a separate obligation.
+lean_def: Classicism.P.NecessaryLowerPeanoE.schemaIn

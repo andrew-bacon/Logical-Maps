@@ -2267,6 +2267,28 @@
     "lines": [679, 681],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
+  "necessary-lower-peano-implies-exact-peano-e":
+  {"proofs":
+   [{"name": "Classicism.Proofs.necessary_lower_peano_implies_exact_peano_e",
+     "lines": [9, 12],
+     "file": "Classicism/Results/Records/ExactLower.lean"}],
+   "certificate":
+   {"name": "Classicism.Map.necessary_lower_peano_implies_exact_peano_e",
+    "lines": [14, 16],
+    "file": "Classicism/MapExactLower.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "necessary-lower-peano-implies-cardinality-bijection-e":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.necessary_lower_peano_implies_cardinality_bijection_e",
+     "lines": [14, 17],
+     "file": "Classicism/Results/Records/ExactLower.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.necessary_lower_peano_implies_cardinality_bijection_e",
+    "lines": [18, 20],
+    "file": "Classicism/MapExactLower.lean",
+    "axioms": ["propext", "Quot.sound"]}},
   "necessary-intensional-choice-r-implies-intensional-choice-r":
   {"proofs":
    [{"name":
@@ -3617,6 +3639,18 @@
    {"name": "Classicism.Map.extensionality_r_implies_actuality",
     "lines": [386, 388],
     "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "exact-peano-and-necessary-lower-peano-imply-cardinality-bijection-e":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.exact_peano_and_necessary_lower_peano_imply_cardinality_bijection_e",
+     "lines": [19, 22],
+     "file": "Classicism/Results/Records/ExactLower.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.exact_peano_and_necessary_lower_peano_imply_cardinality_bijection_e",
+    "lines": [22, 24],
+    "file": "Classicism/MapExactLower.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "distinctness-signature-r-implies-distinctness-schema-r":
   {"proofs": [],
@@ -13237,6 +13271,10 @@
   {"name": "Classicism.P.NecessityOfDistinctness",
    "lines": [99, 100],
    "file": "Classicism/Principles/Coarse.lean"},
+  "Classicism.P.NecessaryLowerPeanoE":
+  {"name": "Classicism.P.NecessaryLowerPeanoE",
+   "lines": [14, 15],
+   "file": "Classicism/Principles/ExactLower.lean"},
   "Classicism.P.NecWellOrdering":
   {"name": "Classicism.P.NecWellOrdering",
    "lines": [112, 113],
@@ -13673,6 +13711,14 @@
   {"name": "Classicism.P.Existence",
    "lines": [90, 93],
    "file": "Classicism/Principles/Base.lean"},
+  "Classicism.P.ExactPeanoE":
+  {"name": "Classicism.P.ExactPeanoE",
+   "lines": [17, 18],
+   "file": "Classicism/Principles/ExactLower.lean"},
+  "Classicism.P.ExactLowerBijectionE":
+  {"name": "Classicism.P.ExactLowerBijectionE",
+   "lines": [20, 22],
+   "file": "Classicism/Principles/ExactLower.lean"},
   "Classicism.P.EquivRel":
   {"name": "Classicism.P.EquivRel",
    "lines": [69, 71],

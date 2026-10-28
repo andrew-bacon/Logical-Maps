@@ -90,6 +90,7 @@ import Classicism.Strict.Audit
 import Classicism.Strict.Tests
 import Classicism.Statements
 import Classicism.Map
+import Classicism.MapExactLower
 import Classicism.Tools.MapIndex
 import Classicism.ModelStatements
 import Classicism.MapModels

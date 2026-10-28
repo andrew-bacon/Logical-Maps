@@ -193,6 +193,7 @@ lean:
   imports:
   - Classicism.Certified.Signatures
   - Classicism.Certified.Arithmetic
+  - Classicism.Certified.ExactLowerSchemas
   namespace: Classicism
   definition_check: "example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=\n  {def}"
   result:

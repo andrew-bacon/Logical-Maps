@@ -19,3 +19,4 @@ notes: >-
   The source theorem proves more: unboxed LowerPeano implies ExactPeano, and therefore necessary
   LowerPeano implies necessary ExactPeano. No equivalence of the two Peano principles is asserted here.
   This remains distinct from the repository's individual-infinity axiom.
+lean_def: Classicism.P.ExactPeanoE.schemaIn

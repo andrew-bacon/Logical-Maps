@@ -9,7 +9,8 @@ certificate:
   recorded_by: GPT-6 Astra Pro (OpenAI), prompted by Andrew Bacon
   checked_by: []
   date: '2026-10-28'
-  lean: none
+  lean: verified
+  lean_ref: Classicism.Map.necessary_lower_peano_implies_cardinality_bijection_e
 sources:
 - Andrew Bacon, exact/at-least cardinality comparison; exact-Peano hypothesis eliminated by GPT-6 Astra Pro (OpenAI), prompted by Andrew Bacon, 28 October 2026. ExactLowerPeanoTransfer.lean in the native and checkpoint Classicism projects.
 source_names:

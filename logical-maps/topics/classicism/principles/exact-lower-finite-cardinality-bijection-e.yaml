@@ -19,3 +19,4 @@ source_names:
 notes: The bijection result is conditional on both zero/successor separation principles. The Lean proof does
   not yet derive exact Peano conditions from the boxed at-least Peano principle of the forcing argument. A
   graph is used instead of introducing a function constant.
+lean_def: Classicism.P.ExactLowerBijectionE.schemaIn
