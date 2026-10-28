@@ -33,4 +33,4 @@ The source's theorem is general: the maximalization of any recursively enumerabl
 
 ## Paper references
 
-- **Proof: Arithmetic is Necessary.** Goodsell, Zachary William Lee. Arithmetic is Necessary. Draft dated 5 June 2024, 28 pages. Derives the necessity of arithmetic in the logic HKC (H plus K plus Countable Boolean Completeness) and shows that Boolean Completeness is inconsistent with the maximalization of any recursively enumerable extension of HK consistent with I, answering the question of Classicism, §2.6. Locators refer to this draft. — §6, Theorem 11 and n. 14, pp. 24–26
+- **Proof: [Arithmetic is Necessary](https://philpapers.org/archive/GOOAIN.pdf).** Goodsell, Zachary William Lee. Arithmetic is Necessary. Draft dated 5 June 2024, 28 pages. Derives the necessity of arithmetic in the logic HKC (H plus K plus Countable Boolean Completeness) and shows that Boolean Completeness is inconsistent with the maximalization of any recursively enumerable extension of HK consistent with I, answering the question of Classicism, §2.6. Locators refer to this draft. — §6, Theorem 11 and n. 14, pp. 24–26
