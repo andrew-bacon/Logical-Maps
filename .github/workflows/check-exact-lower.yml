@@ -1,0 +1,47 @@
+name: Check exact/at-least finite-cardinality comparison
+
+on:
+  pull_request:
+    paths:
+      - 'logical-maps/topics/classicism/ch-contingency-lean/Classicism/MathematicalContingency/ExactLowerCorrespondence.lean'
+      - 'logical-maps/topics/classicism/lean/Classicism/Results/Research/ExactLowerCorrespondence.lean'
+      - 'logical-maps/topics/classicism/principles/exact-*'
+      - 'logical-maps/topics/classicism/results/exact-*'
+      - '.github/workflows/check-exact-lower.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checkpoint-theorem:
+    name: Check theorem in checkpoint Classicism
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: logical-maps/topics/classicism/ch-contingency-lean
+          auto-config: 'false'
+          build: 'true'
+          build-args: 'Classicism.MathematicalContingency.ExactLowerCorrespondence'
+          test: 'false'
+          use-mathlib-cache: 'false'
+          use-github-cache: 'true'
+
+  map-lean-theorem:
+    name: Check theorem in native Logical-Maps Classicism
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: logical-maps/topics/classicism/lean
+          auto-config: 'false'
+          build: 'true'
+          build-args: 'Classicism.Results.Research.ExactLowerCorrespondence'
+          test: 'false'
+          use-mathlib-cache: 'true'
+          use-github-cache: 'true'
