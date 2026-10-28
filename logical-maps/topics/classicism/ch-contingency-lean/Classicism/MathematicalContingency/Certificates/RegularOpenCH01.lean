@@ -1,0 +1,15 @@
+import Diagnostics.DeepSplitTranslate
+import Classicism.MathematicalContingency.RegularOpenCH
+import Classicism.MathematicalContingency.Certificates.ConeSuprema03
+import Classicism.MathematicalContingency.Certificates.CountableConditions06
+import Classicism.MathematicalContingency.Certificates.CohenConditions05
+import Classicism.MathematicalContingency.Certificates.NaturalCHContingency01
+import Classicism.MathematicalContingency.Certificates.RegularOpenForcing03
+set_option synthInstance.maxSize 4000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+set_option Classicism.Meta.DeepSplitTranslate.conversionTrace "RegularOpenCH01-conversions.trace"
+#classicism_deep_split_derive Classicism.MathematicalContingency.natural_CH_contingency_regularOpen
+#print axioms Classicism.MathematicalContingency.natural_CH_contingency_regularOpen.derivable

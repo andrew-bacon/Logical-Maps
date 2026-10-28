@@ -1,0 +1,9 @@
+import Classicism.MathematicalContingency.StableTransport
+import Classicism.MathematicalContingency.Certificates.StableTransport03
+/-! OpenAI Codex, prompted by Andrew Bacon, 25 October 2026. -/
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.rigid_binary_negative
+#print axioms Classicism.MathematicalContingency.rigid_binary_negative.derivable

@@ -1,0 +1,16 @@
+import Diagnostics.DeepSplitTranslate
+import Classicism.MathematicalContingency.OrderTypeCHBridge
+import Classicism.MathematicalContingency.Certificates.CardinalCH04
+import Classicism.MathematicalContingency.Certificates.WellOrderCardinality04
+import Classicism.MathematicalContingency.Certificates.HartogsTheorem11
+import Classicism.MathematicalContingency.Certificates.OrderTypeCHBridge02
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+set_option Classicism.Meta.DeepSplitTranslate.profile true
+set_option Classicism.Meta.DeepSplitTranslate.progress "order-type-bridge-03-progress.trace"
+set_option Classicism.Meta.DeepSplitTranslate.conversionTrace "order-type-bridge-03-conversions.trace"
+#classicism_deep_split_derive Classicism.MathematicalContingency.cardinalCH_of_equinumerous_hartogs
+#print axioms Classicism.MathematicalContingency.cardinalCH_of_equinumerous_hartogs.derivable

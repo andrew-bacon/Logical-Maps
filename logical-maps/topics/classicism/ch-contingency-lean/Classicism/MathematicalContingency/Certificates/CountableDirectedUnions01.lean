@@ -1,0 +1,11 @@
+import Diagnostics.DeepSplitTranslate
+import Classicism.MathematicalContingency.CountableDirectedUnions
+import Classicism.MathematicalContingency.Certificates.CountableDomainFamilies06
+set_option synthInstance.maxSize 2000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+set_option Classicism.Meta.DeepSplitTranslate.conversionTrace "CountableDirectedUnions01-conversions.trace"
+#classicism_deep_split_derive Classicism.MathematicalContingency.ternaryFunctional_directed_union
+#print axioms Classicism.MathematicalContingency.ternaryFunctional_directed_union.derivable

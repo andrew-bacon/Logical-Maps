@@ -1,0 +1,12 @@
+import Diagnostics.DeepSplitTranslate
+import Classicism.MathematicalContingency.RegularOpenHull
+import Classicism.MathematicalContingency.Certificates.ConeSuprema03
+import Classicism.MathematicalContingency.Certificates.RegularOpenHull05
+set_option synthInstance.maxSize 4000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+set_option Classicism.Meta.DeepSplitTranslate.conversionTrace "RegularOpenHull06-conversions.trace"
+#classicism_deep_split_derive Classicism.MathematicalContingency.roFixed_down
+#print axioms Classicism.MathematicalContingency.roFixed_down.derivable

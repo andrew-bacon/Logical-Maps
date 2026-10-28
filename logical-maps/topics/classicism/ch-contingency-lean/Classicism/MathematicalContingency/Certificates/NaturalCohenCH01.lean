@@ -1,0 +1,14 @@
+import Diagnostics.DeepSplitTranslate
+import Classicism.MathematicalContingency.NaturalCohenCH
+import Classicism.MathematicalContingency.Certificates.NaturalCommonBound01
+import Classicism.MathematicalContingency.Certificates.CohenCommonBound01
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+set_option Classicism.Meta.DeepSplitTranslate.profile true
+set_option Classicism.Meta.DeepSplitTranslate.progress "natural-cohen-progress.trace"
+set_option Classicism.Meta.DeepSplitTranslate.conversionTrace "natural-cohen-conversions.trace"
+#classicism_deep_split_derive Classicism.MathematicalContingency.natural_cohen_possible_not_cardinalCH
+#print axioms Classicism.MathematicalContingency.natural_cohen_possible_not_cardinalCH.derivable

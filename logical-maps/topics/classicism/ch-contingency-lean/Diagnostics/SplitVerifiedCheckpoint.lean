@@ -1,0 +1,5 @@
+import Classicism.MathematicalContingency.VerifiedCheckpoint
+import Diagnostics.DeepSplitCommonBound
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 4
+#check Classicism.MathematicalContingency.doubleHartogs_commonPairedBound_nontrivial.derivable

@@ -119,4 +119,4 @@ $e$; Countable Boolean Completeness is used only at the matching $\sigma$.
 
 ## Paper references
 
-- **Proof: [Arithmetic is Necessary](https://philpapers.org/archive/GOOAIN.pdf).** Goodsell, Zachary William Lee. Arithmetic is Necessary. Draft dated 5 June 2024, 28 pages. Derives the necessity of arithmetic in the logic HKC (H plus K plus Countable Boolean Completeness) and shows that Boolean Completeness is inconsistent with the maximalization of any recursively enumerable extension of HK consistent with I, answering the question of Classicism, §2.6. Locators refer to this draft. — §5, Lemmas 2–8 and Theorem 9, pp. 14–21
+- **Proof: Arithmetic is Necessary.** Goodsell, Zachary William Lee. Arithmetic is Necessary. Draft dated 5 June 2024, 28 pages. Derives the necessity of arithmetic in the logic HKC (H plus K plus Countable Boolean Completeness) and shows that Boolean Completeness is inconsistent with the maximalization of any recursively enumerable extension of HK consistent with I, answering the question of Classicism, §2.6. Locators refer to this draft. — §5, Lemmas 2–8 and Theorem 9, pp. 14–21
