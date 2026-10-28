@@ -1,0 +1,38 @@
+name: Certify exact-at-least map implications
+
+on:
+  pull_request:
+    paths:
+      - 'logical-maps/topics/classicism/lean/**'
+      - 'logical-maps/topics/classicism/principles/*peano*'
+      - 'logical-maps/topics/classicism/principles/exact-lower*'
+      - 'logical-maps/topics/classicism/results/*peano*'
+      - '.github/workflows/check-exact-lower-certificates.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: exact-lower-certificates-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  native-object-language:
+    name: Native Classicism derivations and axiom audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      LEAN_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: logical-maps/topics/classicism/lean
+          auto-config: 'false'
+          build: 'true'
+          build-args: 'Classicism.Certified.ExactLower'
+          test: 'false'
+          lint: 'false'
+          use-mathlib-cache: 'true'
+          use-github-cache: 'true'
