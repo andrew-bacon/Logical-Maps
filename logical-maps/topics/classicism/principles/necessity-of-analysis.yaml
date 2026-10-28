@@ -43,10 +43,18 @@ references:
 notes: >-
   The sentence-level counterpart of Analytic Necessitism, which implies it
   ([[analytic-necessitism-implies-necessity-of-analysis]]); weaker than Necessity of Second-Order
-  Analysis, which covers the continuum hypothesis. Whether C5 proves it is open: the proof of
-  [[c5-implies-necessity-of-arithmetic]] uses BF at the type of numbers, and nothing comparable controls
-  new extensions of properties of numbers, over which first-order analytical sentences quantify through
-  the reals. It fails in a stitched forcing model whose ground model satisfies $V=L$, where "every real
-  is constructible" changes truth value; over a ground model with enough large cardinals projective truth
-  is forcing-invariant, so such a model keeps this principle while refuting Analytic Necessitism. Neither
-  variant is recorded yet.
+  Analysis, which covers the continuum hypothesis. C5 does not prove it: it fails in
+  [[full-boolean-valued-atom-and-atomless-universe-constructible]], Bacon's Boolean-valued model of C5
+  with BF and Functional Choice built inside $L$, where "every real is constructible" is true at the
+  actual world and false in the atomless component; the proof of [[c5-implies-necessity-of-arithmetic]]
+  uses BF at the type of numbers, and nothing comparable controls new extensions of properties of
+  numbers. It fails likewise in the stitched models built over $L$
+  ([[stitched-cohen-extension-universe-constructible]], [[stitched-ch-reversing-universe-constructible]]),
+  with □Rigid Comprehension and □Atomicity at type $t$. In the same models built over an arbitrary
+  ground model it is left unknown: with a proper class of Woodin cardinals, projective truth is
+  invariant under set forcing and it holds in them.
+changes:
+- date: '2026-10-25'
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+  summary: 'Notes updated: the models built in $L$ that refute it.'
+  minor: true

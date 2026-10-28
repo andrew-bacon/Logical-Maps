@@ -298,26 +298,45 @@ distinct here may be identical elsewhere, where antisymmetry then fails.
 Orders on properties and relations defined by inclusion are typically only
 preorders: coextensive but distinct relations each include the other.
 
-Strong and weak worlds follow Bacon, *A Philosophical Introduction to
-Higher-Order Logics*, §8.2, pp. 165–166. At a relational type $\sigma$, with
-$\Diamond_\sigma X:=X\ne\bot_\sigma$,
+**Strong atoms.** At a relational type $\sigma$, with $\Diamond_\sigma X:=X\ne\bot_\sigma$, a
+*strong atom* is a possible entity that necessarily entails every entity of its type or its
+negation:
 
 $$
-\begin{aligned}
-\operatorname{SWorld}_\sigma(W)&:=\Diamond_\sigma W\land\Box\forall Y^\sigma\, .\,
-  W\le_\sigma Y\lor W\le_\sigma\neg_\sigma Y,\\
-\operatorname{WWorld}_\sigma(W)&:=\Diamond_\sigma W\land\forall Y^\sigma\, .\,
+\operatorname{SAtom}_\sigma(W):=\Diamond_\sigma W\land\Box\forall Y^\sigma\, .\,
   W\le_\sigma Y\lor W\le_\sigma\neg_\sigma Y.
-\end{aligned}
 $$
 
-A weak world is an atom in the sense above; a strong world necessarily settles
-every entity of its type, including ones that do not actually exist. The
-Weak Leibniz Biconditionals, $\forall X\, .\,\Diamond_\sigma X\to\exists W\, .\,
-\operatorname{WWorld}_\sigma(W)\land W\le X$, are the map's Atomicity; the
-Strong Leibniz Biconditionals replace $\operatorname{WWorld}$ by
-$\operatorname{SWorld}$. In both, the right-to-left direction is a theorem of C. The type-$t$ instance
-of the strong form is recorded separately, as is done for Atomicity.
+Bacon, *A Philosophical Introduction to Higher-Order Logics*, §8.2, pp. 165–166, calls these
+*strong worlds*; dropping the box gives his *weak worlds*, which are just the atoms. The map
+avoids the word "world" for them, since at types other than $t$ they are not world-like. By T,
+a strong atom is an atom; unlike an atom, it necessarily settles every entity of its type,
+including entities that do not actually exist. Atomicity says that every possible entity is
+entailed by an atom; Strong Atomicity requires a strong atom. Each is one direction of a
+biconditional that Bacon calls the Weak and the Strong Leibniz Biconditionals; the other
+direction is a theorem of C. The type-$t$ instance of each is recorded separately.
+
+**Self-atoms.** A *self-atom* (Cian Dorr, 25 October 2026) is a possible entity
+that is necessarily an atom whenever it is instantiated:
+
+$$
+\operatorname{SelfAtom}_\sigma(X):=\Diamond_\sigma X\land
+  \Box\bigl(\exists\bar x\, .\,X\bar x\to\operatorname{Atom}_\sigma(X)\bigr),
+\qquad
+\operatorname{SelfAtom}_t(p):=\Diamond p\land\Box\bigl(p\to\operatorname{Atom}_t(p)\bigr).
+$$
+
+At type $t$, since $p\land\operatorname{Atom}_t(p)$ is equivalent in C to
+$p\land\forall q\, .\,q\to p\le q$, a self-atom is a possible proposition that
+entails that it is the actual world. A strong atom is an atom at every world,
+a self-atom an atom at every world where it holds, an atom an atom at the
+evaluation point; a strong atom is a self-atom and a true atom is a
+self-atom, but a self-atom need not be an atom. Self-Atomicity replaces
+$\operatorname{SAtom}$ in Strong Atomicity by
+$\operatorname{SelfAtom}$, and the four *bridge principles* say that atoms are
+self-atoms, that self-atoms are atoms, that self-atoms are strong atoms, and
+that atoms are strong atoms; the last is what Strong Atomicity
+adds to Atomicity.
 
 Strong Possibility uses the distinctness-preserving modality of §2.6, p. 42:
 
@@ -360,7 +379,7 @@ The cardinal formulation avoids constructing a real-number structure. To match
 checkpoint 140 of the CH formalization, fix $\nu=(et)t$ and use the
 **at-least** number carrier:
 
-$$
+$
 \begin{aligned}
 z&:=\lambda A^{et}.\top,\\
 N&:=\lambda n^\nu.\forall Z^{\nu t}.\,
@@ -369,7 +388,7 @@ N&:=\lambda n^\nu.\forall Z^{\nu t}.\,
 S&:=\mathcal P_r(N),\\
 C_N&:=\forall X^{(\nu t)t}.\,X\subseteq S\to(X\precsim N\lor X\approx S).
 \end{aligned}
-$$
+$
 
 The successor is the cardinal successor defined above, but the starting
 property $z$ holds of every property, rather than just the empty ones. Thus
@@ -382,11 +401,11 @@ The contingency conclusion is $\Diamond C_N\land\Diamond\neg C_N$.
 
 **The smallness parameter.** Forcing Possibilism has the general form
 
-$$
+$
 \mathrm{FP}[\mathrm{Small}]:\quad
 \forall B,E.\,\operatorname{CBA}(B,E)\land\mathrm{Small}(B)
 \to\exists p.\,(B,E)\cong(\lambda q.\,q\le p,\le).
-$$
+$
 
 Changing the meaning of Small produces a different principle. For example,
 one may use size strictly below the propositions, size bounded by the
@@ -397,13 +416,13 @@ The existing [[forcing-possibilism]] retains its original smallness and
 proper-interval requirements. The new [[forcing-possibilism-inaccessible]]
 uses the following clauses, with $L$ a **strict** well-order:
 
-$$
+$
 \begin{aligned}
 K_{<a}&:=\lambda x.\,Kx\land(Lx)a,\\
 A\prec B&:=(A\precsim B)\land\neg(B\precsim A),\\
 \operatorname{Small}_{K,L}(B)&:=\exists a.\,Ka\land B\precsim K_{<a}.
 \end{aligned}
-$$
+$
 
 $\operatorname{Inacc}(K,L)$ is the conjunction of:
 
@@ -427,10 +446,10 @@ Assume [[forcing-possibilism-inaccessible]],
 [[necessary-lower-peano-e]], and $\operatorname{Rigid}(N)$.
 Then
 
-$$
+$
 \bigl(\Diamond(S\approx H(N))\land\Diamond\neg(S\approx H(N))\bigr)
 \land\bigl(\Diamond C_N\land\Diamond\neg C_N\bigr).
-$$
+$
 
 Here $H(N)$ is the Hartogs carrier of order types of well-orders on
 subcarriers of $N$. This gives the order-type formulation as well as the
@@ -457,11 +476,11 @@ new map result `lean: verified`.
 Lemmas 3 and 8, supplies the relevant arithmetic argument. Lemma 3 proves
 persistence of numberhood. Lemma 8 proves
 
-$$
+$
 \forall X^{\nu t}.\,
  (\forall n^\nu.\,Nn\to\Box Xn)\to
  \Box\forall n^\nu.\,Nn\to Xn.
-$$
+$
 
 The argument concerns the least successor-closed property containing a
 specified zero, so it applies with the $z$ and successor used here; it does
@@ -490,11 +509,11 @@ schema over real-carrier types, whereas $C_N$ uses the fixed carrier above.
 
 A sufficient route is to establish, for every real-carrier type $\sigma$,
 
-$$
+$
 \Box\forall\mathfrak R.\,
 \operatorname{Real}_\sigma(\mathfrak R)\to
  (\operatorname{CH}(\mathfrak R)\leftrightarrow C_N),
-$$
+$
 
 and, at one specified sufficiently high type $\rho$,
 $\Box\exists\mathfrak R.\operatorname{Real}_\rho(\mathfrak R)$.

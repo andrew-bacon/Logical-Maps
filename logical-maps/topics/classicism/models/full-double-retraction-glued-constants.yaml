@@ -49,6 +49,10 @@ definition: 'Let $\mathcal C$ be the category of the two-object retract with two
   is contingent; and every arrow into $W_1$ factors through $h$, whose transports never yield the true
   atom of $W_1$, so Possibly Witnessed Possibility fails.'
 meets:
+  incomparable-free-arrows: >-
+    The free generators $f_1$ and $f_2$ at $W_0$: in the pushout a reduced word is fixed under post-
+    composition only by the identity when it ends in a free generator, and neither generator is a
+    left multiple of the other.
   countably-many-arrows: >-
     The arrows of $\mathcal D$ are the reduced alternating words in the finitely many non-identity
     arrows of $\mathcal C$ and the countably many generators of $F$: countably many.
@@ -97,7 +101,7 @@ arguments:
   date: '2026-10-14'
   text: Strong Actuality fails at $W_0$, where $h$ has the two retractions $j_1,j_2$, and holds at $W_1$,
     where no non-identity arrow has a retraction (write-up, Corollary 3), so the true atom $\{1_{W_1}\}$
-    is a strong world there; a closed pure sentence being true at an arrow iff true at its target, the
+    is a strong atom there; a closed pure sentence being true at an arrow iff true at its target, the
     pure sentence SA is true exactly at the worlds with target $W_1$. Let $c$ be a constant of type $t$
     and $P(x)$ say that SA holds and $x$ is a true atom. $\Diamond\exists x\,P$ holds at the root, at
     the world $h$. But every arrow $W_0\to W_1$ is $h\circ v$, so at any world with target $W_1$ the constant

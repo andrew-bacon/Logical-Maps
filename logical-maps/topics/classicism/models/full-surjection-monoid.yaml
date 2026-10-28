@@ -37,6 +37,10 @@ settings:
   individuals: singleton
   sigma: top
 meets:
+  incomparable-free-arrows: >-
+    Two surjections of $\mathbb N$ with incomparable kernels, say one identifying only $0,1$ and one
+    identifying only $2,3$: a surjection is fixed only by the identity, and $k^{\prime}=m\circ k$
+    requires the kernel of $k$ to lie inside that of $k^{\prime}$.
   arbitrary-infinite-set: The monoid is that of the surjections of any infinite set.
   continuum-many-arrows:
     when: {metatheory: [choice, no-countable-choice-reals]}
@@ -107,7 +111,7 @@ arguments:
 # now general arguments, reached through this record's `meets`, and dropped: distinctness-preserving-collapse (dpc-returning-arrow).
 
 # migration: text of the old notes that no argument holds, verbatim: their first two sentences. The
-# arguments for □Strong Leibniz Biconditionals (type t) and □Relational Choice, now derived, are
+# arguments for □Strong Atomicity (type t) and □Relational Choice, now derived, are
 # dropped.
 notes: >-
   The cited construction is a model of the map’s relational-type framework. The description
@@ -158,10 +162,10 @@ history:
   - distinctness-signature-r
 - date: '2026-09-22'
   by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
-  summary: 'Added □Strong Leibniz Biconditionals (type t): every singleton of an arrow is a strong world
+  summary: 'Added □Strong Atomicity (type t): every singleton of an arrow is a strong atom
     in a propositionally full one-object model; see the notes.'
   satisfies:
-  - necessary-strong-leibniz-t
+  - necessary-strong-atomicity-t
 - date: '2026-09-22'
   by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
   summary: Boxed the Relational Choice claim; see the notes.
@@ -190,7 +194,7 @@ history:
   - transversal-choice-r
 - date: '2026-09-23'
   by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
-  summary: 'Corrected the justification of □Strong Leibniz Biconditionals (type t): the 22 September argument
+  summary: 'Corrected the justification of □Strong Atomicity (type t): the 22 September argument
     tacitly used that the monoid is right-cancellative, which holds here; no verdict changes.'
 
 # The model in Lean (Models/FullActionModels.lean), and its verdicts proved there (Classicism/MapModels.lean);

@@ -1,0 +1,25 @@
+id: second-order-analysis-full-continuum
+requires: [full-continuum-everywhere]
+choice: free
+holds: [necessity-of-second-order-analysis]
+by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+date: '2026-10-25'
+text: >-
+  Let $v$ be reachable from the evaluation point. If every type is finite at $v$ there is no real number
+  structure there, an ordered field having the infinitely many distinct elements $0$, $1$, $1+1$, and so on.
+  Otherwise let $D$ be as in the condition. Carry the real numbers onto $D$ by a bijection: the carrier,
+  order, sum, product, $0$, $1$ and natural numbers are sets of tuples from $D$, so extensions at $v$ of
+  entities there, which form a real number structure $\mathfrak R^*$ at $v$, its completeness and the
+  leastness of its natural numbers being tested against subproperties whose extensions are all the subsets
+  of $D$. Its second-order quantifiers, applied to tuples from $D$, range over all relations on $D$, so for
+  each second-order analytical sentence $A$, $A(\mathfrak R^*)$ holds at $v$ iff $A$ is true of the real
+  numbers under full second-order semantics. Any real number structure $\mathfrak R$ at $v$, of any type, is
+  isomorphic to $\mathfrak R^*$ by a relation in the domain there (Huntington's theorem, a theorem of C:
+  Background, Analysis), and $A(\mathfrak R)\leftrightarrow A(\mathfrak R^*)$ is a theorem of C given such
+  an isomorphism, relations on one carrier being carried to the other by comprehension. So at every
+  reachable object every real number structure satisfies exactly the second-order analytical sentences
+  true of the reals, and each instance $\Box\forall\mathfrak R\,.\,\operatorname{Real}_\sigma(\mathfrak R)
+  \to A(\mathfrak R)$ or $\Box\forall\mathfrak R\,.\,\operatorname{Real}_\sigma(\mathfrak R)\to\neg
+  A(\mathfrak R)$ of the Necessity of Second-Order Analysis holds, with the Necessity of Analysis and the
+  Non-contingency of the Continuum Hypothesis. The choice of the bijection with the reals needs no choice
+  principle, $D$ having the cardinality of the continuum.

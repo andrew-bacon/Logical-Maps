@@ -1,0 +1,102 @@
+id: symmetric-finite-compression-entrance
+name: 'Symmetric ideally-full model: finite-compression labels at an entrance'
+certificate:
+  source_id: misc
+  produced_by: GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 23 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 25 October 2026
+  checked_by: []
+  date: '2026-10-25'
+  lean: stated
+sources:
+- GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, Tame Rigidity and Rigid Power without Weakly Rigid Power,
+  research note of 23 October 2026, §§2–9 (unpaginated), in Daniel Kodsi's submission of 24 October 2026
+  (branch classicism-results-2026-10-24 of github.com/dkodsi/Logical-Maps, proofs/finite-compression.md).
+- Cian Dorr, Boolean Completeness does not imply Rigid Comprehension, draft of 30 July 2026, Definitions 15–18,
+  p. 8; Proposition 20.
+source_names:
+- Astra (Kodsi) 23 Oct
+- BC does not imply RC
+references:
+- paper: dorr-bc-not-rc
+  role: background
+  locator: Definitions 15–18, p. 8; Proposition 20
+  note: Symmetric ideally-full models, of which this is one.
+group: symmetric-ideally-full
+settings:
+  construction: 'A symmetric ideally-full model on two objects. Partition a countably infinite set $N$ into
+    infinitely many infinite blocks $B_i$, and let $Q$ be a set of labels: $q_i$ for each block, $q_D$ for
+    each finite $D\subseteq N$, and $q_\top$, with fibres $R(q_i)=B_i$, $R(q_D)=D$, $R(q_\top)=N$. The root
+    $A$ has base $N$, the tail $B$ has base $N\sqcup Q$. The arrows $A\to A$ are the surjections of $N$;
+    the arrows $A\to B$ are the surjections of $N$ onto the $N$ summand; there are none from $B$ to $A$;
+    and an arrow $B\to B$ is a pair $(f,g)$ of a surjection $f$ of $N$ and a map $g:Q\to Q$ fixing
+    $q_\top$ with $f[R(q)]\subseteq R(g(q))$ for every label $q$. The symmetry group at $A$ is all
+    permutations of $N$; at $B$ it is the permutations of $N$ permuting the blocks, acting on the labels
+    accordingly. Both objects carry the ideal of finite sets. Evaluation point: $1_A$.'
+  sigma: top
+meets:
+  finite-pinning: Both objects carry the ideal of finite sets.
+  transposable: For finite $N_0\subseteq N$, the property true of the individuals outside $N_0$ is pinned
+    down by $N_0$ and has an infinite extension, each member of which some permutation fixing $N_0$
+    pointwise moves.
+  separable-collapses: The pairs $\{2k,2k+1\}$ of $N$; for any two of them a surjection of $N$ collapses
+    the one and is injective elsewhere.
+arguments:
+- holds: [tame-rigidity-r]
+  when: {individuals: base}
+  choice: free
+  writeup: symmetric-finite-compression-entrance
+  text: >-
+    A set $D$ of root tuples closed under the surjections fixing a finite $S\subseteq N$ pointwise has
+    an admitted exact-image relation $h\mapsto h[D]$, pinned by $S$, which is rigid. A weakly rigid root
+    relation pinned by $S$ has such an extension by weak persistence, so it is identical to that exact
+    image: every weakly rigid root relation $F$ has $F_h=h[F_{1_A}]$, and is rigid, at every type.
+- holds: [rigid-power-r]
+  when: {individuals: base}
+  choice: free
+  writeup: symmetric-finite-compression-entrance
+  text: >-
+    A rigid relation at $B$ entailing the transport of a root rigid relation is itself an exact image,
+    pinned by a finite subset of $N$: compress its pinned block labels to finite ones, apply the
+    exact-image criterion for relations whose pinned labels have finite fibres, and return. Then every
+    rigid $Y\le h\cdot F$ is $j\cdot X$ for a root rigid $X\le F$ and an arrow $j$ agreeing with $h$ on
+    any prescribed finite set, which makes the rigid power property of $F$ weakly inextensible; Tame
+    Rigidity makes it rigid.
+- fails: [weakly-rigid-power-r, necessary-tame-rigidity-r]
+  when: {individuals: base}
+  choice: free
+  writeup: symmetric-finite-compression-entrance
+  text: >-
+    At type $et$. At $B$ the fibre relation $U_{q_i}$, with extension $R(g(q_i))$ at $(f,g)$, is weakly
+    rigid but not rigid: an arrow sends $q_i$ to $q_{\{a,b\}}$, after which a further arrow fixing that
+    label and collapsing $a,b$ separates it from $\delta_a\lor\delta_b$. So □Tame Rigidity fails. Its
+    extensions lie in $N$, so it entails $i\cdot F$ for the rigid root property $F$ with extension $h[N]$
+    at every $h$. Every current instance of the weak power property of $F$ is rigid, by Tame Rigidity,
+    while $U_{q_i}$ is an instance at the entrance $i$ that is not: the weak power property is not
+    weakly inextensible.
+- fails: [barcan-r]
+  when: {individuals: base}
+  choice: free
+  writeup: symmetric-finite-compression-entrance
+  text: >-
+    At type $e$. Every individual at $A$ necessarily falls under the rigid property $F$ with extension
+    $h[N]$ at every arrow $h$, but after an entrance the labels are individuals outside it.
+lean:
+  param: Classicism.Meta.Intensional.FiniteCompression.base Classicism.Meta.Intensional.FiniteCompression.A
+  verdicts:
+  - holds: tame-rigidity-r
+    ref: Classicism.Map.Models.symmetric_finite_compression_entrance.tame_rigidity_r
+    status: verified
+  - holds: rigid-power-r
+    ref: Classicism.Map.Models.symmetric_finite_compression_entrance.rigid_power_r
+    status: verified
+  - fails: weakly-rigid-power-r
+    ref: Classicism.Map.Models.symmetric_finite_compression_entrance.weakly_rigid_power_r
+    status: verified
+notes: >-
+  Tame Rigidity and Rigid Power do not imply Weakly Rigid Power, answering the question of 10 October 2026
+  ([[tame-rigidity-and-rigid-power-imply-weakly-rigid-power]]) negatively. The source also characterizes
+  Weakly Rigid Power as Tame Rigidity plus Rigid Power plus a bounded future-tameness condition, every
+  future weakly rigid subrelation of an actual rigid bound being rigid; that characterization is not
+  recorded. The Lean certificates of Tame Rigidity, Rigid Power and the failure of Weakly
+  Rigid Power are Astra's (Classicism.Meta.Intensional.FiniteCompression), ported from the submission. The group's variant
+  with one individual is generated; no argument above applies to it.

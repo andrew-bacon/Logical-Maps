@@ -39,11 +39,12 @@ notes: >-
   from Atomicity with □Rigid Comprehension. Bacon's Theorem 6.1, that □Rigid Comprehension, Intensional
   Choice and Forcing Possibilism refute it, is recorded as a conjecture until its proof appears
   ([[necessary-rigid-comprehension-intensional-choice-and-forcing-possibilism-incompatible-with-non-contingency-of-ch]]).
-  The stitched model on the map ([[stitched-cohen-extension]]) adds a single Cohen real, which leaves the
-  truth value of the continuum hypothesis unchanged, so it says nothing about this principle; the
-  variants of Barton and Goodsell's Theorem 20 that add $\aleph_2$ Cohen reals or collapse the continuum
-  refute it in either direction, as does Bacon's Theorem 5.1 model of C5 with Rigid Comprehension. None
-  of these is recorded yet. It fails in [[full-boolean-valued-atom-and-atomless]], Bacon's Boolean-valued
+  Of Barton and Goodsell's stitched models, the one adding a single Cohen real
+  ([[stitched-cohen-extension]]) leaves the truth value of the continuum hypothesis unchanged and
+  satisfies it; the instance of their Theorem 20 that adds $\aleph_2$ Cohen reals or collapses the
+  continuum, by cases on CH ([[stitched-ch-reversing]]), refutes it, with □Rigid Comprehension and
+  □Atomicity at type $t$. Bacon's Theorem 5.1 model of C5 with Rigid Comprehension also refutes it and is
+  not recorded. It fails in [[full-boolean-valued-atom-and-atomless]], Bacon's Boolean-valued
   model of §B.2 with the algebra chosen by cases on CH, and it is incompatible with Maximalism
   ([[maximalism-incompatible-with-non-contingency-of-ch]]).
 changes:
@@ -51,7 +52,10 @@ changes:
   by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   summary: 'Notes updated: a recorded countermodel and the incompatibility with Maximalism.'
   minor: true
-
+- date: '2026-10-25'
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+  summary: 'Notes updated: the stitched models that satisfy and refute it.'
+  minor: true
 - date: '2026-10-27'
   by: OpenAI Codex, prompted by Andrew Bacon
   summary: >-
