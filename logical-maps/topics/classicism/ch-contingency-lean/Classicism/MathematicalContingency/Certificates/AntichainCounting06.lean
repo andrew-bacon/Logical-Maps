@@ -1,9 +1,0 @@
-import Classicism.MathematicalContingency.AntichainCounting
-import Classicism.MathematicalContingency.Certificates.AntichainCounting05
-set_option maxRecDepth 20000
-set_option maxHeartbeats 0
-set_option synthInstance.maxSize 2000
-set_option pp.deepTerms false
-set_option pp.deepTerms.threshold 8
-#classicism_derive Classicism.MathematicalContingency.antichain_uniform_fibre_codes
-#print axioms Classicism.MathematicalContingency.antichain_uniform_fibre_codes.derivable

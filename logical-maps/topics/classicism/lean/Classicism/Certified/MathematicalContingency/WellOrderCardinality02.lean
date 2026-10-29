@@ -1,0 +1,8 @@
+import Classicism.Results.MathematicalContingency.WellOrderCardinality
+import Classicism.Certified.MathematicalContingency.WellOrderCardinality01
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.wellOrder_embeds_of_not_embeds
+#print axioms Classicism.MathematicalContingency.wellOrder_embeds_of_not_embeds.derivable

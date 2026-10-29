@@ -18,20 +18,22 @@ sources:
   and its ClosedBoundsCH01 certificate; exact finite-package map projection recorded 28 October 2026.'
 source_names:
 - Bacon / Codex CH project
-proof: The setup provides the two MPAt instances with one K,L witness, StronglyInaccessible K L, the two
-  finite boxed RC bundles and the extra boxed Cohen-completion RC instance, and the three unboxed IC instances.
-  Apply natural_CH_contingency_closedBounds to these, Necessary Peano conditions (DraftBoxInfinity e),
-  and the separately assumed strong rigidity of LowerNat. The resulting NaturalCHContingency is a conjunction
-  of order-type CH contingency and cardinal CH contingency; project its second conjunct. In checkpoint
-  140 the source theorem has a successful object-language certificate (Certificates/ClosedBoundsCH01.lean;
-  CHECKPOINT-140-AUDIT.json). The new MapBridge.lean wrapper was not itself compiled or checked with the
-  map pmap lean-check, so certificate.lean remains none.
+proof: Apply [[bounded-forcing-and-necessary-peano-imply-cardinal-ch-contingency]] to the setup and Necessary
+  Peano conditions. It derives strong rigidity of LowerNat from the boxed RC instances already in the
+  setup, so the extra rigidity premise is redundant. The native wrapper retains the original three-premise
+  statement and projects the cardinal-CH conclusion of natural_CH_contingency_from_principles.
 references:
 - paper: bacon-ch-general-forcing
   role: background
   note: The forcing proof and its conditional premises; the precise Lean derivation in checkpoint 140
     is narrower than the unqualified structural-CH claim.
-notes: This proved arrow is conditional on Rigid LowerNat, which has not been derived, and on the full
-  explicitly existential size/forcing package. It yields only cardinal CH contingency and does not alter
-  the earlier conjectured cardinal-to-structural bridges. The 728/743 historical certificate report is
-  not a fresh pmap verification; do not mark this arrow Lean verified without a successful map-level check.
+notes: The original conditional arrow is retained with its stable ID. The stronger result [[bounded-forcing-and-necessary-peano-imply-cardinal-ch-contingency]]
+  derives rigidity from the setup and removes this redundant premise. See its native proof and write-up.
+  Structural CH remains separate. The exact shallow map theorem is in lean/Classicism/Results/Records/MathematicalContingency.lean
+  and passes the native gate and type checks. The native schema/reflection step exceeded the available
+  memory; there is no generated-statement certificate for this arrow yet.
+changes:
+- date: '2026-10-29'
+  by: OpenAI Codex, prompted by Andrew Bacon
+  summary: Connect the original arrow to the native library; add a stronger arrow deriving the rigidity
+    premise from the existing setup.

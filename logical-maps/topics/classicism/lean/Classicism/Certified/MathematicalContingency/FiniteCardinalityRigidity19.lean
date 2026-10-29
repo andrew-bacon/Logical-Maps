@@ -1,0 +1,5 @@
+import Classicism.Certified.MathematicalContingency.FiniteCardinalityRigidity18
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+#classicism_derive Classicism.MathematicalContingency.finiteCardinality_weaklyRigid
+#print axioms Classicism.MathematicalContingency.finiteCardinality_weaklyRigid.derivable

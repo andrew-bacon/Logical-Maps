@@ -1,0 +1,11 @@
+import Classicism.Results.MathematicalContingency.CohenFrozenPower
+import Classicism.Certified.MathematicalContingency.NameCardinalTransportCertified
+import Classicism.Certified.MathematicalContingency.CohenFrozenNamesCertified
+import Classicism.Certified.MathematicalContingency.CohenPowerObstructionCertified
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.cohen_frozen_rigidPower_no_injection
+#print axioms Classicism.MathematicalContingency.cohen_frozen_rigidPower_no_injection.derivable

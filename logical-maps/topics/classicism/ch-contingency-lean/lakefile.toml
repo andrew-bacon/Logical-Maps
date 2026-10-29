@@ -1,9 +1,0 @@
-name = "ClassicismCHRecovery"
-defaultTargets = ["Classicism.MathematicalContingency.Checked"]
-
-[[lean_lib]]
-name = "Classicism"
-
-# Optional certificate generator and saved optimized certificate modules.
-[[lean_lib]]
-name = "Diagnostics"

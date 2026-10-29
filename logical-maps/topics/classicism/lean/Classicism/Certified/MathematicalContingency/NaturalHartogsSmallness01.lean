@@ -1,0 +1,10 @@
+import Classicism.Results.MathematicalContingency.NaturalHartogsSmallness
+import Classicism.Certified.MathematicalContingency.HartogsSmallness02
+import Classicism.Certified.MathematicalContingency.NaturalWellOrder04
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.small_lowerNat_of_not_embeds
+#print axioms Classicism.MathematicalContingency.small_lowerNat_of_not_embeds.derivable

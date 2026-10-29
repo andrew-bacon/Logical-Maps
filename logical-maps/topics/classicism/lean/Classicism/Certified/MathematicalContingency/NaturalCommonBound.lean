@@ -1,0 +1,11 @@
+import Classicism.Results.MathematicalContingency.NaturalCommonBound
+import Classicism.Certified.MathematicalContingency.DeepSplitCommonBound
+import Classicism.Certified.MathematicalContingency.NaturalHartogsSmallness03
+import Classicism.Certified.MathematicalContingency.PairingAbsorption01
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_deep_split_derive Classicism.MathematicalContingency.natural_small_commonPairedBound
+#print axioms Classicism.MathematicalContingency.natural_small_commonPairedBound.derivable

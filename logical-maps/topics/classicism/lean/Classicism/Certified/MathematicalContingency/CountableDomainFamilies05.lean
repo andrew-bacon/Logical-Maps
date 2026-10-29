@@ -1,0 +1,12 @@
+import Classicism.Tools.DeepSplitTranslate
+import Classicism.Results.MathematicalContingency.CountableDomainFamilies
+import Classicism.Certified.MathematicalContingency.CountableConditions08
+import Classicism.Certified.MathematicalContingency.SerialCounting02
+import Classicism.Certified.MathematicalContingency.CountableDomainFamilies04
+set_option synthInstance.maxSize 2000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_deep_split_derive Classicism.MathematicalContingency.uniformDomainCodes_of_wellOrder
+#print axioms Classicism.MathematicalContingency.uniformDomainCodes_of_wellOrder.derivable

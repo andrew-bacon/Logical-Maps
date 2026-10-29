@@ -1,9 +1,9 @@
-name: Check isolated CH contingency bridge
+name: Check native CH contingency integration
 
 on:
   pull_request:
     paths:
-      - 'logical-maps/topics/classicism/ch-contingency-lean/**'
+      - 'logical-maps/topics/classicism/lean/**'
       - 'logical-maps/topics/classicism/principles/**'
       - 'logical-maps/topics/classicism/results/**'
       - '.github/workflows/check-ch-bridge.yml'
@@ -13,36 +13,48 @@ permissions:
   contents: read
 
 jobs:
-  static-map-bridge:
-    name: Match conditional result to its map record
+  native-ch-source:
+    name: Check CH and its exact source-level map wrappers
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 75
+    env:
+      LEAN_NUM_THREADS: '1'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m pip install pyyaml
-      - run: python logical-maps/topics/classicism/ch-contingency-lean/check_map_bridge.py
+      - run: python -m pip install -r logical-maps/requirements.txt
+      - name: Validate records and regenerate statements
+        working-directory: logical-maps
+        run: |
+          python scripts/pmap.py validate classicism
+          python scripts/pmap.py lean classicism
+      - uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: logical-maps/topics/classicism/lean
+          auto-config: 'false'
+          build: 'true'
+          build-args: 'Classicism.Results.Records.MathematicalContingency'
+          test: 'false'
+          use-mathlib-cache: 'false'
+          use-github-cache: 'true'
 
-  isolated-lean-certificate:
-    name: Replay isolated object-language CH bridge
+  native-ch-derivation:
+    name: Replay native CH object-language derivations
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 360
     env:
       LEAN_NUM_THREADS: '1'
     steps:
       - uses: actions/checkout@v4
       - uses: leanprover/lean-action@v1
         with:
-          lake-package-directory: logical-maps/topics/classicism/ch-contingency-lean
+          lake-package-directory: logical-maps/topics/classicism/lean
           auto-config: 'false'
           build: 'true'
-          build-args: 'Diagnostics.MapBridgeImportCheck'
+          build-args: 'Classicism.Certified.MathematicalContingency.GoodsellCH03'
           test: 'false'
           use-mathlib-cache: 'false'
           use-github-cache: 'true'
-      - name: Explain certification scope
-        run: |
-          echo "Checks the checkpoint project's exact MapBridge derivation."
-          echo "Does not run pmap lean-check classicism and must not set Lean verified."

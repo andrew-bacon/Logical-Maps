@@ -1,0 +1,13 @@
+import Classicism.Results.MathematicalContingency.HartogsCoordinates
+import Classicism.Certified.MathematicalContingency.PairingTransportCertified
+import Classicism.Certified.MathematicalContingency.HartogsIndices02
+import Classicism.Certified.MathematicalContingency.WellOrderCardinality04
+import Classicism.Certified.MathematicalContingency.PairWellOrder03
+import Classicism.Certified.MathematicalContingency.RigidPairsCertified
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.image_coordinate_bounds
+#print axioms Classicism.MathematicalContingency.image_coordinate_bounds.derivable

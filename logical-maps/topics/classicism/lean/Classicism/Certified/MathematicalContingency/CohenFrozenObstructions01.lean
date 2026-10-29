@@ -1,0 +1,10 @@
+import Classicism.Results.MathematicalContingency.CohenFrozenObstructions
+import Classicism.Certified.MathematicalContingency.CohenFrozenPowerCertified
+import Classicism.Certified.MathematicalContingency.CohenFrozenUncountabilityCertified
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.cohen_frozen_intermediate_obstructions
+#print axioms Classicism.MathematicalContingency.cohen_frozen_intermediate_obstructions.derivable

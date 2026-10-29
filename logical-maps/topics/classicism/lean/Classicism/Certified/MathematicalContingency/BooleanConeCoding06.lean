@@ -1,0 +1,9 @@
+import Classicism.Results.MathematicalContingency.BooleanConeCoding
+import Classicism.Certified.MathematicalContingency.BooleanConeCoding05
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.denseCones_embeds_rigidPower
+#print axioms Classicism.MathematicalContingency.denseCones_embeds_rigidPower.derivable

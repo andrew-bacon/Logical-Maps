@@ -1,0 +1,10 @@
+import Classicism.Tools.DeepSplitTranslate
+import Classicism.Results.MathematicalContingency.PositiveOrderTypeCHBridge
+import Classicism.Certified.MathematicalContingency.PositiveOrderTypeCHBridge02
+set_option synthInstance.maxSize 2000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_deep_split_derive Classicism.MathematicalContingency.possible_rigidPower_equinumerous_hartogs_of_possible_embeds
+#print axioms Classicism.MathematicalContingency.possible_rigidPower_equinumerous_hartogs_of_possible_embeds.derivable

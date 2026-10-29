@@ -461,15 +461,21 @@ The cardinal comparison and preservation arguments then deliver the two
 conclusions. Both regular-open completions and both Hartogs closed-segment
 bounds are constructed in the checked development.
 
-The exact formal endpoint is
-`Classicism.MathematicalContingency.natural_CH_contingency_closedBounds`
-in `ClosedBoundsCH.lean`, checkpoint 140. Its full RC and IC hypotheses are
-finite instances of the displayed schemata. It retains the explicit premise
-`Rigid (@LowerNat e _)`. The checkpoint has 728 passing certificate targets
-out of 743; 15 historical targets remain pending, separately from the checked
-dependencies of this endpoint. This repository update records the mathematical
-interface; it does not import that separate certificate archive or label any
-new map result `lean: verified`.
+The native formal endpoint is
+`Classicism.MathematicalContingency.natural_CH_contingency_from_principles`
+in `lean/Classicism/Results/MathematicalContingency/GoodsellCH.lean`, recovered
+from checkpoint 142. It derives `Rigid (@LowerNat e _)` from the existing
+`rcFreeze` conjunct of `NaturalPositiveRC`, through boxed countable Boolean
+completeness. Thus the explicit rigidity premise in the older conditional
+statement above is redundant. The stronger arrow is
+[[bounded-forcing-and-necessary-peano-imply-cardinal-ch-contingency]].
+Its detailed write-up explains the finite RC/IC package, the two forcing
+instances, and the distinction from structural CH. Object-language
+certificates live under `lean/Classicism/Certified/MathematicalContingency/`;
+the map audit, not a historical checkpoint report, determines their status.
+The exact shallow map wrappers pass the native checks. The large setup schema
+has not yet passed its native reflection check within the available memory,
+so the CH arrows retain `lean: none`.
 
 **Rigidity citation.** Zachary Goodsell, *Arithmetic is Necessary*,
 [author's draft](https://philpapers.org/archive/GOOAIN.pdf), §5,

@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.GoodsellRigidity23
+import Classicism.Results.MathematicalContingency.UnboxedRCRigidity
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+#classicism_derive Classicism.MathematicalContingency.finiteCardinality_rigid_of_rc
+#print axioms Classicism.MathematicalContingency.finiteCardinality_rigid_of_rc.derivable

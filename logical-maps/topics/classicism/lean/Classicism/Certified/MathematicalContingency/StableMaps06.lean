@@ -1,0 +1,8 @@
+import Classicism.Results.MathematicalContingency.StableMaps
+import Classicism.Certified.MathematicalContingency.StableMaps05
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.rigid_injects_necessary
+#print axioms Classicism.MathematicalContingency.rigid_injects_necessary.derivable

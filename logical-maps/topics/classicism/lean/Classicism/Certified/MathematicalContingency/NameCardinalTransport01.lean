@@ -1,0 +1,12 @@
+import Classicism.Results.MathematicalContingency.NameCardinalTransport
+import Classicism.Certified.MathematicalContingency.FrozenNameCarriersCertified
+import Classicism.Certified.MathematicalContingency.FoundationsCertified
+import Classicism.Certified.MathematicalContingency.HartogsDistinctness01
+import Classicism.Certified.MathematicalContingency.RigidPairsCertified
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.bijects_inverse
+#print axioms Classicism.MathematicalContingency.bijects_inverse.derivable

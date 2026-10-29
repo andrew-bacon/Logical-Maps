@@ -1,0 +1,12 @@
+import Classicism.Tools.DeepSplitTranslate
+import Classicism.Results.MathematicalContingency.RegularOpenLattice
+import Classicism.Certified.MathematicalContingency.ConeSuprema03
+import Classicism.Certified.MathematicalContingency.RegularOpenHull08
+import Classicism.Certified.MathematicalContingency.RegularOpenLattice04
+set_option synthInstance.maxSize 4000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_deep_split_derive Classicism.MathematicalContingency.roInfimum_characterization
+#print axioms Classicism.MathematicalContingency.roInfimum_characterization.derivable

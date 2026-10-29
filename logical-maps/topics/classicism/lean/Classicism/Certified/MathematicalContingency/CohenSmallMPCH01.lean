@@ -1,0 +1,10 @@
+import Classicism.Results.MathematicalContingency.CohenSmallMPCH
+import Classicism.Certified.MathematicalContingency.CohenSmallCompletion01
+import Classicism.Certified.MathematicalContingency.CohenPairedMPCH01
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.cohen_possible_not_cardinalCH_of_small_paired_bound
+#print axioms Classicism.MathematicalContingency.cohen_possible_not_cardinalCH_of_small_paired_bound.derivable

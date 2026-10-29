@@ -1,0 +1,18 @@
+import Classicism.Tools.DeepSplitTranslate
+import Classicism.Results.MathematicalContingency.CountableRowDensity
+import Classicism.Certified.MathematicalContingency.CountableBitPreservation01
+import Classicism.Certified.MathematicalContingency.ConeSuprema03
+import Classicism.Certified.MathematicalContingency.IndexedNames04
+import Classicism.Certified.MathematicalContingency.FrozenNameCarriers05
+import Classicism.Certified.MathematicalContingency.StableMaps07
+import Classicism.Certified.MathematicalContingency.CountableRows03
+import Classicism.Certified.MathematicalContingency.RepresentativeFibres01
+import Classicism.Certified.MathematicalContingency.DensityEntailment06
+import Classicism.Certified.MathematicalContingency.CountableRowCoextension02
+set_option synthInstance.maxSize 4000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_deep_split_derive Classicism.MathematicalContingency.countable_names_dense_coverage
+#print axioms Classicism.MathematicalContingency.countable_names_dense_coverage.derivable

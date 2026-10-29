@@ -1,0 +1,15 @@
+import Classicism.Tools.DeepSplitTranslate
+import Classicism.Results.MathematicalContingency.CountableSequenceClosure
+import Classicism.Certified.MathematicalContingency.CountableDirectedUnions02
+import Classicism.Certified.MathematicalContingency.NaturalOrder08
+import Classicism.Certified.MathematicalContingency.NaturalWellOrder04
+import Classicism.Certified.MathematicalContingency.PairingAbsorption01
+import Classicism.Certified.MathematicalContingency.DescendingSequences02
+import Classicism.Certified.MathematicalContingency.CountableSequenceClosure01
+set_option synthInstance.maxSize 2000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_deep_split_derive Classicism.MathematicalContingency.maps_graph_evaluation_coext
+#print axioms Classicism.MathematicalContingency.maps_graph_evaluation_coext.derivable

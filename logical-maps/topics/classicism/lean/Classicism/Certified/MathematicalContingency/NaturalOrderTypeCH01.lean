@@ -1,0 +1,11 @@
+import Classicism.Tools.DeepSplitTranslate
+import Classicism.Results.MathematicalContingency.NaturalOrderTypeCH
+import Classicism.Certified.MathematicalContingency.NaturalCohenCoordinates01
+import Classicism.Certified.MathematicalContingency.OrderTypeCHBridge05
+set_option synthInstance.maxSize 2000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_deep_split_derive Classicism.MathematicalContingency.natural_cohen_possible_not_orderTypeCH
+#print axioms Classicism.MathematicalContingency.natural_cohen_possible_not_orderTypeCH.derivable

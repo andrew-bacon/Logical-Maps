@@ -464,3 +464,48 @@ Lean project on a machine (each copy is several GB), make that directory a symli
 shared one outside Dropbox, `ln -s ~/lean-packages .lake/packages`, before the first
 build; the configuration itself has no machine-specific path, so continuous integration
 builds unchanged. The project's own modules build in about a minute from cold.
+
+## CH contingency
+
+The CH development uses this Lake project and its existing Classicism
+foundations. Its shallow proofs are in `Classicism/Results/MathematicalContingency/`;
+its object-language certificates are in `Classicism/Certified/MathematicalContingency/`.
+The map definitions, exact record proofs and wrappers are respectively
+`Principles/MathematicalContingency.lean`, `Results/Records/MathematicalContingency.lean`
+and the source records under `../results/`.
+
+The endpoint `natural_CH_contingency_from_principles` is the checkpoint-142
+result. It derives natural-number rigidity from the boxed RC instances in the
+forcing setup. Necessary lower-Peano conditions, the common inaccessible size
+witness, the two forcing instances, and the specified RC/IC instances remain
+explicit. It proves cardinal and order-type CH contingency, not structural CH
+for real-number structures. The map wrapper projects the cardinal conclusion.
+
+`Tools/DeepSplitTranslate.lean` is the checkpoint's conversion-splitting proof
+translator, relocated into the native tools directory. It constructs derivations
+of the unchanged native syntax; it introduces no logical axiom. The unused
+measurement option that could insert `sorryAx` was removed for this integration.
+The preserved derivation drivers print their axiom reports. No map verification
+status follows from shallow compilation or historical certificate logs alone.
+
+Focused checks, from this directory:
+
+```sh
+lake build Classicism.Results.Records.MathematicalContingency
+lake build Classicism.Certified.MathematicalContingency.GoodsellCH03
+```
+
+The second replays the object-language dependency chain and can be substantially
+more expensive than the shallow check on a cold cache. Use the normal
+`pmap lean-check classicism --update` audit to assign map verification status.
+The mathematical explanation is in
+`../writeups/bounded-forcing-and-necessary-peano-imply-cardinal-ch-contingency.md`.
+
+The exact source-level map wrappers pass the native Classicism and type-system
+checks. Native schema generation/reflection for the large bounded forcing
+package exceeded the migration workspace's memory limit, even in isolation.
+No failing experimental schema hook is imported into the library. The CH map
+records therefore retain `lean: none`, with no `lean_ref`, pending a factored
+schema/reflection proof and a certificate at the generated map statement type.
+This is distinct from the successful shallow checks and the historical
+object-language certificate of the checkpoint-142 endpoint.

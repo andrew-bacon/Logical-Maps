@@ -1,0 +1,9 @@
+import Classicism.Certified.MathematicalContingency.GoodsellRigidityCertified
+import Classicism.Results.MathematicalContingency.GoodsellCH
+set_option synthInstance.maxSize 4000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.naturalPositiveRC_box_countable
+#print axioms Classicism.MathematicalContingency.naturalPositiveRC_box_countable.derivable

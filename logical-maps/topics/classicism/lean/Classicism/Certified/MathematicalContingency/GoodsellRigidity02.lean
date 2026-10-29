@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.GoodsellRigidity01
+import Classicism.Results.MathematicalContingency.CountableRigidity
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+#classicism_derive Classicism.MathematicalContingency.singletonFamily_countable
+#print axioms Classicism.MathematicalContingency.singletonFamily_countable.derivable

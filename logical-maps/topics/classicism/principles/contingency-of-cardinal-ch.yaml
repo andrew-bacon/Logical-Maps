@@ -5,7 +5,7 @@ statement: Cardinal CH holds at some possibility and fails at some possibility, 
   carrier and its rigid power.
 formal: $\Diamond C_N\land\Diamond\neg C_N$
 definitions: $C_N$ is [[cardinal-continuum-hypothesis]] for $N=\operatorname{LowerNat}_e$ and $S=\operatorname{RigidPower}(N)$.
-  This is CardinalCHContingency in the checkpoint MapBridge.lean.
+  This is P.CardinalCHContingency in the native lean/Classicism/Principles/MathematicalContingency.lean.
 date: '2026-10-28'
 sources:
 - Andrew Bacon, CH-contingency Lean formalization (checkpoint 140, 27 October 2026), map bridge prepared
@@ -19,4 +19,9 @@ references:
     the certified conditional endpoint.
 notes: Equivalent to the negation of [[non-contingency-of-cardinal-ch]] by the usual modal dualities.
   This is not by itself structural contingency of CH for real-number structures; the necessary real-structure
-  construction/transfer is not present in checkpoint 140.
+  construction/transfer remains a separate obligation.
+changes:
+- date: '2026-10-29'
+  by: OpenAI Codex, prompted by Andrew Bacon
+  summary: Connect the unchanged principle to the native Lean library and update its role in the checkpoint-142
+    CH proof.

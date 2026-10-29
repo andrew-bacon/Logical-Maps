@@ -1,0 +1,9 @@
+import Classicism.Results.MathematicalContingency.NameCardinalTransport
+import Classicism.Certified.MathematicalContingency.NameCardinalTransport01
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.bijects_target_coext
+#print axioms Classicism.MathematicalContingency.bijects_target_coext.derivable

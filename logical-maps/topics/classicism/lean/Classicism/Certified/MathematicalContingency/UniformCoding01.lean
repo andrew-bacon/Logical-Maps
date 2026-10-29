@@ -1,0 +1,11 @@
+import Classicism.Results.MathematicalContingency.UniformCoding
+import Classicism.Certified.MathematicalContingency.FiniteLayerCodingCertified
+import Classicism.Certified.MathematicalContingency.ConeAntichainsCertified
+import Classicism.Certified.MathematicalContingency.BoundedAntichainsCertified
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.finiteLayers_uniform
+#print axioms Classicism.MathematicalContingency.finiteLayers_uniform.derivable
