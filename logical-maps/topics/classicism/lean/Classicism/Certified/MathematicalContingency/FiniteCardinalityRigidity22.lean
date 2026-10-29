@@ -1,0 +1,5 @@
+import Classicism.Certified.MathematicalContingency.FiniteCardinalityRigidity21
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+#classicism_derive Classicism.MathematicalContingency.lowerNat_restricted_barcan
+#print axioms Classicism.MathematicalContingency.lowerNat_restricted_barcan.derivable

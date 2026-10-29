@@ -1,0 +1,10 @@
+import Classicism.Results.MathematicalContingency.CohenCardinalCH
+import Classicism.Certified.MathematicalContingency.CardinalCHCertified
+import Classicism.Certified.MathematicalContingency.CohenFrozenObstructionsCertified
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.cohen_not_cardinalCH_of_coordinate_bounds
+#print axioms Classicism.MathematicalContingency.cohen_not_cardinalCH_of_coordinate_bounds.derivable

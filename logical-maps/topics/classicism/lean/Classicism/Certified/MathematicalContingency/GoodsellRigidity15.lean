@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.GoodsellRigidity14
+import Classicism.Results.MathematicalContingency.RCBooleanCompleteness
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+#classicism_derive Classicism.MathematicalContingency.box_booleanCompleteAt_of_box_rc
+#print axioms Classicism.MathematicalContingency.box_booleanCompleteAt_of_box_rc.derivable

@@ -1,0 +1,15 @@
+import Classicism.Tools.DeepSplitTranslate
+import Classicism.Results.MathematicalContingency.NaturalPositiveCH
+import Classicism.Certified.MathematicalContingency.CountableRowSurjection03
+import Classicism.Certified.MathematicalContingency.WellOrderSurjection04
+import Classicism.Certified.MathematicalContingency.CountableBitSetup04
+import Classicism.Certified.MathematicalContingency.StableHartogsIndex04
+import Classicism.Certified.MathematicalContingency.NaturalOrderTypeCH01
+import Classicism.Certified.MathematicalContingency.CountableCompletionCH01
+set_option synthInstance.maxSize 4000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_deep_split_derive Classicism.MathematicalContingency.natural_countable_possible_orderTypeCH
+#print axioms Classicism.MathematicalContingency.natural_countable_possible_orderTypeCH.derivable

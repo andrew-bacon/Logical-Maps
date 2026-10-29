@@ -1,0 +1,9 @@
+import Classicism.Results.MathematicalContingency.SmallnessTransfer
+import Classicism.Certified.MathematicalContingency.SmallnessTransfer02
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.small_of_embeds_rigidPower
+#print axioms Classicism.MathematicalContingency.small_of_embeds_rigidPower.derivable

@@ -1,0 +1,12 @@
+import Classicism.Tools.DeepSplitTranslate
+import Classicism.Results.MathematicalContingency.PositiveOrderTypeCHBridge
+import Classicism.Certified.MathematicalContingency.PositiveOrderTypeCHBridge01
+import Classicism.Certified.MathematicalContingency.HartogsTheorem13
+import Classicism.Certified.MathematicalContingency.Foundation07
+set_option synthInstance.maxSize 2000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_deep_split_derive Classicism.MathematicalContingency.rigidPower_equinumerous_hartogs_of_embeds
+#print axioms Classicism.MathematicalContingency.rigidPower_equinumerous_hartogs_of_embeds.derivable

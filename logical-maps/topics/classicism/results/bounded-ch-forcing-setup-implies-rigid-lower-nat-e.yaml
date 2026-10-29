@@ -1,0 +1,33 @@
+id: bounded-ch-forcing-setup-implies-rigid-lower-nat-e
+premises:
+- bounded-ch-forcing-setup
+conclusion: rigid-lower-nat-e
+status: proved
+certificate:
+  source_id: misc
+  produced_by: OpenAI Codex, prompted by Andrew Bacon
+  recorded_by: OpenAI Codex, prompted by Andrew Bacon
+  checked_by: []
+  date: '2026-10-29'
+  lean: none
+sources:
+- Andrew Bacon, CH-contingency formalization, checkpoint 142 (28 October 2026), natural_CH_contingency_from_principles;
+  native integration by OpenAI Codex, prompted by Andrew Bacon, 29 October 2026.
+source_names:
+- Bacon / Codex CH project
+proof: Unpack the setup and take NaturalPositiveRC. Its rcFreeze conjunct gives boxed countable Boolean
+  completeness on the lower-natural carrier. Goodsell’s inductive singleton-supremum argument gives Rigid
+  LowerNat. Necessary Peano conditions are not used.
+references:
+- paper: bacon-ch-general-forcing
+  role: background
+  note: The general forcing argument; the native proof uses the precise finite-instance assumptions of
+    the CH development.
+- paper: goodsell-arithmetic-necessary
+  role: proof
+  locator: Lemmas 3 and 8
+  note: The arithmetic rigidity argument used to discharge the lower-natural rigidity premise.
+notes: Native-library integration of checkpoint 142. Verification status is updated only by pmap lean-check.
+  The conclusion concerns cardinal CH, not structural CH. The exact shallow map theorem is in lean/Classicism/Results/Records/MathematicalContingency.lean
+  and passes the native gate and type checks. The native schema/reflection step exceeded the available
+  memory; there is no generated-statement certificate for this arrow yet.

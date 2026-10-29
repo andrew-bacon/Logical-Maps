@@ -1,0 +1,10 @@
+import Classicism.Results.MathematicalContingency.PowerRepresentativeFibres
+import Classicism.Certified.MathematicalContingency.RepresentativeFibresCertified
+import Classicism.Certified.MathematicalContingency.ModalCertified
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.powerRepresentativeValue_cover_current
+#print axioms Classicism.MathematicalContingency.powerRepresentativeValue_cover_current.derivable

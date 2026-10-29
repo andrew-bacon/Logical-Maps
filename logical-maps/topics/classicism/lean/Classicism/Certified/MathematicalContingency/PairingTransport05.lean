@@ -1,0 +1,9 @@
+import Classicism.Results.MathematicalContingency.PairingTransport
+import Classicism.Certified.MathematicalContingency.PairingTransport04
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.pairingImage_injective
+#print axioms Classicism.MathematicalContingency.pairingImage_injective.derivable

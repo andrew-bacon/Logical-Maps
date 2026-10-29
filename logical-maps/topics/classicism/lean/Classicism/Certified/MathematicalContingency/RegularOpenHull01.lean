@@ -1,0 +1,10 @@
+import Classicism.Tools.DeepSplitTranslate
+import Classicism.Results.MathematicalContingency.RegularOpenHull
+import Classicism.Certified.MathematicalContingency.ConeSuprema03
+set_option synthInstance.maxSize 4000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_deep_split_derive Classicism.MathematicalContingency.roHull_mono
+#print axioms Classicism.MathematicalContingency.roHull_mono.derivable

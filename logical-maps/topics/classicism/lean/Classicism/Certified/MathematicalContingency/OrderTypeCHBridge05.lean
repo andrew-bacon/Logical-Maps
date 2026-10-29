@@ -1,0 +1,9 @@
+import Classicism.Results.MathematicalContingency.OrderTypeCHBridge
+import Classicism.Certified.MathematicalContingency.OrderTypeCHBridge04
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.possible_not_equinumerous_hartogs_of_possible_not_cardinalCH
+#print axioms Classicism.MathematicalContingency.possible_not_equinumerous_hartogs_of_possible_not_cardinalCH.derivable

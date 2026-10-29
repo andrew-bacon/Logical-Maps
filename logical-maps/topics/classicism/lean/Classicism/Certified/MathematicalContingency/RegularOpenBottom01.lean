@@ -1,0 +1,11 @@
+import Classicism.Tools.DeepSplitTranslate
+import Classicism.Results.MathematicalContingency.RegularOpenBottom
+import Classicism.Certified.MathematicalContingency.ConeSuprema03
+import Classicism.Certified.MathematicalContingency.RegularOpenExistence01
+set_option synthInstance.maxSize 4000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_deep_split_derive Classicism.MathematicalContingency.regularOpen_exists_bottom
+#print axioms Classicism.MathematicalContingency.regularOpen_exists_bottom.derivable

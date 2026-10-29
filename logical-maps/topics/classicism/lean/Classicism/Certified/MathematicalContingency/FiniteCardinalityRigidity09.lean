@@ -1,0 +1,5 @@
+import Classicism.Certified.MathematicalContingency.FiniteCardinalityRigidity08
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+#classicism_derive Classicism.MathematicalContingency.singletonFamily_box
+#print axioms Classicism.MathematicalContingency.singletonFamily_box.derivable

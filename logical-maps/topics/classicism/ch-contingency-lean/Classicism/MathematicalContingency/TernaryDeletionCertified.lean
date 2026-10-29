@@ -1,1 +1,0 @@
-import Classicism.MathematicalContingency.Certificates.TernaryDeletion05

@@ -1,0 +1,10 @@
+import Classicism.Results.MathematicalContingency.AntichainCounting
+import Classicism.Certified.MathematicalContingency.ConeAntichainsCertified
+import Classicism.Certified.MathematicalContingency.SerialCountingCertified
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.disjoint_equal_zero
+#print axioms Classicism.MathematicalContingency.disjoint_equal_zero.derivable

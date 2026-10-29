@@ -1,0 +1,10 @@
+import Classicism.Results.MathematicalContingency.CohenCoordinateValues
+import Classicism.Certified.MathematicalContingency.CohenCoordinateValues03
+import Classicism.Certified.MathematicalContingency.PropositionConeTransport03
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.cohenCoordinateValue_interfaces
+#print axioms Classicism.MathematicalContingency.cohenCoordinateValue_interfaces.derivable

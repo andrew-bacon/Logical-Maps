@@ -1,0 +1,9 @@
+import Classicism.Results.MathematicalContingency.DoubleHartogsPieces
+import Classicism.Certified.MathematicalContingency.HartogsCoordinates04
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.doubleHartogs_pairing_closed
+#print axioms Classicism.MathematicalContingency.doubleHartogs_pairing_closed.derivable

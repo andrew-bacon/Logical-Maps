@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.GoodsellRigidity21
+import Classicism.Results.MathematicalContingency.UnboxedRCRigidity
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+#classicism_derive Classicism.MathematicalContingency.inductiveClosure_eq_rigid_coext
+#print axioms Classicism.MathematicalContingency.inductiveClosure_eq_rigid_coext.derivable

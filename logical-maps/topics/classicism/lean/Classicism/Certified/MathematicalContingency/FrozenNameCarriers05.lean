@@ -1,0 +1,9 @@
+import Classicism.Results.MathematicalContingency.FrozenNameCarriers
+import Classicism.Certified.MathematicalContingency.FrozenNameCarriers04
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.representativeImage_rigidPower
+#print axioms Classicism.MathematicalContingency.representativeImage_rigidPower.derivable

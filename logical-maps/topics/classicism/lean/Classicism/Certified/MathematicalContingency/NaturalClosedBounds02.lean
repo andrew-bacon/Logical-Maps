@@ -1,0 +1,17 @@
+import Classicism.Tools.DeepSplitTranslate
+import Classicism.Results.MathematicalContingency.NaturalClosedBounds
+import Classicism.Certified.MathematicalContingency.HartogsPairing02
+import Classicism.Certified.MathematicalContingency.HartogsPairing05
+import Classicism.Certified.MathematicalContingency.HartogsCoordinates06
+import Classicism.Certified.MathematicalContingency.HartogsIndices02
+import Classicism.Certified.MathematicalContingency.PairingAbsorption01
+import Classicism.Certified.MathematicalContingency.RegularOpenCH01
+import Classicism.Certified.MathematicalContingency.HartogsClosedBounds03
+import Classicism.Certified.MathematicalContingency.NaturalClosedBounds01
+set_option synthInstance.maxSize 4000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_deep_split_derive Classicism.MathematicalContingency.natural_hartogs_closedSegments
+#print axioms Classicism.MathematicalContingency.natural_hartogs_closedSegments.derivable

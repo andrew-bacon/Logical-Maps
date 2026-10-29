@@ -1,0 +1,10 @@
+import Classicism.Results.MathematicalContingency.SegmentSmallness
+import Classicism.Certified.MathematicalContingency.SegmentSmallness01
+import Classicism.Certified.MathematicalContingency.Foundation07
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.small_of_power_and_segment_bounds
+#print axioms Classicism.MathematicalContingency.small_of_power_and_segment_bounds.derivable

@@ -1,0 +1,10 @@
+import Classicism.Results.MathematicalContingency.CohenFrozenNames
+import Classicism.Certified.MathematicalContingency.FrozenNameCarriersCertified
+import Classicism.Certified.MathematicalContingency.CohenSeparationCertified
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.cohen_subfamily_separation
+#print axioms Classicism.MathematicalContingency.cohen_subfamily_separation.derivable

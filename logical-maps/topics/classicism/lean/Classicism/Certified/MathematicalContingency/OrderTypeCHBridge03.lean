@@ -1,0 +1,13 @@
+import Classicism.Tools.DeepSplitTranslate
+import Classicism.Results.MathematicalContingency.OrderTypeCHBridge
+import Classicism.Certified.MathematicalContingency.CardinalCH04
+import Classicism.Certified.MathematicalContingency.WellOrderCardinality04
+import Classicism.Certified.MathematicalContingency.HartogsTheorem11
+import Classicism.Certified.MathematicalContingency.OrderTypeCHBridge02
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_deep_split_derive Classicism.MathematicalContingency.cardinalCH_of_equinumerous_hartogs
+#print axioms Classicism.MathematicalContingency.cardinalCH_of_equinumerous_hartogs.derivable

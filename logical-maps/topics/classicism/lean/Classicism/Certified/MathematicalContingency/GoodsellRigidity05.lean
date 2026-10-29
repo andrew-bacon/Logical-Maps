@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.GoodsellRigidity04
+import Classicism.Results.MathematicalContingency.CountableRigidity
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+#classicism_derive Classicism.MathematicalContingency.inductiveClosure_weaklyRigid_of_countable
+#print axioms Classicism.MathematicalContingency.inductiveClosure_weaklyRigid_of_countable.derivable

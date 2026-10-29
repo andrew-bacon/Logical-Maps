@@ -3,7 +3,6 @@ name: Check exact/at-least finite-cardinality comparison
 on:
   pull_request:
     paths:
-      - 'logical-maps/topics/classicism/ch-contingency-lean/Classicism/MathematicalContingency/ExactLower*.lean'
       - 'logical-maps/topics/classicism/lean/Classicism/Results/Research/ExactLower*.lean'
       - 'logical-maps/topics/classicism/principles/exact-*'
       - 'logical-maps/topics/classicism/results/exact-*'
@@ -15,22 +14,6 @@ permissions:
   contents: read
 
 jobs:
-  checkpoint-theorem:
-    name: Check theorem in checkpoint Classicism
-    runs-on: ubuntu-latest
-    timeout-minutes: 75
-    steps:
-      - uses: actions/checkout@v4
-      - uses: leanprover/lean-action@v1
-        with:
-          lake-package-directory: logical-maps/topics/classicism/ch-contingency-lean
-          auto-config: 'false'
-          build: 'true'
-          build-args: 'Classicism.MathematicalContingency.ExactLowerPeanoTransfer'
-          test: 'false'
-          use-mathlib-cache: 'false'
-          use-github-cache: 'true'
-
   map-lean-theorem:
     name: Check theorem in native Logical-Maps Classicism
     runs-on: ubuntu-latest

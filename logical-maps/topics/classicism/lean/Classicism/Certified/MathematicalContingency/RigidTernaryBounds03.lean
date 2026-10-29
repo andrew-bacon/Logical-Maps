@@ -1,0 +1,16 @@
+import Classicism.Tools.DeepSplitTranslate
+import Classicism.Results.MathematicalContingency.RigidTernaryBounds
+import Classicism.Certified.MathematicalContingency.CountableSequenceClosure03
+import Classicism.Certified.MathematicalContingency.SmallnessTransfer04
+import Classicism.Certified.MathematicalContingency.WellOrderPullback02
+import Classicism.Certified.MathematicalContingency.RigidImageCoding07
+import Classicism.Certified.MathematicalContingency.PairingAbsorption06
+import Classicism.Certified.MathematicalContingency.RigidTernaryCoding04
+import Classicism.Certified.MathematicalContingency.RigidTernaryBounds02
+set_option synthInstance.maxSize 4000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_deep_split_derive Classicism.MathematicalContingency.rigidTernaryPower_wellOrder_of_pairing
+#print axioms Classicism.MathematicalContingency.rigidTernaryPower_wellOrder_of_pairing.derivable
