@@ -1,0 +1,30 @@
+id: boolean-completeness-implies-numerical-rigidity
+premises:
+- boolean-completeness-r
+conclusion: numerical-rigidity-r
+status: proved
+certificate:
+  source_id: goodsell-arithmetic-necessary
+  produced_by: Zachary Goodsell
+  recorded_by: OpenAI Codex (GPT-6), prompted by Andrew Bacon, 29 October 2026
+  checked_by: []
+  date: '2026-10-29'
+  lean: verified
+  lean_ref: Classicism.Map.boolean_completeness_implies_numerical_rigidity
+sources:
+- Zachary Goodsell, Arithmetic is Necessary (2024), Lemmas 3 and 8; 5 June 2024 draft, pp. 14–18.
+- Zachary Goodsell, Arithmetic is Determinate (2022; first published 2021), higher-order development, Theorem 13.
+source_names:
+- Arithmetic is Necessary
+- Arithmetic is Determinate
+references:
+- paper: goodsell-arithmetic-necessary
+  role: proof
+  locator: Lemmas 3 and 8
+  note: Direct source for the countable-completeness singleton-supremum proof; boxed consequences use C’s necessitation and K.
+- paper: goodsell-arithmetic-determinate
+  role: origin
+  locator: Higher-order development, Theorem 13
+  note: Earlier rigid-comprehension development. The 2024 paper weakens the comprehension assumption to countable Boolean completeness.
+proof: Apply the singleton-supremum argument at the property type νσ→t. Full Boolean completeness supplies the needed supremum. See the write-up for the proof and the distinction between local and necessary rigidity.
+notes: No claim of a new mathematical result. The native Lean proof is uniform in every admitted σ; it needs no Infinity, Choice, BF or necessary distinctness. Mathematical attribution is separate from this transcription and formalization.

@@ -133,6 +133,20 @@ successors of terms, by $\neg$, $\lor$, $\land$ and quantifiers
 $\forall v\in\mathbb N_\sigma$. These are Definitions 3–8 of Goodsell's
 draft. Where the type is fixed by context the subscript $\sigma$ is dropped.
 
+**Numerical Rigidity.** With these finite-cardinality numbers, the principle is
+$\forall X\, .\,(\forall n\in\mathbb N_\sigma\, .\,\Box Xn)\leftrightarrow
+\Box(\forall n\in\mathbb N_\sigma\, .\,Xn)$.
+Persistence of numberhood is a theorem of C. Thus this restricted-Barcan form is
+$\operatorname{WeaklyRigid}(\mathbb N_\sigma)$ in the rigidity conventions below;
+its boxed form is $\operatorname{Rigid}(\mathbb N_\sigma)$.
+Bacon and Zeng call the related principle for Church numerals “Numerical Rigidity”
+in *A Theory of Necessities* (author draft, p. 14). Goodsell’s *Arithmetic is
+Determinate* and *Arithmetic is Necessary* supply the arithmetic rigidity results;
+the latter’s Lemma 8 obtains the unboxed form from Countable Boolean Completeness.
+The [proof and formalization](writeups/boolean-completeness-implies-numerical-rigidity.md)
+explain the Church-numeral instance and the boxed conclusions. Neither principle
+assumes Infinity or Peano injectivity.
+
 **Analysis.** A *real number structure* at a type $\sigma$ is a tuple
 $\mathfrak R=(X^{\sigma t},\le^{\sigma\sigma t},+^{\sigma\sigma\sigma t},
 \times^{\sigma\sigma\sigma t},0^\sigma,1^\sigma,N^{\sigma t})$ such that

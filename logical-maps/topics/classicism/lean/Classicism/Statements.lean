@@ -1,5 +1,6 @@
 import Classicism.Certified.Signatures
 import Classicism.Certified.Arithmetic
+import Classicism.Certified.NumericalRigidity.Schemas
 
 /-!
 # Generated statements
@@ -331,6 +332,10 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.NecModalizedRelationalChoice.schemaIn
 
+/-- Principle definition check: `necessary-numerical-rigidity-r`. -/
+example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
+  Classicism.P.NecNumericalRigidity.schemaIn
+
 /-- Principle definition check: `necessary-persistent-comprehension-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.NecPersistentComprehension.schemaIn
@@ -454,6 +459,10 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 /-- Principle definition check: `no-pure-contingency-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.noContingency)
+
+/-- Principle definition check: `numerical-rigidity-r`. -/
+example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
+  Classicism.P.NumericalRigidity.schemaIn
 
 /-- Principle definition check: `ordinary-comprehension-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
@@ -1075,6 +1084,14 @@ def bf_weak_rigid_comprehension_atomicity_and_relational_choice_imply_intensiona
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RelationalChoice.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.IntensionalChoice.schemaIn
 
+/-- `boolean-completeness-implies-numerical-rigidity`
+
+Boolean Completeness ⇒ Numerical Rigidity -/
+def boolean_completeness_implies_numerical_rigidity : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BooleanCompleteness.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NumericalRigidity.schemaIn
+
 /-- `boolean-completeness-r-implies-boolean-completeness-t`
 
 Boolean Completeness ⇒ Boolean Completeness (type t) -/
@@ -1383,6 +1400,14 @@ def countable_boolean_completeness_implies_necessity_of_arithmetic : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.CountableBooleanCompleteness.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.ofPure Classicism.Meta.AxiomSet.necessityOfArithmetic)
+
+/-- `countable-boolean-completeness-implies-numerical-rigidity`
+
+Countable Boolean Completeness ⇒ Numerical Rigidity -/
+def countable_boolean_completeness_implies_numerical_rigidity : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.CountableBooleanCompleteness.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NumericalRigidity.schemaIn
 
 /-- `distinctness-necessary-r-implies-distinctness-necessary-t`
 
@@ -2512,6 +2537,14 @@ def necessary_bf_atomicity_and_rigid_comprehension_imply_necessary_rigid_power :
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRigidComprehension.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRigidPower.schemaIn
 
+/-- `necessary-boolean-completeness-implies-necessary-numerical-rigidity`
+
+□Boolean Completeness ⇒ □Numerical Rigidity -/
+def necessary_boolean_completeness_implies_necessary_numerical_rigidity : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBooleanCompleteness.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecNumericalRigidity.schemaIn
+
 /-- `necessary-boolean-completeness-implies-necessary-weakly-inextensible-comprehension`
 
 □Boolean Completeness ⇒ □Weakly Inextensible Comprehension -/
@@ -2560,6 +2593,14 @@ def necessary_completeness_and_necessary_actuality_imply_necessary_weak_rigid_co
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBooleanCompleteness.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecActuality.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWeakRigidComprehension.schemaIn
+
+/-- `necessary-countable-boolean-completeness-implies-necessary-numerical-rigidity`
+
+□Countable Boolean Completeness ⇒ □Numerical Rigidity -/
+def necessary_countable_boolean_completeness_implies_necessary_numerical_rigidity : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecCountableBooleanCompleteness.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecNumericalRigidity.schemaIn
 
 /-- `necessary-countable-boolean-completeness-r-implies-countable-boolean-completeness-r`
 
@@ -2882,6 +2923,14 @@ def necessary_nd_implies_bf : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecNecessityOfDistinctness.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Barcan.schemaIn
+
+/-- `necessary-numerical-rigidity-implies-numerical-rigidity`
+
+□Numerical Rigidity ⇒ Numerical Rigidity -/
+def necessary_numerical_rigidity_implies_numerical_rigidity : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecNumericalRigidity.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NumericalRigidity.schemaIn
 
 /-- `necessary-persistent-comprehension-implies-necessary-actuality`
 
@@ -4544,6 +4593,14 @@ def rigid_comprehension_and_bf_t_imply_necessary_bf_t : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidComprehension.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanT.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcanT.schemaIn
+
+/-- `rigid-comprehension-implies-necessary-numerical-rigidity`
+
+Rigid Comprehension ⇒ □Numerical Rigidity -/
+def rigid_comprehension_implies_necessary_numerical_rigidity : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidComprehension.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecNumericalRigidity.schemaIn
 
 /-- `rigid-comprehension-implies-tame-rigidity`
 

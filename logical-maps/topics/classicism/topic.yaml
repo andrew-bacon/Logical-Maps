@@ -51,8 +51,14 @@ source_catalog:
   name: Goodsell (personal communication)
   kind: misc
 - id: goodsell-arithmetic-necessary
-  name: Arithmetic is Necessary (2024 draft)
-  kind: misc
+  name: Arithmetic is Necessary (2024)
+  kind: published-paper
+- id: goodsell-arithmetic-determinate
+  name: Arithmetic is Determinate (2022)
+  kind: published-paper
+- id: bacon-zeng-theory-necessities
+  name: A Theory of Necessities (2022)
+  kind: published-paper
 - id: sun-possible-worlds-without-atomicity
   name: Possible Worlds Without Atomicity (draft)
   kind: misc
@@ -193,6 +199,7 @@ lean:
   imports:
   - Classicism.Certified.Signatures
   - Classicism.Certified.Arithmetic
+  - Classicism.Certified.NumericalRigidity.Schemas
   namespace: Classicism
   definition_check: "example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=\n  {def}"
   result:

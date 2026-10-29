@@ -1,0 +1,20 @@
+id: necessary-numerical-rigidity-implies-numerical-rigidity
+premises:
+- necessary-numerical-rigidity-r
+conclusion: numerical-rigidity-r
+status: proved
+certificate:
+  source_id: misc
+  produced_by: OpenAI Codex (GPT-6), prompted by Andrew Bacon, 29 October 2026
+  recorded_by: OpenAI Codex (GPT-6), prompted by Andrew Bacon, 29 October 2026
+  checked_by: []
+  date: '2026-10-29'
+  lean: verified
+  lean_ref: Classicism.Map.necessary_numerical_rigidity_implies_numerical_rigidity
+sources:
+- 'OpenAI Codex (GPT-6), prompted by Andrew Bacon, 29 October 2026: the T instance for Numerical Rigidity.'
+source_names:
+- Codex, prompted by Bacon, 29 Oct
+references: []
+proof: Apply T to □Numerical Rigidity.
+notes: The type variable stays outside the box.

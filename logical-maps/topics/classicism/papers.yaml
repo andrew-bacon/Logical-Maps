@@ -56,6 +56,8 @@ papers:
   note: Work in progress. No PDF is copied into the topic or its downloads.
 - id: goodsell-arithmetic-necessary
   title: Arithmetic is Necessary
+  url: https://doi.org/10.1007/s10992-024-09760-9
+  note: Published in Journal of Philosophical Logic 53 (2024), 1145–1159. Existing locators refer to the 5 June 2024 draft.
   citation: Goodsell, Zachary William Lee. Arithmetic is Necessary. Draft dated 5 June 2024, 28 pages. Derives
     the necessity of arithmetic in the logic HKC (H plus K plus Countable Boolean Completeness) and shows
     that Boolean Completeness is inconsistent with the maximalization of any recursively enumerable extension
@@ -128,3 +130,14 @@ papers:
   note: The first-page authorship note credits Bacon with the framework and proposed applications, and
     Claude Opus 5.5 with the write-up and verification. This contribution records the pure-language applications
     in §§4–6; §7 involving E is excluded.
+
+- id: bacon-zeng-theory-necessities
+  title: A Theory of Necessities
+  citation: 'Bacon, Andrew, and Jin Zeng (2022). A Theory of Necessities. Journal of Philosophical Logic 51, 151–199. DOI 10.1007/s10992-021-09617-5.'
+  url: https://doi.org/10.1007/s10992-021-09617-5
+  note: 'Numerical Rigidity is stated for Church numerals and L* in the author draft, p. 14. The map adapts that form to finite cardinality quantifiers and the Classicism box. No PDF is redistributed.'
+- id: goodsell-arithmetic-determinate
+  title: Arithmetic is Determinate
+  citation: 'Goodsell, Zachary (2022; first published 2021). Arithmetic is Determinate. Journal of Philosophical Logic 51, 127–150. DOI 10.1007/s10992-021-09613-9.'
+  url: https://doi.org/10.1007/s10992-021-09613-9
+  note: 'Earlier rigid-comprehension argument; the higher-order result is Theorem 13. Arithmetic is Necessary weakens its assumptions. No PDF is redistributed.'

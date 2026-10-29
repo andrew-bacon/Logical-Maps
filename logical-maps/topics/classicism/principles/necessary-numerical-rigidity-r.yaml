@@ -1,0 +1,23 @@
+id: necessary-numerical-rigidity-r
+name: □Numerical Rigidity
+category: mathematical-contingency
+statement: Necessarily, Numerical Rigidity holds. Equivalently, natural numberhood is rigid in the map’s strong sense, at every type σ.
+formal: $\Box\bigl[\forall X^{\nu_\sigma t}\, .\,(\forall n\in\mathbb N_\sigma\, .\,\Box Xn)\leftrightarrow\Box(\forall n\in\mathbb N_\sigma\, .\,Xn)\bigr]$
+definitions: $\nu_\sigma=(\sigma t)t$ and $\mathbb N_\sigma=\operatorname{FiniteCardinality}_\sigma$. This is equivalent in C to $\operatorname{Rigid}(\mathbb N_\sigma)$.
+date: '2026-10-29'
+sources:
+- Andrew Bacon and Jin Zeng, A Theory of Necessities, Journal of Philosophical Logic 51 (2022), 151–199; Numerical Rigidity, author draft p. 14.
+- Zachary Goodsell, Arithmetic is Necessary, Journal of Philosophical Logic 53 (2024), 1145–1159; Lemmas 3 and 8 (5 June 2024 draft, pp. 14–18).
+source_names:
+- A Theory of Necessities
+- Arithmetic is Necessary
+references:
+- paper: bacon-zeng-theory-necessities
+  role: formulation
+  locator: Discussion of Numerical Rigidity and Church numerals, author draft p. 14
+  note: The source uses Church numerals and its operator L*. This entry adapts the restricted-Barcan form to finite cardinality quantifiers and the Classicism box.
+- paper: goodsell-arithmetic-necessary
+  role: background
+  locator: Definitions 2–3; Lemmas 3 and 8
+notes: The outer box closes the object variables, not the type parameter. Unboxed RC suffices; boxed Countable Boolean Completeness also suffices. Do not infer this stronger form merely by necessitating a consequence of an unboxed hypothesis.
+lean_def: Classicism.P.NecNumericalRigidity.schemaIn

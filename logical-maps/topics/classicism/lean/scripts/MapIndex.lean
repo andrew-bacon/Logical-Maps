@@ -1,3 +1,4 @@
+import Classicism.MapNumericalRigidity
 import Classicism.Map
 import Classicism.MapModels
 import Classicism.MapDerived

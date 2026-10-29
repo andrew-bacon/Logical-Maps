@@ -1,3 +1,4 @@
+import Classicism.MapNumericalRigidity
 -- The formalization: theorems of Classicism, in the paper's vocabulary
 import Classicism.Core
 import Classicism.Equivalence

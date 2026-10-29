@@ -1,0 +1,23 @@
+id: numerical-rigidity-r
+name: Numerical Rigidity
+category: mathematical-contingency
+statement: 'Natural numberhood is rigid in the restricted-Barcan sense: every number necessarily has a property exactly when necessarily every number has it. One instance for each type σ, with numbers the finite cardinality quantifiers at σ.'
+formal: $\forall X^{\nu_\sigma t}\, .\,(\forall n\in\mathbb N_\sigma\, .\,\Box Xn)\leftrightarrow\Box(\forall n\in\mathbb N_\sigma\, .\,Xn)$
+definitions: Here $\nu_\sigma=(\sigma t)t$ and $\mathbb N_\sigma=\operatorname{FiniteCardinality}_\sigma$, as in Background.
+date: '2026-10-29'
+sources:
+- Andrew Bacon and Jin Zeng, A Theory of Necessities, Journal of Philosophical Logic 51 (2022), 151–199; Numerical Rigidity, author draft p. 14.
+- Zachary Goodsell, Arithmetic is Necessary, Journal of Philosophical Logic 53 (2024), 1145–1159; Lemmas 3 and 8 (5 June 2024 draft, pp. 14–18).
+source_names:
+- A Theory of Necessities
+- Arithmetic is Necessary
+references:
+- paper: bacon-zeng-theory-necessities
+  role: formulation
+  locator: Discussion of Numerical Rigidity and Church numerals, author draft p. 14
+  note: The source uses Church numerals and its operator L*. This entry adapts the restricted-Barcan form to finite cardinality quantifiers and the Classicism box.
+- paper: goodsell-arithmetic-necessary
+  role: background
+  locator: Definitions 2–3; Lemmas 3 and 8
+notes: The property of being a number is at issue, not invariance of an exact-count quantifier on arbitrary varying predicates. In the map’s terminology this is WeaklyRigid(N), since persistence is already a theorem of C. The necessarily rigid form Rigid(N) is the distinct principle □Numerical Rigidity. No Infinity or Peano assumption is part of either principle. Bacon and Zeng use the same name for the related Church-numeral principle; no identification of Church numerals with finite cardinality quantifiers is assumed. See the Boolean-completeness implication write-up.
+lean_def: Classicism.P.NumericalRigidity.schemaIn

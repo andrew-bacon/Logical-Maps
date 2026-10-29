@@ -623,6 +623,18 @@
     "lines": [1531, 1533],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
+  "rigid-comprehension-implies-necessary-numerical-rigidity":
+  {"proofs":
+   [{"name":
+     "Classicism.Numerical.rigid_comprehension_implies_necessary_numerical_rigidity",
+     "lines": [51, 55],
+     "file": "Classicism/Results/NumericalRigidity/Records.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.rigid_comprehension_implies_necessary_numerical_rigidity",
+    "lines": [31, 32],
+    "file": "Classicism/MapNumericalRigidity.lean",
+    "axioms": ["propext", "Quot.sound"]}},
   "rigid-comprehension-and-bf-imply-necessary-bf":
   {"proofs":
    [{"name": "Classicism.Proofs.rigid_comprehension_and_bf_imply_necessary_bf",
@@ -2179,6 +2191,18 @@
     "lines": [1471, 1473],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
+  "necessary-numerical-rigidity-implies-numerical-rigidity":
+  {"proofs":
+   [{"name":
+     "Classicism.Numerical.necessary_numerical_rigidity_implies_numerical_rigidity",
+     "lines": [57, 58],
+     "file": "Classicism/Results/NumericalRigidity/Records.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.necessary_numerical_rigidity_implies_numerical_rigidity",
+    "lines": [35, 36],
+    "file": "Classicism/MapNumericalRigidity.lean",
+    "axioms": ["propext", "Quot.sound"]}},
   "necessary-nd-implies-bf":
   {"proofs":
    [{"name": "Classicism.Proofs.necessary_nd_implies_bf",
@@ -2612,6 +2636,18 @@
     "lines": [1479, 1481],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
+  "necessary-countable-boolean-completeness-implies-necessary-numerical-rigidity":
+  {"proofs":
+   [{"name":
+     "Classicism.Numerical.necessary_countable_boolean_completeness_implies_necessary_numerical_rigidity",
+     "lines": [39, 43],
+     "file": "Classicism/Results/NumericalRigidity/Records.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.necessary_countable_boolean_completeness_implies_necessary_numerical_rigidity",
+    "lines": [23, 24],
+    "file": "Classicism/MapNumericalRigidity.lean",
+    "axioms": ["propext", "Quot.sound"]}},
   "necessary-completeness-and-necessary-actuality-imply-necessary-weak-rigid-comprehension":
   {"proofs":
    [{"name":
@@ -2675,6 +2711,18 @@
     "Classicism.Map.necessary_boolean_completeness_r_implies_boolean_completeness_r",
     "lines": [607, 609],
     "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "necessary-boolean-completeness-implies-necessary-numerical-rigidity":
+  {"proofs":
+   [{"name":
+     "Classicism.Numerical.necessary_boolean_completeness_implies_necessary_numerical_rigidity",
+     "lines": [45, 49],
+     "file": "Classicism/Results/NumericalRigidity/Records.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.necessary_boolean_completeness_implies_necessary_numerical_rigidity",
+    "lines": [27, 28],
+    "file": "Classicism/MapNumericalRigidity.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-bf-atomicity-and-rigid-comprehension-imply-necessary-rigid-power":
   {"proofs":
@@ -3693,6 +3741,18 @@
     "lines": [366, 368],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
+  "countable-boolean-completeness-implies-numerical-rigidity":
+  {"proofs":
+   [{"name":
+     "Classicism.Numerical.countable_boolean_completeness_implies_numerical_rigidity",
+     "lines": [28, 32],
+     "file": "Classicism/Results/NumericalRigidity/Records.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.countable_boolean_completeness_implies_numerical_rigidity",
+    "lines": [15, 16],
+    "file": "Classicism/MapNumericalRigidity.lean",
+    "axioms": ["propext", "Quot.sound"]}},
   "converse-witnessed-possibility-r-implies-no-pure-contingency-r":
   {"proofs":
    [{"name": "Classicism.Meta.converseWitnessedPossibility_entails_npc",
@@ -4104,6 +4164,17 @@
     "Classicism.Map.boolean_completeness_r_implies_boolean_completeness_t",
     "lines": [250, 252],
     "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "boolean-completeness-implies-numerical-rigidity":
+  {"proofs":
+   [{"name":
+     "Classicism.Numerical.boolean_completeness_implies_numerical_rigidity",
+     "lines": [34, 37],
+     "file": "Classicism/Results/NumericalRigidity/Records.lean"}],
+   "certificate":
+   {"name": "Classicism.Map.boolean_completeness_implies_numerical_rigidity",
+    "lines": [19, 20],
+    "file": "Classicism/MapNumericalRigidity.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "bf-weak-rigid-comprehension-atomicity-and-relational-choice-imply-intensional-choice":
   {"proofs":
@@ -13213,6 +13284,10 @@
   {"name": "Classicism.P.PersistentComprehension",
    "lines": [30, 32],
    "file": "Classicism/Principles/Comprehension.lean"},
+  "Classicism.P.NumericalRigidity":
+  {"name": "Classicism.P.NumericalRigidity",
+   "lines": [9, 11],
+   "file": "Classicism/Principles/NumericalRigidity.lean"},
   "Classicism.P.NecessityOfIdentity":
   {"name": "Classicism.P.NecessityOfIdentity",
    "lines": [62, 63],
@@ -13377,6 +13452,10 @@
   {"name": "Classicism.P.NecPersistentComprehension",
    "lines": [83, 84],
    "file": "Classicism/Principles/Comprehension.lean"},
+  "Classicism.P.NecNumericalRigidity":
+  {"name": "Classicism.P.NecNumericalRigidity",
+   "lines": [13, 13],
+   "file": "Classicism/Principles/NumericalRigidity.lean"},
   "Classicism.P.NecNecessityOfDistinctnessTDual":
   {"name": "Classicism.P.NecNecessityOfDistinctnessTDual",
    "lines": [37, 38],
