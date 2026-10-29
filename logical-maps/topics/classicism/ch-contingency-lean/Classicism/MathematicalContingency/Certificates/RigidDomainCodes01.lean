@@ -1,0 +1,16 @@
+import Diagnostics.DeepSplitTranslate
+import Classicism.MathematicalContingency.RigidDomainCodes
+import Classicism.MathematicalContingency.Certificates.CountableSequenceClosure03
+import Classicism.MathematicalContingency.Certificates.SmallnessTransfer04
+import Classicism.MathematicalContingency.Certificates.WellOrderPullback02
+import Classicism.MathematicalContingency.Certificates.RigidImageCoding07
+import Classicism.MathematicalContingency.Certificates.PairingAbsorption06
+import Classicism.MathematicalContingency.Certificates.RigidTernaryBounds03
+set_option synthInstance.maxSize 4000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+set_option Classicism.Meta.DeepSplitTranslate.conversionTrace "RigidDomainCodes01-conversions.trace"
+#classicism_deep_split_derive Classicism.MathematicalContingency.countableDomain_rigid_code
+#print axioms Classicism.MathematicalContingency.countableDomain_rigid_code.derivable

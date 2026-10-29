@@ -1,0 +1,13 @@
+import Diagnostics.DeepSplitTranslate
+import Classicism.MathematicalContingency.RegularOpenLattice
+import Classicism.MathematicalContingency.Certificates.ConeSuprema03
+import Classicism.MathematicalContingency.Certificates.RegularOpenHull08
+import Classicism.MathematicalContingency.Certificates.RegularOpenLattice03
+set_option synthInstance.maxSize 4000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+set_option Classicism.Meta.DeepSplitTranslate.conversionTrace "RegularOpenLattice04-conversions.trace"
+#classicism_deep_split_derive Classicism.MathematicalContingency.roSupremum_characterization
+#print axioms Classicism.MathematicalContingency.roSupremum_characterization.derivable

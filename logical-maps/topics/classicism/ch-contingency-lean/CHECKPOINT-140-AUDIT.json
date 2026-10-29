@@ -1,0 +1,139 @@
+{
+  "checkpoint": 140,
+  "baseline": 138,
+  "completed_stages": 3,
+  "new_certificates": 6,
+  "historical_certificates_completed": 1,
+  "checked_this_batch": 7,
+  "passed": 728,
+  "total": 743,
+  "pending": 15,
+  "completed_historical_target": "Classicism.MathematicalContingency.Certificates.HartogsPairing02",
+  "other_pending_unchanged": true,
+  "changed_prior_lean_files": [
+    "Classicism/MathematicalContingency/Certificates/HartogsPairing02.lean",
+    "Classicism/MathematicalContingency/Checked.lean",
+    "Classicism/MathematicalContingency/FullyCertified.lean",
+    "Classicism/MathematicalContingency/VerifiedCheckpoint.lean"
+  ],
+  "unchanged_key_files": [
+    "Classicism/Tools/Translate.lean",
+    "Diagnostics/DeepSplitTranslate.lean",
+    "Classicism/MathematicalContingency/HartogsPairing.lean",
+    "Classicism/MathematicalContingency/RegularOpenCH.lean",
+    "Classicism/MathematicalContingency/NaturalOrderTypeCH.lean",
+    ".lake/build/lib/lean/Classicism/MathematicalContingency/Certificates/NaturalOrderTypeCH01.olean"
+  ],
+  "historical_retry": {
+    "module": "HartogsPairing02",
+    "exit": 0,
+    "seconds": 100.23,
+    "peak_rss_kib": 2224600,
+    "stopped": null,
+    "certificate_bytes": 6038520,
+    "sha256": "34a961db444b12a6b3a478a00f8f6146ff73e1a2e37ddfcd21023dc09821a837",
+    "conversion_lemmas": 241,
+    "fresh_import_exit": 0
+  },
+  "stages": [
+    {
+      "stage": "HartogsClosedBounds",
+      "certificate_results": [
+        {
+          "module": "HartogsClosedBounds01",
+          "exit": 0,
+          "seconds": 14.82,
+          "peak_rss_kib": 2033512,
+          "stopped": null,
+          "certificate_bytes": 2533472,
+          "sha256": "f9880b8091df4c7f480c928c5ad3dfc42ddeb0e6f1f1e6378468df298fcb38b8",
+          "conversion_lemmas": 18
+        },
+        {
+          "module": "HartogsClosedBounds02",
+          "exit": 0,
+          "seconds": 31.39,
+          "peak_rss_kib": 2157848,
+          "stopped": null,
+          "certificate_bytes": 4273272,
+          "sha256": "8934bd2934ebde5a6df7fb51ff38f19b4407fbc4e569942dcf4c8fc26c8b8c27",
+          "conversion_lemmas": 74
+        },
+        {
+          "module": "HartogsClosedBounds03",
+          "exit": 0,
+          "seconds": 40.92,
+          "peak_rss_kib": 2311088,
+          "stopped": null,
+          "certificate_bytes": 3748320,
+          "sha256": "b252460571adfba91308db4a0da9947a6cb910a40c27bcfacaff806034e5ec8b",
+          "conversion_lemmas": 156
+        }
+      ],
+      "integration_exit_codes": {
+        "Diagnostics/HartogsClosedBoundsImportCheck": 0,
+        "Classicism/MathematicalContingency/Checked": 0,
+        "Classicism/MathematicalContingency/VerifiedCheckpoint": 0
+      },
+      "passed": 725,
+      "total": 740,
+      "pending": 15
+    },
+    {
+      "stage": "NaturalClosedBounds",
+      "certificate_results": [
+        {
+          "module": "NaturalClosedBounds01",
+          "exit": 0,
+          "seconds": 6.78,
+          "peak_rss_kib": 1944468,
+          "stopped": null,
+          "certificate_bytes": 541320,
+          "sha256": "7a9f027c46c022c29a5f1d9b52b3ccbce869582e66155a41d99c67d542c2c5f1",
+          "conversion_lemmas": 88
+        },
+        {
+          "module": "NaturalClosedBounds02",
+          "exit": 0,
+          "seconds": 49.45,
+          "peak_rss_kib": 2115124,
+          "stopped": null,
+          "certificate_bytes": 3938840,
+          "sha256": "76d031489471030be5a50aafff590fa69858edca5726252bff763434e3c96862",
+          "conversion_lemmas": 421
+        }
+      ],
+      "integration_exit_codes": {
+        "Diagnostics/NaturalClosedBoundsImportCheck": 0,
+        "Classicism/MathematicalContingency/Checked": 0,
+        "Classicism/MathematicalContingency/VerifiedCheckpoint": 0
+      },
+      "passed": 727,
+      "total": 742,
+      "pending": 15
+    },
+    {
+      "stage": "ClosedBoundsCH",
+      "certificate_results": [
+        {
+          "module": "ClosedBoundsCH01",
+          "exit": 0,
+          "seconds": 42.44,
+          "peak_rss_kib": 2200020,
+          "stopped": null,
+          "certificate_bytes": 7104128,
+          "sha256": "86dd0d1d1ad717c01b3d3cecb356da32e471ba7ae0d981081a18ef4a70284698",
+          "conversion_lemmas": 9
+        }
+      ],
+      "integration_exit_codes": {
+        "Diagnostics/ClosedBoundsCHImportCheck": 0,
+        "Classicism/MathematicalContingency/Checked": 0,
+        "Classicism/MathematicalContingency/VerifiedCheckpoint": 0
+      },
+      "passed": 728,
+      "total": 743,
+      "pending": 15
+    }
+  ]
+}

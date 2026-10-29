@@ -1,0 +1,36 @@
+id: necessary-lower-peano-implies-exact-peano-e
+premises:
+- necessary-lower-peano-e
+conclusion: exact-peano-e
+status: proved
+certificate:
+  source_id: misc
+  produced_by: GPT-6 Astra Pro (OpenAI), prompted by Andrew Bacon
+  recorded_by: GPT-6 Astra Pro (OpenAI), prompted by Andrew Bacon
+  checked_by: []
+  date: '2026-10-28'
+  lean: verified
+  lean_ref: Classicism.Map.necessary_lower_peano_implies_exact_peano_e
+sources:
+- Andrew Bacon, exact/at-least cardinality comparison; exact-Peano hypothesis eliminated by GPT-6 Astra Pro (OpenAI), prompted by Andrew Bacon, 28 October 2026. ExactLowerPeanoTransfer.lean in the native and checkpoint Classicism projects.
+source_names:
+- Bacon / Codex CH project
+proof: >-
+  Write R(q,l) for the least relation pairing the two zeros and closed under simultaneous successor.
+  By induction R(q,l) implies, for every X, that l(X) holds iff some subproperty Y of X satisfies q(Y).
+  R is persistent, by induction using the necessitated zero and successor introduction theorems.
+  Thus two partners l,l' of the same q are necessarily coextensive and hence identical by Intensionality.
+  This right-uniqueness result uses no Peano premise. Exact zero cannot be a successor: evaluate on the
+  empty property. For finite exact m,n with Suc m = Suc n, take lower partners l,k. Right uniqueness
+  gives Suc l = Suc k; LowerPeano gives l = k; the earlier left-uniqueness theorem gives m = n.
+  This proves the stronger unboxed implication LowerPeano implies ExactPeano; modal T gives the recorded
+  implication from NecessaryLowerPeano. Necessitating the implication and applying K also gives necessary
+  ExactPeano from necessary LowerPeano.
+notes: >-
+  No exact-Peano, Choice, Barcan or Rigid Comprehension premise is added. The native theorem is
+  Classicism.ExactLower.exactPeano_of_box_lowerPeano, in Results/Research/ExactLowerPeanoTransfer.lean;
+  the checkpoint copy has namespace Classicism.MathematicalContingency. The native object-language
+  derivation and schema entailment are in Classicism/Certified/ExactLower.lean, and the certificate at
+  the generated map statement is in Classicism/MapExactLower.lean. The unchanged pmap lean-check
+  classicism --update command verified this record in run 40756833756 on 28 October 2026; see
+  lean/map/exact-lower-audit.json. This is not an identification with individual infinity.

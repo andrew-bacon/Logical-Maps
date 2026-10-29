@@ -1,0 +1,75 @@
+name: Native map audit for exact-at-least results
+
+on:
+  push:
+    branches: [forcing-cardinal-ch]
+    paths:
+      - 'logical-maps/scripts/certify_exact_lower.py'
+      - 'logical-maps/topics/classicism/lean/Classicism/Certified/ExactLower*.lean'
+      - 'logical-maps/topics/classicism/lean/Classicism/Principles/ExactLower.lean'
+      - 'logical-maps/topics/classicism/lean/Classicism/Results/Records/ExactLower.lean'
+      - 'logical-maps/topics/classicism/lean/Classicism/Results/Research/ExactLower*.lean'
+      - '.github/workflows/publish-exact-lower-certification.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: native-exact-lower-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  certify:
+    if: github.repository == 'andrew-bacon/Logical-Maps' && github.actor != 'github-actions[bot]'
+    name: Run native pmap audit before publishing verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      LEAN_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r logical-maps/requirements.txt
+      - name: Prepare exact map-statement integration
+        run: python logical-maps/scripts/certify_exact_lower.py prepare
+      - uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: logical-maps/topics/classicism/lean
+          auto-config: 'false'
+          build: 'false'
+          test: 'false'
+          lint: 'false'
+          use-mathlib-cache: 'true'
+          use-github-cache: 'true'
+      - name: Run unchanged pmap generated-statement and axiom audit
+        shell: bash
+        run: |
+          set -o pipefail
+          python logical-maps/scripts/certify_exact_lower.py audit 2>&1 | tee /tmp/exact-lower-pmap-audit.log
+      - name: Publish only native-audited integration files
+        shell: bash
+        run: |
+          set -euo pipefail
+          current=$(git ls-remote origin refs/heads/forcing-cardinal-ch | cut -f1)
+          test "$current" = "$GITHUB_SHA" || { echo 'Branch moved; refusing to publish stale audit.'; exit 1; }
+          python logical-maps/scripts/certify_exact_lower.py publish-paths > /tmp/exact-lower-publish-paths
+          while IFS= read -r path; do git add -- "$path"; done < /tmp/exact-lower-publish-paths
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Certify exact-at-least map arrows with native pmap audit'
+            git push origin HEAD:forcing-cardinal-ch
+          fi
+      - name: Preserve audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: exact-lower-native-map-audit
+          path: |
+            /tmp/exact-lower-pmap-audit.log
+            logical-maps/topics/classicism/lean/map/exact-lower-audit.json
+          if-no-files-found: ignore

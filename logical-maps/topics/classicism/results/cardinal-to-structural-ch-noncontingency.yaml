@@ -1,0 +1,35 @@
+id: cardinal-to-structural-ch-noncontingency
+premises:
+- necessary-rigid-comprehension-r
+- intensional-choice-r
+- necessary-lower-peano-e
+- non-contingency-of-cardinal-ch
+conclusion: non-contingency-of-ch
+status: conjectured
+certificate:
+  source_id: misc
+  produced_by: Andrew Bacon (proposed equivalence); OpenAI Codex, prompted by Andrew Bacon (explicit candidate
+    assumptions)
+  recorded_by: OpenAI Codex, prompted by Andrew Bacon
+  checked_by: []
+  date: '2026-10-27'
+  lean: none
+sources:
+- Andrew Bacon, CH contingency formalization and repository proposal, 27 October 2026, with OpenAI Codex;
+  checkpoint 140, natural_CH_contingency_closedBounds.
+source_names:
+- Bacon / Codex CH project
+references:
+- paper: bacon-ch-general-forcing
+  role: background
+- paper: goodsell-arithmetic-necessary
+  role: background
+  locator: §5, Lemmas 3 and 8 (5 June 2024 draft)
+proof: ''
+notes: One direction of the proposed equivalence of the two non-contingency principles under the displayed
+  candidate assumptions. These assumptions have not yet been proved sufficient. For the forward direction
+  one needs, at every carrier type, necessary comparison of every real structure's natural-number carrier
+  and continuum with N and S. For the converse one also needs a necessarily available real structure at
+  some specified sufficiently high type; otherwise the structural universal quantifiers can be vacuous.
+  Current-world bijections alone do not transfer modal claims. Goodsell's arithmetic rigidity result addresses
+  the number carrier, not the real-structure construction. See Background, Cardinal CH and bounded forcing.

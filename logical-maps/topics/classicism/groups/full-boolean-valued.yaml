@@ -1,0 +1,69 @@
+id: full-boolean-valued
+name: 'Full Boolean-valued models'
+references:
+- paper: bacon-mathematical-contingency
+  role: proof
+  locator: Online appendix §B.2, pp. 7–9 (PDF pp. 41–43)
+
+# Bacon's full Boolean-valued models (Could the truths of mathematics have been different?, online
+# appendix §B.2). Made a group on 25 October 2026 by Claude Opus 5.5 (Anthropic), prompted by Cian
+# Dorr, so that the universe in which a member is built can be varied: each member is recorded as a
+# construction in ZFC, and its variant carried out inside Gödel's L is generated. Each member keeps
+# its own file, id and arguments; the member's definition is its setting for `construction`, its
+# text unchanged.
+
+definition: >-
+  {{construction}}
+
+
+  {{universe}}
+
+parameters:
+  construction:
+    text: The algebra, the domains and the evaluation point, as the member's source gives them.
+  universe:
+    text: Where the construction is carried out. Each member is recorded as a construction in ZFC;
+      its variant carried out inside $L$ is generated.
+    generate: true
+    default: zfc
+    values:
+      zfc:
+        text: >-
+          Universe, fixed for this record: the construction is carried out in an arbitrary model of
+          ZFC.
+        label: in ZFC
+      constructible:
+        text: >-
+          Universe, fixed for this record: the construction is carried out inside Gödel's
+          constructible universe $L$, which ZFC proves to be a model of ZFC + $V=L$. Read in the
+          ambient universe, the result is still a Boolean-valued model of the same kind, with the
+          same values: every element of the algebra lies in $L$, and every clause of the semantics
+          takes the meet or join of a family that lies in $L$ (by induction on formulas), whose meet
+          or join in $L$ is its meet or join outright, since every candidate bound is itself an
+          element of the algebra, hence in $L$. Its domains are full in the sense of $L$, and every
+          argument for the member, being a proof in ZFC about the model's values, holds of it. In
+          particular $L\models\mathrm{CH}$, so an algebra chosen by cases on CH is the one for CH.
+        label: built in L
+
+arguments:
+
+- id: necessity-of-analysis-constructible
+  when: {universe: constructible}
+  fails: [necessity-of-analysis]
+  choice: free
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+  date: '2026-10-25'
+  text: >-
+    At type $t$, for the analytical sentence $\Phi$ saying that every real is constructible: membership
+    of a real in $L$ is $\Sigma^1_2$ (Shoenfield), so $\Phi$ is $\Pi^1_3$, a first-order analytical
+    sentence in any real number structure, whose natural numbers code sets of naturals by its reals.
+    Write $\pi,\rho$ for the projections of $B=\mathbf 2\times A$ onto the atom's coordinate and $A$.
+    As in the argument for the contingency of CH, the $\pi$-coordinate of a box-free sentence is its
+    truth in the full model over $L$ and the $\rho$-coordinate its value in $L^A$, and both have real
+    number structures on subsets of $D_t=B$. $L\models\Phi$, while forcing with $A$ adds a Cohen real
+    over $L$, not constructible, and Shoenfield absoluteness makes the $\Sigma^1_2$ definition of
+    constructibility mean the same in $L^A$; so $\Phi$ has value $0_A$ there. Real number structures
+    being isomorphic within each coordinate, $\forall\mathfrak R\, .\,\operatorname{Real}_t(\mathfrak
+    R)\to\Phi(\mathfrak R)$ has value $(1,0_A)$ and $\forall\mathfrak R\, .\,\operatorname{Real}_t(\mathfrak
+    R)\to\neg\Phi(\mathfrak R)$ has value $(0,1_A)$. As $\Box p$ is $p=\top$, both disjuncts of the
+    instance are $\bot$.

@@ -1,0 +1,37 @@
+id: bounded-forcing-and-rigid-naturals-imply-cardinal-ch-contingency
+premises:
+- bounded-ch-forcing-setup
+- necessary-lower-peano-e
+- rigid-lower-nat-e
+conclusion: contingency-of-cardinal-ch
+status: proved
+certificate:
+  source_id: misc
+  produced_by: OpenAI Codex, prompted by Andrew Bacon (checkpoint-140 conditional theorem); OpenAI GPT-6,
+    prompted by Andrew Bacon (finite-package projection)
+  recorded_by: OpenAI GPT-6, prompted by Andrew Bacon
+  checked_by: []
+  date: '2026-10-28'
+  lean: none
+sources:
+- 'Andrew Bacon, CH contingency formalization, checkpoint 140 (27 October 2026): natural_CH_contingency_closedBounds
+  and its ClosedBoundsCH01 certificate; exact finite-package map projection recorded 28 October 2026.'
+source_names:
+- Bacon / Codex CH project
+proof: The setup provides the two MPAt instances with one K,L witness, StronglyInaccessible K L, the two
+  finite boxed RC bundles and the extra boxed Cohen-completion RC instance, and the three unboxed IC instances.
+  Apply natural_CH_contingency_closedBounds to these, Necessary Peano conditions (DraftBoxInfinity e),
+  and the separately assumed strong rigidity of LowerNat. The resulting NaturalCHContingency is a conjunction
+  of order-type CH contingency and cardinal CH contingency; project its second conjunct. In checkpoint
+  140 the source theorem has a successful object-language certificate (Certificates/ClosedBoundsCH01.lean;
+  CHECKPOINT-140-AUDIT.json). The new MapBridge.lean wrapper was not itself compiled or checked with the
+  map pmap lean-check, so certificate.lean remains none.
+references:
+- paper: bacon-ch-general-forcing
+  role: background
+  note: The forcing proof and its conditional premises; the precise Lean derivation in checkpoint 140
+    is narrower than the unqualified structural-CH claim.
+notes: This proved arrow is conditional on Rigid LowerNat, which has not been derived, and on the full
+  explicitly existential size/forcing package. It yields only cardinal CH contingency and does not alter
+  the earlier conjectured cardinal-to-structural bridges. The 728/743 historical certificate report is
+  not a fresh pmap verification; do not mark this arrow Lean verified without a successful map-level check.

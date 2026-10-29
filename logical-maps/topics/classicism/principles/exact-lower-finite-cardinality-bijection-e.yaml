@@ -1,0 +1,26 @@
+id: exact-lower-finite-cardinality-bijection-e
+name: Exact/at-least finite-cardinality correspondence (type e)
+category: mathematical-contingency
+statement: The inductively generated exact finite-cardinality quantifiers and at-least finite-cardinality quantifiers
+  are related by a bijection sending their respective zeros to each other and commuting with successor.
+formal: $\exists R^{\nu\nu t}\, .\,\operatorname{Bij}(R;\mathrm{FinCard}_e,\operatorname{LowerNat}_e)\ \land\
+  R(\mathbf 0_e^=,\mathbf 0_e^{\ge})\ \land\ \forall e,l\,(R(e,l)\to R(\operatorname{Suc}e,\operatorname{Suc}l))$
+definitions: \(\nu=(et)t\). Exact zero is \(\lambda X.\forall u\neg Xu\), at-least zero is \(\lambda X.\top\),
+  and successor removes an individual from a property. Both carriers are impredicatively least successor-closed.
+  The witness is the least binary relation containing the two zeros and closed under simultaneous successor
+  (ExactLowerPair). The formal Lean definition ExactLowerBijection includes totality in both directions,
+  injectivity/functionality, the zero pair, and closure under simultaneous successor.
+date: '2026-10-28'
+sources:
+- Andrew Bacon, exact/at-least cardinality comparison formalized with OpenAI GPT-6, 28 October 2026, in the
+  CH checkpoint and Logical-Maps Lean projects.
+source_names:
+- Bacon / Codex CH project
+notes: >-
+  LowerPeano alone suffices: ExactLowerPeanoTransfer derives the exact Peano conditions from it.
+  The map records the implication from [[necessary-lower-peano-e]] as
+  [[necessary-lower-peano-implies-cardinality-bijection-e]], now verified by the native map auditor.
+  The earlier two-premise result is retained but its extra exact-Peano premise is unnecessary.
+  A graph is used instead of introducing a function constant. The conclusion does not assert that
+  one fixed graph is rigid or discharge the separate strong-rigidity premise for LowerNat.
+lean_def: Classicism.P.ExactLowerBijectionE.schemaIn

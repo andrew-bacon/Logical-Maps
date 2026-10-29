@@ -1,0 +1,34 @@
+id: necessary-lower-peano-implies-cardinality-bijection-e
+premises:
+- necessary-lower-peano-e
+conclusion: exact-lower-finite-cardinality-bijection-e
+status: proved
+certificate:
+  source_id: misc
+  produced_by: GPT-6 Astra Pro (OpenAI), prompted by Andrew Bacon
+  recorded_by: GPT-6 Astra Pro (OpenAI), prompted by Andrew Bacon
+  checked_by: []
+  date: '2026-10-28'
+  lean: verified
+  lean_ref: Classicism.Map.necessary_lower_peano_implies_cardinality_bijection_e
+sources:
+- Andrew Bacon, exact/at-least cardinality comparison; exact-Peano hypothesis eliminated by GPT-6 Astra Pro (OpenAI), prompted by Andrew Bacon, 28 October 2026. ExactLowerPeanoTransfer.lean in the native and checkpoint Classicism projects.
+source_names:
+- Bacon / Codex CH project
+proof: >-
+  NecessaryLowerPeano implies LowerPeano by T. The theorem exactPeano_of_lowerPeano derives ExactPeano
+  without any further hypothesis. Apply the previously established exactLowerBijection_of_peano.
+  The witness is the synchronous inductive relation ExactLowerPair. It has total projections in both
+  directions, is functional and one-to-one, relates exact zero to at-least zero, and relates successors
+  of every pair. The stronger unboxed implication LowerPeano implies ExactLowerBijection is proved as
+  exactLowerBijection_of_lowerPeano; its necessitation and K give necessary existence of a bijection
+  from NecessaryLowerPeano as well.
+notes: >-
+  This removes the exact-peano-e premise of
+  [[exact-peano-and-necessary-lower-peano-imply-cardinality-bijection-e]]. The native theorem is
+  Classicism.ExactLower.exactLowerBijection_of_box_lowerPeano; the checkpoint counterpart has namespace
+  Classicism.MathematicalContingency. The boxed theorem states that necessarily a bijection exists, not
+  that one fixed rigid graph has been obtained. It does not by itself discharge Rigid LowerNat, transfer
+  all arithmetic operations or construct a real-number structure. The native object-language certificate
+  and exact generated map statement passed pmap lean-check classicism --update in run 40756833756;
+  see lean/map/exact-lower-audit.json. This record's verified status was written by that auditor.

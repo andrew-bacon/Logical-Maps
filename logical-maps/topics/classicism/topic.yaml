@@ -8,6 +8,9 @@ framework: 'The fixed base is Bacon and Dorr’s Classicism (C) in their relatio
   assumptions does not satisfy it.'
 background: []
 source_catalog:
+- id: bacon-substitution-structures-2019
+  name: Substitution Structures (2019)
+  kind: published-paper
 - id: bacon-modalized-domains-2026
   name: Modalized Domains (2026)
   kind: misc
@@ -51,8 +54,14 @@ source_catalog:
   name: Goodsell (personal communication)
   kind: misc
 - id: goodsell-arithmetic-necessary
-  name: Arithmetic is Necessary (2024 draft)
-  kind: misc
+  name: Arithmetic is Necessary (2024)
+  kind: published-paper
+- id: goodsell-arithmetic-determinate
+  name: Arithmetic is Determinate (2022)
+  kind: published-paper
+- id: bacon-zeng-theory-necessities
+  name: A Theory of Necessities (2022)
+  kind: published-paper
 - id: sun-possible-worlds-without-atomicity
   name: Possible Worlds Without Atomicity (draft)
   kind: misc
@@ -72,6 +81,8 @@ principle_categories:
   name: Modal principles
 - id: lattice
   name: Boolean structure
+- id: more-boolean-structure
+  name: More Boolean structure
 - id: comprehension
   name: Comprehension
 - id: choice
@@ -119,6 +130,17 @@ background_presets:
   - necessary-rigid-comprehension-r
 
 lattice_views:
+- id: self-atoms
+  name: Self-atoms and strong atoms
+  description: 'Atomicity, Self-Atomicity, Strong Atomicity, and the four bridge principles between atoms, self-atoms and strong atoms.'
+  principles:
+  - atomicity-r
+  - self-atomicity-r
+  - strong-atomicity-r
+  - atoms-are-self-atoms-r
+  - self-atoms-are-atoms-r
+  - self-atoms-are-strong-atoms-r
+  - atoms-are-strong-atoms-r
 - id: modality-rigid-comprehension
   name: Modality and rigid comp.
   default: true
@@ -170,16 +192,18 @@ lattice_views:
   - boolean-completeness-r
   - weak-rigid-comprehension-r
   - rigid-comprehension-r
-  - strong-leibniz-r
+  - strong-atomicity-r
 lean_lib: Classicism
 lean:
   index:
     script: scripts/MapIndex.lean
     file: map/index.json
-  source_url: https://github.com/zwlgzwlg/Logical-Maps/blob/{commit}/logical-maps/topics/classicism/lean/{file}#L{start}-L{end}
+  source_url: https://github.com/andrew-bacon/Logical-Maps/blob/{commit}/logical-maps/topics/classicism/lean/{file}#L{start}-L{end}
   imports:
   - Classicism.Certified.Signatures
   - Classicism.Certified.Arithmetic
+  - Classicism.Certified.ExactLowerSchemas
+  - Classicism.Certified.NumericalRigidity.Schemas
   namespace: Classicism
   definition_check: "example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=\n  {def}"
   result:
@@ -203,6 +227,8 @@ lean:
     - Classicism.Models.SymmetricIdeal
     - Classicism.Models.PairInjCollapse
     - Classicism.Models.OldNewBase
+    - Classicism.Models.FiniteCompressionBase
+    - Classicism.Models.FixedPointEntranceModel
     holds: ({model}).IsModel ∧ ({model}).HoldsAx {def}
     fails: ({model}).IsModel ∧ ¬ ({model}).HoldsAx {def}
     relative_categories: [signature]

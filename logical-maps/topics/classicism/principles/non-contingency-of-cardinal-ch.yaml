@@ -1,0 +1,23 @@
+id: non-contingency-of-cardinal-ch
+name: Non-contingency of Cardinal CH
+category: mathematical-contingency
+statement: Cardinal CH for the specified natural-number carrier is either necessarily true or necessarily
+  false.
+formal: $\Box C_N\lor\Box\neg C_N$
+definitions: $C_N$ is [[cardinal-continuum-hypothesis]], with N the at-least natural-number carrier at
+  $\nu=(et)t$. Its negation is $\Diamond C_N\land\Diamond\neg C_N$.
+date: '2026-10-27'
+sources:
+- Andrew Bacon, CH contingency formalization and repository proposal, 27 October 2026, with OpenAI Codex;
+  checkpoint 140, natural_CH_contingency_closedBounds.
+source_names:
+- Bacon / Codex CH project
+references:
+- paper: bacon-ch-general-forcing
+  role: formulation
+  note: The inaccessible-bound version and carrier conventions used in the accompanying formalization.
+notes: The conjectured equivalence is between this modal principle and [[non-contingency-of-ch]], not
+  between the truth of Cardinal CH and non-contingency. The two directions are recorded under boxed Rigid
+  Comprehension, Intensional Choice and [[necessary-lower-peano-e]]. See [[cardinal-to-structural-ch-noncontingency]]
+  and [[structural-to-cardinal-ch-noncontingency]]. The real-structure construction and necessary carrier
+  comparisons remain conjectural here.

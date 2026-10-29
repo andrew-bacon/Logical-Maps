@@ -1,0 +1,12 @@
+import Diagnostics.DeepSplitTranslate
+import Classicism.MathematicalContingency.CountableConditions
+import Classicism.MathematicalContingency.Certificates.FiniteConditions04
+import Classicism.MathematicalContingency.Certificates.CountableConditions05
+set_option synthInstance.maxSize 2000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+set_option Classicism.Meta.DeepSplitTranslate.conversionTrace "countable-conditions-06-conversions.trace"
+#classicism_deep_split_derive Classicism.MathematicalContingency.countableConditionOrder_partialOrder
+#print axioms Classicism.MathematicalContingency.countableConditionOrder_partialOrder.derivable

@@ -1,0 +1,36 @@
+import Classicism.Results.NumericalRigidity.Inductive
+import Classicism.Tools.Translate
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+#classicism_derive Classicism.Numerical.inductiveClosure_zero
+#print axioms Classicism.Numerical.inductiveClosure_zero.derivable
+#classicism_derive Classicism.Numerical.inductiveClosure_suc
+#print axioms Classicism.Numerical.inductiveClosure_suc.derivable
+#classicism_derive Classicism.Numerical.inductiveClosure_induction
+#print axioms Classicism.Numerical.inductiveClosure_induction.derivable
+#classicism_derive Classicism.Numerical.inductiveClosure_box
+#print axioms Classicism.Numerical.inductiveClosure_box.derivable
+#classicism_derive Classicism.Numerical.inductiveClosure_persistent
+#print axioms Classicism.Numerical.inductiveClosure_persistent.derivable
+#classicism_derive Classicism.Numerical.singleton_le_of_box
+#print axioms Classicism.Numerical.singleton_le_of_box.derivable
+#classicism_derive Classicism.Numerical.box_of_singleton_le
+#print axioms Classicism.Numerical.box_of_singleton_le.derivable
+#classicism_derive Classicism.Numerical.singletonFamily_upper
+#print axioms Classicism.Numerical.singletonFamily_upper.derivable
+#classicism_derive Classicism.Numerical.singletonFamily_box
+#print axioms Classicism.Numerical.singletonFamily_box.derivable
+#classicism_derive Classicism.Numerical.booleanCompleteAt_lub
+#print axioms Classicism.Numerical.booleanCompleteAt_lub.derivable
+#classicism_derive Classicism.Numerical.inductiveClosure_lub_step
+#print axioms Classicism.Numerical.inductiveClosure_lub_step.derivable
+#classicism_derive Classicism.Numerical.inductiveClosure_le_lub
+#print axioms Classicism.Numerical.inductiveClosure_le_lub.derivable
+#classicism_derive Classicism.Numerical.inductiveClosure_restricted_barcan_of_lub
+#print axioms Classicism.Numerical.inductiveClosure_restricted_barcan_of_lub.derivable
+#classicism_derive Classicism.Numerical.inductiveClosure_weaklyInextensible
+#print axioms Classicism.Numerical.inductiveClosure_weaklyInextensible.derivable
+#classicism_derive Classicism.Numerical.inductiveClosure_weaklyRigid
+#print axioms Classicism.Numerical.inductiveClosure_weaklyRigid.derivable
+#classicism_derive Classicism.Numerical.inductiveClosure_rigid
+#print axioms Classicism.Numerical.inductiveClosure_rigid.derivable

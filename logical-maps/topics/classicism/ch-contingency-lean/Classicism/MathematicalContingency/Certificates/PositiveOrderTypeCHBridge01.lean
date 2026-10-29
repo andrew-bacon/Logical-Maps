@@ -1,0 +1,13 @@
+import Diagnostics.DeepSplitTranslate
+import Classicism.MathematicalContingency.PositiveOrderTypeCHBridge
+import Classicism.MathematicalContingency.Certificates.OrderTypeCHBridge02
+import Classicism.MathematicalContingency.Certificates.WellOrderPullback02
+import Classicism.MathematicalContingency.Certificates.WellOrderCardinality04
+set_option synthInstance.maxSize 2000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+set_option Classicism.Meta.DeepSplitTranslate.conversionTrace "positive-bridge-01-conversions.trace"
+#classicism_deep_split_derive Classicism.MathematicalContingency.equinumerous_of_embeds_countable_segments
+#print axioms Classicism.MathematicalContingency.equinumerous_of_embeds_countable_segments.derivable

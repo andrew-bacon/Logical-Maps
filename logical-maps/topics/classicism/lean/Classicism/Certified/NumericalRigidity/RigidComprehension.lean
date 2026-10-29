@@ -1,0 +1,14 @@
+import Classicism.Results.NumericalRigidity.RigidComprehension
+import Classicism.Certified.NumericalRigidity.Countable
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+#classicism_derive Classicism.Numerical.inductiveClosure_le_rigid_coext
+#print axioms Classicism.Numerical.inductiveClosure_le_rigid_coext.derivable
+#classicism_derive Classicism.Numerical.rigid_coext_le_inductiveClosure
+#print axioms Classicism.Numerical.rigid_coext_le_inductiveClosure.derivable
+#classicism_derive Classicism.Numerical.inductiveClosure_eq_rigid_coext
+#print axioms Classicism.Numerical.inductiveClosure_eq_rigid_coext.derivable
+#classicism_derive Classicism.Numerical.inductiveClosure_rigid_of_rc
+#print axioms Classicism.Numerical.inductiveClosure_rigid_of_rc.derivable
+#classicism_derive Classicism.Numerical.finiteCardinality_rigid_of_rc
+#print axioms Classicism.Numerical.finiteCardinality_rigid_of_rc.derivable

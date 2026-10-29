@@ -133,6 +133,20 @@ successors of terms, by $\neg$, $\lor$, $\land$ and quantifiers
 $\forall v\in\mathbb N_\sigma$. These are Definitions 3–8 of Goodsell's
 draft. Where the type is fixed by context the subscript $\sigma$ is dropped.
 
+**Numerical Rigidity.** With these finite-cardinality numbers, the principle is
+$\forall X\, .\,(\forall n\in\mathbb N_\sigma\, .\,\Box Xn)\leftrightarrow
+\Box(\forall n\in\mathbb N_\sigma\, .\,Xn)$.
+Persistence of numberhood is a theorem of C. Thus this restricted-Barcan form is
+$\operatorname{WeaklyRigid}(\mathbb N_\sigma)$ in the rigidity conventions below;
+its boxed form is $\operatorname{Rigid}(\mathbb N_\sigma)$.
+Bacon and Zeng call the related principle for Church numerals “Numerical Rigidity”
+in *A Theory of Necessities* (author draft, p. 14). Goodsell’s *Arithmetic is
+Determinate* and *Arithmetic is Necessary* supply the arithmetic rigidity results;
+the latter’s Lemma 8 obtains the unboxed form from Countable Boolean Completeness.
+The [proof and formalization](writeups/boolean-completeness-implies-numerical-rigidity.md)
+explain the Church-numeral instance and the boxed conclusions. Neither principle
+assumes Infinity or Peano injectivity.
+
 **Analysis.** A *real number structure* at a type $\sigma$ is a tuple
 $\mathfrak R=(X^{\sigma t},\le^{\sigma\sigma t},+^{\sigma\sigma\sigma t},
 \times^{\sigma\sigma\sigma t},0^\sigma,1^\sigma,N^{\sigma t})$ such that
@@ -298,26 +312,45 @@ distinct here may be identical elsewhere, where antisymmetry then fails.
 Orders on properties and relations defined by inclusion are typically only
 preorders: coextensive but distinct relations each include the other.
 
-Strong and weak worlds follow Bacon, *A Philosophical Introduction to
-Higher-Order Logics*, §8.2, pp. 165–166. At a relational type $\sigma$, with
-$\Diamond_\sigma X:=X\ne\bot_\sigma$,
+**Strong atoms.** At a relational type $\sigma$, with $\Diamond_\sigma X:=X\ne\bot_\sigma$, a
+*strong atom* is a possible entity that necessarily entails every entity of its type or its
+negation:
 
 $$
-\begin{aligned}
-\operatorname{SWorld}_\sigma(W)&:=\Diamond_\sigma W\land\Box\forall Y^\sigma\, .\,
-  W\le_\sigma Y\lor W\le_\sigma\neg_\sigma Y,\\
-\operatorname{WWorld}_\sigma(W)&:=\Diamond_\sigma W\land\forall Y^\sigma\, .\,
+\operatorname{SAtom}_\sigma(W):=\Diamond_\sigma W\land\Box\forall Y^\sigma\, .\,
   W\le_\sigma Y\lor W\le_\sigma\neg_\sigma Y.
-\end{aligned}
 $$
 
-A weak world is an atom in the sense above; a strong world necessarily settles
-every entity of its type, including ones that do not actually exist. The
-Weak Leibniz Biconditionals, $\forall X\, .\,\Diamond_\sigma X\to\exists W\, .\,
-\operatorname{WWorld}_\sigma(W)\land W\le X$, are the map's Atomicity; the
-Strong Leibniz Biconditionals replace $\operatorname{WWorld}$ by
-$\operatorname{SWorld}$. In both, the right-to-left direction is a theorem of C. The type-$t$ instance
-of the strong form is recorded separately, as is done for Atomicity.
+Bacon, *A Philosophical Introduction to Higher-Order Logics*, §8.2, pp. 165–166, calls these
+*strong worlds*; dropping the box gives his *weak worlds*, which are just the atoms. The map
+avoids the word "world" for them, since at types other than $t$ they are not world-like. By T,
+a strong atom is an atom; unlike an atom, it necessarily settles every entity of its type,
+including entities that do not actually exist. Atomicity says that every possible entity is
+entailed by an atom; Strong Atomicity requires a strong atom. Each is one direction of a
+biconditional that Bacon calls the Weak and the Strong Leibniz Biconditionals; the other
+direction is a theorem of C. The type-$t$ instance of each is recorded separately.
+
+**Self-atoms.** A *self-atom* (Cian Dorr, 25 October 2026) is a possible entity
+that is necessarily an atom whenever it is instantiated:
+
+$$
+\operatorname{SelfAtom}_\sigma(X):=\Diamond_\sigma X\land
+  \Box\bigl(\exists\bar x\, .\,X\bar x\to\operatorname{Atom}_\sigma(X)\bigr),
+\qquad
+\operatorname{SelfAtom}_t(p):=\Diamond p\land\Box\bigl(p\to\operatorname{Atom}_t(p)\bigr).
+$$
+
+At type $t$, since $p\land\operatorname{Atom}_t(p)$ is equivalent in C to
+$p\land\forall q\, .\,q\to p\le q$, a self-atom is a possible proposition that
+entails that it is the actual world. A strong atom is an atom at every world,
+a self-atom an atom at every world where it holds, an atom an atom at the
+evaluation point; a strong atom is a self-atom and a true atom is a
+self-atom, but a self-atom need not be an atom. Self-Atomicity replaces
+$\operatorname{SAtom}$ in Strong Atomicity by
+$\operatorname{SelfAtom}$, and the four *bridge principles* say that atoms are
+self-atoms, that self-atoms are atoms, that self-atoms are strong atoms, and
+that atoms are strong atoms; the last is what Strong Atomicity
+adds to Atomicity.
 
 Strong Possibility uses the distinctness-preserving modality of §2.6, p. 42:
 
@@ -351,6 +384,161 @@ equivalent. Theorems of C: $\Box\le\Box_{\ne}\le\hat{\hat\Box}\le\Box_5\le\lambd
 (the order is necessary pointwise implication); each of these operators is
 necessarily N, K, T and 4, and $\Box_5$ is an S5 operator; and if $\Box_{\ne}$ or
 $\hat{\hat\Box}$ is identical to its own hat, it is identical to $\Box_5$.
+
+## Cardinal CH and bounded forcing
+
+*Added 27 October 2026 by OpenAI Codex, prompted by Andrew Bacon.*
+
+The cardinal formulation avoids constructing a real-number structure. To match
+checkpoint 140 of the CH formalization, fix $\nu=(et)t$ and use the
+**at-least** number carrier:
+
+$
+\begin{aligned}
+z&:=\lambda A^{et}.\top,\\
+N&:=\lambda n^\nu.\forall Z^{\nu t}.\,
+ \bigl(Zz\land\forall m^\nu.\,Zm\to Z(\operatorname{Suc}_e m)\bigr)\to Zn,\\
+\mathcal P_r(A)&:=\lambda U.\,\operatorname{Rigid}(U)\land U\subseteq A,\\
+S&:=\mathcal P_r(N),\\
+C_N&:=\forall X^{(\nu t)t}.\,X\subseteq S\to(X\precsim N\lor X\approx S).
+\end{aligned}
+$
+
+The successor is the cardinal successor defined above, but the starting
+property $z$ holds of every property, rather than just the empty ones. Thus
+$N$ is `LowerNat`, not definitionally `FiniteCardinality`.
+$A\subseteq B$ means current pointwise inclusion; $A\precsim B$ and
+$A\approx B$ have relational injection and bijection witnesses.
+[[cardinal-continuum-hypothesis]] asserts $C_N$;
+[[non-contingency-of-cardinal-ch]] asserts $\Box C_N\lor\Box\neg C_N$.
+The contingency conclusion is $\Diamond C_N\land\Diamond\neg C_N$.
+
+**The smallness parameter.** Forcing Possibilism has the general form
+
+$
+\mathrm{FP}[\mathrm{Small}]:\quad
+\forall B,E.\,\operatorname{CBA}(B,E)\land\mathrm{Small}(B)
+\to\exists p.\,(B,E)\cong(\lambda q.\,q\le p,\le).
+$
+
+Changing the meaning of Small produces a different principle. For example,
+one may use size strictly below the propositions, size bounded by the
+hereditarily rigid entities of a type, or size bounded by a specified
+inaccessible carrier. No equivalence between these alternatives is being
+assumed. The choice of whether to require $p\ne\top$ is a further parameter.
+The existing [[forcing-possibilism]] retains its original smallness and
+proper-interval requirements. The new [[forcing-possibilism-inaccessible]]
+uses the following clauses, with $L$ a **strict** well-order:
+
+$
+\begin{aligned}
+K_{<a}&:=\lambda x.\,Kx\land(Lx)a,\\
+A\prec B&:=(A\precsim B)\land\neg(B\precsim A),\\
+\operatorname{Small}_{K,L}(B)&:=\exists a.\,Ka\land B\precsim K_{<a}.
+\end{aligned}
+$
+
+$\operatorname{Inacc}(K,L)$ is the conjunction of:
+
+- $L$ strictly well-orders $K$, and no $K_{<a}$ admits an injection of $K$;
+- $N\prec K$;
+- for every $X\subseteq K$ with $X\prec K$, there is $a\in K$ such that
+  every $x\in X$ satisfies $(Lx)a$;
+- for each $a\in K$ there is $b\in K$ with
+  $\mathcal P_r(K_{<a})\precsim K_{<b}$.
+
+These are the carrier-relative initial-cardinal, uncountability, regularity
+and strong-limit clauses used by the formalization. This is a definition,
+not an assertion that such a carrier exists. The new FP schema applies
+at each pair of admitted types $\kappa,\tau$, with the type variables outside
+object-language quantification. It permits the top interval and the
+degenerate one-element Boolean algebra.
+
+**Conditional contingency theorem.** Fix one $(K,L)$ satisfying Inacc.
+Assume [[forcing-possibilism-inaccessible]],
+[[necessary-rigid-comprehension-r]], [[intensional-choice-r]],
+[[necessary-lower-peano-e]], and $\operatorname{Rigid}(N)$.
+Then
+
+$
+\bigl(\Diamond(S\approx H(N))\land\Diamond\neg(S\approx H(N))\bigr)
+\land\bigl(\Diamond C_N\land\Diamond\neg C_N\bigr).
+$
+
+Here $H(N)$ is the Hartogs carrier of order types of well-orders on
+subcarriers of $N$. This gives the order-type formulation as well as the
+subset-cardinal formulation. The proof uses two instances of FP, at the
+regular-open completions of the countable collapse and Cohen conditions,
+with the **same** $(K,L)$. The collapse gives the positive possibility;
+Cohen forcing on the double-Hartogs index gives the negative possibility.
+The cardinal comparison and preservation arguments then deliver the two
+conclusions. Both regular-open completions and both Hartogs closed-segment
+bounds are constructed in the checked development.
+
+The exact formal endpoint is
+`Classicism.MathematicalContingency.natural_CH_contingency_closedBounds`
+in `ClosedBoundsCH.lean`, checkpoint 140. Its full RC and IC hypotheses are
+finite instances of the displayed schemata. It retains the explicit premise
+`Rigid (@LowerNat e _)`. The checkpoint has 728 passing certificate targets
+out of 743; 15 historical targets remain pending, separately from the checked
+dependencies of this endpoint. This repository update records the mathematical
+interface; it does not import that separate certificate archive or label any
+new map result `lean: verified`.
+
+**Rigidity citation.** Zachary Goodsell, *Arithmetic is Necessary*,
+[author's draft](https://philpapers.org/archive/GOOAIN.pdf), §5,
+Lemmas 3 and 8, supplies the relevant arithmetic argument. Lemma 3 proves
+persistence of numberhood. Lemma 8 proves
+
+$
+\forall X^{\nu t}.\,
+ (\forall n^\nu.\,Nn\to\Box Xn)\to
+ \Box\forall n^\nu.\,Nn\to Xn.
+$
+
+The argument concerns the least successor-closed property containing a
+specified zero, so it applies with the $z$ and successor used here; it does
+not require identifying at-least and exact-cardinality predicates.
+Lemma 8 uses Countable Boolean Completeness. Under boxed Rigid Comprehension,
+Boolean Completeness (hence its countable restriction) is available
+necessarily. Necessitating the conditional derivation and applying that
+boxed hypothesis supplies the leading box needed for the map's
+Inextensible clause. Necessitating Lemma 3 supplies Persistent. Together
+these yield Rigid(N). Thus Goodsell provides a literature justification for
+this premise under the stated background assumptions. This is distinct from
+a checked Lean derivation of `Rigid LowerNat`; that final formal integration
+remains outstanding. The map's existing write-up
+[[countable-boolean-completeness-implies-necessity-of-arithmetic]] gives the
+lemma-by-lemma argument. Published reference: *Journal of Philosophical Logic*
+53 (2024), 1145–1159, DOI 10.1007/s10992-024-09760-9; lemma locators here use
+the 5 June 2024 draft.
+
+**Conjectured real-structure bridge.** Under boxed Rigid Comprehension,
+Intensional Choice and the specified necessary Peano conditions, conjecture
+that [[non-contingency-of-cardinal-ch]] is equivalent to
+[[non-contingency-of-ch]]. The two directions are separate conjectured result
+records, not proof edges. The assumptions are candidates, not a proved
+sufficient or minimal package. In particular, the structural principle is a
+schema over real-carrier types, whereas $C_N$ uses the fixed carrier above.
+
+A sufficient route is to establish, for every real-carrier type $\sigma$,
+
+$
+\Box\forall\mathfrak R.\,
+\operatorname{Real}_\sigma(\mathfrak R)\to
+ (\operatorname{CH}(\mathfrak R)\leftrightarrow C_N),
+$
+
+and, at one specified sufficiently high type $\rho$,
+$\Box\exists\mathfrak R.\operatorname{Real}_\rho(\mathfrak R)$.
+The first transfers either necessary truth value of $C_N$ to every real
+structure. Conversely, specialize structural non-contingency to $\rho$;
+necessary existence and comparison give either $\Box C_N$ or
+$\Box\neg C_N$. This also identifies the negations, the corresponding
+contingency claims. The outstanding work is the real-structure construction
+and the **necessary** comparisons of its natural and continuum carriers
+with $N$ and $S$. A current-world bijection does not suffice, and omitting
+existence would allow the structural statement to hold vacuously.
 
 ## Conventions
 
@@ -497,3 +685,30 @@ $f(m)\preccurlyeq m\preccurlyeq f(m)$, and $f(m)=m$. $\square$
 
 The tower also supports induction: to show that every member of $M$ has a
 property, show that the members of $M$ having it form a closed property.
+
+## S4 upper bound and modalized-domain models
+
+The propositional modal fragment of C is exactly S4: for a modal formula A
+with arbitrary type-t parameters and box interpreted as p = top,
+C proves A iff S4 proves A. The existing K, T and 4 results supply the
+lower bound, with necessitation. The upper bound is Bacon's *The Broadest
+Necessity* (2018), Theorem 5.1 and Corollary 7.6, transferred from HFE to C.
+See [the metatheorem and translation](writeups/classicism-s4-upper-bound.html).
+It is a metatheorem about theoremhood, not an extra object-language axiom
+or an ordinary implication node.
+
+The paper's full modalized-domain construction lifts every reflexive
+transitive Kripke countermodel to a higher-order countermodel. Thus each
+S4 non-theorem has a counterexample in this family; no assertion is made
+that each individual frame refutes every such formula. The concrete
+records [[full-modalized-kripke-chain]] and
+[[full-modalized-expanding-chain]] witness failure of B; the expanding
+instance additionally refutes BF at e, Functionality and Tractarianism.
+
+The full transformation-monoid construction in *Substitution Structures*
+(2019), §5.3, is recorded as [[full-transformation-monoid-two]] and
+[[full-transformation-monoid-naturals]], with the natural action on the
+individuals. Both validate boxed Rigid Comprehension and boxed Atomicity,
+and refute B and BF at e and t. The cardinality-dependent verdicts are
+kept separate. These additions are mathematical source records and
+ordinary arguments; no new Lean verification is claimed.

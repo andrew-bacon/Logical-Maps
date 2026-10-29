@@ -1,0 +1,33 @@
+id: exact-peano-and-necessary-lower-peano-imply-cardinality-bijection-e
+premises:
+- exact-peano-e
+- necessary-lower-peano-e
+conclusion: exact-lower-finite-cardinality-bijection-e
+status: proved
+certificate:
+  source_id: misc
+  produced_by: OpenAI GPT-6, prompted by Andrew Bacon
+  recorded_by: OpenAI GPT-6, prompted by Andrew Bacon
+  checked_by: []
+  date: '2026-10-28'
+  lean: verified
+  lean_ref: Classicism.Map.exact_peano_and_necessary_lower_peano_imply_cardinality_bijection_e
+sources:
+- Andrew Bacon, exact/at-least cardinality comparison formalized with OpenAI GPT-6, 28 October 2026, in the
+  CH checkpoint and Logical-Maps Lean projects.
+source_names:
+- Bacon / Codex CH project
+proof: 'Define the relation R by simultaneous induction: R(e,l) if every binary relation containing (exact-zero,
+  at-least-zero) and closed under (Suc,Suc) contains (e,l). Both projections of R lie in their respective finite-cardinality
+  carriers. By induction over the exact and at-least carriers, R is total in each direction. Under the exact
+  Peano zero/successor conditions, induction over R proves that each exact count has a unique at-least partner;
+  under the at-least Peano conditions, the dual induction proves the exact partner is unique. Since □LowerPeano
+  implies LowerPeano by modal T, R is the desired bijection. The written Lean proofs are ExactLower.exactLowerBijection_of_necessary_lower_peano
+  and MathematicalContingency.exactLowerBijection_of_draft_box_infinity.'
+notes: >-
+  Preserved as the original, weaker theorem. The extra exact-peano-e premise is now discharged by
+  [[necessary-lower-peano-implies-exact-peano-e]], and the stronger single-premise result is
+  [[necessary-lower-peano-implies-cardinality-bijection-e]]. The original declarations and proofs remain
+  unchanged. All these are relational object-language statements, not claims indexed by metalinguistic
+  natural numbers. This record and both stronger arrows passed the native generated-statement and axiom
+  audit in run 40756833756; see lean/map/exact-lower-audit.json. The verified status is the auditor's output.

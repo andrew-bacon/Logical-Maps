@@ -1,0 +1,10 @@
+import Classicism.MathematicalContingency.RealCHTransport
+import Classicism.MathematicalContingency.Certificates.RealCHTransport02
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.not_ch_of_cardinalCH_embeddings
+#print axioms Classicism.MathematicalContingency.not_ch_of_cardinalCH_embeddings.derivable
+

@@ -1,0 +1,16 @@
+import Diagnostics.DeepSplitTranslate
+import Classicism.MathematicalContingency.HartogsClosedBounds
+import Classicism.MathematicalContingency.Certificates.HartogsPairing02
+import Classicism.MathematicalContingency.Certificates.HartogsPairing05
+import Classicism.MathematicalContingency.Certificates.HartogsCoordinates06
+import Classicism.MathematicalContingency.Certificates.HartogsIndices02
+import Classicism.MathematicalContingency.Certificates.PairingAbsorption01
+import Classicism.MathematicalContingency.Certificates.RegularOpenCH01
+set_option synthInstance.maxSize 4000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+set_option Classicism.Meta.DeepSplitTranslate.conversionTrace "HartogsClosedBounds01-conversions.trace"
+#classicism_deep_split_derive Classicism.MathematicalContingency.closedSegments_of_pairing_and_two
+#print axioms Classicism.MathematicalContingency.closedSegments_of_pairing_and_two.derivable

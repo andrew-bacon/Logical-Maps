@@ -1,0 +1,86 @@
+{
+  "source_commit": "9792a14798ab90e0d7c2800a75b825594da7c319",
+  "workflow_run": "40756833756",
+  "command": "python3 scripts/pmap.py lean-check classicism --update",
+  "native_audit_succeeded": true,
+  "principle_definitions": {
+    "necessary-lower-peano-e": "Classicism.P.NecessaryLowerPeanoE.schemaIn",
+    "exact-peano-e": "Classicism.P.ExactPeanoE.schemaIn",
+    "exact-lower-finite-cardinality-bijection-e": "Classicism.P.ExactLowerBijectionE.schemaIn"
+  },
+  "results": {
+    "necessary-lower-peano-implies-exact-peano-e": {
+      "proofs": [
+        {
+          "name": "Classicism.Proofs.necessary_lower_peano_implies_exact_peano_e",
+          "lines": [
+            9,
+            12
+          ],
+          "file": "Classicism/Results/Records/ExactLower.lean"
+        }
+      ],
+      "certificate": {
+        "name": "Classicism.Map.necessary_lower_peano_implies_exact_peano_e",
+        "lines": [
+          14,
+          16
+        ],
+        "file": "Classicism/MapExactLower.lean",
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ]
+      }
+    },
+    "necessary-lower-peano-implies-cardinality-bijection-e": {
+      "proofs": [
+        {
+          "name": "Classicism.Proofs.necessary_lower_peano_implies_cardinality_bijection_e",
+          "lines": [
+            14,
+            17
+          ],
+          "file": "Classicism/Results/Records/ExactLower.lean"
+        }
+      ],
+      "certificate": {
+        "name": "Classicism.Map.necessary_lower_peano_implies_cardinality_bijection_e",
+        "lines": [
+          18,
+          20
+        ],
+        "file": "Classicism/MapExactLower.lean",
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ]
+      }
+    },
+    "exact-peano-and-necessary-lower-peano-imply-cardinality-bijection-e": {
+      "proofs": [
+        {
+          "name": "Classicism.Proofs.exact_peano_and_necessary_lower_peano_imply_cardinality_bijection_e",
+          "lines": [
+            19,
+            22
+          ],
+          "file": "Classicism/Results/Records/ExactLower.lean"
+        }
+      ],
+      "certificate": {
+        "name": "Classicism.Map.exact_peano_and_necessary_lower_peano_imply_cardinality_bijection_e",
+        "lines": [
+          22,
+          24
+        ],
+        "file": "Classicism/MapExactLower.lean",
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ]
+      }
+    }
+  },
+  "scope": "Exact/at-least comparison only; no CH map verification is claimed."
+}

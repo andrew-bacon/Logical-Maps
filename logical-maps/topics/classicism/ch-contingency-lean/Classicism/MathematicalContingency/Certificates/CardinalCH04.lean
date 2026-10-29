@@ -1,0 +1,12 @@
+import Classicism.MathematicalContingency.CardinalCH
+import Classicism.MathematicalContingency.Certificates.CardinalCH03
+import Classicism.MathematicalContingency.Certificates.PairingTransport01
+import Classicism.MathematicalContingency.Certificates.Foundation08
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_derive Classicism.MathematicalContingency.cardinalCH_of_embeddings
+#print axioms Classicism.MathematicalContingency.cardinalCH_of_embeddings.derivable
+

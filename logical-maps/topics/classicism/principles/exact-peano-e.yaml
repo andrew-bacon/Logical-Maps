@@ -1,0 +1,22 @@
+id: exact-peano-e
+name: Peano separation for exact finite cardinalities (type e)
+category: mathematical-contingency
+statement: Zero exact cardinality is not a successor of an exact finite cardinality, and successor is injective
+  on exact finite cardinalities.
+formal: $\forall n\in \mathrm{FinCard}_e\,(\mathbf 0^{=}_e\ne\mathrm{Suc}_e n)\ \land\ \forall m,n\in\mathrm{FinCard}_e\,(\mathrm{Suc}_e
+  m=\mathrm{Suc}_e n\to m=n)$
+definitions: \(\mathbf 0^=_e:=\lambda X^{et}.\forall u^e\neg Xu\). The exact carrier is the least successor-closed
+  property containing this zero. Compare [[necessary-lower-peano-e]], which uses the different at-least zero
+  \(\lambda X.\top\). This is Classicism.ExactLower.ExactPeano e.
+date: '2026-10-28'
+sources:
+- Andrew Bacon, exact/at-least cardinality comparison formalized with OpenAI GPT-6, 28 October 2026, in the
+  CH checkpoint and Logical-Maps Lean projects.
+source_names:
+- Bacon / Codex CH project
+notes: >-
+  Now derived from [[necessary-lower-peano-e]] in [[necessary-lower-peano-implies-exact-peano-e]].
+  The source theorem proves more: unboxed LowerPeano implies ExactPeano, and therefore necessary
+  LowerPeano implies necessary ExactPeano. No equivalence of the two Peano principles is asserted here.
+  This remains distinct from the repository's individual-infinity axiom.
+lean_def: Classicism.P.ExactPeanoE.schemaIn

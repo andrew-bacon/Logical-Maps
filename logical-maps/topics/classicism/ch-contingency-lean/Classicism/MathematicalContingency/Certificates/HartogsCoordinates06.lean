@@ -1,0 +1,13 @@
+import Classicism.MathematicalContingency.Certificates.PairingAbsorption01
+import Diagnostics.DeepSplitTranslate
+import Classicism.MathematicalContingency.HartogsCoordinates
+import Classicism.MathematicalContingency.Certificates.HartogsCoordinates05
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+set_option Classicism.Meta.DeepSplitTranslate.progress "coordinates-06-progress.trace"
+set_option Classicism.Meta.DeepSplitTranslate.conversionTrace "coordinates-06-conversions.trace"
+#classicism_deep_split_derive Classicism.MathematicalContingency.natural_hartogs_coordinate_bounds
+#print axioms Classicism.MathematicalContingency.natural_hartogs_coordinate_bounds.derivable

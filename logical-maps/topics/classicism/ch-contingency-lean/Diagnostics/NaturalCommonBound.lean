@@ -1,0 +1,14 @@
+import Classicism.MathematicalContingency.NaturalCommonBound
+import Diagnostics.DeepSplitCommonBound
+import Classicism.MathematicalContingency.Certificates.NaturalHartogsSmallness03
+import Classicism.MathematicalContingency.Certificates.PairingAbsorption01
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+set_option Classicism.Meta.DeepSplitTranslate.profile true
+set_option Classicism.Meta.DeepSplitTranslate.progress "natural-common-bound-progress.trace"
+set_option Classicism.Meta.DeepSplitTranslate.conversionTrace "natural-common-bound-conversions.trace"
+#classicism_deep_split_derive Classicism.MathematicalContingency.natural_small_commonPairedBound
+#print axioms Classicism.MathematicalContingency.natural_small_commonPairedBound.derivable

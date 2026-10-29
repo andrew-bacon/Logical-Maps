@@ -1,0 +1,13 @@
+import Diagnostics.DeepSplitTranslate
+import Classicism.MathematicalContingency.RegularOpenCones
+import Classicism.MathematicalContingency.Certificates.ConeSuprema03
+import Classicism.MathematicalContingency.Certificates.RegularOpenBoolean09
+import Classicism.MathematicalContingency.Certificates.RegularOpenCones06
+set_option synthInstance.maxSize 4000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+set_option Classicism.Meta.DeepSplitTranslate.conversionTrace "RegularOpenCones07-conversions.trace"
+#classicism_deep_split_derive Classicism.MathematicalContingency.regularOpen_incompatibleCones
+#print axioms Classicism.MathematicalContingency.regularOpen_incompatibleCones.derivable

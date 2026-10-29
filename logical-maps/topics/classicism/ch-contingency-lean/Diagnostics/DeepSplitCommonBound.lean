@@ -1,0 +1,15 @@
+import Diagnostics.DeepSplitTranslate
+import Classicism.MathematicalContingency.HartogsCommonBound
+import Classicism.MathematicalContingency.Certificates.CommonPairedBound02
+import Classicism.MathematicalContingency.Certificates.DoubleHartogsPieces01
+import Classicism.MathematicalContingency.Certificates.DoubleHartogsPieces02
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option synthInstance.maxSize 2000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+set_option Classicism.Meta.DeepSplitTranslate.profile true
+set_option Classicism.Meta.DeepSplitTranslate.progress "diagnostic-deep-split-assembly-progress.trace"
+set_option Classicism.Meta.DeepSplitTranslate.conversionTrace "diagnostic-deep-split-conversions.trace"
+#classicism_deep_split_derive Classicism.MathematicalContingency.doubleHartogs_commonPairedBound_nontrivial
+#print axioms Classicism.MathematicalContingency.doubleHartogs_commonPairedBound_nontrivial.derivable

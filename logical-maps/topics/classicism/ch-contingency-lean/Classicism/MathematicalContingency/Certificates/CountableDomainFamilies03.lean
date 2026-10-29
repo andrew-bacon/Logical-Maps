@@ -1,0 +1,13 @@
+import Diagnostics.DeepSplitTranslate
+import Classicism.MathematicalContingency.CountableDomainFamilies
+import Classicism.MathematicalContingency.Certificates.CountableConditions08
+import Classicism.MathematicalContingency.Certificates.SerialCounting02
+import Classicism.MathematicalContingency.Certificates.CountableDomainFamilies02
+set_option synthInstance.maxSize 2000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+set_option Classicism.Meta.DeepSplitTranslate.conversionTrace "CountableDomainFamilies03-conversions.trace"
+#classicism_deep_split_derive Classicism.MathematicalContingency.firstDomainStage_unique
+#print axioms Classicism.MathematicalContingency.firstDomainStage_unique.derivable

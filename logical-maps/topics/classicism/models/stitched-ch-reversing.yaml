@@ -1,0 +1,46 @@
+id: stitched-ch-reversing
+name: 'Stitched forcing model: ground-model root with a CH-reversing extension at its one other world'
+certificate:
+  source_id: barton-goodsell-continuum-contingency
+  produced_by: Neil Barton and Zachary Goodsell (the construction and the contingency of the continuum
+    hypothesis, Theorem 20); Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 25 October 2026 (the
+    choice of forcing by cases, adding a Cohen real to the collapse so that both cases add a real)
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 25 October 2026
+  checked_by: []
+  date: '2026-10-25'
+  lean: none
+sources:
+- Neil Barton and Zachary Goodsell, Continuum Contingency, draft of October 2026, §7.1 (V-decisive
+  forcing), §8 (the stitching construction, Definition 1 and Lemmas 11–19) and Theorem 20.
+source_names:
+- Continuum Contingency
+references:
+- paper: barton-goodsell-continuum-contingency
+  role: proof
+  locator: §8, Definition 1, Lemmas 11–19, Theorem 20; §7.1
+  note: Theorem 20 takes $\operatorname{Add}(\omega,\omega_2)$ or $\operatorname{Col}(\omega_1,\mathfrak c)$;
+    here the collapse is multiplied by Cohen forcing, so that the forcing adds a real in either case.
+group: stitched-forcing
+settings:
+  forcing: 'The forcing $P$ is chosen by cases on the continuum hypothesis in $V$. If $V\models\mathrm{CH}$,
+    $P:=\operatorname{Add}(\omega,\omega_2)$, which adds $\aleph_2$ Cohen reals, so that
+    $V[G]\models\neg\mathrm{CH}$. Otherwise $P:=\operatorname{Col}(\omega_1,2^{\aleph_0})\times
+    \operatorname{Add}(\omega,1)$: the collapse, with countable conditions, adds no reals and makes the
+    continuum of $V$ have size $\aleph_1$, and the Cohen real then adds a real and preserves CH, so that
+    $V[G]\models\mathrm{CH}$. Both forcings are weakly homogeneous (a product of weakly homogeneous
+    forcings is weakly homogeneous), hence $V$-decisive.'
+
+meets:
+  adds-a-real: In either case $P$ adds a Cohen real.
+  changes-ch: CH holds in $V[G]$ iff it fails in $V$, by the choice of $P$.
+
+notes: >-
+  The instance of Barton and Goodsell's Theorem 20 that makes the continuum hypothesis contingent, true but
+  possibly false if $V\models\mathrm{CH}$ and false but possibly true otherwise; which, the map does not
+  need to know. Every verdict of stitched-cohen-extension is shared except Non-contingency of CH, which
+  holds there and fails here, so the two separate it from □Rigid Comprehension, □Relational Choice,
+  □Atomicity at $t$ and the rest of that model's package. Like the Cohen instance, it establishes
+  consistency relative to ZFC. Analytic Necessitism fails here only because the forcing adds a real; with
+  the bare collapse of Theorem 20 the reals would not change.
+
+arguments: []
