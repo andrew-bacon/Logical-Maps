@@ -30,8 +30,9 @@ proof: >-
 references:
 - paper: bounds-of-possibility
   role: background
-  locator: Appendix D, pp. 400–409
-  note: The 5-necessity operator.
+  locator: Appendix D, pp. 400–409; fact (C5), p. 402; Proposition D3, p. 403; Corollary D6, p. 404; Theorem
+    D16, p. 406
+  note: The 5-necessity operator, and its Barcan formula at every type.
 notes: >-
   BF itself is not needed. Its restriction to the possibilities compatible with the
   actual world, that is to those of the form $\Diamond(\Diamond a\land p)$, is derived from the
