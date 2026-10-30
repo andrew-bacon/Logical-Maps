@@ -45,7 +45,9 @@ settings:
       As in coalesced-pinned-substitutions-root, intensions over the arrows out of $W_0$ pinned down
       by a finite set of constants of $\Sigma^+$, whose transports along the arrows into the component land
       in its domains.
-meets: {}
+meets:
+  pinned-substitution-root: The root, its domains and the interpretation of Σ are as in
+    coalesced-pinned-substitutions-root; only the components differ.
 arguments:
 - id: atomlessness
   holds:

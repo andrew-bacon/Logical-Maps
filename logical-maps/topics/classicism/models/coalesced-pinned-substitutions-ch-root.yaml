@@ -38,7 +38,18 @@ settings:
       As in coalesced-pinned-substitutions-root, intensions over the arrows out of $W_0$ pinned down by a
       finite set of constants of $\Sigma^+$, whose transports along the arrows into a component land in its
       domains.
-meets: {}
+meets:
+  pinned-substitution-root: The root, its domains and the interpretation of Σ are as in
+    coalesced-pinned-substitutions-root; only the components differ.
+  root-only-sentence: >-
+    $B:=\Diamond\exists\mathfrak R\,.\,(\operatorname{Real}_{et}(\mathfrak R)\land\operatorname{CH}(\mathfrak
+    R))\land\Diamond\exists\mathfrak R\,.\,(\operatorname{Real}_{et}(\mathfrak R)\land\neg\operatorname{CH}(\mathfrak
+    R))$. It is true at $W_0$, by the argument atomlessness-and-ch. The worlds seen from $R_{N_+}$ are
+    $R_{N_+}$ and the object $V_{N_+}$ of finite-support-monotone-maps as built in $N_+$; both are
+    extensionally full inside $N_+$ (the first as in that argument, the second as recorded for the
+    finite-support models), so every real number structure at $et$ at either is isomorphic inside $N_+$
+    to $N_+$'s reals and satisfies CH. So the second conjunct of $B$ fails at $R_{N_+}$ and at $V_{N_+}$,
+    and likewise the first at $R_{N_-}$ and at $V_{N_-}$.
 arguments:
 - id: atomlessness-and-ch
   holds:
@@ -61,6 +72,47 @@ arguments:
     arrow $\langle R_N,I\rangle$ iff it holds at $R_N$, so at $W_0$ the arrows into $R_{N_-}$ refute
     $\Box\forall\mathfrak R\,.\,\operatorname{Real}_{et}(\mathfrak R)\to\operatorname{CH}(\mathfrak R)$ and those into
     $R_{N_+}$ its counterpart with $\neg\operatorname{CH}$.
+- id: boxed-through-components
+  holds:
+  - necessary-five-implies-two-hat-necessity
+  fails:
+  - necessary-barcan-t
+  - necessary-two-hat-implies-nd-necessity
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts
+  date: '2026-10-30'
+  choice: free
+  text: >-
+    These principles are closed pure sentences, one for each type, and a closed sentence holds at an
+    arrow out of $W_0$ iff it holds at the identity of its target: $W_0$, $R_{N_\pm}$, or the object
+    $V_{N_\pm}$ of finite-support-monotone-maps as built in $N_\pm$, whose truths are those of that model,
+    its verdicts being theorems of ZFC and so true in $N_\pm$. So a necessitation holds at $W_0$ iff the
+    principle holds at these five objects. BF (type t) and the conditional from two-hat to ND-necessity
+    fail at $V_{N_\pm}$, as recorded for finite-support-monotone-maps, so their necessitations fail;
+    with BF (type t) at $W_0$, the recorded result that Tame Rigidity and BF (type t) give $\Box$BF
+    (type t) makes Tame Rigidity fail at the root. The conditional from 5- to two-hat necessity holds at
+    $W_0$ by the group's argument substitution-root, at $R_{N_\pm}$ by the same argument carried out in
+    $N_\pm$, and at $V_{N_\pm}$ as recorded for finite-support-monotone-maps.
+- id: intensional-choice
+  holds:
+  - necessary-intensional-choice-r
+  - modal-well-ordering-r
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts
+  date: '2026-10-30'
+  choice: uses
+  text: >-
+    The argument intensional-choice-well-ordering, with the well-orderings at the objects of the
+    components chosen inside $N_\pm$. Fix a type $\sigma$; for $U$ among $R_{N_\pm}$ and $V_{N_\pm}$ let
+    $<_U\in N_\pm$ well-order $D^\sigma_U$ inside $N_\pm$, and let $<_{W_0}$ well-order $D^\sigma_{W_0}$.
+    The intension $W$ with value $<_{\operatorname{cod}h}$ at each arrow $h$ out of $W_0$ is pinned down by
+    $\emptyset$; its transport along an arrow into $R_N$ is the intension $k\mapsto<_{\operatorname{cod}k}$
+    there, which is in $N$, pinned down by $\emptyset$, and lands in the domain of $V_N$, where it is
+    constant and finite-support-monotone-maps meets codomain-intensions; so it is in the domain of $R_N$,
+    and $W$ is in the domain of $W_0$. At every world its extension well-orders the type-$\sigma$ domain
+    there, the subproperties tested at a component object being sets of $N$: so $W$ is necessarily a
+    well-order of type $\sigma$, and Modal Well-Ordering holds. Given $F$ necessarily instantiated at a
+    reachable object, $G:=\lambda x\,.\,Fx\land\forall y\,.\,(Fy\to\neg Wyx)$, definable from $F$ and $W$,
+    is below $F$ and necessarily uniquely instantiated, its extension at every arrow being the singleton of
+    the least element of $F$'s. So $\Box$Intensional Choice holds.
 notes: 'Proposed on 29 October 2026 in a trawl for the open questions created by □Atomlessness: □Atomlessness
   does not give Non-contingency of CH. It assumes Con(ZFC) in the metatheory. Checked by Claude Opus 5.5
   (Anthropic), prompted by Cian Dorr; it inherits the model-of-C argument of coalesced-pinned-substitutions-root,
