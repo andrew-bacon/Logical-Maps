@@ -92,9 +92,27 @@ arguments:
     moving $q-c$; with the identity below $c$ and below $\neg k$ it is an $h\in H_P$ with $hq\ne q$. Then
     $s(k,hq)=h\,s(k,q)\ge h c=c$. So at the worlds in $\hat c$, inside $\hat k$, both $q$ and $hq$ bear $Sk$,
     and $Sk$ is not functional there: a contradiction.
+- id: transversal
+  holds: [necessary-transversal-r]
+  choice: free
+  writeup: transversal-supported-boolean-component
+  by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 29 October 2026; checked and recorded by Claude
+    Opus 5.5 (Anthropic), prompted by Cian Dorr
+  date: '2026-10-30'
+  text: >-
+    At every type and every world. Coextension at a world $U$ is sharing a germ at $U$: agreeing below some
+    $b\in U$. Two facts about $G=\operatorname{Aut}(B)$ give each germ a canonical representative. First,
+    supports intersect: the automorphisms fixing finite subalgebras $A_1$ and $A_2$ generate those fixing
+    $A_1\cap A_2$. So every entity, and with a further step every germ, has a least support. Second,
+    propagation: two entities supported by $A$ that agree below a nonzero $b$ under an $A$-cell $c$ agree
+    under all of $c$. Some automorphism fixing $A$ swaps $b$ and $c-b$. The canonical representative of a
+    germ at $U$ is any representative with the germ's least support, cut down to the cell of that support
+    containing $U$ and made $0$ elsewhere. The witness $\Phi$ holds of $Y$ at $U$ just when $Y$ is the
+    canonical representative of its own germ there. $\Phi$ is invariant under $G$, and its fibre at $Y$ is a
+    join of cells of the least support of $Y$, so it is admitted (write-up).
 notes: >-
   The component of supported-boolean-complete-predecessor, recorded on its own: a model of C5 with
   □Boolean Completeness (type $t$), □BF, □Atomlessness and □Intensional Choice, in which Actuality and
   Relational Choice fail. It separates Intensional Choice with Boolean Completeness (type $t$), even with
-  BF or Vicinity, from Actuality. Whether Transversal holds here is open; if it fails, the model refutes
-  Intensional Choice ⇒ Transversal.
+  BF or Vicinity, from Actuality. Transversal holds, so Transversal Choice fails with Relational Choice;
+  the model does not separate Intensional Choice from Transversal, which remains open.
