@@ -29,3 +29,7 @@ notes: The lift of Self-atoms are strong atoms from type $t$ to every relational
   pattern of [[atomicity-t-and-bf-imply-atomicity]]; BF is used at the argument types, to pass from a
   possible relation to a possible instance. Atoms are strong atoms needs no such lift, since BF at relational
   types gives it outright ([[barcan-relational-implies-atoms-are-strong-atoms-r]]).
+changes:
+- date: '2026-10-30'
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+  summary: 'Noted that the BF premise is idle: [[self-atoms-are-strong-atoms-t-implies-self-atoms-are-strong-atoms-r]] gives the conclusion from the type-t premise alone. The record is kept as stated.'
