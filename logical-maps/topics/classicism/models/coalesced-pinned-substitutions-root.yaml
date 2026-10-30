@@ -42,6 +42,7 @@ settings:
       the domain: it is pinned down by $f(S)$, and its transports are transports of the original.'
 meets:
   complete-components: The models in $A$ are complete for C($\Sigma$), so in particular for C.
+  pinned-substitution-root: This is the model whose root the condition describes.
 arguments:
 - fails:
   - self-atoms-are-atoms-t

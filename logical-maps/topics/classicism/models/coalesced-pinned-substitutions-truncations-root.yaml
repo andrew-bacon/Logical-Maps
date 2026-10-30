@@ -47,6 +47,7 @@ meets:
     $k\mapsto E^{\prime}$, which is in $V$'s domain, $V$ meeting the condition as recorded for finite-support-truncations; so
     it lands and is in the domain at $W_0$, whose domains are as full as pinning and landing allow.
   infinitely-many-individuals: The individuals at $W_0$ are the infinitely many individual constants of $\Sigma^+$.
+  finite-types-stay-finite: Every type has infinitely many entities at both objects.
   infinitely-many-propositions-everywhere: >-
     At $W_0$ the propositions $\hat c$ for the propositional constants $c$ are pairwise distinct, each true
     at an arrow sending $c$ to $\top$ and the others to $\bot$; $V$ has infinitely many propositions, as
@@ -91,20 +92,6 @@ arguments:
     recorded there, so their necessitations fail at $W_0$; the map derives the failure of the other
     boxed principles that fail at $V$. With BF (type t) at $W_0$, the recorded result
     that Tame Rigidity and BF (type t) give $\Box$BF (type t) makes Tame Rigidity fail at the root.
-- id: arithmetic
-  holds:
-  - necessity-of-arithmetic
-  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts
-  date: '2026-10-30'
-  choice: free
-  text: >-
-    At each type $\sigma$. The model is extensionally full at both its objects (see meets), so at each
-    the numbers at $\sigma$ are the numerals, as in the argument arithmetic-necessitism-extensionally-full,
-    pairwise distinct as every type is infinite at both; $\operatorname{Sum}_\sigma$ and
-    $\operatorname{Prod}_\sigma$ are the least relations closed under their clauses, and the relations
-    whose extensions are the graphs of addition and multiplication on the numerals are in the domain and
-    closed under them, so they are standard. So an arithmetical sentence at $\sigma$ has at every world
-    its truth value in the standard model, and the instance holds.
 notes: 'Proposed on 29 October 2026 in a trawl for the open questions created by □Atomlessness, to show that
   Atomlessness with the bridge principles for self-atoms, boxed or not, does not give □Atomlessness: with no
   Actuality anywhere there are no self-atoms, by the argument no-actuality-no-self-atoms. Checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr; it inherits the model-of-C argument of

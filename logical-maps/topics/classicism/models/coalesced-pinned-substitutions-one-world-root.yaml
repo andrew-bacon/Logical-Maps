@@ -47,6 +47,7 @@ meets:
     down by $\emptyset$, and its transport along each $\langle V,I\rangle$ is the constant intension
     $k\mapsto E^{\prime}$, which is in $V$'s domain, $V$ being full; so it lands and is in the domain at $W_0$.
   infinitely-many-individuals: The individuals at $W_0$ are the infinitely many individual constants of $\Sigma^+$.
+  finite-types-stay-finite: Every type has infinitely many entities at $W_0$, and $V$, where every type is finite, sees only itself.
   root-only-sentence: >-
     $\exists x^e\,y^e\, .\,x\ne y$ is true at $W_0$, whose individuals are the infinitely many
     individual constants, and false at $V$, which has one individual.
@@ -94,23 +95,6 @@ arguments:
     ND-necessity hold by the group's argument substitution-root. $V$, with its identity arrow alone, is
     the full Henkin model on one individual (full-henkin-singleton-base), where both hold, the second
     because $\Box$ is idle there.
-- id: arithmetic
-  holds:
-  - necessity-of-arithmetic
-  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts
-  date: '2026-10-30'
-  choice: free
-  text: >-
-    At each type $\sigma$. At $V$ every type is finite, so $I^*_\sigma$ fails there (the finite
-    cardinalities beyond the size of the type coincide), and $V$ sees only itself, so $I_\sigma$ is
-    false at $V$ and both disjuncts are true at the arrows into $V$. At $W_0$, extensionally full at its
-    identity, the numbers at $\sigma$ are the numerals, as in the argument
-    arithmetic-necessitism-extensionally-full, and they are pairwise distinct, every type being
-    infinite there; $\operatorname{Sum}_\sigma$ and $\operatorname{Prod}_\sigma$ are the least
-    relations closed under their clauses, and the relations whose extensions are the graphs of addition
-    and multiplication on the numerals are in the domain and closed under them, so they are standard.
-    So an arithmetical sentence at $\sigma$ has at $W_0$, and so at every map, its truth value in the
-    standard model, and the instance holds.
 - id: rigidity
   holds:
   - necessary-tame-rigidity-r

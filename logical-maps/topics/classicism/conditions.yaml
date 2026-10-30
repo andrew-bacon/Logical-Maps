@@ -96,6 +96,9 @@ conditions:
   lean: Classicism.Meta.Intensional.Premodel.FinitelyManyPropositionsEverywhere
 - id: infinitely-many-propositions-everywhere
   text: There are infinitely many propositions at every object reachable from the evaluation point.
+- id: finite-types-stay-finite
+  text: At every object reachable from the evaluation point at which a type has finitely many entities,
+    that type has finitely many entities at every object reachable from there.
 - id: finite-reachable-object
   text: Some object reachable from the evaluation point has finitely many entities of every type, and there
     is a real number structure at the evaluation point.
