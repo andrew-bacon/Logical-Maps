@@ -115,4 +115,5 @@ notes: >-
   □Boolean Completeness (type $t$), □BF, □Atomlessness and □Intensional Choice, in which Actuality and
   Relational Choice fail. It separates Intensional Choice with Boolean Completeness (type $t$), even with
   BF or Vicinity, from Actuality. Transversal holds, so Transversal Choice fails with Relational Choice;
-  the model does not separate Intensional Choice from Transversal, which remains open.
+  the model does not separate Intensional Choice from Transversal; supported-diagonal-tail-permutations,
+  with a smaller symmetry group, does.
