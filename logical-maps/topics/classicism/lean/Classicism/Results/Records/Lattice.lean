@@ -1080,4 +1080,206 @@ theorem necessary_self_atoms_are_strong_atoms_t_implies_necessary_self_atoms_are
 
 end selfAtomLift
 
+/-! ### The type-`t` atom principles at `σ → t`, under Intensional Choice (30 October 2026)
+
+Cian Dorr's argument (30 October 2026): if `G` is necessarily uniquely instantiated, the
+*copy* `λx. w ∧ Gx` of a proposition `w` along `G` is an atom, a strong atom or a self-atom
+when `w` is (Background, *copies of propositions along a uniquely instantiated property*);
+Intensional Choice, applied to `λx. w → Xx`, gives such a `G` with the copy below `X`
+whenever `w` entails that `X` is instantiated, and makes every atom the copy of its instance
+proposition. Existence at `σ` supplies an instance where `w` is false; the map's records
+discharge it as a theorem of `C`. -/
+
+section icLift
+variable {σ : Type} [Ty σ]
+
+/-- `G` is uniquely instantiated. -/
+abbrev UniquelyInstantiated (G : σ → Prop) : Prop := ∃ x, G x ∧ ∀ y, G y → y = x
+
+/-- Existence at `σ`, necessitated: an object is necessarily self-identical. -/
+theorem box_existence (hE : Existence σ) : □ (∃ x : σ, x = x) :=
+  hE.elim fun x _ => modal_K _ _ (nec% (fun (h : x = x) => (⟨x, h⟩ : ∃ y : σ, y = y)))
+    (necessity_of_identity x x rfl)
+
+/-- `(∃y. y = y) → (w → ∃y. Xy) → ∃x. w → Xx`. -/
+theorem exists_imp_of_imp_exists (w : Prop) (X : σ → Prop) :
+    (∃ y : σ, y = y) → (w → ∃ y, X y) → ∃ x, w → X x := fun hE f =>
+  (em w).elim (fun hw => (f hw).elim fun y hy => ⟨y, fun _ => hy⟩)
+    (fun hn => hE.elim fun y _ => ⟨y, fun hw => absurd hw hn⟩)
+
+/-- Intensional Choice gives, below any `X` and for any `w` entailing that `X` is
+instantiated, a necessarily uniquely instantiated `G` whose copy of `w` lies below `X`. -/
+theorem copy_exists (hE : Existence σ) (ic : IntensionalChoice σ) (w : Prop) (X : σ → Prop)
+    (h : w ≤ ∃ y, X y) :
+    ∃ G : σ → Prop, G ≤ (λ x ↦ w → X x) ∧ □ (UniquelyInstantiated G) :=
+  ic _ (modal_K _ _ (modal_K _ _ (nec% (exists_imp_of_imp_exists w X)) (box_existence hE))
+    ((le_iff_prop _ _).1 h))
+
+/-- The copy of `w` along `G ≤ λx. w → Xx` lies below `X`. -/
+theorem copy_le (w : Prop) (G X : σ → Prop) (h : G ≤ (λ x ↦ w → X x)) :
+    (λ x ↦ w ∧ G x) ≤ X :=
+  (le_iff _ _).2 (modal_K _ _
+    (nec% (fun (f : ∀ x, G x → w → X x) (x : σ) (hx : w ∧ G x) => f x hx.2 hx.1))
+    ((le_iff _ _).1 h))
+
+/-- Along a uniquely instantiated `G`, if `w` gives an instance of `G` in `Y`, the copy of `w`
+is in `Y`. -/
+theorem copy_incl_of (w : Prop) (G Y : σ → Prop) :
+    UniquelyInstantiated G → (w → ∃ x, G x ∧ Y x) → ∀ x, w ∧ G x → Y x := fun hu f x hx =>
+  hu.elim fun x₀ h₀ => (f hx.1).elim fun x' hx' =>
+    ((h₀.2 x hx.2).trans (h₀.2 x' hx'.1).symm) ▸ hx'.2
+
+/-- If `w` excludes an instance of `G` in `Y`, the copy of `w` is outside `Y`. -/
+theorem copy_incl_not_of (w : Prop) (G Y : σ → Prop) :
+    (w → ¬ ∃ x, G x ∧ Y x) → ∀ x, w ∧ G x → ¬ Y x := fun f x hx hy =>
+  f hx.1 ⟨x, hx.2, hy⟩
+
+/-- A proposition deciding every proposition, copied along a necessarily uniquely instantiated
+`G`, decides every property. -/
+theorem copy_decides (w : Prop) (G : σ → Prop) (hU : □ (UniquelyInstantiated G)) :
+    (∀ q : Prop, w ≤ q ∨ w ≤ ¬ q) →
+      ∀ Y : σ → Prop, (λ x ↦ w ∧ G x) ≤ Y ∨ (λ x ↦ w ∧ G x) ≤ ¬ Y := fun h Y =>
+  (h (∃ x, G x ∧ Y x)).elim
+    (fun h₁ => Or.inl ((le_iff _ _).2 (modal_K _ _ (modal_K _ _ (nec% (copy_incl_of w G Y)) hU)
+      ((le_iff_prop _ _).1 h₁))))
+    (fun h₂ => Or.inr ((le_iff _ _).2 (modal_K _ _ (nec% (copy_incl_not_of w G Y))
+      ((le_iff_prop _ _).1 h₂))))
+
+/-- If the copy of `w` along a uniquely instantiated `G` is `⊥`, `w` is false. -/
+theorem not_of_copy_eq_bot (w : Prop) (G : σ → Prop) :
+    UniquelyInstantiated G → (λ x ↦ w ∧ G x) = Rel.bot (σ → Prop) → ¬ w := fun hu e hw =>
+  hu.elim fun x₀ h₀ => (show False from Eq.mp (congrFun e x₀) ⟨hw, h₀.1⟩)
+
+/-- `¬w → w → ¬w`. -/
+theorem not_imp_not_self (w : Prop) : ¬ w → w → ¬ w := fun h _ => h
+
+/-- The copy of a possible proposition along a necessarily uniquely instantiated `G` is not
+bottom. -/
+theorem copy_ne_bot (w : Prop) (G : σ → Prop) (hU : □ (UniquelyInstantiated G)) (hw : w ≠ False) :
+    (λ x ↦ w ∧ G x) ≠ Rel.bot (σ → Prop) := fun e =>
+  hw (eq_false_of_le_neg w ((le_iff_prop _ _).2 (modal_K _ _ (nec% (not_imp_not_self w))
+    (modal_K _ _ (modal_K _ _ (nec% (not_of_copy_eq_bot w G)) hU) (necessity_of_identity _ _ e)))))
+
+/-- The copy of an atom is an atom. -/
+theorem copy_atom (w : Prop) (G : σ → Prop) (hU : □ (UniquelyInstantiated G)) (hw : Atom w) :
+    Atom (λ x ↦ w ∧ G x) :=
+  atom_of_decides_arrow _ (copy_ne_bot w G hU (atom_ne_false w hw))
+    (copy_decides w G hU (fun q => atom_le_or_le_neg w q hw))
+
+/-- The copy of a strong atom is a strong atom. -/
+theorem copy_satom (w : Prop) (G : σ → Prop) (hU : □ (UniquelyInstantiated G)) (hw : SAtom w) :
+    SAtom (λ x ↦ w ∧ G x) :=
+  ⟨copy_ne_bot w G hU hw.1,
+    modal_K _ _ (modal_K _ _ (nec% (copy_decides w G)) (modal_four _ hU)) hw.2⟩
+
+
+/-- An instantiated copy has an instantiated original. -/
+theorem instantiated_of_instantiated_copy (w : Prop) (G : σ → Prop)
+    (h : Instantiated (λ x ↦ w ∧ G x)) : Instantiated w := fun hw =>
+  h (show Rel.incl (λ x ↦ w ∧ G x) (Rel.bot (σ → Prop)) from fun _ hx => hw hx.1)
+
+/-- The self-atom clause passes to the copy. -/
+theorem copy_self_clause (w : Prop) (G : σ → Prop) (hU : □ (UniquelyInstantiated G))
+    (h : Instantiated w → Atom w) : Instantiated (λ x ↦ w ∧ G x) → Atom (λ x ↦ w ∧ G x) :=
+  fun hi => copy_atom w G hU (h (instantiated_of_instantiated_copy w G hi))
+
+/-- The copy of a self-atom is a self-atom. -/
+theorem copy_self_atom (w : Prop) (G : σ → Prop) (hU : □ (UniquelyInstantiated G))
+    (hw : SelfAtom w) : SelfAtom (λ x ↦ w ∧ G x) :=
+  ⟨copy_ne_bot w G hU hw.1,
+    modal_K _ _ (modal_K _ _ (nec% (copy_self_clause w G)) (modal_four _ hU)) hw.2⟩
+
+/-- An instantiated property has an instance. -/
+theorem exists_of_instantiated_arrow (X : σ → Prop) : Instantiated X → ∃ y, X y := fun h =>
+  (em (∃ y, X y)).elim id fun hn =>
+    (h (show Rel.incl X (Rel.bot (σ → Prop)) from fun z hz => absurd ⟨z, hz⟩ hn)).elim
+
+/-- Under Intensional Choice an atom is the copy of its instance proposition. -/
+theorem atom_eq_copy (hE : Existence σ) (ic : IntensionalChoice σ) (X : σ → Prop) (hX : Atom X) :
+    ∃ G : σ → Prop, □ (UniquelyInstantiated G) ∧ (λ x ↦ Instantiated X ∧ G x) = X :=
+  (copy_exists hE ic (Instantiated X) X
+      ((le_iff_prop _ _).2 (nec% (exists_of_instantiated_arrow X)))).elim fun G hG =>
+    ⟨G, hG.2, (em ((λ x ↦ Instantiated X ∧ G x) = X)).elim id fun hne =>
+      absurd (eq_bot_of_le_neg_arrow _ ((hX _).1 ⟨copy_le _ G X hG.1, hne⟩))
+        (copy_ne_bot _ G hG.2 (atom_ne_false _ (atom_instantiated_of_atom X hX)))⟩
+
+/-- `atomicity-t-and-intensional-choice-imply-atomicity`, at `σ → t`, its list form being the
+map's record (Cian Dorr, 30 October 2026): a non-bottom `X` is possibly instantiated, Atomicity
+at `t` gives an atom `w` entailing that it is instantiated, and Intensional Choice a copy of `w`
+below `X`, which is an atom. -/
+theorem atomicity_t_and_intensional_choice_imply_atomicity :
+    Existence σ → AtomicityT → IntensionalChoice σ → Atomicity (σ → Prop) := fun hE at_ ic X =>
+  (em (X ≤ ¬ X)).elim Or.inl fun hX => Or.inr <|
+    have hd : ◇ (∃ y, X y) :=
+      dia_exists_of_ne_bot X fun e => hX (by rw [e]; exact bot_le_arrow _)
+    ((at_ (∃ y, X y)).elim (fun h => (hd (eq_false_of_le_neg _ h)).elim) id).elim fun w hw =>
+      (copy_exists hE ic w X hw.2).elim fun G hG =>
+        ⟨λ x ↦ w ∧ G x, copy_atom w G hG.2 hw.1, copy_le w G X hG.1⟩
+
+/-- `strong-atomicity-t-and-intensional-choice-imply-strong-atomicity`, at `σ → t`: the same,
+with a strong atom. -/
+theorem strong_atomicity_t_and_intensional_choice_imply_strong_atomicity :
+    Existence σ → StrongAtomicityT → IntensionalChoice σ → StrongAtomicity (σ → Prop) :=
+  fun hE sl ic X hX => (sl (∃ y, X y) (dia_exists_of_ne_bot X hX)).elim fun w hw =>
+    (copy_exists hE ic w X hw.2).elim fun G hG =>
+      ⟨λ x ↦ w ∧ G x, copy_satom w G hG.2 hw.1, copy_le w G X hG.1⟩
+
+/-- `self-atomicity-t-and-intensional-choice-imply-self-atomicity-r`, at `σ → t`: the same,
+with a self-atom. -/
+theorem self_atomicity_t_and_intensional_choice_imply_self_atomicity_r :
+    Existence σ → SelfAtomicityT → IntensionalChoice σ → SelfAtomicity (σ → Prop) :=
+  fun hE sa ic X hX => (sa (∃ y, X y) (dia_exists_of_ne_bot X hX)).elim fun w hw =>
+    (copy_exists hE ic w X hw.2).elim fun G hG =>
+      ⟨λ x ↦ w ∧ G x, copy_self_atom w G hG.2 hw.1, copy_le w G X hG.1⟩
+
+/-- `atoms-are-self-atoms-t-and-intensional-choice-imply-atoms-are-self-atoms-r`, at `σ → t`: an
+atom is the copy of its instance proposition, an atom, hence by the type-`t` principle a
+self-atom, whose copy is a self-atom. -/
+theorem atoms_are_self_atoms_t_and_intensional_choice_imply_atoms_are_self_atoms_r :
+    Existence σ → AtomsAreSelfAtomsT → IntensionalChoice σ → AtomsAreSelfAtoms (σ → Prop) :=
+  fun hE h ic X hX => (atom_eq_copy hE ic X hX).elim fun G hG => by
+    rw [← hG.2]
+    exact copy_self_atom _ G hG.1 (h _ (atom_instantiated_of_atom X hX))
+
+/-- `atoms-are-strong-atoms-t-and-intensional-choice-imply-atoms-are-strong-atoms-r`, at `σ → t`:
+the same, with strong atoms. -/
+theorem atoms_are_strong_atoms_t_and_intensional_choice_imply_atoms_are_strong_atoms_r :
+    Existence σ → AtomsAreStrongAtomsT → IntensionalChoice σ → AtomsAreStrongAtoms (σ → Prop) :=
+  fun hE h ic X hX => (atom_eq_copy hE ic X hX).elim fun G hG => by
+    rw [← hG.2]
+    exact copy_satom _ G hG.1 (h _ (atom_instantiated_of_atom X hX))
+
+/-- `necessary-atomicity-t-and-necessary-intensional-choice-imply-necessary-atomicity`, at
+`σ → t`: the unboxed record, necessitated. -/
+theorem necessary_atomicity_t_and_necessary_intensional_choice_imply_necessary_atomicity :
+    Existence σ → NecAtomicityT → NecIntensionalChoice σ → NecAtomicity (σ → Prop) :=
+  fun hE h₁ h₂ => modal_K _ _ (modal_K _ _ (modal_K _ _
+    (nec% (atomicity_t_and_intensional_choice_imply_atomicity (σ := σ))) (box_existence hE : □ (Existence σ))) h₁) h₂
+
+/-- `necessary-strong-atomicity-t-and-necessary-intensional-choice-imply-necessary-strong-atomicity`, at `σ → t`: the unboxed record, necessitated. -/
+theorem necessary_strong_atomicity_t_and_necessary_intensional_choice_imply_necessary_strong_atomicity :
+    Existence σ → NecStrongAtomicityT → NecIntensionalChoice σ → NecStrongAtomicity (σ → Prop) :=
+  fun hE h₁ h₂ => modal_K _ _ (modal_K _ _ (modal_K _ _
+    (nec% (strong_atomicity_t_and_intensional_choice_imply_strong_atomicity (σ := σ))) (box_existence hE : □ (Existence σ))) h₁) h₂
+
+/-- `necessary-self-atomicity-t-and-necessary-intensional-choice-imply-necessary-self-atomicity-r`, at `σ → t`: the unboxed record, necessitated. -/
+theorem necessary_self_atomicity_t_and_necessary_intensional_choice_imply_necessary_self_atomicity_r :
+    Existence σ → NecSelfAtomicityT → NecIntensionalChoice σ → NecSelfAtomicity (σ → Prop) :=
+  fun hE h₁ h₂ => modal_K _ _ (modal_K _ _ (modal_K _ _
+    (nec% (self_atomicity_t_and_intensional_choice_imply_self_atomicity_r (σ := σ))) (box_existence hE : □ (Existence σ))) h₁) h₂
+
+/-- `necessary-atoms-are-self-atoms-t-and-necessary-intensional-choice-imply-necessary-atoms-are-self-atoms-r`, at `σ → t`: the unboxed record, necessitated. -/
+theorem necessary_atoms_are_self_atoms_t_and_necessary_intensional_choice_imply_necessary_atoms_are_self_atoms_r :
+    Existence σ → NecAtomsAreSelfAtomsT → NecIntensionalChoice σ → NecAtomsAreSelfAtoms (σ → Prop) :=
+  fun hE h₁ h₂ => modal_K _ _ (modal_K _ _ (modal_K _ _
+    (nec% (atoms_are_self_atoms_t_and_intensional_choice_imply_atoms_are_self_atoms_r (σ := σ))) (box_existence hE : □ (Existence σ))) h₁) h₂
+
+/-- `necessary-atoms-are-strong-atoms-t-and-necessary-intensional-choice-imply-necessary-atoms-are-strong-atoms-r`, at `σ → t`: the unboxed record, necessitated. -/
+theorem necessary_atoms_are_strong_atoms_t_and_necessary_intensional_choice_imply_necessary_atoms_are_strong_atoms_r :
+    Existence σ → NecAtomsAreStrongAtomsT → NecIntensionalChoice σ → NecAtomsAreStrongAtoms (σ → Prop) :=
+  fun hE h₁ h₂ => modal_K _ _ (modal_K _ _ (modal_K _ _
+    (nec% (atoms_are_strong_atoms_t_and_intensional_choice_imply_atoms_are_strong_atoms_r (σ := σ))) (box_existence hE : □ (Existence σ))) h₁) h₂
+
+end icLift
+
 end Classicism.Proofs
