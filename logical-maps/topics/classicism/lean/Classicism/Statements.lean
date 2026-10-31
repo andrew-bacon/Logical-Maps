@@ -3059,6 +3059,16 @@ def necessary_rigid_rigidity_r_implies_rigid_rigidity_r : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRigidRigidity.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidRigidity.schemaIn
 
+/-- `necessary-self-atomicity-necessary-transversal-choice-and-necessary-weak-rigid-comprehension-imply-necessary-intensional-choice`
+
+□Self-Atomicity ∧ □Transversal Choice ∧ □Weak Rigid Comprehension ⇒ □Intensional Choice -/
+def necessary_self_atomicity_necessary_transversal_choice_and_necessary_weak_rigid_comprehension_imply_necessary_intensional_choice : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecSelfAtomicity.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTransversalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWeakRigidComprehension.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecIntensionalChoice.schemaIn
+
 /-- `necessary-self-atomicity-r-and-necessary-self-atoms-are-atoms-r-imply-necessary-atomicity-r`
 
 □Self-Atomicity ∧ □Self-atoms are atoms ⇒ □Atomicity -/
@@ -4822,6 +4832,16 @@ def self_atomicity_t_implies_two_hat_implies_nd : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.SelfAtomicityT.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.TwoHatImpliesNdNecessity.schemaIn
+
+/-- `self-atomicity-zorn-and-weak-rigid-comprehension-imply-intensional-choice`
+
+Self-Atomicity ∧ Zorn's Lemma ∧ Weak Rigid Comprehension ⇒ Intensional Choice -/
+def self_atomicity_zorn_and_weak_rigid_comprehension_imply_intensional_choice : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.SelfAtomicity.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Zorn.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeakRigidComprehension.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.IntensionalChoice.schemaIn
 
 /-- `self-atoms-are-atoms-r-implies-self-atoms-are-atoms-t`
 
