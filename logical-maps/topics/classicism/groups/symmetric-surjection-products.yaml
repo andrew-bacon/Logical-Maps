@@ -256,8 +256,8 @@ arguments:
   text: >-
     As axiom-of-infinity-e, the propositions $q_{a,b}$ being infinitely many.
 
-- id: distinctness-preserving-collapse
-  holds: [necessary-distinctness-preserving-collapse]
+- id: truths-are-nd-necessary
+  holds: [necessary-truths-are-nd-necessary]
   choice: free
   by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   date: '2026-10-28'

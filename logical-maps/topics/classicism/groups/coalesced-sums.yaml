@@ -357,7 +357,7 @@ arguments:
   - two-hat-implies-nd-necessity
   - five-implies-two-hat-necessity
   fails:
-  - distinctness-preserving-collapse
+  - truths-are-nd-necessary
   - vicinity
   - weakly-inextensible-comprehension-r
   - boolean-completeness-t

@@ -1,4 +1,4 @@
-id: distinctness-preserving-collapse
+id: truths-are-nd-necessary
 name: Truths are ND-necessary
 category: necessity-varieties
 statement: Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
@@ -14,13 +14,13 @@ references:
 - paper: bacon-dorr-classicism
   role: formulation
   locator: Appendix E, p. 83
-notes: Formerly named Distinctness-preserving collapse; renamed on 14 October 2026 when the Varieties
+notes: Formerly named Truths are ND-necessary; renamed on 14 October 2026 when the Varieties
   of necessity category was added at the suggestion of Christopher Sun. The id is unchanged.
 variants:
 - id: dual
   lean:
-    ref: Classicism.P.DistinctnessPreservingCollapseDual.schemaIn
-    equivalence_ref: Classicism.Map.distinctness_preserving_collapse.dual
+    ref: Classicism.P.TruthsAreNDNecessaryDual.schemaIn
+    equivalence_ref: Classicism.Map.truths_are_nd_necessary.dual
     status: verified
   name: Dual form
   statement: Whatever is possible under the distinctness-preserving modality is true.
@@ -28,7 +28,7 @@ variants:
   equivalence: Instantiate either form at the negations of its propositional or relational variables,
     contrapose, and rewrite with $\Diamond_{\ne}=\neg\Box_{\ne}\neg$ and $q\le r\leftrightarrow\neg r\le\neg
     q$. This yields the other form, and the same steps lead back.
-lean_def: Classicism.P.DistinctnessPreservingCollapse.schemaIn
+lean_def: Classicism.P.TruthsAreNDNecessary.schemaIn
 aliases:
 - Distinctness-preserving collapse
 - Truth implies ND-necessity
@@ -45,3 +45,6 @@ changes:
   summary: Renamed from Truth implies ND-necessity to Truths are ND-necessary, at Cian Dorr's request, so that the name does not use the verb
     of entailment; the statement is unchanged.
   minor: true
+- date: '2026-10-30'
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  summary: 'Id renamed from distinctness-preserving-collapse, to match the current principle names.'

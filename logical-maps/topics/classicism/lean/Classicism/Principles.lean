@@ -25,7 +25,7 @@ One definition per principle of the map with a shallow statement, named as the m
 | `Principles/Comprehension.lean` | `comprehension`: the comprehension principles |
 | `Principles/Choice.lean` | `choice`: Choice, Plenitude, Transversals |
 | `Principles/Infinity.lean` | `infinity`: the Axioms of Infinity and Possible Infinity |
-| `Principles/Schematic.lean` | `schematic`: the Distinctness-Preserving Collapse |
+| `Principles/Schematic.lean` | `schematic`: Truths are ND-necessary |
 
 The sentence schemas, the map's other `schematic` principles and its `signature` ones, are
 not shallow statements: they are defined in the object language, in `Syntax/`.

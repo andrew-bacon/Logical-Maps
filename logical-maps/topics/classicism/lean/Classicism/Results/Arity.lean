@@ -1166,13 +1166,13 @@ theorem necessary_bf_and_actuality_imply_inextensible_comprehension :
         (Entails.union_right _ _))
       Proofs.necessary_bf_and_actuality_imply_inextensible_comprehension.listEntails)
 
-/-- `actuality-and-distinctness-preserving-collapse-imply-inextensible-comprehension`, at
+/-- `actuality-and-truths-are-nd-necessary-imply-inextensible-comprehension`, at
 every arity. -/
-theorem actuality_and_distinctness_preserving_collapse_imply_inextensible_comprehension :
-    P.Actuality.schema ∪ P.DistinctnessPreservingCollapse.schema ⟹
+theorem actuality_and_truths_are_nd_necessary_imply_inextensible_comprehension :
+    P.Actuality.schema ∪ P.TruthsAreNDNecessary.schema ⟹
       P.InextensibleComprehension.schema :=
   Entails.mono_right (schema_subset_args _)
-    Proofs.actuality_and_distinctness_preserving_collapse_imply_inextensible_comprehension.listEntails
+    Proofs.actuality_and_truths_are_nd_necessary_imply_inextensible_comprehension.listEntails
 
 /-- `classicism-implies-modalized-plenitude-r`, at every output type. -/
 theorem classicism_implies_modalized_plenitude_r :

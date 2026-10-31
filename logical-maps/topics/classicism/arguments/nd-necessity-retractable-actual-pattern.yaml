@@ -1,8 +1,8 @@
-id: dpc-retractable-actual-pattern
+id: nd-necessity-retractable-actual-pattern
 requires:
 - retractable-means-actual-pattern
 holds:
-- distinctness-preserving-collapse
+- truths-are-nd-necessary
 by: Claude Fable 5.1 (Anthropic), at Cian Dorr's direction
 date: '2026-10-14'
 text: Let $p$ be true, pinned by $N$ (and symmetric, when there is a symmetry group), and let $N^\prime$

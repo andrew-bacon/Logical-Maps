@@ -178,8 +178,8 @@ arguments:
     root that necessarily holds of every root proposition holds at $C_0$ of both propositions there; at
     $C_0$, which sees only itself, BF is trivial.
 
-- id: distinctness-preserving-collapse
-  holds: [necessary-distinctness-preserving-collapse]
+- id: truths-are-nd-necessary
+  holds: [necessary-truths-are-nd-necessary]
   by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
   date: '2026-10-19'
   text: >-

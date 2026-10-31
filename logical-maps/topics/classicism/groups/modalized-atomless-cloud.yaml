@@ -124,7 +124,7 @@ arguments:
     and is closed under successor, so contains every finite cardinality, none of which holds of $\lambda
     u\,.\,\top$, whose root extension is $\omega$.
 - id: truth-implies-nd-necessity
-  holds: [necessary-distinctness-preserving-collapse]
+  holds: [necessary-truths-are-nd-necessary]
   choice: free
   by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   date: '2026-10-29'

@@ -1,7 +1,7 @@
-id: strong-possibility-signature-and-distinctness-preserving-collapse-incompatible
+id: strong-possibility-signature-and-truths-are-nd-necessary-incompatible
 premises:
 - strong-possibility-signature-r
-- distinctness-preserving-collapse
+- truths-are-nd-necessary
 conclusion: 'false'
 status: proved
 certificate:
@@ -24,7 +24,7 @@ proof: 'Let $Z$ be the closed pure sentence $\forall xy\, .\,x\ne y\to\Diamond(x
   (signature Σ) and Possibility+ (pure), hence $Z$, and the maximalist coalesced root satisfies Possibility Maximalism
   (signature Σ) and refutes exactly this instance of Possibility+ (pure). Since $Z$ is pure it is a sentence
   of $\mathcal L(\Sigma)$. Let $P$ be whichever of $Z$, $\neg Z$ is false. Strong Possibility (signature
-  Σ) gives $\Diamond_{\ne}P$. Distinctness-preserving collapse applied to the truth $\neg P$ gives $\Box_{\ne}\neg
+  Σ) gives $\Diamond_{\ne}P$. Truths are ND-necessary, applied to the truth $\neg P$, gives $\Box_{\ne}\neg
   P$, which is $\neg\Diamond_{\ne}P$.'
 references:
 - paper: bacon-dorr-classicism
@@ -40,3 +40,7 @@ notes: 'The Σ counterpart of the recorded incompatibility of Strong Possibility
   and a relational constant; the collapse holds at both roots. This is the one place where Strong Possibility
   bites beyond Possibility Maximalism: it makes $P$ possible under the distinctness-preserving modality, and the
   collapse denies exactly that of every falsehood.'
+changes:
+- date: '2026-10-30'
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  summary: 'Id renamed from strong-possibility-signature-and-distinctness-preserving-collapse-incompatible, to match the current principle names.'

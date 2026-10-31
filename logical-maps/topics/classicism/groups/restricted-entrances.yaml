@@ -60,7 +60,7 @@ arguments:
     $s$ is full and current extensions at $r$ are arbitrary.
 
 - id: truth-implies-nd-necessity
-  holds: [necessary-distinctness-preserving-collapse]
+  holds: [necessary-truths-are-nd-necessary]
   choice: free
   by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by
     Claude Opus 5.5 (Anthropic), prompted by Cian Dorr

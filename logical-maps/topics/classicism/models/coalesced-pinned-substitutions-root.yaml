@@ -116,7 +116,7 @@ arguments:
     finitely pinned model.
 - id: as-in-all-maps
   fails:
-  - distinctness-preserving-collapse
+  - truths-are-nd-necessary
   - vicinity
   - weakly-inextensible-comprehension-r
   - boolean-completeness-t

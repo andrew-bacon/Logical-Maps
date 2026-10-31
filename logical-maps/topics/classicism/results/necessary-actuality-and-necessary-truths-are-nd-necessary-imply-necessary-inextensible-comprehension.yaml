@@ -1,7 +1,7 @@
-id: necessary-actuality-and-necessary-distinctness-preserving-collapse-imply-necessary-inextensible-comprehension
+id: necessary-actuality-and-necessary-truths-are-nd-necessary-imply-necessary-inextensible-comprehension
 premises:
 - necessary-actuality
-- necessary-distinctness-preserving-collapse
+- necessary-truths-are-nd-necessary
 conclusion: necessary-inextensible-comprehension-r
 status: proved
 certificate:
@@ -17,7 +17,11 @@ sources:
   the write-up.
 source_names:
 - Fable 5.1, 25 Sep
-proof: The boxed form of [[actuality-and-distinctness-preserving-collapse-imply-inextensible-comprehension]].
+proof: The boxed form of [[actuality-and-truths-are-nd-necessary-imply-inextensible-comprehension]].
   Its proof derives each instance of the conclusion in C from finitely many instances of the premises; necessitate
   the conditional and apply K.
 notes: ''
+changes:
+- date: '2026-10-30'
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  summary: 'Id renamed from necessary-actuality-and-necessary-distinctness-preserving-collapse-imply-necessary-inextensible-comprehension, to match the current principle names.'

@@ -144,7 +144,7 @@ arguments:
     rigid ones at the root, and the power property of $F$ is weakly rigid, hence rigid. In $H$ the
     principle is trivial.
 - id: one-world-component
-  holds: [necessary-distinctness-preserving-collapse, necessary-persistent-comprehension-r]
+  holds: [necessary-truths-are-nd-necessary, necessary-persistent-comprehension-r]
   choice: free
   by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   date: '2026-10-28'

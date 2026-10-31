@@ -1,7 +1,7 @@
-id: necessary-distinctness-preserving-collapse-implies-distinctness-preserving-collapse
+id: necessary-truths-are-nd-necessary-implies-truths-are-nd-necessary
 premises:
-- necessary-distinctness-preserving-collapse
-conclusion: distinctness-preserving-collapse
+- necessary-truths-are-nd-necessary
+conclusion: truths-are-nd-necessary
 status: proved
 certificate:
   source_id: misc
@@ -17,3 +17,7 @@ source_names:
 - Dorr–Claude 14 Oct
 proof: 'The T axiom for $\Box$: the boxed closed sentence implies the sentence.'
 notes: Boxed form of a composition or decomposition fact for the chain of necessity operators.
+changes:
+- date: '2026-10-30'
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  summary: 'Id renamed from necessary-distinctness-preserving-collapse-implies-distinctness-preserving-collapse, to match the current principle names.'

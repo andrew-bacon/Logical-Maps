@@ -87,7 +87,7 @@ arguments:
     containing $k\cdot Y_1$, by weak persistence, and contained in it, by weak inextensibility tested
     against that haecceity disjunction; so it is rigid.
 - id: truth-implies-nd-necessity
-  holds: [distinctness-preserving-collapse]
+  holds: [truths-are-nd-necessary]
   fails: [necessary-truth-implies-five-necessity]
   choice: free
   by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr

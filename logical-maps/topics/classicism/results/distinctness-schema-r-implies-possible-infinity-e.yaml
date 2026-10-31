@@ -1,4 +1,4 @@
-id: possibility-schema-r-implies-possible-infinity-e
+id: distinctness-schema-r-implies-possible-infinity-e
 premises:
 - distinctness-schema-r
 conclusion: possible-infinity-e
@@ -10,7 +10,7 @@ certificate:
   checked_by: []
   date: '2026-09-20'
   lean: verified
-  lean_ref: Classicism.Map.possibility_schema_r_implies_possible_infinity_e
+  lean_ref: Classicism.Map.distinctness_schema_r_implies_possible_infinity_e
 sources:
 - Cian Dorr, suggestion of 20 September 2026.
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §3.2, Definition 3.6 and Proposition 3.7,
@@ -35,3 +35,6 @@ changes:
     Distinctness Maximalism and Possibility Maximalism unified as Maximalism, with Distinctness the
     official form and Possibility a variant form; this record's premise changed from the Possibility
     principle to Maximalism. The proof is unchanged, the two forms being equivalent in C.
+- date: '2026-10-30'
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  summary: 'Id renamed from possibility-schema-r-implies-possible-infinity-e, to match the current principle names.'

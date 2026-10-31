@@ -83,7 +83,7 @@ arguments:
   like: coalesced-two-extensional-arithmetics-root#boolean-completeness-t
   adapt: Unchanged.
 - holds:
-  - necessary-distinctness-preserving-collapse
+  - necessary-truths-are-nd-necessary
   - tame-rigidity-r
   - necessary-tame-rigidity-r
   - necessary-intensional-choice-r

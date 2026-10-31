@@ -1,6 +1,6 @@
-# Actuality and Distinctness-preserving collapse imply Inextensible Comprehension
+# Actuality and Truths are ND-necessary imply Inextensible Comprehension
 
-Assume Actuality and Distinctness-preserving collapse, with the map's fixed
+Assume Actuality and Truths are ND-necessary, with the map's fixed
 type range. The conclusion is Inextensible Comprehension: every relation is
 coextensive with an inextensible one, where inextensibility carries its
 leading box. This is an original connecting proof by Claude Fable 5.1, prompted by Cian Dorr
@@ -65,8 +65,8 @@ inside the box is the boxed statement on the left of $(*)$.
 
 ## Proof
 
-Let $a$ witness Actuality, so $L(a)$ is true. Apply Distinctness-preserving
-collapse to the truth $L(a)$: there is a true $q^*$ with
+Let $a$ witness Actuality, so $L(a)$ is true. Apply Truths are
+ND-necessary to the truth $L(a)$: there is a true $q^*$ with
 $\Box(\Diamond q^*\to L(a))$. Since $q^*$ is true and $a$ entails every
 truth, $\Box(a\to q^*)$. The K-theorem
 $\Box(a\to q^*)\to(\Diamond a\to\Diamond q^*)$, necessitated, together with
@@ -78,14 +78,14 @@ coextensive with $X$ because $a$ is true. $\square$
 The hypothesis actually used is $\Box(\Diamond a\to L(a))$: necessarily, the
 actual atom is the least truth wherever it is so much as possible. It says
 two things at once, that $a$ is possible only where true and that it stays
-the least truth wherever it is true. Distinctness-preserving collapse gives
+the least truth wherever it is true. Truths are ND-necessary gives
 it directly; the recorded verifications of that principle in the action
 models all take $q:=a$ and check exactly these two facts.
 
 ## What this places on the map
 
-Every recorded model with Actuality also satisfies Distinctness-preserving
-collapse, so Inextensible Comprehension now holds in all of them by
+Every recorded model with Actuality also satisfies Truths are
+ND-necessary, so Inextensible Comprehension now holds in all of them by
 derivation, including
 
 - the symmetric two-object unpinned model and the qualitative-link model,
@@ -106,7 +106,7 @@ as soon as $a$ fails.
 
 A countermodel to Actuality alone implying Inextensible Comprehension
 would need an Actuality witness that is possible at some world where it is
-false, so that Distinctness-preserving collapse fails, without the symmetry
+false, so that Truths are ND-necessary fails, without the symmetry
 that makes C5 deliver Rigid Comprehension; and it would have to defeat not
 only $Y_a$ but every other coextension of some $X$. None is recorded. The
 converse questions, whether Inextensible Comprehension or Weakly

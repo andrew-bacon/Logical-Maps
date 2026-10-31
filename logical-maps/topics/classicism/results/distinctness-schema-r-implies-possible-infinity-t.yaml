@@ -1,4 +1,4 @@
-id: possibility-schema-r-implies-possible-infinity-t
+id: distinctness-schema-r-implies-possible-infinity-t
 premises:
 - distinctness-schema-r
 conclusion: possible-infinity-t
@@ -32,3 +32,6 @@ changes:
     Distinctness Maximalism and Possibility Maximalism unified as Maximalism, with Distinctness the
     official form and Possibility a variant form; this record's premise changed from the Possibility
     principle to Maximalism. The proof is unchanged, the two forms being equivalent in C.
+- date: '2026-10-30'
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  summary: 'Id renamed from possibility-schema-r-implies-possible-infinity-t, to match the current principle names.'

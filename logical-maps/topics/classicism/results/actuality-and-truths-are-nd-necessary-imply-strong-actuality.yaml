@@ -1,7 +1,7 @@
-id: actuality-and-distinctness-preserving-collapse-imply-strong-actuality
+id: actuality-and-truths-are-nd-necessary-imply-strong-actuality
 premises:
 - actuality
-- distinctness-preserving-collapse
+- truths-are-nd-necessary
 conclusion: strong-actuality
 status: proved
 certificate:
@@ -11,7 +11,7 @@ certificate:
   checked_by: []
   date: '2026-10-06'
   lean: verified
-  lean_ref: Classicism.Map.actuality_and_distinctness_preserving_collapse_imply_strong_actuality
+  lean_ref: Classicism.Map.actuality_and_truths_are_nd_necessary_imply_strong_actuality
 sources:
 - Cian Dorr, suggestion of 6 October 2026.
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.6, p. 42; Appendix E, p. 83.
@@ -20,7 +20,7 @@ source_names:
 - Classicism
 proof: >-
   Let $a$ witness Actuality and write $L(a)$ for $a\land\forall q\, .\,q\to a\le q$. As in the recorded
-  derivation of Inextensible Comprehension from the same premises, Distinctness-preserving collapse
+  derivation of Inextensible Comprehension from the same premises, Truths are ND-necessary
   applied to the truth $L(a)$ gives a true $q^*$ with $\Box(\Diamond q^*\to L(a))$, and since $a\le
   q^*$, 4 and K give $\Box(\Diamond a\to L(a))$. Two theorems of C: (i) $L(a)\to\forall q\, .\,a\le
   q\lor a\le\neg q$, since one of $q$ and $\neg q$ is true and $a$ entails it; (ii) $\neg\Diamond
@@ -37,3 +37,7 @@ notes: >-
   impossible, and either way necessarily settles every proposition (Cian Dorr's observation). Every
   action model whose actual world is isolated satisfies the collapse principle, so this settles
   Strong Actuality in all of them.
+changes:
+- date: '2026-10-30'
+  by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
+  summary: 'Id renamed from actuality-and-distinctness-preserving-collapse-imply-strong-actuality, to match the current principle names.'

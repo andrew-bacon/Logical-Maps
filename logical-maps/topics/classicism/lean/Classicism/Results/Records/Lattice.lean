@@ -413,11 +413,11 @@ theorem necessary_actuality_implies_necessary_vicinity : NecActuality → NecVic
 /-- `necessary-vicinity-implies-vicinity`: `T`. -/
 theorem necessary_vicinity_implies_vicinity : NecVicinity → Vicinity := fun h => box_elim h
 
-/-- `vicinity-and-distinctness-preserving-collapse-imply-actuality`: the witness of
+/-- `vicinity-and-truths-are-nd-necessary-imply-actuality`: the witness of
 Vicinity entails `◇q` for the true `q` the collapse gives with `◇q ≤ p`, so it entails
 each truth `p`. -/
-theorem vicinity_and_distinctness_preserving_collapse_imply_actuality :
-    Vicinity → DistinctnessPreservingCollapse → Actuality := fun vic col =>
+theorem vicinity_and_truths_are_nd_necessary_imply_actuality :
+    Vicinity → TruthsAreNDNecessary → Actuality := fun vic col =>
   vic.elim fun w hw => ⟨w, hw.1, fun p hp => (col p hp).elim fun q hq =>
     le_trans_prop w (◇ q) p (hw.2 q hq.1) ((le_iff_prop _ _).2 hq.2)⟩
 
@@ -458,12 +458,12 @@ theorem weaklyInextensible_of_dia_actual {σ : Type} [Ty σ] (a : Prop) (X : σ 
       (nec% (fun (hna : ¬ a) (y : σ) (hy : a ∧ X y) => (hna hy.1).elim : ¬ a → ∀ y, a ∧ X y → Z y))
       (box_not_of_not_dia a hnd))
 
-/-- `actuality-and-distinctness-preserving-collapse-imply-inextensible-comprehension`, at
+/-- `actuality-and-truths-are-nd-necessary-imply-inextensible-comprehension`, at
 `σ → t`: with `a` the actual world, the collapse makes `◇a → ActualWorld a` necessary, so
 `λy. a ∧ Xy`, weakly inextensible wherever that holds, is inextensible. -/
-theorem actuality_and_distinctness_preserving_collapse_imply_inextensible_comprehension
+theorem actuality_and_truths_are_nd_necessary_imply_inextensible_comprehension
     {σ : Type} [Ty σ] :
-    Actuality → DistinctnessPreservingCollapse → InextensibleComprehension (σ → Prop) :=
+    Actuality → TruthsAreNDNecessary → InextensibleComprehension (σ → Prop) :=
   fun act col X => act.elim fun a (ha : ActualWorld a) => (col (ActualWorld a) ha).elim
     fun q hq =>
       have h₁ : □ (◇ a → ◇ q) := modal_K _ _ (nec% (dia_mono a q))
@@ -827,11 +827,11 @@ theorem decides_of_dia_actual (a : Prop) :
       (fun hnq => Or.inr ((h hd).2 (¬ q) hnq)))
     (fun hnd => Or.inl (le_of_box_not a q (box_not_of_not_dia a hnd)))
 
-/-- `actuality-and-distinctness-preserving-collapse-imply-strong-actuality`: with `a` the
+/-- `actuality-and-truths-are-nd-necessary-imply-strong-actuality`: with `a` the
 actual world, the collapse makes `◇a → ActualWorld a` necessary (as for Inextensible
 Comprehension), and that decides every proposition, so `a` is a strong atom. -/
-theorem actuality_and_distinctness_preserving_collapse_imply_strong_actuality :
-    Actuality → DistinctnessPreservingCollapse → StrongActuality :=
+theorem actuality_and_truths_are_nd_necessary_imply_strong_actuality :
+    Actuality → TruthsAreNDNecessary → StrongActuality :=
   fun act col => act.elim fun a (ha : ActualWorld a) => (col (ActualWorld a) ha).elim
     fun q hq =>
       have h₁ : □ (◇ a → ◇ q) := modal_K _ _ (nec% (dia_mono a q))
