@@ -27,6 +27,8 @@ definition: 'Appendix D, p. 79, the paragraph beginning “One particularly inte
   Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each denotes the
   top element of its type.'
 meets:
+  finitely-many-individuals-somewhere: >-
+    The object $W_1=\{0\}$, reached by the constant map, has one individual.
   infinitely-many-propositions-everywhere: >-
     At $W_0$ the sets of arrows pinned down by a finite set are infinitely many; at $W_1$ every set of
     the arrows $1_{W_1}$ and $c_n:0\mapsto n$ is pinned down by $\{0\}$.

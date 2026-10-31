@@ -38,6 +38,16 @@ settings:
     record: every constant of Σ is relational, and each denotes the top element of its type.
   domains: fullest
 meets:
+  infinitely-many-individuals-everywhere: >-
+    The individuals of $H$, the $L_i$ and $A_i^\epsilon$, are infinitely many, and they are the
+    root's individuals too.
+  finite-extension-properties-everywhere: >-
+    In $H$, the function from $D_{\sigma t}$ to $\{0,1\}$ true of exactly the entities with finite
+    extension is fixed by every group element, which preserves finiteness, so it is in the domain;
+    the haecceity of $A_i^\epsilon$ is fixed by every group element vanishing at $i$, and $L_i$'s by
+    every element, so identity at $e$ is literal, and at $t$ it is trivially so. At the root, an
+    entity has an arbitrary root component and components in the domain of $H$: give it that
+    function as its $H$-component and any root extension, singletons included.
   free-root-component: The root domains are as full as compatibility allows.
   sigma-top: This is the interpretation the construction fixes.
 arguments:

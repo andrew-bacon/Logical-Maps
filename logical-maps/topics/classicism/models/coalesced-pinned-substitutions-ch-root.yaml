@@ -43,6 +43,20 @@ settings:
       finite set of constants of $\Sigma^+$, whose transports along the arrows into a component land in its
       domains.
 meets:
+  infinitely-many-individuals-everywhere: >-
+    The individuals are the infinitely many individual constants at $W_0$ and at each $R_N$, and the
+    natural numbers at the objects of finite-support-monotone-maps as built in $N$, $N$ being
+    transitive.
+  finite-extension-properties-everywhere: >-
+    At every reachable object $U$, take the intension depending only on the codomain whose value at
+    an arrow into $U'$ is the set of entities of type $\sigma t$ at $U'$ with finite extension at
+    $1_{U'}$. At an object of finite-support-monotone-maps it is pinned down by $\emptyset$; at a
+    pinned-substitution root, $R_N$ or $W_0$, it is pinned down by $\emptyset$ and lands, its
+    transports being the like intensions at the targets. Inside $M_N$ it is defined in $N$ from
+    parameters in $N$ by a formula absolute for transitive models, finiteness being absolute, so it
+    belongs to the domains computed in $N$; at $W_0$ the domains are as full as pinning and landing
+    allow. Haecceities are pinned down by the constants or points that pin their entities, so
+    identity is literal.
   pinned-substitution-root: The root, its domains and the interpretation of Σ are as in
     coalesced-pinned-substitutions-root; only the components differ.
   root-only-sentence: >-

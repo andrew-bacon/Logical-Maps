@@ -35,6 +35,13 @@ settings:
       As in coalesced-pinned-substitutions-root, intensions over the arrows out of $W_0$ pinned down by a
       finite set of constants of $\Sigma^+$, whose transports along the arrows into $V$ land in its domains.
 meets:
+  infinitely-many-individuals-everywhere: >-
+    The individuals are the infinitely many individual constants at $W_0$ and the natural numbers at
+    $V$.
+  finite-extension-properties-everywhere: >-
+    By codomain-intensions, as for that condition: at $W_0$ and at $V$ the intensions depending only
+    on the arrow's codomain are in the domain, giving any extension at the identity arrow, among
+    them the singletons, so identity is literal.
   pinned-substitution-root: The root, its domains and the interpretation of Σ are as in
     coalesced-pinned-substitutions-root; only the components differ.
   extensionally-full: >-

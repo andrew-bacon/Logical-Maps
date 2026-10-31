@@ -39,6 +39,10 @@ settings:
 definition: 'Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each denotes
   the top element of its type.'
 meets:
+  finitely-many-individuals-somewhere: >-
+    The world of $M_1$, seen from the root, has one individual.
+  finitely-many-propositions-somewhere: >-
+    The world of $M_1$, seen from the root, is a one-world full Henkin model with two propositions.
   two-actual-components: >-
     Every component is a one-world Henkin model, where the top proposition is the true atom; the
     root domains are the fullest.

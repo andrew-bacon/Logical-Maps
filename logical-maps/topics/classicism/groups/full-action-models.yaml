@@ -65,6 +65,7 @@ parameters:
           fixed-infinite-individuals: This is the choice of individuals.
           arbitrary-infinite-set: $D$ is any infinite set.
           infinitely-many-individuals: $D$ is infinite.
+          infinitely-many-individuals-everywhere: $D$ is infinite and the individuals at every object.
           homogeneous-individuals: >-
             A permutation of $D$ commutes with every arrow's action, the identity,
             so it is an automorphism at type $e$ and extends, by conjugation, to the full domains
@@ -160,6 +161,9 @@ meets:
   extensionally-full: >-
     A full model contains every intension, so in particular one with any given extension at the
     identity.
+  finite-extension-properties-everywhere: >-
+    The domains are full at every object, so they contain the haecceities, making identity literal,
+    and an intension with any given extension at each identity arrow.
   identity-singletons: >-
     The singleton of the identity arrow at any object is in the domain, the model being full.
   actuality-contingent: >-

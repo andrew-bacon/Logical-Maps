@@ -220,6 +220,17 @@ arguments:
     the pairs of numerals $(\mathbf i,\mathbf{i+m})$, resp. $(\mathbf i,\mathbf{i\cdot m})$, which
     automorphisms fix. So wherever $I_\sigma$ holds an arithmetical sentence at $\sigma$ has its standard
     truth value.
+- id: necessary-axiom-of-infinity-t
+  holds: [necessary-axiom-of-infinity-t]
+  choice: free
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+  date: '2026-10-31'
+  text: >-
+    The root sees itself and the worlds of the component. At $r$ the Axiom of Infinity at type $t$ holds
+    (axiom-of-infinity-at-root). At a world of the component the propositions are the $\hat b$, ordered as
+    $B$, the same entities being available at every world and identity genuine; $B$ is atomless, so
+    Atomlessness holds there, and with it the Axiom of Infinity at type $t$, which it implies in C
+    (atomlessness-implies-axiom-of-infinity-t). So the Axiom holds at every world the root sees.
 notes: >-
   Separates □Boolean Completeness (type $t$), □BF, Relational Choice and Actuality from □Actuality: the
   component is a model of C5 in which Actuality is necessarily false. The completeness of $B$ is used only at
