@@ -323,100 +323,26 @@ body.writeup-page { max-width: 82ch; margin: 3em auto; padding: 0 1.5em 3em; fon
 <script defer src="../math/katex.min.js"></script>
 <script defer src="../math/contrib/auto-render.min.js"></script>
 <script defer src="../math/math.js"></script></head><body class="writeup-page"><nav class="writeup-nav" aria-label="Write-up navigation"><a href="../index.html">← Back to map</a><div class="display-toggles"><button type="button" class="theme-toggle" data-theme-toggle>[Dark mode]</button><button type="button" class="theme-toggle" data-colourblind-toggle aria-label="Colourblind mode" aria-pressed="false">[Colourblind mode: off]</button></div></nav><header id="title-block-header"><h1>Vicinity ∧ Atomicity (type t) ⇒ Actuality</h1></header><p class="cert">
-Result — Source: Misc.; produced by Cian Dorr (the argument and its use
-of BF for 5-necessity, 28 October 2026), with Claude Opus 5.5
-(Anthropic), who completed the step showing that the atoms below the
-witness are self-atoms; recorded by Claude Opus 5.5 (Anthropic),
-prompted by Cian Dorr, 28 October 2026.
+Result — Source: Misc.; produced by Cian Dorr (the argument and its use of BF for 5-necessity, 28 October 2026), with Claude Opus 5.5 (Anthropic), who completed the step showing that the atoms below the witness are self-atoms; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 28 October 2026.
 </p>
 <h2 id="premises">Premises</h2>
 <ul>
-<li><strong>Vicinity.</strong> There is a true proposition that entails
-the possibility of each true proposition.</li>
-<li><strong>Atomicity (type t).</strong> Every non-bottom proposition
-has an atom below it.</li>
+<li><strong>Vicinity.</strong> There is a true proposition that entails the possibility of each true proposition.</li>
+<li><strong>Atomicity (type t).</strong> Every non-bottom proposition has an atom below it.</li>
 </ul>
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li><strong>Actuality.</strong> There is a true proposition that entails
-every true proposition.</li>
+<li><strong>Actuality.</strong> There is a true proposition that entails every true proposition.</li>
 </ul>
 <h2 id="proof">Proof</h2>
-<p>By the 5-necessity form of [[vicinity]], some truth <span
-class="math inline">v</span> entails every 5-necessary truth. We show
-that every atom <span class="math inline">w\le v</span> is a self-atom.
-Let <span class="math inline">A:=\operatorname{Atom}_t(w)</span>. Since
-<span class="math inline">w</span> is an atom, <span
-class="math inline">w\le A</span> or <span class="math inline">w\le\neg
-A</span>; suppose <span class="math inline">w\le\neg A</span>. First,
-<span class="math inline">\Diamond_5w</span>: otherwise <span
-class="math inline">\Box_5\neg w</span>, so <span
-class="math inline">v\le\neg w</span>, and with <span
-class="math inline">w\le v</span>, <span
-class="math inline">w=\bot</span>. As <span
-class="math inline">\Box\le\Box_5</span> and <span
-class="math inline">\Box_5</span> is K, <span
-class="math inline">\Diamond_5\neg A</span>, that is, <span
-class="math inline">\Diamond_5\exists z\, .\,\psi(z)</span>, where <span
-class="math inline">\psi(z)</span> says that <span
-class="math inline">z</span> falsifies the clause of <span
-class="math inline">\operatorname{Atom}_t(w)</span> for <span
-class="math inline">z</span>. <span class="math inline">\Box_5</span>
-satisfies BF at type <span class="math inline">t</span>: in the form of
-The Bounds of Possibility, Appendix D, <span
-class="math inline">\Box_5p</span> says that <span
-class="math inline">p</span> is <span
-class="math inline">X</span>-necessary for every <span
-class="math inline">X</span> that is necessarily NKJF<span
-class="math inline">_{\langle\rangle}</span>, and F<span
-class="math inline">_{\langle\rangle}</span> is BF for <span
-class="math inline">X</span>; that definition is necessarily equivalent
-to the map’s (Background). So <span
-class="math inline">\Diamond_5\psi(z)</span> for some <span
-class="math inline">z</span>. But <span
-class="math inline">\psi(z)</span> is a truth-functional compound of
-identities among <span class="math inline">z</span>, <span
-class="math inline">w</span> and <span class="math inline">\bot</span>
-(the order <span class="math inline">\le</span> is an identity), and
-such a formula <span class="math inline">\varphi</span> satisfies <span
-class="math inline">\Diamond_5\varphi\to\varphi</span>: identities are
-necessary (NI), hence 5-necessary, so <span
-class="math inline">\varphi\to\Box_5\varphi</span> holds for identities
-and their negations by B for the S5 operator <span
-class="math inline">\Box_5</span>, and so for their compounds;
-contraposing for <span class="math inline">\neg\varphi</span> gives the
-claim. Hence <span class="math inline">\psi(z)</span> holds,
-contradicting that <span class="math inline">w</span> is an atom. So
-<span class="math inline">w\le A</span>, and <span
-class="math inline">w</span> is a self-atom. Wherever <span
-class="math inline">w</span> is true it is then a true atom, and a true
-atom entails every truth (it lies below <span
-class="math inline">q</span> or <span class="math inline">\neg q</span>,
-and not below a falsehood); so <span
-class="math inline">w\le\mathrm{Act}</span>, where <span
-class="math inline">\mathrm{Act}</span> is Actuality. Finally, were
-<span class="math inline">v\land\neg\mathrm{Act}</span> possible,
-Atomicity (type <span class="math inline">t</span>) would give an atom
-<span class="math inline">w\le v\land\neg\mathrm{Act}</span>, with <span
-class="math inline">w\le v</span> and hence <span
-class="math inline">w\le\mathrm{Act}</span>, so <span
-class="math inline">w=\bot</span>. So <span
-class="math inline">v\le\mathrm{Act}</span>, and since <span
-class="math inline">v</span> is true, Actuality holds.</p>
+<p>By the 5-necessity form of [[vicinity]], some truth <span class="math inline">v</span> entails every 5-necessary truth. We show that every atom <span class="math inline">w\le v</span> is a self-atom. Let <span class="math inline">A:=\operatorname{Atom}_t(w)</span>. Since <span class="math inline">w</span> is an atom, <span class="math inline">w\le A</span> or <span class="math inline">w\le\neg A</span>; suppose <span class="math inline">w\le\neg A</span>. First, <span class="math inline">\Diamond_5w</span>: otherwise <span class="math inline">\Box_5\neg w</span>, so <span class="math inline">v\le\neg w</span>, and with <span class="math inline">w\le v</span>, <span class="math inline">w=\bot</span>. As <span class="math inline">\Box\le\Box_5</span> and <span class="math inline">\Box_5</span> is K, <span class="math inline">\Diamond_5\neg A</span>, that is, <span class="math inline">\Diamond_5\exists z\, .\,\psi(z)</span>, where <span class="math inline">\psi(z)</span> says that <span class="math inline">z</span> falsifies the clause of <span class="math inline">\operatorname{Atom}_t(w)</span> for <span class="math inline">z</span>. <span class="math inline">\Box_5</span> satisfies BF at type <span class="math inline">t</span>: in the form of The Bounds of Possibility, Appendix D, <span class="math inline">\Box_5p</span> says that <span class="math inline">p</span> is <span class="math inline">X</span>-necessary for every <span class="math inline">X</span> that is necessarily NKJF<span class="math inline">_{\langle\rangle}</span>, and F<span class="math inline">_{\langle\rangle}</span> is BF for <span class="math inline">X</span>; that definition is necessarily equivalent to the map’s (Background). So <span class="math inline">\Diamond_5\psi(z)</span> for some <span class="math inline">z</span>. But <span class="math inline">\psi(z)</span> is a truth-functional compound of identities among <span class="math inline">z</span>, <span class="math inline">w</span> and <span class="math inline">\bot</span> (the order <span class="math inline">\le</span> is an identity), and such a formula <span class="math inline">\varphi</span> satisfies <span class="math inline">\Diamond_5\varphi\to\varphi</span>: identities are necessary (NI), hence 5-necessary, so <span class="math inline">\varphi\to\Box_5\varphi</span> holds for identities and their negations by B for the S5 operator <span class="math inline">\Box_5</span>, and so for their compounds; contraposing for <span class="math inline">\neg\varphi</span> gives the claim. Hence <span class="math inline">\psi(z)</span> holds, contradicting that <span class="math inline">w</span> is an atom. So <span class="math inline">w\le A</span>, and <span class="math inline">w</span> is a self-atom. Wherever <span class="math inline">w</span> is true it is then a true atom, and a true atom entails every truth (it lies below <span class="math inline">q</span> or <span class="math inline">\neg q</span>, and not below a falsehood); so <span class="math inline">w\le\mathrm{Act}</span>, where <span class="math inline">\mathrm{Act}</span> is Actuality. Finally, were <span class="math inline">v\land\neg\mathrm{Act}</span> possible, Atomicity (type <span class="math inline">t</span>) would give an atom <span class="math inline">w\le v\land\neg\mathrm{Act}</span>, with <span class="math inline">w\le v</span> and hence <span class="math inline">w\le\mathrm{Act}</span>, so <span class="math inline">w=\bot</span>. So <span class="math inline">v\le\mathrm{Act}</span>, and since <span class="math inline">v</span> is true, Actuality holds.</p>
 <h2 id="notes">Notes</h2>
-<p>Vicinity and Atomicity thus give Actuality as Vicinity and Weakly
-Inextensible Comprehension do
-([[vicinity-and-weakly-inextensible-comprehension-imply-actuality]]).
-The proof shows more, that every atom below the strongest 5-necessary
-truth is a self-atom.</p>
+<p>Vicinity and Atomicity thus give Actuality as Vicinity and Weakly Inextensible Comprehension do ([[vicinity-and-weakly-inextensible-comprehension-imply-actuality]]). The proof shows more, that every atom below the strongest 5-necessary truth is a self-atom.</p>
 <h2 id="sources">Sources</h2>
 <ul>
-<li><strong>Dorr 28 Oct</strong> — Cian Dorr, argument of 28 October
-2026 that Vicinity and Atomicity give Actuality, through the 5-necessity
-form of Vicinity and BF for 5-necessity (session transcript).</li>
+<li><strong>Dorr 28 Oct</strong> — Cian Dorr, argument of 28 October 2026 that Vicinity and Atomicity give Actuality, through the 5-necessity form of Vicinity and BF for 5-necessity (session transcript).</li>
 </ul>
 <p class="cert">
-Record:
-<code>topics/classicism/results/vicinity-and-atomicity-t-imply-actuality.yaml</code>
+Record: <code>topics/classicism/results/vicinity-and-atomicity-t-imply-actuality.yaml</code>
 </p>
 </body></html>

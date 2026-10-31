@@ -1,11 +1,11 @@
-# □Actuality ∧ □Two-hat necessity implies ND-necessity ⇒ □Strong Actuality
+# □Actuality ∧ □Two-hat necessities are ND-necessary ⇒ □Strong Actuality
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_actuality_and_necessary_two_hat_implies_nd_imply_necessary_strong_actuality`; produced by Cian Dorr, 14 October 2026 (with 5-necessity implies ND-necessity as the second premise); weakened to Two-hat necessity implies ND-necessity, and checked, by Claude Fable 5.1 (Anthropic) the same day; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_actuality_and_necessary_two_hat_implies_nd_imply_necessary_strong_actuality`; produced by Cian Dorr, 14 October 2026 (with 5-necessities are ND-necessary as the second premise); weakened to Two-hat necessities are ND-necessary, and checked, by Claude Fable 5.1 (Anthropic) the same day; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
 
 ## Premises
 
 - **□Actuality.** Necessarily, there is a true proposition that entails every true proposition.
-- **□Two-hat necessity implies ND-necessity.** Necessarily, whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat. In C this is the identity $\hat{\hat\Box}=\Box_{\ne}$.
+- **□Two-hat necessities are ND-necessary.** Necessarily, whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat. In C this is the identity $\hat{\hat\Box}=\Box_{\ne}$.
 
 ## Conclusion
 

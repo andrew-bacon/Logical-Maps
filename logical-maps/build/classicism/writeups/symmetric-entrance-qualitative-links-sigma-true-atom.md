@@ -11,7 +11,12 @@
 - **Relational Choice.** Every serial binary relation has a functional subrelation.
 - **Weakly Rigid Power.** If a relation is weakly rigid, so is the property of being a weakly rigid relation that entails it.
 - **□Strong Actuality.** Necessarily, there is a true strong atom: a true proposition that necessarily entails every proposition or its negation.
+- **□Truths are ND-necessary.** Necessarily, every truth is ND-necessary. In C this is the identity $\Box_{\ne}=\lambda p\, .\,p$.
+- **□Weak Rigid Comprehension.** Necessarily, every relation, including a proposition, is coextensive with a weakly rigid one.
+- **Possible Infinity (type t).** Possibly there are not finitely many propositions: the Axiom of Infinity at this type, under a diamond.
 - **Actuality.** There is a true proposition that entails every true proposition.
+- **Arithmetic Necessitism.** Given that necessarily zero is not a successor and successor is injective on numbers, the numbers at $\sigma$ form a rigid property with necessarily distinct instances. One sentence for each type $\sigma$.
+- **Truths are ND-necessary.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **¬ Atoms are self-atoms (type t).** Every atom is a self-atom: necessarily, if it is true, it is an atom.
 - **¬ Self-Atomicity (type t).** Every possible proposition is entailed by a self-atom: a possible proposition that necessarily, if true, is an atom, that is, one that entails that it is the actual world.
 - **¬ □Self-atoms are atoms (type t).** Necessarily, every self-atom is an atom.
@@ -20,6 +25,10 @@
 - **¬ BF (type t).** If every proposition necessarily has a property, then necessarily every proposition has it.
 - **¬ ND (type t).** Distinct propositions are necessarily distinct.
 - **¬ Strong Atomicity (type t).** Every possible proposition is entailed by a strong atom, one that is possible and necessarily entails every proposition or its negation.
+- **¬ □Atomicity (type t).** Necessarily, every non-bottom proposition has an atom below it.
+- **¬ □Rigid Power.** Necessarily, if a relation is rigid, so is the property of being a rigid relation that entails it.
+- **¬ Infinity Schema (type t).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
+- **¬ B for pure sentences.** The B instance for every closed sentence in the pure language.
 - **¬ Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **¬ Infinity Schema (type e).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
 - **¬ Possible Infinity (type e).** Possibly there are not finitely many individuals: the Axiom of Infinity at this type, under a diamond.
@@ -89,6 +98,12 @@ With $r$ the proposition true at $A$ only: every proposition $p$ at $A$ necessar
 
 *Write-up: [symmetric-entrance-qualitative-links](symmetric-entrance-qualitative-links.html). By GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 22 October 2026, 2026-10-24.*
 
+### Holds □Truths are ND-necessary, □Weak Rigid Comprehension, Possible Infinity (type t). Fails □Atomicity (type t), □Rigid Power, Infinity Schema (type t), B for pure sentences.
+
+The arrows out of $A$ are $1_A$ and $i$, with $m\circ i=i$ for every $m$, so $i$ sees only itself and a closed sentence holds at $i$ iff at $1_B$; so a boxed sentence holds at $1_A$ iff it holds there and at $1_B$, where the tail, as the notes say, has the verdicts of the qualitative-links model with one individual: Truths are ND-necessary and Weak Rigid Comprehension hold, Atomicity at $t$ and Rigid Power fail, and there are infinitely many propositions. At $A$ there are exactly four propositions, so Infinity at $t$ fails there, and the pure sentence saying so is true at $1_A$ and false at $1_B$, impossible at $i$.
+
+*Address: `symmetric-entrance-qualitative-links-sigma-true-atom#transfer`. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-29.*
+
 ### Holds Actuality.
 
 The symmetry group is the smallest symmetric set of arrows containing the identity, and by the condition it is pinned down by a finite set, so it is a proposition in the domain, and an atom entailing every truth.
@@ -96,6 +111,20 @@ The symmetry group is the smallest symmetric set of arrows containing the identi
 *Source: Boolean Completeness does not imply Rigid Comprehension, Proposition 24, p. 13; §7.1, p. 21; §8, pp. 23–26. From the group *Symmetric ideally-full models*, shared argument `symmetric-ideally-full#actuality`. It requires that The symmetry group, the smallest symmetric set of arrows containing the identity, is pinned down by a finite set. Here: The symmetry group at $A$ is its identity alone, pinned down by $\varnothing$. By Cian Dorr, 2026-09-19.*
 
 *Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* The three members' versions stated once; what pins the group down is each member's reason for meeting symmetry-group-pinned.
+
+### Holds Arithmetic Necessitism.
+
+As the argument arithmetic-necessitism-extensionally-full, with the property of being a numeral supplied by pinning. The intension $Z$ whose value at each arrow $k$ out of the evaluation object is the set of numerals $\mathbf 0_\sigma,\operatorname{Suc}_\sigma\mathbf 0_\sigma,\ldots$ at the target of $k$ is pinned down by the empty set, its value depending on the arrow only through its target, and is symmetric, transport along a permutation of the points carrying numerals to numerals, as transport along any arrow does, numerals being closed terms; so it is in the domain, and so is its transport $k\cdot Z$ to any reachable object, whose extension there is exactly the numerals. Hence at every reachable object the numbers at $\sigma$, the instances of the least inductive property, are exactly the numerals, which transport to numerals; persistence and, given $\Box I^*_\sigma$, necessary distinctness are theorems of C, and inextensibility follows as in that argument. So Arithmetic Necessitism holds at every type. No choice is used.
+
+*General argument `arguments/arithmetic-necessitism-finitely-pinned`. It requires that Write an entity of relational type at the evaluation object as its intension $k\mapsto Y_k$ over the arrows $k$ out of it, so that $Y\bar a$ holds at $k$ iff $k\cdot\bar a\in Y_k$; $Y$ is pinned down by a finite set $N$ of the points the arrows act on when $Y_k=Y_{k^{\prime}}$ for any arrows $k,k^{\prime}$ agreeing on $N$. Every entity in a domain is pinned down by a finite set, in the sense that $k\cdot x=k^{\prime}\cdot x$ for arrows agreeing on it, and the domain of each relational type at the evaluation object holds every intension pinned down by a finite set (in a symmetric model, every symmetric one). Here: Both objects carry the ideal of finite sets, and the domains hold every symmetric intension pinned down by a finite set. By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-23.*
+
+### Holds Truths are ND-necessary.
+
+For a true $p$, $a\le p$, since $a$ entails every truth. Take $q:=a$ in the definition of $\Box_{\ne}p$: at a world in $a$, $p$ holds; at a world outside $a$, $\Diamond a$ fails. So every truth is $\Box_{\ne}$-necessary.
+
+*General argument `arguments/dpc-isolated-actual-world`. It requires that The actual-world proposition $a$ is in the domain and entails every truth, and no world outside $a$ sees a world in $a$. Here: $\{1_A\}$ is in the domain and entails every truth, and the only other world, $i$, sees only itself. By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 2026-09-23.*
+
+*Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* The finite-support, symmetric and full action models' copies (eight records) stated once for the topic; what varied, why no world outside the actual world sees back into it, is each record's reason for meeting actual-world-isolated.
 
 ### Fails Axiom of Infinity (type e), Infinity Schema (type e), Possible Infinity (type e).
 

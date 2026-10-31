@@ -322,101 +322,19 @@ body.writeup-page { max-width: 82ch; margin: 3em auto; padding: 0 1.5em 3em; fon
 <link rel="stylesheet" href="../math/katex.min.css">
 <script defer src="../math/katex.min.js"></script>
 <script defer src="../math/contrib/auto-render.min.js"></script>
-<script defer src="../math/math.js"></script></head><body class="writeup-page"><nav class="writeup-nav" aria-label="Write-up navigation"><a href="../index.html">← Back to map</a><div class="display-toggles"><button type="button" class="theme-toggle" data-theme-toggle>[Dark mode]</button><button type="button" class="theme-toggle" data-colourblind-toggle aria-label="Colourblind mode" aria-pressed="false">[Colourblind mode: off]</button></div></nav><header id="title-block-header"><h1>Self-Atomicity, Atomicity (type t), Weak Rigid Comprehension and Relational Choice imply Intensional Choice</h1></header><p>The construction is Cian Dorr’s (20 October 2026), as recorded for
-Strong Atomicity in <a
-href="strong-atomicity-weak-rigid-comprehension-and-relational-choice-imply-intensional-choice.html">that
-write-up</a>; the observation that self-atoms suffice is by Claude Fable
-5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026, from a survey
-of Strong Atomicity results. Not Lean-verified.</p>
-<p>Fix <span class="math inline">\sigma</span> and let <span
-class="math inline">F^{\sigma t}</span> satisfy <span
-class="math inline">\Box\exists y\, .\,Fy</span>. Self-Atomicity is used
-at type <span class="math inline">\sigma t</span>, Atomicity at type
-<span class="math inline">t</span>, Relational Choice at types <span
-class="math inline">t,\sigma t</span>, and Weak Rigid Comprehension at
-<span class="math inline">(\sigma t)t</span>. Only T and 4 are needed
-from the modal logic. An <em>atom</em> below is an atom of type <span
-class="math inline">t</span>, and <span
-class="math inline">\operatorname{SelfAtom}_{\sigma
-t}(X):=X\ne\bot\land\Box(\exists y\, .\,Xy\to\operatorname{Atom}_{\sigma
-t}(X))</span>.</p>
+<script defer src="../math/math.js"></script></head><body class="writeup-page"><nav class="writeup-nav" aria-label="Write-up navigation"><a href="../index.html">← Back to map</a><div class="display-toggles"><button type="button" class="theme-toggle" data-theme-toggle>[Dark mode]</button><button type="button" class="theme-toggle" data-colourblind-toggle aria-label="Colourblind mode" aria-pressed="false">[Colourblind mode: off]</button></div></nav><header id="title-block-header"><h1>Self-Atomicity, Atomicity (type t), Weak Rigid Comprehension and Relational Choice imply Intensional Choice</h1></header><p>The construction is Cian Dorr’s (20 October 2026), as recorded for Strong Atomicity in <a href="strong-atomicity-weak-rigid-comprehension-and-relational-choice-imply-intensional-choice.html">that write-up</a>; the observation that self-atoms suffice is by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026, from a survey of Strong Atomicity results. Not Lean-verified.</p>
+<p>Fix <span class="math inline">\sigma</span> and let <span class="math inline">F^{\sigma t}</span> satisfy <span class="math inline">\Box\exists y\, .\,Fy</span>. Self-Atomicity is used at type <span class="math inline">\sigma t</span>, Atomicity at type <span class="math inline">t</span>, Relational Choice at types <span class="math inline">t,\sigma t</span>, and Weak Rigid Comprehension at <span class="math inline">(\sigma t)t</span>. Only T and 4 are needed from the modal logic. An <em>atom</em> below is an atom of type <span class="math inline">t</span>, and <span class="math inline">\operatorname{SelfAtom}_{\sigma t}(X):=X\ne\bot\land\Box(\exists y\, .\,Xy\to\operatorname{Atom}_{\sigma t}(X))</span>.</p>
 <h2 id="the-construction">The construction</h2>
-<p>Put <span class="math display">U:=\lambda wX\,
-.\,\operatorname{Atom}(w)\to\bigl(\operatorname{SelfAtom}_{\sigma
-t}(X)\land X\le\lambda y\, .\,w\land Fy\bigr).</span> It is serial: for
-an atom <span class="math inline">w</span>, <span
-class="math inline">\Diamond w</span> and <span
-class="math inline">\Box\exists y\, .\,Fy</span> give <span
-class="math inline">\Diamond\exists y\, .\,(w\land Fy)</span>, so <span
-class="math inline">\lambda y\, .\,w\land Fy</span> is not bottom and
-Self-Atomicity gives a self-atom below it. Relational Choice gives a
-functional <span class="math inline">V</span> with <span
-class="math inline">VwX\to UwX</span>; write <span
-class="math inline">X_w</span> for the value at an atom <span
-class="math inline">w</span>. Weak Rigid Comprehension gives a weakly
-rigid <span class="math inline">R</span> coextensive with <span
-class="math inline">\lambda X\, .\,\exists w\,
-.\,\operatorname{Atom}(w)\land VwX</span>, and <span
-class="math inline">G:=\lambda y\, .\,\exists X\, .\,RX\land
-Xy</span>.</p>
-<h2 id="two-facts-about-the-actual-instances">Two facts about the actual
-instances</h2>
-<p><strong>(a)</strong> For every atom <span
-class="math inline">w</span>, <span class="math inline">\Box(X_w\le
-F)</span> and <span class="math inline">\Box\Box(\exists y\,
-.\,X_wy\to\operatorname{Atom}_{\sigma t}(X_w))</span>: the first since
-<span class="math inline">\le</span> is boxed and 4, the second by 4 on
-the self-atom clause. By weak inextensibility of <span
-class="math inline">R</span>, <span class="math display">\Box\forall X\,
-.\,RX\to\bigl(X\le F\land\Box(\exists y\,
-.\,Xy\to\operatorname{Atom}_{\sigma t}(X))\bigr).</span></p>
-<p><strong>(b)</strong> For all atoms <span
-class="math inline">w,w&#39;</span>, <span
-class="math inline">\Box\bigl(X_w=X_{w&#39;}\lor\neg(\exists y\,
-.\,X_wy\land\exists z\, .\,X_{w&#39;}z)\bigr)</span>, exactly as in
-Strong Atomicity write-up: distinct atoms are disjoint, and <span
-class="math inline">X_w\le\lambda y\, .\,w</span>. This is where the
-indices must be atoms rather than self-atoms, which may overlap.</p>
-<p>The pair lemma of that write-up then gives <span
-class="math inline">\Box\forall XX&#39;\, .\,RX\land RX&#39;\to
-X=X&#39;\lor\neg(\text{both instantiated})</span>.</p>
+<p>Put <span class="math display">U:=\lambda wX\, .\,\operatorname{Atom}(w)\to\bigl(\operatorname{SelfAtom}_{\sigma t}(X)\land X\le\lambda y\, .\,w\land Fy\bigr).</span> It is serial: for an atom <span class="math inline">w</span>, <span class="math inline">\Diamond w</span> and <span class="math inline">\Box\exists y\, .\,Fy</span> give <span class="math inline">\Diamond\exists y\, .\,(w\land Fy)</span>, so <span class="math inline">\lambda y\, .\,w\land Fy</span> is not bottom and Self-Atomicity gives a self-atom below it. Relational Choice gives a functional <span class="math inline">V</span> with <span class="math inline">VwX\to UwX</span>; write <span class="math inline">X_w</span> for the value at an atom <span class="math inline">w</span>. Weak Rigid Comprehension gives a weakly rigid <span class="math inline">R</span> coextensive with <span class="math inline">\lambda X\, .\,\exists w\, .\,\operatorname{Atom}(w)\land VwX</span>, and <span class="math inline">G:=\lambda y\, .\,\exists X\, .\,RX\land Xy</span>.</p>
+<h2 id="two-facts-about-the-actual-instances">Two facts about the actual instances</h2>
+<p><strong>(a)</strong> For every atom <span class="math inline">w</span>, <span class="math inline">\Box(X_w\le F)</span> and <span class="math inline">\Box\Box(\exists y\, .\,X_wy\to\operatorname{Atom}_{\sigma t}(X_w))</span>: the first since <span class="math inline">\le</span> is boxed and 4, the second by 4 on the self-atom clause. By weak inextensibility of <span class="math inline">R</span>, <span class="math display">\Box\forall X\, .\,RX\to\bigl(X\le F\land\Box(\exists y\, .\,Xy\to\operatorname{Atom}_{\sigma t}(X))\bigr).</span></p>
+<p><strong>(b)</strong> For all atoms <span class="math inline">w,w&#39;</span>, <span class="math inline">\Box\bigl(X_w=X_{w&#39;}\lor\neg(\exists y\, .\,X_wy\land\exists z\, .\,X_{w&#39;}z)\bigr)</span>, exactly as in Strong Atomicity write-up: distinct atoms are disjoint, and <span class="math inline">X_w\le\lambda y\, .\,w</span>. This is where the indices must be atoms rather than self-atoms, which may overlap.</p>
+<p>The pair lemma of that write-up then gives <span class="math inline">\Box\forall XX&#39;\, .\,RX\land RX&#39;\to X=X&#39;\lor\neg(\text{both instantiated})</span>.</p>
 <h2 id="verification">Verification</h2>
-<p><strong><span class="math inline">G\le F</span>.</strong> From (a),
-necessarily an instance <span class="math inline">X</span> of <span
-class="math inline">R</span> has <span class="math inline">X\le
-F</span>, so <span class="math inline">Gy</span> gives <span
-class="math inline">Fy</span> by T.</p>
-<p><strong><span class="math inline">\Box\exists y\,
-.\,Gy</span>.</strong> As in Strong Atomicity write-up, using Atomicity
-(type <span class="math inline">t</span>): an atom <span
-class="math inline">w_0\le\neg\exists y\, .\,Gy</span> would have <span
-class="math inline">\Box RX_{w_0}</span> by weak persistence, <span
-class="math inline">\Diamond\exists y\, .\,X_{w_0}y</span> since <span
-class="math inline">X_{w_0}\ne\bot</span>, and <span
-class="math inline">X_{w_0}\le\lambda y\, .\,w_0</span>, so <span
-class="math inline">\Diamond(w_0\land\exists y\, .\,Gy)</span>.</p>
-<p><strong>Necessarily at most one instance.</strong> Reason inside the
-box. Suppose <span class="math inline">Gy</span> and <span
-class="math inline">Gz</span>, with <span class="math inline">RX</span>,
-<span class="math inline">Xy</span>, <span
-class="math inline">RX&#39;</span> and <span
-class="math inline">X&#39;z</span>. The pair lemma gives <span
-class="math inline">X=X&#39;</span>. By (a), <span
-class="math inline">X</span> is instantiated here, so <span
-class="math inline">\operatorname{Atom}_{\sigma t}(X)</span> holds here,
-and an atom lies below every property or its negation: <span
-class="math inline">X\le\lambda u\, .\,u=y</span> or <span
-class="math inline">X\le\lambda u\, .\,u\ne y</span>. The second
-contradicts <span class="math inline">Xy</span> by T, so the first
-holds, and <span class="math inline">Xz</span> gives <span
-class="math inline">z=y</span>.</p>
-<p>So <span class="math inline">G\le F</span> and <span
-class="math inline">\Box\exists y\, .\,(Gy\land\forall z\, .\,Gz\to
-z=y)</span>. ∎</p>
+<p><strong><span class="math inline">G\le F</span>.</strong> From (a), necessarily an instance <span class="math inline">X</span> of <span class="math inline">R</span> has <span class="math inline">X\le F</span>, so <span class="math inline">Gy</span> gives <span class="math inline">Fy</span> by T.</p>
+<p><strong><span class="math inline">\Box\exists y\, .\,Gy</span>.</strong> As in Strong Atomicity write-up, using Atomicity (type <span class="math inline">t</span>): an atom <span class="math inline">w_0\le\neg\exists y\, .\,Gy</span> would have <span class="math inline">\Box RX_{w_0}</span> by weak persistence, <span class="math inline">\Diamond\exists y\, .\,X_{w_0}y</span> since <span class="math inline">X_{w_0}\ne\bot</span>, and <span class="math inline">X_{w_0}\le\lambda y\, .\,w_0</span>, so <span class="math inline">\Diamond(w_0\land\exists y\, .\,Gy)</span>.</p>
+<p><strong>Necessarily at most one instance.</strong> Reason inside the box. Suppose <span class="math inline">Gy</span> and <span class="math inline">Gz</span>, with <span class="math inline">RX</span>, <span class="math inline">Xy</span>, <span class="math inline">RX&#39;</span> and <span class="math inline">X&#39;z</span>. The pair lemma gives <span class="math inline">X=X&#39;</span>. By (a), <span class="math inline">X</span> is instantiated here, so <span class="math inline">\operatorname{Atom}_{\sigma t}(X)</span> holds here, and an atom lies below every property or its negation: <span class="math inline">X\le\lambda u\, .\,u=y</span> or <span class="math inline">X\le\lambda u\, .\,u\ne y</span>. The second contradicts <span class="math inline">Xy</span> by T, so the first holds, and <span class="math inline">Xz</span> gives <span class="math inline">z=y</span>.</p>
+<p>So <span class="math inline">G\le F</span> and <span class="math inline">\Box\exists y\, .\,(Gy\land\forall z\, .\,Gz\to z=y)</span>. ∎</p>
 <h2 id="remark">Remark</h2>
-<p>Strong Atomicity write-up explains why an atom of type <span
-class="math inline">\sigma t</span> would not do: it settles only actual
-properties, while the uniqueness step needs the haecceity of an instance
-at another world. A self-atom settles every property at the worlds where
-it is instantiated, and those are the only worlds the step visits.</p>
+<p>Strong Atomicity write-up explains why an atom of type <span class="math inline">\sigma t</span> would not do: it settles only actual properties, while the uniqueness step needs the haecceity of an instance at another world. A self-atom settles every property at the worlds where it is instantiated, and those are the only worlds the step visits.</p>
 </body></html>

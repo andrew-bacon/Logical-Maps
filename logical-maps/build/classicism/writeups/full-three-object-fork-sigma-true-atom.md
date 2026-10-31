@@ -8,7 +8,7 @@
 - **Second-Order Analytic Necessitism.** If there could be a real number structure, there is a rigid one, necessarily a real number structure, together with represented powers of every arity up to $n$: rigid properties of rigid relations among the structure's elements that necessarily represent every relation on them. One sentence for each type $\sigma$ and each $n\ge1$.
 - **Necessity of Second-Order Analysis.** Every second-order analytical sentence is either true in every real number structure in every possible world or false in every real number structure in every possible world. One sentence for each type $\sigma$ and each second-order analytical sentence.
 - **Arithmetic Necessitism.** Given that necessarily zero is not a successor and successor is injective on numbers, the numbers at $\sigma$ form a rigid property with necessarily distinct instances. One sentence for each type $\sigma$.
-- **Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
+- **Truths are ND-necessary.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **□Atomicity.** Necessarily, every non-bottom entity of each relational type has an atom below it.
 - **Self-atoms are atoms.** At each relational type, every self-atom is an atom.
 - **□Rigid Comprehension.** Necessarily, every relation, including a proposition, is coextensive with a rigid one.
@@ -23,7 +23,7 @@
 - **Strong Actuality.** There is a true strong atom: a true proposition that necessarily entails every proposition or its negation.
 - **□Strong Actuality.** Necessarily, there is a true strong atom: a true proposition that necessarily entails every proposition or its negation.
 - **Transversal Choice.** Every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
-- **□Two-hat necessity implies ND-necessity.** Necessarily, whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat. In C this is the identity $\hat{\hat\Box}=\Box_{\ne}$.
+- **□Two-hat necessities are ND-necessary.** Necessarily, whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat. In C this is the identity $\hat{\hat\Box}=\Box_{\ne}$.
 - **¬ □Self-atoms are atoms (type t).** Necessarily, every self-atom is an atom.
 - **¬ Possible Infinity (type t).** Possibly there are not finitely many propositions: the Axiom of Infinity at this type, under a diamond.
 - **¬ Infinity Schema (type t).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
@@ -74,7 +74,7 @@ The numbers at a type $\sigma$ are the instances of $\mathbb N_\sigma$, the leas
 
 *General argument `arguments/arithmetic-necessitism-extensionally-full`. It requires that The model is extensionally full at every object: every set of tuples from the domains at an object is the extension, at the identity arrow, of an element of the domain of the matching relational type there. Here: A full model contains every intension, so in particular one with any given extension at the identity. By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-23.*
 
-### Holds Truth implies ND-necessity.
+### Holds Truths are ND-necessary.
 
 For a true $p$, $a\le p$, since $a$ entails every truth. Take $q:=a$ in the definition of $\Box_{\ne}p$: at a world in $a$, $p$ holds; at a world outside $a$, $\Diamond a$ fails. So every truth is $\Box_{\ne}$-necessary.
 
@@ -238,7 +238,7 @@ For an equivalence relation at the evaluation point, a transversal of its extens
 
 *Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* Moved from the group finite-support-one-object to the topic. Its first sentence, deriving extensional fullness from ideal fullness, is now the group's reason for meeting extensionally-full.
 
-### Holds □Two-hat necessity implies ND-necessity.
+### Holds □Two-hat necessities are ND-necessary.
 
 In a full action model the actual-world proposition $\{1\}$ is in the domain at every object. Taking it as the witness, $\Box_{\ne}p$ holds at an identity iff $p$ contains every arrow out of that object with a retraction (these are the arrows at which $\Diamond\{1\}$ holds), and $\hat{\hat\Box}p$ iff $p$ contains every invertible arrow out of it (an arrow lies in $\hat\Diamond\{1\}$ iff some retraction of it has a retraction, i.e. iff it is invertible). Full models satisfy necessary Actuality, so $\Box_5=\hat{\hat\Box}$ by Proposition D21 of The Bounds of Possibility. When every retracted arrow is invertible, the two boxes coincide at every reachable object, so $\Box_{\ne}=\hat{\hat\Box}$.
 

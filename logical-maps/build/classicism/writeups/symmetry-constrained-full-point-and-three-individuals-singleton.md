@@ -6,6 +6,11 @@
 
 - **□Strong Actuality.** Necessarily, there is a true strong atom: a true proposition that necessarily entails every proposition or its negation.
 - **Plenitude.** Every total single-valued binary relation is represented by an operation. Its output type is relational, as required by the type system.
+- **□Truths are two-hat necessary.** Necessarily, every truth is two-hat necessary. In C this is the identity $\hat{\hat\Box}=\lambda p\, .\,p$.
+- **□Rigid Comprehension.** Necessarily, every relation, including a proposition, is coextensive with a rigid one.
+- **□Tame Rigidity.** Necessarily, every weakly rigid relation, including a proposition, is rigid.
+- **□Boolean Completeness.** Necessarily, every property of entities of a relational type has a greatest lower bound in that type.
+- **□Well-Ordering.** Necessarily, every type, including e, is well-ordered by some relation.
 - **Atomicity.** Every non-bottom entity of each relational type has an atom below it.
 - **□Atomicity.** Necessarily, every non-bottom entity of each relational type has an atom below it.
 - **□Actuality.** Necessarily, there is a true proposition that entails every true proposition.
@@ -28,6 +33,7 @@
 - **¬ Infinity Schema (type t).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
 - **¬ Self-Atomicity (type t).** Every possible proposition is entailed by a self-atom: a possible proposition that necessarily, if true, is an atom, that is, one that entails that it is the actual world.
 - **¬ Atoms are self-atoms (type t).** Every atom is a self-atom: necessarily, if it is true, it is an atom.
+- **¬ Possible Infinity (type t).** Possibly there are not finitely many propositions: the Axiom of Infinity at this type, under a diamond.
 - **¬ Witnessed Possibility.** For pure-formulas P with free variables among a finite tuple x, and distinct matching nonlogical constants c, a witness to P entails that P at those constants is possible.
 - **¬ Separated Structure.** For each typed nonlogical constant c and closed same-typed terms F,G not containing c, equality after application to c implies equality of F and G.
 - **¬ Independence (signature Σ).** No constant of Sigma is a pure operation applied to other constants: for a closed pure term A and distinct constants c, d_1,…,d_n with n ≥ 0, c differs from A applied to the d’s. With n = 0, no constant denotes a pure entity.
@@ -35,7 +41,7 @@
 
 ## Definition
 
-The arrows are all maps between $W_0=\{x\}$ and $X$: the identity of $W_0$, the three maps $h_n:x\mapsto n$ into $X$, the map from $X$ to $W_0$, and all $27$ maps from $X$ to itself. The arrows act on a three-element set $X$, and $G$ is the group of all its permutations, which are arrows in every member. An intension $D$ of a relational type is admitted exactly when it is symmetric: $\langle\bar x,h\rangle\in D$ implies $\langle g\cdot\bar x,g\circ h\rangle\in D$ for every $g\in G$, where $g$ acts on individuals as itself and on entities of higher types by relabelling (Dorr's Definition 17). At a collapse $c_i$, the constant map with value $i$, it says that $D(c_{g(i)})=g\cdot D(c_i)$. Every such domain is finite and closed under the operations of C: each $g$ is an automorphism of the whole structure, and every parameter transported along a collapse is fixed by $G$, so the extension at a collapse of any definable intension is invariant. The member has two objects, $W_0$ with a single point $x$, and $X$; the arrows are all maps between them, and the symmetry group at $W_0$ is trivial, so the condition bites at the arrows into $X$. Evaluation point: $W_0$, at its identity arrow.
+The arrows are all maps between $W_0=\{x\}$ and $X$: the identity of $W_0$, the three maps $h_n:x\mapsto n$ into $X$, the map from $X$ to $W_0$, and all $27$ maps from $X$ to itself. The arrows act on a three-element set $X$, and $G$ is the group of all its permutations, which are arrows in every member. An intension $D$ of a relational type is admitted exactly when it is symmetric: $\langle\bar x,h\rangle\in D$ implies $\langle g\cdot\bar x,g\circ h\rangle\in D$ for every $g\in G$, where $g$ acts on individuals as itself and on entities of higher types by relabelling (Dorr's Definition 17). At a collapse $c_i$, the constant map with value $i$, it says that $D(c_{g(i)})=g\cdot D(c_i)$. Every such domain is finite and closed under the operations of C: each $g$ is an automorphism of the whole structure, and every parameter transported along a collapse is fixed by $G$, so the extension at a collapse of any definable intension is invariant. The member has two objects, $W_0$ with a single point $x$, and $X$; the symmetry group at $W_0$ is trivial, so the condition bites at the arrows into $X$. Evaluation point: $W_0$, at its identity arrow.
 
 Individuals, fixed for this record: there is a single individual, which every arrow fixes; the arrows still act on the three-element set $X$, which supplies the symmetry.
 
@@ -62,6 +68,24 @@ At $W_0$ there is one individual, and at every world at most three, with literal
 ND holds at $W_0$: transport along $h_n$ determines an entity $Y$ at $W_0$ at every world, since $(h_n\cdot Y)_k=Y_{k\circ h_n}$ and $k\circ h_n$ is $1_{W_0}$ for the map back to $W_0$ and $h_m$ for each $m$ as $k$ ranges over the maps on $X$; so distinct entities stay distinct at every world. Given $U$ functional at the identity with values $Z_y$, put $X_k:=\{(k\cdot y,\bar a):\bar a\in (Z_y)_k\}$, well defined by ND, symmetric because each $Z_y$ is, and so in the full domain; and $Xy=Z_y$.
 
 *Address: `symmetry-constrained-full-point-and-three-individuals-singleton#plenitude`. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-16.*
+
+### Holds □Truths are two-hat necessary.
+
+At $W_0$, with $q:=\{1_{W_0}\}$, at each $h_n$ the transport of $\neg q$ is the self-maps of $X$, ND-necessary at $1_X$ with the permutations as witness, since from the map back to $W_0$ one sees only it and constant maps; so $\Diamond_{\ne}q$ fails at every $h_n$ and every truth at $W_0$ is two-hat necessary. At $X$ the permutations form a true proposition possible only at permutations, so every truth there is ND-necessary. (Checked by brute force over the finite domains.)
+
+*Address: `symmetry-constrained-full-point-and-three-individuals-singleton#two-hat`. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-29.*
+
+### Holds □Rigid Comprehension, □Tame Rigidity, □Boolean Completeness.
+
+At either object the exact image $h\mapsto h\cdot E$ of an extension $E$ is symmetric, so in the domain, rigid and coextensive with any relation with extension $E$; a weakly rigid relation is that exact image. The domains are finite and closed under joins, so every property has a least upper bound.
+
+*Address: `symmetry-constrained-full-point-and-three-individuals-singleton#rigid-comprehension-exact-images`. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-29.*
+
+### Holds □Well-Ordering.
+
+At either object every set of tuples at the identity is an extension (at $W_0$ with $\varnothing$ at the $h_n$; at $X$ with $g\cdot E$ at each permutation $g$ and $\varnothing$ elsewhere, which is symmetric). The domains are finite, so well-orders exist and are extensions.
+
+*Address: `symmetry-constrained-full-point-and-three-individuals-singleton#well-ordering`. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-29.*
 
 ### Holds Atomicity.
 
@@ -103,7 +127,7 @@ There are finitely many propositions, $n$ say, with literal identity. The numera
 
 At every object the atoms are the orbits of single pairs under the symmetry group. The orbit $C$ of a collapse $c$ (in the two-object member, of the arrows $c_i:W_0\to X$) is an atom; its transport along $c$ is the set of arrows $m$ with $m\circ c$ in $C$, which includes every arrow $X\to X$, since $m\circ c$ is again a collapse, and so is not an atom there, the orbit of the permutations being a proper symmetric part. So $C$ is an atom and not a self-atom, and the only possible proposition below $C$ is $C$ itself: Atoms are self-atoms (type t) and Self-Atomicity (type t) fail. Conversely a self-atom $I$ at a relational type has, at each of its pairs $\langle k,\bar a\rangle$, a transport along $k$ that is an atom containing $\langle1,\cdot\rangle$, hence the orbit of the identity; so $m\circ k$ carries a pair of $I$ only for symmetries $m$, which excludes collapses ($c\circ c=c$) and leaves pairs at permutations, where symmetry makes $I$ the orbit of one pair, an atom, whose transport along a collapse is empty and along a permutation is an atom again: a strong atom. The same holds at every reachable object, the domains being the symmetric intensions everywhere.
 
-*From the group *Symmetry-constrained full models*, shared argument `symmetry-constrained-full#self-atoms`. By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026.*
+*From the group *Symmetry-constrained full models*, shared argument `symmetry-constrained-full#self-atoms`. It requires that Some arrow $c$ out of the evaluation object is absorbed by an arrow $m$ out of its codomain that is not a symmetry: $m\circ c$ lies in the orbit of $c$ under the symmetry group. Here: The arrow $h_n$ is absorbed by the constant map $c_n$ of $X$ with value $n$, $c_n\circ h_n=h_n$, which is not a permutation. By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026.*
 
 ### Holds Analytic Necessitism, Second-Order Analytic Necessitism, Necessity of Second-Order Analysis.
 
@@ -116,6 +140,12 @@ Every type is finite at every object $v$ reachable from the evaluation point, by
 The numbers at a type $\sigma$ are the instances of $\mathbb N_\sigma$, the least property containing $\mathbf 0_\sigma$ and closed under $\operatorname{Suc}_\sigma$ (Background); the numerals $\mathbf 0_\sigma$, $\operatorname{Suc}_\sigma\mathbf 0_\sigma,\ldots$ are closed terms, so each denotes at every object, and transport along an arrow carries its denotation at the source to its denotation at the target. At any object $v$ reachable from the evaluation point, extensional fullness gives a property whose extension at $v$ is exactly the numerals there; it contains $\mathbf 0_\sigma$ and is closed under successor, so the numbers at $v$ are exactly the numerals, every numeral being an instance of every inductive property. Persistence of $\mathbb N_\sigma$ and, given $\Box I^*_\sigma$, the necessary distinctness of the numbers are theorems of C (the proof of necessary-rigid-comprehension-implies-arithmetic-necessitism). Inextensibility, $\Box\forall X\,.\,(\forall n\,.\,\mathbb N_\sigma n\to\Box Xn)\to\mathbb N_\sigma\le X$: at a reachable $v$ and for an arrow $j$ from $v$ to $u$, the numbers at $u$ are the numerals there, which are the transports along $j$ of the numbers at $v$, so any $X$ that necessarily holds of the numbers at $v$ holds at $u$ of the numbers there. So $\mathbb N_\sigma$ is rigid, and Arithmetic Necessitism holds at every type. No choice is used.
 
 *General argument `arguments/arithmetic-necessitism-extensionally-full`. It requires that The model is extensionally full at every object: every set of tuples from the domains at an object is the extension, at the identity arrow, of an element of the domain of the matching relational type there. Here: Any set $S$ of tuples at the identity of $W_0$ is the extension there of a symmetric intension: put $S$ at the identity and the empty set at the arrows into $X$. By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-23.*
+
+### Fails Possible Infinity (type t).
+
+At a world with $n$ propositions, the numeral $\operatorname{Suc}^n_t\mathbf{0}_t$, a finite cardinality, holds of the universal property of propositions, so the Axiom of Infinity at type $t$ fails there. It fails at every world, so Possible Infinity at type $t$ fails.
+
+*General argument `arguments/finitely-many-propositions-everywhere`. It requires that There are finitely many propositions at every object reachable from the evaluation point. Here: Four propositions at $W_0$, sixty-four at $X$. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-06.*
 
 ### Fails Axiom of Infinity (type e), Infinity Schema (type e), Possible Infinity (type e).
 

@@ -4,6 +4,8 @@
 
 ## Package
 
+- **Axiom of Infinity (type t).** There are not finitely many propositions. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
+- **Forcing Possibilism.** Every complete Boolean algebra that is finite or has strictly fewer elements than there are propositions is isomorphic to the entailment algebra below some proposition other than top.
 - **□Functional Choice.** Necessarily, every serial binary relation admits a selecting operation. Its output type is relational, as required by the type system.
 - **□Intensional Choice.** Necessarily, if a property is necessarily instantiated, then some property entailing it is necessarily uniquely instantiated.
 - **□BF.** Necessarily, the Barcan Formula holds at every type. The predicate formulation closes the formula schema using lambda abstraction.
@@ -14,8 +16,6 @@
 - **□Strong Atomicity.** Necessarily, at each relational type, every possible entity (one distinct from bottom) is entailed by a strong atom: a possible entity that necessarily entails every entity of the type or its negation.
 - **□Well-Ordering.** Necessarily, every type, including e, is well-ordered by some relation.
 - **No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
-- **Axiom of Infinity (type t).** There are not finitely many propositions. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
-- **Forcing Possibilism.** Every complete Boolean algebra that is finite or has strictly fewer elements than there are propositions is isomorphic to the entailment algebra below some proposition other than top.
 - **Infinity Schema (type e).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
 - **No Contingency (signature Σ).** Each closed sentence of the language of the fixed signature Sigma, if true, is necessary. A sentence schema, standing to No Pure Contingency as Possibility Maximalism (signature Σ) stands to Possibility Maximalism (pure).
 - **B for sentences of Σ.** The B instance for every closed sentence of the language of the fixed signature Sigma.
@@ -27,15 +27,17 @@
 
 ## Definition
 
-As ultraproduct-finite-full-s5, with factors $M_n$ the full S5 models with the worlds $\mathbb N$ and $n$ individuals: the full action model on the category with objects $\mathbb N$ and exactly one arrow between any two, the same $n$ individuals at every object, fixed by every arrow. $M:=\prod_nM_n/U$ for a nonprincipal ultrafilter $U$ on the positive integers, a Henkin model of C in which a sentence is true iff it is true in $U$-many $M_n$.
+For $n\ge1$ let $M_n$ be the full S5 model with the worlds $\mathbb N$ and $n$ individuals: the full action model on a category in which there is exactly one arrow between any two objects, with the same $n$ individuals at every object, fixed by every arrow, evaluated at one object. Regard each $M_n$ as a many-sorted first-order structure, with a sort for each type, application, the logical constants, the constants of Σ, and a predicate $T$ on the sort of $t$ for truth at the evaluation object. Let $U$ be a nonprincipal ultrafilter on the positive integers, and $M:=\prod_nM_n/U$, the evaluation point being the class of the factors' evaluation objects. By Łoś's theorem a first-order sentence holds in $M$ iff it holds in $M_n$ for $U$-many $n$. $M$ is a Henkin model of C, and a sentence of the object language is true in $M$ iff it is true in $U$-many $M_n$ (see the write-up). It is not full.
 
-Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each denotes the top element of its type in every factor, hence in $M$.
+Interpretation of Σ, fixed for these records: every constant of Σ is relational, and each denotes the top element of its type in every factor, hence in $M$.
+
+*A member of the group Ultraproducts of full S5 models, which supplies this definition with the record's settings, and the arguments marked as shared.*
 
 ## Arguments
 
-### Holds □Functional Choice, □Intensional Choice, □BF, □ND, □Atomicity, □Actuality, □Rigid Comprehension, □Strong Atomicity, □Well-Ordering, No Pure Contingency, Axiom of Infinity (type t).
+### Holds Axiom of Infinity (type t).
 
-As for ultraproduct-finite-full-s5, each instance holds in every factor: the factors are full, with constant domains, crisp identity, atomic algebras whose atoms are the worlds, and automorphisms taking any world to any other. In each factor there are infinitely many propositions, and the finite cardinalities, the domains being full, are the standard ones, so the Axiom of Infinity (type $t$) is true in each factor, hence in $M$.
+In each factor there are infinitely many propositions, and the finite cardinalities, the domains being full, are the standard ones, so the Axiom of Infinity (type $t$) is true in each factor, hence in $M$.
 
 *Write-up: [ultraproduct-finite-full-s5](ultraproduct-finite-full-s5.html). By GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 23 October 2026, 2026-10-25.*
 
@@ -45,17 +47,23 @@ In each factor the propositions are the $2^{\aleph_0}$ subsets of $\mathbb N$, a
 
 *Write-up: [ultraproduct-finite-full-s5](ultraproduct-finite-full-s5.html). By GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 23 October 2026, 2026-10-25.*
 
+### Holds □Functional Choice, □Intensional Choice, □BF, □ND, □Atomicity, □Actuality, □Rigid Comprehension, □Strong Atomicity, □Well-Ordering, No Pure Contingency.
+
+Each instance of each of these schemata is a sentence true in every factor, so true in $M$. The full domains contain every function, which gives the choice principles, Rigid Comprehension and Well-Ordering; constant domains give BF; identity is crisp, which gives ND; the algebras are atomic, the worlds being the atoms and every true proposition entailed by the actual one; and any two worlds are related by an automorphism, so a true pure sentence is necessary. All of this holds at every world.
+
+*Write-up: [ultraproduct-finite-full-s5](ultraproduct-finite-full-s5.html). From the group *Ultraproducts of full S5 models*, shared argument `s5-ultraproducts#transfer`. By GPT-6 Astra (OpenAI), prompted by Daniel Kodsi; checked and recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-25.*
+
 ### Holds Infinity Schema (type e).
 
-The instance asking for $k$ distinct individuals holds in $M_n$ for $n\ge k$.
+The instance of the Infinity Schema (type $e$) asking for $k$ distinct individuals holds in $M_n$ for $n\ge k$, a cofinite set of $n$, hence in $U$.
 
-*Write-up: [ultraproduct-finite-full-s5](ultraproduct-finite-full-s5.html). By GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 23 October 2026, 2026-10-25.*
+*Write-up: [ultraproduct-finite-full-s5](ultraproduct-finite-full-s5.html). From the group *Ultraproducts of full S5 models*, shared argument `s5-ultraproducts#infinity-e`. By GPT-6 Astra (OpenAI), prompted by Daniel Kodsi; checked and recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-25.*
 
 ### Fails Possible Infinity (type e).
 
-In $M_n$, at every world, the $n$-th finite cardinality counts the universal property of individuals, so $\Box\exists Z\, .\,\operatorname{FiniteCardinality}_e(Z)\land Z(\lambda u\, .\,\top)$ is true in every factor, hence in $M$.
+In $M_n$, at every world, the domains being full, the finite cardinalities are the standard ones, and the $n$-th counts the universal property of individuals. So $\Box\exists Z\, .\,\operatorname{FiniteCardinality}_e(Z)\land Z(\lambda u\, .\,\top)$ is true in every factor, hence in $M$, where the witnessing cardinality is nonstandard.
 
-*Write-up: [ultraproduct-finite-full-s5](ultraproduct-finite-full-s5.html). By GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 23 October 2026, 2026-10-25.*
+*Write-up: [ultraproduct-finite-full-s5](ultraproduct-finite-full-s5.html). From the group *Ultraproducts of full S5 models*, shared argument `s5-ultraproducts#possible-infinity-e`. By GPT-6 Astra (OpenAI), prompted by Daniel Kodsi; checked and recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-25.*
 
 ### Holds No Contingency (signature Σ), B for sentences of Σ.
 

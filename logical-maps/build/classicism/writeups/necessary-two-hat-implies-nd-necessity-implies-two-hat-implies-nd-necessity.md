@@ -1,14 +1,14 @@
-# □Two-hat necessity implies ND-necessity ⇒ Two-hat necessity implies ND-necessity
+# □Two-hat necessities are ND-necessary ⇒ Two-hat necessities are ND-necessary
 
 <p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_two_hat_implies_nd_necessity_implies_two_hat_implies_nd_necessity`; produced by Claude Fable 5.1 (Anthropic), 14 October 2026, at Cian Dorr's direction; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
 
 ## Premises
 
-- **□Two-hat necessity implies ND-necessity.** Necessarily, whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat. In C this is the identity $\hat{\hat\Box}=\Box_{\ne}$.
+- **□Two-hat necessities are ND-necessary.** Necessarily, whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat. In C this is the identity $\hat{\hat\Box}=\Box_{\ne}$.
 
 ## Conclusion
 
-- **Two-hat necessity implies ND-necessity.** Whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat.
+- **Two-hat necessities are ND-necessary.** Whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat.
 
 ## Proof
 

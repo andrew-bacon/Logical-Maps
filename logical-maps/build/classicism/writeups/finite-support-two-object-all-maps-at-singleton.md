@@ -11,6 +11,13 @@
 - **Actuality.** There is a true proposition that entails every true proposition.
 - **Possible Infinity (type e).** Possibly there are not finitely many individuals: the Axiom of Infinity at this type, under a diamond.
 - **Plenitude.** Every total single-valued binary relation is represented by an operation. Its output type is relational, as required by the type system.
+- **□5-necessities are two-hat necessary.** Necessarily, whatever is 5-necessary is two-hat necessary. In C this is the identity $\Box_5=\hat{\hat\Box}$.
+- **□Rigid Power.** Necessarily, if a relation is rigid, so is the property of being a rigid relation that entails it.
+- **Tame Rigidity.** Every weakly rigid relation, including a proposition, is rigid.
+- **Truths are two-hat necessary.** Every truth is two-hat necessary.
+- **Forcing Possibilism.** Every complete Boolean algebra that is finite or has strictly fewer elements than there are propositions is isomorphic to the entailment algebra below some proposition other than top.
+- **Analytic Necessitism.** If there could be a real number structure, there is a rigid one that is necessarily a real number structure: a rigid property with necessarily distinct instances, with rigid order, addition, multiplication and natural numbers, which necessarily form a complete ordered field. One sentence for each type $\sigma$.
+- **Second-Order Analytic Necessitism.** If there could be a real number structure, there is a rigid one, necessarily a real number structure, together with represented powers of every arity up to $n$: rigid properties of rigid relations among the structure's elements that necessarily represent every relation on them. One sentence for each type $\sigma$ and each $n\ge1$.
 - **Arithmetic Necessitism.** Given that necessarily zero is not a successor and successor is injective on numbers, the numbers at $\sigma$ form a rigid property with necessarily distinct instances. One sentence for each type $\sigma$.
 - **□Intensional Choice.** Necessarily, if a property is necessarily instantiated, then some property entailing it is necessarily uniquely instantiated.
 - **□Relational Choice.** Necessarily, every serial binary relation has a functional subrelation.
@@ -23,7 +30,11 @@
 - **¬ No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
 - **¬ BF.** The Barcan Formula at every type. The predicate formulation closes the formula schema using lambda abstraction.
 - **¬ Infinity Schema (type e).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
-- **¬ Analytic Necessitism.** If there could be a real number structure, there is a rigid one that is necessarily a real number structure: a rigid property with necessarily distinct instances, with rigid order, addition, multiplication and natural numbers, which necessarily form a complete ordered field. One sentence for each type $\sigma$.
+- **¬ □Countable Boolean Completeness.** Necessarily, every countable property of entities of a relational type has a least upper bound in that type, with countability relative to a type $\sigma$ as in Countable Boolean Completeness; one instance for each $\sigma$.
+- **¬ □Truths are two-hat necessary.** Necessarily, every truth is two-hat necessary. In C this is the identity $\hat{\hat\Box}=\lambda p\, .\,p$.
+- **¬ □Vicinity.** Necessarily, there is a true proposition that entails the possibility of each true proposition.
+- **¬ □Weakly Inextensible Comprehension.** Necessarily, every relation, including a proposition, is coextensive with a weakly inextensible one.
+- **¬ □Weakly Rigid Power.** Necessarily, if a relation is weakly rigid, so is the property of being a weakly rigid relation that entails it.
 - **¬ Witnessed Possibility.** For pure-formulas P with free variables among a finite tuple x, and distinct matching nonlogical constants c, a witness to P entails that P at those constants is possible.
 - **¬ Separated Structure.** For each typed nonlogical constant c and closed same-typed terms F,G not containing c, equality after application to c implies equality of F and G.
 - **¬ Independence (signature Σ).** No constant of Sigma is a pure operation applied to other constants: for a closed pure term A and distinct constants c, d_1,…,d_n with n ≥ 0, c differs from A applied to the d’s. With n = 0, no constant denotes a pure entity.
@@ -73,9 +84,41 @@ ND holds at $W_1$: $(c_n\cdot Y)_k=Y_{k\circ c_n}$, and $k\circ c_n$ is $1_{W_1}
 
 ### Fails Analytic Necessitism.
 
+*Withdrawn 2026-10-29 by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, after a trawl subagent's report: The step from the equality of transports to membership in the carrier by inextensibility does not follow: inextensibility bounds a rigid carrier from above, by the transports of its actual instances, and puts nothing new into its actual extension.*
+
 At $W_1$, at type $t$. The propositions at $W_1$ are all the sets of its arrows out, the identity and the $c_n$, each such set being pinned down by $\{0\}$; they are continuum many, and the model being extensionally full at $W_1$ there is a real number structure of propositions there, complete since every subset of its carrier is the extension of a subproperty. Suppose $\mathfrak R$ were a rigid one, necessarily a real number structure, with carrier $X$. Its boxed clauses hold at $c_1$ and along the arrows after it, and $X_{c_1}$, its instances at $W_0$, is a complete ordered field there. But no proposition $x$ at $W_0$ is determined by its transport along the arrow $k$ of $W_0$ collapsing $0$ and $1$: with $q$ the set of arrows out of $W_0$ separating $0$ from $1$, pinned down by $\{0,1\}$ and containing no arrow after $k$, $y:=x\mathbin{\triangle}q$ is in the domain, differs from $x$, and has $k\cdot y=k\cdot x$; for $x\in X_{c_1}$ persistence gives $k\cdot y\in X_{k\circ c_1}$, inextensibility $y\in X_{c_1}$, and necessary distinctness $k\cdot y\ne k\cdot x$. So $X_{c_1}$ is empty, a contradiction, and Analytic Necessitism fails.
 
 *By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-23.*
+
+### Holds □5-necessities are two-hat necessary, □Rigid Power. Fails □Countable Boolean Completeness, □Truths are two-hat necessary, □Vicinity, □Weakly Inextensible Comprehension, □Weakly Rigid Power.
+
+All maps between the objects are arrows, so from $1_{W_1}$ and from $1_{W_0}$ both identities are reachable, and a closed sentence holds at an arrow iff at its codomain's identity. So a boxed sentence holds at $W_1$ iff at $W_0$, the evaluation point of finite-support-two-object-all-maps, whose verdicts these are.
+
+*Address: `finite-support-two-object-all-maps-at-singleton#transfer-boxed`. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-29.*
+
+### Holds Tame Rigidity.
+
+An arrow out of $W_1$ is fixed by its value at $0$, so every intension at $W_1$ is pinned down by $\{0\}$ and in the domain. A weakly rigid $Y$ with extension $E$ is therefore the exact image $h\mapsto h\cdot E$: weak persistence gives one inclusion, weak inextensibility tested against that exact image the other; and exact images are rigid.
+
+*Address: `finite-support-two-object-all-maps-at-singleton#tame-rigidity`. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-29.*
+
+### Holds Truths are two-hat necessary.
+
+Let $q:=\{1_{W_1}\}$, which transports along $c_n$ to $\{!\}$, $!$ the arrow back to $W_1$. At $1_{W_0}$ the arrows injective on $\{0,1\}$ form a truth, impossible at $!$, from which one sees only $!$ and constant maps; so $\neg\{!\}$ is ND-necessary there and $\Diamond_{\ne}q$ fails at every $c_n$. So every truth $p$ at $W_1$ has $\Box(\Diamond_{\ne}q\to p)$ with $q$ true: it is two- hat necessary.
+
+*Address: `finite-support-two-object-all-maps-at-singleton#truth-implies-two-hat`. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-29.*
+
+### Holds Forcing Possibilism.
+
+The propositions at $W_1$ are all the sets of its arrows out, continuum many, and the model is extensionally full there, so completeness, finiteness, size and isomorphism are the external notions. A complete Boolean algebra that is Dedekind finite or smaller than the continuum is finite, with $2^k$ elements, and isomorphic to the propositions below $\{c_0,\ldots,c_{k-1}\}$, which is not $\top$.
+
+*Address: `finite-support-two-object-all-maps-at-singleton#forcing-possibilism`. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-29.*
+
+### Holds Analytic Necessitism, Second-Order Analytic Necessitism.
+
+At type $\tau:=tt$. For each object $V$ reachable from the evaluation point fix an injection $A\mapsto E^A_V$ from the sets of natural numbers into the sets of propositions at $V$, possible as these are infinitely many, and let $Y_A$ be the intension whose value at an arrow into $V$ is $E^A_V$: it depends only on the codomain, so it is in the domain, and its transport along an arrow into $V$ is the $Y_A$ of $V$, distinct for distinct $A$. Carry the real numbers onto the $Y_A$ and take as relations the codomain-only intensions whose value at $V$ is the corresponding set of tuples of the $Y_A$ of $V$. Along every arrow the structure is carried to the like structure at the target, an isomorphic copy, which is a real number structure there: bounded sets of its elements have least upper bounds among them and every inductive subproperty contains its natural numbers. Such a structure is rigid, its instances are necessarily distinct, and it is necessarily a real number structure; and the codomain-only intension of type $((\tau)^kt)t$ whose value at each object is the set of codomain-only $k$-ary relations among the carrier there is a represented power of arity $k$, since at every world each $k$-ary relation agrees on the carrier with one of them. So the consequents of Analytic Necessitism and of its second-order form hold, and both principles hold. (The argument of the withdrawn analytic-necessitism-unretracted-arrow would refute this structure; its step from inextensibility is the gap.)
+
+*General argument `arguments/analytic-necessitism-codomain-everywhere`. It requires that At every object reachable from the evaluation point, the domain contains every intension whose value at an arrow depends only on the arrow's codomain. Here: The model is ideally full at both objects, and an intension whose value at an arrow depends only on the arrow's codomain is pinned down by $\emptyset$. It requires that There are infinitely many propositions at every object reachable from the evaluation point. Here: At $W_1$ every set of the arrows $1_{W_1}$ and $c_n:0\mapsto n$ is pinned down by $\{0\}$; at $W_0$ the sets of arrows pinned down by a finite set are infinitely many. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, auditing the withdrawn arguments for the failure of Analytic Necessitism, 2026-10-29.*
 
 ### Holds Arithmetic Necessitism.
 

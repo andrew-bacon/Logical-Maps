@@ -83,6 +83,34 @@
   .changes-summary { color: var(--ink-2); font-size: 13px; margin: 4px 0 8px; }
   table.changes tr.new td.mono { font-weight: 600; }
   .changes-more { margin: 10px 0; }
+  /* Progress over time, above the Changes list: one step chart, four views. */
+  details.history { margin: 0 0 14px; border: 1px solid var(--line); border-radius: 4px; background: var(--panel); }
+  details.history > summary { padding: 7px 10px; cursor: pointer; font: 600 14px/1.4 var(--sans); color: var(--ink); }
+  details.history[open] > summary { border-bottom: 1px solid var(--line); }
+  .history-controls { display: flex; flex-wrap: wrap; gap: 8px 14px; padding: 10px 10px 0; }
+  .history-controls .seg { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 4px; overflow: hidden; }
+  .history-controls .seg button { width: auto; height: auto; min-height: 26px; padding: 2px 10px; border: 0; background: var(--panel); color: var(--ink-2); font-size: 13px; white-space: nowrap; cursor: pointer; }
+  .history-controls .seg button + button { border-left: 1px solid var(--line-strong); }
+  .history-controls .seg button[aria-pressed="true"] { background: var(--hl); color: var(--ink); font-weight: 600; }
+  .history-chart { position: relative; padding: 6px 10px 0; }
+  .history-chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .history-chart .axis text { fill: var(--ink-3); font-size: 11px; }
+  .history-chart .grid { stroke: var(--line); stroke-width: 1; }
+  .history-chart .total { fill: none; stroke: var(--ink-2); stroke-width: 1.5; }
+  .history-chart .settled-area { fill: var(--accent); opacity: .22; }
+  .history-chart .main-line { fill: none; stroke: var(--accent); stroke-width: 2; }
+  .history-chart .live { stroke-dasharray: 4 3; }
+  .history-chart .guide { stroke: var(--ink-3); stroke-width: 1; }
+  .history-chart .dot { fill: var(--accent); }
+  .history-tip { position: absolute; top: 6px; pointer-events: none; padding: 6px 8px; border: 1px solid var(--line-strong); border-radius: 4px; background: var(--panel); color: var(--ink); font-size: 12px; line-height: 1.45; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,.12); }
+  .history-tip .dim { color: var(--ink-3); }
+  .history-legend { display: flex; flex-wrap: wrap; gap: 4px 14px; padding: 2px 10px 0; font-size: 12px; color: var(--ink-2); }
+  .history-legend i { display: inline-block; width: 14px; height: 0; margin-right: 5px; vertical-align: middle; border-top: 2px solid var(--accent); }
+  .history-legend i.total { border-top-color: var(--ink-2); border-top-width: 1.5px; }
+  .history-legend i.area { height: 8px; border: 0; background: var(--accent); opacity: .3; }
+  .history-legend i.live { border-top-style: dashed; }
+  .history-note { margin: 4px 10px 10px; font-size: 12px; color: var(--ink-3); }
+  .changes-filter { margin: 0 0 10px; font-size: 13px; color: var(--ink-2); }
   .legend-note { color: var(--ink-3); font-size: 12px; }
   .framework { font-size: 12.5px; color: var(--ink-2); }
   .framework p { margin: 0 0 6px; }
@@ -489,8 +517,11 @@
   .page .group-grid-wrap { overflow-x: auto; }
   .page table.group-grid { border-collapse: separate; border-spacing: 0; font-size: 13px; }
   .page table.group-grid th, .page table.group-grid td { padding: 0; }
-  .page table.group-grid thead th.gcol { vertical-align: bottom; height: 170px; width: 32px; min-width: 32px; }
-  .page table.group-grid thead th.gcol button { writing-mode: vertical-rl; transform: rotate(180deg); white-space: nowrap; max-height: 170px; overflow: hidden; text-overflow: ellipsis; padding: 4px 0; font: 500 12.5px var(--sans); text-align: left; }
+  /* Column labels slant up to the right from the foot of their column; the wrap scrolls to show the last. */
+  .page table.group-grid thead th.gcol { vertical-align: bottom; height: 190px; width: 32px; min-width: 32px; max-width: 32px; position: relative; }
+  .page table.group-grid thead th.gcol button { position: absolute; left: 14px; bottom: 4px; transform-origin: 0 100%; transform: rotate(-45deg); white-space: nowrap; max-width: 260px; overflow: hidden; text-overflow: ellipsis; padding: 0 2px; font: 500 12.5px var(--sans); text-align: left; }
+  .page table.group-grid thead tr { height: 190px; }
+  .page .group-grid-wrap { padding-right: 190px; }
   .page table.group-grid thead th.gcol.derived button { color: var(--ink-3); font-style: italic; }
   .page table.group-grid tbody th { text-align: left; font-weight: 500; padding: 3px 14px 3px 0; white-space: nowrap; position: sticky; left: 0; background: var(--bg); z-index: 1; }
   .page table.group-grid tbody tr.first > * { border-top: 1px solid var(--line); }
@@ -511,8 +542,9 @@
   .page .group-detail { border-top: 1px solid var(--line); margin-top: 10px; padding-top: 8px; }
   .page .group-detail h3 { font: 600 15px var(--sans); margin: 4px 0 6px; }
   .page .group-param { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; border-top: 1px solid var(--line); padding: 8px 0; }
-  .page .group-param > .note { grid-column: 1; }
-  .page .group-param > button { grid-row: 1 / span 2; grid-column: 2; align-self: start; }
+  .page .group-param > button { grid-column: 2; align-self: start; }
+  .page .group-param .param-values { margin: 4px 0 0; padding-left: 18px; font-size: 13px; }
+  .page .group-param .param-values li { margin: 1px 0; }
   .page .group-param > button[aria-pressed="true"] { background: var(--accent); color: var(--bg); }
   .page dl.group-params dt { font-weight: 600; margin-top: 6px; } .page dl.group-params dd { margin: 2px 0 6px 14px; }
   .page details.argument details.review { margin: 2px 0 6px 14px; font-size: 12.5px; color: var(--ink-2); }
@@ -565,6 +597,36 @@
   .page .prose, .prose-page { overflow-wrap: anywhere; }
   .prose-page pre { max-width: 100%; overflow-x: auto; padding: 12px; background: var(--panel-2); }
   .prose-page math[display="block"] { display: block; overflow-x: auto; }
+  /* The Background's pages: their list beside the page shown, above it on a narrow screen. */
+  .bg-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px 32px; }
+  @media (min-width: 900px) { .bg-layout { grid-template-columns: 13rem minmax(0, 1fr); } .bg-toc { position: sticky; top: 0; align-self: start; } }
+  .bg-toc ol { list-style: none; margin: 0; padding: 0; font-size: 14px; line-height: 1.4; }
+  .bg-toc li { margin: 0 0 6px; }
+  .bg-toc a { color: var(--ink-2); text-decoration: none; }
+  .bg-toc a[aria-current] { color: var(--ink); font-weight: 600; }
+  .bg-page h1 { font: 600 22px/1.3 var(--sans); margin: 0 0 12px; }
+  .bg-item { border-left: 3px solid var(--line); padding: 2px 0 2px 14px; margin: 14px 0; }
+  .bg-item.bg-lemma, .bg-item.bg-proposition, .bg-item.bg-theorem, .bg-item.bg-corollary { border-left-color: var(--accent); }
+  .bg-item.flash { background: var(--hl); }
+  .bg-item-head { margin: 0 0 6px; }
+  .bg-kind { font-weight: 600; }
+  .bg-meta, .bg-item-foot { font-size: 13px; color: var(--ink-2); }
+  .bg-item-foot details { margin-top: 4px; }
+  .lean-ref { font-size: 12px; white-space: nowrap; }
+  .lean-menu { display: inline; }
+  .principle-tools { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px 16px; margin: 8px 0; font-size: 13px; }
+  .principle-tools .explore-links { margin-left: auto; }
+  button.badge.lean { cursor: pointer; margin: 0; }
+  button.badge.lean:hover, button.badge.lean[aria-expanded="true"] { background: var(--panel-2); }
+  .lean-pop { position: fixed; z-index: 1000; display: flex; flex-direction: column; min-width: 160px; max-width: min(360px, calc(100vw - 32px));
+    max-height: min(60vh, 420px); overflow-y: auto; padding: 4px 0; background: var(--panel); color: var(--ink);
+    border: 1px solid var(--line-strong); border-radius: 4px; box-shadow: 0 4px 14px rgba(0, 0, 0, .18); font: 13px/1.35 var(--sans); white-space: normal; text-align: left; }
+  .lean-pop[hidden] { display: none; }
+  .lean-pop-note { padding: 4px 12px 6px; color: var(--ink-2); font-size: 12px; border-bottom: 1px solid var(--line); margin-bottom: 2px; }
+  .lean-pop-head { padding: 6px 12px 2px; color: var(--ink-2); font-size: 12px; font-weight: 600; }
+  .lean-pop a { display: block; padding: 5px 12px; color: var(--accent); text-decoration: none; overflow-wrap: anywhere; }
+  .lean-pop a:hover, .lean-pop a:focus { background: var(--panel-2); outline: none; }
+  .lean-pop code { font-size: 12px; }
   .badge { border-radius: 2px; }
   .ex > div { min-width: 0; }
   /* Shared signed controls and a quieter Theory Explorer. */
@@ -593,6 +655,14 @@
   .principle-line .evidence-link { margin-left: 5px; }
   .ex-p.fin, .ex-p.model-in { background: color-mix(in srgb, var(--human) 10%, transparent); }
   .ex-p.fout, .ex-p.model-out { background: color-mix(in srgb, var(--indep) 10%, transparent); }
+  /* A swatch split as the graph's and the lattice's boxes are: upper left, a matching model
+     satisfies it; lower right, one violates it. */
+  .ex-p[class*="split-"] .principle-line::before, .ex-p.fin .principle-line::before, .ex-p.fout .principle-line::before { content: ''; display: inline-block; width: 15px; height: 15px; margin-right: 7px; vertical-align: -3px; border: 1px solid var(--line-strong); border-radius: 2px; }
+  .ex-p.fin .principle-line::before { background: var(--rel-entailed); }
+  .ex-p.fout .principle-line::before { background: var(--rel-excluded); border-color: var(--indep); }
+  .ex-p.split-consistent .principle-line::before { background: linear-gradient(to bottom right, var(--rel-entailed) 50%, var(--node-fill) 50%); }
+  .ex-p.split-separated .principle-line::before { background: linear-gradient(to bottom right, var(--node-fill) 50%, var(--rel-excluded) 50%); }
+  .ex-p.split-independent .principle-line::before { background: linear-gradient(to bottom right, var(--rel-entailed) 50%, var(--rel-excluded) 50%); }
   .seg button.auto-positive { color: var(--human); background: color-mix(in srgb, var(--human) 18%, var(--panel)); }
   .seg button.auto-negative { color: var(--indep); background: color-mix(in srgb, var(--indep) 18%, var(--panel)); }
   /* The Assumptions box heads the model column: the theory's statement above what it yields. */
@@ -659,7 +729,6 @@
   .ex-m > .model-heading[data-ex-inspect]:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
   .ex-m.sel > .model-heading[data-ex-inspect] { background: var(--hl); }
   .ex-p .family-verdict { font-size: 11.5px; margin-left: 6px; font-variant-numeric: tabular-nums; }
-  .ex-m .ex-fit { font-size: 12px; color: var(--ink-2); margin: 2px 0 0 16px; }
   .ex-m .twisty { flex: none; align-self: center; width: 18px; height: 18px; margin: -4px 2px -4px -4px; padding: 0; border: 0; border-radius: 4px; background: none; color: var(--ink-3); font-size: 10px; line-height: 18px; cursor: pointer; transition: transform .12s; }
   .ex-m .twisty:hover { color: var(--ink); background: color-mix(in srgb, var(--ink) 8%, transparent); }
   .ex-m .twisty[aria-expanded="true"] { transform: rotate(90deg); }
@@ -672,6 +741,8 @@
   .ex-m.ex-unfit > .model-heading > .lnk { color: var(--ink-3); }
   .ex-m .fit-note { font-size: 11.5px; line-height: normal; color: var(--ink-3); }
   .page table.group-grid tbody tr.nofit > * { opacity: .35; }
+  /* The row whose model or cell is shown below the grid. */
+  .page table.group-grid tbody tr.gsel > * { background: var(--hl); }
   .page table.group-grid tbody tr.mayfit th .gname::after, .page table.group-grid tbody tr.mayfit:not(.first) th .gtags::after { content: ' ?'; color: var(--ink-3); }
   .inspection-note { font-size: 12px; color: var(--ink-2); margin-bottom: 8px; }
   .inspection-note > .lnk { display: inline-block; margin-left: 10px; font-size: 11px; }
@@ -892,7 +963,7 @@
         </div>
       </section>
       <section class="pane" id="pane-models"><div class="list" id="models"></div></section>
-      <section class="pane" id="pane-results"><div class="list"><div class="changes-controls"><input class="search" id="search" type="search" placeholder="Filter" aria-label="Filter changes"><label class="minor-toggle" title="Housekeeping that leaves what a record says unchanged"><input type="checkbox" id="show-minor"> minor changes <span class="n" id="n-minor"></span></label></div><div class="changes-summary" id="changes-summary"></div><div id="results"></div></div></section>
+      <section class="pane" id="pane-results"><div class="list"><details class="history" id="history" hidden><summary>Progress over time</summary><div class="history-controls"><span class="seg" role="group" aria-label="Questions"><button type="button" data-history-kind="two" aria-pressed="true">Two-premise</button><button type="button" data-history-kind="core" aria-pressed="false">Core</button></span><span class="seg" role="group" aria-label="Measure"><button type="button" data-history-measure="share" aria-pressed="true">Open share</button><button type="button" data-history-measure="counts" aria-pressed="false">Counts</button></span></div><div class="history-chart" id="history-chart"></div><p class="history-note" id="history-note"></p></details><div class="changes-filter" id="changes-filter" hidden></div><div class="changes-controls"><input class="search" id="search" type="search" placeholder="Filter" aria-label="Filter changes"><label class="minor-toggle" title="Housekeeping that leaves what a record says unchanged"><input type="checkbox" id="show-minor"> minor changes <span class="n" id="n-minor"></span></label></div><div class="changes-summary" id="changes-summary"></div><div id="results"></div></div></section>
       <section class="pane" id="pane-theorems"><div class="open-content"><div class="list" id="theorems"></div></div></section>
       <section class="pane" id="pane-open"><div class="open-content"><div id="open-warning" class="graph-warning" role="alert" hidden></div><div class="list" id="open"></div></div></section>
       <section class="pane" id="pane-page"><div class="page" id="page"></div></section>
@@ -1153,12 +1224,16 @@ const byGid = new Map(GROUPS.map(g => [g.id, g]));
 // to every record meeting its conditions, marked with its id.
 const GENERAL = DATA.general_arguments || [], TOPIC_CONDITIONS = DATA.conditions || [];
 const byAid = new Map(GENERAL.map(a => [a.id, a])), byCid = new Map(TOPIC_CONDITIONS.map(c => [c.id, c]));
+// The Background's pages and the definitions and lemmas on them, which `[[id]]` links reach too.
+const BG_PAGES = DATA.background_pages || [], BG_ITEMS = DATA.background_items || [];
+const byBgPage = new Map(BG_PAGES.map(p => [p.id, p])), byBgItem = new Map(BG_ITEMS.map(i => [i.id, i]));
 const P = DATA.principles, R = DATA.results.map(r => ({...r, conclusion: r.conclusion === false ? FALSE : r.conclusion})), MODELS = DATA.models, T = DATA.topic;
 const byPid = new Map(P.map(p => [p.id, p])), byRid = new Map(R.map(r => [r.id, r])), byMid = new Map(MODELS.map(m => [m.id, m]));
 const ids = P.map(p => p.id);
 const topicBackground = T.background || [];
 const backgroundPresets = T.background_presets || [];
 const backgroundParams = new URLSearchParams(window.location.search);
+const initialHash = window.location.hash || '';  // read before any tab change clears a record page's hash
 const initialBackground = backgroundParams.has('assume') ? (backgroundParams.get('assume') || '').split(',') : backgroundPresets.filter(p => p.default).flatMap(p => p.principles);
 const background = new Set([...topicBackground, ...initialBackground.filter(id => byPid.has(id))]);
 const negativeBackground = new Set((backgroundParams.get('deny') || '').split(',').filter(id => byPid.has(id) && !topicBackground.includes(id)));
@@ -1367,17 +1442,23 @@ function crossRef(id, text) {
   if (byMid.has(id)) return link('open-model', esc(byMid.get(id).name));
   if (byGid.has(id)) return link('open-group', esc(byGid.get(id).name));
   if (byAid.has(id)) return link('open-argument', esc(id));
+  if (byBgItem.has(id)) return link('open-background', esc(bgItemLabel(byBgItem.get(id))));
+  if (byBgPage.has(id)) return link('open-background', esc(byBgPage.get(id).title));
   return text || esc(id);
 }
+// A Background item as a link labels it, its kind and title: "Lemma (weakly rigid relations are persistent)".
+const bgItemLabel = i => i.kind[0].toUpperCase() + i.kind.slice(1) + (i.title ? ` (${i.title})` : '');
 // The records whose prose cross-references a given id, found once for all ids.
 let crossRefIndex = null;
 function referencedBy(id) {
   if (!crossRefIndex) {
     crossRefIndex = new Map();
     const text = v => typeof v === 'string' ? v : Array.isArray(v) ? v.map(text).join('\n') : v && typeof v === 'object' ? Object.values(v).map(text).join('\n') : '';
-    for (const x of [...R, ...P, ...MODELS.filter(m => !m.companion_of), ...GROUPS, ...GENERAL])
+    for (const x of [...R, ...P, ...MODELS.filter(m => !m.companion_of), ...GROUPS, ...GENERAL, ...BG_ITEMS])
       for (const ref of new Set([...text(x).matchAll(CROSS_REF)].map(m => m[1])))
         if (ref !== x.id) crossRefIndex.set(ref, [...(crossRefIndex.get(ref) || []), x.id]);
+    // A Background page's own prose, outside its items, as the build lists it.
+    for (const p of BG_PAGES) for (const ref of p.refs || []) crossRefIndex.set(ref, [...(crossRefIndex.get(ref) || []), p.id]);
   }
   return crossRefIndex.get(id) || [];
 }
@@ -3056,6 +3137,17 @@ function renderModels() {
   // A group is inspected through the models of it that fit: those known to, else those that might.
   const igFits = ig ? (() => { const fam = groupFamily(ig.id), known = fam.filter(m => modelFit(m, IN, OUT) === 'known'); return known.length ? known : fam.filter(m => modelFit(m, IN, OUT) === 'potential'); })() : [];
   const conflict = theoryE.conflict([]), implied = conflict ? new Set() : theoryE.cl([]).facts;
+  // With assumptions, a principle they do not settle is shaded as on the graph: its upper left
+  // when a model matching them satisfies it, its lower right when one violates it.
+  const matching = !conflict && (IN.length || OUT.length) ? MODELS.filter(m => modelFit(m, IN, OUT) === 'known') : [];
+  const splitTint = id => {
+    const pos = matching.some(m => cellOf(m, id)[0] === 'h'), neg = matching.some(m => cellOf(m, id)[0] === 'f');
+    return !matching.length && !(IN.length || OUT.length) ? '' : pos && neg ? 'split-independent' : pos ? 'split-consistent' : neg ? 'split-separated' : 'split-open';
+  };
+  const splitTitle = {'split-independent': 'Independent of the assumptions: matching models satisfy it and violate it',
+    'split-consistent': 'Consistent with the assumptions: a matching model satisfies it',
+    'split-separated': 'Not entailed by the assumptions: a matching model violates it',
+    'split-open': 'No matching model settles it either way'};
   // Clearing sits on the heading line with the category control; the packages, which are
   // used far less often than the list, wait at its foot.
   let h = `<div class="ex"><div class="ex-col ex-principles"><div class="ex-head">Principles <span class="n">${ids.filter(inTheory).length} assumed</span>${categoryExpander()}<button class="lnk" id="ex-clear">clear assumptions</button></div>`;
@@ -3074,14 +3166,14 @@ function renderModels() {
       const evidence = inspected && modelEvidence(inspected, id);
       const fv = ig && igFits.length ? familyVerdict(igFits, id) : null;
       const groupTint = fv ? (fv.h === igFits.length ? 'model-in' : fv.f === igFits.length ? 'model-out' : '') : '';
-      const tint = inspected ? evidence ? evidence.value ? 'model-in' : 'model-out' : '' : ig ? groupTint : positive ? 'in' : negative ? 'out' : follows ? 'fin' : ruledOut ? 'fout' : '';
+      const tint = inspected ? evidence ? evidence.value ? 'model-in' : 'model-out' : '' : ig ? groupTint : positive ? 'in' : negative ? 'out' : follows ? 'fin' : ruledOut ? 'fout' : splitTint(id);
       const groupNote = fv ? `<span class="via family-verdict">${fv.h === igFits.length ? '✓ in all' : fv.f === igFits.length ? '✗ in all' : [fv.h ? fv.h + '✓' : '', fv.f ? fv.f + '✗' : '', fv.u ? fv.u + '?' : ''].filter(Boolean).join(' ')}</span>` : '';
       // After the name: the inspected model's verdict, a derived one opening to its derivation
       // in place; a group's tally; or, for a principle the assumptions settle, why.
       const tail = inspected ? ' ' + (evidence && !evidence.direct ? `<span class="model-flag">${evidence.value ? '✓' : '✗'} derived</span>${modelWhy(inspected, id, evidence)}` : verdictButton(inspected, id, evidence, true))
         : groupNote ? ' ' + groupNote
         : follows && !positive ? theoryWhy(id, true) : ruledOut && !negative ? theoryWhy(id, false) : '';
-      h += `<li class="ex-p ${tint}" data-assumption-row="${id}">${assumptionButtons(id, follows, ruledOut, theory.positive, theory.negative)}<div class="principle-line"><button class="lnk" data-principle="${id}">${esc(name(id))}</button>${tail}</div></li>`;
+      h += `<li class="ex-p ${tint}" data-assumption-row="${id}"${splitTitle[tint] ? ` title="${splitTitle[tint]}"` : ''}>${assumptionButtons(id, follows, ruledOut, theory.positive, theory.negative)}<div class="principle-line"><button class="lnk" data-principle="${id}">${esc(name(id))}</button>${tail}</div></li>`;
 
     }
     h += '</ul></details>';
@@ -3116,7 +3208,6 @@ function renderModels() {
     const extra = groupsKnown.has(e.g.id) ? potentialOf(e.g.id).length : 0, sel = state.groupId === e.g.id && !inspected;
     const open = state.openGroups.has(e.g.id);
     return `<li class="ex-m ex-group${sel ? ' sel' : ''}"><div ${inspector('group', e.g.id, sel)}>${twisty('members', e.g.id, open, 'Its models')}<button class="lnk" data-open-group="${esc(e.g.id)}">${esc(e.g.name)}</button><span class="via ex-sum">${groupCount(e.g, e.fits)}${extra ? ` +${extra} potential` : ''}</span></div>`
-      + (fitDescription(e.g, e.fits) ? `<div class="ex-fit">${esc(fitDescription(e.g, e.fits))}</div>` : '')
       + `<div class="ex-sub" data-ex-members="${esc(e.g.id)}"${open ? '' : ' hidden'}><ul class="ex-list">${groupMembers(e.g).map(m => memberRow(e.g, m, e.fits)).join('')}</ul></div></li>`;
   };
   const row = e => e.g ? groupRow(e) : modelRow(e.m);
@@ -3180,9 +3271,9 @@ function renderModels() {
   drawExFind(); markFound();
 }
 
-function certBadges(r) {
+function certBadges(r, menu = false) {
   const c = r.certificate, n = leanVerdicts(r).length;
-  const lean = c.lean === 'verified' ? '<span class="badge lean verified">Lean ✓</span>'
+  const lean = c.lean === 'verified' ? leanBadge({note: 'Proved in Lean, passing the check of a shallow proof', links: menu ? r.lean_links : []})
     : n ? `<span class="badge lean" title="${n} of its verdicts proved in Lean">Lean: ${n} verdict${n === 1 ? '' : 's'}</span>` : '';
   return `${sourceBadge(sourceOf(r))}${lean}${r.status === 'conjectured' ? '<span class="badge conj">conjecture</span>' : ''}`;
 }
@@ -3194,7 +3285,7 @@ const leanVerdictLinks = (m, c) => {
   const v = leanVerdict(m, c);
   if (!v) return '';
   const via = !v.via ? '' : ` <span class="dim">by ${v.via.group ? `the group’s argument ${esc(v.via.argument)}` : `the argument <button class="lnk" data-open-argument="${esc(v.via.argument)}">${esc(v.via.argument)}</button>`}</span>`;
-  return `<div class="links">${['<span class="badge lean verified">Lean ✓</span>', ...leanLinkTags(v.lean_links)].join(' ')}${via}</div>`;
+  return `<div class="links">${leanBadge({note: 'Proved in Lean for this model', links: v.lean_links})}${via}</div>`;
 };
 
 // Abbreviate only equivalent positive conjunctions. These are presentation
@@ -3263,7 +3354,7 @@ function kindOf(x) { return x.satisfies ? 'model' : x.premises ? 'result' : 'pri
 // a record's text is computed once, and typing redraws the list when it pauses. A long list comes
 // in pages. The tab's number is what is new: the rows dated since the reader's previous visit,
 // remembered in this browser, or in the last seven days on a first visit or without storage.
-const changesView = { timer: null, limit: 0, text: new Map() };
+const changesView = { timer: null, limit: 0, text: new Map(), range: null };
 const CHANGES_PAGE = 300;
 const isoDate = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 const longDate = iso => { const [y, m, d] = iso.split('-').map(Number); return `${d} ${['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][m - 1]} ${y}`; };
@@ -3310,7 +3401,9 @@ function renderResults() {
   if (!changesView.limit) changesView.limit = CHANGES_PAGE;
   const qf = findText(state.search);
   const all = changesRows();
-  const matching = qf ? all.filter(r => changesText(r.x).includes(qf)) : all;
+  const range = changesView.range;
+  const dated = range ? all.filter(r => r.date > range.after && r.date <= range.through) : all;
+  const matching = qf ? dated.filter(r => changesText(r.x).includes(qf)) : dated;
   const minor = matching.filter(r => r.change?.minor).length;
   const rows = matching.filter(r => state.showMinor || !r.change?.minor);
   const fresh = all.filter(r => !r.change?.minor && r.date >= lastVisit.since).length;
@@ -3328,7 +3421,136 @@ function renderResults() {
   document.getElementById('changes-summary').textContent = `${fresh} ${fresh === 1 ? 'change' : 'changes'} ${lastVisit.label} · ${rows.length} ${qf ? 'matching' : 'in all'}`;
   document.getElementById('n-minor').textContent = minor;
   document.getElementById('show-minor').closest('label').hidden = !minor && !state.showMinor;
+  const filter = document.getElementById('changes-filter');
+  filter.hidden = !range;
+  if (range) {
+    filter.innerHTML = `Showing changes dated ${esc(range.label)}. <button class="lnk" id="changes-filter-clear">Show all</button>`;
+    filter.querySelector('#changes-filter-clear').addEventListener('click', () => { changesView.range = null; changesView.limit = CHANGES_PAGE; renderResults(); });
+  }
+  renderHistory();
 }
+// ---------------------------------------------------------------- progress over time
+// The settled counts of the published branch, one point a day (pmap.py history), and this build
+// as a dashed last step: the whole map under the topic background alone, whatever is shown.
+const historyView = { kind: 'two', measure: 'share', width: 0, key: '' };
+function historyPoints() {
+  const h = DATA.history;
+  if (!h) return [];
+  const pts = (h.points || []).map(p => ({ ...p }));
+  const last = pts[pts.length - 1];
+  if (h.live && (!last || h.live.date > last.date || ['questions', 'settled', 'core_questions', 'core_settled'].some(k => h.live[k] !== last[k])))
+    pts.push({ ...h.live, date: last && h.live.date <= last.date ? last.date : h.live.date });
+  return pts;
+}
+function historyValue(p, kind) {
+  const q = kind === 'core' ? p.core_questions : p.questions, s = kind === 'core' ? p.core_settled : p.settled;
+  return { q, s, open: q - s, share: q ? 100 * (q - s) / q : 0 };
+}
+const shortDate = d => new Date(d + 'T00:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' });
+function niceTicks(max, n = 4) {
+  const raw = max / n, mag = 10 ** Math.floor(Math.log10(raw || 1)), step = [1, 2, 2.5, 5, 10].map(m => m * mag).find(x => x >= raw) || raw;
+  const ticks = []; for (let v = 0; v <= max + 1e-9; v += step) ticks.push(v);
+  if (ticks[ticks.length - 1] < max) ticks.push(ticks[ticks.length - 1] + step);
+  return ticks;
+}
+const compact = v => v >= 1e6 ? (v / 1e6).toFixed(v % 1e6 ? 1 : 0) + 'M' : v >= 1e3 ? Math.round(v / 1e3) + 'k' : String(Math.round(v));
+function renderHistory() {
+  const box = document.getElementById('history');
+  const pts = historyPoints();
+  box.hidden = pts.length < 2;
+  if (box.hidden || !box.open) return;
+  const el = document.getElementById('history-chart');
+  const width = Math.max(280, el.clientWidth - 20), key = [historyView.kind, historyView.measure, width, pts.length].join();
+  if (key === historyView.key) return;
+  historyView.key = key;
+  const { kind, measure } = historyView, H = 220, m = { l: 46, r: 12, t: 10, b: 24 };
+  const t = p => Date.parse(p.date + 'T00:00:00Z'), t0 = t(pts[0]), t1 = t(pts[pts.length - 1]) + 864e5;
+  const x = v => m.l + (width - m.l - m.r) * (v - t0) / (t1 - t0);
+  const vals = pts.map(p => historyValue(p, kind));
+  const top = measure === 'share' ? Math.max(...vals.map(v => v.share)) : Math.max(...vals.map(v => v.q));
+  const ticks = niceTicks(top), ymax = ticks[ticks.length - 1];
+  const y = v => m.t + (H - m.t - m.b) * (1 - v / ymax);
+  // A value holds from its day until the next point's day.
+  const step = (f, from = 0, to = pts.length) => {
+    let d = '';
+    for (let i = from; i < to; i++) {
+      const xa = x(t(pts[i])), xb = i + 1 < pts.length ? x(t(pts[i + 1])) : x(t1), yv = y(f(vals[i]));
+      d += (d ? `L${xa},${yv}` : `M${xa},${yv}`) + `L${xb},${yv}`;
+    }
+    return d;
+  };
+  const liveFrom = pts[pts.length - 1].live ? pts.length - 1 : pts.length;
+  // This build's step is dashed: from the published value, up or down to its own, to the end.
+  const line = (f, cls) => `<path class="${cls}" d="${step(f, 0, liveFrom)}"/>` + (liveFrom < pts.length
+    ? `<path class="${cls} live" d="M${x(t(pts[liveFrom]))},${y(f(vals[liveFrom - 1]))}L${x(t(pts[liveFrom]))},${y(f(vals[liveFrom]))}L${x(t1)},${y(f(vals[liveFrom]))}"/>` : '');
+  let g = ticks.map(v => `<line class="grid" x1="${m.l}" x2="${width - m.r}" y1="${y(v)}" y2="${y(v)}"/><text x="${m.l - 6}" y="${y(v) + 4}" text-anchor="end">${measure === 'share' ? v + '%' : compact(v)}</text>`).join('');
+  // Date labels at Mondays, thinned to fit.
+  const days = []; for (let d = t0; d < t1; d += 864e5) if (new Date(d).getUTCDay() === 1) days.push(d);
+  const every = Math.max(1, Math.ceil(days.length * 64 / (width - m.l - m.r)));
+  g += days.filter((_, i) => i % every === 0).map(d => `<text x="${x(d)}" y="${H - 6}" text-anchor="middle">${shortDate(new Date(d).toISOString().slice(0, 10))}</text>`).join('');
+  let body;
+  if (measure === 'share') body = line(v => v.share, 'main-line');
+  else {
+    const area = (from, to) => { const d = step(v => v.s, from, to); if (!d) return ''; const xs = d.match(/[ML]([\d.]+),/g).map(c => c.slice(1, -1)); return d + `L${xs[xs.length - 1]},${y(0)}L${xs[0]},${y(0)}Z`; };
+    body = `<path class="settled-area" d="${area(0, liveFrom)}"/>` + (liveFrom < pts.length ? `<path class="settled-area" d="${area(liveFrom, pts.length)}" style="opacity:.12"/>` : '')
+      + line(v => v.s, 'main-line') + line(v => v.q, 'total');
+  }
+  const label = `${kind === 'core' ? 'Core Questions' : 'Questions with up to two premises'}: ${measure === 'share' ? 'open share' : 'questions and settled questions'} from ${shortDate(pts[0].date)} to ${shortDate(pts[pts.length - 1].date)}`;
+  el.innerHTML = `<svg viewBox="0 0 ${width} ${H}" role="img" aria-label="${esc(label)}"><g class="axis">${g}</g>${body}<line class="guide" y1="${m.t}" y2="${H - m.b}" hidden/><circle class="dot" r="3.5" hidden/><rect x="${m.l}" y="${m.t}" width="${width - m.l - m.r}" height="${H - m.t - m.b}" fill="transparent" style="cursor:pointer"/></svg><div class="history-tip" hidden></div>`;
+  const legend = measure === 'share'
+    ? `<span><i></i>open share</span>`
+    : `<span><i class="total"></i>questions</span><span><i class="area"></i>settled</span>`;
+  el.insertAdjacentHTML('beforeend', `<div class="history-legend">${legend}${liveFrom < pts.length ? '<span><i class="live"></i>this build, not yet published</span>' : ''}</div>`);
+  const svg = el.querySelector('svg'), tip = el.querySelector('.history-tip'), guide = svg.querySelector('.guide'), dot = svg.querySelector('.dot'), hit = svg.querySelector('rect');
+  const at = ev => {
+    const r = svg.getBoundingClientRect(), vx = (ev.clientX - r.left) * width / r.width, tv = t0 + (vx - m.l) * (t1 - t0) / (width - m.l - m.r);
+    let i = 0; while (i + 1 < pts.length && t(pts[i + 1]) <= tv) i++;
+    return i;
+  };
+  hit.addEventListener('mousemove', ev => {
+    const i = at(ev), p = pts[i], v = vals[i], prev = i ? vals[i - 1] : null, pp = i ? pts[i - 1] : null;
+    const xv = x(t(p)), yv = y(measure === 'share' ? v.share : v.s);
+    guide.setAttribute('x1', xv); guide.setAttribute('x2', xv); guide.hidden = false;
+    dot.setAttribute('cx', xv); dot.setAttribute('cy', yv); dot.hidden = false;
+    const n = k => (p[k] - (pp ? pp[k] : 0)), sign = d => (d > 0 ? '+' : d < 0 ? '−' : '±') + Math.abs(d).toLocaleString('en-US');
+    const records = pp ? ['principles', 'results', 'models'].map(k => [n(k), k]).filter(([d]) => d).map(([d, k]) => `${sign(d)} ${d === 1 || d === -1 ? k.slice(0, -1) : k}`).join(', ') : '';
+    tip.innerHTML = `<b>${esc(shortDate(p.date))}</b>${p.live ? ' <span class="dim">(this build)</span>' : ''}<br>${v.open.toLocaleString('en-US')} open (${openShare({ open: v.open, questions: v.q })}%) of ${v.q.toLocaleString('en-US')}`
+      + (prev ? `<br><span class="dim">${sign(v.s - prev.s)} settled, ${sign(v.q - prev.q)} questions</span>` : '')
+      + (records ? `<br><span class="dim">${esc(records)}</span>` : '') + `<br><span class="dim">Click for the changes</span>`;
+    tip.hidden = false;
+    const r = svg.getBoundingClientRect(), px = xv * r.width / width + 10;
+    tip.style.left = Math.min(px + 12, el.clientWidth - tip.offsetWidth - 4) + 'px';
+  });
+  hit.addEventListener('mouseleave', () => { tip.hidden = true; guide.hidden = true; dot.hidden = true; });
+  // A point reached the published branch on its day; the records it brought are dated when the
+  // work was done, so the changes shown are those dated since the previous point.
+  hit.addEventListener('click', ev => {
+    const i = at(ev), p = pts[i], after = i ? pts[i - 1].date : '';
+    changesView.range = { after, through: p.live ? '9999' : p.date, label: historyRange(after, p) };
+    changesView.limit = CHANGES_PAGE; renderResults();
+    document.getElementById('changes-filter').scrollIntoView?.({ block: 'nearest' });
+  });
+  const src = DATA.history.ref || 'main';
+  document.getElementById('history-note').textContent = `Whole map, no background, whatever is shown; one point a day of ${src.replace(/^origin\//, '')}${liveFrom < pts.length ? ', then this build' : ''}.`;
+}
+function historyRange(after, p) {
+  if (p.live) return `after ${shortDate(after)}`;
+  if (!after) return `up to ${shortDate(p.date)}`;
+  const first = new Date(Date.parse(after + 'T00:00:00Z') + 864e5).toISOString().slice(0, 10);
+  return first === p.date ? shortDate(p.date) : `${shortDate(first)}–${shortDate(p.date)}`;
+}
+(function wireHistory() {
+  const box = document.getElementById('history');
+  try { box.open = localStorage.getItem('pmap-history-open') === '1'; } catch (_) {}
+  box.addEventListener('toggle', () => { try { localStorage.setItem('pmap-history-open', box.open ? '1' : '0'); } catch (_) {} historyView.key = ''; renderHistory(); });
+  box.querySelectorAll('button[data-history-kind], button[data-history-measure]').forEach(b => b.addEventListener('click', () => {
+    if (b.dataset.historyKind) historyView.kind = b.dataset.historyKind; else historyView.measure = b.dataset.historyMeasure;
+    box.querySelectorAll('button[data-history-kind]').forEach(x => x.setAttribute('aria-pressed', String(x.dataset.historyKind === historyView.kind)));
+    box.querySelectorAll('button[data-history-measure]').forEach(x => x.setAttribute('aria-pressed', String(x.dataset.historyMeasure === historyView.measure)));
+    renderHistory();
+  }));
+  window.addEventListener('resize', () => { if (box.open && !box.hidden) renderHistory(); });
+})();
 // ---------------------------------------------------------------- results
 // Every proved result among the principles the sidebar shows, from its sources, grouped by
 // what it concludes, with the incompatibilities last; narrowed by text found anywhere in a
@@ -3464,18 +3686,19 @@ function renderProgress() {
   const coreEl = document.getElementById('open-core-progress');
   if (el.hidden) { el.textContent = ''; if (coreEl) { coreEl.hidden = true; coreEl.textContent = ''; } return; }
   if (!p.questions) { el.textContent = '0 questions with up to two premises are shown.'; el.title = ''; if (coreEl) { coreEl.hidden = true; coreEl.textContent = ''; } return; }
-  const pct = p.open ? Math.min(99, Math.floor(100 * p.settled / p.questions)) : 100;
-  el.textContent = `${p.settled.toLocaleString('en-US')} (${pct}%) of ${p.questions.toLocaleString('en-US')} questions with up to ${p.premises === 2 ? 'two' : p.premises} premises are settled.`;
-  el.title = `${p.settled} of ${p.questions} questions S ⊢ c, with S at most ${p.premises} principle classes and c a class or ⊥, are proved, excluded or refuted by a model under this background, using all recorded proved evidence. Counts include only shown principles, using statuses computed at build time for this background.`;
+  el.textContent = `${p.open.toLocaleString('en-US')} (${openShare(p)}%) of ${p.questions.toLocaleString('en-US')} questions with up to ${p.premises === 2 ? 'two' : p.premises} premises are open.`;
+  el.title = `${p.open} of ${p.questions} questions S ⊢ c, with S at most ${p.premises} principle classes and c a class or ⊥, are not yet proved, excluded or refuted by a model under this background, using all recorded proved evidence. Counts include only shown principles, using statuses computed at build time for this background.`;
   const core = document.getElementById('open-core-progress'), c = p.core;
   if (!core) return;
   core.hidden = !c;
   if (!c) { core.textContent = ''; return; }
   if (!c.questions) { core.textContent = '0 Core Questions are shown.'; return; }
-  // The open ones, with a decimal: the share left is small, and it moves in small steps.
+  core.textContent = `${c.open.toLocaleString('en-US')} (${openShare(c)}%) of ${c.questions.toLocaleString('en-US')} Core Questions are open.`;
+}
+// The open share, with a decimal: the share left is small, and it moves in small steps.
+function openShare(c) {
   const share = 100 * c.open / c.questions;
-  const cpct = c.open && share < 0.1 ? '<0.1' : c.open < c.questions && share > 99.9 ? '>99.9' : share.toFixed(1).replace(/\.0$/, '');
-  core.textContent = `${c.open.toLocaleString('en-US')} (${cpct}%) of ${c.questions.toLocaleString('en-US')} Core Questions are open.`;
+  return c.open && share < 0.1 ? '<0.1' : c.open < c.questions && share > 99.9 ? '>99.9' : share === 100 ? '100' : share.toFixed(1);
 }
 const SETTLED = new Set(['proved', 'refuted', 'excluded', 'consistent', 'inconsistent']);
 function rankedTable(rep, rows, mode = 'questions') {
@@ -3604,6 +3827,55 @@ function sourceList(items) {
   const linked = refs.length ? `<h2>Paper references</h2>${paperReferenceList(refs)}` : '';
   return linked + (entries.length ? `<h2>Record provenance</h2><ul class="src">${entries.map(x => `<li><b>${esc(x.label)}</b>${x.label === x.source ? '' : ' — ' + esc(x.source)}</li>`).join('')}</ul>` : '');
 }
+// The Background as pages: a list of them beside the one shown. An item's section gets its Lean
+// and what refers to it, and each [[id]] slot the build left becomes a link.
+function renderBackgroundPages(el) {
+  el.innerHTML = `<div class="bg-layout"><nav class="bg-toc" aria-label="Background pages"><ol>${BG_PAGES.map(p =>
+    `<li><a href="#background/${esc(p.id)}" data-bg-nav="${esc(p.id)}">${esc(p.title)}</a></li>`).join('')}</ol></nav>`
+    + `<div class="bg-pages">${BG_PAGES.map(p => `<article class="bg-page" id="bg-page-${esc(p.id)}" data-bg-page="${esc(p.id)}" hidden><h1>${esc(p.title)}</h1>${p.html}</article>`).join('')}</div></div>`;
+  el.querySelectorAll('section[data-bg-item]').forEach(s => {
+    const i = byBgItem.get(s.dataset.bgItem);
+    if (!i) return;
+    const verified = i.lean_status === 'verified';
+    const lean = (i.lean || []).length ? `<div class="pop-l">${leanBadge({verified, code: true, links: i.lean_links,
+      note: verified ? 'Proved in Lean, passing the check of a shallow proof' + (i.lean_theory ? '; a theorem of ' + i.lean_theory : '') : 'Stated in Lean; not every declaration passes the check'})}</div>` : '';
+    const refs = referencedBy(i.id);
+    const used = refs.length ? `<details class="bg-refs"><summary>Referenced by (${refs.length})</summary><ul class="src">${refs.map(r => `<li>${crossRef(r)}</li>`).join('')}</ul></details>` : '';
+    if (lean || used) s.insertAdjacentHTML('beforeend', `<div class="bg-item-foot">${lean}${used}</div>`);
+  });
+  el.querySelectorAll('span.xref-slot').forEach(s => { s.outerHTML = crossRef(s.dataset.xref, s.innerHTML); });
+  // {lean: A, B, C} in the prose: one badge, its menu listing the declarations.
+  el.querySelectorAll('span.lean-ref').forEach(s => {
+    const names = (s.dataset.lean || '').split(' ').filter(Boolean), found = names.map(n => (DATA.background_lean || {})[n]);
+    const verified = found.length > 0 && found.every(d => d && d.theory);
+    s.innerHTML = leanBadge({verified, code: true, links: found.filter(Boolean).map(d => d.link),
+      note: verified ? 'Proved in Lean, passing the check of a shallow proof' : 'Stated in Lean; not every declaration passes the check'});
+  });
+  el.querySelectorAll('a[data-bg-nav]').forEach(a => a.addEventListener('click', ev => { ev.preventDefault(); showBackgroundPage(a.dataset.bgNav); }));
+  wire(el);
+}
+// #background/<page>[/<item>] names what the Background shows.
+function bgRoute() {
+  const m = /^#background(?:\/([a-z0-9-]+))?(?:\/([a-z0-9-]+))?$/.exec(window.location.hash || '');
+  return m ? { page: m[1], item: m[2] } : {};
+}
+function showBackgroundPage(pageId, itemId, record = true) {
+  if (!byBgPage.has(pageId)) pageId = BG_PAGES[0]?.id;
+  if (!pageId) return;
+  document.querySelectorAll('#background [data-bg-page]').forEach(a => { a.hidden = a.dataset.bgPage !== pageId; });
+  document.querySelectorAll('#background [data-bg-nav]').forEach(a => a.toggleAttribute('aria-current', a.dataset.bgNav === pageId));
+  if (record) try { window.history.replaceState(window.history.state, '', '#background/' + pageId + (itemId ? '/' + itemId : '')); } catch { /* Local files may not allow history updates. */ }
+  const pane = document.getElementById('pane-background'), target = itemId && document.getElementById('bg-' + itemId);
+  if (target) {
+    target.scrollIntoView?.({ block: 'start' }); target.classList.add('flash'); setTimeout(() => target.classList.remove('flash'), 1600);
+  } else if (pane) pane.scrollTop = 0;
+}
+// A link to a Background page or item opens it on its page.
+function openBackground(id) {
+  const item = byBgItem.get(id), pageId = item ? item.page : id;
+  state.selected = null; document.getElementById('pop').hidden = true;
+  showTab('background'); showBackgroundPage(pageId, item ? id : undefined);
+}
 function mountPaperCatalogue() {
   if (!papers.length) return;
   const backgroundPage = document.getElementById('background');
@@ -3652,43 +3924,108 @@ function openPaper(id) {
   state.selected = null; document.getElementById('pop').hidden = true;
   document.getElementById('paper-search').value = '';
   renderPapers(); showTab('background');
+  if (byBgPage.has('literature')) showBackgroundPage('literature');
   const target = document.getElementById('paper-' + id);
   target.scrollIntoView({block: 'start'}); target.focus({preventScroll: true});
 }
 // Links to the Lean sources: a record's own, pinned to the commit the map was built from,
 // when the topic's Lean index has them; else the Lean files.
-const leanLinkTags = ls => (ls || []).map(l => `<a href="${esc(l.url)}" target="_blank">Lean ${esc(l.label)}</a>`);
+// A Lean badge is a button opening a small menu: what the badge means, then one row per
+// link, under a heading when the links come in groups. Without links it is a plain badge.
+// `code` sets the row labels as declaration names.
+function leanBadge({verified = true, text, note = '', links = [], groups, code = false} = {}) {
+  const gs = (groups || [{links}]).filter(g => (g.links || []).length);
+  const cls = `badge lean${verified ? ' verified' : ''}`, label = esc(text || (verified ? 'Lean ✓' : 'Lean'));
+  if (!gs.length) return `<span class="${cls}"${note ? ` title="${esc(note)}"` : ''}>${label}</span>`;
+  const row = l => `<a role="menuitem" href="${esc(l.url)}" target="_blank" rel="noopener">${code ? `<code>${esc(l.label)}</code>` : esc(l.label)}</a>`;
+  return `<span class="lean-menu"><button type="button" class="${cls}"${note ? ` title="${esc(note)}"` : ''} data-lean-menu aria-haspopup="menu" aria-expanded="false">${label}</button>`
+    + `<span class="lean-pop" role="menu" hidden>${note ? `<span class="lean-pop-note">${esc(note)}</span>` : ''}`
+    + gs.map(g => (g.title ? `<span class="lean-pop-head">${g.title}</span>` : '') + g.links.map(row).join('')).join('') + '</span></span>';
+}
+// The Lean files, for a record whose Lean certificate the index does not link.
 function fileLinks(x) {
-  const f = x.files || {}; const parts = [];
-  if ((x.lean_links || []).length) parts.push(...leanLinkTags(x.lean_links));
-  else if (x.certificate.lean_ref && (DATA.downloads || {}).lean) parts.push(`<a href="${DATA.downloads.lean}" target="_blank">lean</a>`);
-  return parts.length ? `<div class="links">${parts.join(' · ')}</div>` : '';
+  return !(x.lean_links || []).length && x.certificate.lean_ref && (DATA.downloads || {}).lean
+    ? `<div class="links"><a href="${DATA.downloads.lean}" target="_blank">lean</a></div>` : '';
 }
 // A record with a hand-written write-up shows that write-up in full on its page.
 // The record's own description is rendered first so the page is complete without
 // network access; the write-up replaces it once fetched.
+// The hand-written write-ups, each by its id: those of records, and those an argument names.
+let writeupSet = null;
+function writeupIds() {
+  if (writeupSet) return writeupSet;
+  writeupSet = new Set([...R, ...MODELS].filter(x => (x.files || {}).handwritten).map(x => x.id));
+  for (const a of [...MODELS.flatMap(m => m.arguments || []), ...GROUPS.flatMap(g => g.arguments || []), ...GENERAL]) if (a && a.writeup) writeupSet.add(a.writeup);
+  return writeupSet;
+}
+function writeupLink(id, text) { return `<a href="writeups/${esc(id)}.html" data-open-writeup-page="${esc(id)}">${text}</a>`; }
+// The write-up a record's prose means by "the write-up": its own, or else its source record's.
+function recordWriteup(x) {
+  for (const id of [x && x.id, x && x.variant_of, x && x.companion_of]) if (id && writeupIds().has(id)) return id;
+  return null;
+}
 function writeupNote(x) {
   const f = x.files || {};
-  if (x.definition) return f.handwritten && f.html ? `<p class="note writeup-note">Write-up: <a href="${esc(f.html)}" target="_blank">${esc(f.html)}</a>.</p>` : '';
-  return f.handwritten && f.html ? `<p class="note writeup-note">The record’s own summary follows; the full details are at <a href="${esc(f.html)}" target="_blank">${esc(f.html)}</a>.</p>` : '';
+  if (!f.handwritten || !f.html) return '';
+  return x.definition ? `<p class="note writeup-note">Write-up: ${writeupLink(x.id, esc(x.id))}.</p>`
+    : `<p class="note writeup-note">The record’s own summary follows; the full details are in the ${writeupLink(x.id, 'write-up')}.</p>`;
 }
-function loadWriteup(el, x) {
-  const f = x.files || {}, box = el.querySelector('.record-summary');
-  if (!box || x.definition || !f.handwritten || !f.html || typeof fetch !== 'function') return;  // a definition is not replaced
-  fetch(f.html).then(r => r.ok ? r.text() : Promise.reject(r.status)).then(html => {
+// Fetch a write-up's page into box, its links pointing into the viewer where they can.
+function fillWriteup(box, href, done) {
+  if (typeof fetch !== 'function') return;
+  fetch(href).then(r => r.ok ? r.text() : Promise.reject(r.status)).then(html => {
     if (!box.isConnected) return;
     const doc = new DOMParser().parseFromString(html, 'text/html');
+    const title = (doc.querySelector('header#title-block-header h1') || doc.querySelector('title'))?.textContent || '';
     doc.querySelectorAll('nav.writeup-nav, header#title-block-header, script, style').forEach(n => n.remove());
     doc.body.querySelectorAll('a[href]').forEach(a => {
       const href = a.getAttribute('href'), m = /^([a-z0-9-]+)\.html$/.exec(href);
       if (m && (byRid.has(m[1]) || byMid.has(m[1]))) { a.setAttribute('href', 'writeups/' + href); a.dataset.openWriteup = m[1]; }
+      else if (m && writeupIds().has(m[1])) { a.setAttribute('href', 'writeups/' + href); a.dataset.openWriteupPage = m[1]; }
       else if (/^[a-z0-9.-]+\.(html|md)$/.test(href)) a.setAttribute('href', 'writeups/' + href);
       else if (/^https?:/.test(href)) a.target = '_blank';
     });
-    box.className = 'prose writeup'; box.innerHTML = doc.body.innerHTML;
+    box.classList.remove('record-summary'); box.classList.add('prose', 'writeup'); box.innerHTML = doc.body.innerHTML;
     renderSubscripts(box);
     box.querySelectorAll('a[data-open-writeup]').forEach(a => a.addEventListener('click', ev => { ev.preventDefault(); const id = a.dataset.openWriteup; openPage({ type: byRid.has(id) ? 'result' : 'model', id }); }));
-  }).catch(() => {});
+    wireWriteupLinks(box);
+    if (done) done(title);
+  }).catch(() => { if (box.isConnected && box.classList.contains('writeup-body')) box.innerHTML = `<p class="note">The write-up could not be loaded here; <a href="${esc(href)}" target="_blank">open it on its own</a>.</p>`; });
+}
+function loadWriteup(el, x) {
+  const f = x.files || {}, box = el.querySelector('.record-summary');
+  if (!box || x.definition || !f.handwritten || !f.html) return;  // a definition is not replaced
+  fillWriteup(box, f.html);
+}
+function wireWriteupLinks(el) {
+  el.querySelectorAll('a[data-open-writeup-page]').forEach(a => a.addEventListener('click', ev => {
+    if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.button) return;  // a new tab or window, as the reader asked
+    ev.preventDefault(); openPage({ type: 'writeup', id: a.dataset.openWriteupPage });
+  }));
+}
+// "write-up" in a record's prose links to the write-up it means: an argument's own, else the
+// record's; "the write-up <id>" and "writeups/<id>.md" to the one they name. Sources, links and
+// mathematics are left alone, as is a write-up's own text.
+function linkWriteups(el, fallback) {
+  const ids = writeupIds(), skip = 'a, button, .katex, .formal, .writeup, .writeup-note, .writeup-label, .src, .pop-sources, script, style, summary';
+  const pattern = /writeups\/([a-z0-9-]+)\.(?:md|html)\b|\b(write-up)(?!s\b)(\s+([a-z0-9]+(?:-[a-z0-9]+)+))?/gi;
+  const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), nodes = [];
+  for (let n = walker.nextNode(); n; n = walker.nextNode()) if (/write-?up/i.test(n.nodeValue) && !n.parentElement.closest(skip)) nodes.push(n);
+  for (const n of nodes) {
+    const target = n.parentElement.closest('[data-writeup]')?.dataset.writeup || fallback;
+    let html = '', last = 0, changed = false;
+    n.nodeValue.replace(pattern, (match, path, word, rest, named, at) => {
+      let out = null;
+      if (path) out = ids.has(path) ? writeupLink(path, esc(match)) : null;
+      else if (named && ids.has(named.toLowerCase())) out = writeupLink(named.toLowerCase(), esc(match));
+      else if (target) out = writeupLink(target, esc(word)) + esc(rest || '');
+      if (out) { html += esc(n.nodeValue.slice(last, at)) + out; last = at + match.length; changed = true; }
+      return match;
+    });
+    if (!changed) continue;
+    const span = document.createElement('span'); span.innerHTML = html + esc(n.nodeValue.slice(last));
+    n.replaceWith(...span.childNodes);
+  }
 }
 function pstmt(id) { if (id === FALSE) return "<li><b>⊥.</b> These premises cannot all hold together.</li>"; const p = byPid.get(id); return `<li><button class="lnk" data-principle="${id}"><b>${esc(p.name)}</b></button> ${esc(p.statement)}</li>`; }
 // A model written as arguments: each argument once, in the record's order, under its
@@ -3700,26 +4037,17 @@ function shortAuthor(by) { return String(by || '').split(/ \(|[,;]/)[0].trim(); 
 function trawlChain(m, a) { return a.provenance ? (PROVENANCE.get(a.provenance)?.records || {})[m.companion_of || m.id] || null : null; }
 const isoDay = t => String(t || '').slice(0, 10);
 function argumentTags(a, m) {
-  const forModel = m && leanForArgument(m, a).length;
+  const forModel = m ? leanForArgument(m, a) : [], general = leanArgument(a);
+  const groups = vs => vs.map(v => ({title: (v.holds ? '✓ ' : '✗ ') + esc(name(v.holds || v.fails)), links: v.lean_links}));
   return (a.standing === 'conjectured' ? `<span class="badge conj">conjecture${a.tier ? ' · ' + esc(a.tier) : ''}</span>` : '')
     + (a.withdrawn ? '<span class="badge withdrawn">withdrawn</span>' : '')
-    + (forModel ? '<span class="badge lean verified" title="Proved in Lean for this model">Lean ✓</span>'
-      : leanArgument(a).length ? '<span class="badge lean verified" title="Proved in Lean, for every model meeting its conditions">Lean ✓</span>' : '');
+    + (forModel.length ? leanBadge({note: 'Proved in Lean for this model', groups: groups(forModel)})
+      : general.length ? leanBadge({note: 'Proved in Lean, for every model meeting its conditions', groups: groups(general)}) : '');
 }
 // The model's Lean certificates of the verdicts an argument gives it.
 const leanForArgument = (m, a) => [...(a.holds || []), ...(a.fails || [])].map(c => leanVerdict(m, c)).filter(Boolean);
-const leanModelLine = (m, a) => {
-  const ls = leanForArgument(m, a);
-  return ls.length ? `<p class="note lean-argument">Proved in Lean for this model: ${ls.map(v => (v.holds ? '✓ ' : '✗ ') + esc(name(v.holds || v.fails))
-    + ((v.lean_links || []).length ? ' (' + leanLinkTags(v.lean_links).join(' · ') + ')' : '')).join('; ')}.</p>` : '';
-};
 // A general argument's verdicts proved in Lean, for every model meeting its conditions.
 const leanArgument = a => (a.lean || []).filter(e => e.status === 'verified');
-const leanArgumentLine = a => {
-  const ls = leanArgument(a);
-  return ls.length ? `<p class="note lean-argument">Proved in Lean: ${ls.map(e => (e.holds ? '✓ ' : '✗ ') + esc(name(e.holds || e.fails))
-    + ((e.lean_links || []).length ? ' (' + leanLinkTags(e.lean_links).join(' · ') + ')' : '')).join('; ')}.</p>` : '';
-};
 // Who and when, without repeating a date the name already gives ("…, 20 September 2026").
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 function withDate(by, date) {
@@ -3748,7 +4076,7 @@ function argumentHtml(m, a, i) {
   const marks = [(a.holds || []).length ? '✓ ' + a.holds.map(name).map(esc).join(', ') : '', (a.fails || []).length ? '✗ ' + a.fails.map(name).map(esc).join(', ') : ''].filter(Boolean).join(' ');
   const meta = [
     a.source ? `Source: ${paper ? `<button class="lnk" data-paper="${esc(paper.id)}">${esc(paper.title)}</button>` : esc(a.source.paper)}${a.source.locator ? ', ' + esc(a.source.locator) : ''}.${paperFileLink(paper)}` : '',
-    a.writeup ? `Write-up: <a href="writeups/${esc(a.writeup)}.html" target="_blank">${esc(a.writeup)}</a>.` : '',
+    a.writeup ? `<span class="writeup-label">Write-up:</span> ${writeupLink(a.writeup, esc(a.writeup))}.` : '',
     a.like ? `Like <button class="lnk" data-open-model="${esc(a.like.split('#')[0])}">${esc(a.like)}</button>${(a.adapt || '').trim() ? ':' : ', word for word.'}` : '',
     side?.folded ? `Folded in from the record <span class="mono">${esc(side.id)}</span>.` : '',
     a.provenance ? `Provenance: <span class="mono">provenance/${esc(a.provenance)}.yaml</span>.` : '',
@@ -3759,11 +4087,10 @@ function argumentHtml(m, a, i) {
   ].filter(Boolean).join(' ');
   // A shared argument applies to a member through the conditions it requires; say why the member meets each.
   const conditions = (a.conditions || []).map(c => `<div class="note condition"><b>Requires:</b> ${fmt(c.text || '')}${c.reason ? ` <b>Here:</b> ${fmt(c.reason)}` : ''}</div>`).join('');
-  return `<details class="argument${a.withdrawn ? ' withdrawn' : ''}"${i === undefined ? '' : ` id="argument-${i}"`}><summary><span class="argument-verdicts">${marks}</span> ${argumentTags(a, m)}</summary>`
+  return `<details class="argument${a.withdrawn ? ' withdrawn' : ''}"${i === undefined ? '' : ` id="argument-${i}"`}${a.writeup ? ` data-writeup="${esc(a.writeup)}"` : ''}><summary><span class="argument-verdicts">${marks}</span> ${argumentTags(a, m)}</summary>`
     + (a.text ? `<div class="prose reading">${fmt(a.text)}</div>` : '')
     + ((a.adapt || '').trim() ? `<div class="prose reading">${fmt(a.adapt)}</div>` : '')
     + conditions
-    + (leanModelLine(m, a) || leanArgumentLine(a))
     + creditHtml(m, a)
     + (meta ? `<p class="note">${meta}</p>` : '')
     + (a.revisions || []).map(r => `<p class="note">Revised ${esc(r.date)}${r.by ? ' by ' + esc(r.by) : ''}: ${esc(r.note)}</p>`).join('')
@@ -3831,31 +4158,12 @@ function shortName(g, m) {
   const names = groupMembers(g).map(x => x.name), cut = names.every(n => n.includes(': ')) ? 0 : -1;
   return cut === 0 ? m.name.slice(m.name.indexOf(': ') + 2) : m.name;
 }
-// What changing one generated parameter does, member by member: the principles whose verdict changes.
-function parameterEffects(g, k) {
-  const out = new Map();
-  for (const m of groupMembers(g)) for (const v of groupVariants(m)) {
-    const d = variantDiff(g, v, m);
-    if (d.length !== 1 || d[0] !== k) continue;
-    const changes = ids.map(c => [c, cellOf(m, c)[0], cellOf(v, c)[0]]).filter(([, a, b]) => a !== b);
-    const key = valueLabel(g.parameters[k], v.settings[k]) + '|' + changes.map(x => x.join(':')).join(',');
-    if (!out.has(key)) out.set(key, { to: valueLabel(g.parameters[k], v.settings[k]), changes, ms: [] });
-    out.get(key).ms.push(m);
-  }
-  return [...out.values()];
-}
-function describeChanges(changes) {
-  if (!changes.length) return 'no verdict changes';
-  const by = new Map();
-  for (const [c, a, b] of changes) { const k = `${a}>${b}`; if (!by.has(k)) by.set(k, []); by.get(k).push(c); }
-  return [...by.entries()].map(([k, cs]) => { const [a, b] = k.split('>'); return `${cs.map(c => esc(name(c))).join(', ')}: ${CELL_WORD[a]} → ${CELL_WORD[b]}`; }).join('; ');
-}
 function groupGrid(g, view) {
   const rows = groupRows(g, view), members = rows.filter(r => r.first);
   const varies = (rs, c) => new Set(rs.map(r => cellOf(r.m, c)[0])).size > 1;
   const qualifies = (rs, c) => varies(rs, c) && (view.derived || rs.some(r => cellOf(r.m, c)[1]));
   // Principles hidden in the sidebar (signature schemata, by default) are left out here too.
-  const all = principleOrder(), order = all.filter(c => !state.excluded.has(c));
+  const all = principleGroups().flatMap(g => g.principles.map(p => p.id)), order = all.filter(c => !state.excluded.has(c));
   const baseCols = order.filter(c => qualifies(members, c)), extra = order.filter(c => !baseCols.includes(c) && qualifies(rows, c));
   const cols = [...baseCols, ...extra];
   const hiddenDerived = order.filter(c => varies(rows, c) && !rows.some(r => cellOf(r.m, c)[1])).length;
@@ -3865,10 +4173,12 @@ function groupGrid(g, view) {
   let h = `<div class="group-bar"><label><input type="checkbox" id="group-derived"${view.derived ? ' checked' : ''}> Principles derived in every row <span class="dim">(${hiddenDerived})</span></label>${hiddenInSidebar ? ` <span class="dim">${hiddenInSidebar} more differ${hiddenInSidebar === 1 ? 's' : ''} among principles hidden in the sidebar</span>` : ''}`
     + `<span class="group-legend"><span class="gcell h r">✓</span> recorded <span class="gcell h d">✓</span> derived <span class="gcell u">?</span> unknown</span></div>`
     + (assumptionsActive ? `<p class="note">Assumed in the theory explorer: ${assumed.join(', ')}. Rows that do not fit are dimmed; rows that might fit are marked ?.</p>` : '');
-  h += `<div class="group-grid-wrap"><table class="group-grid"><thead><tr><th></th>${cols.map(c => `<th class="gcol${extra.includes(c) && c === extra[0] ? ' xfirst' : ''}${rows.some(r => cellOf(r.m, c)[1]) ? '' : ' derived'}"><button class="lnk" data-principle="${c}" title="${esc(name(c))}">${esc(name(c))}</button></th>`).join('')}</tr></thead><tbody>`;
+  // The header is as tall as the longest slanted label needs, up to the labels' cap.
+  const head = Math.round(Math.min(260, 7.2 * Math.max(0, ...cols.map(c => name(c).length))) * 0.71) + 18;
+  h += `<div class="group-grid-wrap"><table class="group-grid"><thead><tr style="height:${head}px"><th></th>${cols.map(c => `<th style="height:${head}px" class="gcol${extra.includes(c) && c === extra[0] ? ' xfirst' : ''}${rows.some(r => cellOf(r.m, c)[1]) ? '' : ' derived'}"><button class="lnk" data-principle="${c}" title="${esc(name(c))}">${esc(name(c))}</button></th>`).join('')}</tr></thead><tbody>`;
   rows.forEach((r, ri) => {
     const fit = assumptionsActive ? modelFit(r.m) : 'known';
-    h += `<tr class="${r.first ? 'first' : ''}${fit === 'out' ? ' nofit' : fit === 'potential' ? ' mayfit' : ''}"><th><button class="growlab" data-grow="${ri}">${r.first ? `<span class="gname">${esc(shortName(g, r.m))}</span>` : ''}${r.tags.length ? `<span class="gtags">${r.tags.map(esc).join(' · ')}</span>` : ''}</button></th>`;
+    h += `<tr class="${r.first ? 'first' : ''}${fit === 'out' ? ' nofit' : fit === 'potential' ? ' mayfit' : ''}${view.sel && view.sel.ri === ri ? ' gsel' : ''}"><th><button class="growlab" data-grow="${ri}">${r.first ? `<span class="gname">${esc(shortName(g, r.m))}</span>` : ''}${r.tags.length ? `<span class="gtags">${r.tags.map(esc).join(' · ')}</span>` : ''}</button></th>`;
     for (const c of cols) {
       const [st, rec] = cellOf(r.m, c), sel = view.sel && view.sel.ri === ri && view.sel.c === c;
       h += `<td${extra.includes(c) && c === extra[0] ? ' class="xfirst"' : ''}><button class="gcell ${st} ${st === 'u' ? '' : rec ? 'r' : 'd'}" data-gcell="${ri}" data-gc="${c}" aria-pressed="${sel}" aria-label="${esc(shortName(g, r.member))}${r.tags.length ? ' (' + esc(r.tags.join(', ')) + ')' : ''}: ${esc(name(c))} ${CELL_WORD[st]}">${CELL_SYM[st]}</button></td>`;
@@ -3881,19 +4191,19 @@ function groupGrid(g, view) {
 function groupDetail(g, view, rows) {
   const s = view.sel, r = s && rows[s.ri];
   if (!r) return '<p class="dim">Click a cell for its arguments, or a row’s name for the model.</p>';
-  const label = `${esc(shortName(g, r.member))}${r.tags.length ? ` <span class="dim">(${r.tags.map(esc).join(', ')})</span>` : ''}`;
-  const page = `<button class="lnk" data-open-model="${esc(r.m.id)}">The model’s page →</button>`;
+  const label = `<button class="lnk" data-open-model="${esc(r.m.id)}" title="The model’s page">${esc(shortName(g, r.member))}</button>${r.tags.length ? ` <span class="dim">(${r.tags.map(esc).join(', ')})</span>` : ''}`;
   if (s.row) {
-    const prose = Object.entries(g.parameters || {}).filter(([, p]) => !p.generate).map(([k]) => (r.m.settings || {})[k]).map(v => typeof v === 'string' ? v : v && v.text).filter(Boolean);
+    // A setting is the member's own prose, or the id of one of the parameter's values, shown as that value's text.
+    const prose = Object.entries(g.parameters || {}).filter(([, p]) => !p.generate).map(([k, p]) => { const v = (r.m.settings || {})[k]; return typeof v === 'string' ? (p.values?.[v]?.text ?? v) : v && v.text; }).filter(Boolean);
     const gen = generatedParams(g).map(([k, p]) => `${esc(valueLabel(p, (r.m.settings || {})[k]))}${sameSetting((r.m.settings || {})[k], (r.member.settings || {})[k]) ? '' : ' <span class="dim">(variant)</span>'}`);
-    return `<h3>${label}</h3>${prose.map(t => `<div class="prose reading">${fmt(t)}</div>`).join('')}<p class="note">${gen.join(' · ')}</p><p>${page}</p>`;
+    return `<h3>${label}</h3>${prose.map(t => `<div class="prose reading">${fmt(t)}</div>`).join('')}<p class="note">${gen.join(' · ')}</p>`;
   }
   const c = s.c, [st, rec] = cellOf(r.m, c);
   let body;
   if (st === 'u') body = '<p>Nothing recorded or derived settles it.</p>';
   else if (rec) body = `<div class="arguments">${argumentsFor(r.m, c).map(a => argumentHtml(r.m, a).replace('<details class="argument', '<details open class="argument')).join('')}</div>`;
   else { const e = modelEvidence(r.m, c); body = e ? modelWhy(r.m, c, e, true) : '<p>Derived.</p>'; }
-  return `<h3>${esc(name(c))} ${CELL_WORD[st]} in ${label}</h3>${body}<p>${page}</p>`;
+  return `<h3>${esc(name(c))} ${CELL_WORD[st]} in ${label}</h3>${body}`;
 }
 function groupPage(g) {
   const view = groupView(g.id), members = groupMembers(g);
@@ -3902,13 +4212,8 @@ function groupPage(g) {
   h += groupGrid(g, view);
   const gen = generatedParams(g);
   if (gen.length) {
-    h += `<h2>Variants</h2><p class="note">Each row above is a member as its record has it. Each parameter below also gives every member a variant for each of its other values; the summary says what that changes.</p>`;
-    h += gen.map(([k, p]) => {
-      const effects = parameterEffects(g, k), all = effects.length === 1 && effects[0].ms.length === members.length;
-      const lines = all ? [`For every member, ${esc(effects[0].to)}: ${describeChanges(effects[0].changes)}.`]
-        : effects.map(e => `${e.ms.length === members.length ? 'For every member' : 'For ' + e.ms.map(m => esc(shortName(g, m))).join(', ')}, ${esc(e.to)}: ${describeChanges(e.changes)}.`);
-      return `<div class="group-param"><div><b>${esc(k)}</b> <span class="dim">${fmt(p.text)}</span></div><button class="btn small" data-group-toggle="${esc(k)}" aria-pressed="${view.open.has(k)}">${view.open.has(k) ? 'Hide variants' : 'Show variants'}</button><div class="note">${lines.join('<br>')}</div></div>`;
-    }).join('');
+    h += `<h2>Variants</h2><p class="note">Each row above is a member as its record has it. Each parameter below also gives every member a variant for each of its other values; show them to add them to the grid.</p>`;
+    h += gen.map(([k, p]) => `<div class="group-param"><div><b>${esc(k)}</b> <span class="dim">${fmt(p.text)}</span><ul class="param-values">${Object.entries(p.values || {}).map(([v, e]) => `<li><b>${esc(valueLabel(p, v))}</b>${e && e.brief ? ` <span class="dim">— ${fmt(e.brief)}</span>` : ''}</li>`).join('')}</ul></div><button class="btn small" data-group-toggle="${esc(k)}" aria-pressed="${view.open.has(k)}">${view.open.has(k) ? 'Hide variants' : 'Show variants'}</button></div>`).join('');
   }
   const rows = groupRows(g, view);
   const same = principleOrder().filter(c => new Set(rows.map(r => cellOf(r.m, c)[0])).size === 1 && cellOf(rows[0].m, c)[0] !== 'u');
@@ -3984,7 +4289,7 @@ function renderPage(sel) {
     h += `<h2>Incompatibilities</h2><ul>${R.filter(r => r.conclusion === FALSE && passes(r) && (r.status === 'proved' || state.showConj)).map(r => `<li><button class="lnk" data-result="${r.id}">${resultStmt(r)}</button> ${certBadges(r)}</li>`).join('')}</ul>`;
   } else if (sel.type === 'result') {
     const r = byRid.get(sel.id);
-    h += `<h1>${resultStmt(r)}</h1>${fullConjunctionDetails(r)}<div class="badges">${certBadges(r)}</div>${fileLinks(r)}${certDl(r.certificate)}`;
+    h += `<h1>${resultStmt(r)}</h1>${fullConjunctionDetails(r)}<div class="badges">${certBadges(r, true)}</div>${fileLinks(r)}${certDl(r.certificate)}`;
     h += `<h2>Premises</h2><ul class="plist">${r.premises.map(pstmt).join('') || '<li>⊤</li>'}</ul><h2>Conclusion</h2><ul class="plist">${pstmt(r.conclusion)}</ul>`;
     h += `<div class="record-summary">${writeupNote(r)}${r.proof ? `<h2>Proof</h2><div class="prose">${fmt(r.proof)}</div>` : ''}</div>`;
     if (r.notes) h += `<h2>Notes</h2><div class="prose">${fmt(r.notes)}</div>`;
@@ -3996,7 +4301,7 @@ function renderPage(sel) {
     const base = m.companion_of ? byMid.get(m.companion_of) : null, construction = m.construction || {};
     // A companion's certificate is its model's; what it adds is who proposed the conjectured arguments.
     const proposed = [...new Set((m.arguments || []).map(a => withDate(a.by || m.certificate.produced_by || '', a.date || m.certificate.date || '')))];
-    h += `<h1>${esc(m.name)}</h1><div class="badges">${certBadges(m)}</div>${fileLinks(m)}`
+    h += `<h1>${esc(m.name)}</h1><div class="badges">${certBadges(m, true)}</div>${fileLinks(m)}`
       + (base ? `<dl><dt>conjectured by</dt><dd>${proposed.map(esc).join('; ')}</dd><dt>model</dt><dd><button class="lnk" data-open-model="${esc(base.id)}">${esc(base.name)}</button></dd></dl>` : certDl(m.certificate));
     const doubt = construction.withdrawn ? 'withdrawn' : construction.standing === 'conjectured' ? 'conjectured' : '';
     h += `<div class="record-summary">${writeupNote(m)}${m.description ? `<h2>Construction</h2><div class="prose">${fmt(m.description)}</div>` : ''}`
@@ -4032,6 +4337,13 @@ function renderPage(sel) {
     h += referencedBySection(m.id);
     if (!m.arguments) h += sourceList([m]);
     h += `<div class="file">${esc(m.file)}</div>`;
+  } else if (sel.type === 'writeup') {
+    // A write-up read in the viewer: its record, if it has one, and the page itself in a new tab.
+    const owner = byMid.get(sel.id) || byRid.get(sel.id);
+    h += `<h1 class="writeup-title">${esc(owner ? (owner.name || resultStmt(owner)) : sel.id)}</h1>`
+      + `<p class="note">Write-up${owner ? ` of the ${byMid.has(sel.id) ? 'model' : 'result'} <button class="lnk" data-open-${byMid.has(sel.id) ? 'model' : 'result'}="${esc(sel.id)}">${byMid.has(sel.id) ? esc(owner.name) : resultStmt(owner)}</button>` : ''}`
+      + ` · <a href="writeups/${esc(sel.id)}.html" target="_blank">open on its own ↗</a></p>`
+      + `<div class="writeup-body prose"><p class="dim">Loading…</p></div>`;
   } else if (sel.type === 'group') {
     h += groupPage(byGid.get(sel.id)) + referencedBySection(sel.id);
   } else if (sel.type === 'argument') {
@@ -4039,7 +4351,9 @@ function renderPage(sel) {
   } else if (sel.type === 'principle') {
     const p = byPid.get(sel.id);
     h += `<h1>${sel.negative ? '¬' : ''}${esc(p.name)}</h1>${sel.negative ? '<p>Negation of the following principle:</p>' : ''}${(p.aliases || []).length ? `<div class="id">${esc(p.aliases.join(', '))}</div>` : ''}<div class="prose statement">${esc(p.statement)}</div>${p.formal ? `<div class="formal">${esc(p.formal)}</div>` : ''}${p.definitions ? `<div class="defs">${fmt(p.definitions)}</div>` : ''}`
-      + (p.lean_def ? `<div class="pop-l">Lean: <code>${esc(p.lean_def)}</code>${(p.lean_links || []).length ? ' · ' + leanLinkTags(p.lean_links).join(' · ') : ''}</div>` : '');
+      // One line: the Lean badge on the left, the explorer controls on the right.
+      + `<div class="principle-tools"><span>${p.lean_def ? leanBadge({verified: false, note: 'Defined in Lean', links: p.lean_links}) : ''}</span>`
+      + (topicBackground.includes(p.id) ? '' : `<span class="explore-links"><button class="lnk" data-explore="${esc(p.id)}" data-explore-sign="positive">View in Theory Explorer</button> · <button class="lnk" data-explore="${esc(p.id)}" data-explore-sign="negative">View negation in Theory Explorer</button></span>`) + '</div>';
     if (p.about) h += `<h2>About</h2><div class="prose about">${fmt(p.about)}</div>`;
     h += variantsSection(p);
     if (p.notes) h += `<h2>Notes</h2><div class="prose">${fmt(p.notes)}</div>`;
@@ -4048,17 +4362,8 @@ function renderPage(sel) {
     const premisesName = r => r.premises.map(name).join(' ∧ ');
     const concluding = R.filter(r => r.conclusion === p.id).sort((a, b) => a.premises.length - b.premises.length || compareNames(premisesName(a), premisesName(b)));
     const using = R.filter(r => r.premises.includes(p.id)).sort((a, b) => (a.conclusion === FALSE) - (b.conclusion === FALSE) || compareNames(name(a.conclusion), name(b.conclusion)) || a.premises.length - b.premises.length || compareNames(premisesName(a), premisesName(b)));
-    const inM = MODELS.filter(m => !m.group && (m.satisfies.includes(p.id) || m.violates.includes(p.id)));
-    // A group is one row: how many of its models satisfy the principle and how many violate it, and which.
-    const groupRows = GROUPS.map(g => {
-      const fam = groupFamily(g.id), sat = fam.filter(m => cellOf(m, p.id)[0] === 'h'), vio = fam.filter(m => cellOf(m, p.id)[0] === 'f');
-      if (!sat.length && !vio.length) return '';
-      const part = (mark, list) => list.length ? `<div>${mark} ${list.length} of ${fam.length}${fitDescription(g, list) ? ': ' + esc(fitDescription(g, list)) : ''}</div>` : '';
-      return `<tr data-open-group-row="${esc(g.id)}"><td class="mono nowrap">${sat.length && vio.length ? '✓✗' : sat.length ? '✓' : '✗'}</td><td class="stmt"><b>${esc(g.name)}</b> <span class="dim">group of ${fam.length} models</span>${part('✓', sat)}${part('✗', vio)}</td><td></td></tr>`;
-    }).join('');
     const resultsTable = rows => `<table class="results"><tbody>${rows.map(r => `<tr data-result="${r.id}"><td class="stmt">${resultStmt(r)}</td><td>${certBadges(r)}</td></tr>`).join('') || '<tr><td>—</td></tr>'}</tbody></table>`;
     h += `<h2>Results</h2><h3 class="verdict-group">Concluding it <span class="n">${concluding.length}</span></h3>${resultsTable(concluding)}<h3 class="verdict-group">Using it as a premise <span class="n">${using.length}</span></h3>${resultsTable(using)}`;
-    h += `<h2>Models</h2><table class="results"><tbody>${groupRows}${inM.map(m => `<tr data-model="${m.id}"><td class="mono nowrap">${m.satisfies.includes(p.id) ? '✓' : '✗'}</td><td class="stmt"><b>${esc(m.name)}</b> &nbsp; ${modelStmt(m)}</td><td>${certBadges(m)}</td></tr>`).join('') || (groupRows ? '' : '<tr><td>—</td></tr>')}</tbody></table>`;
     h += referencedBySection(p.id);
     h += sourceList([p]);
     h += `<div class="file">${esc(p.file)}</div>`;
@@ -4066,12 +4371,16 @@ function renderPage(sel) {
   el.innerHTML = h;
   el.querySelectorAll('tr[data-result]').forEach(tr => tr.addEventListener('click', () => select({ type: 'result', id: tr.dataset.result })));
   el.querySelectorAll('tr[data-model]').forEach(tr => tr.addEventListener('click', () => openPage({ type: 'model', id: tr.dataset.model })));
-  el.querySelectorAll('tr[data-open-group-row]').forEach(tr => tr.addEventListener('click', () => openPage({ type: 'group', id: tr.dataset.openGroupRow })));
   el.querySelector('#page-back').addEventListener('click', pageBack);
   el.querySelectorAll('button[data-jump]').forEach(b => b.addEventListener('click', () => jumpToArguments(el, b.dataset.jump.split(' '))));
   wire(el);
   if (sel.type === 'group' && byGid.has(sel.id)) wireGroup(el, byGid.get(sel.id));
+  if (sel.type === 'model' || sel.type === 'result' || sel.type === 'group') linkWriteups(el, sel.type === 'group' ? null : recordWriteup(sel.type === 'result' ? byRid.get(sel.id) : byMid.get(sel.id)));
+  wireWriteupLinks(el);
   if (sel.type === 'result' || sel.type === 'model') loadWriteup(el, sel.type === 'result' ? byRid.get(sel.id) : byMid.get(sel.id));
+  if (sel.type === 'writeup') fillWriteup(el.querySelector('.writeup-body'), `writeups/${sel.id}.html`, title => {
+    const h1 = el.querySelector('.writeup-title'); if (h1 && title && !byMid.has(sel.id) && !byRid.has(sel.id)) h1.textContent = title;
+  });
   if (sel.type === 'model' && sel.jump) { const m = byMid.get(sel.id); jumpToArguments(el, argumentsFor(m, sel.jump).map(a => m.arguments.indexOf(a))); }
 }
 // The forms a principle can be stated in, each provably equivalent to the official one
@@ -4083,7 +4392,8 @@ function variantsSection(p) {
   return `<h2>Equivalent forms</h2><p class="note">Each is provably equivalent to the statement above in the base theory, instance by instance.</p><div class="variants">${vs.map(v =>
     `<section class="variant" id="variant-${esc(v.id)}"><h3>${esc(v.name)}</h3>${v.statement ? `<div class="prose">${esc(v.statement)}</div>` : ''}${v.formal ? `<div class="formal">${esc(v.formal)}</div>` : ''}${v.definitions ? `<div class="defs">${fmt(v.definitions)}</div>` : ''}`
     + `<details><summary>Why it is equivalent</summary><div class="prose">${fmt(v.equivalence)}</div>${(v.references || []).length ? paperReferenceList(paperReferences([v])) : ''}</details>`
-    + (v.lean && v.lean.ref ? `<div class="pop-l">${v.lean.status === 'verified' ? '<span class="badge lean verified">Lean ✓</span> ' : ''}Lean: <code>${esc(v.lean.ref)}</code>${v.lean.equivalence_ref ? `; equivalence <code>${esc(v.lean.equivalence_ref)}</code>` : ''}${(v.lean_links || []).length ? ' · ' + leanLinkTags(v.lean_links).join(' · ') : ''}</div>` : '')
+    + (v.lean && v.lean.ref ? `<div class="pop-l">${leanBadge({verified: v.lean.status === 'verified', links: v.lean_links,
+      note: v.lean.status === 'verified' ? 'Equivalence proved in Lean' : 'Stated in Lean'})}</div>` : '')
     + '</section>').join('')}</div>`;
 }
 function jumpToArguments(el, indices) {
@@ -4101,7 +4411,7 @@ function openPage(sel, back = null) {
   if (!back && state.page && pane.dataset.active === 'true')
     pageHistory.push({ sel: { ...state.page, jump: undefined }, scroll: pane.scrollTop, open: [...el.querySelectorAll('details')].map(d => d.open) });
   else if (!back) pageHistory.length = 0;
-  state.page = sel; renderPage(sel);
+  state.page = sel; renderPage(sel); pageHash(sel);
   document.getElementById('pop').hidden = true; document.querySelectorAll('.tab').forEach(x => x.setAttribute('aria-selected', 'false')); document.querySelectorAll('.pane').forEach(p => p.dataset.active = (p.id === 'pane-page'));
   if (back) {
     const details = [...el.querySelectorAll('details')];
@@ -4109,13 +4419,23 @@ function openPage(sel, back = null) {
     pane.scrollTop = back.scroll;
   } else if (!sel.jump) pane.scrollTop = 0;
 }
+// #model/<id>, #result/<id>, #principle/<id>, #group/<id> and #writeup/<id> name the page shown, so its
+// address can be copied as a link to it.
+// (Functions, not constants, since a page may open before this point of the script runs.)
+function pageLookup(type) { return type === 'writeup' ? writeupIds() : { model: byMid, result: byRid, principle: byPid, group: byGid }[type]; }
+function pageRoute(hash = window.location.hash || '') { return /^#(model|result|principle|group|writeup)\/([A-Za-z0-9_.-]+)$/.exec(hash); }
+function pageHash(sel) {
+  const hash = sel && pageLookup(sel.type)?.has(sel.id) ? '#' + sel.type + '/' + sel.id : '';
+  if (hash === (window.location.hash || '') || (!hash && !pageRoute())) return;
+  try { window.history.replaceState(window.history.state, '', hash || window.location.pathname + window.location.search); } catch { /* Local files may not allow history updates. */ }
+}
 function pageBack() {
   const prev = pageHistory.pop();
   if (prev) openPage(prev.sel, prev); else { state.page = null; showTab(state.tab); }
 }
 function showTab(tab) {
   hover(null);
-  state.tab = tab; state.page = null; pageHistory.length = 0;
+  state.tab = tab; state.page = null; pageHistory.length = 0; pageHash(null);
   if (tab === 'graph' || tab === 'open' || tab === 'lattice' || tab === 'theorems') {
     // One sidebar for the three views, so background, source selections,
     // click slots, scrolling and pane sizes are shared rather than duplicated.
@@ -4170,8 +4490,10 @@ function wire(el) {
   el.querySelectorAll('button[data-open-arg]').forEach(b => b.addEventListener('click', () => openPage({ type: 'model', id: b.dataset.openArg, jump: b.dataset.argPrinciple })));
   el.querySelectorAll('button[data-open-model]').forEach(b => b.addEventListener('click', () => openPage({ type: 'model', id: b.dataset.openModel })));
   el.querySelectorAll('button[data-open-group]').forEach(b => b.addEventListener('click', () => openPage({ type: 'group', id: b.dataset.openGroup })));
+  el.querySelectorAll('button[data-explore]').forEach(b => b.addEventListener('click', () => exploreTheory(b.dataset.explore, b.dataset.exploreSign)));
   el.querySelectorAll('button[data-open-argument]').forEach(b => b.addEventListener('click', () => openPage({ type: 'argument', id: b.dataset.openArgument })));
   el.querySelectorAll('button[data-open-result]').forEach(b => b.addEventListener('click', () => openPage({ type: 'result', id: b.dataset.openResult })));
+  el.querySelectorAll('button[data-open-background]').forEach(b => b.addEventListener('click', () => openBackground(b.dataset.openBackground)));
 }
 // A principle's statement at a glance, beside its name, in the lists that name principles:
 // after a short delay on hover, at once on keyboard focus, never on a touch screen, and with
@@ -4210,7 +4532,7 @@ function wirePreviews(root) {
   root.addEventListener('click', hidePreview, true);
 }
 function relList(items) { return items.length ? `<ul class="rel">${items.map(([id, via]) => `<li><button data-principle="${id}">${esc(name(id))}</button>${via ? `<span class="via">${via}</span>` : ''}</li>`).join('')}</ul>` : `<div class="empty">—</div>`; }
-function certDl(c) { return `<dl>${c.produced_by ? `<dt>by</dt><dd>${esc(c.produced_by)}</dd>` : ''}${c.recorded_by ? `<dt>recorded by</dt><dd>${esc(c.recorded_by)}</dd>` : ''}${(c.checked_by || []).length ? `<dt>checked</dt><dd>${esc(c.checked_by.join(', '))}</dd>` : ''}${c.lean_ref ? `<dt>Lean</dt><dd class="mono">${esc(c.lean_ref)}</dd>` : ''}${c.date ? `<dt>date</dt><dd>${esc(c.date)}</dd>` : ''}</dl>`; }
+function certDl(c) { return `<dl>${c.produced_by ? `<dt>by</dt><dd>${esc(c.produced_by)}</dd>` : ''}${c.recorded_by ? `<dt>recorded by</dt><dd>${esc(c.recorded_by)}</dd>` : ''}${(c.checked_by || []).length ? `<dt>checked</dt><dd>${esc(c.checked_by.join(', '))}</dd>` : ''}${c.date ? `<dt>date</dt><dd>${esc(c.date)}</dd>` : ''}</dl>`; }
 let popAt = null;
 // One relation verdict with its evidence: proof steps or witness models.
 function relHead(text) { return `<span class="rel-head">${esc(text)}</span>`; }
@@ -4335,7 +4657,7 @@ function renderDetail() {
     // saying it twice says nothing.
     const recorded = sel.type === 'result' ? resultStmt(x).replace(/<[^>]*>/g, '') : '';
     if (sel.display && sel.display !== recorded) h += `<div class="pop-t">${esc(sel.display)}</div><p class="note">${sel.contraposed ? 'Contrapositive, under the current assumptions.' : 'Shown under the current assumptions.'} Original result:</p>`;
-    h += `<div class="pop-t">${sel.type === 'result' ? resultStmt(x) : esc(x.name)}</div>${sel.type === 'result' ? fullConjunctionDetails(x) : ''}<div class="pop-meta"><span class="badges">${certBadges(x)}</span>${sourceSummary([x])}</div>${x.certificate.lean_ref ? `<div class="pop-l">Lean: <code>${esc(x.certificate.lean_ref)}</code></div>` : ''}<div class="links"><button class="lnk" data-goto="1">details</button>${fileLinks(x).replace('<div class="links">', ' · ').replace('</div>', '')}</div>`;
+    h += `<div class="pop-t">${sel.type === 'result' ? resultStmt(x) : esc(x.name)}</div>${sel.type === 'result' ? fullConjunctionDetails(x) : ''}<div class="pop-meta"><span class="badges">${certBadges(x)}</span>${sourceSummary([x])}</div><div class="links"><button class="lnk" data-goto="1">details</button>${fileLinks(x).replace('<div class="links">', ' · ').replace('</div>', '')}</div>`;
     if (sel.type === 'result' && sel.premises) h += edgeContext(sel.premises, sel.conclusion);
   }
   el.innerHTML = '<button class="lnk detail-close" aria-label="Close details">×</button>' + h; el.hidden = false; el.scrollTop = 0; wire(el);
@@ -4364,6 +4686,44 @@ function placeDetail() {
   if (docked) { el.style.removeProperty('left'); el.style.removeProperty('top'); }
 }
 document.addEventListener('pointerdown', ev => { popAt = { x: ev.clientX, y: ev.clientY }; const el = document.getElementById('pop'); if (!el.hidden && !['graph-details', 'lat-detail'].includes(el.parentElement.id) && !el.contains(ev.target)) el.hidden = true; });
+// Lean menus: open below their badge (above it when there is no room), clamped to the
+// viewport; one open at a time; closed by Escape, a click elsewhere, scrolling or resizing.
+// Clicks are caught first, so a badge inside a table row or a summary opens only its menu.
+let leanMenuOpen = null;
+function closeLeanMenu(focus = false) {
+  if (!leanMenuOpen) return;
+  const b = leanMenuOpen; leanMenuOpen = null;
+  b.setAttribute('aria-expanded', 'false'); b.nextElementSibling.hidden = true;
+  if (focus) b.focus({preventScroll: true});
+}
+function openLeanMenu(b, keyboard) {
+  closeLeanMenu();
+  const pop = b.nextElementSibling, r = b.getBoundingClientRect();
+  pop.hidden = false; b.setAttribute('aria-expanded', 'true'); leanMenuOpen = b;
+  const w = pop.offsetWidth, h = pop.offsetHeight, gap = 4, edge = 8;
+  pop.style.left = Math.max(edge, Math.min(r.left, innerWidth - w - edge)) + 'px';
+  pop.style.top = (r.bottom + gap + h <= innerHeight - edge || r.top - gap - h < edge ? r.bottom + gap : r.top - gap - h) + 'px';
+  if (keyboard) pop.querySelector('a')?.focus();
+}
+document.addEventListener('click', ev => {
+  const b = ev.target.closest?.('[data-lean-menu]');
+  if (b) {
+    ev.preventDefault(); ev.stopPropagation();
+    if (leanMenuOpen === b) closeLeanMenu(); else openLeanMenu(b, ev.detail === 0);
+  } else if (ev.target.closest?.('.lean-pop')) ev.stopPropagation();
+  else closeLeanMenu();
+}, true);
+document.addEventListener('keydown', ev => {
+  if (!leanMenuOpen) return;
+  const items = [...leanMenuOpen.nextElementSibling.querySelectorAll('a')], k = items.indexOf(document.activeElement);
+  if (ev.key === 'Escape') { ev.preventDefault(); ev.stopPropagation(); closeLeanMenu(true); }
+  else if (ev.key === 'ArrowDown' || ev.key === 'ArrowUp') {
+    ev.preventDefault(); ev.stopPropagation();
+    items[(k + (ev.key === 'ArrowDown' ? 1 : items.length - 1 + (k < 0 ? 1 : 0))) % items.length]?.focus();
+  } else if (ev.key === 'Tab') closeLeanMenu();
+}, true);
+addEventListener('scroll', ev => { if (leanMenuOpen && !leanMenuOpen.nextElementSibling.contains(ev.target)) closeLeanMenu(); }, true);
+addEventListener('resize', () => closeLeanMenu());
 document.addEventListener('keydown', ev => {
   if (ev.key !== 'Escape' || ev.target.closest?.('.graph-search') || document.body.classList.contains('resizing-panes')) return;
   if (state.focus || state.selected?.type === 'principle') select(null);
@@ -4655,6 +5015,14 @@ function addTheoryPreset(presetId) {
   for (const id of preset.principles) { theory.positive.add(id); theory.negative.delete(id); }
   rerenderTheory();
 }
+// A principle's page opens the theory explorer with it, or its negation, as the one assumption.
+function exploreTheory(id, sign) {
+  for (const x of [...theory.positive]) if (!topicBackground.includes(x)) theory.positive.delete(x);
+  theory.negative.clear();
+  state.modelId = null; state.groupId = null;
+  showTab('models');
+  setTheoryAssumption(id, sign);
+}
 function resetTheory() {
   for (const id of [...theory.positive]) if (!topicBackground.includes(id)) theory.positive.delete(id);
   theory.negative.clear();
@@ -4724,9 +5092,11 @@ function renderAll(refit) {
   renderSubscripts(document.getElementById('contribute'));
   const backgroundPage = document.getElementById('background');
   if (!backgroundPage.dataset.ready) {
-    backgroundPage.innerHTML = DATA.background_html || '<p class="dim">—</p>';
+    if (BG_PAGES.length) renderBackgroundPages(backgroundPage);
+    else backgroundPage.innerHTML = DATA.background_html || '<p class="dim">—</p>';
     renderSubscripts(backgroundPage);
     mountPaperCatalogue(); backgroundPage.dataset.ready = 'true';
+    if (BG_PAGES.length) showBackgroundPage(bgRoute().page || BG_PAGES[0].id, bgRoute().item, false);
   }
   renderGraph(); if (refit) fitInitial(); renderModels(); renderResults(); renderOpen(); renderTheorems();
   if (state.tab === 'lattice' && typeof renderLattice === 'function') { renderLatticeFilters(); renderLattice(); }
@@ -5833,4 +6203,8 @@ requestAnimationFrame(fit);
 // A topic may open on another tab than the graph (topic.yaml default_tab).
 for (const id of ['pr-filters', 'lat-filters', 'models', 'open', 'pop']) wirePreviews(document.getElementById(id));
 if (T.default_tab && T.default_tab !== 'graph') document.querySelector(`.tab[data-tab="${T.default_tab}"]:not([hidden])`)?.click();
+// A link to a Background page or item, #background/<page>[/<item>], opens it.
+if (BG_PAGES.length && /^#background(\/|$)/.test(window.location.hash || '')) { showTab('background'); showBackgroundPage(bgRoute().page, bgRoute().item, false); }
+// A link to a record page, #model/<id> (or result, principle, group), opens it.
+{ const m = pageRoute(initialHash); if (m && pageLookup(m[1]).has(m[2])) openPage({ type: m[1], id: m[2] }); }
 </script>

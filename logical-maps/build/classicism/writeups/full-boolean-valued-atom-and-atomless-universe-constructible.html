@@ -323,602 +323,114 @@ body.writeup-page { max-width: 82ch; margin: 3em auto; padding: 0 1.5em 3em; fon
 <script defer src="../math/katex.min.js"></script>
 <script defer src="../math/contrib/auto-render.min.js"></script>
 <script defer src="../math/math.js"></script></head><body class="writeup-page"><nav class="writeup-nav" aria-label="Write-up navigation"><a href="../index.html">← Back to map</a><div class="display-toggles"><button type="button" class="theme-toggle" data-theme-toggle>[Dark mode]</button><button type="button" class="theme-toggle" data-colourblind-toggle aria-label="Colourblind mode" aria-pressed="false">[Colourblind mode: off]</button></div></nav><header id="title-block-header"><h1>Full Boolean-valued model: one atom and an atomless component [built in L]</h1></header><p class="cert">
-Model — Source: Could the truths of mathematics have been different?
-(draft); produced by Andrew Bacon (underlying Boolean-valued
-construction); OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 27
-September 2026 (singleton-base specialization and verification of the
-recorded choice and atomicity claims); recorded by OpenAI Codex (GPT-6),
-prompted by Zachary Goodsell, 27 September 2026.
+Model — Source: Could the truths of mathematics have been different? (draft); produced by Andrew Bacon (underlying Boolean-valued construction); OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 27 September 2026 (singleton-base specialization and verification of the recorded choice and atomicity claims); recorded by OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 27 September 2026.
 </p>
 <h2 id="package">Package</h2>
 <ul>
-<li><strong>BF.</strong> The Barcan Formula at every type. The predicate
-formulation closes the formula schema using lambda abstraction.</li>
-<li><strong>Functional Choice.</strong> Every serial binary relation
-admits a selecting operation. Its output type is relational, as required
-by the type system.</li>
-<li><strong>□Intensional Choice.</strong> Necessarily, if a property is
-necessarily instantiated, then some property entailing it is necessarily
-uniquely instantiated.</li>
-<li><strong>□Transversal Choice.</strong> Necessarily, every equivalence
-relation, at any type including e, has a transversal, that is, a
-property with exactly one instance in each of its cells.</li>
-<li><strong>Axiom of Infinity (type t).</strong> There are not finitely
-many propositions. No finite cardinality holds of the universal
-property, so the domain of the type cannot be exhausted by finitely many
-steps from the empty property.</li>
-<li><strong>Arithmetic Necessitism.</strong> Given that necessarily zero
-is not a successor and successor is injective on numbers, the numbers at
-<span class="math inline">\sigma</span> form a rigid property with
-necessarily distinct instances. One sentence for each type <span
-class="math inline">\sigma</span>.</li>
-<li><strong>¬ Atomicity (type t).</strong> Every non-bottom proposition
-has an atom below it.</li>
-<li><strong>¬ □Boolean Completeness (type t).</strong> Necessarily,
-every property of propositions has a greatest lower bound.</li>
-<li><strong>¬ □Countable Boolean Completeness.</strong> Necessarily,
-every countable property of entities of a relational type has a least
-upper bound in that type, with countability relative to a type <span
-class="math inline">\sigma</span> as in Countable Boolean Completeness;
-one instance for each <span class="math inline">\sigma</span>.</li>
-<li><strong>¬ Forcing Possibilism.</strong> Every complete Boolean
-algebra that is finite or has strictly fewer elements than there are
-propositions is isomorphic to the entailment algebra below some
-proposition other than top.</li>
-<li><strong>¬ Analytic Necessitism.</strong> If there could be a real
-number structure, there is a rigid one that is necessarily a real number
-structure: a rigid property with necessarily distinct instances, with
-rigid order, addition, multiplication and natural numbers, which
-necessarily form a complete ordered field. One sentence for each type
-<span class="math inline">\sigma</span>.</li>
-<li><strong>¬ Non-contingency of the Continuum Hypothesis.</strong>
-Either necessarily every real number structure satisfies the continuum
-hypothesis, or necessarily every real number structure falsifies it:
-that every subproperty of the continuum either injects into the natural
-numbers or is in bijection with the continuum. One sentence for each
-type <span class="math inline">\sigma</span>.</li>
-<li><strong>¬ Necessity of Analysis.</strong> Every first-order
-analytical sentence is either true in every real number structure in
-every possible world or false in every real number structure in every
-possible world. One sentence for each type <span
-class="math inline">\sigma</span> and each first-order analytical
-sentence.</li>
-<li><strong>¬ Axiom of Infinity (type e).</strong> There are not
-finitely many individuals. No finite cardinality holds of the universal
-property, so the domain of the type cannot be exhausted by finitely many
-steps from the empty property.</li>
-<li><strong>¬ Infinity Schema (type e).</strong> There are arbitrarily
-many pairwise distinct entities of this fixed type; one sentence for
-each positive integer n.</li>
-<li><strong>¬ Possible Infinity (type e).</strong> Possibly there are
-not finitely many individuals: the Axiom of Infinity at this type, under
-a diamond.</li>
-<li><strong>¬ Witnessed Possibility.</strong> For pure-formulas P with
-free variables among a finite tuple x, and distinct matching nonlogical
-constants c, a witness to P entails that P at those constants is
-possible.</li>
-<li><strong>¬ Separated Structure.</strong> For each typed nonlogical
-constant c and closed same-typed terms F,G not containing c, equality
-after application to c implies equality of F and G.</li>
-<li><strong>¬ Independence (signature Σ).</strong> No constant of Sigma
-is a pure operation applied to other constants: for a closed pure term A
-and distinct constants c, d_1,…,d_n with n ≥ 0, c differs from A applied
-to the d’s. With n = 0, no constant denotes a pure entity.</li>
-<li><strong>¬ Maximalism (signature Σ).</strong> The Maximalism schema
-for the fixed nonlogical signature Σ: every closed identity of its
-language not provable in C(Σ) is false.</li>
+<li><strong>BF.</strong> The Barcan Formula at every type. The predicate formulation closes the formula schema using lambda abstraction.</li>
+<li><strong>Functional Choice.</strong> Every serial binary relation admits a selecting operation. Its output type is relational, as required by the type system.</li>
+<li><strong>□Intensional Choice.</strong> Necessarily, if a property is necessarily instantiated, then some property entailing it is necessarily uniquely instantiated.</li>
+<li><strong>□Transversal Choice.</strong> Necessarily, every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.</li>
+<li><strong>Axiom of Infinity (type t).</strong> There are not finitely many propositions. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.</li>
+<li><strong>Arithmetic Necessitism.</strong> Given that necessarily zero is not a successor and successor is injective on numbers, the numbers at <span class="math inline">\sigma</span> form a rigid property with necessarily distinct instances. One sentence for each type <span class="math inline">\sigma</span>.</li>
+<li><strong>¬ Atomicity (type t).</strong> Every non-bottom proposition has an atom below it.</li>
+<li><strong>¬ □Boolean Completeness (type t).</strong> Necessarily, every property of propositions has a greatest lower bound.</li>
+<li><strong>¬ □Countable Boolean Completeness.</strong> Necessarily, every countable property of entities of a relational type has a least upper bound in that type, with countability relative to a type <span class="math inline">\sigma</span> as in Countable Boolean Completeness; one instance for each <span class="math inline">\sigma</span>.</li>
+<li><strong>¬ Forcing Possibilism.</strong> Every complete Boolean algebra that is finite or has strictly fewer elements than there are propositions is isomorphic to the entailment algebra below some proposition other than top.</li>
+<li><strong>¬ Analytic Necessitism.</strong> If there could be a real number structure, there is a rigid one that is necessarily a real number structure: a rigid property with necessarily distinct instances, with rigid order, addition, multiplication and natural numbers, which necessarily form a complete ordered field. One sentence for each type <span class="math inline">\sigma</span>.</li>
+<li><strong>¬ Non-contingency of the Continuum Hypothesis.</strong> Either necessarily every real number structure satisfies the continuum hypothesis, or necessarily every real number structure falsifies it: that every subproperty of the continuum either injects into the natural numbers or is in bijection with the continuum. One sentence for each type <span class="math inline">\sigma</span>.</li>
+<li><strong>¬ Necessity of Analysis.</strong> Every first-order analytical sentence is either true in every real number structure in every possible world or false in every real number structure in every possible world. One sentence for each type <span class="math inline">\sigma</span> and each first-order analytical sentence.</li>
+<li><strong>¬ Axiom of Infinity (type e).</strong> There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.</li>
+<li><strong>¬ Infinity Schema (type e).</strong> There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.</li>
+<li><strong>¬ Possible Infinity (type e).</strong> Possibly there are not finitely many individuals: the Axiom of Infinity at this type, under a diamond.</li>
+<li><strong>¬ Witnessed Possibility.</strong> For pure-formulas P with free variables among a finite tuple x, and distinct matching nonlogical constants c, a witness to P entails that P at those constants is possible.</li>
+<li><strong>¬ Separated Structure.</strong> For each typed nonlogical constant c and closed same-typed terms F,G not containing c, equality after application to c implies equality of F and G.</li>
+<li><strong>¬ Independence (signature Σ).</strong> No constant of Sigma is a pure operation applied to other constants: for a closed pure term A and distinct constants c, d_1,…,d_n with n ≥ 0, c differs from A applied to the d’s. With n = 0, no constant denotes a pure entity.</li>
+<li><strong>¬ Maximalism (signature Σ).</strong> The Maximalism schema for the fixed nonlogical signature Σ: every closed identity of its language not provable in C(Σ) is false.</li>
 </ul>
 <h2 id="definition">Definition</h2>
-<p>A singleton-base specialization of Bacon’s full Boolean-valued
-construction in §B.2. Work in ZFC, let <span
-class="math inline">A</span> be a nontrivial complete atomless Boolean
-algebra, and set <span class="math inline">B=\mathbf{2}\times A</span>,
-<span class="math inline">D_e=\{*\}</span>, <span
-class="math inline">D_t=B</span>, and <span
-class="math inline">D_{\sigma\to\tau}=D_\tau^{D_\sigma}</span> for every
-admitted function type. Use ordinary application and abstraction,
-Boolean connectives, quantifiers given by meets and joins, and crisp
-equality. Evaluation point: the atom <span
-class="math inline">a=(1,0_A)</span>; a proposition is true iff its
-first coordinate is <span class="math inline">1</span>.</p>
-<p><span class="math inline">A</span> is fixed by cases on the continuum
-hypothesis in the ambient set theory. If CH holds, <span
-class="math inline">A</span> is <span
-class="math inline">\operatorname{RO}(\operatorname{Add}(\omega,\omega_2))</span>,
-the algebra adding <span class="math inline">\aleph_2</span> Cohen
-reals, as in Bacon’s §B.2; if CH fails, <span
-class="math inline">A</span> is <span
-class="math inline">\operatorname{RO}(\operatorname{Col}(\omega_1,2^{\aleph_0})\times\operatorname{Add}(\omega,1))</span>,
-which collapses the continuum to <span
-class="math inline">\aleph_1</span> and adds one Cohen real. Either way
-forcing with <span class="math inline">A</span> adds a Cohen real, <span
-class="math inline">A</span> has at least continuum many elements, and
-CH takes the opposite value in <span class="math inline">V^A</span> to
-its value in <span class="math inline">V</span>.</p>
-<p>Interpretation of Σ, fixed for this record: every constant of Σ is
-relational, and each denotes the top element of its type.</p>
-<p>Universe, fixed for this record: the construction is carried out
-inside Gödel’s constructible universe <span
-class="math inline">L</span>, which ZFC proves to be a model of ZFC +
-<span class="math inline">V=L</span>. Read in the ambient universe, the
-result is still a Boolean-valued model of the same kind, with the same
-values: every element of the algebra lies in <span
-class="math inline">L</span>, and every clause of the semantics takes
-the meet or join of a family that lies in <span
-class="math inline">L</span> (by induction on formulas), whose meet or
-join in <span class="math inline">L</span> is its meet or join outright,
-since every candidate bound is itself an element of the algebra, hence
-in <span class="math inline">L</span>. Its domains are full in the sense
-of <span class="math inline">L</span>, and every argument for the
-member, being a proof in ZFC about the model’s values, holds of it. In
-particular <span class="math inline">L\models\mathrm{CH}</span>, so an
-algebra chosen by cases on CH is the one for CH.</p>
-<p><em>A member of the group Full Boolean-valued models, which supplies
-this definition with the record’s settings, and the arguments marked as
-shared.</em></p>
+<p>A singleton-base specialization of Bacon’s full Boolean-valued construction in §B.2. Work in ZFC, let <span class="math inline">A</span> be a nontrivial complete atomless Boolean algebra, and set <span class="math inline">B=\mathbf{2}\times A</span>, <span class="math inline">D_e=\{*\}</span>, <span class="math inline">D_t=B</span>, and <span class="math inline">D_{\sigma\to\tau}=D_\tau^{D_\sigma}</span> for every admitted function type. Use ordinary application and abstraction, Boolean connectives, quantifiers given by meets and joins, and crisp equality. Evaluation point: the atom <span class="math inline">a=(1,0_A)</span>; a proposition is true iff its first coordinate is <span class="math inline">1</span>.</p>
+<p><span class="math inline">A</span> is fixed by cases on the continuum hypothesis in the ambient set theory. If CH holds, <span class="math inline">A</span> is <span class="math inline">\operatorname{RO}(\operatorname{Add}(\omega,\omega_2))</span>, the algebra adding <span class="math inline">\aleph_2</span> Cohen reals, as in Bacon’s §B.2; if CH fails, <span class="math inline">A</span> is <span class="math inline">\operatorname{RO}(\operatorname{Col}(\omega_1,2^{\aleph_0})\times\operatorname{Add}(\omega,1))</span>, which collapses the continuum to <span class="math inline">\aleph_1</span> and adds one Cohen real. Either way forcing with <span class="math inline">A</span> adds a Cohen real, <span class="math inline">A</span> has at least continuum many elements, and CH takes the opposite value in <span class="math inline">V^A</span> to its value in <span class="math inline">V</span>.</p>
+<p>Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each denotes the top element of its type.</p>
+<p>Universe, fixed for this record: the construction is carried out inside Gödel’s constructible universe <span class="math inline">L</span>, which ZFC proves to be a model of ZFC + <span class="math inline">V=L</span>. Read in the ambient universe, the result is still a Boolean-valued model of the same kind, with the same values: every element of the algebra lies in <span class="math inline">L</span>, and every clause of the semantics takes the meet or join of a family that lies in <span class="math inline">L</span> (by induction on formulas), whose meet or join in <span class="math inline">L</span> is its meet or join outright, since every candidate bound is itself an element of the algebra, hence in <span class="math inline">L</span>. Its domains are full in the sense of <span class="math inline">L</span>, and every argument for the member, being a proof in ZFC about the model’s values, holds of it. In particular <span class="math inline">L\models\mathrm{CH}</span>, so an algebra chosen by cases on CH is the one for CH.</p>
+<p><em>A member of the group Full Boolean-valued models, which supplies this definition with the record’s settings, and the arguments marked as shared.</em></p>
 <h2 id="arguments">Arguments</h2>
 <h3 id="holds-bf.">Holds BF.</h3>
-<p>The full function domains and complete truth projection validate C,
-boxed BF, and boxed ND.</p>
-<p><em>By Andrew Bacon (underlying Boolean-valued construction); OpenAI
-Codex (GPT-6), prompted by Zachary Goodsell, 27 September 2026
-(singleton-base specialization and verification of the recorded choice
-and atomicity claims).</em></p>
+<p>The full function domains and complete truth projection validate C, boxed BF, and boxed ND.</p>
+<p><em>By Andrew Bacon (underlying Boolean-valued construction); OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 27 September 2026 (singleton-base specialization and verification of the recorded choice and atomicity claims).</em></p>
 <h3 id="holds-functional-choice.">Holds Functional Choice.</h3>
-<p>Extensional fullness and metatheoretic choice give Relational Choice;
-full function domains give Plenitude, hence Functional Choice.</p>
-<p><em>By Andrew Bacon (underlying Boolean-valued construction); OpenAI
-Codex (GPT-6), prompted by Zachary Goodsell, 27 September 2026
-(singleton-base specialization and verification of the recorded choice
-and atomicity claims).</em></p>
+<p>Extensional fullness and metatheoretic choice give Relational Choice; full function domains give Plenitude, hence Functional Choice.</p>
+<p><em>By Andrew Bacon (underlying Boolean-valued construction); OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 27 September 2026 (singleton-base specialization and verification of the recorded choice and atomicity claims).</em></p>
 <h3 id="fails-atomicity-type-t.">Fails Atomicity (type t).</h3>
-<p>The sole atom <span class="math inline">a</span> witnesses Actuality
-and refutes Atomlessness, while <span class="math inline">(0,1_A)</span>
-is nonzero with no atom below it, refuting Atomicity at type <span
-class="math inline">t</span> and the full schema.</p>
-<p><em>By Andrew Bacon (underlying Boolean-valued construction); OpenAI
-Codex (GPT-6), prompted by Zachary Goodsell, 27 September 2026
-(singleton-base specialization and verification of the recorded choice
-and atomicity claims).</em></p>
+<p>The sole atom <span class="math inline">a</span> witnesses Actuality and refutes Atomlessness, while <span class="math inline">(0,1_A)</span> is nonzero with no atom below it, refuting Atomicity at type <span class="math inline">t</span> and the full schema.</p>
+<p><em>By Andrew Bacon (underlying Boolean-valued construction); OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 27 September 2026 (singleton-base specialization and verification of the recorded choice and atomicity claims).</em></p>
 <h3 id="holds-intensional-choice.">Holds □Intensional Choice.</h3>
-<p>Here <span class="math inline">\Box p</span> is <span
-class="math inline">p=\top</span>, so <span
-class="math inline">\Box\exists x\, .\,Fx</span> says <span
-class="math inline">\bigvee_{x\in D_\sigma}F(x)=1_B</span>. Well-order
-<span class="math inline">D_\sigma</span> and put <span
-class="math inline">G(x):=F(x)\land\neg\bigvee_{y&lt;x}F(y)</span>. Then
-<span class="math inline">G\le F</span> pointwise, the <span
-class="math inline">G(x)</span> are pairwise disjoint, and <span
-class="math inline">\bigvee_xG(x)=\bigvee_xF(x)=1_B</span>. With crisp
-equality <span class="math inline">\exists x\, .\,(Gx\land\forall y\,
-.\,(Gy\to y=x))</span> has value <span
-class="math inline">\bigvee_x(G(x)\land\bigwedge_{y\ne x}\neg
-G(y))=\bigvee_xG(x)=1_B</span>, and so does its box. The function
-domains are full, so <span class="math inline">G</span> is in the
-domain. Every closed instance has value <span
-class="math inline">1_B</span>, so Intensional Choice holds
-necessarily.</p>
-<p><em>By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, at Cian
-Dorr’s suggestion, 2026-10-03.</em></p>
+<p>Here <span class="math inline">\Box p</span> is <span class="math inline">p=\top</span>, so <span class="math inline">\Box\exists x\, .\,Fx</span> says <span class="math inline">\bigvee_{x\in D_\sigma}F(x)=1_B</span>. Well-order <span class="math inline">D_\sigma</span> and put <span class="math inline">G(x):=F(x)\land\neg\bigvee_{y&lt;x}F(y)</span>. Then <span class="math inline">G\le F</span> pointwise, the <span class="math inline">G(x)</span> are pairwise disjoint, and <span class="math inline">\bigvee_xG(x)=\bigvee_xF(x)=1_B</span>. With crisp equality <span class="math inline">\exists x\, .\,(Gx\land\forall y\, .\,(Gy\to y=x))</span> has value <span class="math inline">\bigvee_x(G(x)\land\bigwedge_{y\ne x}\neg G(y))=\bigvee_xG(x)=1_B</span>, and so does its box. The function domains are full, so <span class="math inline">G</span> is in the domain. Every closed instance has value <span class="math inline">1_B</span>, so Intensional Choice holds necessarily.</p>
+<p><em>By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, at Cian Dorr’s suggestion, 2026-10-03.</em></p>
 <h3 id="holds-transversal-choice.">Holds □Transversal Choice.</h3>
-<p>Write <span class="math inline">\pi</span> and <span
-class="math inline">\rho</span> for the two coordinate projections of
-<span class="math inline">B=\mathbf 2\times A</span>, both complete
-homomorphisms; <span class="math inline">\Box p</span> is <span
-class="math inline">p=\top</span>, so a closed sentence is necessary
-when it is true and its <span class="math inline">\rho</span>-coordinate
-is <span class="math inline">1_A</span>. Under <span
-class="math inline">\rho</span> a sentence without <span
-class="math inline">\Box</span> takes its value in the Boolean-valued
-universe <span class="math inline">V^A</span>, each <span
-class="math inline">D_\sigma</span> read as a ground set with crisp
-identity and the <span class="math inline">\rho</span>-parts of
-relations on it ranging over all names for subsets of it. So a theorem
-of ZFC about relations on well-orderable sets has <span
-class="math inline">\rho</span>-value <span
-class="math inline">1_A</span>. Transversal Choice is of this kind: the
-least element of each class, <span
-class="math inline">F(y):=\bigwedge_{y^{\prime}&lt;y}\neg
-R(y^{\prime},y)</span>, is a transversal. Its truth is already derived,
-so it is necessary.</p>
-<p><em>By Claude Fable 5.1 (Anthropic), at Cian Dorr’s request,
-2026-10-03.</em></p>
-<h3 id="holds-countable-boolean-completeness.">Holds □Countable Boolean
-Completeness.</h3>
-<p><em>Withdrawn 2026-10-16 by Claude Opus 5.5 (Anthropic), at Cian
-Dorr’s direction: Countable Boolean Completeness now measures
-countability at every type. The argument covers only the instances
-counting at <span class="math inline">e</span>; at type <span
-class="math inline">t</span>, where <span class="math inline">B</span>
-is infinite and the numerals are the standard ones, it says
-nothing.</em></p>
-<p>An effect of the single individual. The type-<span
-class="math inline">e</span> numerals are crisply three entities, <span
-class="math inline">\mathbf 0_e</span>, <span
-class="math inline">\mathbf 1_e</span>, and the empty cardinality, which
-is its own successor, so <span
-class="math inline">\operatorname{Ctbl}(X)</span> makes <span
-class="math inline">X</span> have at most three members internally; a
-finite subset of a ground set is a ground set, and finite families have
-joins in the complete pointwise order. So every closed instance has
-value <span class="math inline">1_B</span>.</p>
-<p><em>By Claude Fable 5.1 (Anthropic), at Cian Dorr’s request,
-2026-10-03.</em></p>
-<h3 id="holds-axiom-of-infinity-type-t.">Holds Axiom of Infinity (type
-t).</h3>
-<p><span class="math inline">B</span> is infinite and identity is crisp.
-The crisp characteristic function of the standard numerals is inductive,
-so finite cardinality has value <span class="math inline">0_B</span> off
-the standard numerals, and the <span class="math inline">n</span>th
-numeral holds of the universal property of propositions with the value
-of “<span class="math inline">B</span> has exactly <span
-class="math inline">n</span> elements”, <span
-class="math inline">0_B</span>.</p>
-<p><em>By Claude Fable 5.1 (Anthropic), at Cian Dorr’s request,
-2026-10-03.</em></p>
-<h3 id="fails-boolean-completeness-type-t.">Fails □Boolean Completeness
-(type t).</h3>
-<p>For the algebra fixed in the definition. Take a countable maximal
-antichain <span class="math inline">(a_n)</span> in <span
-class="math inline">A</span>, put <span class="math inline">w_n:=(0,\neg
-a_n)</span>, choose <span class="math inline">c_n\in A</span>, and let
-<span class="math inline">X</span> of type <span
-class="math inline">t\to t</span> have <span class="math inline">\rho
-X(w_n)=c_n</span> and <span class="math inline">0</span> elsewhere. With
-<span class="math inline">s</span> the fuzzy subset of <span
-class="math inline">\omega</span> given by the <span
-class="math inline">c_n</span>, a direct computation gives <span
-class="math inline">\rho[\![\exists y\,
-.\,\operatorname{GLB}_t(y,X)]\!]=\bigvee_{U\subseteq\omega}[\![s=\check
-U]\!]</span>, the value of “<span class="math inline">s</span> is a
-ground set”. Forcing with <span class="math inline">A</span> adds a
-Cohen real; taking the <span class="math inline">c_n</span> to be its
-coordinates, <span class="math inline">[\![s=\check U]\!]=0_A</span> for
-every <span class="math inline">U</span>, so the closed instance of
-Boolean Completeness (type <span class="math inline">t</span>) has value
-exactly <span class="math inline">a</span>: true, and not necessary.
-Whether it is necessary for an algebra adding no reals is open.</p>
-<p><em>By Claude Fable 5.1 (Anthropic), at Cian Dorr’s request,
-2026-10-03.</em></p>
-<p><em>Revised 2026-10-24 by Claude Opus 5.5 (Anthropic), prompted by
-Cian Dorr:</em> The argument used only that forcing with <span
-class="math inline">A</span> adds a Cohen real, which the algebras now
-fixed by cases on CH both do; the text names that property instead of
-the regular open algebra of the real line.</p>
-<h3 id="fails-countable-boolean-completeness.">Fails □Countable Boolean
-Completeness.</h3>
-<p>At <span class="math inline">\sigma=\tau=t</span>, for the property
-<span class="math inline">X</span> of type <span
-class="math inline">t\to t</span> in the argument for the failure of
-<span class="math inline">\Box</span>Boolean Completeness (type <span
-class="math inline">t</span>). The crisp relation pairing <span
-class="math inline">w_n</span> with the <span
-class="math inline">n</span>-th numeral, and nothing else, is in the
-full domain; the numerals at <span class="math inline">t</span> are
-crisply the standard ones (the argument for the Axiom of Infinity (type
-<span class="math inline">t</span>)), so <span
-class="math inline">\operatorname{Ctbl}_{t,t}(X)</span> has value <span
-class="math inline">1_B</span>. The instance of Countable Boolean
-Completeness at <span class="math inline">X</span> in its
-greatest-lower-bound form then has the value of <span
-class="math inline">\exists y\, .\,\operatorname{GLB}_t(y,X)</span>,
-whose <span class="math inline">A</span>-coordinate is <span
-class="math inline">0_A</span>, so the closed instance is not
-necessary.</p>
-<p><em>By Claude Opus 5.5 (Anthropic), at Cian Dorr’s direction,
-2026-10-16.</em></p>
+<p>Write <span class="math inline">\pi</span> and <span class="math inline">\rho</span> for the two coordinate projections of <span class="math inline">B=\mathbf 2\times A</span>, both complete homomorphisms; <span class="math inline">\Box p</span> is <span class="math inline">p=\top</span>, so a closed sentence is necessary when it is true and its <span class="math inline">\rho</span>-coordinate is <span class="math inline">1_A</span>. Under <span class="math inline">\rho</span> a sentence without <span class="math inline">\Box</span> takes its value in the Boolean-valued universe <span class="math inline">V^A</span>, each <span class="math inline">D_\sigma</span> read as a ground set with crisp identity and the <span class="math inline">\rho</span>-parts of relations on it ranging over all names for subsets of it. So a theorem of ZFC about relations on well-orderable sets has <span class="math inline">\rho</span>-value <span class="math inline">1_A</span>. Transversal Choice is of this kind: the least element of each class, <span class="math inline">F(y):=\bigwedge_{y^{\prime}&lt;y}\neg R(y^{\prime},y)</span>, is a transversal. Its truth is already derived, so it is necessary.</p>
+<p><em>By Claude Fable 5.1 (Anthropic), at Cian Dorr’s request, 2026-10-03.</em></p>
+<h3 id="holds-countable-boolean-completeness.">Holds □Countable Boolean Completeness.</h3>
+<p><em>Withdrawn 2026-10-16 by Claude Opus 5.5 (Anthropic), at Cian Dorr’s direction: Countable Boolean Completeness now measures countability at every type. The argument covers only the instances counting at <span class="math inline">e</span>; at type <span class="math inline">t</span>, where <span class="math inline">B</span> is infinite and the numerals are the standard ones, it says nothing.</em></p>
+<p>An effect of the single individual. The type-<span class="math inline">e</span> numerals are crisply three entities, <span class="math inline">\mathbf 0_e</span>, <span class="math inline">\mathbf 1_e</span>, and the empty cardinality, which is its own successor, so <span class="math inline">\operatorname{Ctbl}(X)</span> makes <span class="math inline">X</span> have at most three members internally; a finite subset of a ground set is a ground set, and finite families have joins in the complete pointwise order. So every closed instance has value <span class="math inline">1_B</span>.</p>
+<p><em>By Claude Fable 5.1 (Anthropic), at Cian Dorr’s request, 2026-10-03.</em></p>
+<h3 id="holds-axiom-of-infinity-type-t.">Holds Axiom of Infinity (type t).</h3>
+<p><span class="math inline">B</span> is infinite and identity is crisp. The crisp characteristic function of the standard numerals is inductive, so finite cardinality has value <span class="math inline">0_B</span> off the standard numerals, and the <span class="math inline">n</span>th numeral holds of the universal property of propositions with the value of “<span class="math inline">B</span> has exactly <span class="math inline">n</span> elements”, <span class="math inline">0_B</span>.</p>
+<p><em>By Claude Fable 5.1 (Anthropic), at Cian Dorr’s request, 2026-10-03.</em></p>
+<h3 id="fails-boolean-completeness-type-t.">Fails □Boolean Completeness (type t).</h3>
+<p>For the algebra fixed in the definition. Take a countable maximal antichain <span class="math inline">(a_n)</span> in <span class="math inline">A</span>, put <span class="math inline">w_n:=(0,\neg a_n)</span>, choose <span class="math inline">c_n\in A</span>, and let <span class="math inline">X</span> of type <span class="math inline">t\to t</span> have <span class="math inline">\rho X(w_n)=c_n</span> and <span class="math inline">0</span> elsewhere. With <span class="math inline">s</span> the fuzzy subset of <span class="math inline">\omega</span> given by the <span class="math inline">c_n</span>, a direct computation gives <span class="math inline">\rho[\![\exists y\, .\,\operatorname{GLB}_t(y,X)]\!]=\bigvee_{U\subseteq\omega}[\![s=\check U]\!]</span>, the value of “<span class="math inline">s</span> is a ground set”. Forcing with <span class="math inline">A</span> adds a Cohen real; taking the <span class="math inline">c_n</span> to be its coordinates, <span class="math inline">[\![s=\check U]\!]=0_A</span> for every <span class="math inline">U</span>, so the closed instance of Boolean Completeness (type <span class="math inline">t</span>) has value exactly <span class="math inline">a</span>: true, and not necessary. Whether it is necessary for an algebra adding no reals is open.</p>
+<p><em>By Claude Fable 5.1 (Anthropic), at Cian Dorr’s request, 2026-10-03.</em></p>
+<p><em>Revised 2026-10-24 by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr:</em> The argument used only that forcing with <span class="math inline">A</span> adds a Cohen real, which the algebras now fixed by cases on CH both do; the text names that property instead of the regular open algebra of the real line.</p>
+<h3 id="fails-countable-boolean-completeness.">Fails □Countable Boolean Completeness.</h3>
+<p>At <span class="math inline">\sigma=\tau=t</span>, for the property <span class="math inline">X</span> of type <span class="math inline">t\to t</span> in the argument for the failure of <span class="math inline">\Box</span>Boolean Completeness (type <span class="math inline">t</span>). The crisp relation pairing <span class="math inline">w_n</span> with the <span class="math inline">n</span>-th numeral, and nothing else, is in the full domain; the numerals at <span class="math inline">t</span> are crisply the standard ones (the argument for the Axiom of Infinity (type <span class="math inline">t</span>)), so <span class="math inline">\operatorname{Ctbl}_{t,t}(X)</span> has value <span class="math inline">1_B</span>. The instance of Countable Boolean Completeness at <span class="math inline">X</span> in its greatest-lower-bound form then has the value of <span class="math inline">\exists y\, .\,\operatorname{GLB}_t(y,X)</span>, whose <span class="math inline">A</span>-coordinate is <span class="math inline">0_A</span>, so the closed instance is not necessary.</p>
+<p><em>By Claude Opus 5.5 (Anthropic), at Cian Dorr’s direction, 2026-10-16.</em></p>
 <h3 id="fails-forcing-possibilism.">Fails Forcing Possibilism.</h3>
-<p>The four-element Boolean algebra is finite, hence small, and present
-internally on any four propositions with the right order, the model
-being full. Forcing Possibilism would give a proposition <span
-class="math inline">p\ne\top</span> with exactly four propositions
-entailing it. In <span class="math inline">B=\mathbf 2\times A</span>
-the propositions below <span class="math inline">(0,a)</span> are the
-<span class="math inline">(0,b)</span> with <span
-class="math inline">b\le a</span>, one of them if <span
-class="math inline">a=0_A</span> and infinitely many otherwise, <span
-class="math inline">A</span> being atomless; and those below <span
-class="math inline">(1,a)</span> are the <span
-class="math inline">(\varepsilon,b)</span> with <span
-class="math inline">b\le a</span>, two of them if <span
-class="math inline">a=0_A</span> and infinitely many otherwise. No
-proposition has exactly four, so Forcing Possibilism fails.</p>
-<p><em>By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell,
-2026-10-23.</em></p>
+<p>The four-element Boolean algebra is finite, hence small, and present internally on any four propositions with the right order, the model being full. Forcing Possibilism would give a proposition <span class="math inline">p\ne\top</span> with exactly four propositions entailing it. In <span class="math inline">B=\mathbf 2\times A</span> the propositions below <span class="math inline">(0,a)</span> are the <span class="math inline">(0,b)</span> with <span class="math inline">b\le a</span>, one of them if <span class="math inline">a=0_A</span> and infinitely many otherwise, <span class="math inline">A</span> being atomless; and those below <span class="math inline">(1,a)</span> are the <span class="math inline">(\varepsilon,b)</span> with <span class="math inline">b\le a</span>, two of them if <span class="math inline">a=0_A</span> and infinitely many otherwise. No proposition has exactly four, so Forcing Possibilism fails.</p>
+<p><em>By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-23.</em></p>
 <h3 id="fails-analytic-necessitism.">Fails Analytic Necessitism.</h3>
-<p>At type <span class="math inline">t</span>, for the algebra fixed in
-the definition. Here <span class="math inline">\Box p</span> is <span
-class="math inline">p=\top</span>, so a property <span
-class="math inline">X</span> of type <span class="math inline">t\to
-t</span> satisfies <span class="math inline">\Box\forall
-x\,.\,(Xx\to\Box Xx)\land(\neg Xx\to\Box\neg Xx)</span> with first
-coordinate <span class="math inline">1</span> only if <span
-class="math inline">X</span> is crisp, taking the values <span
-class="math inline">\top</span> and <span
-class="math inline">\bot</span> alone, and likewise for relations; so a
-rigid real number structure <span class="math inline">\mathfrak R</span>
-is crisp, the check of a structure <span
-class="math inline">(S,\le,+,\times,0,1,N)</span> of the ground model,
-and <span class="math inline">\Box\operatorname{Real}_t(\mathfrak
-R)</span> asks that <span
-class="math inline">\operatorname{Real}_t(\mathfrak R)</span> have value
-<span class="math inline">\top</span>, in particular <span
-class="math inline">\rho</span>-coordinate <span
-class="math inline">1_A</span>. That fails: forcing with <span
-class="math inline">A</span> adds a real <span
-class="math inline">r</span>; the <span
-class="math inline">A</span>-valued subproperty of <span
-class="math inline">S</span> naming the lower Dedekind cut of <span
-class="math inline">r</span> in <span class="math inline">S</span> is in
-the full domain and is bounded, but has no least upper bound in <span
-class="math inline">S</span> with positive value, since <span
-class="math inline">[\![r=\check s]\!]=0</span> for every ground real
-<span class="math inline">s</span>. So the consequent of Analytic
-Necessitism is false at the evaluation point. Its antecedent is true:
-<span class="math inline">B</span> has at least continuum many elements,
-the crisp characteristic functions of a set <span
-class="math inline">S\subseteq B</span> in bijection with the reals and
-of its order, sum, product and natural numbers are in the full domains,
-and <span class="math inline">\operatorname{Real}_t</span> of this
-structure has <span class="math inline">\pi</span>-coordinate <span
-class="math inline">1</span>, every bounded crisp subset of <span
-class="math inline">S</span> having a least upper bound in it; so <span
-class="math inline">\exists\mathfrak
-R\,.\,\operatorname{Real}_t(\mathfrak R)</span> is not <span
-class="math inline">\bot</span> and its possibility is <span
-class="math inline">\top</span>.</p>
-<p><em>By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell,
-2026-10-23.</em></p>
-<p><em>Revised 2026-10-24 by Claude Opus 5.5 (Anthropic), prompted by
-Cian Dorr:</em> The argument used only that forcing with <span
-class="math inline">A</span> adds a real and that <span
-class="math inline">B</span> has at least continuum many elements, true
-of the algebras now fixed by cases on CH; the text says so instead of
-naming the regular open algebra of the real line.</p>
-<h3 id="fails-non-contingency-of-the-continuum-hypothesis.">Fails
-Non-contingency of the Continuum Hypothesis.</h3>
-<p>At type <span class="math inline">t</span>. Write <span
-class="math inline">\pi,\rho</span> for the coordinate projections of
-<span class="math inline">B=\mathbf 2\times A</span>. By extensional
-fullness the <span class="math inline">\pi</span>-coordinate of a
-box-free sentence is its truth in the full standard model over the same
-domains, and the <span class="math inline">\rho</span>-coordinate its
-value in <span class="math inline">V^A</span>, relations on a ground set
-ranging over all names for subsets of it. Both <span
-class="math inline">V</span> and <span class="math inline">V^A</span>
-have a real number structure on a subset of <span
-class="math inline">D_t=B</span>: <span
-class="math inline">|B|\ge2^{\aleph_0}</span>, and <span
-class="math inline">|B|\ge(2^{\aleph_0})^{V^A}</span>, which is <span
-class="math inline">\aleph_2</span> in the first case (where <span
-class="math inline">|B|=\aleph_2^{\aleph_0}=\aleph_2</span>, by CH) and
-<span class="math inline">\aleph_1</span> in the second. Real number
-structures are unique up to isomorphism, so <span
-class="math inline">\exists\mathfrak R\,
-.\,\operatorname{Real}_t(\mathfrak R)\land\operatorname{CH}(\mathfrak
-R)</span> has <span class="math inline">\pi</span>-coordinate <span
-class="math inline">1</span> iff CH holds in <span
-class="math inline">V</span> and <span
-class="math inline">\rho</span>-coordinate <span
-class="math inline">1_A</span> iff CH holds in <span
-class="math inline">V^A</span>, and likewise for <span
-class="math inline">\neg\operatorname{CH}</span>, the value otherwise
-being <span class="math inline">0</span>. CH takes opposite values in
-<span class="math inline">V</span> and <span
-class="math inline">V^A</span>, so each of <span
-class="math inline">\forall\mathfrak R\,
-.\,\operatorname{Real}_t(\mathfrak R)\to\operatorname{CH}(\mathfrak
-R)</span> and <span class="math inline">\forall\mathfrak R\,
-.\,\operatorname{Real}_t(\mathfrak R)\to\neg\operatorname{CH}(\mathfrak
-R)</span> is <span class="math inline">(1,0_A)</span> or <span
-class="math inline">(0,1_A)</span>, not <span
-class="math inline">\top</span>. As <span class="math inline">\Box
-p</span> is <span class="math inline">p=\top</span>, both disjuncts of
-Non-contingency of CH are <span class="math inline">\bot</span>.</p>
-<p><em>Source: Could the truths of mathematics have been different?,
-Online appendix §B.2, Lemmas B.1–B.4, pp. 7–9. <a
-href="https://andrew-bacon.github.io/papers/Could%20mathematics%20have%20been%20different.pdf">Paper</a>
-Write-up: <a
-href="full-boolean-valued-atom-and-atomless.html">full-boolean-valued-atom-and-atomless</a>.
-Address:
-<code>full-boolean-valued-atom-and-atomless-universe-constructible#ch-contingent</code>.
-By Cian Dorr (the choice of algebra by cases on CH, after Bacon’s §B.2),
-with Claude Opus 5.5 (Anthropic), 2026-10-24.</em></p>
-<h3 id="holds-arithmetic-necessitism.">Holds Arithmetic
-Necessitism.</h3>
-<p>At every type. The numerals are crisp entities, and the crisp
-characteristic function of the set of numerals at <span
-class="math inline">\sigma</span> is in the full domain and inductive
-with value <span class="math inline">\top</span>, so <span
-class="math inline">\mathbb N_\sigma</span> is crisp, with the numerals
-as its instances. Here <span class="math inline">\Box p</span> is <span
-class="math inline">p=\top</span>, so persistence, <span
-class="math inline">\Box\forall n\,.\,\mathbb N_\sigma n\to\Box\mathbb
-N_\sigma n</span>, has value <span class="math inline">\top</span>;
-inextensibility, <span class="math inline">\Box\forall X\,.\,(\forall
-n\,.\,\mathbb N_\sigma n\to\Box Xn)\to\mathbb N_\sigma\le X</span>, has
-value <span class="math inline">\top</span>, since for each <span
-class="math inline">X</span> both sides of the implication are <span
-class="math inline">\bigwedge_n[\![Xn=\top]\!]</span> over the numerals
-<span class="math inline">n</span>; and distinct numerals are
-necessarily distinct, identity being crisp. So <span
-class="math inline">\mathbb N_\sigma</span> is rigid with necessarily
-distinct instances, whether or not <span class="math inline">\Box
-I^*_\sigma</span> holds.</p>
-<p><em>By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell,
-2026-10-23.</em></p>
+<p>At type <span class="math inline">t</span>, for the algebra fixed in the definition. Here <span class="math inline">\Box p</span> is <span class="math inline">p=\top</span>, so a property <span class="math inline">X</span> of type <span class="math inline">t\to t</span> satisfies <span class="math inline">\Box\forall x\,.\,(Xx\to\Box Xx)\land(\neg Xx\to\Box\neg Xx)</span> with first coordinate <span class="math inline">1</span> only if <span class="math inline">X</span> is crisp, taking the values <span class="math inline">\top</span> and <span class="math inline">\bot</span> alone, and likewise for relations; so a rigid real number structure <span class="math inline">\mathfrak R</span> is crisp, the check of a structure <span class="math inline">(S,\le,+,\times,0,1,N)</span> of the ground model, and <span class="math inline">\Box\operatorname{Real}_t(\mathfrak R)</span> asks that <span class="math inline">\operatorname{Real}_t(\mathfrak R)</span> have value <span class="math inline">\top</span>, in particular <span class="math inline">\rho</span>-coordinate <span class="math inline">1_A</span>. That fails: forcing with <span class="math inline">A</span> adds a real <span class="math inline">r</span>; the <span class="math inline">A</span>-valued subproperty of <span class="math inline">S</span> naming the lower Dedekind cut of <span class="math inline">r</span> in <span class="math inline">S</span> is in the full domain and is bounded, but has no least upper bound in <span class="math inline">S</span> with positive value, since <span class="math inline">[\![r=\check s]\!]=0</span> for every ground real <span class="math inline">s</span>. So the consequent of Analytic Necessitism is false at the evaluation point. Its antecedent is true: <span class="math inline">B</span> has at least continuum many elements, the crisp characteristic functions of a set <span class="math inline">S\subseteq B</span> in bijection with the reals and of its order, sum, product and natural numbers are in the full domains, and <span class="math inline">\operatorname{Real}_t</span> of this structure has <span class="math inline">\pi</span>-coordinate <span class="math inline">1</span>, every bounded crisp subset of <span class="math inline">S</span> having a least upper bound in it; so <span class="math inline">\exists\mathfrak R\,.\,\operatorname{Real}_t(\mathfrak R)</span> is not <span class="math inline">\bot</span> and its possibility is <span class="math inline">\top</span>.</p>
+<p><em>By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-23.</em></p>
+<p><em>Revised 2026-10-24 by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr:</em> The argument used only that forcing with <span class="math inline">A</span> adds a real and that <span class="math inline">B</span> has at least continuum many elements, true of the algebras now fixed by cases on CH; the text says so instead of naming the regular open algebra of the real line.</p>
+<h3 id="fails-non-contingency-of-the-continuum-hypothesis.">Fails Non-contingency of the Continuum Hypothesis.</h3>
+<p>At type <span class="math inline">t</span>. Write <span class="math inline">\pi,\rho</span> for the coordinate projections of <span class="math inline">B=\mathbf 2\times A</span>. By extensional fullness, for a box-free formula whose relation variables are only applied to elements of a fixed carrier, with identity only between those elements, the <span class="math inline">\pi</span>-coordinate is its truth in the full standard model over the same domains, and the <span class="math inline">\rho</span>-coordinate its value in <span class="math inline">V^A</span>, relations on a ground set ranging over all names for subsets of it. (Not every box-free sentence transfers: identity between relations is crisp, so box-free Extensionality has value <span class="math inline">\bot</span>.) The sentences below are in this fragment. Both <span class="math inline">V</span> and <span class="math inline">V^A</span> have a real number structure on a subset of <span class="math inline">D_t=B</span>: <span class="math inline">|B|\ge2^{\aleph_0}</span>, and <span class="math inline">|B|\ge(2^{\aleph_0})^{V^A}</span>, which is <span class="math inline">\aleph_2</span> in the first case (where <span class="math inline">|B|=\aleph_2^{\aleph_0}=\aleph_2</span>, by CH) and <span class="math inline">\aleph_1</span> in the second. Real number structures are unique up to isomorphism, so <span class="math inline">\exists\mathfrak R\, .\,\operatorname{Real}_t(\mathfrak R)\land\operatorname{CH}(\mathfrak R)</span> has <span class="math inline">\pi</span>-coordinate <span class="math inline">1</span> iff CH holds in <span class="math inline">V</span> and <span class="math inline">\rho</span>-coordinate <span class="math inline">1_A</span> iff CH holds in <span class="math inline">V^A</span>, and likewise for <span class="math inline">\neg\operatorname{CH}</span>, the value otherwise being <span class="math inline">0</span>. CH takes opposite values in <span class="math inline">V</span> and <span class="math inline">V^A</span>, so each of <span class="math inline">\forall\mathfrak R\, .\,\operatorname{Real}_t(\mathfrak R)\to\operatorname{CH}(\mathfrak R)</span> and <span class="math inline">\forall\mathfrak R\, .\,\operatorname{Real}_t(\mathfrak R)\to\neg\operatorname{CH}(\mathfrak R)</span> is <span class="math inline">(1,0_A)</span> or <span class="math inline">(0,1_A)</span>, not <span class="math inline">\top</span>. As <span class="math inline">\Box p</span> is <span class="math inline">p=\top</span>, both disjuncts of Non-contingency of CH are <span class="math inline">\bot</span>.</p>
+<p><em>Source: Could the truths of mathematics have been different?, Online appendix §B.2, Lemmas B.1–B.4, pp. 7–9. <a href="https://andrew-bacon.github.io/papers/Could%20mathematics%20have%20been%20different.pdf">Paper</a> Write-up: <a href="full-boolean-valued-atom-and-atomless.html">full-boolean-valued-atom-and-atomless</a>. Address: <code>full-boolean-valued-atom-and-atomless-universe-constructible#ch-contingent</code>. By Cian Dorr (the choice of algebra by cases on CH, after Bacon’s §B.2), with Claude Opus 5.5 (Anthropic), 2026-10-24.</em></p>
+<p><em>Revised 2026-10-29 by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, from a correction by OpenAI Codex (GPT-6), prompted by Daniel Kodsi, 25 October 2026, in Daniel Kodsi’s pull request:</em> The first sentence claimed the transfer for every box-free sentence. That is false: with crisp identity of entities, take <span class="math inline">F(*)=\bot</span> and <span class="math inline">G(*)=(1,0_A)</span> at type <span class="math inline">et</span>; coextension has value <span class="math inline">(0,1_A)</span> and identity <span class="math inline">\bot</span>, so box-free Extensionality has value <span class="math inline">\bot</span>. The transfer is now stated for formulas whose relation variables are only applied to carrier elements, with identity only on those; the real number structure and CH sentences are in that fragment, and the verdict is unchanged.</p>
+<h3 id="holds-arithmetic-necessitism.">Holds Arithmetic Necessitism.</h3>
+<p>At every type. The numerals are crisp entities, and the crisp characteristic function of the set of numerals at <span class="math inline">\sigma</span> is in the full domain and inductive with value <span class="math inline">\top</span>, so <span class="math inline">\mathbb N_\sigma</span> is crisp, with the numerals as its instances. Here <span class="math inline">\Box p</span> is <span class="math inline">p=\top</span>, so persistence, <span class="math inline">\Box\forall n\,.\,\mathbb N_\sigma n\to\Box\mathbb N_\sigma n</span>, has value <span class="math inline">\top</span>; inextensibility, <span class="math inline">\Box\forall X\,.\,(\forall n\,.\,\mathbb N_\sigma n\to\Box Xn)\to\mathbb N_\sigma\le X</span>, has value <span class="math inline">\top</span>, since for each <span class="math inline">X</span> both sides of the implication are <span class="math inline">\bigwedge_n[\![Xn=\top]\!]</span> over the numerals <span class="math inline">n</span>; and distinct numerals are necessarily distinct, identity being crisp. So <span class="math inline">\mathbb N_\sigma</span> is rigid with necessarily distinct instances, whether or not <span class="math inline">\Box I^*_\sigma</span> holds.</p>
+<p><em>By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-23.</em></p>
 <h3 id="fails-necessity-of-analysis.">Fails Necessity of Analysis.</h3>
-<p>At type <span class="math inline">t</span>, for the analytical
-sentence <span class="math inline">\Phi</span> saying that every real is
-constructible: membership of a real in <span
-class="math inline">L</span> is <span
-class="math inline">\Sigma^1_2</span> (Shoenfield), so <span
-class="math inline">\Phi</span> is <span
-class="math inline">\Pi^1_3</span>, a first-order analytical sentence in
-any real number structure, whose natural numbers code sets of naturals
-by its reals. Write <span class="math inline">\pi,\rho</span> for the
-projections of <span class="math inline">B=\mathbf 2\times A</span> onto
-the atom’s coordinate and <span class="math inline">A</span>. As in the
-argument for the contingency of CH, the <span
-class="math inline">\pi</span>-coordinate of a box-free sentence is its
-truth in the full model over <span class="math inline">L</span> and the
-<span class="math inline">\rho</span>-coordinate its value in <span
-class="math inline">L^A</span>, and both have real number structures on
-subsets of <span class="math inline">D_t=B</span>. <span
-class="math inline">L\models\Phi</span>, while forcing with <span
-class="math inline">A</span> adds a Cohen real over <span
-class="math inline">L</span>, not constructible, and Shoenfield
-absoluteness makes the <span class="math inline">\Sigma^1_2</span>
-definition of constructibility mean the same in <span
-class="math inline">L^A</span>; so <span class="math inline">\Phi</span>
-has value <span class="math inline">0_A</span> there. Real number
-structures being isomorphic within each coordinate, <span
-class="math inline">\forall\mathfrak R\,
-.\,\operatorname{Real}_t(\mathfrak R)\to\Phi(\mathfrak R)</span> has
-value <span class="math inline">(1,0_A)</span> and <span
-class="math inline">\forall\mathfrak R\,
-.\,\operatorname{Real}_t(\mathfrak R)\to\neg\Phi(\mathfrak R)</span> has
-value <span class="math inline">(0,1_A)</span>. As <span
-class="math inline">\Box p</span> is <span
-class="math inline">p=\top</span>, both disjuncts of the instance are
-<span class="math inline">\bot</span>.</p>
-<p><em>From the group </em>Full Boolean-valued models<em>, shared
-argument
-<code>full-boolean-valued#necessity-of-analysis-constructible</code>. By
-Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-25.</em></p>
-<h3
-id="fails-axiom-of-infinity-type-e-infinity-schema-type-e-possible-infinity-type-e.">Fails
-Axiom of Infinity (type e), Infinity Schema (type e), Possible Infinity
-(type e).</h3>
-<p>No two individuals are distinct, and the numeral <span
-class="math inline">\operatorname{Suc}_e\mathbf{0}_e</span> holds of the
-universal property at type <span class="math inline">e</span> at every
-world.</p>
-<p><em>General argument <code>arguments/one-individual</code>. It
-requires that There is exactly one individual, at every world. Here:
-<span class="math inline">D_e=\{*\}</span>. By Claude Opus 5.5
-(Anthropic), at Cian Dorr’s direction, 2026-10-02.</em></p>
-<p><em>Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr’s
-direction:</em> Moved from the group finite-support-one-object to the
-topic.</p>
-<h3
-id="fails-witnessed-possibility-separated-structure-independence-signature-σ-maximalism-signature-σ.">Fails
-Witnessed Possibility, Separated Structure, Independence (signature Σ),
-Maximalism (signature Σ).</h3>
-<p>Let <span class="math inline">c\in\Sigma</span> have relational type
-<span class="math inline">\tau</span>, so <span
-class="math inline">c=\top_\tau</span> necessarily. Witnessed
-Possibility fails for the pure formula <span
-class="math inline">x\ne\top_\tau</span>, witnessed by <span
-class="math inline">\bot_\tau</span> but impossible of <span
-class="math inline">c</span>; Separated Structure fails since <span
-class="math inline">\lambda x\, .\,x</span> and <span
-class="math inline">\lambda x\, .\,\top_\tau</span> agree on <span
-class="math inline">c</span> and differ; Independence (signature Σ)
-fails since <span class="math inline">c</span> denotes what the closed
-pure term <span class="math inline">\top_\tau</span> denotes;
-Distinctness Maximalism (signature Σ) fails since <span
-class="math inline">c=\top_\tau</span> is a true identity that C(Σ) does
-not prove.</p>
-<p><em>General argument <code>arguments/sigma-top</code>. It requires
-that Every constant of Σ is relational, and each denotes the top element
-of its type. Here: This is the interpretation the definition fixes. By
-Claude Fable 5.1 (Anthropic), at Cian Dorr’s request,
-2026-09-22.</em></p>
-<p><em>Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr’s
-direction:</em> Moved from the group finite-support-one-object to the
-topic; it uses nothing about the model.</p>
+<p>At type <span class="math inline">t</span>, for the analytical sentence <span class="math inline">\Phi</span> saying that every real is constructible: membership of a real in <span class="math inline">L</span> is <span class="math inline">\Sigma^1_2</span> (Shoenfield), so <span class="math inline">\Phi</span> is <span class="math inline">\Pi^1_3</span>, a first-order analytical sentence in any real number structure, whose natural numbers code sets of naturals by its reals. Write <span class="math inline">\pi,\rho</span> for the projections of <span class="math inline">B=\mathbf 2\times A</span> onto the atom’s coordinate and <span class="math inline">A</span>. As in the argument for the contingency of CH, the <span class="math inline">\pi</span>-coordinate of a box-free sentence of the kind used there, whose relation variables are only applied to carrier elements, with identity only between those, is its truth in the full model over <span class="math inline">L</span> and the <span class="math inline">\rho</span>-coordinate its value in <span class="math inline">L^A</span>, and both have real number structures on subsets of <span class="math inline">D_t=B</span>. <span class="math inline">L\models\Phi</span>, while forcing with <span class="math inline">A</span> adds a Cohen real over <span class="math inline">L</span>, not constructible, and Shoenfield absoluteness makes the <span class="math inline">\Sigma^1_2</span> definition of constructibility mean the same in <span class="math inline">L^A</span>; so <span class="math inline">\Phi</span> has value <span class="math inline">0_A</span> there. Real number structures being isomorphic within each coordinate, <span class="math inline">\forall\mathfrak R\, .\,\operatorname{Real}_t(\mathfrak R)\to\Phi(\mathfrak R)</span> has value <span class="math inline">(1,0_A)</span> and <span class="math inline">\forall\mathfrak R\, .\,\operatorname{Real}_t(\mathfrak R)\to\neg\Phi(\mathfrak R)</span> has value <span class="math inline">(0,1_A)</span>. As <span class="math inline">\Box p</span> is <span class="math inline">p=\top</span>, both disjuncts of the instance are <span class="math inline">\bot</span>.</p>
+<p><em>From the group </em>Full Boolean-valued models<em>, shared argument <code>full-boolean-valued#necessity-of-analysis-constructible</code>. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-25.</em></p>
+<p><em>Revised 2026-10-29 by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, from a correction by OpenAI Codex (GPT-6), prompted by Daniel Kodsi, in Daniel Kodsi’s pull request:</em> The transfer is stated for the fragment the argument uses, as in the corrected argument ch-contingent of full-boolean-valued-atom-and-atomless; it does not hold for every box-free sentence. The verdict is unchanged.</p>
+<h3 id="fails-axiom-of-infinity-type-e-infinity-schema-type-e-possible-infinity-type-e.">Fails Axiom of Infinity (type e), Infinity Schema (type e), Possible Infinity (type e).</h3>
+<p>No two individuals are distinct, and the numeral <span class="math inline">\operatorname{Suc}_e\mathbf{0}_e</span> holds of the universal property at type <span class="math inline">e</span> at every world.</p>
+<p><em>General argument <code>arguments/one-individual</code>. It requires that There is exactly one individual, at every world. Here: <span class="math inline">D_e=\{*\}</span>. By Claude Opus 5.5 (Anthropic), at Cian Dorr’s direction, 2026-10-02.</em></p>
+<p><em>Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr’s direction:</em> Moved from the group finite-support-one-object to the topic.</p>
+<h3 id="fails-witnessed-possibility-separated-structure-independence-signature-σ-maximalism-signature-σ.">Fails Witnessed Possibility, Separated Structure, Independence (signature Σ), Maximalism (signature Σ).</h3>
+<p>Let <span class="math inline">c\in\Sigma</span> have relational type <span class="math inline">\tau</span>, so <span class="math inline">c=\top_\tau</span> necessarily. Witnessed Possibility fails for the pure formula <span class="math inline">x\ne\top_\tau</span>, witnessed by <span class="math inline">\bot_\tau</span> but impossible of <span class="math inline">c</span>; Separated Structure fails since <span class="math inline">\lambda x\, .\,x</span> and <span class="math inline">\lambda x\, .\,\top_\tau</span> agree on <span class="math inline">c</span> and differ; Independence (signature Σ) fails since <span class="math inline">c</span> denotes what the closed pure term <span class="math inline">\top_\tau</span> denotes; Distinctness Maximalism (signature Σ) fails since <span class="math inline">c=\top_\tau</span> is a true identity that C(Σ) does not prove.</p>
+<p><em>General argument <code>arguments/sigma-top</code>. It requires that Every constant of Σ is relational, and each denotes the top element of its type. Here: This is the interpretation the definition fixes. By Claude Fable 5.1 (Anthropic), at Cian Dorr’s request, 2026-09-22.</em></p>
+<p><em>Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr’s direction:</em> Moved from the group finite-support-one-object to the topic; it uses nothing about the model.</p>
 <h2 id="notes">Notes</h2>
 <p>Full verification is in the write-up.</p>
-<p>The source uses an infinite individual domain, ZFC + CH, and the
-algebra adding <span class="math inline">\aleph_2</span> Cohen reals, to
-make CH contingent. The record keeps that algebra when CH holds and uses
-its dual when CH fails, so it requires only ZFC; the singleton
-individual domain does no harm, the real number structures living at
-type <span class="math inline">t</span>. For an extensionally full model
-in ZFC, Relational Choice follows by representing a set-theoretic
-functional subrelation, and Plenitude then gives Functional Choice. The
-qualitative-contrast model of Classicism does not meet this fullness
-condition: its finite-support and symmetry restrictions exclude the
-needed selector. In the present model, <span
-class="math inline">R(p,q):=(p\land q=\top)\lor(\neg p\land
-q=\bot)</span> has Seriality and Functionality of value <span
-class="math inline">1_B</span>, but <span class="math inline">\exists
-f\,\forall p\,R(p,f(p))</span> has value exactly <span
-class="math inline">a</span>. The write-up includes the
-atomless-component calculation and the comparison with the older model.
-The finite check tests the Boolean calculation, not the infinite
-construction.</p>
+<p>The source uses an infinite individual domain, ZFC + CH, and the algebra adding <span class="math inline">\aleph_2</span> Cohen reals, to make CH contingent. The record keeps that algebra when CH holds and uses its dual when CH fails, so it requires only ZFC; the singleton individual domain does no harm, the real number structures living at type <span class="math inline">t</span>. For an extensionally full model in ZFC, Relational Choice follows by representing a set-theoretic functional subrelation, and Plenitude then gives Functional Choice. The qualitative-contrast model of Classicism does not meet this fullness condition: its finite-support and symmetry restrictions exclude the needed selector. In the present model, <span class="math inline">R(p,q):=(p\land q=\top)\lor(\neg p\land q=\bot)</span> has Seriality and Functionality of value <span class="math inline">1_B</span>, but <span class="math inline">\exists f\,\forall p\,R(p,f(p))</span> has value exactly <span class="math inline">a</span>. The write-up includes the atomless-component calculation and the comparison with the older model. The finite check tests the Boolean calculation, not the infinite construction.</p>
 <h2 id="history">History</h2>
 <p>The record’s revision log before it was written as arguments.</p>
 <ul>
-<li><strong>2026-09-27</strong> (OpenAI Codex (GPT-6), prompted by
-Zachary Goodsell) — Identified Bacon’s earlier Boolean-valued
-construction at the user’s request, corrected the source attribution,
-and shortened the description to match the source-based model records.
-Distinguished the singleton-base specialization and the explicit choice
-calculation; added the extensional-fullness proof of Relational Choice
-and comparison with the qualitative-contrast model. Now satisfies:
-Relational Choice.</li>
+<li><strong>2026-09-27</strong> (OpenAI Codex (GPT-6), prompted by Zachary Goodsell) — Identified Bacon’s earlier Boolean-valued construction at the user’s request, corrected the source attribution, and shortened the description to match the source-based model records. Distinguished the singleton-base specialization and the explicit choice calculation; added the extensional-fullness proof of Relational Choice and comparison with the qualitative-contrast model. Now satisfies: Relational Choice.</li>
 </ul>
 <h2 id="sources">Sources</h2>
 <ul>
-<li><strong>Mathematical Contingency</strong> — Andrew Bacon, Could the
-truths of mathematics have been different?, draft of 9 October 2025,
-online appendix §B.2, pp. 7–9 (PDF pp. 41–43), especially the
-construction on p. 7 and the extensional-fullness observation following
-Lemma B.3 on p. 9.</li>
-<li><strong>GPT-6 verification 27 Sep</strong> — OpenAI Codex (GPT-6),
-prompted by Zachary Goodsell, 27 September 2026. Specialization to a
-singleton individual domain and an arbitrary complete atomless
-component; verification of Functional Choice, the failure of Atomicity,
-and the exact Boolean values of the choice counterinstance. Full proof
-in the write-up.</li>
-<li><strong>Classicism</strong> — Andrew Bacon and Cian Dorr,
-Classicism, draft of 16 May 2023, §§1.1–1.3 and §§2.1–2.3 (background
-logic, choice decomposition, and definitions); Appendix D, p. 79 (the
-related qualitative-contrast model).</li>
+<li><strong>Mathematical Contingency</strong> — Andrew Bacon, Could the truths of mathematics have been different?, draft of 9 October 2025, online appendix §B.2, pp. 7–9 (PDF pp. 41–43), especially the construction on p. 7 and the extensional-fullness observation following Lemma B.3 on p. 9.</li>
+<li><strong>GPT-6 verification 27 Sep</strong> — OpenAI Codex (GPT-6), prompted by Zachary Goodsell, 27 September 2026. Specialization to a singleton individual domain and an arbitrary complete atomless component; verification of Functional Choice, the failure of Atomicity, and the exact Boolean values of the choice counterinstance. Full proof in the write-up.</li>
+<li><strong>Classicism</strong> — Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §§1.1–1.3 and §§2.1–2.3 (background logic, choice decomposition, and definitions); Appendix D, p. 79 (the related qualitative-contrast model).</li>
 </ul>
 <p class="cert">
-Record:
-<code>topics/classicism/models/full-boolean-valued-atom-and-atomless.yaml</code>
+Record: <code>topics/classicism/models/full-boolean-valued-atom-and-atomless.yaml</code>
 </p>
 <h2 id="paper-references">Paper references</h2>
 <ul>
-<li><strong>Proof: <a
-href="https://andrew-bacon.github.io/papers/Could%20mathematics%20have%20been%20different.pdf">Could
-the truths of mathematics have been different?</a>.</strong> Bacon,
-Andrew (2025). Could the truths of mathematics have been different?
-Draft dated 9 October 2025, with online appendix; published in
-Philosophical Review 135(3), 2026, pp. 221–285, as cited by Barton and
-Goodsell. Locators refer to the draft. The full Boolean-valued
-construction is in appendix §B.2, pp. 7–9 of the separately paginated
-appendix (PDF pp. 41–43); Theorem 4.4 and its proof (Appendix C.1) and
-Lemma C.6 (Appendix C.2) were read directly on 19 October 2026. — Online
-appendix §B.2, pp. 7–9 (PDF pp. 41–43). Source of the full
-Boolean-valued construction with a designated atom and an atomless
-component. This record uses a singleton individual domain, and Bacon’s
-algebra when CH holds and its evident dual when CH fails, so that CH is
-contingent without assuming CH. The explicit Functional Choice and
-boxed-choice calculations are supplied in the write-up.</li>
-<li><strong>Background: Classicism.</strong> Bacon, Andrew, and Cian
-Dorr (2024). Classicism. In Peter Fritz and Nicholas K. Jones (eds),
-Higher-Order Metaphysics, Oxford University Press, pp. 109–190. The map
-was built from the draft dated 16 May 2023, 87 pages, which does not
-differ materially from the published version; all page, proposition and
-footnote locators in this map refer to that draft’s numbering. —
-§§1.1–1.3 and §§2.1–2.3. Definitions of C and the principles, including
-Functional Choice as Plenitude plus Relational Choice.</li>
-<li><strong>Related: Classicism.</strong> Bacon, Andrew, and Cian Dorr
-(2024). Classicism. In Peter Fritz and Nicholas K. Jones (eds),
-Higher-Order Metaphysics, Oxford University Press, pp. 109–190. The map
-was built from the draft dated 16 May 2023, 87 pages, which does not
-differ materially from the published version; all page, proposition and
-footnote locators in this map refer to that draft’s numbering. —
-Appendix D, p. 79, final construction (two copies of N). The recorded
-qualitative-contrast model satisfies C5 and Plenitude but fails
-Atomicity. Its additional symmetry condition prevents extensional
-fullness at the evaluation object and forces both choice principles to
-fail.</li>
+<li><strong>Proof: <a href="https://andrew-bacon.github.io/papers/Could%20mathematics%20have%20been%20different.pdf">Could the truths of mathematics have been different?</a>.</strong> Bacon, Andrew (2025). Could the truths of mathematics have been different? Draft dated 9 October 2025, with online appendix; published in Philosophical Review 135(3), 2026, pp. 221–285, as cited by Barton and Goodsell. Locators refer to the draft. The full Boolean-valued construction is in appendix §B.2, pp. 7–9 of the separately paginated appendix (PDF pp. 41–43); Theorem 4.4 and its proof (Appendix C.1) and Lemma C.6 (Appendix C.2) were read directly on 19 October 2026. — Online appendix §B.2, pp. 7–9 (PDF pp. 41–43). Source of the full Boolean-valued construction with a designated atom and an atomless component. This record uses a singleton individual domain, and Bacon’s algebra when CH holds and its evident dual when CH fails, so that CH is contingent without assuming CH. The explicit Functional Choice and boxed-choice calculations are supplied in the write-up.</li>
+<li><strong>Background: Classicism.</strong> Bacon, Andrew, and Cian Dorr (2024). Classicism. In Peter Fritz and Nicholas K. Jones (eds), Higher-Order Metaphysics, Oxford University Press, pp. 109–190. The map was built from the draft dated 16 May 2023, 87 pages, which does not differ materially from the published version; all page, proposition and footnote locators in this map refer to that draft’s numbering. — §§1.1–1.3 and §§2.1–2.3. Definitions of C and the principles, including Functional Choice as Plenitude plus Relational Choice.</li>
+<li><strong>Related: Classicism.</strong> Bacon, Andrew, and Cian Dorr (2024). Classicism. In Peter Fritz and Nicholas K. Jones (eds), Higher-Order Metaphysics, Oxford University Press, pp. 109–190. The map was built from the draft dated 16 May 2023, 87 pages, which does not differ materially from the published version; all page, proposition and footnote locators in this map refer to that draft’s numbering. — Appendix D, p. 79, final construction (two copies of N). The recorded qualitative-contrast model satisfies C5 and Plenitude but fails Atomicity. Its additional symmetry condition prevents extensional fullness at the evaluation object and forces both choice principles to fail.</li>
 </ul>
 </body></html>

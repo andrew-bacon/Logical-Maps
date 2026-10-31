@@ -323,69 +323,26 @@ body.writeup-page { max-width: 82ch; margin: 3em auto; padding: 0 1.5em 3em; fon
 <script defer src="../math/katex.min.js"></script>
 <script defer src="../math/contrib/auto-render.min.js"></script>
 <script defer src="../math/math.js"></script></head><body class="writeup-page"><nav class="writeup-nav" aria-label="Write-up navigation"><a href="../index.html">← Back to map</a><div class="display-toggles"><button type="button" class="theme-toggle" data-theme-toggle>[Dark mode]</button><button type="button" class="theme-toggle" data-colourblind-toggle aria-label="Colourblind mode" aria-pressed="false">[Colourblind mode: off]</button></div></nav><header id="title-block-header"><h1>5 ∧ Self-Atomicity (type t) ⇒ □B</h1></header><p class="cert">
-Result — Source: Misc.; produced by Claude Fable 5.1 (Anthropic),
-prompted by Cian Dorr, 25 October 2026; recorded by Claude Fable 5.1
-(Anthropic), prompted by Cian Dorr, 25 October 2026.
+Result — Source: Misc.; produced by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026.
 </p>
 <h2 id="premises">Premises</h2>
 <ul>
-<li><strong>5.</strong> Every possible proposition is necessarily
-possible.</li>
-<li><strong>Self-Atomicity (type t).</strong> Every possible proposition
-is entailed by a self-atom: a possible proposition that necessarily, if
-true, is an atom, that is, one that entails that it is the actual
-world.</li>
+<li><strong>5.</strong> Every possible proposition is necessarily possible.</li>
+<li><strong>Self-Atomicity (type t).</strong> Every possible proposition is entailed by a self-atom: a possible proposition that necessarily, if true, is an atom, that is, one that entails that it is the actual world.</li>
 </ul>
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li><strong>□B.</strong> Necessarily, every true proposition is
-necessarily possible.</li>
+<li><strong>□B.</strong> Necessarily, every true proposition is necessarily possible.</li>
 </ul>
 <h2 id="proof">Proof</h2>
-<p>With 5, every self-atom <span class="math inline">w</span> is
-necessarily a self-atom: 5 gives <span class="math inline">\Box\Diamond
-w</span> and 4 gives <span
-class="math inline">\Box\Box(w\to\operatorname{Atom}(w))</span>, so
-<span class="math inline">\Box\operatorname{SelfAtom}_t(w)</span>. Let
-<span class="math inline">q:=\exists w\,
-.\,\Box\operatorname{SelfAtom}_t(w)\land w</span>. Then <span
-class="math inline">\Box q</span>: if <span
-class="math inline">\Diamond\neg q</span>, Self-Atomicity (type t) gives
-a self-atom <span class="math inline">w\le\neg q</span>, and <span
-class="math inline">\Box\Box\operatorname{SelfAtom}_t(w)</span> by the
-above and 4, so at a world where <span class="math inline">w</span>
-holds, as one does since <span class="math inline">\Diamond w</span>,
-<span class="math inline">q</span> holds too, contradicting <span
-class="math inline">w\le\neg q</span>. Next, <span
-class="math inline">q\to\forall p\, .\,p\to\Box\Diamond p</span> is a
-theorem of C: given <span
-class="math inline">\Box\operatorname{SelfAtom}_t(w_0)\land w_0</span>
-and a true <span class="math inline">p</span>, T gives <span
-class="math inline">\operatorname{SelfAtom}_t(w_0)</span> and then <span
-class="math inline">\operatorname{Atom}_t(w_0)</span>, so <span
-class="math inline">w_0\le p</span> or <span
-class="math inline">w_0\le\neg p</span>, and the second contradicts
-<span class="math inline">w_0\land p</span>; <span
-class="math inline">\Box\operatorname{SelfAtom}_t(w_0)</span> gives
-<span class="math inline">\Box\Diamond w_0</span>, so <span
-class="math inline">w_0\le p</span> gives <span
-class="math inline">\Box\Diamond p</span>. Necessitating this theorem
-and applying K to <span class="math inline">\Box q</span> gives <span
-class="math inline">\Box\forall p\, .\,p\to\Box\Diamond p</span>.</p>
+<p>With 5, every self-atom <span class="math inline">w</span> is necessarily a self-atom: 5 gives <span class="math inline">\Box\Diamond w</span> and 4 gives <span class="math inline">\Box\Box(w\to\operatorname{Atom}(w))</span>, so <span class="math inline">\Box\operatorname{SelfAtom}_t(w)</span>. Let <span class="math inline">q:=\exists w\, .\,\Box\operatorname{SelfAtom}_t(w)\land w</span>. Then <span class="math inline">\Box q</span>: if <span class="math inline">\Diamond\neg q</span>, Self-Atomicity (type t) gives a self-atom <span class="math inline">w\le\neg q</span>, and <span class="math inline">\Box\Box\operatorname{SelfAtom}_t(w)</span> by the above and 4, so at a world where <span class="math inline">w</span> holds, as one does since <span class="math inline">\Diamond w</span>, <span class="math inline">q</span> holds too, contradicting <span class="math inline">w\le\neg q</span>. Next, <span class="math inline">q\to\forall p\, .\,p\to\Box\Diamond p</span> is a theorem of C: given <span class="math inline">\Box\operatorname{SelfAtom}_t(w_0)\land w_0</span> and a true <span class="math inline">p</span>, T gives <span class="math inline">\operatorname{SelfAtom}_t(w_0)</span> and then <span class="math inline">\operatorname{Atom}_t(w_0)</span>, so <span class="math inline">w_0\le p</span> or <span class="math inline">w_0\le\neg p</span>, and the second contradicts <span class="math inline">w_0\land p</span>; <span class="math inline">\Box\operatorname{SelfAtom}_t(w_0)</span> gives <span class="math inline">\Box\Diamond w_0</span>, so <span class="math inline">w_0\le p</span> gives <span class="math inline">\Box\Diamond p</span>. Necessitating this theorem and applying K to <span class="math inline">\Box q</span> gives <span class="math inline">\Box\forall p\, .\,p\to\Box\Diamond p</span>.</p>
 <h2 id="notes">Notes</h2>
-<p>Strengthens [[five-and-strong-atomicity-t-imply-necessary-b]], whose
-proof this follows with self-atoms for strong atoms: 5 is used only to
-make the self-atoms necessarily possible.</p>
+<p>Strengthens [[five-and-strong-atomicity-t-imply-necessary-b]], whose proof this follows with self-atoms for strong atoms: 5 is used only to make the self-atoms necessarily possible.</p>
 <h2 id="sources">Sources</h2>
 <ul>
-<li><strong>Dorr 25 Oct</strong> — Cian Dorr, the notion of a self-atom
-and the bridge principles, 25 October 2026; the proof by Claude Fable
-5.1 (Anthropic) the same day, from the survey of Strong Atomicity
-results that Cian Dorr requested (session transcript of 25 October
-2026).</li>
+<li><strong>Dorr 25 Oct</strong> — Cian Dorr, the notion of a self-atom and the bridge principles, 25 October 2026; the proof by Claude Fable 5.1 (Anthropic) the same day, from the survey of Strong Atomicity results that Cian Dorr requested (session transcript of 25 October 2026).</li>
 </ul>
 <p class="cert">
-Record:
-<code>topics/classicism/results/five-and-self-atomicity-t-imply-necessary-b.yaml</code>
+Record: <code>topics/classicism/results/five-and-self-atomicity-t-imply-necessary-b.yaml</code>
 </p>
 </body></html>

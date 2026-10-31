@@ -1,11 +1,11 @@
-# Strong Possibility (pure) ∧ Two-hat necessity implies ND-necessity ⇒ ⊥
+# Strong Possibility (pure) ∧ Two-hat necessities are ND-necessary ⇒ ⊥
 
 <p class='cert'>Result — Source: Misc.; produced by Cian Dorr, 16 October 2026; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 16 October 2026.</p>
 
 ## Premises
 
 - **Strong Possibility (pure).** Each closed pure sentence consistent with Maximalist Classicism is possible under the distinctness-preserving modality.
-- **Two-hat necessity implies ND-necessity.** Whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat.
+- **Two-hat necessities are ND-necessary.** Whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat.
 
 ## Conclusion
 

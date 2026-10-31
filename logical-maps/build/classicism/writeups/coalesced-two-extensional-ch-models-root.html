@@ -322,133 +322,45 @@ body.writeup-page { max-width: 82ch; margin: 3em auto; padding: 0 1.5em 3em; fon
 <link rel="stylesheet" href="../math/katex.min.css">
 <script defer src="../math/katex.min.js"></script>
 <script defer src="../math/contrib/auto-render.min.js"></script>
-<script defer src="../math/math.js"></script></head><body class="writeup-page"><nav class="writeup-nav" aria-label="Write-up navigation"><a href="../index.html">← Back to map</a><div class="display-toggles"><button type="button" class="theme-toggle" data-theme-toggle>[Dark mode]</button><button type="button" class="theme-toggle" data-colourblind-toggle aria-label="Colourblind mode" aria-pressed="false">[Colourblind mode: off]</button></div></nav><header id="title-block-header"><h1>Coalesced sum of two extensional models disagreeing about CH</h1></header><p>The construction is Cian Dorr’s two-component coalesced sum (<a
-href="coalesced-two-extensional-arithmetics-root.html">the arithmetic
-version</a>), with components chosen by GPT-6 Astra (OpenAI), prompted
-by Daniel Kodsi, 23 October 2026, to disagree about the continuum
-hypothesis. Written for the map by Claude Opus 5.5 (Anthropic), prompted
-by Cian Dorr, 24 October 2026.</p>
-<p>At its root this model satisfies □Atomicity, □BF, □Strong Atomicity,
-□Tame Rigidity, □Rigid Rigidity, □Weakly Rigid Weak Rigidity, Modal
-Well-Ordering and □Intensional Choice, and fails Non-contingency of CH
-at type <span class="math inline">e</span>.</p>
+<script defer src="../math/math.js"></script></head><body class="writeup-page"><nav class="writeup-nav" aria-label="Write-up navigation"><a href="../index.html">← Back to map</a><div class="display-toggles"><button type="button" class="theme-toggle" data-theme-toggle>[Dark mode]</button><button type="button" class="theme-toggle" data-colourblind-toggle aria-label="Colourblind mode" aria-pressed="false">[Colourblind mode: off]</button></div></nav><header id="title-block-header"><h1>Coalesced sum of two extensional models disagreeing about CH</h1></header><p>The construction is Cian Dorr’s two-component coalesced sum (<a href="coalesced-two-extensional-arithmetics-root.html">the arithmetic version</a>), with components chosen by GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 23 October 2026, to disagree about the continuum hypothesis. Written for the map by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 24 October 2026.</p>
+<p>At its root this model satisfies □Atomicity, □BF, □Strong Atomicity, □Tame Rigidity, □Rigid Rigidity, □Weakly Rigid Weak Rigidity, Modal Well-Ordering and □Intensional Choice, and fails Non-contingency of CH at type <span class="math inline">e</span>.</p>
 <h2 id="metatheory">Metatheory</h2>
-<p>ZFC together with <span
-class="math inline">\operatorname{Con}(\mathrm{ZFC})</span>. Then <span
-class="math inline">\mathrm{ZFC}+\mathrm{CH}</span> and <span
-class="math inline">\mathrm{ZFC}+\neg\mathrm{CH}</span> are consistent
-(Gödel, Cohen), and by the completeness theorem they have models</p>
+<p>ZFC together with <span class="math inline">\operatorname{Con}(\mathrm{ZFC})</span>. Then <span class="math inline">\mathrm{ZFC}+\mathrm{CH}</span> and <span class="math inline">\mathrm{ZFC}+\neg\mathrm{CH}</span> are consistent (Gödel, Cohen), and by the completeness theorem they have models</p>
 <p><span class="math display">
-N_+\models\mathrm{ZFC}+\mathrm{CH},\qquad
-N_-\models\mathrm{ZFC}+\neg\mathrm{CH} .
+N_+\models\mathrm{ZFC}+\mathrm{CH},\qquad N_-\models\mathrm{ZFC}+\neg\mathrm{CH} .
 </span></p>
-<p>These need be neither transitive nor <span
-class="math inline">\omega</span>-standard. So, like the forcing
-construction of the <a href="stitched-cohen-extension.html">stitched
-Cohen extension</a>, what the model establishes is consistency relative
-to ZFC.</p>
+<p>These need be neither transitive nor <span class="math inline">\omega</span>-standard. So, like the forcing construction of the <a href="stitched-cohen-extension.html">stitched Cohen extension</a>, what the model establishes is consistency relative to ZFC.</p>
 <h2 id="the-components">The components</h2>
-<p>From a model <span class="math inline">N</span> of ZFC form a
-one-world extensional Henkin model <span class="math inline">M_N</span>
-of C. Inside <span class="math inline">N</span>, let <span
-class="math inline">T_e:=\mathbb R</span> and, for a relational type
-<span class="math inline">\sigma_1\cdots\sigma_nt</span>, <span
-class="math inline">T_{\sigma_1\cdots\sigma_nt}:=\mathcal
-P(T_{\sigma_1}\times\cdots\times T_{\sigma_n})</span>, with <span
-class="math inline">T_t=\mathcal P(\{\varnothing\})</span>. The domains
-of <span class="math inline">M_N</span> are the externalizations of
-these sets: <span class="math inline">D_\sigma:=\{x:N\models x\in
-T_\sigma\}</span>, with application read from <span
-class="math inline">N</span>’s membership. A λ-term with parameters
-denotes the set that Separation in <span class="math inline">N</span>
-gives for the corresponding formula, so the domains are closed under
-definability; <span class="math inline">M_N</span> is a model of C, and
-of Extensionality. It satisfies Well-Ordering at every type, since <span
-class="math inline">N</span> well-orders each <span
-class="math inline">T_\sigma</span>. The individuals are <span
-class="math inline">N</span>’s reals, which are infinite in <span
-class="math inline">N</span>.</p>
-<p>The map’s real number structures and <span
-class="math inline">\operatorname{CH}(\mathfrak R)</span> are formulas
-of higher-order logic, and their quantifiers over relations range over
-the domains of <span class="math inline">M_N</span>, that is, over <span
-class="math inline">N</span>’s sets. So, by induction on formulas, they
-mean in <span class="math inline">M_N</span> what they mean in <span
-class="math inline">N</span>:</p>
+<p>From a model <span class="math inline">N</span> of ZFC form a one-world extensional Henkin model <span class="math inline">M_N</span> of C. Inside <span class="math inline">N</span>, let <span class="math inline">T_e:=\mathbb R</span> and, for a relational type <span class="math inline">\sigma_1\cdots\sigma_nt</span>, <span class="math inline">T_{\sigma_1\cdots\sigma_nt}:=\mathcal P(T_{\sigma_1}\times\cdots\times T_{\sigma_n})</span>, with <span class="math inline">T_t=\mathcal P(\{\varnothing\})</span>. The domains of <span class="math inline">M_N</span> are the externalizations of these sets: <span class="math inline">D_\sigma:=\{x:N\models x\in T_\sigma\}</span>, with application read from <span class="math inline">N</span>’s membership. A λ-term with parameters denotes the set that Separation in <span class="math inline">N</span> gives for the corresponding formula, so the domains are closed under definability; <span class="math inline">M_N</span> is a model of C, and of Extensionality. It satisfies Well-Ordering at every type, since <span class="math inline">N</span> well-orders each <span class="math inline">T_\sigma</span>. The individuals are <span class="math inline">N</span>’s reals, which are infinite in <span class="math inline">N</span>.</p>
+<p>The map’s real number structures and <span class="math inline">\operatorname{CH}(\mathfrak R)</span> are formulas of higher-order logic, and their quantifiers over relations range over the domains of <span class="math inline">M_N</span>, that is, over <span class="math inline">N</span>’s sets. So, by induction on formulas, they mean in <span class="math inline">M_N</span> what they mean in <span class="math inline">N</span>:</p>
 <p><span class="math display">
-M_{N_+}\models\exists\mathfrak R\, .\,\operatorname{Real}_e(\mathfrak
-R)\land\operatorname{CH}(\mathfrak R),
+M_{N_+}\models\exists\mathfrak R\, .\,\operatorname{Real}_e(\mathfrak R)\land\operatorname{CH}(\mathfrak R),
 \qquad
-M_{N_-}\models\exists\mathfrak R\, .\,\operatorname{Real}_e(\mathfrak
-R)\land\neg\operatorname{CH}(\mathfrak R),
+M_{N_-}\models\exists\mathfrak R\, .\,\operatorname{Real}_e(\mathfrak R)\land\neg\operatorname{CH}(\mathfrak R),
 </span></p>
-<p>witnessed by <span class="math inline">N_\pm</span>’s field of reals
-with its order, operations and natural numbers. By Huntington’s theorem
-(all real structures are isomorphic, provably in the non-modal fragment)
-every real number structure at type <span class="math inline">e</span>
-in <span class="math inline">M_{N_+}</span> satisfies CH, and every one
-in <span class="math inline">M_{N_-}</span> falsifies it.</p>
+<p>witnessed by <span class="math inline">N_\pm</span>’s field of reals with its order, operations and natural numbers. By Huntington’s theorem (all real structures are isomorphic, provably in the non-modal fragment) every real number structure at type <span class="math inline">e</span> in <span class="math inline">M_{N_+}</span> satisfies CH, and every one in <span class="math inline">M_{N_-}</span> falsifies it.</p>
 <h2 id="the-coalesced-sum">The coalesced sum</h2>
-<p>Coalesce <span class="math inline">M_{N_+}</span> and <span
-class="math inline">M_{N_-}</span> at a new root as in
-<em>Classicism</em>, Definition E.2, with a distinguished arrow to each
-and the fullest root domains: root individuals are pairs of component
-individuals, and a root entity of a relational type is a triple <span
-class="math inline">(Y_o,Y_+,Y_-)</span> of an arbitrary root extension
-and an entity of each component. The root sees itself and the two
-component worlds, each of which sees only itself. Evaluation point: the
-root. Every relational constant of Σ denotes the top element of its
-type.</p>
+<p>Coalesce <span class="math inline">M_{N_+}</span> and <span class="math inline">M_{N_-}</span> at a new root as in <em>Classicism</em>, Definition E.2, with a distinguished arrow to each and the fullest root domains: root individuals are pairs of component individuals, and a root entity of a relational type is a triple <span class="math inline">(Y_o,Y_+,Y_-)</span> of an arbitrary root extension and an entity of each component. The root sees itself and the two component worlds, each of which sees only itself. Evaluation point: the root. Every relational constant of Σ denotes the top element of its type.</p>
 <h2 id="non-contingency-of-ch-fails">Non-contingency of CH fails</h2>
-<p>At type <span class="math inline">e</span>, Non-contingency of CH
-is</p>
+<p>At type <span class="math inline">e</span>, Non-contingency of CH is</p>
 <p><span class="math display">
-\Box\forall\mathfrak R\, .\,\bigl(\operatorname{Real}_e(\mathfrak
-R)\to\operatorname{CH}(\mathfrak R)\bigr)
+\Box\forall\mathfrak R\, .\,\bigl(\operatorname{Real}_e(\mathfrak R)\to\operatorname{CH}(\mathfrak R)\bigr)
 \ \lor\
-\Box\forall\mathfrak R\, .\,\bigl(\operatorname{Real}_e(\mathfrak
-R)\to\neg\operatorname{CH}(\mathfrak R)\bigr).
+\Box\forall\mathfrak R\, .\,\bigl(\operatorname{Real}_e(\mathfrak R)\to\neg\operatorname{CH}(\mathfrak R)\bigr).
 </span></p>
-<p>At the root, the first disjunct requires the formula under the box at
-the world of <span class="math inline">M_{N_-}</span>, where it is
-false; the second requires its formula at the world of <span
-class="math inline">M_{N_+}</span>, where it is false. So both disjuncts
-fail, and so does the Necessity of Second-Order Analysis.</p>
+<p>At the root, the first disjunct requires the formula under the box at the world of <span class="math inline">M_{N_-}</span>, where it is false; the second requires its formula at the world of <span class="math inline">M_{N_+}</span>, where it is false. So both disjuncts fail, and so does the Necessity of Second-Order Analysis.</p>
 <h2 id="the-other-verdicts">The other verdicts</h2>
-<p>They are the arithmetic model’s arguments, which use only that the
-components are one-world extensional Henkin models with infinitely many
-individuals satisfying Well-Ordering at every type:</p>
+<p>They are the arithmetic model’s arguments, which use only that the components are one-world extensional Henkin models with infinitely many individuals satisfying Well-Ordering at every type:</p>
 <ul>
-<li><code>strong-atomicity</code>: the root entities true of one tuple
-at one world are strong atoms, giving □Strong Atomicity and so
-□Atomicity; and transport onto each component is surjective, giving
-□BF;</li>
-<li><code>one-world-components</code>: □Tame Rigidity, □Intensional
-Choice and □Distinctness-Preserving Collapse;</li>
-<li><code>rigid-rigidity</code>: □Rigid Rigidity and □Weakly Rigid Weak
-Rigidity;</li>
-<li><code>well-ordering</code>: Modal Well-Ordering and
-□Well-Ordering;</li>
-<li><code>boolean-completeness-t</code>, <code>pure-b</code> and
-<code>infinity</code>: Boolean Completeness at <span
-class="math inline">t</span> necessarily, the failure of B for pure
-sentences, and the Infinity schema at <span class="math inline">e</span>
-with the failures at <span class="math inline">t</span>.</li>
+<li><code>strong-atomicity</code>: the root entities true of one tuple at one world are strong atoms, giving □Strong Atomicity and so □Atomicity; and transport onto each component is surjective, giving □BF;</li>
+<li><code>one-world-components</code>: □Tame Rigidity, □Intensional Choice and □Distinctness-Preserving Collapse;</li>
+<li><code>rigid-rigidity</code>: □Rigid Rigidity and □Weakly Rigid Weak Rigidity;</li>
+<li><code>well-ordering</code>: Modal Well-Ordering and □Well-Ordering;</li>
+<li><code>boolean-completeness-t</code>, <code>pure-b</code> and <code>infinity</code>: Boolean Completeness at <span class="math inline">t</span> necessarily, the failure of B for pure sentences, and the Infinity schema at <span class="math inline">e</span> with the failures at <span class="math inline">t</span>.</li>
 </ul>
-<p>What depended on the arithmetic components, the failures of the
-Necessity of Arithmetic, Arithmetic Necessitism, the Necessity of
-Analysis and Rigid Power, is not claimed here: <span
-class="math inline">N_+</span> and <span class="math inline">N_-</span>
-may or may not agree about arithmetic.</p>
+<p>What depended on the arithmetic components, the failures of the Necessity of Arithmetic, Arithmetic Necessitism, the Necessity of Analysis and Rigid Power, is not claimed here: <span class="math inline">N_+</span> and <span class="math inline">N_-</span> may or may not agree about arithmetic.</p>
 <h2 id="paper-references">Paper references</h2>
 <ul>
-<li><strong>Background: Classicism.</strong> Bacon, Andrew, and Cian
-Dorr (2024). Classicism. In Peter Fritz and Nicholas K. Jones (eds),
-Higher-Order Metaphysics, Oxford University Press, pp. 109–190. The map
-was built from the draft dated 16 May 2023, 87 pages, which does not
-differ materially from the published version; all page, proposition and
-footnote locators in this map refer to that draft’s numbering. —
-Appendix E, Definition E.2, pp. 80–83. The coalesced sum, here of two
-components.</li>
+<li><strong>Background: Classicism.</strong> Bacon, Andrew, and Cian Dorr (2024). Classicism. In Peter Fritz and Nicholas K. Jones (eds), Higher-Order Metaphysics, Oxford University Press, pp. 109–190. The map was built from the draft dated 16 May 2023, 87 pages, which does not differ materially from the published version; all page, proposition and footnote locators in this map refer to that draft’s numbering. — Appendix E, Definition E.2, pp. 80–83. The coalesced sum, here of two components.</li>
 </ul>
 </body></html>

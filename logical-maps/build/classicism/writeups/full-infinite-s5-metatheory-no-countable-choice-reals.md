@@ -23,7 +23,7 @@
 - **□Strong Actuality.** Necessarily, there is a true strong atom: a true proposition that necessarily entails every proposition or its negation.
 - **¬ Intensional Choice.** If a property is necessarily instantiated, then some property entailing it is necessarily uniquely instantiated.
 - **¬ Relational Choice.** Every serial binary relation has a functional subrelation.
-- **¬ Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
+- **¬ Truths are ND-necessary.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **¬ Fregean Axiom.** Materially equivalent propositions are identical.
 - **¬ Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **¬ Infinity Schema (type e).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
@@ -71,7 +71,7 @@ Let $(A_n)$ be the family with no choice function. For a set $C$ of natural numb
 
 *General argument `arguments/countable-choice-reals-full`. It requires that The model is full: at each object, the domain of each relational type contains every intension of that type. Here: Every intension of every relational type is present at every object (Classicism, §3.5, p. 59). It requires that There are pairwise distinct arrows $h_n$ out of the evaluation object, one for each natural number $n$, each with a retraction $r_n$, all given by the construction without choice. Here: $h_n$ is the arrow to world $n$, and $r_n$ the arrow back, once $W$ contains the natural numbers: by choice, or because $W$ is $\mathbb N$ in the variant without countable choice. With socks $W$ is their union, and no such arrows need be given. It requires that The construction is carried out in ZF together with a countable family $(A_n)_{n\in\omega}$ of nonempty sets of sets of natural numbers that has no choice function ($\neg\mathrm{AC}_\omega(\mathbb R)$). Here: This is the hypothesis. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-08.*
 
-### Fails Truth implies ND-necessity.
+### Fails Truths are ND-necessary.
 
 Let $p:=\{1\}$, in the domain since the model is full, and true. Any witness $q$ for $\Box_{\ne}p$ is true, so contains the identity; under an arrow $i\ne 1$ with a retraction $r$, the arrow $r\circ i=1$ makes $\Diamond q$ true, while $p$ is false. So no true $q$ has $\Box(\Diamond q\to p)$. (The surjection monoid's own argument of 23 September, stated once.)
 
@@ -176,7 +176,7 @@ The natural numbers are the finite cardinalities at type $e$ (Background, after 
 
 ## Notes
 
-A basic reference model, recorded at Cian Dorr's request: the full S5 model with infinitely many worlds. Nothing depends on which infinite set $W$ is. In the variant with infinitely many individuals the group fixes them as the natural numbers; any infinite set gives the same verdicts under choice. Its verdicts are those of the full permutation group model, whose arrows are likewise all invertible. Without choice in the metatheory, the same construction over a family of nonempty sets with no choice function refutes Intensional Choice; that variant is not recorded.
+A basic reference model, recorded at Cian Dorr's request: the full S5 model with infinitely many worlds. Except for Forcing Possibilism, no recorded verdict depends on which infinite set $W$ is. In the variant with infinitely many individuals the group fixes them as the natural numbers; any infinite set gives the same verdicts under choice. Its verdicts are those of the full permutation group model, whose arrows are likewise all invertible, again except for Forcing Possibilism, which the map leaves unknown here. Under choice, Forcing Possibilism holds iff $2^{|W|}=2^{\aleph_0}$ (GPT-6 Astra, prompted by Daniel Kodsi, 23 October 2026): if so, every small or Dedekind-finite complete Boolean algebra is finite, an infinite one having at least continuum many elements, and is isomorphic to the subsets of a finite set of worlds; if not, the regular-open algebra of Cantor space is small and atomless, while the algebra below any proposition is atomic. So it holds for $W=\mathbb N$ and fails for $|W|=2^{\aleph_0}$. With $W$ the union of Russell's socks it fails without choice (forcing-possibilism-socks).
 
 ## Sources
 

@@ -388,3 +388,18 @@ supply explicit BF witnesses at e and t. Additional deductions are credited
 separately from the source construction. Fullness gives boxed Atomicity,
 not its failure. No finite-support restriction, signature-fundamentality
 claim, or new Lean proof is introduced. Unknown verdicts are left unknown.
+
+## Transformation-model Analytic Necessitism correction (31 October 2026)
+
+OpenAI Codex, prompted by Andrew Bacon, removed the negative verdict in
+`writeups/full-transformation-monoid.md` following the withdrawal of
+`analytic-necessitism-unretracted-arrow` in upstream PR #23. The natural-number
+member meets the conditions of the replacement codomain-intension arguments,
+so the current map assigns both Analytic Necessitism and its second-order
+form positively. The corrected write-up explains the invalid inextensibility
+inference and supplies a model-specific carrier and represented powers at
+every relational type. The finite instance satisfies both principles vacuously.
+No Pure Contingency was already inherited through `one-object-action-model`;
+the model notes and write-up now identify that route explicitly. The finite
+witness check also checks the new carrier transport identities and an outsider
+collapsing onto a carrier member. No new Lean certificate is claimed.

@@ -1,0 +1,169 @@
+id: finite-support-permutations-and-doubled-points
+name: 'Finite-support action model: permutations of N, with each point doubled at a second object'
+certificate:
+  source_id: misc
+  produced_by: Cian Dorr, 29 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 29 October 2026
+  checked_by: []
+  date: '2026-10-29'
+  lean: none
+sources:
+- Cian Dorr, construction of 29 October 2026, in conversation with Claude Opus 5.5 (Anthropic).
+- Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, Appendix D, Definitions D.1–D.3 and Proposition
+  D.4, pp. 73–74 (ideally full action models).
+source_names:
+- Dorr 29 Oct
+- Classicism
+references:
+- paper: bacon-dorr-classicism
+  role: background
+  locator: Appendix D, pp. 73–74
+  note: The ideally full finitely pinned action models over a category of sets.
+group: finite-support-two-object
+settings: {}
+definition: >-
+  $W_0$ has individuals $\mathbb N$ and $W_1$ has individuals $\mathbb N\times\{0,1\}$; write $\pi_0$ for the
+  projection onto $\mathbb N$. The arrows are: $W_0\to W_0$, the permutations of $\mathbb N$; $W_1\to W_0$, the
+  maps $g\circ\pi_0$ with $g$ a permutation; $W_0\to W_1$, the maps $h$ with $\pi_0\circ h$ a permutation;
+  and $W_1\to W_1$, the maps $f$ with $\pi_0\circ f=g\circ\pi_0$ for some permutation $g$. These are closed
+  under composition: whatever the arrows, the first coordinate of a composite is a permutation applied
+  after $\pi_0$ or not. The evaluation point is the identity of $W_0$.
+meets:
+  finitely-pinned-domains: >-
+    Ideally full with the ideal of finite sets at both objects: every intension pinned down by a finite set
+    is in the domain, and every entity in a domain is one.
+  infinitely-many-individuals: The individuals at $W_0$ are the natural numbers.
+  infinitely-many-propositions-everywhere: >-
+    At either object, for distinct $m,n\in\mathbb N$, the propositions that the arrow's first coordinate
+    sends the point over $m$ (at $W_1$, the point $(m,0)$) below the point over $n$ are pinned down by two
+    points and pairwise distinct.
+  infinitely-many-propositions: As for infinitely-many-propositions-everywhere, at $W_0$.
+  no-atoms-anywhere: >-
+    At both objects every nonzero proposition is split by one of the order propositions (argument
+    atomlessness).
+  extensionally-full: >-
+    The model is ideally full, hence extensionally full at both objects (Appendix D, the remark after
+    Definition D.3): for a set $R$ of tuples from the domains at an object $V$, the intension with value
+    $R$ at every arrow out of $V$ into $V$ and $\varnothing$ at the arrows into the other object depends
+    only on the codomain, so is pinned down by $\varnothing$; it is in the domain with extension $R$ at $1_V$.
+  codomain-intensions: >-
+    The model is ideally full at both objects, and an intension whose value at an arrow depends only on
+    the arrow's codomain is pinned down by $\varnothing$ (Appendix D, the remark after Definition D.3).
+  finitely-determined-left-inverses: >-
+    A permutation $\sigma$ has the left inverse $\sigma^{-1}$, and an arrow $h:W_0\to W_1$ with $\pi_0\circ h=\sigma$
+    the left inverse $\sigma^{-1}\circ\pi_0$; on a finite set $P$ of points it depends only on $\sigma^{-1}$ on the
+    finitely many first coordinates of $P$, so only on $u$ on their $\sigma$-preimages.
+arguments:
+- id: distinctness-at-root
+  holds: [distinctness-necessary-r]
+  choice: free
+  by: Cian Dorr, with Claude Opus 5.5 (Anthropic)
+  date: '2026-10-29'
+  text: >-
+    At every type. Every arrow out of $W_0$ has a left inverse: a permutation is invertible, and an arrow
+    $h:W_0\to W_1$ with $\pi_0\circ h=\sigma$ has the left inverse $\sigma^{-1}\circ\pi_0$. So transport along
+    it is injective at every type.
+- id: collapse-at-doubled-object
+  fails: [necessary-distinctness-necessary-t]
+  choice: free
+  by: Cian Dorr, with Claude Opus 5.5 (Anthropic)
+  date: '2026-10-29'
+  text: >-
+    At $W_1$ let $p$ be the arrows $k$ with $k(0,0)=k(0,1)$, pinned down by $\{(0,0),(0,1)\}$. It is not
+    $\top$, the identity separating the two points; but every arrow after $\pi_0$ collapses them, so the
+    transports of $p$ and $\top$ along $\pi_0$ are both $\top$. So ND at type $t$ fails at $W_1$, which $W_0$
+    sees.
+- id: atomlessness
+  holds: [atomlessness, necessary-atomlessness]
+  choice: free
+  by: Cian Dorr, with Claude Opus 5.5 (Anthropic)
+  date: '2026-10-29'
+  text: >-
+    At both objects, as in finite-support-permutations. A nonzero proposition $p$, pinned down by a finite
+    $S$, contains an arrow $k$. For distinct $a,b\in\mathbb N$ outside $\pi_0[S]$ (over which $S$ has no
+    points), there are arrows of each kind agreeing with $k$ on $S$, one sending the point over $a$ below the
+    point over $b$ in the first coordinate and one above, the permutation part being free off a finite set;
+    both lie in $p$. So the proposition that the point over $a$ goes below that over $b$, pinned down by
+    finitely many points, splits $p$.
+- id: haecceities-no-join
+  fails: [countable-boolean-completeness-r]
+  choice: free
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic),
+    prompted by Cian Dorr
+  date: '2026-10-29'
+  text: >-
+    At $\sigma=e$, $\tau=e\to t$, for the property $H$ of being the haecceity of an individual, at $W_0$.
+    An upper bound $Y$ of the haecceities has $Y_k\supseteq k[\mathbb N]$ at every arrow $k$ out of $W_0$.
+    For finite $S$ let $B_S$ hold at $k$ of every individual $k^{\prime}(n)$ with $k^{\prime}$ agreeing with
+    $k$ on $S$ and having its codomain: it is pinned down by $S$, so in the domain, an upper bound, and
+    below every upper bound pinned down by $S$. At the arrow $h(n)=(n,0)$ into $W_1$, $B_S$ omits $(m,1)$
+    for $m\in S$ (an arrow agreeing with $h$ at $m$ and permuting first coordinates sends nothing else
+    over $m$) and contains it for $m\notin S$. So an upper bound pinned down by $S$ is not below
+    $B_{S\cup\{m\}}$ for $m\notin S$, and there is no least one. $H$ is countable relative to $e$: the
+    numerals at $e$ are the finite cardinalities and pairwise distinct, the individuals being infinitely
+    many, and extensional fullness puts in the domain $H$ and the relation pairing the haecceity of $n$
+    with the $n$-th numeral.
+- id: necessity-of-arithmetic
+  holds: [necessity-of-arithmetic]
+  choice: free
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic),
+    prompted by Cian Dorr
+  date: '2026-10-29'
+  text: >-
+    Both objects are extensionally full with infinitely many individuals and propositions, so at each
+    the numbers at every type are the distinct numerals with standard sum and product, and an
+    arithmetical sentence holds at every world iff it is true.
+- id: collapse-blocks-vicinity
+  fails: [necessary-vicinity]
+  choice: free
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic),
+    prompted by Cian Dorr
+  date: '2026-10-29'
+  text: >-
+    Vicinity fails at $W_1$, which every arrow $W_0\to W_1$ reaches. Let $p$ be a true proposition there,
+    pinned down by a finite $S$, and take $m$ with $(m,0),(m,1)\notin S$. The arrow $k$ sending $(m,1)$ to
+    $(m,0)$ and fixing every other point agrees with the identity on $S$, so $k\in p$. The proposition
+    $q$ that the arrow goes into $W_1$ and separates $(m,0)$ and $(m,1)$ is pinned down by those two
+    points and true; but every arrow after $k$ identifies them, so $\Diamond q$ fails at $k$, and $p$ does
+    not entail $\Diamond q$.
+- id: two-hat-necessity-at-root
+  fails: [truth-implies-two-hat-necessity, two-hat-implies-nd-necessity]
+  choice: free
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic),
+    prompted by Cian Dorr
+  date: '2026-10-29'
+  text: >-
+    At $W_0$ every world sees every world, an arrow $u$ being $(u\circ r)\circ k$ for $r$ a left inverse of
+    $k$; so a true $q$ is possible everywhere, and $\Box_{\ne}=\Box$. At $W_1$, writing $I_M$ for the arrows
+    into $W_1$ injective on the fibres over a finite $M\subseteq\mathbb N$: a true proposition contains the
+    arrows into $W_1$ agreeing with the identity on the fibres over some $M$, and the worlds that can reach
+    one of those are exactly $I_M$, so $\Box_{\ne}r$ iff $r\supseteq I_M$ for some $M$. Let $w_0$ be the
+    proposition, pinned down by $\varnothing$, that the arrow goes into $W_0$. At a world $h$ into $W_1$,
+    $\Diamond_{\ne}w_0$ fails, since there the arrows into $W_1$, which contain $I_M$, make $\neg w_0$
+    $\Box_{\ne}$-necessary; at a world into $W_0$ it holds. So
+    $\Diamond_{\ne}w_0=w_0$, while $\Diamond_{\ne}q\supseteq w_0$ for every true $q$, and at $W_0$
+    $\hat{\hat\Box}p$ iff $w_0\subseteq p$. Hence $w_0$ is two-hat necessary but not necessary, so not
+    ND-necessary; and the truth that the first coordinate of the arrow fixes $0$, pinned down by $\{0\}$,
+    is not two-hat necessary.
+- id: five-is-two-hat
+  holds: [necessary-five-implies-two-hat-necessity]
+  choice: free
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic),
+    prompted by Cian Dorr
+  date: '2026-10-29'
+  text: >-
+    With the computations of two-hat-necessity-at-root, let $X$ be the operator, depending only on the
+    codomain and so in the domain, that holds at an object $W_0$ of the $p\supseteq w_0$ and at $W_1$ of
+    the $r\supseteq I_M$ for some finite $M$. At each object it is a filter, so N and K, and it is B: for
+    $p$ true at $W_0$, $\neg X\neg p$ holds at every arrow into $W_0$, since $p$ contains a permutation; for
+    $r$ true at $W_1$, pinned down by the fibres over $M$, $\neg X\neg r$ holds throughout $I_M$, since
+    from $k\in I_M$ every $I_{M^{\prime}}$ contains a fibrewise bijection $j$ with $j\circ k$ agreeing with
+    the identity on those fibres. So $X$ is an S5 operator and $\Box_5\le X$. At $W_0$, $X=\hat{\hat\Box}$;
+    at $W_1$, where $\Diamond_{\ne}$ of the proposition that the arrow agrees with the identity on the
+    fibres over $M$ is $I_M$, $\hat{\hat\Box}=\Box_{\ne}=X$. So $\Box_5\le\hat{\hat\Box}$ at both objects,
+    hence at every world.
+notes: >-
+  Atomlessness with Distinctness-Necessity (at every type) but not □Distinctness-Necessity at type $t$; so,
+  by the recorded result that ND and BF at $t$ give □ND, BF fails at $t$ too. Replaces GPT-6 Astra's
+  Ω-valued model with current distinctness (Kodsi's pull request #18, item 20), which witnessed the same
+  separations.

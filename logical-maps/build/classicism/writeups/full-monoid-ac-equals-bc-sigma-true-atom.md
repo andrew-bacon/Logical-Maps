@@ -4,8 +4,10 @@
 
 ## Package
 
+- **Analytic Necessitism.** If there could be a real number structure, there is a rigid one that is necessarily a real number structure: a rigid property with necessarily distinct instances, with rigid order, addition, multiplication and natural numbers, which necessarily form a complete ordered field. One sentence for each type $\sigma$.
+- **Second-Order Analytic Necessitism.** If there could be a real number structure, there is a rigid one, necessarily a real number structure, together with represented powers of every arity up to $n$: rigid properties of rigid relations among the structure's elements that necessarily represent every relation on them. One sentence for each type $\sigma$ and each $n\ge1$.
 - **Arithmetic Necessitism.** Given that necessarily zero is not a successor and successor is injective on numbers, the numbers at $\sigma$ form a rigid property with necessarily distinct instances. One sentence for each type $\sigma$.
-- **Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
+- **Truths are ND-necessary.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **□Atomicity.** Necessarily, every non-bottom entity of each relational type has an atom below it.
 - **□Rigid Comprehension.** Necessarily, every relation, including a proposition, is coextensive with a rigid one.
 - **□Self-Atomicity.** Necessarily, at each relational type, every possible entity (one distinct from bottom) is entailed by a self-atom: a possible entity that necessarily, if instantiated, is an atom.
@@ -23,8 +25,7 @@
 - **Strong Actuality.** There is a true strong atom: a true proposition that necessarily entails every proposition or its negation.
 - **□Strong Actuality.** Necessarily, there is a true strong atom: a true proposition that necessarily entails every proposition or its negation.
 - **Transversal Choice.** Every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
-- **□Two-hat necessity implies ND-necessity.** Necessarily, whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat. In C this is the identity $\hat{\hat\Box}=\Box_{\ne}$.
-- **¬ Analytic Necessitism.** If there could be a real number structure, there is a rigid one that is necessarily a real number structure: a rigid property with necessarily distinct instances, with rigid order, addition, multiplication and natural numbers, which necessarily form a complete ordered field. One sentence for each type $\sigma$.
+- **□Two-hat necessities are ND-necessary.** Necessarily, whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat. In C this is the identity $\hat{\hat\Box}=\Box_{\ne}$.
 - **¬ Self-atoms are strong atoms (type t).** Every self-atom is a strong atom.
 - **¬ Self-atoms are atoms (type t).** Every self-atom is an atom.
 - **¬ Strong Atomicity (type t).** Every possible proposition is entailed by a strong atom, one that is possible and necessarily entails every proposition or its negation.
@@ -54,7 +55,15 @@ Metatheory, fixed for this record: the axiom of choice is used freely, as in ord
 
 ## Arguments
 
+### Holds Analytic Necessitism, Second-Order Analytic Necessitism.
+
+At type $\tau:=tt$. With one object, an intension whose value is the same at every arrow is in the domain by the condition, and it is fixed by transport along every arrow: $(h\cdot Y)_j=Y_{jh}=Y_j$. The propositions are infinitely many, so the constant intensions $Y_E$, for $E$ a set of propositions, are at least continuum many and pairwise distinct. Carry the real numbers onto continuum many of them, and take as carrier, order, sum, product, $0$, $1$ and natural numbers the constant intensions whose values are the corresponding sets of tuples of the $Y_E$. All parameters are fixed, so a formula about them has the same truth value at every world, and at the evaluation point they form a real number structure: any bounded set of carrier elements has a least upper bound among them, and every inductive subproperty contains the copy of the natural numbers. Such a structure is rigid, its instances are necessarily distinct, and it is necessarily a real number structure; and the codomain-only intension of type $((\tau)^kt)t$ whose value at each object is the set of codomain-only $k$-ary relations among the carrier there is a represented power of arity $k$, since at every world each $k$-ary relation agrees on the carrier with one of them. So the consequents of Analytic Necessitism and of its second-order form hold, and both principles hold. (The argument of the withdrawn analytic-necessitism-unretracted-arrow would refute this structure; its step from inextensibility is the gap.)
+
+*General argument `arguments/analytic-necessitism-codomain-fixed`. It requires that The model is an action model (Classicism, Appendix D), or an intensional action model in the sense of Dorr's draft (Boolean Completeness does not imply Rigid Comprehension), with a single object. Here: It has one object. It requires that At every object reachable from the evaluation point, the domain contains every intension whose value at an arrow depends only on the arrow's codomain. Here: The domains are full at every object. It requires that There are infinitely many propositions at the evaluation world. Here: The subsets of an infinite monoid. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, auditing the withdrawn arguments for the failure of Analytic Necessitism, 2026-10-29.*
+
 ### Fails Analytic Necessitism.
+
+*Withdrawn 2026-10-29 by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, after a trawl subagent's report: The step from $k\cdot y=k\cdot x\in X_k$ to $Xy$ (or $y\in X_h$) by inextensibility does not follow: inextensibility bounds a rigid carrier from above, by the transports of its actual instances, and puts nothing new into its actual extension. The conclusion is false in many of the models the argument was applied to: entities fixed by every arrow, or transported injectively, can carry a rigid real number structure that is necessarily one (see analytic-necessitism-codomain-fixed and analytic-necessitism-full-continuum).*
 
 Write $w$ for the evaluation object and $k$ for an arrow out of it with no retraction. No entity $x$ of a relational type at $w$ is determined by its transport along $k$: the identity of $w$ is not of the form $j\circ k$, such a $j$ being a retraction, and the model being full, the intension $y$ agreeing with $x$ at every arrow but the identity, where it takes another value, is in the domain, while $k\cdot y=k\cdot x$, transport along $k$ reading only the values at the arrows after $k$. Suppose then that $\mathfrak R$ were a rigid real number structure at $w$ at a relational type, necessarily a real number structure (Background, Analysis), with carrier $X$. For an instance $x$ of $X$ and $y$ as above, persistence gives $k\cdot x\in X_k$, so $k\cdot y\in X_k$; inextensibility then gives $Xy$; and the necessary distinctness of the instances gives $k\cdot y\ne k\cdot x$, a contradiction. So $X$ has no instance and is no complete ordered field. The antecedent of Analytic Necessitism holds nevertheless, at some relational type. The propositions at $w$ are the sets of the infinitely many arrows out of it, the sets of sets of propositions are Dedekind-infinite (a theorem of ZF for any infinite set), and the entities of type $ttt$ at $w$, which include one with any given extension at the identity, include a copy of the sets of natural numbers and so of the real numbers; the model being full, the order, sum and product of the reals are the extensions at the identity of relations in the domain, every subset of that carrier is the extension of a subproperty, so the structure is complete, and its least inductive subproperty is its natural numbers. So $\exists\mathfrak R\,.\,\operatorname{Real}_{ttt}(\mathfrak R)$ holds at $w$ while the consequent of Analytic Necessitism fails there: Analytic Necessitism fails. (When the arrows out of $w$ include a copy of the natural numbers, as in the recorded instances, the same argument runs at type $t$.) No choice is used.
 
@@ -66,7 +75,7 @@ The numbers at a type $\sigma$ are the instances of $\mathbb N_\sigma$, the leas
 
 *General argument `arguments/arithmetic-necessitism-extensionally-full`. It requires that The model is extensionally full at every object: every set of tuples from the domains at an object is the extension, at the identity arrow, of an element of the domain of the matching relational type there. Here: A full model contains every intension, so in particular one with any given extension at the identity. By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-23.*
 
-### Holds Truth implies ND-necessity.
+### Holds Truths are ND-necessary.
 
 For a true $p$, $a\le p$, since $a$ entails every truth. Take $q:=a$ in the definition of $\Box_{\ne}p$: at a world in $a$, $p$ holds; at a world outside $a$, $\Diamond a$ fails. So every truth is $\Box_{\ne}$-necessary.
 
@@ -222,7 +231,7 @@ For an equivalence relation at the evaluation point, a transversal of its extens
 
 *Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* Moved from the group finite-support-one-object to the topic. Its first sentence, deriving extensional fullness from ideal fullness, is now the group's reason for meeting extensionally-full.
 
-### Holds □Two-hat necessity implies ND-necessity.
+### Holds □Two-hat necessities are ND-necessary.
 
 In a full action model the actual-world proposition $\{1\}$ is in the domain at every object. Taking it as the witness, $\Box_{\ne}p$ holds at an identity iff $p$ contains every arrow out of that object with a retraction (these are the arrows at which $\Diamond\{1\}$ holds), and $\hat{\hat\Box}p$ iff $p$ contains every invertible arrow out of it (an arrow lies in $\hat\Diamond\{1\}$ iff some retraction of it has a retraction, i.e. iff it is invertible). Full models satisfy necessary Actuality, so $\Box_5=\hat{\hat\Box}$ by Proposition D21 of The Bounds of Possibility. When every retracted arrow is invertible, the two boxes coincide at every reachable object, so $\Box_{\ne}=\hat{\hat\Box}$.
 

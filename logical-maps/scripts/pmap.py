@@ -10,6 +10,7 @@ Subcommands
                             working copy (MAP.md, OPEN-QUESTIONS.md, README, records, tooling)
   status   [TOPIC ...]      print a text summary (counts, open pairs, redundancies)
   lynchpins [TOPIC ...]     rank open questions by what each answer would settle
+  history  [TOPIC ...]      add the days of the published branch's history to the settled-count ledger
   new-topic TOPIC           scaffold topics/TOPIC/
   new-principle TOPIC ID    scaffold a principle file
   new-result TOPIC ID       scaffold an implication file
@@ -170,7 +171,168 @@ def load_topic(topic_id: str) -> dict:
     papers = _load_yaml(tdir / "papers.yaml") if (tdir / "papers.yaml").exists() else {"papers": []}
     return {"topic": topic, "principles": principles, "results": results, "models": models, "paper_catalogue": papers, "papers": papers.get("papers", []) if isinstance(papers, dict) else [],
             "model_sources": sources, "retired_models": retired, "provenance": provenance, "groups": groups,
-            "conditions": conditions, "general_arguments": general, "conditions_file": str((tdir / "conditions.yaml").relative_to(ROOT))}
+            "conditions": conditions, "general_arguments": general, "conditions_file": str((tdir / "conditions.yaml").relative_to(ROOT)),
+            "background": load_background(tdir, topic)}
+
+
+# ----------------------------------------------------------------------------
+# Background pages
+# ----------------------------------------------------------------------------
+#
+# A topic's Background is a series of pages, `background/<page>.md`, in the order its
+# `topic.yaml` lists under `background_pages`; each page opens with `# Title`. A topic with a
+# single `background.md` instead has one page, `background`. A page may contain items, the
+# definitions and lemmas that results draw on, as blocks:
+#
+#     ::: lemma {#weakly-rigid-persistent}
+#     title: Weakly rigid relations are persistent
+#     lean: Classicism.persistent_of_weaklyRigid
+#     credit: Chris Sun, 26 September 2026
+#     sources: Dorr, Boolean Completeness does not imply Rigid Comprehension, p. 12
+#     ---
+#     Statement, then *Proof.* ...
+#     :::
+#
+# The header before `---` is optional; its keys are BACKGROUND_ITEM_KEYS, and `lean` and
+# `sources` take a string or a list. An item's id, and a page's, share the namespace of the
+# topic's records, so `[[id]]` in any prose links to it. Anywhere in a page's prose,
+# `{lean: A, B, C}` cites Lean declarations without an item of their own: "≤ is a partial
+# order {lean: le_refl, le_trans, le_antisymm}" becomes one link to all three.
+
+import re as _re
+
+BACKGROUND_KINDS = ("definition", "lemma", "proposition", "theorem", "corollary", "fact", "remark")
+BACKGROUND_ITEM_KEYS = ("title", "lean", "credit", "sources")
+BACKGROUND_BLOCK = _re.compile(r"^:::[ \t]*(?P<kind>[a-z]+)[ \t]*\{#(?P<id>[^}\s]*)\}[ \t]*\n(?P<content>.*?)^:::[ \t]*$",
+                               _re.M | _re.S)
+_BACKGROUND_HEADER = _re.compile(r"\A(?P<header>(?:[a-z_]+:.*\n(?:[ \t]+.*\n)*)+)---[ \t]*\n")
+
+
+def load_background(tdir: Path, topic: dict) -> dict:
+    """The topic's Background: {"pages": [...], "items": [...], "errors": [...]}, unvalidated beyond
+    what parsing needs. A page is {id, title, md, file}, its md the page with its items in place; an
+    item is {id, kind, page, title, lean, credit, sources, body, file}."""
+    pages, items, errors = [], [], []
+    folder, single = tdir / "background", tdir / "background.md"
+    if folder.is_dir():
+        order = topic.get("background_pages") or []
+        files = {p.stem: p for p in folder.glob("*.md")}
+        for pid in order:
+            if pid not in files:
+                errors.append(f"topic.yaml: background page '{pid}' has no file background/{pid}.md")
+        for stem in sorted(set(files) - set(order)):
+            errors.append(f"background/{stem}.md: not listed in topic.yaml background_pages")
+        sources = [(pid, files[pid]) for pid in order if pid in files]
+        if single.exists():
+            errors.append(f"{single.name}: a topic with background/ has no background.md")
+    else:
+        sources = [("background", single)] if single.exists() else []
+    listed = lambda v: [v] if isinstance(v, str) else v if isinstance(v, list) else []
+    for pid, path in sources:
+        text = path.read_text(encoding="utf-8")
+        rel = str(path.relative_to(ROOT) if path.is_relative_to(ROOT) else path)
+        first, _, rest = text.partition("\n")
+        if not folder.is_dir():   # its own H1, if any, is the topic's title, which the page does not repeat
+            title, body = "Background", (rest if first.startswith("# ") else text)
+        elif first.startswith("# "):
+            title, body = first[2:].strip(), rest
+        else:
+            errors.append(f"{rel}: a background page opens with '# Title'")
+            title, body = pid, text
+        for m in BACKGROUND_BLOCK.finditer(body):
+            content, header = m["content"], {}
+            h = _BACKGROUND_HEADER.match(content)
+            if h:
+                try:
+                    header = _normalise(yaml.safe_load(h["header"]) or {})
+                    if isinstance(header, dict):  # `title: 4` is the title "4"
+                        header = {k: str(v) if isinstance(v, (int, float)) and not isinstance(v, bool) else v for k, v in header.items()}
+                except yaml.YAMLError as exc:
+                    errors.append(f"{rel}: item {m['id']}: unreadable header ({exc})")
+                content = content[h.end():]
+            items.append({"id": m["id"], "kind": m["kind"], "page": pid, "file": rel,
+                          "title": header.get("title", "") if isinstance(header, dict) else "",
+                          "lean": listed(header.get("lean")) if isinstance(header, dict) else [],
+                          "credit": header.get("credit", "") if isinstance(header, dict) else "",
+                          "sources": listed(header.get("sources")) if isinstance(header, dict) else [],
+                          "body": content.strip(), "_header": header})
+        pages.append({"id": pid, "title": title, "md": body.strip(), "file": rel,
+                      "lean_inline": background_inline_lean(body)})
+    return {"pages": pages, "items": items, "errors": errors}
+
+
+LEAN_INLINE = _re.compile(r"\{lean:\s*([^{}\n]+?)\s*\}")
+
+
+def background_inline_lean(md: str) -> list[str]:
+    """The declarations a page's `{lean: …}` citations name, outside math and code, in order."""
+    out = []
+    for m in LEAN_INLINE.finditer(_outside_math_or_code(md)):
+        out += [n.strip() for n in m[1].split(",") if n.strip() and n.strip() not in out]
+    return out
+
+
+def background_lean_names(data: dict) -> list[tuple[str, str]]:
+    """Every Lean declaration the Background cites, with where: an item's header or a page's prose."""
+    bg = data.get("background") or {}
+    return ([(n, f"{i['file']}: item {i['id']}") for i in bg.get("items", []) for n in i["lean"]]
+            + [(n, p["file"]) for p in bg.get("pages", []) for n in p.get("lean_inline", [])])
+
+
+def background_ids(data: dict) -> set:
+    """The ids the Background gives `[[id]]` links to: its pages and items."""
+    bg = data.get("background") or {}
+    return {p["id"] for p in bg.get("pages", [])} | {i["id"] for i in bg.get("items", [])}
+
+
+def background_errors(data: dict, linkable: set) -> list[str]:
+    """Problems with the Background's pages and items; `linkable` is the records' ids."""
+    bg = data.get("background") or {}
+    errors = list(bg.get("errors", []))
+    seen = set()
+    for x in bg.get("pages", []) + bg.get("items", []):
+        where = f"{x['file']}: {'item ' + x['id'] if 'kind' in x else 'page'}"
+        if not _re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", x["id"]):
+            errors.append(f"{where}: id '{x['id']}' is not lowercase-hyphenated")
+        if x["id"] == "literature":
+            errors.append(f"{where}: the id 'literature' is the Literature page's")
+        if x["id"] in seen:
+            errors.append(f"{where}: duplicate background id '{x['id']}'")
+        elif x["id"] in linkable:
+            errors.append(f"{where}: id '{x['id']}' is already a record's id")
+        seen.add(x["id"])
+    for i in bg.get("items", []):
+        where = f"{i['file']}: item {i['id']}"
+        if i["kind"] not in BACKGROUND_KINDS:
+            errors.append(f"{where}: unknown kind '{i['kind']}' (one of {', '.join(BACKGROUND_KINDS)})")
+        header = i["_header"]
+        if not isinstance(header, dict):
+            errors.append(f"{where}: the header is not a mapping")
+            continue
+        for k in header:
+            if k not in BACKGROUND_ITEM_KEYS:
+                errors.append(f"{where}: unknown header key '{k}' (one of {', '.join(BACKGROUND_ITEM_KEYS)})")
+        for k in ("title", "credit"):
+            if k in header and not isinstance(header[k], str):
+                errors.append(f"{where}: {k} is not a string")
+        for k in ("lean", "sources"):
+            v = header.get(k)
+            if v is not None and not (isinstance(v, str) or isinstance(v, list) and all(isinstance(s, str) for s in v)):
+                errors.append(f"{where}: {k} is neither a string nor a list of strings")
+        if not i["body"]:
+            errors.append(f"{where}: empty")
+    for n, where in background_lean_names(data):
+        if not _re.fullmatch(r"[A-Za-z_][\w'.]*", str(n)):
+            errors.append(f"{where}: '{n}' is not a Lean declaration name")
+    known = linkable | seen
+    for p in bg.get("pages", []):
+        for ln in BACKGROUND_BLOCK.sub("", p["md"]).splitlines():
+            if ln.startswith(":::"):
+                errors.append(f"{p['file']}: unmatched or malformed block line '{ln.strip()}'")
+        for ref in sorted(set(CROSS_REF.findall(p["md"]))):
+            if ref not in known:
+                errors.append(f"{p['file']}: unknown cross-reference [[{ref}]]")
+    return errors
 
 
 # ----------------------------------------------------------------------------
@@ -1613,6 +1775,108 @@ def progress_report(data: dict) -> list[dict]:
             for bid, name, L in _engines(data)]
 
 
+# ---------------------------------------------------------------------------- progress history
+# The settled counts over time, for the chart on the Changes tab: one point for each day of the
+# published branch's first-parent history (its last commit that day), for the whole map under the
+# topic background alone. Each commit is loaded by its own pmap.py, which knows its record
+# format; only the engine's inputs are kept, and today's Lynchpins counts them, so the series
+# stays comparable. Bump HISTORY_VERSION when what counts as a question changes: `pmap.py
+# history` then recounts every point. The ledger is written only by that command, never by a
+# build, which adds the current records as a live point of its own.
+HISTORY_REF = "origin/main"
+HISTORY_VERSION = 1
+_HISTORY_EXTRACT = r"""
+import json, sys
+sys.path.insert(0, 'scripts')
+import pmap
+d = pmap.load_topic(sys.argv[1])
+keep = lambda x, ks: {k: x.get(k) for k in ks}
+json.dump({"topic": {"id": d["topic"].get("id"), "background": d["topic"].get("background") or []},
+           "principles": [keep(p, ("id", "name")) for p in d["principles"]],
+           "results": [keep(r, ("id", "premises", "conclusion", "status")) for r in d["results"]],
+           "models": [keep(m, ("id", "satisfies", "violates", "status")) for m in d["models"]]},
+          open(sys.argv[2], "w"))
+"""
+
+
+def history_path(topic_id: str) -> Path:
+    return TOPICS / topic_id / "history.json"
+
+
+def history_counts(data: dict) -> dict:
+    """The counts one point of the history records, under the topic background alone."""
+    p = Lynchpins(data).progress()
+    return {"principles": len(data["principles"]),
+            "results": sum(r.get("status") == "proved" for r in data["results"]),
+            "models": sum(m.get("status") == "proved" for m in data["models"]),
+            "questions": p["questions"], "settled": p["settled"],
+            "core_questions": p["core"]["questions"], "core_settled": p["core"]["settled"]}
+
+
+def _history_inputs(topic_id: str, commit: str) -> dict | None:
+    """The engine's inputs at a commit, read by that commit's own loader; None if it has no topic."""
+    import subprocess, tempfile, tarfile, io
+    repo = ROOT.parent
+    prefix = ROOT.relative_to(repo).as_posix()
+    paths = [f"{prefix}/scripts", f"{prefix}/schema", f"{prefix}/topics/{topic_id}"]
+    paths = [x for x in paths if subprocess.run(["git", "cat-file", "-e", f"{commit}:{x}"], cwd=repo, capture_output=True).returncode == 0]
+    if not any(x.endswith(f"/topics/{topic_id}") for x in paths):
+        return None
+    tar = subprocess.run(["git", "archive", commit, *paths], cwd=repo, capture_output=True, check=True).stdout
+    with tempfile.TemporaryDirectory() as tmp:
+        with tarfile.open(fileobj=io.BytesIO(tar)) as t:
+            t.extractall(tmp, filter="data")
+        out = Path(tmp) / "inputs.json"
+        run = subprocess.run([sys.executable, "-c", _HISTORY_EXTRACT, topic_id, str(out)],
+                             cwd=Path(tmp) / prefix, capture_output=True, text=True)
+        if run.returncode or not out.exists():
+            raise RuntimeError(f"{commit[:8]}: its loader failed: {run.stderr.strip().splitlines()[-1:] or run.returncode}")
+        inputs = json.loads(out.read_text())
+    # Older loaders may leave a status out; read it as the loader of the day did, as proved.
+    for x in inputs["results"] + inputs["models"]:
+        x["status"] = x.get("status") or "proved"
+        for k in ("premises", "satisfies", "violates"):
+            if k in x:
+                x[k] = x[k] or []
+    return inputs
+
+
+def update_history(topic_id: str, ref: str = HISTORY_REF, rebuild: bool = False) -> Path:
+    """Add to the ledger a point for each day of ref's first-parent history it lacks."""
+    import subprocess
+    path = history_path(topic_id)
+    old = json.loads(path.read_text()) if path.exists() else {}
+    known = {} if rebuild or old.get("version") != HISTORY_VERSION else {x["commit"]: x for x in old.get("points", [])}
+    log = subprocess.run(["git", "log", ref, "--first-parent", "--format=%H %cd", "--date=short"],
+                         cwd=ROOT.parent, capture_output=True, text=True, check=True).stdout.split("\n")
+    last = {}
+    for line in reversed([x for x in log if x.strip()]):   # oldest first; a later commit that day replaces an earlier one
+        commit, day = line.split()
+        last[day] = commit
+    points = []
+    for day, commit in sorted(last.items()):
+        short = commit[:8]
+        if short in known:
+            points.append(known[short]); continue
+        inputs = _history_inputs(topic_id, commit)
+        if inputs is None:
+            continue
+        point = {"date": day, "commit": short, **history_counts(inputs)}
+        print(f"{day} {short}: {point['settled']:,} of {point['questions']:,} settled; core {point['core_settled']:,} of {point['core_questions']:,}")
+        points.append(point)
+    path.write_text(json.dumps({"version": HISTORY_VERSION, "ref": ref, "points": points}, indent=1) + "\n", encoding="utf-8")
+    return path
+
+
+def history_export(topic_id: str, data: dict) -> dict | None:
+    """The ledger's points for the viewer, with the current records as a live point."""
+    path = history_path(topic_id)
+    ledger = json.loads(path.read_text()) if path.exists() else {}
+    points = ledger.get("points", []) if ledger.get("version") == HISTORY_VERSION else []
+    live = {"date": _dt.date.today().isoformat(), "live": True, **history_counts(data)}
+    return {"ref": ledger.get("ref", HISTORY_REF), "points": points, "live": live}
+
+
 def lynchpin_report(data: dict, *, sparse_ok: bool = True, top: int | None = 50) -> dict:
     """Rankings under the topic background alone and under each background preset.
 
@@ -2333,6 +2597,8 @@ def validate_topic(topic_id: str, *, quiet=False) -> bool:
     # [[id]] or [[id|text]] in a record's prose links to another record of the topic.
     records = data["principles"] + data["results"] + data["models"] + data.get("groups", []) + data.get("general_arguments", [])
     linkable = {x.get("id") for x in records}
+    errors += background_errors(data, linkable)
+    linkable |= background_ids(data)
     for item in records:
         if item.get("_companion_of"):
             continue
@@ -2561,6 +2827,7 @@ def export_json(topic_id: str, *, data: dict | None = None, an: dict | None = No
         "general_arguments": [clean(c) | {"file": c["_file"]} for c in data.get("general_arguments", [])],
         "generated": _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds"),
         "progress": progress_report(data),
+        "history": history_export(topic_id, data),
         # The viewer takes its top 30 after applying the shown-principle filter.
         "lynchpins": lynchpin_report(data, sparse_ok=False, top=None),
         "server_analysis": {
@@ -2602,6 +2869,96 @@ def literature_md(data: dict, prefix: str = "") -> str:
     return "\n".join(lines)
 
 
+_MATH_OR_CODE = _re.compile(
+    r'(?P<fence>^ {0,3}(?P<ticks>`{3,}|~{3,})[^\n]*\n.*?^ {0,3}(?P=ticks)[ \t]*$)'
+    r'|(?P<code>(?P<tick>`+)[^`]*?(?P=tick))'
+    r'|(?P<math>(?<!\\)(?:\$\$[\s\S]*?(?<!\\)\$\$|\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\)|\$(?!\s)(?:\\.|[^$\n])+?(?<![\\\s])\$(?!\d)))',
+    _re.M | _re.S)
+_CROSS_REF_TEXT = _re.compile(r"\[\[([a-z0-9]+(?:-[a-z0-9]+)*)(?:\|([^\]]*))?\]\]")
+
+
+def _outside_math_or_code(md: str) -> str:
+    """The text with its math and code blanked out, for finding markup that is not inside them."""
+    return _MATH_OR_CODE.sub(lambda m: " " * len(m[0]), md)
+
+
+def _xref_slots(md: str) -> str:
+    """[[id]] and [[id|text]] outside math and code as `<span data-xref>` slots, which the viewer
+    turns into links labelled as it labels cross-references in records; `{lean: A, B}` as a
+    `<span data-lean>` slot, which it turns into one link to the declarations."""
+    def slots(text: str) -> str:
+        text = _CROSS_REF_TEXT.sub(lambda r: f'<span class="xref-slot" data-xref="{r[1]}">{r[2] or ""}</span>', text)
+        return LEAN_INLINE.sub(lambda r: '<span class="lean-ref" data-lean="'
+                               + " ".join(n.strip() for n in r[1].split(",") if n.strip()) + '"></span>', text)
+    out, end = [], 0
+    for m in _MATH_OR_CODE.finditer(md):
+        out += [slots(md[end:m.start()]), m[0]]
+        end = m.end()
+    out.append(slots(md[end:]))
+    return "".join(out)
+
+
+def background_item_label(item: dict) -> str:
+    return item["kind"].capitalize() + (f" ({item['title']})" if item.get("title") else "")
+
+
+def _background_item_meta(item: dict) -> list[str]:
+    meta = []
+    if item.get("credit"):
+        meta.append(f"*Credit:* {item['credit']}")
+    if item.get("sources"):
+        meta.append("*Sources:* " + "; ".join(item["sources"]))
+    return meta
+
+
+def background_item_md(item: dict) -> str:
+    """An item as plain Markdown, for the bundle and the downloaded data.json."""
+    lines = [f'<a id="{item["id"]}"></a>**{background_item_label(item)}.** `{item["id"]}`', "", item["body"], ""]
+    meta = _background_item_meta(item) + ([f"*Lean:* " + ", ".join(f"`{n}`" for n in item["lean"])] if item.get("lean") else [])
+    return "\n".join(lines + ([" ".join(meta), ""] if meta else []))
+
+
+def render_background(bg: dict, payload: dict, literature: bool = True) -> dict:
+    """The Background for the viewer: {"pages": [{id, title, html}], "items": [...], "md": ...}. Each
+    item's block becomes a <section data-bg-item> with its heading and its credit and sources; the
+    viewer adds its Lean links and what refers to it. A topic with papers gets a last page, the
+    Literature, whose catalogue the viewer mounts; the bundle places it itself (`literature=False`)."""
+    from html import escape
+    items = {i["id"]: i for i in bg.get("items", [])}
+
+    def html_block(m) -> str:
+        i = items[m["id"]]
+        head = (f'<p class="bg-item-head"><span class="bg-kind">{escape(i["kind"].capitalize())}</span>'
+                + (f' <span class="bg-title">({_xref_slots(i["title"])})</span>' if i.get("title") else "") + "</p>")
+        meta = _background_item_meta(i)
+        return (f'\n<section class="bg-item bg-{i["kind"]}" id="bg-{i["id"]}" data-bg-item="{i["id"]}">\n{head}\n\n'
+                f'{_xref_slots(i["body"])}\n\n'
+                + (f'<div class="bg-meta">\n{_xref_slots(" · ".join(meta))}\n</div>\n' if meta else "")
+                + '</section>\n')
+
+    pages, md = [], []
+    for p in bg.get("pages", []):
+        # The Literature is a page of its own now: a single background.md's slot for it goes.
+        text = _re.sub(r"(^#+ Literature\s*\n\s*)?" + _re.escape(PAPER_CATALOGUE_SLOT), "", p["md"], flags=_re.M).strip()
+        # A block is rendered as a whole, so the text around it is given its slots separately.
+        end, out = 0, []
+        for m in BACKGROUND_BLOCK.finditer(text):
+            out += [_xref_slots(text[end:m.start()]), html_block(m) if m["id"] in items else m[0]]
+            end = m.end()
+        out.append(_xref_slots(text[end:]))
+        pages.append({"id": p["id"], "title": p["title"], "html": _md_to_html("".join(out)),
+                      "refs": sorted(set(CROSS_REF.findall(BACKGROUND_BLOCK.sub("", text))))})
+        md += [f"## {p['title']}", "", _demote(BACKGROUND_BLOCK.sub(lambda m: background_item_md(items[m["id"]]) if m["id"] in items else m[0], text), 1), ""]
+    if literature and payload.get("papers"):
+        catalogue = literature_md(payload)
+        pages.append({"id": "literature", "title": "Literature",
+                      "html": '<section id="paper-catalogue">' + _md_to_html(catalogue) + '</section>'})
+        md += ["## Literature", "", catalogue, ""]
+    out_items = [{k: v for k, v in i.items() if not k.startswith("_") and k != "file"} | {"file": i["file"]} for i in bg.get("items", [])]
+    text = LEAN_INLINE.sub(lambda r: "(Lean: " + ", ".join(f"`{n.strip()}`" for n in r[1].split(",") if n.strip()) + ")", "\n".join(md))
+    return {"pages": pages, "items": out_items, "md": text.strip() + "\n"}
+
+
 def enriched_payload(topic_id: str, downloads: dict, *, base: dict | None = None) -> dict:
     """export_json plus the topic's prose, so a downloaded data.json is self-explaining. With `base`,
     an export already made, a deep copy of it is enriched instead of a fresh export."""
@@ -2616,21 +2973,17 @@ def enriched_payload(topic_id: str, downloads: dict, *, base: dict | None = None
         if site.get("repository_url"):
             payload["repository_url"] = site["repository_url"]
     payload["downloads"] = downloads
-    for name, key in (("background", "background"), ("contribute", "contribute"), ("extraction", "extraction")):
+    bg = render_background(load_background(TOPICS / topic_id, payload["topic"]), payload)
+    if bg["pages"]:
+        payload["background_pages"], payload["background_items"] = bg["pages"], bg["items"]
+        payload["background_md"] = bg["md"]
+    for name, key in (("contribute", "contribute"), ("extraction", "extraction")):
         path = TOPICS / topic_id / f"{name}.md"
         if path.exists():
             md = path.read_text(encoding="utf-8")
-            if key == "background" and payload.get("papers"):
-                if PAPER_CATALOGUE_SLOT not in md:
-                    md += "\n\n## Literature\n\n" + PAPER_CATALOGUE_SLOT
-                catalogue = literature_md(payload)
-                payload[f"{key}_md"] = md.replace(PAPER_CATALOGUE_SLOT, catalogue)
-                payload[f"{key}_html"] = _md_to_html(md.replace(PAPER_CATALOGUE_SLOT, "<!-- PMAP_LITERATURE -->")).replace("<!-- PMAP_LITERATURE -->",
-                    '<section id="paper-catalogue">' + _md_to_html(catalogue) + '</section>')
-            else:
-                payload[f"{key}_md"] = md
-                if key != "extraction":
-                    payload[f"{key}_html"] = _md_to_html(md)
+            payload[f"{key}_md"] = md
+            if key != "extraction":
+                payload[f"{key}_html"] = _md_to_html(md)
     if downloads.get("starter"):
         section = ("\n\n## Create your own logical map\n\n"
                    f"[Download the starter project (ZIP)]({downloads['starter']})\n")
@@ -3062,7 +3415,9 @@ def lean_source_links(topic_id: str, data: dict) -> dict | None:
     verdict_links = lambda e: [link(d, "model") for d in e.get("definitions", [])] + links(e)
     # Verified: indexed after a successful build, resting on the allowed axioms only.
     sound = lambda e: set(e["certificate"].get("axioms", [])) <= LEAN_ALLOWED_AXIOMS
-    return {"verified": {f"{mid}/{pid}" for mid, vs in idx.get("models", {}).items() for pid, e in vs.items() if sound(e)}
+    return {"declarations": {n: {"link": link(d, n.rsplit(".", 1)[-1]), "theory": d.get("classicism")}
+                             for n, d in idx.get("declarations", {}).items()},
+            "verified": {f"{mid}/{pid}" for mid, vs in idx.get("models", {}).items() for pid, e in vs.items() if sound(e)}
                         | {k for k, e in idx.get("arguments", {}).items() if sound(e)},
             "arguments": {k: links(e) for k, e in idx.get("arguments", {}).items()},
             "results": {rid: links(e) for rid, e in idx.get("results", {}).items()},
@@ -3179,6 +3534,19 @@ def build_topic(topic_id: str, out: Path | None = None, *, fragment: bool = Fals
         item["files"] = files.get(item["id"], {})
     lean_links = lean_source_links(topic_id, data)
     if lean_links:
+        # A Background item's declarations: linked when indexed, verified when every one passes
+        # the check of a shallow proof; `C⁻` when none needs Existence at e.
+        if payload.get("background_pages"):
+            cited = {n for n, _ in background_lean_names(data)}
+            payload["background_lean"] = {n: {"link": d["link"], "theory": d["theory"]}
+                                          for n, d in lean_links["declarations"].items() if n in cited}
+        for item in payload.get("background_items", []):
+            found = [lean_links["declarations"][n] for n in item["lean"] if n in lean_links["declarations"]]
+            if found:
+                item["lean_links"] = [d["link"] for d in found]
+                if len(found) == len(item["lean"]) and all(d["theory"] for d in found):
+                    item["lean_status"] = "verified"
+                    item["lean_theory"] = "C⁻" if all(d["theory"] == "C⁻" for d in found) else "C"
         for item in payload["results"]:
             if item["id"] in lean_links["results"]:
                 item["lean_links"] = lean_links["results"][item["id"]]
@@ -3533,6 +3901,15 @@ def generate_lean_statements(topic_id: str) -> Path | None:
     if loc is None:
         return None
     root, lib = loc
+    # The declarations the Background's items cite, for the index script to locate and audit.
+    index_file = ((data["topic"].get("lean") or {}).get("index") or {}).get("file")
+    if index_file:
+        cited = sorted({n for n, _ in background_lean_names(data)})
+        target = root / Path(index_file).parent / "background-names.txt"
+        text = "".join(n + "\n" for n in cited)
+        if cited or target.exists():
+            if not target.exists() or target.read_text(encoding="utf-8") != text:
+                target.write_text(text, encoding="utf-8")
     cov, cfg = lean_coverage(data), lean_config(data)
     defs, names = cov["defs"], {FALSE: "⊥", **{p["id"]: p["name"] for p in data["principles"]}}
     ns = cfg["namespace"]
@@ -3794,6 +4171,16 @@ def lean_check(topic_id: str, update: bool = False) -> bool:
             bad.append(f"{item['id']}: claims {state} but has no generated statement")
         if state == "verified" and not verdicts.get(wrappers.get(item["id"]), False):
             bad.append(f"{item['id']}: claims verified but has no checked proof")
+    # The Background's items: each declaration cited must be indexed and pass the topic's own
+    # check of a shallow proof (for Classicism, `#classicism_check`: its axioms and the gate).
+    index_file = ((data["topic"].get("lean") or {}).get("index") or {}).get("file")
+    if index_file and (root / index_file).exists():
+        decls = json.loads((root / index_file).read_text(encoding="utf-8")).get("declarations", {})
+        for n, where in background_lean_names(data):
+            if n not in decls:
+                bad.append(f"{where}: no Lean declaration {n}")
+            elif not decls[n].get("classicism"):
+                bad.append(f"{where}: {n} fails the check: {'; '.join(decls[n].get('errors') or ['no verdict'])}")
     print(f"  principle definitions: {len(cov['defs'])}/{len(data['principles'])}")
     print(f"  generated statements: {len(ready)}/{len(records)}")
     verified = {rid for rid, wrapper in wrappers.items() if verdicts.get(wrapper, False)}
@@ -4012,14 +4399,11 @@ def bundle_map_md(topic_id: str, data: dict, an: dict) -> str:
         o += [f"**Named package `{pre['id']}` ({pre['name']}).** " + ", ".join(label(x) for x in pre["principles"]) + "."
               + (" Loaded by default in the viewer." if pre.get("default") else ""), ""]
 
-    bgmd = (TOPICS / topic_id / "background.md")
-    if bgmd.exists():
-        body = bgmd.read_text(encoding="utf-8").strip().replace(PAPER_CATALOGUE_SLOT, literature_md(data))
-        body = "\n".join(body.split("\n")[1:]).strip()          # drop its own H1
-        body = _demote(body, 1)
+    if data["background"]["pages"]:
+        where = "background/" if (TOPICS / topic_id / "background").is_dir() else "background.md"
         o += ["## 2. Background and standing conventions", "",
-              "*Reproduced from `topics/%s/background.md`.*" % topic_id, "",
-              _relink(body, topic_id), ""]
+              f"*Reproduced from `topics/{topic_id}/{where}`.*", "",
+              _relink(_demote(render_background(data["background"], data, literature=False)["md"], 1), topic_id), ""]
 
     o += ["## 3. Principles", ""]
     cats = topic.get("principle_categories") or []
@@ -4193,7 +4577,7 @@ def bundle_map_md(topic_id: str, data: dict, an: dict) -> str:
         for k, v in extras.items():
             o += [f"### `{k}`", "", _demote(_relink(v.strip(), topic_id), 3), ""]
 
-    if data.get("papers") and (not bgmd.exists() or PAPER_CATALOGUE_SLOT not in bgmd.read_text(encoding="utf-8")):
+    if data.get("papers"):
         o += ["## Literature", "", literature_md(data, f"topics/{topic_id}/"), ""]
 
     o += ["## 8. Where this came from", "",
@@ -4363,7 +4747,8 @@ def bundle_readme_md(topic_id: str, data: dict, an: dict) -> str:
          f"data.json derived.json        records, and every derived verdict",
          f"topics/{topic_id}/",
          f"  topic.yaml                  title, source catalog, categories, viewer packages",
-         f"  background.md               the framework in full",
+         f"  background/<page>.md        the framework in full, one topic per page" if (TOPICS / topic_id / "background").is_dir()
+         else f"  background.md               the framework in full",
          f"  extraction.md               source inventory, transcription decisions, deferred items",
          f"  principles/<id>.yaml        one principle per file",
          f"  results/<id>.yaml           premises ⇒ conclusion, with its proof",
@@ -4503,7 +4888,7 @@ def bundle_agents_md(topic_id: str, data: dict) -> str:
         reading = (
             f"Start with [the topic guide](topics/{topic_id}/AGENTS.md) for terminology, record IDs, "
             "and construction-specific entry points. Run commands from this bundle's root. "
-            "Read `topic.yaml`, the relevant section of `background.md`, and the matching principle "
+            "Read `topic.yaml`, the relevant Background page (`background/<page>.md`, or `background.md`), and the matching principle "
             f"records under `topics/{topic_id}/`; then follow their IDs into `results/`, `models/`, "
             "and `writeups/`. Search narrowly before reading whole files.\n\n"
             "Translate the user's question into exact premises and a target, preserving the fixed "
@@ -5415,9 +5800,12 @@ def selftest():
 def main(argv=None):
     ap = argparse.ArgumentParser(prog="pmap", description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
-    for name in ("validate", "build", "status", "bundle", "lean", "lean-check", "lynchpins"):
+    for name in ("validate", "build", "status", "bundle", "lean", "lean-check", "lynchpins", "history"):
         s = sub.add_parser(name)
         s.add_argument("topics", nargs="*")
+        if name == "history":
+            s.add_argument("--ref", default=HISTORY_REF, help=f"the published branch (default {HISTORY_REF})")
+            s.add_argument("--rebuild", action="store_true", help="recount every point, not only the new days")
         if name == "lynchpins":
             s.add_argument("--background", action="append", metavar="PRESET", help="a background preset id, or none; repeatable (default: none and every preset)")
             s.add_argument("--top", type=int, default=10, help="rows per list (default 10)")
@@ -5468,6 +5856,10 @@ def main(argv=None):
             status(t, a.model)
         elif a.cmd == "lynchpins":
             lynchpins(t, a.background, a.top, a.json)
+        elif a.cmd == "history":
+            if load_topic(t)["topic"].get("draft"):
+                continue
+            print(f"wrote {update_history(t, a.ref, a.rebuild).relative_to(ROOT)}")
         elif a.cmd == "lean":
             path = generate_lean_statements(t)
             print(f"wrote {path.relative_to(ROOT)}" if path else f"{t}: no Lean library configured")

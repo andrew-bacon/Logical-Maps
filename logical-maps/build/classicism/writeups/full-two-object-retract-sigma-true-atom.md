@@ -9,7 +9,7 @@
 - **Necessity of Second-Order Analysis.** Every second-order analytical sentence is either true in every real number structure in every possible world or false in every real number structure in every possible world. One sentence for each type $\sigma$ and each second-order analytical sentence.
 - **Arithmetic Necessitism.** Given that necessarily zero is not a successor and successor is injective on numbers, the numbers at $\sigma$ form a rigid property with necessarily distinct instances. One sentence for each type $\sigma$.
 - **Gallin Extensional Comprehension.** Every relation is coextensive with one that is persistent and has a persistent pointwise negation. This is the source’s comparison with Gallin’s different rigidity convention.
-- **□Truth implies 5-necessity.** Necessarily, every truth is 5-necessary: necessary under every S5 operator. In C this is the identity $\Box_5=\lambda p\, .\,p$.
+- **□Truths are 5-necessary.** Necessarily, every truth is 5-necessary: necessary under every S5 operator. In C this is the identity $\Box_5=\lambda p\, .\,p$.
 - **□Atomicity.** Necessarily, every non-bottom entity of each relational type has an atom below it.
 - **□Self-atoms are atoms.** Necessarily, at each relational type, every self-atom is an atom.
 - **□Rigid Comprehension.** Necessarily, every relation, including a proposition, is coextensive with a rigid one.
@@ -24,7 +24,7 @@
 - **Strong Actuality.** There is a true strong atom: a true proposition that necessarily entails every proposition or its negation.
 - **□Strong Actuality.** Necessarily, there is a true strong atom: a true proposition that necessarily entails every proposition or its negation.
 - **Transversal Choice.** Every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
-- **¬ Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
+- **¬ Truths are ND-necessary.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **¬ Possible Infinity (type t).** Possibly there are not finitely many propositions: the Axiom of Infinity at this type, under a diamond.
 - **¬ Infinity Schema (type t).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
 - **¬ Axiom of Infinity (type t).** There are not finitely many propositions. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
@@ -40,7 +40,7 @@
 - **¬ Separated Structure.** For each typed nonlogical constant c and closed same-typed terms F,G not containing c, equality after application to c implies equality of F and G.
 - **¬ Independence (signature Σ).** No constant of Sigma is a pure operation applied to other constants: for a closed pure term A and distinct constants c, d_1,…,d_n with n ≥ 0, c differs from A applied to the d’s. With n = 0, no constant denotes a pure entity.
 - **¬ Maximalism (signature Σ).** The Maximalism schema for the fixed nonlogical signature Σ: every closed identity of its language not provable in C(Σ) is false.
-- **¬ Two-hat necessity implies ND-necessity.** Whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat.
+- **¬ Two-hat necessities are ND-necessary.** Whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat.
 
 ## Definition
 
@@ -74,7 +74,7 @@ Given $X$ with extension $E$ at the evaluation object, let $Y$ hold at an arrow 
 
 *General argument `arguments/coherent-retractions`. It requires that The model is full: at each object, the domain of each relational type contains every intension of that type. Here: Every intension of every relational type is present at every object (Classicism, §3.5, p. 59). It requires that Every arrow $g$ out of the evaluation object has a retraction $r_g$, chosen so that $r_{x\circ g}\circ x=r_g$ for every arrow $x$ after $g$. Here: Every arrow into $W_0$ is the one function to its single member, so any choice is coherent. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-06.*
 
-### Fails Truth implies ND-necessity.
+### Fails Truths are ND-necessary.
 
 Let $p:=\{1\}$, in the domain since the model is full, and true. Any witness $q$ for $\Box_{\ne}p$ is true, so contains the identity; under an arrow $i\ne 1$ with a retraction $r$, the arrow $r\circ i=1$ makes $\Diamond q$ true, while $p$ is false. So no true $q$ has $\Box(\Diamond q\to p)$. (The surjection monoid's own argument of 23 September, stated once.)
 
@@ -96,7 +96,7 @@ The propositions at the evaluation world are finitely many, and every intension 
 
 *Revised 2026-10-06 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* The Axiom of Infinity's failure, which the text states, recorded as a verdict of its own, so that it is certified without the result that the Axiom implies the schema.
 
-### Holds □Truth implies 5-necessity.
+### Holds □Truths are 5-necessary.
 
 In a full action model the actual-world proposition $\{1\}$ is in the domain at every object. Taking it as the witness, $\Box_{\ne}p$ holds at an identity iff $p$ contains every arrow out of that object with a retraction (these are the arrows at which $\Diamond\{1\}$ holds), and $\hat{\hat\Box}p$ iff $p$ contains every invertible arrow out of it (an arrow lies in $\hat\Diamond\{1\}$ iff some retraction of it has a retraction, i.e. iff it is invertible). Full models satisfy necessary Actuality, so $\Box_5=\hat{\hat\Box}$ by Proposition D21 of The Bounds of Possibility. With only identities invertible, $\Box_5$ is the identity operator at every reachable object, so every truth is 5-necessary everywhere.
 
@@ -240,7 +240,7 @@ For an equivalence relation at the evaluation point, a transversal of its extens
 
 *Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* Moved from the group finite-support-one-object to the topic. Its first sentence, deriving extensional fullness from ideal fullness, is now the group's reason for meeting extensionally-full.
 
-### Fails Two-hat necessity implies ND-necessity.
+### Fails Two-hat necessities are ND-necessary.
 
 In a full action model the actual-world proposition $\{1\}$ is in the domain at every object. Taking it as the witness, $\Box_{\ne}p$ holds at an identity iff $p$ contains every arrow out of that object with a retraction (these are the arrows at which $\Diamond\{1\}$ holds), and $\hat{\hat\Box}p$ iff $p$ contains every invertible arrow out of it (an arrow lies in $\hat\Diamond\{1\}$ iff some retraction of it has a retraction, i.e. iff it is invertible). Full models satisfy necessary Actuality, so $\Box_5=\hat{\hat\Box}$ by Proposition D21 of The Bounds of Possibility. Let $u$ have a retraction but no inverse. The true proposition $\{1\}$ excludes $u$, so it is not ND-necessary, while every invertible arrow is the identity or excluded from no such test: $\{1\}$ is two-hat necessary iff no non-identity arrow is invertible, and in any case the proposition $\{1\}\cup\{\text{invertible arrows}\}$ is in the domain, true, two-hat necessary and not ND-necessary.
 
@@ -257,7 +257,7 @@ The record's revision log before it was written as arguments.
 
 - **2026-09-25** (Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell) — Added Transversal Choice, by the argument recorded for Relational Choice: a full model contains every intension, in particular one whose extension at the evaluation point is a transversal, chosen in the metatheory, of the extension there of an equivalence relation; the equivalence and transversal conditions are unboxed. Recorded on a question of Zachary Goodsell, after an observation of Christopher Sun. Now satisfies: Transversal Choice.
 - **2026-09-25** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Added Gallin Extensional Comprehension at W0, and the failure of the Infinity Schema and of Possible Infinity at type t; see the notes. Now satisfies: Gallin Extensional Comprehension. Now violates: Infinity Schema (type t), Possible Infinity (type t).
-- **2026-09-23** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Recorded the Distinctness-preserving collapse; see the notes. Now violates: Truth implies ND-necessity.
+- **2026-09-23** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Recorded the Distinctness-preserving collapse; see the notes. Now violates: Truths are ND-necessary.
 - **2026-09-22** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Fixed an interpretation of Σ (relational constants as top, individual constants as one fixed individual) and recorded the signature schemata it refutes, at Cian Dorr’s request. Now violates: Witnessed Possibility, Separated Structure, Independence (signature Σ), Maximalism (signature Σ).
 - **2026-09-22** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Added the failure of Strong Atomicity (type t) at W0; see the notes. Now violates: Strong Atomicity (type t).
 - **2026-09-22** (Claude Fable 5.1 (Anthropic), prompted by Cian Dorr) — Boxed the Relational Choice claim; see the notes. Now satisfies: □Relational Choice.

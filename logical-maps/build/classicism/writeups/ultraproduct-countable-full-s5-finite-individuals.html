@@ -323,226 +323,70 @@ body.writeup-page { max-width: 82ch; margin: 3em auto; padding: 0 1.5em 3em; fon
 <script defer src="../math/katex.min.js"></script>
 <script defer src="../math/contrib/auto-render.min.js"></script>
 <script defer src="../math/math.js"></script></head><body class="writeup-page"><nav class="writeup-nav" aria-label="Write-up navigation"><a href="../index.html">← Back to map</a><div class="display-toggles"><button type="button" class="theme-toggle" data-theme-toggle>[Dark mode]</button><button type="button" class="theme-toggle" data-colourblind-toggle aria-label="Colourblind mode" aria-pressed="false">[Colourblind mode: off]</button></div></nav><header id="title-block-header"><h1>Henkin ultraproduct: countable full S5 models with n individuals</h1></header><p class="cert">
-Model — Source: Misc.; produced by GPT-6 Astra (OpenAI), prompted by
-Daniel Kodsi, 23 October 2026; recorded by Claude Opus 5.5 (Anthropic),
-prompted by Cian Dorr, 25 October 2026.
+Model — Source: Misc.; produced by GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 23 October 2026; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 25 October 2026.
 </p>
 <h2 id="package">Package</h2>
 <ul>
-<li><strong>□Functional Choice.</strong> Necessarily, every serial
-binary relation admits a selecting operation. Its output type is
-relational, as required by the type system.</li>
-<li><strong>□Intensional Choice.</strong> Necessarily, if a property is
-necessarily instantiated, then some property entailing it is necessarily
-uniquely instantiated.</li>
-<li><strong>□BF.</strong> Necessarily, the Barcan Formula holds at every
-type. The predicate formulation closes the formula schema using lambda
-abstraction.</li>
-<li><strong>□ND.</strong> Necessarily, distinct things of any type are
-necessarily distinct.</li>
-<li><strong>□Atomicity.</strong> Necessarily, every non-bottom entity of
-each relational type has an atom below it.</li>
-<li><strong>□Actuality.</strong> Necessarily, there is a true
-proposition that entails every true proposition.</li>
-<li><strong>□Rigid Comprehension.</strong> Necessarily, every relation,
-including a proposition, is coextensive with a rigid one.</li>
-<li><strong>□Strong Atomicity.</strong> Necessarily, at each relational
-type, every possible entity (one distinct from bottom) is entailed by a
-strong atom: a possible entity that necessarily entails every entity of
-the type or its negation.</li>
-<li><strong>□Well-Ordering.</strong> Necessarily, every type, including
-e, is well-ordered by some relation.</li>
-<li><strong>No Pure Contingency.</strong> Each closed sentence of the
-pure language, if true, is necessary. This is a sentence schema, not a
-quantifier over propositions.</li>
-<li><strong>Axiom of Infinity (type t).</strong> There are not finitely
-many propositions. No finite cardinality holds of the universal
-property, so the domain of the type cannot be exhausted by finitely many
-steps from the empty property.</li>
-<li><strong>Forcing Possibilism.</strong> Every complete Boolean algebra
-that is finite or has strictly fewer elements than there are
-propositions is isomorphic to the entailment algebra below some
-proposition other than top.</li>
-<li><strong>Infinity Schema (type e).</strong> There are arbitrarily
-many pairwise distinct entities of this fixed type; one sentence for
-each positive integer n.</li>
-<li><strong>No Contingency (signature Σ).</strong> Each closed sentence
-of the language of the fixed signature Sigma, if true, is necessary. A
-sentence schema, standing to No Pure Contingency as Possibility
-Maximalism (signature Σ) stands to Possibility Maximalism (pure).</li>
-<li><strong>B for sentences of Σ.</strong> The B instance for every
-closed sentence of the language of the fixed signature Sigma.</li>
-<li><strong>¬ Possible Infinity (type e).</strong> Possibly there are
-not finitely many individuals: the Axiom of Infinity at this type, under
-a diamond.</li>
-<li><strong>¬ Witnessed Possibility.</strong> For pure-formulas P with
-free variables among a finite tuple x, and distinct matching nonlogical
-constants c, a witness to P entails that P at those constants is
-possible.</li>
-<li><strong>¬ Separated Structure.</strong> For each typed nonlogical
-constant c and closed same-typed terms F,G not containing c, equality
-after application to c implies equality of F and G.</li>
-<li><strong>¬ Independence (signature Σ).</strong> No constant of Sigma
-is a pure operation applied to other constants: for a closed pure term A
-and distinct constants c, d_1,…,d_n with n ≥ 0, c differs from A applied
-to the d’s. With n = 0, no constant denotes a pure entity.</li>
-<li><strong>¬ Maximalism (signature Σ).</strong> The Maximalism schema
-for the fixed nonlogical signature Σ: every closed identity of its
-language not provable in C(Σ) is false.</li>
+<li><strong>Axiom of Infinity (type t).</strong> There are not finitely many propositions. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.</li>
+<li><strong>Forcing Possibilism.</strong> Every complete Boolean algebra that is finite or has strictly fewer elements than there are propositions is isomorphic to the entailment algebra below some proposition other than top.</li>
+<li><strong>□Functional Choice.</strong> Necessarily, every serial binary relation admits a selecting operation. Its output type is relational, as required by the type system.</li>
+<li><strong>□Intensional Choice.</strong> Necessarily, if a property is necessarily instantiated, then some property entailing it is necessarily uniquely instantiated.</li>
+<li><strong>□BF.</strong> Necessarily, the Barcan Formula holds at every type. The predicate formulation closes the formula schema using lambda abstraction.</li>
+<li><strong>□ND.</strong> Necessarily, distinct things of any type are necessarily distinct.</li>
+<li><strong>□Atomicity.</strong> Necessarily, every non-bottom entity of each relational type has an atom below it.</li>
+<li><strong>□Actuality.</strong> Necessarily, there is a true proposition that entails every true proposition.</li>
+<li><strong>□Rigid Comprehension.</strong> Necessarily, every relation, including a proposition, is coextensive with a rigid one.</li>
+<li><strong>□Strong Atomicity.</strong> Necessarily, at each relational type, every possible entity (one distinct from bottom) is entailed by a strong atom: a possible entity that necessarily entails every entity of the type or its negation.</li>
+<li><strong>□Well-Ordering.</strong> Necessarily, every type, including e, is well-ordered by some relation.</li>
+<li><strong>No Pure Contingency.</strong> Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.</li>
+<li><strong>Infinity Schema (type e).</strong> There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.</li>
+<li><strong>No Contingency (signature Σ).</strong> Each closed sentence of the language of the fixed signature Sigma, if true, is necessary. A sentence schema, standing to No Pure Contingency as Possibility Maximalism (signature Σ) stands to Possibility Maximalism (pure).</li>
+<li><strong>B for sentences of Σ.</strong> The B instance for every closed sentence of the language of the fixed signature Sigma.</li>
+<li><strong>¬ Possible Infinity (type e).</strong> Possibly there are not finitely many individuals: the Axiom of Infinity at this type, under a diamond.</li>
+<li><strong>¬ Witnessed Possibility.</strong> For pure-formulas P with free variables among a finite tuple x, and distinct matching nonlogical constants c, a witness to P entails that P at those constants is possible.</li>
+<li><strong>¬ Separated Structure.</strong> For each typed nonlogical constant c and closed same-typed terms F,G not containing c, equality after application to c implies equality of F and G.</li>
+<li><strong>¬ Independence (signature Σ).</strong> No constant of Sigma is a pure operation applied to other constants: for a closed pure term A and distinct constants c, d_1,…,d_n with n ≥ 0, c differs from A applied to the d’s. With n = 0, no constant denotes a pure entity.</li>
+<li><strong>¬ Maximalism (signature Σ).</strong> The Maximalism schema for the fixed nonlogical signature Σ: every closed identity of its language not provable in C(Σ) is false.</li>
 </ul>
 <h2 id="definition">Definition</h2>
-<p>As ultraproduct-finite-full-s5, with factors <span
-class="math inline">M_n</span> the full S5 models with the worlds <span
-class="math inline">\mathbb N</span> and <span
-class="math inline">n</span> individuals: the full action model on the
-category with objects <span class="math inline">\mathbb N</span> and
-exactly one arrow between any two, the same <span
-class="math inline">n</span> individuals at every object, fixed by every
-arrow. <span class="math inline">M:=\prod_nM_n/U</span> for a
-nonprincipal ultrafilter <span class="math inline">U</span> on the
-positive integers, a Henkin model of C in which a sentence is true iff
-it is true in <span class="math inline">U</span>-many <span
-class="math inline">M_n</span>.</p>
-<p>Interpretation of Σ, fixed for this record: every constant of Σ is
-relational, and each denotes the top element of its type in every
-factor, hence in <span class="math inline">M</span>.</p>
+<p>For <span class="math inline">n\ge1</span> let <span class="math inline">M_n</span> be the full S5 model with the worlds <span class="math inline">\mathbb N</span> and <span class="math inline">n</span> individuals: the full action model on a category in which there is exactly one arrow between any two objects, with the same <span class="math inline">n</span> individuals at every object, fixed by every arrow, evaluated at one object. Regard each <span class="math inline">M_n</span> as a many-sorted first-order structure, with a sort for each type, application, the logical constants, the constants of Σ, and a predicate <span class="math inline">T</span> on the sort of <span class="math inline">t</span> for truth at the evaluation object. Let <span class="math inline">U</span> be a nonprincipal ultrafilter on the positive integers, and <span class="math inline">M:=\prod_nM_n/U</span>, the evaluation point being the class of the factors’ evaluation objects. By Łoś’s theorem a first-order sentence holds in <span class="math inline">M</span> iff it holds in <span class="math inline">M_n</span> for <span class="math inline">U</span>-many <span class="math inline">n</span>. <span class="math inline">M</span> is a Henkin model of C, and a sentence of the object language is true in <span class="math inline">M</span> iff it is true in <span class="math inline">U</span>-many <span class="math inline">M_n</span> (see the write-up). It is not full.</p>
+<p>Interpretation of Σ, fixed for these records: every constant of Σ is relational, and each denotes the top element of its type in every factor, hence in <span class="math inline">M</span>.</p>
+<p><em>A member of the group Ultraproducts of full S5 models, which supplies this definition with the record’s settings, and the arguments marked as shared.</em></p>
 <h2 id="arguments">Arguments</h2>
-<h3
-id="holds-functional-choice-intensional-choice-bf-nd-atomicity-actuality-rigid-comprehension-strong-atomicity-well-ordering-no-pure-contingency-axiom-of-infinity-type-t.">Holds
-□Functional Choice, □Intensional Choice, □BF, □ND, □Atomicity,
-□Actuality, □Rigid Comprehension, □Strong Atomicity, □Well-Ordering, No
-Pure Contingency, Axiom of Infinity (type t).</h3>
-<p>As for ultraproduct-finite-full-s5, each instance holds in every
-factor: the factors are full, with constant domains, crisp identity,
-atomic algebras whose atoms are the worlds, and automorphisms taking any
-world to any other. In each factor there are infinitely many
-propositions, and the finite cardinalities, the domains being full, are
-the standard ones, so the Axiom of Infinity (type <span
-class="math inline">t</span>) is true in each factor, hence in <span
-class="math inline">M</span>.</p>
-<p><em>Write-up: <a
-href="ultraproduct-finite-full-s5.html">ultraproduct-finite-full-s5</a>.
-By GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 23 October 2026,
-2026-10-25.</em></p>
+<h3 id="holds-axiom-of-infinity-type-t.">Holds Axiom of Infinity (type t).</h3>
+<p>In each factor there are infinitely many propositions, and the finite cardinalities, the domains being full, are the standard ones, so the Axiom of Infinity (type <span class="math inline">t</span>) is true in each factor, hence in <span class="math inline">M</span>.</p>
+<p><em>Write-up: <a href="ultraproduct-finite-full-s5.html">ultraproduct-finite-full-s5</a>. By GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 23 October 2026, 2026-10-25.</em></p>
 <h3 id="holds-forcing-possibilism.">Holds Forcing Possibilism.</h3>
-<p>In each factor the propositions are the <span
-class="math inline">2^{\aleph_0}</span> subsets of <span
-class="math inline">\mathbb N</span>, and every relation on each domain
-is present. An infinite complete Boolean algebra has a countably
-infinite antichain, so at least <span
-class="math inline">2^{\aleph_0}</span> elements; so a complete Boolean
-algebra represented in a factor that is Dedekind-finite or strictly
-smaller than the propositions is finite, with <span
-class="math inline">k</span> atoms say, and is isomorphic to the
-propositions below any proposition true at exactly <span
-class="math inline">k</span> worlds, which is not <span
-class="math inline">\top</span>. So each instance holds in every factor,
-hence in <span class="math inline">M</span>.</p>
-<p><em>Write-up: <a
-href="ultraproduct-finite-full-s5.html">ultraproduct-finite-full-s5</a>.
-By GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 23 October 2026,
-2026-10-25.</em></p>
-<h3 id="holds-infinity-schema-type-e.">Holds Infinity Schema (type
-e).</h3>
-<p>The instance asking for <span class="math inline">k</span> distinct
-individuals holds in <span class="math inline">M_n</span> for <span
-class="math inline">n\ge k</span>.</p>
-<p><em>Write-up: <a
-href="ultraproduct-finite-full-s5.html">ultraproduct-finite-full-s5</a>.
-By GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 23 October 2026,
-2026-10-25.</em></p>
-<h3 id="fails-possible-infinity-type-e.">Fails Possible Infinity (type
-e).</h3>
-<p>In <span class="math inline">M_n</span>, at every world, the <span
-class="math inline">n</span>-th finite cardinality counts the universal
-property of individuals, so <span class="math inline">\Box\exists Z\,
-.\,\operatorname{FiniteCardinality}_e(Z)\land Z(\lambda u\,
-.\,\top)</span> is true in every factor, hence in <span
-class="math inline">M</span>.</p>
-<p><em>Write-up: <a
-href="ultraproduct-finite-full-s5.html">ultraproduct-finite-full-s5</a>.
-By GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 23 October 2026,
-2026-10-25.</em></p>
-<h3 id="holds-no-contingency-signature-σ-b-for-sentences-of-σ.">Holds No
-Contingency (signature Σ), B for sentences of Σ.</h3>
-<p>Each constant of Σ denotes what the closed pure term <span
-class="math inline">\top_\tau</span> of its type denotes, so a closed
-sentence of the language of Σ denotes what the pure sentence with <span
-class="math inline">\top_\tau</span> in place of each constant denotes;
-if true it is necessary by No Pure Contingency, which holds here. So No
-Contingency (signature Σ) holds, and B for sentences of Σ with it: a
-true Σ-sentence is necessary, hence necessarily possible.</p>
-<p><em>General argument <code>arguments/sigma-top-npc</code>. It
-requires that Every constant of Σ is relational, and each denotes the
-top element of its type. Here: This is the interpretation the definition
-fixes. By Cian Dorr (observation); recorded by Claude Opus 5.5
-(Anthropic), 2026-10-02.</em></p>
-<p><em>Revised 2026-10-03 by Claude Opus 5.5 (Anthropic), at Cian Dorr’s
-direction:</em> The argument sigma-single-top, for Σ a single constant
-of type <span class="math inline">t</span> denoting <span
-class="math inline">\top</span>, stated for every interpretation of Σ by
-top elements, now that such interpretations have no individual
-constants. It replaces that argument and nc-sigma-homogeneous, which
-reached the same verdicts through an individual constant when the
-model’s automorphisms carry every individual to every other. With an
-individual constant and no such automorphisms the verdicts were unknown
-in 19 models, and nowhere did the individual constants settle a verdict
-differently.</p>
-<h3
-id="fails-witnessed-possibility-separated-structure-independence-signature-σ-maximalism-signature-σ.">Fails
-Witnessed Possibility, Separated Structure, Independence (signature Σ),
-Maximalism (signature Σ).</h3>
-<p>Let <span class="math inline">c\in\Sigma</span> have relational type
-<span class="math inline">\tau</span>, so <span
-class="math inline">c=\top_\tau</span> necessarily. Witnessed
-Possibility fails for the pure formula <span
-class="math inline">x\ne\top_\tau</span>, witnessed by <span
-class="math inline">\bot_\tau</span> but impossible of <span
-class="math inline">c</span>; Separated Structure fails since <span
-class="math inline">\lambda x\, .\,x</span> and <span
-class="math inline">\lambda x\, .\,\top_\tau</span> agree on <span
-class="math inline">c</span> and differ; Independence (signature Σ)
-fails since <span class="math inline">c</span> denotes what the closed
-pure term <span class="math inline">\top_\tau</span> denotes;
-Distinctness Maximalism (signature Σ) fails since <span
-class="math inline">c=\top_\tau</span> is a true identity that C(Σ) does
-not prove.</p>
-<p><em>General argument <code>arguments/sigma-top</code>. It requires
-that Every constant of Σ is relational, and each denotes the top element
-of its type. Here: This is the interpretation the definition fixes. By
-Claude Fable 5.1 (Anthropic), at Cian Dorr’s request,
-2026-09-22.</em></p>
-<p><em>Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr’s
-direction:</em> Moved from the group finite-support-one-object to the
-topic; it uses nothing about the model.</p>
+<p>In each factor the propositions are the <span class="math inline">2^{\aleph_0}</span> subsets of <span class="math inline">\mathbb N</span>, and every relation on each domain is present. An infinite complete Boolean algebra has a countably infinite antichain, so at least <span class="math inline">2^{\aleph_0}</span> elements; so a complete Boolean algebra represented in a factor that is Dedekind-finite or strictly smaller than the propositions is finite, with <span class="math inline">k</span> atoms say, and is isomorphic to the propositions below any proposition true at exactly <span class="math inline">k</span> worlds, which is not <span class="math inline">\top</span>. So each instance holds in every factor, hence in <span class="math inline">M</span>.</p>
+<p><em>Write-up: <a href="ultraproduct-finite-full-s5.html">ultraproduct-finite-full-s5</a>. By GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 23 October 2026, 2026-10-25.</em></p>
+<h3 id="holds-functional-choice-intensional-choice-bf-nd-atomicity-actuality-rigid-comprehension-strong-atomicity-well-ordering-no-pure-contingency.">Holds □Functional Choice, □Intensional Choice, □BF, □ND, □Atomicity, □Actuality, □Rigid Comprehension, □Strong Atomicity, □Well-Ordering, No Pure Contingency.</h3>
+<p>Each instance of each of these schemata is a sentence true in every factor, so true in <span class="math inline">M</span>. The full domains contain every function, which gives the choice principles, Rigid Comprehension and Well-Ordering; constant domains give BF; identity is crisp, which gives ND; the algebras are atomic, the worlds being the atoms and every true proposition entailed by the actual one; and any two worlds are related by an automorphism, so a true pure sentence is necessary. All of this holds at every world.</p>
+<p><em>Write-up: <a href="ultraproduct-finite-full-s5.html">ultraproduct-finite-full-s5</a>. From the group </em>Ultraproducts of full S5 models<em>, shared argument <code>s5-ultraproducts#transfer</code>. By GPT-6 Astra (OpenAI), prompted by Daniel Kodsi; checked and recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-25.</em></p>
+<h3 id="holds-infinity-schema-type-e.">Holds Infinity Schema (type e).</h3>
+<p>The instance of the Infinity Schema (type <span class="math inline">e</span>) asking for <span class="math inline">k</span> distinct individuals holds in <span class="math inline">M_n</span> for <span class="math inline">n\ge k</span>, a cofinite set of <span class="math inline">n</span>, hence in <span class="math inline">U</span>.</p>
+<p><em>Write-up: <a href="ultraproduct-finite-full-s5.html">ultraproduct-finite-full-s5</a>. From the group </em>Ultraproducts of full S5 models<em>, shared argument <code>s5-ultraproducts#infinity-e</code>. By GPT-6 Astra (OpenAI), prompted by Daniel Kodsi; checked and recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-25.</em></p>
+<h3 id="fails-possible-infinity-type-e.">Fails Possible Infinity (type e).</h3>
+<p>In <span class="math inline">M_n</span>, at every world, the domains being full, the finite cardinalities are the standard ones, and the <span class="math inline">n</span>-th counts the universal property of individuals. So <span class="math inline">\Box\exists Z\, .\,\operatorname{FiniteCardinality}_e(Z)\land Z(\lambda u\, .\,\top)</span> is true in every factor, hence in <span class="math inline">M</span>, where the witnessing cardinality is nonstandard.</p>
+<p><em>Write-up: <a href="ultraproduct-finite-full-s5.html">ultraproduct-finite-full-s5</a>. From the group </em>Ultraproducts of full S5 models<em>, shared argument <code>s5-ultraproducts#possible-infinity-e</code>. By GPT-6 Astra (OpenAI), prompted by Daniel Kodsi; checked and recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-25.</em></p>
+<h3 id="holds-no-contingency-signature-σ-b-for-sentences-of-σ.">Holds No Contingency (signature Σ), B for sentences of Σ.</h3>
+<p>Each constant of Σ denotes what the closed pure term <span class="math inline">\top_\tau</span> of its type denotes, so a closed sentence of the language of Σ denotes what the pure sentence with <span class="math inline">\top_\tau</span> in place of each constant denotes; if true it is necessary by No Pure Contingency, which holds here. So No Contingency (signature Σ) holds, and B for sentences of Σ with it: a true Σ-sentence is necessary, hence necessarily possible.</p>
+<p><em>General argument <code>arguments/sigma-top-npc</code>. It requires that Every constant of Σ is relational, and each denotes the top element of its type. Here: This is the interpretation the definition fixes. By Cian Dorr (observation); recorded by Claude Opus 5.5 (Anthropic), 2026-10-02.</em></p>
+<p><em>Revised 2026-10-03 by Claude Opus 5.5 (Anthropic), at Cian Dorr’s direction:</em> The argument sigma-single-top, for Σ a single constant of type <span class="math inline">t</span> denoting <span class="math inline">\top</span>, stated for every interpretation of Σ by top elements, now that such interpretations have no individual constants. It replaces that argument and nc-sigma-homogeneous, which reached the same verdicts through an individual constant when the model’s automorphisms carry every individual to every other. With an individual constant and no such automorphisms the verdicts were unknown in 19 models, and nowhere did the individual constants settle a verdict differently.</p>
+<h3 id="fails-witnessed-possibility-separated-structure-independence-signature-σ-maximalism-signature-σ.">Fails Witnessed Possibility, Separated Structure, Independence (signature Σ), Maximalism (signature Σ).</h3>
+<p>Let <span class="math inline">c\in\Sigma</span> have relational type <span class="math inline">\tau</span>, so <span class="math inline">c=\top_\tau</span> necessarily. Witnessed Possibility fails for the pure formula <span class="math inline">x\ne\top_\tau</span>, witnessed by <span class="math inline">\bot_\tau</span> but impossible of <span class="math inline">c</span>; Separated Structure fails since <span class="math inline">\lambda x\, .\,x</span> and <span class="math inline">\lambda x\, .\,\top_\tau</span> agree on <span class="math inline">c</span> and differ; Independence (signature Σ) fails since <span class="math inline">c</span> denotes what the closed pure term <span class="math inline">\top_\tau</span> denotes; Distinctness Maximalism (signature Σ) fails since <span class="math inline">c=\top_\tau</span> is a true identity that C(Σ) does not prove.</p>
+<p><em>General argument <code>arguments/sigma-top</code>. It requires that Every constant of Σ is relational, and each denotes the top element of its type. Here: This is the interpretation the definition fixes. By Claude Fable 5.1 (Anthropic), at Cian Dorr’s request, 2026-09-22.</em></p>
+<p><em>Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr’s direction:</em> Moved from the group finite-support-one-object to the topic; it uses nothing about the model.</p>
 <h2 id="notes">Notes</h2>
-<p>The Axiom of Infinity at <span class="math inline">t</span> with the
-Infinity Schema at <span class="math inline">e</span> does not imply the
-Axiom of Infinity at <span class="math inline">e</span>, nor its
-possibility, even with Forcing Possibilism, □Functional Choice, C5 and
-BF.</p>
+<p>The Axiom of Infinity at <span class="math inline">t</span> with the Infinity Schema at <span class="math inline">e</span> does not imply the Axiom of Infinity at <span class="math inline">e</span>, nor its possibility, even with Forcing Possibilism, □Functional Choice, C5 and BF.</p>
 <h2 id="sources">Sources</h2>
 <ul>
-<li><strong>Astra (Kodsi) 23 Oct</strong> — GPT-6 Astra (OpenAI),
-prompted by Daniel Kodsi, Forcing Possibilism, Choice and Infinity,
-research note of 23 October 2026, §§2, 5 (unpaginated), in Daniel
-Kodsi’s submission of 24 October 2026 (branch
-classicism-results-2026-10-24 of github.com/dkodsi/Logical-Maps,
-proofs/forcing-possibilism.md).</li>
+<li><strong>Astra (Kodsi) 23 Oct</strong> — GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, Forcing Possibilism, Choice and Infinity, research note of 23 October 2026, §§2, 5 (unpaginated), in Daniel Kodsi’s submission of 24 October 2026 (branch classicism-results-2026-10-24 of github.com/dkodsi/Logical-Maps, proofs/forcing-possibilism.md).</li>
 </ul>
 <p class="cert">
-Record:
-<code>topics/classicism/models/ultraproduct-countable-full-s5-finite-individuals.yaml</code>
+Record: <code>topics/classicism/models/ultraproduct-countable-full-s5-finite-individuals.yaml</code>
 </p>
 <h2 id="paper-references">Paper references</h2>
 <ul>
-<li><strong>Background: Classicism.</strong> Bacon, Andrew, and Cian
-Dorr (2024). Classicism. In Peter Fritz and Nicholas K. Jones (eds),
-Higher-Order Metaphysics, Oxford University Press, pp. 109–190. The map
-was built from the draft dated 16 May 2023, 87 pages, which does not
-differ materially from the published version; all page, proposition and
-footnote locators in this map refer to that draft’s numbering. — §3.5,
-pp. 58–61. Full action models; the factors are full S5 models with
-countably many worlds.</li>
+<li><strong>Background: Classicism.</strong> Bacon, Andrew, and Cian Dorr (2024). Classicism. In Peter Fritz and Nicholas K. Jones (eds), Higher-Order Metaphysics, Oxford University Press, pp. 109–190. The map was built from the draft dated 16 May 2023, 87 pages, which does not differ materially from the published version; all page, proposition and footnote locators in this map refer to that draft’s numbering. — §3.5, pp. 58–61. Full action models; the factors are full S5 models with countably many worlds.</li>
 </ul>
 </body></html>

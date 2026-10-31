@@ -5,6 +5,8 @@
 ## Package
 
 - **No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
+- **Analytic Necessitism.** If there could be a real number structure, there is a rigid one that is necessarily a real number structure: a rigid property with necessarily distinct instances, with rigid order, addition, multiplication and natural numbers, which necessarily form a complete ordered field. One sentence for each type $\sigma$.
+- **Second-Order Analytic Necessitism.** If there could be a real number structure, there is a rigid one, necessarily a real number structure, together with represented powers of every arity up to $n$: rigid properties of rigid relations among the structure's elements that necessarily represent every relation on them. One sentence for each type $\sigma$ and each $n\ge1$.
 - **Arithmetic Necessitism.** Given that necessarily zero is not a successor and successor is injective on numbers, the numbers at $\sigma$ form a rigid property with necessarily distinct instances. One sentence for each type $\sigma$.
 - **Gallin Extensional Comprehension.** Every relation is coextensive with one that is persistent and has a persistent pointwise negation. This is the source’s comparison with Gallin’s different rigidity convention.
 - **□Atomicity.** Necessarily, every non-bottom entity of each relational type has an atom below it.
@@ -26,7 +28,7 @@
 - **Strong Actuality.** There is a true strong atom: a true proposition that necessarily entails every proposition or its negation.
 - **□Strong Actuality.** Necessarily, there is a true strong atom: a true proposition that necessarily entails every proposition or its negation.
 - **Transversal Choice.** Every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
-- **¬ Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
+- **¬ Truths are ND-necessary.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **¬ Fregean Axiom.** Materially equivalent propositions are identical.
 - **¬ No Contingency (signature Σ).** Each closed sentence of the language of the fixed signature Sigma, if true, is necessary. A sentence schema, standing to No Pure Contingency as Possibility Maximalism (signature Σ) stands to Possibility Maximalism (pure).
 - **¬ Witnessed Possibility.** For pure-formulas P with free variables among a finite tuple x, and distinct matching nonlogical constants c, a witness to P entails that P at those constants is possible.
@@ -54,6 +56,12 @@ Any two objects are isomorphic, by the unique arrow between them, and composing 
 
 *By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-07.*
 
+### Holds Analytic Necessitism, Second-Order Analytic Necessitism.
+
+At type $\tau:=et$, as analytic-necessitism-codomain-everywhere with the individuals in place of the propositions: the individuals are the same infinite set $D$ at every object, so the codomain-only intension $Y_A$ whose value at every arrow is $E^A$, for an injection $A\mapsto E^A$ from the sets of natural numbers into the sets of individuals, is in the domain, and its transports are the $Y_A$ of the targets, distinct for distinct $A$; the real number structure on the $Y_A$ by codomain-only relations is carried along every arrow to an isomorphic one. Such a structure is rigid, its instances are necessarily distinct, and it is necessarily a real number structure; and the codomain-only intension of type $((\tau)^kt)t$ whose value at each object is the set of codomain-only $k$-ary relations among the carrier there is a represented power of arity $k$, since at every world each $k$-ary relation agrees on the carrier with one of them. So the consequents of Analytic Necessitism and of its second-order form hold, and both principles hold. (The argument of the withdrawn analytic-necessitism-unretracted-arrow would refute this structure; its step from inextensibility is the gap.)
+
+*General argument `arguments/analytic-necessitism-codomain-fixed-infinite-individuals`. It requires that At every object reachable from the evaluation point, the domain contains every intension whose value at an arrow depends only on the arrow's codomain. Here: The domains are full at every object. It requires that At every object the individuals are the same infinite set, and every arrow acts on them as the identity. Here: This is the choice of individuals. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, auditing the withdrawn arguments for the failure of Analytic Necessitism, 2026-10-29.*
+
 ### Holds Arithmetic Necessitism.
 
 The numbers at a type $\sigma$ are the instances of $\mathbb N_\sigma$, the least property containing $\mathbf 0_\sigma$ and closed under $\operatorname{Suc}_\sigma$ (Background); the numerals $\mathbf 0_\sigma$, $\operatorname{Suc}_\sigma\mathbf 0_\sigma,\ldots$ are closed terms, so each denotes at every object, and transport along an arrow carries its denotation at the source to its denotation at the target. At any object $v$ reachable from the evaluation point, extensional fullness gives a property whose extension at $v$ is exactly the numerals there; it contains $\mathbf 0_\sigma$ and is closed under successor, so the numbers at $v$ are exactly the numerals, every numeral being an instance of every inductive property. Persistence of $\mathbb N_\sigma$ and, given $\Box I^*_\sigma$, the necessary distinctness of the numbers are theorems of C (the proof of necessary-rigid-comprehension-implies-arithmetic-necessitism). Inextensibility, $\Box\forall X\,.\,(\forall n\,.\,\mathbb N_\sigma n\to\Box Xn)\to\mathbb N_\sigma\le X$: at a reachable $v$ and for an arrow $j$ from $v$ to $u$, the numbers at $u$ are the numerals there, which are the transports along $j$ of the numbers at $v$, so any $X$ that necessarily holds of the numbers at $v$ holds at $u$ of the numbers there. So $\mathbb N_\sigma$ is rigid, and Arithmetic Necessitism holds at every type. No choice is used.
@@ -66,7 +74,7 @@ Given $X$ with extension $E$ at the evaluation object, let $Y$ hold at an arrow 
 
 *General argument `arguments/coherent-retractions`. It requires that The model is full: at each object, the domain of each relational type contains every intension of that type. Here: Every intension of every relational type is present at every object (Classicism, §3.5, p. 59). It requires that Every arrow $g$ out of the evaluation object has a retraction $r_g$, chosen so that $r_{x\circ g}\circ x=r_g$ for every arrow $x$ after $g$. Here: $r_g$ is the unique arrow back; any two arrows with the same ends are equal, so $r_{x\circ g}\circ x=r_g$. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-06.*
 
-### Fails Truth implies ND-necessity.
+### Fails Truths are ND-necessary.
 
 Let $p:=\{1\}$, in the domain since the model is full, and true. Any witness $q$ for $\Box_{\ne}p$ is true, so contains the identity; under an arrow $i\ne 1$ with a retraction $r$, the arrow $r\circ i=1$ makes $\Diamond q$ true, while $p$ is false. So no true $q$ has $\Box(\Diamond q\to p)$. (The surjection monoid's own argument of 23 September, stated once.)
 
@@ -189,7 +197,7 @@ For an equivalence relation at the evaluation point, a transversal of its extens
 
 ## Notes
 
-A basic reference model, recorded at Cian Dorr's request: the full S5 model with infinitely many worlds. Nothing depends on which infinite set $W$ is. In the variant with infinitely many individuals the group fixes them as the natural numbers; any infinite set gives the same verdicts under choice. Its verdicts are those of the full permutation group model, whose arrows are likewise all invertible. Without choice in the metatheory, the same construction over a family of nonempty sets with no choice function refutes Intensional Choice; that variant is not recorded.
+A basic reference model, recorded at Cian Dorr's request: the full S5 model with infinitely many worlds. Except for Forcing Possibilism, no recorded verdict depends on which infinite set $W$ is. In the variant with infinitely many individuals the group fixes them as the natural numbers; any infinite set gives the same verdicts under choice. Its verdicts are those of the full permutation group model, whose arrows are likewise all invertible, again except for Forcing Possibilism, which the map leaves unknown here. Under choice, Forcing Possibilism holds iff $2^{|W|}=2^{\aleph_0}$ (GPT-6 Astra, prompted by Daniel Kodsi, 23 October 2026): if so, every small or Dedekind-finite complete Boolean algebra is finite, an infinite one having at least continuum many elements, and is isomorphic to the subsets of a finite set of worlds; if not, the regular-open algebra of Cantor space is small and atomless, while the algebra below any proposition is atomic. So it holds for $W=\mathbb N$ and fails for $|W|=2^{\aleph_0}$. With $W$ the union of Russell's socks it fails without choice (forcing-possibilism-socks).
 
 ## Sources
 

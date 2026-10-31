@@ -5,6 +5,7 @@ import Classicism.Results.Lists
 import Classicism.Principles
 import Classicism.Pointwise
 import Classicism.Paper
+import Classicism.Background.RigidityClosure
 
 -- goals and hover print `fun y ↦ …`, matching the source
 set_option pp.unicode.fun true
@@ -164,18 +165,6 @@ theorem nec_gallin_c5_nec_rigid_comprehension :
 theorem le_top_unary (F : σ → Prop) : F ≤ (fun _ : σ => True) :=
   le_of_box_incl (nec% (fun (z : σ) (_ : F z) => trivial))
 
-/-- With BF at `σ`, `λz. ⊤` is weakly rigid. -/
-theorem weaklyRigid_top_of_bf : P.Barcan σ → WeaklyRigid (fun _ : σ => True) := fun bf =>
-  ⟨fun _ _ => box_true, fun Z hZ =>
-    bf (λ z ↦ True → Z z) fun z => box_imp_of_box True (Z z) (hZ z trivial)⟩
-
-/-- The haecceity `λz. z = y` is rigid: persistent by the Necessity of Identity, and
-inextensible since `□Zy` gives `□∀z. z = y → Zz`. -/
-theorem rigid_haecceity (y : σ) : Rigid (fun z : σ => z = y) :=
-  ⟨nec% (fun (z : σ) (h : z = y) => necessity_of_identity z y h),
-   nec% (fun (Z : σ → Prop) (hZ : ∀ z : σ, z = y → □ (Z z)) =>
-     modal_K _ _ (nec% (fun (h : Z y) (z : σ) (hz : z = y) => hz ▸ h)) (hZ y rfl))⟩
-
 /-- `barcan-and-weakly-rigid-power-imply-weakly-rigid-weak-rigidity`, at `σ → t`: the power
 property of the weakly rigid `λz. ⊤` is weak rigidity itself. -/
 theorem bf_wrp_weakly_rigid_weak_rigidity :
@@ -189,7 +178,7 @@ theorem bf_wrp_weakly_rigid_weak_rigidity :
       (le_of_box_incl (nec% (fun (X : σ → Prop) (h : WeaklyRigid X) =>
         (⟨h, le_top_unary X⟩ : WeaklyRigid X ∧ X ≤ (fun _ : σ => True)))))
   show WeaklyRigid (fun X : σ → Prop => WeaklyRigid X) from
-    heq ▸ wrp _ (weaklyRigid_top_of_bf bf)
+    heq ▸ wrp _ (P.Barcan.to_universalWeaklyRigid bf)
 
 /-- `rigid-rigidity-implies-necessary-barcan`, at `σ → t`: at every world, a property
 necessary of everything is entailed by every rigid property, by the latter's weak
@@ -201,7 +190,7 @@ theorem rr_necessary_barcan : P.RigidRigidity (σ → Prop) → P.NecBarcan σ :
         (hX : ∀ x : σ, □ (X x)) =>
       modal_K _ _
         (nec% (fun (hq : ∀ Z : σ → Prop, Rigid Z → ∀ y : σ, Z y → X y) (y : σ) =>
-          hq (fun z : σ => z = y) (rigid_haecceity y) y rfl))
+          hq (fun z : σ => z = y) (Rigidity.singleton_rigid y) y rfl))
         (wi (fun Z : σ → Prop => ∀ y : σ, Z y → X y)
           (fun (Z : σ → Prop) (hZ : Rigid Z) =>
             weaklyInextensible_of_inextensible hZ.2 X (fun y _ => hX y)))))
@@ -213,7 +202,7 @@ theorem nbf_rp_rigid_rigidity :
     P.NecBarcan σ → P.RigidPower (σ → Prop) → P.RigidRigidity (σ → Prop) := fun nbf rp =>
   have htop : Rigid (fun _ : σ => True) :=
     ⟨nec% (fun (_ : σ) (_ : True) => box_true),
-     modal_K _ _ (nec% (fun (bf : P.Barcan σ) => (weaklyRigid_top_of_bf bf).2)) nbf⟩
+     modal_K _ _ (nec% (fun (bf : P.Barcan σ) => (P.Barcan.to_universalWeaklyRigid bf).2)) nbf⟩
   have heq : (fun X : σ → Prop => Rigid X ∧ X ≤ (fun _ : σ => True)) =
       (fun X : σ → Prop => Rigid X) :=
     le_antisymm_rel _ _
@@ -299,20 +288,11 @@ theorem atom_actual_instance {σ : Type} [Ty σ] {R : σ → Prop} (hR : WeaklyR
       ((atom_le_or_le_neg a (z = z₁) ha).elim (fun h' => (hn ⟨z₁, h₁, h'⟩).elim) id)))
     ((le_iff_prop a _).1 h))).elim
 
-/-- A rigid relation is necessarily rigid, by `4`. -/
-theorem box_rigid {τ : Type} [Rel τ] (X : τ) (h : Rigid X) : □ (Rigid X) :=
-  modal_K _ _ (nec% (rigid_iff_box_weaklyRigid X).2)
-    (modal_four _ ((rigid_iff_box_weaklyRigid X).1 h))
-
-/-- Entailment is necessary if true, by `4`. -/
-theorem box_le_rel {τ : Type} [Rel τ] [Order τ] (X Y : τ) (h : X ≤ Y) : □ (X ≤ Y) :=
-  modal_K _ _ (nec% (le_iff X Y).2) (modal_four _ ((le_iff X Y).1 h))
-
 /-- The power property is persistent, in C. -/
 theorem rigid_power_property_persistent {τ : Type} [Rel τ] [Order τ] (F : τ) :
     Persistent (fun X : τ => Rigid X ∧ X ≤ F) :=
   nec% (fun (X : τ) (hX : Rigid X ∧ X ≤ F) =>
-    Eq.mpr (box_and_eq (Rigid X) (X ≤ F)) ⟨box_rigid X hX.1, box_le_rel X F hX.2⟩)
+    Eq.mpr (box_and_eq (Rigid X) (X ≤ F)) ⟨rigid_necessary X hX.1, box_le_rel X F hX.2⟩)
 
 /-- The core, at one world: BF at `σ` and at `σ → t`, Atomicity at `t` and Rigid
 Comprehension at `σ → t` make the power property of a rigid `F` weakly inextensible. -/
@@ -379,7 +359,7 @@ theorem rigid_power_core (F : σ → Prop) (bf : P.Barcan σ) (bf₂ : P.Barcan 
   have heq : □ (a → X = X') := modal_K _ _ (modal_K _ _ (modal_K _ _
     (nec% (fun (f : a → (Rigid X ∧ X ≤ F) ∧ ¬ 𝒳 X) (g : WeaklyRigid X')
         (k : ∀ z : σ, a → (X z ↔ X' z)) (ha : a) =>
-      Proofs.eq_of_weaklyRigid_coext (weaklyRigid_of_rigid (f ha).1.1) g (fun z => k z ha)))
+      eq_of_weaklyRigid_coext (weaklyRigid_of_rigid (f ha).1.1) g (fun z => k z ha)))
     hXb) ((rigid_iff_box_weaklyRigid X').1 hX')) hco'
   (atom_absurd ha (modal_K _ _ (modal_K _ _ (modal_K _ _
     (nec% (fun (f : a → (Rigid X ∧ X ≤ F) ∧ ¬ 𝒳 X) (g : 𝒳 X') (k : a → X = X') (ha : a) =>
@@ -393,7 +373,7 @@ theorem nbf_natom_nrc_rigid_power :
       P.NecRigidComprehension (σ → Prop) → P.RigidPower (σ → Prop) := fun h₁ h₂ h₃ h₄ F hF =>
   ⟨rigid_power_property_persistent F,
    modal_K _ _ (modal_K _ _ (modal_K _ _ (modal_K _ _ (modal_K _ _
-     (nec% (rigid_power_core (σ := σ) F)) h₁) h₂) h₃) h₄) (box_rigid F hF)⟩
+     (nec% (rigid_power_core (σ := σ) F)) h₁) h₂) h₃) h₄) (rigid_necessary F hF)⟩
 
 /-- `necessary-bf-atomicity-and-rigid-comprehension-imply-necessary-rigid-power`, at `σ → t`:
 the last, necessitated, the premises boxed again by `4`. -/
@@ -437,7 +417,7 @@ theorem sl_join_rep (A : (σ → Prop) → Prop) (rc : P.RigidComprehension ((σ
     (nec% (fun (h : ∀ W, R W → W ≤ Y) (x : σ) (hx : JoinOf R x) =>
       hx.elim fun W ⟨hW, hWx⟩ => incl_of_le (h W hW) x hWx))
     (weaklyInextensible_of_inextensible hR.2 (fun W => W ≤ Y)
-      fun W hW => Proofs.box_le_arrow' W Y ((hco W).2 hW).2))
+      fun W hW => box_le_rel W Y ((hco W).2 hW).2))
   have hz : □ (∀ W, A W → (∃ x, W x) → W ≤ Y → R W) :=
     wiA (fun W => (∃ x, W x) → W ≤ Y → R W) fun W hW =>
       (box_elim hb W hW Y).elim
@@ -445,7 +425,7 @@ theorem sl_join_rep (A : (σ → Prop) → Prop) (rc : P.RigidComprehension ((σ
           (weaklyPersistent_of_persistent hR.1 W ((hco W).1 ⟨hW, h⟩)))
         (fun h => modal_K _ _ (nec% (fun (hn : W ≤ ¬ Y) (hx : ∃ x, W x) (hy : W ≤ Y) =>
             (hx.elim fun x hx => (incl_of_le hn x hx (incl_of_le hy x hx)).elim : R W)))
-          (Proofs.box_le_arrow' W (¬ Y) h))
+          (box_le_rel W (¬ Y) h))
   have h2 : Y ≤ JoinOf R := (le_iff _ _).2 (modal_K _ _ (modal_K _ _ (modal_K _ _
     (nec% (fun (ha : ∀ x : σ, ∃ W, A W ∧ W x) (hb : ∀ W, A W → ∀ Z : σ → Prop, W ≤ Z ∨ W ≤ ¬ Z)
         (hz : ∀ W, A W → (∃ x, W x) → W ≤ Y → R W) (x : σ) (hY : Y x) =>
@@ -606,7 +586,7 @@ theorem atom_power_pullback (F : σ → Prop) (hF : Rigid F) (rc : P.RigidCompre
           (hb : ∀ z : σ, X z → ∀ Y : σ → Prop, W Y → Y z)
           (hc : ∀ z : σ, F z → ∀ Y : σ → Prop, W Y → Y z → X z)
           (hwX : WeaklyRigid X) (Y : σ → Prop) (hY : W Y) =>
-        Proofs.eq_of_weaklyRigid_coext (weaklyRigid_of_rigid (hWP Y hY).1) hwX
+        eq_of_weaklyRigid_coext (weaklyRigid_of_rigid (hWP Y hY).1) hwX
           fun z => ⟨fun hYz => hc z (incl_of_le (hWP Y hY).2 z hYz) Y hY hYz,
                     fun hXz => hb z hXz Y hY⟩))
       hWP) hb) hc) ((rigid_iff_box_weaklyRigid X).1 hX)⟩
@@ -687,10 +667,6 @@ theorem necAtomicity_step {σ : Type} [Ty σ] :
     P.NecAtomicity Prop → P.NecBarcan σ → P.NecAtomicity (σ → Prop) := fun h₁ h₂ =>
   modal_K _ _ (modal_K _ _ (nec% (Proofs.atomicity_t_and_bf_imply_atomicity (σ := σ))) h₁) h₂
 
-/-- Atomicity at `t` read as the instance of Atomicity is Atomicity at `t` in the map's own
-spelling, as a rule (the `C5` records conclude with the instance). -/
-theorem atomicityT_of_atomicity_at_t : P.Atomicity Prop → P.AtomicityT := fun h => h
-
 /-- In `C5`, `□`Actuality gives `□`Atomicity at `t`: Proposition 2.6 at `t`, necessitated. -/
 theorem c5_necessary_atomicity_t :
     P.NecActuality → P.NecNecessityOfDistinctness Prop → P.NecAtomicity Prop := fun hna hnd =>
@@ -712,7 +688,7 @@ theorem fregean_actuality_necessary_actuality : P.FregeanAxiom → P.Actuality �
   Classicism.nbf_rp_rigid_rigidity
   Classicism.gallin_bf_weak_rigid_comprehension Classicism.gallin_c5_rigid_comprehension
   Classicism.nec_gallin_c5_nec_rigid_comprehension
-  Classicism.necAtomicity_step Classicism.atomicityT_of_atomicity_at_t
+  Classicism.necAtomicity_step Classicism.Proofs.atomicity_r_implies_atomicity_t
   Classicism.c5_necessary_atomicity_t Classicism.fregean_actuality_necessary_actuality
   Classicism.extensionality_r_implies_rigid_comprehension_r
   Classicism.c5_and_persistent_comprehension_imply_gallin
@@ -814,7 +790,7 @@ theorem atomicity_of_atomicity_at_t_barcan :
   Entails.trans
     (Entails.union
       (by rintro a rfl
-          exact (Theorem.ofC atomicityT_of_atomicity_at_t.rule).mp (Theorem.ax (Or.inl rfl)))
+          exact (Theorem.ofC Proofs.atomicity_r_implies_atomicity_t.rule).mp (Theorem.ax (Or.inl rfl)))
       (Entails.union_right _ _))
     atomicity_t_and_bf_imply_atomicity
 

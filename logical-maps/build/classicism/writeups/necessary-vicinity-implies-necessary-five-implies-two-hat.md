@@ -1,4 +1,4 @@
-# □Vicinity ⇒ □5-necessity implies two-hat necessity
+# □Vicinity ⇒ □5-necessities are two-hat necessary
 
 <p class='cert'>Result — Source: Misc.; produced by Christopher Sun, 19 October 2026 (unboxed form); boxed form recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 19 October 2026; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 19 October 2026.</p>
 
@@ -8,7 +8,7 @@
 
 ## Conclusion
 
-- **□5-necessity implies two-hat necessity.** Necessarily, whatever is 5-necessary is two-hat necessary. In C this is the identity $\Box_5=\hat{\hat\Box}$.
+- **□5-necessities are two-hat necessary.** Necessarily, whatever is 5-necessary is two-hat necessary. In C this is the identity $\Box_5=\hat{\hat\Box}$.
 
 ## Proof
 

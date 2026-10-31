@@ -1,11 +1,11 @@
-# Maximalism (pure) ∧ □Truth implies 5-necessity ⇒ ⊥
+# Maximalism (pure) ∧ □Truths are 5-necessary ⇒ ⊥
 
 <p class='cert'>Result — Source: Misc.; produced by Claude Fable 5.1 (Anthropic), 14 October 2026, at Cian Dorr's direction, by Cian Dorr's pattern of 8 October 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
 
 ## Premises
 
 - **Maximalism (pure).** Every closed pure identity not provable in C is false. The non-theorem condition is metalinguistic.
-- **□Truth implies 5-necessity.** Necessarily, every truth is 5-necessary: necessary under every S5 operator. In C this is the identity $\Box_5=\lambda p\, .\,p$.
+- **□Truths are 5-necessary.** Necessarily, every truth is 5-necessary: necessary under every S5 operator. In C this is the identity $\Box_5=\lambda p\, .\,p$.
 
 ## Conclusion
 
@@ -13,7 +13,7 @@
 
 ## Proof
 
-Truth implies 5-necessity is a closed pure sentence that fails in full-involution-group, a model of C, so its negation is consistent with C. The possibility form of Maximalism (pure) makes that negation possible, and the boxed principle makes the sentence necessary.
+Truths are 5-necessary is a closed pure sentence that fails in full-involution-group, a model of C, so its negation is consistent with C. The possibility form of Maximalism (pure) makes that negation possible, and the boxed principle makes the sentence necessary.
 
 ## Notes
 

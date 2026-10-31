@@ -13,7 +13,7 @@
 
 ## Proof
 
-Let $R^{\sigma\sigma t}$ be an equivalence relation and write $[x]$ for the cell $\lambda z\, .\,(Rx)z$. The relation $U^{(\sigma t)\sigma t}$ with $(UC)y:=Cy\lor\neg\exists z\, .\,Cz$ is serial, so Relational Choice gives a functional $S$ with $(SC)y\to(UC)y$. Put $Fy:=\exists x\, .\,(S[x])y$. Existence: given $x$, functionality gives $y$ with $(S[x])y$; the cell $[x]$ has the instance $x$, so $(U[x])y$ gives $(Rx)y$, and $Fy$ holds. Uniqueness: suppose $(Rx)y$, $Fy$, $(Rx)y'$ and $Fy'$, with witnesses $x_1$ and $x_2$, so that $(S[x_1])y$ and $(S[x_2])y'$. As before $(Rx_1)y$ and $(Rx_2)y'$, so $x_1$, $y$, $x$, $y'$ and $x_2$ lie in one cell and $\forall z\, .\,(Rx_1)z\leftrightarrow(Rx_2)z$. Extensionality at type $\sigma t$ gives $[x_1]=[x_2]$, and functionality of $S$ gives $y=y'$.
+Let $R^{\sigma\sigma t}$ be an equivalence relation and write $[x]$ for the cell $\lambda z\, .\,(Rx)z$. The relation $U^{(\sigma t)\sigma t}$ with $(UC)y:=Cy\lor\neg\exists z\, .\,Cz$ is serial, so Relational Choice gives a functional $S$ with $(SC)y\to(UC)y$. Put $Fy:=\exists x\, .\,(S[x])y$. Existence: given $x$, functionality gives $y$ with $(S[x])y$; the cell $[x]$ has the instance $x$, so $(U[x])y$ gives $(Rx)y$, and $Fy$ holds. Uniqueness: suppose $(Rx)y$, $Fy$, $(Rx)y'$ and $Fy'$, with witnesses $x_1$ and $x_2$, so that $(S[x_1])y$ and $(S[x_2])y'$. As before $(Rx_1)y$ and $(Rx_2)y'$, so $x_1$, $y$, $x$, $y'$ and $x_2$ lie in one cell and $(Rx_1)\equiv (Rx_2)$. Extensionality at type $\sigma t$ gives $[x_1]=[x_2]$, and functionality of $S$ gives $y=y'$.
 
 ## Notes
 

@@ -1,15 +1,15 @@
-# No Pure Contingency ∧ 5-necessity implies ND-necessity ⇒ □5-necessity implies ND-necessity
+# No Pure Contingency ∧ 5-necessities are ND-necessary ⇒ □5-necessities are ND-necessary
 
 <p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_pure_contingency_and_five_implies_nd_necessity_imply_necessary_five_implies_nd_necessity`; produced by Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 14 October 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
 
 ## Premises
 
 - **No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
-- **5-necessity implies ND-necessity.** Whatever is 5-necessary is ND-necessary.
+- **5-necessities are ND-necessary.** Whatever is 5-necessary is ND-necessary.
 
 ## Conclusion
 
-- **□5-necessity implies ND-necessity.** Necessarily, whatever is 5-necessary is ND-necessary. In C this is the identity $\Box_5=\Box_{\ne}$.
+- **□5-necessities are ND-necessary.** Necessarily, whatever is 5-necessary is ND-necessary. In C this is the identity $\Box_5=\Box_{\ne}$.
 
 ## Proof
 

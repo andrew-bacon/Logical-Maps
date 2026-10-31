@@ -11,7 +11,7 @@
 - **Possible Infinity (type e).** Possibly there are not finitely many individuals: the Axiom of Infinity at this type, under a diamond.
 - **Boolean Completeness (type t).** Every property of propositions has a greatest lower bound.
 - **□Boolean Completeness (type t).** Necessarily, every property of propositions has a greatest lower bound.
-- **□Truth implies ND-necessity.** Necessarily, every truth is ND-necessary. In C this is the identity $\Box_{\ne}=\lambda p\, .\,p$.
+- **□Truths are ND-necessary.** Necessarily, every truth is ND-necessary. In C this is the identity $\Box_{\ne}=\lambda p\, .\,p$.
 - **Tame Rigidity.** Every weakly rigid relation, including a proposition, is rigid.
 - **□Tame Rigidity.** Necessarily, every weakly rigid relation, including a proposition, is rigid.
 - **□Intensional Choice.** Necessarily, if a property is necessarily instantiated, then some property entailing it is necessarily uniquely instantiated.
@@ -23,7 +23,7 @@
 - **□Weakly Rigid Weak Rigidity.** Necessarily, being weakly rigid is a weakly rigid property of relations, including propositions.
 - **Relational Choice.** Every serial binary relation has a functional subrelation.
 - **Actuality.** There is a true proposition that entails every true proposition.
-- **Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
+- **Truths are ND-necessary.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **¬ Necessity of Arithmetic.** Every arithmetical sentence is either necessarily true or necessarily false, given that possibly zero is not a successor and successor is injective on numbers, where the numbers are the finite cardinalities of properties of a type $\sigma$. One sentence for each type $\sigma$ and each arithmetical sentence at $\sigma$.
 - **¬ B for pure sentences.** The B instance for every closed sentence in the pure language.
 - **¬ Axiom of Infinity (type t).** There are not finitely many propositions. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
@@ -84,9 +84,9 @@ The propositions form a finite Boolean algebra at every world, so every family h
 
 *Address: `coalesced-two-extensional-arithmetics-root#boolean-completeness-t`. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-19.*
 
-### Holds □Truth implies ND-necessity, Tame Rigidity, □Tame Rigidity, □Intensional Choice.
+### Holds □Truths are ND-necessary, Tame Rigidity, □Tame Rigidity, □Intensional Choice.
 
-At a one-world component $\Box$ is idle. Every truth is ND-necessary there, with $\top$ as witness; every relation is weakly persistent and weakly inextensible, so Tame Rigidity holds there trivially; and Intensional Choice holds, the singleton of a chosen instance being definable. At the root, a weakly rigid relation is rigid, since Rigid is weak rigidity at every world and the other worlds are the components; and Truth implies ND-necessity holds there already.
+At a one-world component $\Box$ is idle. Every truth is ND-necessary there, with $\top$ as witness; every relation is weakly persistent and weakly inextensible, so Tame Rigidity holds there trivially; and Intensional Choice holds, the singleton of a chosen instance being definable. At the root, a weakly rigid relation is rigid, since Rigid is weak rigidity at every world and the other worlds are the components; and Truths are ND-necessary holds there already.
 
 *Address: `coalesced-two-extensional-arithmetics-root#one-world-components`. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-19.*
 
@@ -151,7 +151,7 @@ Let $N$ and $M$ be two components whose roots satisfy Actuality, with true atoms
 
 *From the group *Coalesced sums at a new root*, shared argument `coalesced-sums#self-atom-of-two-actual-components`. It requires that At least two components are action models whose roots satisfy Actuality, and the root domain contains every family of component propositions with a truth value at the root (the fullest root domains). Here: Both components are one-world Henkin models, where the top proposition is the true atom; the root domains are the fullest. By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026.*
 
-### Holds Truth implies ND-necessity.
+### Holds Truths are ND-necessary.
 
 For a true $p$, $a\le p$, since $a$ entails every truth. Take $q:=a$ in the definition of $\Box_{\ne}p$: at a world in $a$, $p$ holds; at a world outside $a$, $\Diamond a$ fails. So every truth is $\Box_{\ne}$-necessary.
 

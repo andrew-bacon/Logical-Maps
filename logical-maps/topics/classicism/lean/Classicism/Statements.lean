@@ -75,14 +75,6 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.BooleanCompletenessT.schemaIn
 
-/-- Principle definition check: `broad-necessitism-r`. -/
-example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
-  Classicism.P.BroadNecessitism.schemaIn
-
-/-- Principle definition check: `converse-barcan-r`. -/
-example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
-  Classicism.P.ConverseBarcan.schemaIn
-
 /-- Principle definition check: `converse-witnessed-possibility-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   (Classicism.Meta.AxiomSet.converseWitnessedPossibility _)
@@ -110,10 +102,6 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 /-- Principle definition check: `distinctness-signature-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   (Classicism.Meta.AxiomSet.distinctnessC _)
-
-/-- Principle definition check: `existence-r`. -/
-example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
-  Classicism.P.Existence.schemaIn
 
 /-- Principle definition check: `extensionality-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
@@ -143,10 +131,6 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.GallinExtensionalComprehension.schemaIn
 
-/-- Principle definition check: `identity-necessary-r`. -/
-example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
-  Classicism.P.NecessityOfIdentity.schemaIn
-
 /-- Principle definition check: `independence-signature-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   (Classicism.Meta.AxiomSet.independence _)
@@ -167,10 +151,6 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.IntensionalChoice.schemaIn
 
-/-- Principle definition check: `intensionality-r`. -/
-example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
-  Classicism.P.Intensionality.schemaIn
-
 /-- Principle definition check: `logical-necessity-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   (Classicism.Meta.AxiomSet.logicalNecessity _)
@@ -183,37 +163,13 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.ModalFive.schemaIn
 
-/-- Principle definition check: `modal-four`. -/
-example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
-  Classicism.P.ModalFour.schemaIn
-
 /-- Principle definition check: `modal-freedom-signature-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   (Classicism.Meta.AxiomSet.modalFreedom _)
 
-/-- Principle definition check: `modal-k`. -/
-example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
-  Classicism.P.ModalK.schemaIn
-
-/-- Principle definition check: `modal-t`. -/
-example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
-  Classicism.P.ModalT.schemaIn
-
 /-- Principle definition check: `modal-well-ordering-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.ModalWellOrdering.schemaIn
-
-/-- Principle definition check: `modalized-fregean`. -/
-example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
-  Classicism.P.ModalizedFregean.schemaIn
-
-/-- Principle definition check: `modalized-functionality-r`. -/
-example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
-  Classicism.P.ModalizedFunctionality.schemaIn
-
-/-- Principle definition check: `modalized-plenitude-r`. -/
-example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
-  Classicism.P.ModalizedPlenitude.schemaIn
 
 /-- Principle definition check: `modalized-relational-choice-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
@@ -230,6 +186,10 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 /-- Principle definition check: `necessary-atomicity-t`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.NecAtomicityT.schemaIn
+
+/-- Principle definition check: `necessary-atomlessness`. -/
+example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
+  Classicism.P.NecAtomlessness.schemaIn
 
 /-- Principle definition check: `necessary-atoms-are-self-atoms-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
@@ -455,10 +415,6 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.noContingency)
 
-/-- Principle definition check: `ordinary-comprehension-r`. -/
-example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
-  (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.ordinaryComprehension)
-
 /-- Principle definition check: `persistent-comprehension-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.PersistentComprehension.schemaIn
@@ -639,7 +595,7 @@ def actuality_and_bf_t_imply_strong_actuality : Prop :=
 
 /-- `actuality-and-distinctness-preserving-collapse-imply-inextensible-comprehension`
 
-Actuality ∧ Truth implies ND-necessity ⇒ Inextensible Comprehension -/
+Actuality ∧ Truths are ND-necessary ⇒ Inextensible Comprehension -/
 def actuality_and_distinctness_preserving_collapse_imply_inextensible_comprehension : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Actuality.schemaIn →
@@ -648,12 +604,21 @@ def actuality_and_distinctness_preserving_collapse_imply_inextensible_comprehens
 
 /-- `actuality-and-distinctness-preserving-collapse-imply-strong-actuality`
 
-Actuality ∧ Truth implies ND-necessity ⇒ Strong Actuality -/
+Actuality ∧ Truths are ND-necessary ⇒ Strong Actuality -/
 def actuality_and_distinctness_preserving_collapse_imply_strong_actuality : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Actuality.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.DistinctnessPreservingCollapse.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongActuality.schemaIn
+
+/-- `actuality-and-five-implies-nd-necessity-imply-inextensible-comprehension`
+
+Actuality ∧ 5-necessities are ND-necessary ⇒ Inextensible Comprehension -/
+def actuality_and_five_implies_nd_necessity_imply_inextensible_comprehension : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Actuality.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.FiveImpliesNdNecessity.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.InextensibleComprehension.schemaIn
 
 /-- `actuality-and-self-atoms-are-strong-atoms-t-imply-strong-actuality`
 
@@ -666,7 +631,7 @@ def actuality_and_self_atoms_are_strong_atoms_t_imply_strong_actuality : Prop :=
 
 /-- `actuality-and-two-hat-implies-nd-imply-strong-actuality`
 
-Actuality ∧ Two-hat necessity implies ND-necessity ⇒ Strong Actuality -/
+Actuality ∧ Two-hat necessities are ND-necessary ⇒ Strong Actuality -/
 def actuality_and_two_hat_implies_nd_imply_strong_actuality : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Actuality.schemaIn →
@@ -675,7 +640,7 @@ def actuality_and_two_hat_implies_nd_imply_strong_actuality : Prop :=
 
 /-- `actuality-implies-five-implies-two-hat`
 
-Actuality ⇒ 5-necessity implies two-hat necessity -/
+Actuality ⇒ 5-necessities are two-hat necessary -/
 def actuality_implies_five_implies_two_hat : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Actuality.schemaIn →
@@ -989,6 +954,15 @@ def axiom_of_infinity_t_implies_possible_infinity_t : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AxiomOfInfinityT.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.PossibleInfinityT.schemaIn
 
+/-- `barcan-and-intensional-choice-imply-necessary-intensional-choice`
+
+BF ∧ Intensional Choice ⇒ □Intensional Choice -/
+def barcan_and_intensional_choice_imply_necessary_intensional_choice : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Barcan.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.IntensionalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecIntensionalChoice.schemaIn
+
 /-- `barcan-and-weakly-rigid-power-imply-necessary-tame-rigidity`
 
 BF ∧ Weakly Rigid Power ⇒ □Tame Rigidity -/
@@ -1074,6 +1048,15 @@ def bf_weak_rigid_comprehension_atomicity_and_relational_choice_imply_intensiona
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Atomicity.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RelationalChoice.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.IntensionalChoice.schemaIn
+
+/-- `boolean-completeness-and-modalized-relational-choice-imply-necessary-transversal`
+
+Boolean Completeness ∧ Modalized Relational Choice ⇒ □Transversal -/
+def boolean_completeness_and_modalized_relational_choice_imply_necessary_transversal : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BooleanCompleteness.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalizedRelationalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTransversal.schemaIn
 
 /-- `boolean-completeness-r-implies-boolean-completeness-t`
 
@@ -1170,6 +1153,15 @@ def c5_and_atomicity_t_imply_no_pure_contingency : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecNecessityOfDistinctness.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AtomicityT.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.noContingency)
+
+/-- `c5-and-atomlessness-imply-necessary-atomlessness`
+
+□ND ∧ Atomlessness ⇒ □Atomlessness -/
+def c5_and_atomlessness_imply_necessary_atomlessness : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecNecessityOfDistinctness.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Atomlessness.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomlessness.schemaIn
 
 /-- `c5-and-completeness-imply-actuality`
 
@@ -1275,90 +1267,6 @@ def c5_implies_tame_rigidity : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecNecessityOfDistinctness.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.TameRigidity.schemaIn
 
-/-- `classicism-implies-broad-necessitism-r`
-
-⊤ ⇒ Broad Necessitism -/
-def classicism_implies_broad_necessitism_r : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BroadNecessitism.schemaIn
-
-/-- `classicism-implies-converse-barcan-r`
-
-⊤ ⇒ CBF -/
-def classicism_implies_converse_barcan_r : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ConverseBarcan.schemaIn
-
-/-- `classicism-implies-existence-r`
-
-⊤ ⇒ Existence -/
-def classicism_implies_existence_r : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Existence.schemaIn
-
-/-- `classicism-implies-identity-necessary-r`
-
-⊤ ⇒ NI -/
-def classicism_implies_identity_necessary_r : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessityOfIdentity.schemaIn
-
-/-- `classicism-implies-intensionality-r`
-
-⊤ ⇒ Intensionality -/
-def classicism_implies_intensionality_r : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Intensionality.schemaIn
-
-/-- `classicism-implies-modal-four`
-
-⊤ ⇒ 4 -/
-def classicism_implies_modal_four : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalFour.schemaIn
-
-/-- `classicism-implies-modal-k`
-
-⊤ ⇒ K -/
-def classicism_implies_modal_k : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalK.schemaIn
-
-/-- `classicism-implies-modal-t`
-
-⊤ ⇒ T -/
-def classicism_implies_modal_t : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalT.schemaIn
-
-/-- `classicism-implies-modalized-fregean`
-
-⊤ ⇒ Modalized Fregean Axiom -/
-def classicism_implies_modalized_fregean : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalizedFregean.schemaIn
-
-/-- `classicism-implies-modalized-functionality-r`
-
-⊤ ⇒ Modalized Functionality -/
-def classicism_implies_modalized_functionality_r : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalizedFunctionality.schemaIn
-
-/-- `classicism-implies-modalized-plenitude-r`
-
-⊤ ⇒ Modalized Plenitude -/
-def classicism_implies_modalized_plenitude_r : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalizedPlenitude.schemaIn
-
-/-- `classicism-implies-ordinary-comprehension-r`
-
-⊤ ⇒ Ordinary Comprehension -/
-def classicism_implies_ordinary_comprehension_r : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.ordinaryComprehension)
-
 /-- `completeness-and-actuality-imply-weak-rigid-comprehension`
 
 Boolean Completeness ∧ Actuality ⇒ Weak Rigid Comprehension -/
@@ -1419,7 +1327,7 @@ def distinctness_necessary_t_implies_vicinity : Prop :=
 
 /-- `distinctness-preserving-collapse-and-nd-imply-fregean-axiom`
 
-Truth implies ND-necessity ∧ ND ⇒ Fregean Axiom -/
+Truths are ND-necessary ∧ ND ⇒ Fregean Axiom -/
 def distinctness_preserving_collapse_and_nd_imply_fregean_axiom : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.DistinctnessPreservingCollapse.schemaIn →
@@ -1534,7 +1442,7 @@ def five_and_strong_atomicity_t_imply_necessary_b : Prop :=
 
 /-- `five-implies-nd-and-truth-implies-five-imply-truth-implies-nd`
 
-5-necessity implies ND-necessity ∧ Truth implies 5-necessity ⇒ Truth implies ND-necessity -/
+5-necessities are ND-necessary ∧ Truths are 5-necessary ⇒ Truths are ND-necessary -/
 def five_implies_nd_and_truth_implies_five_imply_truth_implies_nd : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.FiveImpliesNdNecessity.schemaIn →
@@ -1543,7 +1451,7 @@ def five_implies_nd_and_truth_implies_five_imply_truth_implies_nd : Prop :=
 
 /-- `five-implies-nd-implies-five-implies-two-hat`
 
-5-necessity implies ND-necessity ⇒ 5-necessity implies two-hat necessity -/
+5-necessities are ND-necessary ⇒ 5-necessities are two-hat necessary -/
 def five_implies_nd_implies_five_implies_two_hat : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.FiveImpliesNdNecessity.schemaIn →
@@ -1551,7 +1459,7 @@ def five_implies_nd_implies_five_implies_two_hat : Prop :=
 
 /-- `five-implies-nd-implies-two-hat-implies-nd`
 
-5-necessity implies ND-necessity ⇒ Two-hat necessity implies ND-necessity -/
+5-necessities are ND-necessary ⇒ Two-hat necessities are ND-necessary -/
 def five_implies_nd_implies_two_hat_implies_nd : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.FiveImpliesNdNecessity.schemaIn →
@@ -1559,7 +1467,7 @@ def five_implies_nd_implies_two_hat_implies_nd : Prop :=
 
 /-- `five-implies-two-hat-and-truth-implies-five-imply-truth-implies-two-hat`
 
-5-necessity implies two-hat necessity ∧ Truth implies 5-necessity ⇒ Truth implies two-hat necessity -/
+5-necessities are two-hat necessary ∧ Truths are 5-necessary ⇒ Truths are two-hat necessary -/
 def five_implies_two_hat_and_truth_implies_five_imply_truth_implies_two_hat : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.FiveImpliesTwoHatNecessity.schemaIn →
@@ -1568,7 +1476,7 @@ def five_implies_two_hat_and_truth_implies_five_imply_truth_implies_two_hat : Pr
 
 /-- `fregean-axiom-implies-distinctness-preserving-collapse`
 
-Fregean Axiom ⇒ Truth implies ND-necessity -/
+Fregean Axiom ⇒ Truths are ND-necessary -/
 def fregean_axiom_implies_distinctness_preserving_collapse : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.FregeanAxiom.schemaIn →
@@ -1739,6 +1647,15 @@ def maximalism_incompatible_with_modalized_relational_choice : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalizedRelationalChoice.schemaIn →
     ¬ Classicism.Meta.AxiomSet.Consistent Ax
 
+/-- `maximalism-incompatible-with-self-atoms-are-atoms-t`
+
+Maximalism (pure) ∧ Self-atoms are atoms (type t) ⇒ ⊥ -/
+def maximalism_incompatible_with_self_atoms_are_atoms_t : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.distinctnessC) →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.SelfAtomsAreAtomsT.schemaIn →
+    ¬ Classicism.Meta.AxiomSet.Consistent Ax
+
 /-- `maximalism-signature-incompatible-with-strong-possibility-pure`
 
 Maximalism (signature Σ) ∧ Strong Possibility (pure) ⇒ ⊥ -/
@@ -1793,6 +1710,15 @@ def maximalist_distinctness_incompatible_with_necessary_atomicity_t : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomicityT.schemaIn →
     ¬ Classicism.Meta.AxiomSet.Consistent Ax
 
+/-- `maximalist-distinctness-incompatible-with-necessary-atomlessness`
+
+Maximalism (pure) ∧ □Atomlessness ⇒ ⊥ -/
+def maximalist_distinctness_incompatible_with_necessary_atomlessness : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.distinctnessC) →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomlessness.schemaIn →
+    ¬ Classicism.Meta.AxiomSet.Consistent Ax
+
 /-- `maximalist-distinctness-incompatible-with-necessary-barcan-r`
 
 Maximalism (pure) ∧ □BF ⇒ ⊥ -/
@@ -1822,7 +1748,7 @@ def maximalist_distinctness_incompatible_with_necessary_boolean_completeness_t :
 
 /-- `maximalist-distinctness-incompatible-with-necessary-five-implies-nd-necessity`
 
-Maximalism (pure) ∧ □5-necessity implies ND-necessity ⇒ ⊥ -/
+Maximalism (pure) ∧ □5-necessities are ND-necessary ⇒ ⊥ -/
 def maximalist_distinctness_incompatible_with_necessary_five_implies_nd_necessity : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.distinctnessC) →
@@ -1831,7 +1757,7 @@ def maximalist_distinctness_incompatible_with_necessary_five_implies_nd_necessit
 
 /-- `maximalist-distinctness-incompatible-with-necessary-five-implies-two-hat-necessity`
 
-Maximalism (pure) ∧ □5-necessity implies two-hat necessity ⇒ ⊥ -/
+Maximalism (pure) ∧ □5-necessities are two-hat necessary ⇒ ⊥ -/
 def maximalist_distinctness_incompatible_with_necessary_five_implies_two_hat_necessity : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.distinctnessC) →
@@ -1885,7 +1811,7 @@ def maximalist_distinctness_incompatible_with_necessary_transversal_r : Prop :=
 
 /-- `maximalist-distinctness-incompatible-with-necessary-truth-implies-five-necessity`
 
-Maximalism (pure) ∧ □Truth implies 5-necessity ⇒ ⊥ -/
+Maximalism (pure) ∧ □Truths are 5-necessary ⇒ ⊥ -/
 def maximalist_distinctness_incompatible_with_necessary_truth_implies_five_necessity : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.distinctnessC) →
@@ -1894,7 +1820,7 @@ def maximalist_distinctness_incompatible_with_necessary_truth_implies_five_neces
 
 /-- `maximalist-distinctness-incompatible-with-necessary-truth-implies-two-hat-necessity`
 
-Maximalism (pure) ∧ □Truth implies two-hat necessity ⇒ ⊥ -/
+Maximalism (pure) ∧ □Truths are two-hat necessary ⇒ ⊥ -/
 def maximalist_distinctness_incompatible_with_necessary_truth_implies_two_hat_necessity : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.distinctnessC) →
@@ -1903,7 +1829,7 @@ def maximalist_distinctness_incompatible_with_necessary_truth_implies_two_hat_ne
 
 /-- `maximalist-distinctness-incompatible-with-necessary-two-hat-implies-nd-necessity`
 
-Maximalism (pure) ∧ □Two-hat necessity implies ND-necessity ⇒ ⊥ -/
+Maximalism (pure) ∧ □Two-hat necessities are ND-necessary ⇒ ⊥ -/
 def maximalist_distinctness_incompatible_with_necessary_two_hat_implies_nd_necessity : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.distinctnessC) →
@@ -2033,6 +1959,14 @@ def modalized_relational_choice_implies_intensional_choice : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalizedRelationalChoice.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.IntensionalChoice.schemaIn
 
+/-- `modalized-relational-choice-implies-necessary-modalized-relational-choice`
+
+Modalized Relational Choice ⇒ □Modalized Relational Choice -/
+def modalized_relational_choice_implies_necessary_modalized_relational_choice : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalizedRelationalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecModalizedRelationalChoice.schemaIn
+
 /-- `modalized-relational-choice-implies-relational-choice`
 
 Modalized Relational Choice ⇒ Relational Choice -/
@@ -2088,11 +2022,20 @@ def necessary_actuality_and_necessary_bf_t_imply_necessary_strong_actuality : Pr
 
 /-- `necessary-actuality-and-necessary-distinctness-preserving-collapse-imply-necessary-inextensible-comprehension`
 
-□Actuality ∧ □Truth implies ND-necessity ⇒ □Inextensible Comprehension -/
+□Actuality ∧ □Truths are ND-necessary ⇒ □Inextensible Comprehension -/
 def necessary_actuality_and_necessary_distinctness_preserving_collapse_imply_necessary_inextensible_comprehension : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecActuality.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecDistinctnessPreservingCollapse.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecInextensibleComprehension.schemaIn
+
+/-- `necessary-actuality-and-necessary-five-implies-nd-necessity-imply-necessary-inextensible-comprehension`
+
+□Actuality ∧ □5-necessities are ND-necessary ⇒ □Inextensible Comprehension -/
+def necessary_actuality_and_necessary_five_implies_nd_necessity_imply_necessary_inextensible_comprehension : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecActuality.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecFiveImpliesNdNecessity.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecInextensibleComprehension.schemaIn
 
 /-- `necessary-actuality-and-necessary-self-atoms-are-strong-atoms-t-imply-necessary-strong-actuality`
@@ -2106,7 +2049,7 @@ def necessary_actuality_and_necessary_self_atoms_are_strong_atoms_t_imply_necess
 
 /-- `necessary-actuality-and-necessary-two-hat-implies-nd-imply-necessary-strong-actuality`
 
-□Actuality ∧ □Two-hat necessity implies ND-necessity ⇒ □Strong Actuality -/
+□Actuality ∧ □Two-hat necessities are ND-necessary ⇒ □Strong Actuality -/
 def necessary_actuality_and_necessary_two_hat_implies_nd_imply_necessary_strong_actuality : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecActuality.schemaIn →
@@ -2123,7 +2066,7 @@ def necessary_actuality_implies_actuality : Prop :=
 
 /-- `necessary-actuality-implies-necessary-five-implies-two-hat`
 
-□Actuality ⇒ □5-necessity implies two-hat necessity -/
+□Actuality ⇒ □5-necessities are two-hat necessary -/
 def necessary_actuality_implies_necessary_five_implies_two_hat : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecActuality.schemaIn →
@@ -2293,6 +2236,30 @@ def necessary_atomicity_t_implies_atomicity_t : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomicityT.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AtomicityT.schemaIn
+
+/-- `necessary-atomlessness-implies-atomlessness`
+
+□Atomlessness ⇒ Atomlessness -/
+def necessary_atomlessness_implies_atomlessness : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomlessness.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Atomlessness.schemaIn
+
+/-- `necessary-atomlessness-implies-necessary-atoms-are-strong-atoms-r`
+
+□Atomlessness ⇒ □Atoms are strong atoms -/
+def necessary_atomlessness_implies_necessary_atoms_are_strong_atoms_r : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomlessness.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomsAreStrongAtoms.schemaIn
+
+/-- `necessary-atomlessness-implies-necessary-self-atoms-are-strong-atoms-r`
+
+□Atomlessness ⇒ □Self-atoms are strong atoms -/
+def necessary_atomlessness_implies_necessary_self_atoms_are_strong_atoms_r : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomlessness.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecSelfAtomsAreStrongAtoms.schemaIn
 
 /-- `necessary-atoms-are-self-atoms-r-and-necessary-self-atoms-are-strong-atoms-r-imply-necessary-atoms-are-strong-atoms-r`
 
@@ -2619,7 +2586,7 @@ def necessary_distinctness_necessary_t_implies_necessary_distinctness_necessary_
 
 /-- `necessary-distinctness-necessary-t-implies-necessary-two-hat-implies-nd`
 
-□ND (type t) ⇒ □Two-hat necessity implies ND-necessity -/
+□ND (type t) ⇒ □Two-hat necessities are ND-necessary -/
 def necessary_distinctness_necessary_t_implies_necessary_two_hat_implies_nd : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecNecessityOfDistinctnessT.schemaIn →
@@ -2635,7 +2602,7 @@ def necessary_distinctness_necessary_t_implies_necessary_vicinity : Prop :=
 
 /-- `necessary-distinctness-preserving-collapse-implies-distinctness-preserving-collapse`
 
-□Truth implies ND-necessity ⇒ Truth implies ND-necessity -/
+□Truths are ND-necessary ⇒ Truths are ND-necessary -/
 def necessary_distinctness_preserving_collapse_implies_distinctness_preserving_collapse : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecDistinctnessPreservingCollapse.schemaIn →
@@ -2651,7 +2618,7 @@ def necessary_extensionality_r_implies_extensionality_r : Prop :=
 
 /-- `necessary-five-implies-nd-and-necessary-truth-implies-five-imply-necessary-truth-implies-nd`
 
-□5-necessity implies ND-necessity ∧ □Truth implies 5-necessity ⇒ □Truth implies ND-necessity -/
+□5-necessities are ND-necessary ∧ □Truths are 5-necessary ⇒ □Truths are ND-necessary -/
 def necessary_five_implies_nd_and_necessary_truth_implies_five_imply_necessary_truth_implies_nd : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecFiveImpliesNdNecessity.schemaIn →
@@ -2660,7 +2627,7 @@ def necessary_five_implies_nd_and_necessary_truth_implies_five_imply_necessary_t
 
 /-- `necessary-five-implies-nd-implies-five-implies-two-hat`
 
-□5-necessity implies ND-necessity ⇒ □5-necessity implies two-hat necessity -/
+□5-necessities are ND-necessary ⇒ □5-necessities are two-hat necessary -/
 def necessary_five_implies_nd_implies_five_implies_two_hat : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecFiveImpliesNdNecessity.schemaIn →
@@ -2668,7 +2635,7 @@ def necessary_five_implies_nd_implies_five_implies_two_hat : Prop :=
 
 /-- `necessary-five-implies-nd-implies-two-hat-implies-nd`
 
-□5-necessity implies ND-necessity ⇒ □Two-hat necessity implies ND-necessity -/
+□5-necessities are ND-necessary ⇒ □Two-hat necessities are ND-necessary -/
 def necessary_five_implies_nd_implies_two_hat_implies_nd : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecFiveImpliesNdNecessity.schemaIn →
@@ -2676,7 +2643,7 @@ def necessary_five_implies_nd_implies_two_hat_implies_nd : Prop :=
 
 /-- `necessary-five-implies-nd-necessity-implies-five-implies-nd-necessity`
 
-□5-necessity implies ND-necessity ⇒ 5-necessity implies ND-necessity -/
+□5-necessities are ND-necessary ⇒ 5-necessities are ND-necessary -/
 def necessary_five_implies_nd_necessity_implies_five_implies_nd_necessity : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecFiveImpliesNdNecessity.schemaIn →
@@ -2684,7 +2651,7 @@ def necessary_five_implies_nd_necessity_implies_five_implies_nd_necessity : Prop
 
 /-- `necessary-five-implies-two-hat-and-truth-implies-five-imply-truth-implies-two-hat`
 
-□5-necessity implies two-hat necessity ∧ □Truth implies 5-necessity ⇒ □Truth implies two-hat necessity -/
+□5-necessities are two-hat necessary ∧ □Truths are 5-necessary ⇒ □Truths are two-hat necessary -/
 def necessary_five_implies_two_hat_and_truth_implies_five_imply_truth_implies_two_hat : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecFiveImpliesTwoHatNecessity.schemaIn →
@@ -2693,7 +2660,7 @@ def necessary_five_implies_two_hat_and_truth_implies_five_imply_truth_implies_tw
 
 /-- `necessary-five-implies-two-hat-necessity-implies-five-implies-two-hat-necessity`
 
-□5-necessity implies two-hat necessity ⇒ 5-necessity implies two-hat necessity -/
+□5-necessities are two-hat necessary ⇒ 5-necessities are two-hat necessary -/
 def necessary_five_implies_two_hat_necessity_implies_five_implies_two_hat_necessity : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecFiveImpliesTwoHatNecessity.schemaIn →
@@ -3117,7 +3084,7 @@ def necessary_self_atomicity_t_implies_necessary_atoms_are_self_atoms_t : Prop :
 
 /-- `necessary-self-atomicity-t-implies-necessary-two-hat-implies-nd`
 
-□Self-Atomicity (type t) ⇒ □Two-hat necessity implies ND-necessity -/
+□Self-Atomicity (type t) ⇒ □Two-hat necessities are ND-necessary -/
 def necessary_self_atomicity_t_implies_necessary_two_hat_implies_nd : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecSelfAtomicityT.schemaIn →
@@ -3330,7 +3297,7 @@ def necessary_strong_atomicity_t_implies_necessary_strong_actuality : Prop :=
 
 /-- `necessary-strong-atomicity-t-implies-necessary-two-hat-implies-nd`
 
-□Strong Atomicity (type t) ⇒ □Two-hat necessity implies ND-necessity -/
+□Strong Atomicity (type t) ⇒ □Two-hat necessities are ND-necessary -/
 def necessary_strong_atomicity_t_implies_necessary_two_hat_implies_nd : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecStrongAtomicityT.schemaIn →
@@ -3446,7 +3413,7 @@ def necessary_transversal_r_implies_transversal_r : Prop :=
 
 /-- `necessary-truth-implies-five-necessity-implies-truth-implies-five-necessity`
 
-□Truth implies 5-necessity ⇒ Truth implies 5-necessity -/
+□Truths are 5-necessary ⇒ Truths are 5-necessary -/
 def necessary_truth_implies_five_necessity_implies_truth_implies_five_necessity : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTruthImpliesFiveNecessity.schemaIn →
@@ -3454,7 +3421,7 @@ def necessary_truth_implies_five_necessity_implies_truth_implies_five_necessity 
 
 /-- `necessary-truth-implies-nd-implies-necessary-five-implies-nd`
 
-□Truth implies ND-necessity ⇒ □5-necessity implies ND-necessity -/
+□Truths are ND-necessary ⇒ □5-necessities are ND-necessary -/
 def necessary_truth_implies_nd_implies_necessary_five_implies_nd : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecDistinctnessPreservingCollapse.schemaIn →
@@ -3462,7 +3429,7 @@ def necessary_truth_implies_nd_implies_necessary_five_implies_nd : Prop :=
 
 /-- `necessary-truth-implies-nd-implies-necessary-truth-implies-five`
 
-□Truth implies ND-necessity ⇒ □Truth implies 5-necessity -/
+□Truths are ND-necessary ⇒ □Truths are 5-necessary -/
 def necessary_truth_implies_nd_implies_necessary_truth_implies_five : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecDistinctnessPreservingCollapse.schemaIn →
@@ -3470,7 +3437,7 @@ def necessary_truth_implies_nd_implies_necessary_truth_implies_five : Prop :=
 
 /-- `necessary-truth-implies-two-hat-implies-five-implies-two-hat`
 
-□Truth implies two-hat necessity ⇒ □5-necessity implies two-hat necessity -/
+□Truths are two-hat necessary ⇒ □5-necessities are two-hat necessary -/
 def necessary_truth_implies_two_hat_implies_five_implies_two_hat : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTruthImpliesTwoHatNecessity.schemaIn →
@@ -3478,7 +3445,7 @@ def necessary_truth_implies_two_hat_implies_five_implies_two_hat : Prop :=
 
 /-- `necessary-truth-implies-two-hat-implies-truth-implies-five`
 
-□Truth implies two-hat necessity ⇒ □Truth implies 5-necessity -/
+□Truths are two-hat necessary ⇒ □Truths are 5-necessary -/
 def necessary_truth_implies_two_hat_implies_truth_implies_five : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTruthImpliesTwoHatNecessity.schemaIn →
@@ -3486,7 +3453,7 @@ def necessary_truth_implies_two_hat_implies_truth_implies_five : Prop :=
 
 /-- `necessary-truth-implies-two-hat-necessity-implies-truth-implies-two-hat-necessity`
 
-□Truth implies two-hat necessity ⇒ Truth implies two-hat necessity -/
+□Truths are two-hat necessary ⇒ Truths are two-hat necessary -/
 def necessary_truth_implies_two_hat_necessity_implies_truth_implies_two_hat_necessity : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTruthImpliesTwoHatNecessity.schemaIn →
@@ -3494,7 +3461,7 @@ def necessary_truth_implies_two_hat_necessity_implies_truth_implies_two_hat_nece
 
 /-- `necessary-two-hat-implies-nd-and-five-implies-two-hat-imply-five-implies-nd`
 
-□Two-hat necessity implies ND-necessity ∧ □5-necessity implies two-hat necessity ⇒ □5-necessity implies ND-necessity -/
+□Two-hat necessities are ND-necessary ∧ □5-necessities are two-hat necessary ⇒ □5-necessities are ND-necessary -/
 def necessary_two_hat_implies_nd_and_five_implies_two_hat_imply_five_implies_nd : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTwoHatImpliesNdNecessity.schemaIn →
@@ -3503,7 +3470,7 @@ def necessary_two_hat_implies_nd_and_five_implies_two_hat_imply_five_implies_nd 
 
 /-- `necessary-two-hat-implies-nd-implies-necessary-five-implies-two-hat`
 
-□Two-hat necessity implies ND-necessity ⇒ □5-necessity implies two-hat necessity -/
+□Two-hat necessities are ND-necessary ⇒ □5-necessities are two-hat necessary -/
 def necessary_two_hat_implies_nd_implies_necessary_five_implies_two_hat : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTwoHatImpliesNdNecessity.schemaIn →
@@ -3511,7 +3478,7 @@ def necessary_two_hat_implies_nd_implies_necessary_five_implies_two_hat : Prop :
 
 /-- `necessary-two-hat-implies-nd-necessity-implies-two-hat-implies-nd-necessity`
 
-□Two-hat necessity implies ND-necessity ⇒ Two-hat necessity implies ND-necessity -/
+□Two-hat necessities are ND-necessary ⇒ Two-hat necessities are ND-necessary -/
 def necessary_two_hat_implies_nd_necessity_implies_two_hat_implies_nd_necessity : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTwoHatImpliesNdNecessity.schemaIn →
@@ -3528,7 +3495,7 @@ def necessary_vicinity_and_necessary_atomicity_t_imply_necessary_actuality : Pro
 
 /-- `necessary-vicinity-and-necessary-barcan-t-imply-necessary-two-hat-implies-nd`
 
-□Vicinity ∧ □BF (type t) ⇒ □Two-hat necessity implies ND-necessity -/
+□Vicinity ∧ □BF (type t) ⇒ □Two-hat necessities are ND-necessary -/
 def necessary_vicinity_and_necessary_barcan_t_imply_necessary_two_hat_implies_nd : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecVicinity.schemaIn →
@@ -3537,12 +3504,21 @@ def necessary_vicinity_and_necessary_barcan_t_imply_necessary_two_hat_implies_nd
 
 /-- `necessary-vicinity-and-necessary-distinctness-preserving-collapse-imply-necessary-actuality`
 
-□Vicinity ∧ □Truth implies ND-necessity ⇒ □Actuality -/
+□Vicinity ∧ □Truths are ND-necessary ⇒ □Actuality -/
 def necessary_vicinity_and_necessary_distinctness_preserving_collapse_imply_necessary_actuality : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecVicinity.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecDistinctnessPreservingCollapse.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecActuality.schemaIn
+
+/-- `necessary-vicinity-and-necessary-relational-choice-imply-necessary-transversal-choice`
+
+□Vicinity ∧ □Relational Choice ⇒ □Transversal Choice -/
+def necessary_vicinity_and_necessary_relational_choice_imply_necessary_transversal_choice : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecVicinity.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRelationalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTransversalChoice.schemaIn
 
 /-- `necessary-vicinity-and-necessary-weakly-inextensible-comprehension-imply-necessary-actuality`
 
@@ -3553,9 +3529,19 @@ def necessary_vicinity_and_necessary_weakly_inextensible_comprehension_imply_nec
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWeaklyInextensibleComprehension.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecActuality.schemaIn
 
+/-- `necessary-vicinity-boolean-completeness-t-and-relational-choice-imply-necessary-actuality`
+
+□Vicinity ∧ □Boolean Completeness (type t) ∧ □Relational Choice ⇒ □Actuality -/
+def necessary_vicinity_boolean_completeness_t_and_relational_choice_imply_necessary_actuality : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecVicinity.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBooleanCompletenessT.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRelationalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecActuality.schemaIn
+
 /-- `necessary-vicinity-implies-necessary-five-implies-two-hat`
 
-□Vicinity ⇒ □5-necessity implies two-hat necessity -/
+□Vicinity ⇒ □5-necessities are two-hat necessary -/
 def necessary_vicinity_implies_necessary_five_implies_two_hat : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecVicinity.schemaIn →
@@ -3718,6 +3704,15 @@ def no_pure_contingency_and_atomicity_t_imply_necessary_atomicity_t : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AtomicityT.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomicityT.schemaIn
 
+/-- `no-pure-contingency-and-atomlessness-imply-necessary-atomlessness`
+
+No Pure Contingency ∧ Atomlessness ⇒ □Atomlessness -/
+def no_pure_contingency_and_atomlessness_imply_necessary_atomlessness : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.noContingency) →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Atomlessness.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomlessness.schemaIn
+
 /-- `no-pure-contingency-and-atoms-are-self-atoms-r-imply-necessary-atoms-are-self-atoms-r`
 
 No Pure Contingency ∧ Atoms are self-atoms ⇒ □Atoms are self-atoms -/
@@ -3828,7 +3823,7 @@ def no_pure_contingency_and_extensionality_imply_necessary_extensionality : Prop
 
 /-- `no-pure-contingency-and-five-implies-nd-necessity-imply-necessary-five-implies-nd-necessity`
 
-No Pure Contingency ∧ 5-necessity implies ND-necessity ⇒ □5-necessity implies ND-necessity -/
+No Pure Contingency ∧ 5-necessities are ND-necessary ⇒ □5-necessities are ND-necessary -/
 def no_pure_contingency_and_five_implies_nd_necessity_imply_necessary_five_implies_nd_necessity : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.noContingency) →
@@ -3837,7 +3832,7 @@ def no_pure_contingency_and_five_implies_nd_necessity_imply_necessary_five_impli
 
 /-- `no-pure-contingency-and-five-implies-two-hat-necessity-imply-necessary-five-implies-two-hat-necessity`
 
-No Pure Contingency ∧ 5-necessity implies two-hat necessity ⇒ □5-necessity implies two-hat necessity -/
+No Pure Contingency ∧ 5-necessities are two-hat necessary ⇒ □5-necessities are two-hat necessary -/
 def no_pure_contingency_and_five_implies_two_hat_necessity_imply_necessary_five_implies_two_hat_necessity : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.noContingency) →
@@ -4098,7 +4093,7 @@ def no_pure_contingency_and_transversal_imply_necessary_transversal : Prop :=
 
 /-- `no-pure-contingency-and-truth-implies-five-necessity-imply-necessary-truth-implies-five-necessity`
 
-No Pure Contingency ∧ Truth implies 5-necessity ⇒ □Truth implies 5-necessity -/
+No Pure Contingency ∧ Truths are 5-necessary ⇒ □Truths are 5-necessary -/
 def no_pure_contingency_and_truth_implies_five_necessity_imply_necessary_truth_implies_five_necessity : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.noContingency) →
@@ -4107,7 +4102,7 @@ def no_pure_contingency_and_truth_implies_five_necessity_imply_necessary_truth_i
 
 /-- `no-pure-contingency-and-truth-implies-two-hat-necessity-imply-necessary-truth-implies-two-hat-necessity`
 
-No Pure Contingency ∧ Truth implies two-hat necessity ⇒ □Truth implies two-hat necessity -/
+No Pure Contingency ∧ Truths are two-hat necessary ⇒ □Truths are two-hat necessary -/
 def no_pure_contingency_and_truth_implies_two_hat_necessity_imply_necessary_truth_implies_two_hat_necessity : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.noContingency) →
@@ -4116,7 +4111,7 @@ def no_pure_contingency_and_truth_implies_two_hat_necessity_imply_necessary_trut
 
 /-- `no-pure-contingency-and-two-hat-implies-nd-necessity-imply-necessary-two-hat-implies-nd-necessity`
 
-No Pure Contingency ∧ Two-hat necessity implies ND-necessity ⇒ □Two-hat necessity implies ND-necessity -/
+No Pure Contingency ∧ Two-hat necessities are ND-necessary ⇒ □Two-hat necessities are ND-necessary -/
 def no_pure_contingency_and_two_hat_implies_nd_necessity_imply_necessary_two_hat_implies_nd_necessity : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.noContingency) →
@@ -4602,6 +4597,15 @@ def rigid_rigidity_and_necessary_tame_rigidity_imply_weakly_rigid_weak_rigidity 
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTameRigidity.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeaklyRigidWeakRigidity.schemaIn
 
+/-- `rigid-rigidity-and-rigid-power-imply-necessary-rigid-power`
+
+Rigid Rigidity ∧ Rigid Power ⇒ □Rigid Power -/
+def rigid_rigidity_and_rigid_power_imply_necessary_rigid_power : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidRigidity.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidPower.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRigidPower.schemaIn
+
 /-- `rigid-rigidity-implies-necessary-barcan`
 
 Rigid Rigidity ⇒ □BF -/
@@ -4716,7 +4720,7 @@ def self_atomicity_t_implies_necessary_actuality : Prop :=
 
 /-- `self-atomicity-t-implies-two-hat-implies-nd`
 
-Self-Atomicity (type t) ⇒ Two-hat necessity implies ND-necessity -/
+Self-Atomicity (type t) ⇒ Two-hat necessities are ND-necessary -/
 def self_atomicity_t_implies_two_hat_implies_nd : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.SelfAtomicityT.schemaIn →
@@ -4906,6 +4910,14 @@ def strong_atomicity_t_implies_necessary_actuality : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongAtomicityT.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecActuality.schemaIn
 
+/-- `strong-atomicity-t-implies-necessary-strong-actuality`
+
+Strong Atomicity (type t) ⇒ □Strong Actuality -/
+def strong_atomicity_t_implies_necessary_strong_actuality : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongAtomicityT.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecStrongActuality.schemaIn
+
 /-- `strong-atomicity-t-implies-self-atomicity-t`
 
 Strong Atomicity (type t) ⇒ Self-Atomicity (type t) -/
@@ -4924,7 +4936,7 @@ def strong_atomicity_t_implies_strong_actuality : Prop :=
 
 /-- `strong-atomicity-t-implies-two-hat-implies-nd`
 
-Strong Atomicity (type t) ⇒ Two-hat necessity implies ND-necessity -/
+Strong Atomicity (type t) ⇒ Two-hat necessities are ND-necessary -/
 def strong_atomicity_t_implies_two_hat_implies_nd : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongAtomicityT.schemaIn →
@@ -4940,6 +4952,16 @@ def strong_atomicity_t_necessary_rigid_comprehension_and_rigid_power_imply_bf_t 
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidPower.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanT.schemaIn
 
+/-- `strong-atomicity-t-rigid-comprehension-and-barcan-relational-imply-necessary-rigid-comprehension`
+
+Strong Atomicity (type t) ∧ Rigid Comprehension ∧ BF (relational types) ⇒ □Rigid Comprehension -/
+def strong_atomicity_t_rigid_comprehension_and_barcan_relational_imply_necessary_rigid_comprehension : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongAtomicityT.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidComprehension.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanRelational.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRigidComprehension.schemaIn
+
 /-- `strong-atomicity-weak-rigid-comprehension-and-relational-choice-imply-intensional-choice`
 
 Strong Atomicity ∧ Weak Rigid Comprehension ∧ Relational Choice ⇒ Intensional Choice -/
@@ -4952,7 +4974,7 @@ def strong_atomicity_weak_rigid_comprehension_and_relational_choice_imply_intens
 
 /-- `strong-possibility-and-distinctness-preserving-collapse-incompatible`
 
-Strong Possibility (pure) ∧ Truth implies ND-necessity ⇒ ⊥ -/
+Strong Possibility (pure) ∧ Truths are ND-necessary ⇒ ⊥ -/
 def strong_possibility_and_distinctness_preserving_collapse_incompatible : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.strongPossibility) →
@@ -4968,13 +4990,31 @@ def strong_possibility_and_infinity_e_incompatible : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.infinityE) →
     ¬ Classicism.Meta.AxiomSet.Consistent Ax
 
+/-- `strong-possibility-and-strong-actuality-incompatible`
+
+Strong Possibility (pure) ∧ Strong Actuality ⇒ ⊥ -/
+def strong_possibility_and_strong_actuality_incompatible : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.strongPossibility) →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongActuality.schemaIn →
+    ¬ Classicism.Meta.AxiomSet.Consistent Ax
+
 /-- `strong-possibility-and-two-hat-implies-nd-incompatible`
 
-Strong Possibility (pure) ∧ Two-hat necessity implies ND-necessity ⇒ ⊥ -/
+Strong Possibility (pure) ∧ Two-hat necessities are ND-necessary ⇒ ⊥ -/
 def strong_possibility_and_two_hat_implies_nd_incompatible : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.strongPossibility) →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.TwoHatImpliesNdNecessity.schemaIn →
+    ¬ Classicism.Meta.AxiomSet.Consistent Ax
+
+/-- `strong-possibility-incompatible-with-barcan-t`
+
+Strong Possibility (pure) ∧ BF (type t) ⇒ ⊥ -/
+def strong_possibility_incompatible_with_barcan_t : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.strongPossibility) →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanT.schemaIn →
     ¬ Classicism.Meta.AxiomSet.Consistent Ax
 
 /-- `strong-possibility-r-implies-possibility-schema-r`
@@ -4987,7 +5027,7 @@ def strong_possibility_r_implies_possibility_schema_r : Prop :=
 
 /-- `strong-possibility-signature-and-distinctness-preserving-collapse-incompatible`
 
-Strong Possibility (signature Σ) ∧ Truth implies ND-necessity ⇒ ⊥ -/
+Strong Possibility (signature Σ) ∧ Truths are ND-necessary ⇒ ⊥ -/
 def strong_possibility_signature_and_distinctness_preserving_collapse_incompatible : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.strongPossibility _) →
@@ -5001,14 +5041,6 @@ def strong_possibility_signature_r_implies_possibility_signature_r : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.strongPossibility _) →
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.distinctnessC _)
-
-/-- `strong-possibility-signature-r-implies-strong-possibility-r`  (conjectured)
-
-Strong Possibility (signature Σ) ⇒ Strong Possibility (pure) -/
-def strong_possibility_signature_r_implies_strong_possibility_r : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.strongPossibility _) →
-    Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.strongPossibility)
 
 /-- `tame-rigidity-and-barcan-imply-necessary-barcan`
 
@@ -5098,7 +5130,7 @@ def transversal_choice_r_implies_zorn_r : Prop :=
 
 /-- `truth-implies-nd-implies-five-implies-nd`
 
-Truth implies ND-necessity ⇒ 5-necessity implies ND-necessity -/
+Truths are ND-necessary ⇒ 5-necessities are ND-necessary -/
 def truth_implies_nd_implies_five_implies_nd : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.DistinctnessPreservingCollapse.schemaIn →
@@ -5106,7 +5138,7 @@ def truth_implies_nd_implies_five_implies_nd : Prop :=
 
 /-- `truth-implies-nd-implies-truth-implies-five`
 
-Truth implies ND-necessity ⇒ Truth implies 5-necessity -/
+Truths are ND-necessary ⇒ Truths are 5-necessary -/
 def truth_implies_nd_implies_truth_implies_five : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.DistinctnessPreservingCollapse.schemaIn →
@@ -5114,7 +5146,7 @@ def truth_implies_nd_implies_truth_implies_five : Prop :=
 
 /-- `truth-implies-two-hat-implies-five-implies-two-hat`
 
-Truth implies two-hat necessity ⇒ 5-necessity implies two-hat necessity -/
+Truths are two-hat necessary ⇒ 5-necessities are two-hat necessary -/
 def truth_implies_two_hat_implies_five_implies_two_hat : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.TruthImpliesTwoHatNecessity.schemaIn →
@@ -5122,7 +5154,7 @@ def truth_implies_two_hat_implies_five_implies_two_hat : Prop :=
 
 /-- `truth-implies-two-hat-implies-truth-implies-five`
 
-Truth implies two-hat necessity ⇒ Truth implies 5-necessity -/
+Truths are two-hat necessary ⇒ Truths are 5-necessary -/
 def truth_implies_two_hat_implies_truth_implies_five : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.TruthImpliesTwoHatNecessity.schemaIn →
@@ -5130,7 +5162,7 @@ def truth_implies_two_hat_implies_truth_implies_five : Prop :=
 
 /-- `two-hat-implies-nd-and-five-implies-two-hat-imply-five-implies-nd`
 
-Two-hat necessity implies ND-necessity ∧ 5-necessity implies two-hat necessity ⇒ 5-necessity implies ND-necessity -/
+Two-hat necessities are ND-necessary ∧ 5-necessities are two-hat necessary ⇒ 5-necessities are ND-necessary -/
 def two_hat_implies_nd_and_five_implies_two_hat_imply_five_implies_nd : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.TwoHatImpliesNdNecessity.schemaIn →
@@ -5148,7 +5180,7 @@ def vicinity_and_atomicity_t_imply_actuality : Prop :=
 
 /-- `vicinity-and-barcan-t-imply-five-implies-two-hat`
 
-Vicinity ∧ BF (type t) ⇒ 5-necessity implies two-hat necessity -/
+Vicinity ∧ BF (type t) ⇒ 5-necessities are two-hat necessary -/
 def vicinity_and_barcan_t_imply_five_implies_two_hat : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Vicinity.schemaIn →
@@ -5157,7 +5189,7 @@ def vicinity_and_barcan_t_imply_five_implies_two_hat : Prop :=
 
 /-- `vicinity-and-barcan-t-imply-two-hat-implies-nd`
 
-Vicinity ∧ BF (type t) ⇒ Two-hat necessity implies ND-necessity -/
+Vicinity ∧ BF (type t) ⇒ Two-hat necessities are ND-necessary -/
 def vicinity_and_barcan_t_imply_two_hat_implies_nd : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Vicinity.schemaIn →
@@ -5166,12 +5198,21 @@ def vicinity_and_barcan_t_imply_two_hat_implies_nd : Prop :=
 
 /-- `vicinity-and-distinctness-preserving-collapse-imply-actuality`
 
-Vicinity ∧ Truth implies ND-necessity ⇒ Actuality -/
+Vicinity ∧ Truths are ND-necessary ⇒ Actuality -/
 def vicinity_and_distinctness_preserving_collapse_imply_actuality : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Vicinity.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.DistinctnessPreservingCollapse.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Actuality.schemaIn
+
+/-- `vicinity-and-relational-choice-imply-transversal-choice`
+
+Vicinity ∧ Relational Choice ⇒ Transversal Choice -/
+def vicinity_and_relational_choice_imply_transversal_choice : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Vicinity.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RelationalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.TransversalChoice.schemaIn
 
 /-- `vicinity-and-weakly-inextensible-comprehension-imply-actuality`
 
@@ -5182,9 +5223,19 @@ def vicinity_and_weakly_inextensible_comprehension_imply_actuality : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeaklyInextensibleComprehension.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Actuality.schemaIn
 
+/-- `vicinity-boolean-completeness-t-and-relational-choice-imply-actuality`
+
+Vicinity ∧ Boolean Completeness (type t) ∧ Relational Choice ⇒ Actuality -/
+def vicinity_boolean_completeness_t_and_relational_choice_imply_actuality : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Vicinity.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BooleanCompletenessT.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RelationalChoice.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Actuality.schemaIn
+
 /-- `vicinity-implies-five-implies-two-hat`
 
-Vicinity ⇒ 5-necessity implies two-hat necessity -/
+Vicinity ⇒ 5-necessities are two-hat necessary -/
 def vicinity_implies_five_implies_two_hat : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Vicinity.schemaIn →
@@ -5352,191 +5403,44 @@ def coalesced_all_finite_individual_domains : Prop :=
     ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.independence _) ∧
     ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.distinctnessC _)
 
-/-- `finite-support-cantor-fan`
+/-- `coalesced-pinned-substitutions-one-world-root`
 
-Finitely pinned action model: Cantor fan of terminal worlds: a witness satisfying 7 principles
-and violating 8. -/
-def finite_support_cantor_fan : Prop :=
+Coalesced sum: substitution arrows over a one-world component: a witness satisfying 2 principles
+and violating 1. -/
+def coalesced_pinned_substitutions_one_world_root : Prop :=
   ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecSelfAtomicity.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomsAreSelfAtoms.schemaIn ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Atomlessness.schemaIn ∧
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomsAreStrongAtoms.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanT.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.DistinctnessPreservingCollapse.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongActuality.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecStrongActuality.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AtomicityT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.SelfAtomsAreAtomsT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessityOfDistinctnessT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalFive.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.witnessedPossibility _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.separatedStructure _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.independence _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.distinctnessC _)
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.SelfAtomsAreAtomsT.schemaIn
 
-/-- `full-henkin-infinite-base`
+/-- `coalesced-pinned-substitutions-truncations-root`
 
-Full Henkin model: countably infinite individual domain: a witness satisfying 3 principles
-and violating 4. -/
-def full_henkin_infinite_base : Prop :=
+Coalesced sum: substitution arrows over the truncations model: a witness satisfying 3 principles
+and violating 2. -/
+def coalesced_pinned_substitutions_truncations_root : Prop :=
   ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AxiomOfInfinityE.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.FregeanAxiom.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.FunctionalChoice.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.witnessedPossibility _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.separatedStructure _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.independence _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.distinctnessC _)
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Atomlessness.schemaIn ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecSelfAtomsAreAtoms.schemaIn ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecSelfAtomsAreStrongAtoms.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomlessness.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.SelfAtomicityT.schemaIn
 
-/-- `full-henkin-singleton-base`
+/-- `stitched-cohen-coalesced-middle`
 
-Full Henkin model: singleton individual domain: a witness satisfying 2 principles
-and violating 5. -/
-def full_henkin_singleton_base : Prop :=
+Stitched Cohen model with a coalesced middle world: a witness satisfying 5 principles
+and violating 9. -/
+def stitched_cohen_coalesced_middle : Prop :=
   ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.FregeanAxiom.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.FunctionalChoice.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.infinityE) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.witnessedPossibility _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.separatedStructure _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.independence _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.distinctnessC _)
-
-/-- `henkin-without-relational-choice`
-
-Henkin model: base without a choice function: a witness satisfying 2 principles
-and violating 5. -/
-def henkin_without_relational_choice : Prop :=
-  ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Extensionality.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AxiomOfInfinityE.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RelationalChoice.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.witnessedPossibility _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.separatedStructure _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.independence _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.distinctnessC _)
-
-/-- `modalized-cohen-cloud`
-
-Modalized domains: Cohen cloud: a witness satisfying 4 principles
-and violating 3. -/
-def modalized_cohen_cloud : Prop :=
-  ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecSelfAtomicity.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRigidComprehension.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecIntensionalChoice.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcan.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.SelfAtomsAreAtomsT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AtomicityT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessityOfDistinctnessT.schemaIn
-
-/-- `modalized-cohen-idempotent-sum`
-
-Modalized domains: Cohen–idempotent rooted sum: a witness satisfying 4 principles
-and violating 6. -/
-def modalized_cohen_idempotent_sum : Prop :=
-  ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongActuality.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecStrongActuality.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRigidComprehension.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecIntensionalChoice.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.SelfAtomicityT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AtomsAreSelfAtomsT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.SelfAtomsAreAtomsT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AtomicityT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessityOfDistinctnessT.schemaIn
-
-/-- `symmetric-entrance-qualitative-links`
-
-Symmetric ideally-full model: a one-point entrance to the qualitative-links tail: a witness satisfying 8 principles
-and violating 15. -/
-def symmetric_entrance_qualitative_links : Prop :=
-  ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.SelfAtomsAreAtoms.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.SelfAtomsAreStrongAtoms.schemaIn ∧
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidComprehension.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Atomicity.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RelationalChoice.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeaklyRigidPower.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecStrongActuality.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Actuality.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AtomsAreSelfAtomsT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.SelfAtomicityT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecSelfAtomsAreAtomsT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecSelfAtomsAreStrongAtomsT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTameRigidity.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanT.schemaIn ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecStrongAtomicityT.schemaIn ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcanT.schemaIn ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBooleanCompletenessT.schemaIn ∧
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecRelationalChoice.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWeakRigidComprehension.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBooleanCompleteness.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanRelational.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Atomicity.schemaIn ∧
     ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessityOfDistinctnessT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongAtomicityT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AxiomOfInfinityE.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.infinityE) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.PossibleInfinityE.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.witnessedPossibility _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.separatedStructure _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.independence _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.distinctnessC _)
-
-/-- `symmetric-entrance-qualitative-links-sigma-true-atom`
-
-Symmetric ideally-full model: a one-point entrance to the qualitative-links tail [Σ true atom]: a witness satisfying 8 principles
-and violating 16. -/
-def symmetric_entrance_qualitative_links_sigma_true_atom : Prop :=
-  ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.SelfAtomsAreAtoms.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.SelfAtomsAreStrongAtoms.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidComprehension.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Atomicity.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RelationalChoice.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeaklyRigidPower.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecStrongActuality.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Actuality.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AtomsAreSelfAtomsT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.SelfAtomicityT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecSelfAtomsAreAtomsT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecSelfAtomsAreStrongAtomsT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTameRigidity.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessityOfDistinctnessT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.StrongAtomicityT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AxiomOfInfinityE.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.infinityE) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.PossibleInfinityE.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.noContingency _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.witnessedPossibility _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.separatedStructure _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.independence _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.distinctnessC _)
-
-/-- `symmetric-finite-compression-entrance`
-
-Symmetric ideally-full model: finite-compression labels at an entrance: a witness satisfying 4 principles
-and violating 8. -/
-def symmetric_finite_compression_entrance : Prop :=
-  ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.TameRigidity.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RigidPower.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AxiomOfInfinityE.schemaIn ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AxiomOfInfinityT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.WeaklyRigidPower.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecTameRigidity.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Barcan.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.RelationalChoice.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.witnessedPossibility _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.separatedStructure _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.independence _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.distinctnessC _)
-
-/-- `symmetric-finite-compression-entrance-individuals-singleton`
-
-Symmetric ideally-full model: finite-compression labels at an entrance [one individual]: a witness satisfying 1 principles
-and violating 7. -/
-def symmetric_finite_compression_entrance_individuals_singleton : Prop :=
-  ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AxiomOfInfinityT.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AxiomOfInfinityE.schemaIn ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.infinityE) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.PossibleInfinityE.schemaIn ∧
     ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.witnessedPossibility _) ∧
     ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.separatedStructure _) ∧
     ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.independence _) ∧
@@ -5548,6 +5452,7 @@ Henkin ultraproduct: finite full S5 models, n worlds and n individuals: a witnes
 and violating 6. -/
 def ultraproduct_finite_full_s5 : Prop :=
   ∃ (Sig : Classicism.Meta.Signature) (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig), Classicism.Meta.AxiomSet.Consistent Ax ∧ Classicism.Meta.AxiomSet.Complete Ax ∧
+    Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.infinityT) ∧
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecFunctionalChoice.schemaIn ∧
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecIntensionalChoice.schemaIn ∧
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcan.schemaIn ∧
@@ -5559,11 +5464,10 @@ def ultraproduct_finite_full_s5 : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecWellOrdering.schemaIn ∧
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.noContingency) ∧
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.infinityE) ∧
-    Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.infinityT) ∧
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.noContingency _) ∧
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.signatureB _) ∧
-    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.PossibleInfinityE.schemaIn ∧
     ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.PossibleInfinityT.schemaIn ∧
+    ¬ Classicism.Meta.AxiomSet.Entails Ax Classicism.P.PossibleInfinityE.schemaIn ∧
     ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.witnessedPossibility _) ∧
     ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.separatedStructure _) ∧
     ¬ Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.independence _) ∧
@@ -5617,6 +5521,14 @@ def barcan_r.dual_polyadic : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Barcan.schemaIn ↔
       Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanDual.listSchemaIn
 
+/-- `barcan-r`, variant `universal-weakly-rigid`
+
+BF ⇔ Weak rigidity of the universal property -/
+def barcan_r.universal_weakly_rigid : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Barcan.schemaIn ↔
+      Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BarcanUniversalWeaklyRigid.schemaIn
+
 /-- `barcan-t`, variant `dual`
 
 BF (type t) ⇔ Dual form -/
@@ -5640,38 +5552,6 @@ def boolean_completeness_t.lub : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BooleanCompletenessT.schemaIn ↔
       Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BooleanCompletenessTLUB.schemaIn
-
-/-- `broad-necessitism-r`, variant `polyadic`
-
-Broad Necessitism ⇔ Polyadic form -/
-def broad_necessitism_r.polyadic : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BroadNecessitism.schemaIn ↔
-      Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BroadNecessitism.listSchemaIn
-
-/-- `converse-barcan-r`, variant `polyadic`
-
-CBF ⇔ Polyadic form -/
-def converse_barcan_r.polyadic : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ConverseBarcan.schemaIn ↔
-      Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ConverseBarcan.listSchemaIn
-
-/-- `converse-barcan-r`, variant `dual`
-
-CBF ⇔ Dual form -/
-def converse_barcan_r.dual : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ConverseBarcan.schemaIn ↔
-      Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ConverseBarcanDual.schemaIn
-
-/-- `converse-barcan-r`, variant `dual-polyadic`
-
-CBF ⇔ Dual polyadic form -/
-def converse_barcan_r.dual_polyadic : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ConverseBarcan.schemaIn ↔
-      Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ConverseBarcanDual.listSchemaIn
 
 /-- `distinctness-necessary-r`, variant `polyadic`
 
@@ -5707,7 +5587,7 @@ def distinctness_necessary_t.dual : Prop :=
 
 /-- `distinctness-preserving-collapse`, variant `dual`
 
-Truth implies ND-necessity ⇔ Dual form -/
+Truths are ND-necessary ⇔ Dual form -/
 def distinctness_preserving_collapse.dual : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.DistinctnessPreservingCollapse.schemaIn ↔
@@ -5729,14 +5609,6 @@ def distinctness_signature_r.possibility : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.distinctnessC _) ↔
       Classicism.Meta.AxiomSet.Entails Ax (Classicism.Meta.AxiomSet.possibilityC _)
 
-/-- `existence-r`, variant `polyadic`
-
-Existence ⇔ Polyadic form -/
-def existence_r.polyadic : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Existence.schemaIn ↔
-      Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Existence.listSchemaIn
-
 /-- `functional-choice-r`, variant `polyadic`
 
 Functional Choice ⇔ Polyadic form -/
@@ -5753,14 +5625,6 @@ def functionality_r.polyadic : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Functionality.schemaIn ↔
       Classicism.Meta.AxiomSet.Entails Ax Classicism.P.Functionality.listSchemaIn
 
-/-- `identity-necessary-r`, variant `polyadic`
-
-NI ⇔ Polyadic form -/
-def identity_necessary_r.polyadic : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessityOfIdentity.schemaIn ↔
-      Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecessityOfIdentity.listSchemaIn
-
 /-- `modal-b`, variant `dual`
 
 B ⇔ Dual form -/
@@ -5776,46 +5640,6 @@ def modal_five.dual : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalFive.schemaIn ↔
       Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalFiveDual.schemaIn
-
-/-- `modal-four`, variant `dual`
-
-4 ⇔ Dual form -/
-def modal_four.dual : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalFour.schemaIn ↔
-      Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalFourDual.schemaIn
-
-/-- `modal-k`, variant `dual`
-
-K ⇔ Dual form -/
-def modal_k.dual : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalK.schemaIn ↔
-      Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalKDual.schemaIn
-
-/-- `modal-t`, variant `dual`
-
-T ⇔ Dual form -/
-def modal_t.dual : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalT.schemaIn ↔
-      Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalTDual.schemaIn
-
-/-- `modalized-functionality-r`, variant `polyadic`
-
-Modalized Functionality ⇔ Polyadic form -/
-def modalized_functionality_r.polyadic : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalizedFunctionality.schemaIn ↔
-      Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalizedFunctionality.listSchemaIn
-
-/-- `modalized-plenitude-r`, variant `polyadic`
-
-Modalized Plenitude ⇔ Polyadic form -/
-def modalized_plenitude_r.polyadic : Prop :=
-  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
-    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalizedPlenitude.schemaIn ↔
-      Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ModalizedPlenitude.listSchemaIn
 
 /-- `necessary-atomicity-r`, variant `dual`
 
@@ -5848,6 +5672,14 @@ def necessary_barcan_r.dual_polyadic : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcan.schemaIn ↔
       Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcanDual.listSchemaIn
+
+/-- `necessary-barcan-r`, variant `universal-rigid`
+
+□BF ⇔ Rigidity of the universal property -/
+def necessary_barcan_r.universal_rigid : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcan.schemaIn ↔
+      Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBarcanUniversalRigid.schemaIn
 
 /-- `necessary-barcan-t`, variant `dual`
 

@@ -1,11 +1,11 @@
-# Maximalism (pure) ∧ □5-necessity implies ND-necessity ⇒ ⊥
+# Maximalism (pure) ∧ □5-necessities are ND-necessary ⇒ ⊥
 
 <p class='cert'>Result — Source: Misc.; produced by Claude Fable 5.1 (Anthropic), 14 October 2026, at Cian Dorr's direction, by Cian Dorr's pattern of 8 October 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
 
 ## Premises
 
 - **Maximalism (pure).** Every closed pure identity not provable in C is false. The non-theorem condition is metalinguistic.
-- **□5-necessity implies ND-necessity.** Necessarily, whatever is 5-necessary is ND-necessary. In C this is the identity $\Box_5=\Box_{\ne}$.
+- **□5-necessities are ND-necessary.** Necessarily, whatever is 5-necessary is ND-necessary. In C this is the identity $\Box_5=\Box_{\ne}$.
 
 ## Conclusion
 
@@ -13,7 +13,7 @@
 
 ## Proof
 
-5-necessity implies ND-necessity is a closed pure sentence that fails in full-two-object-retract, a model of C, so its negation is consistent with C. The possibility form of Maximalism (pure) makes that negation possible, and the boxed principle makes the sentence necessary.
+5-necessities are ND-necessary is a closed pure sentence that fails in full-two-object-retract, a model of C, so its negation is consistent with C. The possibility form of Maximalism (pure) makes that negation possible, and the boxed principle makes the sentence necessary.
 
 ## Notes
 

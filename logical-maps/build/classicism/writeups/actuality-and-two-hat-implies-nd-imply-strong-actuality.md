@@ -1,11 +1,11 @@
-# Actuality ∧ Two-hat necessity implies ND-necessity ⇒ Strong Actuality
+# Actuality ∧ Two-hat necessities are ND-necessary ⇒ Strong Actuality
 
-<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.actuality_and_two_hat_implies_nd_imply_strong_actuality`; produced by Cian Dorr, 14 October 2026 (with 5-necessity implies ND-necessity as the second premise); weakened to Two-hat necessity implies ND-necessity, and checked, by Claude Fable 5.1 (Anthropic) the same day; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
+<p class='cert'>Result — Source: Misc., Lean `Classicism.Map.actuality_and_two_hat_implies_nd_imply_strong_actuality`; produced by Cian Dorr, 14 October 2026 (with 5-necessities are ND-necessary as the second premise); weakened to Two-hat necessities are ND-necessary, and checked, by Claude Fable 5.1 (Anthropic) the same day; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
 
 ## Premises
 
 - **Actuality.** There is a true proposition that entails every true proposition.
-- **Two-hat necessity implies ND-necessity.** Whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat.
+- **Two-hat necessities are ND-necessary.** Whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat.
 
 ## Conclusion
 
@@ -17,7 +17,7 @@ Let $w$ witness Actuality; it is a true atom, since a possible $p\le w$ cannot b
 
 ## Notes
 
-Cian Dorr's argument used 5-necessity implies ND-necessity, with BF and the necessity of distinctness for $\Box_5$ (Theorem D16, Corollary D6); the same steps go through for $\hat{\hat\Box}$ once Actuality supplies its BF at the actual world, so the weaker collapse principle suffices. The recorded result from Actuality and Truth implies ND-necessity is now derivable, that principle implying this one. The hypothesis Actuality cannot be dropped (the one-object models in which every truth is ND-necessary but Actuality fails), and the converse fails: the two-object retract full model has Strong Actuality but not Two-hat necessity implies ND-necessity.
+Cian Dorr's argument used 5-necessities are ND-necessary, with BF and the necessity of distinctness for $\Box_5$ (Theorem D16, Corollary D6); the same steps go through for $\hat{\hat\Box}$ once Actuality supplies its BF at the actual world, so the weaker collapse principle suffices. The recorded result from Actuality and Truths are ND-necessary is now derivable, that principle implying this one. The hypothesis Actuality cannot be dropped (the one-object models in which every truth is ND-necessary but Actuality fails), and the converse fails: the two-object retract full model has Strong Actuality but not Two-hat necessities are ND-necessary.
 
 ## Sources
 

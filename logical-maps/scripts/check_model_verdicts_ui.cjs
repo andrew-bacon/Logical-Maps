@@ -281,7 +281,7 @@ try{
   assert.deepEqual(rowNames(),['group member'],'One row per member, named without the shared prefix');
   assert.deepEqual(colNames(),[],'Nothing varies across one member');
   assert.match(page.textContent,/General arguments used.*gen-c ✓ C\. Every member\./,'The general arguments its models use');
-  assert.match(page.textContent,/For every member, Σ atom: E: holds → fails\./,'What the parameter changes');
+  assert.doesNotMatch(page.textContent,/holds → fails/,'The grid, not a summary, shows what a parameter changes');
   page.querySelector('button[data-group-toggle="sigma"]').click();
   assert.deepEqual(rowNames(),['group member','Σ atom'],'The variant as a sub-row');
   assert.deepEqual(colNames(),['E'],'And the column it needs');
@@ -296,7 +296,8 @@ try{
   assert.match(page.querySelector('#group-detail').textContent,/E fails in group member \(Σ atom\).*Atom\./,'A cell shows its argument');
   page.querySelector('button[data-grow="0"]').click();
   assert.match(page.querySelector('#group-detail').textContent,/the truncations.*Σ top/,'A row name shows the settings');
-  assert.ok(page.querySelector('#group-detail button[data-open-model="gm"]'),'And links to the model');
+  assert.equal(page.querySelector('#group-detail h3 button[data-open-model="gm"]').textContent,'group member','And its name links to the model');
+  assert.doesNotMatch(page.querySelector('#group-detail').textContent,/model’s page/,'with no separate link');
   // A verdict every row derives opens its derivation in place, as on a model's page.
   const same=[...page.querySelectorAll('h2')].find(h=>h.textContent==='The same in every row').nextElementSibling;
   const derivedD=same.querySelector('ul.verdict-list.derived [data-principle="d"]')?.closest('li');
@@ -310,6 +311,13 @@ try{
   assert.deepEqual(rowNames(),['group member']);
   page.querySelector('#page-back').click();
   assert.equal(page.querySelector('h1').textContent,'Fixture: group member','Back to the member');
+  // A principle's page has no list of models; it opens the theory explorer with the principle assumed.
+  w3.eval('openPage({type:"principle", id:"e"})');
+  assert.equal([...page.querySelectorAll('h2')].some(h=>h.textContent==='Models'),false,'No Models section');
+  page.querySelector('button[data-explore="e"][data-explore-sign="negative"]').click();
+  assert.equal(d3.querySelector('.tab[data-tab="models"]').getAttribute('aria-selected'),'true','The explorer opens');
+  assert.equal(w3.eval('JSON.stringify([[...theory.positive].filter(p=>!topicBackground.includes(p)), [...theory.negative]])'),'[[],["e"]]','with the negation as its one assumption');
+  w3.eval('resetTheory()');
   // The theory explorer lists the group once, counting the models that fit and saying which.
   d3.querySelector('[data-tab="models"]').click();
   const exRows=()=>[...d3.querySelectorAll('#models .explorer-models > ul.ex-list > li.ex-m')];
@@ -331,7 +339,8 @@ try{
   assert.ok(!vd.hidden&&inner()[0].classList.contains('ex-unfit')&&/does not fit/.test(inner()[0].textContent),'When only the variant fits, the member heads it and its variants open');
   w3.eval('setTheoryAssumption("e","positive")');
   assert.ok(!inner()[0].querySelector('[data-ex-variants]'),'No variant fits: none is listed');
-  assert.match(exRows()[0].textContent,/1 of 2 models\s*Σ top/,'Only the member assumes E; the description names its Σ');
+  assert.match(exRows()[0].querySelector('.model-heading').textContent,/1 of 2 models\s*$/,'Only the member assumes E: the count says so');
+  assert.doesNotMatch(exRows()[0].textContent,/Σ top/,'and which models fit is left behind the triangle');
   const head=exRows()[0].querySelector('[data-ex-inspect="group"]');
   assert.ok(head.querySelector('button[data-open-group]'),'The group\'s name is a link to its page');
   assert.equal(exRows()[0].textContent.includes('The group’s page'),false,'With no separate link to it');
@@ -381,19 +390,25 @@ try{
     assert.equal(page.querySelectorAll('.verdict-columns .badge.lean').length,0,'No Lean marks in the columns');
     const own=page.querySelector('#argument-0'),general=page.querySelector('#argument-1');
     assert.equal(own.querySelector('summary .badge.lean.verified').title,'Proved in Lean for this model','The argument giving a verdict says so');
-    assert.equal(own.querySelector('.lean-argument a').getAttribute('href'),'https://lean.example/la_a','And links the model\'s certificate');
-    assert.match(general.querySelector('.lean-argument').textContent,/^Proved in Lean for this model: ✓ C/,'A general argument shows the model\'s certificate, not its own line');
-    assert.equal(general.querySelector('.lean-argument a').getAttribute('href'),'https://lean.example/la_c');
+    assert.equal(own.querySelector('summary .lean-pop a').getAttribute('href'),'https://lean.example/la_a','And its menu links the model\'s certificate');
+    assert.equal(general.querySelector('summary .badge.lean').title,'Proved in Lean for this model','A general argument shows the model\'s certificate, not its own');
+    assert.equal(general.querySelector('.lean-pop-head').textContent,'✓ C','under the verdict it proves');
+    assert.equal(general.querySelector('.lean-pop a').getAttribute('href'),'https://lean.example/la_c');
+    general.querySelector('summary [data-lean-menu]').click();
+    assert.equal(general.open,false,'The badge in the summary opens its menu, not the argument');
+    assert.equal(general.querySelector('.lean-pop').hidden,false);
+    d4.dispatchEvent(new w4.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));
+    assert.equal(general.querySelector('.lean-pop').hidden,true,'Escape closes it');
     page.querySelector('.verdict-columns [data-principle="a"]').parentElement.querySelector('button.vc[data-jump]').click();
     assert.equal(own.open,true,'The verdict\'s ↓ opens that argument');
     w4.eval('openPage({type:"argument", id:"gen"})');
     assert.ok(page.querySelector('details.argument summary .badge.lean.verified'),'An argument proved in Lean says so on its own page');
-    assert.equal(page.querySelector('.lean-argument a').getAttribute('href'),'https://lean.example/gen_c','And links its certificate');
+    assert.equal(page.querySelector('details.argument summary .lean-pop a').getAttribute('href'),'https://lean.example/gen_c','And links its certificate');
     w4.eval('openPage({type:"model", id:"lv"})');
     assert.equal(page.querySelector('.badges .badge.lean').textContent,'Lean: 1 verdict','A verdict only stated is not counted');
     page.querySelector('.verdict-columns button.vc[data-verdict="a"]').click();
     assert.equal(pop.hidden,false,'A listed verdict\'s ↗ opens its evidence');
-    assert.equal(pop.querySelector('.links a[href="https://lean.example/lv_a"]').textContent,'Lean certificate','Which links the Lean');
+    assert.equal(pop.querySelector('.links .lean-pop a[href="https://lean.example/lv_a"]').textContent,'certificate','Whose Lean badge links the certificate');
     w4.eval('select({type:"model-verdict", id:"lv", principle:"b"})');
     assert.equal(pop.querySelector('.badge.lean.verified'),null,'A verdict only stated is not marked');
     assert.deepEqual(errors4.map(String),[]);

@@ -1,0 +1,380 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Actuality and the 5-necessity collapse imply Inextensible Comprehension</title><link rel="icon" type="image/png" href="../favicon.png">
+<style>/* Fixed forest palette, adapted from the supplied style example.
+   Semantic and source hues retain their meaning in both modes. */
+:root {
+  --bg: #f3f1e8;
+  --panel: #f8f7f0;
+  --panel-2: #e9ecdf;
+  --line: #d4d9c9;
+  --line-strong: #a2ae97;
+  --ink: #283c28;
+  --ink-2: #4f604b;
+  --ink-3: #5f6d58;
+  --accent: #356044;
+  --link-hover: #914b30;
+  --human: #3e7052;
+  --assisted: #746044;
+  --ai: #a35b36;
+  --derived: #7b8271;
+  --indep: #a0483a;
+  --open: #e2e5d9;
+  --open-ink: #65705f;
+  --conj: #896b27;
+  --node-fill: #f8f7f0;
+  --node-stroke: #98a68b;
+  --junction: #52634b;
+  --hl: #e0e7cd;
+  --focus: #914b30;
+  --badge-ink: #ffffff;
+  --warning-bg: #f4e6dc;
+  --source-forest: #3e7052;
+  --source-rust: #a25336;
+  --source-ochre: #896b27;
+  --source-slate: #4c7279;
+  --source-berry: #80556d;
+  --source-olive: #69753c;
+  --source-misc: #696d61;
+  --shadow: 0 4px 24px rgb(40 60 40 / 12%);
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --serif: var(--sans);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: #0e1912;
+  --panel: #142018;
+  --panel-2: #1d2b20;
+  --line: #304332;
+  --line-strong: #596e51;
+  --ink: #d7dfca;
+  --ink-2: #b3c1a7;
+  --ink-3: #96aa8d;
+  --accent: #a6c699;
+  --link-hover: #dfab89;
+  --human: #94bc95;
+  --assisted: #c1ad8d;
+  --ai: #dca17b;
+  --derived: #83937c;
+  --indep: #e09b86;
+  --open: #243327;
+  --open-ink: #a2b398;
+  --conj: #d0b36b;
+  --node-fill: #19261c;
+  --node-stroke: #627957;
+  --junction: #b3c1a7;
+  --hl: #30422a;
+  --focus: #dfab89;
+  --badge-ink: #0e1912;
+  --warning-bg: #32251f;
+  --source-forest: #94bc95;
+  --source-rust: #dca17b;
+  --source-ochre: #d0b36b;
+  --source-slate: #95bcc1;
+  --source-berry: #c5a0b7;
+  --source-olive: #b6c383;
+  --source-misc: #a9b09c;
+  --shadow: 0 4px 24px rgb(0 0 0 / 25%);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); scrollbar-color: var(--line-strong) var(--bg); }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.6 var(--sans); }
+button, input, select { font: inherit; color: inherit; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--link-hover); text-decoration: underline; text-underline-offset: 3px; }
+input[type="checkbox"] { accent-color: var(--accent); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+::selection { background: var(--hl); color: var(--ink); }
+.theme-toggle { border: 0; padding: 6px 0; background: transparent; color: var(--ink-2); cursor: pointer; font: 13px var(--sans); white-space: nowrap; }
+.theme-toggle:hover { color: var(--link-hover); }
+.display-toggles { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 16px; }
+.theme-toggle[aria-pressed="true"] { color: var(--accent); }
+
+/* A prismatic name: one rainbow wheel around a point in the word, spinning;
+   --prism-x and --prism-y move that point off the middle.
+   Pure spectral stops, turned by a registered angle rather than a hue
+   filter, which would muddy them. */
+@property --prism { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+.prismatic { font-weight: 600; color: transparent; background: conic-gradient(from var(--prism) at var(--prism-x, 50%) var(--prism-y, 50%), #ff1a1a, #ff8a00, #ffd000, #22c33a, #00a8f0, #3d4bff, #b026ff, #ff1a1a); -webkit-background-clip: text; background-clip: text; animation: prism-spin 6s linear infinite; }
+/* As a link it keeps the gradient on hover, under an accent underline. */
+a.prismatic, a.prismatic:hover { color: transparent; }
+a.prismatic:hover { text-decoration-color: var(--accent); }
+@keyframes prism-spin { to { --prism: 360deg; } }
+@media (prefers-reduced-motion: reduce) { .prismatic { animation: none; } }
+
+/* Standalone write-ups use the same quiet, ruled typography as the map. */
+html:has(body.writeup-page) { background: var(--bg); }
+body.writeup-page { max-width: 82ch; margin: 3em auto; padding: 0 1.5em 3em; font: 16px/1.7 var(--sans); overflow-wrap: anywhere; }
+.writeup-nav { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 16px; border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 24px; font-size: 13px; }
+.writeup-page h1 { font-size: 1.4em; line-height: 1.4; margin: 0 0 20px; color: var(--ink); }
+.writeup-page h2 { font-size: 1.15em; line-height: 1.4; margin: 1.8em 0 .5em; padding-top: 14px; border-top: 1px solid var(--line); }
+.writeup-page h3 { font-size: 1em; }
+.writeup-page p { margin: 0 0 12px; }
+.writeup-page .cert { color: var(--ink-2); font-size: .85em; }
+.writeup-page code, .writeup-page pre { font: .85em/1.6 var(--mono); color: var(--ink); }
+.writeup-page pre { padding: 14px; background: var(--panel-2); overflow-x: auto; }
+.writeup-page blockquote { color: var(--ink-2); border-left: 2px solid var(--line-strong); margin-left: 0; padding-left: 20px; }
+.writeup-page math[display="block"] { display: block; overflow-x: auto; padding: 8px 0; }
+.writeup-page table { display: block; overflow-x: auto; border-collapse: collapse; }
+.writeup-page th, .writeup-page td { border-bottom: 1px solid var(--line); padding: 8px 12px; }
+@media (max-width: 600px) {
+  body.writeup-page { margin: 1.5em auto; padding: 0 1em 2em; }
+}
+@media print {
+  :root, :root[data-theme="dark"] { --bg: white; --ink: #283c28; --ink-2: #4f604b; --accent: #356044; --line: #d4d9c9; color-scheme: light; }
+  .writeup-nav { display: none; }
+  body.writeup-page { max-width: none; margin: 0; padding: 0; }
+}
+
+/* Teal-grey, muted rust, deep teal and warm stone. Screen-only overrides
+   preserve print styling. */
+@media screen {
+  :root {
+    --bg: #ebf1f1;
+    --panel: #e1eae9;
+    --panel-2: #d0dfde;
+    --line: #c0cecd;
+    --line-strong: #849997;
+    --ink: #303b3a;
+    --ink-2: #4a5a59;
+    --ink-3: #526160;
+    --accent: #884932;
+    --link-hover: #6f3827;
+    --derived: #6f8180;
+    --open: #d6e2e1;
+    --open-ink: #526160;
+    --node-fill: #f1f6f6;
+    --node-stroke: #7f9391;
+    --junction: #596b6a;
+    --human: #2f6b66;
+    --source-forest: #2f6b66;
+    --hl: #e6ddd0;
+    --focus: #884932;
+    --shadow: 0 4px 24px rgb(48 59 58 / 10%);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #171e1d;
+    --panel: #202a29;
+    --panel-2: #2b3736;
+    --line: #3d4b4a;
+    --line-strong: #6b817f;
+    --ink: #dbe8e7;
+    --ink-2: #b9cbca;
+    --ink-3: #a6bdbb;
+    --accent: #e2ad92;
+    --link-hover: #f0c3aa;
+    --derived: #87a09e;
+    --open: #303d3c;
+    --open-ink: #aec6c4;
+    --node-fill: #263130;
+    --node-stroke: #738d8b;
+    --junction: #b3cbc9;
+    --human: #86c0b6;
+    --source-forest: #86c0b6;
+    --hl: #463f37;
+    --focus: #e2ad92;
+    --badge-ink: #171e1a;
+    --shadow: 0 4px 24px rgb(0 0 0 / 24%);
+  }
+}
+
+/* Shared Okabe–Ito palette: https://jfly.uni-koeln.de/color/#pallet
+   Loaded after topic themes. Sky blue and orange distinguish positive and
+   negative relations; darker inks keep small labels readable in light mode.
+   Neutral surfaces are identical across maps. Print uses the shared theme. */
+@media screen {
+  :root[data-palette="colourblind"] {
+    --bg: #f4f5f6;
+    --panel: #ffffff;
+    --panel-2: #e9edf0;
+    --line: #d0d6da;
+    --line-strong: #87949d;
+    --ink: #202930;
+    --ink-2: #45535d;
+    --ink-3: #586670;
+    --accent: #0072b2;
+    --link-hover: #925f00;
+    --human: #0072b2;
+    --assisted: #80506a;
+    --ai: #a44500;
+    --derived: #687780;
+    --indep: #925f00;
+    --open: #e9edf0;
+    --open-ink: #586670;
+    --conj: #80506a;
+    --node-fill: #ffffff;
+    --node-stroke: #7a8b96;
+    --junction: #45535d;
+    --hl: #dce4ea;
+    --focus: #0072b2;
+    --badge-ink: #ffffff;
+    --warning-bg: #fff0ce;
+    --source-forest: #56b4e9;
+    --source-rust: #e69f00;
+    --source-ochre: #d55e00;
+    --source-slate: #0072b2;
+    --source-berry: #cc79a7;
+    --source-olive: #009e73;
+    --source-misc: #687780;
+    --rel-positive: #56b4e9;
+    --rel-negative: #e69f00;
+    --shadow: 0 4px 24px rgb(32 41 48 / 12%);
+  }
+  :root[data-palette="colourblind"][data-theme="dark"] {
+    --bg: #111820;
+    --panel: #18222b;
+    --panel-2: #23303b;
+    --line: #354550;
+    --line-strong: #718492;
+    --ink: #edf2f5;
+    --ink-2: #c1ced7;
+    --ink-3: #a5b5c1;
+    --accent: #56b4e9;
+    --link-hover: #e69f00;
+    --human: #56b4e9;
+    --assisted: #cc79a7;
+    --ai: #e69f00;
+    --derived: #91a1ad;
+    --indep: #e69f00;
+    --open: #23303b;
+    --open-ink: #a5b5c1;
+    --conj: #cc79a7;
+    --node-fill: #1c2933;
+    --node-stroke: #8094a3;
+    --junction: #c1ced7;
+    --hl: #354654;
+    --focus: #56b4e9;
+    --badge-ink: #111820;
+    --warning-bg: #352b18;
+    --source-misc: #91a1ad;
+    --shadow: 0 4px 24px rgb(0 0 0 / 25%);
+  }
+  /* Source swatches use the unmodified palette; outlined badges allow their
+     text to keep the normal contrast on both light and dark surfaces. */
+  :root[data-palette="colourblind"] .badge.source {
+    background: var(--panel);
+    color: var(--ink);
+    border: 1px solid var(--source-color);
+    border-left-width: 4px;
+  }
+}
+</style>
+<script>/* Apply before paint; share the preference between every map and write-up. */
+(() => {
+  const key = 'pmap-theme';
+  const paletteKey = 'pmap-palette';
+  const system = window.matchMedia?.('(prefers-color-scheme: dark)');
+  let preference;
+  let palette;
+  try { preference = localStorage.getItem(key); } catch (_) {}
+  try { palette = localStorage.getItem(paletteKey); } catch (_) {}
+  if (!['light', 'dark'].includes(preference)) preference = null;
+  if (palette !== 'colourblind') palette = 'default';
+  function apply(theme) {
+    document.documentElement.dataset.theme = theme;
+    document.querySelectorAll('[data-theme-toggle]').forEach(button => {
+      button.textContent = theme === 'dark' ? '[Light mode]' : '[Dark mode]';
+      button.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
+    });
+  }
+  function applyPalette() {
+    document.documentElement.dataset.palette = palette;
+    document.querySelectorAll('[data-colourblind-toggle]').forEach(button => {
+      button.setAttribute('aria-pressed', String(palette === 'colourblind'));
+      button.textContent = `[Colourblind mode: ${palette === 'colourblind' ? 'on' : 'off'}]`;
+    });
+  }
+  const initial = () => preference || (system?.matches ? 'dark' : 'light');
+  apply(initial());
+  applyPalette();
+  document.addEventListener('DOMContentLoaded', () => {
+    apply(initial());
+    applyPalette();
+    document.querySelectorAll('[data-theme-toggle]').forEach(button => {
+      button.addEventListener('click', () => {
+        preference = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        apply(preference);
+        try { localStorage.setItem(key, preference); } catch (_) {}
+      });
+    });
+    document.querySelectorAll('[data-colourblind-toggle]').forEach(button => {
+      button.addEventListener('click', () => {
+        palette = palette === 'colourblind' ? 'default' : 'colourblind';
+        applyPalette();
+        try { localStorage.setItem(paletteKey, palette); } catch (_) {}
+      });
+    });
+  });
+  system?.addEventListener('change', () => { if (!preference) apply(initial()); });
+  window.addEventListener('storage', event => {
+    if (event.key === key || event.key === null) {
+      preference = ['light', 'dark'].includes(event.newValue) ? event.newValue : null;
+      apply(initial());
+    }
+    if (event.key === paletteKey || event.key === null) {
+      palette = event.newValue === 'colourblind' ? 'colourblind' : 'default';
+      applyPalette();
+    }
+  });
+})();
+</script>
+<link rel="stylesheet" href="../math/katex.min.css">
+<script defer src="../math/katex.min.js"></script>
+<script defer src="../math/contrib/auto-render.min.js"></script>
+<script defer src="../math/math.js"></script></head><body class="writeup-page"><nav class="writeup-nav" aria-label="Write-up navigation"><a href="../index.html">← Back to map</a><div class="display-toggles"><button type="button" class="theme-toggle" data-theme-toggle>[Dark mode]</button><button type="button" class="theme-toggle" data-colourblind-toggle aria-label="Colourblind mode" aria-pressed="false">[Colourblind mode: off]</button></div></nav><header id="title-block-header"><h1>Actuality and the 5-necessity collapse imply Inextensible Comprehension</h1></header><p>Assume Actuality and that 5-necessities are ND-necessary, in the map’s fixed relational type system. The conclusion is Inextensible Comprehension: every relation is coextensive with an inextensible one. The theorem and argument are Cian Dorr’s, found with help from GPT-6 Astra (OpenAI) on 29 October 2026. Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, checked and adapted the text. No independent checker or Lean verification is recorded.</p>
+<p>The argument is the one for <a href="actuality-and-bf-imply-inextensible-comprehension.md">BF and Actuality</a>, with BF replaced by a restricted Barcan formula. That formula is derived from the premises.</p>
+<h2 id="definitions">Definitions</h2>
+<p><span class="math inline">\Box_{\ne}p:=\exists q\, .\,q\land\Box(\Diamond q\to p)</span>, with dual</p>
+<p><span class="math display">
+\Diamond_{\ne}p\ \leftrightarrow\ \forall q\, .\,q\to\Diamond(\Diamond q\land p).
+</span></p>
+<p><span class="math inline">\Box_5</span> is necessity under every S5 operator, with dual <span class="math inline">\Diamond_5</span> (Background, Varieties of necessity). C proves <span class="math inline">\Box_{\ne}\le\Box_5</span>. The premise <span class="math inline">\forall p\, .\,\Box_5p\to\Box_{\ne}p</span> therefore makes the two operators coextensive, and so also their duals. Inextensibility and Actuality are as in the BF write-up. Let <span class="math inline">a</span> witness Actuality.</p>
+<h2 id="step-1-actuality-gives-diamond_ne-a-simple-form">Step 1: Actuality gives <span class="math inline">\Diamond_{\ne}</span> a simple form</h2>
+<p>Put <span class="math inline">D_ap:=\Diamond(\Diamond a\land p)</span>. Then</p>
+<p><span class="math display">
+(1)\qquad \forall p\, .\,D_ap\leftrightarrow\Diamond_{\ne}p.
+</span></p>
+<p>Right to left, take <span class="math inline">q:=a</span>, which is true. Left to right, let <span class="math inline">q</span> be true. Then <span class="math inline">a\le q</span>, so <span class="math inline">\Box(\Diamond a\to\Diamond q)</span> by 4 and K, and <span class="math inline">\Diamond(\Diamond a\land p)</span> gives <span class="math inline">\Diamond(\Diamond q\land p)</span>.</p>
+<h2 id="step-2-the-5-necessity-collapse">Step 2: the 5-necessity collapse</h2>
+<p>With the premise, (1) gives</p>
+<p><span class="math display">
+(2)\qquad \forall p\, .\,D_ap\leftrightarrow\Diamond_5p.
+</span></p>
+<p>This is coextensiveness at the actual world only. The argument never needs the operators to be identical or necessarily coextensive.</p>
+<h2 id="step-3-a-barcan-formula-restricted-to-diamond-a">Step 3: a Barcan formula restricted to <span class="math inline">\Diamond a</span></h2>
+<p><span class="math inline">\Box_5</span> obeys the Barcan formula at every type, as a theorem of C. This is Prior’s derivation from B (Background, [[box5-barcan]]). Dually, for tuples, <span class="math inline">\Diamond_5\exists\bar x\, .\,R[\bar x]\to\exists\bar x\, .\,\Diamond_5R[\bar x]</span>.</p>
+<p>Transfer this through (2), applying (2) once to <span class="math inline">\exists\bar x\, .\,R[\bar x]</span> and once to each <span class="math inline">R[\bar x]</span>:</p>
+<p><span class="math display">
+\text{(RB)}\qquad
+\Diamond\exists\bar x\, .\,\Diamond a\land R[\bar x]
+\ \to\ \exists\bar x\, .\,\Diamond(\Diamond a\land R[\bar x]).
+</span></p>
+<p>This holds at the actual world, for every relation <span class="math inline">R</span> and at every type.</p>
+<h2 id="step-4-inextensibility">Step 4: inextensibility</h2>
+<p>Fix <span class="math inline">F</span> of type <span class="math inline">\bar\sigma t</span> and put <span class="math inline">C:=\lambda\bar z\, .\,\Diamond(a\land F[\bar z])</span>. As in the BF write-up, Actuality makes <span class="math inline">C</span> coextensive with <span class="math inline">F</span>. Suppose <span class="math inline">C</span> is not inextensible. With <span class="math inline">A(X):=\forall\bar y\, .\,C[\bar y]\to\Box X[\bar y]</span>,</p>
+<p><span class="math display">
+(3)\qquad \Diamond\exists X\, .\,A(X)\land\Diamond\exists\bar z\, .\,
+  C[\bar z]\land\neg X[\bar z].
+</span></p>
+<ol type="1">
+<li><strong>Extract <span class="math inline">X</span>.</strong> The matrix of (3) implies <span class="math inline">\Diamond a</span>. Its second conjunct gives <span class="math inline">\Diamond\Diamond a</span>, since <span class="math inline">C[\bar z]</span> implies <span class="math inline">\Diamond a</span>, and then 4 applies. So (RB), at the type of <span class="math inline">X</span>, gives an <span class="math inline">X</span> with <span class="math display">(4)\qquad\Diamond(\Diamond a\land A(X)\land\Diamond\exists\bar z\, .\,C[\bar z]\land\neg X[\bar z]).</span></li>
+<li><strong>Extract <span class="math inline">\bar z</span>.</strong> By 4, <span class="math inline">\Diamond\exists\bar z\, .\,C[\bar z]\land\neg X[\bar z]</span>. Its matrix implies <span class="math inline">\Diamond a</span>, so (RB) at the types <span class="math inline">\bar\sigma</span> gives <span class="math inline">\bar z</span> with <span class="math inline">\Diamond(C[\bar z]\land\neg X[\bar z])</span>.</li>
+<li><strong>Facts at the actual world.</strong> <span class="math inline">\Diamond C[\bar z]</span> gives <span class="math inline">C[\bar z]</span> by 4, hence <span class="math inline">F[\bar z]</span>; also <span class="math inline">\Diamond\neg X[\bar z]</span>. Actuality gives <span class="math inline">a\le F[\bar z]</span> and <span class="math inline">a\le\Diamond\neg X[\bar z]</span>. By 4 and K, <span class="math display">(5)\qquad\Box(\Diamond a\to C[\bar z]\land\Diamond\neg X[\bar z]).</span></li>
+<li><strong>Contradiction.</strong> (4) gives a world where <span class="math inline">A(X)</span> and <span class="math inline">\Diamond a</span> hold. There, (5) gives <span class="math inline">C[\bar z]</span> and <span class="math inline">\Diamond\neg X[\bar z]</span>. But <span class="math inline">A(X)</span>, instantiated at <span class="math inline">\bar z</span>, gives <span class="math inline">\Box X[\bar z]</span>.</li>
+</ol>
+<p>So <span class="math inline">C</span> is inextensible and coextensive with <span class="math inline">F</span>.</p>
+<h2 id="remarks">Remarks</h2>
+<ul>
+<li><strong>What replaces BF.</strong> BF is used in the earlier proof only to bring quantifiers out from under a possibility. Every such possibility there is compatible with <span class="math inline">\Diamond a</span>, so the restricted form (RB) is enough.
+<ul>
+<li>(RB) follows from the 5-necessity collapse at the actual world, because <span class="math inline">\Box_5</span> satisfies the Barcan formula outright.</li>
+</ul></li>
+<li><strong>The boxed version.</strong> It follows by necessitating the theorem, since the premises are used only at finitely many closed instances.</li>
+<li><strong>Consequences on the map.</strong> Self-Atomicity and Strong Atomicity, at type <span class="math inline">t</span> or at every type, give Actuality and the 5-necessity collapse through the recorded results. So they now give Inextensible Comprehension.</li>
+</ul>
+<h2 id="paper-references">Paper references</h2>
+<ul>
+<li><strong>Background: The Bounds of Possibility.</strong> Dorr, Cian, John Hawthorne, and Juhani Yli-Vakkuri (2021). The Bounds of Possibility. Oxford University Press. Appendix D, Narrower Modalities in Higher-Order S4, pp. 400–409; locators follow the OUP corrected proof dated 9 May 2024. Its background logic HS4 (a primitive S4 operator over higher-order logic) is read into C by interpreting the primitive box as <span class="math inline">\lambda p\, .\,p=\top</span>, under which every theorem of HS4 is a theorem of C. — Appendix D, pp. 400–409. The 5-necessity operator.</li>
+</ul>
+</body></html>

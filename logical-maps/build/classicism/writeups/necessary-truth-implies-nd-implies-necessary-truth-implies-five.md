@@ -1,14 +1,14 @@
-# □Truth implies ND-necessity ⇒ □Truth implies 5-necessity
+# □Truths are ND-necessary ⇒ □Truths are 5-necessary
 
 <p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_truth_implies_nd_implies_necessary_truth_implies_five`; produced by Claude Fable 5.1 (Anthropic), 14 October 2026, at Cian Dorr's direction; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
 
 ## Premises
 
-- **□Truth implies ND-necessity.** Necessarily, every truth is ND-necessary. In C this is the identity $\Box_{\ne}=\lambda p\, .\,p$.
+- **□Truths are ND-necessary.** Necessarily, every truth is ND-necessary. In C this is the identity $\Box_{\ne}=\lambda p\, .\,p$.
 
 ## Conclusion
 
-- **□Truth implies 5-necessity.** Necessarily, every truth is 5-necessary: necessary under every S5 operator. In C this is the identity $\Box_5=\lambda p\, .\,p$.
+- **□Truths are 5-necessary.** Necessarily, every truth is 5-necessary: necessary under every S5 operator. In C this is the identity $\Box_5=\lambda p\, .\,p$.
 
 ## Proof
 

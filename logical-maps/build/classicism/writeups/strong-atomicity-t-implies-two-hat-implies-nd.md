@@ -1,4 +1,4 @@
-# Strong Atomicity (type t) ⇒ Two-hat necessity implies ND-necessity
+# Strong Atomicity (type t) ⇒ Two-hat necessities are ND-necessary
 
 <p class='cert'>Result — Source: Misc., Lean `Classicism.Map.strong_atomicity_t_implies_two_hat_implies_nd`; produced by Cian Dorr, 14 October 2026; checked step by step by Claude Fable 5.1 (Anthropic) the same day; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
 
@@ -8,7 +8,7 @@
 
 ## Conclusion
 
-- **Two-hat necessity implies ND-necessity.** Whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat.
+- **Two-hat necessities are ND-necessary.** Whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat.
 
 ## Proof
 
@@ -16,7 +16,7 @@ Let $w$ be a true strong atom, which Strong Atomicity (type $t$) supplies (stron
 
 ## Notes
 
-With Actuality's consequence that 5-necessity implies two-hat necessity, this gives that Strong Atomicity (type t) makes 5-necessity, two-hat necessity and ND-necessity coextensive. It cannot be pushed to $\Box$ itself: the two-object chain full model satisfies Strong Atomicity while ND fails.
+With Actuality's consequence that 5-necessities are two-hat necessary, this gives that Strong Atomicity (type t) makes 5-necessity, two-hat necessity and ND-necessity coextensive. It cannot be pushed to $\Box$ itself: the two-object chain full model satisfies Strong Atomicity while ND fails.
 
 Strengthened by [[self-atomicity-t-implies-two-hat-implies-nd]]: the strong atom $v$ is used only as a self-atom.
 

@@ -1,0 +1,203 @@
+id: symmetric-boolean-prefix-recurrent-colours
+name: 'Symmetric ideally-full model: atomless Boolean prefix with recurrent colour subalgebras'
+certificate:
+  source_id: misc
+  produced_by: GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 26 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 29 October 2026
+  checked_by: []
+  date: '2026-10-29'
+  lean: none
+sources:
+- >-
+  GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, Symmetric ideally-full model: an atomless Boolean prefix
+  with recurrent colour subalgebras, research note of 26 October 2026, §§2–11 (unpaginated), in Daniel
+  Kodsi's pull request #18 of 26 October 2026 (boolean-prefix-rigidity.md in the integration register of
+  branch classicism-integration-2026-10-26 of github.com/dkodsi/Logical-Maps).
+- Cian Dorr, Boolean Completeness does not imply Rigid Comprehension, draft of 30 July 2026, Definitions 15–18,
+  p. 8.
+source_names:
+- Astra via Kodsi 26 Oct
+- BC does not imply RC
+references:
+- paper: dorr-bc-not-rc
+  role: background
+  locator: Definitions 15–18, p. 8
+  note: Symmetric ideally-full models, of which this is one.
+group: symmetric-ideally-full
+settings:
+  construction: 'A symmetric ideally-full model with a prefix object $A$, whose base is the countable
+    atomless Boolean algebra $B$, and tail objects $V_m$ ($m\ge0$) and $V_\infty$, whose bases are countable
+    atomless Boolean algebras with colour subalgebras: at $V_m$, free on $c_0,\dots,c_{m-1},d_0,d_1,\dots$,
+    the colours are $C_m:=\langle c_0,\dots,c_{m-1}\rangle$; at $V_\infty$, free on
+    $c_0,c_1,\dots,d_0,d_1,\dots$, they are $C_\infty:=\langle c_0,c_1,\dots\rangle$. The arrows $A\to A$ are
+    the automorphisms of $B$; the arrows from $A$ to a tail object are the surjective homomorphisms with dense
+    kernel (every nonzero element has a nonzero element of the kernel below it); the arrows between tail
+    objects are the surjective homomorphisms $f$ with $f[C_V]\subseteq C_W$; no arrows go from the tail to
+    $A$. The symmetry group is $\operatorname{Aut}(B)$ at $A$ and the automorphisms with $f[C_V]=C_V$ at a
+    tail object. Every object carries the ideal of finite sets. Evaluation point: $1_A$.'
+  sigma: top
+meets:
+  finitely-pinned-domains: >-
+    The domains hold every symmetric intension pinned down by a finite set, and every entity in them is
+    one.
+  finite-pinning: Every object carries the ideal of finite sets.
+  surjective-arrows: Every arrow is a surjection of the bases.
+  infinite-base: The base at $A$ is the countable atomless Boolean algebra.
+  symmetry-group-pinned: >-
+    The arrows into $A$ are exactly the automorphisms of $B$, the symmetry group, and the proposition true
+    at the arrows into $A$ is pinned down by $\varnothing$.
+  transposable: >-
+    For finite $N$, the property of lying outside $\langle h[N]\rangle$ (at an arrow $h$) is symmetric and
+    pinned down by $N$, with a nonempty extension; an element $y\notin\langle N\rangle$ splits some atom
+    $s$ of $\langle N\rangle$, and the automorphism exchanging $y\land s$ with $s\setminus y$ inside
+    $[0,s]$ and fixing everything disjoint from $s$ fixes $\langle N\rangle$, hence the property, and moves
+    $y$.
+  separable-collapses: >-
+    Present $B$ as free on $a_0,a_1,\dots$ and take the pairs $\{0,a_n\}$. For $i\ne j$, the homomorphism
+    onto $V_0$ sending $a_i$ and infinitely many other generators to $0$, $a_j$ to a generator, and the rest
+    onto the remaining generators is a surjection with dense kernel that collapses the one pair and not the
+    other.
+  actual-world-isolated: >-
+    The proposition true at the arrows into $A$, the symmetry group, is in the domain and entails every
+    truth (argument actuality of the group); no arrow goes from a tail object to $A$, so no world outside
+    it sees a world in it.
+arguments:
+- id: necessary-barcan
+  holds: [necessary-barcan-r]
+  choice: free
+  writeup: symmetric-boolean-prefix-recurrent-colours
+  text: >-
+    At every type and every object. Every arrow is surjective and every object carries the ideal of finite
+    sets, so the argument barcan-surjective of the group applies at each object.
+- id: rigid-comprehension
+  when: {individuals: base}
+  holds: [rigid-comprehension-r]
+  choice: free
+  writeup: symmetric-boolean-prefix-recurrent-colours
+  text: >-
+    At every relational type. If a set $D$ of tuples is invariant under the automorphisms fixing a finite
+    subalgebra $P$ pointwise, then $h\mapsto h[D]$ is in the domain, pinned down by $P$, and rigid, as an
+    exact-image relation. For arrows $h,h^{\prime}$ into the tail that agree on $P$, and $a\in D$ pinned down
+    by $M\supseteq P$, an automorphism $u$ fixing $P$ with $hu=h^{\prime}$ on $M$ exists because $\ker h$ is
+    dense: within each atom of $P$, the atoms of $M$ are matched with a partition having the right images,
+    nonzero pieces with zero image being carved out of a kernel element. So $h^{\prime}\cdot a=h\cdot(u\cdot
+    a)$. The extension of a relation pinned down by $P$ is such a $D$.
+- id: rigid-power
+  when: {individuals: base}
+  holds: [necessary-rigid-power-r]
+  choice: free
+  writeup: symmetric-boolean-prefix-recurrent-colours
+  text: >-
+    At every type. Let $F$ be rigid at $A$, so $F_h=h[F_1]$, and $Y\le h\cdot F$ rigid at the target of $h$.
+    At $A$, invert $h$. At $V_m$, pin $F$, $Y$ and the finite colour algebra by a finite $P$, and fix one
+    kernel element $z$ meeting every live atom of $P$ and covering the dead ones. Every tuple of $F_1$ is then
+    conjugate, by an automorphism fixing $P$ and not changing its image, to one whose pinning algebra has its
+    kernel below $z$. The orbit, under the automorphisms fixing $P$ and $z$, of the normalised tuples with
+    image in $Y$ gives a rigid $X\le F$ with $h\cdot X=Y$: the image of a conjugate is moved back into $Y$ by
+    an endomorphism of $V_m$ fixing the colours and the pin of $Y$. At $V_\infty$, pass through a finite-colour
+    object by tail arrows $c$ and $k$ with $kc$ fixing the pins of $Y$ and of the test. So the property of
+    being rigid and below $F$ is weakly inextensible, hence rigid by Tame Rigidity. With □BF, Rigid Power at
+    the universal relation is Rigid Rigidity, so Rigid Power is necessary
+    (rigid-rigidity-and-rigid-power-imply-necessary-rigid-power).
+- id: tame-rigidity-fails-at-infinite-colour
+  when: {individuals: base}
+  fails: [necessary-tame-rigidity-r, weakly-rigid-power-r]
+  choice: free
+  writeup: symmetric-boolean-prefix-recurrent-colours
+  text: >-
+    At type $et$. At $V_\infty$ let $U$ have extension $C_W$ at every arrow into $W$: symmetric, pinned down by
+    $\varnothing$, persistent because arrows preserve colour, and weakly inextensible, since a test pinned down
+    by $P$ and necessary of every colour is met at any $h$ by each $y\in C_W$, as some arrow agreeing with $h$
+    on $P$ sends a fresh colour generator to $y$. It is not rigid: along the arrow $l$ to $V_0$ sending every
+    colour generator to $0$ its extension is $\{0,1\}$, and it does not entail the disjunction of their
+    haecceities, which along an isomorphism back to $V_\infty$ has two instances while $l\cdot U$ has
+    infinitely many. An entrance $A\to V_\infty$ exists, so □Tame Rigidity fails. And the weakly rigid
+    subproperties of the universal property at $A$ are rigid, by Tame Rigidity, but $U$ is a weakly rigid one
+    at $V_\infty$ that is not, so Weakly Rigid Power fails.
+- id: tail-atomless
+  holds: [necessary-self-atoms-are-strong-atoms-r, necessary-self-atoms-are-atoms-r]
+  fails: [pure-b-r, necessary-vicinity]
+  choice: free
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+  date: '2026-10-29'
+  text: >-
+    No tail object $V$ has an atom of type $t$. Let $p$ be a nonzero proposition there, pinned down by a
+    finite subalgebra $S$, and $h:V\to W$ in $p$. Choose a $d$-generator $y$ outside the finitely many
+    generators $S$ depends on, and let $j_0,j_1$ agree with $h$ on the other generators except an infinite
+    set of further $d$-generators, which they send onto the base of $W$, with $j_0(y)=0$ and $j_1(y)=1$.
+    Both are tail arrows agreeing with $h$ on $S$, so both lie in $p$, and the proposition
+    $\{j : j(y)=0\}$, symmetric and pinned down by $\{y\}$, splits $p$. By existential projection (as in
+    the argument no-actuality-no-self-atoms) no tail object has an atom of any relational type either.
+    Nothing returns from the tail to $A$, so every world seen from a tail world is a tail world.
+
+
+    So Actuality, a closed pure sentence true at $1_A$, is impossible at an entrance $A\to V_0$, and B for
+    pure sentences fails. Vicinity fails at each tail object $V$: given a truth $p$ pinned down by
+    $T$, the endomorphism fixing every generator except $d_n,d_{n+1},\dots$ for a $d_n$ outside $T$'s
+    generators, sending $d_n$ to $0$ and $d_{k+1}$ to $d_k$, is an arrow in $p$ at which the truth that
+    $d_n\ne0$ is impossible. So □Vicinity fails.
+
+
+    Self-atoms. At a tail object a self-atom would be possible, so instantiated at some arrow, and an
+    atom at its target; so there are none, and the bridge principles hold there vacuously. At $A$, a
+    self-atom $X$ of any relational type is instantiated at no entrance, since it would be an atom at a
+    tail object; being nonzero it is instantiated at an automorphism, hence by symmetry at $1_A$ and at
+    every automorphism, so it is an atom there. Its transport along an entrance $h$ is $\bot$, every
+    arrow after $h$ being an entrance. So $X$ is necessarily an atom or $\bot$, a strong atom. At type
+    $t$ the only self-atom is the actual-world proposition. Hence self-atoms are necessarily atoms and
+    strong atoms, at every type.
+- id: forcing-possibilism
+  fails: [forcing-possibilism]
+  choice: free
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+  date: '2026-10-29'
+  text: >-
+    The actual-world proposition $a$ is the only atom of type $t$ at $A$. A nonzero proposition $p$
+    containing no entrance lies in $a=\operatorname{Aut}(B)$, and by symmetry is $a$. If $p$, pinned
+    down by a finite subalgebra $S$, contains an entrance $h$, take an atom $s$ of $S$ with $h(s)\ne0$
+    and a nonzero $z<s$ in $\ker h$, and an automorphism $u$ fixing $S$ pointwise that exchanges $z$
+    and $s\setminus z$ inside $[0,s]$, by fact (a). Then $hu$ is an entrance agreeing with $h$ on $S$,
+    so it lies in $p$, with $hu(z)=h(s)\ne0=h(z)$; so the proposition $\{k : k(z)=0\}$ splits $p$.
+
+
+    Now the four propositions $\bot,a,\neg a,\top$ are distinct, $a$ being true and not necessary, and
+    the property of being one of them, with entailment among them, is a complete Boolean algebra in the
+    domain, defined from $a$, and Dedekind finite. Forcing Possibilism would give $p\ne\top$ whose
+    entailment algebra is isomorphic to it, so with exactly two atoms below it. There is only one atom.
+- id: intensional-choice
+  when: {individuals: base}
+  fails: [intensional-choice-r]
+  choice: free
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+  date: '2026-10-29'
+  text: >-
+    At type $e$, for $F:=\lambda x\, .\,x\ne0\land x\ne1$, necessarily instantiated since every base is
+    atomless. Let $G\le F$ be necessarily uniquely instantiated, pinned down by a finite subalgebra $S$.
+    Take an atom $s$ of $S$ and a dense-kernel surjection $f:[0,s]\to V_0$, by fact (d), and put
+    $h(b):=f(b\land s)$: an entrance $A\to V_0$ sending $S$ into $\{0,1\}$. So $G_h=\{y\}$ with $y\notin
+    \{0,1\}$. Every automorphism $\sigma$ of $V_0$ is a symmetry there and fixes $0$ and $1$, so
+    $\sigma h$ agrees with $h$ on $S$ and $\{\sigma y\}=G_{\sigma h}=G_h$. But by fact (a) some
+    automorphism exchanges $y$ and $\neg y$. So Intensional Choice fails, and with it □Intensional
+    Choice.
+- id: two-hat-not-nd-from-v0
+  fails: [necessary-two-hat-implies-nd-necessity]
+  choice: free
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+  date: '2026-10-29'
+  text: >-
+    At $V_0$, which an entrance reaches, let $p$ be the arrows into $V_0$: true, symmetric and pinned
+    down by $\varnothing$. It is not ND-necessary there. For a truth $q$ pinned down by $S$, generated
+    by $d_0,\dots,d_n$, the arrow $h:V_0\to V_1$ fixing $d_0,\dots,d_n$, sending $d_{n+1}$ to $c_0$ and
+    $d_{k+1}$ to $d_k$ for $k>n$, and the arrow $k:V_1\to V_0$ sending $c_0$ to $0$ and fixing every
+    $d_i$, give $k\circ h\in q$, as it agrees with $1_{V_0}$ on $S$; so $h\in\Diamond q\setminus p$.
+    But $p$ is two-hat necessary with witness $p$: at an arrow into a $V_m$ with $m\ge1$, or into
+    $V_\infty$, the arrows not sending $c_0$ into $\{0,1\}$ form a truth that is impossible at every
+    arrow into $V_0$, colours being preserved and $C_0=\{0,1\}$, so $\neg p$ is ND-necessary there and
+    $\Diamond_{\ne}p$ fails outside $p$. So at $V_0$ two-hat necessity, and hence 5-necessity and
+    truth, do not imply ND-necessity, and the boxed forms fail at $A$.
+notes: >-
+  Separates Rigid Comprehension, □BF and □Rigid Power from Weakly Rigid Power and □Tame Rigidity,
+  strengthening symmetric-recurrent-colours, which has Tame Rigidity in place of Rigid Comprehension. So Rigid
+  Comprehension is not necessary here. The prefix object's arrows into the tail have dense kernels, which is
+  what lets rigid relations at $A$ lift. Recorded with the base as individuals; the arguments using
+  individuals do not apply to the generated variant with one individual.

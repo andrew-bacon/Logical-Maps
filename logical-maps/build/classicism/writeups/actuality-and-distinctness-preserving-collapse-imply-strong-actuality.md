@@ -1,11 +1,11 @@
-# Actuality ∧ Truth implies ND-necessity ⇒ Strong Actuality
+# Actuality ∧ Truths are ND-necessary ⇒ Strong Actuality
 
 <p class='cert'>Result — Source: Misc., Lean `Classicism.Map.actuality_and_distinctness_preserving_collapse_imply_strong_actuality`; produced by Cian Dorr, 6 October 2026; written out by Claude Opus 5.5 (Anthropic); recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 6 October 2026.</p>
 
 ## Premises
 
 - **Actuality.** There is a true proposition that entails every true proposition.
-- **Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
+- **Truths are ND-necessary.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 
 ## Conclusion
 

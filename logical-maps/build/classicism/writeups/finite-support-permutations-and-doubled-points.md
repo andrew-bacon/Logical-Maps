@@ -1,0 +1,180 @@
+# Finite-support action model: permutations of N, with each point doubled at a second object
+
+<p class='cert'>Model — Source: Misc.; produced by Cian Dorr, 29 October 2026; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 29 October 2026.</p>
+
+## Package
+
+- **ND.** Distinct things of any type are necessarily distinct.
+- **Atomlessness.** Atomlessness in the displayed closed propositional formulation.
+- **□Atomlessness.** Necessarily, every possible proposition has a possible proposition strictly below it.
+- **Necessity of Arithmetic.** Every arithmetical sentence is either necessarily true or necessarily false, given that possibly zero is not a successor and successor is injective on numbers, where the numbers are the finite cardinalities of properties of a type $\sigma$. One sentence for each type $\sigma$ and each arithmetical sentence at $\sigma$.
+- **□5-necessities are two-hat necessary.** Necessarily, whatever is 5-necessary is two-hat necessary. In C this is the identity $\Box_5=\hat{\hat\Box}$.
+- **Weakly Rigid Power.** If a relation is weakly rigid, so is the property of being a weakly rigid relation that entails it.
+- **Analytic Necessitism.** If there could be a real number structure, there is a rigid one that is necessarily a real number structure: a rigid property with necessarily distinct instances, with rigid order, addition, multiplication and natural numbers, which necessarily form a complete ordered field. One sentence for each type $\sigma$.
+- **Second-Order Analytic Necessitism.** If there could be a real number structure, there is a rigid one, necessarily a real number structure, together with represented powers of every arity up to $n$: rigid properties of rigid relations among the structure's elements that necessarily represent every relation on them. One sentence for each type $\sigma$ and each $n\ge1$.
+- **Arithmetic Necessitism.** Given that necessarily zero is not a successor and successor is injective on numbers, the numbers at $\sigma$ form a rigid property with necessarily distinct instances. One sentence for each type $\sigma$.
+- **Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
+- **Infinity Schema (type e).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
+- **Axiom of Infinity (type t).** There are not finitely many propositions. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
+- **Infinity Schema (type t).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
+- **□Intensional Choice.** Necessarily, if a property is necessarily instantiated, then some property entailing it is necessarily uniquely instantiated.
+- **□Relational Choice.** Necessarily, every serial binary relation has a functional subrelation.
+- **□Transversal Choice.** Necessarily, every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
+- **□Atoms are self-atoms.** Necessarily, at each relational type, every atom is a self-atom: necessarily, if it is instantiated, it is an atom.
+- **□Atoms are strong atoms.** Necessarily, at each relational type, every atom is a strong atom: it necessarily entails every entity of the type or its negation.
+- **□Self-atoms are atoms.** Necessarily, at each relational type, every self-atom is an atom.
+- **□Self-atoms are strong atoms.** Necessarily, at each relational type, every self-atom is a strong atom: it necessarily entails every entity of the type or its negation.
+- **Necessity of Second-Order Analysis.** Every second-order analytical sentence is either true in every real number structure in every possible world or false in every real number structure in every possible world. One sentence for each type $\sigma$ and each second-order analytical sentence.
+- **Transversal Choice.** Every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
+- **¬ □ND (type t).** Necessarily, distinct propositions are necessarily distinct.
+- **¬ Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable relative to a type $\sigma$ when it injects into the finite cardinalities of properties of type $\sigma$; one instance for each $\sigma$.
+- **¬ □Vicinity.** Necessarily, there is a true proposition that entails the possibility of each true proposition.
+- **¬ Truths are two-hat necessary.** Every truth is two-hat necessary.
+- **¬ Two-hat necessities are ND-necessary.** Whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat.
+- **¬ Self-Atomicity (type t).** Every possible proposition is entailed by a self-atom: a possible proposition that necessarily, if true, is an atom, that is, one that entails that it is the actual world.
+
+## Definition
+
+An ideally full action model in the sense of Classicism, Appendix D, over a category with two objects, each carrying the ideal of finite sets: a model of C by Proposition D.4. The member's construction and evaluation point follow.
+
+$W_0$ has individuals $\mathbb N$ and $W_1$ has individuals $\mathbb N\times\{0,1\}$; write $\pi_0$ for the projection onto $\mathbb N$. The arrows are: $W_0\to W_0$, the permutations of $\mathbb N$; $W_1\to W_0$, the maps $g\circ\pi_0$ with $g$ a permutation; $W_0\to W_1$, the maps $h$ with $\pi_0\circ h$ a permutation; and $W_1\to W_1$, the maps $f$ with $\pi_0\circ f=g\circ\pi_0$ for some permutation $g$. These are closed under composition: whatever the arrows, the first coordinate of a composite is a permutation applied after $\pi_0$ or not. The evaluation point is the identity of $W_0$.
+
+*A member of the group Finitely pinned action models on two objects, which supplies this definition with the record's settings, and the arguments marked as shared.*
+
+## Arguments
+
+### Holds ND.
+
+At every type. Every arrow out of $W_0$ has a left inverse: a permutation is invertible, and an arrow $h:W_0\to W_1$ with $\pi_0\circ h=\sigma$ has the left inverse $\sigma^{-1}\circ\pi_0$. So transport along it is injective at every type.
+
+*Address: `finite-support-permutations-and-doubled-points#distinctness-at-root`. By Cian Dorr, with Claude Opus 5.5 (Anthropic), 2026-10-29.*
+
+### Fails □ND (type t).
+
+At $W_1$ let $p$ be the arrows $k$ with $k(0,0)=k(0,1)$, pinned down by $\{(0,0),(0,1)\}$. It is not $\top$, the identity separating the two points; but every arrow after $\pi_0$ collapses them, so the transports of $p$ and $\top$ along $\pi_0$ are both $\top$. So ND at type $t$ fails at $W_1$, which $W_0$ sees.
+
+*Address: `finite-support-permutations-and-doubled-points#collapse-at-doubled-object`. By Cian Dorr, with Claude Opus 5.5 (Anthropic), 2026-10-29.*
+
+### Holds Atomlessness, □Atomlessness.
+
+At both objects, as in finite-support-permutations. A nonzero proposition $p$, pinned down by a finite $S$, contains an arrow $k$. For distinct $a,b\in\mathbb N$ outside $\pi_0[S]$ (over which $S$ has no points), there are arrows of each kind agreeing with $k$ on $S$, one sending the point over $a$ below the point over $b$ in the first coordinate and one above, the permutation part being free off a finite set; both lie in $p$. So the proposition that the point over $a$ goes below that over $b$, pinned down by finitely many points, splits $p$.
+
+*Address: `finite-support-permutations-and-doubled-points#atomlessness`. By Cian Dorr, with Claude Opus 5.5 (Anthropic), 2026-10-29.*
+
+### Fails Countable Boolean Completeness.
+
+At $\sigma=e$, $\tau=e\to t$, for the property $H$ of being the haecceity of an individual, at $W_0$. An upper bound $Y$ of the haecceities has $Y_k\supseteq k[\mathbb N]$ at every arrow $k$ out of $W_0$. For finite $S$ let $B_S$ hold at $k$ of every individual $k^{\prime}(n)$ with $k^{\prime}$ agreeing with $k$ on $S$ and having its codomain: it is pinned down by $S$, so in the domain, an upper bound, and below every upper bound pinned down by $S$. At the arrow $h(n)=(n,0)$ into $W_1$, $B_S$ omits $(m,1)$ for $m\in S$ (an arrow agreeing with $h$ at $m$ and permuting first coordinates sends nothing else over $m$) and contains it for $m\notin S$. So an upper bound pinned down by $S$ is not below $B_{S\cup\{m\}}$ for $m\notin S$, and there is no least one. $H$ is countable relative to $e$: the numerals at $e$ are the finite cardinalities and pairwise distinct, the individuals being infinitely many, and extensional fullness puts in the domain $H$ and the relation pairing the haecceity of $n$ with the $n$-th numeral.
+
+*Address: `finite-support-permutations-and-doubled-points#haecceities-no-join`. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-29.*
+
+### Holds Necessity of Arithmetic.
+
+Both objects are extensionally full with infinitely many individuals and propositions, so at each the numbers at every type are the distinct numerals with standard sum and product, and an arithmetical sentence holds at every world iff it is true.
+
+*Address: `finite-support-permutations-and-doubled-points#necessity-of-arithmetic`. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-29.*
+
+### Fails □Vicinity.
+
+Vicinity fails at $W_1$, which every arrow $W_0\to W_1$ reaches. Let $p$ be a true proposition there, pinned down by a finite $S$, and take $m$ with $(m,0),(m,1)\notin S$. The arrow $k$ sending $(m,1)$ to $(m,0)$ and fixing every other point agrees with the identity on $S$, so $k\in p$. The proposition $q$ that the arrow goes into $W_1$ and separates $(m,0)$ and $(m,1)$ is pinned down by those two points and true; but every arrow after $k$ identifies them, so $\Diamond q$ fails at $k$, and $p$ does not entail $\Diamond q$.
+
+*Address: `finite-support-permutations-and-doubled-points#collapse-blocks-vicinity`. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-29.*
+
+### Fails Truths are two-hat necessary, Two-hat necessities are ND-necessary.
+
+At $W_0$ every world sees every world, an arrow $u$ being $(u\circ r)\circ k$ for $r$ a left inverse of $k$; so a true $q$ is possible everywhere, and $\Box_{\ne}=\Box$. At $W_1$, writing $I_M$ for the arrows into $W_1$ injective on the fibres over a finite $M\subseteq\mathbb N$: a true proposition contains the arrows into $W_1$ agreeing with the identity on the fibres over some $M$, and the worlds that can reach one of those are exactly $I_M$, so $\Box_{\ne}r$ iff $r\supseteq I_M$ for some $M$. Let $w_0$ be the proposition, pinned down by $\varnothing$, that the arrow goes into $W_0$. At a world $h$ into $W_1$, $\Diamond_{\ne}w_0$ fails, since there the arrows into $W_1$, which contain $I_M$, make $\neg w_0$ $\Box_{\ne}$-necessary; at a world into $W_0$ it holds. So $\Diamond_{\ne}w_0=w_0$, while $\Diamond_{\ne}q\supseteq w_0$ for every true $q$, and at $W_0$ $\hat{\hat\Box}p$ iff $w_0\subseteq p$. Hence $w_0$ is two-hat necessary but not necessary, so not ND-necessary; and the truth that the first coordinate of the arrow fixes $0$, pinned down by $\{0\}$, is not two-hat necessary.
+
+*Address: `finite-support-permutations-and-doubled-points#two-hat-necessity-at-root`. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-29.*
+
+### Holds □5-necessities are two-hat necessary.
+
+With the computations of two-hat-necessity-at-root, let $X$ be the operator, depending only on the codomain and so in the domain, that holds at an object $W_0$ of the $p\supseteq w_0$ and at $W_1$ of the $r\supseteq I_M$ for some finite $M$. At each object it is a filter, so N and K, and it is B: for $p$ true at $W_0$, $\neg X\neg p$ holds at every arrow into $W_0$, since $p$ contains a permutation; for $r$ true at $W_1$, pinned down by the fibres over $M$, $\neg X\neg r$ holds throughout $I_M$, since from $k\in I_M$ every $I_{M^{\prime}}$ contains a fibrewise bijection $j$ with $j\circ k$ agreeing with the identity on those fibres. So $X$ is an S5 operator and $\Box_5\le X$. At $W_0$, $X=\hat{\hat\Box}$; at $W_1$, where $\Diamond_{\ne}$ of the proposition that the arrow agrees with the identity on the fibres over $M$ is $I_M$, $\hat{\hat\Box}=\Box_{\ne}=X$. So $\Box_5\le\hat{\hat\Box}$ at both objects, hence at every world.
+
+*Address: `finite-support-permutations-and-doubled-points#five-is-two-hat`. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-29.*
+
+### Holds Weakly Rigid Power.
+
+At $W_0$, at every type. Write a relation $Y$ as its intension $k\mapsto Y_k$, put $X_0(E)_k:=k\cdot E$, and let $B_N(E)_k$ be the union of the $k^{\prime}\cdot E$ for $k^{\prime}$ agreeing with $k$ on $N$ and having its codomain; $B_N(E)$ is pinned down by $N$, so in the domain at either object. (1) An $X_0(E)$ in the domain is rigid: its transports are $X_0$ of the transported extensions, persistent and below whatever holds necessarily of their members. (2) A weakly rigid $Y$ with extension $E$ has $X_0(E)\le Y\le B_N(E)$ for every finite $N$, by weak persistence and weak inextensibility. (3) If $x$ is in $B_N(E)_u$ for every $N$, then $x=u\cdot a$ for some $a\in E$: for $N$ large, $x=u^{\prime}\cdot a_N$ with $u^{\prime}$ agreeing with $u$ on $N$ and $r_{u^{\prime}}$ agreeing with $r_u$ on a pin of $x$, so $a_N=r_{u^{\prime}}\cdot x=r_u\cdot x=:a$, and taking $N$ to contain a pin of $a$ also, $x=u^{\prime}\cdot a=u\cdot a$. So a weakly rigid relation at $W_0$ is $X_0$ of its extension, and rigid: Tame Rigidity. (4) Let $F=X_0(E)$, $h$ an arrow out of $W_0$, and $X$ weakly rigid at its target with $X\le h\cdot F$ and extension $D$. Applying (2) at the target and (3) to the arrows $k\circ h$, $X=X_0(D)$, and $D=h\cdot A$ for $A:=\{a\in E:h\cdot a\in D\}$; $X_0(A)$, the transport of $X$ along $r_h$, is in the domain, weakly rigid and below $F$, with $h\cdot X_0(A)=X$. So the property of being weakly rigid and below $F$ has at each world the transports of its extension at the identity: it is $X_0$ of that extension, which is rigid by (1). Weakly Rigid Power holds at $W_0$.
+
+*From the group *Finitely pinned action models on two objects*, shared argument `finite-support-two-object#weakly-rigid-power-left-inverses`. It requires that Every arrow $u$ out of the evaluation object $W_0$ has a left inverse $r_u$ ($r_u\circ u=1_{W_0}$) such that, for every finite set $P$ of points at the codomain of $u$, there is a finite set $N$ of points at $W_0$ with $r_{u'}$ agreeing with $r_u$ on $P$ whenever $u'$ has the same codomain as $u$ and agrees with $u$ on $N$. Here: A permutation $\sigma$ has the left inverse $\sigma^{-1}$, and an arrow $h:W_0\to W_1$ with $\pi_0\circ h=\sigma$ the left inverse $\sigma^{-1}\circ\pi_0$; on a finite set $P$ of points it depends only on $\sigma^{-1}$ on the finitely many first coordinates of $P$, so only on $u$ on their $\sigma$-preimages. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-29.*
+
+### Holds Analytic Necessitism, Second-Order Analytic Necessitism.
+
+At type $\tau:=tt$. For each object $V$ reachable from the evaluation point fix an injection $A\mapsto E^A_V$ from the sets of natural numbers into the sets of propositions at $V$, possible as these are infinitely many, and let $Y_A$ be the intension whose value at an arrow into $V$ is $E^A_V$: it depends only on the codomain, so it is in the domain, and its transport along an arrow into $V$ is the $Y_A$ of $V$, distinct for distinct $A$. Carry the real numbers onto the $Y_A$ and take as relations the codomain-only intensions whose value at $V$ is the corresponding set of tuples of the $Y_A$ of $V$. Along every arrow the structure is carried to the like structure at the target, an isomorphic copy, which is a real number structure there: bounded sets of its elements have least upper bounds among them and every inductive subproperty contains its natural numbers. Such a structure is rigid, its instances are necessarily distinct, and it is necessarily a real number structure; and the codomain-only intension of type $((\tau)^kt)t$ whose value at each object is the set of codomain-only $k$-ary relations among the carrier there is a represented power of arity $k$, since at every world each $k$-ary relation agrees on the carrier with one of them. So the consequents of Analytic Necessitism and of its second-order form hold, and both principles hold. (The argument of the withdrawn analytic-necessitism-unretracted-arrow would refute this structure; its step from inextensibility is the gap.)
+
+*General argument `arguments/analytic-necessitism-codomain-everywhere`. It requires that At every object reachable from the evaluation point, the domain contains every intension whose value at an arrow depends only on the arrow's codomain. Here: The model is ideally full at both objects, and an intension whose value at an arrow depends only on the arrow's codomain is pinned down by $\varnothing$ (Appendix D, the remark after Definition D.3). It requires that There are infinitely many propositions at every object reachable from the evaluation point. Here: At either object, for distinct $m,n\in\mathbb N$, the propositions that the arrow's first coordinate sends the point over $m$ (at $W_1$, the point $(m,0)$) below the point over $n$ are pinned down by two points and pairwise distinct. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, auditing the withdrawn arguments for the failure of Analytic Necessitism, 2026-10-29.*
+
+### Holds Arithmetic Necessitism.
+
+The numbers at a type $\sigma$ are the instances of $\mathbb N_\sigma$, the least property containing $\mathbf 0_\sigma$ and closed under $\operatorname{Suc}_\sigma$ (Background); the numerals $\mathbf 0_\sigma$, $\operatorname{Suc}_\sigma\mathbf 0_\sigma,\ldots$ are closed terms, so each denotes at every object, and transport along an arrow carries its denotation at the source to its denotation at the target. At any object $v$ reachable from the evaluation point, extensional fullness gives a property whose extension at $v$ is exactly the numerals there; it contains $\mathbf 0_\sigma$ and is closed under successor, so the numbers at $v$ are exactly the numerals, every numeral being an instance of every inductive property. Persistence of $\mathbb N_\sigma$ and, given $\Box I^*_\sigma$, the necessary distinctness of the numbers are theorems of C (the proof of necessary-rigid-comprehension-implies-arithmetic-necessitism). Inextensibility, $\Box\forall X\,.\,(\forall n\,.\,\mathbb N_\sigma n\to\Box Xn)\to\mathbb N_\sigma\le X$: at a reachable $v$ and for an arrow $j$ from $v$ to $u$, the numbers at $u$ are the numerals there, which are the transports along $j$ of the numbers at $v$, so any $X$ that necessarily holds of the numbers at $v$ holds at $u$ of the numbers there. So $\mathbb N_\sigma$ is rigid, and Arithmetic Necessitism holds at every type. No choice is used.
+
+*General argument `arguments/arithmetic-necessitism-extensionally-full`. It requires that The model is extensionally full at every object: every set of tuples from the domains at an object is the extension, at the identity arrow, of an element of the domain of the matching relational type there. Here: The model is ideally full, hence extensionally full at both objects (Appendix D, the remark after Definition D.3): for a set $R$ of tuples from the domains at an object $V$, the intension with value $R$ at every arrow out of $V$ into $V$ and $\varnothing$ at the arrows into the other object depends only on the codomain, so is pinned down by $\varnothing$; it is in the domain with extension $R$ at $1_V$. By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-23.*
+
+### Holds Arithmetic Necessitism.
+
+As the argument arithmetic-necessitism-extensionally-full, with the property of being a numeral supplied by pinning. The intension $Z$ whose value at each arrow $k$ out of the evaluation object is the set of numerals $\mathbf 0_\sigma,\operatorname{Suc}_\sigma\mathbf 0_\sigma,\ldots$ at the target of $k$ is pinned down by the empty set, its value depending on the arrow only through its target, and is symmetric, transport along a permutation of the points carrying numerals to numerals, as transport along any arrow does, numerals being closed terms; so it is in the domain, and so is its transport $k\cdot Z$ to any reachable object, whose extension there is exactly the numerals. Hence at every reachable object the numbers at $\sigma$, the instances of the least inductive property, are exactly the numerals, which transport to numerals; persistence and, given $\Box I^*_\sigma$, necessary distinctness are theorems of C, and inextensibility follows as in that argument. So Arithmetic Necessitism holds at every type. No choice is used.
+
+*General argument `arguments/arithmetic-necessitism-finitely-pinned`. It requires that Write an entity of relational type at the evaluation object as its intension $k\mapsto Y_k$ over the arrows $k$ out of it, so that $Y\bar a$ holds at $k$ iff $k\cdot\bar a\in Y_k$; $Y$ is pinned down by a finite set $N$ of the points the arrows act on when $Y_k=Y_{k^{\prime}}$ for any arrows $k,k^{\prime}$ agreeing on $N$. Every entity in a domain is pinned down by a finite set, in the sense that $k\cdot x=k^{\prime}\cdot x$ for arrows agreeing on it, and the domain of each relational type at the evaluation object holds every intension pinned down by a finite set (in a symmetric model, every symmetric one). Here: Ideally full with the ideal of finite sets at both objects: every intension pinned down by a finite set is in the domain, and every entity in a domain is one. By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-23.*
+
+### Holds Axiom of Infinity (type e), Infinity Schema (type e).
+
+The Infinity schema holds, there being $n$ distinct individuals for every $n$. For the Axiom: by extensional fullness the domain has a property of cardinalities true of $Z$ exactly when every property $Z$ holds of has a finite extension. It holds of $\mathbf{0}_e$, which holds only of empty properties, and passes from $Y$ to $\operatorname{Suc}_e Y$, which holds of $F$ only if $Y$ holds of $F$ less one of its instances. So every finite cardinality has it, and none holds of the universal property, whose extension is infinite.
+
+*General argument `arguments/infinitely-many-individuals`. It requires that The model is extensionally full at every object: every set of tuples from the domains at an object is the extension, at the identity arrow, of an element of the domain of the matching relational type there. Here: The model is ideally full, hence extensionally full at both objects (Appendix D, the remark after Definition D.3): for a set $R$ of tuples from the domains at an object $V$, the intension with value $R$ at every arrow out of $V$ into $V$ and $\varnothing$ at the arrows into the other object depends only on the codomain, so is pinned down by $\varnothing$; it is in the domain with extension $R$ at $1_V$. It requires that There are infinitely many individuals at the evaluation world. Here: The individuals at $W_0$ are the natural numbers. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-06.*
+
+### Holds Axiom of Infinity (type t), Infinity Schema (type t).
+
+As for individuals (the argument infinitely-many-individuals), at type $t$: the Infinity schema holds, and by extensional fullness the property of cardinalities that hold only of properties with finite extensions is in the domain, has every finite cardinality, and excludes those holding of the universal property of propositions, whose extension is infinite.
+
+*General argument `arguments/infinitely-many-propositions`. It requires that The model is extensionally full at every object: every set of tuples from the domains at an object is the extension, at the identity arrow, of an element of the domain of the matching relational type there. Here: The model is ideally full, hence extensionally full at both objects (Appendix D, the remark after Definition D.3): for a set $R$ of tuples from the domains at an object $V$, the intension with value $R$ at every arrow out of $V$ into $V$ and $\varnothing$ at the arrows into the other object depends only on the codomain, so is pinned down by $\varnothing$; it is in the domain with extension $R$ at $1_V$. It requires that There are infinitely many propositions at the evaluation world. Here: As for infinitely-many-propositions-everywhere, at $W_0$. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-06.*
+
+### Holds □Intensional Choice.
+
+For each object $U$ and type $\sigma$ fix a well-ordering $<_U$ of the domain $D^\sigma_U$, and let $W$ be the intension of type $\sigma\to\sigma\to t$ with $W(h):={<_{\operatorname{cod}h}}$. Its value depends only on the arrow's codomain, so by the condition it is in the domain, and at every world its extension well-orders that world's type-$\sigma$ domain. Given $F$ with $\Box\exists x\, .\,Fx$, put $G:=\lambda x\, .\,Fx\land\forall y\, .\,(Fy\to\neg Wyx)$, the $W$-least $F$. It is definable from $F$ and $W$, so in the domain; $G\le F$, and its extension at every arrow is the singleton of the least element of $F$'s. So Intensional Choice holds, and the same at every reachable object gives $\Box$Intensional Choice. Cian Dorr's observation that such models are qualitatively full, made precise.
+
+*General argument `arguments/intensional-choice-well-ordering`. It requires that At every object reachable from the evaluation point, the domain contains every intension whose value at an arrow depends only on the arrow's codomain. Here: The model is ideally full at both objects, and an intension whose value at an arrow depends only on the arrow's codomain is pinned down by $\varnothing$ (Appendix D, the remark after Definition D.3). By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, at Cian Dorr's suggestion, 2026-10-03.*
+
+### Holds □Relational Choice, □Transversal Choice.
+
+At any reachable object $W$, let $U$ be a serial relation in the domain there. Using the axiom of choice, pick for each $x$ a $y$ with $(x,y)$ in the extension of $U$ at the identity, and let $S$ be the intension whose value at every arrow $W\to W$ is the graph of this choice and whose value at arrows with any other codomain is empty; it depends only on the codomain, so the condition puts it in the domain, and at the identity it is a functional subrelation of $U$. Likewise a set of representatives of an equivalence relation at $W$, made into such an intension, is a transversal. Since $W$ was any reachable object, both principles hold at every world.
+
+*General argument `arguments/necessary-relational-choice-codomain-intensions`. It requires that At every object reachable from the evaluation point, the domain contains every intension whose value at an arrow depends only on the arrow's codomain. Here: The model is ideally full at both objects, and an intension whose value at an arrow depends only on the arrow's codomain is pinned down by $\varnothing$ (Appendix D, the remark after Definition D.3). By Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 2026-10-14.*
+
+### Holds □Atomlessness, □Atoms are self-atoms, □Atoms are strong atoms, □Self-atoms are atoms, □Self-atoms are strong atoms. Fails Self-Atomicity (type t).
+
+An atom of a relational type at a reachable object would give, by existential projection, an atom of type $t$ there (as in the argument no-actuality-no-self-atoms), which the condition excludes; so no reachable object has an atom of any relational type, nor a self-atom, since a self-atom is an atom where it is instantiated. All four bridge principles therefore hold vacuously at every type and every reachable object, and Self-Atomicity (type t) fails at the evaluation point.
+
+*General argument `arguments/no-atoms-no-self-atoms`. It requires that At every object reachable from the evaluation point, no proposition in the domain is an atom. Here: At both objects every nonzero proposition is split by one of the order propositions (argument atomlessness). By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026.*
+
+*Revised 2026-10-29 by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr:* Now also gives □Atomlessness, which the condition states: a reachable object with no atom of type $t$ satisfies Atomlessness. The bridge verdicts and the failure of Self-Atomicity are now also consequences of □Atomlessness by recorded results.
+
+### Holds Necessity of Second-Order Analysis.
+
+Let $v$ be any object reachable from the evaluation point and $\mathfrak R$ a real number structure at $v$ (Background, Analysis). Its completeness is tested against the subproperties of its carrier present at $v$, and by extensional fullness every subset of the carrier's extension there is the extension at the identity of one of them; so the carrier, with the extensions of $\le$, $+$ and $\times$, is a complete ordered field in the sense of the metatheory and, by Huntington's theorem, a theorem of ZF, is isomorphic to the real numbers. For the same reason the extension of $N$, the least subproperty containing $0$ and closed under adding $1$, is its set of natural numbers, that set being the extension of a subproperty. A second-order analytical sentence $A(\mathfrak R)$ quantifies over the relations among entities of the structure's type at $v$, applied to the structure's elements, and their extensions at the identity are all the relations on the carrier, again by extensional fullness. So $A(\mathfrak R)$ holds at $v$ exactly when $A$ holds in the real numbers under full second-order semantics, which depends neither on $v$ nor on $\mathfrak R$. Hence $\Box\forall\mathfrak R\,.\,\operatorname{Real}_\sigma(\mathfrak R)\to A(\mathfrak R)$ holds when $A$ is true of the reals and $\Box\forall\mathfrak R\,.\,\operatorname{Real}_\sigma(\mathfrak R)\to\neg A(\mathfrak R)$ when it is false: every instance of the Necessity of Second-Order Analysis holds, and with it the Necessity of Analysis and the Non-contingency of the Continuum Hypothesis, as recorded. No choice is used.
+
+*General argument `arguments/second-order-analysis-extensionally-full`. It requires that The model is extensionally full at every object: every set of tuples from the domains at an object is the extension, at the identity arrow, of an element of the domain of the matching relational type there. Here: The model is ideally full, hence extensionally full at both objects (Appendix D, the remark after Definition D.3): for a set $R$ of tuples from the domains at an object $V$, the intension with value $R$ at every arrow out of $V$ into $V$ and $\varnothing$ at the arrows into the other object depends only on the codomain, so is pinned down by $\varnothing$; it is in the domain with extension $R$ at $1_V$. By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-23.*
+
+### Holds Transversal Choice.
+
+For an equivalence relation at the evaluation point, a transversal of its extension there, chosen in the metatheory, is by extensional fullness the extension of an element of the domain; the equivalence and transversal conditions are unboxed.
+
+*General argument `arguments/transversal-choice-extensionally-full`. It requires that The model is extensionally full at every object: every set of tuples from the domains at an object is the extension, at the identity arrow, of an element of the domain of the matching relational type there. Here: The model is ideally full, hence extensionally full at both objects (Appendix D, the remark after Definition D.3): for a set $R$ of tuples from the domains at an object $V$, the intension with value $R$ at every arrow out of $V$ into $V$ and $\varnothing$ at the arrows into the other object depends only on the codomain, so is pinned down by $\varnothing$; it is in the domain with extension $R$ at $1_V$. By Cian Dorr (observation); recorded by Claude Fable 5.1 (Anthropic), on a question of Zachary Goodsell, after an observation of Christopher Sun, 2026-09-25.*
+
+*Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* The Relational Choice and Transversal Choice arguments merged into one, stated for every extensionally full model.
+
+*Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr's direction:* Moved from the group finite-support-one-object to the topic. Its first sentence, deriving extensional fullness from ideal fullness, is now the group's reason for meeting extensionally-full.
+
+
+## Notes
+
+Atomlessness with Distinctness-Necessity (at every type) but not □Distinctness-Necessity at type $t$; so, by the recorded result that ND and BF at $t$ give □ND, BF fails at $t$ too. Replaces GPT-6 Astra's Ω-valued model with current distinctness (Kodsi's pull request #18, item 20), which witnessed the same separations.
+
+## Sources
+
+- **Dorr 29 Oct** — Cian Dorr, construction of 29 October 2026, in conversation with Claude Opus 5.5 (Anthropic).
+- **Classicism** — Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, Appendix D, Definitions D.1–D.3 and Proposition D.4, pp. 73–74 (ideally full action models).
+
+<p class='cert'>Record: <code>topics/classicism/models/finite-support-permutations-and-doubled-points.yaml</code></p>
+
+## Paper references
+
+- **Background: Classicism.** Bacon, Andrew, and Cian Dorr (2024). Classicism. In Peter Fritz and Nicholas K. Jones (eds), Higher-Order Metaphysics, Oxford University Press, pp. 109–190. The map was built from the draft dated 16 May 2023, 87 pages, which does not differ materially from the published version; all page, proposition and footnote locators in this map refer to that draft's numbering. — Appendix D, pp. 73–74. The ideally full finitely pinned action models over a category of sets.

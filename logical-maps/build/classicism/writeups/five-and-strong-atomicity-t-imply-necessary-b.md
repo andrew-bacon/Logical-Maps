@@ -17,7 +17,7 @@ Strong atoms are necessarily strong: if $\operatorname{SAtom}(w)$, then 5 gives 
 
 ## Notes
 
-5 is equivalent to ND in C, by the recorded results, so this gives □ND from ND and Strong Atomicity (type t). 5 is used only to make the strong atoms necessarily possible. atoms do not suffice: ND with □Atomicity (type t) does not give □ND, by the recorded models.
+5 is equivalent to ND in C, by the recorded results, so this gives □ND from ND and Strong Atomicity (type t). 5 is used only to make the strong atoms necessarily possible. Atoms do not suffice: ND with □Atomicity (type t) does not give □ND, by the recorded models.
 
 Strengthened by [[five-and-self-atomicity-t-imply-necessary-b]]: self-atoms serve for strong atoms.
 

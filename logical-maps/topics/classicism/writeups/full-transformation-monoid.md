@@ -72,10 +72,15 @@ intersections give Boolean Completeness, at every object. The singleton
 and at the target of every arrow, giving boxed Actuality.
 
 The existing full-model arguments give Relational Choice (using choice in
-the metatheory), and extensional fullness gives Transversal Choice. The
-one-object argument gives No Pure Contingency; this also supplies boxed
-forms via the map's recorded implications where applicable. The entries
-are in ZFC: no choiceless variation is asserted.
+the metatheory), and extensional fullness gives Transversal Choice.
+The general argument [[no-pure-contingency-one-object]] gives
+[[no-pure-contingency-r|No Pure Contingency]] for both instances: a closed
+pure sentence has no parameters to transport, and every arrow has the same
+codomain object. Its truth value is therefore the same after every arrow.
+The model records inherit this argument through the group's
+`one-object-action-model` condition; no duplicate verdict is needed. This
+also supplies boxed forms via the map's recorded implications where applicable.
+The entries are in ZFC: no choiceless variation is asserted.
 
 ## Why two instances
 
@@ -96,15 +101,12 @@ Both instances also satisfy boxed Intensional Choice: the general
 `intensional-choice-well-ordering` argument applies because full domains
 contain all codomain-dependent intensions (using ZFC). Thus this verdict
 for the infinite instance does not rely on the finite-arrows argument.
-Against upstream main at 6f15ef5 (28 October 2026), the map has 158
-principles. Its closure settles 142 for the two-element carrier (77 true,
-65 false) and 154 for the natural-number carrier (75 true, 79 false).
-The remaining 16 and 4 verdicts concern the newly added self-atom
-principles and remain unknown in these records. These are counts for
-that map snapshot, not claims about every expressible higher-order
-principle. The executable
-check `checks/bacon_model_witnesses.py` exhausts the two-element monoid's
-low-type witnesses; it is not a formalization of the full type hierarchy.
+Verdicts below use the corrected general arguments merged in upstream PR #23
+(30 October 2026 UTC). The earlier closure counts are withdrawn: they included
+consequences of the invalid Analytic Necessitism failure argument. Recompute
+closure from the current source records rather than reusing that snapshot.
+The executable check `checks/bacon_model_witnesses.py` exhausts the two-element
+monoid's low-type witnesses; it is not a formalization of the full type hierarchy.
 
 
 ## Selected verdicts after map closure
@@ -125,10 +127,81 @@ low-type witnesses; it is not a formalization of the full type hierarchy.
 | Distinctness-Preserving Collapse | fails | fails |
 | Strong Actuality | holds | fails |
 | Axioms of Infinity at e and t | fails | holds |
-| Analytic Necessitism | holds | fails |
+| Analytic Necessitism | holds (vacuously) | holds |
+| Second-Order Analytic Necessitism | holds (vacuously) | holds |
 
-The finite Analytic Necessitism verdict is vacuous. The infinite failure
-uses the existing full-model argument for an unretracted arrow with an
-infinite domain. Signature verdicts are relative to the explicitly fixed
-interpretation of all constants as top; they are not claims about the
-paper's separate fundamental-language expansion.
+## Analytic Necessitism: correction of 31 October 2026
+
+Correction and the model-specific construction below by OpenAI Codex,
+prompted by Andrew Bacon. The withdrawal and general replacement arguments
+are due to Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in
+[upstream PR #23](https://github.com/zwlgzwlg/Logical-Maps/pull/23).
+These are mathematical arguments; no new Lean verification is claimed.
+
+The finite verdicts are vacuous: every type has a finite domain, so none
+can carry a complete ordered field. For the natural-number instance, the
+map now applies [[analytic-necessitism-codomain-fixed]] (and the corresponding
+individual-domain argument): the group meets `one-object-action-model` and
+`codomain-intensions`, and this member meets `infinitely-many-propositions`
+and `infinitely-many-individuals`. The recorded conclusions are Analytic
+Necessitism and Second-Order Analytic Necessitism. At type $tt$, the
+replacement builds the continuum on constant intensions fixed by every arrow.
+
+The previous negative verdict relied on
+[[analytic-necessitism-unretracted-arrow]], now withdrawn. Its invalid step
+was to infer $y\in A$ from $k\cdot y=k\cdot x\in A_k$ and inextensibility
+of $A$. Inextensibility requires a preimage in $A$, which $x$ already
+provides; it does not put every preimage into $A$. Necessary distinctness
+only prohibits identifying two members, not identifying a member with an
+outsider. The existence of an unretracted arrow remains correct and still
+supports other verdicts, such as failure of B.
+
+No Pure Contingency concerns closed pure sentences. It gives the necessity
+of the existence of a real number structure when one exists, but moving
+from $\Box\exists\mathfrak R\,\operatorname{Real}(\mathfrak R)$ to a
+particular rigid, necessarily real number structure needs a further argument.
+Here one can give that argument at every relational carrier type, including
+$t$, rather than relying on a witness at $tt$ alone.
+
+Fix $a\in\mathbb N$ and choose distinct subsets $E_r\subseteq\mathbb N$
+indexed by $r\in\mathbb R$. For $b\in\mathbb N$, put
+
+$$p_r^b=\{g\in M:g(b)\in E_r\}.$$
+
+Then $h\cdot p_r^b=p_r^{h(b)}$, and for each $b$ the propositions $p_r^b$
+are pairwise distinct: constant transformations distinguish any two
+unequal $E_r$. At an arbitrary relational type
+$\sigma=\sigma_1\cdots\sigma_m t$, including $m=0$, let $z_r^b$ be the
+intension with value the full argument domain at $g$ if $g(b)\in E_r$,
+and the empty extension otherwise. All argument domains are nonempty, so
+these are again pairwise distinct for fixed $b$, and
+$h\cdot z_r^b=z_r^{h(b)}$.
+
+For each $k$-ary relation $T\subseteq\mathbb R^k$, fullness supplies the
+intension $S_T^b$ whose extension at $g$ is
+
+$$\{(z_{r_1}^{g(b)},\ldots,z_{r_k}^{g(b)}):(r_1,\ldots,r_k)\in T\}.$$
+
+Its transport along $h$ is $S_T^{h(b)}$. At every arrow, these extensions
+are exactly the images of the earlier extensions under transport. Thus
+they are persistent and inextensible, including after every further arrow.
+Use the carrier $S_{\mathbb R}^a$, the usual real order, sum, product and
+natural-number relations $S_T^a$, and $z_0^a,z_1^a$. At every arrow the
+structure is a copy of the full real field, so is complete for every
+internal subproperty; its carrier members remain distinct. It is a rigid,
+necessarily real number structure at $\sigma$.
+
+For each arity $k$, take the intension with extension
+$\{S_T^{g(a)}:T\subseteq\mathbb R^k\}$ at $g$. Transport again carries its
+extension exactly onto the next extension, making this a rigid property
+of rigid relations. Every relation on the carrier at any arrow determines
+a subset of $\mathbb R^k$, and hence agrees there with one of these members.
+These are represented powers of every finite arity. At type $e$ the
+antecedent is false: the individual domain is countable and fullness
+precludes a countable complete ordered field. This verifies both schemas
+for this particular model without asserting that the general replacement's
+single-type construction by itself establishes all type instances.
+
+Signature verdicts are relative to the explicitly fixed interpretation of
+all constants as top; they are not claims about the paper's separate
+fundamental-language expansion.

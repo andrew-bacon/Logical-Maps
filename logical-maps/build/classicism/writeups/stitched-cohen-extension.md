@@ -13,7 +13,7 @@
 - **Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **□Atomicity (type t).** Necessarily, every non-bottom proposition has an atom below it.
 - **□BF (type t).** Necessarily, if every proposition necessarily has a property, then necessarily every proposition has it.
-- **□Truth implies ND-necessity.** Necessarily, every truth is ND-necessary. In C this is the identity $\Box_{\ne}=\lambda p\, .\,p$.
+- **□Truths are ND-necessary.** Necessarily, every truth is ND-necessary. In C this is the identity $\Box_{\ne}=\lambda p\, .\,p$.
 - **Non-contingency of the Continuum Hypothesis.** Either necessarily every real number structure satisfies the continuum hypothesis, or necessarily every real number structure falsifies it: that every subproperty of the continuum either injects into the natural numbers or is in bijection with the continuum. One sentence for each type $\sigma$.
 - **¬ Infinity Schema (type t).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
 - **¬ Rigid Power.** If a relation is rigid, so is the property of being a rigid relation that entails it.
@@ -80,7 +80,7 @@ Both propositions of $C_0$ are transports of root propositions, so a property of
 
 *From the group *Stitched forcing models*, shared argument `stitched-forcing#barcan-t`. By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-19.*
 
-### Holds □Truth implies ND-necessity.
+### Holds □Truths are ND-necessary.
 
 At the root let $q$ be the proposition true at the root alone. $\Diamond q$ is true at the root and false at $C_0$, so for any truth $p$, $\Box(\Diamond q\to p)$ holds, and $q$ witnesses $\Box_{\ne}p$. At $C_0$, where necessity is truth, $\top$ witnesses $\Box_{\ne}p$ for every truth $p$.
 

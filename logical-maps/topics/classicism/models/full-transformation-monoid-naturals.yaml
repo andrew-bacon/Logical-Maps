@@ -12,9 +12,12 @@ sources:
   natural D^D action on p. 46.
 - 'Additional verdicts: OpenAI Codex, prompted by Andrew Bacon, 28 October 2026; shared group arguments
   and the accompanying write-up.'
+- OpenAI Codex, prompted by Andrew Bacon, 31 October 2026; correction following upstream PR 23 and
+  the model-specific Analytic Necessitism construction in writeups/full-transformation-monoid.md.
 source_names:
 - Substitution Structures
 - Codex, prompted by Bacon
+- Codex correction, prompted by Bacon
 references:
 - paper: bacon-substitution-structures-2019
   role: origin
@@ -38,3 +41,8 @@ arguments: []
 notes: The full model validates necessary Atomicity at all relational types (full-atomicity), as well
   as necessary Rigid Comprehension. It does not refute Atomicity. Its natural action on individuals is
   essential to the type-e Barcan counterexample.
+  Both instances inherit No Pure Contingency from no-pure-contingency-one-object through the group.
+  The Analytic Necessitism failure formerly claimed in the write-up is withdrawn with upstream PR 23;
+  analytic-necessitism-codomain-fixed supplies the current positive verdicts for Analytic Necessitism
+  and its second-order form. The corrected write-up includes a model-specific construction at every
+  relational type and represented powers; no new Lean verification is claimed.

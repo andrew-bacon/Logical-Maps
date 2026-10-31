@@ -1,4 +1,4 @@
-# □Self-Atomicity (type t) ⇒ □Two-hat necessity implies ND-necessity
+# □Self-Atomicity (type t) ⇒ □Two-hat necessities are ND-necessary
 
 <p class='cert'>Result — Source: Misc.; produced by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026.</p>
 
@@ -8,7 +8,7 @@
 
 ## Conclusion
 
-- **□Two-hat necessity implies ND-necessity.** Necessarily, whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat. In C this is the identity $\hat{\hat\Box}=\Box_{\ne}$.
+- **□Two-hat necessities are ND-necessary.** Necessarily, whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat. In C this is the identity $\hat{\hat\Box}=\Box_{\ne}$.
 
 ## Proof
 

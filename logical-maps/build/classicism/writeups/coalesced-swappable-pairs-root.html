@@ -1,0 +1,423 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Coalesced sum: free root over a Henkin model with independently swappable pairs</title><link rel="icon" type="image/png" href="../favicon.png">
+<style>/* Fixed forest palette, adapted from the supplied style example.
+   Semantic and source hues retain their meaning in both modes. */
+:root {
+  --bg: #f3f1e8;
+  --panel: #f8f7f0;
+  --panel-2: #e9ecdf;
+  --line: #d4d9c9;
+  --line-strong: #a2ae97;
+  --ink: #283c28;
+  --ink-2: #4f604b;
+  --ink-3: #5f6d58;
+  --accent: #356044;
+  --link-hover: #914b30;
+  --human: #3e7052;
+  --assisted: #746044;
+  --ai: #a35b36;
+  --derived: #7b8271;
+  --indep: #a0483a;
+  --open: #e2e5d9;
+  --open-ink: #65705f;
+  --conj: #896b27;
+  --node-fill: #f8f7f0;
+  --node-stroke: #98a68b;
+  --junction: #52634b;
+  --hl: #e0e7cd;
+  --focus: #914b30;
+  --badge-ink: #ffffff;
+  --warning-bg: #f4e6dc;
+  --source-forest: #3e7052;
+  --source-rust: #a25336;
+  --source-ochre: #896b27;
+  --source-slate: #4c7279;
+  --source-berry: #80556d;
+  --source-olive: #69753c;
+  --source-misc: #696d61;
+  --shadow: 0 4px 24px rgb(40 60 40 / 12%);
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --serif: var(--sans);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: #0e1912;
+  --panel: #142018;
+  --panel-2: #1d2b20;
+  --line: #304332;
+  --line-strong: #596e51;
+  --ink: #d7dfca;
+  --ink-2: #b3c1a7;
+  --ink-3: #96aa8d;
+  --accent: #a6c699;
+  --link-hover: #dfab89;
+  --human: #94bc95;
+  --assisted: #c1ad8d;
+  --ai: #dca17b;
+  --derived: #83937c;
+  --indep: #e09b86;
+  --open: #243327;
+  --open-ink: #a2b398;
+  --conj: #d0b36b;
+  --node-fill: #19261c;
+  --node-stroke: #627957;
+  --junction: #b3c1a7;
+  --hl: #30422a;
+  --focus: #dfab89;
+  --badge-ink: #0e1912;
+  --warning-bg: #32251f;
+  --source-forest: #94bc95;
+  --source-rust: #dca17b;
+  --source-ochre: #d0b36b;
+  --source-slate: #95bcc1;
+  --source-berry: #c5a0b7;
+  --source-olive: #b6c383;
+  --source-misc: #a9b09c;
+  --shadow: 0 4px 24px rgb(0 0 0 / 25%);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); scrollbar-color: var(--line-strong) var(--bg); }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.6 var(--sans); }
+button, input, select { font: inherit; color: inherit; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--link-hover); text-decoration: underline; text-underline-offset: 3px; }
+input[type="checkbox"] { accent-color: var(--accent); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+::selection { background: var(--hl); color: var(--ink); }
+.theme-toggle { border: 0; padding: 6px 0; background: transparent; color: var(--ink-2); cursor: pointer; font: 13px var(--sans); white-space: nowrap; }
+.theme-toggle:hover { color: var(--link-hover); }
+.display-toggles { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 16px; }
+.theme-toggle[aria-pressed="true"] { color: var(--accent); }
+
+/* A prismatic name: one rainbow wheel around a point in the word, spinning;
+   --prism-x and --prism-y move that point off the middle.
+   Pure spectral stops, turned by a registered angle rather than a hue
+   filter, which would muddy them. */
+@property --prism { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+.prismatic { font-weight: 600; color: transparent; background: conic-gradient(from var(--prism) at var(--prism-x, 50%) var(--prism-y, 50%), #ff1a1a, #ff8a00, #ffd000, #22c33a, #00a8f0, #3d4bff, #b026ff, #ff1a1a); -webkit-background-clip: text; background-clip: text; animation: prism-spin 6s linear infinite; }
+/* As a link it keeps the gradient on hover, under an accent underline. */
+a.prismatic, a.prismatic:hover { color: transparent; }
+a.prismatic:hover { text-decoration-color: var(--accent); }
+@keyframes prism-spin { to { --prism: 360deg; } }
+@media (prefers-reduced-motion: reduce) { .prismatic { animation: none; } }
+
+/* Standalone write-ups use the same quiet, ruled typography as the map. */
+html:has(body.writeup-page) { background: var(--bg); }
+body.writeup-page { max-width: 82ch; margin: 3em auto; padding: 0 1.5em 3em; font: 16px/1.7 var(--sans); overflow-wrap: anywhere; }
+.writeup-nav { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 16px; border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 24px; font-size: 13px; }
+.writeup-page h1 { font-size: 1.4em; line-height: 1.4; margin: 0 0 20px; color: var(--ink); }
+.writeup-page h2 { font-size: 1.15em; line-height: 1.4; margin: 1.8em 0 .5em; padding-top: 14px; border-top: 1px solid var(--line); }
+.writeup-page h3 { font-size: 1em; }
+.writeup-page p { margin: 0 0 12px; }
+.writeup-page .cert { color: var(--ink-2); font-size: .85em; }
+.writeup-page code, .writeup-page pre { font: .85em/1.6 var(--mono); color: var(--ink); }
+.writeup-page pre { padding: 14px; background: var(--panel-2); overflow-x: auto; }
+.writeup-page blockquote { color: var(--ink-2); border-left: 2px solid var(--line-strong); margin-left: 0; padding-left: 20px; }
+.writeup-page math[display="block"] { display: block; overflow-x: auto; padding: 8px 0; }
+.writeup-page table { display: block; overflow-x: auto; border-collapse: collapse; }
+.writeup-page th, .writeup-page td { border-bottom: 1px solid var(--line); padding: 8px 12px; }
+@media (max-width: 600px) {
+  body.writeup-page { margin: 1.5em auto; padding: 0 1em 2em; }
+}
+@media print {
+  :root, :root[data-theme="dark"] { --bg: white; --ink: #283c28; --ink-2: #4f604b; --accent: #356044; --line: #d4d9c9; color-scheme: light; }
+  .writeup-nav { display: none; }
+  body.writeup-page { max-width: none; margin: 0; padding: 0; }
+}
+
+/* Teal-grey, muted rust, deep teal and warm stone. Screen-only overrides
+   preserve print styling. */
+@media screen {
+  :root {
+    --bg: #ebf1f1;
+    --panel: #e1eae9;
+    --panel-2: #d0dfde;
+    --line: #c0cecd;
+    --line-strong: #849997;
+    --ink: #303b3a;
+    --ink-2: #4a5a59;
+    --ink-3: #526160;
+    --accent: #884932;
+    --link-hover: #6f3827;
+    --derived: #6f8180;
+    --open: #d6e2e1;
+    --open-ink: #526160;
+    --node-fill: #f1f6f6;
+    --node-stroke: #7f9391;
+    --junction: #596b6a;
+    --human: #2f6b66;
+    --source-forest: #2f6b66;
+    --hl: #e6ddd0;
+    --focus: #884932;
+    --shadow: 0 4px 24px rgb(48 59 58 / 10%);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #171e1d;
+    --panel: #202a29;
+    --panel-2: #2b3736;
+    --line: #3d4b4a;
+    --line-strong: #6b817f;
+    --ink: #dbe8e7;
+    --ink-2: #b9cbca;
+    --ink-3: #a6bdbb;
+    --accent: #e2ad92;
+    --link-hover: #f0c3aa;
+    --derived: #87a09e;
+    --open: #303d3c;
+    --open-ink: #aec6c4;
+    --node-fill: #263130;
+    --node-stroke: #738d8b;
+    --junction: #b3cbc9;
+    --human: #86c0b6;
+    --source-forest: #86c0b6;
+    --hl: #463f37;
+    --focus: #e2ad92;
+    --badge-ink: #171e1a;
+    --shadow: 0 4px 24px rgb(0 0 0 / 24%);
+  }
+}
+
+/* Shared Okabe–Ito palette: https://jfly.uni-koeln.de/color/#pallet
+   Loaded after topic themes. Sky blue and orange distinguish positive and
+   negative relations; darker inks keep small labels readable in light mode.
+   Neutral surfaces are identical across maps. Print uses the shared theme. */
+@media screen {
+  :root[data-palette="colourblind"] {
+    --bg: #f4f5f6;
+    --panel: #ffffff;
+    --panel-2: #e9edf0;
+    --line: #d0d6da;
+    --line-strong: #87949d;
+    --ink: #202930;
+    --ink-2: #45535d;
+    --ink-3: #586670;
+    --accent: #0072b2;
+    --link-hover: #925f00;
+    --human: #0072b2;
+    --assisted: #80506a;
+    --ai: #a44500;
+    --derived: #687780;
+    --indep: #925f00;
+    --open: #e9edf0;
+    --open-ink: #586670;
+    --conj: #80506a;
+    --node-fill: #ffffff;
+    --node-stroke: #7a8b96;
+    --junction: #45535d;
+    --hl: #dce4ea;
+    --focus: #0072b2;
+    --badge-ink: #ffffff;
+    --warning-bg: #fff0ce;
+    --source-forest: #56b4e9;
+    --source-rust: #e69f00;
+    --source-ochre: #d55e00;
+    --source-slate: #0072b2;
+    --source-berry: #cc79a7;
+    --source-olive: #009e73;
+    --source-misc: #687780;
+    --rel-positive: #56b4e9;
+    --rel-negative: #e69f00;
+    --shadow: 0 4px 24px rgb(32 41 48 / 12%);
+  }
+  :root[data-palette="colourblind"][data-theme="dark"] {
+    --bg: #111820;
+    --panel: #18222b;
+    --panel-2: #23303b;
+    --line: #354550;
+    --line-strong: #718492;
+    --ink: #edf2f5;
+    --ink-2: #c1ced7;
+    --ink-3: #a5b5c1;
+    --accent: #56b4e9;
+    --link-hover: #e69f00;
+    --human: #56b4e9;
+    --assisted: #cc79a7;
+    --ai: #e69f00;
+    --derived: #91a1ad;
+    --indep: #e69f00;
+    --open: #23303b;
+    --open-ink: #a5b5c1;
+    --conj: #cc79a7;
+    --node-fill: #1c2933;
+    --node-stroke: #8094a3;
+    --junction: #c1ced7;
+    --hl: #354654;
+    --focus: #56b4e9;
+    --badge-ink: #111820;
+    --warning-bg: #352b18;
+    --source-misc: #91a1ad;
+    --shadow: 0 4px 24px rgb(0 0 0 / 25%);
+  }
+  /* Source swatches use the unmodified palette; outlined badges allow their
+     text to keep the normal contrast on both light and dark surfaces. */
+  :root[data-palette="colourblind"] .badge.source {
+    background: var(--panel);
+    color: var(--ink);
+    border: 1px solid var(--source-color);
+    border-left-width: 4px;
+  }
+}
+</style>
+<script>/* Apply before paint; share the preference between every map and write-up. */
+(() => {
+  const key = 'pmap-theme';
+  const paletteKey = 'pmap-palette';
+  const system = window.matchMedia?.('(prefers-color-scheme: dark)');
+  let preference;
+  let palette;
+  try { preference = localStorage.getItem(key); } catch (_) {}
+  try { palette = localStorage.getItem(paletteKey); } catch (_) {}
+  if (!['light', 'dark'].includes(preference)) preference = null;
+  if (palette !== 'colourblind') palette = 'default';
+  function apply(theme) {
+    document.documentElement.dataset.theme = theme;
+    document.querySelectorAll('[data-theme-toggle]').forEach(button => {
+      button.textContent = theme === 'dark' ? '[Light mode]' : '[Dark mode]';
+      button.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
+    });
+  }
+  function applyPalette() {
+    document.documentElement.dataset.palette = palette;
+    document.querySelectorAll('[data-colourblind-toggle]').forEach(button => {
+      button.setAttribute('aria-pressed', String(palette === 'colourblind'));
+      button.textContent = `[Colourblind mode: ${palette === 'colourblind' ? 'on' : 'off'}]`;
+    });
+  }
+  const initial = () => preference || (system?.matches ? 'dark' : 'light');
+  apply(initial());
+  applyPalette();
+  document.addEventListener('DOMContentLoaded', () => {
+    apply(initial());
+    applyPalette();
+    document.querySelectorAll('[data-theme-toggle]').forEach(button => {
+      button.addEventListener('click', () => {
+        preference = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        apply(preference);
+        try { localStorage.setItem(key, preference); } catch (_) {}
+      });
+    });
+    document.querySelectorAll('[data-colourblind-toggle]').forEach(button => {
+      button.addEventListener('click', () => {
+        palette = palette === 'colourblind' ? 'default' : 'colourblind';
+        applyPalette();
+        try { localStorage.setItem(paletteKey, palette); } catch (_) {}
+      });
+    });
+  });
+  system?.addEventListener('change', () => { if (!preference) apply(initial()); });
+  window.addEventListener('storage', event => {
+    if (event.key === key || event.key === null) {
+      preference = ['light', 'dark'].includes(event.newValue) ? event.newValue : null;
+      apply(initial());
+    }
+    if (event.key === paletteKey || event.key === null) {
+      palette = event.newValue === 'colourblind' ? 'colourblind' : 'default';
+      applyPalette();
+    }
+  });
+})();
+</script>
+<link rel="stylesheet" href="../math/katex.min.css">
+<script defer src="../math/katex.min.js"></script>
+<script defer src="../math/contrib/auto-render.min.js"></script>
+<script defer src="../math/math.js"></script></head><body class="writeup-page"><nav class="writeup-nav" aria-label="Write-up navigation"><a href="../index.html">← Back to map</a><div class="display-toggles"><button type="button" class="theme-toggle" data-theme-toggle>[Dark mode]</button><button type="button" class="theme-toggle" data-colourblind-toggle aria-label="Colourblind mode" aria-pressed="false">[Colourblind mode: off]</button></div></nav><header id="title-block-header"><h1>Coalesced sum: free root over a Henkin model with independently swappable pairs</h1></header><p class="cert">
+Model — Source: Misc.; produced by GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 26 October 2026; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 28 October 2026.
+</p>
+<h2 id="package">Package</h2>
+<ul>
+<li><strong>□Intensional Choice.</strong> Necessarily, if a property is necessarily instantiated, then some property entailing it is necessarily uniquely instantiated.</li>
+<li><strong>□BF.</strong> Necessarily, the Barcan Formula holds at every type. The predicate formulation closes the formula schema using lambda abstraction.</li>
+<li><strong>□Boolean Completeness (type t).</strong> Necessarily, every property of propositions has a greatest lower bound.</li>
+<li><strong>□Self-atoms are strong atoms.</strong> Necessarily, at each relational type, every self-atom is a strong atom: it necessarily entails every entity of the type or its negation.</li>
+<li><strong>Axiom of Infinity (type e).</strong> There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.</li>
+<li><strong>Arithmetic Necessitism.</strong> Given that necessarily zero is not a successor and successor is injective on numbers, the numbers at <span class="math inline">\sigma</span> form a rigid property with necessarily distinct instances. One sentence for each type <span class="math inline">\sigma</span>.</li>
+<li><strong>Necessity of Arithmetic.</strong> Every arithmetical sentence is either necessarily true or necessarily false, given that possibly zero is not a successor and successor is injective on numbers, where the numbers are the finite cardinalities of properties of a type <span class="math inline">\sigma</span>. One sentence for each type <span class="math inline">\sigma</span> and each arithmetical sentence at <span class="math inline">\sigma</span>.</li>
+<li><strong>□Tame Rigidity.</strong> Necessarily, every weakly rigid relation, including a proposition, is rigid.</li>
+<li><strong>□Rigid Power.</strong> Necessarily, if a relation is rigid, so is the property of being a rigid relation that entails it.</li>
+<li><strong>□Truths are ND-necessary.</strong> Necessarily, every truth is ND-necessary. In C this is the identity <span class="math inline">\Box_{\ne}=\lambda p\, .\,p</span>.</li>
+<li><strong>□Persistent Comprehension.</strong> Necessarily, every relation, including a proposition, is coextensive with a persistent one.</li>
+<li><strong>Necessity of Second-Order Analysis.</strong> Every second-order analytical sentence is either true in every real number structure in every possible world or false in every real number structure in every possible world. One sentence for each type <span class="math inline">\sigma</span> and each second-order analytical sentence.</li>
+<li><strong>Relational Choice.</strong> Every serial binary relation has a functional subrelation.</li>
+<li><strong>Actuality.</strong> There is a true proposition that entails every true proposition.</li>
+<li><strong>Truths are ND-necessary.</strong> Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.</li>
+<li><strong>¬ Modalized Relational Choice.</strong> Every necessarily serial relation is entailed by a necessarily functional relation.</li>
+<li><strong>¬ Infinity Schema (type t).</strong> There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.</li>
+<li><strong>¬ Countable Boolean Completeness.</strong> Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable relative to a type <span class="math inline">\sigma</span> when it injects into the finite cardinalities of properties of type <span class="math inline">\sigma</span>; one instance for each <span class="math inline">\sigma</span>.</li>
+<li><strong>¬ B for pure sentences.</strong> The B instance for every closed sentence in the pure language.</li>
+<li><strong>¬ Witnessed Possibility.</strong> For pure-formulas P with free variables among a finite tuple x, and distinct matching nonlogical constants c, a witness to P entails that P at those constants is possible.</li>
+<li><strong>¬ Separated Structure.</strong> For each typed nonlogical constant c and closed same-typed terms F,G not containing c, equality after application to c implies equality of F and G.</li>
+<li><strong>¬ Independence (signature Σ).</strong> No constant of Sigma is a pure operation applied to other constants: for a closed pure term A and distinct constants c, d_1,…,d_n with n ≥ 0, c differs from A applied to the d’s. With n = 0, no constant denotes a pure entity.</li>
+<li><strong>¬ Maximalism (signature Σ).</strong> The Maximalism schema for the fixed nonlogical signature Σ: every closed identity of its language not provable in C(Σ) is false.</li>
+</ul>
+<h2 id="definition">Definition</h2>
+<p>The component is a one-world Henkin model <span class="math inline">H</span>, as an action model with one object and only its identity arrow. Its individuals are labels <span class="math inline">L_i</span> and options <span class="math inline">A_i^0,A_i^1</span> (<span class="math inline">i\in\mathbb N</span>). The group <span class="math inline">\{0,1\}^{\mathbb N}</span> acts on them, <span class="math inline">g</span> fixing each <span class="math inline">L_i</span> and sending <span class="math inline">A_i^\epsilon</span> to <span class="math inline">A_i^{\epsilon+g(i)}</span> (mod 2), and on functions by conjugation; its domain of each relational type <span class="math inline">\sigma\tau</span> holds the functions from <span class="math inline">D_\sigma</span> to <span class="math inline">D_\tau</span> fixed by every group element that is <span class="math inline">0</span> on some finite set, and <span class="math inline">D_t=\{0,1\}</span>. These domains are closed under the logical constants and lambda abstraction, terms denoting equivariantly, so <span class="math inline">H</span> is an extensional Henkin model of C. Coalesce <span class="math inline">H</span> at a new root as in Definition E.2. The root’s individuals are those of <span class="math inline">H</span>, carried to themselves by the arrow into <span class="math inline">H</span>. Evaluation point: the root. Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each denotes the top element of its type.</p>
+<p>The root has one distinguished arrow to the root of each component, and every arrow from the root into a component factors through it.</p>
+<p>Root domains are as full as compatibility allows: a root proposition is a choice, for each component, of a proposition of that component’s root domain, together with a truth value at the root’s identity arrow, and a root entity of a relational type is likewise a family of component entities with a root component that is an arbitrary function of the root arguments.</p>
+<p><em>A member of the group Coalesced sums at a new root, which supplies this definition with the record’s settings, and the arguments marked as shared.</em></p>
+<h2 id="arguments">Arguments</h2>
+<h3 id="fails-modalized-relational-choice.">Fails Modalized Relational Choice.</h3>
+<p>At the types <span class="math inline">e</span> and <span class="math inline">e</span>. In <span class="math inline">H</span>, let <span class="math inline">U</span> relate each <span class="math inline">L_i</span> to <span class="math inline">A_i^0</span> and <span class="math inline">A_i^1</span>, and each option to <span class="math inline">L_0</span>: it is fixed by the whole group, so in the domain, and serial. No functional subrelation <span class="math inline">S</span> of <span class="math inline">U</span> is in the domain of <span class="math inline">H</span>: <span class="math inline">S</span> is fixed by the group elements that are <span class="math inline">0</span> on some finite set <span class="math inline">N</span>; for <span class="math inline">i\notin N</span>, the element swapping the two options of pair <span class="math inline">i</span> alone fixes <span class="math inline">S</span> and <span class="math inline">L_i</span>, so it carries the <span class="math inline">S</span>-output of <span class="math inline">L_i</span>, one of those options, to a second <span class="math inline">S</span>-output. Now let <span class="math inline">R</span> be the root relation with the universal relation as its root component and <span class="math inline">U</span> as its component in <span class="math inline">H</span>: it is necessarily serial. A necessarily functional <span class="math inline">S\le R</span> would have as its component in <span class="math inline">H</span> a functional subrelation of <span class="math inline">U</span> in the domain of <span class="math inline">H</span>. So Modalized Relational Choice fails, and with it □Relational Choice.</p>
+<p><em>Address: <code>coalesced-swappable-pairs-root#modalized-relational-choice</code>. By GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 26 October 2026; checked and recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-28.</em></p>
+<h3 id="holds-intensional-choice.">Holds □Intensional Choice.</h3>
+<p>In <span class="math inline">H</span>, a property with an instance <span class="math inline">b</span> entails the haecceity of <span class="math inline">b</span>, which is in the domain, being fixed by whatever fixes <span class="math inline">b</span>. At the root, let <span class="math inline">F</span> be necessarily instantiated: its root component has an instance <span class="math inline">a</span> and its component in <span class="math inline">H</span> an instance <span class="math inline">b</span>. The root property with root component <span class="math inline">\{a\}</span> and the haecceity of <span class="math inline">b</span> as its component entails <span class="math inline">F</span> and is necessarily uniquely instantiated; it does not matter that <span class="math inline">b</span> need not be the image of <span class="math inline">a</span>. So Intensional Choice holds at both objects.</p>
+<p><em>Address: <code>coalesced-swappable-pairs-root#intensional-choice</code>. By GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 26 October 2026; checked and recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-28.</em></p>
+<h3 id="holds-bf-boolean-completeness-type-t.">Holds □BF, □Boolean Completeness (type t).</h3>
+<p>The arrow into <span class="math inline">H</span> carries the root domains onto those of <span class="math inline">H</span> at every type: an entity of <span class="math inline">H</span> is the component of the root entity with that component and an empty root component, and individuals go to themselves. So if <span class="math inline">Fx</span> is necessary for every root <span class="math inline">x</span>, <span class="math inline">F</span>’s component holds of every entity of <span class="math inline">H</span>, and <span class="math inline">\forall x\,.\,Fx</span> is necessary: BF holds at the root, and trivially in the one-world <span class="math inline">H</span>. There are four root propositions and two in <span class="math inline">H</span>, so Boolean Completeness (type <span class="math inline">t</span>) holds at both objects.</p>
+<p><em>Address: <code>coalesced-swappable-pairs-root#barcan-and-completeness</code>. By GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 26 October 2026; checked and recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-28.</em></p>
+<h3 id="holds-self-atoms-are-strong-atoms.">Holds □Self-atoms are strong atoms.</h3>
+<p>In <span class="math inline">H</span> the singletons of tuples are fixed by whatever fixes their entries, so <span class="math inline">H</span> is atomic, and in a one-world model atoms are strong atoms. At the root, the singletons of root tuples with empty <span class="math inline">H</span>-component, and the entities with empty root extension and a singleton <span class="math inline">H</span>-component, are atoms, every nonzero entity is above one, and both kinds are strong atoms. A self-atom instantiated at the root is an atom; one instantiated only at <span class="math inline">a</span> has empty root extension and an atom of <span class="math inline">H</span> as <span class="math inline">H</span>-component, so it is an atom too.</p>
+<p><em>Address: <code>coalesced-swappable-pairs-root#self-atoms</code>. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-28.</em></p>
+<h3 id="holds-axiom-of-infinity-type-e.-fails-infinity-schema-type-t.">Holds Axiom of Infinity (type e). Fails Infinity Schema (type t).</h3>
+<p>Root extensions are arbitrary, so the property of cardinalities that hold at the root only of properties with finite root extension is in the domain, and the argument infinitely-many-individuals runs at the root, which has infinitely many individuals. There are four propositions at the root and two in <span class="math inline">H</span>.</p>
+<p><em>Address: <code>coalesced-swappable-pairs-root#infinity</code>. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-28.</em></p>
+<h3 id="fails-countable-boolean-completeness.">Fails Countable Boolean Completeness.</h3>
+<p>At <span class="math inline">\sigma=e</span>. Let <span class="math inline">P_i</span> have empty root extension and <span class="math inline">H</span>-component <span class="math inline">\{A_i^0\}</span>. An upper bound has an <span class="math inline">H</span>-component containing every <span class="math inline">A_i^0</span>, fixed by the swaps vanishing on some finite <span class="math inline">N</span>, so containing <span class="math inline">A_i^1</span> for <span class="math inline">i\notin N</span>; removing one such <span class="math inline">A_j^1</span> gives a smaller upper bound. The numbers at <span class="math inline">e</span> at the root are the distinct numerals, root extensions being arbitrary, and the relation pairing <span class="math inline">P_i</span> with the <span class="math inline">i</span>th numeral is in the domain, so the family is countable relative to <span class="math inline">e</span>.</p>
+<p><em>Address: <code>coalesced-swappable-pairs-root#countable-boolean-completeness</code>. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-28.</em></p>
+<h3 id="holds-arithmetic-necessitism-necessity-of-arithmetic.">Holds Arithmetic Necessitism, Necessity of Arithmetic.</h3>
+<p>The numerals are fixed by the whole group, so the property of being a numeral is admitted in <span class="math inline">H</span> and at the root, and the numbers at every type are the numerals, crisply. A type is finite at both objects (those built from <span class="math inline">t</span> alone) or infinite at both; at a finite type <span class="math inline">I_\sigma</span> fails everywhere, and at an infinite one every relation among numerals is fixed by the group, so sum and product are standard at both objects. Persistence and inextensibility of the numbers are as in arithmetic-necessitism-extensionally-full.</p>
+<p><em>Address: <code>coalesced-swappable-pairs-root#arithmetic</code>. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-28.</em></p>
+<h3 id="holds-tame-rigidity-rigid-power.">Holds □Tame Rigidity, □Rigid Power.</h3>
+<p>In the one-world <span class="math inline">H</span> every relation is rigid, so rigidity at the root is weak rigidity there, and Tame Rigidity holds. Rigid Power: a rigid root <span class="math inline">F</span> with root extension <span class="math inline">S</span> has as <span class="math inline">H</span>-component the least finitely supported superset <span class="math inline">T</span> of <span class="math inline">a\cdot S</span>. For a finitely supported <span class="math inline">T&#39;\subseteq T</span>, let <span class="math inline">S&#39;</span> be the members of <span class="math inline">S</span> sent into <span class="math inline">T&#39;</span>: any finitely supported <span class="math inline">T&#39;&#39;\supseteq a\cdot S&#39;</span> gives the finitely supported superset <span class="math inline">(T&#39;&#39;\cap T&#39;)\cup(T\setminus T&#39;)</span> of <span class="math inline">a\cdot S</span>, so <span class="math inline">T&#39;&#39;\supseteq T&#39;</span>, and <span class="math inline">(S&#39;,T&#39;)</span> is rigid and below <span class="math inline">F</span>. So the rigid relations below <span class="math inline">F</span> in <span class="math inline">H</span> are the transports of rigid ones at the root, and the power property of <span class="math inline">F</span> is weakly rigid, hence rigid. In <span class="math inline">H</span> the principle is trivial.</p>
+<p><em>Address: <code>coalesced-swappable-pairs-root#tame-rigidity</code>. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-28.</em></p>
+<h3 id="holds-truths-are-nd-necessary-persistent-comprehension.">Holds □Truths are ND-necessary, □Persistent Comprehension.</h3>
+<p>Both hold at the root (recorded) and trivially in the one-world <span class="math inline">H</span>.</p>
+<p><em>Address: <code>coalesced-swappable-pairs-root#one-world-component</code>. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-28.</em></p>
+<h3 id="fails-b-for-pure-sentences.">Fails B for pure sentences.</h3>
+<p>Distinctness-Necessity at <span class="math inline">t</span> fails at the root and holds in the one-world <span class="math inline">H</span>; so its negation is true at the root and not possible at <span class="math inline">a</span>.</p>
+<p><em>Address: <code>coalesced-swappable-pairs-root#pure-b</code>. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-28.</em></p>
+<h3 id="holds-necessity-of-second-order-analysis.">Holds Necessity of Second-Order Analysis.</h3>
+<p>At the root real number structures are standard, root extensions being arbitrary. In <span class="math inline">H</span>, a real number structure has a carrier and relations fixed by the swaps vanishing on some finite <span class="math inline">N</span>, each of which acts as an order-automorphism of a complete ordered field, hence trivially on the carrier; so every subset of the carrier and every relation on it is admitted, and the structure is standard with full second-order quantification. So an analytical sentence is true in every real number structure at every world, or false in every one.</p>
+<p><em>Address: <code>coalesced-swappable-pairs-root#second-order-analysis</code>. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-28.</em></p>
+<h3 id="holds-relational-choice.">Holds Relational Choice.</h3>
+<p>The functionality of a subrelation is evaluated at the root’s identity arrow only, while the subrelation condition is boxed; so for a serial root relation take the subrelation whose root component is a functional choice from the root component, by choice in the metatheory, and whose component parts are empty. Where some component refutes Relational Choice at its root, as when the components are complete for C, its necessitation fails.</p>
+<p><em>From the group </em>Coalesced sums at a new root<em>, shared argument <code>coalesced-sums#relational-choice-free-root</code>. It requires that A root entity of a relational type has a root component that is an arbitrary function of the root arguments. Here: The root domains are as full as compatibility allows. By Cian Dorr, recorded by Claude Fable 5.1 (Anthropic), 2026-09-22.</em></p>
+<p><em>Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr’s direction:</em> The three complete members’ copies stated once; “Its necessitation fails, since some component refutes Relational Choice at its root” became conditional on that, since in the all-finite-domains member every component satisfies Relational Choice.</p>
+<h3 id="holds-actuality.">Holds Actuality.</h3>
+<p>The singleton root proposition witnesses Actuality.</p>
+<p><em>Source: Classicism, Appendix E, p. 83. From the group </em>Coalesced sums at a new root<em>, shared argument <code>coalesced-sums#actuality-singleton-root</code>. It requires that The actual-world proposition <span class="math inline">a</span> is in the domain and entails every truth, and no world outside <span class="math inline">a</span> sees a world in <span class="math inline">a</span>. Here: The singleton root proposition, true at the root’s identity arrow and nowhere in a component, is in the domain and entails every truth; the components have no arrows back to the root (Classicism, Appendix E, p. 83, on the distinctness-preserving collapse). By Andrew Bacon and Cian Dorr, 2026-09-17.</em></p>
+<p><em>Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr’s direction:</em> The three members’ versions stated once.</p>
+<h3 id="holds-truths-are-nd-necessary.">Holds Truths are ND-necessary.</h3>
+<p>For a true <span class="math inline">p</span>, <span class="math inline">a\le p</span>, since <span class="math inline">a</span> entails every truth. Take <span class="math inline">q:=a</span> in the definition of <span class="math inline">\Box_{\ne}p</span>: at a world in <span class="math inline">a</span>, <span class="math inline">p</span> holds; at a world outside <span class="math inline">a</span>, <span class="math inline">\Diamond a</span> fails. So every truth is <span class="math inline">\Box_{\ne}</span>-necessary.</p>
+<p><em>General argument <code>arguments/dpc-isolated-actual-world</code>. It requires that The actual-world proposition <span class="math inline">a</span> is in the domain and entails every truth, and no world outside <span class="math inline">a</span> sees a world in <span class="math inline">a</span>. Here: The singleton root proposition, true at the root’s identity arrow and nowhere in a component, is in the domain and entails every truth; the components have no arrows back to the root (Classicism, Appendix E, p. 83, on the distinctness-preserving collapse). By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 2026-09-23.</em></p>
+<p><em>Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr’s direction:</em> The finite-support, symmetric and full action models’ copies (eight records) stated once for the topic; what varied, why no world outside the actual world sees back into it, is each record’s reason for meeting actual-world-isolated.</p>
+<h3 id="fails-witnessed-possibility-separated-structure-independence-signature-σ-maximalism-signature-σ.">Fails Witnessed Possibility, Separated Structure, Independence (signature Σ), Maximalism (signature Σ).</h3>
+<p>Let <span class="math inline">c\in\Sigma</span> have relational type <span class="math inline">\tau</span>, so <span class="math inline">c=\top_\tau</span> necessarily. Witnessed Possibility fails for the pure formula <span class="math inline">x\ne\top_\tau</span>, witnessed by <span class="math inline">\bot_\tau</span> but impossible of <span class="math inline">c</span>; Separated Structure fails since <span class="math inline">\lambda x\, .\,x</span> and <span class="math inline">\lambda x\, .\,\top_\tau</span> agree on <span class="math inline">c</span> and differ; Independence (signature Σ) fails since <span class="math inline">c</span> denotes what the closed pure term <span class="math inline">\top_\tau</span> denotes; Distinctness Maximalism (signature Σ) fails since <span class="math inline">c=\top_\tau</span> is a true identity that C(Σ) does not prove.</p>
+<p><em>General argument <code>arguments/sigma-top</code>. It requires that Every constant of Σ is relational, and each denotes the top element of its type. Here: This is the interpretation the construction fixes. By Claude Fable 5.1 (Anthropic), at Cian Dorr’s request, 2026-09-22.</em></p>
+<p><em>Revised 2026-10-02 by Claude Opus 5.5 (Anthropic), at Cian Dorr’s direction:</em> Moved from the group finite-support-one-object to the topic; it uses nothing about the model.</p>
+<h2 id="notes">Notes</h2>
+<p>Recorded for the separation of Relational Choice with Intensional Choice from Modalized Relational Choice: Relational Choice holds at the root by choice in the metatheory (the group’s argument relational-choice-free-root), while the choice-free component <span class="math inline">H</span> has no selector for its pair relation. Astra’s note also shows that the root satisfies its “logical observer” separation principles, which the map does not record. An earlier version of the note took as its component a Henkin model of ZF without choice, as in henkin-without-relational-choice; <span class="math inline">H</span> removes the need for that model’s set-theoretic hypothesis.</p>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><strong>Astra via Kodsi 26 Oct</strong> — GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, Free root over a choiceless Henkin leaf, and Classical Henkin leaf with independently swappable pairs, research notes of 26 October 2026, §§1–7 and §§1–4 (unpaginated), in Daniel Kodsi’s pull request #18 of 26 October 2026 (branch classicism-integration-2026-10-26 of github.com/dkodsi/Logical-Maps).</li>
+<li><strong>Classicism</strong> — Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, Appendix E, Definition E.2, pp. 80–83.</li>
+</ul>
+<p class="cert">
+Record: <code>topics/classicism/models/coalesced-swappable-pairs-root.yaml</code>
+</p>
+<h2 id="paper-references">Paper references</h2>
+<ul>
+<li><strong>Background: Classicism.</strong> Bacon, Andrew, and Cian Dorr (2024). Classicism. In Peter Fritz and Nicholas K. Jones (eds), Higher-Order Metaphysics, Oxford University Press, pp. 109–190. The map was built from the draft dated 16 May 2023, 87 pages, which does not differ materially from the published version; all page, proposition and footnote locators in this map refer to that draft’s numbering. — Appendix E, Definition E.2, pp. 80–83. The coalesced sum, here of a single one-world component.</li>
+</ul>
+</body></html>

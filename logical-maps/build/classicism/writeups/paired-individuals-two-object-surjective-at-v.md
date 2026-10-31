@@ -5,19 +5,37 @@
 ## Package
 
 - **□BF.** Necessarily, the Barcan Formula holds at every type. The predicate formulation closes the formula schema using lambda abstraction.
+- **Atomlessness.** Atomlessness in the displayed closed propositional formulation.
+- **Necessity of Arithmetic.** Every arithmetical sentence is either necessarily true or necessarily false, given that possibly zero is not a successor and successor is injective on numbers, where the numbers are the finite cardinalities of properties of a type $\sigma$. One sentence for each type $\sigma$ and each arithmetical sentence at $\sigma$.
+- **B for sentences of Σ.** The B instance for every closed sentence of the language of the fixed signature Sigma.
+- **B for pure sentences.** The B instance for every closed sentence in the pure language.
+- **□Tame Rigidity.** Necessarily, every weakly rigid relation, including a proposition, is rigid.
+- **□Rigid Power.** Necessarily, if a relation is rigid, so is the property of being a rigid relation that entails it.
+- **Analytic Necessitism.** If there could be a real number structure, there is a rigid one that is necessarily a real number structure: a rigid property with necessarily distinct instances, with rigid order, addition, multiplication and natural numbers, which necessarily form a complete ordered field. One sentence for each type $\sigma$.
+- **Second-Order Analytic Necessitism.** If there could be a real number structure, there is a rigid one, necessarily a real number structure, together with represented powers of every arity up to $n$: rigid properties of rigid relations among the structure's elements that necessarily represent every relation on them. One sentence for each type $\sigma$ and each $n\ge1$.
 - **Arithmetic Necessitism.** Given that necessarily zero is not a successor and successor is injective on numbers, the numbers at $\sigma$ form a rigid property with necessarily distinct instances. One sentence for each type $\sigma$.
+- **Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
+- **Infinity Schema (type e).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
 - **Axiom of Infinity (type t).** There are not finitely many propositions. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **Infinity Schema (type t).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
 - **□Intensional Choice.** Necessarily, if a property is necessarily instantiated, then some property entailing it is necessarily uniquely instantiated.
 - **□Relational Choice.** Necessarily, every serial binary relation has a functional subrelation.
 - **□Transversal Choice.** Necessarily, every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
+- **□Atomlessness.** Necessarily, every possible proposition has a possible proposition strictly below it.
+- **□Atoms are self-atoms.** Necessarily, at each relational type, every atom is a self-atom: necessarily, if it is instantiated, it is an atom.
+- **□Atoms are strong atoms.** Necessarily, at each relational type, every atom is a strong atom: it necessarily entails every entity of the type or its negation.
+- **□Self-atoms are atoms.** Necessarily, at each relational type, every self-atom is an atom.
+- **□Self-atoms are strong atoms.** Necessarily, at each relational type, every self-atom is a strong atom: it necessarily entails every entity of the type or its negation.
 - **Necessity of Second-Order Analysis.** Every second-order analytical sentence is either true in every real number structure in every possible world or false in every real number structure in every possible world. One sentence for each type $\sigma$ and each second-order analytical sentence.
 - **Transversal Choice.** Every equivalence relation, at any type including e, has a transversal, that is, a property with exactly one instance in each of its cells.
-- **¬ Two-hat necessity implies ND-necessity.** Whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat.
-- **¬ Truth implies 5-necessity.** Every truth is 5-necessary: necessary under every S5 operator.
+- **¬ Two-hat necessities are ND-necessary.** Whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat.
+- **¬ Truths are 5-necessary.** Every truth is 5-necessary: necessary under every S5 operator.
 - **¬ Countable Boolean Completeness.** Every countable property of entities of a relational type has a least upper bound in that type, where a property is countable relative to a type $\sigma$ when it injects into the finite cardinalities of properties of type $\sigma$; one instance for each $\sigma$.
 - **¬ Boolean Completeness (type t).** Every property of propositions has a greatest lower bound.
-- **¬ Analytic Necessitism.** If there could be a real number structure, there is a rigid one that is necessarily a real number structure: a rigid property with necessarily distinct instances, with rigid order, addition, multiplication and natural numbers, which necessarily form a complete ordered field. One sentence for each type $\sigma$.
+- **¬ No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
+- **¬ □5-necessities are two-hat necessary.** Necessarily, whatever is 5-necessary is two-hat necessary. In C this is the identity $\Box_5=\hat{\hat\Box}$.
+- **¬ Weakly Inextensible Comprehension.** Every relation, including a proposition, is coextensive with a weakly inextensible one.
+- **¬ Self-Atomicity (type t).** Every possible proposition is entailed by a self-atom: a possible proposition that necessarily, if true, is an atom, that is, one that entails that it is the actual world.
 - **¬ Witnessed Possibility.** For pure-formulas P with free variables among a finite tuple x, and distinct matching nonlogical constants c, a witness to P entails that P at those constants is possible.
 - **¬ Separated Structure.** For each typed nonlogical constant c and closed same-typed terms F,G not containing c, equality after application to c implies equality of F and G.
 - **¬ Independence (signature Σ).** No constant of Sigma is a pure operation applied to other constants: for a closed pure term A and distinct constants c, d_1,…,d_n with n ≥ 0, c differs from A applied to the d’s. With n = 0, no constant denotes a pure entity.
@@ -42,13 +60,13 @@ Every arrow is surjective on individuals, hence on finite sets of individuals, s
 
 *Address: `paired-individuals-two-object-surjective-at-v#necessary-barcan`. By Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 2026-10-14.*
 
-### Fails Two-hat necessity implies ND-necessity.
+### Fails Two-hat necessities are ND-necessary.
 
 At $V$ let $p:=\mathrm{fix}^{VV}_{\{\star\}}$, the true proposition that $\star$ is fixed. For any true $q$ at $V$, pinned by $N_q$, the surjection $u\colon V\to W_0$ that is the identity on $\mathbb N$ and sends $\star$ into a block $B$ disjoint from $N_q$ lies in $\Diamond q$ (a surjection fixing $N_q$ and collapsing $B$ onto $\star$ brings it back into $\mathrm{fix}^{VV}_{N_q}$) but not in $\hat\Diamond p$, since every $v$ with $vu\in p$ collapses $B$ onto $\star$ and so cannot return to $\mathrm{fix}^{00}_B$. So B fails for $\Box_{\ne}$ at $p$. By Proposition D11 of The Bounds of Possibility, $p\to\hat{\hat\Box}\hat\Diamond p$, so $\hat\Diamond p$ is two-hat necessary; it is not ND-necessary, which is what the failure of B says. Actuality fails: the true propositions $\mathrm{fix}^{VV}_N$ descend strictly.
 
 *Address: `paired-individuals-two-object-surjective-at-v#nd-necessity-not-b`. By Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 2026-10-14.*
 
-### Fails Truth implies 5-necessity.
+### Fails Truths are 5-necessary.
 
 As in the record evaluated at $W_0$, the three-hat operator $\hat{(3)}\Box$ is necessarily B in this model, so it is an S5 operator and $\Box_5\le\hat{(3)}\Box$; at $V$ its cluster on $\mathrm{fix}^{VV}_N$ is the set of surjective block-bijections of $V$ fixing $\star$ and block-injective on $N$, which contains arrows moving any given point of $\mathbb N$, so the truth $\mathrm{fix}^{VV}_N$ is not 5-necessary.
 
@@ -58,7 +76,51 @@ As in the record evaluated at $W_0$, the three-hat operator $\hat{(3)}\Box$ is n
 
 *Like `paired-individuals-two-object#countable-boolean-completeness-t`: The arrows are the surjective block-respecting maps, and the evaluation object is $V$; the family consists of arrows $V\to V$, the block $\{\star\}$ is sent to $\star$ in the witnesses, and every arrow used can be made surjective by mapping the infinitely many blocks after those named onto every block. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-16.*
 
+### Holds Atomlessness.
+
+At either object let $p\ne\bot$ be pinned down by a finite $N$ and contain $h$. Take a block $B$ disjoint from $N$ and its $\pi$-image and $b\in B$: some arrow agreeing with $h$ on $N$ sends $b$ to $h(b)$ and some sends it elsewhere, both in $p$ (in the surjective model the infinitely many other blocks keep it surjective), so the arrows in $p$ sending $b$ to $h(b)$ lie strictly between $\bot$ and $p$.
+
+*Address: `paired-individuals-two-object-surjective-at-v#atomlessness`. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-29.*
+
+### Holds Necessity of Arithmetic.
+
+Both objects are extensionally full with infinitely many individuals, so at each the numbers at every type are the distinct numerals with standard sum and product, and an arithmetical sentence holds at every world iff it is true.
+
+*Address: `paired-individuals-two-object-surjective-at-v#necessity-of-arithmetic`. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-29.*
+
+### Holds B for sentences of Σ, B for pure sentences.
+
+There are arrows each way between the objects, so from every world both identities are reachable, and a closed sentence holds at an arrow iff at its codomain's identity; so $\varphi\to\Box\Diamond\varphi$. With Σ top a closed Σ-sentence denotes what a pure one does.
+
+*Address: `paired-individuals-two-object-surjective-at-v#signature-b`. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-29.*
+
+### Fails No Pure Contingency, □5-necessities are two-hat necessary.
+
+No Pure Contingency fails at $W_0$ (paired-individuals-two-object-surjective), so some closed pure sentence true at $W_0$ is false at $V$, whose negation is then true at $V$ and false along an arrow to $W_0$. And 5-necessities are two-hat necessary fails at $W_0$, which $V$ reaches.
+
+*Address: `paired-individuals-two-object-surjective-at-v#at-v`. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, in a trawl for cheaply settled verdicts; checked by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-29.*
+
+### Holds □Tame Rigidity.
+
+*Write-up: [paired-individuals-two-object](paired-individuals-two-object.html). Like `paired-individuals-two-object#tame-rigidity`: The arrows are the surjective block-respecting maps and the evaluation object is $V$. The write-up proves the argument at both objects in both categories: every arrow it constructs completes a finite block prescription, and can be made surjective by mapping the infinitely many unused pairs onto the uncovered pairs and collapsing one more onto $\star$ if needed; at $V$ the finite sets used contain $\star$. Address: `paired-individuals-two-object-surjective-at-v#tame-rigidity`. By GPT-6 Astra (OpenAI), prompted by Cian Dorr; checked and recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-29.*
+
+### Fails Weakly Inextensible Comprehension.
+
+*Write-up: [paired-individuals-two-object](paired-individuals-two-object.html). Like `paired-individuals-two-object#weakly-inextensible-comprehension`: The arrows are the surjective block-respecting maps and the evaluation object is $V$. The write-up proves the argument at both objects in both categories: every arrow it constructs completes a finite block prescription, and can be made surjective by mapping the infinitely many unused pairs onto the uncovered pairs and collapsing one more onto $\star$ if needed; at $V$ the finite sets used contain $\star$. Address: `paired-individuals-two-object-surjective-at-v#weakly-inextensible-comprehension`. By GPT-6 Astra (OpenAI), prompted by Cian Dorr; checked and recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-29.*
+
+### Holds □Rigid Power.
+
+*Write-up: [paired-individuals-two-object](paired-individuals-two-object.html). Like `paired-individuals-two-object#rigid-power`: The arrows are the surjective block-respecting maps and the evaluation object is $V$. The write-up proves the argument at both objects in both categories: every arrow it constructs completes a finite block prescription, and can be made surjective by mapping the infinitely many unused pairs onto the uncovered pairs and collapsing one more onto $\star$ if needed; at $V$ the finite sets used contain $\star$. Address: `paired-individuals-two-object-surjective-at-v#rigid-power`. By GPT-6 Astra (OpenAI), prompted by Cian Dorr; checked and recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-29.*
+
+### Holds Analytic Necessitism, Second-Order Analytic Necessitism.
+
+At type $\tau:=tt$. For each object $V$ reachable from the evaluation point fix an injection $A\mapsto E^A_V$ from the sets of natural numbers into the sets of propositions at $V$, possible as these are infinitely many, and let $Y_A$ be the intension whose value at an arrow into $V$ is $E^A_V$: it depends only on the codomain, so it is in the domain, and its transport along an arrow into $V$ is the $Y_A$ of $V$, distinct for distinct $A$. Carry the real numbers onto the $Y_A$ and take as relations the codomain-only intensions whose value at $V$ is the corresponding set of tuples of the $Y_A$ of $V$. Along every arrow the structure is carried to the like structure at the target, an isomorphic copy, which is a real number structure there: bounded sets of its elements have least upper bounds among them and every inductive subproperty contains its natural numbers. Such a structure is rigid, its instances are necessarily distinct, and it is necessarily a real number structure; and the codomain-only intension of type $((\tau)^kt)t$ whose value at each object is the set of codomain-only $k$-ary relations among the carrier there is a represented power of arity $k$, since at every world each $k$-ary relation agrees on the carrier with one of them. So the consequents of Analytic Necessitism and of its second-order form hold, and both principles hold. (The argument of the withdrawn analytic-necessitism-unretracted-arrow would refute this structure; its step from inextensibility is the gap.)
+
+*General argument `arguments/analytic-necessitism-codomain-everywhere`. It requires that At every object reachable from the evaluation point, the domain contains every intension whose value at an arrow depends only on the arrow's codomain. Here: The model is ideally full with the ideal of finite sets and no symmetry group, so every intension pinned down by the empty set, i.e. whose value at an arrow depends only on the codomain, is in the domain at every object (Classicism, Definition D.3). It requires that There are infinitely many propositions at every object reachable from the evaluation point. Here: At both objects the propositions that an arrow sends $0$ to $n$, one for each $n$, are pinned down by $\{0\}$ and pairwise distinct. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, auditing the withdrawn arguments for the failure of Analytic Necessitism, 2026-10-29.*
+
 ### Fails Analytic Necessitism.
+
+*Withdrawn 2026-10-29 by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, after a trawl subagent's report: The step from $k\cdot y=k\cdot x\in X_k$ to $Xy$ (or $y\in X_h$) by inextensibility does not follow: inextensibility bounds a rigid carrier from above, by the transports of its actual instances, and puts nothing new into its actual extension. The conclusion is false in many of the models the argument was applied to: entities fixed by every arrow, or transported injectively, can carry a rigid real number structure that is necessarily one (see analytic-necessitism-codomain-fixed and analytic-necessitism-full-continuum).*
 
 Let $k$ be an arrow out of the evaluation object $w$ with $ka=kb$ for two distinct points $a$ and $b$ of the set the arrows act on, and let $q$ be the set of arrows $j$ out of $w$ with $ja\ne jb$. It contains the identity, is pinned down by $\{a,b\}$, is symmetric (an arrow separates $a$ from $b$ iff its composite with a permutation of the points does), and contains no arrow $j\circ k$. Let $\tau$ be $tt$, or $tttt$ in the case noted below. No entity $x$ of type $\tau$ at $w$ is determined by its transport along $k$: let $y$ agree with $x$ except at the arrows in $q$, where the top entity of the argument type of $\tau$ is added to its value or removed from it. Then $y$ is pinned down by a finite set along with $x$, is symmetric if $x$ is, so is in the domain; it differs from $x$ and has $k\cdot y=k\cdot x$, transport along $k$ reading only the values at the arrows after $k$. If $\mathfrak R$ were a rigid real number structure at $w$ of type $\tau$, necessarily a real number structure, with carrier $X$ (Background, Analysis), an instance $x$ of $X$ and $y$ as above would give $k\cdot y=k\cdot x\in X_k$ by persistence, $Xy$ by inextensibility, and $k\cdot y\ne k\cdot x$ by the necessary distinctness of the instances: so $X$ has no instance. The antecedent of Analytic Necessitism holds, however, at type $\tau$. The propositions are infinitely many and, in the recorded instances, include a copy of the natural numbers, so by extensional fullness the entities of type $tt$, which include one with any set of propositions as extension at the identity, include a copy of the sets of natural numbers and so of the reals, whose order, sum, product and natural numbers are the extensions at the identity of relations in the domain; the structure is complete, every subset of its carrier being the extension of a subproperty, so $\exists\mathfrak R\,.\,\operatorname{Real}_{tt}(\mathfrak R)$ holds at $w$. (Should the propositions be infinite without including a copy of the natural numbers, the same holds at type $tttt$, the sets of sets of propositions being Dedekind-infinite in ZF.) So Analytic Necessitism fails. No choice is used.
 
@@ -75,6 +137,12 @@ The numbers at a type $\sigma$ are the instances of $\mathbb N_\sigma$, the leas
 As the argument arithmetic-necessitism-extensionally-full, with the property of being a numeral supplied by pinning. The intension $Z$ whose value at each arrow $k$ out of the evaluation object is the set of numerals $\mathbf 0_\sigma,\operatorname{Suc}_\sigma\mathbf 0_\sigma,\ldots$ at the target of $k$ is pinned down by the empty set, its value depending on the arrow only through its target, and is symmetric, transport along a permutation of the points carrying numerals to numerals, as transport along any arrow does, numerals being closed terms; so it is in the domain, and so is its transport $k\cdot Z$ to any reachable object, whose extension there is exactly the numerals. Hence at every reachable object the numbers at $\sigma$, the instances of the least inductive property, are exactly the numerals, which transport to numerals; persistence and, given $\Box I^*_\sigma$, necessary distinctness are theorems of C, and inextensibility follows as in that argument. So Arithmetic Necessitism holds at every type. No choice is used.
 
 *General argument `arguments/arithmetic-necessitism-finitely-pinned`. It requires that Write an entity of relational type at the evaluation object as its intension $k\mapsto Y_k$ over the arrows $k$ out of it, so that $Y\bar a$ holds at $k$ iff $k\cdot\bar a\in Y_k$; $Y$ is pinned down by a finite set $N$ of the points the arrows act on when $Y_k=Y_{k^{\prime}}$ for any arrows $k,k^{\prime}$ agreeing on $N$. Every entity in a domain is pinned down by a finite set, in the sense that $k\cdot x=k^{\prime}\cdot x$ for arrows agreeing on it, and the domain of each relational type at the evaluation object holds every intension pinned down by a finite set (in a symmetric model, every symmetric one). Here: Ideally full with the ideal of finite sets: every intension pinned down by a finite set is in the domain, and every entity in a domain is one. By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-23.*
+
+### Holds Axiom of Infinity (type e), Infinity Schema (type e).
+
+The Infinity schema holds, there being $n$ distinct individuals for every $n$. For the Axiom: by extensional fullness the domain has a property of cardinalities true of $Z$ exactly when every property $Z$ holds of has a finite extension. It holds of $\mathbf{0}_e$, which holds only of empty properties, and passes from $Y$ to $\operatorname{Suc}_e Y$, which holds of $F$ only if $Y$ holds of $F$ less one of its instances. So every finite cardinality has it, and none holds of the universal property, whose extension is infinite.
+
+*General argument `arguments/infinitely-many-individuals`. It requires that The model is extensionally full at every object: every set of tuples from the domains at an object is the extension, at the identity arrow, of an element of the domain of the matching relational type there. Here: Ideally full action models are extensionally full (Classicism, p. 74). It requires that There are infinitely many individuals at the evaluation world. Here: The individuals are infinite at both objects. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-06.*
 
 ### Holds Axiom of Infinity (type t), Infinity Schema (type t).
 
@@ -93,6 +161,14 @@ For each object $U$ and type $\sigma$ fix a well-ordering $<_U$ of the domain $D
 At any reachable object $W$, let $U$ be a serial relation in the domain there. Using the axiom of choice, pick for each $x$ a $y$ with $(x,y)$ in the extension of $U$ at the identity, and let $S$ be the intension whose value at every arrow $W\to W$ is the graph of this choice and whose value at arrows with any other codomain is empty; it depends only on the codomain, so the condition puts it in the domain, and at the identity it is a functional subrelation of $U$. Likewise a set of representatives of an equivalence relation at $W$, made into such an intension, is a transversal. Since $W$ was any reachable object, both principles hold at every world.
 
 *General argument `arguments/necessary-relational-choice-codomain-intensions`. It requires that At every object reachable from the evaluation point, the domain contains every intension whose value at an arrow depends only on the arrow's codomain. Here: The model is ideally full with the ideal of finite sets and no symmetry group, so every intension pinned down by the empty set, i.e. whose value at an arrow depends only on the codomain, is in the domain at every object (Classicism, Definition D.3). By Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 2026-10-14.*
+
+### Holds □Atomlessness, □Atoms are self-atoms, □Atoms are strong atoms, □Self-atoms are atoms, □Self-atoms are strong atoms. Fails Self-Atomicity (type t).
+
+An atom of a relational type at a reachable object would give, by existential projection, an atom of type $t$ there (as in the argument no-actuality-no-self-atoms), which the condition excludes; so no reachable object has an atom of any relational type, nor a self-atom, since a self-atom is an atom where it is instantiated. All four bridge principles therefore hold vacuously at every type and every reachable object, and Self-Atomicity (type t) fails at the evaluation point.
+
+*General argument `arguments/no-atoms-no-self-atoms`. It requires that At every object reachable from the evaluation point, no proposition in the domain is an atom. Here: At either object let $p\ne\bot$ be pinned down by a finite $N$ and contain $h$. Take a block $B$ disjoint from $N$ and its $\pi$-image and $b\in B$: some arrow agreeing with $h$ on $N$ sends $b$ to $h(b)$ and some sends it elsewhere, both in $p$ (in the surjective model the infinitely many other blocks keep it surjective), so the arrows in $p$ sending $b$ to $h(b)$ lie strictly between $\bot$ and $p$. By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026.*
+
+*Revised 2026-10-29 by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr:* Now also gives □Atomlessness, which the condition states: a reachable object with no atom of type $t$ satisfies Atomlessness. The bridge verdicts and the failure of Self-Atomicity are now also consequences of □Atomlessness by recorded results.
 
 ### Holds Necessity of Second-Order Analysis.
 
@@ -121,7 +197,7 @@ For an equivalence relation at the evaluation point, a transversal of its extens
 
 ## Notes
 
-The surjective paired-individuals model with its other object as the evaluation point. Necessary BF holds at every type, yet Two-hat necessity implies ND-necessity fails here, so BF at no type, boxed or not, yields that collapse. Built in the conversation of 14 October 2026.
+The surjective paired-individuals model with its other object as the evaluation point. Necessary BF holds at every type, yet Two-hat necessities are ND-necessary fails here, so BF at no type, boxed or not, yields that collapse. Built in the conversation of 14 October 2026.
 
 ## Sources
 

@@ -41,6 +41,20 @@ def check_transformation_model():
             assert atom <= p
             assert all(q in (frozenset(), atom) for q in P if q <= atom)
     assert len(M) == 4 and len(P) == 16
+    # Finite analogue of the corrected continuum carrier (31 October 2026):
+    # labels E survive every transport, although arbitrary outsiders can collapse
+    # onto a member. This checks the transport identities, not infinite analysis.
+    carriers = {b: {E: frozenset(g for g in M if g[b] in E)
+                    for E in powerset(X)} for b in X}
+    for b, h in product(X, M):
+        assert len(set(carriers[b].values())) == len(powerset(X))
+        assert all(transport(h, p) == carriers[h[b]][E]
+                   for E, p in carriers[b].items())
+        assert {transport(h, p) for p in carriers[b].values()} == set(carriers[h[b]].values())
+    member = carriers[0][frozenset((0,))]
+    outsider = member ^ frozenset((one,))
+    assert outsider not in set(carriers[0].values())
+    assert transport(k, outsider) == transport(k, member)
 
 
 def check_kripke_instances():
@@ -62,4 +76,4 @@ def check_kripke_instances():
 if __name__ == '__main__':
     check_transformation_model()
     check_kripke_instances()
-    print('Bacon model witnesses: finite B/BF/equality/atomicity checks passed.')
+    print('Bacon model witnesses: finite B/BF/equality/atomicity/carrier-transport checks passed.')

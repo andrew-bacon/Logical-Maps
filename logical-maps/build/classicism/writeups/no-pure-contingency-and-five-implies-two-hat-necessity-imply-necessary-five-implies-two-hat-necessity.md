@@ -1,15 +1,15 @@
-# No Pure Contingency ∧ 5-necessity implies two-hat necessity ⇒ □5-necessity implies two-hat necessity
+# No Pure Contingency ∧ 5-necessities are two-hat necessary ⇒ □5-necessities are two-hat necessary
 
 <p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_pure_contingency_and_five_implies_two_hat_necessity_imply_necessary_five_implies_two_hat_necessity`; produced by Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 14 October 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
 
 ## Premises
 
 - **No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
-- **5-necessity implies two-hat necessity.** Whatever is 5-necessary is two-hat necessary.
+- **5-necessities are two-hat necessary.** Whatever is 5-necessary is two-hat necessary.
 
 ## Conclusion
 
-- **□5-necessity implies two-hat necessity.** Necessarily, whatever is 5-necessary is two-hat necessary. In C this is the identity $\Box_5=\hat{\hat\Box}$.
+- **□5-necessities are two-hat necessary.** Necessarily, whatever is 5-necessary is two-hat necessary. In C this is the identity $\Box_5=\hat{\hat\Box}$.
 
 ## Proof
 

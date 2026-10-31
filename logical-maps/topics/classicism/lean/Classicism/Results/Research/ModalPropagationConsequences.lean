@@ -28,7 +28,7 @@ theorem strong_atomicity_rc_necessary_barcan_relational :
     RigidComprehension (((σ → Prop) → Prop) → Prop) →
     NecBarcanRelational (σ → Prop) := fun sl slHigh rc rcHigh =>
   strong_atomicity_rc_power_implies_necessary_barcan sl rc
-    (ModalPropagationRigidPower.atom_rc_rigid_power
+    (atom_rc_rigid_power
       (Proofs.strong_atomicity_r_implies_atomicity_r slHigh) rc rcHigh)
 
 /-- The explicit finite dependency set behind full-schema comprehension propagation. -/

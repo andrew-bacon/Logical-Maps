@@ -1,0 +1,505 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Symmetric surjection products with free-word gluing</title><link rel="icon" type="image/png" href="../favicon.png">
+<style>/* Fixed forest palette, adapted from the supplied style example.
+   Semantic and source hues retain their meaning in both modes. */
+:root {
+  --bg: #f3f1e8;
+  --panel: #f8f7f0;
+  --panel-2: #e9ecdf;
+  --line: #d4d9c9;
+  --line-strong: #a2ae97;
+  --ink: #283c28;
+  --ink-2: #4f604b;
+  --ink-3: #5f6d58;
+  --accent: #356044;
+  --link-hover: #914b30;
+  --human: #3e7052;
+  --assisted: #746044;
+  --ai: #a35b36;
+  --derived: #7b8271;
+  --indep: #a0483a;
+  --open: #e2e5d9;
+  --open-ink: #65705f;
+  --conj: #896b27;
+  --node-fill: #f8f7f0;
+  --node-stroke: #98a68b;
+  --junction: #52634b;
+  --hl: #e0e7cd;
+  --focus: #914b30;
+  --badge-ink: #ffffff;
+  --warning-bg: #f4e6dc;
+  --source-forest: #3e7052;
+  --source-rust: #a25336;
+  --source-ochre: #896b27;
+  --source-slate: #4c7279;
+  --source-berry: #80556d;
+  --source-olive: #69753c;
+  --source-misc: #696d61;
+  --shadow: 0 4px 24px rgb(40 60 40 / 12%);
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --serif: var(--sans);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: #0e1912;
+  --panel: #142018;
+  --panel-2: #1d2b20;
+  --line: #304332;
+  --line-strong: #596e51;
+  --ink: #d7dfca;
+  --ink-2: #b3c1a7;
+  --ink-3: #96aa8d;
+  --accent: #a6c699;
+  --link-hover: #dfab89;
+  --human: #94bc95;
+  --assisted: #c1ad8d;
+  --ai: #dca17b;
+  --derived: #83937c;
+  --indep: #e09b86;
+  --open: #243327;
+  --open-ink: #a2b398;
+  --conj: #d0b36b;
+  --node-fill: #19261c;
+  --node-stroke: #627957;
+  --junction: #b3c1a7;
+  --hl: #30422a;
+  --focus: #dfab89;
+  --badge-ink: #0e1912;
+  --warning-bg: #32251f;
+  --source-forest: #94bc95;
+  --source-rust: #dca17b;
+  --source-ochre: #d0b36b;
+  --source-slate: #95bcc1;
+  --source-berry: #c5a0b7;
+  --source-olive: #b6c383;
+  --source-misc: #a9b09c;
+  --shadow: 0 4px 24px rgb(0 0 0 / 25%);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); scrollbar-color: var(--line-strong) var(--bg); }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.6 var(--sans); }
+button, input, select { font: inherit; color: inherit; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--link-hover); text-decoration: underline; text-underline-offset: 3px; }
+input[type="checkbox"] { accent-color: var(--accent); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+::selection { background: var(--hl); color: var(--ink); }
+.theme-toggle { border: 0; padding: 6px 0; background: transparent; color: var(--ink-2); cursor: pointer; font: 13px var(--sans); white-space: nowrap; }
+.theme-toggle:hover { color: var(--link-hover); }
+.display-toggles { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 16px; }
+.theme-toggle[aria-pressed="true"] { color: var(--accent); }
+
+/* A prismatic name: one rainbow wheel around a point in the word, spinning;
+   --prism-x and --prism-y move that point off the middle.
+   Pure spectral stops, turned by a registered angle rather than a hue
+   filter, which would muddy them. */
+@property --prism { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+.prismatic { font-weight: 600; color: transparent; background: conic-gradient(from var(--prism) at var(--prism-x, 50%) var(--prism-y, 50%), #ff1a1a, #ff8a00, #ffd000, #22c33a, #00a8f0, #3d4bff, #b026ff, #ff1a1a); -webkit-background-clip: text; background-clip: text; animation: prism-spin 6s linear infinite; }
+/* As a link it keeps the gradient on hover, under an accent underline. */
+a.prismatic, a.prismatic:hover { color: transparent; }
+a.prismatic:hover { text-decoration-color: var(--accent); }
+@keyframes prism-spin { to { --prism: 360deg; } }
+@media (prefers-reduced-motion: reduce) { .prismatic { animation: none; } }
+
+/* Standalone write-ups use the same quiet, ruled typography as the map. */
+html:has(body.writeup-page) { background: var(--bg); }
+body.writeup-page { max-width: 82ch; margin: 3em auto; padding: 0 1.5em 3em; font: 16px/1.7 var(--sans); overflow-wrap: anywhere; }
+.writeup-nav { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 16px; border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 24px; font-size: 13px; }
+.writeup-page h1 { font-size: 1.4em; line-height: 1.4; margin: 0 0 20px; color: var(--ink); }
+.writeup-page h2 { font-size: 1.15em; line-height: 1.4; margin: 1.8em 0 .5em; padding-top: 14px; border-top: 1px solid var(--line); }
+.writeup-page h3 { font-size: 1em; }
+.writeup-page p { margin: 0 0 12px; }
+.writeup-page .cert { color: var(--ink-2); font-size: .85em; }
+.writeup-page code, .writeup-page pre { font: .85em/1.6 var(--mono); color: var(--ink); }
+.writeup-page pre { padding: 14px; background: var(--panel-2); overflow-x: auto; }
+.writeup-page blockquote { color: var(--ink-2); border-left: 2px solid var(--line-strong); margin-left: 0; padding-left: 20px; }
+.writeup-page math[display="block"] { display: block; overflow-x: auto; padding: 8px 0; }
+.writeup-page table { display: block; overflow-x: auto; border-collapse: collapse; }
+.writeup-page th, .writeup-page td { border-bottom: 1px solid var(--line); padding: 8px 12px; }
+@media (max-width: 600px) {
+  body.writeup-page { margin: 1.5em auto; padding: 0 1em 2em; }
+}
+@media print {
+  :root, :root[data-theme="dark"] { --bg: white; --ink: #283c28; --ink-2: #4f604b; --accent: #356044; --line: #d4d9c9; color-scheme: light; }
+  .writeup-nav { display: none; }
+  body.writeup-page { max-width: none; margin: 0; padding: 0; }
+}
+
+/* Teal-grey, muted rust, deep teal and warm stone. Screen-only overrides
+   preserve print styling. */
+@media screen {
+  :root {
+    --bg: #ebf1f1;
+    --panel: #e1eae9;
+    --panel-2: #d0dfde;
+    --line: #c0cecd;
+    --line-strong: #849997;
+    --ink: #303b3a;
+    --ink-2: #4a5a59;
+    --ink-3: #526160;
+    --accent: #884932;
+    --link-hover: #6f3827;
+    --derived: #6f8180;
+    --open: #d6e2e1;
+    --open-ink: #526160;
+    --node-fill: #f1f6f6;
+    --node-stroke: #7f9391;
+    --junction: #596b6a;
+    --human: #2f6b66;
+    --source-forest: #2f6b66;
+    --hl: #e6ddd0;
+    --focus: #884932;
+    --shadow: 0 4px 24px rgb(48 59 58 / 10%);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #171e1d;
+    --panel: #202a29;
+    --panel-2: #2b3736;
+    --line: #3d4b4a;
+    --line-strong: #6b817f;
+    --ink: #dbe8e7;
+    --ink-2: #b9cbca;
+    --ink-3: #a6bdbb;
+    --accent: #e2ad92;
+    --link-hover: #f0c3aa;
+    --derived: #87a09e;
+    --open: #303d3c;
+    --open-ink: #aec6c4;
+    --node-fill: #263130;
+    --node-stroke: #738d8b;
+    --junction: #b3cbc9;
+    --human: #86c0b6;
+    --source-forest: #86c0b6;
+    --hl: #463f37;
+    --focus: #e2ad92;
+    --badge-ink: #171e1a;
+    --shadow: 0 4px 24px rgb(0 0 0 / 24%);
+  }
+}
+
+/* Shared Okabe–Ito palette: https://jfly.uni-koeln.de/color/#pallet
+   Loaded after topic themes. Sky blue and orange distinguish positive and
+   negative relations; darker inks keep small labels readable in light mode.
+   Neutral surfaces are identical across maps. Print uses the shared theme. */
+@media screen {
+  :root[data-palette="colourblind"] {
+    --bg: #f4f5f6;
+    --panel: #ffffff;
+    --panel-2: #e9edf0;
+    --line: #d0d6da;
+    --line-strong: #87949d;
+    --ink: #202930;
+    --ink-2: #45535d;
+    --ink-3: #586670;
+    --accent: #0072b2;
+    --link-hover: #925f00;
+    --human: #0072b2;
+    --assisted: #80506a;
+    --ai: #a44500;
+    --derived: #687780;
+    --indep: #925f00;
+    --open: #e9edf0;
+    --open-ink: #586670;
+    --conj: #80506a;
+    --node-fill: #ffffff;
+    --node-stroke: #7a8b96;
+    --junction: #45535d;
+    --hl: #dce4ea;
+    --focus: #0072b2;
+    --badge-ink: #ffffff;
+    --warning-bg: #fff0ce;
+    --source-forest: #56b4e9;
+    --source-rust: #e69f00;
+    --source-ochre: #d55e00;
+    --source-slate: #0072b2;
+    --source-berry: #cc79a7;
+    --source-olive: #009e73;
+    --source-misc: #687780;
+    --rel-positive: #56b4e9;
+    --rel-negative: #e69f00;
+    --shadow: 0 4px 24px rgb(32 41 48 / 12%);
+  }
+  :root[data-palette="colourblind"][data-theme="dark"] {
+    --bg: #111820;
+    --panel: #18222b;
+    --panel-2: #23303b;
+    --line: #354550;
+    --line-strong: #718492;
+    --ink: #edf2f5;
+    --ink-2: #c1ced7;
+    --ink-3: #a5b5c1;
+    --accent: #56b4e9;
+    --link-hover: #e69f00;
+    --human: #56b4e9;
+    --assisted: #cc79a7;
+    --ai: #e69f00;
+    --derived: #91a1ad;
+    --indep: #e69f00;
+    --open: #23303b;
+    --open-ink: #a5b5c1;
+    --conj: #cc79a7;
+    --node-fill: #1c2933;
+    --node-stroke: #8094a3;
+    --junction: #c1ced7;
+    --hl: #354654;
+    --focus: #56b4e9;
+    --badge-ink: #111820;
+    --warning-bg: #352b18;
+    --source-misc: #91a1ad;
+    --shadow: 0 4px 24px rgb(0 0 0 / 25%);
+  }
+  /* Source swatches use the unmodified palette; outlined badges allow their
+     text to keep the normal contrast on both light and dark surfaces. */
+  :root[data-palette="colourblind"] .badge.source {
+    background: var(--panel);
+    color: var(--ink);
+    border: 1px solid var(--source-color);
+    border-left-width: 4px;
+  }
+}
+</style>
+<script>/* Apply before paint; share the preference between every map and write-up. */
+(() => {
+  const key = 'pmap-theme';
+  const paletteKey = 'pmap-palette';
+  const system = window.matchMedia?.('(prefers-color-scheme: dark)');
+  let preference;
+  let palette;
+  try { preference = localStorage.getItem(key); } catch (_) {}
+  try { palette = localStorage.getItem(paletteKey); } catch (_) {}
+  if (!['light', 'dark'].includes(preference)) preference = null;
+  if (palette !== 'colourblind') palette = 'default';
+  function apply(theme) {
+    document.documentElement.dataset.theme = theme;
+    document.querySelectorAll('[data-theme-toggle]').forEach(button => {
+      button.textContent = theme === 'dark' ? '[Light mode]' : '[Dark mode]';
+      button.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
+    });
+  }
+  function applyPalette() {
+    document.documentElement.dataset.palette = palette;
+    document.querySelectorAll('[data-colourblind-toggle]').forEach(button => {
+      button.setAttribute('aria-pressed', String(palette === 'colourblind'));
+      button.textContent = `[Colourblind mode: ${palette === 'colourblind' ? 'on' : 'off'}]`;
+    });
+  }
+  const initial = () => preference || (system?.matches ? 'dark' : 'light');
+  apply(initial());
+  applyPalette();
+  document.addEventListener('DOMContentLoaded', () => {
+    apply(initial());
+    applyPalette();
+    document.querySelectorAll('[data-theme-toggle]').forEach(button => {
+      button.addEventListener('click', () => {
+        preference = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        apply(preference);
+        try { localStorage.setItem(key, preference); } catch (_) {}
+      });
+    });
+    document.querySelectorAll('[data-colourblind-toggle]').forEach(button => {
+      button.addEventListener('click', () => {
+        palette = palette === 'colourblind' ? 'default' : 'colourblind';
+        applyPalette();
+        try { localStorage.setItem(paletteKey, palette); } catch (_) {}
+      });
+    });
+  });
+  system?.addEventListener('change', () => { if (!preference) apply(initial()); });
+  window.addEventListener('storage', event => {
+    if (event.key === key || event.key === null) {
+      preference = ['light', 'dark'].includes(event.newValue) ? event.newValue : null;
+      apply(initial());
+    }
+    if (event.key === paletteKey || event.key === null) {
+      palette = event.newValue === 'colourblind' ? 'colourblind' : 'default';
+      applyPalette();
+    }
+  });
+})();
+</script>
+<link rel="stylesheet" href="../math/katex.min.css">
+<script defer src="../math/katex.min.js"></script>
+<script defer src="../math/contrib/auto-render.min.js"></script>
+<script defer src="../math/math.js"></script></head><body class="writeup-page"><nav class="writeup-nav" aria-label="Write-up navigation"><a href="../index.html">← Back to map</a><div class="display-toggles"><button type="button" class="theme-toggle" data-theme-toggle>[Dark mode]</button><button type="button" class="theme-toggle" data-colourblind-toggle aria-label="Colourblind mode" aria-pressed="false">[Colourblind mode: off]</button></div></nav><header id="title-block-header"><h1>Symmetric surjection products with free-word gluing</h1></header><p>Construction and proofs by GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, in the research note <em>Symmetric surjection model with free-word gluing</em> of 22 October 2026. Checked and rewritten for the map by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 28 October 2026.</p>
+<p>These models extend Dorr’s symmetric all-surjections model (symmetric-all-surjections) in two ways, each needed to add <strong>Logical Necessity</strong> to that model’s package:</p>
+<ol type="1">
+<li>pinning sets may have any size up to <span class="math inline">\kappa</span>, inside a base of size <span class="math inline">\kappa^+</span>;</li>
+<li>the arrows carry an extra <em>monoid coordinate</em>, which provides the sites for gluing the interpretations of Σ.</li>
+</ol>
+<p>Finite pinning would not do, because the gluing has to absorb the pinning sets of infinitely many witnesses. Nor would the surjections alone, because a later collapse merges any gluing sites among the points. The arguments are the <span class="math inline">\kappa</span>-pinned forms of the arguments recorded for the finite model, with the monoid coordinate held fixed. They are checked again here.</p>
+<p>The verdicts for all four models:</p>
+<ul>
+<li><strong>Hold:</strong> Logical Necessity, □Boolean Completeness, □Tame Rigidity, □Weakly Rigid Power and Atomlessness.</li>
+<li><strong>Fail:</strong> Actuality, Vicinity and Relational Choice.</li>
+<li><strong>BF</strong> holds necessarily when the monoid factor is right cancellative, and fails at type <span class="math inline">t</span> when it has an idempotent.</li>
+<li><strong>Individuals:</strong> with the members of <span class="math inline">U</span> as individuals, the Axioms of Infinity at <span class="math inline">e</span> and <span class="math inline">t</span> hold too.</li>
+</ul>
+<h2 id="the-models">The models</h2>
+<p>Fix an infinite cardinal <span class="math inline">\kappa\ge|\Sigma|</span>, a set <span class="math inline">U</span> with <span class="math inline">|U|=\kappa^+</span>, the monoid <span class="math inline">S</span> of surjections <span class="math inline">U\to U</span>, and a monoid <span class="math inline">K</span>. The two choices of <span class="math inline">K</span> are:</p>
+<ul>
+<li><strong>Free words.</strong> <span class="math inline">K=W</span>, the free monoid of words on an alphabet of size <span class="math inline">\kappa</span>, with empty word <span class="math inline">\varepsilon</span>.</li>
+<li><strong>Free words with an idempotent.</strong> <span class="math inline">K=W\times\{1,d\}</span>, where <span class="math inline">d^2=d\ne1</span>.</li>
+</ul>
+<p>There is one object, with arrows</p>
+<p><span class="math display">
+(k,s)\in K\times S,\qquad (k,s)(k&#39;,s&#39;):=(kk&#39;,\,s\circ s&#39;),
+</span></p>
+<p>evaluation point <span class="math inline">1:=(1_K,\mathrm{id})</span>, and symmetry group <span class="math inline">\{1_K\}\times\operatorname{Sym}(U)</span>. For a permutation <span class="math inline">\pi</span>, write <span class="math inline">\pi</span> also for the arrow <span class="math inline">(1_K,\pi)</span>.</p>
+<p><strong>Individuals.</strong> Either there is a single individual, fixed by every arrow, or the individuals are the members of <span class="math inline">U</span>, with <span class="math inline">(k,s)\cdot a:=s(a)</span>, and <span class="math inline">a</span> is pinned down by <span class="math inline">\{a\}</span>.</p>
+<p><strong>Domains.</strong> At a relational type, the domain is the set of profiles <span class="math inline">F</span>, assigning to each arrow a set of argument tuples, such that:</p>
+<ul>
+<li><span class="math inline">F</span> is <em>pinned down</em> by some <span class="math inline">N\subseteq U</span> of size at most <span class="math inline">\kappa</span>: <span class="math inline">F_{(k,s)}</span> depends only on <span class="math inline">k</span> and <span class="math inline">s|_N</span>;</li>
+<li><span class="math inline">F</span> is <em>symmetric</em>: <span class="math inline">F_{(k,\pi s)}=\pi\cdot F_{(k,s)}</span> for every permutation <span class="math inline">\pi</span>.</li>
+</ul>
+<p>Transport is <span class="math inline">(h\cdot F)_j:=F_{jh}</span>. The semantics is that of one-object intensional action models: a formula holds at <span class="math inline">h</span> iff it holds at <span class="math inline">1</span> with its parameters transported along <span class="math inline">h</span>.</p>
+<h2 id="a-model-of-c">1. A model of C</h2>
+<p>Transport along <span class="math inline">h=(k_h,s_h)</span> takes a profile pinned down by <span class="math inline">N</span> to one pinned down by <span class="math inline">s_h(N)</span>, and keeps symmetry: <span class="math inline">(h\cdot F)_{(k,\pi s)}=F_{(kk_h,\pi ss_h)}=\pi\cdot(h\cdot F)_{(k,s)}</span>.</p>
+<p>Every permutation <span class="math inline">\pi</span> acts as an automorphism of the structure at <span class="math inline">1</span>. Symmetry gives <span class="math inline">F_\pi=\pi\cdot F_1</span>, so <span class="math inline">\bar b\in F_1</span> iff <span class="math inline">\pi\cdot\bar b\in(\pi\cdot F)_1</span>. So whatever a formula says of parameters <span class="math inline">\bar a</span> and arguments <span class="math inline">\bar b</span>, it says of <span class="math inline">\pi\cdot\bar a</span> and <span class="math inline">\pi\cdot\bar b</span>.</p>
+<p>Now consider the profile of a <span class="math inline">\lambda</span>-abstract with parameters <span class="math inline">\bar a</span>. At <span class="math inline">(k,s)</span> it depends only on <span class="math inline">(k,s)\cdot\bar a</span>, so it is pinned down by the union of the parameters’ pinning sets. By the automorphism property it is symmetric.</p>
+<p>So the domains are closed under the denotations of terms. This is the argument of Dorr’s Lemma 19 with sets of size at most <span class="math inline">\kappa</span> in place of finite sets, the monoid coordinate passing through unchanged. Each entity <span class="math inline">a</span> has its <em>haecceity</em> <span class="math inline">h\mapsto\{h\cdot a\}</span> in the domain, pinned down by a pinning set of <span class="math inline">a</span>. As there is one object, a closed pure sentence has the same truth value at every arrow.</p>
+<p><strong>Lifting along surjections.</strong> Let <span class="math inline">F</span> be pinned down by <span class="math inline">N</span>, and <span class="math inline">s\in S</span>. Choose distinct <span class="math inline">s</span>-preimages of the members of <span class="math inline">N</span>, and extend <span class="math inline">n\mapsto</span> (its preimage) to a permutation <span class="math inline">\pi</span>. This is possible because the sets involved have size at most <span class="math inline">\kappa</span> and their complements size <span class="math inline">\kappa^+</span>. Then <span class="math inline">s\pi</span> is the identity on <span class="math inline">N</span>, and <span class="math inline">(1_K,s)\cdot(\pi\cdot F)=(1_K,s\pi)\cdot F=F</span>. So transport along <span class="math inline">(1_K,s)</span> is onto every relational domain. It is onto the individuals because <span class="math inline">s</span> is a surjection.</p>
+<h2 id="logical-necessity">2. Logical Necessity</h2>
+<p>There are at most <span class="math inline">\kappa</span> sentences of <span class="math inline">\mathcal L(\Sigma)</span>. For each sentence <span class="math inline">\varphi_\alpha</span> true at <span class="math inline">1</span> under some interpretation of Σ over these domains, choose such an interpretation <span class="math inline">J_\alpha</span> and a letter <span class="math inline">f_\alpha</span>, distinct letters for distinct sentences. Then:</p>
+<ol type="1">
+<li>Let the individual constants <span class="math inline">c</span> denote distinct members <span class="math inline">a_c</span> of <span class="math inline">U</span>, or the only individual. Let <span class="math inline">s_\alpha</span> be a surjection with <span class="math inline">s_\alpha(a_c)=J_\alpha(c)</span> for each of them. There are at most <span class="math inline">\kappa</span> prescriptions and <span class="math inline">\kappa^+</span> other points. With one individual, take <span class="math inline">s_\alpha:=\mathrm{id}</span>.</li>
+<li>For each relational constant <span class="math inline">c</span>, choose <span class="math inline">B_{\alpha,c}</span> with <span class="math inline">(1_K,s_\alpha)\cdot B_{\alpha,c}=J_\alpha(c)</span>, by the lifting of §1.</li>
+<li>Interpret <span class="math inline">c</span> by the profile <span class="math inline">G_c</span> defined below.</li>
+</ol>
+<p>With <span class="math inline">K=W</span>, write an arrow as <span class="math inline">(w,s)</span>; with <span class="math inline">K=W\times\{1,d\}</span>, as <span class="math inline">(w,j,s)</span>, the coordinate <span class="math inline">j</span> being carried along unchanged. Put</p>
+<p><span class="math display">
+(G_c)_{(w,s)}:=\begin{cases}(B_{\alpha,c})_{(u,s)}&amp;w=uf_\alpha,\\ \varnothing&amp;w=\varepsilon.\end{cases}
+</span></p>
+<p><span class="math inline">G_c</span> is pinned down by the union of the pinning sets of the <span class="math inline">B_{\alpha,c}</span>. That is at most <span class="math inline">\kappa</span> sets of size at most <span class="math inline">\kappa</span>. It is symmetric, since the permutations touch only the surjection coordinate.</p>
+<p>At <span class="math inline">h_\alpha:=(f_\alpha,s_\alpha)</span>, for every arrow <span class="math inline">(u,r)</span>:</p>
+<p><span class="math display">
+(h_\alpha\cdot G_c)_{(u,r)}=(G_c)_{(uf_\alpha,\,rs_\alpha)}=(B_{\alpha,c})_{(u,\,rs_\alpha)}
+=\bigl((1_K,s_\alpha)\cdot B_{\alpha,c}\bigr)_{(u,r)}=J_\alpha(c)_{(u,r)} .
+</span></p>
+<p>Also <span class="math inline">h_\alpha\cdot a_c=s_\alpha(a_c)=J_\alpha(c)</span>. So at <span class="math inline">h_\alpha</span> every constant takes its <span class="math inline">J_\alpha</span>-value simultaneously, and <span class="math inline">\varphi_\alpha</span> holds there. Conversely, a sentence true at an arrow <span class="math inline">h</span> is true at <span class="math inline">1</span> under the interpretation <span class="math inline">c\mapsto h\cdot c</span>. Hence</p>
+<p><span class="math display">
+\Diamond\varphi\ \text{at }1\iff\varphi\text{ is true at }1\text{ under some interpretation of }\Sigma .
+</span></p>
+<p>Now take <span class="math inline">P</span> pure and <span class="math inline">\bar c</span> distinct constants. <span class="math inline">P[\bar c/\bar x]</span> is true under some interpretation iff <span class="math inline">\exists\bar x\,.\,P</span> holds at <span class="math inline">1</span>. So <span class="math inline">\Diamond P[\bar c/\bar x]\leftrightarrow \exists\bar x\,.\,P</span>. Applied to <span class="math inline">\neg P</span>, this is Logical Necessity. It is claimed at the evaluation point only.</p>
+<h2 id="bf-and-the-monoid-factor">3. BF and the monoid factor</h2>
+<p><strong>When <span class="math inline">K</span> is right cancellative</strong>, every arrow acts onto every domain. For <span class="math inline">(v,s)=(v,1)(1_K,s)</span>, compose the surjection lift of §1 with the lift along <span class="math inline">(v,1)</span>:</p>
+<p><span class="math display">
+L_v(F)_{(k,s)}:=\begin{cases}F_{(u,s)}&amp;k=uv,\\ \varnothing&amp;k\notin Kv.\end{cases}
+</span></p>
+<p><span class="math inline">L_v(F)</span> is well defined because <span class="math inline">u</span> is unique, by right cancellation. It keeps <span class="math inline">F</span>’s pinning set and symmetry, and <span class="math inline">(v,1)\cdot L_v(F)=F</span>. So whenever <span class="math inline">\Box Ra</span> holds for every <span class="math inline">a</span>, any entity at any arrow <span class="math inline">h</span> is <span class="math inline">h\cdot a</span> for some <span class="math inline">a</span>, and so lies in <span class="math inline">R</span> there. That is BF at every type. Being closed and pure, it holds necessarily.</p>
+<p><strong>When <span class="math inline">K</span> has an idempotent</strong> <span class="math inline">d_0\ne1_K</span>, with <span class="math inline">1_Kd_0=d_0=d_0d_0</span>, BF fails at type <span class="math inline">t</span>.</p>
+<ul>
+<li>Let <span class="math inline">p</span> be the proposition that the monoid coordinate is <span class="math inline">1_K</span>.</li>
+<li>Let <span class="math inline">R</span>, of type <span class="math inline">tt</span>, hold of <span class="math inline">p</span> alone at the arrows with monoid coordinate <span class="math inline">d_0</span>, and of nothing elsewhere.</li>
+</ul>
+<p>Both are pinned down by <span class="math inline">\varnothing</span> and symmetric. Then <span class="math inline">\Diamond\exists q\,.\,Rq</span>, witnessed at <span class="math inline">(d_0,\mathrm{id})</span>.</p>
+<p>Suppose <span class="math inline">\Diamond Rq</span> for some <span class="math inline">q</span>. Then <span class="math inline">k\cdot q=p</span> for an arrow <span class="math inline">k</span> with monoid coordinate <span class="math inline">d_0</span>. But <span class="math inline">(k\cdot q)_{(1_K,s)}=q_{(d_0,ss_k)}=(k\cdot q)_{(d_0,s)}</span>, since <span class="math inline">1_Kd_0=d_0d_0</span>, whereas <span class="math inline">p</span> is true at <span class="math inline">(1_K,s)</span> and false at <span class="math inline">(d_0,s)</span>. So BF fails at <span class="math inline">t</span>.</p>
+<h2 id="atomlessness-actuality-vicinity-and-relational-choice-fail">4. Atomlessness; Actuality, Vicinity and Relational Choice fail</h2>
+<p>For distinct <span class="math inline">a,b\in U</span> let <span class="math inline">q_{a,b}:=\{(k,s):s(a)\ne s(b)\}</span>. It is pinned down by <span class="math inline">\{a,b\}</span> and symmetric.</p>
+<p><strong>Atomlessness.</strong> Let <span class="math inline">p\ne\bot</span> be pinned down by <span class="math inline">N</span>, with <span class="math inline">(k,s)\in p</span>, and let <span class="math inline">a,b\notin N</span>. <span class="math inline">s|_N</span> has at most <span class="math inline">\kappa</span> values, so it extends to a surjection that separates <span class="math inline">a</span> and <span class="math inline">b</span>, and to one that identifies them. Both lie in <span class="math inline">p</span>. So <span class="math inline">p\land q_{a,b}</span> and <span class="math inline">p\land\neg q_{a,b}</span> are nonzero. Hence there is no atom, and Actuality fails.</p>
+<p><strong>Vicinity.</strong> Let <span class="math inline">p</span> be true, pinned down by <span class="math inline">N</span>, and <span class="math inline">a,b\notin N</span>. Let <span class="math inline">s</span> fix <span class="math inline">N</span> pointwise and identify <span class="math inline">a</span> and <span class="math inline">b</span>. Then <span class="math inline">p</span> holds at <span class="math inline">(1_K,s)</span>. But <span class="math inline">q_{a,b}</span>, which is true, is impossible there: every arrow <span class="math inline">j(1_K,s)</span> has surjection <span class="math inline">s_js</span>, which identifies <span class="math inline">a</span> and <span class="math inline">b</span>. So no truth entails the possibility of every truth.</p>
+<p><strong>Relational Choice</strong>, at input type <span class="math inline">tt</span> and output type <span class="math inline">t</span>.</p>
+<ul>
+<li>Let <span class="math inline">U</span> relate each property of propositions with exactly two actual instances to each of them, and every other property to every proposition. It is a closed term, and serial.</li>
+<li>Let <span class="math inline">R\le U</span> be functional, pinned down by <span class="math inline">N</span>. For a permutation <span class="math inline">\pi</span> fixing <span class="math inline">N</span>, pinning gives <span class="math inline">R_\pi=R_1</span> and symmetry gives <span class="math inline">R_\pi=\pi\cdot R_1</span>. So <span class="math inline">R_1</span> is invariant under <span class="math inline">\pi</span>.</li>
+<li>Take distinct <span class="math inline">a,b,c\notin N</span>. The propositions <span class="math inline">q_{c,a}</span> and <span class="math inline">q_{c,b}</span> are distinct: a surjection identifying <span class="math inline">c</span> with <span class="math inline">a</span> but not with <span class="math inline">b</span> separates them.</li>
+<li>Let <span class="math inline">A</span> be the union of their haecceities. It is in the domain, with exactly these two actual instances.</li>
+<li>The transposition <span class="math inline">\pi</span> of <span class="math inline">a</span> and <span class="math inline">b</span> fixes <span class="math inline">N</span> and <span class="math inline">c</span>. It exchanges <span class="math inline">q_{c,a}</span> and <span class="math inline">q_{c,b}</span> and fixes <span class="math inline">A</span>.</li>
+<li><span class="math inline">R</span> relates <span class="math inline">A</span> to one of the two instances, so by invariance it relates <span class="math inline">A</span> to the other as well, and <span class="math inline">R</span> is not functional.</li>
+</ul>
+<h2 id="boolean-completeness">5. □Boolean Completeness</h2>
+<p>Let <span class="math inline">A</span>, of type <span class="math inline">\tau t</span>, be pinned down by <span class="math inline">N</span>, with actual instances <span class="math inline">E:=A_1</span>. For a permutation <span class="math inline">\pi</span> fixing <span class="math inline">N</span> pointwise, <span class="math inline">\pi\cdot E=E</span>, by pinning and symmetry as above. Let</p>
+<p><span class="math display">
+J_{(k,s)}:=\bigcup\{a_{(k,t)}:\ a\in E,\ t\in S,\ t|_N=s|_N\}.
+</span></p>
+<p><span class="math inline">J</span> is pinned down by <span class="math inline">N</span>. It is symmetric: replacing <span class="math inline">s</span> by <span class="math inline">\pi s</span> replaces each <span class="math inline">t</span> by <span class="math inline">\pi t</span>, and <span class="math inline">a_{(k,\pi t)}=\pi\cdot a_{(k,t)}</span>. It is an upper bound of <span class="math inline">E</span>, by taking <span class="math inline">t=s</span>.</p>
+<p><strong><span class="math inline">J</span> is below every upper bound.</strong> Let <span class="math inline">Z</span>, pinned down by <span class="math inline">T</span>, be an upper bound of <span class="math inline">E</span>, and let <span class="math inline">\bar b\in a_{(k,t)}</span> with <span class="math inline">a\in E</span> and <span class="math inline">t|_N=s|_N</span>. Let <span class="math inline">L</span> pin down <span class="math inline">a</span>.</p>
+<ul>
+<li>Choose a permutation <span class="math inline">\pi</span> fixing <span class="math inline">N</span> pointwise and moving <span class="math inline">L\setminus N</span> off <span class="math inline">T</span>. Then <span class="math inline">\pi\cdot a\in E</span>.</li>
+<li>Prescribe a surjection <span class="math inline">r</span> to agree with <span class="math inline">s</span> on <span class="math inline">T</span>, and to send <span class="math inline">\pi(l)</span> to <span class="math inline">t(l)</span> for each <span class="math inline">l\in L</span>.</li>
+<li>The prescriptions are compatible. A point of <span class="math inline">T\cap\pi(L)</span> is <span class="math inline">\pi(l)</span> with <span class="math inline">l\in N</span>, where <span class="math inline">\pi(l)=l</span> and <span class="math inline">t(l)=s(l)</span>.</li>
+<li>There are at most <span class="math inline">\kappa</span> of them, so they extend to a surjection.</li>
+<li>Then <span class="math inline">r\pi</span> agrees with <span class="math inline">t</span> on <span class="math inline">L</span>, so</li>
+</ul>
+<p><span class="math display">
+\bar b\in a_{(k,t)}=a_{(k,r\pi)}=(\pi\cdot a)_{(k,r)}\subseteq Z_{(k,r)}=Z_{(k,s)} .
+</span></p>
+<p>So <span class="math inline">J\le Z</span>, and <span class="math inline">J</span> is the least upper bound of <span class="math inline">A</span>’s actual instances, at every relational type. The schema is closed and pure, so it holds necessarily. This is the hull argument of Dorr’s Theorem 36, specialised to surjections with pinning sets of size at most <span class="math inline">\kappa</span>.</p>
+<h2 id="exact-images-and-tame-rigidity">6. Exact images and □Tame Rigidity</h2>
+<p>For a set <span class="math inline">E</span> of argument tuples, let <span class="math inline">H_E</span> be the profile <span class="math inline">h\mapsto h\cdot E</span>.</p>
+<p><strong>Lemma.</strong> A weakly rigid <span class="math inline">Y</span>, pinned down by <span class="math inline">N</span>, with <span class="math inline">Y_1=E</span>, is <span class="math inline">H_E</span>.</p>
+<p><em>Proof.</em> Let <span class="math inline">B_N(E)_{(k,s)}:=\bigcup\{(k,t)\cdot E:\ t|_N=s|_N\}</span>. It is pinned down by <span class="math inline">N</span>, and symmetric by functoriality, and every member of <span class="math inline">E</span> is necessarily in it. So weak inextensibility gives <span class="math inline">Y\le B_N(E)</span>, and weak persistence gives <span class="math inline">h\cdot E\subseteq Y_h</span>.</p>
+<p>Let <span class="math inline">\bar b\in Y_{(k,s)}</span>, so <span class="math inline">\bar b=(k,t)\cdot\bar a</span> with <span class="math inline">\bar a\in E</span> and <span class="math inline">t|_N=s|_N</span>, and let <span class="math inline">L</span> pin down the entries of <span class="math inline">\bar a</span>. Let <span class="math inline">u</span> be a surjection fixing <span class="math inline">N</span> and sending each <span class="math inline">l\in L\setminus N</span> to an <span class="math inline">s</span>-preimage of <span class="math inline">t(l)</span>. Then <span class="math inline">Y_{(1_K,u)}=E</span>, so weak persistence gives <span class="math inline">u\cdot\bar a\in E</span>. And <span class="math inline">(k,su)</span> agrees with <span class="math inline">(k,t)</span> on <span class="math inline">L</span>, so <span class="math inline">\bar b=(k,s)\cdot(u\cdot\bar a)\in(k,s)\cdot E</span>. <span class="math inline">\square</span></p>
+<p>Conversely, every <span class="math inline">H_E</span> in the domain is rigid, and so is each of its transports. So weak rigidity coincides with rigidity at every world, and □Tame Rigidity holds at every type.</p>
+<h2 id="rigid-power-and-weakly-rigid-power">7. □Rigid Power and □Weakly Rigid Power</h2>
+<p><strong>Stability lemma.</strong> Let <span class="math inline">A</span> be a set of tuples closed under every <span class="math inline">(1_K,u)</span> with <span class="math inline">u</span> fixing <span class="math inline">P</span> pointwise, where <span class="math inline">|P|\le\kappa</span>. Then <span class="math inline">H_A</span> is pinned down by <span class="math inline">P</span>, so it is in the domain and rigid.</p>
+<p><em>Proof.</em> Let <span class="math inline">s|_P=t|_P</span> and <span class="math inline">\bar a\in A</span>, pinned down by <span class="math inline">L</span>. A surjection <span class="math inline">u</span> fixing <span class="math inline">P</span> with <span class="math inline">su=t</span> on <span class="math inline">L</span> gives <span class="math inline">(k,t)\cdot\bar a=(k,s)\cdot(u\cdot\bar a)\in(k,s)\cdot A</span>. By symmetry in <span class="math inline">s</span> and <span class="math inline">t</span>, the two images are equal. <span class="math inline">\square</span></p>
+<p><strong>The power property is weakly inextensible.</strong></p>
+<ul>
+<li>Let <span class="math inline">F=H_E</span> be rigid, pinned down by <span class="math inline">S_F</span>, with power property <span class="math inline">\mathcal P_F</span>. Let <span class="math inline">Z</span> necessarily hold of every actual rigid <span class="math inline">Y\le F</span>. Let <span class="math inline">N\supseteq S_F</span> also pin down <span class="math inline">Z</span>, let <span class="math inline">h=(k,s)</span>, and let <span class="math inline">X=H_D\le h\cdot F</span> be rigid, pinned down by <span class="math inline">T</span>.</li>
+<li>Let <span class="math inline">j_0</span> agree with <span class="math inline">s</span> on <span class="math inline">N</span> and map <span class="math inline">U\setminus N</span> bijectively onto <span class="math inline">U\setminus s(N)</span>, and put <span class="math inline">j:=(k,j_0)</span>. Then <span class="math inline">j\cdot F=h\cdot F</span>, so <span class="math inline">D\subseteq j\cdot E</span>.</li>
+<li>Every nonsingleton fibre of <span class="math inline">j_0</span> lies inside <span class="math inline">N</span>. So <span class="math inline">P:=N\cup j_0^{-1}(T)</span> has size at most <span class="math inline">\kappa</span>.</li>
+<li>Let <span class="math inline">A:=\{\bar a\in E:j\cdot\bar a\in D\}</span>. Then <span class="math inline">j\cdot A=D</span>.</li>
+<li><strong><span class="math inline">A</span> is closed under the surjections fixing <span class="math inline">P</span>.</strong>
+<ul>
+<li>Let <span class="math inline">u</span> fix <span class="math inline">P</span>. Then <span class="math inline">j_0u=vj_0</span> for the surjection <span class="math inline">v</span> with <span class="math inline">v(j_0x):=j_0(ux)</span>.</li>
+<li><span class="math inline">v</span> is well defined because <span class="math inline">u</span> fixes the nonsingleton fibres, and <span class="math inline">v</span> fixes <span class="math inline">T</span>.</li>
+<li><span class="math inline">F</span> and <span class="math inline">X</span> are weakly persistent, <span class="math inline">u</span> fixes <span class="math inline">S_F</span> and <span class="math inline">v</span> fixes <span class="math inline">T</span>. So <span class="math inline">u\cdot E\subseteq E</span> and <span class="math inline">v\cdot D\subseteq D</span>.</li>
+<li>Hence <span class="math inline">j\cdot(u\cdot\bar a)=v\cdot(j\cdot\bar a)\in D</span> for <span class="math inline">\bar a\in A</span>, and <span class="math inline">u\cdot\bar a\in A</span>.</li>
+</ul></li>
+<li>By the stability lemma, <span class="math inline">Y:=H_A</span> is rigid, <span class="math inline">Y\le F</span>, and <span class="math inline">j\cdot Y=X</span>.</li>
+<li>So <span class="math inline">X\in Z_j</span>. And <span class="math inline">Z_j=Z_h</span>, since <span class="math inline">j</span> and <span class="math inline">h</span> have the same monoid coordinate and agree on <span class="math inline">N</span>.</li>
+</ul>
+<p>So <span class="math inline">\mathcal P_F</span> is weakly inextensible. It is persistent by C, and rigid by Tame Rigidity. Hence Rigid Power holds at every type. As weakly rigid and rigid subrelations coincide, the same power properties give Weakly Rigid Power. Both are closed and pure, so they hold necessarily.</p>
+<h2 id="the-axioms-of-infinity">8. The Axioms of Infinity</h2>
+<p>The numerals are closed pure terms, fixed by every arrow. So the constant profile whose instances are the numerals at a type is symmetric and pinned down by <span class="math inline">\varnothing</span>.</p>
+<ul>
+<li><strong>The finite cardinalities are the standard ones.</strong> Every inductive property contains the numerals, and this constant profile is inductive.</li>
+<li><strong>The <span class="math inline">n</span>th holds of exactly the properties with <span class="math inline">n</span> actual instances</strong>, by finite induction.</li>
+<li><strong>With the members of <span class="math inline">U</span> as individuals</strong>, the universal property of individuals has <span class="math inline">\kappa^+</span> instances. So no finite cardinality holds of it, and the Axiom of Infinity holds at <span class="math inline">e</span>.</li>
+<li><strong>At <span class="math inline">t</span>, in every case</strong>, the propositions <span class="math inline">q_{a,b}</span> are infinitely many, so the Axiom of Infinity holds at <span class="math inline">t</span>.</li>
+</ul>
+<h2 id="further-verdicts">9. Further verdicts</h2>
+<p>Added 28 October 2026 by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr. Write <span class="math inline">q_{x,y}:=\{(k,s):s(x)\ne s(y)\}</span> for any <span class="math inline">x,y\in U</span>, so that <span class="math inline">\pi\cdot q_{x,y}=q_{\pi x,\pi y}</span>.</p>
+<p><strong>Truths are ND-necessary holds.</strong> Let <span class="math inline">p</span> be true, pinned down by <span class="math inline">N</span>, and let <span class="math inline">q:=\{(1_K,s):s\text{ injective on }N\}</span>. It is true, pinned down by <span class="math inline">N</span>, and symmetric.</p>
+<ul>
+<li><strong><span class="math inline">\Diamond q=q</span>.</strong> In both monoid factors, <span class="math inline">jk=1_K</span> only if <span class="math inline">k=1_K</span>, and <span class="math inline">ts</span> is injective on <span class="math inline">N</span> only if <span class="math inline">s</span> is.</li>
+<li><strong><span class="math inline">q\le p</span>.</strong> A member <span class="math inline">(1_K,s)</span> of <span class="math inline">q</span> agrees on <span class="math inline">N</span> with a permutation <span class="math inline">\pi</span>. And <span class="math inline">(1_K,\pi)\in p</span>, since <span class="math inline">p</span> is symmetric and true. So <span class="math inline">(1_K,s)\in p</span>.</li>
+</ul>
+<p>Hence <span class="math inline">\Box(\Diamond q\to p)</span>, and every truth is ND-necessary. The verdicts on the varieties of necessity follow.</p>
+<p><strong>Intensional Choice fails</strong> at type <span class="math inline">t</span>. Fix <span class="math inline">c\in U</span>, and let</p>
+<p><span class="math display">
+F_{(k,s)}:=\{q_{s(c),y}:\ y\ne s(c)\},
+</span></p>
+<p>which is pinned down by <span class="math inline">\{c\}</span>, symmetric, and necessarily instantiated. Suppose <span class="math inline">G\le F</span> is necessarily uniquely instantiated, and pinned down by <span class="math inline">N\ni c</span>. Let <span class="math inline">h:=(1_K,s)</span> with <span class="math inline">s</span> sending <span class="math inline">N</span> to a single point <span class="math inline">p</span>. Then <span class="math inline">G_h=\{q_{p,y}\}</span> for some <span class="math inline">y\ne p</span>.</p>
+<p>For a permutation <span class="math inline">\pi</span> fixing <span class="math inline">p</span>, the arrow <span class="math inline">\pi h</span> agrees with <span class="math inline">h</span> on <span class="math inline">N</span>. So <span class="math inline">G_{\pi h}=G_h</span> by pinning, while symmetry gives <span class="math inline">G_{\pi h}=\{q_{p,\pi y}\}</span>. Hence every such <span class="math inline">\pi</span> fixes <span class="math inline">y</span>, which is false. This is intensional-choice-collapse at type <span class="math inline">t</span>.</p>
+<p><strong>Arithmetic Necessitism holds.</strong> The profile whose value at every arrow is the set of numerals is pinned down by <span class="math inline">\varnothing</span> and symmetric. So the numbers are the numerals, fixed by every arrow (as arithmetic-necessitism-finitely-pinned).</p>
+<p><strong>Analytic Necessitism holds</strong>, and so does its second-order form. Revised 29 October 2026: this section first recorded a failure. Its argument was withdrawn, because it inferred membership in a rigid carrier from inextensibility, which only bounds a carrier from above.</p>
+<ul>
+<li><strong>The entities.</strong> For finite <span class="math inline">N</span>, the arrows whose surjection is constant on <span class="math inline">N</span> form a symmetric proposition, pinned down by <span class="math inline">N</span>. Its orbit under the permutations depends only on <span class="math inline">|N|</span>. So the unions <span class="math inline">S_A</span> of the orbits for the sizes in <span class="math inline">A\subseteq\mathbb N</span> are continuum many invariant sets of propositions. The constant intensions <span class="math inline">Y_A</span> with these values are in the domain and fixed by every arrow.</li>
+<li><strong>The structure.</strong> Every set of tuples of the <span class="math inline">Y_A</span> is invariant, and so is every set of such constant relations, so each is the value of a constant intension in the domain. A real number structure on the <span class="math inline">Y_A</span> by constant relations therefore has fixed parameters, and there is one object. So it is one at every world, rigid, with necessarily distinct instances. The constant intensions of the sets of its constant relations are represented powers.</li>
+</ul>
+<h2 id="inextensible-comprehension">10. Inextensible Comprehension</h2>
+<p>GPT-6 Astra (OpenAI), prompted by Cian Dorr, 29 October 2026; checked and recorded by Claude Opus 5.5 (Anthropic). □Inextensible Comprehension holds in all four variants. The finite-model argument relabels an arrow fixing the pinning set into one that leaves the entity unchanged, and the monoid coordinate blocks that step. This argument instead switches the witness off for good once the monoid coordinate leaves <span class="math inline">1_K</span>.</p>
+<p><strong>The witness.</strong> Let <span class="math inline">X</span> be pinned down by <span class="math inline">N</span>, with <span class="math inline">|N|\le\kappa</span>, and put</p>
+<p><span class="math display">
+Y_{(k,s)}:=\begin{cases}X_{(k,s)}&amp;k=1_K\text{ and }s|_N\text{ injective},\\ \varnothing&amp;\text{otherwise.}\end{cases}
+</span></p>
+<p>Injectivity on <span class="math inline">N</span> depends only on <span class="math inline">s|_N</span> and is unchanged by composing with a permutation, so <span class="math inline">Y</span> is pinned down by <span class="math inline">N</span> and symmetric. And <span class="math inline">Y_1=X_1</span>, so <span class="math inline">Y</span> is coextensive with <span class="math inline">X</span> at <span class="math inline">1</span>.</p>
+<p><strong>The defects are permanent.</strong> In both monoid factors, <span class="math inline">jk=1_K</span> only if <span class="math inline">k=1_K</span>: in <span class="math inline">W</span> by length, and in <span class="math inline">W\times\{1,d\}</span> because <span class="math inline">xy=1</span> forces <span class="math inline">x=y=1</span>. And if <span class="math inline">s</span> collapses two points of <span class="math inline">N</span>, so does <span class="math inline">ts</span>. So along an arrow <span class="math inline">h=(k,s)</span> with <span class="math inline">k\ne1_K</span>, or with <span class="math inline">s</span> not injective on <span class="math inline">N</span>, <span class="math inline">(h\cdot Y)_j=Y_{jh}=\varnothing</span> for every <span class="math inline">j</span>: the transport is <span class="math inline">\bot</span>, which is weakly inextensible.</p>
+<p>Along <span class="math inline">h=(1_K,s)</span> with <span class="math inline">s|_N</span> injective, <span class="math inline">h\cdot X</span> is pinned down by <span class="math inline">s[N]</span>. Since <span class="math inline">ts|_N</span> is injective iff <span class="math inline">t|_{s[N]}</span> is, <span class="math inline">h\cdot Y</span> is the same construction applied to <span class="math inline">h\cdot X</span> with pinning set <span class="math inline">s[N]</span>. So it suffices to show that <span class="math inline">Y</span> is weakly inextensible at <span class="math inline">1</span>, for every <span class="math inline">X</span> and <span class="math inline">N</span>.</p>
+<p><strong>Lifting.</strong> Put <span class="math inline">E:=X_1</span>. A permutation <span class="math inline">\tau</span> fixing <span class="math inline">N</span> has <span class="math inline">X_{(1_K,\tau)}=X_1</span> by pinning and <span class="math inline">=\tau\cdot X_1</span> by symmetry, so <span class="math inline">\tau\cdot E=E</span>. Let <span class="math inline">g</span> be a surjection fixing <span class="math inline">N</span> pointwise and <span class="math inline">\bar a\in E</span>, its entries pinned down by <span class="math inline">T</span>, <span class="math inline">|T|\le\kappa</span>. For <span class="math inline">t\in T\setminus N</span> choose a <span class="math inline">g</span>-preimage <span class="math inline">p_t</span>. These are distinct and lie outside <span class="math inline">N</span>, since <span class="math inline">g</span> fixes <span class="math inline">N</span>. So the identity on <span class="math inline">N</span> together with <span class="math inline">t\mapsto p_t</span> is injective, with domain and range of size at most <span class="math inline">\kappa</span>, whose complements have size <span class="math inline">\kappa^+</span>, and it extends to a permutation <span class="math inline">\tau</span>. Then <span class="math inline">g\tau</span> is the identity on <span class="math inline">T</span>, so <span class="math inline">(g\tau)\cdot\bar a=\bar a</span>: for an entity <span class="math inline">F</span> pinned down by <span class="math inline">T</span>, <span class="math inline">F_{(k,t\circ g\tau)}=F_{(k,t)}</span>, and an individual <span class="math inline">a</span> is pinned down by <span class="math inline">\{a\}</span>. Thus <span class="math inline">\tau\cdot\bar a\in E</span> and <span class="math inline">g\cdot(\tau\cdot\bar a)=\bar a</span>: every member of <span class="math inline">E</span> is the <span class="math inline">g</span>-image of a member of <span class="math inline">E</span>.</p>
+<p><strong>Weak inextensibility at <span class="math inline">1</span>.</strong> Suppose <span class="math inline">Z</span> necessarily holds of every member of <span class="math inline">E</span>. Take <span class="math inline">\bar b\in Y_{(k,s)}</span>, so that <span class="math inline">k=1_K</span> and <span class="math inline">s|_N</span> is injective. Extend <span class="math inline">s|_N</span> to a permutation <span class="math inline">\pi</span> and put <span class="math inline">g:=\pi^{-1}s</span>, which fixes <span class="math inline">N</span>. By pinning and symmetry, <span class="math inline">Y_{(1_K,s)}=X_{(1_K,\pi)}=\pi\cdot E</span>; write <span class="math inline">\bar b=\pi\cdot\bar a</span> with <span class="math inline">\bar a\in E</span>, and lift <span class="math inline">\bar a</span> to <span class="math inline">\bar a&#39;\in E</span> with <span class="math inline">g\cdot\bar a&#39;=\bar a</span>. Transport is a left action, so <span class="math inline">(1_K,s)\cdot\bar a&#39;=(1_K,\pi)\cdot((1_K,g)\cdot\bar a&#39;)=\bar b</span>. Since <span class="math inline">Z</span> holds necessarily of <span class="math inline">\bar a&#39;</span>, <span class="math inline">\bar b\in Z_{(1_K,s)}</span>. At every other arrow <span class="math inline">Y</span> is empty. So <span class="math inline">Y\le Z</span>.</p>
+<p><strong>Conclusion.</strong> Every <span class="math inline">X</span> is coextensive at <span class="math inline">1</span> with an inextensible <span class="math inline">Y</span>, so Inextensible Comprehension holds at <span class="math inline">1</span>. It is a closed pure sentence and the models have one object, so it holds at every arrow: □Inextensible Comprehension holds. Nothing depends on whether the individuals are <span class="math inline">U</span> or a single point. The argument uses choice, for the preimages <span class="math inline">p_t</span> and the extending permutations.</p>
+<h2 id="remarks">Remarks</h2>
+<ol type="1">
+<li><strong>Choice.</strong> Logical Necessity uses choice in the metatheory, in choosing the witnesses <span class="math inline">J_\alpha</span>, and so do the lifts in BF and Rigid Power.</li>
+<li><strong>What is left open.</strong> Transversal holds in the finite model and is open here. The finite argument breaks in two places:
+<ul>
+<li>It takes least supports, which need not exist for pinning sets of size <span class="math inline">\kappa</span>.</li>
+<li>It relabels an arrow fixing the pinning set into one that leaves the entity unchanged. The monoid coordinate blocks that step. For Inextensible Comprehension, which had the same obstacle, §10 avoids it by making the witness empty once the monoid coordinate leaves <span class="math inline">1_K</span>.</li>
+</ul></li>
+<li><strong>Source.</strong> Astra’s note also gives the general criterion: with any monoid factor <span class="math inline">K</span>, BF holds iff <span class="math inline">K</span> is right cancellative. The map records the two instances above.</li>
+</ol>
+</body></html>

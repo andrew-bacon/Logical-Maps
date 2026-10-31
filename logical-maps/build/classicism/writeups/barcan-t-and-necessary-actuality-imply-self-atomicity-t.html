@@ -323,71 +323,26 @@ body.writeup-page { max-width: 82ch; margin: 3em auto; padding: 0 1.5em 3em; fon
 <script defer src="../math/katex.min.js"></script>
 <script defer src="../math/contrib/auto-render.min.js"></script>
 <script defer src="../math/math.js"></script></head><body class="writeup-page"><nav class="writeup-nav" aria-label="Write-up navigation"><a href="../index.html">← Back to map</a><div class="display-toggles"><button type="button" class="theme-toggle" data-theme-toggle>[Dark mode]</button><button type="button" class="theme-toggle" data-colourblind-toggle aria-label="Colourblind mode" aria-pressed="false">[Colourblind mode: off]</button></div></nav><header id="title-block-header"><h1>BF (type t) ∧ □Actuality ⇒ Self-Atomicity (type t)</h1></header><p class="cert">
-Result — Source: Misc.; produced by Cian Dorr, 28 October 2026; recorded
-by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 28 October 2026.
+Result — Source: Misc.; produced by Cian Dorr, 28 October 2026; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 28 October 2026.
 </p>
 <h2 id="premises">Premises</h2>
 <ul>
-<li><strong>BF (type t).</strong> If every proposition necessarily has a
-property, then necessarily every proposition has it.</li>
-<li><strong>□Actuality.</strong> Necessarily, there is a true
-proposition that entails every true proposition.</li>
+<li><strong>BF (type t).</strong> If every proposition necessarily has a property, then necessarily every proposition has it.</li>
+<li><strong>□Actuality.</strong> Necessarily, there is a true proposition that entails every true proposition.</li>
 </ul>
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li><strong>Self-Atomicity (type t).</strong> Every possible proposition
-is entailed by a self-atom: a possible proposition that necessarily, if
-true, is an atom, that is, one that entails that it is the actual
-world.</li>
+<li><strong>Self-Atomicity (type t).</strong> Every possible proposition is entailed by a self-atom: a possible proposition that necessarily, if true, is an atom, that is, one that entails that it is the actual world.</li>
 </ul>
 <h2 id="proof">Proof</h2>
-<p>Write <span class="math inline">A(w):=w\land\forall q\, .\,q\to w\le
-q</span>, so that □Actuality is <span class="math inline">\Box\exists
-w\, .\,A(w)</span>. Let <span class="math inline">\Diamond p</span>.
-With □Actuality this gives <span
-class="math inline">\Diamond(p\land\exists w\, .\,A(w))</span>, that is,
-<span class="math inline">\Diamond\exists w\, .\,p\land A(w)</span>, and
-BF at type <span class="math inline">t</span>, in its dual form, gives
-some <span class="math inline">w</span> with <span
-class="math inline">\Diamond(p\land A(w))</span>. Put <span
-class="math inline">s:=p\land A(w)</span>. Then <span
-class="math inline">\Diamond s</span> and <span class="math inline">s\le
-p</span>. It remains to show <span
-class="math inline">\Box(s\to\operatorname{Atom}_t(s))</span>, by an
-argument in C, which may therefore be necessitated. Suppose <span
-class="math inline">s</span>. Then <span
-class="math inline">A(w)</span>, so <span class="math inline">w</span>
-is true and entails every truth; in particular <span
-class="math inline">w\le s</span>, while <span class="math inline">s\le
-w</span> since <span class="math inline">A(w)</span> entails <span
-class="math inline">w</span>; so <span class="math inline">s=w</span>.
-And <span class="math inline">w</span> is an atom: if <span
-class="math inline">z\le w</span>, then either <span
-class="math inline">z</span> is true, so <span class="math inline">w\le
-z</span> and <span class="math inline">z=w</span>, or <span
-class="math inline">\neg z</span> is true, so <span
-class="math inline">z\le w\le\neg z</span> and <span
-class="math inline">z=\bot</span>. So <span class="math inline">s</span>
-is an atom, and <span class="math inline">s</span> is a self-atom below
-<span class="math inline">p</span>.</p>
+<p>Write <span class="math inline">A(w):=w\land\forall q\, .\,q\to w\le q</span>, so that □Actuality is <span class="math inline">\Box\exists w\, .\,A(w)</span>. Let <span class="math inline">\Diamond p</span>. With □Actuality this gives <span class="math inline">\Diamond(p\land\exists w\, .\,A(w))</span>, that is, <span class="math inline">\Diamond\exists w\, .\,p\land A(w)</span>, and BF at type <span class="math inline">t</span>, in its dual form, gives some <span class="math inline">w</span> with <span class="math inline">\Diamond(p\land A(w))</span>. Put <span class="math inline">s:=p\land A(w)</span>. Then <span class="math inline">\Diamond s</span> and <span class="math inline">s\le p</span>. It remains to show <span class="math inline">\Box(s\to\operatorname{Atom}_t(s))</span>, by an argument in C, which may therefore be necessitated. Suppose <span class="math inline">s</span>. Then <span class="math inline">A(w)</span>, so <span class="math inline">w</span> is true and entails every truth; in particular <span class="math inline">w\le s</span>, while <span class="math inline">s\le w</span> since <span class="math inline">A(w)</span> entails <span class="math inline">w</span>; so <span class="math inline">s=w</span>. And <span class="math inline">w</span> is an atom: if <span class="math inline">z\le w</span>, then either <span class="math inline">z</span> is true, so <span class="math inline">w\le z</span> and <span class="math inline">z=w</span>, or <span class="math inline">\neg z</span> is true, so <span class="math inline">z\le w\le\neg z</span> and <span class="math inline">z=\bot</span>. So <span class="math inline">s</span> is an atom, and <span class="math inline">s</span> is a self-atom below <span class="math inline">p</span>.</p>
 <h2 id="notes">Notes</h2>
-<p>Under BF at every type,
-[[self-atomicity-t-and-bf-imply-self-atomicity-r]] lifts the conclusion
-to [[self-atomicity-r]], so BF and □Actuality give Self-Atomicity. The
-self-atom is the conjunction of <span class="math inline">p</span> with
-“<span class="math inline">w</span> is a true atom”; conjoining <span
-class="math inline">p</span> puts it below <span
-class="math inline">p</span> without appeal to B or ND, since <span
-class="math inline">w\le p</span> itself is only known to hold
-possibly.</p>
+<p>Under BF at every type, [[self-atomicity-t-and-bf-imply-self-atomicity-r]] lifts the conclusion to [[self-atomicity-r]], so BF and □Actuality give Self-Atomicity. The self-atom is the conjunction of <span class="math inline">p</span> with “<span class="math inline">w</span> is a true atom”; conjoining <span class="math inline">p</span> puts it below <span class="math inline">p</span> without appeal to B or ND, since <span class="math inline">w\le p</span> itself is only known to hold possibly.</p>
 <h2 id="sources">Sources</h2>
 <ul>
-<li><strong>Dorr 28 Oct</strong> — Cian Dorr, argument of 28 October
-2026 that BF and □Actuality give Self-Atomicity (session
-transcript).</li>
+<li><strong>Dorr 28 Oct</strong> — Cian Dorr, argument of 28 October 2026 that BF and □Actuality give Self-Atomicity (session transcript).</li>
 </ul>
 <p class="cert">
-Record:
-<code>topics/classicism/results/barcan-t-and-necessary-actuality-imply-self-atomicity-t.yaml</code>
+Record: <code>topics/classicism/results/barcan-t-and-necessary-actuality-imply-self-atomicity-t.yaml</code>
 </p>
 </body></html>

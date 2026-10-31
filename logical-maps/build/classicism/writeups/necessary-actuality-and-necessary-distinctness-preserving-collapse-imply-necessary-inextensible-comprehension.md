@@ -1,11 +1,11 @@
-# □Actuality ∧ □Truth implies ND-necessity ⇒ □Inextensible Comprehension
+# □Actuality ∧ □Truths are ND-necessary ⇒ □Inextensible Comprehension
 
 <p class='cert'>Result — Source: Misc.; produced by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 September 2026 (unboxed form); boxed form recorded by Claude Opus 5.5 (Anthropic), 19 October 2026; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 19 October 2026.</p>
 
 ## Premises
 
 - **□Actuality.** Necessarily, there is a true proposition that entails every true proposition.
-- **□Truth implies ND-necessity.** Necessarily, every truth is ND-necessary. In C this is the identity $\Box_{\ne}=\lambda p\, .\,p$.
+- **□Truths are ND-necessary.** Necessarily, every truth is ND-necessary. In C this is the identity $\Box_{\ne}=\lambda p\, .\,p$.
 
 ## Conclusion
 

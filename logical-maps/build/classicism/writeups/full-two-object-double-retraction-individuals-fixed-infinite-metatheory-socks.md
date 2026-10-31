@@ -4,6 +4,8 @@
 
 ## Package
 
+- **Analytic Necessitism.** If there could be a real number structure, there is a rigid one that is necessarily a real number structure: a rigid property with necessarily distinct instances, with rigid order, addition, multiplication and natural numbers, which necessarily form a complete ordered field. One sentence for each type $\sigma$.
+- **Second-Order Analytic Necessitism.** If there could be a real number structure, there is a rigid one, necessarily a real number structure, together with represented powers of every arity up to $n$: rigid properties of rigid relations among the structure's elements that necessarily represent every relation on them. One sentence for each type $\sigma$ and each $n\ge1$.
 - **Arithmetic Necessitism.** Given that necessarily zero is not a successor and successor is injective on numbers, the numbers at $\sigma$ form a rigid property with necessarily distinct instances. One sentence for each type $\sigma$.
 - **□Atomicity.** Necessarily, every non-bottom entity of each relational type has an atom below it.
 - **Self-atoms are atoms.** At each relational type, every self-atom is an atom.
@@ -16,8 +18,7 @@
 - **□Rigid Power.** Necessarily, if a relation is rigid, so is the property of being a rigid relation that entails it.
 - **Necessity of Second-Order Analysis.** Every second-order analytical sentence is either true in every real number structure in every possible world or false in every real number structure in every possible world. One sentence for each type $\sigma$ and each second-order analytical sentence.
 - **¬ □Self-atoms are atoms (type t).** Necessarily, every self-atom is an atom.
-- **¬ Analytic Necessitism.** If there could be a real number structure, there is a rigid one that is necessarily a real number structure: a rigid property with necessarily distinct instances, with rigid order, addition, multiplication and natural numbers, which necessarily form a complete ordered field. One sentence for each type $\sigma$.
-- **¬ Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
+- **¬ Truths are ND-necessary.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **¬ Possible Infinity (type t).** Possibly there are not finitely many propositions: the Axiom of Infinity at this type, under a diamond.
 - **¬ Infinity Schema (type t).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
 - **¬ Axiom of Infinity (type t).** There are not finitely many propositions. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
@@ -53,7 +54,15 @@ At $W_1$, which $h$ reaches: $j_1$ and $j_2$ are each fixed only by $1_{W_0}$ an
 
 *By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026.*
 
+### Holds Analytic Necessitism, Second-Order Analytic Necessitism.
+
+At type $\tau:=et$, as analytic-necessitism-codomain-everywhere with the individuals in place of the propositions: the individuals are the same infinite set $D$ at every object, so the codomain-only intension $Y_A$ whose value at every arrow is $E^A$, for an injection $A\mapsto E^A$ from the sets of natural numbers into the sets of individuals, is in the domain, and its transports are the $Y_A$ of the targets, distinct for distinct $A$; the real number structure on the $Y_A$ by codomain-only relations is carried along every arrow to an isomorphic one. Such a structure is rigid, its instances are necessarily distinct, and it is necessarily a real number structure; and the codomain-only intension of type $((\tau)^kt)t$ whose value at each object is the set of codomain-only $k$-ary relations among the carrier there is a represented power of arity $k$, since at every world each $k$-ary relation agrees on the carrier with one of them. So the consequents of Analytic Necessitism and of its second-order form hold, and both principles hold. (The argument of the withdrawn analytic-necessitism-unretracted-arrow would refute this structure; its step from inextensibility is the gap.)
+
+*General argument `arguments/analytic-necessitism-codomain-fixed-infinite-individuals`. It requires that At every object reachable from the evaluation point, the domain contains every intension whose value at an arrow depends only on the arrow's codomain. Here: The domains are full at every object. It requires that At every object the individuals are the same infinite set, and every arrow acts on them as the identity. Here: This is the choice of individuals. By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, auditing the withdrawn arguments for the failure of Analytic Necessitism, 2026-10-29.*
+
 ### Fails Analytic Necessitism.
+
+*Withdrawn 2026-10-29 by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, after a trawl subagent's report: The step from $k\cdot y=k\cdot x\in X_k$ to $Xy$ (or $y\in X_h$) by inextensibility does not follow: inextensibility bounds a rigid carrier from above, by the transports of its actual instances, and puts nothing new into its actual extension. The conclusion is false in many of the models the argument was applied to: entities fixed by every arrow, or transported injectively, can carry a rigid real number structure that is necessarily one (see analytic-necessitism-codomain-fixed and analytic-necessitism-full-continuum).*
 
 As the argument analytic-necessitism-noninvertible-retracted-arrow: an arrow $h\colon w\to v$ out of the evaluation object with a retraction $j$ but no inverse gives the idempotent $e:=h\circ j$ out of $v$, which has no retraction, and a rigid real number structure at $w$ at a relational type, necessarily a real number structure, would have at $h$ a complete ordered field of instances each determined by its transport along $e$, which no entity of a relational type at $v$ is, the model being full there. The antecedent of Analytic Necessitism holds at the relational type $((et)t)t$, as in the argument analytic-necessitism-unretracted-arrow-individuals, the individuals at $w$ being infinitely many. So Analytic Necessitism fails. No choice is used.
 
@@ -65,7 +74,7 @@ The numbers at a type $\sigma$ are the instances of $\mathbb N_\sigma$, the leas
 
 *General argument `arguments/arithmetic-necessitism-extensionally-full`. It requires that The model is extensionally full at every object: every set of tuples from the domains at an object is the extension, at the identity arrow, of an element of the domain of the matching relational type there. Here: A full model contains every intension, so in particular one with any given extension at the identity. By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-23.*
 
-### Fails Truth implies ND-necessity.
+### Fails Truths are ND-necessary.
 
 Let $p:=\{1\}$, in the domain since the model is full, and true. Any witness $q$ for $\Box_{\ne}p$ is true, so contains the identity; under an arrow $i\ne 1$ with a retraction $r$, the arrow $r\circ i=1$ makes $\Diamond q$ true, while $p$ is false. So no true $q$ has $\Box(\Diamond q\to p)$. (The surjection monoid's own argument of 23 September, stated once.)
 

@@ -1,15 +1,15 @@
-# No Pure Contingency ∧ Truth implies two-hat necessity ⇒ □Truth implies two-hat necessity
+# No Pure Contingency ∧ Truths are two-hat necessary ⇒ □Truths are two-hat necessary
 
 <p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_pure_contingency_and_truth_implies_two_hat_necessity_imply_necessary_truth_implies_two_hat_necessity`; produced by Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 14 October 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
 
 ## Premises
 
 - **No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
-- **Truth implies two-hat necessity.** Every truth is two-hat necessary.
+- **Truths are two-hat necessary.** Every truth is two-hat necessary.
 
 ## Conclusion
 
-- **□Truth implies two-hat necessity.** Necessarily, every truth is two-hat necessary. In C this is the identity $\hat{\hat\Box}=\lambda p\, .\,p$.
+- **□Truths are two-hat necessary.** Necessarily, every truth is two-hat necessary. In C this is the identity $\hat{\hat\Box}=\lambda p\, .\,p$.
 
 ## Proof
 

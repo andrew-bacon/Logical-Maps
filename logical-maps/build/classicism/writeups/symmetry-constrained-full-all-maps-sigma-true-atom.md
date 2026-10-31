@@ -16,7 +16,7 @@
 - **Second-Order Analytic Necessitism.** If there could be a real number structure, there is a rigid one, necessarily a real number structure, together with represented powers of every arity up to $n$: rigid properties of rigid relations among the structure's elements that necessarily represent every relation on them. One sentence for each type $\sigma$ and each $n\ge1$.
 - **Necessity of Second-Order Analysis.** Every second-order analytical sentence is either true in every real number structure in every possible world or false in every real number structure in every possible world. One sentence for each type $\sigma$ and each second-order analytical sentence.
 - **Arithmetic Necessitism.** Given that necessarily zero is not a successor and successor is injective on numbers, the numbers at $\sigma$ form a rigid property with necessarily distinct instances. One sentence for each type $\sigma$.
-- **Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
+- **Truths are ND-necessary.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
 - **Rigid Power.** If a relation is rigid, so is the property of being a rigid relation that entails it.
 - **□Rigid Power.** Necessarily, if a relation is rigid, so is the property of being a rigid relation that entails it.
@@ -121,7 +121,7 @@ The constant maps form one orbit of the symmetry group, so the proposition $C$ t
 
 At every object the atoms are the orbits of single pairs under the symmetry group. The orbit $C$ of a collapse $c$ (in the two-object member, of the arrows $c_i:W_0\to X$) is an atom; its transport along $c$ is the set of arrows $m$ with $m\circ c$ in $C$, which includes every arrow $X\to X$, since $m\circ c$ is again a collapse, and so is not an atom there, the orbit of the permutations being a proper symmetric part. So $C$ is an atom and not a self-atom, and the only possible proposition below $C$ is $C$ itself: Atoms are self-atoms (type t) and Self-Atomicity (type t) fail. Conversely a self-atom $I$ at a relational type has, at each of its pairs $\langle k,\bar a\rangle$, a transport along $k$ that is an atom containing $\langle1,\cdot\rangle$, hence the orbit of the identity; so $m\circ k$ carries a pair of $I$ only for symmetries $m$, which excludes collapses ($c\circ c=c$) and leaves pairs at permutations, where symmetry makes $I$ the orbit of one pair, an atom, whose transport along a collapse is empty and along a permutation is an atom again: a strong atom. The same holds at every reachable object, the domains being the symmetric intensions everywhere.
 
-*From the group *Symmetry-constrained full models*, shared argument `symmetry-constrained-full#self-atoms`. By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026.*
+*From the group *Symmetry-constrained full models*, shared argument `symmetry-constrained-full#self-atoms`. It requires that Some arrow $c$ out of the evaluation object is absorbed by an arrow $m$ out of its codomain that is not a symmetry: $m\circ c$ lies in the orbit of $c$ under the symmetry group. Here: A collapse $c_i$ is absorbed by itself, $c_i\circ c_i=c_i$, and is not a permutation. By Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 25 October 2026.*
 
 ### Holds Analytic Necessitism, Second-Order Analytic Necessitism, Necessity of Second-Order Analysis.
 
@@ -135,7 +135,7 @@ The numbers at a type $\sigma$ are the instances of $\mathbb N_\sigma$, the leas
 
 *General argument `arguments/arithmetic-necessitism-extensionally-full`. It requires that The model is extensionally full at every object: every set of tuples from the domains at an object is the extension, at the identity arrow, of an element of the domain of the matching relational type there. Here: Any set $S$ of tuples at the identity is the extension there of a symmetric intension: put $S$ at the identity, $g\cdot S$ at each permutation $g$, and the empty set at every other arrow. By Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 2026-10-23.*
 
-### Holds Truth implies ND-necessity.
+### Holds Truths are ND-necessary.
 
 For a true $p$, $a\le p$, since $a$ entails every truth. Take $q:=a$ in the definition of $\Box_{\ne}p$: at a world in $a$, $p$ holds; at a world outside $a$, $\Diamond a$ fails. So every truth is $\Box_{\ne}$-necessary.
 

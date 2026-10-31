@@ -1,14 +1,14 @@
-# Truth implies two-hat necessity ⇒ Truth implies 5-necessity
+# Truths are two-hat necessary ⇒ Truths are 5-necessary
 
 <p class='cert'>Result — Source: Misc., Lean `Classicism.Map.truth_implies_two_hat_implies_truth_implies_five`; produced by Claude Fable 5.1 (Anthropic), 14 October 2026, at Cian Dorr's direction; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
 
 ## Premises
 
-- **Truth implies two-hat necessity.** Every truth is two-hat necessary.
+- **Truths are two-hat necessary.** Every truth is two-hat necessary.
 
 ## Conclusion
 
-- **Truth implies 5-necessity.** Every truth is 5-necessary: necessary under every S5 operator.
+- **Truths are 5-necessary.** Every truth is 5-necessary: necessary under every S5 operator.
 
 ## Proof
 

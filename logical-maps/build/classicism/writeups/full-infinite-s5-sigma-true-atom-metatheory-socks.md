@@ -21,7 +21,8 @@
 - **□Strong Actuality.** Necessarily, there is a true strong atom: a true proposition that necessarily entails every proposition or its negation.
 - **¬ Intensional Choice.** If a property is necessarily instantiated, then some property entailing it is necessarily uniquely instantiated.
 - **¬ Relational Choice.** Every serial binary relation has a functional subrelation.
-- **¬ Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
+- **¬ Forcing Possibilism.** Every complete Boolean algebra that is finite or has strictly fewer elements than there are propositions is isomorphic to the entailment algebra below some proposition other than top.
+- **¬ Truths are ND-necessary.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 - **¬ Fregean Axiom.** Materially equivalent propositions are identical.
 - **¬ Axiom of Infinity (type e).** There are not finitely many individuals. No finite cardinality holds of the universal property, so the domain of the type cannot be exhausted by finitely many steps from the empty property.
 - **¬ Infinity Schema (type e).** There are arbitrarily many pairwise distinct entities of this fixed type; one sentence for each positive integer n.
@@ -58,6 +59,12 @@ At type $t$, with the worlds the union $W$ of the socks. The propositions at a w
 
 *By Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, after Cian Dorr's construction of 7 October 2026, 2026-10-08.*
 
+### Fails Forcing Possibilism.
+
+As in the general argument forcing-possibilism-continuum-arrows, with the worlds the union $W$ of the socks $P_n$, so that the propositions are the sets of worlds. The regular-open algebra $B$ of Cantor space has the size of the continuum in ZF, and it injects into the propositions, $S\mapsto\bigcup_{n\in S}P_n$ injecting the sets of natural numbers. The propositions do not inject into $B$: an injection would give one of $W$ into the sets of natural numbers, through $w\mapsto\{w\}$, and the lexicographic order of those sets would then choose a member of each sock. So $B$, realised at type $t$ by fullness, is a small complete Boolean algebra, atomless, while every entailment algebra below a proposition is atomic or has one element. (From Astra's note "Forcing Possibilism, Choice and Infinity", §6, in Daniel Kodsi's submission of 24 October 2026.)
+
+*Address: `full-infinite-s5-sigma-true-atom-metatheory-socks#forcing-possibilism-socks`. By GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 23 October 2026; checked and recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 2026-10-28.*
+
 ### Holds Arithmetic Necessitism.
 
 The numbers at a type $\sigma$ are the instances of $\mathbb N_\sigma$, the least property containing $\mathbf 0_\sigma$ and closed under $\operatorname{Suc}_\sigma$ (Background); the numerals $\mathbf 0_\sigma$, $\operatorname{Suc}_\sigma\mathbf 0_\sigma,\ldots$ are closed terms, so each denotes at every object, and transport along an arrow carries its denotation at the source to its denotation at the target. At any object $v$ reachable from the evaluation point, extensional fullness gives a property whose extension at $v$ is exactly the numerals there; it contains $\mathbf 0_\sigma$ and is closed under successor, so the numbers at $v$ are exactly the numerals, every numeral being an instance of every inductive property. Persistence of $\mathbb N_\sigma$ and, given $\Box I^*_\sigma$, the necessary distinctness of the numbers are theorems of C (the proof of necessary-rigid-comprehension-implies-arithmetic-necessitism). Inextensibility, $\Box\forall X\,.\,(\forall n\,.\,\mathbb N_\sigma n\to\Box Xn)\to\mathbb N_\sigma\le X$: at a reachable $v$ and for an arrow $j$ from $v$ to $u$, the numbers at $u$ are the numerals there, which are the transports along $j$ of the numbers at $v$, so any $X$ that necessarily holds of the numbers at $v$ holds at $u$ of the numbers there. So $\mathbb N_\sigma$ is rigid, and Arithmetic Necessitism holds at every type. No choice is used.
@@ -70,7 +77,7 @@ Given $X$ with extension $E$ at the evaluation object, let $Y$ hold at an arrow 
 
 *General argument `arguments/coherent-retractions`. It requires that The model is full: at each object, the domain of each relational type contains every intension of that type. Here: Every intension of every relational type is present at every object (Classicism, §3.5, p. 59). It requires that Every arrow $g$ out of the evaluation object has a retraction $r_g$, chosen so that $r_{x\circ g}\circ x=r_g$ for every arrow $x$ after $g$. Here: $r_g$ is the unique arrow back; any two arrows with the same ends are equal, so $r_{x\circ g}\circ x=r_g$. By Claude Opus 5.5 (Anthropic), at Cian Dorr's direction, 2026-10-06.*
 
-### Fails Truth implies ND-necessity.
+### Fails Truths are ND-necessary.
 
 Let $p:=\{1\}$, in the domain since the model is full, and true. Any witness $q$ for $\Box_{\ne}p$ is true, so contains the identity; under an arrow $i\ne 1$ with a retraction $r$, the arrow $r\circ i=1$ makes $\Diamond q$ true, while $p$ is false. So no true $q$ has $\Box(\Diamond q\to p)$. (The surjection monoid's own argument of 23 September, stated once.)
 
@@ -167,7 +174,7 @@ The natural numbers are the finite cardinalities at type $e$ (Background, after 
 
 ## Notes
 
-A basic reference model, recorded at Cian Dorr's request: the full S5 model with infinitely many worlds. Nothing depends on which infinite set $W$ is. In the variant with infinitely many individuals the group fixes them as the natural numbers; any infinite set gives the same verdicts under choice. Its verdicts are those of the full permutation group model, whose arrows are likewise all invertible. Without choice in the metatheory, the same construction over a family of nonempty sets with no choice function refutes Intensional Choice; that variant is not recorded.
+A basic reference model, recorded at Cian Dorr's request: the full S5 model with infinitely many worlds. Except for Forcing Possibilism, no recorded verdict depends on which infinite set $W$ is. In the variant with infinitely many individuals the group fixes them as the natural numbers; any infinite set gives the same verdicts under choice. Its verdicts are those of the full permutation group model, whose arrows are likewise all invertible, again except for Forcing Possibilism, which the map leaves unknown here. Under choice, Forcing Possibilism holds iff $2^{|W|}=2^{\aleph_0}$ (GPT-6 Astra, prompted by Daniel Kodsi, 23 October 2026): if so, every small or Dedekind-finite complete Boolean algebra is finite, an infinite one having at least continuum many elements, and is isomorphic to the subsets of a finite set of worlds; if not, the regular-open algebra of Cantor space is small and atomless, while the algebra below any proposition is atomic. So it holds for $W=\mathbb N$ and fails for $|W|=2^{\aleph_0}$. With $W$ the union of Russell's socks it fails without choice (forcing-possibilism-socks).
 
 ## Sources
 
