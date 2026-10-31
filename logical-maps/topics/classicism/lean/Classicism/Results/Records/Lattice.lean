@@ -886,4 +886,198 @@ theorem necessary_atomicity_t_and_necessary_wic_imply_necessary_actuality :
   fun h₁ h₂ => modal_K _ _ (modal_K _ _
     (nec% atomicity_t_and_weakly_inextensible_comprehension_imply_actuality) h₁) h₂
 
+/-! ### Self-atoms are atoms, and strong atoms, from their type-`t` forms (30 October 2026)
+
+A self-atom is an atom wherever it is instantiated, and that is enough to make the bridge
+principles at `t` give them at every relational type, with no choice: the instance
+proposition `∃x̄. X[x̄]`, written `Instantiated X`, of a self-atom is a self-atom
+(Background, *the instance proposition of an atom*); and once it is an atom (or a strong
+atom), a part of `X` instantiated wherever `X` is must be `X` itself, because `X` is an atom
+there. Stated pointwise at a relational type, so at every arity. -/
+
+section selfAtomLift
+variable {τ : Type} [Rel τ] [Order τ] [Pointwise τ]
+
+omit [Order τ] in
+/-- `⊥_τ ⊑ Y`. -/
+theorem bot_incl_rel (Y : τ) : Rel.bot τ ⊆ Y := incl_of_constP Y False id
+
+omit [Order τ] [Pointwise τ] in
+/-- What is not instantiated is below bottom. -/
+theorem incl_bot_of_not_instantiated (X : τ) (h : ¬ Instantiated X) : X ⊆ Rel.bot τ :=
+  (em (X ⊆ Rel.bot τ)).elim id (fun hn => absurd hn h)
+
+omit [Order τ] in
+/-- Bottom is not instantiated. -/
+theorem not_instantiated_bot : ¬ Instantiated (Rel.bot τ) := fun h => h (incl_refl _)
+
+omit [Order τ] [Pointwise τ] in
+/-- If its instance proposition is `⊥`, `X` is below bottom. -/
+theorem incl_bot_of_instantiated_eq_false (X : τ) (h : Instantiated X = False) :
+    X ⊆ Rel.bot τ :=
+  incl_bot_of_not_instantiated X (fun hi => Eq.mp h hi)
+
+/-- Necessarily below bottom is bottom. -/
+theorem eq_bot_of_box_incl_bot (X : τ) (h : □ (X ⊆ Rel.bot τ)) : X = Rel.bot τ :=
+  le_antisymm_rel X _ (le_of_box_incl h) (bot_le_rel X)
+
+/-- A possible entity has a possible instance proposition. -/
+theorem instantiated_ne_false (X : τ) (hX : X ≠ Rel.bot τ) : Instantiated X ≠ False := fun e =>
+  hX (eq_bot_of_box_incl_bot X
+    (modal_K _ _ (nec% (incl_bot_of_instantiated_eq_false X)) (necessity_of_identity _ _ e)))
+
+/-- An entity whose instance proposition is `⊥` is bottom. -/
+theorem eq_bot_of_instantiated_eq_false (X : τ) (e : Instantiated X = False) : X = Rel.bot τ :=
+  eq_bot_of_box_incl_bot X
+    (modal_K _ _ (nec% (incl_bot_of_instantiated_eq_false X)) (necessity_of_identity _ _ e))
+
+omit [Order τ] in
+/-- An instance of a part is an instance of the whole. -/
+theorem instantiated_mono (z X : τ) (h : z ⊆ X) (hz : Instantiated z) : Instantiated X :=
+  fun hX => hz (incl_trans z X _ h hX)
+
+/-- Entailment carries over to the instance propositions. -/
+theorem instantiated_le (z X : τ) (h : z ≤ X) : Instantiated z ≤ Instantiated X :=
+  (le_iff_prop _ _).2 (modal_K _ _ (nec% (instantiated_mono z X)) ((le_iff z X).1 h))
+
+/-- An atom is not bottom. -/
+theorem ne_bot_of_atom (X : τ) (hX : Atom X) : X ≠ Rel.bot τ := fun e =>
+  not_le_neg_of_atom hX (by rw [e]; exact bot_le_rel _)
+
+omit [Order τ] in
+/-- If `X ∧ const q` is `X`, then `X`'s instance proposition entails `q`. -/
+theorem instantiated_imp_of_and_eq (X : τ) (q : Prop) (e : (X ∧ constP q) = X) :
+    Instantiated X → q := fun hi =>
+  (em q).elim id fun hn => absurd (by
+    have h := incl_of_and_constP X (Rel.bot τ) q hn
+    rw [e] at h
+    exact h) hi
+
+omit [Order τ] in
+/-- If `X ∧ const q` is bottom, then `X`'s instance proposition entails `¬q`. -/
+theorem instantiated_imp_not_of_and_eq_bot (X : τ) (q : Prop) (e : (X ∧ constP q) = Rel.bot τ) :
+    Instantiated X → ¬ q := fun hi hq => hi (by
+  have h := incl_and_constP_self X q hq
+  rw [e] at h
+  exact h)
+
+/-- The instance proposition of an atom is an atom (Background, *the instance proposition of
+an atom*): `X ∧ const q` is `X` or bottom. -/
+theorem atom_instantiated_of_atom (X : τ) (hX : Atom X) : Atom (Instantiated X) :=
+  atom_of_decides _ ⟨instantiated_ne_false X (ne_bot_of_atom X hX), fun q =>
+    (em ((X ∧ constP q) = X)).elim
+      (fun e => Or.inl ((le_iff_prop _ _).2
+        (modal_K _ _ (nec% (instantiated_imp_of_and_eq X q)) (necessity_of_identity _ _ e))))
+      (fun hne => Or.inr ((le_iff_prop _ _).2
+        (modal_K _ _ (nec% (instantiated_imp_not_of_and_eq_bot X q)) (necessity_of_identity _ _
+          (eq_bot_of_le_neg_rel _ ((hX (X ∧ constP q)).1
+            ⟨(le_iff _ _).2 (nec% (incl_and_left X (constP q))), hne⟩))))))⟩
+
+/-- At `t`, an instantiated proposition is true. -/
+theorem of_instantiated_prop (p : Prop) (h : Instantiated p) : p :=
+  (em p).elim id (fun hn => (h (show Rel.incl p (Rel.bot Prop) from fun hp => absurd hp hn)).elim)
+
+/-- The self-atom clause passes to the instance proposition. -/
+theorem self_clause_instantiated (X : τ) (h : Instantiated X → Atom X) :
+    Instantiated (Instantiated X) → Atom (Instantiated X) := fun hi =>
+  atom_instantiated_of_atom X (h (of_instantiated_prop _ hi))
+
+/-- The instance proposition of a self-atom is a self-atom. -/
+theorem selfAtom_instantiated (X : τ) (hX : SelfAtom X) : SelfAtom (Instantiated X) :=
+  ⟨instantiated_ne_false X hX.1, modal_K _ _ (nec% (self_clause_instantiated X)) hX.2⟩
+
+/-- Where `X` is an atom if instantiated, a part `z` instantiated exactly when `X` is
+contains `X`. -/
+theorem incl_of_self_clause (X z : τ) (h : Instantiated X → Atom X) (hz : z ≤ X)
+    (e : Instantiated z = Instantiated X) : X ⊆ z :=
+  (em (Instantiated X)).elim
+    (fun hi => (em (z = X)).elim
+      (fun ezx => by rw [ezx]; exact incl_refl X)
+      (fun hne => by
+        have hz0 : z = Rel.bot τ := eq_bot_of_le_neg_rel z ((h hi z).1 ⟨hz, hne⟩)
+        have hiz : Instantiated z := Eq.mpr e hi
+        rw [hz0] at hiz
+        exact absurd hiz not_instantiated_bot))
+    (fun hn => incl_trans X (Rel.bot τ) z (incl_bot_of_not_instantiated X hn) (bot_incl_rel z))
+
+/-- `self-atoms-are-atoms-t-implies-self-atoms-are-atoms-r`, at every relational type: the
+instance proposition `w` of a self-atom `X` is a self-atom, so an atom; a part `z` of `X`
+has instance proposition `w` or `⊥`; if `⊥`, `z` is bottom; if `w`, then necessarily `X` is
+an atom wherever instantiated, and `z`, instantiated there, is `X`, so `X ≤ z`. -/
+theorem self_atoms_are_atoms_t_implies_self_atoms_are_atoms_r :
+    SelfAtomsAreAtomsT → SelfAtomsAreAtoms τ := fun h X hX z =>
+  have hw : Atom (Instantiated X) := h _ (selfAtom_instantiated X hX)
+  ⟨fun hz => (em (Instantiated z = Instantiated X)).elim
+      (fun e => absurd (le_antisymm_rel z X hz.1 (le_of_box_incl
+        (modal_K _ _ (modal_K _ _ (modal_K _ _ (nec% (incl_of_self_clause X z)) hX.2)
+          (box_le_rel z X hz.1)) (necessity_of_identity _ _ e)))) hz.2)
+      (fun hne => by
+        have hz0 : z = Rel.bot τ := eq_bot_of_instantiated_eq_false z
+          (eq_false_of_le_neg _ ((hw _).1 ⟨instantiated_le z X hz.1, hne⟩))
+        rw [hz0]
+        exact bot_le_rel _),
+   fun hz => by
+    have hz0 : z = Rel.bot τ := eq_bot_of_le_neg_rel z hz
+    exact ⟨by rw [hz0]; exact bot_le_rel X, fun e => hX.1 (e.symm.trans hz0)⟩⟩
+
+/-- `necessary-self-atoms-are-atoms-t-implies-necessary-self-atoms-are-atoms-r`: the last,
+necessitated. -/
+theorem necessary_self_atoms_are_atoms_t_implies_necessary_self_atoms_are_atoms_r :
+    NecSelfAtomsAreAtomsT → NecSelfAtomsAreAtoms τ :=
+  modal_K _ _ (nec% (self_atoms_are_atoms_t_implies_self_atoms_are_atoms_r (τ := τ)))
+
+/-- Where `X` is an atom if instantiated and `X ∧ Y` is instantiated if `X` is, `X ⊑ Y`. -/
+theorem incl_of_instantiated_and (X Y : τ) (h : Instantiated X → Atom X)
+    (hr : Instantiated X → Instantiated (X ∧ Y)) : X ⊆ Y :=
+  (em (Instantiated X)).elim
+    (fun hi => (em ((X ∧ Y) = X)).elim
+      (fun e => by
+        have h' := incl_and_right X Y
+        rw [e] at h'
+        exact h')
+      (fun hne => by
+        have h0 : (X ∧ Y) = Rel.bot τ := eq_bot_of_le_neg_rel _
+          ((h hi _).1 ⟨(le_iff _ _).2 (nec% (incl_and_left X Y)), hne⟩)
+        have hh := hr hi
+        rw [h0] at hh
+        exact absurd hh not_instantiated_bot))
+    (fun hn => incl_trans X (Rel.bot τ) Y (incl_bot_of_not_instantiated X hn) (bot_incl_rel Y))
+
+omit [Order τ] in
+/-- Where `X ∧ Y` is not instantiated if `X` is, `X ⊑ ¬Y`. -/
+theorem incl_neg_of_not_instantiated_and (X Y : τ)
+    (hr : Instantiated X → ¬ Instantiated (X ∧ Y)) : X ⊆ ¬ Y :=
+  (em (Instantiated X)).elim
+    (fun hi => incl_neg_of_and_incl_neg X Y (incl_trans _ (Rel.bot τ) _
+      (incl_bot_of_not_instantiated _ (hr hi)) (bot_incl_rel _)))
+    (fun hn => incl_trans X (Rel.bot τ) _ (incl_bot_of_not_instantiated X hn) (bot_incl_rel _))
+
+/-- A self-atom whose instance proposition decides every proposition decides every entity of
+its type. -/
+theorem decides_of_self_clause (X : τ) (h : □ (Instantiated X → Atom X))
+    (hd : ∀ q : Prop, Instantiated X ≤ q ∨ Instantiated X ≤ ¬ q) :
+    ∀ Y : τ, X ≤ Y ∨ X ≤ ¬ Y := fun Y =>
+  (hd (Instantiated (X ∧ Y))).elim
+    (fun hle => Or.inl ((le_iff _ _).2 (modal_K _ _ (modal_K _ _
+      (nec% (incl_of_instantiated_and X Y)) h) ((le_iff_prop _ _).1 hle))))
+    (fun hle => Or.inr ((le_iff _ _).2 (modal_K _ _
+      (nec% (incl_neg_of_not_instantiated_and X Y)) ((le_iff_prop _ _).1 hle))))
+
+/-- `self-atoms-are-strong-atoms-t-implies-self-atoms-are-strong-atoms-r`, at every relational
+type: the instance proposition of a self-atom `X` is a self-atom, so a strong atom; inside
+the box, for each `Y`, it decides whether `X ∧ Y` is instantiated, and that decides `Y` for
+`X`, because `X` is an atom wherever instantiated (its self-atom clause boxed again by `4`). -/
+theorem self_atoms_are_strong_atoms_t_implies_self_atoms_are_strong_atoms_r :
+    SelfAtomsAreStrongAtomsT → SelfAtomsAreStrongAtoms τ := fun h X hX =>
+  ⟨hX.1, modal_K _ _ (modal_K _ _ (nec% (decides_of_self_clause X)) (modal_four _ hX.2))
+    (h _ (selfAtom_instantiated X hX)).2⟩
+
+/-- `necessary-self-atoms-are-strong-atoms-t-implies-necessary-self-atoms-are-strong-atoms-r`:
+the last, necessitated. -/
+theorem necessary_self_atoms_are_strong_atoms_t_implies_necessary_self_atoms_are_strong_atoms_r :
+    NecSelfAtomsAreStrongAtomsT → NecSelfAtomsAreStrongAtoms τ :=
+  modal_K _ _ (nec% (self_atoms_are_strong_atoms_t_implies_self_atoms_are_strong_atoms_r (τ := τ)))
+
+end selfAtomLift
+
 end Classicism.Proofs
