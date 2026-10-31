@@ -203,6 +203,14 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.NecAtomsAreStrongAtomsT.schemaIn
 
+/-- Principle definition check: `necessary-axiom-of-infinity-e`. -/
+example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
+  Classicism.P.NecAxiomOfInfinityE.schemaIn
+
+/-- Principle definition check: `necessary-axiom-of-infinity-t`. -/
+example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
+  Classicism.P.NecAxiomOfInfinityT.schemaIn
+
 /-- Principle definition check: `necessary-barcan-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.NecBarcan.schemaIn
@@ -2304,6 +2312,14 @@ def necessary_atomlessness_implies_necessary_atoms_are_strong_atoms_r : Prop :=
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomlessness.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomsAreStrongAtoms.schemaIn
 
+/-- `necessary-atomlessness-implies-necessary-axiom-of-infinity-t`
+
+□Atomlessness ⇒ □Axiom of Infinity (type t) -/
+def necessary_atomlessness_implies_necessary_axiom_of_infinity_t : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomlessness.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAxiomOfInfinityT.schemaIn
+
 /-- `necessary-atomlessness-implies-necessary-self-atoms-are-strong-atoms-r`
 
 □Atomlessness ⇒ □Self-atoms are strong atoms -/
@@ -2438,6 +2454,22 @@ def necessary_atoms_are_strong_atoms_t_implies_necessary_atoms_are_self_atoms_t 
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomsAreStrongAtomsT.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAtomsAreSelfAtomsT.schemaIn
+
+/-- `necessary-axiom-of-infinity-e-implies-axiom-of-infinity-e`
+
+□Axiom of Infinity (type e) ⇒ Axiom of Infinity (type e) -/
+def necessary_axiom_of_infinity_e_implies_axiom_of_infinity_e : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAxiomOfInfinityE.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AxiomOfInfinityE.schemaIn
+
+/-- `necessary-axiom-of-infinity-t-implies-axiom-of-infinity-t`
+
+□Axiom of Infinity (type t) ⇒ Axiom of Infinity (type t) -/
+def necessary_axiom_of_infinity_t_implies_axiom_of_infinity_t : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecAxiomOfInfinityT.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.AxiomOfInfinityT.schemaIn
 
 /-- `necessary-barcan-and-rigid-power-imply-rigid-rigidity`
 

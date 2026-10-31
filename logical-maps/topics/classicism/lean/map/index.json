@@ -789,7 +789,7 @@
   {"proofs":
    [{"name":
      "Classicism.Proofs.possible_infinity_t_and_bf_t_imply_axiom_of_infinity_t",
-     "lines": [63, 66],
+     "lines": [71, 74],
      "file": "Classicism/Results/Records/Infinity.lean"}],
    "certificate":
    {"name":
@@ -812,7 +812,7 @@
   {"proofs":
    [{"name":
      "Classicism.Proofs.possible_infinity_e_and_bf_imply_axiom_of_infinity_e",
-     "lines": [68, 71],
+     "lines": [76, 79],
      "file": "Classicism/Results/Records/Infinity.lean"}],
    "certificate":
    {"name":
@@ -2713,7 +2713,7 @@
   {"proofs":
    [{"name":
      "Classicism.Proofs.necessary_countable_boolean_completeness_r_implies_countable_boolean_completeness_r",
-     "lines": [82, 87],
+     "lines": [90, 95],
      "file": "Classicism/Results/Records/Infinity.lean"}],
    "certificate":
    {"name":
@@ -2753,7 +2753,7 @@
   {"proofs":
    [{"name":
      "Classicism.Proofs.necessary_boolean_completeness_r_implies_necessary_countable_boolean_completeness_r",
-     "lines": [88, 94],
+     "lines": [96, 102],
      "file": "Classicism/Results/Records/Infinity.lean"}],
    "certificate":
    {"name":
@@ -2903,6 +2903,30 @@
     "lines": [1564, 1566],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
+  "necessary-axiom-of-infinity-t-implies-axiom-of-infinity-t":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.necessary_axiom_of_infinity_t_implies_axiom_of_infinity_t",
+     "lines": [29, 31],
+     "file": "Classicism/Results/Records/Infinity.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.necessary_axiom_of_infinity_t_implies_axiom_of_infinity_t",
+    "lines": [2006, 2007],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "necessary-axiom-of-infinity-e-implies-axiom-of-infinity-e":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.necessary_axiom_of_infinity_e_implies_axiom_of_infinity_e",
+     "lines": [25, 27],
+     "file": "Classicism/Results/Records/Infinity.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.necessary_axiom_of_infinity_e_implies_axiom_of_infinity_e",
+    "lines": [2003, 2004],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
   "necessary-atoms-are-strong-atoms-t-and-necessary-intensional-choice-imply-necessary-atoms-are-strong-atoms-r":
   {"proofs":
    [{"name":
@@ -2933,6 +2957,18 @@
    {"name":
     "Classicism.Map.necessary_atoms_are_self_atoms_t_and_necessary_intensional_choice_imply_necessary_atoms_are_self_atoms_r",
     "lines": [1994, 1995],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "necessary-atomlessness-implies-necessary-axiom-of-infinity-t":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.necessary_atomlessness_implies_necessary_axiom_of_infinity_t",
+     "lines": [105, 109],
+     "file": "Classicism/Results/Records/Infinity.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.necessary_atomlessness_implies_necessary_axiom_of_infinity_t",
+    "lines": [2009, 2010],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atomicity-t-implies-atomicity-t":
@@ -4122,7 +4158,7 @@
   {"proofs":
    [{"name":
      "Classicism.Proofs.boolean_completeness_r_implies_countable_boolean_completeness_r",
-     "lines": [73, 79],
+     "lines": [81, 87],
      "file": "Classicism/Results/Records/Infinity.lean"}],
    "certificate":
    {"name":
@@ -4275,7 +4311,7 @@
   "atomlessness-implies-axiom-of-infinity-t":
   {"proofs":
    [{"name": "Classicism.Proofs.atomlessness_implies_axiom_of_infinity_t",
-     "lines": [25, 47],
+     "lines": [33, 55],
      "file": "Classicism/Results/Records/Infinity.lean"}],
    "certificate":
    {"name": "Classicism.Map.atomlessness_implies_axiom_of_infinity_t",
@@ -11970,7 +12006,7 @@
       "lines": [205, 207],
       "file": "Classicism/Principles/Coarse.lean"},
      {"name": "Classicism.P.TractarianismDual.listQuoted",
-      "lines": [76, 76],
+      "lines": [77, 77],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.tractarianism_r.dual_polyadic",
@@ -12130,7 +12166,7 @@
       "lines": [226, 227],
       "file": "Classicism/Principles/Coarse.lean"},
      {"name": "Classicism.P.NecTractarianismDual.listQuoted",
-      "lines": [77, 77],
+      "lines": [78, 78],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_tractarianism_r.dual_polyadic",
@@ -12370,7 +12406,7 @@
       "lines": [117, 118],
       "file": "Classicism/Principles/Coarse.lean"},
      {"name": "Classicism.P.NecNecessityOfDistinctnessDual.listQuoted",
-      "lines": [74, 74],
+      "lines": [75, 75],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_distinctness_necessary_r.dual_polyadic",
@@ -12493,7 +12529,7 @@
       "lines": [155, 156],
       "file": "Classicism/Principles/Coarse.lean"},
      {"name": "Classicism.P.NecBarcanDual.listQuoted",
-      "lines": [75, 75],
+      "lines": [76, 76],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_barcan_r.dual_polyadic",
@@ -12712,7 +12748,7 @@
       "lines": [100, 101],
       "file": "Classicism/Principles/Coarse.lean"},
      {"name": "Classicism.P.NecessityOfDistinctnessDual.listQuoted",
-      "lines": [74, 74],
+      "lines": [75, 75],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.distinctness_necessary_r.dual_polyadic",
@@ -12856,7 +12892,7 @@
       "lines": [134, 135],
       "file": "Classicism/Principles/Coarse.lean"},
      {"name": "Classicism.P.BarcanDual.listQuoted",
-      "lines": [75, 75],
+      "lines": [76, 76],
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.barcan_r.dual_polyadic",
@@ -13431,6 +13467,14 @@
   {"name": "Classicism.P.NecBarcan",
    "lines": [155, 156],
    "file": "Classicism/Principles/Coarse.lean"},
+  "Classicism.P.NecAxiomOfInfinityT":
+  {"name": "Classicism.P.NecAxiomOfInfinityT",
+   "lines": [32, 33],
+   "file": "Classicism/Principles/Infinity.lean"},
+  "Classicism.P.NecAxiomOfInfinityE":
+  {"name": "Classicism.P.NecAxiomOfInfinityE",
+   "lines": [30, 31],
+   "file": "Classicism/Principles/Infinity.lean"},
   "Classicism.P.NecAtomsAreStrongAtomsT":
   {"name": "Classicism.P.NecAtomsAreStrongAtomsT",
    "lines": [158, 159],
