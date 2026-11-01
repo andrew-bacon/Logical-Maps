@@ -3,6 +3,7 @@ import Mathlib.Data.Countable.Basic
 import Classicism.Completeness.Reserve
 import Classicism.Completeness.ObjectLemmas
 import Classicism.Completeness.Lindenbaum
+import Classicism.Completeness.ReserveConservativity
 import Classicism.Syntax.Blocks
 
 /-!
@@ -241,23 +242,27 @@ theorem exists_world_of_consistent_lift [Countable Sig.Const] {Ax : AxiomSet Sig
     lindenbaum (fun τ => by simpa using Set.infinite_univ) hA h
   exact ⟨⟨S, hroomy, Γ, hlang, hcons, hcompl, hwit⟩, hAΓ⟩
 
-/-- **Lindenbaum–Henkin**: an axiom set consistent with `C` is included in some world.
+/-- **Lindenbaum–Henkin**, from consistency with Existence at the type variables: such
+an axiom set is included in some world. The hypothesis is needed as well as sufficient,
+since every world says that every type is inhabited (`World.exists_self_mem`). -/
+theorem exists_world_of_varExistence [Countable Sig.Const] {Ax : AxiomSet Sig}
+    (h : AxiomSet.Consistent (Ax ∪ AxiomSet.varExistence)) :
+    ∃ w : World Sig, ∀ a, AxiomSet.lift Ax a → a ∈ w.Γ :=
+  exists_world_of_consistent_lift (AxiomSet.Consistent.lift_of_varExistence h)
 
-NOT PROVABLE AS STATED (W1a, 31 October 2026), and false: every world contains
-`∃x:σ. x = x` at every type `σ`, type variables included (`World.exists_self_mem`), since
-the reserve has constants of every type; but `C` does not prove `∃x:var i. x = x`
-(`Syntax/Conservativity.lean`, `Syntax/Inhabited.lean`; an intensional action model may
-have an empty inner domain at a type variable). So for `Ax = {¬∃x:var 0. x = x}`, which is
-consistent with `C`, no world includes `lift Ax`. The hypothesis needed is consistency of
-`lift Ax` in the ambient signature (`exists_world_of_consistent_lift`). Mathematically that
-holds iff `Ax` is consistent together with `∃x:var i. x = x` for every `i`; neither direction
-is formalized yet, and the one a completeness proof needs (from that consistency in `Sig`
-to consistency in `ext Sig`) is a conservativity theorem for the reserve, which needs a
-finite-support argument: a derivation uses finitely many reserve constants, and those of a
-type variable can only be eliminated into variables. -/
-theorem exists_world [Countable Sig.Const] {Ax : AxiomSet Sig} (h : AxiomSet.Consistent Ax) :
-    ∃ w : World Sig, ∀ a, AxiomSet.lift Ax a → a ∈ w.Γ := by
-  sorry
+/-- **Lindenbaum–Henkin**: an axiom set of the paper's language, in a signature of the
+paper's language, consistent with `C`, is included in some world.
+
+The restriction to the paper's language is needed: every world contains `∃x:σ. x = x` at
+every type `σ`, type variables included (`World.exists_self_mem`), and `C` does not prove
+that of a type variable, so `{¬∃x:var 0. x = x}`, consistent with `C`, is in no world. For
+the paper's language, Existence at the type variables is consistent with any consistent
+theory (`AxiomSet.Consistent.union_varExistence`, by vectorizing along `var i ↦ e`), and
+the reserve is conservative over it (`AxiomSet.Consistent.lift_of_varExistence`). -/
+theorem exists_world [Countable Sig.Const] (hS : Sig.Closed) {Ax : AxiomSet Sig}
+    (hc : AxiomSet.ClosedTypes Ax) (h : AxiomSet.Consistent Ax) :
+    ∃ w : World Sig, ∀ a, AxiomSet.lift Ax a → a ∈ w.Γ :=
+  exists_world_of_varExistence (h.union_varExistence hS hc)
 
 end Completeness
 
