@@ -7,6 +7,8 @@ import Classicism.Models.FiniteCompressionSeparation
 import Classicism.Models.FixedPointEntranceBarcan
 import Classicism.Models.FixedPointEntranceRelationalBarcan
 import Classicism.Models.FixedPointEntranceChoice
+import Classicism.Models.CoalescedInterpretations
+import Classicism.Semantics.OneIndividual
 import Mathlib.Data.Fintype.Powerset
 import Mathlib.Data.Finite.Sigma
 import Mathlib.Data.Finite.Prod
@@ -305,6 +307,70 @@ theorem rigid_power_r : Statements.Models.finite_support_pair_injections_or_coll
   verdict_fails M <| not_holdsAx_of ⟨.arr .e .t, by simp, rfl⟩ Monoids.PairInjCol.not_rigidPower
 
 end finite_support_pair_injections_or_collapses
+
+namespace coalesced_definable_root
+
+/-! The definable coalesced root over the canonical model of `Σ₀ = {d}`
+(`Models/CoalescedInterpretations.lean`, 31 October 2026, Claude Opus 5.5, prompted by Cian Dorr). -/
+
+open CategoryTheory
+
+local notation "M" => Classicism.Meta.Coalesced.definableRoot_isModel
+
+/-- Every pure sentence consistent with `C` is possible at the root; Possibility gives Distinctness. -/
+theorem distinctness_schema_r : Statements.Models.coalesced_definable_root.distinctness_schema_r :=
+  verdict_holds M Coalesced.definableRoot_distinctness
+
+/-- The only individual at the root is `d`: no two distinct ones (`Premodel.holds_count`). -/
+theorem infinity_e : Statements.Models.coalesced_definable_root.infinity_e := by
+  refine ⟨M, fun H => ?_⟩
+  rw [holdsAx_ofPure] at H
+  obtain ⟨f, hf⟩ := (holds_count (Coalesced.definableRoot.reduct_isModel M) (𝟙 _) .e 2).1 (H _ ⟨2, by decide, rfl⟩)
+  have : Subsingleton (Coalesced.definableRoot.reduct.Dom Coalesced.definableRoot.reduct.W₀ .e) :=
+    Coalesced.definableRoot_subsingleton
+  exact absurd (hf (Subsingleton.elim (f 0) (f 1))) (by decide)
+
+/-- `Suc_e 𝟎_e` is a finite cardinality holding of the universal property
+(`Premodel.not_holds_axiomOfInfinityE`), the root having one individual. -/
+theorem axiom_of_infinity_e : Statements.Models.coalesced_definable_root.axiom_of_infinity_e := by
+  refine ⟨M, fun H => ?_⟩
+  rw [holdsAx_ofPure] at H
+  exact not_holds_axiomOfInfinityE (Coalesced.definableRoot.reduct_isModel M) (𝟙 _)
+    Coalesced.definableRoot_subsingleton (H _ rfl)
+
+end coalesced_definable_root
+
+namespace coalesced_pinned_interpretations_root
+
+/-! The finitely pinned coalesced root over the canonical model of `Σ⁺`
+(`Models/CoalescedInterpretations.lean`, 31 October 2026, Claude Opus 5.5, prompted by Cian Dorr). -/
+
+local notation "M" => Classicism.Meta.Coalesced.pinnedInterpRoot_isModel
+
+/-- BF at every closed type (`Coalesced.pinned_bf`): a fresh constant witnesses each instance. -/
+theorem barcan_r : Statements.Models.coalesced_pinned_interpretations_root.barcan_r :=
+  ⟨M, (holdsAx_ofPure _ _).2 <| holdsAx_indexed.2 fun σ hσ => Coalesced.pinnedInterpRoot_bf σ hσ⟩
+
+/-- Every sentence of `Σ⁺` consistent with `C(Σ⁺)` is possible at the root. -/
+theorem distinctness_signature_r : Statements.Models.coalesced_pinned_interpretations_root.distinctness_signature_r :=
+  ⟨Signature.plus_admitted, M, Coalesced.pinnedInterpRoot_distinctness⟩
+
+end coalesced_pinned_interpretations_root
+
+namespace coalesced_pinned_substitutions_root
+
+/-! As `coalesced-pinned-interpretations-root`, with the maps of the constants at the root. -/
+
+local notation "M" => Classicism.Meta.Coalesced.pinnedSubstRoot_isModel
+
+/-- BF at every closed type (`Coalesced.pinned_bf`), the maps of the constants undone by shifts. -/
+theorem barcan_r : Statements.Models.coalesced_pinned_substitutions_root.barcan_r :=
+  ⟨M, (holdsAx_ofPure _ _).2 <| holdsAx_indexed.2 fun σ hσ => Coalesced.pinnedSubstRoot_bf σ hσ⟩
+
+theorem distinctness_signature_r : Statements.Models.coalesced_pinned_substitutions_root.distinctness_signature_r :=
+  ⟨Signature.plus_admitted, M, Coalesced.pinnedSubstRoot_distinctness⟩
+
+end coalesced_pinned_substitutions_root
 
 end Classicism.Map.Models
 

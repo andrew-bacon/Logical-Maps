@@ -4763,7 +4763,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.symmetric_two_object_unpinned.necessary_boolean_completeness_r",
-     "lines": [209, 216],
+     "lines": [211, 218],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
    "independence-signature-r":
@@ -5597,7 +5597,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.symmetric_old_new_individuals.necessary_boolean_completeness_r",
-     "lines": [233, 237],
+     "lines": [235, 239],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
    "independence-signature-r":
@@ -5666,7 +5666,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.symmetric_old_new_individuals.distinctness_necessary_r",
-     "lines": [225, 227],
+     "lines": [227, 229],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
    "boolean-completeness-r":
@@ -5696,7 +5696,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.symmetric_old_new_individuals.boolean_completeness_r",
-     "lines": [229, 231],
+     "lines": [231, 233],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}}},
   "symmetric-infinite-classes":
@@ -6005,7 +6005,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.symmetric_finite_compression_entrance.weakly_rigid_power_r",
-     "lines": [256, 261],
+     "lines": [258, 263],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
    "tame-rigidity-r":
@@ -6038,7 +6038,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.symmetric_finite_compression_entrance.tame_rigidity_r",
-     "lines": [248, 250],
+     "lines": [250, 252],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
    "rigid-power-r":
@@ -6072,7 +6072,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.symmetric_finite_compression_entrance.rigid_power_r",
-     "lines": [252, 254],
+     "lines": [254, 256],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
    "independence-signature-r":
@@ -6145,7 +6145,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.symmetric_entrance_qualitative_links.relational_choice_r",
-     "lines": [273, 275],
+     "lines": [275, 277],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
    "independence-signature-r":
@@ -6213,7 +6213,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.symmetric_entrance_qualitative_links.barcan_t",
-     "lines": [277, 279],
+     "lines": [279, 281],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
    "barcan-relational":
@@ -6243,7 +6243,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.symmetric_entrance_qualitative_links.barcan_relational",
-     "lines": [281, 284],
+     "lines": [283, 286],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}}},
   "symmetric-collapse-pair":
@@ -8445,7 +8445,7 @@
       "lines": [124, 128],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Map.Meets.mset_one_individual",
-      "lines": [374, 376],
+      "lines": [440, 442],
       "file": "Classicism/MapModels.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Intensional.FullActionModels.surj",
@@ -8634,7 +8634,7 @@
       "lines": [108, 115],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Map.Meets.mset_one_individual",
-      "lines": [374, 376],
+      "lines": [440, 442],
       "file": "Classicism/MapModels.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Intensional.FullActionModels.surj",
@@ -8782,7 +8782,7 @@
       "lines": [117, 122],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Map.Meets.mset_one_individual",
-      "lines": [374, 376],
+      "lines": [440, 442],
       "file": "Classicism/MapModels.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Intensional.FullActionModels.surj",
@@ -8844,7 +8844,7 @@
       "lines": [124, 128],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Map.Meets.mset_one_individual",
-      "lines": [374, 376],
+      "lines": [440, 442],
       "file": "Classicism/MapModels.lean"}],
     "definitions": [],
     "certificate":
@@ -9031,7 +9031,7 @@
       "lines": [108, 115],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Map.Meets.mset_one_individual",
-      "lines": [374, 376],
+      "lines": [440, 442],
       "file": "Classicism/MapModels.lean"}],
     "definitions": [],
     "certificate":
@@ -9164,7 +9164,7 @@
       "lines": [117, 122],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Map.Meets.mset_one_individual",
-      "lines": [374, 376],
+      "lines": [440, 442],
       "file": "Classicism/MapModels.lean"}],
     "definitions": [],
     "certificate":
@@ -9227,7 +9227,7 @@
       "lines": [456, 462],
       "file": "Classicism/Models/FullActionModels.lean"},
      {"name": "Classicism.Map.Meets.instFintypeInvol",
-      "lines": [387, 387],
+      "lines": [453, 453],
       "file": "Classicism/MapModels.lean"}],
     "definitions": [],
     "certificate":
@@ -9244,7 +9244,7 @@
       "lines": [124, 128],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Map.Meets.mset_one_individual",
-      "lines": [374, 376],
+      "lines": [440, 442],
       "file": "Classicism/MapModels.lean"}],
     "definitions": [],
     "certificate":
@@ -9406,10 +9406,10 @@
       "lines": [84, 84],
       "file": "Classicism/Semantics/IntensionalExamples.lean"},
      {"name": "Classicism.Map.Meets.mset_finitely_many_propositions",
-      "lines": [378, 384],
+      "lines": [444, 450],
       "file": "Classicism/MapModels.lean"},
      {"name": "Classicism.Map.Meets.instFintypeInvol",
-      "lines": [387, 387],
+      "lines": [453, 453],
       "file": "Classicism/MapModels.lean"}],
     "definitions": [],
     "certificate":
@@ -9426,7 +9426,7 @@
       "lines": [108, 115],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Map.Meets.mset_one_individual",
-      "lines": [374, 376],
+      "lines": [440, 442],
       "file": "Classicism/MapModels.lean"}],
     "definitions": [],
     "certificate":
@@ -9541,10 +9541,10 @@
       "lines": [84, 84],
       "file": "Classicism/Semantics/IntensionalExamples.lean"},
      {"name": "Classicism.Map.Meets.mset_finitely_many_propositions",
-      "lines": [378, 384],
+      "lines": [444, 450],
       "file": "Classicism/MapModels.lean"},
      {"name": "Classicism.Map.Meets.instFintypeInvol",
-      "lines": [387, 387],
+      "lines": [453, 453],
       "file": "Classicism/MapModels.lean"}],
     "definitions": [],
     "certificate":
@@ -9561,7 +9561,7 @@
       "lines": [117, 122],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Map.Meets.mset_one_individual",
-      "lines": [374, 376],
+      "lines": [440, 442],
       "file": "Classicism/MapModels.lean"}],
     "definitions": [],
     "certificate":
@@ -9645,7 +9645,7 @@
       "lines": [456, 462],
       "file": "Classicism/Models/FullActionModels.lean"},
      {"name": "Classicism.Map.Meets.instFintypeIdem",
-      "lines": [386, 386],
+      "lines": [452, 452],
       "file": "Classicism/MapModels.lean"}],
     "definitions": [],
     "certificate":
@@ -9662,7 +9662,7 @@
       "lines": [124, 128],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Map.Meets.mset_one_individual",
-      "lines": [374, 376],
+      "lines": [440, 442],
       "file": "Classicism/MapModels.lean"}],
     "definitions": [],
     "certificate":
@@ -9785,10 +9785,10 @@
       "lines": [84, 84],
       "file": "Classicism/Semantics/IntensionalExamples.lean"},
      {"name": "Classicism.Map.Meets.mset_finitely_many_propositions",
-      "lines": [378, 384],
+      "lines": [444, 450],
       "file": "Classicism/MapModels.lean"},
      {"name": "Classicism.Map.Meets.instFintypeIdem",
-      "lines": [386, 386],
+      "lines": [452, 452],
       "file": "Classicism/MapModels.lean"}],
     "definitions": [],
     "certificate":
@@ -9805,7 +9805,7 @@
       "lines": [108, 115],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Map.Meets.mset_one_individual",
-      "lines": [374, 376],
+      "lines": [440, 442],
       "file": "Classicism/MapModels.lean"}],
     "definitions": [],
     "certificate":
@@ -9871,7 +9871,7 @@
       "file": "Classicism/MapArguments.lean"},
      {"name":
       "Classicism.Map.Meets.full_idempotent_monoid.actual_world_isolated",
-      "lines": [398, 427],
+      "lines": [464, 493],
       "file": "Classicism/MapModels.lean"}],
     "definitions": [],
     "certificate":
@@ -9893,7 +9893,7 @@
       "lines": [84, 84],
       "file": "Classicism/Semantics/IntensionalExamples.lean"},
      {"name": "Classicism.Map.Meets.full_idempotent_monoid.unretracted",
-      "lines": [391, 396],
+      "lines": [457, 462],
       "file": "Classicism/MapModels.lean"}],
     "definitions": [],
     "certificate":
@@ -9915,10 +9915,10 @@
       "lines": [84, 84],
       "file": "Classicism/Semantics/IntensionalExamples.lean"},
      {"name": "Classicism.Map.Meets.mset_finitely_many_propositions",
-      "lines": [378, 384],
+      "lines": [444, 450],
       "file": "Classicism/MapModels.lean"},
      {"name": "Classicism.Map.Meets.instFintypeIdem",
-      "lines": [386, 386],
+      "lines": [452, 452],
       "file": "Classicism/MapModels.lean"}],
     "definitions": [],
     "certificate":
@@ -9935,7 +9935,7 @@
       "lines": [117, 122],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Map.Meets.mset_one_individual",
-      "lines": [374, 376],
+      "lines": [440, 442],
       "file": "Classicism/MapModels.lean"}],
     "definitions": [],
     "certificate":
@@ -9968,7 +9968,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.finite_support_two_object_all_maps.necessary_barcan_r",
-     "lines": [201, 203],
+     "lines": [203, 205],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
    "barcan-r":
@@ -9995,7 +9995,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.finite_support_two_object_all_maps.barcan_r",
-     "lines": [197, 199],
+     "lines": [199, 201],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}}},
   "finite-support-truncations":
@@ -10131,7 +10131,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.finite_support_truncations.boolean_completeness_r",
-     "lines": [163, 165],
+     "lines": [165, 167],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
    "actuality":
@@ -10151,7 +10151,7 @@
       "file": "Classicism/Models/MonoidModel.lean"}],
     "certificate":
     {"name": "Classicism.Map.Models.finite_support_truncations.actuality",
-     "lines": [159, 161],
+     "lines": [161, 163],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}}},
   "finite-support-truncated-shifts":
@@ -10287,7 +10287,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.finite_support_truncated_shifts.boolean_completeness_r",
-     "lines": [187, 189],
+     "lines": [189, 191],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
    "barcan-r":
@@ -10463,7 +10463,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.finite_support_permutations.distinctness_necessary_r",
-     "lines": [89, 91],
+     "lines": [91, 93],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
    "boolean-completeness-r":
@@ -10481,7 +10481,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.finite_support_permutations.boolean_completeness_r",
-     "lines": [97, 99],
+     "lines": [99, 101],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
    "atomlessness":
@@ -10498,7 +10498,7 @@
       "file": "Classicism/Models/Permutations.lean"}],
     "certificate":
     {"name": "Classicism.Map.Models.finite_support_permutations.atomlessness",
-     "lines": [93, 95],
+     "lines": [95, 97],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}}},
   "finite-support-pair-injections-or-collapses":
@@ -10520,7 +10520,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.finite_support_pair_injections_or_collapses.vicinity",
-     "lines": [292, 294],
+     "lines": [294, 296],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
    "transversal-choice-r":
@@ -10566,7 +10566,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.finite_support_pair_injections_or_collapses.rigid_power_r",
-     "lines": [303, 305],
+     "lines": [305, 307],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
    "no-pure-contingency-r":
@@ -10676,7 +10676,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.finite_support_pair_injections_or_collapses.barcan_r",
-     "lines": [296, 298],
+     "lines": [298, 300],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
    "atomlessness":
@@ -10697,7 +10697,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.finite_support_pair_injections_or_collapses.atomlessness",
-     "lines": [300, 301],
+     "lines": [302, 303],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}}},
   "finite-support-monotone-surjections":
@@ -10833,7 +10833,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.finite_support_monotone_surjections.distinctness_necessary_r",
-     "lines": [111, 113],
+     "lines": [113, 115],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
    "boolean-completeness-r":
@@ -10854,7 +10854,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.finite_support_monotone_surjections.boolean_completeness_r",
-     "lines": [115, 117],
+     "lines": [117, 119],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
    "barcan-r":
@@ -10900,7 +10900,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.finite_support_monotone_surjections.atomlessness",
-     "lines": [107, 109],
+     "lines": [109, 111],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}}},
   "finite-support-monotone-maps":
@@ -10972,7 +10972,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.finite_support_monotone_maps.boolean_completeness_r",
-     "lines": [129, 131],
+     "lines": [131, 133],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
    "barcan-r":
@@ -10986,7 +10986,7 @@
       "file": "Classicism/MapArguments.lean"},
      {"name":
       "Classicism.Map.Meets.finite_support_monotone_maps.positive_preserving",
-      "lines": [334, 335],
+      "lines": [400, 401],
       "file": "Classicism/MapModels.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Intensional.Monoids.mono",
@@ -11017,7 +11017,7 @@
       "file": "Classicism/Models/MonoidModel.lean"}],
     "certificate":
     {"name": "Classicism.Map.Models.finite_support_monotone_maps.atomlessness",
-     "lines": [125, 127],
+     "lines": [127, 129],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}}},
   "finite-support-identity-or-collapse-surjections":
@@ -11153,7 +11153,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.finite_support_identity_or_collapse_surjections.boolean_completeness_r",
-     "lines": [149, 151],
+     "lines": [151, 153],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
    "barcan-r":
@@ -11192,7 +11192,7 @@
       "file": "Classicism/MapArguments.lean"},
      {"name":
       "Classicism.Map.Meets.finite_support_identity_or_collapse_surjections.collapse_unpinned",
-      "lines": [360, 370],
+      "lines": [426, 436],
       "file": "Classicism/MapModels.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Intensional.Monoids.monoSurj01",
@@ -11218,7 +11218,7 @@
       "file": "Classicism/MapArguments.lean"},
      {"name":
       "Classicism.Map.Meets.finite_support_identity_or_collapse_surjections.collapse_unpinned",
-      "lines": [360, 370],
+      "lines": [426, 436],
       "file": "Classicism/MapModels.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Intensional.Monoids.monoSurj01",
@@ -11395,7 +11395,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.finite_support_identity_or_collapse.boolean_completeness_r",
-     "lines": [139, 141],
+     "lines": [141, 143],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
    "barcan-r":
@@ -11409,7 +11409,7 @@
       "file": "Classicism/MapArguments.lean"},
      {"name":
       "Classicism.Map.Meets.finite_support_identity_or_collapse.positive_preserving",
-      "lines": [341, 342],
+      "lines": [407, 408],
       "file": "Classicism/MapModels.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Intensional.Monoids.mono01",
@@ -11435,7 +11435,7 @@
       "file": "Classicism/MapArguments.lean"},
      {"name":
       "Classicism.Map.Meets.finite_support_identity_or_collapse.collapse_unpinned",
-      "lines": [344, 354],
+      "lines": [410, 420],
       "file": "Classicism/MapModels.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Intensional.Monoids.mono01",
@@ -11461,7 +11461,7 @@
       "file": "Classicism/MapArguments.lean"},
      {"name":
       "Classicism.Map.Meets.finite_support_identity_or_collapse.collapse_unpinned",
-      "lines": [344, 354],
+      "lines": [410, 420],
       "file": "Classicism/MapModels.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Intensional.Monoids.mono01",
@@ -11638,7 +11638,7 @@
     "certificate":
     {"name":
      "Classicism.Map.Models.finite_support_dyadic_roundings.boolean_completeness_r",
-     "lines": [177, 179],
+     "lines": [179, 181],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
    "barcan-r":
@@ -11658,7 +11658,7 @@
       "file": "Classicism/Models/MonoidModel.lean"}],
     "certificate":
     {"name": "Classicism.Map.Models.finite_support_dyadic_roundings.barcan_r",
-     "lines": [173, 175],
+     "lines": [175, 177],
      "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
    "actuality":
@@ -11688,6 +11688,188 @@
     {"name": "Classicism.Map.Models.finite_support_dyadic_roundings.actuality",
      "lines": [18, 20],
      "file": "Classicism/MapDerived.lean",
+     "axioms": ["propext", "Classical.choice", "Quot.sound"]}}},
+  "coalesced-pinned-substitutions-root":
+  {"distinctness-signature-r":
+   {"proofs":
+    [{"name": "Classicism.Meta.Signature.plus_admitted",
+      "lines": [113, 114],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.pinnedSubstRoot_isModel",
+      "lines": [185, 186],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.pinnedSubstRoot_distinctness",
+      "lines": [200, 203],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"}],
+    "definitions":
+    [{"name": "Classicism.Meta.Signature.plus",
+      "lines": [106, 107],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.canonicalFamily",
+      "lines": [42, 44],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.pinnedSubstRoot",
+      "lines": [179, 183],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"}],
+    "certificate":
+    {"name":
+     "Classicism.Map.Models.coalesced_pinned_substitutions_root.distinctness_signature_r",
+     "lines": [370, 371],
+     "file": "Classicism/MapModels.lean",
+     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
+   "barcan-r":
+   {"proofs":
+    [{"name": "Classicism.Meta.Coalesced.pinnedSubstRoot_isModel",
+      "lines": [185, 186],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.pinnedSubstRoot_bf",
+      "lines": [211, 213],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"}],
+    "definitions":
+    [{"name": "Classicism.Meta.Signature.plus",
+      "lines": [106, 107],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.canonicalFamily",
+      "lines": [42, 44],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.pinnedSubstRoot",
+      "lines": [179, 183],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"}],
+    "certificate":
+    {"name":
+     "Classicism.Map.Models.coalesced_pinned_substitutions_root.barcan_r",
+     "lines": [366, 368],
+     "file": "Classicism/MapModels.lean",
+     "axioms": ["propext", "Classical.choice", "Quot.sound"]}}},
+  "coalesced-pinned-interpretations-root":
+  {"distinctness-signature-r":
+   {"proofs":
+    [{"name": "Classicism.Meta.Signature.plus_admitted",
+      "lines": [113, 114],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.pinnedInterpRoot_isModel",
+      "lines": [176, 177],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.pinnedInterpRoot_distinctness",
+      "lines": [195, 198],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"}],
+    "definitions":
+    [{"name": "Classicism.Meta.Signature.plus",
+      "lines": [106, 107],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.canonicalFamily",
+      "lines": [42, 44],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.pinnedInterpRoot",
+      "lines": [170, 174],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"}],
+    "certificate":
+    {"name":
+     "Classicism.Map.Models.coalesced_pinned_interpretations_root.distinctness_signature_r",
+     "lines": [354, 356],
+     "file": "Classicism/MapModels.lean",
+     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
+   "barcan-r":
+   {"proofs":
+    [{"name": "Classicism.Meta.Coalesced.pinnedInterpRoot_isModel",
+      "lines": [176, 177],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.pinnedInterpRoot_bf",
+      "lines": [207, 209],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"}],
+    "definitions":
+    [{"name": "Classicism.Meta.Signature.plus",
+      "lines": [106, 107],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.canonicalFamily",
+      "lines": [42, 44],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.pinnedInterpRoot",
+      "lines": [170, 174],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"}],
+    "certificate":
+    {"name":
+     "Classicism.Map.Models.coalesced_pinned_interpretations_root.barcan_r",
+     "lines": [350, 352],
+     "file": "Classicism/MapModels.lean",
+     "axioms": ["propext", "Classical.choice", "Quot.sound"]}}},
+  "coalesced-definable-root":
+  {"infinity-e":
+   {"proofs":
+    [{"name": "Classicism.Meta.Coalesced.definableRoot_isModel",
+      "lines": [167, 168],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Intensional.Premodel.holds_count",
+      "lines": [171, 180],
+      "file": "Classicism/Semantics/Counting.lean"},
+     {"name": "Classicism.Meta.Coalesced.definableRoot_subsingleton",
+      "lines": [217, 219],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"}],
+    "definitions":
+    [{"name": "Classicism.Meta.Signature.oneIndividual",
+      "lines": [98, 99],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.canonicalFamily",
+      "lines": [42, 44],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.definableRoot",
+      "lines": [161, 162],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"}],
+    "certificate":
+    {"name": "Classicism.Map.Models.coalesced_definable_root.infinity_e",
+     "lines": [324, 331],
+     "file": "Classicism/MapModels.lean",
+     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
+   "distinctness-schema-r":
+   {"proofs":
+    [{"name": "Classicism.Meta.Coalesced.definableRoot_isModel",
+      "lines": [167, 168],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.definableRoot_distinctness",
+      "lines": [190, 193],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"}],
+    "definitions":
+    [{"name": "Classicism.Meta.Signature.oneIndividual",
+      "lines": [98, 99],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.canonicalFamily",
+      "lines": [42, 44],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.definableRoot",
+      "lines": [161, 162],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"}],
+    "certificate":
+    {"name":
+     "Classicism.Map.Models.coalesced_definable_root.distinctness_schema_r",
+     "lines": [320, 322],
+     "file": "Classicism/MapModels.lean",
+     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
+   "axiom-of-infinity-e":
+   {"proofs":
+    [{"name": "Classicism.Meta.Coalesced.definableRoot_isModel",
+      "lines": [167, 168],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Intensional.Premodel.not_holds_axiomOfInfinityE",
+      "lines": [51, 101],
+      "file": "Classicism/Semantics/OneIndividual.lean"},
+     {"name": "Classicism.Meta.Coalesced.definableRoot_subsingleton",
+      "lines": [217, 219],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"}],
+    "definitions":
+    [{"name": "Classicism.Meta.Signature.oneIndividual",
+      "lines": [98, 99],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.canonicalFamily",
+      "lines": [42, 44],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.definableRoot",
+      "lines": [161, 162],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"}],
+    "certificate":
+    {"name":
+     "Classicism.Map.Models.coalesced_definable_root.axiom_of_infinity_e",
+     "lines": [333, 339],
+     "file": "Classicism/MapModels.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}}}},
  "forms":
  {"weak-rigid-comprehension-r":
@@ -11776,17 +11958,17 @@
   {"dual":
    {"proofs":
     [{"name": "Classicism.P.StrongAtomicityT.to_dual",
-      "lines": [112, 114],
+      "lines": [114, 116],
       "file": "Classicism/Principles/Instances.lean"},
      {"name": "Classicism.P.StrongAtomicityT.of_dual",
-      "lines": [115, 117],
+      "lines": [117, 119],
       "file": "Classicism/Principles/Instances.lean"}],
     "definitions":
     [{"name": "Classicism.P.StrongAtomicityT",
-      "lines": [106, 107],
+      "lines": [108, 109],
       "file": "Classicism/Principles/Instances.lean"},
      {"name": "Classicism.P.StrongAtomicityTDual",
-      "lines": [108, 110],
+      "lines": [110, 112],
       "file": "Classicism/Principles/Instances.lean"}],
     "certificate":
     {"name": "Classicism.Map.strong_atomicity_t.dual",
@@ -11936,17 +12118,17 @@
   {"dual":
    {"proofs":
     [{"name": "Classicism.P.NecStrongAtomicityT.to_dual",
-      "lines": [124, 126],
+      "lines": [126, 128],
       "file": "Classicism/Principles/Instances.lean"},
      {"name": "Classicism.P.NecStrongAtomicityT.of_dual",
-      "lines": [127, 129],
+      "lines": [129, 131],
       "file": "Classicism/Principles/Instances.lean"}],
     "definitions":
     [{"name": "Classicism.P.NecStrongAtomicityT",
-      "lines": [119, 120],
+      "lines": [121, 122],
       "file": "Classicism/Principles/Instances.lean"},
      {"name": "Classicism.P.NecStrongAtomicityTDual",
-      "lines": [121, 122],
+      "lines": [123, 124],
       "file": "Classicism/Principles/Instances.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_strong_atomicity_t.dual",
@@ -12539,17 +12721,17 @@
   {"lub":
    {"proofs":
     [{"name": "Classicism.P.BooleanCompletenessT.to_lub",
-      "lines": [97, 99],
+      "lines": [99, 101],
       "file": "Classicism/Principles/Instances.lean"},
      {"name": "Classicism.P.BooleanCompletenessT.of_lub",
-      "lines": [100, 102],
+      "lines": [102, 104],
       "file": "Classicism/Principles/Instances.lean"}],
     "definitions":
     [{"name": "Classicism.P.BooleanCompletenessT",
-      "lines": [92, 93],
+      "lines": [94, 95],
       "file": "Classicism/Principles/Instances.lean"},
      {"name": "Classicism.P.BooleanCompletenessTLUB",
-      "lines": [94, 95],
+      "lines": [96, 97],
       "file": "Classicism/Principles/Instances.lean"}],
     "certificate":
     {"name": "Classicism.Map.boolean_completeness_t.lub",
@@ -12821,11 +13003,11 @@
    "file": "Classicism/Principles/Comprehension.lean"},
   "Classicism.P.StrongAtomicityTDual":
   {"name": "Classicism.P.StrongAtomicityTDual",
-   "lines": [108, 110],
+   "lines": [110, 112],
    "file": "Classicism/Principles/Instances.lean"},
   "Classicism.P.StrongAtomicityT":
   {"name": "Classicism.P.StrongAtomicityT",
-   "lines": [106, 107],
+   "lines": [108, 109],
    "file": "Classicism/Principles/Instances.lean"},
   "Classicism.P.StrongAtomicityDual":
   {"name": "Classicism.P.StrongAtomicityDual",
@@ -12845,7 +13027,7 @@
    "file": "Classicism/Principles/Choice.lean"},
   "Classicism.P.SelfAtomsAreStrongAtomsT":
   {"name": "Classicism.P.SelfAtomsAreStrongAtomsT",
-   "lines": [150, 151],
+   "lines": [152, 153],
    "file": "Classicism/Principles/Instances.lean"},
   "Classicism.P.SelfAtomsAreStrongAtoms":
   {"name": "Classicism.P.SelfAtomsAreStrongAtoms",
@@ -12853,7 +13035,7 @@
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.SelfAtomsAreAtomsT":
   {"name": "Classicism.P.SelfAtomsAreAtomsT",
-   "lines": [146, 147],
+   "lines": [148, 149],
    "file": "Classicism/Principles/Instances.lean"},
   "Classicism.P.SelfAtomsAreAtoms":
   {"name": "Classicism.P.SelfAtomsAreAtoms",
@@ -12861,7 +13043,7 @@
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.SelfAtomicityT":
   {"name": "Classicism.P.SelfAtomicityT",
-   "lines": [138, 139],
+   "lines": [140, 141],
    "file": "Classicism/Principles/Instances.lean"},
   "Classicism.P.SelfAtomicity":
   {"name": "Classicism.P.SelfAtomicity",
@@ -13009,11 +13191,11 @@
    "file": "Classicism/Principles/Comprehension.lean"},
   "Classicism.P.NecStrongAtomicityTDual":
   {"name": "Classicism.P.NecStrongAtomicityTDual",
-   "lines": [121, 122],
+   "lines": [123, 124],
    "file": "Classicism/Principles/Instances.lean"},
   "Classicism.P.NecStrongAtomicityT":
   {"name": "Classicism.P.NecStrongAtomicityT",
-   "lines": [119, 120],
+   "lines": [121, 122],
    "file": "Classicism/Principles/Instances.lean"},
   "Classicism.P.NecStrongAtomicityDual":
   {"name": "Classicism.P.NecStrongAtomicityDual",
@@ -13029,7 +13211,7 @@
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.NecSelfAtomsAreStrongAtomsT":
   {"name": "Classicism.P.NecSelfAtomsAreStrongAtomsT",
-   "lines": [152, 153],
+   "lines": [154, 155],
    "file": "Classicism/Principles/Instances.lean"},
   "Classicism.P.NecSelfAtomsAreStrongAtoms":
   {"name": "Classicism.P.NecSelfAtomsAreStrongAtoms",
@@ -13037,7 +13219,7 @@
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.NecSelfAtomsAreAtomsT":
   {"name": "Classicism.P.NecSelfAtomsAreAtomsT",
-   "lines": [148, 149],
+   "lines": [150, 151],
    "file": "Classicism/Principles/Instances.lean"},
   "Classicism.P.NecSelfAtomsAreAtoms":
   {"name": "Classicism.P.NecSelfAtomsAreAtoms",
@@ -13045,7 +13227,7 @@
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.NecSelfAtomicityT":
   {"name": "Classicism.P.NecSelfAtomicityT",
-   "lines": [140, 141],
+   "lines": [142, 143],
    "file": "Classicism/Principles/Instances.lean"},
   "Classicism.P.NecSelfAtomicity":
   {"name": "Classicism.P.NecSelfAtomicity",
@@ -13181,7 +13363,7 @@
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.NecBooleanCompletenessT":
   {"name": "Classicism.P.NecBooleanCompletenessT",
-   "lines": [133, 134],
+   "lines": [135, 136],
    "file": "Classicism/Principles/Instances.lean"},
   "Classicism.P.NecBooleanCompletenessLUB":
   {"name": "Classicism.P.NecBooleanCompletenessLUB",
@@ -13221,7 +13403,7 @@
    "file": "Classicism/Principles/Coarse.lean"},
   "Classicism.P.NecAtomsAreStrongAtomsT":
   {"name": "Classicism.P.NecAtomsAreStrongAtomsT",
-   "lines": [156, 157],
+   "lines": [158, 159],
    "file": "Classicism/Principles/Instances.lean"},
   "Classicism.P.NecAtomsAreStrongAtoms":
   {"name": "Classicism.P.NecAtomsAreStrongAtoms",
@@ -13229,15 +13411,19 @@
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.NecAtomsAreSelfAtomsT":
   {"name": "Classicism.P.NecAtomsAreSelfAtomsT",
-   "lines": [144, 145],
+   "lines": [146, 147],
    "file": "Classicism/Principles/Instances.lean"},
   "Classicism.P.NecAtomsAreSelfAtoms":
   {"name": "Classicism.P.NecAtomsAreSelfAtoms",
    "lines": [221, 222],
    "file": "Classicism/Principles/Lattice.lean"},
+  "Classicism.P.NecAtomlessness":
+  {"name": "Classicism.P.NecAtomlessness",
+   "lines": [89, 90],
+   "file": "Classicism/Principles/Instances.lean"},
   "Classicism.P.NecAtomicityT":
   {"name": "Classicism.P.NecAtomicityT",
-   "lines": [131, 132],
+   "lines": [133, 134],
    "file": "Classicism/Principles/Instances.lean"},
   "Classicism.P.NecAtomicityDual":
   {"name": "Classicism.P.NecAtomicityDual",
@@ -13429,11 +13615,11 @@
    "file": "Classicism/Principles/Schematic.lean"},
   "Classicism.P.BooleanCompletenessTLUB":
   {"name": "Classicism.P.BooleanCompletenessTLUB",
-   "lines": [94, 95],
+   "lines": [96, 97],
    "file": "Classicism/Principles/Instances.lean"},
   "Classicism.P.BooleanCompletenessT":
   {"name": "Classicism.P.BooleanCompletenessT",
-   "lines": [92, 93],
+   "lines": [94, 95],
    "file": "Classicism/Principles/Instances.lean"},
   "Classicism.P.BooleanCompletenessLUB":
   {"name": "Classicism.P.BooleanCompletenessLUB",
@@ -13485,7 +13671,7 @@
    "file": "Classicism/Principles/Infinity.lean"},
   "Classicism.P.AtomsAreStrongAtomsT":
   {"name": "Classicism.P.AtomsAreStrongAtomsT",
-   "lines": [154, 155],
+   "lines": [156, 157],
    "file": "Classicism/Principles/Instances.lean"},
   "Classicism.P.AtomsAreStrongAtoms":
   {"name": "Classicism.P.AtomsAreStrongAtoms",
@@ -13493,7 +13679,7 @@
    "file": "Classicism/Principles/Lattice.lean"},
   "Classicism.P.AtomsAreSelfAtomsT":
   {"name": "Classicism.P.AtomsAreSelfAtomsT",
-   "lines": [142, 143],
+   "lines": [144, 145],
    "file": "Classicism/Principles/Instances.lean"},
   "Classicism.P.AtomsAreSelfAtoms":
   {"name": "Classicism.P.AtomsAreSelfAtoms",

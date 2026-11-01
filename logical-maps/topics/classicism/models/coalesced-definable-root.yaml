@@ -207,3 +207,22 @@ notes: 'Built on 20 October 2026, at Cian Dorr''s suggestion, as a coalesced roo
   for Σ fails here only because Σ is interpreted at the top; interpreting its constants by closed terms of
   a larger $\Sigma_0$ would give Maximalism for Σ but lose Ψ. That it is a model of C is argued in the
   write-up; no second reader has checked it, and no Lean verification is claimed.'
+
+# The model in Lean (Models/CoalescedInterpretations.lean, 31 October 2026, Claude Opus 5.5, prompted
+# by Cian Dorr): the pure reduct of the coalesced sum over the canonical model of Σ₀ = {d}, with its base
+# at each world, as the complete family; that it is a model is `isModel_definableSum`
+# (Coalesced/Definable.lean). Its verdicts proved there (Classicism/MapModels.lean); statuses are written
+# by lean-check --update.
+lean:
+  model: Classicism.Meta.Coalesced.definableRoot
+  is_model: Classicism.Meta.Coalesced.definableRoot_isModel
+  verdicts:
+  - holds: distinctness-schema-r
+    ref: Classicism.Map.Models.coalesced_definable_root.distinctness_schema_r
+    status: verified
+  - fails: infinity-e
+    ref: Classicism.Map.Models.coalesced_definable_root.infinity_e
+    status: verified
+  - fails: axiom-of-infinity-e
+    ref: Classicism.Map.Models.coalesced_definable_root.axiom_of_infinity_e
+    status: verified

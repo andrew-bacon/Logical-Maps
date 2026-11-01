@@ -14,6 +14,7 @@ import Classicism.Models.PairInjCollapse
 import Classicism.Models.OldNewBase
 import Classicism.Models.FiniteCompressionBase
 import Classicism.Models.FixedPointEntranceModel
+import Classicism.Models.CoalescedInterpretations
 
 /-!
 # Generated statements: models' verdicts
@@ -26,6 +27,34 @@ the principle holds, or fails, in the record's Lean model.
 
 namespace Classicism.Statements
 open Classicism
+
+/-- `coalesced-definable-root`: Maximalism (pure) holds. -/
+def Models.coalesced_definable_root.distinctness_schema_r : Prop :=
+  (Classicism.Meta.Coalesced.definableRoot).IsModel ∧ (Classicism.Meta.Coalesced.definableRoot).HoldsAx (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.distinctnessC)
+
+/-- `coalesced-definable-root`: Infinity Schema (type e) fails. -/
+def Models.coalesced_definable_root.infinity_e : Prop :=
+  (Classicism.Meta.Coalesced.definableRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.definableRoot).HoldsAx (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.infinityE)
+
+/-- `coalesced-definable-root`: Axiom of Infinity (type e) fails. -/
+def Models.coalesced_definable_root.axiom_of_infinity_e : Prop :=
+  (Classicism.Meta.Coalesced.definableRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.definableRoot).HoldsAx Classicism.P.AxiomOfInfinityE.schemaIn
+
+/-- `coalesced-pinned-interpretations-root`: BF holds. -/
+def Models.coalesced_pinned_interpretations_root.barcan_r : Prop :=
+  (Classicism.Meta.Coalesced.pinnedInterpRoot).IsModel ∧ (Classicism.Meta.Coalesced.pinnedInterpRoot).HoldsAx Classicism.P.Barcan.schemaIn
+
+/-- `coalesced-pinned-interpretations-root`: Maximalism (signature Σ) holds. -/
+def Models.coalesced_pinned_interpretations_root.distinctness_signature_r : Prop :=
+  (Classicism.Meta.Coalesced.pinnedInterpRoot).Admitted ∧ (Classicism.Meta.Coalesced.pinnedInterpRoot).IsModel ∧ (Classicism.Meta.Coalesced.pinnedInterpRoot).HoldsAx (Classicism.Meta.AxiomSet.distinctnessC _)
+
+/-- `coalesced-pinned-substitutions-root`: BF holds. -/
+def Models.coalesced_pinned_substitutions_root.barcan_r : Prop :=
+  (Classicism.Meta.Coalesced.pinnedSubstRoot).IsModel ∧ (Classicism.Meta.Coalesced.pinnedSubstRoot).HoldsAx Classicism.P.Barcan.schemaIn
+
+/-- `coalesced-pinned-substitutions-root`: Maximalism (signature Σ) holds. -/
+def Models.coalesced_pinned_substitutions_root.distinctness_signature_r : Prop :=
+  (Classicism.Meta.Coalesced.pinnedSubstRoot).Admitted ∧ (Classicism.Meta.Coalesced.pinnedSubstRoot).IsModel ∧ (Classicism.Meta.Coalesced.pinnedSubstRoot).HoldsAx (Classicism.Meta.AxiomSet.distinctnessC _)
 
 /-- `finite-support-dyadic-roundings`: BF fails. -/
 def Models.finite_support_dyadic_roundings.barcan_r : Prop :=

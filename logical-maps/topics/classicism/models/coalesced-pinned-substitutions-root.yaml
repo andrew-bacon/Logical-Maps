@@ -201,3 +201,20 @@ notes: 'A variant of coalesced-pinned-interpretations-root, suggested by Cian Do
   substitutions of constants make Actuality fail, as in the finitely pinned model on all maps, while
   Maximalism and BF still hold. The argument that it is a model of C is that of the original with the maps
   added (see the write-up) and has not been checked by a second reader. No Lean verification is claimed.'
+
+# The model in Lean (Models/CoalescedInterpretations.lean, 31 October 2026, Claude Opus 5.5, prompted
+# by Cian Dorr): the coalesced sum over the canonical model of Σ⁺, countably many constants of every
+# closed type, with its base at each world, as the complete family (complete for C(Σ⁺), so for C(Σ)), the
+# record's Σ being Σ⁺ itself and every constant denoting ĉ; that it is a model is `isModel_pinnedSum`
+# (Coalesced/Pinned.lean). Its verdicts proved there (Classicism/MapModels.lean); statuses are written by
+# lean-check --update.
+lean:
+  model: Classicism.Meta.Coalesced.pinnedSubstRoot
+  is_model: Classicism.Meta.Coalesced.pinnedSubstRoot_isModel
+  verdicts:
+  - holds: barcan-r
+    ref: Classicism.Map.Models.coalesced_pinned_substitutions_root.barcan_r
+    status: verified
+  - holds: distinctness-signature-r
+    ref: Classicism.Map.Models.coalesced_pinned_substitutions_root.distinctness_signature_r
+    status: verified
