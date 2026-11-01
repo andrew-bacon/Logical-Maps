@@ -7,6 +7,7 @@ import Classicism.Coalesced.SumData
 import Classicism.Models.Henkin
 import Classicism.Coalesced.Transfer
 import Classicism.Coalesced.TransferBC
+import Classicism.Coalesced.TransferChoice
 import Classicism.Coalesced.TransferSelfAtoms
 import Mathlib.SetTheory.Cardinal.NatCard
 
@@ -571,6 +572,15 @@ theorem atoms_are_self_atoms_t :
   fun _ hc hD hF => Coalesced.SumData.not_holds_aasaT hD hF hc
 
 end self_atomicity_component
+
+namespace intensional_choice_component
+
+/-- The thread on a component's counterexample (`Coalesced/TransferChoice.lean`). -/
+theorem intensional_choice_r :
+    Statements.Arguments.coalesced_sums.intensional_choice_component.intensional_choice_r :=
+  fun _ hc hD hF => Coalesced.SumData.not_holds_ic hD hF hc
+
+end intensional_choice_component
 
 /-! #### End of witness transfers -/
 

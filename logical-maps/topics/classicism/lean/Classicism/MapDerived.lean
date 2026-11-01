@@ -75,6 +75,10 @@ theorem coalesced_all_finite_individual_domains.distinctness_necessary_t : State
 theorem coalesced_all_finite_individual_domains.independence_signature_r : Statements.Models.coalesced_all_finite_individual_domains.independence_signature_r :=
   ⟨Classicism.Meta.Signature.sigmaTop_admitted, Classicism.Meta.Intensional.Premodel.withTop_isModel (Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.SumData.ofAppendixE Classicism.Meta.Coalesced.AllFinite.comp Classicism.Meta.Coalesced.AllFinite.comp_isModel)), Classicism.Map.Arguments.sigma_top.independence_signature_r (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.SumData.ofAppendixE Classicism.Meta.Coalesced.AllFinite.comp Classicism.Meta.Coalesced.AllFinite.comp_isModel)) (Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.SumData.ofAppendixE Classicism.Meta.Coalesced.AllFinite.comp Classicism.Meta.Coalesced.AllFinite.comp_isModel))) (Classicism.Meta.Intensional.Premodel.withTop_isModel (Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.SumData.ofAppendixE Classicism.Meta.Coalesced.AllFinite.comp Classicism.Meta.Coalesced.AllFinite.comp_isModel))) (Classicism.Meta.Signature.sigmaTop_admitted) (Classicism.Meta.Intensional.Premodel.withTop_sigmaTop (Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.SumData.ofAppendixE Classicism.Meta.Coalesced.AllFinite.comp Classicism.Meta.Coalesced.AllFinite.comp_isModel)))⟩
 
+/-- `coalesced-constant-indexed-root`: Intensional Choice fails, by `coalesced-sums`'s argument `intensional-choice-component`. -/
+theorem coalesced_constant_indexed_root.intensional_choice_r : Statements.Models.coalesced_constant_indexed_root.intensional_choice_r :=
+  ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.constantIndexedData), Classicism.Map.Arguments.coalesced_sums.intensional_choice_component.intensional_choice_r (Classicism.Meta.Coalesced.constantIndexedData) (Classicism.Meta.Coalesced.constantIndexedData_complete) (Classicism.Meta.Coalesced.constantIndexedData_distinguished) (Classicism.Meta.Coalesced.constantIndexedData_fullest)⟩
+
 /-- `coalesced-constant-indexed-root`: Relational Choice holds, by `coalesced-sums`'s argument `relational-choice-free-root`. -/
 theorem coalesced_constant_indexed_root.relational_choice_r : Statements.Models.coalesced_constant_indexed_root.relational_choice_r :=
   ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.constantIndexedData), Classicism.Map.Arguments.coalesced_sums.relational_choice_free_root.relational_choice_r (Classicism.Meta.Coalesced.constantIndexedData) (Classicism.Meta.Coalesced.constantIndexedData_free)⟩
@@ -115,6 +119,10 @@ theorem coalesced_definable_root.distinctness_preserving_collapse : Statements.M
 theorem coalesced_definable_root.independence_signature_r : Statements.Models.coalesced_definable_root.independence_signature_r :=
   ⟨Classicism.Meta.Signature.sigmaTop_admitted, Classicism.Meta.Intensional.Premodel.withTop_isModel (Classicism.Meta.Coalesced.definableRoot_isModel), Classicism.Map.Arguments.sigma_top.independence_signature_r (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Coalesced.definableRoot) (Classicism.Meta.Coalesced.definableRoot_isModel)) (Classicism.Meta.Intensional.Premodel.withTop_isModel (Classicism.Meta.Coalesced.definableRoot_isModel)) (Classicism.Meta.Signature.sigmaTop_admitted) (Classicism.Meta.Intensional.Premodel.withTop_sigmaTop (Classicism.Meta.Coalesced.definableRoot_isModel))⟩
 
+/-- `coalesced-maximalist-root`: Intensional Choice fails, by `coalesced-sums`'s argument `intensional-choice-component`. -/
+theorem coalesced_maximalist_root.intensional_choice_r : Statements.Models.coalesced_maximalist_root.intensional_choice_r :=
+  ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.maximalistRoot), Classicism.Map.Arguments.coalesced_sums.intensional_choice_component.intensional_choice_r (Classicism.Meta.Coalesced.maximalistRoot) (Classicism.Meta.Coalesced.maximalistData_complete Classicism.Meta.Coalesced.sigmaTop_closed) (Classicism.Meta.Coalesced.maximalistData_distinguished) (Classicism.Meta.Coalesced.maximalistData_fullest)⟩
+
 /-- `coalesced-maximalist-root`: Relational Choice holds, by `coalesced-sums`'s argument `relational-choice-free-root`. -/
 theorem coalesced_maximalist_root.relational_choice_r : Statements.Models.coalesced_maximalist_root.relational_choice_r :=
   ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.maximalistRoot), Classicism.Map.Arguments.coalesced_sums.relational_choice_free_root.relational_choice_r (Classicism.Meta.Coalesced.maximalistRoot) (Classicism.Meta.Coalesced.maximalistData_free)⟩
@@ -150,6 +158,10 @@ theorem coalesced_maximalist_root.distinctness_preserving_collapse : Statements.
 /-- `coalesced-pinned-interpretations-root`: Truths are ND-necessary holds, by the argument `dpc-isolated-actual-world`. -/
 theorem coalesced_pinned_interpretations_root.distinctness_preserving_collapse : Statements.Models.coalesced_pinned_interpretations_root.distinctness_preserving_collapse :=
   ⟨Classicism.Meta.Coalesced.pinnedInterpRoot_isModel, Classicism.Map.Arguments.dpc_isolated_actual_world.distinctness_preserving_collapse (Classicism.Meta.Coalesced.pinnedInterpRoot) (Classicism.Meta.Coalesced.pinnedInterpRoot_isModel) (Classicism.Meta.Coalesced.pinnedInterpRoot_actualWorldIsolated)⟩
+
+/-- `coalesced-single-individual-root`: Intensional Choice fails, by `coalesced-sums`'s argument `intensional-choice-component`. -/
+theorem coalesced_single_individual_root.intensional_choice_r : Statements.Models.coalesced_single_individual_root.intensional_choice_r :=
+  ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.singleIndividualData), Classicism.Map.Arguments.coalesced_sums.intensional_choice_component.intensional_choice_r (Classicism.Meta.Coalesced.singleIndividualData) (Classicism.Meta.Coalesced.singleIndividualData_complete) (Classicism.Meta.Coalesced.singleIndividualData_distinguished) (Classicism.Meta.Coalesced.singleIndividualData_fullest)⟩
 
 /-- `coalesced-single-individual-root`: Relational Choice holds, by `coalesced-sums`'s argument `relational-choice-free-root`. -/
 theorem coalesced_single_individual_root.relational_choice_r : Statements.Models.coalesced_single_individual_root.relational_choice_r :=

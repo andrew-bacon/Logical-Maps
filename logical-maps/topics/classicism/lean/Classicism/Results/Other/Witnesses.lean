@@ -1,6 +1,7 @@
 import Classicism.Results.Other.Meta
 import Classicism.Certified.Entailed
 import Classicism.Coalesced.TransferBC
+import Classicism.Coalesced.TransferChoice
 import Classicism.Coalesced.TransferSelfAtoms
 
 /-!
@@ -291,6 +292,15 @@ the idempotent monoid (`Idem.not_aasaT`). -/
 theorem maximalist_necAtomsAreSelfAtomsT_inconsistent :
     ¬ Consistent (maximalist (Sig := Signature.pure) ∪ P.NecAtomsAreSelfAtomsT.schema) :=
   max_box_inconsistent (Consistent.empty_union Intensional.Idem.not_aasaT_consistent) rfl
+
+/-- `possibility-and-necessary-intensional-choice-incompatible`: it fails at `e` in the symmetric
+model on all surjections (`SymIdeal.allSurj_not_ic`). -/
+theorem maximalist_necIntensionalChoice_inconsistent :
+    ¬ Consistent (maximalist (Sig := Signature.pure) ∪ P.NecIntensionalChoice.schema) :=
+  maximalist_box_inconsistent_of_model _ (SymIdeal.model_isModel SymIdeal.allSurj)
+    P.IntensionalChoice.schema_closedTypes
+    (fun h => SymIdeal.allSurj_not_ic (h _ ⟨.e, by decide, rfl⟩))
+    (by rintro _ ⟨_, ⟨τ, hτ, rfl⟩, rfl⟩; exact ⟨τ, hτ, rfl⟩)
 
 /-- `maximalist-distinctness-incompatible-with-necessary-vicinity`. -/
 theorem maximalist_necVicinity_inconsistent :

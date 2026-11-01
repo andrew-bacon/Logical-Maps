@@ -11,6 +11,7 @@ certificate:
   checked_by: []
   date: '2026-10-03'
   lean: stated
+  lean_ref: Classicism.Map.possibility_and_necessary_intensional_choice_incompatible
 sources:
 - Original argument of 3 October 2026, using the model symmetric-all-surjections.
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §3.4, Theorem 3.23, p. 58 (soundness of

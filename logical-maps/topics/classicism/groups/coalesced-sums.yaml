@@ -218,6 +218,9 @@ arguments:
       Condition fullest-domains added to the requirements: the argument builds root entities whose
       parts in the components are chosen freely, which needs the root domains to be the fullest.
       Every member with distinguished arrows has them, so no member's verdicts change.
+  lean:
+  - fails: intensional-choice-r
+    ref: Classicism.Map.Arguments.coalesced_sums.intensional_choice_component.intensional_choice_r
 
 
 - id: relational-choice-free-root

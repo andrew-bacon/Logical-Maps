@@ -44,6 +44,15 @@ theorem atoms_are_self_atoms_t : Statements.Models.full_idempotent_monoid.atoms_
 
 end full_idempotent_monoid
 
+namespace symmetric_all_surjections
+
+/-- By a collapse and a transposition (`SymIdeal.allSurj_not_ic`). -/
+theorem intensional_choice_r : Statements.Models.symmetric_all_surjections.intensional_choice_r :=
+  ⟨SymIdeal.model_isModel SymIdeal.allSurj, fun h => SymIdeal.allSurj_not_ic
+    ((Premodel.holdsAx_schemaIn_iff _ _).1 h _ ⟨.e, by decide, rfl⟩)⟩
+
+end symmetric_all_surjections
+
 /-- The four boxed failures at a coalesced root with complete components. -/
 theorem coalesced_box_failures {D : Coalesced.SumData} (hD : D.DistinguishedArrows)
     (hc : D.CompleteComponents) :
