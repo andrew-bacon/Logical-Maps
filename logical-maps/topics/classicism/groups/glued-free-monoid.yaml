@@ -30,6 +30,21 @@ parameters:
   construction:
     text: The individuals and the gluing, as the member's write-up gives them.
 
+# The construction in Lean (Models/GluedFreeMonoid.lean): the glued premodel of a GluedData, a
+# category with a base object, the individuals, sites at the base, a signature and the constants'
+# values at each site, the constants glued at the sites (Semantics/Glued.lean). A member gives its
+# data as lean.param. Added 1 November 2026 by Claude Opus 5.5, at Cian Dorr's direction.
+lean:
+  binder: '(D : Classicism.Meta.Intensional.GluedData)'
+  var: D
+  model: Classicism.Meta.Intensional.GluedData.model {param}
+  is_model: Classicism.Meta.Intensional.GluedData.isModel {param}
+  meets:
+    full-model: Classicism.Meta.Intensional.GluedData.full {param}
+    full-action-model: Classicism.Meta.Intensional.GluedData.full {param}
+    extensionally-full: Classicism.Meta.Intensional.Premodel.Full.extFull _ (Classicism.Meta.Intensional.GluedData.full
+      {param})
+
 meets:
   codomain-intensions: >-
     The domains are full at every object.

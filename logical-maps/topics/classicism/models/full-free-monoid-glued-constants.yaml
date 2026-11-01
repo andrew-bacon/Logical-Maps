@@ -161,3 +161,20 @@ history:
     are unboxed. Recorded on a question of Zachary Goodsell, after an observation of Christopher Sun.'
   satisfies:
   - transversal-choice-r
+lean:
+  param: Classicism.Meta.Intensional.freeMonoidThread
+  meets:
+    one-object-action-model: Classicism.Meta.Intensional.FreeMonoidMembers.thread_oneObject
+    unretracted-arrow: Classicism.Meta.Intensional.FreeMonoidMembers.thread_unretracted
+    infinitely-many-propositions: Classicism.Meta.Intensional.FreeMonoidMembers.thread_infinitely_many_propositions
+    actual-world-isolated: Classicism.Meta.Intensional.FreeMonoidMembers.thread_actual_world_isolated
+  verdicts:
+  - holds: logical-necessity-r
+    ref: Classicism.Map.Models.full_free_monoid_glued_constants.logical_necessity_r
+    status: verified
+  - holds: axiom-of-infinity-e
+    ref: Classicism.Map.Models.full_free_monoid_glued_constants.axiom_of_infinity_e
+    status: verified
+  - holds: barcan-r
+    ref: Classicism.Map.Models.full_free_monoid_glued_constants.barcan_r
+    status: verified

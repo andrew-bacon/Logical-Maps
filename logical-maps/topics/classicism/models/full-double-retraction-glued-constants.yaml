@@ -134,3 +134,24 @@ notes: 'Built on 14 October 2026 to separate Witnessed Possibility from Separate
   full model satisfies. The failures of No Pure Contingency, Converse Witnessed Possibility and Modal
   Freedom are derived by the engine from Witnessed Possibility without Possibly Witnessed Possibility;
   the write-up, §3.2, gives them directly from the contingency of the pure sentence Strong Actuality.'
+lean:
+  param: Classicism.Meta.Intensional.doubleRetractionSites
+  meets:
+    identity-singletons: Classicism.Meta.Intensional.DoubleRetractionSites.identity_singletons
+    one-individual: Classicism.Meta.Intensional.DoubleRetractionSites.one_individual
+    infinitely-many-propositions: Classicism.Meta.Intensional.DoubleRetractionSites.infinitely_many_propositions
+    nonidentity-arrow: Classicism.Meta.Intensional.DoubleRetractionSites.nonidentity
+    nonepic-arrow: Classicism.Meta.Intensional.DoubleRetractionSites.nonepic
+    returning-arrow: Classicism.Meta.Intensional.DoubleRetractionSites.returning
+    separated-retractions: Classicism.Meta.Intensional.DoubleRetractionSites.separated
+    unretracted-arrow: Classicism.Meta.Intensional.DoubleRetractionSites.unretracted
+  verdicts:
+  - holds: witnessed-possibility-r
+    ref: Classicism.Map.Models.full_double_retraction_glued_constants.witnessed_possibility_r
+    status: verified
+  - fails: possibly-witnessed-possibility-r
+    ref: Classicism.Map.Models.full_double_retraction_glued_constants.possibly_witnessed_possibility_r
+    status: verified
+  - holds: pure-b-r
+    ref: Classicism.Map.Models.full_double_retraction_glued_constants.pure_b_r
+    status: verified
