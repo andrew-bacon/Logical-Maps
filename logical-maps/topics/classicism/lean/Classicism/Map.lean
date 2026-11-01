@@ -7,6 +7,7 @@ import Classicism.Results.SentenceSchemas.WitnessedPossibility
 import Classicism.Results.SentenceSchemas.PossibilityPlus
 import Classicism.Results.SentenceSchemas.Infinity
 import Classicism.Results.SentenceSchemas.Constants
+import Classicism.Results.SentenceSchemas.SeparatedStructure
 import Classicism.Results.SentenceSchemas.ArithmeticMeta
 import Classicism.Certified.Research
 import Classicism.Results.Research.NPCC5Atomicity
@@ -2044,6 +2045,54 @@ theorem axiom_of_infinity_t_implies_infinity_t : Statements.axiom_of_infinity_t_
 theorem atomlessness_implies_infinity_t : Statements.atomlessness_implies_infinity_t := by
   map_cert (Entails.trans Proofs.atomlessness_implies_axiom_of_infinity_t.entails
     axiomOfInfinityT_entails_infinityT)
+
+/-! ### Separated Structure and the signature schemas (`Results/SentenceSchemas/SeparatedStructure.lean`) -/
+
+/-- `distinctness-signature-r-implies-separated-structure-r` -/
+theorem distinctness_signature_r_implies_separated_structure_r :
+    Statements.distinctness_signature_r_implies_separated_structure_r :=
+  fun _ _ h => Entails.trans h distinctness_entails_separatedStructure
+
+/-- `possibility-signature-r-implies-witnessed-possibility-r` (premise: Maximalism, Distinctness form) -/
+theorem possibility_signature_r_implies_witnessed_possibility_r :
+    Statements.possibility_signature_r_implies_witnessed_possibility_r :=
+  fun _ _ h => Entails.trans h distinctness_entails_witnessedPossibility
+
+/-- `separated-structure-r-implies-possibly-witnessed-possibility-r` -/
+theorem separated_structure_r_implies_possibly_witnessed_possibility_r :
+    Statements.separated_structure_r_implies_possibly_witnessed_possibility_r :=
+  fun _ _ h => Entails.trans h separatedStructure_entails_possiblyWitnessedPossibility
+
+/-- `possibly-witnessed-possibility-r-implies-separated-structure-r` -/
+theorem possibly_witnessed_possibility_r_implies_separated_structure_r :
+    Statements.possibly_witnessed_possibility_r_implies_separated_structure_r :=
+  fun hS _ h => Entails.trans h (possiblyWitnessedPossibility_entails_separatedStructure hS.1)
+
+/-- `logical-necessity-r-implies-separated-structure-r`, through Possibly Witnessed Possibility -/
+theorem logical_necessity_r_implies_separated_structure_r :
+    Statements.logical_necessity_r_implies_separated_structure_r :=
+  fun hS _ h => Entails.trans h (logicalNecessity_entails_separatedStructure hS.1)
+
+/-- `logical-necessity-r-implies-modal-freedom-signature-r` -/
+theorem logical_necessity_r_implies_modal_freedom_signature_r :
+    Statements.logical_necessity_r_implies_modal_freedom_signature_r :=
+  fun hS _ h => Entails.trans h (logicalNecessity_entails_modalFreedom hS.1)
+
+/-- `separated-structure-r-implies-independence-signature-r` -/
+theorem separated_structure_r_implies_independence_signature_r :
+    Statements.separated_structure_r_implies_independence_signature_r :=
+  fun hS _ h => Entails.trans h (separatedStructure_entails_independence hS.1)
+
+/-- `witnessed-possibility-r-implies-independence-signature-r` -/
+theorem witnessed_possibility_r_implies_independence_signature_r :
+    Statements.witnessed_possibility_r_implies_independence_signature_r :=
+  fun hS _ h => Entails.trans h (witnessedPossibility_entails_independence hS.1)
+
+/-- `pure-distinctness-and-separated-structure-imply-signature-distinctness` -/
+theorem pure_distinctness_and_separated_structure_imply_signature_distinctness :
+    Statements.pure_distinctness_and_separated_structure_imply_signature_distinctness :=
+  fun hS _ h₁ h₂ => Entails.trans (Entails.union h₁ h₂)
+    (pureDistinctness_separatedStructure_entails_distinctness hS.1)
 
 /-! ### Boxed twins, by `map_boxed` (`Results/Boxed.lean`) -/
 
