@@ -315,9 +315,11 @@ On 6 October two topic arguments gave 24 Σ verdicts this way: `sigma-top` (Inde
 relative to `Σ` fails, at `c ≠ ⊤_ρ`) and `sigma-top-npc` (No Contingency relative to `Σ`
 holds, given No Pure Contingency). A relative argument's statement has the hypothesis
 `Admitted` after the model's (`lean.argument.relative`). With these the engine settles 11 or 12
-of the 14 Σ verdicts of each one-object model from Lean alone. What it lacks: General Separated
-Structure has no `lean_def`, and the results Separated Structure ⇒ Possibly Witnessed
-Possibility and Strong Possibility (`Σ`) ⇒ Possibility (`Σ`) are stated, not proved. Not
+of the 14 Σ verdicts of each one-object model from Lean alone. What it lacked then: General
+Separated Structure had no `lean_def`, and the results Separated Structure ⇒ Possibly Witnessed
+Possibility and Strong Possibility (`Σ`) ⇒ Possibility (`Σ`) were stated, not proved; the first
+is proved since 1 November, with the other Separated Structure and Independence results
+(`Results/SentenceSchemas/SeparatedStructure.lean`). Not
 done yet: the rest of `sigma-top` (Witnessed Possibility, which the two-object chain needs),
 and the true-atom interpretation (`sigma-true-atom`), which no model in Lean uses.
 

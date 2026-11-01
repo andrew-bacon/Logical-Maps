@@ -2,6 +2,7 @@ import Classicism.Results.SentenceSchemas.WitnessedPossibility
 import Classicism.Results.SentenceSchemas.PossibilityDistinctness
 import Classicism.Completeness.ConstantBlocks
 import Classicism.Syntax.Inhabited
+import Classicism.Syntax.PossibilityPlus
 
 /-!
 # Separated Structure, Independence and the signature schemas
@@ -521,23 +522,11 @@ theorem pureDistinctness_separatedStructure_entails_distinctness (hS : Sig.Close
 
 /-! ### Independence -/
 
-/-- A tuple of pure terms, read in a signature. -/
-def Terms.ofPure {Γ : Ctx} : ∀ {σs : List Ty}, Terms Signature.pure Γ σs → Terms Sig Γ σs
-  | [], _ => .nil
-  | _ :: _, as => .cons (Term.ofPure as.head) (Terms.ofPure as.tail)
-
 theorem Term.ofPure_appBlock {Γ : Ctx} : ∀ {σs : List Ty} {ρ : RTy}
     (f : Term Signature.pure Γ (σs ⇒* ρ)) (as : Terms Signature.pure Γ σs),
     Term.ofPure (Sig := Sig) (Term.appBlock f as) = Term.appBlock (Term.ofPure f) (Terms.ofPure as)
   | [], _, _, .nil => rfl
   | _ :: _, _, f, .cons a as => Term.ofPure_appBlock (Term.app f a) as
-
-theorem Terms.ofPure_vars : ∀ (σs : List Ty) (Γ : Ctx),
-    Terms.ofPure (Sig := Sig) (Terms.vars σs Γ) = Terms.vars σs Γ
-  | [], _ => rfl
-  | σ :: σs, Γ => by
-    show Terms.cons (Term.ofPure ((Term.var .zero).rename (Ren.wkBlock σs))) (Terms.ofPure (Terms.vars σs (σ :: Γ))) = _
-    rw [Term.ofPure_rename, Terms.ofPure_vars σs]; rfl
 
 /-- A term of a relational type `ρ`, read at a type `τ` equal to it. -/
 def Term.castR {S : Signature} {Γ : Ctx} {τ : Ty} {ρ : RTy} (h : τ = Ty.rel ρ)
@@ -793,7 +782,7 @@ theorem existsBlock_conj (cs ds : List Sig.Const) (hnd : (cs ++ ds).Nodup)
     simp only [θ, hd, if_true]
     exact (CMap.block_rename ds (Ren.wkBlock τc) hd).symm
   have hfix : θ.Fixes {c | c ∈ cs ∨ c ∈ ds} := fun c hc => by
-    simp only [Set.mem_setOf_eq, not_or] at hc
+    simp only [Set.mem_ofPred_eq, not_or] at hc
     simp only [θ, hc.2, if_false, CMap.block_not_mem cs [] hc.1, Term.rename_const]
   -- the theorem in the signature, then with the variables for the constants
   have t₀ : C.Theorem (Term.imp (Term.conj (Term.atConsts cs P) (Term.atConsts ds Q))
