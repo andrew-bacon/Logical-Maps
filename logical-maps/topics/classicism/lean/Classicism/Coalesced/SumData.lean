@@ -18,11 +18,15 @@ nonemptiness, the root values of the constants, and the proof that the coalesced
 The group's conditions, as predicates of the data:
 
 * `complete-components` (`SumData.CompleteComponents`): every closed-type pure sentence
-  consistent with `C` holds in the component seen from some root arrow
-  (`RootAction.CompleteComponents`); over distinguished arrows, at the root of some component.
+  consistent with `C` is true at the root of some component. Over distinguished arrows this
+  gives the weaker `RootAction.CompleteComponents`, the sentence holding in the component seen
+  from some root arrow, which is what Maximalism at the root needs
+  (`SumData.completeComponents_root`).
 * `distinguished-arrows` (`SumData.DistinguishedArrows`): the root has only its identity as
-  endo-arrow, and each component has an object `W` and an arrow `d` from the root to `W`
+  endo-arrow, and each component has an arrow `d` from the root to the component's root
   through which every root arrow into the component factors uniquely.
+* `fullest-domains` (`SumData.FullestDomains`): every intension at the root whose transport
+  along every root arrow is in the component's domain is a root entity.
 * `free-root-component` (`SumData.FreeRootComponent`): any intension at the root agreeing
   with a root entity off the root (on the tuples whose world lies in a component) is a root
   entity: the root component is an arbitrary function of the root arguments.
@@ -95,17 +99,18 @@ abbrev model : Premodel D.Sig (CoalescedSum D.S) := D.RA.coalescedSum D.RI D.ne 
 
 theorem isModel : D.model.IsModel := D.isModel'
 
-/-- `complete-components`: every closed-type pure sentence consistent with `C` holds in the
-component seen from some root arrow. -/
-def CompleteComponents : Prop := D.RA.CompleteComponents D.I
+/-- `complete-components`: every closed-type pure sentence consistent with `C` is true at the
+root of some component. -/
+def CompleteComponents : Prop :=
+  ∀ p : Sentence Signature.pure, p.closedTypes = true → AxiomSet.Consistent (AxiomSet.single p) →
+    ∃ k : D.ι, (D.A k).HoldsSentence (Term.ofPure p)
 
-/-- `distinguished-arrows`: only the identity at the root, and in each component an object `W`
-and a root arrow `d` into it through which every root arrow into the component factors
-uniquely. -/
+/-- `distinguished-arrows`: only the identity at the root, and in each component a root arrow `d`
+to the component's root through which every root arrow into the component factors uniquely. -/
 def DistinguishedArrows : Prop :=
   (∀ m : D.S.End, m = D.S.one) ∧
-    ∀ k : D.ι, ∃ (W : D.C k) (d : D.S.R.obj ⟨k, W⟩), ∀ (V : D.C k) (r : D.S.R.obj ⟨k, V⟩),
-      ∃! j : W ⟶ V, D.S.R.map (SigmaHom.mk j) d = r
+    ∀ k : D.ι, ∃ d : D.S.R.obj ⟨k, (D.A k).W₀⟩, ∀ (V : D.C k) (r : D.S.R.obj ⟨k, V⟩),
+      ∃! j : (D.A k).W₀ ⟶ V, D.S.R.map (SigmaHom.mk j) d = r
 
 /-- `free-root-component`: an intension at the root that agrees with a root entity on every
 tuple whose world lies in a component is a root entity. -/
@@ -118,6 +123,19 @@ def FreeRootComponent : Prop :=
 /-- `fullest-domains`: the root domains are the **fullest**, every landing intension at the root
 being the inclusion of a root entity (`RootAction.Fullest`). -/
 def FullestDomains : Prop := D.RA.Fullest D.RI
+
+/-- Over distinguished arrows, a sentence true at the root of a component holds in the component
+seen from the distinguished arrow into it, a pure sentence not depending on the constants: so
+`complete-components` gives the components' completeness as Maximalism at the root uses it
+(`RootAction.holds_dia_of_complete`). -/
+theorem completeComponents_root {D : SumData} (hD : D.DistinguishedArrows) (hc : D.CompleteComponents) :
+    D.RA.CompleteComponents D.I := fun p hp h => by
+  obtain ⟨k, hk⟩ := hc p hp h
+  obtain ⟨d, -⟩ := hD.2 k
+  have e : (D.RA.component D.I d).reduct = (D.A k).reduct := rfl
+  have h1 := (Premodel.holdsSentence_ofPure (D.A k) p).1 hk
+  rw [← e] at h1
+  exact ⟨k, _, d, (Premodel.holdsSentence_ofPure (D.RA.component D.I d) p).2 h1⟩
 
 /-! ### A free root component -/
 
@@ -228,7 +246,7 @@ variable {A ae av ne I}
 so. -/
 theorem SumData.distinguishedArrows_ofDistinguished (hI : TransportsConstants (fullAction ae av) I)
     (M : ∀ k, (A k).IsModel) : (SumData.ofDistinguished A ae av ne I hI M).DistinguishedArrows :=
-  ⟨fun _ => rfl, fun k => ⟨(A k).W₀, dist A k, fun _ r =>
+  ⟨fun _ => rfl, fun k => ⟨dist A k, fun _ r =>
     ⟨r, Category.id_comp r, fun j hj => (Category.id_comp j).symm.trans hj⟩⟩⟩
 
 /-- They meet `free-root-component`, the root domains being the fullest: an intension that agrees
@@ -254,8 +272,13 @@ theorem SumData.completeComponents_ofDistinguished (hI : TransportsConstants (fu
     (M : ∀ k, (A k).IsModel) (hS : Sig.Closed)
     (hA : ∀ p : Sentence Sig, p.closedTypes = true → AxiomSet.Consistent (AxiomSet.single p) →
       ∃ k : ι, (A k).HoldsSentence p) :
-    (SumData.ofDistinguished A ae av ne I hI M).CompleteComponents :=
-  RootAction.CompleteComponentsSig.complete _ _ hS (completeComponentsSig_distinguished ae av I hI hA)
+    (SumData.ofDistinguished A ae av ne I hI M).CompleteComponents := fun p hp hc =>
+  hA (Term.ofPure p) (by rw [Term.closedTypes_ofPure]; exact hp)
+    (by
+      have := (AxiomSet.consistent_ofPure_iff (Sig := Sig) hS (A := AxiomSet.single p)).2 hc
+      refine AxiomSet.Consistent.mono ?_ this
+      rintro _ rfl
+      exact ⟨p, rfl, rfl⟩)
 
 end Distinguished
 

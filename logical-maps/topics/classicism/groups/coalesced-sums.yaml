@@ -286,6 +286,9 @@ arguments:
       Condition fullest-domains added to the requirements: the argument builds root entities whose
       parts in the components are chosen freely, which needs the root domains to be the fullest.
       Every member with distinguished arrows has them, so no member's verdicts change.
+  lean:
+  - fails: barcan-t
+    ref: Classicism.Map.Arguments.coalesced_sums.barcan_t_component.barcan_t
 
 - id: atomicity-t-component
   requires: [complete-components, distinguished-arrows, fullest-domains]
@@ -308,6 +311,9 @@ arguments:
       Condition fullest-domains added to the requirements: the argument builds root entities whose
       parts in the components are chosen freely, which needs the root domains to be the fullest.
       Every member with distinguished arrows has them, so no member's verdicts change.
+  lean:
+  - fails: atomicity-t
+    ref: Classicism.Map.Arguments.coalesced_sums.atomicity_t_component.atomicity_t
 
 - id: boolean-completeness-t-component
   requires: [complete-components, distinguished-arrows, fullest-domains]
