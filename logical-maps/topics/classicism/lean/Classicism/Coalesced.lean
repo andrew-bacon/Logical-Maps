@@ -1,32 +1,52 @@
-import Classicism.Semantics.IntensionalFacts
+import Classicism.Coalesced.Category
+import Classicism.Coalesced.Premodel
+import Classicism.Coalesced.Transport
+import Classicism.Coalesced.Model
+import Classicism.Coalesced.Full
+import Classicism.Coalesced.Distinguished
 
 /-!
 # Coalesced sums
 
-Classicism, Appendix E (Definition E.2, Theorem 3.26), in a generality that covers the
-members of the map's group `coalesced-sums`, for intensional action models.
+Classicism, Appendix E (Definition E.2, Theorem 3.26), for intensional action models, in a
+generality that covers the members of the map's group `coalesced-sums`.
 
-The construction is a **collage**. The data are a family of intensional action models
-`A k` on categories `C k`, indexed by a type `ι`; a functor `R : (Σ k, C k) ⥤ Type`, whose
-value at an object `V` is the set of arrows from the new root `W₀` to `V`; and a monoid `M`
-of arrows from `W₀` to itself, acting on `R` naturally (trivial except in the
-substitution variant). The category has objects `Option (Σ k, C k)`, with `none` the root;
-`Hom none none = M`, `Hom none (some V) = R.obj V`, `Hom (some V) none = ∅`, and the
-component arrows otherwise. Appendix E's distinguished arrows are the representable case,
-`R` restricted to component `k` being `Hom (W k) –`; the interpretation-arrow members take
+The data are a family of intensional action premodels `A k` on categories `C k`, indexed by
+a type `ι`, and the **root arrows** (`RootArrows`): an action `R` of the disjoint union
+`Σ k, C k`, whose value at `V` is the set of arrows from the new root `W₀` to `V`, and a
+monoid of root endo-arrows acting on it naturally (only the identity, except in the
+substitution members). The coalesced sum of the categories (`CoalescedSum`,
+`Category.lean`) has the root and the component objects as objects; its arrows out of a
+component object are the component's. Appendix E's **distinguished arrows** are the case
+`R V = Hom (W k, V)` (`RootArrows.distinguished`); the interpretation-arrow members take
 `R V` to be the interpretations of a signature at `V`.
 
-At the root, the individuals are a type `X` with a natural transport `X × R V → V^e`, and the
-domain at a relational type is a chosen set of **landing** intensions, those whose transport
-along every root arrow lies in the component's domain: all of them (fullest), the finitely
-pinned ones, or the closed-term-definable ones. The general theorems:
+At the root (`Premodel.lean`), a **root action** gives the root domain at each type with
+its transports along the root arrows, and a **root inclusion** reads the root relational
+elements as intensions; at a component object everything is the component's, by
+definition. The theorems:
 
-* **transport**: along a root arrow `r : W₀ → V`, the value of a term is its value in `V`'s
-  component, re-based at `V` with the constants transported along `r`;
-* **root closure**: the collage is a model iff the chosen root domains are closed under the
-  operations of the language at the root;
-* as corollaries, Theorem 3.26 (each component is a truncation of the sum) and the
-  possibility at the root of every sentence that holds at some component's base.
+* **transport** (`RootAction.sem_transport`, `Transport.lean`): along a root arrow
+  `r : W₀ → V`, the value of a term is its value in `V`'s component re-based at `V` with the
+  constants transported along `r` (`RootAction.component`);
+* **root closure** (`RootAction.isModel_iff`, `Model.lean`): the sum is a model iff those
+  re-based components are models and the root domains are closed under the language at
+  the root; with the **fullest** root domains, every **landing** intension, closure is
+  automatic (`RootAction.isModel_of_fullest`);
+* the truncation of the sum by a root arrow is the re-based component
+  (`RootAction.truncate_arr_sem`), so what holds there is possible at the root
+  (`RootAction.holds_dia_of_component`).
 
-To be written (workstream W3); this file will import its parts.
+The root domains are built by recursion on the type from a **domain selector**
+(`Selector`, `Full.lean`), the fullest being `fullAction`, with root individuals any set
+with natural transports (`AtomAction`); for selected domains root closure says that the
+selector contains the values of the terms (`rootClosed_iff_selected`). Appendix E itself,
+over the distinguished arrows (`Distinguished.lean`): product root individuals, fullest
+domains, the unions of the components' intensions as the root values of the constants, and
+**Theorem 3.26** (`theorem_3_26`, `coalesced_sum_theorem`): each component is the
+truncation of the sum by its distinguished arrow.
+
+In standard terms the coalesced sum of the categories is the *collage* (cograph) of the
+profunctor from the one-object category `End` to `Σ k, C k` given by `R`, and an action is
+a copresheaf.
 -/
