@@ -1,6 +1,7 @@
 import Classicism.Completeness.Worlds
 import Mathlib.CategoryTheory.Category.Preorder
 import Classicism.Semantics.IntensionalSoundness
+import Classicism.Completeness.CanonicalTruth
 
 /-!
 # Completeness of intensional action models for Classicism
@@ -23,8 +24,10 @@ This replaces the paper's route (BBK models, their categories, and the represent
 intensional category by an action model) by the construction of Bacon's book, Chapter 18,
 read in the intensional form.
 
-INTERFACE (31 October 2026): the statements are fixed; the construction and the proofs are
-to be supplied (workstream W2), in further files of `Completeness/`.
+The construction is in `Completeness/Canonical.lean` (term classes, the canonical inclusion,
+the readings of the type-subscripted operations) and `Completeness/CanonicalTruth.lean` (the
+premodel, the truth lemma, the model condition); the world theory it rests on is
+`Completeness/Worlds.lean`, and the object-language facts `Completeness/ObjectLemmas.lean`.
 -/
 
 namespace Classicism.Meta
@@ -39,7 +42,9 @@ variable {Sig : Signature}
 countable signature, holds in an intensional action model. The category is a preorder. -/
 theorem exists_model [Countable Sig.Const] {Ax : AxiomSet Sig} (h : AxiomSet.Consistent Ax) :
     ∃ (W : Type) (_ : Preorder W) (A : Intensional.Premodel Sig W), A.IsModel ∧ A.HoldsAx Ax := by
-  sorry
+  obtain ⟨w, hw⟩ := exists_world h
+  exact ⟨World Sig, inferInstance, Canonical.premodel w, Canonical.isModel w,
+    fun a ha => (Canonical.holdsSentence_iff w a).2 (hw _ ⟨a, ha, rfl⟩)⟩
 
 /-- **Completeness**: what holds in every intensional action model of `Ax` is a theorem
 of `C + Ax`. -/
@@ -47,17 +52,25 @@ theorem theorem_of_valid [Countable Sig.Const] {Ax : AxiomSet Sig} {p : Sentence
     (h : ∀ (W : Type) [SmallCategory W] (A : Intensional.Premodel Sig W),
       A.IsModel → A.HoldsAx Ax → A.HoldsSentence p) :
     Theorem (C.axioms ∪ Ax) p := by
-  sorry
+  by_contra hn
+  obtain ⟨w, hw⟩ := exists_world (AxiomSet.consistent_neg_of_not_theorem hn)
+  have hp := (Canonical.holdsSentence_iff w p).1
+    (h (World Sig) (Canonical.premodel w) (Canonical.isModel w)
+      fun a ha => (Canonical.holdsSentence_iff w a).2 (hw _ ⟨a, Or.inl ha, rfl⟩))
+  exact World.not_mem_and_neg hp (hw _ ⟨Term.neg p, Or.inr rfl, rfl⟩)
 
 /-- **A complete family**, as the coalesced sums use it: a family of intensional action
 models, indexed by a type, in which every sentence consistent with `C` holds at the base
-of some member. -/
+of some member. The family is the canonical model with its base varying over the worlds. -/
 theorem exists_complete_family [Countable Sig.Const] :
     ∃ (ι : Type) (W : ι → Type) (_ : ∀ k, Preorder (W k))
       (A : ∀ k, Intensional.Premodel Sig (W k)),
       (∀ k, (A k).IsModel) ∧
       ∀ p : Sentence Sig, AxiomSet.Consistent (AxiomSet.single p) → ∃ k, (A k).HoldsSentence p := by
-  sorry
+  refine ⟨World Sig, fun _ => World Sig, fun _ => inferInstance, Canonical.premodel,
+    Canonical.isModel, fun p hp => ?_⟩
+  obtain ⟨w, hw⟩ := exists_world hp
+  exact ⟨w, (Canonical.holdsSentence_iff w p).2 (hw _ ⟨p, rfl, rfl⟩)⟩
 
 end Completeness
 
