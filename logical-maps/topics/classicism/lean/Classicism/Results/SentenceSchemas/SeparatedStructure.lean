@@ -68,8 +68,17 @@ its negation is possible. -/
 theorem wp_ind_glue (q : Prop) : (q → □ q) → ◇ ¬ q → ¬ q :=
   fun hn hd hq => not_dia_of_box_not (¬ q) (modal_K _ _ (nec% (fun (h : q) (hn' : ¬ q) => hn' h)) (hn hq)) hd
 
+/-- Logical Necessity at `¬a`: `◇a` refutes `∀x̄. ¬P`, so gives `∃x̄. P`. -/
+theorem ln_mf_glue₁ (a f e : Prop) : (□ ¬ a ↔ f) → (¬ f → e) → ◇ a → e :=
+  fun h1 h2 ha => h2 (fun hf => not_dia_of_box_not a (h1.2 hf) ha)
+
+/-- Logical Necessity at `¬r`: what refutes `∀x̄. ¬R` makes `r` possible. -/
+theorem ln_mf_glue₂ (r f e : Prop) : (□ ¬ r ↔ f) → (e → ¬ f) → e → ◇ r :=
+  fun h1 h2 he => by rw [dia_eq_not_box_not]; exact fun hb => h2 he (h1.1 hb)
+
 end shallow
 
+#classicism_derive Classicism.ln_mf_glue₁ Classicism.ln_mf_glue₂
 #classicism_derive Classicism.ss_ind_glue Classicism.wp_ind_glue
 #classicism_derive Classicism.ss_pwp_glue Classicism.ln_pwp_glue Classicism.modalized_functionality
   Classicism.pwp_ss_glue
@@ -661,6 +670,240 @@ theorem witnessedPossibility_entails_independence (hS : Sig.Closed) :
   exact Theorem.mp₂ (Derivable.allEβ
     (Theorem.ofCMinus (C.TheoremMinus.ofPure wp_ind_glue.derivable)) (Term.eq' (h ▸ Term.const c) U))
     (Theorem.ofC hni) hdia
+
+/-! ### Logical Necessity gives Modal Freedom -/
+
+/-- Renaming from the empty context is unique. -/
+theorem Ren.eq_of_nil {Δ : Ctx} (r r' : Ren [] Δ) : r = r' := by
+  funext τ v; exact nomatch v
+
+/-- Weakening past a block, then a renaming lifted over it: the renaming, then the
+weakening. -/
+theorem Ren.comp_liftBlock_wkBlock : ∀ (σs : List Ty) {Γ Γ' : Ctx} (r : Ren Γ Γ'),
+    Ren.comp (Ren.liftBlock σs r) (Ren.wkBlock σs) = Ren.comp (Ren.wkBlock σs) r
+  | [], _, _, _ => rfl
+  | σ :: σs, Γ, Γ', r => by
+    have ih := Ren.comp_liftBlock_wkBlock σs (Γ := σ :: Γ) (Γ' := σ :: Γ') (Ren.lift r (σ := σ))
+    show Ren.comp (Ren.liftBlock σs (Ren.lift r (σ := σ))) (Ren.comp (Ren.wkBlock σs) (Ren.shift (σ := σ))) =
+      Ren.comp (Ren.comp (Ren.wkBlock σs) (Ren.shift (σ := σ))) r
+    have e : Ren.comp (Ren.liftBlock σs (Ren.lift r (σ := σ))) (Ren.comp (Ren.wkBlock σs) (Ren.shift (σ := σ))) =
+        Ren.comp (Ren.comp (Ren.liftBlock σs (Ren.lift r (σ := σ))) (Ren.wkBlock σs)) (Ren.shift (σ := σ)) := rfl
+    rw [e, ih]; rfl
+
+/-- The block map, renamed by a renaming lifted over the block, is the block map in the
+renamed context, at the block's constants. -/
+theorem CMap.block_rename : ∀ (cs : List Sig.Const) {Γ Γ' : Ctx} (r : Ren Γ Γ') {c : Sig.Const},
+    c ∈ cs → (CMap.block cs Γ c).rename (Ren.liftBlock (cs.map Sig.typeOf) r) = CMap.block cs Γ' c
+  | [], _, _, _, _, h => nomatch h
+  | d :: cs, Γ, Γ', r, c, h => by
+    by_cases e : c = d
+    · subst e
+      rw [CMap.block_head, CMap.block_head]
+      show ((Term.var .zero).rename (Ren.wkBlock _)).rename (Ren.liftBlock _ (Ren.lift r)) = _
+      rw [Term.rename_rename, Ren.comp_liftBlock_wkBlock, ← Term.rename_rename]; rfl
+    · rw [CMap.block_tail cs Γ e, CMap.block_tail cs Γ' e]
+      exact CMap.block_rename cs (Ren.lift r) ((List.mem_cons.1 h).resolve_left e)
+
+/-- The constants of a substitution instance. -/
+theorem Term.consts_subst : ∀ {Γ Δ : Ctx} (s : Sub Sig Γ Δ) {σ : Ty} (t : Term Sig Γ σ) {c : Sig.Const},
+    c ∈ (t.subst s).consts → c ∈ t.consts ∨ ∃ τ, ∃ v : Var Γ τ, c ∈ (s τ v).consts
+  | _, _, s, _, .var v, _, h => Or.inr ⟨_, v, h⟩
+  | _, _, _, _, .const _, _, h => Or.inl h
+  | _, _, _, _, .and, _, h | _, _, _, _, .or, _, h | _, _, _, _, .not, _, h
+  | _, _, _, _, .all _, _, h | _, _, _, _, .ex _, _, h | _, _, _, _, .eq _, _, h
+  | _, _, _, _, .constR _, _, h | _, _, _, _, .negR _, _, h | _, _, _, _, .andR _, _, h
+  | _, _, _, _, .orR _, _, h | _, _, _, _, .coextR _, _, h | _, _, _, _, .boxR _, _, h
+  | _, _, _, _, .inclR _, _, h => Or.inl h
+  | _, _, s, _, .app f a, _, h => by
+    rcases h with h | h
+    · exact (consts_subst s f h).imp Or.inl id
+    · exact (consts_subst s a h).imp Or.inr id
+  | _, _, s, _, .lam b, _, h => by
+    rcases consts_subst (Sub.lift s) b h with h | ⟨τ, v, hv⟩
+    · exact Or.inl h
+    · cases v with
+      | zero => exact absurd hv (Set.notMem_empty _)
+      | succ v =>
+        rw [Sub.lift_succ, Term.weaken, Term.consts_rename] at hv
+        exact Or.inr ⟨τ, v, hv⟩
+
+/-- The constants of a block substitution of constants. -/
+theorem consts_consBlock_constsAt {Δ : Ctx} : ∀ (cs : List Sig.Const) {Γ : Ctx} (s : Sub Sig Γ Δ)
+    {τ : Ty} (v : Var (Ctx.block (cs.map Sig.typeOf) Γ) τ) {c : Sig.Const},
+    c ∈ (Sub.consBlock (Terms.constsAt Δ cs) s τ v).consts → c ∈ cs ∨ ∃ τ', ∃ w : Var Γ τ', c ∈ (s τ' w).consts
+  | [], _, _, _, v, _, h => Or.inr ⟨_, v, h⟩
+  | d :: cs, Γ, s, _, v, c, h => by
+    rcases consts_consBlock_constsAt cs (Sub.cons (Term.const d) s) v h with h | ⟨τ', w, hw⟩
+    · exact Or.inl (List.mem_cons_of_mem _ h)
+    · cases w with
+      | zero => exact Or.inl (by rw [Set.mem_singleton_iff.1 hw]; exact List.mem_cons_self)
+      | succ w => exact Or.inr ⟨τ', w, hw⟩
+
+/-- The constants of `P[c̄/x̄]` are among `c̄`. -/
+theorem consts_atConsts (cs : List Sig.Const)
+    (P : Formula Signature.pure (Ctx.block (cs.map Sig.typeOf) [])) {c : Sig.Const}
+    (h : c ∈ (Term.atConsts cs P).consts) : c ∈ cs := by
+  rw [atConsts_eq] at h
+  rcases Term.consts_subst _ _ h with h | ⟨τ, v, hv⟩
+  · rw [Term.consts_ofPure] at h; exact absurd h (Set.notMem_empty _)
+  · rcases consts_consBlock_constsAt cs Sub.id v hv with h | ⟨_, w, _⟩
+    · exact h
+    · exact nomatch w
+
+/-- `¬∃x̄. P` gives `∀x̄. ¬P`. -/
+theorem Derivable.forallBlock_neg_of_not_existsBlock {Ax : AxiomSet Sig} (σs : List Ty) {Γ : Ctx}
+    {Δ : List (Formula Sig Γ)} {P : Formula Sig (Ctx.block σs Γ)}
+    (h : Derivable Ax Δ (Term.neg (Term.existsBlock σs P))) :
+    Derivable Ax Δ (Term.forallBlock σs (Term.neg P)) :=
+  Derivable.allIBlock σs (Derivable.orE (Derivable.em P)
+    (Derivable.notE (Derivable.exIBlock_vars σs Derivable.hyp₀)
+      (Derivable.weaken₁ (Derivable.rename (Ren.wkBlock σs) h)))
+    Derivable.hyp₀)
+
+/-- `¬∀x̄. ¬P` gives `∃x̄. P`. -/
+theorem existsBlock_of_not_forallBlock_neg (σs : List Ty) (P : Formula Sig (Ctx.block σs [])) :
+    C.Theorem (Term.imp (Term.neg (Term.forallBlock σs (Term.neg P))) (Term.existsBlock σs P)) :=
+  Derivable.impI (Derivable.orE (Derivable.em (Term.existsBlock σs P)) Derivable.hyp₀
+    (Derivable.notE (Derivable.forallBlock_neg_of_not_existsBlock σs Derivable.hyp₀)
+      (Derivable.weaken₁ Derivable.hyp₀)))
+
+open Classical in
+/-- `∃x̄. P` and `∃ȳ. Q` give `∃x̄ȳ. R`, for `R[c̄d̄/x̄ȳ]` the conjunction `P[c̄/x̄] ∧ Q[d̄/ȳ]`:
+the theorem `P[c̄/x̄] ∧ Q[d̄/ȳ] → ∃x̄ȳ. R`, with the variables `x̄ȳ` put for the constants. -/
+theorem existsBlock_conj (cs ds : List Sig.Const) (hnd : (cs ++ ds).Nodup)
+    (P : Formula Signature.pure (Ctx.block (cs.map Sig.typeOf) []))
+    (Q : Formula Signature.pure (Ctx.block (ds.map Sig.typeOf) []))
+    (R : Formula Signature.pure (Ctx.block ((cs ++ ds).map Sig.typeOf) []))
+    (hR : (Term.ofPure (Sig := Sig) R).subst (Sub.consBlock (Terms.constsAt [] (cs ++ ds)) Sub.id) =
+      Term.conj (Term.atConsts cs P) (Term.atConsts ds Q)) :
+    C.Theorem (Term.imp (Term.ofPure (Sig := Sig) (Term.existsBlock _ P))
+      (Term.imp (Term.ofPure (Term.existsBlock _ Q)) (Term.ofPure (Term.existsBlock _ R)))) := by
+  have hcs : cs.Nodup := (List.nodup_append.1 hnd).1
+  have hds : ds.Nodup := (List.nodup_append.1 hnd).2.1
+  have hdisj : ∀ c ∈ cs, c ∉ ds := fun c hc hd => (List.nodup_append.1 hnd).2.2 c hc c hd rfl
+  let τc := cs.map Sig.typeOf
+  let τd := ds.map Sig.typeOf
+  let Δ : Ctx := Ctx.block τd (Ctx.block τc [])
+  let rQ : Ren (Ctx.block τd []) Δ := Ren.liftBlock τd (Ren.wkBlock τc)
+  let θ : CMap Sig Δ := fun c => if c ∈ ds then CMap.block ds (Ctx.block τc []) c
+    else (CMap.block cs [] c).rename (Ren.wkBlock τd)
+  have hθc : ∀ c ∈ cs, θ c = (CMap.block cs [] c).rename (Ren.wkBlock τd) := fun c hc => by
+    simp [θ, hdisj c hc]
+  have hθd : ∀ d ∈ ds, θ d = (CMap.block ds [] d).rename rQ := fun d hd => by
+    simp only [θ, hd, if_true]
+    exact (CMap.block_rename ds (Ren.wkBlock τc) hd).symm
+  have hfix : θ.Fixes {c | c ∈ cs ∨ c ∈ ds} := fun c hc => by
+    simp only [Set.mem_setOf_eq, not_or] at hc
+    simp only [θ, hc.2, if_false, CMap.block_not_mem cs [] hc.1, Term.rename_const]
+  -- the theorem in the signature, then with the variables for the constants
+  have t₀ : C.Theorem (Term.imp (Term.conj (Term.atConsts cs P) (Term.atConsts ds Q))
+      (Term.ofPure (Sig := Sig) (Term.existsBlock _ R))) := by
+    rw [Term.ofPure_existsBlock]
+    refine Derivable.impI (Derivable.exIBlock _ (Terms.constsAt [] (cs ++ ds)) ?_)
+    rw [hR]; exact Derivable.hyp₀
+  have t₁ := Derivable.cmap (M := {c | c ∈ cs ∨ c ∈ ds})
+    (fun a ha c' hc' => absurd hc' (C.axioms_consts ha c')) θ hfix
+    (Derivable.rename (Ren.ofEmpty (Γ := Δ)) t₀)
+  have eP := Term.cmap_block_subst_consts cs hcs (Term.ofPure P) (Term.pure_ofPure P)
+    (Ren.wkBlock τd) Ren.ofEmpty θ hθc
+  have eQ := Term.cmap_block_subst_consts ds hds (Term.ofPure Q) (Term.pure_ofPure Q) rQ Ren.ofEmpty θ hθd
+  have eR : ((Term.ofPure (Sig := Sig) (Term.existsBlock _ R)).rename (Ren.ofEmpty (Γ := Δ))).cmap θ =
+      (Term.ofPure (Sig := Sig) (Term.existsBlock _ R)).rename (Ren.ofEmpty (Γ := Δ)) :=
+    Term.cmap_of_fixes θ hfix _ (fun c hc => by
+      rw [Term.consts_rename, Term.consts_ofPure] at hc; exact absurd hc (Set.notMem_empty _))
+  have t₂ : C.Derivable ([] : List (Formula Sig Δ)) (Term.imp
+      (Term.conj ((Term.ofPure P).rename (Ren.wkBlock τd)) ((Term.ofPure Q).rename rQ))
+      ((Term.ofPure (Sig := Sig) (Term.existsBlock _ R)).rename (Ren.ofEmpty (Γ := Δ)))) := by
+    have e : ((Term.imp (Term.conj (Term.atConsts cs P) (Term.atConsts ds Q))
+        (Term.ofPure (Sig := Sig) (Term.existsBlock _ R))).rename (Ren.ofEmpty (Γ := Δ))).cmap θ =
+        Term.imp (Term.conj ((((Term.atConsts cs P).rename Ren.ofEmpty)).cmap θ)
+          (((Term.atConsts ds Q).rename Ren.ofEmpty).cmap θ))
+          (((Term.ofPure (Sig := Sig) (Term.existsBlock _ R)).rename (Ren.ofEmpty (Γ := Δ))).cmap θ) := rfl
+    rw [e, eR, atConsts_eq, atConsts_eq, eP, eQ] at t₁
+    exact t₁
+  -- now the two existentials, eliminated in turn
+  refine Derivable.impI (Derivable.impI ?_)
+  rw [Term.ofPure_existsBlock (σs := τc), Term.ofPure_existsBlock (σs := τd)]
+  refine Derivable.exEBlock τc (Derivable.weaken₁ (Derivable.hyp₀)) ?_
+  have hQ : Derivable C.axioms (Term.ofPure P :: Hyps.wkBlock τc
+      [Term.existsBlock τd (Term.ofPure Q), Term.existsBlock τc (Term.ofPure P)])
+      ((Term.existsBlock τd (Term.ofPure (Sig := Sig) Q)).rename (Ren.wkBlock τc)) :=
+    Derivable.weaken₁ Derivable.hyp₀
+  rw [Term.rename_existsBlock] at hQ
+  refine Derivable.exEBlock τd hQ ?_
+  have t₃ := Derivable.weaken t₂ (List.nil_subset
+    ((Term.ofPure Q).rename rQ :: Hyps.wkBlock τd (Term.ofPure P :: Hyps.wkBlock τc
+      [Term.existsBlock τd (Term.ofPure Q), Term.existsBlock τc (Term.ofPure P)])))
+  have t₄ := Derivable.impE t₃ (Derivable.andI
+    (Derivable.weaken₁ (Derivable.hyp (List.mem_map.2 ⟨_, List.mem_cons_self, rfl⟩)))
+    Derivable.hyp₀)
+  have e2 : (((Term.ofPure (Sig := Sig) (Term.existsBlock _ R)).rename (Ren.wkBlock τc)).rename
+      (Ren.wkBlock τd)) = (Term.ofPure (Term.existsBlock _ R)).rename (Ren.ofEmpty (Γ := Δ)) := by
+    rw [Term.rename_rename, Ren.eq_of_nil (Ren.comp (Ren.wkBlock τd) (Ren.wkBlock τc)) Ren.ofEmpty]
+  rw [e2]
+  exact t₄
+
+/-- `logical-necessity-r-implies-modal-freedom-signature-r` (Bacon): `◇P[c̄/x̄]` gives
+`∃x̄. P` and `◇Q[d̄/ȳ]` gives `∃ȳ. Q`, by Logical Necessity at `¬P` and `¬Q`; so
+`∃x̄ȳ. P ∧ Q`, and Logical Necessity at `¬(P ∧ Q)` and `c̄d̄` gives the joint possibility. -/
+theorem logicalNecessity_entails_modalFreedom (hS : Sig.Closed) :
+    logicalNecessity Sig ⟹ modalFreedom Sig := by
+  rintro a ⟨hc, cs, ds, P, Q, hnd, rfl⟩
+  split_closed hc
+  have hcs : cs.Nodup := (List.nodup_append.1 hnd).1
+  have hds : ds.Nodup := (List.nodup_append.1 hnd).2.1
+  have hPc : P.closedTypes = true := by simpa [Term.closedTypes_atConsts] using hc.1.1
+  have hQc : Q.closedTypes = true := by simpa [Term.closedTypes_atConsts] using hc.1.2
+  obtain ⟨R, eR, cR⟩ := Term.exists_abstract (cs ++ ds)
+    (Term.conj (Term.atConsts (Sig := Sig) cs P) (Term.atConsts ds Q)) (fun c hc' => by
+      rcases hc' with h | h
+      · rcases h with h | h
+        · exact absurd h (Set.notMem_empty _)
+        · exact List.mem_append_left _ (consts_atConsts cs P h)
+      · exact List.mem_append_right _ (consts_atConsts ds Q h))
+  have hRc : R.closedTypes = true := by
+    rw [cR, Term.closedTypes_conj, Term.closedTypes_atConsts, Term.closedTypes_atConsts, hPc, hQc]; rfl
+  have exc : ∀ (es : List Sig.Const) (S : Formula Signature.pure (Ctx.block (es.map Sig.typeOf) [])),
+      S.closedTypes = true → (Term.existsBlock _ (Term.neg S)).closedTypes = true := fun es S hS' => by
+    rw [Term.closedTypes_existsBlock, all_closed_map hS, Term.closedTypes_neg, hS']; rfl
+  let X := logicalNecessity Sig
+  have h1 : Theorem (C.axioms ∪ X) (Term.iff (Term.box (Term.atConsts cs (Term.neg P)))
+      (Term.ofPure (Term.forallBlock _ (Term.neg P)))) :=
+    Theorem.ax (logicalNecessity_mem hcs (exc cs P hPc))
+  have h2 : Theorem (C.axioms ∪ X) (Term.iff (Term.box (Term.atConsts ds (Term.neg Q)))
+      (Term.ofPure (Term.forallBlock _ (Term.neg Q)))) :=
+    Theorem.ax (logicalNecessity_mem hds (exc ds Q hQc))
+  have h3 : Theorem (C.axioms ∪ X) (Term.iff (Term.box (Term.atConsts (cs ++ ds) (Term.neg R)))
+      (Term.ofPure (Term.forallBlock _ (Term.neg R)))) :=
+    Theorem.ax (logicalNecessity_mem hnd (exc (cs ++ ds) R hRc))
+  have eR' : Term.atConsts (Sig := Sig) (cs ++ ds) (Term.neg R) =
+      Term.neg (Term.conj (Term.atConsts cs P) (Term.atConsts ds Q)) := by
+    rw [atConsts_eq]
+    show Term.neg ((Term.ofPure R).subst _) = _
+    rw [eR]
+  rw [eR'] at h3
+  have dm : ∀ (es : List Sig.Const) (S : Formula Signature.pure (Ctx.block (es.map Sig.typeOf) [])),
+      C.Theorem (Term.imp (Term.neg (Term.ofPure (Sig := Sig) (Term.forallBlock _ (Term.neg S))))
+        (Term.ofPure (Term.existsBlock _ S))) := fun es S => by
+    rw [Term.ofPure_forallBlock, Term.ofPure_existsBlock]
+    exact existsBlock_of_not_forallBlock_neg _ _
+  have hef : C.Theorem (Term.imp (Term.ofPure (Sig := Sig) (Term.existsBlock _ R))
+      (Term.neg (Term.ofPure (Term.forallBlock ((cs ++ ds).map Sig.typeOf) (Term.neg R))))) := by
+    rw [Term.ofPure_existsBlock, Term.ofPure_forallBlock]
+    exact Derivable.impI (Derivable.notI (q := Term.top)
+      (Derivable.existsBlock_forallBlock_neg _ (Derivable.weaken₁ Derivable.hyp₀) Derivable.hyp₀)
+      (Derivable.existsBlock_forallBlock_neg _ (Derivable.weaken₁ Derivable.hyp₀) Derivable.hyp₀))
+  have g₁ := Theorem.mp₂ (Derivable.allE₃β
+    (Theorem.ofCMinus (C.TheoremMinus.ofPure ln_mf_glue₁.derivable)) _ _ _) h1 (Theorem.ofC (dm cs P))
+  have g₂ := Theorem.mp₂ (Derivable.allE₃β
+    (Theorem.ofCMinus (C.TheoremMinus.ofPure ln_mf_glue₁.derivable)) _ _ _) h2 (Theorem.ofC (dm ds Q))
+  have g₃ := Theorem.mp₂ (Derivable.allE₃β
+    (Theorem.ofCMinus (C.TheoremMinus.ofPure ln_mf_glue₂.derivable)) _ _ _) h3 (Theorem.ofC hef)
+  have hEx := existsBlock_conj (Sig := Sig) cs ds hnd P Q R eR
+  exact Derivable.impI (Derivable.impE (Derivable.weaken₁ g₃)
+    (Derivable.impE (Derivable.impE (Derivable.weaken₁ (Theorem.ofC hEx))
+      (Derivable.impE (Derivable.weaken₁ g₁) (Derivable.andE₁ Derivable.hyp₀)))
+      (Derivable.impE (Derivable.weaken₁ g₂) (Derivable.andE₂ Derivable.hyp₀))))
 
 end Meta
 
