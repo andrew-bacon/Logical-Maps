@@ -11,6 +11,7 @@ certificate:
   checked_by: []
   date: '2026-10-25'
   lean: stated
+  lean_ref: Classicism.Map.self_atoms_are_atoms_t_and_bf_imply_self_atoms_are_atoms_r
 sources:
 - Cian Dorr, suggestion of 25 October 2026 that under BF the type-t forms of the new principles lift to
   their full forms, as Atomicity does; proofs by Claude Fable 5.1 (Anthropic) the same day (session transcript).

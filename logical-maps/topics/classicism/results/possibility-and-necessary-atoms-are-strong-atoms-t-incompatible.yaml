@@ -11,6 +11,7 @@ certificate:
   checked_by: []
   date: '2026-10-25'
   lean: stated
+  lean_ref: Classicism.Map.possibility_and_necessary_atoms_are_strong_atoms_t_incompatible
 sources:
 - Cian Dorr, the bridge principles, 25 October 2026; the incompatibility recorded by Claude Fable 5.1
   (Anthropic) the same day, on the pattern of the recorded incompatibility with □Strong Atomicity
