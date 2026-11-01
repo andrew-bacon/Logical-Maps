@@ -15,6 +15,42 @@ group's).
 namespace Classicism.Map.Models
 open Classicism
 
+/-- `coalesced-constant-indexed-root`: Relational Choice holds, by `coalesced-sums`'s argument `relational-choice-free-root`. -/
+theorem coalesced_constant_indexed_root.relational_choice_r : Statements.Models.coalesced_constant_indexed_root.relational_choice_r :=
+  ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.constantIndexedData), Classicism.Map.Arguments.coalesced_sums.relational_choice_free_root.relational_choice_r (Classicism.Meta.Coalesced.constantIndexedData) (Classicism.Meta.Coalesced.constantIndexedData_free)⟩
+
+/-- `coalesced-constant-indexed-root`: Actuality holds, by `coalesced-sums`'s argument `actuality-singleton-root`. -/
+theorem coalesced_constant_indexed_root.actuality : Statements.Models.coalesced_constant_indexed_root.actuality :=
+  ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.constantIndexedData), Classicism.Map.Arguments.coalesced_sums.actuality_singleton_root.actuality (Classicism.Meta.Coalesced.constantIndexedData) (Classicism.Meta.Coalesced.constantIndexedData_isolated)⟩
+
+/-- `coalesced-constant-indexed-root`: Truths are ND-necessary holds, by the argument `dpc-isolated-actual-world`. -/
+theorem coalesced_constant_indexed_root.distinctness_preserving_collapse : Statements.Models.coalesced_constant_indexed_root.distinctness_preserving_collapse :=
+  ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.constantIndexedData), Classicism.Map.Arguments.dpc_isolated_actual_world.distinctness_preserving_collapse (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)) (Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.constantIndexedData)) (Classicism.Meta.Coalesced.constantIndexedData_isolated)⟩
+
+/-- `coalesced-maximalist-root`: Relational Choice holds, by `coalesced-sums`'s argument `relational-choice-free-root`. -/
+theorem coalesced_maximalist_root.relational_choice_r : Statements.Models.coalesced_maximalist_root.relational_choice_r :=
+  ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.maximalistRoot), Classicism.Map.Arguments.coalesced_sums.relational_choice_free_root.relational_choice_r (Classicism.Meta.Coalesced.maximalistRoot) (Classicism.Meta.Coalesced.maximalistData_free)⟩
+
+/-- `coalesced-maximalist-root`: Actuality holds, by `coalesced-sums`'s argument `actuality-singleton-root`. -/
+theorem coalesced_maximalist_root.actuality : Statements.Models.coalesced_maximalist_root.actuality :=
+  ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.maximalistRoot), Classicism.Map.Arguments.coalesced_sums.actuality_singleton_root.actuality (Classicism.Meta.Coalesced.maximalistRoot) (Classicism.Meta.Coalesced.maximalistData_isolated)⟩
+
+/-- `coalesced-maximalist-root`: Truths are ND-necessary holds, by the argument `dpc-isolated-actual-world`. -/
+theorem coalesced_maximalist_root.distinctness_preserving_collapse : Statements.Models.coalesced_maximalist_root.distinctness_preserving_collapse :=
+  ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.maximalistRoot), Classicism.Map.Arguments.dpc_isolated_actual_world.distinctness_preserving_collapse (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)) (Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.maximalistRoot)) (Classicism.Meta.Coalesced.maximalistData_isolated)⟩
+
+/-- `coalesced-single-individual-root`: Relational Choice holds, by `coalesced-sums`'s argument `relational-choice-free-root`. -/
+theorem coalesced_single_individual_root.relational_choice_r : Statements.Models.coalesced_single_individual_root.relational_choice_r :=
+  ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.singleIndividualData), Classicism.Map.Arguments.coalesced_sums.relational_choice_free_root.relational_choice_r (Classicism.Meta.Coalesced.singleIndividualData) (Classicism.Meta.Coalesced.singleIndividualData_free)⟩
+
+/-- `coalesced-single-individual-root`: Actuality holds, by `coalesced-sums`'s argument `actuality-singleton-root`. -/
+theorem coalesced_single_individual_root.actuality : Statements.Models.coalesced_single_individual_root.actuality :=
+  ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.singleIndividualData), Classicism.Map.Arguments.coalesced_sums.actuality_singleton_root.actuality (Classicism.Meta.Coalesced.singleIndividualData) (Classicism.Meta.Coalesced.singleIndividualData_isolated)⟩
+
+/-- `coalesced-single-individual-root`: Truths are ND-necessary holds, by the argument `dpc-isolated-actual-world`. -/
+theorem coalesced_single_individual_root.distinctness_preserving_collapse : Statements.Models.coalesced_single_individual_root.distinctness_preserving_collapse :=
+  ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.singleIndividualData), Classicism.Map.Arguments.dpc_isolated_actual_world.distinctness_preserving_collapse (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)) (Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.singleIndividualData)) (Classicism.Meta.Coalesced.singleIndividualData_isolated)⟩
+
 /-- `finite-support-dyadic-roundings`: Actuality holds, by `finite-support-one-object`'s argument `actual-world`. -/
 theorem finite_support_dyadic_roundings.actuality : Statements.Models.finite_support_dyadic_roundings.actuality :=
   ⟨Classicism.Meta.Intensional.MonoidModel.model_isModel (Classicism.Meta.Intensional.Monoids.pow2), Classicism.Map.Arguments.finite_support_one_object.actual_world.actuality (Classicism.Meta.Intensional.Monoids.pow2) (Classicism.Meta.Intensional.MonoidModel.actualWorldPinned_of_onePinned _ Classicism.Meta.Intensional.Monoids.Pow2.onePinned)⟩

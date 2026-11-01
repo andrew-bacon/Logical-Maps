@@ -116,3 +116,18 @@ history:
     the root, and symmetric-infinite-classes refutes Transversal at type e.'
   violates:
   - necessary-transversal-r
+
+# The model in Lean (Coalesced/SumData.lean): the coalesced sum of the complete family of
+# Completeness/ at the signature with individual constants c_n (n in ℕ) and one constant of type t
+# (constantSig); the root individuals are the n, c_n denoting n at the root.
+lean:
+  param: Classicism.Meta.Coalesced.constantIndexedData
+  meets:
+    complete-components: Classicism.Meta.Coalesced.constantIndexedData_complete
+    distinguished-arrows: Classicism.Meta.Coalesced.constantIndexedData_distinguished
+    free-root-component: Classicism.Meta.Coalesced.constantIndexedData_free
+    actual-world-isolated: Classicism.Meta.Coalesced.constantIndexedData_isolated
+  verdicts:
+  - holds: axiom-of-infinity-e
+    ref: Classicism.Map.Models.coalesced_constant_indexed_root.axiom_of_infinity_e
+    status: verified

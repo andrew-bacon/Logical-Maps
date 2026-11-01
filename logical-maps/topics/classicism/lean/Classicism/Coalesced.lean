@@ -4,6 +4,8 @@ import Classicism.Coalesced.Transport
 import Classicism.Coalesced.Model
 import Classicism.Coalesced.Full
 import Classicism.Coalesced.Distinguished
+import Classicism.Coalesced.Complete
+import Classicism.Coalesced.SumData
 
 /-!
 # Coalesced sums
@@ -45,6 +47,14 @@ over the distinguished arrows (`Distinguished.lean`): product root individuals, 
 domains, the unions of the components' intensions as the root values of the constants, and
 **Theorem 3.26** (`theorem_3_26`, `coalesced_sum_theorem`): each component is the
 truncation of the sum by its distinguished arrow.
+
+With complete components (`Complete.lean`), every sentence consistent with `C` is possible
+at the root (`RootAction.holdsAx_possibility_of_complete`): Maximalism. The coalesced sum of
+the complete family of `Completeness/`, over the distinguished arrows, is Appendix E's
+maximalist root (`maximalist`), so Maximalism is consistent with `C`
+(`maximalism_consistent`). The map's group `coalesced-sums` takes as its parameter the data of
+a coalesced sum that is a model (`SumData`, `SumData.lean`), with its conditions and three
+members.
 
 In standard terms the coalesced sum of the categories is the *collage* (cograph) of the
 profunctor from the one-object category `End` to `Σ k, C k` given by `R`, and an action is

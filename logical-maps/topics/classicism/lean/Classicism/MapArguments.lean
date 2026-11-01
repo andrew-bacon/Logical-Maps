@@ -3,6 +3,7 @@ import Classicism.Models.Conditions
 import Classicism.Semantics.OneIndividual
 import Classicism.Semantics.Interpretations
 import Classicism.Models.SymBase
+import Classicism.Coalesced.SumData
 import Mathlib.SetTheory.Cardinal.NatCard
 
 /-!
@@ -494,5 +495,36 @@ theorem barcan_r : Statements.Arguments.finite_support_one_object.barcan_positiv
 end barcan_positive
 
 end finite_support_one_object
+
+/-! ## Arguments of the coalesced sums
+
+The group's parameter is the data of a coalesced sum that is a model (`Coalesced.SumData`), for
+any root arrows and root domains. -/
+
+namespace coalesced_sums
+
+namespace actuality_singleton_root
+
+/-- The singleton root proposition, the actual-world proposition, entails every truth
+(`Premodel.holds_actuality_of`, in the pure reduct). -/
+theorem actuality : Statements.Arguments.coalesced_sums.actuality_singleton_root.actuality := by
+  intro D ⟨a, ha, hle, _⟩
+  rw [holdsAx_ofPure]
+  rintro _ rfl
+  exact holds_actuality_of (D.model.reduct_isModel D.isModel) a ha hle
+
+end actuality_singleton_root
+
+namespace relational_choice_free_root
+
+/-- With a free root component the root is extensionally full, and a serial relation's extension
+there has a functional subset by choice (`Coalesced.SumData.holds_rc_root`). -/
+theorem relational_choice_r :
+    Statements.Arguments.coalesced_sums.relational_choice_free_root.relational_choice_r :=
+  fun _ hF => Coalesced.SumData.holds_rc_root hF
+
+end relational_choice_free_root
+
+end coalesced_sums
 
 end Classicism.Map.Arguments

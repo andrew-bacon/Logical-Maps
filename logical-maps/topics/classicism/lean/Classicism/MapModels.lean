@@ -7,6 +7,7 @@ import Classicism.Models.FiniteCompressionSeparation
 import Classicism.Models.FixedPointEntranceBarcan
 import Classicism.Models.FixedPointEntranceRelationalBarcan
 import Classicism.Models.FixedPointEntranceChoice
+import Classicism.Coalesced.SumData
 import Mathlib.Data.Fintype.Powerset
 import Mathlib.Data.Finite.Sigma
 import Mathlib.Data.Finite.Prod
@@ -305,6 +306,45 @@ theorem rigid_power_r : Statements.Models.finite_support_pair_injections_or_coll
   verdict_fails M <| not_holdsAx_of ⟨.arr .e .t, by simp, rfl⟩ Monoids.PairInjCol.not_rigidPower
 
 end finite_support_pair_injections_or_collapses
+
+/-! ### The coalesced sums over the complete family (`Coalesced/SumData.lean`) -/
+
+namespace coalesced_maximalist_root
+
+open Coalesced
+
+/-- **Theorem 3.26**: Maximalism for the signature, every closed identity that `C(Σ)` does not
+prove being false at the root, the components being complete for `C(Σ)`
+(`Coalesced.maximalist_distinctnessC`). -/
+theorem distinctness_signature_r : Statements.Models.coalesced_maximalist_root.distinctness_signature_r :=
+  ⟨Signature.sigmaTop_admitted, maximalistRoot.isModel, maximalistData_distinctnessC sigmaTop_closed⟩
+
+/-- The root individuals, the families of the components' individuals, are infinitely many, and
+the root is extensionally full, its root components being free
+(`Coalesced.SumData.holds_axiomOfInfinityE_root`). -/
+theorem axiom_of_infinity_e : Statements.Models.coalesced_maximalist_root.axiom_of_infinity_e :=
+  ⟨maximalistRoot.isModel, SumData.holds_axiomOfInfinityE_root maximalistData_free
+    (maximalistData_infinite sigmaTop_closed)⟩
+
+end coalesced_maximalist_root
+
+namespace coalesced_single_individual_root
+
+/-- One individual at the root: no two distinct ones (`Coalesced.singleIndividualData_not_infinityE`). -/
+theorem infinity_e : Statements.Models.coalesced_single_individual_root.infinity_e :=
+  ⟨Coalesced.singleIndividualData.isModel, Coalesced.singleIndividualData_not_infinityE⟩
+
+end coalesced_single_individual_root
+
+namespace coalesced_constant_indexed_root
+
+/-- The root individuals are the indices of the constants, infinitely many, and the root is
+extensionally full (`Coalesced.SumData.holds_axiomOfInfinityE_root`). -/
+theorem axiom_of_infinity_e : Statements.Models.coalesced_constant_indexed_root.axiom_of_infinity_e :=
+  ⟨Coalesced.constantIndexedData.isModel, Coalesced.SumData.holds_axiomOfInfinityE_root
+    Coalesced.constantIndexedData_free Coalesced.constantIndexedData_infinite⟩
+
+end coalesced_constant_indexed_root
 
 end Classicism.Map.Models
 
