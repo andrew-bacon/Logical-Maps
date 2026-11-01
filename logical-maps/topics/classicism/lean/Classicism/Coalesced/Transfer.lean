@@ -215,7 +215,7 @@ theorem root_isModel : D.model.reduct.IsModel := D.model.reduct_isModel D.isMode
 is consistent with `C` fails at the root of some component (`complete-components`). -/
 theorem exists_comp (hc : D.CompleteComponents) {q : Sentence Signature.pure} (hq : q.closedTypes = true)
     (h : AxiomSet.Consistent (AxiomSet.single (Term.neg q))) : ∃ k, ¬ (D.A k).reduct.HoldsSentence q := by
-  obtain ⟨k, hk⟩ := hc (Term.neg q) (by simpa using hq) h
+  obtain ⟨k, hk⟩ := hc.1 (Term.neg q) (by simpa using hq) h
   exact ⟨k, ((D.A k).reduct.holdsSentence_neg (compRoot_isModel hD k) q).1
     (((D.A k).holdsSentence_ofPure _).1 hk)⟩
 

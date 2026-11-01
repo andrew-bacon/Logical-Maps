@@ -558,7 +558,7 @@ theorem arithmetic_necessitism :
   obtain ⟨R, hR⟩ := P.ArithmeticNecessitism.quoted_eq σ
   rw [hR]
   exact ((D.model).holds_imp D.isModel (𝟙 _) IEnv.nil _ _).2 fun hb =>
-    absurd hb (D.RA.not_holds_box_of_complete D.I D.RI D.ne D.isModel hc (iStar_closedTypes hσ)
+    absurd hb (D.RA.not_holds_box_of_complete D.I D.RI D.ne D.isModel hc.2 (iStar_closedTypes hσ)
       (not_iStar_consistent σ))
 
 end arithmetic_necessitism_complete_components
