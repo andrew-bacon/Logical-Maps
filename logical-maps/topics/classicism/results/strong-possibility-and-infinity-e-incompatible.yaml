@@ -10,7 +10,8 @@ certificate:
   recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 16 October 2026
   checked_by: []
   date: '2026-10-16'
-  lean: stated
+  lean: verified
+  lean_ref: Classicism.Map.strong_possibility_and_infinity_e_incompatible
 sources:
 - Cian Dorr, suggestion of 16 October 2026.
 source_names:

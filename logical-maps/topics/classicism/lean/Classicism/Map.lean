@@ -2017,4 +2017,30 @@ theorem possibility_schema_r_implies_possible_infinity_t : Statements.possibilit
 theorem strong_possibility_r_implies_possibility_schema_r : Statements.strong_possibility_r_implies_possibility_schema_r := by
   map_cert (AxiomSet.Entails.trans strongPossibility_entails_possibility (possibility_entails_distinctness _))
 
+/-- `strong-possibility-and-infinity-e-incompatible` -/
+theorem strong_possibility_and_infinity_e_incompatible : Statements.strong_possibility_and_infinity_e_incompatible := by
+  map_cert_incompatible strongPossibility_infinityE_inconsistent
+
+/-- `strong-possibility-and-distinctness-preserving-collapse-incompatible` -/
+theorem strong_possibility_and_distinctness_preserving_collapse_incompatible : Statements.strong_possibility_and_distinctness_preserving_collapse_incompatible := by
+  map_cert_incompatible strongPossibility_dpc_inconsistent
+
+/-- `strong-possibility-and-two-hat-implies-nd-incompatible` -/
+theorem strong_possibility_and_two_hat_implies_nd_incompatible : Statements.strong_possibility_and_two_hat_implies_nd_incompatible := by
+  map_cert_incompatible strongPossibility_twoHat_inconsistent
+
+/-- `axiom-of-infinity-e-implies-infinity-e`, by completeness -/
+theorem axiom_of_infinity_e_implies_infinity_e : Statements.axiom_of_infinity_e_implies_infinity_e := by
+  map_cert axiomOfInfinityE_entails_infinityE
+
+/-- `axiom-of-infinity-t-implies-infinity-t`, by completeness -/
+theorem axiom_of_infinity_t_implies_infinity_t : Statements.axiom_of_infinity_t_implies_infinity_t := by
+  map_cert axiomOfInfinityT_entails_infinityT
+
+/-- `atomlessness-implies-infinity-t`, through the Axiom of Infinity at `t`
+(`atomlessness-implies-axiom-of-infinity-t`) -/
+theorem atomlessness_implies_infinity_t : Statements.atomlessness_implies_infinity_t := by
+  map_cert (Entails.trans Proofs.atomlessness_implies_axiom_of_infinity_t.entails
+    axiomOfInfinityT_entails_infinityT)
+
 end Classicism.Map

@@ -11,7 +11,8 @@ certificate:
   recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026
   checked_by: []
   date: '2026-09-22'
-  lean: stated
+  lean: verified
+  lean_ref: Classicism.Map.strong_possibility_and_distinctness_preserving_collapse_incompatible
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §2.6, p. 42; Appendix E, p. 83.
 source_names:

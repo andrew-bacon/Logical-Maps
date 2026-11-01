@@ -2,6 +2,8 @@ import Classicism.Results.SentenceSchemas.Incompatibilities
 import Classicism.Coalesced.Complete
 import Classicism.MapDerived
 import Classicism.Results.Other.Certificates
+import Classicism.Completeness.Completeness
+import Classicism.Semantics.Numerals
 
 /-!
 # Further results about the sentence schemas (1 November 2026)
@@ -28,6 +30,37 @@ theorem diaNe_dia_imp_dia (p : Prop) : P.DiaNe (◇ p) → ◇ p := fun h hn =>
       not_dia_of_box_not p hb hd)) (modal_four _ ((box_not_eq p).mpr hn))⟩
 
 #classicism_derive Classicism.diaNe_dia_imp_dia
+
+/-- The second instance of the Infinity schema at `e`, as the schema writes it. -/
+def TwoIndividuals : Prop := ∃ x y : e, ((¬ x = y) ∧ True) ∧ (True ∧ True)
+
+/-- `◇(a ≠ b) → a ≠ b`, by the necessity of identity. -/
+theorem ne_of_dia_ne_e (a b : e) : ◇ (¬ a = b) → ¬ a = b := fun hd h =>
+  (dia_not_eq (a = b) ▸ hd) (necessity_of_identity a b h)
+
+/-- Two distinct individuals make it ND-necessary that there are two: `a ≠ b` is true, and
+wherever it is possible it is true. -/
+theorem two_imp (a b : e) : ◇ (¬ a = b) → ¬ ¬ TwoIndividuals := fun hd hn =>
+  hn ⟨a, b, ⟨ne_of_dia_ne_e a b hd, trivial⟩, trivial, trivial⟩
+
+/-- `◇_≠¬T₂ → ¬T₂` (the lemma of `strong-possibility-and-infinity-e-incompatible`). -/
+theorem diaNe_not_two : P.DiaNe (¬ TwoIndividuals) → ¬ TwoIndividuals := fun h ⟨a, b, hab⟩ =>
+  h ⟨¬ a = b, hab.1.1, nec% (two_imp a b)⟩
+
+/-- With `◇_≠T₂` and `◇_≠¬T₂`, the Distinctness-Preserving Collapse at whichever of `T₂`, `¬T₂` is
+true contradicts the other. -/
+theorem dpc_two_contra : P.DistinctnessPreservingCollapse → P.DiaNe TwoIndividuals →
+    P.DiaNe (¬ TwoIndividuals) → False := fun h d₁ d₂ =>
+  (em TwoIndividuals).elim (fun ht => d₂ (h _ (fun hn => hn ht))) (fun hn => d₁ (h _ hn))
+
+/-- With `◇_≠T₂` and `◇_≠¬T₂`, two-hat necessity implying ND-necessity is contradicted: `¬T₂`
+holds, and is two-hat necessary through itself (`◇_≠¬T₂ → ¬T₂`, necessitated), so
+ND-necessary, against `◇_≠T₂`. -/
+theorem twoHat_two_contra : P.TwoHatImpliesNdNecessity → P.DiaNe TwoIndividuals →
+    P.DiaNe (¬ TwoIndividuals) → False := fun h d₁ d₂ =>
+  d₁ (h _ ⟨¬ TwoIndividuals, diaNe_not_two d₂, nec% diaNe_not_two⟩)
+
+#classicism_derive Classicism.diaNe_not_two Classicism.dpc_two_contra Classicism.twoHat_two_contra
 
 namespace Meta
 
@@ -130,6 +163,127 @@ theorem strongPossibility_entails_possibility :
     ⟨by simpa [Term.diaNe, Term.closedTypes_rename] using hcp, Term.dia p, hcons, rfl⟩
   exact Theorem.mp (Derivable.allEβ (Theorem.ofCMinus diaNe_dia_imp_dia.derivable) p)
     (Theorem.ax hmem)
+
+/-- The second instance of the Infinity schema at `e`. -/
+abbrev twoE {Sig : Signature} : Sentence Sig :=
+  Term.existsBlock (List.replicate 2 Ty.e) (Term.distinct 2 (Terms.vars _ []))
+
+/-- A model of the pure language where Maximalism (pure) holds is a model of Maximalist
+Classicism. -/
+theorem holdsAx_maximalist_of {C : Type} [CategoryTheory.SmallCategory C]
+    (M : Intensional.Premodel Signature.pure C) (h : M.HoldsAx (pureVersion distinctnessC)) :
+    M.HoldsAx (maximalist (Sig := Signature.pure)) := fun a ha =>
+  ha.elim (fun h => h.elim) (fun hd => ((Intensional.Premodel.holdsAx_schemaIn_iff M _).1 h) a hd)
+
+/-- Maximalism (pure) holds at the single-individual root (`coalesced-single-individual-root`):
+its components are complete. -/
+theorem singleIndividual_maximalism :
+    Coalesced.singleIndividualData.model.HoldsAx (pureVersion distinctnessC) :=
+  Coalesced.RootAction.holdsAx_distinctness_of_complete _ _ _ _
+    Coalesced.singleIndividualData.isModel Coalesced.singleIndividualData_complete
+
+/-- There are not two individuals at the single-individual root. -/
+theorem singleIndividual_not_twoE :
+    ¬ Coalesced.singleIndividualData.model.HoldsSentence twoE := fun H => by
+  obtain ⟨f, hf⟩ := (Intensional.Premodel.holds_count Coalesced.singleIndividualData.isModel
+    (CategoryTheory.CategoryStruct.id _) .e 2).1 H
+  have : Subsingleton (Coalesced.singleIndividualData.model.Dom
+      Coalesced.singleIndividualData.model.W₀ .e) := inferInstanceAs (Subsingleton PUnit)
+  exact absurd (hf (Subsingleton.elim (f 0) (f 1))) (by decide)
+
+/-- `¬T₂` is consistent with Maximalist Classicism (pure). -/
+theorem maximalist_not_twoE_consistent :
+    Consistent (maximalist (Sig := Signature.pure) ∪ single (Term.neg twoE)) :=
+  Consistent.of_model _ Coalesced.singleIndividualData.isModel fun a ha => ha.elim
+    (holdsAx_maximalist_of _ singleIndividual_maximalism a)
+    (fun h => by
+      rw [show a = Term.neg twoE from h]
+      exact (Coalesced.singleIndividualData.model.holdsSentence_neg
+        Coalesced.singleIndividualData.isModel _).2 singleIndividual_not_twoE)
+
+/-- `strong-possibility-and-infinity-e-incompatible`: Strong Possibility gives `◇_≠¬T₂`, so
+`¬T₂`, against the second instance of the Infinity schema at `e`. -/
+theorem strongPossibility_infinityE_inconsistent :
+    ¬ Consistent (strongPossibility Signature.pure ∪ infinityE Signature.pure) := fun hc => hc <|
+  have h₁ : Theorem (C.axioms ∪ (strongPossibility Signature.pure ∪ infinityE Signature.pure))
+      (Term.diaNe (Term.neg twoE)) :=
+    Theorem.ax (Or.inl ⟨rfl, Term.neg twoE, maximalist_not_twoE_consistent, rfl⟩)
+  have h₂ : Theorem (C.axioms ∪ (strongPossibility Signature.pure ∪ infinityE Signature.pure))
+      twoE := Theorem.ax (Or.inr ⟨2, by decide, rfl⟩)
+  Derivable.notE h₂ (Theorem.mp (Theorem.ofCMinus diaNe_not_two.derivable) h₁)
+
+/-- There are two individuals at the maximalist root of the pure signature: its root
+individuals are infinitely many (`maximalistData_infinite`). -/
+theorem maximalistPure_twoE :
+    (Coalesced.maximalistData Signature.pure).model.HoldsSentence twoE := by
+  have hinf : Infinite ((Coalesced.maximalistData Signature.pure).model.Dom
+      (Coalesced.maximalistData Signature.pure).model.W₀ .e) :=
+    Coalesced.maximalistData_infinite (Sig := Signature.pure) Coalesced.pure_closed
+  refine (Intensional.Premodel.holds_count (Coalesced.maximalistData Signature.pure).isModel
+    (CategoryTheory.CategoryStruct.id _) .e 2).2 ⟨fun i => Infinite.natEmbedding _ i.val, ?_⟩
+  intro i j hij
+  exact Fin.ext ((Infinite.natEmbedding _).injective hij)
+
+/-- `T₂` is consistent with Maximalist Classicism (pure). -/
+theorem maximalist_twoE_consistent :
+    Consistent (maximalist (Sig := Signature.pure) ∪ single twoE) :=
+  Consistent.of_model _ (Coalesced.maximalistData Signature.pure).isModel fun a ha => ha.elim
+    (holdsAx_maximalist_of _ (Coalesced.RootAction.holdsAx_distinctness_of_complete _ _ _ _
+      (Coalesced.maximalistData Signature.pure).isModel
+      (Coalesced.maximalistData_complete Coalesced.pure_closed)) a)
+    (fun h => by rw [show a = twoE from h]; exact maximalistPure_twoE)
+
+/-- Strong Possibility (pure) has `◇_≠T₂` and `◇_≠¬T₂`. -/
+theorem strongPossibility_diaNe_twoE {Ax : AxiomSet Signature.pure} (h : strongPossibility _ ⊆ Ax) :
+    Theorem (C.axioms ∪ Ax) (Term.diaNe twoE) ∧ Theorem (C.axioms ∪ Ax) (Term.diaNe (Term.neg twoE)) :=
+  ⟨Theorem.ax (h _ ⟨rfl, twoE, maximalist_twoE_consistent, rfl⟩),
+   Theorem.ax (h _ ⟨rfl, Term.neg twoE, maximalist_not_twoE_consistent, rfl⟩)⟩
+
+/-- `strong-possibility-and-distinctness-preserving-collapse-incompatible`. -/
+theorem strongPossibility_dpc_inconsistent :
+    ¬ Consistent (strongPossibility Signature.pure ∪ P.DistinctnessPreservingCollapse.schema) :=
+  fun hc => hc <|
+  have h := strongPossibility_diaNe_twoE (Ax := strongPossibility _ ∪ _) (subset_union_left _ _)
+  Derivable.notE h.2 (Theorem.mp₂ (Theorem.ofCMinus dpc_two_contra.derivable) (Theorem.ax (Or.inr rfl)) h.1)
+
+/-- `strong-possibility-and-two-hat-implies-nd-incompatible`. -/
+theorem strongPossibility_twoHat_inconsistent :
+    ¬ Consistent (strongPossibility Signature.pure ∪ P.TwoHatImpliesNdNecessity.schema) :=
+  fun hc => hc <|
+  have h := strongPossibility_diaNe_twoE (Ax := strongPossibility _ ∪ _) (subset_union_left _ _)
+  Derivable.notE h.2 (Theorem.mp₂ (Theorem.ofCMinus twoHat_two_contra.derivable) (Theorem.ax (Or.inr rfl)) h.1)
+
+/-! ### The Axioms of Infinity give the Infinity schemas, by completeness
+
+In a model where the Axiom of Infinity at `σ` holds, the entities of type `σ` at the base are
+infinitely many (`not_holds_axInf_of_finite`), so every instance of the Infinity schema at `σ`
+holds there (`holds_count`); by completeness (`theorem_of_valid`) it is a theorem. -/
+
+theorem axInf_entails_infinitySchema (σ : Ty) (hσ : σ.Closed)
+    (hc : (Intensional.axInf σ).closedTypes = true) :
+    single (Intensional.axInf σ) ⟹ infinitySchema Signature.pure σ := by
+  rintro a ⟨n, _, rfl⟩
+  refine Completeness.theorem_of_valid Coalesced.pure_closed
+    (fun b hb => by rw [show b = Intensional.axInf σ from hb]; exact hc)
+    (Intensional.Count.closedTypes_count hσ n) ?_
+  intro W _ A hA hAx
+  have hinf : Infinite (A.Dom A.W₀ σ) := by
+    by_contra hfin
+    rw [not_infinite_iff_finite] at hfin
+    exact Intensional.Premodel.not_holds_axInf_of_finite hA (CategoryTheory.CategoryStruct.id _) σ
+      (hAx _ rfl)
+  exact (A.holds_count hA (CategoryTheory.CategoryStruct.id _) σ n).2
+    ⟨fun i => Infinite.natEmbedding _ i.val, fun i j h => Fin.ext ((Infinite.natEmbedding _).injective h)⟩
+
+/-- `axiom-of-infinity-e-implies-infinity-e`. -/
+theorem axiomOfInfinityE_entails_infinityE :
+    P.AxiomOfInfinityE.schema ⟹ infinityE Signature.pure :=
+  axInf_entails_infinitySchema .e (by decide) (P.AxiomOfInfinityE.schema_closedTypes _ rfl)
+
+/-- `axiom-of-infinity-t-implies-infinity-t`. -/
+theorem axiomOfInfinityT_entails_infinityT :
+    P.AxiomOfInfinityT.schema ⟹ infinityT Signature.pure :=
+  axInf_entails_infinitySchema (.rel .t) (by decide) (P.AxiomOfInfinityT.schema_closedTypes _ rfl)
 
 end Meta
 

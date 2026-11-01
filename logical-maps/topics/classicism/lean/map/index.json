@@ -364,7 +364,7 @@
   "strong-possibility-r-implies-possibility-schema-r":
   {"proofs":
    [{"name": "Classicism.Meta.strongPossibility_entails_possibility",
-     "lines": [118, 132],
+     "lines": [151, 165],
      "file": "Classicism/Results/Other/Meta.lean"},
     {"name": "Classicism.Meta.possibility_entails_distinctness",
      "lines": [45, 51],
@@ -373,6 +373,38 @@
    "certificate":
    {"name": "Classicism.Map.strong_possibility_r_implies_possibility_schema_r",
     "lines": [2016, 2018],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
+  "strong-possibility-and-two-hat-implies-nd-incompatible":
+  {"proofs":
+   [{"name": "Classicism.Meta.strongPossibility_twoHat_inconsistent",
+     "lines": [249, 254],
+     "file": "Classicism/Results/Other/Meta.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.strong_possibility_and_two_hat_implies_nd_incompatible",
+    "lines": [2028, 2030],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
+  "strong-possibility-and-infinity-e-incompatible":
+  {"proofs":
+   [{"name": "Classicism.Meta.strongPossibility_infinityE_inconsistent",
+     "lines": [204, 213],
+     "file": "Classicism/Results/Other/Meta.lean"}],
+   "certificate":
+   {"name": "Classicism.Map.strong_possibility_and_infinity_e_incompatible",
+    "lines": [2020, 2022],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
+  "strong-possibility-and-distinctness-preserving-collapse-incompatible":
+  {"proofs":
+   [{"name": "Classicism.Meta.strongPossibility_dpc_inconsistent",
+     "lines": [242, 247],
+     "file": "Classicism/Results/Other/Meta.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.strong_possibility_and_distinctness_preserving_collapse_incompatible",
+    "lines": [2024, 2026],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
   "strong-atomicity-weak-rigid-comprehension-and-relational-choice-imply-intensional-choice":
@@ -808,7 +840,7 @@
      "lines": [65, 68],
      "file": "Classicism/Results/SentenceSchemas/PossibilityDistinctness.lean"},
     {"name": "Classicism.Meta.possibility_entails_possibleInfinityT",
-     "lines": [105, 109],
+     "lines": [138, 142],
      "file": "Classicism/Results/Other/Meta.lean"}],
    "certificate":
    {"name": "Classicism.Map.possibility_schema_r_implies_possible_infinity_t",
@@ -904,7 +936,7 @@
   "possibility-and-necessary-relational-choice-incompatible":
   {"proofs":
    [{"name": "Classicism.Meta.maximalist_necRelationalChoice_inconsistent",
-     "lines": [89, 96],
+     "lines": [122, 129],
      "file": "Classicism/Results/Other/Meta.lean"}],
    "certificate":
    {"name":
@@ -989,7 +1021,7 @@
   "no-pure-contingency-and-well-ordering-imply-necessary-well-ordering":
   {"proofs":
    [{"name": "Classicism.Meta.npc_wellOrdering_entails_necWellOrdering",
-     "lines": [46, 51],
+     "lines": [79, 84],
      "file": "Classicism/Results/Other/Meta.lean"}],
    "certificate":
    {"name":
@@ -1424,7 +1456,7 @@
   "no-pure-contingency-and-atomlessness-imply-necessary-atomlessness":
   {"proofs":
    [{"name": "Classicism.Meta.npc_atomlessness_entails_necAtomlessness",
-     "lines": [40, 44],
+     "lines": [73, 77],
      "file": "Classicism/Results/Other/Meta.lean"}],
    "certificate":
    {"name":
@@ -3375,7 +3407,7 @@
   "maximalist-distinctness-incompatible-with-necessary-atomlessness":
   {"proofs":
    [{"name": "Classicism.Meta.maximalist_necAtomlessness_inconsistent",
-     "lines": [84, 87],
+     "lines": [117, 120],
      "file": "Classicism/Results/Other/Meta.lean"}],
    "certificate":
    {"name":
@@ -4223,6 +4255,16 @@
     "lines": [239, 241],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
+  "axiom-of-infinity-t-implies-infinity-t":
+  {"proofs":
+   [{"name": "Classicism.Meta.axiomOfInfinityT_entails_infinityT",
+     "lines": [283, 286],
+     "file": "Classicism/Results/Other/Meta.lean"}],
+   "certificate":
+   {"name": "Classicism.Map.axiom_of_infinity_t_implies_infinity_t",
+    "lines": [2036, 2038],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
   "axiom-of-infinity-e-implies-possible-infinity-e":
   {"proofs":
    [{"name":
@@ -4234,6 +4276,29 @@
     "lines": [235, 237],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
+  "axiom-of-infinity-e-implies-infinity-e":
+  {"proofs":
+   [{"name": "Classicism.Meta.axiomOfInfinityE_entails_infinityE",
+     "lines": [278, 281],
+     "file": "Classicism/Results/Other/Meta.lean"}],
+   "certificate":
+   {"name": "Classicism.Map.axiom_of_infinity_e_implies_infinity_e",
+    "lines": [2032, 2034],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
+  "atomlessness-implies-infinity-t":
+  {"proofs":
+   [{"name": "Classicism.Proofs.atomlessness_implies_axiom_of_infinity_t",
+     "lines": [25, 47],
+     "file": "Classicism/Results/Records/Infinity.lean"},
+    {"name": "Classicism.Meta.axiomOfInfinityT_entails_infinityT",
+     "lines": [283, 286],
+     "file": "Classicism/Results/Other/Meta.lean"}],
+   "certificate":
+   {"name": "Classicism.Map.atomlessness_implies_infinity_t",
+    "lines": [2040, 2044],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
   "atomlessness-implies-axiom-of-infinity-t":
   {"proofs":
    [{"name": "Classicism.Proofs.atomlessness_implies_axiom_of_infinity_t",
