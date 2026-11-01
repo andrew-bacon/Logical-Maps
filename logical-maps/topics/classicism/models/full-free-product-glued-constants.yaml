@@ -108,3 +108,18 @@ history:
     Weakly Rigid Power follows from Rigid Power and □Tame Rigidity by the recorded results. The model
     is not a member of the full-action-models group, whose shared conditions would otherwise have supplied
     these.
+lean:
+  param: Classicism.Meta.Intensional.freeProductSites
+  meets:
+    one-object-action-model: Classicism.Meta.Intensional.FreeProductSites.oneObject
+    one-individual: Classicism.Meta.Intensional.FreeProductSites.one_individual
+    infinitely-many-propositions: Classicism.Meta.Intensional.FreeProductSites.infinitely_many_propositions
+    nonidentity-arrow: Classicism.Meta.Intensional.FreeProductSites.nonidentity
+    nonepic-arrow: Classicism.Meta.Intensional.FreeProductSites.nonepic
+    unretracted-arrow: Classicism.Meta.Intensional.FreeProductSites.unretracted
+    returning-arrow: Classicism.Meta.Intensional.FreeProductSites.returning
+    identity-singletons: Classicism.Meta.Intensional.FreeProductSites.identity_singletons
+  verdicts:
+  - holds: logical-necessity-r
+    ref: Classicism.Map.Models.full_free_product_glued_constants.logical_necessity_r
+    status: verified

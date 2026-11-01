@@ -11,6 +11,7 @@ import Classicism.Coalesced.SumData
 import Classicism.Models.CoalescedFinite
 import Classicism.Models.CoalescedInterpretations
 import Classicism.Models.GluedFreeMonoid
+import Classicism.Models.GluedFreeProduct
 import Classicism.Semantics.OneIndividual
 import Mathlib.Data.Fintype.Powerset
 import Mathlib.Data.Finite.Sigma
@@ -487,6 +488,17 @@ theorem pure_b_r : Statements.Models.full_double_retraction_glued_constants.pure
   ⟨doubleRetractionSites.isModel, DoubleRetractionSites.pureB⟩
 
 end full_double_retraction_glued_constants
+
+namespace full_free_product_glued_constants
+
+open Meta.Intensional
+
+/-- **Logical Necessity**: the free generators of `F_∞ * E * B * ℤ₂` are sites
+(`FreeProd.sites_sep`), the constants glued by formulas, on one object. -/
+theorem logical_necessity_r : Statements.Models.full_free_product_glued_constants.logical_necessity_r :=
+  ⟨Signature.sigmaTop_admitted, freeProductSites.isModel, FreeProductSites.logicalNecessity⟩
+
+end full_free_product_glued_constants
 
 end Classicism.Map.Models
 

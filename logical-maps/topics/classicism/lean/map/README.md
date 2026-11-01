@@ -176,8 +176,10 @@ full, so the group meets `full-model`, `full-action-model` and `extensionally-fu
 (Logical Necessity, BF, and the Axiom of Infinity at `e` with the threads), and the double retraction with free sites
 at `W₀`, glued by formulas (Witnessed Possibility, Pure B, and the failure of Possibly Witnessed Possibility). The
 free monoid's generators are indexed by the sentences of `Σ` themselves rather than by `ℕ` through an enumeration;
-for a countable signature the frames are isomorphic. The free-product member is not yet built (its monoid's normal
-forms).
+for a countable signature the frames are isomorphic. The free-product member (`Models/GluedFreeProduct.lean`) has
+Logical Necessity and the conditions on arrows, its generators being sites by the free product's normal form at the free
+factor; its condition `unique-retractions-everywhere` (the record's Lemma 3) is not yet in Lean, so Strong Actuality
+and Rigid Power are not certified for it.
 
 **The sentence schemas range over the paper's language.** The object language here also has
 type variables, a device of the metalogic; every sentence schema (No Contingency, No Pure

@@ -18,6 +18,7 @@ import Classicism.Coalesced.SumData
 import Classicism.Models.CoalescedFinite
 import Classicism.Models.CoalescedInterpretations
 import Classicism.Models.GluedFreeMonoid
+import Classicism.Models.GluedFreeProduct
 
 /-!
 # Generated statements: models' verdicts
@@ -194,6 +195,10 @@ def Models.full_free_monoid_glued_constants.axiom_of_infinity_e : Prop :=
 /-- `full-free-monoid-glued-constants`: BF holds. -/
 def Models.full_free_monoid_glued_constants.barcan_r : Prop :=
   (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidThread)).IsModel ∧ (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidThread)).HoldsAx Classicism.P.Barcan.schemaIn
+
+/-- `full-free-product-glued-constants`: Logical Necessity holds. -/
+def Models.full_free_product_glued_constants.logical_necessity_r : Prop :=
+  (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).Admitted ∧ (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).IsModel ∧ (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).HoldsAx (Classicism.Meta.AxiomSet.logicalNecessity _)
 
 /-- `symmetric-entrance-qualitative-links`: Relational Choice holds. -/
 def Models.symmetric_entrance_qualitative_links.relational_choice_r : Prop :=
@@ -682,6 +687,66 @@ def Models.full_free_monoid_glued_constants.transversal_choice_r : Prop :=
 /-- `full-free-monoid-glued-constants`: ND (type t) fails. -/
 def Models.full_free_monoid_glued_constants.distinctness_necessary_t : Prop :=
   (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidThread)).IsModel ∧ ¬ (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidThread)).HoldsAx Classicism.P.NecessityOfDistinctnessT.schemaIn
+
+/-- `full-free-product-glued-constants`: Truths are ND-necessary fails. -/
+def Models.full_free_product_glued_constants.distinctness_preserving_collapse : Prop :=
+  (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).IsModel ∧ ¬ (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
+
+/-- `full-free-product-glued-constants`: □Atomicity holds. -/
+def Models.full_free_product_glued_constants.necessary_atomicity_r : Prop :=
+  (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).IsModel ∧ (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).HoldsAx Classicism.P.NecAtomicity.schemaIn
+
+/-- `full-free-product-glued-constants`: □Rigid Comprehension holds. -/
+def Models.full_free_product_glued_constants.necessary_rigid_comprehension_r : Prop :=
+  (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).IsModel ∧ (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).HoldsAx Classicism.P.NecRigidComprehension.schemaIn
+
+/-- `full-free-product-glued-constants`: Axiom of Infinity (type t) holds. -/
+def Models.full_free_product_glued_constants.axiom_of_infinity_t : Prop :=
+  (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).IsModel ∧ (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).HoldsAx Classicism.P.AxiomOfInfinityT.schemaIn
+
+/-- `full-free-product-glued-constants`: Infinity Schema (type t) holds. -/
+def Models.full_free_product_glued_constants.infinity_t : Prop :=
+  (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).IsModel ∧ (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).HoldsAx (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.infinityT)
+
+/-- `full-free-product-glued-constants`: No Pure Contingency holds. -/
+def Models.full_free_product_glued_constants.no_pure_contingency_r : Prop :=
+  (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).IsModel ∧ (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).HoldsAx (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.noContingency)
+
+/-- `full-free-product-glued-constants`: Strong Atomicity (type t) fails. -/
+def Models.full_free_product_glued_constants.strong_atomicity_t : Prop :=
+  (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).IsModel ∧ ¬ (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).HoldsAx Classicism.P.StrongAtomicityT.schemaIn
+
+/-- `full-free-product-glued-constants`: Fregean Axiom fails. -/
+def Models.full_free_product_glued_constants.fregean_axiom : Prop :=
+  (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).IsModel ∧ ¬ (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).HoldsAx Classicism.P.FregeanAxiom.schemaIn
+
+/-- `full-free-product-glued-constants`: Infinity Schema (type e) fails. -/
+def Models.full_free_product_glued_constants.infinity_e : Prop :=
+  (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).IsModel ∧ ¬ (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).HoldsAx (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.infinityE)
+
+/-- `full-free-product-glued-constants`: Axiom of Infinity (type e) fails. -/
+def Models.full_free_product_glued_constants.axiom_of_infinity_e : Prop :=
+  (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).IsModel ∧ ¬ (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).HoldsAx Classicism.P.AxiomOfInfinityE.schemaIn
+
+/-- `full-free-product-glued-constants`: Possible Infinity (type e) fails. -/
+def Models.full_free_product_glued_constants.possible_infinity_e : Prop :=
+  (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).IsModel ∧ ¬ (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).HoldsAx Classicism.P.PossibleInfinityE.schemaIn
+
+/-- `full-free-product-glued-constants`: □Relational Choice holds. -/
+def Models.full_free_product_glued_constants.necessary_relational_choice_r : Prop :=
+  (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).IsModel ∧ (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).HoldsAx Classicism.P.NecRelationalChoice.schemaIn
+
+/-- `full-free-product-glued-constants`: Relational Choice holds. -/
+def Models.full_free_product_glued_constants.relational_choice_r : Prop :=
+  (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).IsModel ∧ (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).HoldsAx Classicism.P.RelationalChoice.schemaIn
+
+/-- `full-free-product-glued-constants`: Transversal Choice holds. -/
+def Models.full_free_product_glued_constants.transversal_choice_r : Prop :=
+  (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).IsModel ∧ (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).HoldsAx Classicism.P.TransversalChoice.schemaIn
+
+/-- `full-free-product-glued-constants`: ND (type t) fails. -/
+def Models.full_free_product_glued_constants.distinctness_necessary_t : Prop :=
+  (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).IsModel ∧ ¬ (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeProductSites)).HoldsAx Classicism.P.NecessityOfDistinctnessT.schemaIn
 
 /-- `full-idempotent-monoid`: Truths are ND-necessary holds. -/
 def Models.full_idempotent_monoid.distinctness_preserving_collapse : Prop :=

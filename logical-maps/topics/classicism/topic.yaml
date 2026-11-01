@@ -236,6 +236,7 @@ lean:
     - Classicism.Models.CoalescedFinite
     - Classicism.Models.CoalescedInterpretations
     - Classicism.Models.GluedFreeMonoid
+    - Classicism.Models.GluedFreeProduct
     holds: ({model}).IsModel ∧ ({model}).HoldsAx {def}
     fails: ({model}).IsModel ∧ ¬ ({model}).HoldsAx {def}
     relative_categories: [signature]
