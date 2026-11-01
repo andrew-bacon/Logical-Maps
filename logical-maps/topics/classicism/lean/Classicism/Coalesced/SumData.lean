@@ -37,7 +37,8 @@ What they give:
   isolated** (`actualWorldIsolated_of`): the singleton of the root's identity arrow is a root
   proposition.
 
-**The distinguished members** (`SumData.ofDistinguished`): Appendix E's construction over the
+**The distinguished members** (`SumData.ofDistinguished`, and `SumData.ofAppendixE` with
+Appendix E's product individuals and union constants): Appendix E's construction over the
 distinguished arrows with the fullest root domains, any root individuals and any root values of
 the constants transported to the components'. They meet `distinguished-arrows`
 (`distinguishedArrows_ofDistinguished`) and `free-root-component`
@@ -249,6 +250,34 @@ theorem SumData.completeComponents_ofDistinguished (hI : TransportsConstants (fu
 
 end Distinguished
 
+/-! ### Appendix E's choices -/
+
+section AppendixE
+
+variable {Sig : Signature} {ι : Type} {C : ι → Type} [∀ k, SmallCategory (C k)]
+  (A : ∀ k, Premodel Sig (C k)) (M : ∀ k, (A k).IsModel)
+
+/-- **Appendix E's coalesced sum of a family of models as group data**: distinguished arrows,
+the fullest root domains, the product of the components' individuals as root individuals, the
+unions of the components' intensions as the root values of the constants. Its model is
+`(appendixE A).coalescedSum (fullRootIncl _ _) ne (appendixEConst A)` for any `ne`. -/
+noncomputable abbrev SumData.ofAppendixE : SumData :=
+  SumData.ofDistinguished A (productAtom A .e) (fun i => productAtom A (.var i))
+    ⟨fun k => Classical.choice ((A k).nonempty_e _)⟩ (appendixEConst A) (transportsConstants_appendixE A) M
+
+variable {A}
+
+theorem SumData.ofAppendixE_distinguished : (SumData.ofAppendixE A M).DistinguishedArrows :=
+  SumData.distinguishedArrows_ofDistinguished _ _
+
+theorem SumData.ofAppendixE_free : (SumData.ofAppendixE A M).FreeRootComponent :=
+  SumData.freeRootComponent_ofDistinguished _ _
+
+theorem SumData.ofAppendixE_isolated : (SumData.ofAppendixE A M).model.ActualWorldIsolated :=
+  SumData.actualWorldIsolated_of (SumData.ofAppendixE_free M) fun _ => rfl
+
+end AppendixE
+
 /-! ### Root values of relational constants over the distinguished arrows -/
 
 section UnionConst
@@ -278,8 +307,7 @@ open Completeness
 
 /-- The maximalist root over a countable closed signature, as group data. -/
 noncomputable abbrev maximalistData (Sig : Signature) [Countable Sig.Const] : SumData :=
-  SumData.ofDistinguished (canonicalFamily Sig) (productAtom _ .e) (fun i => productAtom _ (.var i))
-    (maximalist_nonempty Sig) (appendixEConst _) (transportsConstants_appendixE _) canonicalFamily_isModel
+  SumData.ofAppendixE (canonicalFamily Sig) canonicalFamily_isModel
 
 instance : Countable Signature.sigmaTop.Const := inferInstanceAs (Countable Unit)
 
@@ -290,15 +318,15 @@ theorem sigmaTop_closed : Signature.sigmaTop.Closed := fun _ => (by decide : Ty.
 
 theorem maximalistData_complete {Sig : Signature} [Countable Sig.Const] (hS : Sig.Closed) :
     (maximalistData Sig).CompleteComponents :=
-  SumData.completeComponents_ofDistinguished _ _ hS (canonicalFamily_complete hS)
+  SumData.completeComponents_ofDistinguished (transportsConstants_appendixE _) canonicalFamily_isModel hS (canonicalFamily_complete hS)
 
 theorem maximalistData_distinguished {Sig : Signature} [Countable Sig.Const] :
     (maximalistData Sig).DistinguishedArrows :=
-  SumData.distinguishedArrows_ofDistinguished _ _
+  SumData.ofAppendixE_distinguished canonicalFamily_isModel
 
 theorem maximalistData_free {Sig : Signature} [Countable Sig.Const] :
     (maximalistData Sig).FreeRootComponent :=
-  SumData.freeRootComponent_ofDistinguished _ _
+  SumData.ofAppendixE_free canonicalFamily_isModel
 
 theorem maximalistData_isolated {Sig : Signature} [Countable Sig.Const] :
     (maximalistData Sig).model.ActualWorldIsolated :=
