@@ -8,6 +8,7 @@ import Classicism.Coalesced.Parameters
 import Classicism.Coalesced.Interpretations
 import Classicism.Coalesced.Definable
 import Classicism.Coalesced.Pinned
+import Classicism.Coalesced.PinnedBarcan
 
 /-!
 # Coalesced sums
