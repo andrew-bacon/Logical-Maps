@@ -4,6 +4,10 @@ import Classicism.Coalesced.Transport
 import Classicism.Coalesced.Model
 import Classicism.Coalesced.Full
 import Classicism.Coalesced.Distinguished
+import Classicism.Coalesced.Parameters
+import Classicism.Coalesced.Interpretations
+import Classicism.Coalesced.Definable
+import Classicism.Coalesced.Pinned
 
 /-!
 # Coalesced sums
