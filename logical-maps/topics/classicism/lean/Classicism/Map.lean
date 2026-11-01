@@ -2044,4 +2044,22 @@ theorem atomlessness_implies_infinity_t : Statements.atomlessness_implies_infini
   map_cert (Entails.trans Proofs.atomlessness_implies_axiom_of_infinity_t.entails
     axiomOfInfinityT_entails_infinityT)
 
+/-! ### Boxed twins, by `map_boxed` (`Results/Boxed.lean`) -/
+
+/-- `necessary-actuality-and-necessary-distinctness-preserving-collapse-imply-necessary-inextensible-comprehension`: the boxed form of `actuality-and-distinctness-preserving-collapse-imply-inextensible-comprehension` -/
+theorem necessary_actuality_and_necessary_distinctness_preserving_collapse_imply_necessary_inextensible_comprehension : Statements.necessary_actuality_and_necessary_distinctness_preserving_collapse_imply_necessary_inextensible_comprehension := by
+  map_boxed actuality_and_distinctness_preserving_collapse_imply_inextensible_comprehension
+
+/-- `necessary-boolean-completeness-implies-necessary-weakly-inextensible-comprehension`: the boxed form of `boolean-completeness-r-implies-weakly-inextensible-comprehension-r` -/
+theorem necessary_boolean_completeness_implies_necessary_weakly_inextensible_comprehension : Statements.necessary_boolean_completeness_implies_necessary_weakly_inextensible_comprehension := by
+  map_boxed boolean_completeness_r_implies_weakly_inextensible_comprehension_r
+
+/-- `necessary-vicinity-and-necessary-distinctness-preserving-collapse-imply-necessary-actuality`: the boxed form of `vicinity-and-distinctness-preserving-collapse-imply-actuality` -/
+theorem necessary_vicinity_and_necessary_distinctness_preserving_collapse_imply_necessary_actuality : Statements.necessary_vicinity_and_necessary_distinctness_preserving_collapse_imply_necessary_actuality := by
+  map_boxed vicinity_and_distinctness_preserving_collapse_imply_actuality
+
+/-- `necessary-weak-rigid-comprehension-implies-necessary-boolean-completeness`: the boxed form of `weak-rigid-comprehension-r-implies-boolean-completeness-r` -/
+theorem necessary_weak_rigid_comprehension_implies_necessary_boolean_completeness : Statements.necessary_weak_rigid_comprehension_implies_necessary_boolean_completeness := by
+  map_boxed weak_rigid_comprehension_r_implies_boolean_completeness_r
+
 end Classicism.Map
