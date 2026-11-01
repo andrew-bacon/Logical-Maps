@@ -6,6 +6,7 @@ import Classicism.Models.SymBase
 import Classicism.Coalesced.SumData
 import Classicism.Models.Henkin
 import Classicism.Coalesced.Transfer
+import Classicism.Results.SentenceSchemas.ArithmeticNecessitism
 import Mathlib.SetTheory.Cardinal.NatCard
 
 /-!
@@ -544,6 +545,23 @@ theorem atomicity_t : Statements.Arguments.coalesced_sums.atomicity_t_component.
   fun _ hc hD hF => Coalesced.SumData.not_holds_atomicityT hD hF hc
 
 end atomicity_t_component
+
+namespace arithmetic_necessitism_complete_components
+
+/-- Vacuously: `¬I*_σ` is consistent with `C` (`not_iStar_consistent`, the full model on one
+individual), so with complete components `□I*_σ` fails at the root
+(`RootAction.not_holds_box_of_complete`), and the instance `□I*_σ → …` holds. -/
+theorem arithmetic_necessitism :
+    Statements.Arguments.coalesced_sums.arithmetic_necessitism_complete_components.arithmetic_necessitism := by
+  intro D hc
+  rintro _ ⟨_, ⟨σ, hσ, rfl⟩, rfl⟩
+  obtain ⟨R, hR⟩ := P.ArithmeticNecessitism.quoted_eq σ
+  rw [hR]
+  exact ((D.model).holds_imp D.isModel (𝟙 _) IEnv.nil _ _).2 fun hb =>
+    absurd hb (D.RA.not_holds_box_of_complete D.I D.RI D.ne D.isModel hc (iStar_closedTypes hσ)
+      (not_iStar_consistent σ))
+
+end arithmetic_necessitism_complete_components
 
 end coalesced_sums
 

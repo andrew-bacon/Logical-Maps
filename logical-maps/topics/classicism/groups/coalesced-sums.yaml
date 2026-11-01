@@ -381,6 +381,9 @@ arguments:
     finite and the finite cardinalities beyond the size of the type coincide. So it is possible at
     the root (pure-sentences-possible), the antecedent $\Box I^*_\sigma$ fails there, and the
     instance of Arithmetic Necessitism at $\sigma$ is true.
+  lean:
+  - holds: arithmetic-necessitism
+    ref: Classicism.Map.Arguments.coalesced_sums.arithmetic_necessitism_complete_components.arithmetic_necessitism
 - id: necessity-of-analysis-complete-components
   requires: [complete-components]
   fails: [necessity-of-analysis]

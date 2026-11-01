@@ -65,7 +65,12 @@ closed type `σ`, in `Certified/Arithmetic.lean`). The latter's vocabulary, `�
 `ℕ_σ`, `Sum_σ` and `Prod_σ`, is written as shallow definitions with a type parameter and
 quoted by `#classicism_quote_term` (`Tools/QuoteTerm.lean`), which reads each type parameter
 as a metalogical type and checks each term's reading against its definition, at every such
-type, as `#classicism_quote` does a statement's.
+type, as `#classicism_quote` does a statement's. Arithmetic Necessitism, by contrast, is an ordinary
+shallow principle with a type parameter (`P.ArithmeticNecessitism`, in
+`Principles/Arithmetic.lean`), over the Background's finite cardinalities; its antecedent's
+`I*_σ` is `Classicism.IStar`, quoted on its own as the sentence `IStar.term σ` too, so that a
+proof can refute `□I*_σ` where `¬I*_σ` is consistent
+(`Results/SentenceSchemas/ArithmeticNecessitism.lean`).
 
 ## The shape of a statement
 

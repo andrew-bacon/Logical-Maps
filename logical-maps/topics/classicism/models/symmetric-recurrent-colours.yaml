@@ -6,7 +6,7 @@ certificate:
   recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 28 October 2026
   checked_by: []
   date: '2026-10-28'
-  lean: none
+  lean: stated
 sources:
 - >-
   GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, Symmetric ideally-full model: recurrent finite colour

@@ -66,7 +66,7 @@ Ty-parameter, also its list form: `P.listQuoted`, the instance at a list of type
   Classicism.P.NecWeaklyRigidWeakRigidity Classicism.P.BarcanRelational
   Classicism.P.NecBarcanRelational Classicism.P.WellOrdering Classicism.P.NecWellOrdering
   Classicism.P.ModalWellOrdering Classicism.P.Zorn Classicism.P.ModalizedRelationalChoice
-  Classicism.P.NecModalizedRelationalChoice
+  Classicism.P.NecModalizedRelationalChoice Classicism.P.ArithmeticNecessitism
   -- the equivalent forms (`Principles/`)
   Classicism.P.ModalKDual Classicism.P.ModalTDual Classicism.P.ModalFourDual
   Classicism.P.ConverseBarcanDual Classicism.P.ModalBDual Classicism.P.NecModalBDual

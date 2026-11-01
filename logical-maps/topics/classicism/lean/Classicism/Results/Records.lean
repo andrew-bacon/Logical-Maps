@@ -6,6 +6,7 @@ import Classicism.Results.Records.Lattice
 import Classicism.Results.Records.Choice
 import Classicism.Results.Records.C5
 import Classicism.Results.Records.Infinity
+import Classicism.Results.Records.Arithmetic
 import Classicism.Background.AppendixD
 import Classicism.Results.Records.Necessity
 
@@ -45,6 +46,7 @@ One file per topic, in the order of the map's categories, each importing those i
 | `Records/Choice.lean` | Choice, Plenitude, Transversals, Modalized Plenitude |
 | `Records/C5.lean` | the records of `C5`, `□ND` at `t` (§§2.1–2.3) |
 | `Records/Infinity.lean` | Infinity, Countable Boolean Completeness |
+| `Records/Arithmetic.lean` | Arithmetic Necessitism |
 | `Background/AppendixD.lean` | *The Bounds of Possibility*, Appendix D: properties of operators, hats, `□₅`, Propositions D11–D19 as the map's records use them (no records of its own) |
 | `Records/Necessity.lean` | the varieties of necessity: `□_≠`, `□̂̂`, `□₅` and the principles comparing them |
 
