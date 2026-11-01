@@ -1,6 +1,7 @@
 import Classicism.Results.Other.Meta
 import Classicism.Certified.Entailed
 import Classicism.Coalesced.TransferBC
+import Classicism.Coalesced.TransferSelfAtoms
 
 /-!
 # Witnesses: failures in Lean models, through the map's results (1 November 2026)
@@ -284,6 +285,12 @@ theorem maximalist_necStrongAtomicityT_inconsistent :
     (fun h => Map.Models.full_idempotent_monoid.strong_atomicity_t.2
       ((Premodel.holdsAx_schemaIn_iff _ _).2 h))
     (by rintro _ ⟨_, rfl, rfl⟩; rfl)
+
+/-- `possibility-and-necessary-atoms-are-self-atoms-t-incompatible`: it fails in the full model on
+the idempotent monoid (`Idem.not_aasaT`). -/
+theorem maximalist_necAtomsAreSelfAtomsT_inconsistent :
+    ¬ Consistent (maximalist (Sig := Signature.pure) ∪ P.NecAtomsAreSelfAtomsT.schema) :=
+  max_box_inconsistent (Consistent.empty_union Intensional.Idem.not_aasaT_consistent) rfl
 
 /-- `maximalist-distinctness-incompatible-with-necessary-vicinity`. -/
 theorem maximalist_necVicinity_inconsistent :

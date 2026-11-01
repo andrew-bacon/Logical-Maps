@@ -7,6 +7,7 @@ import Classicism.Coalesced.SumData
 import Classicism.Models.Henkin
 import Classicism.Coalesced.Transfer
 import Classicism.Coalesced.TransferBC
+import Classicism.Coalesced.TransferSelfAtoms
 import Mathlib.SetTheory.Cardinal.NatCard
 
 /-!
@@ -557,6 +558,19 @@ theorem boolean_completeness_t :
   fun _ hc hD hF => Coalesced.SumData.not_holds_bcT hD hF hc
 
 end boolean_completeness_t_component
+
+namespace self_atomicity_component
+
+/-- The single-component copy of a component's atom that is no self-atom
+(`Coalesced/TransferSelfAtoms.lean`). -/
+theorem self_atomicity_t : Statements.Arguments.coalesced_sums.self_atomicity_component.self_atomicity_t :=
+  fun _ hc hD hF => Coalesced.SumData.not_holds_selfAtomicityT hD hF hc
+
+theorem atoms_are_self_atoms_t :
+    Statements.Arguments.coalesced_sums.self_atomicity_component.atoms_are_self_atoms_t :=
+  fun _ hc hD hF => Coalesced.SumData.not_holds_aasaT hD hF hc
+
+end self_atomicity_component
 
 /-! #### End of witness transfers -/
 

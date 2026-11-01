@@ -2101,6 +2101,10 @@ theorem maximalist_distinctness_incompatible_with_necessary_boolean_completeness
 theorem possibility_and_necessary_strong_atomicity_t_incompatible : Statements.possibility_and_necessary_strong_atomicity_t_incompatible := by
   map_cert_incompatible maximalist_necStrongAtomicityT_inconsistent
 
+/-- `possibility-and-necessary-atoms-are-self-atoms-t-incompatible` -/
+theorem possibility_and_necessary_atoms_are_self_atoms_t_incompatible : Statements.possibility_and_necessary_atoms_are_self_atoms_t_incompatible := by
+  map_cert_incompatible maximalist_necAtomsAreSelfAtomsT_inconsistent
+
 /-! ### End of witness verdicts -/
 
 end Classicism.Map

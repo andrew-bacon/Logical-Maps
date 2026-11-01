@@ -440,3 +440,8 @@ arguments:
       Condition fullest-domains added to the requirements: the argument builds root entities whose
       parts in the components are chosen freely, which needs the root domains to be the fullest.
       Every member with distinguished arrows has them, so no member's verdicts change.
+  lean:
+  - fails: self-atomicity-t
+    ref: Classicism.Map.Arguments.coalesced_sums.self_atomicity_component.self_atomicity_t
+  - fails: atoms-are-self-atoms-t
+    ref: Classicism.Map.Arguments.coalesced_sums.self_atomicity_component.atoms_are_self_atoms_t

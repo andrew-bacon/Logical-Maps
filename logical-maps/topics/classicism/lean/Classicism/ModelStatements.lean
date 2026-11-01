@@ -219,6 +219,10 @@ def Models.finite_support_two_object_all_maps.barcan_r : Prop :=
 def Models.finite_support_two_object_all_maps.necessary_barcan_r : Prop :=
   (Classicism.Meta.Intensional.ContingentBarcan.model).IsModel ∧ ¬ (Classicism.Meta.Intensional.ContingentBarcan.model).HoldsAx Classicism.P.NecBarcan.schemaIn
 
+/-- `full-idempotent-monoid`: Atoms are self-atoms (type t) fails. -/
+def Models.full_idempotent_monoid.atoms_are_self_atoms_t : Prop :=
+  (Classicism.Meta.Intensional.MSet.model Classicism.Meta.Intensional.Idem).IsModel ∧ ¬ (Classicism.Meta.Intensional.MSet.model Classicism.Meta.Intensional.Idem).HoldsAx Classicism.P.AtomsAreSelfAtomsT.schemaIn
+
 /-- `symmetric-entrance-qualitative-links`: Relational Choice holds. -/
 def Models.symmetric_entrance_qualitative_links.relational_choice_r : Prop :=
   (Classicism.Meta.Intensional.FixedPointEntrance.Qualitative.model).IsModel ∧ (Classicism.Meta.Intensional.FixedPointEntrance.Qualitative.model).HoldsAx Classicism.P.RelationalChoice.schemaIn
@@ -339,6 +343,14 @@ def Models.coalesced_constant_indexed_root.atomicity_t : Prop :=
 def Models.coalesced_constant_indexed_root.boolean_completeness_t : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).HoldsAx Classicism.P.BooleanCompletenessT.schemaIn
 
+/-- `coalesced-constant-indexed-root`: Self-Atomicity (type t) fails. -/
+def Models.coalesced_constant_indexed_root.self_atomicity_t : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).HoldsAx Classicism.P.SelfAtomicityT.schemaIn
+
+/-- `coalesced-constant-indexed-root`: Atoms are self-atoms (type t) fails. -/
+def Models.coalesced_constant_indexed_root.atoms_are_self_atoms_t : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).HoldsAx Classicism.P.AtomsAreSelfAtomsT.schemaIn
+
 /-- `coalesced-constant-indexed-root`: Truths are ND-necessary holds. -/
 def Models.coalesced_constant_indexed_root.distinctness_preserving_collapse : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
@@ -371,6 +383,14 @@ def Models.coalesced_maximalist_root.atomicity_t : Prop :=
 def Models.coalesced_maximalist_root.boolean_completeness_t : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).HoldsAx Classicism.P.BooleanCompletenessT.schemaIn
 
+/-- `coalesced-maximalist-root`: Self-Atomicity (type t) fails. -/
+def Models.coalesced_maximalist_root.self_atomicity_t : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).HoldsAx Classicism.P.SelfAtomicityT.schemaIn
+
+/-- `coalesced-maximalist-root`: Atoms are self-atoms (type t) fails. -/
+def Models.coalesced_maximalist_root.atoms_are_self_atoms_t : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).HoldsAx Classicism.P.AtomsAreSelfAtomsT.schemaIn
+
 /-- `coalesced-maximalist-root`: Truths are ND-necessary holds. -/
 def Models.coalesced_maximalist_root.distinctness_preserving_collapse : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
@@ -398,6 +418,14 @@ def Models.coalesced_single_individual_root.atomicity_t : Prop :=
 /-- `coalesced-single-individual-root`: Boolean Completeness (type t) fails. -/
 def Models.coalesced_single_individual_root.boolean_completeness_t : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).HoldsAx Classicism.P.BooleanCompletenessT.schemaIn
+
+/-- `coalesced-single-individual-root`: Self-Atomicity (type t) fails. -/
+def Models.coalesced_single_individual_root.self_atomicity_t : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).HoldsAx Classicism.P.SelfAtomicityT.schemaIn
+
+/-- `coalesced-single-individual-root`: Atoms are self-atoms (type t) fails. -/
+def Models.coalesced_single_individual_root.atoms_are_self_atoms_t : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).HoldsAx Classicism.P.AtomsAreSelfAtomsT.schemaIn
 
 /-- `coalesced-single-individual-root`: Truths are ND-necessary holds. -/
 def Models.coalesced_single_individual_root.distinctness_preserving_collapse : Prop :=
@@ -1546,6 +1574,14 @@ def Arguments.coalesced_sums.atomicity_t_component.atomicity_t : Prop :=
 /-- `coalesced-sums`, argument `boolean-completeness-t-component`: Boolean Completeness (type t) fails in every model meeting its conditions. -/
 def Arguments.coalesced_sums.boolean_completeness_t_component.boolean_completeness_t : Prop :=
   ∀ (D : Classicism.Meta.Coalesced.SumData), Classicism.Meta.Coalesced.SumData.CompleteComponents D → Classicism.Meta.Coalesced.SumData.DistinguishedArrows D → Classicism.Meta.Coalesced.SumData.FullestDomains D → ¬ ((Classicism.Meta.Coalesced.SumData.model D)).HoldsAx Classicism.P.BooleanCompletenessT.schemaIn
+
+/-- `coalesced-sums`, argument `self-atomicity-component`: Self-Atomicity (type t) fails in every model meeting its conditions. -/
+def Arguments.coalesced_sums.self_atomicity_component.self_atomicity_t : Prop :=
+  ∀ (D : Classicism.Meta.Coalesced.SumData), Classicism.Meta.Coalesced.SumData.CompleteComponents D → Classicism.Meta.Coalesced.SumData.DistinguishedArrows D → Classicism.Meta.Coalesced.SumData.FullestDomains D → ¬ ((Classicism.Meta.Coalesced.SumData.model D)).HoldsAx Classicism.P.SelfAtomicityT.schemaIn
+
+/-- `coalesced-sums`, argument `self-atomicity-component`: Atoms are self-atoms (type t) fails in every model meeting its conditions. -/
+def Arguments.coalesced_sums.self_atomicity_component.atoms_are_self_atoms_t : Prop :=
+  ∀ (D : Classicism.Meta.Coalesced.SumData), Classicism.Meta.Coalesced.SumData.CompleteComponents D → Classicism.Meta.Coalesced.SumData.DistinguishedArrows D → Classicism.Meta.Coalesced.SumData.FullestDomains D → ¬ ((Classicism.Meta.Coalesced.SumData.model D)).HoldsAx Classicism.P.AtomsAreSelfAtomsT.schemaIn
 
 /-- `finite-support-one-object`, argument `actual-world`: Actuality holds in every model meeting its conditions. -/
 def Arguments.finite_support_one_object.actual_world.actuality : Prop :=

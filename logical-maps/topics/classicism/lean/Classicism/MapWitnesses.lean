@@ -35,6 +35,15 @@ theorem boolean_completeness_t : Statements.Models.finite_support_truncations.bo
 
 end finite_support_truncations
 
+namespace full_idempotent_monoid
+
+/-- The atom `{k}` becomes `{1, k}` along `k`, where it is true (`Idem.not_aasaT`). -/
+theorem atoms_are_self_atoms_t : Statements.Models.full_idempotent_monoid.atoms_are_self_atoms_t :=
+  ⟨MSet.model_isModel Intensional.Idem, fun h => Intensional.Idem.not_aasaT
+    ((Premodel.holdsAx_schemaIn_iff _ _).1 h _ rfl)⟩
+
+end full_idempotent_monoid
+
 /-- The four boxed failures at a coalesced root with complete components. -/
 theorem coalesced_box_failures {D : Coalesced.SumData} (hD : D.DistinguishedArrows)
     (hc : D.CompleteComponents) :
