@@ -32,16 +32,6 @@ section InLang
 
 variable {Γ : Ctx}
 
-@[simp] theorem inLang_app {σ : Ty} {ρ : RTy} {f : Term (ext Sig) Γ (σ ⇒ ρ)} {a : Term (ext Sig) Γ σ} :
-    InLang S (.app f a) ↔ InLang S f ∧ InLang S a := by
-  unfold InLang
-  simp only [Term.consts]
-  exact ⟨fun h => ⟨fun r hr => h r (Or.inl hr), fun r hr => h r (Or.inr hr)⟩,
-    fun h r hr => hr.elim (h.1 r) (h.2 r)⟩
-
-@[simp] theorem inLang_lam {σ : Ty} {ρ : RTy} {b : Term (ext Sig) (σ :: Γ) ρ} :
-    InLang S (.lam b) ↔ InLang S b := Iff.rfl
-
 theorem inLang_of_consts_empty {σ : Ty} {t : Term (ext Sig) Γ σ} (h : t.consts = ∅) : InLang S t := by
   intro r hr; rw [h] at hr; exact hr.elim
 
@@ -67,25 +57,7 @@ theorem inLang_of_consts_empty {σ : Ty} {t : Term (ext Sig) Γ σ} (h : t.const
   intro r hr
   exact (Sum.inr_ne_inl (Set.mem_singleton_iff.1 hr)).elim
 
-theorem InLang.mono (hS : S ⊆ S') {σ : Ty} {t : Term (ext Sig) Γ σ} (h : InLang S t) : InLang S' t :=
-  fun r hr => hS (h r hr)
-
 end InLang
-
-theorem consts_rename : ∀ {Γ Δ : Ctx} (r : Ren Γ Δ) {σ : Ty} (t : Term Sig Γ σ),
-    (t.rename r).consts = t.consts
-  | _, _, _, _, .var _ | _, _, _, _, .const _ | _, _, _, _, .and | _, _, _, _, .or
-  | _, _, _, _, .not | _, _, _, _, .all _ | _, _, _, _, .ex _ | _, _, _, _, .eq _
-  | _, _, _, _, .constR _ | _, _, _, _, .negR _ | _, _, _, _, .andR _ | _, _, _, _, .orR _
-  | _, _, _, _, .coextR _ | _, _, _, _, .boxR _ | _, _, _, _, .inclR _ => rfl
-  | _, _, r, _, .app f a => by
-    show (f.rename r).consts ∪ (a.rename r).consts = f.consts ∪ a.consts
-    rw [consts_rename r f, consts_rename r a]
-  | _, _, r, _, .lam b => consts_rename (Ren.lift r) b
-
-@[simp] theorem inLang_rename {Γ Δ : Ctx} (r : Ren Γ Δ) {σ : Ty} {t : Term (ext Sig) Γ σ} :
-    InLang S (t.rename r) ↔ InLang S t := by
-  unfold InLang; rw [consts_rename]
 
 /-- Substituting terms of a language into a term of it stays in it. -/
 theorem inLang_subst : ∀ {Γ Δ : Ctx} {s : Sub (ext Sig) Γ Δ} {σ : Ty} {t : Term (ext Sig) Γ σ},
@@ -124,12 +96,6 @@ theorem consts_lift : ∀ {Γ : Ctx} {σ : Ty} (t : Term Sig Γ σ) {c : (ext Si
   | _, _, .ex _, _, h | _, _, .eq _, _, h | _, _, .constR _, _, h | _, _, .negR _, _, h
   | _, _, .andR _, _, h | _, _, .orR _, _, h | _, _, .coextR _, _, h | _, _, .boxR _, _, h
   | _, _, .inclR _, _, h => h.elim
-
-/-- A term of `Sig` is in every language. -/
-@[simp] theorem inLang_lift {Γ : Ctx} {σ : Ty} (t : Term Sig Γ σ) : InLang S (lift t) := by
-  intro r hr
-  obtain ⟨c', hc'⟩ := consts_lift t hr
-  exact (Sum.inr_ne_inl hc').elim
 
 /-! ### β with several arguments -/
 

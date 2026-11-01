@@ -36,15 +36,15 @@ section Language
 
 variable {S S' : Set Reserve}
 
-theorem InLang.mono {Γ : Ctx} {σ : Ty} {t : Term (ext Sig) Γ σ} (h : InLang S t) (hS : S ⊆ S') :
+theorem InLang.mono {Γ : Ctx} (hS : S ⊆ S') {σ : Ty} {t : Term (ext Sig) Γ σ} (h : InLang S t) :
     InLang S' t := fun r hr => hS (h r hr)
 
-theorem inLang_app {Γ : Ctx} {σ : Ty} {ρ : RTy} {f : Term (ext Sig) Γ (σ ⇒ ρ)}
+@[simp] theorem inLang_app {Γ : Ctx} {σ : Ty} {ρ : RTy} {f : Term (ext Sig) Γ (σ ⇒ ρ)}
     {a : Term (ext Sig) Γ σ} : InLang S (.app f a) ↔ InLang S f ∧ InLang S a :=
   ⟨fun h => ⟨fun r hr => h r (Or.inl hr), fun r hr => h r (Or.inr hr)⟩,
     fun h r hr => hr.elim (h.1 r) (h.2 r)⟩
 
-theorem inLang_lam {Γ : Ctx} {σ : Ty} {ρ : RTy} {b : Term (ext Sig) (σ :: Γ) ρ} :
+@[simp] theorem inLang_lam {Γ : Ctx} {σ : Ty} {ρ : RTy} {b : Term (ext Sig) (σ :: Γ) ρ} :
     InLang S (.lam b) ↔ InLang S b := Iff.rfl
 
 theorem inLang_reserve {Γ : Ctx} {r : Reserve} :
@@ -53,7 +53,7 @@ theorem inLang_reserve {Γ : Ctx} {r : Reserve} :
     have : (Sum.inr r' : (ext Sig).Const) = Sum.inr r := hr'
     cases this; exact h⟩
 
-theorem inLang_of_consts_empty {Γ : Ctx} {σ : Ty} {t : Term (ext Sig) Γ σ}
+theorem inLang_of_not_mem_consts {Γ : Ctx} {σ : Ty} {t : Term (ext Sig) Γ σ}
     (h : ∀ c, c ∉ t.consts) : InLang S t := fun _ hr => absurd hr (h _)
 
 /-- The logical constants are in every language. -/
@@ -74,7 +74,7 @@ theorem inLang_conj {Γ : Ctx} {p q : Formula (ext Sig) Γ} :
     InLang S (conj p q) ↔ InLang S p ∧ InLang S q := inLang_bin rfl
 theorem inLang_disj {Γ : Ctx} {p q : Formula (ext Sig) Γ} :
     InLang S (disj p q) ↔ InLang S p ∧ InLang S q := inLang_bin rfl
-theorem inLang_eq {Γ : Ctx} {σ : Ty} {a b : Term (ext Sig) Γ σ} :
+theorem inLang_eq' {Γ : Ctx} {σ : Ty} {a b : Term (ext Sig) Γ σ} :
     InLang S (eq' a b) ↔ InLang S a ∧ InLang S b := inLang_bin rfl
 
 theorem inLang_quant {Γ : Ctx} {σ : Ty} {Q : Term (ext Sig) Γ ((σ ⇒ RTy.t) ⇒ RTy.t)}
@@ -82,24 +82,24 @@ theorem inLang_quant {Γ : Ctx} {σ : Ty} {Q : Term (ext Sig) Γ ((σ ⇒ RTy.t)
   simp only [inLang_app]
   exact ⟨fun h => h.2, fun h => ⟨inLang_op hQ, h⟩⟩
 
-theorem inLang_all {Γ : Ctx} {σ : Ty} {F : Term (ext Sig) Γ (σ ⇒ RTy.t)} :
+theorem inLang_all_app {Γ : Ctx} {σ : Ty} {F : Term (ext Sig) Γ (σ ⇒ RTy.t)} :
     InLang S (.app (.all σ) F) ↔ InLang S F := inLang_quant rfl
-theorem inLang_ex {Γ : Ctx} {σ : Ty} {F : Term (ext Sig) Γ (σ ⇒ RTy.t)} :
+theorem inLang_ex_app {Γ : Ctx} {σ : Ty} {F : Term (ext Sig) Γ (σ ⇒ RTy.t)} :
     InLang S (.app (.ex σ) F) ↔ InLang S F := inLang_quant rfl
 
 theorem inLang_top {Γ : Ctx} : InLang S (top : Formula (ext Sig) Γ) :=
-  inLang_of_consts_empty fun c => by simp [Term.consts]
+  inLang_of_not_mem_consts fun c => by simp [Term.consts]
 theorem inLang_bot {Γ : Ctx} : InLang S (bot : Formula (ext Sig) Γ) :=
-  inLang_of_consts_empty fun c => by simp [Term.consts]
+  inLang_of_not_mem_consts fun c => by simp [Term.consts]
 
 theorem inLang_box {Γ : Ctx} {p : Formula (ext Sig) Γ} : InLang S (box p) ↔ InLang S p := by
-  rw [box, inLang_eq]; exact ⟨fun h => h.1, fun h => ⟨h, inLang_top⟩⟩
+  rw [box, inLang_eq']; exact ⟨fun h => h.1, fun h => ⟨h, inLang_top⟩⟩
 
 theorem inLang_imp {Γ : Ctx} {p q : Formula (ext Sig) Γ} :
     InLang S (imp p q) ↔ InLang S p ∧ InLang S q := by
   rw [imp, inLang_disj, inLang_neg]
 
-theorem inLang_rename {Γ Δ : Ctx} (r : Ren Γ Δ) {σ : Ty} {t : Term (ext Sig) Γ σ} :
+@[simp] theorem inLang_rename {Γ Δ : Ctx} (r : Ren Γ Δ) {σ : Ty} {t : Term (ext Sig) Γ σ} :
     InLang S (t.rename r) ↔ InLang S t := by
   unfold InLang; rw [Term.consts_rename]
 
@@ -235,7 +235,7 @@ theorem witnessFor_spec (L : List (Sentence (ext Sig))) (φ : Sentence (ext Sig)
   have hφ' : φ = .app (.ex σ) F := Classical.choose_spec (Classical.choose_spec h)
   have hk := Classical.choose_spec (exists_fresh_witness (Sig := Sig) hS₀ σ (φ :: L))
   set k := Classical.choose (exists_fresh_witness (Sig := Sig) hS₀ σ (φ :: L))
-  have hF : InLang (newLang S₀) F := by rw [hφ'] at hφ; exact inLang_ex.1 hφ
+  have hF : InLang (newLang S₀) F := by rw [hφ'] at hφ; exact inLang_ex_app.1 hφ
   have hw : witnessFor hS₀ L φ h = .app F (.const (Sig := ext Sig) (Sum.inr (σ, freshNum (S₀ := S₀) σ (2 * k)))) := rfl
   rw [hw]
   refine ⟨inLang_app.2 ⟨hF, inLang_reserve.2 (witness_mem_newLang σ k)⟩, ?_⟩
@@ -391,7 +391,7 @@ theorem lindenbaum [Countable Sig.Const] {S₀ : Set Reserve} (hS₀ : Roomy S�
     fun _ h => limit_witnessed hA hc h⟩
 
 /-- A term of `Sig`, read in the ambient signature, has no reserve constant. -/
-theorem inLang_lift {S : Set Reserve} : ∀ {Γ : Ctx} {σ : Ty} (t : Term Sig Γ σ),
+@[simp] theorem inLang_lift {S : Set Reserve} : ∀ {Γ : Ctx} {σ : Ty} (t : Term Sig Γ σ),
     InLang S (Completeness.lift t)
   | _, _, .var _ => fun _ h => h.elim
   | _, _, .const c => fun r h => by

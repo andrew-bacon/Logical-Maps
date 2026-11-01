@@ -127,12 +127,12 @@ theorem mem_all_iff {σ : Ty} {F : Term (ext Sig) [] (σ ⇒ RTy.t)} (hF : InLan
     exact mem_of_theorem (inLang_app.2 ⟨hF, ha⟩) (Derivable.allE (Theorem.ax h) a)
   · intro h
     by_contra hn
-    have hneg := (mem_neg_iff (inLang_all.2 hF)).2 hn
+    have hneg := (mem_neg_iff (inLang_all_app.2 hF)).2 hn
     have hFw : InLang w.S (F.weaken (τ := σ)) := (inLang_rename _).2 hF
     have hb : InLang w.S (Term.lam (neg (Term.app F.weaken (.var .zero)))) :=
       inLang_lam.2 (inLang_neg.2 (inLang_app.2 ⟨hFw, fun _ h => h.elim⟩))
     have hex : Term.app (.ex σ) (Term.lam (neg (Term.app F.weaken (.var .zero)))) ∈ w.Γ :=
-      mem_of_theorem (inLang_ex.2 hb)
+      mem_of_theorem (inLang_ex_app.2 hb)
         (Derivable.existsBlock_neg_of_not_forallBlock [σ]
           (Derivable.conv (Theorem.ax hneg)
             (Conv.app_congr (Conv.refl _) (Conv.app_congr (Conv.refl _) (Conv.symm (Conv.eta F))))))
@@ -150,7 +150,7 @@ theorem mem_ex_iff {σ : Ty} {F : Term (ext Sig) [] (σ ⇒ RTy.t)} (hF : InLang
   constructor
   · exact w.witnessed F
   · rintro ⟨a, _, h⟩
-    exact mem_of_theorem (inLang_ex.2 hF) (Derivable.exI a (Theorem.ax h))
+    exact mem_of_theorem (inLang_ex_app.2 hF) (Derivable.exI a (Theorem.ax h))
 
 /-- Membership transfers along conversion, within the language. -/
 theorem mem_conv {p q : Sentence (ext Sig)} (hpq : p ≡ q) (hq : InLang w.S q) (hp : p ∈ w.Γ) :
@@ -158,21 +158,21 @@ theorem mem_conv {p q : Sentence (ext Sig)} (hpq : p ≡ q) (hq : InLang w.S q) 
   exact mem_of_theorem hq (Derivable.conv (Theorem.ax hp) hpq)
 
 theorem eq_refl {σ : Ty} {a : Term (ext Sig) [] σ} (ha : InLang w.S a) : eq' a a ∈ w.Γ := by
-  exact mem_of_theorem (inLang_eq.2 ⟨ha, ha⟩) (Derivable.refl a)
+  exact mem_of_theorem (inLang_eq'.2 ⟨ha, ha⟩) (Derivable.refl a)
 
 theorem eq_symm {σ : Ty} {a b : Term (ext Sig) [] σ} (h : eq' a b ∈ w.Γ) : eq' b a ∈ w.Γ := by
-  have hl := inLang_eq.1 (w.lang _ h)
-  exact mem_of_theorem (inLang_eq.2 ⟨hl.2, hl.1⟩) (Derivable.eqSymm (Theorem.ax h))
+  have hl := inLang_eq'.1 (w.lang _ h)
+  exact mem_of_theorem (inLang_eq'.2 ⟨hl.2, hl.1⟩) (Derivable.eqSymm (Theorem.ax h))
 
 theorem eq_trans {σ : Ty} {a b c : Term (ext Sig) [] σ} (h₁ : eq' a b ∈ w.Γ) (h₂ : eq' b c ∈ w.Γ) :
     eq' a c ∈ w.Γ := by
-  exact mem_of_theorem (inLang_eq.2 ⟨(inLang_eq.1 (w.lang _ h₁)).1, (inLang_eq.1 (w.lang _ h₂)).2⟩)
+  exact mem_of_theorem (inLang_eq'.2 ⟨(inLang_eq'.1 (w.lang _ h₁)).1, (inLang_eq'.1 (w.lang _ h₂)).2⟩)
     (Derivable.eqTrans (Theorem.ax h₁) (Theorem.ax h₂))
 
 /-- Leibniz's Law within a world. -/
 theorem mem_ll {σ : Ty} {a b : Term (ext Sig) [] σ} (F : Term (ext Sig) [] (σ ⇒ RTy.t))
     (hFb : InLang w.S F) (h : eq' a b ∈ w.Γ) (hFa : app F a ∈ w.Γ) : app F b ∈ w.Γ := by
-  exact mem_of_theorem (inLang_app.2 ⟨hFb, (inLang_eq.1 (w.lang _ h)).2⟩)
+  exact mem_of_theorem (inLang_app.2 ⟨hFb, (inLang_eq'.1 (w.lang _ h)).2⟩)
     (Derivable.ll F (Theorem.ax h) (Theorem.ax hFa))
 
 /-! ### Accessibility -/
@@ -185,8 +185,8 @@ theorem inLang_of_le (h : w ≤ v) {Γ : Ctx} {σ : Ty} {t : Term (ext Sig) Γ �
   have hc : InLang w.S c := inLang_reserve.2 (ht r hr)
   have hrefl : C.Theorem (Sig := ext Sig) (eq' c c) := Derivable.refl c
   have hbox : box (eq' c c) ∈ w.Γ :=
-    mem_of_theorem (inLang_box.2 (inLang_eq.2 ⟨hc, hc⟩)) (Theorem.ofC (C.Theorem.nec hrefl))
-  exact inLang_reserve.1 (inLang_eq.1 (v.lang _ (h _ hbox))).1
+    mem_of_theorem (inLang_box.2 (inLang_eq'.2 ⟨hc, hc⟩)) (Theorem.ofC (C.Theorem.nec hrefl))
+  exact inLang_reserve.1 (inLang_eq'.1 (v.lang _ (h _ hbox))).1
 
 /-- Identities persist along accessibility. -/
 theorem eq_of_le (h : w ≤ v) {σ : Ty} {a b : Term (ext Sig) [] σ} (hab : eq' a b ∈ w.Γ) :
@@ -224,7 +224,7 @@ the ambient signature, and it has no reserve constant. This is why `exists_world
 more than the consistency of `Ax` (see there). -/
 theorem exists_self_mem (σ : Ty) :
     Term.exists' (σ := σ) (eq' (Term.var .zero) (Term.var .zero)) ∈ w.Γ :=
-  mem_of_theorem (inLang_ex.2 (inLang_lam.2 (inLang_eq.2 ⟨fun _ h => h.elim, fun _ h => h.elim⟩)))
+  mem_of_theorem (inLang_ex_app.2 (inLang_lam.2 (inLang_eq'.2 ⟨fun _ h => h.elim, fun _ h => h.elim⟩)))
     (Derivable.exIβ (Term.const (Sig := ext Sig) (Sum.inr (σ, 0))) (Derivable.refl _))
 
 end World
