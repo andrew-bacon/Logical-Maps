@@ -14,6 +14,7 @@ import Classicism.Results.Research.RigidityClosureResearchAtomicPowerCertificate
 import Classicism.Results.Research.ModalPropagationCertificates.StrongAtomicity
 import Classicism.Results.Research.ModalPropagationCertificates.BoxedComprehension
 import Classicism.Results.Other.Meta
+import Classicism.Results.BourbakiWitt.Certificates
 
 /-!
 # The map's results, certified
@@ -2061,5 +2062,11 @@ theorem necessary_vicinity_and_necessary_distinctness_preserving_collapse_imply_
 /-- `necessary-weak-rigid-comprehension-implies-necessary-boolean-completeness`: the boxed form of `weak-rigid-comprehension-r-implies-boolean-completeness-r` -/
 theorem necessary_weak_rigid_comprehension_implies_necessary_boolean_completeness : Statements.necessary_weak_rigid_comprehension_implies_necessary_boolean_completeness := by
   map_boxed weak_rigid_comprehension_r_implies_boolean_completeness_r
+
+/-! ### Resting on the Bourbaki–Witt lemma (`Background/BourbakiWitt.lean`, `Results/BourbakiWitt/`) -/
+
+/-- `boolean-completeness-and-modalized-relational-choice-imply-necessary-transversal` -/
+theorem boolean_completeness_and_modalized_relational_choice_imply_necessary_transversal : Statements.boolean_completeness_and_modalized_relational_choice_imply_necessary_transversal := by
+  map_cert Proofs.BWTransversal.boolean_completeness_and_modalized_relational_choice_imply_necessary_transversal.entails
 
 end Classicism.Map
