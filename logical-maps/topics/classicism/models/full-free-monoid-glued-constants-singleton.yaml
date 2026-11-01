@@ -120,3 +120,18 @@ history:
     are unboxed. Recorded on a question of Zachary Goodsell, after an observation of Christopher Sun.'
   satisfies:
   - transversal-choice-r
+lean:
+  param: Classicism.Meta.Intensional.freeMonoidSingleton
+  meets:
+    one-object-action-model: Classicism.Meta.Intensional.FreeMonoidMembers.singleton_oneObject
+    unretracted-arrow: Classicism.Meta.Intensional.FreeMonoidMembers.singleton_unretracted
+    infinitely-many-propositions: Classicism.Meta.Intensional.FreeMonoidMembers.singleton_infinitely_many_propositions
+    actual-world-isolated: Classicism.Meta.Intensional.FreeMonoidMembers.singleton_actual_world_isolated
+    one-individual: Classicism.Meta.Intensional.FreeMonoidMembers.singleton_one_individual
+  verdicts:
+  - holds: logical-necessity-r
+    ref: Classicism.Map.Models.full_free_monoid_glued_constants_singleton.logical_necessity_r
+    status: verified
+  - holds: barcan-r
+    ref: Classicism.Map.Models.full_free_monoid_glued_constants_singleton.barcan_r
+    status: verified

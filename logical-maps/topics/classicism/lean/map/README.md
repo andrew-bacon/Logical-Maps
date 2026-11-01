@@ -165,6 +165,20 @@ Inextensible Comprehension or Transversal. The members `coalesced-maximalist-roo
 over the complete family of `Completeness/` (`Coalesced/Complete.lean`, where every sentence
 consistent with `C` is possible at the root: Maximalism).
 
+**Glued models.** `Semantics/Glued.lean` has Bacon's gluing (*Logical Combinatorialism*, Appendix A.3): in a
+full model, sites at the base (endo-arrows through which arrows are told apart, along which the individuals glue)
+glue one entity from one at each site, and the constants glued from values at the sites give a model whose
+truncation along a site is the full model with that site's values. With rich values Witnessed Possibility holds,
+and with one object Logical Necessity (`Premodel.holdsAx_witnessedPossibility`, `holdsAx_logicalNecessity`).
+`Models/GluedFreeMonoid.lean` has the group `glued-free-monoid` (parameter `GluedData`, model `GluedData.model`,
+full, so the group meets `full-model`, `full-action-model` and `extensionally-full`) and three members, all at
+`Σ = {c : t}`: the free monoid with thread individuals and with one individual, the constants glued by sentences
+(Logical Necessity, BF, and the Axiom of Infinity at `e` with the threads), and the double retraction with free sites
+at `W₀`, glued by formulas (Witnessed Possibility, Pure B, and the failure of Possibly Witnessed Possibility). The
+free monoid's generators are indexed by the sentences of `Σ` themselves rather than by `ℕ` through an enumeration;
+for a countable signature the frames are isomorphic. The free-product member is not yet built (its monoid's normal
+forms).
+
 **The sentence schemas range over the paper's language.** The object language here also has
 type variables, a device of the metalogic; every sentence schema (No Contingency, No Pure
 Contingency, B, Distinctness, Possibility, Witnessed Possibility and its kin, Separated

@@ -311,6 +311,158 @@ theorem finite_support_truncations.independence_signature_r : Statements.Models.
 theorem finite_support_truncations.no_contingency_signature_r : Statements.Models.finite_support_truncations.no_contingency_signature_r :=
   ⟨Classicism.Meta.Signature.sigmaTop_admitted, Classicism.Meta.Intensional.Premodel.withTop_isModel (Classicism.Meta.Intensional.MonoidModel.model_isModel (Classicism.Meta.Intensional.Monoids.truncs)), Classicism.Map.Arguments.sigma_top_npc.no_contingency_signature_r (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.MonoidModel.model (Classicism.Meta.Intensional.Monoids.truncs)) (Classicism.Meta.Intensional.MonoidModel.model_isModel (Classicism.Meta.Intensional.Monoids.truncs))) (Classicism.Meta.Intensional.Premodel.withTop_isModel (Classicism.Meta.Intensional.MonoidModel.model_isModel (Classicism.Meta.Intensional.Monoids.truncs))) (Classicism.Meta.Signature.sigmaTop_admitted) (Classicism.Meta.Intensional.Premodel.withTop_sigmaTop (Classicism.Meta.Intensional.MonoidModel.model_isModel (Classicism.Meta.Intensional.Monoids.truncs))) (Classicism.Meta.Intensional.Premodel.holdsAx_interp_ofPure.2 ((Classicism.Map.Models.finite_support_truncations.no_pure_contingency_r).2))⟩
 
+/-- `full-double-retraction-glued-constants`: Truths are ND-necessary fails, by the argument `dpc-returning-arrow`. -/
+theorem full_double_retraction_glued_constants.distinctness_preserving_collapse : Statements.Models.full_double_retraction_glued_constants.distinctness_preserving_collapse :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites), Classicism.Map.Arguments.dpc_returning_arrow.distinctness_preserving_collapse (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.DoubleRetractionSites.returning)⟩
+
+/-- `full-double-retraction-glued-constants`: □Atomicity holds, by the argument `full-atomicity`. -/
+theorem full_double_retraction_glued_constants.necessary_atomicity_r : Statements.Models.full_double_retraction_glued_constants.necessary_atomicity_r :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites), Classicism.Map.Arguments.full_atomicity.necessary_atomicity_r (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.doubleRetractionSites))⟩
+
+/-- `full-double-retraction-glued-constants`: □Rigid Comprehension holds, by the argument `full-rigid-comprehension`. -/
+theorem full_double_retraction_glued_constants.necessary_rigid_comprehension_r : Statements.Models.full_double_retraction_glued_constants.necessary_rigid_comprehension_r :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites), Classicism.Map.Arguments.full_rigid_comprehension.necessary_rigid_comprehension_r (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.doubleRetractionSites))⟩
+
+/-- `full-double-retraction-glued-constants`: Axiom of Infinity (type t) holds, by the argument `infinitely-many-propositions`. -/
+theorem full_double_retraction_glued_constants.axiom_of_infinity_t : Statements.Models.full_double_retraction_glued_constants.axiom_of_infinity_t :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites), Classicism.Map.Arguments.infinitely_many_propositions.axiom_of_infinity_t (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.Premodel.Full.extFull _ (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.doubleRetractionSites))) (Classicism.Meta.Intensional.DoubleRetractionSites.infinitely_many_propositions)⟩
+
+/-- `full-double-retraction-glued-constants`: Infinity Schema (type t) holds, by the argument `infinitely-many-propositions`. -/
+theorem full_double_retraction_glued_constants.infinity_t : Statements.Models.full_double_retraction_glued_constants.infinity_t :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites), Classicism.Map.Arguments.infinitely_many_propositions.infinity_t (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.Premodel.Full.extFull _ (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.doubleRetractionSites))) (Classicism.Meta.Intensional.DoubleRetractionSites.infinitely_many_propositions)⟩
+
+/-- `full-double-retraction-glued-constants`: Strong Atomicity (type t) fails, by the argument `nonepic-strong-atomicity`. -/
+theorem full_double_retraction_glued_constants.strong_atomicity_t : Statements.Models.full_double_retraction_glued_constants.strong_atomicity_t :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites), Classicism.Map.Arguments.nonepic_strong_atomicity.strong_atomicity_t (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.DoubleRetractionSites.nonepic)⟩
+
+/-- `full-double-retraction-glued-constants`: Fregean Axiom fails, by the argument `nonidentity-arrow`. -/
+theorem full_double_retraction_glued_constants.fregean_axiom : Statements.Models.full_double_retraction_glued_constants.fregean_axiom :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites), Classicism.Map.Arguments.nonidentity_arrow.fregean_axiom (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.DoubleRetractionSites.nonidentity)⟩
+
+/-- `full-double-retraction-glued-constants`: Infinity Schema (type e) fails, by the argument `one-individual`. -/
+theorem full_double_retraction_glued_constants.infinity_e : Statements.Models.full_double_retraction_glued_constants.infinity_e :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites), Classicism.Map.Arguments.one_individual.infinity_e (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.DoubleRetractionSites.one_individual)⟩
+
+/-- `full-double-retraction-glued-constants`: Axiom of Infinity (type e) fails, by the argument `one-individual`. -/
+theorem full_double_retraction_glued_constants.axiom_of_infinity_e : Statements.Models.full_double_retraction_glued_constants.axiom_of_infinity_e :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites), Classicism.Map.Arguments.one_individual.axiom_of_infinity_e (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.DoubleRetractionSites.one_individual)⟩
+
+/-- `full-double-retraction-glued-constants`: Possible Infinity (type e) fails, by the argument `one-individual`. -/
+theorem full_double_retraction_glued_constants.possible_infinity_e : Statements.Models.full_double_retraction_glued_constants.possible_infinity_e :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites), Classicism.Map.Arguments.one_individual.possible_infinity_e (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.DoubleRetractionSites.one_individual)⟩
+
+/-- `full-double-retraction-glued-constants`: □Relational Choice holds, by the argument `relational-choice-full-boxed`. -/
+theorem full_double_retraction_glued_constants.necessary_relational_choice_r : Statements.Models.full_double_retraction_glued_constants.necessary_relational_choice_r :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites), Classicism.Map.Arguments.relational_choice_full_boxed.necessary_relational_choice_r (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.doubleRetractionSites))⟩
+
+/-- `full-double-retraction-glued-constants`: Relational Choice holds, by the argument `relational-choice-full`. -/
+theorem full_double_retraction_glued_constants.relational_choice_r : Statements.Models.full_double_retraction_glued_constants.relational_choice_r :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites), Classicism.Map.Arguments.relational_choice_full.relational_choice_r (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.doubleRetractionSites))⟩
+
+/-- `full-double-retraction-glued-constants`: Strong Actuality fails, by the argument `separated-retractions-strong-actuality`. -/
+theorem full_double_retraction_glued_constants.strong_actuality : Statements.Models.full_double_retraction_glued_constants.strong_actuality :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites), Classicism.Map.Arguments.separated_retractions_strong_actuality.strong_actuality (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.DoubleRetractionSites.separated)⟩
+
+/-- `full-double-retraction-glued-constants`: Transversal Choice holds, by the argument `transversal-choice-extensionally-full`. -/
+theorem full_double_retraction_glued_constants.transversal_choice_r : Statements.Models.full_double_retraction_glued_constants.transversal_choice_r :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites), Classicism.Map.Arguments.transversal_choice_extensionally_full.transversal_choice_r (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.Premodel.Full.extFull _ (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.doubleRetractionSites)))⟩
+
+/-- `full-double-retraction-glued-constants`: ND (type t) fails, by the argument `unretracted-arrow`. -/
+theorem full_double_retraction_glued_constants.distinctness_necessary_t : Statements.Models.full_double_retraction_glued_constants.distinctness_necessary_t :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites), Classicism.Map.Arguments.unretracted_arrow.distinctness_necessary_t (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.doubleRetractionSites)) (Classicism.Meta.Intensional.DoubleRetractionSites.unretracted)⟩
+
+/-- `full-free-monoid-glued-constants-singleton`: Truths are ND-necessary holds, by the argument `dpc-isolated-actual-world`. -/
+theorem full_free_monoid_glued_constants_singleton.distinctness_preserving_collapse : Statements.Models.full_free_monoid_glued_constants_singleton.distinctness_preserving_collapse :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton), Classicism.Map.Arguments.dpc_isolated_actual_world.distinctness_preserving_collapse (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.FreeMonoidMembers.singleton_actual_world_isolated)⟩
+
+/-- `full-free-monoid-glued-constants-singleton`: □Atomicity holds, by the argument `full-atomicity`. -/
+theorem full_free_monoid_glued_constants_singleton.necessary_atomicity_r : Statements.Models.full_free_monoid_glued_constants_singleton.necessary_atomicity_r :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton), Classicism.Map.Arguments.full_atomicity.necessary_atomicity_r (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.freeMonoidSingleton))⟩
+
+/-- `full-free-monoid-glued-constants-singleton`: □Rigid Comprehension holds, by the argument `full-rigid-comprehension`. -/
+theorem full_free_monoid_glued_constants_singleton.necessary_rigid_comprehension_r : Statements.Models.full_free_monoid_glued_constants_singleton.necessary_rigid_comprehension_r :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton), Classicism.Map.Arguments.full_rigid_comprehension.necessary_rigid_comprehension_r (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.freeMonoidSingleton))⟩
+
+/-- `full-free-monoid-glued-constants-singleton`: Axiom of Infinity (type t) holds, by the argument `infinitely-many-propositions`. -/
+theorem full_free_monoid_glued_constants_singleton.axiom_of_infinity_t : Statements.Models.full_free_monoid_glued_constants_singleton.axiom_of_infinity_t :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton), Classicism.Map.Arguments.infinitely_many_propositions.axiom_of_infinity_t (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.Premodel.Full.extFull _ (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.freeMonoidSingleton))) (Classicism.Meta.Intensional.FreeMonoidMembers.singleton_infinitely_many_propositions)⟩
+
+/-- `full-free-monoid-glued-constants-singleton`: Infinity Schema (type t) holds, by the argument `infinitely-many-propositions`. -/
+theorem full_free_monoid_glued_constants_singleton.infinity_t : Statements.Models.full_free_monoid_glued_constants_singleton.infinity_t :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton), Classicism.Map.Arguments.infinitely_many_propositions.infinity_t (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.Premodel.Full.extFull _ (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.freeMonoidSingleton))) (Classicism.Meta.Intensional.FreeMonoidMembers.singleton_infinitely_many_propositions)⟩
+
+/-- `full-free-monoid-glued-constants-singleton`: No Pure Contingency holds, by the argument `no-pure-contingency-one-object`. -/
+theorem full_free_monoid_glued_constants_singleton.no_pure_contingency_r : Statements.Models.full_free_monoid_glued_constants_singleton.no_pure_contingency_r :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton), Classicism.Map.Arguments.no_pure_contingency_one_object.no_pure_contingency_r (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.FreeMonoidMembers.singleton_oneObject)⟩
+
+/-- `full-free-monoid-glued-constants-singleton`: Infinity Schema (type e) fails, by the argument `one-individual`. -/
+theorem full_free_monoid_glued_constants_singleton.infinity_e : Statements.Models.full_free_monoid_glued_constants_singleton.infinity_e :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton), Classicism.Map.Arguments.one_individual.infinity_e (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.FreeMonoidMembers.singleton_one_individual)⟩
+
+/-- `full-free-monoid-glued-constants-singleton`: Axiom of Infinity (type e) fails, by the argument `one-individual`. -/
+theorem full_free_monoid_glued_constants_singleton.axiom_of_infinity_e : Statements.Models.full_free_monoid_glued_constants_singleton.axiom_of_infinity_e :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton), Classicism.Map.Arguments.one_individual.axiom_of_infinity_e (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.FreeMonoidMembers.singleton_one_individual)⟩
+
+/-- `full-free-monoid-glued-constants-singleton`: Possible Infinity (type e) fails, by the argument `one-individual`. -/
+theorem full_free_monoid_glued_constants_singleton.possible_infinity_e : Statements.Models.full_free_monoid_glued_constants_singleton.possible_infinity_e :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton), Classicism.Map.Arguments.one_individual.possible_infinity_e (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.FreeMonoidMembers.singleton_one_individual)⟩
+
+/-- `full-free-monoid-glued-constants-singleton`: □Relational Choice holds, by the argument `relational-choice-full-boxed`. -/
+theorem full_free_monoid_glued_constants_singleton.necessary_relational_choice_r : Statements.Models.full_free_monoid_glued_constants_singleton.necessary_relational_choice_r :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton), Classicism.Map.Arguments.relational_choice_full_boxed.necessary_relational_choice_r (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.freeMonoidSingleton))⟩
+
+/-- `full-free-monoid-glued-constants-singleton`: Relational Choice holds, by the argument `relational-choice-full`. -/
+theorem full_free_monoid_glued_constants_singleton.relational_choice_r : Statements.Models.full_free_monoid_glued_constants_singleton.relational_choice_r :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton), Classicism.Map.Arguments.relational_choice_full.relational_choice_r (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.freeMonoidSingleton))⟩
+
+/-- `full-free-monoid-glued-constants-singleton`: Transversal Choice holds, by the argument `transversal-choice-extensionally-full`. -/
+theorem full_free_monoid_glued_constants_singleton.transversal_choice_r : Statements.Models.full_free_monoid_glued_constants_singleton.transversal_choice_r :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton), Classicism.Map.Arguments.transversal_choice_extensionally_full.transversal_choice_r (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.Premodel.Full.extFull _ (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.freeMonoidSingleton)))⟩
+
+/-- `full-free-monoid-glued-constants-singleton`: ND (type t) fails, by the argument `unretracted-arrow`. -/
+theorem full_free_monoid_glued_constants_singleton.distinctness_necessary_t : Statements.Models.full_free_monoid_glued_constants_singleton.distinctness_necessary_t :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton), Classicism.Map.Arguments.unretracted_arrow.distinctness_necessary_t (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.freeMonoidSingleton)) (Classicism.Meta.Intensional.FreeMonoidMembers.singleton_unretracted)⟩
+
+/-- `full-free-monoid-glued-constants`: Truths are ND-necessary holds, by the argument `dpc-isolated-actual-world`. -/
+theorem full_free_monoid_glued_constants.distinctness_preserving_collapse : Statements.Models.full_free_monoid_glued_constants.distinctness_preserving_collapse :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidThread), Classicism.Map.Arguments.dpc_isolated_actual_world.distinctness_preserving_collapse (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidThread)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidThread)) (Classicism.Meta.Intensional.FreeMonoidMembers.thread_actual_world_isolated)⟩
+
+/-- `full-free-monoid-glued-constants`: □Atomicity holds, by the argument `full-atomicity`. -/
+theorem full_free_monoid_glued_constants.necessary_atomicity_r : Statements.Models.full_free_monoid_glued_constants.necessary_atomicity_r :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidThread), Classicism.Map.Arguments.full_atomicity.necessary_atomicity_r (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidThread)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidThread)) (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.freeMonoidThread))⟩
+
+/-- `full-free-monoid-glued-constants`: □Rigid Comprehension holds, by the argument `full-rigid-comprehension`. -/
+theorem full_free_monoid_glued_constants.necessary_rigid_comprehension_r : Statements.Models.full_free_monoid_glued_constants.necessary_rigid_comprehension_r :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidThread), Classicism.Map.Arguments.full_rigid_comprehension.necessary_rigid_comprehension_r (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidThread)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidThread)) (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.freeMonoidThread))⟩
+
+/-- `full-free-monoid-glued-constants`: Axiom of Infinity (type t) holds, by the argument `infinitely-many-propositions`. -/
+theorem full_free_monoid_glued_constants.axiom_of_infinity_t : Statements.Models.full_free_monoid_glued_constants.axiom_of_infinity_t :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidThread), Classicism.Map.Arguments.infinitely_many_propositions.axiom_of_infinity_t (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidThread)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidThread)) (Classicism.Meta.Intensional.Premodel.Full.extFull _ (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.freeMonoidThread))) (Classicism.Meta.Intensional.FreeMonoidMembers.thread_infinitely_many_propositions)⟩
+
+/-- `full-free-monoid-glued-constants`: Infinity Schema (type t) holds, by the argument `infinitely-many-propositions`. -/
+theorem full_free_monoid_glued_constants.infinity_t : Statements.Models.full_free_monoid_glued_constants.infinity_t :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidThread), Classicism.Map.Arguments.infinitely_many_propositions.infinity_t (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidThread)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidThread)) (Classicism.Meta.Intensional.Premodel.Full.extFull _ (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.freeMonoidThread))) (Classicism.Meta.Intensional.FreeMonoidMembers.thread_infinitely_many_propositions)⟩
+
+/-- `full-free-monoid-glued-constants`: No Pure Contingency holds, by the argument `no-pure-contingency-one-object`. -/
+theorem full_free_monoid_glued_constants.no_pure_contingency_r : Statements.Models.full_free_monoid_glued_constants.no_pure_contingency_r :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidThread), Classicism.Map.Arguments.no_pure_contingency_one_object.no_pure_contingency_r (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidThread)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidThread)) (Classicism.Meta.Intensional.FreeMonoidMembers.thread_oneObject)⟩
+
+/-- `full-free-monoid-glued-constants`: □Relational Choice holds, by the argument `relational-choice-full-boxed`. -/
+theorem full_free_monoid_glued_constants.necessary_relational_choice_r : Statements.Models.full_free_monoid_glued_constants.necessary_relational_choice_r :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidThread), Classicism.Map.Arguments.relational_choice_full_boxed.necessary_relational_choice_r (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidThread)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidThread)) (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.freeMonoidThread))⟩
+
+/-- `full-free-monoid-glued-constants`: Relational Choice holds, by the argument `relational-choice-full`. -/
+theorem full_free_monoid_glued_constants.relational_choice_r : Statements.Models.full_free_monoid_glued_constants.relational_choice_r :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidThread), Classicism.Map.Arguments.relational_choice_full.relational_choice_r (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidThread)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidThread)) (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.freeMonoidThread))⟩
+
+/-- `full-free-monoid-glued-constants`: Transversal Choice holds, by the argument `transversal-choice-extensionally-full`. -/
+theorem full_free_monoid_glued_constants.transversal_choice_r : Statements.Models.full_free_monoid_glued_constants.transversal_choice_r :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidThread), Classicism.Map.Arguments.transversal_choice_extensionally_full.transversal_choice_r (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidThread)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidThread)) (Classicism.Meta.Intensional.Premodel.Full.extFull _ (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.freeMonoidThread)))⟩
+
+/-- `full-free-monoid-glued-constants`: ND (type t) fails, by the argument `unretracted-arrow`. -/
+theorem full_free_monoid_glued_constants.distinctness_necessary_t : Statements.Models.full_free_monoid_glued_constants.distinctness_necessary_t :=
+  ⟨Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidThread), Classicism.Map.Arguments.unretracted_arrow.distinctness_necessary_t (Classicism.Meta.Intensional.GluedData.model (Classicism.Meta.Intensional.freeMonoidThread)) (Classicism.Meta.Intensional.GluedData.isModel (Classicism.Meta.Intensional.freeMonoidThread)) (Classicism.Meta.Intensional.GluedData.full (Classicism.Meta.Intensional.freeMonoidThread)) (Classicism.Meta.Intensional.FreeMonoidMembers.thread_unretracted)⟩
+
 /-- `full-idempotent-monoid`: Truths are ND-necessary holds, by the argument `dpc-isolated-actual-world`. -/
 theorem full_idempotent_monoid.distinctness_preserving_collapse : Statements.Models.full_idempotent_monoid.distinctness_preserving_collapse :=
   ⟨Classicism.Meta.Intensional.MSet.model_isModel Classicism.Meta.Intensional.Idem, Classicism.Map.Arguments.dpc_isolated_actual_world.distinctness_preserving_collapse (Classicism.Meta.Intensional.MSet.model Classicism.Meta.Intensional.Idem) (Classicism.Meta.Intensional.MSet.model_isModel Classicism.Meta.Intensional.Idem) (Classicism.Map.Meets.full_idempotent_monoid.actual_world_isolated)⟩

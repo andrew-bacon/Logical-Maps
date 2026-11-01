@@ -10,6 +10,7 @@ import Classicism.Models.FixedPointEntranceChoice
 import Classicism.Coalesced.SumData
 import Classicism.Models.CoalescedFinite
 import Classicism.Models.CoalescedInterpretations
+import Classicism.Models.GluedFreeMonoid
 import Classicism.Semantics.OneIndividual
 import Mathlib.Data.Fintype.Powerset
 import Mathlib.Data.Finite.Sigma
@@ -426,6 +427,66 @@ theorem distinctness_signature_r : Statements.Models.coalesced_pinned_substituti
   ⟨Signature.plus_admitted, M, Coalesced.pinnedSubstRoot_distinctness⟩
 
 end coalesced_pinned_substitutions_root
+
+/-! ### The glued free-monoid models (`Models/GluedFreeMonoid.lean`)
+
+The members of `glued-free-monoid`, at the signature `Σ = {c : t}`: their own arguments.
+Everything else they get from the topic's arguments for full models (`MapDerived.lean`). -/
+
+namespace full_free_monoid_glued_constants
+
+open Meta.Intensional
+
+/-- **Logical Necessity**: the constants glued by sentences, on one object
+(`Premodel.holdsAx_logicalNecessity`). -/
+theorem logical_necessity_r : Statements.Models.full_free_monoid_glued_constants.logical_necessity_r :=
+  ⟨Signature.sigmaTop_admitted, freeMonoidThread.isModel, FreeMonoidMembers.thread_logicalNecessity⟩
+
+/-- The thread individuals are infinitely many, and the model is full. -/
+theorem axiom_of_infinity_e : Statements.Models.full_free_monoid_glued_constants.axiom_of_infinity_e :=
+  ⟨freeMonoidThread.isModel, FreeMonoidMembers.thread_axiomOfInfinityE⟩
+
+/-- Every word is an epimorphism acting onto the thread individuals, in a full model. -/
+theorem barcan_r : Statements.Models.full_free_monoid_glued_constants.barcan_r :=
+  ⟨freeMonoidThread.isModel, FreeMonoidMembers.thread_barcan⟩
+
+end full_free_monoid_glued_constants
+
+namespace full_free_monoid_glued_constants_singleton
+
+open Meta.Intensional
+
+theorem logical_necessity_r :
+    Statements.Models.full_free_monoid_glued_constants_singleton.logical_necessity_r :=
+  ⟨Signature.sigmaTop_admitted, freeMonoidSingleton.isModel, FreeMonoidMembers.singleton_logicalNecessity⟩
+
+theorem barcan_r : Statements.Models.full_free_monoid_glued_constants_singleton.barcan_r :=
+  ⟨freeMonoidSingleton.isModel, FreeMonoidMembers.singleton_barcan⟩
+
+end full_free_monoid_glued_constants_singleton
+
+namespace full_double_retraction_glued_constants
+
+open Meta.Intensional
+
+/-- **Witnessed Possibility**: the constants glued by formulas at the sites at `W₀`
+(`Premodel.holdsAx_witnessedPossibility`). -/
+theorem witnessed_possibility_r :
+    Statements.Models.full_double_retraction_glued_constants.witnessed_possibility_r :=
+  ⟨Signature.sigmaTop_admitted, doubleRetractionSites.isModel, DoubleRetractionSites.witnessedPossibility⟩
+
+/-- **Possibly Witnessed Possibility fails**: a true atom where Strong Actuality holds is
+possible, but no constant is one (`DoubleRetractionSites.not_possiblyWitnessedPossibility`). -/
+theorem possibly_witnessed_possibility_r :
+    Statements.Models.full_double_retraction_glued_constants.possibly_witnessed_possibility_r :=
+  ⟨Signature.sigmaTop_admitted, doubleRetractionSites.isModel,
+    DoubleRetractionSites.not_possiblyWitnessedPossibility⟩
+
+/-- **B for pure sentences**: every object reaches the base. -/
+theorem pure_b_r : Statements.Models.full_double_retraction_glued_constants.pure_b_r :=
+  ⟨doubleRetractionSites.isModel, DoubleRetractionSites.pureB⟩
+
+end full_double_retraction_glued_constants
 
 end Classicism.Map.Models
 
