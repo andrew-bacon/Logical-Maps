@@ -28,7 +28,7 @@ $$
 $\Box_5:=\lambda p\, .\,\forall X^{tt}\, .\,\operatorname{S5}(X)\to Xp$, with
 dual $\Diamond_5$. Appendix D defines $\Box_5$ with the condition NKJF$_{\langle\rangle}$
 in place of NKB; its facts (A5) and (C5) make the two definitions necessarily
-equivalent. Theorems of C: $\Box\le\Box_{\ne}\le\hat{\hat\Box}\le\Box_5\le\lambda p\, .\,p$
+equivalent {lean: Classicism.AppD.box5_le_box5A, Classicism.box5A_le_box5}. Theorems of C: $\Box\le\Box_{\ne}\le\hat{\hat\Box}\le\Box_5\le\lambda p\, .\,p$
 (the order is necessary pointwise implication)
 {lean: Classicism.box_le_boxNe, Classicism.boxNe_le_boxHH, Classicism.boxHH_le_box5, Classicism.box5_le}; each of these operators is
 necessarily N, K, T and 4, and $\Box_5$ is an S5 operator; and if $\Box_{\ne}$ or
@@ -154,6 +154,7 @@ and $\hat\Box=\Box_{\ne}$ is Proposition D17.
 
 ::: proposition {#box5-barcan}
 title: the Barcan formula for 5-necessity
+lean: [Classicism.box5_barcan, Classicism.dia5_exists]
 credit: Cian Dorr, with help from GPT-6 Astra (OpenAI), 29 October 2026
 ---
 At every type $\sigma$, C proves $\forall x^\sigma\, .\,\Box_5Rx\to\Box_5\forall x\, .\,Rx$, and

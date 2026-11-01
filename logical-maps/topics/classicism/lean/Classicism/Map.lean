@@ -14,6 +14,7 @@ import Classicism.Results.Research.RigidityClosureResearchAtomicPowerCertificate
 import Classicism.Results.Research.ModalPropagationCertificates.StrongAtomicity
 import Classicism.Results.Research.ModalPropagationCertificates.BoxedComprehension
 import Classicism.Results.Other.Meta
+import Classicism.Certified.Box5
 
 /-!
 # The map's results, certified
@@ -2061,5 +2062,41 @@ theorem necessary_vicinity_and_necessary_distinctness_preserving_collapse_imply_
 /-- `necessary-weak-rigid-comprehension-implies-necessary-boolean-completeness`: the boxed form of `weak-rigid-comprehension-r-implies-boolean-completeness-r` -/
 theorem necessary_weak_rigid_comprehension_implies_necessary_boolean_completeness : Statements.necessary_weak_rigid_comprehension_implies_necessary_boolean_completeness := by
   map_boxed weak_rigid_comprehension_r_implies_boolean_completeness_r
+
+/-! ## The theory of 5-necessity (`lean-box5`, 1 November 2026)
+
+Proofs in `Results/Records/Box5.lean`, from `Background/Box5.lean` (the Barcan formula for
+`□₅`, the equivalence of its two definitions, Theorem D9 of *The Bounds of Possibility*,
+Appendix D); certified in `Certified/Box5.lean`. -/
+
+/-- `vicinity-implies-five-implies-two-hat` -/
+theorem vicinity_implies_five_implies_two_hat : Statements.vicinity_implies_five_implies_two_hat := by
+  map_cert Proofs.vicinity_implies_five_implies_two_hat.entails
+
+/-- `vicinity-and-barcan-t-imply-five-implies-two-hat`, Vicinity alone sufficing -/
+theorem vicinity_and_barcan_t_imply_five_implies_two_hat : Statements.vicinity_and_barcan_t_imply_five_implies_two_hat := by
+  map_cert Proofs.vicinity_and_barcan_t_imply_five_implies_two_hat.entails
+
+/-- `vicinity-and-atomicity-t-imply-actuality` -/
+theorem vicinity_and_atomicity_t_imply_actuality : Statements.vicinity_and_atomicity_t_imply_actuality := by
+  map_cert Proofs.vicinity_and_atomicity_t_imply_actuality.entails
+
+/-- `actuality-and-five-implies-nd-necessity-imply-inextensible-comprehension`, at every arity -/
+theorem actuality_and_five_implies_nd_necessity_imply_inextensible_comprehension : Statements.actuality_and_five_implies_nd_necessity_imply_inextensible_comprehension := by
+  map_cert Meta.actuality_and_five_implies_nd_necessity_imply_inextensible_comprehension
+
+/-- `necessary-vicinity-implies-necessary-five-implies-two-hat`: the boxed form of `vicinity-implies-five-implies-two-hat` -/
+theorem necessary_vicinity_implies_necessary_five_implies_two_hat : Statements.necessary_vicinity_implies_necessary_five_implies_two_hat := by
+  map_boxed vicinity_implies_five_implies_two_hat
+
+/-- `necessary-vicinity-and-necessary-atomicity-t-imply-necessary-actuality`: the boxed form of `vicinity-and-atomicity-t-imply-actuality` -/
+theorem necessary_vicinity_and_necessary_atomicity_t_imply_necessary_actuality : Statements.necessary_vicinity_and_necessary_atomicity_t_imply_necessary_actuality := by
+  map_boxed vicinity_and_atomicity_t_imply_actuality
+
+/-- `necessary-actuality-and-necessary-five-implies-nd-necessity-imply-necessary-inextensible-comprehension`: the boxed form of `actuality-and-five-implies-nd-necessity-imply-inextensible-comprehension` -/
+theorem necessary_actuality_and_necessary_five_implies_nd_necessity_imply_necessary_inextensible_comprehension : Statements.necessary_actuality_and_necessary_five_implies_nd_necessity_imply_necessary_inextensible_comprehension := by
+  map_boxed actuality_and_five_implies_nd_necessity_imply_inextensible_comprehension
+
+/-! ## End of the theory of 5-necessity (`lean-box5`) -/
 
 end Classicism.Map

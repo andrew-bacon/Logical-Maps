@@ -11,7 +11,8 @@ certificate:
   recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 28 October 2026
   checked_by: []
   date: '2026-10-28'
-  lean: stated
+  lean: verified
+  lean_ref: Classicism.Map.vicinity_and_atomicity_t_imply_actuality
 sources:
 - Cian Dorr, argument of 28 October 2026 that Vicinity and Atomicity give Actuality, through the 5-necessity
   form of Vicinity and BF for 5-necessity (session transcript).
