@@ -371,6 +371,7 @@ Classicism/Tools/Tests.lean             negative and positive controls for the c
 
 Classicism/Results/Lists.lean           each principle's restricted form entails its list form: lists, codes
 Classicism/Results/Arity.lean           the map's arity results: shallow cores at a type parameter, unary cores vectorized, composition
+Classicism/Results/Existence.lean       a premise `Existence τ`, taken where a proof says "types are inhabited" at a type parameter, discharged in C
 scripts/FunKinds.lean                   which `fun`s in a file are terms (written λ … ↦) and which are proofs
 
 Classicism/Certified/Quoted.lean        the record theorems quoted; home of foo.quoted

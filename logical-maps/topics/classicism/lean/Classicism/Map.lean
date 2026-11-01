@@ -17,6 +17,7 @@ import Classicism.Results.Research.ModalPropagationCertificates.StrongAtomicity
 import Classicism.Results.Research.ModalPropagationCertificates.BoxedComprehension
 import Classicism.Results.Other.Meta
 import Classicism.Certified.Box5
+import Classicism.Results.Existence
 
 /-!
 # The map's results, certified
@@ -2160,5 +2161,17 @@ theorem necessary_actuality_and_necessary_five_implies_nd_necessity_imply_necess
   map_boxed actuality_and_five_implies_nd_necessity_imply_inextensible_comprehension
 
 /-! ## End of the theory of 5-necessity (`lean-box5`) -/
+
+/-! ### Existence as a premise, discharged (`Results/Existence.lean`; lean-type-existence) -/
+
+/-- `barcan-and-intensional-choice-imply-necessary-intensional-choice` -/
+theorem barcan_and_intensional_choice_imply_necessary_intensional_choice : Statements.barcan_and_intensional_choice_imply_necessary_intensional_choice := by
+  map_cert (Entails.discharge_existence Proofs.barcan_and_intensional_choice_imply_necessary_intensional_choice.entails)
+
+/-- `modalized-relational-choice-implies-necessary-modalized-relational-choice` -/
+theorem modalized_relational_choice_implies_necessary_modalized_relational_choice : Statements.modalized_relational_choice_implies_necessary_modalized_relational_choice := by
+  map_cert (Entails.discharge_existence Proofs.modalized_relational_choice_implies_necessary_modalized_relational_choice.entails)
+
+/-! ### End of Existence as a premise, discharged -/
 
 end Classicism.Map
