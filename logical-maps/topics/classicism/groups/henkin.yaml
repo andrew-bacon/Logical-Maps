@@ -73,11 +73,25 @@ meets:
   extensionally-full: Every relational type holds every function between its domains, and there is one
     world.
 
+# The group in Lean (Classicism/Models/Henkin.lean): its parameter is the individual domain, and the
+# model the full intensional action model on the one-object category of the trivial monoid, whose only
+# arrow is the identity. Lean's metatheory has choice, so the members read in ZFC are its instances.
+lean:
+  binder: '(D : Type) [Nonempty D]'
+  var: D
+  model: Classicism.Meta.Intensional.Henkin.model {param}
+  is_model: Classicism.Meta.Intensional.Henkin.isModel {param}
+  settings: {metatheory: zfc}
+  meets:
+    extensionally-full: Classicism.Meta.Intensional.Henkin.extFull {param}
+
 conditions:
 - id: several-individuals
   text: There are at least two individuals.
+  lean: Classicism.Meta.Intensional.Henkin.SeveralIndividuals
 - id: finitely-many-individuals
   text: There are finitely many individuals.
+  lean: Classicism.Meta.Intensional.Henkin.FinitelyManyIndividuals
 
 arguments:
 
@@ -91,6 +105,9 @@ arguments:
     coextensive relations are identical. With one world, the boxed principles reduce to their unboxed
     forms, and the comprehension, completeness and atomicity principles hold as in every two-valued full
     model: each relational type is the complete atomic Boolean algebra of the subsets of a domain.
+  lean:
+  - holds: extensionality-r
+    ref: Classicism.Map.Arguments.henkin.extensionality.extensionality_r
 
 - id: functional-choice
   holds: [functional-choice-r]
@@ -100,6 +117,9 @@ arguments:
   text: >-
     Every function between the domains is present, so choice in the metatheory gives every serial
     relation a functional subrelation, and, when the output type is relational, a selecting operation.
+  lean:
+  - holds: functional-choice-r
+    ref: Classicism.Map.Arguments.henkin.functional_choice.functional_choice_r
 
 - id: finitely-many-individuals
   requires: [finitely-many-individuals]
@@ -110,6 +130,9 @@ arguments:
   text: >-
     In a full model the numbers are the standard finite cardinalities, and with finitely many
     individuals one of them holds of the universal property of individuals.
+  lean:
+  - fails: infinity-e
+    ref: Classicism.Map.Arguments.henkin.finitely_many_individuals.infinity_e
 
 - id: independence
   when: {sigma: independent}

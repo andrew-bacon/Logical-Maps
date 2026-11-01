@@ -311,6 +311,78 @@ theorem finite_support_truncations.independence_signature_r : Statements.Models.
 theorem finite_support_truncations.no_contingency_signature_r : Statements.Models.finite_support_truncations.no_contingency_signature_r :=
   ⟨Classicism.Meta.Signature.sigmaTop_admitted, Classicism.Meta.Intensional.Premodel.withTop_isModel (Classicism.Meta.Intensional.MonoidModel.model_isModel (Classicism.Meta.Intensional.Monoids.truncs)), Classicism.Map.Arguments.sigma_top_npc.no_contingency_signature_r (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.MonoidModel.model (Classicism.Meta.Intensional.Monoids.truncs)) (Classicism.Meta.Intensional.MonoidModel.model_isModel (Classicism.Meta.Intensional.Monoids.truncs))) (Classicism.Meta.Intensional.Premodel.withTop_isModel (Classicism.Meta.Intensional.MonoidModel.model_isModel (Classicism.Meta.Intensional.Monoids.truncs))) (Classicism.Meta.Signature.sigmaTop_admitted) (Classicism.Meta.Intensional.Premodel.withTop_sigmaTop (Classicism.Meta.Intensional.MonoidModel.model_isModel (Classicism.Meta.Intensional.Monoids.truncs))) (Classicism.Meta.Intensional.Premodel.holdsAx_interp_ofPure.2 ((Classicism.Map.Models.finite_support_truncations.no_pure_contingency_r).2))⟩
 
+/-- `full-henkin-finite-base`: Extensionality holds, by `henkin`'s argument `extensionality`. -/
+theorem full_henkin_finite_base.extensionality_r : Statements.Models.full_henkin_finite_base.extensionality_r :=
+  ⟨Classicism.Meta.Intensional.Henkin.isModel (Fin 2), Classicism.Map.Arguments.henkin.extensionality.extensionality_r (Fin 2) ⟩
+
+/-- `full-henkin-finite-base`: Functional Choice holds, by `henkin`'s argument `functional-choice`. -/
+theorem full_henkin_finite_base.functional_choice_r : Statements.Models.full_henkin_finite_base.functional_choice_r :=
+  ⟨Classicism.Meta.Intensional.Henkin.isModel (Fin 2), Classicism.Map.Arguments.henkin.functional_choice.functional_choice_r (Fin 2) ⟩
+
+/-- `full-henkin-finite-base`: Infinity Schema (type e) fails, by `henkin`'s argument `finitely-many-individuals`. -/
+theorem full_henkin_finite_base.infinity_e : Statements.Models.full_henkin_finite_base.infinity_e :=
+  ⟨Classicism.Meta.Intensional.Henkin.isModel (Fin 2), Classicism.Map.Arguments.henkin.finitely_many_individuals.infinity_e (Fin 2) (Classicism.Meta.Intensional.Henkin.fin_two_finitelyMany)⟩
+
+/-- `full-henkin-finite-base`: Transversal Choice holds, by the argument `transversal-choice-extensionally-full`. -/
+theorem full_henkin_finite_base.transversal_choice_r : Statements.Models.full_henkin_finite_base.transversal_choice_r :=
+  ⟨Classicism.Meta.Intensional.Henkin.isModel (Fin 2), Classicism.Map.Arguments.transversal_choice_extensionally_full.transversal_choice_r (Classicism.Meta.Intensional.Henkin.model (Fin 2)) (Classicism.Meta.Intensional.Henkin.isModel (Fin 2)) (Classicism.Meta.Intensional.Henkin.extFull (Fin 2))⟩
+
+/-- `full-henkin-finite-base`: Independence (signature Σ) fails, by the argument `sigma-top`. -/
+theorem full_henkin_finite_base.independence_signature_r : Statements.Models.full_henkin_finite_base.independence_signature_r :=
+  ⟨Classicism.Meta.Signature.sigmaTop_admitted, Classicism.Meta.Intensional.Premodel.withTop_isModel (Classicism.Meta.Intensional.Henkin.isModel (Fin 2)), Classicism.Map.Arguments.sigma_top.independence_signature_r (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.Henkin.model (Fin 2)) (Classicism.Meta.Intensional.Henkin.isModel (Fin 2))) (Classicism.Meta.Intensional.Premodel.withTop_isModel (Classicism.Meta.Intensional.Henkin.isModel (Fin 2))) (Classicism.Meta.Signature.sigmaTop_admitted) (Classicism.Meta.Intensional.Premodel.withTop_sigmaTop (Classicism.Meta.Intensional.Henkin.isModel (Fin 2)))⟩
+
+/-- `full-henkin-infinite-base`: Extensionality holds, by `henkin`'s argument `extensionality`. -/
+theorem full_henkin_infinite_base.extensionality_r : Statements.Models.full_henkin_infinite_base.extensionality_r :=
+  ⟨Classicism.Meta.Intensional.Henkin.isModel (ℕ), Classicism.Map.Arguments.henkin.extensionality.extensionality_r (ℕ) ⟩
+
+/-- `full-henkin-infinite-base`: Functional Choice holds, by `henkin`'s argument `functional-choice`. -/
+theorem full_henkin_infinite_base.functional_choice_r : Statements.Models.full_henkin_infinite_base.functional_choice_r :=
+  ⟨Classicism.Meta.Intensional.Henkin.isModel (ℕ), Classicism.Map.Arguments.henkin.functional_choice.functional_choice_r (ℕ) ⟩
+
+/-- `full-henkin-infinite-base`: Axiom of Infinity (type e) holds, by the argument `infinitely-many-individuals`. -/
+theorem full_henkin_infinite_base.axiom_of_infinity_e : Statements.Models.full_henkin_infinite_base.axiom_of_infinity_e :=
+  ⟨Classicism.Meta.Intensional.Henkin.isModel (ℕ), Classicism.Map.Arguments.infinitely_many_individuals.axiom_of_infinity_e (Classicism.Meta.Intensional.Henkin.model (ℕ)) (Classicism.Meta.Intensional.Henkin.isModel (ℕ)) (Classicism.Meta.Intensional.Henkin.extFull (ℕ)) (Classicism.Meta.Intensional.Henkin.infinitelyManyIndividuals ℕ)⟩
+
+/-- `full-henkin-infinite-base`: Infinity Schema (type e) holds, by the argument `infinitely-many-individuals`. -/
+theorem full_henkin_infinite_base.infinity_e : Statements.Models.full_henkin_infinite_base.infinity_e :=
+  ⟨Classicism.Meta.Intensional.Henkin.isModel (ℕ), Classicism.Map.Arguments.infinitely_many_individuals.infinity_e (Classicism.Meta.Intensional.Henkin.model (ℕ)) (Classicism.Meta.Intensional.Henkin.isModel (ℕ)) (Classicism.Meta.Intensional.Henkin.extFull (ℕ)) (Classicism.Meta.Intensional.Henkin.infinitelyManyIndividuals ℕ)⟩
+
+/-- `full-henkin-infinite-base`: Transversal Choice holds, by the argument `transversal-choice-extensionally-full`. -/
+theorem full_henkin_infinite_base.transversal_choice_r : Statements.Models.full_henkin_infinite_base.transversal_choice_r :=
+  ⟨Classicism.Meta.Intensional.Henkin.isModel (ℕ), Classicism.Map.Arguments.transversal_choice_extensionally_full.transversal_choice_r (Classicism.Meta.Intensional.Henkin.model (ℕ)) (Classicism.Meta.Intensional.Henkin.isModel (ℕ)) (Classicism.Meta.Intensional.Henkin.extFull (ℕ))⟩
+
+/-- `full-henkin-infinite-base`: Independence (signature Σ) fails, by the argument `sigma-top`. -/
+theorem full_henkin_infinite_base.independence_signature_r : Statements.Models.full_henkin_infinite_base.independence_signature_r :=
+  ⟨Classicism.Meta.Signature.sigmaTop_admitted, Classicism.Meta.Intensional.Premodel.withTop_isModel (Classicism.Meta.Intensional.Henkin.isModel (ℕ)), Classicism.Map.Arguments.sigma_top.independence_signature_r (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.Henkin.model (ℕ)) (Classicism.Meta.Intensional.Henkin.isModel (ℕ))) (Classicism.Meta.Intensional.Premodel.withTop_isModel (Classicism.Meta.Intensional.Henkin.isModel (ℕ))) (Classicism.Meta.Signature.sigmaTop_admitted) (Classicism.Meta.Intensional.Premodel.withTop_sigmaTop (Classicism.Meta.Intensional.Henkin.isModel (ℕ)))⟩
+
+/-- `full-henkin-singleton-base`: Extensionality holds, by `henkin`'s argument `extensionality`. -/
+theorem full_henkin_singleton_base.extensionality_r : Statements.Models.full_henkin_singleton_base.extensionality_r :=
+  ⟨Classicism.Meta.Intensional.Henkin.isModel (Unit), Classicism.Map.Arguments.henkin.extensionality.extensionality_r (Unit) ⟩
+
+/-- `full-henkin-singleton-base`: Functional Choice holds, by `henkin`'s argument `functional-choice`. -/
+theorem full_henkin_singleton_base.functional_choice_r : Statements.Models.full_henkin_singleton_base.functional_choice_r :=
+  ⟨Classicism.Meta.Intensional.Henkin.isModel (Unit), Classicism.Map.Arguments.henkin.functional_choice.functional_choice_r (Unit) ⟩
+
+/-- `full-henkin-singleton-base`: Infinity Schema (type e) fails, by `henkin`'s argument `finitely-many-individuals`. -/
+theorem full_henkin_singleton_base.infinity_e : Statements.Models.full_henkin_singleton_base.infinity_e :=
+  ⟨Classicism.Meta.Intensional.Henkin.isModel (Unit), Classicism.Map.Arguments.henkin.finitely_many_individuals.infinity_e (Unit) (Classicism.Meta.Intensional.Henkin.unit_finitelyMany)⟩
+
+/-- `full-henkin-singleton-base`: Axiom of Infinity (type e) fails, by the argument `one-individual`. -/
+theorem full_henkin_singleton_base.axiom_of_infinity_e : Statements.Models.full_henkin_singleton_base.axiom_of_infinity_e :=
+  ⟨Classicism.Meta.Intensional.Henkin.isModel (Unit), Classicism.Map.Arguments.one_individual.axiom_of_infinity_e (Classicism.Meta.Intensional.Henkin.model (Unit)) (Classicism.Meta.Intensional.Henkin.isModel (Unit)) (Classicism.Meta.Intensional.Henkin.oneIndividual Unit)⟩
+
+/-- `full-henkin-singleton-base`: Possible Infinity (type e) fails, by the argument `one-individual`. -/
+theorem full_henkin_singleton_base.possible_infinity_e : Statements.Models.full_henkin_singleton_base.possible_infinity_e :=
+  ⟨Classicism.Meta.Intensional.Henkin.isModel (Unit), Classicism.Map.Arguments.one_individual.possible_infinity_e (Classicism.Meta.Intensional.Henkin.model (Unit)) (Classicism.Meta.Intensional.Henkin.isModel (Unit)) (Classicism.Meta.Intensional.Henkin.oneIndividual Unit)⟩
+
+/-- `full-henkin-singleton-base`: Transversal Choice holds, by the argument `transversal-choice-extensionally-full`. -/
+theorem full_henkin_singleton_base.transversal_choice_r : Statements.Models.full_henkin_singleton_base.transversal_choice_r :=
+  ⟨Classicism.Meta.Intensional.Henkin.isModel (Unit), Classicism.Map.Arguments.transversal_choice_extensionally_full.transversal_choice_r (Classicism.Meta.Intensional.Henkin.model (Unit)) (Classicism.Meta.Intensional.Henkin.isModel (Unit)) (Classicism.Meta.Intensional.Henkin.extFull (Unit))⟩
+
+/-- `full-henkin-singleton-base`: Independence (signature Σ) fails, by the argument `sigma-top`. -/
+theorem full_henkin_singleton_base.independence_signature_r : Statements.Models.full_henkin_singleton_base.independence_signature_r :=
+  ⟨Classicism.Meta.Signature.sigmaTop_admitted, Classicism.Meta.Intensional.Premodel.withTop_isModel (Classicism.Meta.Intensional.Henkin.isModel (Unit)), Classicism.Map.Arguments.sigma_top.independence_signature_r (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Intensional.Henkin.model (Unit)) (Classicism.Meta.Intensional.Henkin.isModel (Unit))) (Classicism.Meta.Intensional.Premodel.withTop_isModel (Classicism.Meta.Intensional.Henkin.isModel (Unit))) (Classicism.Meta.Signature.sigmaTop_admitted) (Classicism.Meta.Intensional.Premodel.withTop_sigmaTop (Classicism.Meta.Intensional.Henkin.isModel (Unit)))⟩
+
 /-- `full-idempotent-monoid`: Truths are ND-necessary holds, by the argument `dpc-isolated-actual-world`. -/
 theorem full_idempotent_monoid.distinctness_preserving_collapse : Statements.Models.full_idempotent_monoid.distinctness_preserving_collapse :=
   ⟨Classicism.Meta.Intensional.MSet.model_isModel Classicism.Meta.Intensional.Idem, Classicism.Map.Arguments.dpc_isolated_actual_world.distinctness_preserving_collapse (Classicism.Meta.Intensional.MSet.model Classicism.Meta.Intensional.Idem) (Classicism.Meta.Intensional.MSet.model_isModel Classicism.Meta.Intensional.Idem) (Classicism.Map.Meets.full_idempotent_monoid.actual_world_isolated)⟩
