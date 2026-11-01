@@ -14,6 +14,7 @@ import Classicism.Results.Research.RigidityClosureResearchAtomicPowerCertificate
 import Classicism.Results.Research.ModalPropagationCertificates.StrongAtomicity
 import Classicism.Results.Research.ModalPropagationCertificates.BoxedComprehension
 import Classicism.Results.Other.Meta
+import Classicism.Results.Other.Witnesses
 
 /-!
 # The map's results, certified
@@ -2061,5 +2062,33 @@ theorem necessary_vicinity_and_necessary_distinctness_preserving_collapse_imply_
 /-- `necessary-weak-rigid-comprehension-implies-necessary-boolean-completeness`: the boxed form of `weak-rigid-comprehension-r-implies-boolean-completeness-r` -/
 theorem necessary_weak_rigid_comprehension_implies_necessary_boolean_completeness : Statements.necessary_weak_rigid_comprehension_implies_necessary_boolean_completeness := by
   map_boxed weak_rigid_comprehension_r_implies_boolean_completeness_r
+
+/-! ### Witness verdicts: Maximalism against necessitations (`Results/Other/Witnesses.lean`) -/
+
+/-- `maximalist-distinctness-incompatible-with-necessary-truth-implies-five-necessity` -/
+theorem maximalist_distinctness_incompatible_with_necessary_truth_implies_five_necessity : Statements.maximalist_distinctness_incompatible_with_necessary_truth_implies_five_necessity := by
+  map_cert_incompatible maximalist_necTruthImpliesFive_inconsistent
+
+/-- `maximalist-distinctness-incompatible-with-necessary-truth-implies-two-hat-necessity` -/
+theorem maximalist_distinctness_incompatible_with_necessary_truth_implies_two_hat_necessity : Statements.maximalist_distinctness_incompatible_with_necessary_truth_implies_two_hat_necessity := by
+  map_cert_incompatible maximalist_necTruthImpliesTwoHat_inconsistent
+
+/-- `maximalist-distinctness-incompatible-with-necessary-two-hat-implies-nd-necessity` -/
+theorem maximalist_distinctness_incompatible_with_necessary_two_hat_implies_nd_necessity : Statements.maximalist_distinctness_incompatible_with_necessary_two_hat_implies_nd_necessity := by
+  map_cert_incompatible maximalist_necTwoHatImpliesNd_inconsistent
+
+/-- `maximalist-distinctness-incompatible-with-necessary-five-implies-nd-necessity` -/
+theorem maximalist_distinctness_incompatible_with_necessary_five_implies_nd_necessity : Statements.maximalist_distinctness_incompatible_with_necessary_five_implies_nd_necessity := by
+  map_cert_incompatible maximalist_necFiveImpliesNd_inconsistent
+
+/-- `maximalist-distinctness-incompatible-with-necessary-weakly-inextensible-comprehension-r` -/
+theorem maximalist_distinctness_incompatible_with_necessary_weakly_inextensible_comprehension_r : Statements.maximalist_distinctness_incompatible_with_necessary_weakly_inextensible_comprehension_r := by
+  map_cert_incompatible maximalist_necWeaklyInextensibleComprehension_inconsistent
+
+/-- `maximalist-distinctness-incompatible-with-necessary-tame-rigidity-r` -/
+theorem maximalist_distinctness_incompatible_with_necessary_tame_rigidity_r : Statements.maximalist_distinctness_incompatible_with_necessary_tame_rigidity_r := by
+  map_cert_incompatible maximalist_necTameRigidity_inconsistent
+
+/-! ### End of witness verdicts -/
 
 end Classicism.Map
