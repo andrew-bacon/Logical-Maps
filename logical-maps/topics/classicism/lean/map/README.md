@@ -154,13 +154,20 @@ bound at the second object is the union of the instances (`two_hasLUBs`, `SymBas
 **Coalesced sums.** `Coalesced/SumData.lean` has the group `coalesced-sums`: its parameter is
 `SumData`, the data of a coalesced sum that is a model, for any root arrows and root domains, so
 that the interpretation-arrow members can be instances too. The group's conditions are
-`SumData.CompleteComponents` (every closed-type pure sentence consistent with `C` holds in the
-component seen from some root arrow), `SumData.DistinguishedArrows` and
-`SumData.FreeRootComponent`. Its arguments `actuality-singleton-root` and
-`relational-choice-free-root` are proved; the transfer arguments (`barcan-t-component` and the
-rest) use the fullest root domains as well as the distinguished arrows, and
-`pure-sentences-possible` and `transversal-boxed` need a Lean model refuting Vicinity, Weakly
-Inextensible Comprehension or Transversal. The members `coalesced-maximalist-root` (at
+`SumData.CompleteComponents` (every closed-type pure sentence consistent with `C` is true at the
+root of some component), `SumData.DistinguishedArrows` (every root arrow into a component
+factors uniquely through one to the component's root), `SumData.FreeRootComponent` and
+`SumData.FullestDomains`. Its arguments `actuality-singleton-root` and
+`relational-choice-free-root` are proved, and two of the transfer arguments,
+`barcan-t-component` and `atomicity-t-component` (`Coalesced/Transfer.lean`): over the
+distinguished arrows with the fullest root domains a root entity is its extension at the root
+and its parts in the components, chosen freely (`SumData.thread`), and inclusion is
+componentwise, so a counterexample at a component's root, from a Lean model of `¬BF(t)` or
+`¬Atomicity(t)`, transfers to the root. The other transfer arguments need a Lean model
+refuting BC at `t`, Intensional Choice, Atoms are self-atoms (`t`), Tame Rigidity at a
+relational argument type, or Rigid Power at `t → t`; `pure-sentences-possible` and
+`transversal-boxed` need a Lean model refuting Vicinity, Weakly Inextensible Comprehension or
+Transversal. The members `coalesced-maximalist-root` (at
 `Σ = {c : t}`), `coalesced-single-individual-root` and `coalesced-constant-indexed-root` are built
 over the complete family of `Completeness/` (`Coalesced/Complete.lean`, where every sentence
 consistent with `C` is possible at the root: Maximalism).

@@ -5,6 +5,7 @@ import Classicism.Semantics.Interpretations
 import Classicism.Models.SymBase
 import Classicism.Coalesced.SumData
 import Classicism.Models.Henkin
+import Classicism.Coalesced.Transfer
 import Mathlib.SetTheory.Cardinal.NatCard
 
 /-!
@@ -525,6 +526,24 @@ theorem relational_choice_r :
   fun _ hF => Coalesced.SumData.holds_rc_root hF
 
 end relational_choice_free_root
+
+namespace barcan_t_component
+
+/-- A component refutes BF at `t` at its root; the thread universal at the root and elsewhere and
+the counterexample in that component refutes it at the root (`Coalesced.SumData.not_holds_barcanT`). -/
+theorem barcan_t : Statements.Arguments.coalesced_sums.barcan_t_component.barcan_t :=
+  fun _ hc hD hF => Coalesced.SumData.not_holds_barcanT hD hF hc
+
+end barcan_t_component
+
+namespace atomicity_t_component
+
+/-- A component refutes Atomicity at `t` at its root with a proposition `p`; the root proposition
+that is `p` there and empty elsewhere has no atom below it (`Coalesced.SumData.not_holds_atomicityT`). -/
+theorem atomicity_t : Statements.Arguments.coalesced_sums.atomicity_t_component.atomicity_t :=
+  fun _ hc hD hF => Coalesced.SumData.not_holds_atomicityT hD hF hc
+
+end atomicity_t_component
 
 end coalesced_sums
 

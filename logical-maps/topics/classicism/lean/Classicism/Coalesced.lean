@@ -6,6 +6,7 @@ import Classicism.Coalesced.Full
 import Classicism.Coalesced.Distinguished
 import Classicism.Coalesced.Complete
 import Classicism.Coalesced.SumData
+import Classicism.Coalesced.Transfer
 import Classicism.Coalesced.Parameters
 import Classicism.Coalesced.Interpretations
 import Classicism.Coalesced.Definable
@@ -59,7 +60,10 @@ the complete family of `Completeness/`, over the distinguished arrows, is Append
 maximalist root (`maximalist`), so Maximalism is consistent with `C`
 (`maximalism_consistent`). The map's group `coalesced-sums` takes as its parameter the data of
 a coalesced sum that is a model (`SumData`, `SumData.lean`), with its conditions and three
-members.
+members. Over distinguished arrows with the fullest root domains a root entity is its extension
+at the root and its parts in the components, chosen freely (`SumData.thread`, `Transfer.lean`):
+so a component's counterexample at its root transfers to the root, for BF and Atomicity at `t`
+(`SumData.not_holds_barcanT`, `SumData.not_holds_atomicityT`).
 
 In standard terms the coalesced sum of the categories is the *collage* (cograph) of the
 profunctor from the one-object category `End` to `Σ k, C k` given by `R`, and an action is
