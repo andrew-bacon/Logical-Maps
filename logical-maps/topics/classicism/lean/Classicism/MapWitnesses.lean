@@ -53,6 +53,24 @@ theorem intensional_choice_r : Statements.Models.symmetric_all_surjections.inten
 
 end symmetric_all_surjections
 
+namespace symmetric_infinite_classes
+
+/-- A classifier cannot choose for a class missing its pinning set
+(`SymIdeal.infClasses_not_transversal`). -/
+theorem transversal_r : Statements.Models.symmetric_infinite_classes.transversal_r :=
+  ⟨SymIdeal.model_isModel SymIdeal.infClasses, fun h => SymIdeal.infClasses_not_transversal
+    ((Premodel.holdsAx_schemaIn_iff _ _).1 h _ ⟨.e, by decide, rfl⟩)⟩
+
+end symmetric_infinite_classes
+
+/-- `□`Transversal fails at a coalesced root with complete components. -/
+theorem coalesced_box_transversal {D : Coalesced.SumData} (hD : D.DistinguishedArrows)
+    (hc : D.CompleteComponents) : ¬ D.model.HoldsAx P.NecTransversal.schemaIn :=
+  Coalesced.SumData.not_holdsAx_box_of_model hD hc (SymIdeal.model_isModel SymIdeal.infClasses)
+    P.Transversal.schema_closedTypes
+    (fun h => SymIdeal.infClasses_not_transversal (h _ ⟨.e, by decide, rfl⟩))
+    (by rintro _ ⟨_, ⟨τ, hτ, rfl⟩, rfl⟩; exact ⟨τ, hτ, rfl⟩)
+
 /-- The four boxed failures at a coalesced root with complete components. -/
 theorem coalesced_box_failures {D : Coalesced.SumData} (hD : D.DistinguishedArrows)
     (hc : D.CompleteComponents) :
@@ -95,6 +113,10 @@ theorem necessary_weakly_inextensible_comprehension_r :
   ⟨Coalesced.maximalistRoot.isModel, (coalesced_box_failures Coalesced.maximalistData_distinguished
     (Coalesced.maximalistData_complete Coalesced.sigmaTop_closed)).2.2.2⟩
 
+theorem necessary_transversal_r : Statements.Models.coalesced_maximalist_root.necessary_transversal_r :=
+  ⟨Coalesced.maximalistRoot.isModel, coalesced_box_transversal Coalesced.maximalistData_distinguished
+    (Coalesced.maximalistData_complete Coalesced.sigmaTop_closed)⟩
+
 end coalesced_maximalist_root
 
 namespace coalesced_single_individual_root
@@ -118,6 +140,10 @@ theorem necessary_weakly_inextensible_comprehension_r :
   ⟨Coalesced.singleIndividualData.isModel, (coalesced_box_failures
     Coalesced.singleIndividualData_distinguished Coalesced.singleIndividualData_complete).2.2.2⟩
 
+theorem necessary_transversal_r : Statements.Models.coalesced_single_individual_root.necessary_transversal_r :=
+  ⟨Coalesced.singleIndividualData.isModel, coalesced_box_transversal Coalesced.singleIndividualData_distinguished
+    Coalesced.singleIndividualData_complete⟩
+
 end coalesced_single_individual_root
 
 namespace coalesced_constant_indexed_root
@@ -140,6 +166,10 @@ theorem necessary_weakly_inextensible_comprehension_r :
     Statements.Models.coalesced_constant_indexed_root.necessary_weakly_inextensible_comprehension_r :=
   ⟨Coalesced.constantIndexedData.isModel, (coalesced_box_failures
     Coalesced.constantIndexedData_distinguished Coalesced.constantIndexedData_complete).2.2.2⟩
+
+theorem necessary_transversal_r : Statements.Models.coalesced_constant_indexed_root.necessary_transversal_r :=
+  ⟨Coalesced.constantIndexedData.isModel, coalesced_box_transversal Coalesced.constantIndexedData_distinguished
+    Coalesced.constantIndexedData_complete⟩
 
 end coalesced_constant_indexed_root
 

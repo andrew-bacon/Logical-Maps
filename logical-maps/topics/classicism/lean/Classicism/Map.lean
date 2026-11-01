@@ -2109,6 +2109,10 @@ theorem possibility_and_necessary_atoms_are_self_atoms_t_incompatible : Statemen
 theorem possibility_and_necessary_intensional_choice_incompatible : Statements.possibility_and_necessary_intensional_choice_incompatible := by
   map_cert_incompatible maximalist_necIntensionalChoice_inconsistent
 
+/-- `maximalist-distinctness-incompatible-with-necessary-transversal-r` -/
+theorem maximalist_distinctness_incompatible_with_necessary_transversal_r : Statements.maximalist_distinctness_incompatible_with_necessary_transversal_r := by
+  map_cert_incompatible maximalist_necTransversal_inconsistent
+
 /-! ### End of witness verdicts -/
 
 end Classicism.Map

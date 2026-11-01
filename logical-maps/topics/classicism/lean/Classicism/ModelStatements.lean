@@ -55,6 +55,10 @@ def Models.coalesced_constant_indexed_root.necessary_vicinity : Prop :=
 def Models.coalesced_constant_indexed_root.necessary_weakly_inextensible_comprehension_r : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).HoldsAx Classicism.P.NecWeaklyInextensibleComprehension.schemaIn
 
+/-- `coalesced-constant-indexed-root`: □Transversal fails. -/
+def Models.coalesced_constant_indexed_root.necessary_transversal_r : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).HoldsAx Classicism.P.NecTransversal.schemaIn
+
 /-- `coalesced-definable-root`: Maximalism (pure) holds. -/
 def Models.coalesced_definable_root.distinctness_schema_r : Prop :=
   (Classicism.Meta.Coalesced.definableRoot).IsModel ∧ (Classicism.Meta.Coalesced.definableRoot).HoldsAx (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.distinctnessC)
@@ -91,6 +95,10 @@ def Models.coalesced_maximalist_root.necessary_vicinity : Prop :=
 def Models.coalesced_maximalist_root.necessary_weakly_inextensible_comprehension_r : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).HoldsAx Classicism.P.NecWeaklyInextensibleComprehension.schemaIn
 
+/-- `coalesced-maximalist-root`: □Transversal fails. -/
+def Models.coalesced_maximalist_root.necessary_transversal_r : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).HoldsAx Classicism.P.NecTransversal.schemaIn
+
 /-- `coalesced-pinned-interpretations-root`: BF holds. -/
 def Models.coalesced_pinned_interpretations_root.barcan_r : Prop :=
   (Classicism.Meta.Coalesced.pinnedInterpRoot).IsModel ∧ (Classicism.Meta.Coalesced.pinnedInterpRoot).HoldsAx Classicism.P.Barcan.schemaIn
@@ -126,6 +134,10 @@ def Models.coalesced_single_individual_root.necessary_vicinity : Prop :=
 /-- `coalesced-single-individual-root`: □Weakly Inextensible Comprehension fails. -/
 def Models.coalesced_single_individual_root.necessary_weakly_inextensible_comprehension_r : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).HoldsAx Classicism.P.NecWeaklyInextensibleComprehension.schemaIn
+
+/-- `coalesced-single-individual-root`: □Transversal fails. -/
+def Models.coalesced_single_individual_root.necessary_transversal_r : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).HoldsAx Classicism.P.NecTransversal.schemaIn
 
 /-- `finite-support-dyadic-roundings`: BF fails. -/
 def Models.finite_support_dyadic_roundings.barcan_r : Prop :=
@@ -250,6 +262,10 @@ def Models.symmetric_finite_compression_entrance.rigid_power_r : Prop :=
 /-- `symmetric-finite-compression-entrance`: Weakly Rigid Power fails. -/
 def Models.symmetric_finite_compression_entrance.weakly_rigid_power_r : Prop :=
   (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.FiniteCompression.base Classicism.Meta.Intensional.FiniteCompression.A)).IsModel ∧ ¬ (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.FiniteCompression.base Classicism.Meta.Intensional.FiniteCompression.A)).HoldsAx Classicism.P.WeaklyRigidPower.schemaIn
+
+/-- `symmetric-infinite-classes`: Transversal fails. -/
+def Models.symmetric_infinite_classes.transversal_r : Prop :=
+  (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.SymIdeal.Base.toSym Classicism.Meta.Intensional.SymIdeal.infClasses)).IsModel ∧ ¬ (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.SymIdeal.Base.toSym Classicism.Meta.Intensional.SymIdeal.infClasses)).HoldsAx Classicism.P.Transversal.schemaIn
 
 /-- `symmetric-old-new-individuals`: ND holds. -/
 def Models.symmetric_old_new_individuals.distinctness_necessary_r : Prop :=

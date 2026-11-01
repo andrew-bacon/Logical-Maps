@@ -1,6 +1,7 @@
 import Classicism.Results.Other.Meta
 import Classicism.Certified.Entailed
 import Classicism.Coalesced.TransferBC
+import Classicism.Models.InfClassesTransversal
 import Classicism.Coalesced.TransferChoice
 import Classicism.Coalesced.TransferSelfAtoms
 
@@ -300,6 +301,15 @@ theorem maximalist_necIntensionalChoice_inconsistent :
   maximalist_box_inconsistent_of_model _ (SymIdeal.model_isModel SymIdeal.allSurj)
     P.IntensionalChoice.schema_closedTypes
     (fun h => SymIdeal.allSurj_not_ic (h _ ⟨.e, by decide, rfl⟩))
+    (by rintro _ ⟨_, ⟨τ, hτ, rfl⟩, rfl⟩; exact ⟨τ, hτ, rfl⟩)
+
+/-- `maximalist-distinctness-incompatible-with-necessary-transversal-r`: Transversal fails at `e` in
+`symmetric-infinite-classes` (`SymIdeal.infClasses_not_transversal`). -/
+theorem maximalist_necTransversal_inconsistent :
+    ¬ Consistent (maximalist (Sig := Signature.pure) ∪ P.NecTransversal.schema) :=
+  maximalist_box_inconsistent_of_model _ (SymIdeal.model_isModel SymIdeal.infClasses)
+    P.Transversal.schema_closedTypes
+    (fun h => SymIdeal.infClasses_not_transversal (h _ ⟨.e, by decide, rfl⟩))
     (by rintro _ ⟨_, ⟨τ, hτ, rfl⟩, rfl⟩; exact ⟨τ, hτ, rfl⟩)
 
 /-- `maximalist-distinctness-incompatible-with-necessary-vicinity`. -/
