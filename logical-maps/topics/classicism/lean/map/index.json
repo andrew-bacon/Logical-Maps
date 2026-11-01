@@ -396,23 +396,23 @@
   "strong-atomicity-t-implies-self-atomicity-t":
   {"proofs":
    [{"name": "Classicism.Proofs.strong_atomicity_t_implies_self_atomicity_t",
-     "lines": [263, 265],
+     "lines": [265, 267],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name": "Classicism.Map.strong_atomicity_t_implies_self_atomicity_t",
-    "lines": [265, 267],
+    "lines": [421, 423],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "strong-atomicity-t-implies-necessary-strong-actuality":
   {"proofs":
    [{"name":
      "Classicism.Proofs.strong_atomicity_t_implies_necessary_strong_actuality",
-     "lines": [336, 346],
+     "lines": [338, 348],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.strong_atomicity_t_implies_necessary_strong_actuality",
-    "lines": [261, 263],
+    "lines": [417, 419],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "strong-atomicity-t-implies-necessary-actuality":
@@ -429,12 +429,12 @@
   {"proofs":
    [{"name":
      "Classicism.Proofs.strong_atomicity_t_implies_atoms_are_strong_atoms_t",
-     "lines": [258, 261],
+     "lines": [260, 263],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.strong_atomicity_t_implies_atoms_are_strong_atoms_t",
-    "lines": [257, 259],
+    "lines": [413, 415],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "strong-atomicity-t-implies-atomicity-t":
@@ -460,23 +460,23 @@
   "strong-atomicity-r-implies-self-atomicity-r":
   {"proofs":
    [{"name": "Classicism.Proofs.strong_atomicity_r_implies_self_atomicity_r",
-     "lines": [103, 107],
+     "lines": [105, 109],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name": "Classicism.Map.strong_atomicity_r_implies_self_atomicity_r",
-    "lines": [253, 255],
+    "lines": [409, 411],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "strong-atomicity-r-implies-atoms-are-strong-atoms-r":
   {"proofs":
    [{"name":
      "Classicism.Proofs.strong_atomicity_r_implies_atoms_are_strong_atoms_r",
-     "lines": [96, 101],
+     "lines": [98, 103],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.strong_atomicity_r_implies_atoms_are_strong_atoms_r",
-    "lines": [249, 251],
+    "lines": [405, 407],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "strong-atomicity-r-implies-atomicity-r":
@@ -578,138 +578,201 @@
   {"proofs":
    [{"name":
      "Classicism.Proofs.self_atoms_are_strong_atoms_t_implies_self_atoms_are_atoms_t",
-     "lines": [253, 256],
+     "lines": [255, 258],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.self_atoms_are_strong_atoms_t_implies_self_atoms_are_atoms_t",
-    "lines": [245, 247],
+    "lines": [401, 403],
+    "file": "Classicism/MapAtoms.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "self-atoms-are-strong-atoms-t-and-bf-imply-self-atoms-are-strong-atoms-r":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.self_atoms_are_strong_atoms_t_and_bf_imply_self_atoms_are_strong_atoms_r",
+     "lines": [684, 700],
+     "file": "Classicism/Results/Records/Atoms.lean"},
+    {"name":
+     "Classicism.Meta.self_atoms_are_strong_atoms_t_and_bf_imply_self_atoms_are_strong_atoms_r",
+     "lines": [29, 35],
+     "file": "Classicism/MapAtoms.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.self_atoms_are_strong_atoms_t_and_bf_imply_self_atoms_are_strong_atoms_r",
+    "lines": [397, 399],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "self-atoms-are-strong-atoms-r-implies-self-atoms-are-strong-atoms-t":
   {"proofs":
    [{"name":
      "Classicism.Proofs.self_atoms_are_strong_atoms_r_implies_self_atoms_are_strong_atoms_t",
-     "lines": [281, 283],
+     "lines": [283, 285],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.self_atoms_are_strong_atoms_r_implies_self_atoms_are_strong_atoms_t",
-    "lines": [241, 243],
+    "lines": [393, 395],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "self-atoms-are-strong-atoms-r-implies-self-atoms-are-atoms-r":
   {"proofs":
    [{"name":
      "Classicism.Proofs.self_atoms_are_strong_atoms_r_implies_self_atoms_are_atoms_r",
-     "lines": [128, 131],
+     "lines": [130, 133],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.self_atoms_are_strong_atoms_r_implies_self_atoms_are_atoms_r",
-    "lines": [237, 239],
+    "lines": [389, 391],
+    "file": "Classicism/MapAtoms.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "self-atoms-are-atoms-t-and-bf-imply-self-atoms-are-atoms-r":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.self_atoms_are_atoms_t_implies_self_atoms_are_atoms_r",
+     "lines": [630, 650],
+     "file": "Classicism/Results/Records/Atoms.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.self_atoms_are_atoms_t_and_bf_imply_self_atoms_are_atoms_r",
+    "lines": [385, 387],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "self-atoms-are-atoms-r-implies-self-atoms-are-atoms-t":
   {"proofs":
    [{"name":
      "Classicism.Proofs.self_atoms_are_atoms_r_implies_self_atoms_are_atoms_t",
-     "lines": [278, 280],
+     "lines": [280, 282],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.self_atoms_are_atoms_r_implies_self_atoms_are_atoms_t",
-    "lines": [233, 235],
+    "lines": [381, 383],
+    "file": "Classicism/MapAtoms.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "self-atomicity-t-implies-two-hat-implies-nd":
+  {"proofs":
+   [{"name": "Classicism.Proofs.self_atomicity_t_implies_two_hat_implies_nd",
+     "lines": [568, 582],
+     "file": "Classicism/Results/Records/Atoms.lean"}],
+   "certificate":
+   {"name": "Classicism.Map.self_atomicity_t_implies_two_hat_implies_nd",
+    "lines": [377, 379],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "self-atomicity-t-implies-necessary-actuality":
   {"proofs":
    [{"name": "Classicism.Proofs.self_atomicity_t_implies_necessary_actuality",
-     "lines": [366, 368],
+     "lines": [368, 370],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name": "Classicism.Map.self_atomicity_t_implies_necessary_actuality",
-    "lines": [229, 231],
+    "lines": [373, 375],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "self-atomicity-t-implies-atoms-are-self-atoms-t":
   {"proofs":
    [{"name":
      "Classicism.Proofs.self_atomicity_t_implies_atoms_are_self_atoms_t",
-     "lines": [249, 251],
+     "lines": [251, 253],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name": "Classicism.Map.self_atomicity_t_implies_atoms_are_self_atoms_t",
-    "lines": [225, 227],
+    "lines": [369, 371],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "self-atomicity-t-and-self-atoms-are-strong-atoms-t-imply-strong-atomicity-t":
   {"proofs":
    [{"name":
      "Classicism.Proofs.self_atomicity_t_and_self_atoms_are_strong_atoms_t_imply_strong_atomicity_t",
-     "lines": [244, 247],
+     "lines": [246, 249],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.self_atomicity_t_and_self_atoms_are_strong_atoms_t_imply_strong_atomicity_t",
-    "lines": [221, 223],
+    "lines": [365, 367],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "self-atomicity-t-and-self-atoms-are-atoms-t-imply-atomicity-t":
   {"proofs":
    [{"name":
      "Classicism.Proofs.self_atomicity_t_and_self_atoms_are_atoms_t_imply_atomicity_t",
-     "lines": [239, 242],
+     "lines": [241, 244],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.self_atomicity_t_and_self_atoms_are_atoms_t_imply_atomicity_t",
-    "lines": [217, 219],
+    "lines": [361, 363],
+    "file": "Classicism/MapAtoms.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "self-atomicity-t-and-bf-imply-self-atomicity-r":
+  {"proofs":
+   [{"name": "Classicism.Proofs.self_atomicity_t_and_bf_imply_self_atomicity_r",
+     "lines": [668, 678],
+     "file": "Classicism/Results/Records/Atoms.lean"},
+    {"name": "Classicism.Meta.self_atomicity_t_and_bf_imply_self_atomicity_r",
+     "lines": [21, 27],
+     "file": "Classicism/MapAtoms.lean"}],
+   "certificate":
+   {"name": "Classicism.Map.self_atomicity_t_and_bf_imply_self_atomicity_r",
+    "lines": [357, 359],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "self-atomicity-r-implies-self-atomicity-t":
   {"proofs":
    [{"name": "Classicism.Proofs.self_atomicity_r_implies_self_atomicity_t",
-     "lines": [269, 271],
+     "lines": [271, 273],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name": "Classicism.Map.self_atomicity_r_implies_self_atomicity_t",
-    "lines": [213, 215],
+    "lines": [353, 355],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "self-atomicity-r-implies-atoms-are-self-atoms-r":
   {"proofs":
    [{"name":
      "Classicism.Proofs.self_atomicity_r_implies_atoms_are_self_atoms_r",
-     "lines": [109, 114],
+     "lines": [111, 116],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name": "Classicism.Map.self_atomicity_r_implies_atoms_are_self_atoms_r",
-    "lines": [209, 211],
+    "lines": [349, 351],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "self-atomicity-r-and-self-atoms-are-strong-atoms-r-imply-strong-atomicity-r":
   {"proofs":
    [{"name":
      "Classicism.Proofs.self_atomicity_r_and_self_atoms_are_strong_atoms_r_imply_strong_atomicity_r",
-     "lines": [123, 126],
+     "lines": [125, 128],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.self_atomicity_r_and_self_atoms_are_strong_atoms_r_imply_strong_atomicity_r",
-    "lines": [205, 207],
+    "lines": [345, 347],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "self-atomicity-r-and-self-atoms-are-atoms-r-imply-atomicity-r":
   {"proofs":
    [{"name":
      "Classicism.Proofs.self_atomicity_r_and_self_atoms_are_atoms_r_imply_atomicity_r",
-     "lines": [116, 120],
+     "lines": [118, 122],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.self_atomicity_r_and_self_atoms_are_atoms_r_imply_atomicity_r",
-    "lines": [201, 203],
+    "lines": [341, 343],
+    "file": "Classicism/MapAtoms.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "self-atomicity-atomicity-t-weak-rigid-comprehension-and-relational-choice-imply-intensional-choice":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.self_atomicity_atomicity_t_weak_rigid_comprehension_and_relational_choice_imply_intensional_choice",
+     "lines": [709, 801],
+     "file": "Classicism/Results/Records/Atoms.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.self_atomicity_atomicity_t_weak_rigid_comprehension_and_relational_choice_imply_intensional_choice",
+    "lines": [337, 339],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "rigid-rigidity-implies-necessary-rigid-rigidity":
@@ -1018,6 +1081,22 @@
     "lines": [910, 912],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
+  "possibility-and-necessary-strong-atomicity-t-incompatible":
+  {"proofs":
+   [{"name": "Classicism.Meta.possibility_box_inconsistent",
+     "lines": [91, 101],
+     "file": "Classicism/Results/SentenceSchemas/Incompatibilities.lean"},
+    {"name":
+     "Classicism.Meta.distinctness_schema_r_implies_possibility_schema_r",
+     "lines": [65, 68],
+     "file":
+     "Classicism/Results/SentenceSchemas/PossibilityDistinctness.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.possibility_and_necessary_strong_atomicity_t_incompatible",
+    "lines": [140, 143],
+    "file": "Classicism/MapAtoms.lean",
+    "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
   "possibility-and-necessary-rigid-power-incompatible":
   {"proofs":
    [{"name": "Classicism.Meta.possibility_necRigidPower_inconsistent",
@@ -1047,6 +1126,38 @@
    {"name": "Classicism.Map.possibility_and_necessary_barcan_t_incompatible",
     "lines": [902, 904],
     "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
+  "possibility-and-necessary-atoms-are-strong-atoms-t-incompatible":
+  {"proofs":
+   [{"name": "Classicism.Meta.possibility_box_inconsistent",
+     "lines": [91, 101],
+     "file": "Classicism/Results/SentenceSchemas/Incompatibilities.lean"},
+    {"name":
+     "Classicism.Meta.distinctness_schema_r_implies_possibility_schema_r",
+     "lines": [65, 68],
+     "file":
+     "Classicism/Results/SentenceSchemas/PossibilityDistinctness.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.possibility_and_necessary_atoms_are_strong_atoms_t_incompatible",
+    "lines": [145, 148],
+    "file": "Classicism/MapAtoms.lean",
+    "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
+  "possibility-and-necessary-atoms-are-self-atoms-t-incompatible":
+  {"proofs":
+   [{"name": "Classicism.Meta.possibility_box_inconsistent",
+     "lines": [91, 101],
+     "file": "Classicism/Results/SentenceSchemas/Incompatibilities.lean"},
+    {"name":
+     "Classicism.Meta.distinctness_schema_r_implies_possibility_schema_r",
+     "lines": [65, 68],
+     "file":
+     "Classicism/Results/SentenceSchemas/PossibilityDistinctness.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.possibility_and_necessary_atoms_are_self_atoms_t_incompatible",
+    "lines": [150, 153],
+    "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
   "plenitude-r-implies-distinctness-necessary-r":
   {"proofs":
@@ -1270,7 +1381,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_self_atoms_are_strong_atoms_t_imply_necessary_self_atoms_are_strong_atoms_t",
-    "lines": [196, 199],
+    "lines": [332, 335],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-self-atoms-are-strong-atoms-r-imply-necessary-self-atoms-are-strong-atoms-r":
@@ -1281,7 +1392,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_self_atoms_are_strong_atoms_r_imply_necessary_self_atoms_are_strong_atoms_r",
-    "lines": [191, 194],
+    "lines": [327, 330],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-self-atoms-are-atoms-t-imply-necessary-self-atoms-are-atoms-t":
@@ -1292,7 +1403,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_self_atoms_are_atoms_t_imply_necessary_self_atoms_are_atoms_t",
-    "lines": [186, 189],
+    "lines": [322, 325],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-self-atoms-are-atoms-r-imply-necessary-self-atoms-are-atoms-r":
@@ -1303,7 +1414,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_self_atoms_are_atoms_r_imply_necessary_self_atoms_are_atoms_r",
-    "lines": [181, 184],
+    "lines": [317, 320],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-self-atomicity-t-imply-necessary-self-atomicity-t":
@@ -1314,7 +1425,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_self_atomicity_t_imply_necessary_self_atomicity_t",
-    "lines": [176, 179],
+    "lines": [312, 315],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-self-atomicity-r-imply-necessary-self-atomicity-r":
@@ -1325,7 +1436,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_self_atomicity_r_imply_necessary_self_atomicity_r",
-    "lines": [171, 174],
+    "lines": [307, 310],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-rigid-power-imply-necessary-rigid-power":
@@ -1605,7 +1716,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_atoms_are_strong_atoms_t_imply_necessary_atoms_are_strong_atoms_t",
-    "lines": [166, 169],
+    "lines": [302, 305],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-atoms-are-strong-atoms-r-imply-necessary-atoms-are-strong-atoms-r":
@@ -1616,7 +1727,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_atoms_are_strong_atoms_r_imply_necessary_atoms_are_strong_atoms_r",
-    "lines": [161, 164],
+    "lines": [297, 300],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-atoms-are-self-atoms-t-imply-necessary-atoms-are-self-atoms-t":
@@ -1627,7 +1738,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_atoms_are_self_atoms_t_imply_necessary_atoms_are_self_atoms_t",
-    "lines": [156, 159],
+    "lines": [292, 295],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-atoms-are-self-atoms-r-imply-necessary-atoms-are-self-atoms-r":
@@ -1638,7 +1749,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_atoms_are_self_atoms_r_imply_necessary_atoms_are_self_atoms_r",
-    "lines": [151, 154],
+    "lines": [287, 290],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-atomicity-t-imply-necessary-atomicity-t":
@@ -2168,7 +2279,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_strong_atomicity_t_implies_necessary_self_atomicity_t",
-    "lines": [397, 399],
+    "lines": [569, 571],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-strong-atomicity-t-implies-necessary-atoms-are-strong-atoms-t":
@@ -2185,7 +2296,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_strong_atomicity_t_implies_necessary_atoms_are_strong_atoms_t",
-    "lines": [393, 395],
+    "lines": [565, 567],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-strong-atomicity-t-implies-necessary-atomicity-t":
@@ -2254,7 +2365,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_strong_atomicity_r_implies_necessary_self_atomicity_r",
-    "lines": [389, 391],
+    "lines": [561, 563],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-strong-atomicity-r-implies-necessary-atoms-are-strong-atoms-r":
@@ -2271,7 +2382,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_strong_atomicity_r_implies_necessary_atoms_are_strong_atoms_r",
-    "lines": [385, 387],
+    "lines": [557, 559],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-strong-atomicity-implies-necessary-atomicity":
@@ -2330,12 +2441,12 @@
   {"proofs":
    [{"name":
      "Classicism.Proofs.necessary_self_atoms_are_strong_atoms_t_implies_self_atoms_are_strong_atoms_t",
-     "lines": [314, 316],
+     "lines": [316, 318],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.necessary_self_atoms_are_strong_atoms_t_implies_self_atoms_are_strong_atoms_t",
-    "lines": [147, 149],
+    "lines": [283, 285],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-self-atoms-are-strong-atoms-t-implies-necessary-self-atoms-are-atoms-t":
@@ -2352,19 +2463,36 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_self_atoms_are_strong_atoms_t_implies_necessary_self_atoms_are_atoms_t",
-    "lines": [381, 383],
+    "lines": [553, 555],
+    "file": "Classicism/MapAtoms.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "necessary-self-atoms-are-strong-atoms-t-and-necessary-bf-imply-necessary-self-atoms-are-strong-atoms-r":
+  {"proofs":
+   [{"name": "Classicism.Meta.AxiomSet.entails_ofPure_of_unbox",
+     "lines": [86, 93],
+     "file": "Classicism/Results/Boxed.lean"},
+    {"name": "Classicism.Meta.AxiomSet.unbox",
+     "lines": [51, 52],
+     "file": "Classicism/Results/Boxed.lean"},
+    {"name": "Classicism.Meta.AxiomSet.unbox_entails_ofPure",
+     "lines": [78, 84],
+     "file": "Classicism/Results/Boxed.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.necessary_self_atoms_are_strong_atoms_t_and_necessary_bf_imply_necessary_self_atoms_are_strong_atoms_r",
+    "lines": [549, 551],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-self-atoms-are-strong-atoms-r-implies-self-atoms-are-strong-atoms-r":
   {"proofs":
    [{"name":
      "Classicism.Proofs.necessary_self_atoms_are_strong_atoms_r_implies_self_atoms_are_strong_atoms_r",
-     "lines": [299, 301],
+     "lines": [301, 303],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.necessary_self_atoms_are_strong_atoms_r_implies_self_atoms_are_strong_atoms_r",
-    "lines": [143, 145],
+    "lines": [279, 281],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-self-atoms-are-strong-atoms-r-implies-necessary-self-atoms-are-strong-atoms-t":
@@ -2381,7 +2509,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_self_atoms_are_strong_atoms_r_implies_necessary_self_atoms_are_strong_atoms_t",
-    "lines": [377, 379],
+    "lines": [545, 547],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-self-atoms-are-strong-atoms-r-implies-necessary-self-atoms-are-atoms-r":
@@ -2398,31 +2526,48 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_self_atoms_are_strong_atoms_r_implies_necessary_self_atoms_are_atoms_r",
-    "lines": [373, 375],
+    "lines": [541, 543],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-self-atoms-are-atoms-t-implies-self-atoms-are-atoms-t":
   {"proofs":
    [{"name":
      "Classicism.Proofs.necessary_self_atoms_are_atoms_t_implies_self_atoms_are_atoms_t",
-     "lines": [311, 313],
+     "lines": [313, 315],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.necessary_self_atoms_are_atoms_t_implies_self_atoms_are_atoms_t",
-    "lines": [139, 141],
+    "lines": [275, 277],
+    "file": "Classicism/MapAtoms.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "necessary-self-atoms-are-atoms-t-and-necessary-bf-imply-necessary-self-atoms-are-atoms-r":
+  {"proofs":
+   [{"name": "Classicism.Meta.AxiomSet.entails_ofPure_of_unbox",
+     "lines": [86, 93],
+     "file": "Classicism/Results/Boxed.lean"},
+    {"name": "Classicism.Meta.AxiomSet.unbox",
+     "lines": [51, 52],
+     "file": "Classicism/Results/Boxed.lean"},
+    {"name": "Classicism.Meta.AxiomSet.unbox_entails_ofPure",
+     "lines": [78, 84],
+     "file": "Classicism/Results/Boxed.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.necessary_self_atoms_are_atoms_t_and_necessary_bf_imply_necessary_self_atoms_are_atoms_r",
+    "lines": [537, 539],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-self-atoms-are-atoms-r-implies-self-atoms-are-atoms-r":
   {"proofs":
    [{"name":
      "Classicism.Proofs.necessary_self_atoms_are_atoms_r_implies_self_atoms_are_atoms_r",
-     "lines": [296, 298],
+     "lines": [298, 300],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.necessary_self_atoms_are_atoms_r_implies_self_atoms_are_atoms_r",
-    "lines": [135, 137],
+    "lines": [271, 273],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-self-atoms-are-atoms-r-implies-necessary-self-atoms-are-atoms-t":
@@ -2439,19 +2584,36 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_self_atoms_are_atoms_r_implies_necessary_self_atoms_are_atoms_t",
-    "lines": [369, 371],
+    "lines": [533, 535],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-self-atomicity-t-implies-self-atomicity-t":
   {"proofs":
    [{"name":
      "Classicism.Proofs.necessary_self_atomicity_t_implies_self_atomicity_t",
-     "lines": [302, 304],
+     "lines": [304, 306],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.necessary_self_atomicity_t_implies_self_atomicity_t",
-    "lines": [131, 133],
+    "lines": [267, 269],
+    "file": "Classicism/MapAtoms.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "necessary-self-atomicity-t-implies-necessary-two-hat-implies-nd":
+  {"proofs":
+   [{"name": "Classicism.Meta.AxiomSet.entails_ofPure_of_unbox",
+     "lines": [86, 93],
+     "file": "Classicism/Results/Boxed.lean"},
+    {"name": "Classicism.Meta.AxiomSet.unbox",
+     "lines": [51, 52],
+     "file": "Classicism/Results/Boxed.lean"},
+    {"name": "Classicism.Meta.AxiomSet.unbox_entails_ofPure",
+     "lines": [78, 84],
+     "file": "Classicism/Results/Boxed.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.necessary_self_atomicity_t_implies_necessary_two_hat_implies_nd",
+    "lines": [529, 531],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-self-atomicity-t-implies-necessary-atoms-are-self-atoms-t":
@@ -2468,7 +2630,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_self_atomicity_t_implies_necessary_atoms_are_self_atoms_t",
-    "lines": [365, 367],
+    "lines": [525, 527],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-self-atomicity-t-and-necessary-self-atoms-are-strong-atoms-t-imply-necessary-strong-atomicity-t":
@@ -2485,7 +2647,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_self_atomicity_t_and_necessary_self_atoms_are_strong_atoms_t_imply_necessary_strong_atomicity_t",
-    "lines": [361, 363],
+    "lines": [521, 523],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-self-atomicity-t-and-necessary-self-atoms-are-atoms-t-imply-necessary-atomicity-t":
@@ -2502,19 +2664,36 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_self_atomicity_t_and_necessary_self_atoms_are_atoms_t_imply_necessary_atomicity_t",
-    "lines": [357, 359],
+    "lines": [517, 519],
+    "file": "Classicism/MapAtoms.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "necessary-self-atomicity-t-and-necessary-bf-imply-necessary-self-atomicity-r":
+  {"proofs":
+   [{"name": "Classicism.Meta.AxiomSet.entails_ofPure_of_unbox",
+     "lines": [86, 93],
+     "file": "Classicism/Results/Boxed.lean"},
+    {"name": "Classicism.Meta.AxiomSet.unbox",
+     "lines": [51, 52],
+     "file": "Classicism/Results/Boxed.lean"},
+    {"name": "Classicism.Meta.AxiomSet.unbox_entails_ofPure",
+     "lines": [78, 84],
+     "file": "Classicism/Results/Boxed.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.necessary_self_atomicity_t_and_necessary_bf_imply_necessary_self_atomicity_r",
+    "lines": [513, 515],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-self-atomicity-r-implies-self-atomicity-r":
   {"proofs":
    [{"name":
      "Classicism.Proofs.necessary_self_atomicity_r_implies_self_atomicity_r",
-     "lines": [287, 289],
+     "lines": [289, 291],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.necessary_self_atomicity_r_implies_self_atomicity_r",
-    "lines": [127, 129],
+    "lines": [263, 265],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-self-atomicity-r-implies-necessary-self-atomicity-t":
@@ -2531,7 +2710,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_self_atomicity_r_implies_necessary_self_atomicity_t",
-    "lines": [353, 355],
+    "lines": [509, 511],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-self-atomicity-r-implies-necessary-atoms-are-self-atoms-r":
@@ -2548,7 +2727,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_self_atomicity_r_implies_necessary_atoms_are_self_atoms_r",
-    "lines": [349, 351],
+    "lines": [505, 507],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-self-atomicity-r-and-necessary-self-atoms-are-strong-atoms-r-imply-necessary-strong-atomicity-r":
@@ -2565,7 +2744,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_self_atomicity_r_and_necessary_self_atoms_are_strong_atoms_r_imply_necessary_strong_atomicity_r",
-    "lines": [345, 347],
+    "lines": [501, 503],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-self-atomicity-r-and-necessary-self-atoms-are-atoms-r-imply-necessary-atomicity-r":
@@ -2582,7 +2761,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_self_atomicity_r_and_necessary_self_atoms_are_atoms_r_imply_necessary_atomicity_r",
-    "lines": [341, 343],
+    "lines": [497, 499],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-rigid-rigidity-r-implies-rigid-rigidity-r":
@@ -2860,12 +3039,12 @@
   {"proofs":
    [{"name":
      "Classicism.Proofs.necessary_modal_five_implies_necessary_self_atoms_are_strong_atoms_r",
-     "lines": [484, 487],
+     "lines": [486, 489],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.necessary_modal_five_implies_necessary_self_atoms_are_strong_atoms_r",
-    "lines": [123, 125],
+    "lines": [259, 261],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-modal-five-implies-necessary-self-atoms-are-atoms-r":
@@ -2882,7 +3061,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_modal_five_implies_necessary_self_atoms_are_atoms_r",
-    "lines": [337, 339],
+    "lines": [493, 495],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-modal-five-implies-necessary-modal-b":
@@ -3378,7 +3557,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_barcan_t_implies_necessary_atoms_are_strong_atoms_t",
-    "lines": [333, 335],
+    "lines": [489, 491],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-barcan-t-implies-barcan-t":
@@ -3395,12 +3574,12 @@
   {"proofs":
    [{"name":
      "Classicism.Proofs.necessary_barcan_t_and_necessary_actuality_imply_necessary_self_atomicity_t",
-     "lines": [396, 401],
+     "lines": [398, 403],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.necessary_barcan_t_and_necessary_actuality_imply_necessary_self_atomicity_t",
-    "lines": [119, 121],
+    "lines": [255, 257],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-barcan-relational-implies-necessary-barcan-t":
@@ -3429,7 +3608,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_barcan_relational_implies_necessary_atoms_are_strong_atoms_r",
-    "lines": [329, 331],
+    "lines": [485, 487],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-barcan-relational-implies-barcan-relational":
@@ -3514,19 +3693,19 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_atoms_are_strong_atoms_t_implies_necessary_atoms_are_self_atoms_t",
-    "lines": [325, 327],
+    "lines": [481, 483],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atoms-are-strong-atoms-t-implies-atoms-are-strong-atoms-t":
   {"proofs":
    [{"name":
      "Classicism.Proofs.necessary_atoms_are_strong_atoms_t_implies_atoms_are_strong_atoms_t",
-     "lines": [308, 310],
+     "lines": [310, 312],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.necessary_atoms_are_strong_atoms_t_implies_atoms_are_strong_atoms_t",
-    "lines": [115, 117],
+    "lines": [251, 253],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atoms-are-strong-atoms-t-and-necessary-self-atoms-are-atoms-t-imply-necessary-self-atoms-are-strong-atoms-t":
@@ -3543,7 +3722,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_atoms_are_strong_atoms_t_and_necessary_self_atoms_are_atoms_t_imply_necessary_self_atoms_are_strong_atoms_t",
-    "lines": [321, 323],
+    "lines": [477, 479],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atoms-are-strong-atoms-t-and-necessary-actuality-imply-necessary-strong-actuality":
@@ -3560,7 +3739,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_atoms_are_strong_atoms_t_and_necessary_actuality_imply_necessary_strong_actuality",
-    "lines": [317, 319],
+    "lines": [473, 475],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atoms-are-strong-atoms-r-implies-necessary-atoms-are-strong-atoms-t":
@@ -3577,7 +3756,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_atoms_are_strong_atoms_r_implies_necessary_atoms_are_strong_atoms_t",
-    "lines": [313, 315],
+    "lines": [469, 471],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atoms-are-strong-atoms-r-implies-necessary-atoms-are-self-atoms-r":
@@ -3594,19 +3773,19 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_atoms_are_strong_atoms_r_implies_necessary_atoms_are_self_atoms_r",
-    "lines": [309, 311],
+    "lines": [465, 467],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atoms-are-strong-atoms-r-implies-atoms-are-strong-atoms-r":
   {"proofs":
    [{"name":
      "Classicism.Proofs.necessary_atoms_are_strong_atoms_r_implies_atoms_are_strong_atoms_r",
-     "lines": [293, 295],
+     "lines": [295, 297],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.necessary_atoms_are_strong_atoms_r_implies_atoms_are_strong_atoms_r",
-    "lines": [111, 113],
+    "lines": [247, 249],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atoms-are-strong-atoms-r-and-necessary-self-atoms-are-atoms-r-imply-necessary-self-atoms-are-strong-atoms-r":
@@ -3623,19 +3802,19 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_atoms_are_strong_atoms_r_and_necessary_self_atoms_are_atoms_r_imply_necessary_self_atoms_are_strong_atoms_r",
-    "lines": [305, 307],
+    "lines": [461, 463],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atoms-are-self-atoms-t-implies-atoms-are-self-atoms-t":
   {"proofs":
    [{"name":
      "Classicism.Proofs.necessary_atoms_are_self_atoms_t_implies_atoms_are_self_atoms_t",
-     "lines": [305, 307],
+     "lines": [307, 309],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.necessary_atoms_are_self_atoms_t_implies_atoms_are_self_atoms_t",
-    "lines": [107, 109],
+    "lines": [243, 245],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atoms-are-self-atoms-t-and-necessary-self-atoms-are-strong-atoms-t-imply-necessary-atoms-are-strong-atoms-t":
@@ -3652,7 +3831,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_atoms_are_self_atoms_t_and_necessary_self_atoms_are_strong_atoms_t_imply_necessary_atoms_are_strong_atoms_t",
-    "lines": [301, 303],
+    "lines": [457, 459],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atoms-are-self-atoms-r-implies-necessary-atoms-are-self-atoms-t":
@@ -3669,19 +3848,19 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_atoms_are_self_atoms_r_implies_necessary_atoms_are_self_atoms_t",
-    "lines": [297, 299],
+    "lines": [453, 455],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atoms-are-self-atoms-r-implies-atoms-are-self-atoms-r":
   {"proofs":
    [{"name":
      "Classicism.Proofs.necessary_atoms_are_self_atoms_r_implies_atoms_are_self_atoms_r",
-     "lines": [290, 292],
+     "lines": [292, 294],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.necessary_atoms_are_self_atoms_r_implies_atoms_are_self_atoms_r",
-    "lines": [103, 105],
+    "lines": [239, 241],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atoms-are-self-atoms-r-and-necessary-self-atoms-are-strong-atoms-r-imply-necessary-atoms-are-strong-atoms-r":
@@ -3698,19 +3877,19 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_atoms_are_self_atoms_r_and_necessary_self_atoms_are_strong_atoms_r_imply_necessary_atoms_are_strong_atoms_r",
-    "lines": [293, 295],
+    "lines": [449, 451],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atomlessness-implies-necessary-self-atoms-are-strong-atoms-r":
   {"proofs":
    [{"name":
      "Classicism.Proofs.necessary_atomlessness_implies_necessary_self_atoms_are_strong_atoms_r",
-     "lines": [539, 542],
+     "lines": [541, 544],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.necessary_atomlessness_implies_necessary_self_atoms_are_strong_atoms_r",
-    "lines": [99, 101],
+    "lines": [235, 237],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atomlessness-implies-necessary-atoms-are-strong-atoms-r":
@@ -3727,7 +3906,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_atomlessness_implies_necessary_atoms_are_strong_atoms_r",
-    "lines": [289, 291],
+    "lines": [445, 447],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atomicity-t-implies-atomicity-t":
@@ -3794,7 +3973,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_atomicity_t_and_necessary_atoms_are_strong_atoms_t_imply_necessary_strong_atomicity_t",
-    "lines": [285, 287],
+    "lines": [441, 443],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atomicity-t-and-necessary-atoms-are-self-atoms-t-imply-necessary-self-atomicity-t":
@@ -3811,7 +3990,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_atomicity_t_and_necessary_atoms_are_self_atoms_t_imply_necessary_self_atomicity_t",
-    "lines": [281, 283],
+    "lines": [437, 439],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atomicity-r-implies-necessary-atomicity-t":
@@ -3850,7 +4029,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_atomicity_r_and_necessary_atoms_are_strong_atoms_r_imply_necessary_strong_atomicity_r",
-    "lines": [277, 279],
+    "lines": [433, 435],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atomicity-r-and-necessary-atoms-are-self-atoms-r-imply-necessary-self-atomicity-r":
@@ -3867,7 +4046,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_atomicity_r_and_necessary_atoms_are_self_atoms_r_imply_necessary_self_atomicity_r",
-    "lines": [273, 275],
+    "lines": [429, 431],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atomicity-and-necessary-rigid-comprehension-imply-necessary-rigid-power":
@@ -4023,7 +4202,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_actuality_and_necessary_self_atoms_are_strong_atoms_t_imply_necessary_strong_actuality",
-    "lines": [269, 271],
+    "lines": [425, 427],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-actuality-and-necessary-bf-t-imply-necessary-strong-actuality":
@@ -4172,11 +4351,11 @@
   "modal-five-implies-self-atoms-are-atoms-r":
   {"proofs":
    [{"name": "Classicism.Proofs.modal_five_implies_self_atoms_are_atoms_r",
-     "lines": [452, 466],
+     "lines": [454, 468],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name": "Classicism.Map.modal_five_implies_self_atoms_are_atoms_r",
-    "lines": [95, 97],
+    "lines": [231, 233],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "modal-five-implies-modal-b":
@@ -4556,11 +4735,11 @@
   "five-and-self-atomicity-t-imply-necessary-b":
   {"proofs":
    [{"name": "Classicism.Proofs.five_and_self_atomicity_t_imply_necessary_b",
-     "lines": [445, 447],
+     "lines": [447, 449],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name": "Classicism.Map.five_and_self_atomicity_t_imply_necessary_b",
-    "lines": [91, 93],
+    "lines": [227, 229],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "extensionality-r-implies-rigid-comprehension-r":
@@ -5041,23 +5220,23 @@
   "barcan-t-implies-atoms-are-strong-atoms-t":
   {"proofs":
    [{"name": "Classicism.Proofs.barcan_t_implies_atoms_are_strong_atoms_t",
-     "lines": [403, 407],
+     "lines": [405, 409],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name": "Classicism.Map.barcan_t_implies_atoms_are_strong_atoms_t",
-    "lines": [87, 89],
+    "lines": [223, 225],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "barcan-t-and-necessary-actuality-imply-self-atomicity-t":
   {"proofs":
    [{"name":
      "Classicism.Proofs.barcan_t_and_necessary_actuality_imply_self_atomicity_t",
-     "lines": [386, 394],
+     "lines": [388, 396],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.barcan_t_and_necessary_actuality_imply_self_atomicity_t",
-    "lines": [83, 85],
+    "lines": [219, 221],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "barcan-relational-implies-barcan-t":
@@ -5074,11 +5253,11 @@
   {"proofs":
    [{"name":
      "Classicism.Proofs.barcan_relational_implies_atoms_are_strong_atoms_r",
-     "lines": [409, 413],
+     "lines": [411, 415],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name": "Classicism.Map.barcan_relational_implies_atoms_are_strong_atoms_r",
-    "lines": [79, 81],
+    "lines": [215, 217],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "barcan-r-implies-functionality-r":
@@ -5161,108 +5340,108 @@
   {"proofs":
    [{"name":
      "Classicism.Proofs.atoms_are_strong_atoms_t_implies_atoms_are_self_atoms_t",
-     "lines": [234, 237],
+     "lines": [236, 239],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.atoms_are_strong_atoms_t_implies_atoms_are_self_atoms_t",
-    "lines": [75, 77],
+    "lines": [211, 213],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atoms-are-strong-atoms-t-and-self-atoms-are-atoms-t-imply-self-atoms-are-strong-atoms-t":
   {"proofs":
    [{"name":
      "Classicism.Proofs.atoms_are_strong_atoms_t_and_self_atoms_are_atoms_t_imply_self_atoms_are_strong_atoms_t",
-     "lines": [229, 232],
+     "lines": [231, 234],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.atoms_are_strong_atoms_t_and_self_atoms_are_atoms_t_imply_self_atoms_are_strong_atoms_t",
-    "lines": [71, 73],
+    "lines": [207, 209],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atoms-are-strong-atoms-t-and-actuality-imply-strong-actuality":
   {"proofs":
    [{"name":
      "Classicism.Proofs.atoms_are_strong_atoms_t_and_actuality_imply_strong_actuality",
-     "lines": [326, 330],
+     "lines": [328, 332],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.atoms_are_strong_atoms_t_and_actuality_imply_strong_actuality",
-    "lines": [67, 69],
+    "lines": [203, 205],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atoms-are-strong-atoms-r-implies-atoms-are-strong-atoms-t":
   {"proofs":
    [{"name":
      "Classicism.Proofs.atoms_are_strong_atoms_r_implies_atoms_are_strong_atoms_t",
-     "lines": [275, 277],
+     "lines": [277, 279],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.atoms_are_strong_atoms_r_implies_atoms_are_strong_atoms_t",
-    "lines": [63, 65],
+    "lines": [199, 201],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atoms-are-strong-atoms-r-implies-atoms-are-self-atoms-r":
   {"proofs":
    [{"name":
      "Classicism.Proofs.atoms_are_strong_atoms_r_implies_atoms_are_self_atoms_r",
-     "lines": [91, 94],
+     "lines": [93, 96],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.atoms_are_strong_atoms_r_implies_atoms_are_self_atoms_r",
-    "lines": [59, 61],
+    "lines": [195, 197],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atoms-are-strong-atoms-r-and-self-atoms-are-atoms-r-imply-self-atoms-are-strong-atoms-r":
   {"proofs":
    [{"name":
      "Classicism.Proofs.atoms_are_strong_atoms_r_and_self_atoms_are_atoms_r_imply_self_atoms_are_strong_atoms_r",
-     "lines": [86, 89],
+     "lines": [88, 91],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.atoms_are_strong_atoms_r_and_self_atoms_are_atoms_r_imply_self_atoms_are_strong_atoms_r",
-    "lines": [55, 57],
+    "lines": [191, 193],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atoms-are-self-atoms-t-and-self-atoms-are-strong-atoms-t-imply-atoms-are-strong-atoms-t":
   {"proofs":
    [{"name":
      "Classicism.Proofs.atoms_are_self_atoms_t_and_self_atoms_are_strong_atoms_t_imply_atoms_are_strong_atoms_t",
-     "lines": [224, 227],
+     "lines": [226, 229],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.atoms_are_self_atoms_t_and_self_atoms_are_strong_atoms_t_imply_atoms_are_strong_atoms_t",
-    "lines": [51, 53],
+    "lines": [187, 189],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atoms-are-self-atoms-r-implies-atoms-are-self-atoms-t":
   {"proofs":
    [{"name":
      "Classicism.Proofs.atoms_are_self_atoms_r_implies_atoms_are_self_atoms_t",
-     "lines": [272, 274],
+     "lines": [274, 276],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.atoms_are_self_atoms_r_implies_atoms_are_self_atoms_t",
-    "lines": [47, 49],
+    "lines": [183, 185],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atoms-are-self-atoms-r-and-self-atoms-are-strong-atoms-r-imply-atoms-are-strong-atoms-r":
   {"proofs":
    [{"name":
      "Classicism.Proofs.atoms_are_self_atoms_r_and_self_atoms_are_strong_atoms_r_imply_atoms_are_strong_atoms_r",
-     "lines": [80, 83],
+     "lines": [82, 85],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.atoms_are_self_atoms_r_and_self_atoms_are_strong_atoms_r_imply_atoms_are_strong_atoms_r",
-    "lines": [43, 45],
+    "lines": [179, 181],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atomlessness-implies-axiom-of-infinity-t":
@@ -5278,11 +5457,11 @@
   "atomlessness-implies-atoms-are-strong-atoms-r":
   {"proofs":
    [{"name": "Classicism.Proofs.atomlessness_implies_atoms_are_strong_atoms_r",
-     "lines": [527, 529],
+     "lines": [529, 531],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name": "Classicism.Map.atomlessness_implies_atoms_are_strong_atoms_r",
-    "lines": [39, 41],
+    "lines": [175, 177],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atomicity-t-incompatible-with-atomlessness":
@@ -5344,24 +5523,24 @@
   {"proofs":
    [{"name":
      "Classicism.Proofs.atomicity_t_and_atoms_are_strong_atoms_t_imply_strong_atomicity_t",
-     "lines": [219, 222],
+     "lines": [221, 224],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.atomicity_t_and_atoms_are_strong_atoms_t_imply_strong_atomicity_t",
-    "lines": [35, 37],
+    "lines": [171, 173],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atomicity-t-and-atoms-are-self-atoms-t-imply-self-atomicity-t":
   {"proofs":
    [{"name":
      "Classicism.Proofs.atomicity_t_and_atoms_are_self_atoms_t_imply_self_atomicity_t",
-     "lines": [214, 217],
+     "lines": [216, 219],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.atomicity_t_and_atoms_are_self_atoms_t_imply_self_atomicity_t",
-    "lines": [31, 33],
+    "lines": [167, 169],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atomicity-r-implies-atomicity-t":
@@ -5378,24 +5557,24 @@
   {"proofs":
    [{"name":
      "Classicism.Proofs.atomicity_r_and_atoms_are_strong_atoms_r_imply_strong_atomicity_r",
-     "lines": [73, 77],
+     "lines": [75, 79],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.atomicity_r_and_atoms_are_strong_atoms_r_imply_strong_atomicity_r",
-    "lines": [27, 29],
+    "lines": [163, 165],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atomicity-r-and-atoms-are-self-atoms-r-imply-self-atomicity-r":
   {"proofs":
    [{"name":
      "Classicism.Proofs.atomicity_r_and_atoms_are_self_atoms_r_imply_self_atomicity_r",
-     "lines": [66, 71],
+     "lines": [68, 73],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.atomicity_r_and_atoms_are_self_atoms_r_imply_self_atomicity_r",
-    "lines": [23, 25],
+    "lines": [159, 161],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atomicity-and-rigid-comprehension-imply-weakly-rigid-power":
@@ -5549,12 +5728,12 @@
   {"proofs":
    [{"name":
      "Classicism.Proofs.actuality_and_self_atoms_are_strong_atoms_t_imply_strong_actuality",
-     "lines": [320, 324],
+     "lines": [322, 326],
      "file": "Classicism/Results/Records/Atoms.lean"}],
    "certificate":
    {"name":
     "Classicism.Map.actuality_and_self_atoms_are_strong_atoms_t_imply_strong_actuality",
-    "lines": [19, 21],
+    "lines": [155, 157],
     "file": "Classicism/MapAtoms.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "actuality-and-distinctness-preserving-collapse-imply-strong-actuality":
@@ -14771,7 +14950,105 @@
     {"name": "Classicism.Map.actuality.actual_profile",
      "lines": [1152, 1155],
      "file": "Classicism/Map.lean",
-     "axioms": ["propext", "Quot.sound"]}}}},
+     "axioms": ["propext", "Quot.sound"]}}},
+  "AtomsConsistency":
+  {"not-strongAtomicityT-consistent":
+   {"proofs":
+    [{"name": "Classicism.Meta.Intensional.Perms.model_isModel",
+      "lines": [76, 76],
+      "file": "Classicism/Models/Permutations.lean"},
+     {"name": "Classicism.Meta.Intensional.Perms.not_atomicityT",
+      "lines": [223, 267],
+      "file": "Classicism/Models/Permutations.lean"},
+     {"name": "Classicism.Proofs.strong_atomicity_t_implies_atomicity_t",
+      "lines": [344, 349],
+      "file": "Classicism/Results/Records/Lattice.lean"}],
+    "definitions": [],
+    "certificate":
+    {"name": "Classicism.Map.AtomsConsistency.not_strongAtomicityT_consistent",
+     "lines": [49, 56],
+     "file": "Classicism/MapAtoms.lean",
+     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
+   "not-selfAtomicityT":
+   {"proofs":
+    [{"name": "Classicism.Meta.IEnv.get_map",
+      "lines": [37, 40],
+      "file": "Classicism/Semantics/Env.lean"},
+     {"name": "Classicism.Meta.Intensional.Premodel.incl_map",
+      "lines": [199, 199],
+      "file": "Classicism/Semantics/Intensional.lean"}],
+    "definitions": [],
+    "certificate":
+    {"name": "Classicism.Map.AtomsConsistency.not_selfAtomicityT",
+     "lines": [77, 116],
+     "file": "Classicism/MapAtoms.lean",
+     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
+   "not-atomsAreStrongAtomsT-consistent":
+   {"proofs":
+    [{"name": "Classicism.Meta.Intensional.MSet.model_isModel",
+      "lines": [82, 82],
+      "file": "Classicism/Semantics/IntensionalExamples.lean"},
+     {"name": "Classicism.Proofs.necessary_atomicity_r_implies_atomicity_r",
+      "lines": [315, 317],
+      "file": "Classicism/Results/Records/Lattice.lean"},
+     {"name": "Classicism.Proofs.atomicity_r_implies_atomicity_t",
+      "lines": [306, 307],
+      "file": "Classicism/Results/Records/Lattice.lean"},
+     {"name": "Classicism.Map.Arguments.full_atomicity.necessary_atomicity_r",
+      "lines": [210, 215],
+      "file": "Classicism/MapArguments.lean"},
+     {"name": "Classicism.Meta.Intensional.MSet.model_full",
+      "lines": [84, 84],
+      "file": "Classicism/Semantics/IntensionalExamples.lean"},
+     {"name":
+      "Classicism.Map.Arguments.nonepic_strong_atomicity.strong_atomicity_t",
+      "lines": [291, 296],
+      "file": "Classicism/MapArguments.lean"},
+     {"name": "Classicism.Meta.Intensional.FullActionModels.idem_nonepic",
+      "lines": [583, 587],
+      "file": "Classicism/Models/FullActionModels.lean"},
+     {"name":
+      "Classicism.Proofs.atomicity_t_and_atoms_are_strong_atoms_t_imply_strong_atomicity_t",
+      "lines": [221, 224],
+      "file": "Classicism/Results/Records/Atoms.lean"}],
+    "definitions": [],
+    "certificate":
+    {"name":
+     "Classicism.Map.AtomsConsistency.not_atomsAreStrongAtomsT_consistent",
+     "lines": [58, 75],
+     "file": "Classicism/MapAtoms.lean",
+     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
+   "not-atomsAreSelfAtomsT-consistent":
+   {"proofs":
+    [{"name": "Classicism.Meta.Intensional.MSet.model_isModel",
+      "lines": [82, 82],
+      "file": "Classicism/Semantics/IntensionalExamples.lean"},
+     {"name": "Classicism.Proofs.necessary_atomicity_r_implies_atomicity_r",
+      "lines": [315, 317],
+      "file": "Classicism/Results/Records/Lattice.lean"},
+     {"name": "Classicism.Proofs.atomicity_r_implies_atomicity_t",
+      "lines": [306, 307],
+      "file": "Classicism/Results/Records/Lattice.lean"},
+     {"name": "Classicism.Map.Arguments.full_atomicity.necessary_atomicity_r",
+      "lines": [210, 215],
+      "file": "Classicism/MapArguments.lean"},
+     {"name": "Classicism.Meta.Intensional.MSet.model_full",
+      "lines": [84, 84],
+      "file": "Classicism/Semantics/IntensionalExamples.lean"},
+     {"name": "Classicism.Meta.Intensional.Idem.k_ne_one",
+      "lines": [140, 140],
+      "file": "Classicism/Semantics/IntensionalExamples.lean"},
+     {"name":
+      "Classicism.Proofs.atomicity_t_and_atoms_are_self_atoms_t_imply_self_atomicity_t",
+      "lines": [216, 219],
+      "file": "Classicism/Results/Records/Atoms.lean"}],
+    "definitions": [],
+    "certificate":
+    {"name":
+     "Classicism.Map.AtomsConsistency.not_atomsAreSelfAtomsT_consistent",
+     "lines": [118, 136],
+     "file": "Classicism/MapAtoms.lean",
+     "axioms": ["propext", "Classical.choice", "Quot.sound"]}}}},
  "definitions":
  {"Classicism.P.Zorn":
   {"name": "Classicism.P.Zorn",
