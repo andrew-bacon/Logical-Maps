@@ -6,7 +6,7 @@ certificate:
   recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 25 October 2026
   checked_by: []
   date: '2026-10-25'
-  lean: stated
+  lean: none
 sources:
 - GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, Tame Rigidity and Rigid Power without Weakly Rigid Power,
   research note of 23 October 2026, §§2–9 (unpaginated), in Daniel Kodsi's submission of 24 October 2026

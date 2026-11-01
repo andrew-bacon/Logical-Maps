@@ -8,7 +8,7 @@ certificate:
   checked_by:
   - Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, audit of 29 October 2026
   date: '2026-10-29'
-  lean: none
+  lean: stated
 sources:
 - >-
   GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, Stitched forcing model with a coalesced middle world,
