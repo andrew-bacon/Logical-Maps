@@ -7,6 +7,7 @@ import Classicism.Models.FiniteCompressionSeparation
 import Classicism.Models.FixedPointEntranceBarcan
 import Classicism.Models.FixedPointEntranceRelationalBarcan
 import Classicism.Models.FixedPointEntranceChoice
+import Classicism.Models.CoalescedFinite
 import Mathlib.Data.Fintype.Powerset
 import Mathlib.Data.Finite.Sigma
 import Mathlib.Data.Finite.Prod
@@ -305,6 +306,20 @@ theorem rigid_power_r : Statements.Models.finite_support_pair_injections_or_coll
   verdict_fails M <| not_holdsAx_of ⟨.arr .e .t, by simp, rfl⟩ Monoids.PairInjCol.not_rigidPower
 
 end finite_support_pair_injections_or_collapses
+
+namespace coalesced_all_finite_individual_domains
+
+local notation "M" => Classicism.Meta.Coalesced.AllFinite.isModel
+
+/-- **Every truth is necessarily 5-necessary** at the root of the coalesced sum over the finite
+individual domains (the record's argument `five-necessity-is-truth`): Distinctness-Preserving
+Collapse holds at every world, the actual world being isolated at the root and in each
+one-world component (`AllFinite.holds_necessary_truth_implies_five_necessity`). -/
+theorem necessary_truth_implies_five_necessity :
+    Statements.Models.coalesced_all_finite_individual_domains.necessary_truth_implies_five_necessity :=
+  verdict_holds M Meta.Coalesced.AllFinite.holds_necessary_truth_implies_five_necessity
+
+end coalesced_all_finite_individual_domains
 
 end Classicism.Map.Models
 

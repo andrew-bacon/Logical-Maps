@@ -6,7 +6,7 @@ certificate:
   recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026
   checked_by: []
   date: '2026-09-20'
-  lean: stated
+  lean: none
 sources:
 - Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, construction and verification of 20 September 2026 (see the write-up).
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §3.2, Definition 3.6 and Proposition 3.7,
@@ -44,6 +44,22 @@ meets:
     root domains are the fullest.
   free-root-component: An entity of a function type has an arbitrary root component defined on whole threads.
   sigma-top: This is the interpretation the definition fixes.
+  full-model: >-
+    Every component is full, so every intension at the root has components in the components'
+    domains, and the root domains, being the fullest, contain it.
+  full-action-model: It is the coalesced sum's action model on the sum of the categories, full at every object.
+  extensionally-full: It is full.
+  infinitely-many-individuals: The root individuals are the threads, uncountably many.
+  infinitely-many-propositions: >-
+    The root propositions true at exactly one distinguished arrow are infinitely many.
+  epic-arrows: >-
+    Between two objects there is at most one arrow, so every arrow is an epimorphism; the identities
+    act as the identity, and the distinguished arrow into $M_n$ projects the threads onto
+    $\{1,\ldots,n\}$, surjectively.
+  unretracted-arrow: No arrow returns to the root, so no distinguished arrow has a retraction.
+  fewer-propositions-after: >-
+    The root has three distinct propositions, and the one-world component $M_1$, from which no
+    arrow leaves, has only two.
 arguments:
 - holds:
   - axiom-of-infinity-e
@@ -215,3 +231,25 @@ history:
   - necessary-strong-atomicity-r
   violates:
   - pure-b-r
+
+# The model in Lean (Classicism/Models/CoalescedFinite.lean) and its own verdict proved there
+# (Classicism/MapModels.lean); statuses are written by lean-check --update. The verdicts the map's
+# general arguments give it are certified from the arguments' (MapDerived.lean), with the proofs
+# under `meets` that it meets their conditions.
+lean:
+  model: Classicism.Meta.Coalesced.AllFinite.model
+  is_model: Classicism.Meta.Coalesced.AllFinite.isModel
+  meets:
+    full-model: Classicism.Meta.Coalesced.AllFinite.full
+    full-action-model: Classicism.Meta.Coalesced.AllFinite.full
+    extensionally-full: Classicism.Meta.Intensional.Premodel.Full.extFull _ Classicism.Meta.Coalesced.AllFinite.full
+    infinitely-many-individuals: Classicism.Meta.Coalesced.AllFinite.infinitelyManyIndividuals
+    infinitely-many-propositions: Classicism.Meta.Coalesced.AllFinite.infinitelyManyPropositions
+    epic-arrows: Classicism.Meta.Coalesced.AllFinite.epicArrows
+    unretracted-arrow: Classicism.Meta.Coalesced.AllFinite.unretractedArrow
+    fewer-propositions-after: Classicism.Meta.Coalesced.AllFinite.fewerPropositionsAfter
+    actual-world-isolated: Classicism.Meta.Coalesced.AllFinite.actualWorldIsolated
+  verdicts:
+  - holds: necessary-truth-implies-five-necessity
+    ref: Classicism.Map.Models.coalesced_all_finite_individual_domains.necessary_truth_implies_five_necessity
+    status: verified
