@@ -2,6 +2,7 @@ import Classicism.Coalesced
 import Classicism.Coalesced.PinnedBarcan
 import Classicism.Completeness.Completeness
 import Classicism.Results.SentenceSchemas.PossibilityDistinctness
+import Classicism.Semantics.FullModels
 
 /-!
 # The interpretation-arrow members of `coalesced-sums`
@@ -92,6 +93,56 @@ theorem holdsAx_distinctness_pure (hS : Sig.Closed) (hs : sel.AdmitsConsts) (ne 
     (possibility_entails_distinctness _) hP
 
 end Family
+
+/-! ### The actual world, with only the identity at the root -/
+
+section ActualWorld
+
+variable {Sig : Signature} {ι : Type} {C : ι → Type} [∀ k, SmallCategory (C k)] {A : ∀ k, Premodel Sig (C k)}
+
+/-- The actual-world proposition at a root with only the identity: true at the root's identity
+arrow and at no arrow into a component, as a set of root tuples. -/
+def actualTuples {RA : Type} : Set (RootTuple (interpArrows A (ConstMaps.trivial Sig)) A .t RA)
+  | .inl _ => True
+  | .inr _ => False
+
+theorem rootTransport_actualTuples {RA : Type} {k : ι} {V : C k} (J : Interp A k V) :
+    rootTransport (actualTuples (A := A) (RA := RA)) J = ∅ := rfl
+
+/-- In a component that is a model everywhere, `⊥` is in the domain at every object. -/
+theorem exists_incl_empty (hA : ModelsEverywhere A) (k : ι) (V : C k) : ∃ y, (A k).incl .t V y = ∅ := by
+  obtain ⟨y, hy⟩ := hA k V (𝟙 V) (Term.bot : Sentence Signature.pure) .nil
+  exact ⟨y, hy.trans (((A k).reductAt V).sem_bot (hA k V) (𝟙 V) .nil)⟩
+
+theorem landsT_actualTuples {RA : Type} (hA : ModelsEverywhere A) : LandsT (actualTuples (A := A) (RA := RA)) :=
+  fun {k V} J => (exists_incl_empty hA k V).imp fun _ h => h.trans (rootTransport_actualTuples (A := A) (RA := RA) J).symm
+
+variable {sel : Selector (interpArrows A (ConstMaps.trivial Sig)) A} (hs : sel.AdmitsConsts)
+  (ne : Nonempty {c : Sig.Const // Sig.typeOf c = .e})
+
+/-- **The actual world is isolated** at a root with only the identity, when the selector admits
+the actual-world proposition: it is true, it is the root's identity alone, and nothing in a
+component sees the root. -/
+theorem actualWorldIsolated_interpSum (hA : ModelsEverywhere A) (hX : actualTuples ∈ sel.sel .t PUnit) :
+    (interpSum sel hs ne).ActualWorldIsolated := by
+  refine ⟨⟨actualTuples, landsT_actualTuples hA, hX⟩, trivial, fun p hp => ?_, fun {V U} i j hi => ?_⟩
+  · rintro ⟨_ | _, ⟨⟩, i⟩ h
+    · cases i
+      exact hp
+    · exact h.elim
+  · match V, U, i, j with
+    | .root, .root, _, _ => exact (hi trivial).elim
+    | _, .of _, _, _ => exact fun h => h
+    | .of _, .root, _, e => exact nomatch e
+
+theorem definableSel_actualTuples (hA : ModelsEverywhere A) : actualTuples ∈ (definableSel A).sel .t PUnit :=
+  ⟨Term.bot, fun k V J => (rootTransport_actualTuples J).trans
+    ((((A k).rebase V J).sem_bot ((A k).isModel_rebase V J (hA k V)) (𝟙 V) .nil).symm)⟩
+
+theorem pinnedSel_actualTuples : actualTuples ∈ (pinnedSel A (ConstMaps.trivial Sig)).sel .t PUnit :=
+  ⟨∅, Set.finite_empty, fun _ _ _ _ _ => rfl, fun _ _ _ => rfl⟩
+
+end ActualWorld
 
 /-! ### The signatures -/
 
@@ -201,6 +252,18 @@ theorem pinnedInterpRoot_distinctness :
 theorem pinnedSubstRoot_distinctness :
     pinnedSubstRoot.HoldsAx (AxiomSet.distinctness (AxiomSet.empty : AxiomSet Signature.plus)) :=
   holdsAx_distinctness Signature.plus_closed _ _ pinnedSubstRoot_isModel
+
+/-! ### The actual world at the interpretation-only roots -/
+
+/-- `coalesced-definable-root`: the actual world is isolated. -/
+theorem definableRoot_actualWorldIsolated : definableRoot.ActualWorldIsolated :=
+  actualWorldIsolated_interpSum definableSel_admitsConsts oneIndividual_ne (canonicalFamily_modelsEverywhere _)
+    (definableSel_actualTuples (canonicalFamily_modelsEverywhere _))
+
+/-- `coalesced-pinned-interpretations-root`: the actual world is isolated. -/
+theorem pinnedInterpRoot_actualWorldIsolated : pinnedInterpRoot.ActualWorldIsolated :=
+  actualWorldIsolated_interpSum pinnedSel_admitsConsts plus_ne (canonicalFamily_modelsEverywhere _)
+    pinnedSel_actualTuples
 
 /-! ### BF at the finitely pinned roots -/
 

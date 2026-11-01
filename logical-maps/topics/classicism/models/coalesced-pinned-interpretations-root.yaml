@@ -170,6 +170,8 @@ notes: 'Built on 19 October 2026 to show that Maximalism (pure, and for Σ) is c
 lean:
   model: Classicism.Meta.Coalesced.pinnedInterpRoot
   is_model: Classicism.Meta.Coalesced.pinnedInterpRoot_isModel
+  meets:
+    actual-world-isolated: Classicism.Meta.Coalesced.pinnedInterpRoot_actualWorldIsolated
   verdicts:
   - holds: barcan-r
     ref: Classicism.Map.Models.coalesced_pinned_interpretations_root.barcan_r

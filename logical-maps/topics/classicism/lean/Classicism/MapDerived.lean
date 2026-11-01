@@ -15,6 +15,14 @@ group's).
 namespace Classicism.Map.Models
 open Classicism
 
+/-- `coalesced-definable-root`: Truths are ND-necessary holds, by the argument `dpc-isolated-actual-world`. -/
+theorem coalesced_definable_root.distinctness_preserving_collapse : Statements.Models.coalesced_definable_root.distinctness_preserving_collapse :=
+  ⟨Classicism.Meta.Coalesced.definableRoot_isModel, Classicism.Map.Arguments.dpc_isolated_actual_world.distinctness_preserving_collapse (Classicism.Meta.Coalesced.definableRoot) (Classicism.Meta.Coalesced.definableRoot_isModel) (Classicism.Meta.Coalesced.definableRoot_actualWorldIsolated)⟩
+
+/-- `coalesced-pinned-interpretations-root`: Truths are ND-necessary holds, by the argument `dpc-isolated-actual-world`. -/
+theorem coalesced_pinned_interpretations_root.distinctness_preserving_collapse : Statements.Models.coalesced_pinned_interpretations_root.distinctness_preserving_collapse :=
+  ⟨Classicism.Meta.Coalesced.pinnedInterpRoot_isModel, Classicism.Map.Arguments.dpc_isolated_actual_world.distinctness_preserving_collapse (Classicism.Meta.Coalesced.pinnedInterpRoot) (Classicism.Meta.Coalesced.pinnedInterpRoot_isModel) (Classicism.Meta.Coalesced.pinnedInterpRoot_actualWorldIsolated)⟩
+
 /-- `finite-support-dyadic-roundings`: Actuality holds, by `finite-support-one-object`'s argument `actual-world`. -/
 theorem finite_support_dyadic_roundings.actuality : Statements.Models.finite_support_dyadic_roundings.actuality :=
   ⟨Classicism.Meta.Intensional.MonoidModel.model_isModel (Classicism.Meta.Intensional.Monoids.pow2), Classicism.Map.Arguments.finite_support_one_object.actual_world.actuality (Classicism.Meta.Intensional.Monoids.pow2) (Classicism.Meta.Intensional.MonoidModel.actualWorldPinned_of_onePinned _ Classicism.Meta.Intensional.Monoids.Pow2.onePinned)⟩

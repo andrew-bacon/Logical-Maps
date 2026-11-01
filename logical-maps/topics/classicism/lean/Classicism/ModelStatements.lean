@@ -180,6 +180,14 @@ def Models.symmetric_old_new_individuals.necessary_boolean_completeness_r : Prop
 def Models.symmetric_two_object_unpinned.necessary_boolean_completeness_r : Prop :=
   (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.SymIdeal.twoBase)).IsModel ∧ (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.SymIdeal.twoBase)).HoldsAx Classicism.P.NecBooleanCompleteness.schemaIn
 
+/-- `coalesced-definable-root`: Truths are ND-necessary holds. -/
+def Models.coalesced_definable_root.distinctness_preserving_collapse : Prop :=
+  (Classicism.Meta.Coalesced.definableRoot).IsModel ∧ (Classicism.Meta.Coalesced.definableRoot).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
+
+/-- `coalesced-pinned-interpretations-root`: Truths are ND-necessary holds. -/
+def Models.coalesced_pinned_interpretations_root.distinctness_preserving_collapse : Prop :=
+  (Classicism.Meta.Coalesced.pinnedInterpRoot).IsModel ∧ (Classicism.Meta.Coalesced.pinnedInterpRoot).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
+
 /-- `finite-support-dyadic-roundings`: Actuality holds. -/
 def Models.finite_support_dyadic_roundings.actuality : Prop :=
   (Classicism.Meta.Intensional.MonoidModel.model (Classicism.Meta.Intensional.Monoids.pow2)).IsModel ∧ (Classicism.Meta.Intensional.MonoidModel.model (Classicism.Meta.Intensional.Monoids.pow2)).HoldsAx Classicism.P.Actuality.schemaIn

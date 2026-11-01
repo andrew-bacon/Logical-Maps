@@ -216,6 +216,8 @@ notes: 'Built on 20 October 2026, at Cian Dorr''s suggestion, as a coalesced roo
 lean:
   model: Classicism.Meta.Coalesced.definableRoot
   is_model: Classicism.Meta.Coalesced.definableRoot_isModel
+  meets:
+    actual-world-isolated: Classicism.Meta.Coalesced.definableRoot_actualWorldIsolated
   verdicts:
   - holds: distinctness-schema-r
     ref: Classicism.Map.Models.coalesced_definable_root.distinctness_schema_r
