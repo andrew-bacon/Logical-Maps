@@ -2093,6 +2093,10 @@ theorem maximalist_distinctness_incompatible_with_necessary_tame_rigidity_r : St
 theorem maximalist_distinctness_incompatible_with_necessary_vicinity : Statements.maximalist_distinctness_incompatible_with_necessary_vicinity := by
   map_cert_incompatible maximalist_necVicinity_inconsistent
 
+/-- `maximalist-distinctness-incompatible-with-necessary-boolean-completeness-t` -/
+theorem maximalist_distinctness_incompatible_with_necessary_boolean_completeness_t : Statements.maximalist_distinctness_incompatible_with_necessary_boolean_completeness_t := by
+  map_cert_incompatible maximalist_necBooleanCompletenessT_inconsistent
+
 /-! ### End of witness verdicts -/
 
 end Classicism.Map

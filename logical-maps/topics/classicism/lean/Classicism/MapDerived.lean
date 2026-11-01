@@ -91,6 +91,10 @@ theorem coalesced_constant_indexed_root.barcan_t : Statements.Models.coalesced_c
 theorem coalesced_constant_indexed_root.atomicity_t : Statements.Models.coalesced_constant_indexed_root.atomicity_t :=
   ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.constantIndexedData), Classicism.Map.Arguments.coalesced_sums.atomicity_t_component.atomicity_t (Classicism.Meta.Coalesced.constantIndexedData) (Classicism.Meta.Coalesced.constantIndexedData_complete) (Classicism.Meta.Coalesced.constantIndexedData_distinguished) (Classicism.Meta.Coalesced.constantIndexedData_fullest)⟩
 
+/-- `coalesced-constant-indexed-root`: Boolean Completeness (type t) fails, by `coalesced-sums`'s argument `boolean-completeness-t-component`. -/
+theorem coalesced_constant_indexed_root.boolean_completeness_t : Statements.Models.coalesced_constant_indexed_root.boolean_completeness_t :=
+  ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.constantIndexedData), Classicism.Map.Arguments.coalesced_sums.boolean_completeness_t_component.boolean_completeness_t (Classicism.Meta.Coalesced.constantIndexedData) (Classicism.Meta.Coalesced.constantIndexedData_complete) (Classicism.Meta.Coalesced.constantIndexedData_distinguished) (Classicism.Meta.Coalesced.constantIndexedData_fullest)⟩
+
 /-- `coalesced-constant-indexed-root`: Truths are ND-necessary holds, by the argument `dpc-isolated-actual-world`. -/
 theorem coalesced_constant_indexed_root.distinctness_preserving_collapse : Statements.Models.coalesced_constant_indexed_root.distinctness_preserving_collapse :=
   ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.constantIndexedData), Classicism.Map.Arguments.dpc_isolated_actual_world.distinctness_preserving_collapse (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)) (Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.constantIndexedData)) (Classicism.Meta.Coalesced.constantIndexedData_isolated)⟩
@@ -119,6 +123,10 @@ theorem coalesced_maximalist_root.barcan_t : Statements.Models.coalesced_maximal
 theorem coalesced_maximalist_root.atomicity_t : Statements.Models.coalesced_maximalist_root.atomicity_t :=
   ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.maximalistRoot), Classicism.Map.Arguments.coalesced_sums.atomicity_t_component.atomicity_t (Classicism.Meta.Coalesced.maximalistRoot) (Classicism.Meta.Coalesced.maximalistData_complete Classicism.Meta.Coalesced.sigmaTop_closed) (Classicism.Meta.Coalesced.maximalistData_distinguished) (Classicism.Meta.Coalesced.maximalistData_fullest)⟩
 
+/-- `coalesced-maximalist-root`: Boolean Completeness (type t) fails, by `coalesced-sums`'s argument `boolean-completeness-t-component`. -/
+theorem coalesced_maximalist_root.boolean_completeness_t : Statements.Models.coalesced_maximalist_root.boolean_completeness_t :=
+  ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.maximalistRoot), Classicism.Map.Arguments.coalesced_sums.boolean_completeness_t_component.boolean_completeness_t (Classicism.Meta.Coalesced.maximalistRoot) (Classicism.Meta.Coalesced.maximalistData_complete Classicism.Meta.Coalesced.sigmaTop_closed) (Classicism.Meta.Coalesced.maximalistData_distinguished) (Classicism.Meta.Coalesced.maximalistData_fullest)⟩
+
 /-- `coalesced-maximalist-root`: Truths are ND-necessary holds, by the argument `dpc-isolated-actual-world`. -/
 theorem coalesced_maximalist_root.distinctness_preserving_collapse : Statements.Models.coalesced_maximalist_root.distinctness_preserving_collapse :=
   ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.maximalistRoot), Classicism.Map.Arguments.dpc_isolated_actual_world.distinctness_preserving_collapse (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)) (Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.maximalistRoot)) (Classicism.Meta.Coalesced.maximalistData_isolated)⟩
@@ -142,6 +150,10 @@ theorem coalesced_single_individual_root.barcan_t : Statements.Models.coalesced_
 /-- `coalesced-single-individual-root`: Atomicity (type t) fails, by `coalesced-sums`'s argument `atomicity-t-component`. -/
 theorem coalesced_single_individual_root.atomicity_t : Statements.Models.coalesced_single_individual_root.atomicity_t :=
   ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.singleIndividualData), Classicism.Map.Arguments.coalesced_sums.atomicity_t_component.atomicity_t (Classicism.Meta.Coalesced.singleIndividualData) (Classicism.Meta.Coalesced.singleIndividualData_complete) (Classicism.Meta.Coalesced.singleIndividualData_distinguished) (Classicism.Meta.Coalesced.singleIndividualData_fullest)⟩
+
+/-- `coalesced-single-individual-root`: Boolean Completeness (type t) fails, by `coalesced-sums`'s argument `boolean-completeness-t-component`. -/
+theorem coalesced_single_individual_root.boolean_completeness_t : Statements.Models.coalesced_single_individual_root.boolean_completeness_t :=
+  ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.singleIndividualData), Classicism.Map.Arguments.coalesced_sums.boolean_completeness_t_component.boolean_completeness_t (Classicism.Meta.Coalesced.singleIndividualData) (Classicism.Meta.Coalesced.singleIndividualData_complete) (Classicism.Meta.Coalesced.singleIndividualData_distinguished) (Classicism.Meta.Coalesced.singleIndividualData_fullest)⟩
 
 /-- `coalesced-single-individual-root`: Truths are ND-necessary holds, by the argument `dpc-isolated-actual-world`. -/
 theorem coalesced_single_individual_root.distinctness_preserving_collapse : Statements.Models.coalesced_single_individual_root.distinctness_preserving_collapse :=

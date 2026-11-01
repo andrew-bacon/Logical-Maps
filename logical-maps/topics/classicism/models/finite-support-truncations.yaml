@@ -229,3 +229,5 @@ lean:
   - holds: distinctness-preserving-collapse
     ref: Classicism.Map.Models.finite_support_truncations.distinctness_preserving_collapse
     status: verified
+  - fails: boolean-completeness-t
+    ref: Classicism.Map.Models.finite_support_truncations.boolean_completeness_t

@@ -1,5 +1,6 @@
 import Classicism.Results.Other.Meta
 import Classicism.Certified.Entailed
+import Classicism.Coalesced.TransferBC
 
 /-!
 # Witnesses: failures in Lean models, through the map's results (1 November 2026)
@@ -267,6 +268,12 @@ theorem maximalist_necWeaklyInextensibleComprehension_inconsistent :
   maximalist_box_inconsistent_of_model _ (MonoidModel.model_isModel Monoids.truncs)
     P.WeaklyInextensibleComprehension.schema_closedTypes Truncs.not_weaklyInextensibleComprehension
     (by rintro _ ⟨_, ⟨τ, hτ, rfl⟩, rfl⟩; exact ⟨τ, hτ, rfl⟩)
+
+/-- `maximalist-distinctness-incompatible-with-necessary-boolean-completeness-t`: BC at `t` fails
+in the truncation model (`Monoids.Truncs.not_bcT`, `Coalesced/TransferBC.lean`). -/
+theorem maximalist_necBooleanCompletenessT_inconsistent :
+    ¬ Consistent (maximalist (Sig := Signature.pure) ∪ P.NecBooleanCompletenessT.schema) :=
+  max_box_inconsistent (Consistent.empty_union Monoids.Truncs.not_bcT_consistent) rfl
 
 /-- `maximalist-distinctness-incompatible-with-necessary-vicinity`. -/
 theorem maximalist_necVicinity_inconsistent :

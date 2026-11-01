@@ -6,6 +6,7 @@ import Classicism.Models.SymBase
 import Classicism.Coalesced.SumData
 import Classicism.Models.Henkin
 import Classicism.Coalesced.Transfer
+import Classicism.Coalesced.TransferBC
 import Mathlib.SetTheory.Cardinal.NatCard
 
 /-!
@@ -544,6 +545,20 @@ theorem atomicity_t : Statements.Arguments.coalesced_sums.atomicity_t_component.
   fun _ hc hD hF => Coalesced.SumData.not_holds_atomicityT hD hF hc
 
 end atomicity_t_component
+
+/-! #### Witness transfers (`Coalesced/TransferBC.lean`) -/
+
+namespace boolean_completeness_t_component
+
+/-- The single-component copies of a component's counterexample family, from the truncation
+model's failure of BC at `t` (`Coalesced.SumData.not_holds_bcT`). -/
+theorem boolean_completeness_t :
+    Statements.Arguments.coalesced_sums.boolean_completeness_t_component.boolean_completeness_t :=
+  fun _ hc hD hF => Coalesced.SumData.not_holds_bcT hD hF hc
+
+end boolean_completeness_t_component
+
+/-! #### End of witness transfers -/
 
 end coalesced_sums
 

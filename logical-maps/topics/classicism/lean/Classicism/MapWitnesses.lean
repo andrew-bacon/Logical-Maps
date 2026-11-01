@@ -28,6 +28,11 @@ theorem distinctness_preserving_collapse :
   ⟨MonoidModel.model_isModel Monoids.truncs, (Premodel.holdsAx_schemaIn_iff _ _).2
     (Premodel.holdsAx_single _ Monoids.Truncs.dpc)⟩
 
+/-- On the even truncation singletons (`Monoids.Truncs.not_bcT`). -/
+theorem boolean_completeness_t : Statements.Models.finite_support_truncations.boolean_completeness_t :=
+  ⟨MonoidModel.model_isModel Monoids.truncs, fun h => Monoids.Truncs.not_bcT
+    ((Premodel.holdsAx_schemaIn_iff _ _).1 h _ rfl)⟩
+
 end finite_support_truncations
 
 /-- The four boxed failures at a coalesced root with complete components. -/
