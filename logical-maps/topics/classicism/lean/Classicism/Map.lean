@@ -1,5 +1,6 @@
 import Classicism.Statements
 import Classicism.Results.Arity
+import Classicism.Results.Boxed
 import Classicism.Results.SentenceSchemas.Incompatibilities
 import Classicism.Results.SentenceSchemas.RigidPower
 import Classicism.Results.SentenceSchemas.WitnessedPossibility
