@@ -180,7 +180,9 @@ its components are complete. -/
 theorem singleIndividual_maximalism :
     Coalesced.singleIndividualData.model.HoldsAx (pureVersion distinctnessC) :=
   Coalesced.RootAction.holdsAx_distinctness_of_complete _ _ _ _
-    Coalesced.singleIndividualData.isModel Coalesced.singleIndividualData_complete
+    Coalesced.singleIndividualData.isModel
+    (Coalesced.SumData.completeComponents_root Coalesced.singleIndividualData_distinguished
+      Coalesced.singleIndividualData_complete)
 
 /-- There are not two individuals at the single-individual root. -/
 theorem singleIndividual_not_twoE :
@@ -230,7 +232,8 @@ theorem maximalist_twoE_consistent :
   Consistent.of_model _ (Coalesced.maximalistData Signature.pure).isModel fun a ha => ha.elim
     (holdsAx_maximalist_of _ (Coalesced.RootAction.holdsAx_distinctness_of_complete _ _ _ _
       (Coalesced.maximalistData Signature.pure).isModel
-      (Coalesced.maximalistData_complete Coalesced.pure_closed)) a)
+      (Coalesced.SumData.completeComponents_root Coalesced.maximalistData_distinguished
+        (Coalesced.maximalistData_complete Coalesced.pure_closed))) a)
     (fun h => by rw [show a = twoE from h]; exact maximalistPure_twoE)
 
 /-- Strong Possibility (pure) has `◇_≠T₂` and `◇_≠¬T₂`. -/
