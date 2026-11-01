@@ -54,6 +54,12 @@ theorem truncate_eq_rebase (A : Premodel Sig C) {V : C} (h : A.W₀ ⟶ V) :
 
 theorem rebase_self (A : Premodel Sig C) : A.rebase A.W₀ A.I = A := rfl
 
+/-- Re-basings with equal constant values have equal values of terms. -/
+theorem rebase_sem_congr (A : Premodel Sig C) {V : C} {I I' : ∀ c : Sig.Const, (A.inner (Sig.typeOf c)).obj V}
+    (e : I = I') {Γ : Ctx} {σ : Ty} {W : C} (j : V ⟶ W) (t : Term Sig Γ σ) (g : IEnv (A.Dom W) Γ) :
+    (A.rebase V I).sem j t g = (A.rebase V I').sem j t g := by
+  subst e; rfl
+
 end Classicism.Meta.Intensional.Premodel
 
 namespace Classicism.Meta.Coalesced
@@ -295,7 +301,7 @@ theorem incl_injective (ρ : RTy) : ∀ W : CoalescedSum S, Function.Injective (
 
 /-- **The coalesced sum**, as an intensional action premodel on the sum: the root
 action, the root inclusion, and a value at the root for each constant. -/
-def coalescedSum (ne : Nonempty (RA.D .e)) (I : ∀ c : Sig.Const, RA.D (Sig.typeOf c)) :
+abbrev coalescedSum (ne : Nonempty (RA.D .e)) (I : ∀ c : Sig.Const, RA.D (Sig.typeOf c)) :
     Premodel Sig (CoalescedSum S) where
   W₀ := CoalescedSum.base S
   inner := RA.inner

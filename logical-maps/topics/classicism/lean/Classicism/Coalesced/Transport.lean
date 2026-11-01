@@ -117,7 +117,7 @@ theorem compI_eqRead (σ : Ty) (V : C k) : RA.compI ((P).eqRead σ (.of ⟨k, V�
 the arguments of the component. -/
 theorem forall_args {ρ : RTy} {U : C k} (q : Args (A k).inner ρ U → Prop) :
     (∀ a : Args RA.inner ρ (.of ⟨k, U⟩), q (RA.argsOut ρ a)) ↔ ∀ a, q a :=
-  ⟨fun H a => RA.argsOut_argsIn ρ a ▸ H (RA.argsIn ρ a), fun H a => H _⟩
+  ⟨fun H a => RA.argsOut_argsIn ρ a ▸ H (RA.argsIn ρ a), fun H _ => H _⟩
 
 theorem compI_coextRead (ρ : RTy) (V : C k) : RA.compI ((P).coextRead ρ (.of ⟨k, V⟩)) = (A k).coextRead ρ V := by
   ext ⟨U, ⟨X, Y, ⟨⟩⟩, j⟩

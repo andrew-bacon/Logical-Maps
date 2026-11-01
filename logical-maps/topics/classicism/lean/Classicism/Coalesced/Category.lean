@@ -5,10 +5,11 @@ import Mathlib.CategoryTheory.Types.Basic
 # The category of a coalesced sum
 
 Classicism, Appendix E, Definition E.1, in the generality of the map's group
-`coalesced-sums`. The data are a family of categories `C k`, `k : ι`, and **root arrows**:
-a functor `R : (Σ k, C k) ⥤ Type` (Mathlib's disjoint union of categories), whose value at
-an object `V` is the set of arrows from the new root `W₀` to `V`, and a monoid of arrows
-from `W₀` to itself acting on `R` naturally. The coalesced sum has objects
+`coalesced-sums`. The data are a family of categories `C k`, `k : ι`, and the **root
+arrows**: an action `R` of the disjoint union `Σ k, C k` (Mathlib's), whose value at an
+object `V` is the set of arrows from the new root `W₀` to `V`, the action of a component
+arrow `j` taking a root arrow `r` to `j ∘ r`; and a monoid of arrows from `W₀` to itself
+acting on the root arrows, compatibly. The coalesced sum has objects
 `W₀` and the objects `of V` of the components, and
 
 * `Hom W₀ W₀` the monoid of root endo-arrows;
@@ -19,9 +20,9 @@ from `W₀` to itself acting on `R` naturally. The coalesced sum has objects
 with an arrow `r : W₀ → V` followed by `j : V → U` being `R j r`, and an endo-arrow `m`
 followed by `r` being `m • r`.
 
-Appendix E's distinguished arrows are the representable case: the root arrows into the
-component `k` are `Hom (W k) –`, one arrow `W₀ → W k` through which every other factors
-uniquely, and the root has only its identity (`RootArrows.distinguished`). The
+Appendix E's **distinguished arrows** are the case where the root arrows into the
+component `k` are the arrows out of its base `W k`: one arrow `W₀ → W k` through which every
+other factors uniquely, and only the identity at the root (`RootArrows.distinguished`). The
 interpretation-arrow members of the map take the arrows into `V` to be the interpretations
 of a signature at `V`, and the substitution members add root endo-arrows.
 -/
@@ -32,12 +33,14 @@ open CategoryTheory CategoryTheory.Sigma
 
 variable {ι : Type} {C : ι → Type} [∀ k, SmallCategory (C k)]
 
-/-- The arrows out of a new root into the disjoint union of the categories `C k`: a functor
-`R` giving the arrows into each component object, and a monoid `End` of endo-arrows of the
-root, written diagrammatically (`mul m m'` is `m` followed by `m'`), acting on `R`
-naturally (`act m r` is `m` followed by `r`). -/
+/-- The **root arrows** of a coalesced sum of the categories `C k`: the action `R` of the
+root arrows, giving the arrows from the root into each component object and their
+composites with the component arrows, and a monoid `End` of endo-arrows of the root,
+written diagrammatically (`mul m m'` is `m` followed by `m'`), acting on the root arrows
+compatibly with the component arrows (`act m r` is `m` followed by `r`). -/
 structure RootArrows (C : ι → Type) [∀ k, SmallCategory (C k)] where
-  /-- The arrows from the root to each component object. -/
+  /-- The action of the root arrows: the arrows from the root to each component object,
+  and their composites with the component arrows. -/
   R : (Σ k, C k) ⥤ Type
   /-- The endo-arrows of the root. -/
   End : Type
@@ -127,11 +130,6 @@ def comp : ∀ {X Y Z : CoalescedSum S}, Hom S X Y → Hom S Y Z → Hom S X Z
   | _, of _, root, _, e => nomatch e
   | of _, root, _, e, _ => nomatch e
 
-instance : CategoryStruct (CoalescedSum S) where
-  Hom := Hom S
-  id := id S
-  comp := comp S
-
 theorem id_comp' : ∀ {X Y : CoalescedSum S} (f : Hom S X Y), comp S (id S X) f = f
   | root, root, m => S.one_mul m
   | root, of _, r => S.act_one r
@@ -157,6 +155,9 @@ theorem assoc' : ∀ {W X Y Z : CoalescedSum S} (f : Hom S W X) (g : Hom S X Y) 
   | of _, root, _, _, e, _, _ => nomatch e
 
 instance category : SmallCategory (CoalescedSum S) where
+  Hom := Hom S
+  id := id S
+  comp := comp S
   id_comp := id_comp' S
   comp_id := comp_id' S
   assoc := assoc' S
