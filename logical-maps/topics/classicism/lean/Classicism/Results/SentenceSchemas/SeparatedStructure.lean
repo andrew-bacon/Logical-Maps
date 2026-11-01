@@ -52,8 +52,25 @@ theorem pwp_ss_glue (q g f : Prop) : (◇ g → ◇ ¬ q) → (q → □ q) → 
   fun h1 h2 h3 hq => modal_K _ _ h3 (box_not_of_not_dia g (fun hg =>
     not_dia_of_box_not (¬ q) (modal_K _ _ (nec% (fun (h : q) (hn : ¬ q) => hn h)) (h2 hq)) (h1 hg)))
 
+section ind
+variable {τ : Type} [Rel τ]
+
+/-- Separated Structure gives Independence: `x = u` necessitated makes `e`, which puts both
+`⊤` and `⊥` for `u`. -/
+theorem ss_ind_glue (x u : τ) (e : Prop) : (x = u → □ (x = u)) → (□ (x = u) → e) →
+    (e → Rel.top τ = u) → (e → Rel.bot τ = u) → ¬ Rel.top τ = Rel.bot τ → ¬ x = u :=
+  fun hni hb ht hbot htb hx => htb ((ht (hb (hni hx))).trans (hbot (hb (hni hx))).symm)
+
+end ind
+
+/-- Witnessed Possibility gives Independence: what is necessary when true is false when
+its negation is possible. -/
+theorem wp_ind_glue (q : Prop) : (q → □ q) → ◇ ¬ q → ¬ q :=
+  fun hn hd hq => not_dia_of_box_not (¬ q) (modal_K _ _ (nec% (fun (h : q) (hn' : ¬ q) => hn' h)) (hn hq)) hd
+
 end shallow
 
+#classicism_derive Classicism.ss_ind_glue Classicism.wp_ind_glue
 #classicism_derive Classicism.ss_pwp_glue Classicism.ln_pwp_glue Classicism.modalized_functionality
   Classicism.pwp_ss_glue
 
@@ -441,6 +458,209 @@ theorem logicalNecessity_entails_separatedStructure (hS : Sig.Closed) :
     logicalNecessity Sig ⟹ separatedStructure Sig :=
   Entails.trans logicalNecessity_entails_possiblyWitnessedPossibility
     (possiblyWitnessedPossibility_entails_separatedStructure hS)
+
+/-! ### Distinctness from its pure version and Separated Structure -/
+
+/-- `pure-distinctness-and-separated-structure-imply-signature-distinctness`: with the
+constants `d̄` of `A`, `B` abstracted, `A = B` is `E[d̄/ȳ]` for a pure `E`; `λȳ. E = λȳ. ⊤`
+is not a theorem (else `A = B` would be), so pure Distinctness refutes it, and iterated
+Separated Structure gets it from `□(A = B)`. -/
+theorem pureDistinctness_separatedStructure_entails_distinctness (hS : Sig.Closed) :
+    AxiomSet.ofPure (distinctness (empty : AxiomSet Signature.pure)) ∪ separatedStructure Sig ⟹
+      distinctness (empty : AxiomSet Sig) := by
+  rintro a ⟨hc, σ, A, B, hnt, rfl⟩
+  have hAB : (Term.eq' A B).closedTypes = true := by simpa using hc
+  obtain ⟨ds, hds, hdsm⟩ := exists_consts_list A B
+  obtain ⟨A₀, eA, cA⟩ := Term.exists_abstract ds A (fun d hd => (hdsm d).2 (Or.inl hd))
+  obtain ⟨B₀, eB, cB⟩ := Term.exists_abstract ds B (fun d hd => (hdsm d).2 (Or.inr hd))
+  let E : Formula Signature.pure (Ctx.block (ds.map Sig.typeOf) []) := Term.eq' A₀ B₀
+  have eE : (Term.ofPure (Sig := Sig) E).subst (Sub.consBlock (Terms.constsAt [] ds) Sub.id) =
+      Term.eq' A B := by
+    show Term.eq' ((Term.ofPure A₀).subst _) ((Term.ofPure B₀).subst _) = _
+    rw [eA, eB]
+  have hEc : E.closedTypes = true := by
+    simp only [E, Term.closedTypes_eq', cA, cB]; simpa using hAB
+  have hLc : (Term.lamBlock (Γ := []) (ds.map Sig.typeOf) (Term.ofPure (Sig := Sig) E)).closedTypes = true := by
+    rw [Term.closedTypes_lamBlock, all_closed_map hS, Term.closedTypes_ofPure, hEc]; rfl
+  let X := AxiomSet.ofPure (distinctness (empty : AxiomSet Signature.pure)) ∪ separatedStructure Sig
+  have hnt' : ¬ Theorem (C.axioms ∪ (empty : AxiomSet Signature.pure))
+      (Term.eq' (Term.lamBlock _ E) (Term.lamBlock _ Term.top)) := by
+    intro h
+    have h₁ : C.Theorem (Sig := Sig) (Term.eq' (Term.lamBlock _ (Term.ofPure E)) (Term.lamBlock _ Term.top)) := by
+      have := C.Theorem.ofPure (Sig := Sig) (theorem_union_empty.1 h)
+      rwa [show Term.ofPure (Sig := Sig) (Term.eq' (Term.lamBlock _ E) (Term.lamBlock _ Term.top)) =
+        Term.eq' (Term.ofPure (Term.lamBlock _ E)) (Term.ofPure (Term.lamBlock _ Term.top)) from rfl,
+        Term.ofPure_lamBlock, Term.ofPure_lamBlock] at this
+    have h₂ := Derivable.allEBlock _ (Derivable.forallBlock_of_lamBlock_eq_top _ h₁) (Terms.constsAt [] ds)
+    rw [eE] at h₂
+    exact hnt (theorem_union_empty.2 h₂)
+  have hFGc : (Term.eq' (Term.lamBlock (Γ := []) (ds.map Sig.typeOf) E)
+      (Term.lamBlock _ Term.top)).closedTypes = true := by
+    rw [Term.closedTypes_eq', Term.closedTypes_lamBlock, Term.closedTypes_lamBlock, all_closed_map hS, hEc]; rfl
+  have hpd : Theorem (C.axioms ∪ X) (Term.neg (Term.eq' (Term.lamBlock _ (Term.ofPure (Sig := Sig) E))
+      (Term.lamBlock _ Term.top))) := by
+    refine Theorem.ax (Or.inl ⟨_, distinctness_mem hFGc hnt', ?_⟩)
+    show _ = Term.neg (Term.eq' (Term.ofPure (Term.lamBlock _ E)) (Term.ofPure (Term.lamBlock _ Term.top)))
+    rw [Term.ofPure_lamBlock, Term.ofPure_lamBlock]; rfl
+  have hss := ss_box (X := X) (fun _ h => Or.inr h) ds hds (Term.ofPure E)
+    (fun c _ h => by rw [Term.consts_ofPure] at h; exact h) hLc
+  rw [eE] at hss
+  exact Derivable.notI (q := Term.eq' (Term.lamBlock _ (Term.ofPure (Sig := Sig) E)) (Term.lamBlock _ Term.top))
+    (Derivable.impE (Derivable.weaken₁ hss)
+      (Derivable.impE (Derivable.weaken₁ (Theorem.ofC (Completeness.nec_identity A B))) Derivable.hyp₀))
+    (Derivable.weaken₁ hpd)
+
+/-! ### Independence -/
+
+/-- A tuple of pure terms, read in a signature. -/
+def Terms.ofPure {Γ : Ctx} : ∀ {σs : List Ty}, Terms Signature.pure Γ σs → Terms Sig Γ σs
+  | [], _ => .nil
+  | _ :: _, as => .cons (Term.ofPure as.head) (Terms.ofPure as.tail)
+
+theorem Term.ofPure_appBlock {Γ : Ctx} : ∀ {σs : List Ty} {ρ : RTy}
+    (f : Term Signature.pure Γ (σs ⇒* ρ)) (as : Terms Signature.pure Γ σs),
+    Term.ofPure (Sig := Sig) (Term.appBlock f as) = Term.appBlock (Term.ofPure f) (Terms.ofPure as)
+  | [], _, _, .nil => rfl
+  | _ :: _, _, f, .cons a as => Term.ofPure_appBlock (Term.app f a) as
+
+theorem Terms.ofPure_vars : ∀ (σs : List Ty) (Γ : Ctx),
+    Terms.ofPure (Sig := Sig) (Terms.vars σs Γ) = Terms.vars σs Γ
+  | [], _ => rfl
+  | σ :: σs, Γ => by
+    show Terms.cons (Term.ofPure ((Term.var .zero).rename (Ren.wkBlock σs))) (Terms.ofPure (Terms.vars σs (σ :: Γ))) = _
+    rw [Term.ofPure_rename, Terms.ofPure_vars σs]; rfl
+
+/-- A term of a relational type `ρ`, read at a type `τ` equal to it. -/
+def Term.castR {S : Signature} {Γ : Ctx} {τ : Ty} {ρ : RTy} (h : τ = Ty.rel ρ)
+    (x : Term S Γ (Ty.rel ρ)) : Term S Γ τ := h.symm ▸ x
+
+/-- `x = A ȳ`, for `x` the first variable of a block and `ȳ` the rest, read at the type
+`τ` of `x` through `τ = ρ`. -/
+def indFormula {τ : Ty} {ρ : RTy} (h : τ = Ty.rel ρ) (σs : List Ty)
+    (A : Term Signature.pure [] (σs ⇒* ρ)) : Formula Signature.pure (Ctx.block σs [τ]) :=
+  Term.eq' ((Term.var .zero : Term Signature.pure [τ] τ).rename (Ren.wkBlock σs))
+    (Term.castR h (Term.appBlock (A.rename Ren.ofEmpty) (Terms.vars σs [τ])))
+
+theorem indFormula_subst {τ : Ty} {ρ : RTy} (h : τ = Ty.rel ρ) (ds : List Sig.Const)
+    (A : Term Signature.pure [] (ds.map Sig.typeOf ⇒* ρ)) (t : Term Sig [] τ) :
+    (Term.ofPure (indFormula h (ds.map Sig.typeOf) A)).subst
+        (Sub.consBlock (Terms.constsAt [] ds) (Sub.cons t Sub.id)) =
+      Term.eq' (h ▸ t) (Term.appBlock (Term.ofPure A) (Terms.constsAt [] ds)) := by
+  subst h
+  show Term.eq' ((Term.ofPure ((Term.var .zero : Term Signature.pure [_] _).rename (Ren.wkBlock _))).subst _)
+    ((Term.ofPure (Term.appBlock (A.rename Ren.ofEmpty) (Terms.vars _ _))).subst _) = _
+  rw [Term.ofPure_rename, Term.ofPure_appBlock, Term.ofPure_rename, Terms.ofPure_vars, Term.subst_rename,
+    Sub.compRen_consBlock_wkBlock, Term.subst_appBlock, Term.subst_rename, Terms.vars_subst_consBlock,
+    Sub.eq_of_nil (Sub.compRen _ Ren.ofEmpty) Sub.id, Term.subst_id]
+  rfl
+
+theorem cast_cancel {Γ : Ctx} {τ : Ty} {ρ : RTy} (h : τ = Ty.rel ρ) (x : Term Sig Γ (Ty.rel ρ)) :
+    (h ▸ Term.castR h x : Term Sig Γ (Ty.rel ρ)) = x := by
+  subst h; rfl
+
+theorem closedTypes_appBlock_left {Γ : Ctx} : ∀ {σs : List Ty} {ρ : RTy} (f : Term Sig Γ (σs ⇒* ρ))
+    (as : Terms Sig Γ σs), (Term.appBlock f as).closedTypes = true → f.closedTypes = true
+  | [], _, _, _, h => h
+  | _ :: _, _, f, as, h => by
+    have := closedTypes_appBlock_left (Term.app f as.head) as.tail h
+    simp only [Term.closedTypes, Bool.and_eq_true] at this
+    exact this.1
+
+/-- The pieces of an instance of Independence: the formula `x = Aȳ`, in the paper's
+language, with the constants `c, d̄` put for `x, ȳ`. -/
+theorem independence_parts (hS : Sig.Closed) {c : Sig.Const} {ds : List Sig.Const} {ρ : RTy}
+    (h : Sig.typeOf c = Ty.rel ρ) (A : Term Signature.pure [] (ds.map Sig.typeOf ⇒* ρ))
+    (hc : (Term.neg (Term.eq' (h ▸ Term.const c) (Term.appBlock (Term.ofPure A) (Terms.consts ds)))).closedTypes = true) :
+    (Term.ofPure (Sig := Sig) (indFormula h (ds.map Sig.typeOf) A)).closedTypes = true ∧
+    ((c :: ds).map Sig.typeOf).all (fun σ => decide σ.Closed) = true := by
+  refine ⟨?_, all_closed_map hS _⟩
+  have := Term.closedTypes_subst _ (Term.keepsTypes_consBlock_constsAt ds _
+    (Sub.KeepsTypes.cons (a := Term.const c) rfl Sub.KeepsTypes.id))
+    (Term.ofPure (Sig := Sig) (indFormula h (ds.map Sig.typeOf) A))
+  rw [indFormula_subst, ← Terms.consts_eq_constsAt] at this
+  rw [← this]; simpa using hc
+
+/-- `separated-structure-r-implies-independence-signature-r`: Separated Structure, iterated
+over `c, d̄`, from `□(c = A d̄)` gives `λxȳ. x = Aȳ = λxȳ. ⊤`, so `⊤_ρ = A d̄ = ⊥_ρ`. -/
+theorem separatedStructure_entails_independence (hS : Sig.Closed) :
+    separatedStructure Sig ⟹ independence Sig := by
+  rintro a ⟨hc, c, ds, ρ, h, A, hnd, rfl⟩
+  obtain ⟨hPc, hall⟩ := independence_parts hS h A hc
+  have hρ : ρ.Closed := by have := hS c; rw [h] at this; exact this
+  let P : Formula Sig (Ctx.block ((c :: ds).map Sig.typeOf) []) :=
+    Term.ofPure (indFormula h (ds.map Sig.typeOf) A)
+  let U : Term Sig [] (Ty.rel ρ) := Term.appBlock (Term.ofPure A) (Terms.constsAt [] ds)
+  let e : Sentence Sig := Term.eq' (Term.lamBlock _ P) (Term.lamBlock _ Term.top)
+  have hss := ss_box (X := separatedStructure Sig) (fun _ h => h) (c :: ds) hnd P
+    (fun c _ h' => by rw [Term.consts_ofPure] at h'; exact h')
+    (by rw [Term.closedTypes_lamBlock, hall, hPc]; rfl)
+  have hss' : Theorem (C.axioms ∪ separatedStructure Sig)
+      (Term.imp (Term.box (Term.eq' (h ▸ Term.const c) U)) e) := by
+    rw [← indFormula_subst]; exact hss
+  have inst : ∀ x : Term Sig [] (Ty.rel ρ), C.Theorem (Term.imp e (Term.eq' x U)) := fun x => by
+    refine Derivable.impI ?_
+    have := Derivable.allEBlock ((c :: ds).map Sig.typeOf) (Derivable.forallBlock_of_lamBlock_eq_top _
+      (Derivable.hyp₀ (Ax := C.axioms) (Δ := []) (p := e))) (Terms.cons (Term.castR h x) (Terms.constsAt [] ds))
+    refine Derivable.conv this (Conv.of_eq ?_)
+    show (Term.ofPure (indFormula h (ds.map Sig.typeOf) A)).subst
+      (Sub.consBlock (Terms.constsAt [] ds) (Sub.cons (Term.castR h x) Sub.id)) = _
+    rw [indFormula_subst, cast_cancel]
+  have hni : C.Theorem (Term.imp (Term.eq' (h ▸ Term.const c) U) (Term.box (Term.eq' (h ▸ Term.const c) U))) :=
+    Completeness.nec_identity _ _
+  rw [Terms.consts_eq_constsAt]
+  exact Theorem.mp (Theorem.mp (Theorem.mp (Theorem.mp₂ (Derivable.allE₃β
+    (Theorem.ofCMinus (C.TheoremMinus.ofPure (ss_ind_glue.derivable ρ))) (h ▸ Term.const c) U e)
+    (Theorem.ofC hni) hss') (Theorem.ofC (inst _))) (Theorem.ofC (inst _)))
+    (Theorem.ofC (C.topR_ne_botR ρ hρ))
+
+/-- `witnessed-possibility-r-implies-independence-signature-r`: Witnessed Possibility at
+`x ≠ Aȳ`, whose closure is a theorem (one of `⊤_ρ`, `⊥_ρ` differs from `A d̄`), gives
+`◇(c ≠ A d̄)`, against the necessity of identity. -/
+theorem witnessedPossibility_entails_independence (hS : Sig.Closed) :
+    witnessedPossibility Sig ⟹ independence Sig := by
+  rintro a ⟨hc, c, ds, ρ, h, A, hnd, rfl⟩
+  obtain ⟨hPc, hall⟩ := independence_parts hS h A hc
+  have hρ : ρ.Closed := by have := hS c; rw [h] at this; exact this
+  let P₀ : Formula Signature.pure (Ctx.block ((c :: ds).map Sig.typeOf) []) :=
+    Term.neg (indFormula h (ds.map Sig.typeOf) A)
+  let U : Term Sig [] (Ty.rel ρ) := Term.appBlock (Term.ofPure A) (Terms.constsAt [] ds)
+  have hwp := Theorem.ax (Ax := witnessedPossibility Sig) (witnessedPossibility_mem (P := P₀) hnd (by
+    rw [Term.closedTypes_existsBlock, hall]
+    simpa [P₀] using hPc))
+  have inst : ∀ x : Term Sig [] (Ty.rel ρ), (Term.ofPure (Sig := Sig) P₀).subst
+      (Sub.consBlock (Terms.constsAt [] ds) (Sub.cons (Term.castR h x) Sub.id)) = Term.neg (Term.eq' x U) := by
+    intro x
+    show Term.neg ((Term.ofPure (indFormula h (ds.map Sig.typeOf) A)).subst _) = _
+    rw [indFormula_subst, cast_cancel]
+  have hex : C.Theorem (Term.ofPure (Sig := Sig) (Term.existsBlock _ P₀)) := by
+    rw [Term.ofPure_existsBlock]
+    refine Derivable.orE (Derivable.em (Term.eq' (Term.topR ρ) U)) ?_ ?_
+    · refine Derivable.exIBlock _ (Terms.cons (Term.castR h (Term.botR ρ)) (Terms.constsAt [] ds)) ?_
+      show Derivable _ _ ((Term.ofPure P₀).subst (Sub.consBlock (Terms.constsAt [] ds)
+        (Sub.cons (Term.castR h (Term.botR ρ)) Sub.id)))
+      rw [inst]
+      exact Derivable.notI (q := Term.eq' (Term.topR ρ) (Term.botR ρ))
+        (Derivable.eqTrans (Derivable.weaken₁ Derivable.hyp₀) (Derivable.eqSymm Derivable.hyp₀))
+        (Derivable.weaken (C.topR_ne_botR ρ hρ) (List.nil_subset _))
+    · refine Derivable.exIBlock _ (Terms.cons (Term.castR h (Term.topR ρ)) (Terms.constsAt [] ds)) ?_
+      show Derivable _ _ ((Term.ofPure P₀).subst (Sub.consBlock (Terms.constsAt [] ds)
+        (Sub.cons (Term.castR h (Term.topR ρ)) Sub.id)))
+      rw [inst]
+      exact Derivable.hyp₀
+  have hdia : Theorem (C.axioms ∪ witnessedPossibility Sig)
+      (Term.dia (Term.neg (Term.eq' (h ▸ Term.const c) U))) := by
+    have := Theorem.mp hwp (Theorem.ofC hex)
+    rw [atConsts_eq] at this
+    refine Derivable.conv this (Conv.of_eq ?_)
+    show Term.dia (Term.neg ((Term.ofPure (indFormula h (ds.map Sig.typeOf) A)).subst
+      (Sub.consBlock (Terms.constsAt [] ds) (Sub.cons (Term.const c) Sub.id)))) = _
+    rw [indFormula_subst]
+  have hni : C.Theorem (Term.imp (Term.eq' (h ▸ Term.const c) U) (Term.box (Term.eq' (h ▸ Term.const c) U))) :=
+    Completeness.nec_identity _ _
+  rw [Terms.consts_eq_constsAt]
+  exact Theorem.mp₂ (Derivable.allEβ
+    (Theorem.ofCMinus (C.TheoremMinus.ofPure wp_ind_glue.derivable)) (Term.eq' (h ▸ Term.const c) U))
+    (Theorem.ofC hni) hdia
 
 end Meta
 
