@@ -14,6 +14,7 @@ import Classicism.Results.Research.RigidityClosureResearchAtomicPowerCertificate
 import Classicism.Results.Research.ModalPropagationCertificates.StrongAtomicity
 import Classicism.Results.Research.ModalPropagationCertificates.BoxedComprehension
 import Classicism.Results.Other.Meta
+import Classicism.Results.Existence
 
 /-!
 # The map's results, certified
@@ -2061,5 +2062,17 @@ theorem necessary_vicinity_and_necessary_distinctness_preserving_collapse_imply_
 /-- `necessary-weak-rigid-comprehension-implies-necessary-boolean-completeness`: the boxed form of `weak-rigid-comprehension-r-implies-boolean-completeness-r` -/
 theorem necessary_weak_rigid_comprehension_implies_necessary_boolean_completeness : Statements.necessary_weak_rigid_comprehension_implies_necessary_boolean_completeness := by
   map_boxed weak_rigid_comprehension_r_implies_boolean_completeness_r
+
+/-! ### Existence as a premise, discharged (`Results/Existence.lean`; lean-type-existence) -/
+
+/-- `barcan-and-intensional-choice-imply-necessary-intensional-choice` -/
+theorem barcan_and_intensional_choice_imply_necessary_intensional_choice : Statements.barcan_and_intensional_choice_imply_necessary_intensional_choice := by
+  map_cert (Entails.discharge_existence Proofs.barcan_and_intensional_choice_imply_necessary_intensional_choice.entails)
+
+/-- `modalized-relational-choice-implies-necessary-modalized-relational-choice` -/
+theorem modalized_relational_choice_implies_necessary_modalized_relational_choice : Statements.modalized_relational_choice_implies_necessary_modalized_relational_choice := by
+  map_cert (Entails.discharge_existence Proofs.modalized_relational_choice_implies_necessary_modalized_relational_choice.entails)
+
+/-! ### End of Existence as a premise, discharged -/
 
 end Classicism.Map

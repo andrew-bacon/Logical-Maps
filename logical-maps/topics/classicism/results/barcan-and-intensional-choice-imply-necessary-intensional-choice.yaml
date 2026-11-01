@@ -11,6 +11,7 @@ certificate:
   checked_by: []
   date: '2026-10-28'
   lean: stated
+  lean_ref: Classicism.Map.barcan_and_intensional_choice_imply_necessary_intensional_choice
 sources:
 - >-
   GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, Barcan persistence of modal choice, research note of

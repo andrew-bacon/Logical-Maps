@@ -10,6 +10,7 @@ certificate:
   checked_by: []
   date: '2026-10-28'
   lean: stated
+  lean_ref: Classicism.Map.modalized_relational_choice_implies_necessary_modalized_relational_choice
 sources:
 - >-
   GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, Universal modal selectors and persistence of MRC,
