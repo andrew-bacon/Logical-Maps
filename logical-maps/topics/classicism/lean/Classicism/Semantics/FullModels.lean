@@ -80,22 +80,28 @@ theorem holds_eq_var (M : A.IsModel) {Γ : Ctx} {W : C} (h : A.W₀ ⟶ W) (g : 
 
 /-! ### Relational Choice -/
 
-/-- Relational Choice at `σ`, `τ`, at any arrow of an extensionally full model: a serial
-relation's extension has a functional subset by choice, and that subset is the extension of an
-element of the domain. -/
-theorem holds_rc {B : Premodel Signature.pure C} (M : B.IsModel) (hE : B.ExtFull) {W : C}
+/-- Relational Choice at `σ`, `τ`, at an arrow into an object where the model is extensionally
+full: a serial relation's extension has a functional subset by choice, and that subset is the
+extension of an element of the domain. -/
+theorem holds_rc_at {B : Premodel Signature.pure C} (M : B.IsModel) {W : C}
+    (hE : ∀ (ρ : RTy) (E : Set (Args B.inner ρ W)), ∃ x : B.Dom W (.rel ρ), (B.incl ρ W x).ext' B.inner = E)
     (h : B.W₀ ⟶ W) (σ τ : Ty) : B.Holds h (P.RelationalChoice.quoted σ τ) .nil := by
   simp only [P.RelationalChoice.quoted, B.holds_forall M, B.holds_imp M, B.holds_exists M,
     B.holds_conj M, holds_app_var2, holds_eq_var M, IEnv.get]
   intro U hU
   choose f hf using hU
-  obtain ⟨S, hS⟩ := hE (.arr σ (.arr τ .t)) W {a | a.2.1 = f a.1}
+  obtain ⟨S, hS⟩ := hE (.arr σ (.arr τ .t)) {a | a.2.1 = f a.1}
   refine ⟨S, fun x => ⟨f x, ?_, fun z hz => ?_⟩, fun x y hxy => ?_⟩
   · rw [hS]; rfl
   · rw [hS] at hz; exact hz.symm
   · rw [hS] at hxy
     have hy : y = f x := hxy
     exact hy ▸ hf x
+
+/-- Relational Choice at `σ`, `τ`, at any arrow of an extensionally full model. -/
+theorem holds_rc {B : Premodel Signature.pure C} (M : B.IsModel) (hE : B.ExtFull) {W : C}
+    (h : B.W₀ ⟶ W) (σ τ : Ty) : B.Holds h (P.RelationalChoice.quoted σ τ) .nil :=
+  holds_rc_at M (hE · W) h σ τ
 
 /-- `□`Relational Choice: Relational Choice at every arrow, every object being extensionally
 full. -/

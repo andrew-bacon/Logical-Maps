@@ -151,6 +151,20 @@ model with its second object unpinned (`SymIdeal.twoBase`, `symmetric-two-object
 meets `hull-conditions` (`two_hullConditions`), and its own `□BC` holds because the least upper
 bound at the second object is the union of the instances (`two_hasLUBs`, `SymBase.holds_box_bc_lub`).
 
+**Coalesced sums.** `Coalesced/SumData.lean` has the group `coalesced-sums`: its parameter is
+`SumData`, the data of a coalesced sum that is a model, for any root arrows and root domains, so
+that the interpretation-arrow members can be instances too. The group's conditions are
+`SumData.CompleteComponents` (every closed-type pure sentence consistent with `C` holds in the
+component seen from some root arrow), `SumData.DistinguishedArrows` and
+`SumData.FreeRootComponent`. Its arguments `actuality-singleton-root` and
+`relational-choice-free-root` are proved; the transfer arguments (`barcan-t-component` and the
+rest) use the fullest root domains as well as the distinguished arrows, and
+`pure-sentences-possible` and `transversal-boxed` need a Lean model refuting Vicinity, Weakly
+Inextensible Comprehension or Transversal. The members `coalesced-maximalist-root` (at
+`Σ = {c : t}`), `coalesced-single-individual-root` and `coalesced-constant-indexed-root` are built
+over the complete family of `Completeness/` (`Coalesced/Complete.lean`, where every sentence
+consistent with `C` is possible at the root: Maximalism).
+
 **The sentence schemas range over the paper's language.** The object language here also has
 type variables, a device of the metalogic; every sentence schema (No Contingency, No Pure
 Contingency, B, Distinctness, Possibility, Witnessed Possibility and its kin, Separated

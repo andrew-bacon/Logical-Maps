@@ -72,6 +72,17 @@ parameters:
         component entities with a root component that is an arbitrary function of the root
         arguments.
 
+# The construction in Lean (Coalesced/SumData.lean): the data of a coalesced sum that is a model,
+# for any root arrows (distinguished, interpretation or substitution arrows) and any root domains
+# (fullest, pinned, definable): the components, the root arrows, the root action and inclusion, the
+# root values of the constants. A member gives its data as lean.param. The shared arguments proved
+# in Lean are theorems over every such datum meeting their conditions.
+lean:
+  binder: '(D : Classicism.Meta.Coalesced.SumData)'
+  var: D
+  model: Classicism.Meta.Coalesced.SumData.model {param}
+  is_model: Classicism.Meta.Coalesced.SumData.isModel {param}
+
 # Conditions of the topic that every member meets.
 
 conditions:
@@ -79,14 +90,17 @@ conditions:
   text: >-
     The components are a family of action models complete for C: every sentence consistent with C
     is true at the root of some component.
+  lean: Classicism.Meta.Coalesced.SumData.CompleteComponents
 - id: distinguished-arrows
   text: >-
     Every arrow from the root into a component factors through a single distinguished arrow to
     that component's root.
+  lean: Classicism.Meta.Coalesced.SumData.DistinguishedArrows
 - id: free-root-component
   text: >-
     A root entity of a relational type has a root component that is an arbitrary function of the
     root arguments.
+  lean: Classicism.Meta.Coalesced.SumData.FreeRootComponent
 
 arguments:
 - id: tame-rigidity-component
@@ -180,6 +194,10 @@ arguments:
       The three complete members' copies stated once; "Its necessitation fails, since some
       component refutes Relational Choice at its root" became conditional on that, since in the
       all-finite-domains member every component satisfies Relational Choice.
+  lean:
+  - holds: relational-choice-r
+    ref: Classicism.Map.Arguments.coalesced_sums.relational_choice_free_root.relational_choice_r
+
 
 - id: actuality-singleton-root
   requires: [actual-world-isolated]
@@ -193,6 +211,10 @@ arguments:
   - date: '2026-10-02'
     by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
     note: The three members' versions stated once.
+  lean:
+  - holds: actuality
+    ref: Classicism.Map.Arguments.coalesced_sums.actuality_singleton_root.actuality
+
 
 - id: barcan-t-component
   requires: [complete-components, distinguished-arrows]
