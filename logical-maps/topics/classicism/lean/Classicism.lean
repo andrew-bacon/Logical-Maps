@@ -99,3 +99,6 @@ import Classicism.Background.Framework
 import Classicism.Background.Varieties
 import Classicism.Background.Relations
 import Classicism.Background.RigidityClosure
+-- Completeness of intensional action models, and coalesced sums
+import Classicism.Completeness.Completeness
+import Classicism.Coalesced
