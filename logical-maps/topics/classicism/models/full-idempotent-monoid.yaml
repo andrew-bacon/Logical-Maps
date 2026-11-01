@@ -208,3 +208,7 @@ lean:
     extensionally-full: Classicism.Meta.Intensional.Premodel.Full.extFull _ (Classicism.Meta.Intensional.MSet.model_full Classicism.Meta.Intensional.Idem)
     actual-world-isolated: Classicism.Map.Meets.full_idempotent_monoid.actual_world_isolated
     one-object-action-model: Classicism.Meta.Intensional.Premodel.oneObject_of_subsingleton _
+  verdicts:
+  - fails: atoms-are-self-atoms-t
+    ref: Classicism.Map.Models.full_idempotent_monoid.atoms_are_self_atoms_t
+    status: verified

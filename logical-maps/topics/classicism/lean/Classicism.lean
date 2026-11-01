@@ -95,6 +95,7 @@ import Classicism.Tools.MapIndex
 import Classicism.ModelStatements
 import Classicism.MapModels
 import Classicism.MapDerived
+import Classicism.MapWitnesses
 import Classicism.Background.Framework
 import Classicism.Background.Varieties
 import Classicism.Background.Relations

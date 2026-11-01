@@ -7,6 +7,9 @@ import Classicism.Coalesced.SumData
 import Classicism.Models.Henkin
 import Classicism.Coalesced.Transfer
 import Classicism.Results.SentenceSchemas.ArithmeticNecessitism
+import Classicism.Coalesced.TransferBC
+import Classicism.Coalesced.TransferChoice
+import Classicism.Coalesced.TransferSelfAtoms
 import Mathlib.SetTheory.Cardinal.NatCard
 
 /-!
@@ -562,6 +565,42 @@ theorem arithmetic_necessitism :
       (not_iStar_consistent σ))
 
 end arithmetic_necessitism_complete_components
+
+/-! #### Witness transfers (`Coalesced/TransferBC.lean`) -/
+
+namespace boolean_completeness_t_component
+
+/-- The single-component copies of a component's counterexample family, from the truncation
+model's failure of BC at `t` (`Coalesced.SumData.not_holds_bcT`). -/
+theorem boolean_completeness_t :
+    Statements.Arguments.coalesced_sums.boolean_completeness_t_component.boolean_completeness_t :=
+  fun _ hc hD hF => Coalesced.SumData.not_holds_bcT hD hF hc
+
+end boolean_completeness_t_component
+
+namespace self_atomicity_component
+
+/-- The single-component copy of a component's atom that is no self-atom
+(`Coalesced/TransferSelfAtoms.lean`). -/
+theorem self_atomicity_t : Statements.Arguments.coalesced_sums.self_atomicity_component.self_atomicity_t :=
+  fun _ hc hD hF => Coalesced.SumData.not_holds_selfAtomicityT hD hF hc
+
+theorem atoms_are_self_atoms_t :
+    Statements.Arguments.coalesced_sums.self_atomicity_component.atoms_are_self_atoms_t :=
+  fun _ hc hD hF => Coalesced.SumData.not_holds_aasaT hD hF hc
+
+end self_atomicity_component
+
+namespace intensional_choice_component
+
+/-- The thread on a component's counterexample (`Coalesced/TransferChoice.lean`). -/
+theorem intensional_choice_r :
+    Statements.Arguments.coalesced_sums.intensional_choice_component.intensional_choice_r :=
+  fun _ hc hD hF => Coalesced.SumData.not_holds_ic hD hF hc
+
+end intensional_choice_component
+
+/-! #### End of witness transfers -/
 
 end coalesced_sums
 

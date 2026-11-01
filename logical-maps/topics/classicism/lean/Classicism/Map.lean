@@ -18,6 +18,7 @@ import Classicism.Results.Research.ModalPropagationCertificates.BoxedComprehensi
 import Classicism.Results.Other.Meta
 import Classicism.Certified.Box5
 import Classicism.Results.Existence
+import Classicism.Results.Other.Witnesses
 
 /-!
 # The map's results, certified
@@ -2173,5 +2174,57 @@ theorem modalized_relational_choice_implies_necessary_modalized_relational_choic
   map_cert (Entails.discharge_existence Proofs.modalized_relational_choice_implies_necessary_modalized_relational_choice.entails)
 
 /-! ### End of Existence as a premise, discharged -/
+
+/-! ### Witness verdicts: Maximalism against necessitations (`Results/Other/Witnesses.lean`) -/
+
+/-- `maximalist-distinctness-incompatible-with-necessary-truth-implies-five-necessity` -/
+theorem maximalist_distinctness_incompatible_with_necessary_truth_implies_five_necessity : Statements.maximalist_distinctness_incompatible_with_necessary_truth_implies_five_necessity := by
+  map_cert_incompatible maximalist_necTruthImpliesFive_inconsistent
+
+/-- `maximalist-distinctness-incompatible-with-necessary-truth-implies-two-hat-necessity` -/
+theorem maximalist_distinctness_incompatible_with_necessary_truth_implies_two_hat_necessity : Statements.maximalist_distinctness_incompatible_with_necessary_truth_implies_two_hat_necessity := by
+  map_cert_incompatible maximalist_necTruthImpliesTwoHat_inconsistent
+
+/-- `maximalist-distinctness-incompatible-with-necessary-two-hat-implies-nd-necessity` -/
+theorem maximalist_distinctness_incompatible_with_necessary_two_hat_implies_nd_necessity : Statements.maximalist_distinctness_incompatible_with_necessary_two_hat_implies_nd_necessity := by
+  map_cert_incompatible maximalist_necTwoHatImpliesNd_inconsistent
+
+/-- `maximalist-distinctness-incompatible-with-necessary-five-implies-nd-necessity` -/
+theorem maximalist_distinctness_incompatible_with_necessary_five_implies_nd_necessity : Statements.maximalist_distinctness_incompatible_with_necessary_five_implies_nd_necessity := by
+  map_cert_incompatible maximalist_necFiveImpliesNd_inconsistent
+
+/-- `maximalist-distinctness-incompatible-with-necessary-weakly-inextensible-comprehension-r` -/
+theorem maximalist_distinctness_incompatible_with_necessary_weakly_inextensible_comprehension_r : Statements.maximalist_distinctness_incompatible_with_necessary_weakly_inextensible_comprehension_r := by
+  map_cert_incompatible maximalist_necWeaklyInextensibleComprehension_inconsistent
+
+/-- `maximalist-distinctness-incompatible-with-necessary-tame-rigidity-r` -/
+theorem maximalist_distinctness_incompatible_with_necessary_tame_rigidity_r : Statements.maximalist_distinctness_incompatible_with_necessary_tame_rigidity_r := by
+  map_cert_incompatible maximalist_necTameRigidity_inconsistent
+
+/-- `maximalist-distinctness-incompatible-with-necessary-vicinity` -/
+theorem maximalist_distinctness_incompatible_with_necessary_vicinity : Statements.maximalist_distinctness_incompatible_with_necessary_vicinity := by
+  map_cert_incompatible maximalist_necVicinity_inconsistent
+
+/-- `maximalist-distinctness-incompatible-with-necessary-boolean-completeness-t` -/
+theorem maximalist_distinctness_incompatible_with_necessary_boolean_completeness_t : Statements.maximalist_distinctness_incompatible_with_necessary_boolean_completeness_t := by
+  map_cert_incompatible maximalist_necBooleanCompletenessT_inconsistent
+
+/-- `possibility-and-necessary-strong-atomicity-t-incompatible` -/
+theorem possibility_and_necessary_strong_atomicity_t_incompatible : Statements.possibility_and_necessary_strong_atomicity_t_incompatible := by
+  map_cert_incompatible maximalist_necStrongAtomicityT_inconsistent
+
+/-- `possibility-and-necessary-atoms-are-self-atoms-t-incompatible` -/
+theorem possibility_and_necessary_atoms_are_self_atoms_t_incompatible : Statements.possibility_and_necessary_atoms_are_self_atoms_t_incompatible := by
+  map_cert_incompatible maximalist_necAtomsAreSelfAtomsT_inconsistent
+
+/-- `possibility-and-necessary-intensional-choice-incompatible` -/
+theorem possibility_and_necessary_intensional_choice_incompatible : Statements.possibility_and_necessary_intensional_choice_incompatible := by
+  map_cert_incompatible maximalist_necIntensionalChoice_inconsistent
+
+/-- `maximalist-distinctness-incompatible-with-necessary-transversal-r` -/
+theorem maximalist_distinctness_incompatible_with_necessary_transversal_r : Statements.maximalist_distinctness_incompatible_with_necessary_transversal_r := by
+  map_cert_incompatible maximalist_necTransversal_inconsistent
+
+/-! ### End of witness verdicts -/
 
 end Classicism.Map
