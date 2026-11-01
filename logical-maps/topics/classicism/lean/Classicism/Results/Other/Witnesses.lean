@@ -275,6 +275,16 @@ theorem maximalist_necBooleanCompletenessT_inconsistent :
     ¬ Consistent (maximalist (Sig := Signature.pure) ∪ P.NecBooleanCompletenessT.schema) :=
   max_box_inconsistent (Consistent.empty_union Monoids.Truncs.not_bcT_consistent) rfl
 
+/-- `possibility-and-necessary-strong-atomicity-t-incompatible`: Strong Atomicity at `t` fails in
+the full model on the idempotent monoid (`nonepic-strong-atomicity`). -/
+theorem maximalist_necStrongAtomicityT_inconsistent :
+    ¬ Consistent (maximalist (Sig := Signature.pure) ∪ P.NecStrongAtomicityT.schema) :=
+  maximalist_box_inconsistent_of_model _ (MSet.model_isModel Intensional.Idem)
+    P.StrongAtomicityT.schema_closedTypes
+    (fun h => Map.Models.full_idempotent_monoid.strong_atomicity_t.2
+      ((Premodel.holdsAx_schemaIn_iff _ _).2 h))
+    (by rintro _ ⟨_, rfl, rfl⟩; rfl)
+
 /-- `maximalist-distinctness-incompatible-with-necessary-vicinity`. -/
 theorem maximalist_necVicinity_inconsistent :
     ¬ Consistent (maximalist (Sig := Signature.pure) ∪ P.NecVicinity.schema) :=
