@@ -44,7 +44,7 @@ open Meta Meta.AxiomSet
 
 namespace AtomsConsistency
 
-open Intensional Intensional.Premodel
+open Intensional Intensional.Premodel CategoryTheory
 
 /-- Strong Atomicity at `t` fails in the permutation model of Appendix D, Part 1, where
 Atomicity at `t` fails: the certified record that it implies Atomicity, by soundness. -/
@@ -74,6 +74,67 @@ theorem not_atomsAreStrongAtomsT_consistent :
             Proofs.atomicity_t_and_atoms_are_strong_atoms_t_imply_strong_atomicity_t.entails
             (holdsAx_union _ hat (holdsAx_single _ h))))))
 
+/-- Self-Atomicity at `t` fails in a full model with an arrow `k` and a non-identity `j'` such that
+`k ≫ j' = k`: the only candidate below `{k}` is `{k}`, which after `k` is true and has the proper
+non-bottom part `{𝟙}`, so is not an atom there. -/
+theorem not_selfAtomicityT {C : Type} [SmallCategory C] {B : Premodel Signature.pure C} (M : B.IsModel) (hF : B.Full)
+    {V : C} (k : B.W₀ ⟶ V) (j' : V ⟶ V) (hne : j' ≠ 𝟙 V) (hk : k ≫ j' = k) :
+    ¬ B.HoldsSentence P.SelfAtomicityT.quoted := by
+  have sem_bot' : ∀ {Γ : Ctx} {W : C} (h : B.W₀ ⟶ W) (g : IEnv (B.Dom W) Γ),
+      B.sem h (Term.bot : Formula Signature.pure Γ) g = ∅ := fun h g => B.sem_bot M h g
+  simp only [Premodel.HoldsSentence, P.SelfAtomicityT.quoted, B.holds_forall M, B.holds_imp M,
+    B.holds_exists M, B.holds_conj M, B.holds_neg M, B.holds_box M]
+  simp only [B.holds_eq M, sem_var, sem_bot', B.sem_disj M, B.sem_neg M, IEnv.get, IEnv.get_map,
+    B.incl_map]
+  intro H
+  obtain ⟨x, hx⟩ := hF .t B.W₀ {⟨V, PUnit.unit, k⟩}
+  obtain ⟨w, ⟨hw, hbox⟩, hle⟩ := H x (by rw [hx]; exact Set.singleton_ne_empty _)
+  rw [hx] at hle
+  have hwx : B.incl .t B.W₀ w = {⟨V, PUnit.unit, k⟩} := by
+    have hsub : B.incl .t B.W₀ w ⊆ {⟨V, PUnit.unit, k⟩} := Set.union_eq_right.1 hle.symm
+    exact (Set.subset_singleton_iff_eq.1 hsub).resolve_left hw
+  obtain ⟨y, hy⟩ := hF .t V {⟨V, PUnit.unit, 𝟙 V⟩}
+  have h1 : (⟨V, PUnit.unit, 𝟙 V⟩ : Tuple B.inner .t V) ∈
+      Intension.map B.inner k (B.incl .t B.W₀ w) := by
+    rw [hwx]; show _ = _; simp
+  have hj' : (⟨V, PUnit.unit, j'⟩ : Tuple B.inner .t V) ∈
+      Intension.map B.inner k (B.incl .t B.W₀ w) := by
+    rw [hwx]; show _ = _; rw [hk]
+  have hT : B.Holds (𝟙 B.W₀ ≫ k) (Term.var Var.zero) (B.push k (IEnv.cons w (IEnv.cons x IEnv.nil))) := by
+    rw [holds_var]
+    simpa only [IEnv.get, IEnv.get_map, B.incl_map] using h1
+  have hA := (hbox k (fun f => (f hT).2 (f hT).1) y).1
+    ⟨by rw [hy]; exact (Set.union_eq_right.2 (Set.singleton_subset_iff.2 h1)).symm,
+     fun e => hne (by
+      have : (⟨V, PUnit.unit, j'⟩ : Tuple B.inner .t V) ∈ B.incl .t V y := by rw [e]; exact hj'
+      rw [hy] at this
+      obtain ⟨_, hh⟩ := Sigma.mk.inj_iff.mp (Set.mem_singleton_iff.1 this)
+      exact (Prod.mk.inj (eq_of_heq hh)).2)⟩
+  have hin : (⟨V, PUnit.unit, 𝟙 V⟩ : Tuple B.inner .t V) ∈ B.incl .t V y := by rw [hy]; rfl
+  have : (⟨V, PUnit.unit, 𝟙 V⟩ : Tuple B.inner .t V) ∈ (B.incl .t V y)ᶜ := by
+    rw [hA]; exact Or.inl hin
+  exact this hin
+
+/-- Atoms are self-atoms (type `t`) fails in the full model on the idempotent monoid, where
+Atomicity at `t` holds and Self-Atomicity at `t` fails. -/
+theorem not_atomsAreSelfAtomsT_consistent :
+    Consistent (single (Term.neg P.AtomsAreSelfAtomsT.quoted)) :=
+  have M : (MSet.model Idem).IsModel := MSet.model_isModel Idem
+  have hat : (MSet.model Idem).HoldsAx P.AtomicityT.schema :=
+    (MSet.model Idem).entails_holds M
+      (Entails.trans Proofs.necessary_atomicity_r_implies_atomicity_r.entails
+        Proofs.atomicity_r_implies_atomicity_t.entails)
+      ((holdsAx_schemaIn_iff _ _).1
+        (Map.Arguments.full_atomicity.necessary_atomicity_r _ M (MSet.model_full Idem)))
+  Consistent.of_model (MSet.model Idem) M
+    (holdsAx_single _ ((holdsSentence_neg _ M _).2 fun h =>
+      not_selfAtomicityT (V := SingleObj.star Idem) M (MSet.model_full Idem)
+        (Idem.k : SingleObj.star Idem ⟶ SingleObj.star Idem)
+        (Idem.k : SingleObj.star Idem ⟶ SingleObj.star Idem) Idem.k_ne_one rfl
+        ((MSet.model Idem).entails_holds M
+          Proofs.atomicity_t_and_atoms_are_self_atoms_t_imply_self_atomicity_t.entails
+          (holdsAx_union _ hat (holdsAx_single _ h)) _ rfl)))
+
 end AtomsConsistency
 
 /-- `possibility-and-necessary-strong-atomicity-t-incompatible` -/
@@ -85,6 +146,11 @@ theorem possibility_and_necessary_strong_atomicity_t_incompatible : Statements.p
 theorem possibility_and_necessary_atoms_are_strong_atoms_t_incompatible : Statements.possibility_and_necessary_atoms_are_strong_atoms_t_incompatible := by
   map_cert_incompatible (show ¬ Consistent (possibility (empty : AxiomSet Signature.pure) ∪ P.NecAtomsAreStrongAtomsT.schema) from
     possibility_box_inconsistent (Consistent.empty_union AtomsConsistency.not_atomsAreStrongAtomsT_consistent) rfl)
+
+/-- `possibility-and-necessary-atoms-are-self-atoms-t-incompatible` -/
+theorem possibility_and_necessary_atoms_are_self_atoms_t_incompatible : Statements.possibility_and_necessary_atoms_are_self_atoms_t_incompatible := by
+  map_cert_incompatible (show ¬ Consistent (possibility (empty : AxiomSet Signature.pure) ∪ P.NecAtomsAreSelfAtomsT.schema) from
+    possibility_box_inconsistent (Consistent.empty_union AtomsConsistency.not_atomsAreSelfAtomsT_consistent) rfl)
 
 /-- `actuality-and-self-atoms-are-strong-atoms-t-imply-strong-actuality` -/
 theorem actuality_and_self_atoms_are_strong_atoms_t_imply_strong_actuality : Statements.actuality_and_self_atoms_are_strong_atoms_t_imply_strong_actuality := by
