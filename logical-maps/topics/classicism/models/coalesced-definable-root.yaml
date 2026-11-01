@@ -23,6 +23,7 @@ references:
 group: coalesced-sums
 settings:
   root-arrows: interpretations
+  sigma: top
   construction: 'Fix a set $A$ of action models complete for C, with disjoint objects and arrows, and the
     signature $\Sigma_0=\{d\}$ with one constant $d$ of type $e$. Add an object $W_0$. Its arrows out
     are its identity and, for each object $V$ of a model in $A$ and each individual $a$ at $V$, an arrow

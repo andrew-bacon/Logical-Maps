@@ -27,6 +27,7 @@ references:
 group: coalesced-sums
 settings:
   root-arrows: distinguished
+  sigma: top
   construction: 'Assume $\operatorname{Con}(\mathrm{ZFC})$ in the metatheory, so that there are models
     $N_+\models\mathrm{ZFC}+\mathrm{CH}$ and $N_-\models\mathrm{ZFC}+\neg\mathrm{CH}$. From each $N$ form the
     one-world extensional Henkin model whose individuals are $N$''s reals and whose domain of each relational

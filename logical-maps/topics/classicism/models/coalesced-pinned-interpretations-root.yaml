@@ -26,6 +26,7 @@ references:
 group: coalesced-sums
 settings:
   root-arrows: interpretations
+  sigma: construction
   construction: 'Fix a set $A$ of action models complete for C($\Sigma$), with disjoint objects and arrows,
     and a signature $\Sigma^+\supseteq\Sigma$ with countably infinitely many constants of every type.
     Add an object $W_0$. Its arrows out are its identity and, for each object $V$ of a model in $A$ and

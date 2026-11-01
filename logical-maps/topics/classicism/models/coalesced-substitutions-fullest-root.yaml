@@ -28,6 +28,7 @@ references:
 group: coalesced-sums
 settings:
   root-arrows: interpretations-and-substitutions
+  sigma: construction
   construction: 'Fix a set $A$ of action models complete for C($\Sigma$), with disjoint objects and arrows,
     and a signature
     $\Sigma^+\supseteq\Sigma$ with countably infinitely many constants of every type. Add an object
@@ -47,6 +48,9 @@ settings:
       along a map $f$ keeps an entity in the domain, its transports along the $\langle V,I\rangle$ being
       transports of the original along the $\langle V,I\circ f\rangle$.'
 meets:
+  fullest-domains: >-
+    An entity at $W_0$ of a relational type is any intension over the arrows out of $W_0$ whose
+    transport along every arrow into a component is in that component's domain.
   complete-components: The models in $A$ are complete for C($\Sigma$), so in particular for C.
   free-root-component: >-
     Any extension at the identity of $W_0$ is that of the entity with that extension at the identity

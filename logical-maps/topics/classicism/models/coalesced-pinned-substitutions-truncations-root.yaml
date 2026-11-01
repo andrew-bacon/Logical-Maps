@@ -23,6 +23,7 @@ references:
 group: coalesced-sums
 settings:
   root-arrows: interpretations-and-substitutions
+  sigma: construction
   construction: >-
     As in coalesced-pinned-substitutions-root, with a single component in place of a family complete for
     C($\Sigma$): the one-object model finite-support-truncations, with object $V$. The root $W_0$ has an

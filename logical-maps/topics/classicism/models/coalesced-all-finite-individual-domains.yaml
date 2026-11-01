@@ -29,6 +29,7 @@ references:
 group: coalesced-sums
 settings:
   root-arrows: distinguished
+  sigma: top
   construction: 'Take the full Henkin models $M_n$ with individual domain $\{1,\ldots,n\}$ for every $n\ge1$,
     and add a root world. Individuals are threads $(a_n)_n$ with $a_n\in\{1,\ldots,n\}$. Application is
     componentwise, identity at world $n$ is the identity of $M_n$ and at the root is identity of elements.
@@ -39,6 +40,10 @@ settings:
 definition: 'Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each denotes
   the top element of its type.'
 meets:
+  fullest-domains: >-
+    An entity of a function type is a family of $M_n$-entities together with an arbitrary root
+    component, which is every intension whose transport along each distinguished arrow is in that
+    component's domain.
   two-actual-components: >-
     Every component is a one-world Henkin model, where the top proposition is the true atom; the
     root domains are the fullest.
@@ -241,6 +246,7 @@ lean:
   meets:
     distinguished-arrows: Classicism.Meta.Coalesced.SumData.ofAppendixE_distinguished Classicism.Meta.Coalesced.AllFinite.comp_isModel
     free-root-component: Classicism.Meta.Coalesced.SumData.ofAppendixE_free Classicism.Meta.Coalesced.AllFinite.comp_isModel
+    fullest-domains: Classicism.Meta.Coalesced.SumData.ofAppendixE_fullest Classicism.Meta.Coalesced.AllFinite.comp_isModel
     full-model: Classicism.Meta.Coalesced.AllFinite.full
     full-action-model: Classicism.Meta.Coalesced.AllFinite.full
     extensionally-full: Classicism.Meta.Intensional.Premodel.Full.extFull _ Classicism.Meta.Coalesced.AllFinite.full

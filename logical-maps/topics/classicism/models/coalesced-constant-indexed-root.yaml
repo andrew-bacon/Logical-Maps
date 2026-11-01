@@ -24,6 +24,7 @@ references:
 group: coalesced-sums
 settings:
   root-arrows: distinguished
+  sigma: construction
   construction: 'For a signature Σ with countably infinitely many individual constants and at least one
     relational constant, take a set of action models for L(Σ) complete for C(Σ), and coalesce them at
     a new root whose individual domain is the set of individual constants, each constant denoting itself
@@ -126,6 +127,7 @@ lean:
     complete-components: Classicism.Meta.Coalesced.constantIndexedData_complete
     distinguished-arrows: Classicism.Meta.Coalesced.constantIndexedData_distinguished
     free-root-component: Classicism.Meta.Coalesced.constantIndexedData_free
+    fullest-domains: Classicism.Meta.Coalesced.constantIndexedData_fullest
     actual-world-isolated: Classicism.Meta.Coalesced.constantIndexedData_isolated
   verdicts:
   - holds: axiom-of-infinity-e

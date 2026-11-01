@@ -22,6 +22,7 @@ references:
 group: coalesced-sums
 settings:
   root-arrows: distinguished
+  sigma: top
   construction: 'Let $T$ be C with Extensionality, Well-Ordering at every type and $I^*$ (zero is not a
     successor and successor is injective on the finite cardinalities of individuals). $T$ holds in the
     full standard model on $\mathbb N$, by choice in the metatheory, so $T+\operatorname{Con}(T)$ is consistent, and by Gödel''s second incompleteness

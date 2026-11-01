@@ -19,6 +19,7 @@ references:
 group: coalesced-sums
 settings:
   root-arrows: distinguished
+  sigma: construction
   construction: Take a coalesced sum of a set of source action models complete for C in the fixed signature,
     evaluated at the new root. See Definition E.2 for the construction.
   domains: fullest
@@ -149,6 +150,7 @@ lean:
     complete-components: Classicism.Meta.Coalesced.maximalistData_complete Classicism.Meta.Coalesced.sigmaTop_closed
     distinguished-arrows: Classicism.Meta.Coalesced.maximalistData_distinguished
     free-root-component: Classicism.Meta.Coalesced.maximalistData_free
+    fullest-domains: Classicism.Meta.Coalesced.maximalistData_fullest
     actual-world-isolated: Classicism.Meta.Coalesced.maximalistData_isolated
   verdicts:
   - holds: distinctness-signature-r

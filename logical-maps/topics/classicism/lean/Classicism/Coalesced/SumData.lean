@@ -115,6 +115,10 @@ def FreeRootComponent : Prop :=
       (p ∈ Y ↔ p ∈ D.RI.incl ρ x)) →
       ∃ y, D.RI.incl ρ y = Y
 
+/-- `fullest-domains`: the root domains are the **fullest**, every landing intension at the root
+being the inclusion of a root entity (`RootAction.Fullest`). -/
+def FullestDomains : Prop := D.RA.Fullest D.RI
+
 /-! ### A free root component -/
 
 variable {D}
@@ -239,6 +243,11 @@ theorem SumData.freeRootComponent_ofDistinguished (hI : TransportsConstants (ful
   rw [e]
   exact (fullAction ae av).lands_incl (fullRootIncl ae av) x r
 
+/-- They meet `fullest-domains`: the root domains are `fullAction`'s (`fullest_full`). -/
+theorem SumData.fullestDomains_ofDistinguished (hI : TransportsConstants (fullAction ae av) I)
+    (M : ∀ k, (A k).IsModel) : (SumData.ofDistinguished A ae av ne I hI M).FullestDomains :=
+  fullest_full ae av
+
 /-- They meet `complete-components` when every sentence consistent with `C(Σ)` holds at the base
 of some component, the signature being closed. -/
 theorem SumData.completeComponents_ofDistinguished (hI : TransportsConstants (fullAction ae av) I)
@@ -272,6 +281,9 @@ theorem SumData.ofAppendixE_distinguished : (SumData.ofAppendixE A M).Distinguis
 
 theorem SumData.ofAppendixE_free : (SumData.ofAppendixE A M).FreeRootComponent :=
   SumData.freeRootComponent_ofDistinguished _ _
+
+theorem SumData.ofAppendixE_fullest : (SumData.ofAppendixE A M).FullestDomains :=
+  SumData.fullestDomains_ofDistinguished _ _
 
 theorem SumData.ofAppendixE_isolated : (SumData.ofAppendixE A M).model.ActualWorldIsolated :=
   SumData.actualWorldIsolated_of (SumData.ofAppendixE_free M) fun _ => rfl
@@ -328,6 +340,10 @@ theorem maximalistData_free {Sig : Signature} [Countable Sig.Const] :
     (maximalistData Sig).FreeRootComponent :=
   SumData.ofAppendixE_free canonicalFamily_isModel
 
+theorem maximalistData_fullest {Sig : Signature} [Countable Sig.Const] :
+    (maximalistData Sig).FullestDomains :=
+  SumData.ofAppendixE_fullest canonicalFamily_isModel
+
 theorem maximalistData_isolated {Sig : Signature} [Countable Sig.Const] :
     (maximalistData Sig).model.ActualWorldIsolated :=
   SumData.actualWorldIsolated_of maximalistData_free fun _ => rfl
@@ -381,6 +397,9 @@ theorem singleIndividualData_distinguished : singleIndividualData.DistinguishedA
 
 theorem singleIndividualData_free : singleIndividualData.FreeRootComponent :=
   SumData.freeRootComponent_ofDistinguished _ _
+
+theorem singleIndividualData_fullest : singleIndividualData.FullestDomains :=
+  SumData.fullestDomains_ofDistinguished _ _
 
 theorem singleIndividualData_isolated : singleIndividualData.model.ActualWorldIsolated :=
   SumData.actualWorldIsolated_of singleIndividualData_free fun _ => rfl
@@ -444,6 +463,9 @@ theorem constantIndexedData_distinguished : constantIndexedData.DistinguishedArr
 
 theorem constantIndexedData_free : constantIndexedData.FreeRootComponent :=
   SumData.freeRootComponent_ofDistinguished _ _
+
+theorem constantIndexedData_fullest : constantIndexedData.FullestDomains :=
+  SumData.fullestDomains_ofDistinguished _ _
 
 theorem constantIndexedData_isolated : constantIndexedData.model.ActualWorldIsolated :=
   SumData.actualWorldIsolated_of constantIndexedData_free fun _ => rfl

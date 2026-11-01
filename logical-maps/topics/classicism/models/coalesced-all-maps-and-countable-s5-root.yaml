@@ -25,6 +25,7 @@ references:
 group: coalesced-sums
 settings:
   root-arrows: distinguished
+  sigma: top
   construction: >-
     The components are $A$, the model of symmetry-constrained-full-all-maps (three individuals, all $27$
     maps as arrows), and $B$, the model of full-infinite-s5 with $W=\mathbb N$ and a single individual,

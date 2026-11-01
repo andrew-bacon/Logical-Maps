@@ -27,6 +27,7 @@ references:
 group: coalesced-sums
 settings:
   root-arrows: interpretations-and-substitutions
+  sigma: construction
   construction: 'As in coalesced-pinned-interpretations-root, with further arrows from $W_0$ to itself: one for
     every type-preserving map $f$ of the constants of $\Sigma^+$ to themselves, the identity among them.
     $f$ acts on the individuals at $W_0$ as on constants; maps compose with each other as functions, and

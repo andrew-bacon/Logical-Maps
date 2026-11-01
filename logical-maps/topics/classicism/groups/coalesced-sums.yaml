@@ -65,12 +65,32 @@ parameters:
   domains:
     text: What the root's domains contain.
     values:
-      fullest: >-
-        Root domains are as full as compatibility allows: a root proposition is a choice, for each
-        component, of a proposition of that component’s root domain, together with a truth value at
-        the root’s identity arrow, and a root entity of a relational type is likewise a family of
-        component entities with a root component that is an arbitrary function of the root
-        arguments.
+      fullest:
+        text: >-
+          Root domains are as full as compatibility allows: a root proposition is a choice, for each
+          component, of a proposition of that component’s root domain, together with a truth value at
+          the root’s identity arrow, and a root entity of a relational type is likewise a family of
+          component entities with a root component that is an arbitrary function of the root
+          arguments.
+        meets:
+          fullest-domains: This is the value.
+  sigma:
+    text: >-
+      The interpretation of Σ, as each member's construction or definition fixes it. Nothing is
+      generated: the interpretation is part of the construction.
+    values:
+      top:
+        text: >-
+          Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each
+          denotes the top element of its type.
+        label: Σ top
+        brief: every constant of Σ denotes the top element of its type
+        meets:
+          sigma-top: This is the interpretation.
+      construction:
+        text: The interpretation of Σ that the member's construction gives.
+        label: Σ as constructed
+        brief: Σ as the construction interprets it
 
 # The construction in Lean (Coalesced/SumData.lean): the data of a coalesced sum that is a model,
 # for any root arrows (distinguished, interpretation or substitution arrows) and any root domains
@@ -101,10 +121,15 @@ conditions:
     A root entity of a relational type has a root component that is an arbitrary function of the
     root arguments.
   lean: Classicism.Meta.Coalesced.SumData.FreeRootComponent
+- id: fullest-domains
+  text: >-
+    The root domains are the fullest: every intension at the root whose transport along every root
+    arrow lies in the component's domain is a root entity.
+  lean: Classicism.Meta.Coalesced.SumData.FullestDomains
 
 arguments:
 - id: tame-rigidity-component
-  requires: [complete-components, free-root-component, distinguished-arrows]
+  requires: [complete-components, free-root-component, distinguished-arrows, fullest-domains]
   fails: [tame-rigidity-r]
   by: Claude Fable 5.1 (Anthropic), answering Cian Dorr's conjecture
   date: '2026-10-03'
@@ -131,10 +156,16 @@ arguments:
       One direction of Fable's transfer theorem: at a coalesced root, Tame Rigidity at a
       relational type holds iff it holds at the root of every component. The other direction is
       not recorded, the engine deriving the positive verdict in the one model where it applies.
+  - date: '2026-10-31'
+    by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+    note: >-
+      Condition fullest-domains added to the requirements: the argument builds root entities whose
+      parts in the components are chosen freely, which needs the root domains to be the fullest.
+      Every member with distinguished arrows has them, so no member's verdicts change.
 
 
 - id: rigid-power-component
-  requires: [complete-components, free-root-component, distinguished-arrows]
+  requires: [complete-components, free-root-component, distinguished-arrows, fullest-domains]
   fails: [rigid-power-r]
   by: GPT-6 Astra (OpenAI), at Cian Dorr's request; checked and recorded by Claude Opus 5.5 (Anthropic)
   date: '2026-10-11'
@@ -158,9 +189,16 @@ arguments:
     property is that of $A$, transport respecting abstraction, rigidity and entailment, and every arrow
     into $m$ factors through the distinguished one; so it is not rigid. Rigid Power fails at the root,
     at type $t\to t$.
+  revisions:
+  - date: '2026-10-31'
+    by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+    note: >-
+      Condition fullest-domains added to the requirements: the argument builds root entities whose
+      parts in the components are chosen freely, which needs the root domains to be the fullest.
+      Every member with distinguished arrows has them, so no member's verdicts change.
 
 - id: intensional-choice-component
-  requires: [complete-components, distinguished-arrows]
+  requires: [complete-components, distinguished-arrows, fullest-domains]
   fails: [intensional-choice-r]
   by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, at Cian Dorr's suggestion
   date: '2026-10-03'
@@ -173,6 +211,13 @@ arguments:
     domain, and it is necessarily instantiated. A root $G\le F^{\prime}$ that is necessarily uniquely
     instantiated would be carried onto such a $G$ for $F$ at $M_0$, every arrow from the root into $M$
     factoring through the distinguished one. So the unboxed principle fails at the root.
+  revisions:
+  - date: '2026-10-31'
+    by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+    note: >-
+      Condition fullest-domains added to the requirements: the argument builds root entities whose
+      parts in the components are chosen freely, which needs the root domains to be the fullest.
+      Every member with distinguished arrows has them, so no member's verdicts change.
 
 
 - id: relational-choice-free-root
@@ -217,7 +262,7 @@ arguments:
 
 
 - id: barcan-t-component
-  requires: [complete-components, distinguished-arrows]
+  requires: [complete-components, distinguished-arrows, fullest-domains]
   fails: [barcan-t]
   by: Cian Dorr, recorded by Claude Fable 5.1 (Anthropic)
   date: '2026-09-22'
@@ -235,9 +280,15 @@ arguments:
   - date: '2026-10-02'
     by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
     note: The three members' verbatim copies stated once.
+  - date: '2026-10-31'
+    by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+    note: >-
+      Condition fullest-domains added to the requirements: the argument builds root entities whose
+      parts in the components are chosen freely, which needs the root domains to be the fullest.
+      Every member with distinguished arrows has them, so no member's verdicts change.
 
 - id: atomicity-t-component
-  requires: [complete-components, distinguished-arrows]
+  requires: [complete-components, distinguished-arrows, fullest-domains]
   fails: [atomicity-t]
   by: Cian Dorr, recorded by Claude Fable 5.1 (Anthropic)
   date: '2026-09-22'
@@ -251,9 +302,15 @@ arguments:
   - date: '2026-10-02'
     by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
     note: The three members' verbatim copies stated once.
+  - date: '2026-10-31'
+    by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+    note: >-
+      Condition fullest-domains added to the requirements: the argument builds root entities whose
+      parts in the components are chosen freely, which needs the root domains to be the fullest.
+      Every member with distinguished arrows has them, so no member's verdicts change.
 
 - id: boolean-completeness-t-component
-  requires: [complete-components, distinguished-arrows]
+  requires: [complete-components, distinguished-arrows, fullest-domains]
   fails: [boolean-completeness-t]
   by: Cian Dorr, recorded by Claude Fable 5.1 (Anthropic)
   date: '2026-09-23'
@@ -267,6 +324,12 @@ arguments:
   - date: '2026-10-02'
     by: Claude Opus 5.5 (Anthropic), at Cian Dorr's direction
     note: The three members' verbatim copies stated once.
+  - date: '2026-10-31'
+    by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+    note: >-
+      Condition fullest-domains added to the requirements: the argument builds root entities whose
+      parts in the components are chosen freely, which needs the root domains to be the fullest.
+      Every member with distinguished arrows has them, so no member's verdicts change.
 
 - id: pure-sentences-possible
   requires: [complete-components]
@@ -348,6 +411,7 @@ arguments:
   requires:
   - complete-components
   - distinguished-arrows
+  - fullest-domains
   fails:
   - self-atomicity-t
   - atoms-are-self-atoms-t
@@ -360,3 +424,10 @@ arguments:
     at the root, is possible, and under the distinguished arrow into $N$ becomes $q$, which is true at
     a world of $N$ without being an atom there. So it is an atom that is not a self-atom, and as nothing
     possible lies below it but itself, Self-Atomicity (type t) fails at the root too.
+  revisions:
+  - date: '2026-10-31'
+    by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+    note: >-
+      Condition fullest-domains added to the requirements: the argument builds root entities whose
+      parts in the components are chosen freely, which needs the root domains to be the fullest.
+      Every member with distinguished arrows has them, so no member's verdicts change.

@@ -25,6 +25,7 @@ references:
 group: coalesced-sums
 settings:
   root-arrows: interpretations-and-substitutions
+  sigma: construction
   construction: >-
     Let $T$ be C together with $\Box$Atomlessness, $\Box I^*_e$ and the negation of BF at type $t$, a
     recursively axiomatized theory. $T$ holds in finite-support-monotone-maps, which is atomless, fails BF at

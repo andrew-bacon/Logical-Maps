@@ -25,6 +25,7 @@ references:
 group: coalesced-sums
 settings:
   root-arrows: distinguished
+  sigma: top
   construction: >-
     The component is a one-world Henkin model $H$, as an action model with one object and only its
     identity arrow. Its individuals are labels $L_i$ and options $A_i^0,A_i^1$ ($i\in\mathbb N$). The

@@ -24,6 +24,7 @@ references:
 group: coalesced-sums
 settings:
   root-arrows: interpretations-and-substitutions
+  sigma: construction
   construction: >-
     Assume $\operatorname{Con}(\mathrm{ZFC})$ in the metatheory, as for coalesced-two-extensional-ch-models-root,
     so that there are models $N_+\models\mathrm{ZFC}+\mathrm{CH}$ and $N_-\models\mathrm{ZFC}+\neg\mathrm{CH}$. In each

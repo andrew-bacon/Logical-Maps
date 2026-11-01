@@ -19,6 +19,7 @@ references:
 group: coalesced-sums
 settings:
   root-arrows: distinguished
+  sigma: construction
   construction: 'Take the alternative coalesced-sum root of Appendix E, p. 83: a set of source action
     models complete for C, coalesced at a new root whose individual domain is a singleton, the unique
     root individual being carried by each distinguished arrow to a chosen individual of that component.
@@ -130,6 +131,7 @@ lean:
     complete-components: Classicism.Meta.Coalesced.singleIndividualData_complete
     distinguished-arrows: Classicism.Meta.Coalesced.singleIndividualData_distinguished
     free-root-component: Classicism.Meta.Coalesced.singleIndividualData_free
+    fullest-domains: Classicism.Meta.Coalesced.singleIndividualData_fullest
     actual-world-isolated: Classicism.Meta.Coalesced.singleIndividualData_isolated
   verdicts:
   - fails: infinity-e

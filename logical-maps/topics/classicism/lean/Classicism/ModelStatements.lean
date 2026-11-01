@@ -258,6 +258,10 @@ def Models.coalesced_all_finite_individual_domains.transversal_choice_r : Prop :
 def Models.coalesced_all_finite_individual_domains.distinctness_necessary_t : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.SumData.ofAppendixE Classicism.Meta.Coalesced.AllFinite.comp Classicism.Meta.Coalesced.AllFinite.comp_isModel)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.SumData.ofAppendixE Classicism.Meta.Coalesced.AllFinite.comp Classicism.Meta.Coalesced.AllFinite.comp_isModel)).HoldsAx Classicism.P.NecessityOfDistinctnessT.schemaIn
 
+/-- `coalesced-all-finite-individual-domains`: Independence (signature Σ) fails. -/
+def Models.coalesced_all_finite_individual_domains.independence_signature_r : Prop :=
+  (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.SumData.ofAppendixE Classicism.Meta.Coalesced.AllFinite.comp Classicism.Meta.Coalesced.AllFinite.comp_isModel)) (Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.SumData.ofAppendixE Classicism.Meta.Coalesced.AllFinite.comp Classicism.Meta.Coalesced.AllFinite.comp_isModel))).Admitted ∧ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.SumData.ofAppendixE Classicism.Meta.Coalesced.AllFinite.comp Classicism.Meta.Coalesced.AllFinite.comp_isModel)) (Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.SumData.ofAppendixE Classicism.Meta.Coalesced.AllFinite.comp Classicism.Meta.Coalesced.AllFinite.comp_isModel))).IsModel ∧ ¬ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.SumData.ofAppendixE Classicism.Meta.Coalesced.AllFinite.comp Classicism.Meta.Coalesced.AllFinite.comp_isModel)) (Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.SumData.ofAppendixE Classicism.Meta.Coalesced.AllFinite.comp Classicism.Meta.Coalesced.AllFinite.comp_isModel))).HoldsAx (Classicism.Meta.AxiomSet.independence _)
+
 /-- `coalesced-constant-indexed-root`: Relational Choice holds. -/
 def Models.coalesced_constant_indexed_root.relational_choice_r : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).HoldsAx Classicism.P.RelationalChoice.schemaIn
@@ -273,6 +277,10 @@ def Models.coalesced_constant_indexed_root.distinctness_preserving_collapse : Pr
 /-- `coalesced-definable-root`: Truths are ND-necessary holds. -/
 def Models.coalesced_definable_root.distinctness_preserving_collapse : Prop :=
   (Classicism.Meta.Coalesced.definableRoot).IsModel ∧ (Classicism.Meta.Coalesced.definableRoot).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
+
+/-- `coalesced-definable-root`: Independence (signature Σ) fails. -/
+def Models.coalesced_definable_root.independence_signature_r : Prop :=
+  (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Coalesced.definableRoot) (Classicism.Meta.Coalesced.definableRoot_isModel)).Admitted ∧ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Coalesced.definableRoot) (Classicism.Meta.Coalesced.definableRoot_isModel)).IsModel ∧ ¬ (Classicism.Meta.Intensional.Premodel.withTop (Classicism.Meta.Coalesced.definableRoot) (Classicism.Meta.Coalesced.definableRoot_isModel)).HoldsAx (Classicism.Meta.AxiomSet.independence _)
 
 /-- `coalesced-maximalist-root`: Relational Choice holds. -/
 def Models.coalesced_maximalist_root.relational_choice_r : Prop :=
