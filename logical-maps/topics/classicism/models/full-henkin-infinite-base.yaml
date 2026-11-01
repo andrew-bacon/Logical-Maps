@@ -31,6 +31,13 @@ meets:
   infinitely-many-individuals: The individual domain is countably infinite.
   several-individuals: There are infinitely many individuals.
 
+# The member in Lean: the group's model at this individual domain (Classicism/Models/Henkin.lean).
+lean:
+  param: ℕ
+  meets:
+    infinitely-many-individuals: Classicism.Meta.Intensional.Henkin.infinitelyManyIndividuals ℕ
+    several-individuals: Classicism.Meta.Intensional.Henkin.nat_several
+
 # 29 October 2026: the definition, the Σ interpretation and the two arguments (the Axiom of Infinity at
 # type e; the Fregean Axiom and Functional Choice) are now the henkin group's and the topic's
 # (infinitely-many-individuals).

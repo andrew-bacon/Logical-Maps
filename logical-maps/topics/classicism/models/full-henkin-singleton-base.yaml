@@ -26,6 +26,13 @@ meets:
   one-individual: The individual domain is a singleton.
   finitely-many-individuals: There is one individual.
 
+# The member in Lean: the group's model at this individual domain (Classicism/Models/Henkin.lean).
+lean:
+  param: Unit
+  meets:
+    one-individual: Classicism.Meta.Intensional.Henkin.oneIndividual Unit
+    finitely-many-individuals: Classicism.Meta.Intensional.Henkin.unit_finitelyMany
+
 # 29 October 2026: the definition, the Σ interpretation and the two arguments (the Fregean Axiom and
 # Functional Choice; the failure of the Infinity schema at type e) are now the henkin group's.
 arguments: []

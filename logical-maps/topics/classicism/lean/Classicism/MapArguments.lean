@@ -4,6 +4,7 @@ import Classicism.Semantics.OneIndividual
 import Classicism.Semantics.Interpretations
 import Classicism.Models.SymBase
 import Classicism.Coalesced.SumData
+import Classicism.Models.Henkin
 import Mathlib.SetTheory.Cardinal.NatCard
 
 /-!
@@ -526,5 +527,53 @@ theorem relational_choice_r :
 end relational_choice_free_root
 
 end coalesced_sums
+
+/-! ## Arguments of the full Henkin models
+
+The group's parameter is the individual domain `D`; the model is the full model on the one-object
+category of the trivial monoid (`Models/Henkin.lean`). -/
+
+namespace henkin
+
+namespace extensionality
+
+/-- Every tuple of an intension is one at the identity arrow, so coextensive relations are
+identical (`Henkin.holds_extensionality`). -/
+theorem extensionality_r : Statements.Arguments.henkin.extensionality.extensionality_r := by
+  intro D _
+  rw [holdsAx_schemaIn_iff]
+  rintro _ ⟨ρ, -, rfl⟩
+  exact Henkin.holds_extensionality (Henkin.isModel D) (𝟙 _) ρ
+
+end extensionality
+
+namespace functional_choice
+
+/-- By choice, a serial relation's selecting operation is in the full domain
+(`Henkin.holds_functionalChoice`). -/
+theorem functional_choice_r : Statements.Arguments.henkin.functional_choice.functional_choice_r := by
+  intro D _
+  rw [holdsAx_schemaIn_iff]
+  rintro _ ⟨σ, ρ, -, -, rfl⟩
+  exact Henkin.holds_functionalChoice (Henkin.isModel D) (Henkin.full D) (𝟙 _) σ ρ
+
+end functional_choice
+
+namespace finitely_many_individuals
+
+/-- With `k` individuals there are no `k + 1` distinct ones: that instance of the Infinity
+schema at `e` fails (`Premodel.holds_count`). -/
+theorem infinity_e : Statements.Arguments.henkin.finitely_many_individuals.infinity_e := by
+  intro D _ hfin H
+  have : Finite D := hfin
+  rw [holdsAx_ofPure, reduct_pure] at H
+  obtain ⟨f, hf⟩ := (holds_count (Henkin.isModel D) (𝟙 _) .e (Nat.card D + 1)).1
+    (H _ ⟨_, Nat.le_add_left 1 _, rfl⟩)
+  have := Nat.card_le_card_of_injective (β := D) f hf
+  simp at this
+
+end finitely_many_individuals
+
+end henkin
 
 end Classicism.Map.Arguments

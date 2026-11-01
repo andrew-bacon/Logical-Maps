@@ -31,6 +31,13 @@ settings:
 meets:
   finitely-many-individuals: The individual domain is finite.
   several-individuals: There are at least two individuals.
+
+# The member in Lean: the group's model at this individual domain (Classicism/Models/Henkin.lean).
+lean:
+  param: Fin 2
+  meets:
+    finitely-many-individuals: Classicism.Meta.Intensional.Henkin.fin_two_finitelyMany
+    several-individuals: Classicism.Meta.Intensional.Henkin.fin_two_several
 arguments: []
 notes: >-
   With independent constants (the generated variant), it witnesses the consistency of Independence
