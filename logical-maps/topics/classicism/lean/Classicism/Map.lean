@@ -7,6 +7,7 @@ import Classicism.Results.SentenceSchemas.PossibilityPlus
 import Classicism.Results.SentenceSchemas.Infinity
 import Classicism.Results.SentenceSchemas.Constants
 import Classicism.Results.SentenceSchemas.ArithmeticMeta
+import Classicism.Results.SentenceSchemas.ArithmeticNecessitism
 import Classicism.Certified.Research
 import Classicism.Results.Research.NPCC5Atomicity
 import Classicism.Results.Research.RigidityClosureResearchAtomicPowerCertificates
@@ -307,6 +308,10 @@ theorem c5_and_necessary_rigid_comprehension_imply_necessary_gallin_comprehensio
 theorem c5_and_persistent_comprehension_imply_gallin : Statements.c5_and_persistent_comprehension_imply_gallin := by
   map_cert _root_.Classicism.c5_and_persistent_comprehension_imply_gallin.entails
 
+/-- `c5-implies-arithmetic-necessitism` -/
+theorem c5_implies_arithmetic_necessitism : Statements.c5_implies_arithmetic_necessitism := by
+  map_cert Proofs.c5_implies_arithmetic_necessitism.entails
+
 /-- `completeness-and-actuality-imply-weak-rigid-comprehension` -/
 theorem completeness_and_actuality_imply_weak_rigid_comprehension : Statements.completeness_and_actuality_imply_weak_rigid_comprehension := by
   map_cert Meta.completeness_and_actuality_imply_weak_rigid_comprehension
@@ -434,6 +439,10 @@ theorem logical_necessity_r_implies_no_pure_contingency_r : Statements.logical_n
 /-- `logical-necessity-r-implies-witnessed-possibility-r` -/
 theorem logical_necessity_r_implies_witnessed_possibility_r : Statements.logical_necessity_r_implies_witnessed_possibility_r := by
   map_cert_sig logicalNecessity_entails_witnessedPossibility
+
+/-- `maximalism-implies-arithmetic-necessitism` -/
+theorem maximalism_implies_arithmetic_necessitism : Statements.maximalism_implies_arithmetic_necessitism := by
+  map_cert distinctness_entails_arithmeticNecessitism
 
 /-- `maximalist-distinctness-incompatible-with-nd` -/
 theorem maximalist_distinctness_incompatible_with_nd : Statements.maximalist_distinctness_incompatible_with_nd := by
@@ -1348,6 +1357,10 @@ theorem necessary_rigid_power_r_implies_rigid_power_r : Statements.necessary_rig
 /-- `necessary-rigid-comprehension-implies-necessary-weak-rigid-comprehension` -/
 theorem necessary_rigid_comprehension_implies_necessary_weak_rigid_comprehension : Statements.necessary_rigid_comprehension_implies_necessary_weak_rigid_comprehension := by
   map_cert Proofs.necessary_rigid_comprehension_implies_necessary_weak_rigid_comprehension.entails
+
+/-- `necessary-rigid-comprehension-implies-arithmetic-necessitism` -/
+theorem necessary_rigid_comprehension_implies_arithmetic_necessitism : Statements.necessary_rigid_comprehension_implies_arithmetic_necessitism := by
+  map_cert Proofs.necessary_rigid_comprehension_implies_arithmetic_necessitism.entails
 
 /-- `necessary-rigid-comprehension-implies-necessary-inextensible-comprehension` -/
 theorem necessary_rigid_comprehension_implies_necessary_inextensible_comprehension : Statements.necessary_rigid_comprehension_implies_necessary_inextensible_comprehension := by

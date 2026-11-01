@@ -6,7 +6,7 @@ certificate:
   recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 24 October 2026
   checked_by: []
   date: '2026-10-24'
-  lean: none
+  lean: stated
 sources:
 - GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, A fixed-point entrance model, Tame Rigidity without □Tame
   Rigidity, research note of 22 October 2026, §§1–6 (unpaginated), in Daniel Kodsi's submission of 24 October

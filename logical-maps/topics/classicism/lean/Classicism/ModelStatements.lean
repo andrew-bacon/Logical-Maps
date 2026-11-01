@@ -270,6 +270,10 @@ def Models.coalesced_constant_indexed_root.relational_choice_r : Prop :=
 def Models.coalesced_constant_indexed_root.actuality : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).HoldsAx Classicism.P.Actuality.schemaIn
 
+/-- `coalesced-constant-indexed-root`: Arithmetic Necessitism holds. -/
+def Models.coalesced_constant_indexed_root.arithmetic_necessitism : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).HoldsAx Classicism.P.ArithmeticNecessitism.schemaIn
+
 /-- `coalesced-constant-indexed-root`: Truths are ND-necessary holds. -/
 def Models.coalesced_constant_indexed_root.distinctness_preserving_collapse : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
@@ -290,6 +294,10 @@ def Models.coalesced_maximalist_root.relational_choice_r : Prop :=
 def Models.coalesced_maximalist_root.actuality : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).HoldsAx Classicism.P.Actuality.schemaIn
 
+/-- `coalesced-maximalist-root`: Arithmetic Necessitism holds. -/
+def Models.coalesced_maximalist_root.arithmetic_necessitism : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).HoldsAx Classicism.P.ArithmeticNecessitism.schemaIn
+
 /-- `coalesced-maximalist-root`: Truths are ND-necessary holds. -/
 def Models.coalesced_maximalist_root.distinctness_preserving_collapse : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
@@ -305,6 +313,10 @@ def Models.coalesced_single_individual_root.relational_choice_r : Prop :=
 /-- `coalesced-single-individual-root`: Actuality holds. -/
 def Models.coalesced_single_individual_root.actuality : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).HoldsAx Classicism.P.Actuality.schemaIn
+
+/-- `coalesced-single-individual-root`: Arithmetic Necessitism holds. -/
+def Models.coalesced_single_individual_root.arithmetic_necessitism : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).HoldsAx Classicism.P.ArithmeticNecessitism.schemaIn
 
 /-- `coalesced-single-individual-root`: Truths are ND-necessary holds. -/
 def Models.coalesced_single_individual_root.distinctness_preserving_collapse : Prop :=
@@ -1369,6 +1381,10 @@ def Arguments.coalesced_sums.relational_choice_free_root.relational_choice_r : P
 /-- `coalesced-sums`, argument `actuality-singleton-root`: Actuality holds in every model meeting its conditions. -/
 def Arguments.coalesced_sums.actuality_singleton_root.actuality : Prop :=
   ∀ (D : Classicism.Meta.Coalesced.SumData), Classicism.Meta.Intensional.Premodel.ActualWorldIsolated (Classicism.Meta.Coalesced.SumData.model D) → ((Classicism.Meta.Coalesced.SumData.model D)).HoldsAx Classicism.P.Actuality.schemaIn
+
+/-- `coalesced-sums`, argument `arithmetic-necessitism-complete-components`: Arithmetic Necessitism holds in every model meeting its conditions. -/
+def Arguments.coalesced_sums.arithmetic_necessitism_complete_components.arithmetic_necessitism : Prop :=
+  ∀ (D : Classicism.Meta.Coalesced.SumData), Classicism.Meta.Coalesced.SumData.CompleteComponents D → ((Classicism.Meta.Coalesced.SumData.model D)).HoldsAx Classicism.P.ArithmeticNecessitism.schemaIn
 
 /-- `finite-support-one-object`, argument `actual-world`: Actuality holds in every model meeting its conditions. -/
 def Arguments.finite_support_one_object.actual_world.actuality : Prop :=

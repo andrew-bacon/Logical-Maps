@@ -4,6 +4,7 @@ import Classicism.Semantics.OneIndividual
 import Classicism.Semantics.Interpretations
 import Classicism.Models.SymBase
 import Classicism.Coalesced.SumData
+import Classicism.Results.SentenceSchemas.ArithmeticNecessitism
 import Mathlib.SetTheory.Cardinal.NatCard
 
 /-!
@@ -524,6 +525,23 @@ theorem relational_choice_r :
   fun _ hF => Coalesced.SumData.holds_rc_root hF
 
 end relational_choice_free_root
+
+namespace arithmetic_necessitism_complete_components
+
+/-- Vacuously: `¬I*_σ` is consistent with `C` (`not_iStar_consistent`, the full model on one
+individual), so with complete components `□I*_σ` fails at the root
+(`RootAction.not_holds_box_of_complete`), and the instance `□I*_σ → …` holds. -/
+theorem arithmetic_necessitism :
+    Statements.Arguments.coalesced_sums.arithmetic_necessitism_complete_components.arithmetic_necessitism := by
+  intro D hc
+  rintro _ ⟨_, ⟨σ, hσ, rfl⟩, rfl⟩
+  obtain ⟨R, hR⟩ := P.ArithmeticNecessitism.quoted_eq σ
+  rw [hR]
+  exact ((D.model).holds_imp D.isModel (𝟙 _) IEnv.nil _ _).2 fun hb =>
+    absurd hb (D.RA.not_holds_box_of_complete D.I D.RI D.ne D.isModel hc (iStar_closedTypes hσ)
+      (not_iStar_consistent σ))
+
+end arithmetic_necessitism_complete_components
 
 end coalesced_sums
 

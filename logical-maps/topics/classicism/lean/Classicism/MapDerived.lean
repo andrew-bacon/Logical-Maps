@@ -83,6 +83,10 @@ theorem coalesced_constant_indexed_root.relational_choice_r : Statements.Models.
 theorem coalesced_constant_indexed_root.actuality : Statements.Models.coalesced_constant_indexed_root.actuality :=
   ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.constantIndexedData), Classicism.Map.Arguments.coalesced_sums.actuality_singleton_root.actuality (Classicism.Meta.Coalesced.constantIndexedData) (Classicism.Meta.Coalesced.constantIndexedData_isolated)⟩
 
+/-- `coalesced-constant-indexed-root`: Arithmetic Necessitism holds, by `coalesced-sums`'s argument `arithmetic-necessitism-complete-components`. -/
+theorem coalesced_constant_indexed_root.arithmetic_necessitism : Statements.Models.coalesced_constant_indexed_root.arithmetic_necessitism :=
+  ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.constantIndexedData), Classicism.Map.Arguments.coalesced_sums.arithmetic_necessitism_complete_components.arithmetic_necessitism (Classicism.Meta.Coalesced.constantIndexedData) (Classicism.Meta.Coalesced.constantIndexedData_complete)⟩
+
 /-- `coalesced-constant-indexed-root`: Truths are ND-necessary holds, by the argument `dpc-isolated-actual-world`. -/
 theorem coalesced_constant_indexed_root.distinctness_preserving_collapse : Statements.Models.coalesced_constant_indexed_root.distinctness_preserving_collapse :=
   ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.constantIndexedData), Classicism.Map.Arguments.dpc_isolated_actual_world.distinctness_preserving_collapse (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)) (Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.constantIndexedData)) (Classicism.Meta.Coalesced.constantIndexedData_isolated)⟩
@@ -103,6 +107,10 @@ theorem coalesced_maximalist_root.relational_choice_r : Statements.Models.coales
 theorem coalesced_maximalist_root.actuality : Statements.Models.coalesced_maximalist_root.actuality :=
   ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.maximalistRoot), Classicism.Map.Arguments.coalesced_sums.actuality_singleton_root.actuality (Classicism.Meta.Coalesced.maximalistRoot) (Classicism.Meta.Coalesced.maximalistData_isolated)⟩
 
+/-- `coalesced-maximalist-root`: Arithmetic Necessitism holds, by `coalesced-sums`'s argument `arithmetic-necessitism-complete-components`. -/
+theorem coalesced_maximalist_root.arithmetic_necessitism : Statements.Models.coalesced_maximalist_root.arithmetic_necessitism :=
+  ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.maximalistRoot), Classicism.Map.Arguments.coalesced_sums.arithmetic_necessitism_complete_components.arithmetic_necessitism (Classicism.Meta.Coalesced.maximalistRoot) (Classicism.Meta.Coalesced.maximalistData_complete Classicism.Meta.Coalesced.sigmaTop_closed)⟩
+
 /-- `coalesced-maximalist-root`: Truths are ND-necessary holds, by the argument `dpc-isolated-actual-world`. -/
 theorem coalesced_maximalist_root.distinctness_preserving_collapse : Statements.Models.coalesced_maximalist_root.distinctness_preserving_collapse :=
   ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.maximalistRoot), Classicism.Map.Arguments.dpc_isolated_actual_world.distinctness_preserving_collapse (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)) (Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.maximalistRoot)) (Classicism.Meta.Coalesced.maximalistData_isolated)⟩
@@ -118,6 +126,10 @@ theorem coalesced_single_individual_root.relational_choice_r : Statements.Models
 /-- `coalesced-single-individual-root`: Actuality holds, by `coalesced-sums`'s argument `actuality-singleton-root`. -/
 theorem coalesced_single_individual_root.actuality : Statements.Models.coalesced_single_individual_root.actuality :=
   ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.singleIndividualData), Classicism.Map.Arguments.coalesced_sums.actuality_singleton_root.actuality (Classicism.Meta.Coalesced.singleIndividualData) (Classicism.Meta.Coalesced.singleIndividualData_isolated)⟩
+
+/-- `coalesced-single-individual-root`: Arithmetic Necessitism holds, by `coalesced-sums`'s argument `arithmetic-necessitism-complete-components`. -/
+theorem coalesced_single_individual_root.arithmetic_necessitism : Statements.Models.coalesced_single_individual_root.arithmetic_necessitism :=
+  ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.singleIndividualData), Classicism.Map.Arguments.coalesced_sums.arithmetic_necessitism_complete_components.arithmetic_necessitism (Classicism.Meta.Coalesced.singleIndividualData) (Classicism.Meta.Coalesced.singleIndividualData_complete)⟩
 
 /-- `coalesced-single-individual-root`: Truths are ND-necessary holds, by the argument `dpc-isolated-actual-world`. -/
 theorem coalesced_single_individual_root.distinctness_preserving_collapse : Statements.Models.coalesced_single_individual_root.distinctness_preserving_collapse :=
