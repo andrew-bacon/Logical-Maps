@@ -10,7 +10,8 @@ certificate:
   recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 19 October 2026
   checked_by: []
   date: '2026-10-19'
-  lean: stated
+  lean: verified
+  lean_ref: Classicism.Map.necessary_vicinity_implies_necessary_five_implies_two_hat
 sources:
 - Christopher Sun, handwritten argument sent to Cian Dorr on 19 October 2026.
 source_names:

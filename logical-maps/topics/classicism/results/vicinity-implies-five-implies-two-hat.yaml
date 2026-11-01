@@ -13,7 +13,8 @@ certificate:
     19 October 2026 (the proof)
   checked_by: []
   date: '2026-10-14'
-  lean: stated
+  lean: verified
+  lean_ref: Classicism.Map.vicinity_implies_five_implies_two_hat
 sources:
 - Cian Dorr and Claude Fable 5.1 (Anthropic), conversation of 14 October 2026 (transcript in the private notes).
 - 'Christopher Sun, handwritten argument sent to Cian Dorr on 19 October 2026 (Proposition: Principal □5 implies
