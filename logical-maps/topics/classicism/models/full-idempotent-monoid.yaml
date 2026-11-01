@@ -211,3 +211,4 @@ lean:
   verdicts:
   - fails: atoms-are-self-atoms-t
     ref: Classicism.Map.Models.full_idempotent_monoid.atoms_are_self_atoms_t
+    status: verified

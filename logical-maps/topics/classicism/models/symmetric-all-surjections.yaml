@@ -237,3 +237,4 @@ lean:
   verdicts:
   - fails: intensional-choice-r
     ref: Classicism.Map.Models.symmetric_all_surjections.intensional_choice_r
+    status: verified

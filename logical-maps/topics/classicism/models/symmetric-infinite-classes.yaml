@@ -142,3 +142,4 @@ lean:
   verdicts:
   - fails: transversal-r
     ref: Classicism.Map.Models.symmetric_infinite_classes.transversal_r
+    status: verified

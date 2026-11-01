@@ -173,3 +173,4 @@ lean:
     status: verified
   - fails: necessary-transversal-r
     ref: Classicism.Map.Models.coalesced_maximalist_root.necessary_transversal_r
+    status: verified

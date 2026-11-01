@@ -147,3 +147,4 @@ lean:
     status: verified
   - fails: necessary-transversal-r
     ref: Classicism.Map.Models.coalesced_constant_indexed_root.necessary_transversal_r
+    status: verified
