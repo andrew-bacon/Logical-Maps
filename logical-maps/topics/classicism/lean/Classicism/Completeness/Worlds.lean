@@ -217,9 +217,44 @@ theorem exists_le_of_not_box [Countable Sig.Const] {p : Sentence (ext Sig)} (hp 
   exact ⟨⟨S, hroomy, Γ, hlang, hcons, hcompl, hwit⟩, fun q hq => hAΓ q (Or.inl hq),
     hAΓ _ (Or.inr rfl)⟩
 
+variable (w) in
+/-- **Every world says that every type is inhabited**, type variables included: the
+reserve has a constant `(σ, 0)` of each type `σ`, so `∃x:σ. x = x` is a theorem of `C` in
+the ambient signature, and it has no reserve constant. This is why `exists_world` needs
+more than the consistency of `Ax` (see there). -/
+theorem exists_self_mem (σ : Ty) :
+    Term.exists' (σ := σ) (eq' (Term.var .zero) (Term.var .zero)) ∈ w.Γ :=
+  mem_of_theorem (inLang_ex.2 (inLang_lam.2 (inLang_eq.2 ⟨fun _ h => h.elim, fun _ h => h.elim⟩)))
+    (Derivable.exIβ (Term.const (Sig := ext Sig) (Sum.inr (σ, 0))) (Derivable.refl _))
+
 end World
 
-/-- **Lindenbaum–Henkin**: an axiom set consistent with `C` is included in some world. -/
+/-- **Lindenbaum–Henkin**, from consistency in the ambient signature: an axiom set whose
+reading in the ambient signature is consistent with `C` is included in some world. -/
+theorem exists_world_of_consistent_lift [Countable Sig.Const] {Ax : AxiomSet Sig}
+    (h : AxiomSet.Consistent (AxiomSet.lift Ax)) :
+    ∃ w : World Sig, ∀ a, AxiomSet.lift Ax a → a ∈ w.Γ := by
+  have hA : ∀ p, AxiomSet.lift Ax p → InLang ∅ p := by
+    rintro _ ⟨b, -, rfl⟩
+    exact inLang_lift b
+  obtain ⟨S, Γ, -, hroomy, hAΓ, hlang, hcons, hcompl, hwit⟩ :=
+    lindenbaum (fun τ => by simpa using Set.infinite_univ) hA h
+  exact ⟨⟨S, hroomy, Γ, hlang, hcons, hcompl, hwit⟩, hAΓ⟩
+
+/-- **Lindenbaum–Henkin**: an axiom set consistent with `C` is included in some world.
+
+NOT PROVABLE AS STATED (W1a, 31 October 2026), and false: every world contains
+`∃x:σ. x = x` at every type `σ`, type variables included (`World.exists_self_mem`), since
+the reserve has constants of every type; but `C` does not prove `∃x:var i. x = x`
+(`Syntax/Conservativity.lean`, `Syntax/Inhabited.lean`; an intensional action model may
+have an empty inner domain at a type variable). So for `Ax = {¬∃x:var 0. x = x}`, which is
+consistent with `C`, no world includes `lift Ax`. The hypothesis needed is consistency of
+`lift Ax` in the ambient signature (`exists_world_of_consistent_lift`). Mathematically that
+holds iff `Ax` is consistent together with `∃x:var i. x = x` for every `i`; neither direction
+is formalized yet, and the one a completeness proof needs (from that consistency in `Sig`
+to consistency in `ext Sig`) is a conservativity theorem for the reserve, which needs a
+finite-support argument: a derivation uses finitely many reserve constants, and those of a
+type variable can only be eliminated into variables. -/
 theorem exists_world [Countable Sig.Const] {Ax : AxiomSet Sig} (h : AxiomSet.Consistent Ax) :
     ∃ w : World Sig, ∀ a, AxiomSet.lift Ax a → a ∈ w.Γ := by
   sorry
