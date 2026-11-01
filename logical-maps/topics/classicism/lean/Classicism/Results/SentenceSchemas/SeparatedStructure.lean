@@ -46,9 +46,16 @@ theorem ln_pwp_glue (a f g : Prop) : (□ ¬ a ↔ f) → (□ f ↔ f) → □ 
   fun h1 h2 h3 hg => (em (◇ a)).elim id fun hna =>
     absurd hg (not_dia_of_box_not g (modal_K _ _ h3 (h2.2 (h1.1 (box_not_of_not_dia a hna)))))
 
+/-- Possibly Witnessed Possibility gives Separated Structure: `q` is necessary, so `◇¬q`
+fails, so `◇g` does, and `□¬g` necessitates `f`. -/
+theorem pwp_ss_glue (q g f : Prop) : (◇ g → ◇ ¬ q) → (q → □ q) → □ (¬ g → f) → q → □ f :=
+  fun h1 h2 h3 hq => modal_K _ _ h3 (box_not_of_not_dia g (fun hg =>
+    not_dia_of_box_not (¬ q) (modal_K _ _ (nec% (fun (h : q) (hn : ¬ q) => hn h)) (h2 hq)) (h1 hg)))
+
 end shallow
 
 #classicism_derive Classicism.ss_pwp_glue Classicism.ln_pwp_glue Classicism.modalized_functionality
+  Classicism.pwp_ss_glue
 
 namespace Meta
 
@@ -249,6 +256,191 @@ theorem logicalNecessity_entails_possiblyWitnessedPossibility :
       (Derivable.existsBlock_forallBlock_neg _ Derivable.hyp₀ (Derivable.weaken₁ Derivable.hyp₀))
   exact Theorem.mp (Theorem.mp₂ (Derivable.allE₃β
     (Theorem.ofCMinus (C.TheoremMinus.ofPure ln_pwp_glue.derivable)) _ _ _) h1 h2) (Theorem.ofC h3)
+
+/-! ### Distinctness gives Separated Structure and Witnessed Possibility -/
+
+/-- Modalized Functionality, at two closed terms: `□(∀x. Fx = Gx) → F = G`. -/
+theorem modalizedFunctionality_at {σ : Ty} {ρ : RTy} (F G : Term Sig [] (σ ⇒ ρ)) :
+    C.TheoremMinus (Term.imp (Term.box (Term.forall' (Term.eq' (Term.app F.weaken (Term.var .zero))
+      (Term.app G.weaken (Term.var .zero))))) (Term.eq' F G)) :=
+  Derivable.allE₂β (C.TheoremMinus.ofPure (modalized_functionality.derivable σ ρ)) F G
+
+/-- `distinctness-signature-r-implies-separated-structure-r`: where `Fc = Gc` is a theorem,
+the variable put for `c` makes `∀x. Fx = Gx` one, and Modalized Functionality gives
+`F = G`; where it is not, Distinctness refutes it. -/
+theorem distinctness_entails_separatedStructure :
+    distinctness (empty : AxiomSet Sig) ⟹ separatedStructure Sig := by
+  rintro a ⟨hc, c, ρ, F, G, hF, hG, rfl⟩
+  have hc' := hc
+  simp only [Term.closedTypes_imp, Bool.and_eq_true] at hc'
+  by_cases hthm : Theorem (C.axioms ∪ (empty : AxiomSet Sig))
+      (Term.eq' (Term.app F (Term.const c)) (Term.app G (Term.const c)))
+  · have h₁ := Derivable.rename (Ren.shift (σ := Sig.typeOf c)) (theorem_union_empty.1 hthm)
+    have h₂ := Derivable.cmap (M := {c}) (fun a ha c' hc' => absurd hc' (C.axioms_consts ha c'))
+      (CMap.abstract c (.zero : Var [Sig.typeOf c] _)) (CMap.abstract_fixes _ _) h₁
+    have fx : ∀ H : Term Sig [] (Sig.typeOf c ⇒ ρ), c ∉ H.consts →
+        (H.rename (Ren.shift (σ := Sig.typeOf c))).cmap (CMap.abstract c .zero) = H.weaken :=
+      fun H hH => Term.cmap_of_fixes _ (CMap.abstract_fixes _ _) _ (fun c' hc' => by
+        rw [Term.consts_rename] at hc'
+        simp only [Set.mem_singleton_iff]
+        rintro rfl; exact hH hc')
+    have h₃ : C.Derivable ([] : List (Formula Sig [Sig.typeOf c]))
+        (Term.eq' (Term.app F.weaken (Term.var .zero)) (Term.app G.weaken (Term.var .zero))) := by
+      have e : ((Term.eq' (Term.app F (Term.const c)) (Term.app G (Term.const c))).rename
+          (Ren.shift (σ := Sig.typeOf c))).cmap (CMap.abstract c .zero) =
+          Term.eq' (Term.app F.weaken (Term.var .zero)) (Term.app G.weaken (Term.var .zero)) := by
+        simp only [Term.rename_app, Term.rename_eq, Term.rename_const, Term.cmap, fx F hF, fx G hG,
+          CMap.abstract_self]
+      rw [← e]; exact h₂
+    have h₅ := C.Theorem.nec (Derivable.allI (Δ := []) h₃)
+    exact Derivable.impI (Derivable.weaken₁
+      (Theorem.mp (Theorem.ofCMinus (modalizedFunctionality_at F G)) (Theorem.ofC h₅)))
+  · have hd := Theorem.ax (Ax := distinctness (empty : AxiomSet Sig)) (distinctness_mem hc'.1 hthm)
+    exact Derivable.impI (Derivable.notE Derivable.hyp₀ (Derivable.weaken₁ hd))
+
+/-- Possibility relative to `C` gives Witnessed Possibility: where `P[c̄/x̄]` is consistent,
+it is possible; where it is not, `C ⊢ ¬P[c̄/x̄]`, so with the block put back for the
+constants `C ⊢ ¬P`, and `∃x̄. P` is refuted. -/
+theorem possibility_entails_witnessedPossibility :
+    possibility (empty : AxiomSet Sig) ⟹ witnessedPossibility Sig := by
+  rintro a ⟨hc, cs, P, hcs, rfl⟩
+  split_closed hc
+  by_cases hcons : Consistent ((empty : AxiomSet Sig) ∪ single (Term.atConsts cs P))
+  · exact Derivable.impI (Derivable.weaken₁ (Theorem.ax (possibility_mem
+      (by rw [Term.closedTypes_atConsts]; exact closedTypes_of_existsBlock hc.1) hcons)))
+  · have h₀ : C.Theorem (Term.imp (Term.atConsts cs P) Term.bot) :=
+      theorem_union_empty.1 (Theorem.deductionC (Classical.not_not.1 hcons))
+    have h₁ := Derivable.rename (Ren.wkBlock (cs.map Sig.typeOf) (Γ := [])) h₀
+    have h₂ := Derivable.cmap (M := {c | c ∈ cs})
+      (fun a ha c' hc' => absurd hc' (C.axioms_consts ha c')) (CMap.block cs []) (CMap.block_fixes cs []) h₁
+    have e : ((Term.imp (Term.atConsts cs P) Term.bot).rename (Ren.wkBlock (cs.map Sig.typeOf))).cmap
+        (CMap.block cs []) = Term.imp (Term.ofPure P) Term.bot := by
+      have := Term.cmap_block_subst_consts cs hcs (Term.ofPure P) (Term.pure_ofPure P) Ren.id
+        (Ren.wkBlock _) (CMap.block cs []) (fun c _ => (Term.rename_id _).symm)
+      rw [Term.rename_id] at this
+      rw [atConsts_eq]
+      show Term.imp (((Term.ofPure P).subst _).rename _ |>.cmap _) Term.bot = _
+      rw [this]
+    rw [e] at h₂
+    have h₃ : Derivable (C.axioms ∪ possibility (empty : AxiomSet Sig))
+        ([] : List (Formula Sig (Ctx.block (cs.map Sig.typeOf) []))) (Term.imp (Term.ofPure P) Term.bot) :=
+      Derivable.mono (fun _ => Or.inl) h₂
+    rw [Term.ofPure_existsBlock]
+    exact Derivable.impI (Derivable.exEBlock _ Derivable.hyp₀
+      (Derivable.botE (Derivable.impE (Derivable.weaken h₃ (List.nil_subset _)) Derivable.hyp₀)))
+
+/-- `possibility-signature-r-implies-witnessed-possibility-r` (the map's premise is
+Maximalism in its official form, Distinctness). -/
+theorem distinctness_entails_witnessedPossibility :
+    distinctness (empty : AxiomSet Sig) ⟹ witnessedPossibility Sig :=
+  Entails.trans (distinctness_entails_possibility empty) possibility_entails_witnessedPossibility
+
+/-! ### Possibly Witnessed Possibility gives Separated Structure -/
+
+/-- A block abstraction at `[τ]`, then the constant `a` for the remaining variable. -/
+theorem subst_consBlock_constsAt_cons (ds : List Sig.Const) {τ σ : Ty} (a : Term Sig [] τ)
+    (X : Term Sig (Ctx.block (ds.map Sig.typeOf) [τ]) σ) :
+    (X.subst (Sub.consBlock (Terms.constsAt [τ] ds) Sub.id)).subst (Sub.cons a Sub.id) =
+      X.subst (Sub.consBlock (Terms.constsAt [] ds) (Sub.cons a Sub.id)) := by
+  rw [Term.subst_subst, Sub.comp_consBlock, Terms.subst_constsAt]
+  rfl
+
+/-- `∀x. B` gives `∀x. B'` where `B` gives `B'`. -/
+theorem Derivable.forall_mono {Ax : AxiomSet Sig} {τ : Ty} {B B' : Formula Sig [τ]}
+    (h : Derivable Ax [B] B') : Derivable Ax [Term.forall' B] (Term.forall' B') :=
+  Derivable.allI (Derivable.impE (Derivable.weaken (Derivable.impI h) (List.nil_subset _))
+    (Derivable.conv (Derivable.allE (F := (Term.lam B).weaken) Derivable.hyp₀ (Term.var .zero))
+      (Conv.app_lam_weaken_zero B)))
+
+/-- The constants of two terms, listed without repetition. -/
+theorem exists_consts_list {Γ Γ' : Ctx} {σ σ' : Ty} (F : Term Sig Γ σ) (G : Term Sig Γ' σ') :
+    ∃ ds : List Sig.Const, ds.Nodup ∧ ∀ d, d ∈ ds ↔ d ∈ F.consts ∪ G.consts :=
+  ⟨((Term.consts_finite F).union (Term.consts_finite G)).toFinset.toList, Finset.nodup_toList _,
+    fun d => by simp⟩
+
+theorem all_closed_map (hS : Sig.Closed) (cs : List Sig.Const) :
+    (cs.map Sig.typeOf).all (fun σ => decide σ.Closed) = true := by
+  simp [List.all_eq_true, hS _]
+
+/-- `possibly-witnessed-possibility-r-implies-separated-structure-r`. -/
+theorem possiblyWitnessedPossibility_entails_separatedStructure (hS : Sig.Closed) :
+    possiblyWitnessedPossibility Sig ⟹ separatedStructure Sig := by
+  rintro a ⟨hc, c, ρ, F, G, hF, hG, rfl⟩
+  have hc' := hc
+  simp only [Term.closedTypes_imp, Term.closedTypes_eq', Bool.and_eq_true] at hc'
+  have hFc : F.closedTypes = true := hc'.2.1
+  have hGc : G.closedTypes = true := hc'.2.2
+  have hτ : (Sig.typeOf c).Closed := (Term.closed_of_closedTypes hFc).1
+  have hρ : ρ.Closed := (Term.closed_of_closedTypes hFc).2
+  obtain ⟨ds, hds, hdsm⟩ := exists_consts_list F G
+  have hcds : c ∉ ds := fun h => ((hdsm c).1 h).elim hF hG
+  let τ := Sig.typeOf c
+  let Fx : Term Sig [τ] ρ := Term.app F.weaken (Term.var .zero)
+  let Gx : Term Sig [τ] ρ := Term.app G.weaken (Term.var .zero)
+  have mem : ∀ H : Term Sig [] (τ ⇒ ρ), (∀ d ∈ H.consts, d ∈ F.consts ∪ G.consts) →
+      ∀ d ∈ (Term.app H.weaken (Term.var .zero) : Term Sig [τ] ρ).consts, d ∈ ds := by
+    intro H hH d hd
+    rcases hd with hd | hd
+    · rw [Term.consts_rename] at hd; exact (hdsm d).2 (hH d hd)
+    · exact absurd hd (Set.notMem_empty d)
+  obtain ⟨F₀, eF, cF⟩ := Term.exists_abstract ds Fx (mem F (fun d h => Or.inl h))
+  obtain ⟨G₀, eG, cG⟩ := Term.exists_abstract ds Gx (mem G (fun d h => Or.inr h))
+  let E : Formula Signature.pure (Ctx.block ((c :: ds).map Sig.typeOf) []) := Term.eq' F₀ G₀
+  have hnd : (c :: ds).Nodup := List.nodup_cons.2 ⟨hcds, hds⟩
+  have hEc : (Term.existsBlock ((c :: ds).map Sig.typeOf) (Term.neg E)).closedTypes = true := by
+    rw [Term.closedTypes_existsBlock, all_closed_map hS]
+    simp only [E, cF, cG, Fx, Gx, Term.closedTypes,
+      Term.weaken, Term.closedTypes_rename, hFc, hGc, hτ, hρ, Ty.closed_rel, Bool.true_and,
+      decide_true]
+  have hpwp := Theorem.ax (Ax := possiblyWitnessedPossibility Sig)
+    (possiblyWitnessedPossibility_mem hnd hEc)
+  have eq₀ : (Term.ofPure (Sig := Sig) E).subst
+      (Sub.consBlock (Terms.constsAt [] ds) (Sub.cons (Term.const c) Sub.id)) =
+      Term.eq' (Term.app F (Term.const c)) (Term.app G (Term.const c)) := by
+    show Term.eq' ((Term.ofPure F₀).subst _) ((Term.ofPure G₀).subst _) = _
+    rw [← subst_consBlock_constsAt_cons, ← subst_consBlock_constsAt_cons, eF, eG]
+    show Term.eq' (Term.app (F.weaken.instantiate _) _) (Term.app (G.weaken.instantiate _) _) = _
+    rw [Term.instantiate_weaken, Term.instantiate_weaken]
+    rfl
+  rw [atConsts_eq] at hpwp
+  have eq₁ : (Term.ofPure (Sig := Sig) (Term.neg E)).subst
+      (Sub.consBlock (Terms.constsAt [] (c :: ds)) Sub.id) =
+      Term.neg (Term.eq' (Term.app F (Term.const c)) (Term.app G (Term.const c))) := by
+    show Term.neg ((Term.ofPure E).subst (Sub.consBlock (Terms.constsAt [] ds)
+      (Sub.cons (Term.const c) Sub.id))) = _
+    rw [eq₀]
+  rw [eq₁] at hpwp
+  let f : Sentence Sig := Term.forall' (Term.eq' Fx Gx)
+  have h3 : C.Theorem (Term.box (Term.imp
+      (Term.neg (Term.ofPure (Term.existsBlock ((c :: ds).map Sig.typeOf) (Term.neg E)))) f)) := by
+    refine C.Theorem.nec (Derivable.impI ?_)
+    rw [Term.ofPure_existsBlock]
+    have hall : C.Derivable [Term.neg (Term.existsBlock _ (Term.neg (Term.ofPure (Sig := Sig) E)))]
+        (Term.forallBlock ((c :: ds).map Sig.typeOf) (Term.ofPure E)) :=
+      Derivable.forallBlock_of_not_existsBlock_neg _ Derivable.hyp₀
+    refine Derivable.impE (Derivable.weaken (Derivable.impI (Derivable.forall_mono ?_)) (List.nil_subset _)) hall
+    have := Derivable.allEBlock (ds.map Sig.typeOf) (Γ := [τ]) (Ax := C.axioms)
+      (Δ := [Term.forallBlock (ds.map Sig.typeOf) (Γ := [τ]) (Term.ofPure (Sig := Sig) E)])
+      Derivable.hyp₀ (Terms.constsAt [τ] ds)
+    refine Derivable.conv this (Conv.of_eq ?_)
+    show Term.eq' ((Term.ofPure F₀).subst _) ((Term.ofPure G₀).subst _) = _
+    rw [eF, eG]
+  have hni : C.Theorem (Term.imp (Term.eq' (Term.app F (Term.const c)) (Term.app G (Term.const c)))
+      (Term.box (Term.eq' (Term.app F (Term.const c)) (Term.app G (Term.const c))))) :=
+    Completeness.nec_identity _ _
+  have hg := Theorem.mp (Theorem.mp₂ (Derivable.allE₃β
+    (Theorem.ofCMinus (C.TheoremMinus.ofPure pwp_ss_glue.derivable)) _ _ f) hpwp (Theorem.ofC hni))
+    (Theorem.ofC h3)
+  exact Derivable.impI (Derivable.impE
+    (Derivable.weaken₁ (Theorem.ofCMinus (modalizedFunctionality_at F G)))
+    (Derivable.impE (Derivable.weaken₁ hg) Derivable.hyp₀))
+
+/-- `logical-necessity-r-implies-separated-structure-r`, through Possibly Witnessed
+Possibility. -/
+theorem logicalNecessity_entails_separatedStructure (hS : Sig.Closed) :
+    logicalNecessity Sig ⟹ separatedStructure Sig :=
+  Entails.trans logicalNecessity_entails_possiblyWitnessedPossibility
+    (possiblyWitnessedPossibility_entails_separatedStructure hS)
 
 end Meta
 
