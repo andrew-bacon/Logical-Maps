@@ -9,7 +9,8 @@ certificate:
   recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026
   checked_by: []
   date: '2026-09-20'
-  lean: stated
+  lean: verified
+  lean_ref: Classicism.Map.possibility_schema_r_implies_possible_infinity_t
 sources:
 - Cian Dorr, suggestion of 20 September 2026.
 - Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, coalesced-sum model of 20 September 2026 (see coalesced-all-finite-individual-domains).

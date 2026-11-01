@@ -6,7 +6,7 @@
      "file": "Classicism/Results/Records/Choice.lean"}],
    "certificate":
    {"name": "Classicism.Map.zorn_r_implies_well_ordering_r",
-    "lines": [1676, 1678],
+    "lines": [1677, 1679],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "witnessed-possibility-incompatible-with-nd":
@@ -16,7 +16,7 @@
      "file": "Classicism/Results/SentenceSchemas/Constants.lean"}],
    "certificate":
    {"name": "Classicism.Map.witnessed_possibility_incompatible_with_nd",
-    "lines": [1077, 1079],
+    "lines": [1078, 1080],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "witnessed-possibility-and-npc-imply-possibly-witnessed-possibility":
@@ -28,7 +28,7 @@
    "certificate":
    {"name":
     "Classicism.Map.witnessed_possibility_and_npc_imply_possibly_witnessed_possibility",
-    "lines": [1073, 1075],
+    "lines": [1074, 1076],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "witnessed-possibility-and-no-pure-contingency-imply-logical-necessity":
@@ -40,7 +40,7 @@
    "certificate":
    {"name":
     "Classicism.Map.witnessed_possibility_and_no_pure_contingency_imply_logical_necessity",
-    "lines": [1069, 1071],
+    "lines": [1070, 1072],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "well-ordering-weak-rigid-comprehension-and-bf-imply-modal-well-ordering":
@@ -52,7 +52,7 @@
    "certificate":
    {"name":
     "Classicism.Map.well_ordering_weak_rigid_comprehension_and_bf_imply_modal_well_ordering",
-    "lines": [1684, 1686],
+    "lines": [1685, 1687],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "well-ordering-r-implies-transversal-choice-r":
@@ -62,7 +62,7 @@
      "file": "Classicism/Results/Records/Choice.lean"}],
    "certificate":
    {"name": "Classicism.Map.well_ordering_r_implies_transversal_choice_r",
-    "lines": [1644, 1646],
+    "lines": [1645, 1647],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "weakly-rigid-weak-rigidity-implies-rigid-rigidity":
@@ -73,7 +73,7 @@
      "file": "Classicism/Results/Records/Comprehension.lean"}],
    "certificate":
    {"name": "Classicism.Map.weakly_rigid_weak_rigidity_implies_rigid_rigidity",
-    "lines": [1536, 1538],
+    "lines": [1537, 1539],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "weakly-rigid-weak-rigidity-implies-necessary-weakly-rigid-weak-rigidity":
@@ -85,7 +85,7 @@
    "certificate":
    {"name":
     "Classicism.Map.weakly_rigid_weak_rigidity_implies_necessary_weakly_rigid_weak_rigidity",
-    "lines": [1544, 1546],
+    "lines": [1545, 1547],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "weakly-rigid-weak-rigidity-implies-necessary-tame-rigidity":
@@ -97,7 +97,7 @@
    "certificate":
    {"name":
     "Classicism.Map.weakly_rigid_weak_rigidity_implies_necessary_tame_rigidity",
-    "lines": [1532, 1534],
+    "lines": [1533, 1535],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "weakly-rigid-power-implies-tame-rigidity":
@@ -107,7 +107,7 @@
      "file": "Classicism/Results/Records/Comprehension.lean"}],
    "certificate":
    {"name": "Classicism.Map.weakly_rigid_power_implies_tame_rigidity",
-    "lines": [1492, 1494],
+    "lines": [1493, 1495],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "weakly-rigid-power-implies-rigid-power":
@@ -117,7 +117,7 @@
      "file": "Classicism/Results/Records/Comprehension.lean"}],
    "certificate":
    {"name": "Classicism.Map.weakly_rigid_power_implies_rigid_power",
-    "lines": [1496, 1498],
+    "lines": [1497, 1499],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "weak-rigid-comprehension-r-implies-weakly-inextensible-comprehension-r":
@@ -129,7 +129,7 @@
    "certificate":
    {"name":
     "Classicism.Map.weak_rigid_comprehension_r_implies_weakly_inextensible_comprehension_r",
-    "lines": [1063, 1065],
+    "lines": [1064, 1066],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "weak-rigid-comprehension-r-implies-persistent-comprehension-r":
@@ -141,7 +141,7 @@
    "certificate":
    {"name":
     "Classicism.Map.weak_rigid_comprehension_r_implies_persistent_comprehension_r",
-    "lines": [1059, 1061],
+    "lines": [1060, 1062],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "weak-rigid-comprehension-r-implies-boolean-completeness-r":
@@ -157,7 +157,7 @@
    "certificate":
    {"name":
     "Classicism.Map.weak_rigid_comprehension_r_implies_boolean_completeness_r",
-    "lines": [1055, 1057],
+    "lines": [1056, 1058],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "weak-rigid-comprehension-and-nd-imply-plenitude":
@@ -171,7 +171,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.weak_rigid_comprehension_and_nd_imply_plenitude",
-    "lines": [970, 972],
+    "lines": [971, 973],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "vicinity-and-weakly-inextensible-comprehension-imply-actuality":
@@ -183,7 +183,7 @@
    "certificate":
    {"name":
     "Classicism.Map.vicinity_and_weakly_inextensible_comprehension_imply_actuality",
-    "lines": [1051, 1053],
+    "lines": [1052, 1054],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "vicinity-and-distinctness-preserving-collapse-imply-actuality":
@@ -195,7 +195,7 @@
    "certificate":
    {"name":
     "Classicism.Map.vicinity_and_distinctness_preserving_collapse_imply_actuality",
-    "lines": [1047, 1049],
+    "lines": [1048, 1050],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "vicinity-and-barcan-t-imply-two-hat-implies-nd":
@@ -205,7 +205,7 @@
      "file": "Classicism/Results/Records/Necessity.lean"}],
    "certificate":
    {"name": "Classicism.Map.vicinity_and_barcan_t_imply_two_hat_implies_nd",
-    "lines": [1852, 1854],
+    "lines": [1853, 1855],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "two-hat-implies-nd-and-five-implies-two-hat-imply-five-implies-nd":
@@ -217,7 +217,7 @@
    "certificate":
    {"name":
     "Classicism.Map.two_hat_implies_nd_and_five_implies_two_hat_imply_five_implies_nd",
-    "lines": [1788, 1790],
+    "lines": [1789, 1791],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "truth-implies-two-hat-implies-truth-implies-five":
@@ -228,7 +228,7 @@
      "file": "Classicism/Results/Records/Necessity.lean"}],
    "certificate":
    {"name": "Classicism.Map.truth_implies_two_hat_implies_truth_implies_five",
-    "lines": [1772, 1774],
+    "lines": [1773, 1775],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "truth-implies-two-hat-implies-five-implies-two-hat":
@@ -239,7 +239,7 @@
      "file": "Classicism/Results/Records/Necessity.lean"}],
    "certificate":
    {"name": "Classicism.Map.truth_implies_two_hat_implies_five_implies_two_hat",
-    "lines": [1768, 1770],
+    "lines": [1769, 1771],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "truth-implies-nd-implies-truth-implies-five":
@@ -249,7 +249,7 @@
      "file": "Classicism/Results/Records/Necessity.lean"}],
    "certificate":
    {"name": "Classicism.Map.truth_implies_nd_implies_truth_implies_five",
-    "lines": [1764, 1766],
+    "lines": [1765, 1767],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "truth-implies-nd-implies-five-implies-nd":
@@ -259,7 +259,7 @@
      "file": "Classicism/Results/Records/Necessity.lean"}],
    "certificate":
    {"name": "Classicism.Map.truth_implies_nd_implies_five_implies_nd",
-    "lines": [1760, 1762],
+    "lines": [1761, 1763],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "transversal-choice-r-implies-zorn-r":
@@ -269,7 +269,7 @@
      "file": "Classicism/Results/Records/Choice.lean"}],
    "certificate":
    {"name": "Classicism.Map.transversal_choice_r_implies_zorn_r",
-    "lines": [1672, 1674],
+    "lines": [1673, 1675],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "transversal-choice-r-implies-transversal-r":
@@ -279,7 +279,7 @@
      "file": "Classicism/Results/Records/Choice.lean"}],
    "certificate":
    {"name": "Classicism.Map.transversal_choice_r_implies_transversal_r",
-    "lines": [1043, 1045],
+    "lines": [1044, 1046],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "transversal-choice-r-implies-relational-choice-r":
@@ -290,7 +290,7 @@
      "file": "Classicism/Results/Records/Choice.lean"}],
    "certificate":
    {"name": "Classicism.Map.transversal_choice_r_implies_relational_choice_r",
-    "lines": [1039, 1041],
+    "lines": [1040, 1042],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "transversal-and-relational-choice-imply-transversal-choice":
@@ -302,7 +302,7 @@
    "certificate":
    {"name":
     "Classicism.Map.transversal_and_relational_choice_imply_transversal_choice",
-    "lines": [1035, 1037],
+    "lines": [1036, 1038],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "tractarianism-r-implies-barcan-r":
@@ -312,7 +312,7 @@
      "file": "Classicism/Results/Records/Coarse.lean"}],
    "certificate":
    {"name": "Classicism.Map.tractarianism_r_implies_barcan_r",
-    "lines": [1031, 1033],
+    "lines": [1032, 1034],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "tame-rigidity-and-weak-rigid-comprehension-imply-rigid-comprehension":
@@ -324,7 +324,18 @@
    "certificate":
    {"name":
     "Classicism.Map.tame_rigidity_and_weak_rigid_comprehension_imply_rigid_comprehension",
-    "lines": [1436, 1438],
+    "lines": [1437, 1439],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "tame-rigidity-and-bf-t-imply-necessary-bf-t":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.Other.tame_rigidity_and_bf_t_imply_necessary_bf_t",
+     "lines": [24, 29],
+     "file": "Classicism/Results/Other/Shallow.lean"}],
+   "certificate":
+   {"name": "Classicism.Map.tame_rigidity_and_bf_t_imply_necessary_bf_t",
+    "lines": [1975, 1977],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "tame-rigidity-and-bf-relational-imply-necessary-bf-relational":
@@ -336,7 +347,7 @@
    "certificate":
    {"name":
     "Classicism.Map.tame_rigidity_and_bf_relational_imply_necessary_bf_relational",
-    "lines": [1592, 1594],
+    "lines": [1593, 1595],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "tame-rigidity-and-barcan-imply-necessary-barcan":
@@ -347,9 +358,23 @@
      "file": "Classicism/Results/Records/Comprehension.lean"}],
    "certificate":
    {"name": "Classicism.Map.tame_rigidity_and_barcan_imply_necessary_barcan",
-    "lines": [1596, 1598],
+    "lines": [1597, 1599],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
+  "strong-possibility-r-implies-possibility-schema-r":
+  {"proofs":
+   [{"name": "Classicism.Meta.strongPossibility_entails_possibility",
+     "lines": [118, 132],
+     "file": "Classicism/Results/Other/Meta.lean"},
+    {"name": "Classicism.Meta.possibility_entails_distinctness",
+     "lines": [45, 51],
+     "file":
+     "Classicism/Results/SentenceSchemas/PossibilityDistinctness.lean"}],
+   "certificate":
+   {"name": "Classicism.Map.strong_possibility_r_implies_possibility_schema_r",
+    "lines": [2016, 2018],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
   "strong-atomicity-weak-rigid-comprehension-and-relational-choice-imply-intensional-choice":
   {"proofs":
    [{"name":
@@ -359,7 +384,7 @@
    "certificate":
    {"name":
     "Classicism.Map.strong_atomicity_weak_rigid_comprehension_and_relational_choice_imply_intensional_choice",
-    "lines": [1692, 1694],
+    "lines": [1693, 1695],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "strong-atomicity-t-necessary-rigid-comprehension-and-rigid-power-imply-bf-t":
@@ -370,7 +395,7 @@
    "certificate":
    {"name":
     "Classicism.Map.strong_atomicity_t_necessary_rigid_comprehension_and_rigid_power_imply_bf_t",
-    "lines": [1696, 1698],
+    "lines": [1697, 1699],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "strong-atomicity-t-implies-two-hat-implies-nd":
@@ -380,7 +405,7 @@
      "file": "Classicism/Results/Records/Necessity.lean"}],
    "certificate":
    {"name": "Classicism.Map.strong_atomicity_t_implies_two_hat_implies_nd",
-    "lines": [1860, 1862],
+    "lines": [1861, 1863],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "strong-atomicity-t-implies-strong-actuality":
@@ -390,7 +415,7 @@
      "file": "Classicism/Results/Records/Lattice.lean"}],
    "certificate":
    {"name": "Classicism.Map.strong_atomicity_t_implies_strong_actuality",
-    "lines": [1027, 1029],
+    "lines": [1028, 1030],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "strong-atomicity-t-implies-necessary-actuality":
@@ -400,7 +425,7 @@
      "file": "Classicism/Results/Records/Lattice.lean"}],
    "certificate":
    {"name": "Classicism.Map.strong_atomicity_t_implies_necessary_actuality",
-    "lines": [1023, 1025],
+    "lines": [1024, 1026],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "strong-atomicity-t-implies-atomicity-t":
@@ -410,7 +435,7 @@
      "file": "Classicism/Results/Records/Lattice.lean"}],
    "certificate":
    {"name": "Classicism.Map.strong_atomicity_t_implies_atomicity_t",
-    "lines": [1019, 1021],
+    "lines": [1020, 1022],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "strong-atomicity-r-implies-strong-atomicity-t":
@@ -420,7 +445,7 @@
      "file": "Classicism/Results/Records/Lattice.lean"}],
    "certificate":
    {"name": "Classicism.Map.strong_atomicity_r_implies_strong_atomicity_t",
-    "lines": [1015, 1017],
+    "lines": [1016, 1018],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "strong-atomicity-r-implies-atomicity-r":
@@ -433,7 +458,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.strong_atomicity_r_implies_atomicity_r",
-    "lines": [1011, 1013],
+    "lines": [1012, 1014],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "strong-atomicity-necessary-rigid-comprehension-and-rigid-power-imply-bf-relational":
@@ -445,7 +470,7 @@
    "certificate":
    {"name":
     "Classicism.Map.strong_atomicity_necessary_rigid_comprehension_and_rigid_power_imply_bf_relational",
-    "lines": [1700, 1702],
+    "lines": [1701, 1703],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "strong-atomicity-and-rigid-comprehension-imply-necessary-strong-atomicity":
@@ -460,7 +485,7 @@
    "certificate":
    {"name":
     "Classicism.Map.strong_atomicity_and_rigid_comprehension_imply_necessary_strong_atomicity",
-    "lines": [1918, 1921],
+    "lines": [1919, 1922],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "strong-atomicity-and-rigid-comprehension-imply-necessary-rigid-comprehension":
@@ -475,7 +500,7 @@
    "certificate":
    {"name":
     "Classicism.Map.strong_atomicity_and_rigid_comprehension_imply_necessary_rigid_comprehension",
-    "lines": [1923, 1933],
+    "lines": [1924, 1934],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "strong-actuality-implies-actuality":
@@ -485,7 +510,7 @@
      "file": "Classicism/Results/Records/Lattice.lean"}],
    "certificate":
    {"name": "Classicism.Map.strong_actuality_implies_actuality",
-    "lines": [1007, 1009],
+    "lines": [1008, 1010],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "signature-b-r-implies-pure-b-r":
@@ -495,7 +520,7 @@
      "file": "Classicism/Results/SentenceSchemas/Contingency.lean"}],
    "certificate":
    {"name": "Classicism.Map.signature_b_r_implies_pure_b_r",
-    "lines": [1002, 1005],
+    "lines": [1003, 1006],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "signature-b-and-witnessed-possibility-incompatible":
@@ -505,7 +530,7 @@
      "file": "Classicism/Results/SentenceSchemas/Constants.lean"}],
    "certificate":
    {"name": "Classicism.Map.signature_b_and_witnessed_possibility_incompatible",
-    "lines": [998, 1000],
+    "lines": [999, 1001],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "separated-structure-incompatible-with-nd":
@@ -515,7 +540,7 @@
      "file": "Classicism/Results/SentenceSchemas/Constants.lean"}],
    "certificate":
    {"name": "Classicism.Map.separated_structure_incompatible_with_nd",
-    "lines": [994, 996],
+    "lines": [995, 997],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "rigid-rigidity-implies-necessary-rigid-rigidity":
@@ -526,7 +551,7 @@
      "file": "Classicism/Results/Records/Comprehension.lean"}],
    "certificate":
    {"name": "Classicism.Map.rigid_rigidity_implies_necessary_rigid_rigidity",
-    "lines": [1524, 1526],
+    "lines": [1525, 1527],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "rigid-rigidity-implies-necessary-barcan":
@@ -536,7 +561,19 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.rigid_rigidity_implies_necessary_barcan",
-    "lines": [1560, 1562],
+    "lines": [1561, 1563],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "rigid-rigidity-and-rigid-power-imply-necessary-rigid-power":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.Other.rigid_rigidity_and_rigid_power_imply_necessary_rigid_power",
+     "lines": [37, 44],
+     "file": "Classicism/Results/Other/Shallow.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.rigid_rigidity_and_rigid_power_imply_necessary_rigid_power",
+    "lines": [1983, 1986],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "rigid-rigidity-and-necessary-tame-rigidity-imply-weakly-rigid-weak-rigidity":
@@ -548,7 +585,7 @@
    "certificate":
    {"name":
     "Classicism.Map.rigid_rigidity_and_necessary_tame_rigidity_imply_weakly_rigid_weak_rigidity",
-    "lines": [1540, 1542],
+    "lines": [1541, 1543],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "rigid-comprehension-r-implies-weak-rigid-comprehension-r":
@@ -560,7 +597,7 @@
    "certificate":
    {"name":
     "Classicism.Map.rigid_comprehension_r_implies_weak_rigid_comprehension_r",
-    "lines": [990, 992],
+    "lines": [991, 993],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "rigid-comprehension-r-implies-persistent-comprehension-r":
@@ -572,7 +609,7 @@
    "certificate":
    {"name":
     "Classicism.Map.rigid_comprehension_r_implies_persistent_comprehension_r",
-    "lines": [986, 988],
+    "lines": [987, 989],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "rigid-comprehension-r-implies-inextensible-comprehension-r":
@@ -584,7 +621,7 @@
    "certificate":
    {"name":
     "Classicism.Map.rigid_comprehension_r_implies_inextensible_comprehension_r",
-    "lines": [982, 984],
+    "lines": [983, 985],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "rigid-comprehension-r-implies-boolean-completeness-r":
@@ -600,7 +637,7 @@
    "certificate":
    {"name":
     "Classicism.Map.rigid_comprehension_r_implies_boolean_completeness_r",
-    "lines": [978, 980],
+    "lines": [979, 981],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "rigid-comprehension-r-implies-actuality":
@@ -610,7 +647,7 @@
      "file": "Classicism/Results/Records/Lattice.lean"}],
    "certificate":
    {"name": "Classicism.Map.rigid_comprehension_r_implies_actuality",
-    "lines": [974, 976],
+    "lines": [975, 977],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "rigid-comprehension-implies-tame-rigidity":
@@ -620,7 +657,18 @@
      "file": "Classicism/Results/Records/Comprehension.lean"}],
    "certificate":
    {"name": "Classicism.Map.rigid_comprehension_implies_tame_rigidity",
-    "lines": [1444, 1446],
+    "lines": [1445, 1447],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "rigid-comprehension-and-bf-t-imply-necessary-bf-t":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.Other.rigid_comprehension_and_bf_t_imply_necessary_bf_t",
+     "lines": [31, 35],
+     "file": "Classicism/Results/Other/Shallow.lean"}],
+   "certificate":
+   {"name": "Classicism.Map.rigid_comprehension_and_bf_t_imply_necessary_bf_t",
+    "lines": [1979, 1981],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "rigid-comprehension-and-bf-imply-necessary-bf":
@@ -630,7 +678,7 @@
      "file": "Classicism/Results/Records/C5.lean"}],
    "certificate":
    {"name": "Classicism.Map.rigid_comprehension_and_bf_imply_necessary_bf",
-    "lines": [966, 968],
+    "lines": [967, 969],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "relational-choice-and-weak-rigid-comprehension-imply-transversal-choice":
@@ -642,7 +690,7 @@
    "certificate":
    {"name":
     "Classicism.Map.relational_choice_and_weak_rigid_comprehension_imply_transversal_choice",
-    "lines": [962, 964],
+    "lines": [963, 965],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "relational-choice-and-plenitude-imply-functional-choice-r":
@@ -654,7 +702,7 @@
    "certificate":
    {"name":
     "Classicism.Map.relational_choice_and_plenitude_imply_functional_choice_r",
-    "lines": [958, 960],
+    "lines": [959, 961],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "relational-choice-and-extensionality-imply-transversal-choice":
@@ -666,7 +714,7 @@
    "certificate":
    {"name":
     "Classicism.Map.relational_choice_and_extensionality_imply_transversal_choice",
-    "lines": [954, 956],
+    "lines": [955, 957],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "relational-choice-and-boolean-completeness-imply-actuality":
@@ -677,7 +725,7 @@
    "certificate":
    {"name":
     "Classicism.Map.relational_choice_and_boolean_completeness_imply_actuality",
-    "lines": [1914, 1916],
+    "lines": [1915, 1917],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "pure-b-and-pure-possibility-incompatible":
@@ -692,7 +740,7 @@
      "Classicism/Results/SentenceSchemas/PossibilityDistinctness.lean"}],
    "certificate":
    {"name": "Classicism.Map.pure_b_and_pure_possibility_incompatible",
-    "lines": [950, 952],
+    "lines": [951, 953],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
   "possibly-witnessed-possibility-r-implies-witnessed-possibility-r":
@@ -704,7 +752,7 @@
    "certificate":
    {"name":
     "Classicism.Map.possibly_witnessed_possibility_r_implies_witnessed_possibility_r",
-    "lines": [946, 948],
+    "lines": [947, 949],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "possible-infinity-t-and-no-pure-contingency-imply-axiom-of-infinity-t":
@@ -715,7 +763,7 @@
    "certificate":
    {"name":
     "Classicism.Map.possible_infinity_t_and_no_pure_contingency_imply_axiom_of_infinity_t",
-    "lines": [942, 944],
+    "lines": [943, 945],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "possible-infinity-t-and-bf-t-imply-axiom-of-infinity-t":
@@ -727,7 +775,7 @@
    "certificate":
    {"name":
     "Classicism.Map.possible_infinity_t_and_bf_t_imply_axiom_of_infinity_t",
-    "lines": [938, 940],
+    "lines": [939, 941],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "possible-infinity-e-and-no-pure-contingency-imply-axiom-of-infinity-e":
@@ -738,7 +786,7 @@
    "certificate":
    {"name":
     "Classicism.Map.possible_infinity_e_and_no_pure_contingency_imply_axiom_of_infinity_e",
-    "lines": [934, 936],
+    "lines": [935, 937],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "possible-infinity-e-and-bf-imply-axiom-of-infinity-e":
@@ -750,9 +798,23 @@
    "certificate":
    {"name":
     "Classicism.Map.possible_infinity_e_and_bf_imply_axiom_of_infinity_e",
-    "lines": [930, 932],
+    "lines": [931, 933],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
+  "possibility-schema-r-implies-possible-infinity-t":
+  {"proofs":
+   [{"name":
+     "Classicism.Meta.distinctness_schema_r_implies_possibility_schema_r",
+     "lines": [65, 68],
+     "file": "Classicism/Results/SentenceSchemas/PossibilityDistinctness.lean"},
+    {"name": "Classicism.Meta.possibility_entails_possibleInfinityT",
+     "lines": [105, 109],
+     "file": "Classicism/Results/Other/Meta.lean"}],
+   "certificate":
+   {"name": "Classicism.Map.possibility_schema_r_implies_possible_infinity_t",
+    "lines": [2012, 2014],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
   "possibility-schema-r-implies-possible-infinity-e":
   {"proofs":
    [{"name":
@@ -764,7 +826,7 @@
      "file": "Classicism/Results/SentenceSchemas/Incompatibilities.lean"}],
    "certificate":
    {"name": "Classicism.Map.possibility_schema_r_implies_possible_infinity_e",
-    "lines": [926, 928],
+    "lines": [927, 929],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
   "possibility-plus-signature-r-implies-possibility-signature-r":
@@ -780,7 +842,7 @@
    "certificate":
    {"name":
     "Classicism.Map.possibility_plus_signature_r_implies_possibility_signature_r",
-    "lines": [921, 924],
+    "lines": [922, 925],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
   "possibility-plus-signature-r-implies-possibility-plus-r":
@@ -791,7 +853,7 @@
    "certificate":
    {"name":
     "Classicism.Map.possibility_plus_signature_r_implies_possibility_plus_r",
-    "lines": [917, 919],
+    "lines": [918, 920],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "possibility-plus-r-implies-possibility-schema-r":
@@ -806,7 +868,7 @@
      "Classicism/Results/SentenceSchemas/PossibilityDistinctness.lean"}],
    "certificate":
    {"name": "Classicism.Map.possibility_plus_r_implies_possibility_schema_r",
-    "lines": [913, 915],
+    "lines": [914, 916],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "possibility-and-no-pure-contingency-incompatible":
@@ -821,7 +883,7 @@
      "Classicism/Results/SentenceSchemas/PossibilityDistinctness.lean"}],
    "certificate":
    {"name": "Classicism.Map.possibility_and_no_pure_contingency_incompatible",
-    "lines": [909, 911],
+    "lines": [910, 912],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
   "possibility-and-necessary-rigid-power-incompatible":
@@ -836,7 +898,18 @@
      "Classicism/Results/SentenceSchemas/PossibilityDistinctness.lean"}],
    "certificate":
    {"name": "Classicism.Map.possibility_and_necessary_rigid_power_incompatible",
-    "lines": [905, 907],
+    "lines": [906, 908],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
+  "possibility-and-necessary-relational-choice-incompatible":
+  {"proofs":
+   [{"name": "Classicism.Meta.maximalist_necRelationalChoice_inconsistent",
+     "lines": [89, 96],
+     "file": "Classicism/Results/Other/Meta.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.possibility_and_necessary_relational_choice_incompatible",
+    "lines": [2008, 2010],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
   "possibility-and-necessary-barcan-t-incompatible":
@@ -851,7 +924,7 @@
      "Classicism/Results/SentenceSchemas/PossibilityDistinctness.lean"}],
    "certificate":
    {"name": "Classicism.Map.possibility_and_necessary_barcan_t_incompatible",
-    "lines": [901, 903],
+    "lines": [902, 904],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
   "plenitude-r-implies-distinctness-necessary-r":
@@ -861,7 +934,7 @@
      "file": "Classicism/Results/Records/Choice.lean"}],
    "certificate":
    {"name": "Classicism.Map.plenitude_r_implies_distinctness_necessary_r",
-    "lines": [897, 899],
+    "lines": [898, 900],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "plenitude-r-implies-actuality":
@@ -871,7 +944,7 @@
      "file": "Classicism/Results/Records/Choice.lean"}],
    "certificate":
    {"name": "Classicism.Map.plenitude_r_implies_actuality",
-    "lines": [893, 895],
+    "lines": [894, 896],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "persistent-comprehension-r-implies-actuality":
@@ -881,7 +954,7 @@
      "file": "Classicism/Results/Records/Lattice.lean"}],
    "certificate":
    {"name": "Classicism.Map.persistent_comprehension_r_implies_actuality",
-    "lines": [889, 891],
+    "lines": [890, 892],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-r-implies-pure-b-r":
@@ -891,7 +964,7 @@
      "file": "Classicism/Results/SentenceSchemas/Contingency.lean"}],
    "certificate":
    {"name": "Classicism.Map.no_pure_contingency_r_implies_pure_b_r",
-    "lines": [884, 887],
+    "lines": [885, 888],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-r-implies-converse-witnessed-possibility-r":
@@ -902,7 +975,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_r_implies_converse_witnessed_possibility_r",
-    "lines": [880, 882],
+    "lines": [881, 883],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-implies-necessity-of-arithmetic":
@@ -910,7 +983,18 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_implies_necessity_of_arithmetic",
-    "lines": [1472, 1474],
+    "lines": [1473, 1475],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "no-pure-contingency-and-well-ordering-imply-necessary-well-ordering":
+  {"proofs":
+   [{"name": "Classicism.Meta.npc_wellOrdering_entails_necWellOrdering",
+     "lines": [46, 51],
+     "file": "Classicism/Results/Other/Meta.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.no_pure_contingency_and_well_ordering_imply_necessary_well_ordering",
+    "lines": [2000, 2002],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-weakly-rigid-power-imply-necessary-weakly-rigid-power":
@@ -921,7 +1005,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_weakly_rigid_power_imply_necessary_weakly_rigid_power",
-    "lines": [1520, 1522],
+    "lines": [1521, 1523],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-weakly-inextensible-comprehension-imply-necessary-weakly-inextensible-comprehension":
@@ -932,7 +1016,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_weakly_inextensible_comprehension_imply_necessary_weakly_inextensible_comprehension",
-    "lines": [876, 878],
+    "lines": [877, 879],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-weak-rigid-comprehension-imply-necessary-weak-rigid-comprehension":
@@ -943,7 +1027,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_weak_rigid_comprehension_imply_necessary_weak_rigid_comprehension",
-    "lines": [1432, 1434],
+    "lines": [1433, 1435],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-vicinity-imply-necessary-vicinity":
@@ -954,7 +1038,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_vicinity_imply_necessary_vicinity",
-    "lines": [872, 874],
+    "lines": [873, 875],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-two-hat-implies-nd-necessity-imply-necessary-two-hat-implies-nd-necessity":
@@ -965,7 +1049,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_two_hat_implies_nd_necessity_imply_necessary_two_hat_implies_nd_necessity",
-    "lines": [1884, 1886],
+    "lines": [1885, 1887],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-truth-implies-two-hat-necessity-imply-necessary-truth-implies-two-hat-necessity":
@@ -976,7 +1060,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_truth_implies_two_hat_necessity_imply_necessary_truth_implies_two_hat_necessity",
-    "lines": [1872, 1874],
+    "lines": [1873, 1875],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-truth-implies-five-necessity-imply-necessary-truth-implies-five-necessity":
@@ -987,7 +1071,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_truth_implies_five_necessity_imply_necessary_truth_implies_five_necessity",
-    "lines": [1868, 1870],
+    "lines": [1869, 1871],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-transversal-imply-necessary-transversal":
@@ -998,7 +1082,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_transversal_imply_necessary_transversal",
-    "lines": [868, 870],
+    "lines": [869, 871],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-transversal-choice-imply-necessary-transversal-choice":
@@ -1010,7 +1094,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_transversal_choice_imply_necessary_transversal_choice",
-    "lines": [864, 866],
+    "lines": [865, 867],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-tractarianism-imply-necessary-tractarianism":
@@ -1021,7 +1105,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_tractarianism_imply_necessary_tractarianism",
-    "lines": [860, 862],
+    "lines": [861, 863],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-tame-rigidity-imply-necessary-tame-rigidity":
@@ -1032,7 +1116,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_tame_rigidity_imply_necessary_tame_rigidity",
-    "lines": [1428, 1430],
+    "lines": [1429, 1431],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-strong-atomicity-t-imply-necessary-strong-atomicity-t":
@@ -1043,7 +1127,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_strong_atomicity_t_imply_necessary_strong_atomicity_t",
-    "lines": [856, 858],
+    "lines": [857, 859],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-strong-atomicity-imply-necessary-strong-atomicity":
@@ -1054,7 +1138,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_strong_atomicity_imply_necessary_strong_atomicity",
-    "lines": [852, 854],
+    "lines": [853, 855],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-strong-actuality-imply-necessary-strong-actuality":
@@ -1065,7 +1149,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_strong_actuality_imply_necessary_strong_actuality",
-    "lines": [848, 850],
+    "lines": [849, 851],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-rigid-power-imply-necessary-rigid-power":
@@ -1076,7 +1160,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_rigid_power_imply_necessary_rigid_power",
-    "lines": [1424, 1426],
+    "lines": [1425, 1427],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-rigid-comprehension-imply-necessary-rigid-comprehension":
@@ -1087,7 +1171,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_rigid_comprehension_imply_necessary_rigid_comprehension",
-    "lines": [844, 846],
+    "lines": [845, 847],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-relational-choice-imply-necessaryelational-choice":
@@ -1098,7 +1182,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_relational_choice_imply_necessaryelational_choice",
-    "lines": [840, 842],
+    "lines": [841, 843],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-plenitude-imply-necessary-plenitude":
@@ -1109,7 +1193,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_plenitude_imply_necessary_plenitude",
-    "lines": [836, 838],
+    "lines": [837, 839],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-persistent-comprehension-imply-necessary-persistent-comprehension":
@@ -1120,7 +1204,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_persistent_comprehension_imply_necessary_persistent_comprehension",
-    "lines": [1420, 1422],
+    "lines": [1421, 1423],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-nd-t-imply-necessary-nd-t":
@@ -1130,7 +1214,7 @@
      "file": "Classicism/Results/SentenceSchemas/Contingency.lean"}],
    "certificate":
    {"name": "Classicism.Map.no_pure_contingency_and_nd_t_imply_necessary_nd_t",
-    "lines": [832, 834],
+    "lines": [833, 835],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-nd-imply-necessary-nd":
@@ -1140,7 +1224,7 @@
      "file": "Classicism/Results/SentenceSchemas/Contingency.lean"}],
    "certificate":
    {"name": "Classicism.Map.no_pure_contingency_and_nd_imply_necessary_nd",
-    "lines": [828, 830],
+    "lines": [829, 831],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-modalized-relational-choice-imply-necessary-modalized-relational-choice":
@@ -1151,7 +1235,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_modalized_relational_choice_imply_necessary_modalized_relational_choice",
-    "lines": [1744, 1746],
+    "lines": [1745, 1747],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-intensional-choice-imply-necessary-intensional-choice":
@@ -1162,7 +1246,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_intensional_choice_imply_necessary_intensional_choice",
-    "lines": [1416, 1418],
+    "lines": [1417, 1419],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-inextensible-comprehension-imply-necessary-inextensible-comprehension":
@@ -1173,7 +1257,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_inextensible_comprehension_imply_necessary_inextensible_comprehension",
-    "lines": [1412, 1414],
+    "lines": [1413, 1415],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-gallin-comprehension-imply-necessary-gallin-comprehension":
@@ -1184,7 +1268,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_gallin_comprehension_imply_necessary_gallin_comprehension",
-    "lines": [824, 826],
+    "lines": [825, 827],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-functionality-imply-necessary-functionality":
@@ -1195,7 +1279,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_functionality_imply_necessary_functionality",
-    "lines": [820, 822],
+    "lines": [821, 823],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-functional-choice-imply-necessary-functional-choice":
@@ -1206,7 +1290,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_functional_choice_imply_necessary_functional_choice",
-    "lines": [816, 818],
+    "lines": [817, 819],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-fregean-imply-necessary-fregean":
@@ -1217,7 +1301,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_fregean_imply_necessary_fregean",
-    "lines": [812, 814],
+    "lines": [813, 815],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-five-imply-necessary-five":
@@ -1227,7 +1311,7 @@
      "file": "Classicism/Results/SentenceSchemas/Contingency.lean"}],
    "certificate":
    {"name": "Classicism.Map.no_pure_contingency_and_five_imply_necessary_five",
-    "lines": [808, 810],
+    "lines": [809, 811],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-five-implies-two-hat-necessity-imply-necessary-five-implies-two-hat-necessity":
@@ -1238,7 +1322,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_five_implies_two_hat_necessity_imply_necessary_five_implies_two_hat_necessity",
-    "lines": [1876, 1878],
+    "lines": [1877, 1879],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-five-implies-nd-necessity-imply-necessary-five-implies-nd-necessity":
@@ -1249,7 +1333,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_five_implies_nd_necessity_imply_necessary_five_implies_nd_necessity",
-    "lines": [1880, 1882],
+    "lines": [1881, 1883],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-extensionality-imply-necessary-extensionality":
@@ -1260,7 +1344,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_extensionality_imply_necessary_extensionality",
-    "lines": [804, 806],
+    "lines": [805, 807],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-countable-boolean-completeness-imply-necessary-countable-boolean-completeness":
@@ -1271,7 +1355,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_countable_boolean_completeness_imply_necessary_countable_boolean_completeness",
-    "lines": [1408, 1410],
+    "lines": [1409, 1411],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-completeness-imply-necessary-completeness":
@@ -1282,7 +1366,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_completeness_imply_necessary_completeness",
-    "lines": [800, 802],
+    "lines": [801, 803],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-boolean-completeness-t-imply-necessary-boolean-completeness-t":
@@ -1293,7 +1377,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_boolean_completeness_t_imply_necessary_boolean_completeness_t",
-    "lines": [1404, 1406],
+    "lines": [1405, 1407],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-bf-t-imply-necessary-bf-t":
@@ -1303,7 +1387,7 @@
      "file": "Classicism/Results/SentenceSchemas/Contingency.lean"}],
    "certificate":
    {"name": "Classicism.Map.no_pure_contingency_and_bf_t_imply_necessary_bf_t",
-    "lines": [796, 798],
+    "lines": [797, 799],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-bf-relational-imply-necessary-bf-relational":
@@ -1314,7 +1398,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_bf_relational_imply_necessary_bf_relational",
-    "lines": [1588, 1590],
+    "lines": [1589, 1591],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-bf-imply-necessary-bf":
@@ -1324,7 +1408,7 @@
      "file": "Classicism/Results/SentenceSchemas/Contingency.lean"}],
    "certificate":
    {"name": "Classicism.Map.no_pure_contingency_and_bf_imply_necessary_bf",
-    "lines": [792, 794],
+    "lines": [793, 795],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-b-imply-necessary-b":
@@ -1334,7 +1418,18 @@
      "file": "Classicism/Results/SentenceSchemas/Contingency.lean"}],
    "certificate":
    {"name": "Classicism.Map.no_pure_contingency_and_b_imply_necessary_b",
-    "lines": [788, 790],
+    "lines": [789, 791],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "no-pure-contingency-and-atomlessness-imply-necessary-atomlessness":
+  {"proofs":
+   [{"name": "Classicism.Meta.npc_atomlessness_entails_necAtomlessness",
+     "lines": [40, 44],
+     "file": "Classicism/Results/Other/Meta.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.no_pure_contingency_and_atomlessness_imply_necessary_atomlessness",
+    "lines": [1996, 1998],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-atomicity-t-imply-necessary-atomicity-t":
@@ -1345,7 +1440,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_atomicity_t_imply_necessary_atomicity_t",
-    "lines": [1400, 1402],
+    "lines": [1401, 1403],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-atomicity-imply-necessary-atomicity":
@@ -1356,7 +1451,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_atomicity_imply_necessary_atomicity",
-    "lines": [784, 786],
+    "lines": [785, 787],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-pure-contingency-and-actuality-imply-necessary-actuality":
@@ -1367,7 +1462,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_pure_contingency_and_actuality_imply_necessary_actuality",
-    "lines": [780, 782],
+    "lines": [781, 783],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-contingency-signature-r-implies-signature-b-r":
@@ -1377,7 +1472,7 @@
      "file": "Classicism/Results/SentenceSchemas/Contingency.lean"}],
    "certificate":
    {"name": "Classicism.Map.no_contingency_signature_r_implies_signature_b_r",
-    "lines": [776, 778],
+    "lines": [777, 779],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-contingency-signature-r-implies-no-pure-contingency-r":
@@ -1388,7 +1483,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_contingency_signature_r_implies_no_pure_contingency_r",
-    "lines": [771, 774],
+    "lines": [772, 775],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-contingency-signature-r-implies-modal-freedom-signature-r":
@@ -1399,7 +1494,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_contingency_signature_r_implies_modal_freedom_signature_r",
-    "lines": [767, 769],
+    "lines": [768, 770],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "no-contingency-signature-incompatible-with-witnessed-possibility":
@@ -1410,7 +1505,7 @@
    "certificate":
    {"name":
     "Classicism.Map.no_contingency_signature_incompatible_with_witnessed_possibility",
-    "lines": [763, 765],
+    "lines": [764, 766],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-well-ordering-r-implies-well-ordering-r":
@@ -1421,7 +1516,7 @@
      "file": "Classicism/Results/Records/Choice.lean"}],
    "certificate":
    {"name": "Classicism.Map.necessary_well_ordering_r_implies_well_ordering_r",
-    "lines": [1648, 1650],
+    "lines": [1649, 1651],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-well-ordering-r-implies-necessary-transversal-choice-r":
@@ -1433,7 +1528,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_well_ordering_r_implies_necessary_transversal_choice_r",
-    "lines": [1652, 1654],
+    "lines": [1653, 1655],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-well-ordering-and-intensional-choice-imply-modal-well-ordering":
@@ -1445,7 +1540,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_well_ordering_and_intensional_choice_imply_modal_well_ordering",
-    "lines": [1668, 1670],
+    "lines": [1669, 1671],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-weakly-rigid-weak-rigidity-r-implies-weakly-rigid-weak-rigidity-r":
@@ -1457,7 +1552,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_weakly_rigid_weak_rigidity_r_implies_weakly_rigid_weak_rigidity_r",
-    "lines": [1548, 1550],
+    "lines": [1549, 1551],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-weakly-rigid-power-r-implies-weakly-rigid-power-r":
@@ -1469,7 +1564,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_weakly_rigid_power_r_implies_weakly_rigid_power_r",
-    "lines": [1504, 1506],
+    "lines": [1505, 1507],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-weakly-rigid-power-implies-necessary-tame-rigidity":
@@ -1481,7 +1576,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_weakly_rigid_power_implies_necessary_tame_rigidity",
-    "lines": [1508, 1510],
+    "lines": [1509, 1511],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-weakly-rigid-power-implies-necessary-rigid-power":
@@ -1493,7 +1588,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_weakly_rigid_power_implies_necessary_rigid_power",
-    "lines": [1512, 1514],
+    "lines": [1513, 1515],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-weakly-inextensible-comprehension-r-implies-weakly-inextensible-comprehension-r":
@@ -1505,7 +1600,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_weakly_inextensible_comprehension_r_implies_weakly_inextensible_comprehension_r",
-    "lines": [759, 761],
+    "lines": [760, 762],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-weak-rigid-comprehension-r-implies-weak-rigid-comprehension-r":
@@ -1517,7 +1612,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_weak_rigid_comprehension_r_implies_weak_rigid_comprehension_r",
-    "lines": [1328, 1330],
+    "lines": [1329, 1331],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-weak-rigid-comprehension-implies-necessary-persistent-comprehension":
@@ -1529,7 +1624,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_weak_rigid_comprehension_implies_necessary_persistent_comprehension",
-    "lines": [1356, 1358],
+    "lines": [1357, 1359],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-vicinity-implies-vicinity":
@@ -1539,7 +1634,7 @@
      "file": "Classicism/Results/Records/Lattice.lean"}],
    "certificate":
    {"name": "Classicism.Map.necessary_vicinity_implies_vicinity",
-    "lines": [755, 757],
+    "lines": [756, 758],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-vicinity-and-necessary-weakly-inextensible-comprehension-imply-necessary-actuality":
@@ -1551,7 +1646,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_vicinity_and_necessary_weakly_inextensible_comprehension_imply_necessary_actuality",
-    "lines": [751, 753],
+    "lines": [752, 754],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-vicinity-and-necessary-barcan-t-imply-necessary-two-hat-implies-nd":
@@ -1563,7 +1658,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_vicinity_and_necessary_barcan_t_imply_necessary_two_hat_implies_nd",
-    "lines": [1856, 1858],
+    "lines": [1857, 1859],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-two-hat-implies-nd-necessity-implies-two-hat-implies-nd-necessity":
@@ -1575,7 +1670,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_two_hat_implies_nd_necessity_implies_two_hat_implies_nd_necessity",
-    "lines": [1848, 1850],
+    "lines": [1849, 1851],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-two-hat-implies-nd-implies-necessary-five-implies-two-hat":
@@ -1587,7 +1682,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_two_hat_implies_nd_implies_necessary_five_implies_two_hat",
-    "lines": [1896, 1898],
+    "lines": [1897, 1899],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-two-hat-implies-nd-and-five-implies-two-hat-imply-five-implies-nd":
@@ -1599,7 +1694,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_two_hat_implies_nd_and_five_implies_two_hat_imply_five_implies_nd",
-    "lines": [1828, 1830],
+    "lines": [1829, 1831],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-truth-implies-two-hat-necessity-implies-truth-implies-two-hat-necessity":
@@ -1611,7 +1706,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_truth_implies_two_hat_necessity_implies_truth_implies_two_hat_necessity",
-    "lines": [1836, 1838],
+    "lines": [1837, 1839],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-truth-implies-two-hat-implies-truth-implies-five":
@@ -1623,7 +1718,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_truth_implies_two_hat_implies_truth_implies_five",
-    "lines": [1812, 1814],
+    "lines": [1813, 1815],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-truth-implies-two-hat-implies-five-implies-two-hat":
@@ -1635,7 +1730,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_truth_implies_two_hat_implies_five_implies_two_hat",
-    "lines": [1808, 1810],
+    "lines": [1809, 1811],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-truth-implies-nd-implies-necessary-truth-implies-five":
@@ -1647,7 +1742,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_truth_implies_nd_implies_necessary_truth_implies_five",
-    "lines": [1804, 1806],
+    "lines": [1805, 1807],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-truth-implies-nd-implies-necessary-five-implies-nd":
@@ -1659,7 +1754,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_truth_implies_nd_implies_necessary_five_implies_nd",
-    "lines": [1800, 1802],
+    "lines": [1801, 1803],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-truth-implies-five-necessity-implies-truth-implies-five-necessity":
@@ -1671,7 +1766,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_truth_implies_five_necessity_implies_truth_implies_five_necessity",
-    "lines": [1832, 1834],
+    "lines": [1833, 1835],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-transversal-r-implies-transversal-r":
@@ -1681,7 +1776,7 @@
      "file": "Classicism/Results/Records/Choice.lean"}],
    "certificate":
    {"name": "Classicism.Map.necessary_transversal_r_implies_transversal_r",
-    "lines": [747, 749],
+    "lines": [748, 750],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-transversal-choice-r-implies-transversal-choice-r":
@@ -1693,7 +1788,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_transversal_choice_r_implies_transversal_choice_r",
-    "lines": [743, 745],
+    "lines": [744, 746],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-transversal-choice-r-implies-necessary-well-ordering-r":
@@ -1705,7 +1800,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_transversal_choice_r_implies_necessary_well_ordering_r",
-    "lines": [1680, 1682],
+    "lines": [1681, 1683],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-transversal-choice-r-implies-necessary-transversal-r":
@@ -1717,7 +1812,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_transversal_choice_r_implies_necessary_transversal_r",
-    "lines": [739, 741],
+    "lines": [740, 742],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-transversal-choice-r-implies-necessary-relational-choice-r":
@@ -1729,7 +1824,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_transversal_choice_r_implies_necessary_relational_choice_r",
-    "lines": [735, 737],
+    "lines": [736, 738],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-transversal-and-necessary-relational-choice-imply-necessary-transversal-choice":
@@ -1741,7 +1836,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_transversal_and_necessary_relational_choice_imply_necessary_transversal_choice",
-    "lines": [731, 733],
+    "lines": [732, 734],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-tractarianism-r-implies-tractarianism-r":
@@ -1752,7 +1847,7 @@
      "file": "Classicism/Results/Records/Coarse.lean"}],
    "certificate":
    {"name": "Classicism.Map.necessary_tractarianism_r_implies_tractarianism_r",
-    "lines": [727, 729],
+    "lines": [728, 730],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-tractarianism-r-implies-necessary-barcan-r":
@@ -1764,7 +1859,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_tractarianism_r_implies_necessary_barcan_r",
-    "lines": [723, 725],
+    "lines": [724, 726],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-tame-rigidity-r-implies-tame-rigidity-r":
@@ -1775,7 +1870,7 @@
      "file": "Classicism/Results/Records/Comprehension.lean"}],
    "certificate":
    {"name": "Classicism.Map.necessary_tame_rigidity_r_implies_tame_rigidity_r",
-    "lines": [1340, 1342],
+    "lines": [1341, 1343],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-tame-rigidity-and-rigid-power-imply-weakly-rigid-power":
@@ -1787,7 +1882,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_tame_rigidity_and_rigid_power_imply_weakly_rigid_power",
-    "lines": [1500, 1502],
+    "lines": [1501, 1503],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-tame-rigidity-and-necessary-weak-rigid-comprehension-imply-necessary-rigid-comprehension":
@@ -1799,7 +1894,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_tame_rigidity_and_necessary_weak_rigid_comprehension_imply_necessary_rigid_comprehension",
-    "lines": [1440, 1442],
+    "lines": [1441, 1443],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-tame-rigidity-and-necessary-rigid-power-imply-necessary-weakly-rigid-power":
@@ -1811,7 +1906,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_tame_rigidity_and_necessary_rigid_power_imply_necessary_weakly_rigid_power",
-    "lines": [1516, 1518],
+    "lines": [1517, 1519],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-strong-atomicity-t-implies-strong-atomicity-t":
@@ -1823,7 +1918,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_strong_atomicity_t_implies_strong_atomicity_t",
-    "lines": [719, 721],
+    "lines": [720, 722],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-strong-atomicity-t-implies-necessary-two-hat-implies-nd":
@@ -1835,7 +1930,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_strong_atomicity_t_implies_necessary_two_hat_implies_nd",
-    "lines": [1864, 1866],
+    "lines": [1865, 1867],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-strong-atomicity-t-implies-necessary-strong-actuality":
@@ -1847,7 +1942,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_strong_atomicity_t_implies_necessary_strong_actuality",
-    "lines": [715, 717],
+    "lines": [716, 718],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-strong-atomicity-t-implies-necessary-atomicity-t":
@@ -1859,7 +1954,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_strong_atomicity_t_implies_necessary_atomicity_t",
-    "lines": [1380, 1382],
+    "lines": [1381, 1383],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-strong-atomicity-t-and-necessary-bf-imply-necessary-strong-atomicity":
@@ -1875,7 +1970,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_strong_atomicity_t_and_necessary_bf_imply_necessary_strong_atomicity",
-    "lines": [711, 713],
+    "lines": [712, 714],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-strong-atomicity-r-implies-strong-atomicity-r":
@@ -1887,7 +1982,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_strong_atomicity_r_implies_strong_atomicity_r",
-    "lines": [707, 709],
+    "lines": [708, 710],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-strong-atomicity-r-implies-necessary-strong-atomicity-t":
@@ -1899,7 +1994,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_strong_atomicity_r_implies_necessary_strong_atomicity_t",
-    "lines": [703, 705],
+    "lines": [704, 706],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-strong-atomicity-implies-necessary-atomicity":
@@ -1915,7 +2010,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_strong_atomicity_implies_necessary_atomicity",
-    "lines": [699, 701],
+    "lines": [700, 702],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-strong-atomicity-and-necessary-rigid-comprehension-imply-necessary-bf-relational":
@@ -1927,7 +2022,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_strong_atomicity_and_necessary_rigid_comprehension_imply_necessary_bf_relational",
-    "lines": [1712, 1714],
+    "lines": [1713, 1715],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-strong-actuality-implies-strong-actuality":
@@ -1939,7 +2034,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_strong_actuality_implies_strong_actuality",
-    "lines": [695, 697],
+    "lines": [696, 698],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-strong-actuality-implies-necessary-actuality":
@@ -1951,7 +2046,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_strong_actuality_implies_necessary_actuality",
-    "lines": [691, 693],
+    "lines": [692, 694],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-rigid-rigidity-r-implies-rigid-rigidity-r":
@@ -1963,7 +2058,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_rigid_rigidity_r_implies_rigid_rigidity_r",
-    "lines": [1528, 1530],
+    "lines": [1529, 1531],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-rigid-power-r-implies-rigid-power-r":
@@ -1973,7 +2068,7 @@
      "file": "Classicism/Results/Records/Comprehension.lean"}],
    "certificate":
    {"name": "Classicism.Map.necessary_rigid_power_r_implies_rigid_power_r",
-    "lines": [1344, 1346],
+    "lines": [1345, 1347],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-rigid-comprehension-r-implies-rigid-comprehension-r":
@@ -1985,7 +2080,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_rigid_comprehension_r_implies_rigid_comprehension_r",
-    "lines": [687, 689],
+    "lines": [688, 690],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-rigid-comprehension-r-implies-necessary-boolean-completeness-r":
@@ -2001,7 +2096,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_rigid_comprehension_r_implies_necessary_boolean_completeness_r",
-    "lines": [683, 685],
+    "lines": [684, 686],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-rigid-comprehension-r-implies-necessary-actuality":
@@ -2013,7 +2108,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_rigid_comprehension_r_implies_necessary_actuality",
-    "lines": [679, 681],
+    "lines": [680, 682],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-rigid-comprehension-implies-necessary-weak-rigid-comprehension":
@@ -2025,7 +2120,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_rigid_comprehension_implies_necessary_weak_rigid_comprehension",
-    "lines": [1348, 1350],
+    "lines": [1349, 1351],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-rigid-comprehension-implies-necessary-tame-rigidity":
@@ -2037,7 +2132,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_rigid_comprehension_implies_necessary_tame_rigidity",
-    "lines": [1448, 1450],
+    "lines": [1449, 1451],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-rigid-comprehension-implies-necessary-inextensible-comprehension":
@@ -2049,7 +2144,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_rigid_comprehension_implies_necessary_inextensible_comprehension",
-    "lines": [1352, 1354],
+    "lines": [1353, 1355],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-relational-choice-r-implies-relational-choice-r":
@@ -2061,7 +2156,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_relational_choice_r_implies_relational_choice_r",
-    "lines": [675, 677],
+    "lines": [676, 678],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-relational-choice-and-necessary-plenitude-imply-necessary-functional-choice":
@@ -2073,7 +2168,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_relational_choice_and_necessary_plenitude_imply_necessary_functional_choice",
-    "lines": [671, 673],
+    "lines": [672, 674],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-relational-choice-and-necessary-intensional-choice-imply-necessary-modalized-relational-choice":
@@ -2085,7 +2180,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_relational_choice_and_necessary_intensional_choice_imply_necessary_modalized_relational_choice",
-    "lines": [1740, 1742],
+    "lines": [1741, 1743],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-relational-choice-and-intensional-choice-imply-modalized-relational-choice":
@@ -2097,7 +2192,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_relational_choice_and_intensional_choice_imply_modalized_relational_choice",
-    "lines": [1724, 1726],
+    "lines": [1725, 1727],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-plenitude-r-implies-plenitude-r":
@@ -2107,7 +2202,7 @@
      "file": "Classicism/Results/Records/Choice.lean"}],
    "certificate":
    {"name": "Classicism.Map.necessary_plenitude_r_implies_plenitude_r",
-    "lines": [667, 669],
+    "lines": [668, 670],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-plenitude-r-implies-necessary-distinctness-necessary-r":
@@ -2119,7 +2214,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_plenitude_r_implies_necessary_distinctness_necessary_r",
-    "lines": [663, 665],
+    "lines": [664, 666],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-plenitude-r-implies-necessary-atomicity-r":
@@ -2131,7 +2226,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_plenitude_r_implies_necessary_atomicity_r",
-    "lines": [659, 661],
+    "lines": [660, 662],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-plenitude-r-implies-necessary-actuality":
@@ -2142,7 +2237,7 @@
      "file": "Classicism/Results/Records/Choice.lean"}],
    "certificate":
    {"name": "Classicism.Map.necessary_plenitude_r_implies_necessary_actuality",
-    "lines": [655, 657],
+    "lines": [656, 658],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-plenitude-r-implies-atomicity-r":
@@ -2152,7 +2247,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.necessary_plenitude_r_implies_atomicity_r",
-    "lines": [651, 653],
+    "lines": [652, 654],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-persistent-comprehension-r-implies-persistent-comprehension-r":
@@ -2164,7 +2259,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_persistent_comprehension_r_implies_persistent_comprehension_r",
-    "lines": [1332, 1334],
+    "lines": [1333, 1335],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-persistent-comprehension-implies-necessary-actuality":
@@ -2176,7 +2271,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_persistent_comprehension_implies_necessary_actuality",
-    "lines": [1384, 1386],
+    "lines": [1385, 1387],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-nd-implies-bf":
@@ -2186,7 +2281,7 @@
      "file": "Classicism/Results/Records/C5.lean"}],
    "certificate":
    {"name": "Classicism.Map.necessary_nd_implies_bf",
-    "lines": [647, 649],
+    "lines": [648, 650],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-modalized-relational-choice-r-implies-modalized-relational-choice-r":
@@ -2198,7 +2293,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_modalized_relational_choice_r_implies_modalized_relational_choice_r",
-    "lines": [1728, 1730],
+    "lines": [1729, 1731],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-modalized-relational-choice-implies-necessary-relational-choice":
@@ -2210,7 +2305,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_modalized_relational_choice_implies_necessary_relational_choice",
-    "lines": [1736, 1738],
+    "lines": [1737, 1739],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-modalized-relational-choice-implies-necessary-intensional-choice":
@@ -2222,7 +2317,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_modalized_relational_choice_implies_necessary_intensional_choice",
-    "lines": [1732, 1734],
+    "lines": [1733, 1735],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-modal-five-implies-necessary-modal-b":
@@ -2232,7 +2327,7 @@
      "file": "Classicism/Results/Records/Coarse.lean"}],
    "certificate":
    {"name": "Classicism.Map.necessary_modal_five_implies_necessary_modal_b",
-    "lines": [643, 645],
+    "lines": [644, 646],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-modal-five-implies-modal-five":
@@ -2242,7 +2337,7 @@
      "file": "Classicism/Results/Records/Coarse.lean"}],
    "certificate":
    {"name": "Classicism.Map.necessary_modal_five_implies_modal_five",
-    "lines": [639, 641],
+    "lines": [640, 642],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-modal-b-implies-necessary-distinctness-necessary-r":
@@ -2254,7 +2349,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_modal_b_implies_necessary_distinctness_necessary_r",
-    "lines": [635, 637],
+    "lines": [636, 638],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-modal-b-implies-modal-b":
@@ -2264,7 +2359,7 @@
      "file": "Classicism/Results/Records/Coarse.lean"}],
    "certificate":
    {"name": "Classicism.Map.necessary_modal_b_implies_modal_b",
-    "lines": [631, 633],
+    "lines": [632, 634],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-intensional-choice-r-implies-intensional-choice-r":
@@ -2276,7 +2371,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_intensional_choice_r_implies_intensional_choice_r",
-    "lines": [1388, 1390],
+    "lines": [1389, 1391],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-inextensible-comprehension-r-implies-inextensible-comprehension-r":
@@ -2288,7 +2383,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_inextensible_comprehension_r_implies_inextensible_comprehension_r",
-    "lines": [1336, 1338],
+    "lines": [1337, 1339],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-inextensible-comprehension-implies-necessary-wic":
@@ -2300,7 +2395,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_inextensible_comprehension_implies_necessary_wic",
-    "lines": [1360, 1362],
+    "lines": [1361, 1363],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-gallin-comprehension-implies-necessary-strong-actuality":
@@ -2312,7 +2407,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_gallin_comprehension_implies_necessary_strong_actuality",
-    "lines": [1612, 1614],
+    "lines": [1613, 1615],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-gallin-comprehension-implies-necessary-rigid-comprehension":
@@ -2324,7 +2419,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_gallin_comprehension_implies_necessary_rigid_comprehension",
-    "lines": [627, 629],
+    "lines": [628, 630],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-gallin-comprehension-implies-necessary-nd":
@@ -2336,7 +2431,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_gallin_comprehension_implies_necessary_nd",
-    "lines": [623, 625],
+    "lines": [624, 626],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-gallin-comprehension-implies-gallin-comprehension":
@@ -2348,7 +2443,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_gallin_comprehension_implies_gallin_comprehension",
-    "lines": [619, 621],
+    "lines": [620, 622],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-functionality-r-implies-necessary-tractarianism-r":
@@ -2360,7 +2455,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_functionality_r_implies_necessary_tractarianism_r",
-    "lines": [615, 617],
+    "lines": [616, 618],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-functionality-r-implies-functionality-r":
@@ -2371,7 +2466,7 @@
      "file": "Classicism/Results/Records/Extensionality.lean"}],
    "certificate":
    {"name": "Classicism.Map.necessary_functionality_r_implies_functionality_r",
-    "lines": [611, 613],
+    "lines": [612, 614],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-functional-choice-r-implies-necessary-relational-choice-r":
@@ -2383,7 +2478,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_functional_choice_r_implies_necessary_relational_choice_r",
-    "lines": [607, 609],
+    "lines": [608, 610],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-functional-choice-r-implies-necessary-plenitude-r":
@@ -2395,7 +2490,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_functional_choice_r_implies_necessary_plenitude_r",
-    "lines": [603, 605],
+    "lines": [604, 606],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-functional-choice-r-implies-functional-choice-r":
@@ -2407,7 +2502,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_functional_choice_r_implies_functional_choice_r",
-    "lines": [599, 601],
+    "lines": [600, 602],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-fregean-axiom-implies-fregean-axiom":
@@ -2417,7 +2512,7 @@
      "file": "Classicism/Results/Records/Extensionality.lean"}],
    "certificate":
    {"name": "Classicism.Map.necessary_fregean_axiom_implies_fregean_axiom",
-    "lines": [595, 597],
+    "lines": [596, 598],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-five-implies-two-hat-necessity-implies-five-implies-two-hat-necessity":
@@ -2429,7 +2524,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_five_implies_two_hat_necessity_implies_five_implies_two_hat_necessity",
-    "lines": [1840, 1842],
+    "lines": [1841, 1843],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-five-implies-two-hat-and-truth-implies-five-imply-truth-implies-two-hat":
@@ -2441,7 +2536,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_five_implies_two_hat_and_truth_implies_five_imply_truth_implies_two_hat",
-    "lines": [1824, 1826],
+    "lines": [1825, 1827],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-five-implies-nd-necessity-implies-five-implies-nd-necessity":
@@ -2453,7 +2548,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_five_implies_nd_necessity_implies_five_implies_nd_necessity",
-    "lines": [1844, 1846],
+    "lines": [1845, 1847],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-five-implies-nd-implies-two-hat-implies-nd":
@@ -2465,7 +2560,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_five_implies_nd_implies_two_hat_implies_nd",
-    "lines": [1796, 1798],
+    "lines": [1797, 1799],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-five-implies-nd-implies-five-implies-two-hat":
@@ -2477,7 +2572,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_five_implies_nd_implies_five_implies_two_hat",
-    "lines": [1816, 1818],
+    "lines": [1817, 1819],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-five-implies-nd-and-necessary-truth-implies-five-imply-necessary-truth-implies-nd":
@@ -2489,7 +2584,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_five_implies_nd_and_necessary_truth_implies_five_imply_necessary_truth_implies_nd",
-    "lines": [1820, 1822],
+    "lines": [1821, 1823],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-extensionality-r-implies-extensionality-r":
@@ -2501,7 +2596,19 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_extensionality_r_implies_extensionality_r",
-    "lines": [591, 593],
+    "lines": [592, 594],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "necessary-distinctness-preserving-collapse-implies-distinctness-preserving-collapse":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.Other.necessary_distinctness_preserving_collapse_implies_distinctness_preserving_collapse",
+     "lines": [19, 22],
+     "file": "Classicism/Results/Other/Shallow.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.necessary_distinctness_preserving_collapse_implies_distinctness_preserving_collapse",
+    "lines": [1971, 1973],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-distinctness-necessary-t-implies-necessary-vicinity":
@@ -2513,7 +2620,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_distinctness_necessary_t_implies_necessary_vicinity",
-    "lines": [587, 589],
+    "lines": [588, 590],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-distinctness-necessary-t-implies-necessary-two-hat-implies-nd":
@@ -2525,7 +2632,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_distinctness_necessary_t_implies_necessary_two_hat_implies_nd",
-    "lines": [1792, 1794],
+    "lines": [1793, 1795],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-distinctness-necessary-t-implies-necessary-distinctness-necessary-r":
@@ -2537,7 +2644,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_distinctness_necessary_t_implies_necessary_distinctness_necessary_r",
-    "lines": [583, 585],
+    "lines": [584, 586],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-distinctness-necessary-t-implies-distinctness-necessary-t":
@@ -2549,7 +2656,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_distinctness_necessary_t_implies_distinctness_necessary_t",
-    "lines": [579, 581],
+    "lines": [580, 582],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-distinctness-necessary-r-implies-necessary-modal-five":
@@ -2561,7 +2668,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_distinctness_necessary_r_implies_necessary_modal_five",
-    "lines": [575, 577],
+    "lines": [576, 578],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-distinctness-necessary-r-implies-necessary-distinctness-necessary-t":
@@ -2573,7 +2680,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_distinctness_necessary_r_implies_necessary_distinctness_necessary_t",
-    "lines": [571, 573],
+    "lines": [572, 574],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-distinctness-necessary-r-implies-necessary-barcan-r":
@@ -2585,7 +2692,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_distinctness_necessary_r_implies_necessary_barcan_r",
-    "lines": [567, 569],
+    "lines": [568, 570],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-distinctness-necessary-r-implies-distinctness-necessary-r":
@@ -2597,7 +2704,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_distinctness_necessary_r_implies_distinctness_necessary_r",
-    "lines": [563, 565],
+    "lines": [564, 566],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-countable-boolean-completeness-r-implies-countable-boolean-completeness-r":
@@ -2609,7 +2716,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_countable_boolean_completeness_r_implies_countable_boolean_completeness_r",
-    "lines": [1392, 1394],
+    "lines": [1393, 1395],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-completeness-and-necessary-actuality-imply-necessary-weak-rigid-comprehension":
@@ -2625,7 +2732,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_completeness_and_necessary_actuality_imply_necessary_weak_rigid_comprehension",
-    "lines": [1464, 1466],
+    "lines": [1465, 1467],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-boolean-completeness-t-implies-boolean-completeness-t":
@@ -2637,7 +2744,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_boolean_completeness_t_implies_boolean_completeness_t",
-    "lines": [1368, 1370],
+    "lines": [1369, 1371],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-boolean-completeness-r-implies-necessary-countable-boolean-completeness-r":
@@ -2649,7 +2756,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_boolean_completeness_r_implies_necessary_countable_boolean_completeness_r",
-    "lines": [1396, 1398],
+    "lines": [1397, 1399],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-boolean-completeness-r-implies-necessary-boolean-completeness-t":
@@ -2661,7 +2768,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_boolean_completeness_r_implies_necessary_boolean_completeness_t",
-    "lines": [1376, 1378],
+    "lines": [1377, 1379],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-boolean-completeness-r-implies-boolean-completeness-r":
@@ -2673,7 +2780,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_boolean_completeness_r_implies_boolean_completeness_r",
-    "lines": [559, 561],
+    "lines": [560, 562],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-bf-atomicity-and-rigid-comprehension-imply-necessary-rigid-power":
@@ -2685,7 +2792,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_bf_atomicity_and_rigid_comprehension_imply_necessary_rigid_power",
-    "lines": [1632, 1634],
+    "lines": [1633, 1635],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-bf-and-actuality-imply-inextensible-comprehension":
@@ -2701,7 +2808,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_bf_and_actuality_imply_inextensible_comprehension",
-    "lines": [555, 557],
+    "lines": [556, 558],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-barcan-t-implies-barcan-t":
@@ -2711,7 +2818,7 @@
      "file": "Classicism/Results/Records/Coarse.lean"}],
    "certificate":
    {"name": "Classicism.Map.necessary_barcan_t_implies_barcan_t",
-    "lines": [551, 553],
+    "lines": [552, 554],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-barcan-relational-implies-necessary-barcan-t":
@@ -2723,7 +2830,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_barcan_relational_implies_necessary_barcan_t",
-    "lines": [1580, 1582],
+    "lines": [1581, 1583],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-barcan-relational-implies-barcan-relational":
@@ -2735,7 +2842,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_barcan_relational_implies_barcan_relational",
-    "lines": [1584, 1586],
+    "lines": [1585, 1587],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-barcan-r-implies-necessary-functionality-r":
@@ -2747,7 +2854,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_barcan_r_implies_necessary_functionality_r",
-    "lines": [547, 549],
+    "lines": [548, 550],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-barcan-r-implies-necessary-barcan-t":
@@ -2757,7 +2864,7 @@
      "file": "Classicism/Results/Records/Coarse.lean"}],
    "certificate":
    {"name": "Classicism.Map.necessary_barcan_r_implies_necessary_barcan_t",
-    "lines": [543, 545],
+    "lines": [544, 546],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-barcan-r-implies-necessary-barcan-relational":
@@ -2769,7 +2876,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_barcan_r_implies_necessary_barcan_relational",
-    "lines": [1576, 1578],
+    "lines": [1577, 1579],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-barcan-r-implies-barcan-r":
@@ -2779,7 +2886,7 @@
      "file": "Classicism/Results/Records/Coarse.lean"}],
    "certificate":
    {"name": "Classicism.Map.necessary_barcan_r_implies_barcan_r",
-    "lines": [539, 541],
+    "lines": [540, 542],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-barcan-and-rigid-power-imply-rigid-rigidity":
@@ -2791,7 +2898,18 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_barcan_and_rigid_power_imply_rigid_rigidity",
-    "lines": [1564, 1566],
+    "lines": [1565, 1567],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "necessary-atomlessness-implies-atomlessness":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.Other.necessary_atomlessness_implies_atomlessness",
+     "lines": [15, 17],
+     "file": "Classicism/Results/Other/Shallow.lean"}],
+   "certificate":
+   {"name": "Classicism.Map.necessary_atomlessness_implies_atomlessness",
+    "lines": [1967, 1969],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atomicity-t-implies-atomicity-t":
@@ -2801,7 +2919,7 @@
      "file": "Classicism/Results/Records/Lattice.lean"}],
    "certificate":
    {"name": "Classicism.Map.necessary_atomicity_t_implies_atomicity_t",
-    "lines": [1364, 1366],
+    "lines": [1365, 1367],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atomicity-t-and-necessary-wic-imply-necessary-actuality":
@@ -2813,7 +2931,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_atomicity_t_and_necessary_wic_imply_necessary_actuality",
-    "lines": [1640, 1642],
+    "lines": [1641, 1643],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atomicity-t-and-necessary-bf-t-imply-necessary-strong-atomicity-t":
@@ -2825,7 +2943,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_atomicity_t_and_necessary_bf_t_imply_necessary_strong_atomicity_t",
-    "lines": [1456, 1458],
+    "lines": [1457, 1459],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atomicity-t-and-necessary-bf-imply-necessary-atomicity":
@@ -2841,7 +2959,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_atomicity_t_and_necessary_bf_imply_necessary_atomicity",
-    "lines": [1452, 1454],
+    "lines": [1453, 1455],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atomicity-r-implies-necessary-atomicity-t":
@@ -2853,7 +2971,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_atomicity_r_implies_necessary_atomicity_t",
-    "lines": [1372, 1374],
+    "lines": [1373, 1375],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atomicity-r-implies-atomicity-r":
@@ -2863,7 +2981,7 @@
      "file": "Classicism/Results/Records/Lattice.lean"}],
    "certificate":
    {"name": "Classicism.Map.necessary_atomicity_r_implies_atomicity_r",
-    "lines": [535, 537],
+    "lines": [536, 538],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atomicity-and-necessary-rigid-comprehension-imply-necessary-rigid-power":
@@ -2875,7 +2993,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_atomicity_and_necessary_rigid_comprehension_imply_necessary_rigid_power",
-    "lines": [1708, 1710],
+    "lines": [1709, 1711],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atomicity-and-necessary-bf-t-imply-necessary-strong-atomicity-t":
@@ -2887,7 +3005,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_atomicity_and_necessary_bf_t_imply_necessary_strong_atomicity_t",
-    "lines": [531, 533],
+    "lines": [532, 534],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atomicity-and-necessary-bf-relational-imply-necessary-strong-atomicity":
@@ -2903,7 +3021,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_atomicity_and_necessary_bf_relational_imply_necessary_strong_atomicity",
-    "lines": [1604, 1606],
+    "lines": [1605, 1607],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-atomicity-and-necessary-bf-imply-necessary-strong-atomicity":
@@ -2919,7 +3037,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_atomicity_and_necessary_bf_imply_necessary_strong_atomicity",
-    "lines": [527, 529],
+    "lines": [528, 530],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-actuality-implies-necessary-weakly-inextensible-comprehension-r":
@@ -2935,7 +3053,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_actuality_implies_necessary_weakly_inextensible_comprehension_r",
-    "lines": [523, 525],
+    "lines": [524, 526],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-actuality-implies-necessary-vicinity":
@@ -2945,7 +3063,7 @@
      "file": "Classicism/Results/Records/Lattice.lean"}],
    "certificate":
    {"name": "Classicism.Map.necessary_actuality_implies_necessary_vicinity",
-    "lines": [519, 521],
+    "lines": [520, 522],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-actuality-implies-necessary-transversal":
@@ -2956,7 +3074,7 @@
      "file": "Classicism/Results/Records/Choice.lean"}],
    "certificate":
    {"name": "Classicism.Map.necessary_actuality_implies_necessary_transversal",
-    "lines": [515, 517],
+    "lines": [516, 518],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-actuality-implies-necessary-persistent-comprehension":
@@ -2968,7 +3086,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_actuality_implies_necessary_persistent_comprehension",
-    "lines": [1624, 1626],
+    "lines": [1625, 1627],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-actuality-implies-necessary-five-implies-two-hat":
@@ -2980,7 +3098,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_actuality_implies_necessary_five_implies_two_hat",
-    "lines": [1892, 1894],
+    "lines": [1893, 1895],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-actuality-implies-actuality":
@@ -2990,7 +3108,7 @@
      "file": "Classicism/Results/Records/Lattice.lean"}],
    "certificate":
    {"name": "Classicism.Map.necessary_actuality_implies_actuality",
-    "lines": [511, 513],
+    "lines": [512, 514],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-actuality-and-necessary-two-hat-implies-nd-imply-necessary-strong-actuality":
@@ -3002,7 +3120,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_actuality_and_necessary_two_hat_implies_nd_imply_necessary_strong_actuality",
-    "lines": [1904, 1906],
+    "lines": [1905, 1907],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-actuality-and-necessary-bf-t-imply-necessary-strong-actuality":
@@ -3014,7 +3132,7 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_actuality_and_necessary_bf_t_imply_necessary_strong_actuality",
-    "lines": [507, 509],
+    "lines": [508, 510],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "necessary-actuality-and-necessary-bf-imply-necessary-inextensible-comprehension":
@@ -3030,7 +3148,18 @@
    "certificate":
    {"name":
     "Classicism.Map.necessary_actuality_and_necessary_bf_imply_necessary_inextensible_comprehension",
-    "lines": [1460, 1462],
+    "lines": [1461, 1463],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "nd-t-and-bf-t-imply-necessary-nd-t":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.distinctness_necessary_t_and_barcan_t_imply_necessary_distinctness_necessary_t",
+     "lines": [116, 120],
+     "file": "Classicism/Results/Records/C5.lean"}],
+   "certificate":
+   {"name": "Classicism.Map.nd_t_and_bf_t_imply_necessary_nd_t",
+    "lines": [1992, 1994],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "nd-and-strong-actuality-imply-gallin-comprehension":
@@ -3041,7 +3170,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.nd_and_strong_actuality_imply_gallin_comprehension",
-    "lines": [1616, 1618],
+    "lines": [1617, 1619],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "nd-and-bf-imply-necessary-nd":
@@ -3051,7 +3180,7 @@
      "file": "Classicism/Results/Records/C5.lean"}],
    "certificate":
    {"name": "Classicism.Map.nd_and_bf_imply_necessary_nd",
-    "lines": [503, 505],
+    "lines": [504, 506],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "modalized-relational-choice-implies-relational-choice":
@@ -3063,7 +3192,7 @@
    "certificate":
    {"name":
     "Classicism.Map.modalized_relational_choice_implies_relational_choice",
-    "lines": [1720, 1722],
+    "lines": [1721, 1723],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "modalized-relational-choice-implies-intensional-choice":
@@ -3075,7 +3204,7 @@
    "certificate":
    {"name":
     "Classicism.Map.modalized_relational_choice_implies_intensional_choice",
-    "lines": [1716, 1718],
+    "lines": [1717, 1719],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "modal-well-ordering-r-implies-necessary-well-ordering-r":
@@ -3087,7 +3216,7 @@
    "certificate":
    {"name":
     "Classicism.Map.modal_well_ordering_r_implies_necessary_well_ordering_r",
-    "lines": [1664, 1666],
+    "lines": [1665, 1667],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "modal-well-ordering-r-implies-necessary-intensional-choice-r":
@@ -3099,7 +3228,7 @@
    "certificate":
    {"name":
     "Classicism.Map.modal_well_ordering_r_implies_necessary_intensional_choice_r",
-    "lines": [1660, 1662],
+    "lines": [1661, 1663],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "modal-well-ordering-r-implies-intensional-choice-r":
@@ -3110,7 +3239,7 @@
      "file": "Classicism/Results/Records/Choice.lean"}],
    "certificate":
    {"name": "Classicism.Map.modal_well_ordering_r_implies_intensional_choice_r",
-    "lines": [1656, 1658],
+    "lines": [1657, 1659],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "modal-well-ordering-implies-necessary-modalized-relational-choice":
@@ -3122,7 +3251,7 @@
    "certificate":
    {"name":
     "Classicism.Map.modal_well_ordering_implies_necessary_modalized_relational_choice",
-    "lines": [1752, 1754],
+    "lines": [1753, 1755],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "modal-well-ordering-implies-modalized-relational-choice":
@@ -3134,7 +3263,7 @@
    "certificate":
    {"name":
     "Classicism.Map.modal_well_ordering_implies_modalized_relational_choice",
-    "lines": [1748, 1750],
+    "lines": [1749, 1751],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "modal-freedom-signature-r-implies-no-pure-contingency-r":
@@ -3145,7 +3274,7 @@
    "certificate":
    {"name":
     "Classicism.Map.modal_freedom_signature_r_implies_no_pure_contingency_r",
-    "lines": [499, 501],
+    "lines": [500, 502],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "modal-five-implies-modal-b":
@@ -3155,7 +3284,7 @@
      "file": "Classicism/Results/Records/Coarse.lean"}],
    "certificate":
    {"name": "Classicism.Map.modal_five_implies_modal_b",
-    "lines": [495, 497],
+    "lines": [496, 498],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "modal-b-implies-signature-b-r":
@@ -3165,7 +3294,7 @@
      "file": "Classicism/Results/SentenceSchemas/Contingency.lean"}],
    "certificate":
    {"name": "Classicism.Map.modal_b_implies_signature_b_r",
-    "lines": [491, 493],
+    "lines": [492, 494],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "modal-b-implies-pure-b-r":
@@ -3175,7 +3304,7 @@
      "file": "Classicism/Results/SentenceSchemas/Contingency.lean"}],
    "certificate":
    {"name": "Classicism.Map.modal_b_implies_pure_b_r",
-    "lines": [487, 489],
+    "lines": [488, 490],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "modal-b-implies-distinctness-necessary-r":
@@ -3185,7 +3314,7 @@
      "file": "Classicism/Results/Records/Coarse.lean"}],
    "certificate":
    {"name": "Classicism.Map.modal_b_implies_distinctness_necessary_r",
-    "lines": [483, 485],
+    "lines": [484, 486],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "maximalist-distinctness-incompatible-with-necessary-tractarianism-r":
@@ -3196,7 +3325,7 @@
    "certificate":
    {"name":
     "Classicism.Map.maximalist_distinctness_incompatible_with_necessary_tractarianism_r",
-    "lines": [476, 481],
+    "lines": [477, 482],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
   "maximalist-distinctness-incompatible-with-necessary-rigid-comprehension-r":
@@ -3207,7 +3336,7 @@
    "certificate":
    {"name":
     "Classicism.Map.maximalist_distinctness_incompatible_with_necessary_rigid_comprehension_r",
-    "lines": [472, 474],
+    "lines": [473, 475],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
   "maximalist-distinctness-incompatible-with-necessary-functionality-r":
@@ -3218,7 +3347,7 @@
    "certificate":
    {"name":
     "Classicism.Map.maximalist_distinctness_incompatible_with_necessary_functionality_r",
-    "lines": [468, 470],
+    "lines": [469, 471],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
   "maximalist-distinctness-incompatible-with-necessary-boolean-completeness-r":
@@ -3229,7 +3358,7 @@
    "certificate":
    {"name":
     "Classicism.Map.maximalist_distinctness_incompatible_with_necessary_boolean_completeness_r",
-    "lines": [464, 466],
+    "lines": [465, 467],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
   "maximalist-distinctness-incompatible-with-necessary-barcan-r":
@@ -3240,7 +3369,18 @@
    "certificate":
    {"name":
     "Classicism.Map.maximalist_distinctness_incompatible_with_necessary_barcan_r",
-    "lines": [457, 462],
+    "lines": [458, 463],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
+  "maximalist-distinctness-incompatible-with-necessary-atomlessness":
+  {"proofs":
+   [{"name": "Classicism.Meta.maximalist_necAtomlessness_inconsistent",
+     "lines": [84, 87],
+     "file": "Classicism/Results/Other/Meta.lean"}],
+   "certificate":
+   {"name":
+    "Classicism.Map.maximalist_distinctness_incompatible_with_necessary_atomlessness",
+    "lines": [2004, 2006],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
   "maximalist-distinctness-incompatible-with-necessary-atomicity-t":
@@ -3251,7 +3391,7 @@
    "certificate":
    {"name":
     "Classicism.Map.maximalist_distinctness_incompatible_with_necessary_atomicity_t",
-    "lines": [453, 455],
+    "lines": [454, 456],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
   "maximalist-distinctness-incompatible-with-necessary-atomicity-r":
@@ -3262,7 +3402,7 @@
    "certificate":
    {"name":
     "Classicism.Map.maximalist_distinctness_incompatible_with_necessary_atomicity_r",
-    "lines": [446, 451],
+    "lines": [447, 452],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
   "maximalist-distinctness-incompatible-with-necessary-actuality":
@@ -3273,7 +3413,7 @@
    "certificate":
    {"name":
     "Classicism.Map.maximalist_distinctness_incompatible_with_necessary_actuality",
-    "lines": [442, 444],
+    "lines": [443, 445],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
   "maximalist-distinctness-incompatible-with-nd":
@@ -3283,7 +3423,7 @@
      "file": "Classicism/Results/SentenceSchemas/Incompatibilities.lean"}],
    "certificate":
    {"name": "Classicism.Map.maximalist_distinctness_incompatible_with_nd",
-    "lines": [438, 440],
+    "lines": [439, 441],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
   "logical-necessity-r-implies-witnessed-possibility-r":
@@ -3294,7 +3434,7 @@
    "certificate":
    {"name":
     "Classicism.Map.logical_necessity_r_implies_witnessed_possibility_r",
-    "lines": [434, 436],
+    "lines": [435, 437],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "logical-necessity-r-implies-no-pure-contingency-r":
@@ -3304,7 +3444,7 @@
      "file": "Classicism/Results/SentenceSchemas/WitnessedPossibility.lean"}],
    "certificate":
    {"name": "Classicism.Map.logical_necessity_r_implies_no_pure_contingency_r",
-    "lines": [430, 432],
+    "lines": [431, 433],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "inextensible-comprehension-r-implies-weakly-inextensible-comprehension-r":
@@ -3316,7 +3456,7 @@
    "certificate":
    {"name":
     "Classicism.Map.inextensible_comprehension_r_implies_weakly_inextensible_comprehension_r",
-    "lines": [426, 428],
+    "lines": [427, 429],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "gallin-comprehension-implies-strong-actuality":
@@ -3326,7 +3466,7 @@
      "file": "Classicism/Results/Records/Comprehension.lean"}],
    "certificate":
    {"name": "Classicism.Map.gallin_comprehension_implies_strong_actuality",
-    "lines": [1608, 1610],
+    "lines": [1609, 1611],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "gallin-comprehension-implies-nd":
@@ -3336,7 +3476,7 @@
      "file": "Classicism/Results/Records/Comprehension.lean"}],
    "certificate":
    {"name": "Classicism.Map.gallin_comprehension_implies_nd",
-    "lines": [422, 424],
+    "lines": [423, 425],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "gallin-comprehension-and-bf-imply-weak-rigid-comprehension":
@@ -3348,7 +3488,7 @@
    "certificate":
    {"name":
     "Classicism.Map.gallin_comprehension_and_bf_imply_weak_rigid_comprehension",
-    "lines": [418, 420],
+    "lines": [419, 421],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "gallin-comprehension-and-bf-imply-rigid-comprehension":
@@ -3360,7 +3500,7 @@
    "certificate":
    {"name":
     "Classicism.Map.gallin_comprehension_and_bf_imply_rigid_comprehension",
-    "lines": [414, 416],
+    "lines": [415, 417],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "functionality-r-implies-tractarianism-r":
@@ -3370,7 +3510,7 @@
      "file": "Classicism/Results/Records/Coarse.lean"}],
    "certificate":
    {"name": "Classicism.Map.functionality_r_implies_tractarianism_r",
-    "lines": [410, 412],
+    "lines": [411, 413],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "functional-choice-r-implies-relational-choice-r":
@@ -3381,7 +3521,7 @@
      "file": "Classicism/Results/Records/Choice.lean"}],
    "certificate":
    {"name": "Classicism.Map.functional_choice_r_implies_relational_choice_r",
-    "lines": [406, 408],
+    "lines": [407, 409],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "functional-choice-r-implies-plenitude-r":
@@ -3391,7 +3531,7 @@
      "file": "Classicism/Results/Records/Choice.lean"}],
    "certificate":
    {"name": "Classicism.Map.functional_choice_r_implies_plenitude_r",
-    "lines": [402, 404],
+    "lines": [403, 405],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "fregean-incompatible-with-infinity-t":
@@ -3401,7 +3541,7 @@
      "file": "Classicism/Results/SentenceSchemas/Infinity.lean"}],
    "certificate":
    {"name": "Classicism.Map.fregean_incompatible_with_infinity_t",
-    "lines": [398, 400],
+    "lines": [399, 401],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "fregean-axiom-implies-no-pure-contingency-r":
@@ -3411,7 +3551,7 @@
      "file": "Classicism/Results/SentenceSchemas/Contingency.lean"}],
    "certificate":
    {"name": "Classicism.Map.fregean_axiom_implies_no_pure_contingency_r",
-    "lines": [394, 396],
+    "lines": [395, 397],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "fregean-axiom-implies-no-contingency-signature-r":
@@ -3421,7 +3561,7 @@
      "file": "Classicism/Results/SentenceSchemas/Contingency.lean"}],
    "certificate":
    {"name": "Classicism.Map.fregean_axiom_implies_no_contingency_signature_r",
-    "lines": [390, 392],
+    "lines": [391, 393],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "fregean-axiom-implies-necessary-fregean-axiom":
@@ -3431,7 +3571,7 @@
      "file": "Classicism/Results/Records/Extensionality.lean"}],
    "certificate":
    {"name": "Classicism.Map.fregean_axiom_implies_necessary_fregean_axiom",
-    "lines": [386, 388],
+    "lines": [387, 389],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "fregean-axiom-implies-necessary-distinctness-necessary-r":
@@ -3443,7 +3583,7 @@
    "certificate":
    {"name":
     "Classicism.Map.fregean_axiom_implies_necessary_distinctness_necessary_r",
-    "lines": [382, 384],
+    "lines": [383, 385],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "fregean-axiom-implies-extensionality-r":
@@ -3453,7 +3593,7 @@
      "file": "Classicism/Results/Records/Extensionality.lean"}],
    "certificate":
    {"name": "Classicism.Map.fregean_axiom_implies_extensionality_r",
-    "lines": [378, 380],
+    "lines": [379, 381],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "fregean-axiom-implies-distinctness-preserving-collapse":
@@ -3465,7 +3605,7 @@
    "certificate":
    {"name":
     "Classicism.Map.fregean_axiom_implies_distinctness_preserving_collapse",
-    "lines": [374, 376],
+    "lines": [375, 377],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "five-implies-two-hat-and-truth-implies-five-imply-truth-implies-two-hat":
@@ -3477,7 +3617,7 @@
    "certificate":
    {"name":
     "Classicism.Map.five_implies_two_hat_and_truth_implies_five_imply_truth_implies_two_hat",
-    "lines": [1784, 1786],
+    "lines": [1785, 1787],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "five-implies-nd-implies-two-hat-implies-nd":
@@ -3487,7 +3627,7 @@
      "file": "Classicism/Results/Records/Necessity.lean"}],
    "certificate":
    {"name": "Classicism.Map.five_implies_nd_implies_two_hat_implies_nd",
-    "lines": [1756, 1758],
+    "lines": [1757, 1759],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "five-implies-nd-implies-five-implies-two-hat":
@@ -3497,7 +3637,7 @@
      "file": "Classicism/Results/Records/Necessity.lean"}],
    "certificate":
    {"name": "Classicism.Map.five_implies_nd_implies_five_implies_two_hat",
-    "lines": [1776, 1778],
+    "lines": [1777, 1779],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "five-implies-nd-and-truth-implies-five-imply-truth-implies-nd":
@@ -3509,7 +3649,7 @@
    "certificate":
    {"name":
     "Classicism.Map.five_implies_nd_and_truth_implies_five_imply_truth_implies_nd",
-    "lines": [1780, 1782],
+    "lines": [1781, 1783],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "five-and-strong-atomicity-t-imply-necessary-b":
@@ -3519,7 +3659,7 @@
      "file": "Classicism/Results/Records/Lattice.lean"}],
    "certificate":
    {"name": "Classicism.Map.five_and_strong_atomicity_t_imply_necessary_b",
-    "lines": [370, 372],
+    "lines": [371, 373],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "extensionality-r-implies-rigid-comprehension-r":
@@ -3529,7 +3669,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.extensionality_r_implies_rigid_comprehension_r",
-    "lines": [366, 368],
+    "lines": [367, 369],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "extensionality-r-implies-plenitude-r":
@@ -3539,7 +3679,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.extensionality_r_implies_plenitude_r",
-    "lines": [362, 364],
+    "lines": [363, 365],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "extensionality-r-implies-necessary-extensionality-r":
@@ -3551,7 +3691,7 @@
    "certificate":
    {"name":
     "Classicism.Map.extensionality_r_implies_necessary_extensionality_r",
-    "lines": [358, 360],
+    "lines": [359, 361],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "extensionality-r-implies-intensional-choice-r":
@@ -3561,7 +3701,7 @@
      "file": "Classicism/Results/Records/Choice.lean"}],
    "certificate":
    {"name": "Classicism.Map.extensionality_r_implies_intensional_choice_r",
-    "lines": [1468, 1470],
+    "lines": [1469, 1471],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "extensionality-r-implies-functionality-r":
@@ -3571,7 +3711,7 @@
      "file": "Classicism/Results/Records/Extensionality.lean"}],
    "certificate":
    {"name": "Classicism.Map.extensionality_r_implies_functionality_r",
-    "lines": [354, 356],
+    "lines": [355, 357],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "extensionality-r-implies-fregean-axiom":
@@ -3581,7 +3721,7 @@
      "file": "Classicism/Results/Records/Extensionality.lean"}],
    "certificate":
    {"name": "Classicism.Map.extensionality_r_implies_fregean_axiom",
-    "lines": [350, 352],
+    "lines": [351, 353],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "extensionality-r-implies-boolean-completeness-r":
@@ -3595,7 +3735,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.extensionality_r_implies_boolean_completeness_r",
-    "lines": [346, 348],
+    "lines": [347, 349],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "extensionality-r-implies-atomicity-r":
@@ -3605,7 +3745,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.extensionality_r_implies_atomicity_r",
-    "lines": [342, 344],
+    "lines": [343, 345],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "extensionality-r-implies-actuality":
@@ -3615,7 +3755,7 @@
      "file": "Classicism/Results/Records/Lattice.lean"}],
    "certificate":
    {"name": "Classicism.Map.extensionality_r_implies_actuality",
-    "lines": [338, 340],
+    "lines": [339, 341],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "distinctness-signature-r-implies-distinctness-schema-r":
@@ -3623,7 +3763,7 @@
    "certificate":
    {"name":
     "Classicism.Map.distinctness_signature_r_implies_distinctness_schema_r",
-    "lines": [334, 336],
+    "lines": [335, 337],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "distinctness-preserving-collapse-and-nd-imply-fregean-axiom":
@@ -3635,7 +3775,7 @@
    "certificate":
    {"name":
     "Classicism.Map.distinctness_preserving_collapse_and_nd_imply_fregean_axiom",
-    "lines": [330, 332],
+    "lines": [331, 333],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "distinctness-necessary-t-implies-vicinity":
@@ -3645,7 +3785,7 @@
      "file": "Classicism/Results/Records/Lattice.lean"}],
    "certificate":
    {"name": "Classicism.Map.distinctness_necessary_t_implies_vicinity",
-    "lines": [326, 328],
+    "lines": [327, 329],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "distinctness-necessary-t-implies-modal-five":
@@ -3655,7 +3795,7 @@
      "file": "Classicism/Results/Records/Coarse.lean"}],
    "certificate":
    {"name": "Classicism.Map.distinctness_necessary_t_implies_modal_five",
-    "lines": [322, 324],
+    "lines": [323, 325],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "distinctness-necessary-t-and-inextensible-comprehension-imply-weakly-rigid-power":
@@ -3678,7 +3818,7 @@
    "certificate":
    {"name":
     "Classicism.Map.distinctness_necessary_t_and_inextensible_comprehension_imply_weakly_rigid_power",
-    "lines": [1949, 1959],
+    "lines": [1950, 1960],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "distinctness-necessary-r-implies-distinctness-necessary-t":
@@ -3690,7 +3830,7 @@
    "certificate":
    {"name":
     "Classicism.Map.distinctness_necessary_r_implies_distinctness_necessary_t",
-    "lines": [318, 320],
+    "lines": [319, 321],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "converse-witnessed-possibility-r-implies-no-pure-contingency-r":
@@ -3701,7 +3841,7 @@
    "certificate":
    {"name":
     "Classicism.Map.converse_witnessed_possibility_r_implies_no_pure_contingency_r",
-    "lines": [314, 316],
+    "lines": [315, 317],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "completeness-and-actuality-imply-weak-rigid-comprehension":
@@ -3717,7 +3857,7 @@
    "certificate":
    {"name":
     "Classicism.Map.completeness_and_actuality_imply_weak_rigid_comprehension",
-    "lines": [310, 312],
+    "lines": [311, 313],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "c5-implies-tame-rigidity":
@@ -3730,7 +3870,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.c5_implies_tame_rigidity",
-    "lines": [1484, 1486],
+    "lines": [1485, 1487],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "c5-implies-necessity-of-arithmetic":
@@ -3740,7 +3880,7 @@
      "file": "Classicism/Results/SentenceSchemas/ArithmeticMeta.lean"}],
    "certificate":
    {"name": "Classicism.Map.c5_implies_necessity_of_arithmetic",
-    "lines": [1476, 1478],
+    "lines": [1477, 1479],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "c5-implies-necessary-tame-rigidity":
@@ -3753,7 +3893,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.c5_implies_necessary_tame_rigidity",
-    "lines": [1488, 1490],
+    "lines": [1489, 1491],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "c5-implies-necessary-rigid-power":
@@ -3766,7 +3906,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.c5_implies_necessary_rigid_power",
-    "lines": [1480, 1482],
+    "lines": [1481, 1483],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "c5-and-persistent-comprehension-imply-gallin":
@@ -3776,7 +3916,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.c5_and_persistent_comprehension_imply_gallin",
-    "lines": [306, 308],
+    "lines": [307, 309],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "c5-and-necessary-strong-actuality-imply-necessary-gallin-comprehension":
@@ -3788,7 +3928,7 @@
    "certificate":
    {"name":
     "Classicism.Map.c5_and_necessary_strong_actuality_imply_necessary_gallin_comprehension",
-    "lines": [1620, 1622],
+    "lines": [1621, 1623],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "c5-and-necessary-rigid-comprehension-imply-necessary-gallin-comprehension":
@@ -3800,7 +3940,7 @@
    "certificate":
    {"name":
     "Classicism.Map.c5_and_necessary_rigid_comprehension_imply_necessary_gallin_comprehension",
-    "lines": [302, 304],
+    "lines": [303, 305],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "c5-and-necessary-persistent-comprehension-imply-necessary-gallin":
@@ -3812,7 +3952,7 @@
    "certificate":
    {"name":
     "Classicism.Map.c5_and_necessary_persistent_comprehension_imply_necessary_gallin",
-    "lines": [1628, 1630],
+    "lines": [1629, 1631],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "c5-and-necessary-completeness-imply-atomicity":
@@ -3822,7 +3962,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.c5_and_necessary_completeness_imply_atomicity",
-    "lines": [298, 300],
+    "lines": [299, 301],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "c5-and-necessary-actuality-imply-atomicity":
@@ -3832,7 +3972,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.c5_and_necessary_actuality_imply_atomicity",
-    "lines": [294, 296],
+    "lines": [295, 297],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "c5-and-completeness-imply-plenitude":
@@ -3845,7 +3985,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.c5_and_completeness_imply_plenitude",
-    "lines": [290, 292],
+    "lines": [291, 293],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "c5-and-completeness-imply-actuality":
@@ -3855,7 +3995,18 @@
      "file": "Classicism/Results/Records/C5.lean"}],
    "certificate":
    {"name": "Classicism.Map.c5_and_completeness_imply_actuality",
-    "lines": [286, 288],
+    "lines": [287, 289],
+    "file": "Classicism/Map.lean",
+    "axioms": ["propext", "Quot.sound"]}},
+  "c5-and-atomlessness-imply-necessary-atomlessness":
+  {"proofs":
+   [{"name":
+     "Classicism.Proofs.Other.c5_and_atomlessness_imply_necessary_atomlessness",
+     "lines": [56, 71],
+     "file": "Classicism/Results/Other/Shallow.lean"}],
+   "certificate":
+   {"name": "Classicism.Map.c5_and_atomlessness_imply_necessary_atomlessness",
+    "lines": [1988, 1990],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "c5-and-atomicity-t-imply-no-pure-contingency":
@@ -3866,14 +4017,14 @@
      "file": "Classicism/Results/Research/NPCC5Atomicity.lean"}],
    "certificate":
    {"name": "Classicism.Map.c5_and_atomicity_t_imply_no_pure_contingency",
-    "lines": [1935, 1937],
+    "lines": [1936, 1938],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "c5-and-atomicity-imply-no-pure-contingency":
   {"proofs": [],
    "certificate":
    {"name": "Classicism.Map.c5_and_atomicity_imply_no_pure_contingency",
-    "lines": [1939, 1942],
+    "lines": [1940, 1943],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "c5-and-atomicity-imply-necessary-rigid-comprehension":
@@ -3889,7 +4040,7 @@
    "certificate":
    {"name":
     "Classicism.Map.c5_and_atomicity_imply_necessary_rigid_comprehension",
-    "lines": [282, 284],
+    "lines": [283, 285],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "c5-and-atomicity-imply-necessary-plenitude":
@@ -3899,7 +4050,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.c5_and_atomicity_imply_necessary_plenitude",
-    "lines": [278, 280],
+    "lines": [279, 281],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "c5-and-atomicity-imply-necessary-completeness":
@@ -3909,7 +4060,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.c5_and_atomicity_imply_necessary_completeness",
-    "lines": [274, 276],
+    "lines": [275, 277],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "c5-and-atomicity-imply-necessary-atomicity":
@@ -3919,7 +4070,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.c5_and_atomicity_imply_necessary_atomicity",
-    "lines": [270, 272],
+    "lines": [271, 273],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "c5-and-actuality-imply-rigid-comprehension":
@@ -3932,7 +4083,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.c5_and_actuality_imply_rigid_comprehension",
-    "lines": [266, 268],
+    "lines": [267, 269],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "c5-and-actuality-imply-completeness":
@@ -3942,7 +4093,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.c5_and_actuality_imply_completeness",
-    "lines": [262, 264],
+    "lines": [263, 265],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "boolean-completeness-r-implies-weakly-inextensible-comprehension-r":
@@ -3958,7 +4109,7 @@
    "certificate":
    {"name":
     "Classicism.Map.boolean_completeness_r_implies_weakly_inextensible_comprehension_r",
-    "lines": [258, 260],
+    "lines": [259, 261],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "boolean-completeness-r-implies-countable-boolean-completeness-r":
@@ -3970,7 +4121,7 @@
    "certificate":
    {"name":
     "Classicism.Map.boolean_completeness_r_implies_countable_boolean_completeness_r",
-    "lines": [254, 256],
+    "lines": [255, 257],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "boolean-completeness-r-implies-boolean-completeness-t":
@@ -3982,7 +4133,7 @@
    "certificate":
    {"name":
     "Classicism.Map.boolean_completeness_r_implies_boolean_completeness_t",
-    "lines": [250, 252],
+    "lines": [251, 253],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "bf-weak-rigid-comprehension-atomicity-and-relational-choice-imply-intensional-choice":
@@ -3994,7 +4145,7 @@
    "certificate":
    {"name":
     "Classicism.Map.bf_weak_rigid_comprehension_atomicity_and_relational_choice_imply_intensional_choice",
-    "lines": [1688, 1690],
+    "lines": [1689, 1691],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "barcan-relational-implies-barcan-t":
@@ -4004,7 +4155,7 @@
      "file": "Classicism/Results/Records/Comprehension.lean"}],
    "certificate":
    {"name": "Classicism.Map.barcan_relational_implies_barcan_t",
-    "lines": [1572, 1574],
+    "lines": [1573, 1575],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "barcan-r-implies-functionality-r":
@@ -4014,7 +4165,7 @@
      "file": "Classicism/Results/Records/Coarse.lean"}],
    "certificate":
    {"name": "Classicism.Map.barcan_r_implies_functionality_r",
-    "lines": [246, 248],
+    "lines": [247, 249],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "barcan-r-implies-barcan-t":
@@ -4024,7 +4175,7 @@
      "file": "Classicism/Results/Records/Coarse.lean"}],
    "certificate":
    {"name": "Classicism.Map.barcan_r_implies_barcan_t",
-    "lines": [242, 244],
+    "lines": [243, 245],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "barcan-r-implies-barcan-relational":
@@ -4034,7 +4185,7 @@
      "file": "Classicism/Results/Records/Comprehension.lean"}],
    "certificate":
    {"name": "Classicism.Map.barcan_r_implies_barcan_relational",
-    "lines": [1568, 1570],
+    "lines": [1569, 1571],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "barcan-and-weakly-rigid-power-imply-weakly-rigid-weak-rigidity":
@@ -4046,7 +4197,7 @@
    "certificate":
    {"name":
     "Classicism.Map.barcan_and_weakly_rigid_power_imply_weakly_rigid_weak_rigidity",
-    "lines": [1552, 1554],
+    "lines": [1553, 1555],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "barcan-and-weakly-rigid-power-imply-necessary-tame-rigidity":
@@ -4058,7 +4209,7 @@
    "certificate":
    {"name":
     "Classicism.Map.barcan_and_weakly_rigid_power_imply_necessary_tame_rigidity",
-    "lines": [1556, 1558],
+    "lines": [1557, 1559],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "axiom-of-infinity-t-implies-possible-infinity-t":
@@ -4069,7 +4220,7 @@
      "file": "Classicism/Results/Records/Infinity.lean"}],
    "certificate":
    {"name": "Classicism.Map.axiom_of_infinity_t_implies_possible_infinity_t",
-    "lines": [238, 240],
+    "lines": [239, 241],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "axiom-of-infinity-e-implies-possible-infinity-e":
@@ -4080,7 +4231,7 @@
      "file": "Classicism/Results/Records/Infinity.lean"}],
    "certificate":
    {"name": "Classicism.Map.axiom_of_infinity_e_implies_possible_infinity_e",
-    "lines": [234, 236],
+    "lines": [235, 237],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atomlessness-implies-axiom-of-infinity-t":
@@ -4090,7 +4241,7 @@
      "file": "Classicism/Results/Records/Infinity.lean"}],
    "certificate":
    {"name": "Classicism.Map.atomlessness_implies_axiom_of_infinity_t",
-    "lines": [230, 232],
+    "lines": [231, 233],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atomicity-t-incompatible-with-atomlessness":
@@ -4100,7 +4251,7 @@
      "file": "Classicism/Results/Records/Lattice.lean"}],
    "certificate":
    {"name": "Classicism.Map.atomicity_t_incompatible_with_atomlessness",
-    "lines": [226, 228],
+    "lines": [227, 229],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atomicity-t-and-weakly-inextensible-comprehension-imply-actuality":
@@ -4112,7 +4263,7 @@
    "certificate":
    {"name":
     "Classicism.Map.atomicity_t_and_weakly_inextensible_comprehension_imply_actuality",
-    "lines": [1636, 1638],
+    "lines": [1637, 1639],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atomicity-t-and-bf-t-imply-strong-atomicity-t":
@@ -4122,7 +4273,7 @@
      "file": "Classicism/Results/Records/Lattice.lean"}],
    "certificate":
    {"name": "Classicism.Map.atomicity_t_and_bf_t_imply_strong_atomicity_t",
-    "lines": [222, 224],
+    "lines": [223, 225],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atomicity-t-and-bf-imply-necessary-actuality":
@@ -4132,7 +4283,7 @@
      "file": "Classicism/Results/Records/Lattice.lean"}],
    "certificate":
    {"name": "Classicism.Map.atomicity_t_and_bf_imply_necessary_actuality",
-    "lines": [218, 220],
+    "lines": [219, 221],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atomicity-t-and-bf-imply-atomicity":
@@ -4145,7 +4296,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.atomicity_t_and_bf_imply_atomicity",
-    "lines": [214, 216],
+    "lines": [215, 217],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atomicity-r-implies-atomicity-t":
@@ -4155,7 +4306,7 @@
      "file": "Classicism/Results/Records/Lattice.lean"}],
    "certificate":
    {"name": "Classicism.Map.atomicity_r_implies_atomicity_t",
-    "lines": [210, 212],
+    "lines": [211, 213],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atomicity-and-rigid-comprehension-imply-weakly-rigid-power":
@@ -4171,7 +4322,7 @@
    "certificate":
    {"name":
     "Classicism.Map.atomicity_and_rigid_comprehension_imply_weakly_rigid_power",
-    "lines": [1944, 1947],
+    "lines": [1945, 1948],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atomicity-and-rigid-comprehension-imply-rigid-power":
@@ -4183,7 +4334,7 @@
    "certificate":
    {"name":
     "Classicism.Map.atomicity_and_rigid_comprehension_imply_rigid_power",
-    "lines": [1704, 1706],
+    "lines": [1705, 1707],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atomicity-and-bf-relational-imply-strong-atomicity":
@@ -4198,7 +4349,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.atomicity_and_bf_relational_imply_strong_atomicity",
-    "lines": [1600, 1602],
+    "lines": [1601, 1603],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atomicity-and-bf-imply-strong-atomicity":
@@ -4211,7 +4362,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.atomicity_and_bf_imply_strong_atomicity",
-    "lines": [206, 208],
+    "lines": [207, 209],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "atomicity-and-bf-imply-necessary-actuality":
@@ -4221,7 +4372,7 @@
      "file": "Classicism/Results/Records/Lattice.lean"}],
    "certificate":
    {"name": "Classicism.Map.atomicity_and_bf_imply_necessary_actuality",
-    "lines": [202, 204],
+    "lines": [203, 205],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "actuality-incompatible-with-atomlessness":
@@ -4231,7 +4382,7 @@
      "file": "Classicism/Results/Records/Lattice.lean"}],
    "certificate":
    {"name": "Classicism.Map.actuality_incompatible_with_atomlessness",
-    "lines": [198, 200],
+    "lines": [199, 201],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "actuality-implies-weakly-inextensible-comprehension-r":
@@ -4247,7 +4398,7 @@
    "certificate":
    {"name":
     "Classicism.Map.actuality_implies_weakly_inextensible_comprehension_r",
-    "lines": [194, 196],
+    "lines": [195, 197],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "actuality-implies-vicinity":
@@ -4257,7 +4408,7 @@
      "file": "Classicism/Results/Records/Lattice.lean"}],
    "certificate":
    {"name": "Classicism.Map.actuality_implies_vicinity",
-    "lines": [190, 192],
+    "lines": [191, 193],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "actuality-implies-transversal":
@@ -4267,7 +4418,7 @@
      "file": "Classicism/Results/Records/Choice.lean"}],
    "certificate":
    {"name": "Classicism.Map.actuality_implies_transversal",
-    "lines": [186, 188],
+    "lines": [187, 189],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "actuality-implies-persistent-comprehension-r":
@@ -4280,7 +4431,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.actuality_implies_persistent_comprehension_r",
-    "lines": [182, 184],
+    "lines": [183, 185],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "actuality-implies-five-implies-two-hat":
@@ -4290,7 +4441,7 @@
      "file": "Classicism/Results/Records/Necessity.lean"}],
    "certificate":
    {"name": "Classicism.Map.actuality_implies_five_implies_two_hat",
-    "lines": [1888, 1890],
+    "lines": [1889, 1891],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "actuality-and-two-hat-implies-nd-imply-strong-actuality":
@@ -4302,7 +4453,7 @@
    "certificate":
    {"name":
     "Classicism.Map.actuality_and_two_hat_implies_nd_imply_strong_actuality",
-    "lines": [1900, 1902],
+    "lines": [1901, 1903],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "actuality-and-distinctness-preserving-collapse-imply-strong-actuality":
@@ -4314,7 +4465,7 @@
    "certificate":
    {"name":
     "Classicism.Map.actuality_and_distinctness_preserving_collapse_imply_strong_actuality",
-    "lines": [178, 180],
+    "lines": [179, 181],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "actuality-and-distinctness-preserving-collapse-imply-inextensible-comprehension":
@@ -4330,7 +4481,7 @@
    "certificate":
    {"name":
     "Classicism.Map.actuality_and_distinctness_preserving_collapse_imply_inextensible_comprehension",
-    "lines": [174, 176],
+    "lines": [175, 177],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "actuality-and-bf-t-imply-strong-actuality":
@@ -4340,7 +4491,7 @@
      "file": "Classicism/Results/Records/Lattice.lean"}],
    "certificate":
    {"name": "Classicism.Map.actuality_and_bf_t_imply_strong_actuality",
-    "lines": [170, 172],
+    "lines": [171, 173],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}},
   "actuality-and-bf-imply-inextensible-comprehension":
@@ -4355,7 +4506,7 @@
      "file": "Classicism/Results/Arity.lean"}],
    "certificate":
    {"name": "Classicism.Map.actuality_and_bf_imply_inextensible_comprehension",
-    "lines": [166, 168],
+    "lines": [167, 169],
     "file": "Classicism/Map.lean",
     "axioms": ["propext", "Quot.sound"]}}},
  "models":
@@ -12486,7 +12637,7 @@
       "file": "Classicism/Principles/Comprehension.lean"}],
     "certificate":
     {"name": "Classicism.Map.weak_rigid_comprehension_r.persistent",
-     "lines": [1236, 1238],
+     "lines": [1237, 1239],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "tractarianism-r":
@@ -12504,7 +12655,7 @@
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.tractarianism_r.polyadic",
-     "lines": [1093, 1095],
+     "lines": [1094, 1096],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}},
    "dual-polyadic":
@@ -12527,7 +12678,7 @@
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.tractarianism_r.dual_polyadic",
-     "lines": [1320, 1323],
+     "lines": [1321, 1324],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}},
    "dual":
@@ -12547,7 +12698,7 @@
       "file": "Classicism/Principles/Coarse.lean"}],
     "certificate":
     {"name": "Classicism.Map.tractarianism_r.dual",
-     "lines": [1315, 1318],
+     "lines": [1316, 1319],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "strong-atomicity-t":
@@ -12568,7 +12719,7 @@
       "file": "Classicism/Principles/Instances.lean"}],
     "certificate":
     {"name": "Classicism.Map.strong_atomicity_t.dual",
-     "lines": [1310, 1313],
+     "lines": [1311, 1314],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "strong-atomicity-r":
@@ -12589,7 +12740,7 @@
       "file": "Classicism/Principles/Lattice.lean"}],
     "certificate":
     {"name": "Classicism.Map.strong_atomicity_r.dual",
-     "lines": [1305, 1308],
+     "lines": [1306, 1309],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "relational-choice-r":
@@ -12607,7 +12758,7 @@
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.relational_choice_r.polyadic",
-     "lines": [1125, 1127],
+     "lines": [1126, 1128],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "plenitude-r":
@@ -12625,7 +12776,7 @@
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.plenitude_r.polyadic",
-     "lines": [1133, 1135],
+     "lines": [1134, 1136],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "necessary-weak-rigid-comprehension-r":
@@ -12646,7 +12797,7 @@
       "file": "Classicism/Principles/Comprehension.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_weak_rigid_comprehension_r.persistent",
-     "lines": [1240, 1243],
+     "lines": [1241, 1244],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "necessary-tractarianism-r":
@@ -12664,7 +12815,7 @@
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_tractarianism_r.polyadic",
-     "lines": [1097, 1099],
+     "lines": [1098, 1100],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}},
    "dual-polyadic":
@@ -12687,7 +12838,7 @@
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_tractarianism_r.dual_polyadic",
-     "lines": [1300, 1303],
+     "lines": [1301, 1304],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}},
    "dual":
@@ -12707,7 +12858,7 @@
       "file": "Classicism/Principles/Coarse.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_tractarianism_r.dual",
-     "lines": [1295, 1298],
+     "lines": [1296, 1299],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "necessary-strong-atomicity-t":
@@ -12728,7 +12879,7 @@
       "file": "Classicism/Principles/Instances.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_strong_atomicity_t.dual",
-     "lines": [1290, 1293],
+     "lines": [1291, 1294],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "necessary-strong-atomicity-r":
@@ -12749,7 +12900,7 @@
       "file": "Classicism/Principles/Lattice.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_strong_atomicity_r.dual",
-     "lines": [1285, 1288],
+     "lines": [1286, 1289],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "necessary-relational-choice-r":
@@ -12767,7 +12918,7 @@
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_relational_choice_r.polyadic",
-     "lines": [1129, 1131],
+     "lines": [1130, 1132],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "necessary-plenitude-r":
@@ -12785,7 +12936,7 @@
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_plenitude_r.polyadic",
-     "lines": [1137, 1139],
+     "lines": [1138, 1140],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "necessary-modal-five":
@@ -12806,7 +12957,7 @@
       "file": "Classicism/Principles/Coarse.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_modal_five.dual",
-     "lines": [1280, 1283],
+     "lines": [1281, 1284],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "necessary-modal-b":
@@ -12827,7 +12978,7 @@
       "file": "Classicism/Principles/Coarse.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_modal_b.dual",
-     "lines": [1275, 1278],
+     "lines": [1276, 1279],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "necessary-functionality-r":
@@ -12845,7 +12996,7 @@
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_functionality_r.polyadic",
-     "lines": [1113, 1115],
+     "lines": [1114, 1116],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "necessary-functional-choice-r":
@@ -12863,7 +13014,7 @@
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_functional_choice_r.polyadic",
-     "lines": [1121, 1123],
+     "lines": [1122, 1124],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "necessary-distinctness-necessary-t":
@@ -12884,7 +13035,7 @@
       "file": "Classicism/Principles/Instances.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_distinctness_necessary_t.dual",
-     "lines": [1270, 1273],
+     "lines": [1271, 1274],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "necessary-distinctness-necessary-r":
@@ -12903,7 +13054,7 @@
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_distinctness_necessary_r.polyadic",
-     "lines": [1105, 1107],
+     "lines": [1106, 1108],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}},
    "dual-polyadic":
@@ -12927,7 +13078,7 @@
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_distinctness_necessary_r.dual_polyadic",
-     "lines": [1265, 1268],
+     "lines": [1266, 1269],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}},
    "dual":
@@ -12947,7 +13098,7 @@
       "file": "Classicism/Principles/Coarse.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_distinctness_necessary_r.dual",
-     "lines": [1260, 1263],
+     "lines": [1261, 1264],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "necessary-boolean-completeness-r":
@@ -12968,7 +13119,7 @@
       "file": "Classicism/Principles/Lattice.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_boolean_completeness_r.lub",
-     "lines": [1255, 1258],
+     "lines": [1256, 1259],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "necessary-barcan-t":
@@ -12989,7 +13140,7 @@
       "file": "Classicism/Principles/Instances.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_barcan_t.dual",
-     "lines": [1231, 1234],
+     "lines": [1232, 1235],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "necessary-barcan-r":
@@ -13010,7 +13161,7 @@
       "file": "Classicism/Principles/Coarse.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_barcan_r.universal_rigid",
-     "lines": [1221, 1224],
+     "lines": [1222, 1225],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}},
    "polyadic":
@@ -13027,7 +13178,7 @@
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_barcan_r.polyadic",
-     "lines": [1089, 1091],
+     "lines": [1090, 1092],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}},
    "dual-polyadic":
@@ -13050,7 +13201,7 @@
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_barcan_r.dual_polyadic",
-     "lines": [1226, 1229],
+     "lines": [1227, 1230],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}},
    "dual":
@@ -13070,7 +13221,7 @@
       "file": "Classicism/Principles/Coarse.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_barcan_r.dual",
-     "lines": [1216, 1219],
+     "lines": [1217, 1220],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "necessary-atomicity-r":
@@ -13091,7 +13242,7 @@
       "file": "Classicism/Principles/Lattice.lean"}],
     "certificate":
     {"name": "Classicism.Map.necessary_atomicity_r.dual",
-     "lines": [1211, 1214],
+     "lines": [1212, 1215],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "modal-five":
@@ -13112,7 +13263,7 @@
       "file": "Classicism/Principles/Coarse.lean"}],
     "certificate":
     {"name": "Classicism.Map.modal_five.dual",
-     "lines": [1206, 1209],
+     "lines": [1207, 1210],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "modal-b":
@@ -13133,7 +13284,7 @@
       "file": "Classicism/Principles/Coarse.lean"}],
     "certificate":
     {"name": "Classicism.Map.modal_b.dual",
-     "lines": [1201, 1204],
+     "lines": [1202, 1205],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "functionality-r":
@@ -13151,7 +13302,7 @@
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.functionality_r.polyadic",
-     "lines": [1109, 1111],
+     "lines": [1110, 1112],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "functional-choice-r":
@@ -13169,7 +13320,7 @@
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.functional_choice_r.polyadic",
-     "lines": [1117, 1119],
+     "lines": [1118, 1120],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "distinctness-signature-r":
@@ -13188,7 +13339,7 @@
     "definitions": [],
     "certificate":
     {"name": "Classicism.Map.distinctness_signature_r.possibility",
-     "lines": [1250, 1253],
+     "lines": [1251, 1254],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "distinctness-schema-r":
@@ -13207,7 +13358,7 @@
     "definitions": [],
     "certificate":
     {"name": "Classicism.Map.distinctness_schema_r.possibility",
-     "lines": [1245, 1248],
+     "lines": [1246, 1249],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "distinctness-preserving-collapse":
@@ -13228,7 +13379,7 @@
       "file": "Classicism/Principles/Schematic.lean"}],
     "certificate":
     {"name": "Classicism.Map.distinctness_preserving_collapse.dual",
-     "lines": [1196, 1199],
+     "lines": [1197, 1200],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "distinctness-necessary-t":
@@ -13249,7 +13400,7 @@
       "file": "Classicism/Principles/Instances.lean"}],
     "certificate":
     {"name": "Classicism.Map.distinctness_necessary_t.dual",
-     "lines": [1191, 1194],
+     "lines": [1192, 1195],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "distinctness-necessary-r":
@@ -13267,7 +13418,7 @@
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.distinctness_necessary_r.polyadic",
-     "lines": [1101, 1103],
+     "lines": [1102, 1104],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}},
    "dual-polyadic":
@@ -13290,7 +13441,7 @@
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.distinctness_necessary_r.dual_polyadic",
-     "lines": [1186, 1189],
+     "lines": [1187, 1190],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}},
    "dual":
@@ -13310,7 +13461,7 @@
       "file": "Classicism/Principles/Coarse.lean"}],
     "certificate":
     {"name": "Classicism.Map.distinctness_necessary_r.dual",
-     "lines": [1181, 1184],
+     "lines": [1182, 1185],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "boolean-completeness-t":
@@ -13331,7 +13482,7 @@
       "file": "Classicism/Principles/Instances.lean"}],
     "certificate":
     {"name": "Classicism.Map.boolean_completeness_t.lub",
-     "lines": [1176, 1179],
+     "lines": [1177, 1180],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "boolean-completeness-r":
@@ -13352,7 +13503,7 @@
       "file": "Classicism/Principles/Lattice.lean"}],
     "certificate":
     {"name": "Classicism.Map.boolean_completeness_r.lub",
-     "lines": [1081, 1083],
+     "lines": [1082, 1084],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "barcan-t":
@@ -13373,7 +13524,7 @@
       "file": "Classicism/Principles/Instances.lean"}],
     "certificate":
     {"name": "Classicism.Map.barcan_t.dual",
-     "lines": [1171, 1174],
+     "lines": [1172, 1175],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "barcan-r":
@@ -13394,7 +13545,7 @@
       "file": "Classicism/Principles/Coarse.lean"}],
     "certificate":
     {"name": "Classicism.Map.barcan_r.universal_weakly_rigid",
-     "lines": [1161, 1164],
+     "lines": [1162, 1165],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}},
    "polyadic":
@@ -13411,7 +13562,7 @@
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.barcan_r.polyadic",
-     "lines": [1085, 1087],
+     "lines": [1086, 1088],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}},
    "dual-polyadic":
@@ -13434,7 +13585,7 @@
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.barcan_r.dual_polyadic",
-     "lines": [1166, 1169],
+     "lines": [1167, 1170],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}},
    "dual":
@@ -13454,7 +13605,7 @@
       "file": "Classicism/Principles/Coarse.lean"}],
     "certificate":
     {"name": "Classicism.Map.barcan_r.dual",
-     "lines": [1156, 1159],
+     "lines": [1157, 1160],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "atomicity-t":
@@ -13475,7 +13626,7 @@
       "file": "Classicism/Principles/Instances.lean"}],
     "certificate":
     {"name": "Classicism.Map.atomicity_t.dual",
-     "lines": [1146, 1149],
+     "lines": [1147, 1150],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "atomicity-r":
@@ -13496,7 +13647,7 @@
       "file": "Classicism/Principles/Lattice.lean"}],
     "certificate":
     {"name": "Classicism.Map.atomicity_r.dual",
-     "lines": [1141, 1144],
+     "lines": [1142, 1145],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}},
   "actuality":
@@ -13517,7 +13668,7 @@
       "file": "Classicism/Certified/Schemas.lean"}],
     "certificate":
     {"name": "Classicism.Map.actuality.actual_profile",
-     "lines": [1151, 1154],
+     "lines": [1152, 1155],
      "file": "Classicism/Map.lean",
      "axioms": ["propext", "Quot.sound"]}}}},
  "definitions":

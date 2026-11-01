@@ -12,6 +12,7 @@ import Classicism.Results.Research.NPCC5Atomicity
 import Classicism.Results.Research.RigidityClosureResearchAtomicPowerCertificates
 import Classicism.Results.Research.ModalPropagationCertificates.StrongAtomicity
 import Classicism.Results.Research.ModalPropagationCertificates.BoxedComprehension
+import Classicism.Results.Other.Meta
 
 /-!
 # The map's results, certified
@@ -1957,5 +1958,63 @@ theorem distinctness_necessary_t_and_inextensible_comprehension_imply_weakly_rig
         Proofs.modal_five_implies_modal_b.entails Proofs.modal_b_implies_distinctness_necessary_r.entails))
     AxiomSet.Entails.mono_right (schema_subset_args _) (AxiomSet.Entails.trans (AxiomSet.Entails.union nd ic)
       _root_.Classicism.Research.InextensiblePower.nd_ic_weaklyRigidPower.listEntails))
+
+/-! ## Further results (`lean-results-other`, 1 November 2026)
+
+Proofs in `Results/Other/`: the shallow records in `Shallow.lean`, certified in
+`Certificates.lean`; the metalogical ones in `Meta.lean`. -/
+
+/-- `necessary-atomlessness-implies-atomlessness` -/
+theorem necessary_atomlessness_implies_atomlessness : Statements.necessary_atomlessness_implies_atomlessness := by
+  map_cert Proofs.Other.necessary_atomlessness_implies_atomlessness.entails
+
+/-- `necessary-distinctness-preserving-collapse-implies-distinctness-preserving-collapse` -/
+theorem necessary_distinctness_preserving_collapse_implies_distinctness_preserving_collapse : Statements.necessary_distinctness_preserving_collapse_implies_distinctness_preserving_collapse := by
+  map_cert Proofs.Other.necessary_distinctness_preserving_collapse_implies_distinctness_preserving_collapse.entails
+
+/-- `tame-rigidity-and-bf-t-imply-necessary-bf-t` -/
+theorem tame_rigidity_and_bf_t_imply_necessary_bf_t : Statements.tame_rigidity_and_bf_t_imply_necessary_bf_t := by
+  map_cert Proofs.Other.tame_rigidity_and_bf_t_imply_necessary_bf_t.entails
+
+/-- `rigid-comprehension-and-bf-t-imply-necessary-bf-t` -/
+theorem rigid_comprehension_and_bf_t_imply_necessary_bf_t : Statements.rigid_comprehension_and_bf_t_imply_necessary_bf_t := by
+  map_cert Proofs.Other.rigid_comprehension_and_bf_t_imply_necessary_bf_t.entails
+
+/-- `rigid-rigidity-and-rigid-power-imply-necessary-rigid-power`, at every type: the shallow
+core is at a Rel-parameter. -/
+theorem rigid_rigidity_and_rigid_power_imply_necessary_rigid_power : Statements.rigid_rigidity_and_rigid_power_imply_necessary_rigid_power := by
+  map_cert Proofs.Other.rigid_rigidity_and_rigid_power_imply_necessary_rigid_power.entails
+
+/-- `c5-and-atomlessness-imply-necessary-atomlessness`, through `□ND` at `t` -/
+theorem c5_and_atomlessness_imply_necessary_atomlessness : Statements.c5_and_atomlessness_imply_necessary_atomlessness := by
+  map_cert Proofs.Other.c5_and_atomlessness_imply_necessary_atomlessness.entails
+
+/-- `nd-t-and-bf-t-imply-necessary-nd-t` (Proposition 2.4 at `t`) -/
+theorem nd_t_and_bf_t_imply_necessary_nd_t : Statements.nd_t_and_bf_t_imply_necessary_nd_t := by
+  map_cert Proofs.distinctness_necessary_t_and_barcan_t_imply_necessary_distinctness_necessary_t.entails
+
+/-- `no-pure-contingency-and-atomlessness-imply-necessary-atomlessness` -/
+theorem no_pure_contingency_and_atomlessness_imply_necessary_atomlessness : Statements.no_pure_contingency_and_atomlessness_imply_necessary_atomlessness := by
+  map_cert npc_atomlessness_entails_necAtomlessness
+
+/-- `no-pure-contingency-and-well-ordering-imply-necessary-well-ordering` -/
+theorem no_pure_contingency_and_well_ordering_imply_necessary_well_ordering : Statements.no_pure_contingency_and_well_ordering_imply_necessary_well_ordering := by
+  map_cert npc_wellOrdering_entails_necWellOrdering
+
+/-- `maximalist-distinctness-incompatible-with-necessary-atomlessness` -/
+theorem maximalist_distinctness_incompatible_with_necessary_atomlessness : Statements.maximalist_distinctness_incompatible_with_necessary_atomlessness := by
+  map_cert_incompatible maximalist_necAtomlessness_inconsistent
+
+/-- `possibility-and-necessary-relational-choice-incompatible` -/
+theorem possibility_and_necessary_relational_choice_incompatible : Statements.possibility_and_necessary_relational_choice_incompatible := by
+  map_cert_incompatible maximalist_necRelationalChoice_inconsistent
+
+/-- `possibility-schema-r-implies-possible-infinity-t` -/
+theorem possibility_schema_r_implies_possible_infinity_t : Statements.possibility_schema_r_implies_possible_infinity_t := by
+  map_cert possibility_entails_possibleInfinityT
+
+/-- `strong-possibility-r-implies-possibility-schema-r` -/
+theorem strong_possibility_r_implies_possibility_schema_r : Statements.strong_possibility_r_implies_possibility_schema_r := by
+  map_cert (AxiomSet.Entails.trans strongPossibility_entails_possibility (possibility_entails_distinctness _))
 
 end Classicism.Map
