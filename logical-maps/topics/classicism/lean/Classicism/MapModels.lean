@@ -8,6 +8,7 @@ import Classicism.Models.FixedPointEntranceBarcan
 import Classicism.Models.FixedPointEntranceRelationalBarcan
 import Classicism.Models.FixedPointEntranceChoice
 import Classicism.Coalesced.SumData
+import Classicism.Models.CoalescedFinite
 import Mathlib.Data.Fintype.Powerset
 import Mathlib.Data.Finite.Sigma
 import Mathlib.Data.Finite.Prod
@@ -345,6 +346,20 @@ theorem axiom_of_infinity_e : Statements.Models.coalesced_constant_indexed_root.
     Coalesced.constantIndexedData_free Coalesced.constantIndexedData_infinite⟩
 
 end coalesced_constant_indexed_root
+
+namespace coalesced_all_finite_individual_domains
+
+local notation "M" => Classicism.Meta.Coalesced.AllFinite.isModel
+
+/-- **Every truth is necessarily 5-necessary** at the root of the coalesced sum over the finite
+individual domains (the record's argument `five-necessity-is-truth`): Distinctness-Preserving
+Collapse holds at every world, the actual world being isolated at the root and in each
+one-world component (`AllFinite.holds_necessary_truth_implies_five_necessity`). -/
+theorem necessary_truth_implies_five_necessity :
+    Statements.Models.coalesced_all_finite_individual_domains.necessary_truth_implies_five_necessity :=
+  verdict_holds M Meta.Coalesced.AllFinite.holds_necessary_truth_implies_five_necessity
+
+end coalesced_all_finite_individual_domains
 
 end Classicism.Map.Models
 

@@ -15,6 +15,7 @@ group's).
 namespace Classicism.Map.Models
 open Classicism
 
+<<<<<<< HEAD
 /-- `coalesced-constant-indexed-root`: Relational Choice holds, by `coalesced-sums`'s argument `relational-choice-free-root`. -/
 theorem coalesced_constant_indexed_root.relational_choice_r : Statements.Models.coalesced_constant_indexed_root.relational_choice_r :=
   ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.constantIndexedData), Classicism.Map.Arguments.coalesced_sums.relational_choice_free_root.relational_choice_r (Classicism.Meta.Coalesced.constantIndexedData) (Classicism.Meta.Coalesced.constantIndexedData_free)⟩
@@ -50,6 +51,59 @@ theorem coalesced_single_individual_root.actuality : Statements.Models.coalesced
 /-- `coalesced-single-individual-root`: Truths are ND-necessary holds, by the argument `dpc-isolated-actual-world`. -/
 theorem coalesced_single_individual_root.distinctness_preserving_collapse : Statements.Models.coalesced_single_individual_root.distinctness_preserving_collapse :=
   ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.singleIndividualData), Classicism.Map.Arguments.dpc_isolated_actual_world.distinctness_preserving_collapse (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)) (Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.singleIndividualData)) (Classicism.Meta.Coalesced.singleIndividualData_isolated)⟩
+=======
+/-- `coalesced-all-finite-individual-domains`: Truths are ND-necessary holds, by the argument `dpc-isolated-actual-world`. -/
+theorem coalesced_all_finite_individual_domains.distinctness_preserving_collapse : Statements.Models.coalesced_all_finite_individual_domains.distinctness_preserving_collapse :=
+  ⟨Classicism.Meta.Coalesced.AllFinite.isModel, Classicism.Map.Arguments.dpc_isolated_actual_world.distinctness_preserving_collapse (Classicism.Meta.Coalesced.AllFinite.model) (Classicism.Meta.Coalesced.AllFinite.isModel) (Classicism.Meta.Coalesced.AllFinite.actualWorldIsolated)⟩
+
+/-- `coalesced-all-finite-individual-domains`: B for pure sentences fails, by the argument `fewer-propositions-after`. -/
+theorem coalesced_all_finite_individual_domains.pure_b_r : Statements.Models.coalesced_all_finite_individual_domains.pure_b_r :=
+  ⟨Classicism.Meta.Coalesced.AllFinite.isModel, Classicism.Map.Arguments.fewer_propositions_after.pure_b_r (Classicism.Meta.Coalesced.AllFinite.model) (Classicism.Meta.Coalesced.AllFinite.isModel) (Classicism.Meta.Coalesced.AllFinite.fewerPropositionsAfter)⟩
+
+/-- `coalesced-all-finite-individual-domains`: □Atomicity holds, by the argument `full-atomicity`. -/
+theorem coalesced_all_finite_individual_domains.necessary_atomicity_r : Statements.Models.coalesced_all_finite_individual_domains.necessary_atomicity_r :=
+  ⟨Classicism.Meta.Coalesced.AllFinite.isModel, Classicism.Map.Arguments.full_atomicity.necessary_atomicity_r (Classicism.Meta.Coalesced.AllFinite.model) (Classicism.Meta.Coalesced.AllFinite.isModel) (Classicism.Meta.Coalesced.AllFinite.full)⟩
+
+/-- `coalesced-all-finite-individual-domains`: □BF holds, by the argument `full-epic-barcan`. -/
+theorem coalesced_all_finite_individual_domains.necessary_barcan_r : Statements.Models.coalesced_all_finite_individual_domains.necessary_barcan_r :=
+  ⟨Classicism.Meta.Coalesced.AllFinite.isModel, Classicism.Map.Arguments.full_epic_barcan.necessary_barcan_r (Classicism.Meta.Coalesced.AllFinite.model) (Classicism.Meta.Coalesced.AllFinite.isModel) (Classicism.Meta.Coalesced.AllFinite.full) (Classicism.Meta.Coalesced.AllFinite.epicArrows)⟩
+
+/-- `coalesced-all-finite-individual-domains`: □Rigid Comprehension holds, by the argument `full-rigid-comprehension`. -/
+theorem coalesced_all_finite_individual_domains.necessary_rigid_comprehension_r : Statements.Models.coalesced_all_finite_individual_domains.necessary_rigid_comprehension_r :=
+  ⟨Classicism.Meta.Coalesced.AllFinite.isModel, Classicism.Map.Arguments.full_rigid_comprehension.necessary_rigid_comprehension_r (Classicism.Meta.Coalesced.AllFinite.model) (Classicism.Meta.Coalesced.AllFinite.isModel) (Classicism.Meta.Coalesced.AllFinite.full)⟩
+
+/-- `coalesced-all-finite-individual-domains`: Axiom of Infinity (type e) holds, by the argument `infinitely-many-individuals`. -/
+theorem coalesced_all_finite_individual_domains.axiom_of_infinity_e : Statements.Models.coalesced_all_finite_individual_domains.axiom_of_infinity_e :=
+  ⟨Classicism.Meta.Coalesced.AllFinite.isModel, Classicism.Map.Arguments.infinitely_many_individuals.axiom_of_infinity_e (Classicism.Meta.Coalesced.AllFinite.model) (Classicism.Meta.Coalesced.AllFinite.isModel) (Classicism.Meta.Intensional.Premodel.Full.extFull _ Classicism.Meta.Coalesced.AllFinite.full) (Classicism.Meta.Coalesced.AllFinite.infinitelyManyIndividuals)⟩
+
+/-- `coalesced-all-finite-individual-domains`: Infinity Schema (type e) holds, by the argument `infinitely-many-individuals`. -/
+theorem coalesced_all_finite_individual_domains.infinity_e : Statements.Models.coalesced_all_finite_individual_domains.infinity_e :=
+  ⟨Classicism.Meta.Coalesced.AllFinite.isModel, Classicism.Map.Arguments.infinitely_many_individuals.infinity_e (Classicism.Meta.Coalesced.AllFinite.model) (Classicism.Meta.Coalesced.AllFinite.isModel) (Classicism.Meta.Intensional.Premodel.Full.extFull _ Classicism.Meta.Coalesced.AllFinite.full) (Classicism.Meta.Coalesced.AllFinite.infinitelyManyIndividuals)⟩
+
+/-- `coalesced-all-finite-individual-domains`: Axiom of Infinity (type t) holds, by the argument `infinitely-many-propositions`. -/
+theorem coalesced_all_finite_individual_domains.axiom_of_infinity_t : Statements.Models.coalesced_all_finite_individual_domains.axiom_of_infinity_t :=
+  ⟨Classicism.Meta.Coalesced.AllFinite.isModel, Classicism.Map.Arguments.infinitely_many_propositions.axiom_of_infinity_t (Classicism.Meta.Coalesced.AllFinite.model) (Classicism.Meta.Coalesced.AllFinite.isModel) (Classicism.Meta.Intensional.Premodel.Full.extFull _ Classicism.Meta.Coalesced.AllFinite.full) (Classicism.Meta.Coalesced.AllFinite.infinitelyManyPropositions)⟩
+
+/-- `coalesced-all-finite-individual-domains`: Infinity Schema (type t) holds, by the argument `infinitely-many-propositions`. -/
+theorem coalesced_all_finite_individual_domains.infinity_t : Statements.Models.coalesced_all_finite_individual_domains.infinity_t :=
+  ⟨Classicism.Meta.Coalesced.AllFinite.isModel, Classicism.Map.Arguments.infinitely_many_propositions.infinity_t (Classicism.Meta.Coalesced.AllFinite.model) (Classicism.Meta.Coalesced.AllFinite.isModel) (Classicism.Meta.Intensional.Premodel.Full.extFull _ Classicism.Meta.Coalesced.AllFinite.full) (Classicism.Meta.Coalesced.AllFinite.infinitelyManyPropositions)⟩
+
+/-- `coalesced-all-finite-individual-domains`: □Relational Choice holds, by the argument `relational-choice-full-boxed`. -/
+theorem coalesced_all_finite_individual_domains.necessary_relational_choice_r : Statements.Models.coalesced_all_finite_individual_domains.necessary_relational_choice_r :=
+  ⟨Classicism.Meta.Coalesced.AllFinite.isModel, Classicism.Map.Arguments.relational_choice_full_boxed.necessary_relational_choice_r (Classicism.Meta.Coalesced.AllFinite.model) (Classicism.Meta.Coalesced.AllFinite.isModel) (Classicism.Meta.Coalesced.AllFinite.full)⟩
+
+/-- `coalesced-all-finite-individual-domains`: Relational Choice holds, by the argument `relational-choice-full`. -/
+theorem coalesced_all_finite_individual_domains.relational_choice_r : Statements.Models.coalesced_all_finite_individual_domains.relational_choice_r :=
+  ⟨Classicism.Meta.Coalesced.AllFinite.isModel, Classicism.Map.Arguments.relational_choice_full.relational_choice_r (Classicism.Meta.Coalesced.AllFinite.model) (Classicism.Meta.Coalesced.AllFinite.isModel) (Classicism.Meta.Coalesced.AllFinite.full)⟩
+
+/-- `coalesced-all-finite-individual-domains`: Transversal Choice holds, by the argument `transversal-choice-extensionally-full`. -/
+theorem coalesced_all_finite_individual_domains.transversal_choice_r : Statements.Models.coalesced_all_finite_individual_domains.transversal_choice_r :=
+  ⟨Classicism.Meta.Coalesced.AllFinite.isModel, Classicism.Map.Arguments.transversal_choice_extensionally_full.transversal_choice_r (Classicism.Meta.Coalesced.AllFinite.model) (Classicism.Meta.Coalesced.AllFinite.isModel) (Classicism.Meta.Intensional.Premodel.Full.extFull _ Classicism.Meta.Coalesced.AllFinite.full)⟩
+
+/-- `coalesced-all-finite-individual-domains`: ND (type t) fails, by the argument `unretracted-arrow`. -/
+theorem coalesced_all_finite_individual_domains.distinctness_necessary_t : Statements.Models.coalesced_all_finite_individual_domains.distinctness_necessary_t :=
+  ⟨Classicism.Meta.Coalesced.AllFinite.isModel, Classicism.Map.Arguments.unretracted_arrow.distinctness_necessary_t (Classicism.Meta.Coalesced.AllFinite.model) (Classicism.Meta.Coalesced.AllFinite.isModel) (Classicism.Meta.Coalesced.AllFinite.full) (Classicism.Meta.Coalesced.AllFinite.unretractedArrow)⟩
+>>>>>>> lean-coal-finite
 
 /-- `finite-support-dyadic-roundings`: Actuality holds, by `finite-support-one-object`'s argument `actual-world`. -/
 theorem finite_support_dyadic_roundings.actuality : Statements.Models.finite_support_dyadic_roundings.actuality :=

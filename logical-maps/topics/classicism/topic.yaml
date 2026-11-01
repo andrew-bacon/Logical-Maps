@@ -233,6 +233,7 @@ lean:
     - Classicism.Models.FiniteCompressionBase
     - Classicism.Models.FixedPointEntranceModel
     - Classicism.Coalesced.SumData
+    - Classicism.Models.CoalescedFinite
     holds: ({model}).IsModel ∧ ({model}).HoldsAx {def}
     fails: ({model}).IsModel ∧ ¬ ({model}).HoldsAx {def}
     relative_categories: [signature]
