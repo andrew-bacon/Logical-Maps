@@ -24,6 +24,65 @@ incompatibilities with Maximalism need (`maximalist_box_inconsistent_of_model`).
   BF holds there and `□BF` fails (`tame-rigidity-and-barcan-imply-necessary-barcan`).
 -/
 
+/-! ### The Distinctness-Preserving Collapse in the truncation model -/
+
+section
+open Classicism.Meta Classicism.Meta.Intensional Classicism.Meta.Intensional.MonoidModel Classicism.Meta.Intensional.Monoids CategoryTheory
+
+namespace Classicism.Meta.Intensional.Monoids.Truncs
+
+/-- Every arrow lowers every number. -/
+theorem apply_le (f : truncs) (y : ℕ) : (f : F) y ≤ y := by
+  rcases f.2 with e | ⟨n, e⟩
+  · rw [e]; exact le_rfl
+  · rw [e]; exact min_le_left y n
+
+/-- **The Distinctness-Preserving Collapse holds** in the truncation model: for a truth `p`
+pinned down below `n`, the witness is the proposition that the arrow fixes `[0, n]`. -/
+theorem dpc : (model truncs).HoldsSentence P.DistinctnessPreservingCollapse.quoted := by
+  have Mo : (model truncs).IsModel := model_isModel truncs
+  rw [Premodel.HoldsSentence]
+  unfold P.DistinctnessPreservingCollapse.quoted
+  rw [(model truncs).holds_forall Mo]
+  intro p
+  rw [(model truncs).holds_imp Mo]
+  intro hp
+  have hp1 : tup 1 ∈ (model truncs).Incl _ (star truncs) p := (holds_var_id truncs _ _).1 hp
+  obtain ⟨N, hN, hpin⟩ := finPinned'_Incl p
+  obtain ⟨n, hn⟩ := exists_bound hN
+  obtain ⟨q, hq⟩ := exists_inner (M := truncs)
+    (q := ofPred fun g : truncs => ∀ x ≤ n, (g : F) x = x)
+    ⟨Set.Iic n, Set.finite_Iic n, ofPred_pinned (M := truncs) _ _ fun (g g' : truncs) ha => by
+      refine forall_congr' fun x => imp_congr_right fun hx => ?_
+      rw [show (g : F) x = (g' : F) x from ha x hx]⟩
+  rw [(model truncs).holds_exists Mo]
+  refine ⟨q, ?_⟩
+  rw [(model truncs).holds_conj Mo]
+  refine ⟨(holds_var_id truncs _ _).2 (by
+    show tup (1 : truncs) ∈ (model truncs).Incl _ (star truncs) q
+    rw [hq]; intro x _; rfl), ?_⟩
+  rw [(model truncs).holds_box Mo]
+  intro V k
+  cases V
+  rw [(model truncs).holds_imp Mo, (model truncs).holds_dia Mo]
+  rintro ⟨U, j, hj⟩
+  cases U
+  rw [Category.assoc, (model truncs).push_push] at hj
+  have hj' := (holds_var_push truncs _ _ _).1 hj
+  change tup (arrow (M := truncs) j * arrow (M := truncs) k) ∈ (model truncs).Incl _ (star truncs) q at hj'
+  rw [hq] at hj'
+  have hk : ∀ x ∈ N, ((arrow (M := truncs) k : truncs) : F) x = x := fun x hx => by
+    have e : ((arrow (M := truncs) j : truncs) : F) (((arrow (M := truncs) k : truncs) : F) x) = x := hj' x (hn x hx)
+    have h1 := apply_le (arrow (M := truncs) j) (((arrow (M := truncs) k : truncs) : F) x)
+    have h2 := apply_le (arrow (M := truncs) k) x
+    omega
+  refine (holds_var_push truncs (Var.zero.succ) _ k).2 ?_
+  exact (mem_iff_of_pinned hpin fun x hx => hk x hx).2 hp1
+
+end Classicism.Meta.Intensional.Monoids.Truncs
+
+end
+
 namespace Classicism.Meta
 
 open AxiomSet Intensional
@@ -145,6 +204,13 @@ theorem not_weaklyInextensibleComprehension :
     (Premodel.holdsAx_single _ Monoids.Truncs.atomicityT)
     (fun h => Monoids.Truncs.not_actuality (h _ rfl))
 
+/-- **Vicinity fails** in the truncation model: with the Distinctness-Preserving Collapse,
+which holds there (`Monoids.Truncs.dpc`), it gives Actuality, which fails. -/
+theorem not_vicinity : ¬ (A).HoldsAx P.Vicinity.schema :=
+  not_holds_left M Proofs.vicinity_and_distinctness_preserving_collapse_imply_actuality.entails
+    (Premodel.holdsAx_single _ Monoids.Truncs.dpc)
+    (fun h => Monoids.Truncs.not_actuality (h _ rfl))
+
 end Truncs
 
 /-! ### The two-object model after Part 8 -/
@@ -202,11 +268,34 @@ theorem maximalist_necWeaklyInextensibleComprehension_inconsistent :
     P.WeaklyInextensibleComprehension.schema_closedTypes Truncs.not_weaklyInextensibleComprehension
     (by rintro _ ⟨_, ⟨τ, hτ, rfl⟩, rfl⟩; exact ⟨τ, hτ, rfl⟩)
 
+/-- `maximalist-distinctness-incompatible-with-necessary-vicinity`. -/
+theorem maximalist_necVicinity_inconsistent :
+    ¬ Consistent (maximalist (Sig := Signature.pure) ∪ P.NecVicinity.schema) :=
+  maximalist_box_inconsistent_of_model _ (MonoidModel.model_isModel Monoids.truncs)
+    P.Vicinity.schema_closedTypes Truncs.not_vicinity
+    (by rintro _ ⟨_, rfl, rfl⟩; rfl)
+
 /-- `maximalist-distinctness-incompatible-with-necessary-tame-rigidity-r`. -/
 theorem maximalist_necTameRigidity_inconsistent :
     ¬ Consistent (maximalist (Sig := Signature.pure) ∪ P.NecTameRigidity.schema) :=
   maximalist_box_inconsistent_of_model _ Intensional.ContingentBarcan.model_isModel
     P.TameRigidity.schema_closedTypes ContingentBarcan.not_tameRigidity
     (by rintro _ ⟨_, ⟨τ, hτ, rfl⟩, rfl⟩; exact ⟨τ, hτ, rfl⟩)
+
+
+/-! ### At a coalesced root with complete components
+
+What a Lean model refutes is possible at the root, so its necessitation fails there
+(`RootAction.not_holds_box_of_complete`, over the distinguished arrows). -/
+
+theorem Coalesced.SumData.not_holdsAx_box_of_model {D : Coalesced.SumData} (hD : D.DistinguishedArrows)
+    (hc : D.CompleteComponents) {C : Type} [CategoryTheory.SmallCategory C]
+    {B : Premodel Signature.pure C} (M : B.IsModel) {X N : AxiomSet Signature.pure}
+    (hX : ClosedTypes X) (hf : ¬ B.HoldsAx X) (hN : X.box ⊆ N) :
+    ¬ D.model.HoldsAx (AxiomSet.ofPure N) := fun H => by
+  obtain ⟨p, hp, -, hcons⟩ := exists_consistent_neg_of_not_holdsAx M hf
+  exact Coalesced.RootAction.not_holds_box_of_complete _ _ _ _ D.isModel
+    (Coalesced.SumData.completeComponents_root hD hc) (hX p hp) hcons
+    (H _ ⟨Term.box p, hN _ (AxiomSet.mem_box hp), rfl⟩)
 
 end Classicism.Meta

@@ -2089,6 +2089,10 @@ theorem maximalist_distinctness_incompatible_with_necessary_weakly_inextensible_
 theorem maximalist_distinctness_incompatible_with_necessary_tame_rigidity_r : Statements.maximalist_distinctness_incompatible_with_necessary_tame_rigidity_r := by
   map_cert_incompatible maximalist_necTameRigidity_inconsistent
 
+/-- `maximalist-distinctness-incompatible-with-necessary-vicinity` -/
+theorem maximalist_distinctness_incompatible_with_necessary_vicinity : Statements.maximalist_distinctness_incompatible_with_necessary_vicinity := by
+  map_cert_incompatible maximalist_necVicinity_inconsistent
+
 /-! ### End of witness verdicts -/
 
 end Classicism.Map

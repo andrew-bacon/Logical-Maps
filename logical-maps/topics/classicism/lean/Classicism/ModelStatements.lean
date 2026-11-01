@@ -39,6 +39,22 @@ def Models.coalesced_all_finite_individual_domains.necessary_truth_implies_five_
 def Models.coalesced_constant_indexed_root.axiom_of_infinity_e : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).HoldsAx Classicism.P.AxiomOfInfinityE.schemaIn
 
+/-- `coalesced-constant-indexed-root`: □Two-hat necessities are ND-necessary fails. -/
+def Models.coalesced_constant_indexed_root.necessary_two_hat_implies_nd_necessity : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).HoldsAx Classicism.P.NecTwoHatImpliesNdNecessity.schemaIn
+
+/-- `coalesced-constant-indexed-root`: □Truths are 5-necessary fails. -/
+def Models.coalesced_constant_indexed_root.necessary_truth_implies_five_necessity : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).HoldsAx Classicism.P.NecTruthImpliesFiveNecessity.schemaIn
+
+/-- `coalesced-constant-indexed-root`: □Vicinity fails. -/
+def Models.coalesced_constant_indexed_root.necessary_vicinity : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).HoldsAx Classicism.P.NecVicinity.schemaIn
+
+/-- `coalesced-constant-indexed-root`: □Weakly Inextensible Comprehension fails. -/
+def Models.coalesced_constant_indexed_root.necessary_weakly_inextensible_comprehension_r : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).HoldsAx Classicism.P.NecWeaklyInextensibleComprehension.schemaIn
+
 /-- `coalesced-definable-root`: Maximalism (pure) holds. -/
 def Models.coalesced_definable_root.distinctness_schema_r : Prop :=
   (Classicism.Meta.Coalesced.definableRoot).IsModel ∧ (Classicism.Meta.Coalesced.definableRoot).HoldsAx (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.distinctnessC)
@@ -59,6 +75,22 @@ def Models.coalesced_maximalist_root.distinctness_signature_r : Prop :=
 def Models.coalesced_maximalist_root.axiom_of_infinity_e : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).HoldsAx Classicism.P.AxiomOfInfinityE.schemaIn
 
+/-- `coalesced-maximalist-root`: □Two-hat necessities are ND-necessary fails. -/
+def Models.coalesced_maximalist_root.necessary_two_hat_implies_nd_necessity : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).HoldsAx Classicism.P.NecTwoHatImpliesNdNecessity.schemaIn
+
+/-- `coalesced-maximalist-root`: □Truths are 5-necessary fails. -/
+def Models.coalesced_maximalist_root.necessary_truth_implies_five_necessity : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).HoldsAx Classicism.P.NecTruthImpliesFiveNecessity.schemaIn
+
+/-- `coalesced-maximalist-root`: □Vicinity fails. -/
+def Models.coalesced_maximalist_root.necessary_vicinity : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).HoldsAx Classicism.P.NecVicinity.schemaIn
+
+/-- `coalesced-maximalist-root`: □Weakly Inextensible Comprehension fails. -/
+def Models.coalesced_maximalist_root.necessary_weakly_inextensible_comprehension_r : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).HoldsAx Classicism.P.NecWeaklyInextensibleComprehension.schemaIn
+
 /-- `coalesced-pinned-interpretations-root`: BF holds. -/
 def Models.coalesced_pinned_interpretations_root.barcan_r : Prop :=
   (Classicism.Meta.Coalesced.pinnedInterpRoot).IsModel ∧ (Classicism.Meta.Coalesced.pinnedInterpRoot).HoldsAx Classicism.P.Barcan.schemaIn
@@ -78,6 +110,22 @@ def Models.coalesced_pinned_substitutions_root.distinctness_signature_r : Prop :
 /-- `coalesced-single-individual-root`: Infinity Schema (type e) fails. -/
 def Models.coalesced_single_individual_root.infinity_e : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).HoldsAx (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.infinityE)
+
+/-- `coalesced-single-individual-root`: □Two-hat necessities are ND-necessary fails. -/
+def Models.coalesced_single_individual_root.necessary_two_hat_implies_nd_necessity : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).HoldsAx Classicism.P.NecTwoHatImpliesNdNecessity.schemaIn
+
+/-- `coalesced-single-individual-root`: □Truths are 5-necessary fails. -/
+def Models.coalesced_single_individual_root.necessary_truth_implies_five_necessity : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).HoldsAx Classicism.P.NecTruthImpliesFiveNecessity.schemaIn
+
+/-- `coalesced-single-individual-root`: □Vicinity fails. -/
+def Models.coalesced_single_individual_root.necessary_vicinity : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).HoldsAx Classicism.P.NecVicinity.schemaIn
+
+/-- `coalesced-single-individual-root`: □Weakly Inextensible Comprehension fails. -/
+def Models.coalesced_single_individual_root.necessary_weakly_inextensible_comprehension_r : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).HoldsAx Classicism.P.NecWeaklyInextensibleComprehension.schemaIn
 
 /-- `finite-support-dyadic-roundings`: BF fails. -/
 def Models.finite_support_dyadic_roundings.barcan_r : Prop :=
@@ -154,6 +202,10 @@ def Models.finite_support_truncations.actuality : Prop :=
 /-- `finite-support-truncations`: Boolean Completeness fails. -/
 def Models.finite_support_truncations.boolean_completeness_r : Prop :=
   (Classicism.Meta.Intensional.MonoidModel.model (Classicism.Meta.Intensional.Monoids.truncs)).IsModel ∧ ¬ (Classicism.Meta.Intensional.MonoidModel.model (Classicism.Meta.Intensional.Monoids.truncs)).HoldsAx Classicism.P.BooleanCompleteness.schemaIn
+
+/-- `finite-support-truncations`: Truths are ND-necessary holds. -/
+def Models.finite_support_truncations.distinctness_preserving_collapse : Prop :=
+  (Classicism.Meta.Intensional.MonoidModel.model (Classicism.Meta.Intensional.Monoids.truncs)).IsModel ∧ (Classicism.Meta.Intensional.MonoidModel.model (Classicism.Meta.Intensional.Monoids.truncs)).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
 
 /-- `finite-support-two-object-all-maps`: BF holds. -/
 def Models.finite_support_two_object_all_maps.barcan_r : Prop :=
