@@ -15,6 +15,8 @@ import Classicism.Models.OldNewBase
 import Classicism.Models.FiniteCompressionBase
 import Classicism.Models.FixedPointEntranceModel
 import Classicism.Coalesced.SumData
+import Classicism.Models.CoalescedFinite
+import Classicism.Models.CoalescedInterpretations
 
 /-!
 # Generated statements: models' verdicts
@@ -28,9 +30,25 @@ the principle holds, or fails, in the record's Lean model.
 namespace Classicism.Statements
 open Classicism
 
+/-- `coalesced-all-finite-individual-domains`: □Truths are 5-necessary holds. -/
+def Models.coalesced_all_finite_individual_domains.necessary_truth_implies_five_necessity : Prop :=
+  (Classicism.Meta.Coalesced.AllFinite.model).IsModel ∧ (Classicism.Meta.Coalesced.AllFinite.model).HoldsAx Classicism.P.NecTruthImpliesFiveNecessity.schemaIn
+
 /-- `coalesced-constant-indexed-root`: Axiom of Infinity (type e) holds. -/
 def Models.coalesced_constant_indexed_root.axiom_of_infinity_e : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).HoldsAx Classicism.P.AxiomOfInfinityE.schemaIn
+
+/-- `coalesced-definable-root`: Maximalism (pure) holds. -/
+def Models.coalesced_definable_root.distinctness_schema_r : Prop :=
+  (Classicism.Meta.Coalesced.definableRoot).IsModel ∧ (Classicism.Meta.Coalesced.definableRoot).HoldsAx (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.distinctnessC)
+
+/-- `coalesced-definable-root`: Infinity Schema (type e) fails. -/
+def Models.coalesced_definable_root.infinity_e : Prop :=
+  (Classicism.Meta.Coalesced.definableRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.definableRoot).HoldsAx (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.infinityE)
+
+/-- `coalesced-definable-root`: Axiom of Infinity (type e) fails. -/
+def Models.coalesced_definable_root.axiom_of_infinity_e : Prop :=
+  (Classicism.Meta.Coalesced.definableRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.definableRoot).HoldsAx Classicism.P.AxiomOfInfinityE.schemaIn
 
 /-- `coalesced-maximalist-root`: Maximalism (signature Σ) holds. -/
 def Models.coalesced_maximalist_root.distinctness_signature_r : Prop :=
@@ -39,6 +57,22 @@ def Models.coalesced_maximalist_root.distinctness_signature_r : Prop :=
 /-- `coalesced-maximalist-root`: Axiom of Infinity (type e) holds. -/
 def Models.coalesced_maximalist_root.axiom_of_infinity_e : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).HoldsAx Classicism.P.AxiomOfInfinityE.schemaIn
+
+/-- `coalesced-pinned-interpretations-root`: BF holds. -/
+def Models.coalesced_pinned_interpretations_root.barcan_r : Prop :=
+  (Classicism.Meta.Coalesced.pinnedInterpRoot).IsModel ∧ (Classicism.Meta.Coalesced.pinnedInterpRoot).HoldsAx Classicism.P.Barcan.schemaIn
+
+/-- `coalesced-pinned-interpretations-root`: Maximalism (signature Σ) holds. -/
+def Models.coalesced_pinned_interpretations_root.distinctness_signature_r : Prop :=
+  (Classicism.Meta.Coalesced.pinnedInterpRoot).Admitted ∧ (Classicism.Meta.Coalesced.pinnedInterpRoot).IsModel ∧ (Classicism.Meta.Coalesced.pinnedInterpRoot).HoldsAx (Classicism.Meta.AxiomSet.distinctnessC _)
+
+/-- `coalesced-pinned-substitutions-root`: BF holds. -/
+def Models.coalesced_pinned_substitutions_root.barcan_r : Prop :=
+  (Classicism.Meta.Coalesced.pinnedSubstRoot).IsModel ∧ (Classicism.Meta.Coalesced.pinnedSubstRoot).HoldsAx Classicism.P.Barcan.schemaIn
+
+/-- `coalesced-pinned-substitutions-root`: Maximalism (signature Σ) holds. -/
+def Models.coalesced_pinned_substitutions_root.distinctness_signature_r : Prop :=
+  (Classicism.Meta.Coalesced.pinnedSubstRoot).Admitted ∧ (Classicism.Meta.Coalesced.pinnedSubstRoot).IsModel ∧ (Classicism.Meta.Coalesced.pinnedSubstRoot).HoldsAx (Classicism.Meta.AxiomSet.distinctnessC _)
 
 /-- `coalesced-single-individual-root`: Infinity Schema (type e) fails. -/
 def Models.coalesced_single_individual_root.infinity_e : Prop :=
@@ -168,6 +202,58 @@ def Models.symmetric_old_new_individuals.necessary_boolean_completeness_r : Prop
 def Models.symmetric_two_object_unpinned.necessary_boolean_completeness_r : Prop :=
   (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.SymIdeal.twoBase)).IsModel ∧ (Classicism.Meta.Intensional.SymBase.model (Classicism.Meta.Intensional.SymIdeal.twoBase)).HoldsAx Classicism.P.NecBooleanCompleteness.schemaIn
 
+/-- `coalesced-all-finite-individual-domains`: Truths are ND-necessary holds. -/
+def Models.coalesced_all_finite_individual_domains.distinctness_preserving_collapse : Prop :=
+  (Classicism.Meta.Coalesced.AllFinite.model).IsModel ∧ (Classicism.Meta.Coalesced.AllFinite.model).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
+
+/-- `coalesced-all-finite-individual-domains`: B for pure sentences fails. -/
+def Models.coalesced_all_finite_individual_domains.pure_b_r : Prop :=
+  (Classicism.Meta.Coalesced.AllFinite.model).IsModel ∧ ¬ (Classicism.Meta.Coalesced.AllFinite.model).HoldsAx (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.signatureB)
+
+/-- `coalesced-all-finite-individual-domains`: □Atomicity holds. -/
+def Models.coalesced_all_finite_individual_domains.necessary_atomicity_r : Prop :=
+  (Classicism.Meta.Coalesced.AllFinite.model).IsModel ∧ (Classicism.Meta.Coalesced.AllFinite.model).HoldsAx Classicism.P.NecAtomicity.schemaIn
+
+/-- `coalesced-all-finite-individual-domains`: □BF holds. -/
+def Models.coalesced_all_finite_individual_domains.necessary_barcan_r : Prop :=
+  (Classicism.Meta.Coalesced.AllFinite.model).IsModel ∧ (Classicism.Meta.Coalesced.AllFinite.model).HoldsAx Classicism.P.NecBarcan.schemaIn
+
+/-- `coalesced-all-finite-individual-domains`: □Rigid Comprehension holds. -/
+def Models.coalesced_all_finite_individual_domains.necessary_rigid_comprehension_r : Prop :=
+  (Classicism.Meta.Coalesced.AllFinite.model).IsModel ∧ (Classicism.Meta.Coalesced.AllFinite.model).HoldsAx Classicism.P.NecRigidComprehension.schemaIn
+
+/-- `coalesced-all-finite-individual-domains`: Axiom of Infinity (type e) holds. -/
+def Models.coalesced_all_finite_individual_domains.axiom_of_infinity_e : Prop :=
+  (Classicism.Meta.Coalesced.AllFinite.model).IsModel ∧ (Classicism.Meta.Coalesced.AllFinite.model).HoldsAx Classicism.P.AxiomOfInfinityE.schemaIn
+
+/-- `coalesced-all-finite-individual-domains`: Infinity Schema (type e) holds. -/
+def Models.coalesced_all_finite_individual_domains.infinity_e : Prop :=
+  (Classicism.Meta.Coalesced.AllFinite.model).IsModel ∧ (Classicism.Meta.Coalesced.AllFinite.model).HoldsAx (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.infinityE)
+
+/-- `coalesced-all-finite-individual-domains`: Axiom of Infinity (type t) holds. -/
+def Models.coalesced_all_finite_individual_domains.axiom_of_infinity_t : Prop :=
+  (Classicism.Meta.Coalesced.AllFinite.model).IsModel ∧ (Classicism.Meta.Coalesced.AllFinite.model).HoldsAx Classicism.P.AxiomOfInfinityT.schemaIn
+
+/-- `coalesced-all-finite-individual-domains`: Infinity Schema (type t) holds. -/
+def Models.coalesced_all_finite_individual_domains.infinity_t : Prop :=
+  (Classicism.Meta.Coalesced.AllFinite.model).IsModel ∧ (Classicism.Meta.Coalesced.AllFinite.model).HoldsAx (Classicism.Meta.AxiomSet.pureVersion Classicism.Meta.AxiomSet.infinityT)
+
+/-- `coalesced-all-finite-individual-domains`: □Relational Choice holds. -/
+def Models.coalesced_all_finite_individual_domains.necessary_relational_choice_r : Prop :=
+  (Classicism.Meta.Coalesced.AllFinite.model).IsModel ∧ (Classicism.Meta.Coalesced.AllFinite.model).HoldsAx Classicism.P.NecRelationalChoice.schemaIn
+
+/-- `coalesced-all-finite-individual-domains`: Relational Choice holds. -/
+def Models.coalesced_all_finite_individual_domains.relational_choice_r : Prop :=
+  (Classicism.Meta.Coalesced.AllFinite.model).IsModel ∧ (Classicism.Meta.Coalesced.AllFinite.model).HoldsAx Classicism.P.RelationalChoice.schemaIn
+
+/-- `coalesced-all-finite-individual-domains`: Transversal Choice holds. -/
+def Models.coalesced_all_finite_individual_domains.transversal_choice_r : Prop :=
+  (Classicism.Meta.Coalesced.AllFinite.model).IsModel ∧ (Classicism.Meta.Coalesced.AllFinite.model).HoldsAx Classicism.P.TransversalChoice.schemaIn
+
+/-- `coalesced-all-finite-individual-domains`: ND (type t) fails. -/
+def Models.coalesced_all_finite_individual_domains.distinctness_necessary_t : Prop :=
+  (Classicism.Meta.Coalesced.AllFinite.model).IsModel ∧ ¬ (Classicism.Meta.Coalesced.AllFinite.model).HoldsAx Classicism.P.NecessityOfDistinctnessT.schemaIn
+
 /-- `coalesced-constant-indexed-root`: Relational Choice holds. -/
 def Models.coalesced_constant_indexed_root.relational_choice_r : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).HoldsAx Classicism.P.RelationalChoice.schemaIn
@@ -180,6 +266,10 @@ def Models.coalesced_constant_indexed_root.actuality : Prop :=
 def Models.coalesced_constant_indexed_root.distinctness_preserving_collapse : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
 
+/-- `coalesced-definable-root`: Truths are ND-necessary holds. -/
+def Models.coalesced_definable_root.distinctness_preserving_collapse : Prop :=
+  (Classicism.Meta.Coalesced.definableRoot).IsModel ∧ (Classicism.Meta.Coalesced.definableRoot).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
+
 /-- `coalesced-maximalist-root`: Relational Choice holds. -/
 def Models.coalesced_maximalist_root.relational_choice_r : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).HoldsAx Classicism.P.RelationalChoice.schemaIn
@@ -191,6 +281,10 @@ def Models.coalesced_maximalist_root.actuality : Prop :=
 /-- `coalesced-maximalist-root`: Truths are ND-necessary holds. -/
 def Models.coalesced_maximalist_root.distinctness_preserving_collapse : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
+
+/-- `coalesced-pinned-interpretations-root`: Truths are ND-necessary holds. -/
+def Models.coalesced_pinned_interpretations_root.distinctness_preserving_collapse : Prop :=
+  (Classicism.Meta.Coalesced.pinnedInterpRoot).IsModel ∧ (Classicism.Meta.Coalesced.pinnedInterpRoot).HoldsAx Classicism.P.DistinctnessPreservingCollapse.schemaIn
 
 /-- `coalesced-single-individual-root`: Relational Choice holds. -/
 def Models.coalesced_single_individual_root.relational_choice_r : Prop :=

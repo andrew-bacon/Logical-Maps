@@ -160,3 +160,22 @@ notes: 'Built on 19 October 2026 to show that Maximalism (pure, and for Σ) is c
   not been checked by a second reader. The group''s shared arguments that carry a component''s counterexample
   to the root through a distinguished arrow do not apply, the root having an arrow to every object for every
   interpretation; BF at type t, for one, holds here. No Lean verification is claimed.'
+
+# The model in Lean (Models/CoalescedInterpretations.lean, 31 October 2026, Claude Opus 5.5, prompted
+# by Cian Dorr): the coalesced sum over the canonical model of Σ⁺, countably many constants of every
+# closed type, with its base at each world, as the complete family (complete for C(Σ⁺), so for C(Σ)), the
+# record's Σ being Σ⁺ itself and every constant denoting ĉ; that it is a model is `isModel_pinnedSum`
+# (Coalesced/Pinned.lean). Its verdicts proved there (Classicism/MapModels.lean); statuses are written by
+# lean-check --update.
+lean:
+  model: Classicism.Meta.Coalesced.pinnedInterpRoot
+  is_model: Classicism.Meta.Coalesced.pinnedInterpRoot_isModel
+  meets:
+    actual-world-isolated: Classicism.Meta.Coalesced.pinnedInterpRoot_actualWorldIsolated
+  verdicts:
+  - holds: barcan-r
+    ref: Classicism.Map.Models.coalesced_pinned_interpretations_root.barcan_r
+    status: verified
+  - holds: distinctness-signature-r
+    ref: Classicism.Map.Models.coalesced_pinned_interpretations_root.distinctness_signature_r
+    status: verified

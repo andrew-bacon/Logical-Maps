@@ -6,6 +6,11 @@ import Classicism.Coalesced.Full
 import Classicism.Coalesced.Distinguished
 import Classicism.Coalesced.Complete
 import Classicism.Coalesced.SumData
+import Classicism.Coalesced.Parameters
+import Classicism.Coalesced.Interpretations
+import Classicism.Coalesced.Definable
+import Classicism.Coalesced.Pinned
+import Classicism.Coalesced.PinnedBarcan
 
 /-!
 # Coalesced sums
