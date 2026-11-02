@@ -6,7 +6,7 @@ certificate:
   recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 30 October 2026
   checked_by: []
   date: '2026-10-30'
-  lean: none
+  lean: stated
 sources:
 - GPT-6 Astra (OpenAI), prompted by Cian Dorr, countermodel to Intensional Choice ⇒ Transversal, in
   conversation, 30 October 2026, answering a brief by Claude Opus 5.5 (Anthropic).
