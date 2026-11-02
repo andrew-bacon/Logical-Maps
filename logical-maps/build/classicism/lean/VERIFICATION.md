@@ -1220,7 +1220,7 @@ before (254 of 256 transformed).
 
 **Metalogical results.** `possible-infinity-{e,t}-and-no-pure-contingency-imply-axiom-of-infinity-{e,t}`
 (No Pure Contingency at the negation of the pure Axiom, and the shallow lemma
-`npc_dia_imp`); `possibility-schema-r-implies-possible-infinity-e` (the Axiom of Infinity at
+`npc_dia_imp`); `distinctness-schema-r-implies-possible-infinity-e` (the Axiom of Infinity at
 `e` holds in the full Henkin model on `ℕ`, `axiomOfInfinityE_holds_nat`: a finite
 cardinality holds only of finite sets); and, item 4 of the night's list,
 `maximalist-distinctness-incompatible-with-necessary-functionality-r` and
@@ -1254,7 +1254,7 @@ compute) and, in `Syntax/Blocks.lean`, a block at its own variables (`allEBlock_
 Not proved: the three incompatibilities of Witnessed Possibility (with No Contingency for
 the signature, Signature B, ND), which need a constant: at a signature with none, Witnessed
 Possibility says only `P → ◇P`, so as statements over every signature they are false; and
-`possibility-signature-r-implies-witnessed-possibility-r`, which needs a variant of
+`distinctness-signature-r-implies-witnessed-possibility-r`, which needs a variant of
 conservativity that turns given constants into distinct variables.
 
 *Checked.* The full build passes. 223 result certificates and 22 form certificates prove
@@ -1274,8 +1274,8 @@ and `t` (`Infinity.lean`); **Strong Possibility**, pure and for a signature, wit
 
 Certified: `classicism-implies-ordinary-comprehension-r` (the witness `λȳ. P`, with
 `Conv.appBlock_lamBlock_vars`; two new lemmas about lifts over a block);
-`possibility-plus-r-implies-possibility-schema-r` and
-`possibility-plus-signature-r-implies-possibility-signature-r` (the instances with no
+`possibility-plus-r-implies-distinctness-schema-r` and
+`possibility-plus-signature-r-implies-distinctness-signature-r` (the instances with no
 variables); `possibility-plus-signature-r-implies-possibility-plus-r` (a pure instance read
 in a closed signature is an instance for it; its consistency by conservativity); and
 `fregean-incompatible-with-infinity-t` (the instance at `n = 3`, refuted by the certified
