@@ -48,6 +48,91 @@ theorem glb_sup (bc : BooleanCompleteness Prop) (a : Prop) (Z : Prop → Prop)
   intro u hu
   exact le_and_le u g a ((hg u).1 hu.2) hu.1
 
+/-! ### The tower of an abstract step
+
+The facts about the tower used below, for an abstract `a` and step `F`, so that a use at
+`Aa h K` and `Fs h K` costs the translator one instantiation of a closed lemma rather than one
+of the general lemma with its admissibility hypotheses. -/
+
+section Gen
+variable (a : Prop) (F : Prop → Prop → Prop)
+
+theorem gen_closed (hF : ∀ x y, Xa a x → F x y → Xa a y) :
+    Closed AllProps (Xa a) Ge F (Tower AllProps (Xa a) Ge F) :=
+  bw_closed AllProps _ _ _ hF (admits_all _)
+
+theorem gen_inv (hF : ∀ x y, Xa a x → F x y → Xa a y)
+    (hfun : ∀ x y y', Xa a x → F x y → F x y' → y = y') :
+    ∀ x x' y y', Xa a x → Xa a x' → Ge x x' → Ge x' x → F x y → F x' y' → Ge y y' ∧ Ge y' y :=
+  invariant_of_partial _ _ _ (ge_refl _) (ge_anti _) hF hfun
+
+theorem gen_total (hF : ∀ x y, Xa a x → F x y → Xa a y) (hser : ∀ x, Xa a x → ∃ y, F x y)
+    (hprog : ∀ x y, Xa a x → F x y → Ge x y)
+    (hfun : ∀ x y y', Xa a x → F x y → F x y' → y = y') :
+    TotalOn Ge (Tower AllProps (Xa a) Ge F) :=
+  bw_total AllProps _ _ _ (ge_trans _) hF hser hprog (gen_inv a F hF hfun) (admits_all _)
+    (admits_all _) (fun _ _ _ _ => admits_all _)
+
+theorem gen_comp (hF : ∀ x y, Xa a x → F x y → Xa a y) (hser : ∀ x, Xa a x → ∃ y, F x y)
+    (hprog : ∀ x y, Xa a x → F x y → Ge x y)
+    (hfun : ∀ x y y', Xa a x → F x y → F x y' → y = y') (p q r : Prop)
+    (hp : Tower AllProps (Xa a) Ge F p) (hq : Tower AllProps (Xa a) Ge F q) (hf : F p r) :
+    p ≤ q ∨ q ≤ r :=
+  bw_comparable AllProps _ _ _ (ge_trans _) hF hser hprog (gen_inv a F hF hfun) (admits_all _)
+    (admits_all _) (fun _ _ _ _ => admits_all _) p q r hp hq hf
+
+/-- Above a false member: if the step fixes false propositions, a false member `q` is below
+every member. -/
+theorem gen_above (hF : ∀ x y, Xa a x → F x y → Xa a y) (hser : ∀ x, Xa a x → ∃ y, F x y)
+    (hprog : ∀ x y, Xa a x → F x y → Ge x y)
+    (hfun : ∀ x y y', Xa a x → F x y → F x y' → y = y')
+    (hfalse : ∀ p r, ¬ p → F p r → r = p) (q : Prop) (hq : Tower AllProps (Xa a) Ge F q)
+    (hq' : ¬ q) : ∀ x, Tower AllProps (Xa a) Ge F x → Tower AllProps (Xa a) Ge F x ∧ q ≤ x := by
+  have hC := gen_closed a F hF
+  have hT := gen_total a F hF hser hprog hfun
+  refine tower_sub AllProps _ _ _ (λ x ↦ Tower AllProps (Xa a) Ge F x ∧ q ≤ x) (admits_all _)
+    ⟨fun x hx => hC.1 x hx.1, fun x y hx hf => ?_, fun Z t _ hZ _ ht => ?_⟩
+  · refine ⟨hC.2.1 x y hx.1 hf, ?_⟩
+    rcases em (x = q) with e | e
+    · subst e
+      rw [hfalse x y hq' hf]
+      exact le_refl_prop x
+    · exact (gen_comp a F hF hser hprog hfun x q y hx.1 hq hf).elim
+        (fun k => (e (le_antisymm_prop x q k hx.2)).elim) id
+  · exact ⟨hC.2.2 Z t trivial (fun z hz => (hZ z hz).1)
+      (fun x y hx hy => hT x y (hZ x hx).1 (hZ y hy).1) ht,
+      ht.2 q ⟨hC.1 q hq, fun z hz => (hZ z hz).2⟩⟩
+
+/-- Fact 3 for an abstract step: if a true member steps to a true proper part, and the only
+false member is `m`, then `m` is the glb of the other members. -/
+theorem gen_glb_rest (hF : ∀ x y, Xa a x → F x y → Xa a y) (hser : ∀ x, Xa a x → ∃ y, F x y)
+    (hprog : ∀ x y, Xa a x → F x y → Ge x y)
+    (hfun : ∀ x y y', Xa a x → F x y → F x y' → y = y') (bc : BooleanCompleteness Prop)
+    (hstep : ∀ t, Xa a t → t → ∃ r, F t r ∧ r ∧ r ≤ t ∧ ¬ (r = t)) (m : Prop) (hmf : ¬ m)
+    (hfm : ∀ t, Tower AllProps (Xa a) Ge F t → ¬ t → t = m) (ha : a)
+    (haT : Tower AllProps (Xa a) Ge F a) (w : Prop)
+    (hw : ∀ x, Tower AllProps (Xa a) Ge F x → ¬ (x = m) → w ≤ x) : w ≤ m := by
+  have hC := gen_closed a F hF
+  have hT := gen_total a F hF hser hprog hfun
+  obtain ⟨t, ht⟩ := glb_sup bc a (λ x ↦ Tower AllProps (Xa a) Ge F x ∧ ¬ (x = m))
+    (fun x hx => hC.1 x hx.1)
+  have htm : Tower AllProps (Xa a) Ge F t := hC.2.2 _ t trivial (fun _ k => k.1)
+    (fun x y hx hy => hT x y hx.1 hy.1) ht
+  have e : t = m := by
+    rcases em (t = m) with e | e
+    · exact e
+    · rcases em t with h₁ | h₁
+      · obtain ⟨r, hf, hr, hrt, hne⟩ := hstep t ht.1.1 h₁
+        have hrm : Tower AllProps (Xa a) Ge F r := hC.2.1 t r htm hf
+        have htr : t ≤ r := ht.1.2 r ⟨hrm, fun e' => hmf (e' ▸ hr)⟩
+        exact (hne (le_antisymm_prop r t hrt htr)).elim
+      · exact hfm t htm h₁
+  have hwa : w ≤ a := hw _ haT (fun e' => hmf (e' ▸ ha))
+  rw [← e]
+  exact ht.2 w ⟨hwa, fun x hx => hw x hx.1 hx.2⟩
+
+end Gen
+
 /-! ### The step -/
 
 section Step
@@ -85,21 +170,18 @@ theorem fs_inv : ∀ x x' y y', Xa (Aa h K) x → Xa (Aa h K) x' → Ge x x' →
 /-! ### The tower `M` -/
 
 theorem tm_closed : Closed AllProps (Xa (Aa h K)) Ge (Fs h K) (Tm h K) :=
-  bw_closed AllProps _ _ _ (fs_X v hs h hh K) (admits_all _)
+  gen_closed _ _ (fs_X v hs h hh K)
 
 theorem tm_X (x : Prop) (hx : Tm h K x) : x ≤ Aa h K := (tm_closed v hs h hh K).1 x hx
 
 theorem tm_total : TotalOn Ge (Tm h K) :=
-  bw_total AllProps _ _ _ (ge_trans _) (fs_X v hs h hh K) (fs_ser v hs h hh K)
-    (fs_prog v hs h hh K) (fs_inv v hs h hh K) (admits_all _) (admits_all _)
-    (fun _ _ _ _ => admits_all _)
+  gen_total _ _ (fs_X v hs h hh K) (fs_ser v hs h hh K) (fs_prog v hs h hh K) (fs_fun v hs h hh K)
 
 /-- Clause (b): `p ≤ q ∨ q ≤ r` for members `p`, `q` and `F(p, r)`. -/
 theorem tm_comp (p q r : Prop) (hp : Tm h K p) (hq : Tm h K q) (hf : Fs h K p r) :
     p ≤ q ∨ q ≤ r :=
-  bw_comparable AllProps _ _ _ (ge_trans _) (fs_X v hs h hh K) (fs_ser v hs h hh K)
-    (fs_prog v hs h hh K) (fs_inv v hs h hh K) (admits_all _) (admits_all _)
-    (fun _ _ _ _ => admits_all _) p q r hp hq hf
+  gen_comp _ _ (fs_X v hs h hh K) (fs_ser v hs h hh K) (fs_prog v hs h hh K) (fs_fun v hs h hh K)
+    p q r hp hq hf
 
 /-- Fact 4: `q ≤ F(p)` for members `q < p`. -/
 theorem tm_below (p q r : Prop) (hp : Tm h K p) (hq : Tm h K q) (hqp : q ≤ p) (hne : ¬ (q = p))
@@ -112,6 +194,13 @@ theorem tm_a : Tm h K (Aa h K) :=
 
 theorem tm_step (p r : Prop) (hp : Tm h K p) (hf : Fs h K p r) : Tm h K r :=
   (tm_closed v hs h hh K).2.1 p r hp hf
+
+/-- A true member steps to a true proper part. -/
+theorem fs_step (t : Prop) (ht : Xa (Aa h K) t) (h₁ : t) :
+    ∃ r, Fs h K t r ∧ r ∧ r ≤ t ∧ ¬ (r = t) := by
+  obtain ⟨r, hc, hr⟩ := true_child h K t ht h₁
+  have hp := child_proper v hs h hh K t r hc
+  exact ⟨r, Or.inr ⟨h₁, hc, hr⟩, hr, hp.1, hp.2⟩
 
 theorem tm_sup (bc : BooleanCompleteness Prop) : ∃ m, SupIn (Xa (Aa h K)) Ge m (Tm h K) :=
   glb_sup bc _ _ (tm_X v hs h hh K)
@@ -130,43 +219,17 @@ theorem m_false (m : Prop) (hm : SupIn (Xa (Aa h K)) Ge m (Tm h K)) : ¬ m := fu
 /-- Fact 2: a false member of `M` is `m`. -/
 theorem false_member (m : Prop) (hm : SupIn (Xa (Aa h K)) Ge m (Tm h K)) (q : Prop)
     (hq : Tm h K q) (hq' : ¬ q) : q = m := by
-  have hY : ∀ x, Tm h K x → Tm h K x ∧ q ≤ x := by
-    refine tower_sub AllProps _ _ _ (λ x ↦ Tm h K x ∧ q ≤ x) (admits_all _)
-      ⟨fun x hx => tm_X v hs h hh K x hx.1, fun x y hx hf => ?_, fun Z t _ hZ _ ht => ?_⟩
-    · refine ⟨tm_step v hs h hh K x y hx.1 hf, ?_⟩
-      rcases em (x = q) with e | e
-      · subst e
-        rw [fs_false v hs h hh K x y hq' hf]
-        exact le_refl_prop x
-      · exact (tm_comp v hs h hh K x q y hx.1 hq hf).elim
-          (fun k => (e (le_antisymm_prop x q k hx.2)).elim) id
-    · exact ⟨(tm_closed v hs h hh K).2.2 Z t trivial (fun z hz => (hZ z hz).1)
-        (fun x y hx hy => tm_total v hs h hh K x y (hZ x hx).1 (hZ y hy).1) ht,
-        ht.2 q ⟨tm_X v hs h hh K q hq, fun z hz => (hZ z hz).2⟩⟩
+  have hY := gen_above _ _ (fs_X v hs h hh K) (fs_ser v hs h hh K) (fs_prog v hs h hh K)
+    (fs_fun v hs h hh K) (fs_false v hs h hh K) q hq hq'
   exact le_antisymm_prop q m (hY m (tm_sup_mem v hs h hh K m hm)).2 (hm.1.2 q hq)
 
 /-- Fact 3: `m` is the glb of the members of `M` other than `m`. -/
 theorem m_glb_rest (bc : BooleanCompleteness Prop) (ha : Aa h K) (m : Prop)
     (hm : SupIn (Xa (Aa h K)) Ge m (Tm h K)) (w : Prop)
-    (hw : ∀ x, Tm h K x → ¬ (x = m) → w ≤ x) : w ≤ m := by
-  have hmf := m_false v hs h hh K m hm
-  obtain ⟨t, ht⟩ := glb_sup bc (Aa h K) (λ x ↦ Tm h K x ∧ ¬ (x = m))
-    (fun x hx => tm_X v hs h hh K x hx.1)
-  have htm : Tm h K t := (tm_closed v hs h hh K).2.2 _ t trivial (fun _ k => k.1)
-    (fun x y hx hy => tm_total v hs h hh K x y hx.1 hy.1) ht
-  have e : t = m := by
-    rcases em (t = m) with e | e
-    · exact e
-    · rcases em t with h₁ | h₁
-      · obtain ⟨r, hc, hr⟩ := true_child h K t ht.1.1 h₁
-        have hrm : Tm h K r := tm_step v hs h hh K t r htm (Or.inr ⟨h₁, hc, hr⟩)
-        have htr : t ≤ r := ht.1.2 r ⟨hrm, fun e' => hmf (e' ▸ hr)⟩
-        have hp := child_proper v hs h hh K t r hc
-        exact (hp.2 (le_antisymm_prop r t hp.1 htr)).elim
-      · exact false_member v hs h hh K m hm t htm h₁
-  have hwa : w ≤ Aa h K := hw _ (tm_a v hs h hh K) (fun e' => hmf (e' ▸ ha))
-  rw [← e]
-  exact ht.2 w ⟨hwa, fun x hx => hw x hx.1 hx.2⟩
+    (hw : ∀ x, Tm h K x → ¬ (x = m) → w ≤ x) : w ≤ m :=
+  gen_glb_rest _ _ (fs_X v hs h hh K) (fs_ser v hs h hh K) (fs_prog v hs h hh K)
+    (fs_fun v hs h hh K) bc (fs_step v hs h hh K) m (m_false v hs h hh K m hm)
+    (fun t ht h₁ => false_member v hs h hh K m hm t ht h₁) ha (tm_a v hs h hh K) w hw
 
 end Step
 
