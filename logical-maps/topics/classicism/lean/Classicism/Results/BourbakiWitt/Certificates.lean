@@ -1,6 +1,6 @@
-import Classicism.Results.BourbakiWitt.NecessaryTransversal
-import Classicism.Results.BourbakiWitt.TransversalChoice
-import Classicism.Results.BourbakiWitt.Actuality
+import Classicism.Results.BourbakiWitt.Derive.NecessaryTransversal
+import Classicism.Results.BourbakiWitt.Derive.TransversalChoice
+import Classicism.Results.BourbakiWitt.Derive.Actuality
 import Classicism.Tools.Check
 import Classicism.Tools.TypeSystem
 import Classicism.Tools.Schema
@@ -22,15 +22,6 @@ result derived in the object language and read as an entailment between schemas
   Classicism.Results.BourbakiWitt.Settled Classicism.Results.BourbakiWitt.TransversalChoice
   Classicism.Results.BourbakiWitt.ActualityParts Classicism.Results.BourbakiWitt.ActualityChain
   Classicism.Results.BourbakiWitt.Actuality
-
-set_option maxHeartbeats 0 in
-#classicism_derive Classicism.Proofs.BWTransversal.boolean_completeness_and_modalized_relational_choice_imply_necessary_transversal
-
-set_option maxHeartbeats 0 in
-#classicism_derive Classicism.Proofs.BWChoice.vicinity_and_relational_choice_imply_transversal_choice
-
-set_option maxHeartbeats 0 in
-#classicism_derive Classicism.Proofs.BWActuality.vicinity_boolean_completeness_t_and_relational_choice_imply_actuality
 
 #classicism_entails Classicism.Proofs.BWTransversal.boolean_completeness_and_modalized_relational_choice_imply_necessary_transversal
 #classicism_entails Classicism.Proofs.BWChoice.vicinity_and_relational_choice_imply_transversal_choice

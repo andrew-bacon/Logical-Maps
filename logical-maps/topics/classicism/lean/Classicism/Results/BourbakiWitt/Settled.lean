@@ -155,7 +155,7 @@ theorem settled_exists {τ : Type} [Ty τ] (v : Prop) (hs : Vs v) (F : τ → Pr
       (nec% (fun (k : F x) => (⟨x, k⟩ : ∃ x, F x))))
   · refine Or.inr (le_mono _ _ _ (collection v hs (λ x ↦ ¬ F x)
       (fun x => le_neg_of_settled _ _ hs (h x) (fun k => hx ⟨x, k⟩)))
-      (nec% (fun (n : ∀ x, ¬ F x) (k : ∃ x, F x) => k.elim n)))
+      (nec% (fun (n : ∀ x, ¬ F x) (k : ∃ x, F x) => k.elim fun x hx => n x hx)))
 
 /-- Being settled is built from identities, so it is settled. -/
 theorem settledP_settled {τ : Type} [Ty τ] (v : Prop) (hs : Vs v) (Y : τ → Prop) :

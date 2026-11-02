@@ -66,8 +66,8 @@ def Dec (w : Prop) : Prop := NZ w ∧ ∀ q : Prop, w ≤ q ∨ w ≤ ¬ q
 /-- `z := ∃p. Dec(p) ∧ p`. -/
 def Zd : Prop := ∃ p, Dec p ∧ p
 
-theorem actuality_of_dec : Zd → Actuality := fun ⟨w, hw, hw'⟩ =>
-  ⟨w, hw', fun q hq => (hw.2 q).elim id (fun hn => ((true_of_le _ _ hn hw') hq).elim)⟩
+theorem actuality_of_dec : Zd → Actuality := fun hz => hz.elim fun w k =>
+  ⟨w, k.2, fun q hq => (k.1.2 q).elim (fun hl => hl) (fun hn => ((true_of_le _ _ hn k.2) hq).elim)⟩
 
 theorem dec_settled (v : Prop) (hs : Vs v) : SettledP (Vs v) Dec :=
   fun _ => settled_and _ _ _ hs (settled_not _ _ (settled_eq v hs _ _)) fun _ =>
@@ -264,7 +264,7 @@ theorem join_least (v : Prop) (hs : Vs v) (h : Prop) (hh : h ≤ Vs v) (K : Prop
     exact le_mono₂ _ _ _ _ (le_tr _ _ _ (le_tr _ _ _ hpa (aa_le v h hh K)) hall) (le_intro _ _ (modal_K _ _
       (nec% (le_vals h K p)) (le_elim _ _ hpa)))
       (nec% (fun (f : ∀ q, (Val h K p q q ∨ Val h K p q (¬ q)) → w)
-        (k : ∃ q, Val h K p q q ∨ Val h K p q (¬ q)) => k.elim f))
+        (k : ∃ q, Val h K p q q ∨ Val h K p q (¬ q)) => k.elim fun q hq => f q hq))
   · have e : p = False := (em (p = False)).elim id (fun n => (hp n).elim)
     rw [e]
     exact bot_le_prop w

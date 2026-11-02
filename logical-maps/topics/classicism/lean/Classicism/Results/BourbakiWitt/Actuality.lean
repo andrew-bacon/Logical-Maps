@@ -65,8 +65,8 @@ include hs hh
 /-! ### §4: the discarded parts -/
 
 theorem dl_le (d : Prop) (hd : Dl h K d) : NZ d ∧ d ≤ Aa h K :=
-  hd.elim fun p ⟨_, hp, _, _, hc, _⟩ =>
-    ⟨hc.2.2.1, le_tr _ _ _ (child_le v hs h hh K p d hc) (tm_X v hs h hh K p hp)⟩
+  hd.elim fun p hp' => hp'.elim fun _ k =>
+    ⟨k.2.2.2.1.2.2.1, le_tr _ _ _ (child_le v hs h hh K p d k.2.2.2.1) (tm_X v hs h hh K p k.1)⟩
 
 /-- The discarded parts are pairwise disjoint. -/
 theorem dl_disjoint (d d' : Prop) (hd : Dl h K d) (hd' : Dl h K d') (hne : ¬ (d = d')) :
