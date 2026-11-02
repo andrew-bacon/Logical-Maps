@@ -12,8 +12,8 @@ Transversal Choice at `σ`.
 Given an equivalence relation `R`, *candidates* are the `B ≤ λx. s` that are necessarily partial
 transversals of `Q := λx y. ∀z. Rxz ↔ Ryz`. Relational Choice gives `K`, choosing for each `B`
 a point outside the cells `B` meets if there is one, and `fB` adds it to `B`. The Bourbaki–Witt
-lemma for admissible chains (`BW.bourbaki_witt_fixed_point`), with the settled properties
-admissible, the candidates ordered by `≤` and the graph of `f` as the step, gives a candidate
+lemma for admissible chains (`BW.bourbaki_witt_fixed_point`, through
+`Settled.bw_settled_fixed_point`), with the settled properties admissible, the candidates ordered by `≤` and the graph of `f` as the step, gives a candidate
 `m` with `fm = m`, which is a transversal.
 -/
 
@@ -193,15 +193,14 @@ theorem serial_U (R : σ → σ → Prop) (x₀ : σ) : Serial (U R) := fun B =>
     (em (∃ a, ¬ Bbar R B a)).elim (fun ⟨a, ha⟩ => ⟨a, Or.inr ha⟩)
       fun hn => (h fun a => (em (Bbar R B a)).elim id fun ha => (hn ⟨a, ha⟩).elim).elim
 
-theorem transversal_choice_core (v : Prop) (hs : Vs v) (R : σ → σ → Prop) (hR : EquivRel R)
-    (K : (σ → Prop) → σ → Prop) (hK : Functional K) (hKU : ∀ B a, K B a → U R B a) :
-    ∃ F : σ → Prop, ∀ x, ∃ y, R x y ∧ F y ∧ ∀ z, (R x z ∧ F z) → y = z := by
-  have hX := cand_settled v hs R
-  have hRs : ∀ B D : σ → Prop, Settled (Vs v) (B ≤ D) := fun B D => settled_le_rel v hs B D
-  have hFs : ∀ B D : σ → Prop, Settled (Vs v) (D = f (Vs v) R K B) :=
-    fun B D => settled_eq v hs D _
-  obtain ⟨m, hm, hfix⟩ := bourbaki_witt_fixed_point (SettledP (Vs v)) (Cand (Vs v) R)
+/-- The fixed point: a candidate `m` with `fm = m`, by the Bourbaki–Witt lemma for admissible
+chains with the settled properties admissible (`Settled.bw_settled_fixed_point`). -/
+theorem cand_fixed (v : Prop) (hs : Vs v) (R : σ → σ → Prop) (K : (σ → Prop) → σ → Prop) :
+    ∃ m, Cand (Vs v) R m ∧ m = f (Vs v) R K m :=
+  bw_settled_fixed_point v hs (Cand (Vs v) R)
     (fun B D : σ → Prop => B ≤ D) (fun B D => D = f (Vs v) R K B)
+    (cand_settled v hs R) (fun B D => settled_le_rel v hs B D)
+    (fun B D => settled_eq v hs D _)
     (fun B _ => le_refl_arrow_prop B)
     (fun B D E _ _ _ h₁ h₂ => le_trans_arrow B D E h₁ h₂)
     (fun B D _ _ h₁ h₂ => le_antisymm_arrow B D h₁ h₂)
@@ -210,13 +209,12 @@ theorem transversal_choice_core (v : Prop) (hs : Vs v) (R : σ → σ → Prop) 
     (fun B D hB e => e ▸ cand_f (Vs v) R K B hB)
     (fun B D _ e => e ▸ le_f (Vs v) R K B)
     (fun _ _ _ _ e₁ e₂ => e₁.trans e₂.symm)
-    (admits_settled _ _ hX)
-    (admits_settled _ _ (tower_settled v hs _ _ _ hX hRs hFs))
-    (admits_settled _ _ (pivot_settled v hs _ _ _ hX hRs hFs))
-    (fun c e _ _ => admits_settled _ _ (mce_settled v hs _ _ _ hX hRs hFs c e))
-  have hc : Cand (Vs v) R m := hm.2.1.1
-  exact ⟨m, transversal_of_full R hR m (full_of_fixed (Vs v) hs R K hK hKU m hfix)
-    (box_elim hc.2)⟩
+
+theorem transversal_choice_core (v : Prop) (hs : Vs v) (R : σ → σ → Prop) (hR : EquivRel R)
+    (K : (σ → Prop) → σ → Prop) (hK : Functional K) (hKU : ∀ B a, K B a → U R B a) :
+    ∃ F : σ → Prop, ∀ x, ∃ y, R x y ∧ F y ∧ ∀ z, (R x z ∧ F z) → y = z :=
+  (cand_fixed v hs R K).elim fun m hm =>
+    ⟨m, transversal_of_full R hR m (full_of_fixed (Vs v) hs R K hK hKU m hm.2) (box_elim hm.1.2)⟩
 
 /-- **The record.** -/
 theorem vicinity_and_relational_choice_imply_transversal_choice :

@@ -261,6 +261,28 @@ theorem mce_settled (v : Prop) (hs : Vs v) (X : τ → Prop) (R F : τ → τ �
 theorem admits_settled (s : Prop) (Y : τ → Prop) (h : SettledP s Y) : Admits (SettledP s) Y :=
   ⟨Y, h, fun _ => Iff.rfl⟩
 
+/-- The Bourbaki–Witt lemma for admissible chains with the settled properties admissible, for
+`X`, `R`, `F` settled at every argument: a closed lemma, so that a use of it at large `X` and
+`F` costs the translator a citation rather than the four admissibility proofs. -/
+theorem bw_settled_fixed_point (v : Prop) (hs : Vs v) (X : τ → Prop) (R F : τ → τ → Prop)
+    (hX : SettledP (Vs v) X) (hR : ∀ x y, Settled (Vs v) (R x y))
+    (hFs : ∀ x y, Settled (Vs v) (F x y))
+    (hrefl : ∀ x, X x → R x x)
+    (htrans : ∀ x y z, X x → X y → X z → R x y → R y z → R x z)
+    (hanti : ∀ x y, X x → X y → R x y → R y x → x = y)
+    (hsup : ∀ Z, SettledP (Vs v) Z → (∀ z, Z z → X z) → TotalOn R Z → ∃ s, SupIn X R s Z)
+    (hser : ∀ x, X x → ∃ y, F x y)
+    (hF : ∀ x y, X x → F x y → X y)
+    (hprog : ∀ x y, X x → F x y → R x y)
+    (hfun : ∀ x y y', X x → F x y → F x y' → y = y') :
+    ∃ m, X m ∧ F m m :=
+  (bourbaki_witt_fixed_point (SettledP (Vs v)) X R F hrefl htrans hanti hsup hser hF hprog hfun
+    (admits_settled _ _ hX)
+    (admits_settled _ _ (tower_settled v hs X R F hX hR hFs))
+    (admits_settled _ _ (pivot_settled v hs X R F hX hR hFs))
+    (fun c e _ _ => admits_settled _ _ (mce_settled v hs X R F hX hR hFs c e))).elim
+    fun m hm => ⟨m, hm.1.2.1.1, hm.2⟩
+
 end Admits
 
 end Classicism.Proofs.Settled
