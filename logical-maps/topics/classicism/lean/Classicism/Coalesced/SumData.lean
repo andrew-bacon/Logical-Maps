@@ -99,11 +99,17 @@ abbrev model : Premodel D.Sig (CoalescedSum D.S) := D.RA.coalescedSum D.RI D.ne 
 
 theorem isModel : D.model.IsModel := D.isModel'
 
-/-- `complete-components`: every closed-type pure sentence consistent with `C` is true at the
-root of some component. -/
-def CompleteComponents : Prop :=
+/-- Every closed-type pure sentence consistent with `C` is true at the root of some component. -/
+def CompleteAtRoots : Prop :=
   ∀ p : Sentence Signature.pure, p.closedTypes = true → AxiomSet.Consistent (AxiomSet.single p) →
     ∃ k : D.ι, (D.A k).HoldsSentence (Term.ofPure p)
+
+/-- `complete-components`: every closed-type pure sentence consistent with `C` is true at the
+root of some component, and so in the component seen from some root arrow. The second conjunct
+follows from the first over distinguished arrows (`completeComponents_of_roots`); it is what
+Maximalism at the root uses, whatever the root arrows, and the first is what the transfer
+arguments use. -/
+def CompleteComponents : Prop := D.CompleteAtRoots ∧ D.RA.CompleteComponents D.I
 
 /-- `distinguished-arrows`: only the identity at the root, and in each component a root arrow `d`
 to the component's root through which every root arrow into the component factors uniquely. -/
@@ -128,14 +134,18 @@ def FullestDomains : Prop := D.RA.Fullest D.RI
 seen from the distinguished arrow into it, a pure sentence not depending on the constants: so
 `complete-components` gives the components' completeness as Maximalism at the root uses it
 (`RootAction.holds_dia_of_complete`). -/
-theorem completeComponents_root {D : SumData} (hD : D.DistinguishedArrows) (hc : D.CompleteComponents) :
-    D.RA.CompleteComponents D.I := fun p hp h => by
+theorem completeComponents_of_roots {D : SumData} (hD : D.DistinguishedArrows) (hc : D.CompleteAtRoots) :
+    D.CompleteComponents := ⟨hc, fun p hp h => by
   obtain ⟨k, hk⟩ := hc p hp h
   obtain ⟨d, -⟩ := hD.2 k
   have e : (D.RA.component D.I d).reduct = (D.A k).reduct := rfl
   have h1 := (Premodel.holdsSentence_ofPure (D.A k) p).1 hk
   rw [← e] at h1
-  exact ⟨k, _, d, (Premodel.holdsSentence_ofPure (D.RA.component D.I d) p).2 h1⟩
+  exact ⟨k, _, d, (Premodel.holdsSentence_ofPure (D.RA.component D.I d) p).2 h1⟩⟩
+
+/-- The form of `complete-components` Maximalism at the root uses. -/
+theorem completeComponents_root {D : SumData} (_hD : D.DistinguishedArrows) (hc : D.CompleteComponents) :
+    D.RA.CompleteComponents D.I := hc.2
 
 /-! ### A free root component -/
 
@@ -272,7 +282,8 @@ theorem SumData.completeComponents_ofDistinguished (hI : TransportsConstants (fu
     (M : ∀ k, (A k).IsModel) (hS : Sig.Closed)
     (hA : ∀ p : Sentence Sig, p.closedTypes = true → AxiomSet.Consistent (AxiomSet.single p) →
       ∃ k : ι, (A k).HoldsSentence p) :
-    (SumData.ofDistinguished A ae av ne I hI M).CompleteComponents := fun p hp hc =>
+    (SumData.ofDistinguished A ae av ne I hI M).CompleteComponents :=
+  SumData.completeComponents_of_roots (SumData.distinguishedArrows_ofDistinguished hI M) fun p hp hc =>
   hA (Term.ofPure p) (by rw [Term.closedTypes_ofPure]; exact hp)
     (by
       have := (AxiomSet.consistent_ofPure_iff (Sig := Sig) hS (A := AxiomSet.single p)).2 hc

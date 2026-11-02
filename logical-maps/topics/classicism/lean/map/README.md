@@ -65,7 +65,12 @@ closed type `σ`, in `Certified/Arithmetic.lean`). The latter's vocabulary, `�
 `ℕ_σ`, `Sum_σ` and `Prod_σ`, is written as shallow definitions with a type parameter and
 quoted by `#classicism_quote_term` (`Tools/QuoteTerm.lean`), which reads each type parameter
 as a metalogical type and checks each term's reading against its definition, at every such
-type, as `#classicism_quote` does a statement's.
+type, as `#classicism_quote` does a statement's. Arithmetic Necessitism, by contrast, is an ordinary
+shallow principle with a type parameter (`P.ArithmeticNecessitism`, in
+`Principles/Arithmetic.lean`), over the Background's finite cardinalities; its antecedent's
+`I*_σ` is `Classicism.IStar`, quoted on its own as the sentence `IStar.term σ` too, so that a
+proof can refute `□I*_σ` where `¬I*_σ` is consistent
+(`Results/SentenceSchemas/ArithmeticNecessitism.lean`).
 
 ## The shape of a statement
 
@@ -172,6 +177,22 @@ Transversal. The members `coalesced-maximalist-root` (at
 over the complete family of `Completeness/` (`Coalesced/Complete.lean`, where every sentence
 consistent with `C` is possible at the root: Maximalism).
 
+**Glued models.** `Semantics/Glued.lean` has Bacon's gluing (*Logical Combinatorialism*, Appendix A.3): in a
+full model, sites at the base (endo-arrows through which arrows are told apart, along which the individuals glue)
+glue one entity from one at each site, and the constants glued from values at the sites give a model whose
+truncation along a site is the full model with that site's values. With rich values Witnessed Possibility holds,
+and with one object Logical Necessity (`Premodel.holdsAx_witnessedPossibility`, `holdsAx_logicalNecessity`).
+`Models/GluedFreeMonoid.lean` has the group `glued-free-monoid` (parameter `GluedData`, model `GluedData.model`,
+full, so the group meets `full-model`, `full-action-model` and `extensionally-full`) and three members, all at
+`Σ = {c : t}`: the free monoid with thread individuals and with one individual, the constants glued by sentences
+(Logical Necessity, BF, and the Axiom of Infinity at `e` with the threads), and the double retraction with free sites
+at `W₀`, glued by formulas (Witnessed Possibility, Pure B, and the failure of Possibly Witnessed Possibility). The
+free monoid's generators are indexed by the sentences of `Σ` themselves rather than by `ℕ` through an enumeration;
+for a countable signature the frames are isomorphic. The free-product member (`Models/GluedFreeProduct.lean`) has
+Logical Necessity and the conditions on arrows, its generators being sites by the free product's normal form at the free
+factor; its condition `unique-retractions-everywhere` (the record's Lemma 3) is not yet in Lean, so Strong Actuality
+and Rigid Power are not certified for it.
+
 **The sentence schemas range over the paper's language.** The object language here also has
 type variables, a device of the metalogic; every sentence schema (No Contingency, No Pure
 Contingency, B, Distinctness, Possibility, Witnessed Possibility and its kin, Separated
@@ -247,7 +268,7 @@ By 6 October, 32 verdicts of 25 arguments were proved this way:
 | `relational-choice-full` | full, choice | Relational Choice holds |
 | `relational-choice-full-boxed` | full action model, choice | □Relational Choice holds |
 | `transversal-choice-extensionally-full` | extensionally full, choice | Transversal Choice holds |
-| `dpc-isolated-actual-world` | actual world isolated | Distinctness-Preserving Collapse holds |
+| `nd-necessity-isolated-actual-world` | actual world isolated | Truths are ND-necessary holds |
 | `one-individual` | one individual | the Axiom of Infinity, the Infinity schema and Possible Infinity at `e` fail |
 | `finitely-many-propositions` | full, finitely many propositions | the Infinity schema at `t` fails |
 | `finitely-many-propositions-everywhere` | finitely many propositions at every reachable object | Possible Infinity at `t` fails |
@@ -260,7 +281,7 @@ By 6 October, 32 verdicts of 25 arguments were proved this way:
 | `unretracted-arrow` | full, an arrow with no retraction | ND (`t`) fails |
 | `nonidentity-arrow` | full, an arrow other than the identity | the Fregean Axiom fails |
 | `nonepic-strong-atomicity` | full, a non-epi arrow | Strong Atomicity (`t`) fails |
-| `dpc-returning-arrow` | full, a returning arrow | Distinctness-Preserving Collapse fails |
+| `nd-necessity-returning-arrow` | full, a returning arrow | Truths are ND-necessary fails |
 | `coherent-retractions` | full, coherent retractions | Gallin Extensional Comprehension holds |
 | `fewer-propositions-after` | fewer propositions after some arrow, and after it | B for pure sentences fails |
 
@@ -315,9 +336,11 @@ On 6 October two topic arguments gave 24 Σ verdicts this way: `sigma-top` (Inde
 relative to `Σ` fails, at `c ≠ ⊤_ρ`) and `sigma-top-npc` (No Contingency relative to `Σ`
 holds, given No Pure Contingency). A relative argument's statement has the hypothesis
 `Admitted` after the model's (`lean.argument.relative`). With these the engine settles 11 or 12
-of the 14 Σ verdicts of each one-object model from Lean alone. What it lacks: General Separated
-Structure has no `lean_def`, and the results Separated Structure ⇒ Possibly Witnessed
-Possibility and Strong Possibility (`Σ`) ⇒ Possibility (`Σ`) are stated, not proved. Not
+of the 14 Σ verdicts of each one-object model from Lean alone. What it lacked then: General
+Separated Structure had no `lean_def`, and the results Separated Structure ⇒ Possibly Witnessed
+Possibility and Strong Possibility (`Σ`) ⇒ Possibility (`Σ`) were stated, not proved; the first
+is proved since 1 November, with the other Separated Structure and Independence results
+(`Results/SentenceSchemas/SeparatedStructure.lean`). Not
 done yet: the rest of `sigma-top` (Witnessed Possibility, which the two-object chain needs),
 and the true-atom interpretation (`sigma-true-atom`), which no model in Lean uses.
 

@@ -9,7 +9,8 @@ certificate:
   recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 24 October 2026
   checked_by: []
   date: '2026-10-24'
-  lean: none
+  lean: verified
+  lean_ref: Classicism.Map.c5_implies_arithmetic_necessitism
 sources:
 - GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, proof sketch in the record c5-implies-arithmetic-necessitism
   of 23 October 2026, in Daniel Kodsi's submission of 24 October 2026 (branch classicism-results-2026-10-24 of

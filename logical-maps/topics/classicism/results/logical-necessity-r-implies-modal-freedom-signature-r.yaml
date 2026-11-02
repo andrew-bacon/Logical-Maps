@@ -9,7 +9,8 @@ certificate:
   recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026
   checked_by: []
   date: '2026-09-22'
-  lean: stated
+  lean: verified
+  lean_ref: Classicism.Map.logical_necessity_r_implies_modal_freedom_signature_r
 sources:
 - Andrew Bacon, Logical Combinatorialism, Philosophical Review 129 (2020), §3, p. 556.
 source_names:

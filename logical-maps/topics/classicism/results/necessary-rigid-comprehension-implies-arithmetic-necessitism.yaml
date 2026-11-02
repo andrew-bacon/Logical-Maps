@@ -11,7 +11,8 @@ certificate:
   recorded_by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, 23 October 2026
   checked_by: []
   date: '2026-10-23'
-  lean: none
+  lean: verified
+  lean_ref: Classicism.Map.necessary_rigid_comprehension_implies_arithmetic_necessitism
 sources:
 - Neil Barton and Zachary Goodsell, Continuum Contingency, draft of 14 October 2026, §5.8, Theorem 3, in
   CR∞, C with □Rigid Comprehension and the axiom of Infinity (eq. (22)); the paper attributes the result

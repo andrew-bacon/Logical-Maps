@@ -28,7 +28,7 @@ $$
 $\Box_5:=\lambda p\, .\,\forall X^{tt}\, .\,\operatorname{S5}(X)\to Xp$, with
 dual $\Diamond_5$. Appendix D defines $\Box_5$ with the condition NKJF$_{\langle\rangle}$
 in place of NKB; its facts (A5) and (C5) make the two definitions necessarily
-equivalent. Theorems of C: $\Box\le\Box_{\ne}\le\hat{\hat\Box}\le\Box_5\le\lambda p\, .\,p$
+equivalent {lean: Classicism.AppD.box5_le_box5A, Classicism.box5A_le_box5}. Theorems of C: $\Box\le\Box_{\ne}\le\hat{\hat\Box}\le\Box_5\le\lambda p\, .\,p$
 (the order is necessary pointwise implication)
 {lean: Classicism.box_le_boxNe, Classicism.boxNe_le_boxHH, Classicism.boxHH_le_box5, Classicism.box5_le}; each of these operators is
 necessarily N, K, T and 4, and $\Box_5$ is an S5 operator; and if $\Box_{\ne}$ or
@@ -154,11 +154,17 @@ and $\hat\Box=\Box_{\ne}$ is Proposition D17.
 
 ::: proposition {#box5-barcan}
 title: the Barcan formula for 5-necessity
-credit: Cian Dorr, with help from GPT-6 Astra (OpenAI), 29 October 2026
+lean: [Classicism.box5_barcan, Classicism.dia5_exists]
+credit: Cian Dorr, John Hawthorne and Juhani Yli-Vakkuri
+sources: The Bounds of Possibility, Appendix D, pp. 402–406
 ---
 At every type $\sigma$, C proves $\forall x^\sigma\, .\,\Box_5Rx\to\Box_5\forall x\, .\,Rx$, and
 dually $\Diamond_5\exists x\, .\,Rx\to\exists x\, .\,\Diamond_5Rx$; iterating, the same holds for
-tuples of variables.
+tuples of variables. In the appendix this is part of fact (C5), p. 402: $\Box_5$ is
+F$_\sigma$ for every $\sigma$. It follows from Theorem D16 ($\Box_5$ is necessarily NKTB4)
+and Corollary D6 (NKB gives NKJF$_\sigma$), whose F$_\sigma$ part is Proposition D3, Prior's
+derivation of BF from B. The map's $\Box_5$ is necessarily equivalent to the appendix's,
+as noted above.
 
 *Proof.* This is Prior's derivation of the Barcan formula from B. It uses only that
 $\Box_5$ is an S5 operator, a theorem of C, so every step below is a theorem and may

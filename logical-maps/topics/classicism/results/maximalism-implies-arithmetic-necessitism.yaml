@@ -10,7 +10,8 @@ certificate:
   recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 29 October 2026
   checked_by: []
   date: '2026-10-29'
-  lean: none
+  lean: verified
+  lean_ref: Classicism.Map.maximalism_implies_arithmetic_necessitism
 sources:
 - >-
   Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell, argument
