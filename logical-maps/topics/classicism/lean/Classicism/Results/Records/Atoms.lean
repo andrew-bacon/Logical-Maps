@@ -139,9 +139,6 @@ end records
 section inst
 variable {τ : Type} [Rel τ] [Order τ] [Pointwise τ]
 
-/-- An uninstantiated entity is included in bottom (excluded middle). -/
-theorem incl_bot_of_not_instantiated (X : τ) : ¬ Instantiated X → X ⊆ ⊥ := fun h =>
-  (em (X ⊆ ⊥)).elim id fun hn => (h hn).elim
 
 /-- What is necessarily uninstantiated is bottom. -/
 theorem eq_bot_of_box_not_instantiated (X : τ) (h : □ (¬ Instantiated X)) : X = ⊥ :=
@@ -185,9 +182,6 @@ end inst
 
 /-! ### At `t` -/
 
-/-- At `t`, an instantiated proposition is true. -/
-theorem of_instantiated_prop (p : Prop) : Instantiated p → p := fun hi =>
-  (em p).elim id fun hn => (hi (fun h => absurd h hn)).elim
 
 /-- A true proposition entailing every truth is an atom. -/
 theorem atom_of_actualWorld (w : Prop) (hw : ActualWorld w) : Atom w :=
@@ -510,17 +504,6 @@ theorem not_of_instantiated_of_and_eq_bot (X : τ) (q : Prop) :
     (X ∧ constP q) = ⊥ → Instantiated X → ¬ q := fun e hi hq =>
   hi (incl_trans X (X ∧ constP q) ⊥ (incl_and_constP_self X q hq) (by rw [e]; exact incl_refl _))
 
-/-- The instantiation of an atom of a relational type is an atom of type `t`: it is possible,
-and below `q` or `¬q` as `X ∧ q̂` is `X` or `⊥`. -/
-theorem atom_instantiated_of_atom (X : τ) (hX : Atom X) : Atom (Instantiated X) :=
-  atom_of_decides _ ⟨dia_instantiated_of_ne_bot X (atom_ne_bot_rel X hX), fun q =>
-    have hle : (X ∧ constP q) ≤ X := (le_iff _ _).2 (nec% (incl_and_left X (constP q)))
-    (em ((X ∧ constP q) = X)).elim
-      (fun e => Or.inl ((le_iff_prop _ _).2 (modal_K _ _ (nec% (of_instantiated_of_and_eq X q))
-        (necessity_of_identity _ _ e))))
-      (fun hne => Or.inr ((le_iff_prop _ _).2
-        (modal_K _ _ (nec% (not_of_instantiated_of_and_eq_bot X q))
-          (necessity_of_identity _ _ (eq_bot_of_le_neg_rel _ ((hX _).1 ⟨hle, hne⟩))))))⟩
 
 /-- Under Atomlessness there is no atom at any relational type. -/
 theorem not_atom_rel_of_atomlessness (atl : Atomlessness) (X : τ) (hX : Atom X) : False :=
@@ -613,11 +596,6 @@ theorem not_of_atom_both (X Y : τ) :
       ((le_iff _ _).2 (nec% (incl_and_left X (¬ Y))))
     not_instantiated_of_and_eq_and_neg X Y (e₁.trans e₂.symm) h₁
 
-/-- The instantiation of a self-atom is a self-atom of type `t`. -/
-theorem selfAtom_instantiated (X : τ) (hX : SelfAtom X) : SelfAtom (Instantiated X) :=
-  ⟨dia_instantiated_of_ne_bot X hX.1, modal_K _ _
-    (nec% (fun (f : Instantiated X → Atom X) (hi : Instantiated (Instantiated X)) =>
-      atom_instantiated_of_atom X (f (of_instantiated_prop _ hi)))) hX.2⟩
 
 /-- Under Self-atoms are atoms at `t`, the instantiation of `X ∧ Y`, for `X` a self-atom, is
 `⊥` or that of `X`. -/

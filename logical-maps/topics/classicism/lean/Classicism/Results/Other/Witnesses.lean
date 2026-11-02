@@ -43,10 +43,10 @@ theorem apply_le (f : truncs) (y : ℕ) : (f : F) y ≤ y := by
 
 /-- **The Distinctness-Preserving Collapse holds** in the truncation model: for a truth `p`
 pinned down below `n`, the witness is the proposition that the arrow fixes `[0, n]`. -/
-theorem dpc : (model truncs).HoldsSentence P.DistinctnessPreservingCollapse.quoted := by
+theorem dpc : (model truncs).HoldsSentence P.TruthsAreNDNecessary.quoted := by
   have Mo : (model truncs).IsModel := model_isModel truncs
   rw [Premodel.HoldsSentence]
-  unfold P.DistinctnessPreservingCollapse.quoted
+  unfold P.TruthsAreNDNecessary.quoted
   rw [(model truncs).holds_forall Mo]
   intro p
   rw [(model truncs).holds_imp Mo]
@@ -159,7 +159,7 @@ theorem holdsAx_fiveImpliesNd : (A).HoldsAx P.FiveImpliesNdNecessity.schema :=
 /-- **Truths are 5-necessary fails** in the full model on the two-element group. -/
 theorem not_truthImpliesFive : ¬ (A).HoldsAx P.TruthImpliesFiveNecessity.schema :=
   not_holds_right M Proofs.five_implies_nd_and_truth_implies_five_imply_truth_implies_nd.entails
-    holdsAx_fiveImpliesNd (fun h => Map.Models.full_involution_group.distinctness_preserving_collapse.2
+    holdsAx_fiveImpliesNd (fun h => Map.Models.full_involution_group.truths_are_nd_necessary.2
       ((Premodel.holdsAx_schemaIn_iff _ _).2 h))
 
 /-- **Truths are two-hat necessary fails** there too. -/
@@ -211,7 +211,7 @@ theorem not_weaklyInextensibleComprehension :
 /-- **Vicinity fails** in the truncation model: with the Distinctness-Preserving Collapse,
 which holds there (`Monoids.Truncs.dpc`), it gives Actuality, which fails. -/
 theorem not_vicinity : ¬ (A).HoldsAx P.Vicinity.schema :=
-  not_holds_left M Proofs.vicinity_and_distinctness_preserving_collapse_imply_actuality.entails
+  not_holds_left M Proofs.vicinity_and_truths_are_nd_necessary_imply_actuality.entails
     (Premodel.holdsAx_single _ Monoids.Truncs.dpc)
     (fun h => Monoids.Truncs.not_actuality (h _ rfl))
 
