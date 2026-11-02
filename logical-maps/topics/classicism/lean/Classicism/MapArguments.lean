@@ -97,18 +97,18 @@ theorem transversal_choice_r :
 
 end transversal_choice_extensionally_full
 
-namespace dpc_isolated_actual_world
+namespace nd_necessity_isolated_actual_world
 
-/-- Distinctness-Preserving Collapse holds where the actual world is isolated
-(`Premodel.holds_dpc`). -/
-theorem distinctness_preserving_collapse :
-    Statements.Arguments.dpc_isolated_actual_world.distinctness_preserving_collapse := by
+/-- Truths are ND-necessary holds where the actual world is isolated
+(`Premodel.holds_truths_nd_necessary`). -/
+theorem truths_are_nd_necessary :
+    Statements.Arguments.nd_necessity_isolated_actual_world.truths_are_nd_necessary := by
   intro Sig C _ A M hI
   rw [holdsAx_ofPure]
   rintro _ rfl
-  exact holds_dpc (A.reduct_isModel M) hI
+  exact holds_truths_nd_necessary (A.reduct_isModel M) hI
 
-end dpc_isolated_actual_world
+end nd_necessity_isolated_actual_world
 
 namespace one_individual
 
@@ -336,17 +336,17 @@ theorem strong_actuality :
 
 end separated_retractions_strong_actuality
 
-namespace dpc_returning_arrow
+namespace nd_necessity_returning_arrow
 
-/-- Distinctness-Preserving Collapse fails in a full model where some arrow other than the
-identity returns (`Premodel.not_holds_dpc_of_returning`). -/
-theorem distinctness_preserving_collapse :
-    Statements.Arguments.dpc_returning_arrow.distinctness_preserving_collapse := by
+/-- Truths are ND-necessary fails in a full model where some arrow other than the
+identity returns (`Premodel.not_holds_truths_nd_necessary_of_returning`). -/
+theorem truths_are_nd_necessary :
+    Statements.Arguments.nd_necessity_returning_arrow.truths_are_nd_necessary := by
   intro Sig C _ A M hF hR H
   rw [holdsAx_ofPure] at H
-  exact not_holds_dpc_of_returning (A.reduct_isModel M) hF hR (H _ rfl)
+  exact not_holds_truths_nd_necessary_of_returning (A.reduct_isModel M) hF hR (H _ rfl)
 
-end dpc_returning_arrow
+end nd_necessity_returning_arrow
 
 namespace coherent_retractions
 

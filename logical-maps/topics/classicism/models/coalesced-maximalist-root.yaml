@@ -78,7 +78,7 @@ history:
   satisfies:
   - distinctness-signature-r
   - actuality
-  - distinctness-preserving-collapse
+  - truths-are-nd-necessary
   violates:
   - strong-possibility-r
   - distinctness-necessary-r

@@ -23,8 +23,8 @@ open Meta Meta.AxiomSet Meta.Intensional
 namespace finite_support_truncations
 
 /-- The witness: the proposition that the arrow fixes `[0, n]`, for `n` beyond the pinning set. -/
-theorem distinctness_preserving_collapse :
-    Statements.Models.finite_support_truncations.distinctness_preserving_collapse :=
+theorem truths_are_nd_necessary :
+    Statements.Models.finite_support_truncations.truths_are_nd_necessary :=
   ⟨MonoidModel.model_isModel Monoids.truncs, (Premodel.holdsAx_schemaIn_iff _ _).2
     (Premodel.holdsAx_single _ Monoids.Truncs.dpc)⟩
 

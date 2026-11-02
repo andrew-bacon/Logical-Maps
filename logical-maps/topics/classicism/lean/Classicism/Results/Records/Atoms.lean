@@ -627,28 +627,6 @@ theorem instantiated_and_eq (saa : SelfAtomsAreAtomsT) (X Y : τ) (hX : SelfAtom
     (eq_of_le_atom_rel _ _ (saa _ (selfAtom_instantiated X hX)) hne
       ((le_iff_prop _ _).2 (nec% (instantiated_of_and X Y))))
 
-/-- `self-atoms-are-atoms-t-and-bf-imply-self-atoms-are-atoms-r`, without BF: for a self-atom
-`X` and any `Y`, the instantiations of `X ∧ Y` and `X ∧ ¬Y` are each `⊥` or the atom
-`∃x̄. Xx̄` (a self-atom of type `t`); were neither `⊥`, wherever `X` is instantiated both
-would be non-bottom parts of the atom `X`, and so the same entity. So `X` decides `Y`. -/
-theorem self_atoms_are_atoms_t_implies_self_atoms_are_atoms_r :
-    SelfAtomsAreAtomsT → SelfAtomsAreAtoms τ := fun saa X hX =>
-  atom_of_decides_rel X hX.1 fun Y =>
-    (instantiated_and_eq saa X Y hX).elim
-      (fun e => Or.inr ((le_iff _ _).2 (modal_K _ _ (nec% (incl_neg_of_and_eq_bot X Y))
-        (necessity_of_identity _ _ (eq_bot_of_box_not_instantiated _ ((box_not_eq _).mpr e))))))
-      (fun e₁ => (instantiated_and_eq saa X (¬ Y) hX).elim
-        (fun e => Or.inl (le_trans_rel _ _ _ ((le_iff _ _).2 (modal_K _ _
-          (nec% (incl_neg_of_and_eq_bot X (¬ Y)))
-          (necessity_of_identity _ _ (eq_bot_of_box_not_instantiated _ ((box_not_eq _).mpr e)))))
-          (neg_neg_le_rel Y)))
-        (fun e₂ => (dia_instantiated_of_ne_bot X hX.1 ((box_not_eq _).mp (modal_K _ _
-          (modal_K _ _ (modal_K _ _
-            (nec% (fun (f : Instantiated X → Atom X) (a : Instantiated (X ∧ Y) = Instantiated X)
-                (b : Instantiated (X ∧ ¬ Y) = Instantiated X) (hi : Instantiated X) =>
-              not_of_atom_both X Y f (a ▸ hi) (b ▸ hi))) hX.2)
-            (necessity_of_identity _ _ e₁)) (necessity_of_identity _ _ e₂)))).elim))
-
 end lift
 
 section unary

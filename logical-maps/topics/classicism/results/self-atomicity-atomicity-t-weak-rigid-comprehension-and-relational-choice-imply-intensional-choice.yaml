@@ -30,3 +30,7 @@ notes: Strengthens [[strong-atomicity-weak-rigid-comprehension-and-relational-ch
   since Strong Atomicity gives Self-Atomicity and Atomicity (type t). Atomicity (type
   t) is used to index the choice by atoms and to make $G$ necessarily instantiated; two self-atoms of
   type $t$ may overlap, which would break the pair lemma, so self-atoms cannot serve as indices.
+changes:
+- date: '2026-10-30'
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+  summary: 'Noted that the Atomicity (type t) premise is idle: Relational Choice and Weak Rigid Comprehension give Transversal Choice, hence Zorn, and [[self-atomicity-zorn-and-weak-rigid-comprehension-imply-intensional-choice]] gives the conclusion, a maximal antichain of self-atoms doing the work of the atoms. The record is kept as stated.'

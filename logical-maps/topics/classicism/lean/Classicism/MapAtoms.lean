@@ -137,20 +137,10 @@ theorem not_atomsAreSelfAtomsT_consistent :
 
 end AtomsConsistency
 
-/-- `possibility-and-necessary-strong-atomicity-t-incompatible` -/
-theorem possibility_and_necessary_strong_atomicity_t_incompatible : Statements.possibility_and_necessary_strong_atomicity_t_incompatible := by
-  map_cert_incompatible (show ¬ Consistent (possibility (empty : AxiomSet Signature.pure) ∪ P.NecStrongAtomicityT.schema) from
-    possibility_box_inconsistent (Consistent.empty_union AtomsConsistency.not_strongAtomicityT_consistent) rfl)
-
 /-- `possibility-and-necessary-atoms-are-strong-atoms-t-incompatible` -/
 theorem possibility_and_necessary_atoms_are_strong_atoms_t_incompatible : Statements.possibility_and_necessary_atoms_are_strong_atoms_t_incompatible := by
   map_cert_incompatible (show ¬ Consistent (possibility (empty : AxiomSet Signature.pure) ∪ P.NecAtomsAreStrongAtomsT.schema) from
     possibility_box_inconsistent (Consistent.empty_union AtomsConsistency.not_atomsAreStrongAtomsT_consistent) rfl)
-
-/-- `possibility-and-necessary-atoms-are-self-atoms-t-incompatible` -/
-theorem possibility_and_necessary_atoms_are_self_atoms_t_incompatible : Statements.possibility_and_necessary_atoms_are_self_atoms_t_incompatible := by
-  map_cert_incompatible (show ¬ Consistent (possibility (empty : AxiomSet Signature.pure) ∪ P.NecAtomsAreSelfAtomsT.schema) from
-    possibility_box_inconsistent (Consistent.empty_union AtomsConsistency.not_atomsAreSelfAtomsT_consistent) rfl)
 
 /-- `actuality-and-self-atoms-are-strong-atoms-t-imply-strong-actuality` -/
 theorem actuality_and_self_atoms_are_strong_atoms_t_imply_strong_actuality : Statements.actuality_and_self_atoms_are_strong_atoms_t_imply_strong_actuality := by
