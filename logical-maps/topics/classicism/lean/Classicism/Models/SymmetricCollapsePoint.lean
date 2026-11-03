@@ -104,23 +104,24 @@ theorem pt_sym_iff {f : ℕ → ℕ} (hf : PtArr f) : collapsePair.Sym f ↔ f 0
     · exact hf.resolve_right fun h => hne h.2
     · exact absurd ((hc 0).trans (hc 1).symm) hne
 
-theorem pt_mem_false (k : ptBase.W₀ ⟶ (false : ptCat.Ob)) :
+theorem pt_mem_false (k : ptBase.W₀ ⟶ (show ptCat.Ob from false)) :
     (⟨false, PUnit.unit, k⟩ : Tuple (SymT ptBase.F.De ptBase.G ptBase.J) .t ptBase.W₀) ∈ ptBase.groupProp ↔
       collapsePair.Sym (FunCat.fn k) :=
   SymBase.mem_groupProp (S := ptBase) k
 
-theorem pt_not_mem_true (k : ptBase.W₀ ⟶ (true : ptCat.Ob)) :
+theorem pt_not_mem_true (k : ptBase.W₀ ⟶ (show ptCat.Ob from true)) :
     (⟨true, PUnit.unit, k⟩ : Tuple (SymT ptBase.F.De ptBase.G ptBase.J) .t ptBase.W₀) ∉ ptBase.groupProp := by
   rintro ⟨g, -, he⟩
-  exact absurd (Sigma.mk.inj_iff.1 he).1 (by decide)
+  exact absurd (Sigma.mk.inj_iff.1 he).1 (fun e => by cases e)
 
 /-- An arrow through `W₁` is constant, so not a symmetry. -/
-theorem pt_not_sym_through (h : ptBase.W₀ ⟶ (true : ptCat.Ob)) (k : (true : ptCat.Ob) ⟶ (false : ptCat.Ob)) :
+theorem pt_not_sym_through (h : ptBase.W₀ ⟶ (show ptCat.Ob from true))
+    (k : (show ptCat.Ob from true) ⟶ (show ptCat.Ob from false)) :
     ¬ collapsePair.Sym (FunCat.fn (h ≫ k)) := fun hs =>
-  absurd (hs.1.1 (show FunCat.fn k (FunCat.fn h 0) = FunCat.fn k (FunCat.fn h 1) from rfl)) (by decide)
+  absurd (hs.1.1 (show FunCat.fn k (FunCat.fn h (0 : ℕ)) = FunCat.fn k (FunCat.fn h (1 : ℕ)) from rfl)) (by decide)
 
 theorem pt_symmetryGroupPinned : ptBase.SymmetryGroupPinned := by
-  refine ⟨{0, 1}, (Set.finite_singleton (1 : ℕ)).insert 0, fun V h i ha => ?_⟩
+  refine ⟨({0, 1} : Set ℕ), (Set.finite_singleton (1 : ℕ)).insert 0, fun V h i ha => ?_⟩
   ext ⟨U, ⟨⟩, k⟩
   show (⟨U, PUnit.unit, h ≫ k⟩ : Tuple (SymT ptBase.F.De ptBase.G ptBase.J) .t ptBase.W₀) ∈ ptBase.groupProp ↔
     (⟨U, PUnit.unit, i ≫ k⟩ : Tuple (SymT ptBase.F.De ptBase.G ptBase.J) .t ptBase.W₀) ∈ ptBase.groupProp
@@ -134,8 +135,8 @@ theorem pt_symmetryGroupPinned : ptBase.SymmetryGroupPinned := by
       have e0 : FunCat.fn h (0 : ℕ) = FunCat.fn i (0 : ℕ) := ha (0 : ℕ) (Or.inl rfl)
       have e1 : FunCat.fn h (1 : ℕ) = FunCat.fn i (1 : ℕ) := ha (1 : ℕ) (Or.inr rfl)
       rw [pt_sym_iff (h ≫ k).2, pt_sym_iff (i ≫ k).2]
-      show FunCat.fn k (FunCat.fn h 0) ≠ FunCat.fn k (FunCat.fn h 1) ↔
-        FunCat.fn k (FunCat.fn i 0) ≠ FunCat.fn k (FunCat.fn i 1)
+      show FunCat.fn k (FunCat.fn h (0 : ℕ)) ≠ FunCat.fn k (FunCat.fn h (1 : ℕ)) ↔
+        FunCat.fn k (FunCat.fn i (0 : ℕ)) ≠ FunCat.fn k (FunCat.fn i (1 : ℕ))
       rw [e0, e1]
 
 theorem pt_actualWorldIsolated : ptBase.model.ActualWorldIsolated :=
@@ -149,19 +150,19 @@ theorem pt_actualWorldIsolated : ptBase.model.ActualWorldIsolated :=
       | false =>
         rw [pt_mem_false, pt_sym_iff i.2]
         intro e
-        exact absurd (hm.1.1 (show FunCat.fn j (FunCat.fn i 0) = FunCat.fn j (FunCat.fn i 1) by rw [e]))
+        exact absurd (hm.1.1 (show FunCat.fn j (FunCat.fn i (0 : ℕ)) = FunCat.fn j (FunCat.fn i (1 : ℕ)) from congrArg (FunCat.fn j) e))
           (by decide)
 
 /-! ### `transposable`, infinitely many individuals, separable collapses -/
 
 /-- Being other than `0` and `1`, at `W₀`. -/
-def ptP : ∀ V : ptCat.Ob, ptCat.X V → Prop
-  | false, x => (x : ℕ) ≠ 0 ∧ (x : ℕ) ≠ 1
+def ptP : ∀ V : Bool, ptX V → Prop
+  | false, x => x ≠ 0 ∧ x ≠ 1
   | true, _ => True
 
 theorem pt_transposable : ptBase.Transposable := by
-  refine SymBase.transposable_of_moves (S := ptBase) ptP (fun V g hg x hx => ?_) (fun K hK => ?_)
-    (fun K hK y hy hyK => ?_)
+  refine SymBase.transposable_of_moves (S := ptBase) ptP (fun V g hg x hx => ?_) (fun (K : Set ℕ) hK => ?_)
+    (fun (K : Set ℕ) hK (y : ℕ) hy hyK => ?_)
   · cases V with
     | true => trivial
     | false =>
@@ -170,7 +171,8 @@ theorem pt_transposable : ptBase.Transposable := by
       rcases hg.2 with ⟨g0, g1⟩ | ⟨g0, g1⟩
       · exact ⟨fun e => hx0 (hinj (e.trans g0.symm)), fun e => hx1 (hinj (e.trans g1.symm))⟩
       · exact ⟨fun e => hx1 (hinj (e.trans g1.symm)), fun e => hx0 (hinj (e.trans g0.symm))⟩
-  · obtain ⟨y, hy⟩ := (hK.union ((Set.finite_singleton (1 : ℕ)).insert 0)).exists_notMem
+  · have hK' : (K ∪ ({0, 1} : Set ℕ)).Finite := hK.union ((Set.finite_singleton (1 : ℕ)).insert 0)
+    obtain ⟨y, hy⟩ := Set.Finite.exists_notMem (α := ℕ) hK'
     exact ⟨y, ⟨fun e => hy (Or.inr (Or.inl e)), fun e => hy (Or.inr (Or.inr e))⟩, fun h => hy (Or.inl h)⟩
   · obtain ⟨hy0, hy1⟩ := hy
     obtain ⟨z, hz, hzy⟩ := exists_fresh (hK.union ((Set.finite_singleton (1 : ℕ)).insert 0)) y
@@ -201,7 +203,7 @@ theorem pt_separable : ptBase.SeparableCollapses := by
 theorem pt_hullConditions : ptBase.HullConditions := by
   classical
   refine ⟨({0, 1} : Set ℕ), (Set.finite_singleton (1 : ℕ)).insert 0,
-    fun M _ hM₀ V h hsep h' hag P Q hP hQ hPQ => ?_, fun N P Q hN hP hQ hM₀ => ?_⟩
+    fun M _ hM₀ V h hsep h' hag (P Q : Set ℕ) hP hQ hPQ => ?_, fun N P Q hN hP hQ hM₀ => ?_⟩
   · cases V with
     | true => exact ⟨h, fun _ _ => rfl, fun _ _ => rfl⟩
     | false =>

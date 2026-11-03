@@ -65,14 +65,16 @@ theorem isLink_of_sym {f : Node → Node} (hf : Sym f) {x : Node} (hx : IsLink x
 theorem swap_preserves (n m k k' : ℕ) (h : n ≠ m) :
     Preserves (Equiv.swap (Node.link n m k h) (Node.link n m k' h)) := by
   intro a b z hr
+  have hpt : ∀ r, Equiv.swap (Node.link n m k h) (Node.link n m k' h) (Node.point r) = Node.point r :=
+    fun r => Equiv.swap_apply_of_ne_of_ne (by simp) (by simp)
   cases hr with
   | companion p c =>
-    rw [Equiv.swap_apply_of_ne_of_ne (by simp) (by simp),
-      Equiv.swap_apply_of_ne_of_ne (by simp) (by simp)]
+    have hc : Equiv.swap (Node.link n m k h) (Node.link n m k' h) (Node.companion p c) = Node.companion p c :=
+      Equiv.swap_apply_of_ne_of_ne (by simp) (by simp)
+    rw [hpt, hc]
     exact R.companion p c
   | link p q j hpq =>
-    rw [Equiv.swap_apply_of_ne_of_ne (a := Node.point p) (by simp) (by simp),
-      Equiv.swap_apply_of_ne_of_ne (a := Node.point q) (by simp) (by simp)]
+    rw [hpt, hpt]
     rw [Equiv.swap_apply_def]
     split_ifs with e1 e2
     · simp only [Node.link.injEq] at e1
@@ -97,7 +99,7 @@ theorem transposable : base.Transposable := by
   · have hinj : Function.Injective fun k : ℕ => Node.link 0 1 k (by decide) :=
       fun a b e => by simpa using e
     obtain ⟨k, hk⟩ := (hK.preimage hinj.injOn).exists_notMem
-    exact ⟨_, trivial, hk⟩
+    exact ⟨Node.link 0 1 k (by decide), trivial, hk⟩
   · cases y with
     | point _ => exact hy.elim
     | companion _ _ => exact hy.elim
