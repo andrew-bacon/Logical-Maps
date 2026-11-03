@@ -16,6 +16,46 @@ $\operatorname{Seq}$ be their least inductive property. Definitions appear on
 the Background page *Church numerals and sequences*. The accumulator is $B$,
 not $t$; no result for the original $t$-accumulator is inferred here.
 
+## Why the accumulator was changed
+
+The original type is
+$L_t=(\sigma\to t\to t)\to t\to t$, with the same empty and cons terms.
+It does not have injective cons merely from
+$\Box\operatorname{ChInf}_\alpha$ at a fixed relational carrier.
+
+Take the full extensional model on the category with one object and only
+its identity arrow, with individual domain $\mathbb N$ and
+$t=\{0,1\}$. This is a model of Classicism, and $\Box A$ is equivalent
+to $A$. At $\alpha=e\to t$, identify the domain with
+$\mathcal P(\mathbb N)$. The endomap
+$q(A)=\{0\}\cup\{n+1:n\in A\}$ has pairwise distinct iterates of
+$\varnothing$, so the standard Church numerals are pairwise distinct.
+Full property quantification makes these exactly the generated naturals.
+Hence $\Box\operatorname{ChInf}_\alpha$ holds.
+
+Fix an entry $b$, and put $w_0=\epsilon$ and
+$w_{k+1}=\operatorname{cons}(b,w_k)$ in the original encoding.
+For every $X$ and $p$, $(w_kX)p=(Xb)^k(p)$.
+Every self-map of $\{0,1\}$ satisfies $h^3=h$, so $w_1=w_3$.
+But $w_0\ne w_2$: take $X=\lambda c p.\,\bot$ and initial value
+$\top$. Both tails are generated. Thus
+$\operatorname{cons}(b,w_0)=\operatorname{cons}(b,w_2)$ despite
+$w_0\ne w_2$.
+
+General functional recursion for this encoding fails too. With output
+type $\nu_\alpha$, initial value $0$, and step
+$g=\lambda b n.\,sn$, the recursion equations would imply
+$f(w_1)=\bar 1$ and $f(w_3)=\bar 3$, contradicting
+$w_1=w_3$ and the distinctness of these numerals.
+
+This countermodel satisfies Infinity at $\alpha=e\to t$, not the
+entire all-carriers schema: it fails Infinity at $t$. It therefore
+does not settle whether stronger assumptions concerning $t$ recover
+the original encoding. It shows that the original encoding cannot
+replace the revised one in the carrier-specific theorem proved here.
+The countermodel argument is mathematical; no Lean certificate for
+it is claimed.
+
 ## Constructor separation from unboxed Infinity
 
 Assume $I$. For every $P:\sigma\to t$ define
