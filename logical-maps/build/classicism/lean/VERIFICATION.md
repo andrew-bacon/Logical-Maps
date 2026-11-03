@@ -1369,6 +1369,39 @@ quoted by `#classicism_schema` (142 schemas).
 577 of 577 records with generated statements (the 26 model records among them), 341 proofs
 verified; no claim fails.
 
+## The Bourbaki–Witt certificates within memory, 3 November
+
+The derivations of the results resting on the Bourbaki–Witt lemma (`Results/BourbakiWitt/`)
+did not build on a 15 GB machine: `Derive/ActualityChain` was killed for memory after
+30 minutes, `Derive/Actuality` likewise, and `Derive/TransversalChoice` built only at
+12.5 GB. The cost was each use of a general lemma (`bw_total`, `bw_comparable`,
+`bourbaki_witt_fixed_point`, `tower_sub`) at a large step: `Fs h K`, `Gr h K b` and `Cand`
+are definitions the translator expands, and every instantiation of the lemma's hypotheses
+(the admissibility of `Pivot` and `Mce` among them) carried them. The fix is the one this
+file already records for long proofs, applied to instantiations: closed lemmas for an
+abstract step, instantiated once.
+
+- `Settled.bw_settled_fixed_point`: the lemma for admissible chains with the settled
+  properties admissible, for settled `X`, `R`, `F`; `TransversalChoice.cand_fixed` uses it.
+  `Derive/TransversalChoice`: 139 s, 2.7 GB (was 893 s, 12.5 GB).
+- `ActualityChain`'s `gen_closed`, `gen_total`, `gen_comp`, `gen_above`, `gen_glb_rest`:
+  the tower of an abstract step `F` below `a`. `Derive/ActualityChain`: 529 s, 8.2 GB.
+- `Actuality` split into `ActualityCode` (§§4–5) and `Actuality` (§6), each with its own
+  derivation module; §6 is one lemma `gen_m_true` for an abstract decoded step `g` (with
+  `GrOf g`, its graph), which `m_true` instantiates once. `Derive/ActualityCode`: 759 s,
+  8.9 GB; `Derive/Actuality`: 921 s, 10.1 GB.
+
+One proof also failed to derive, independently of memory: `h_fails`, whose `subst` under a
+case split gave a motive the translator's derivation did not convert to the statement. It
+is now three closed lemmas (`h_fails_chosen`, `h_fails_other`, `h_fails_at`) with the case
+split by `Or.elim` and the identity used by `▸`.
+
+*Checked.* Each derivation module built alone, then `Certificates`, then the whole library
+(1465 s, 11.8 GB used at the peak). The audits pass on all 200 theorems of the eight
+modules; the five map certificates resting on the lemma depend on `propext` and `Quot.sound`
+only. Peak figures are the machine's used memory sampled every few seconds, not the
+process's maximum.
+
 ## Certificates
 
 No record's `lean` field was changed; all 208 remain `none`. Two things have to happen

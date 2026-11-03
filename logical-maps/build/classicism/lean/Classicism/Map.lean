@@ -16,6 +16,7 @@ import Classicism.Results.Research.RigidityClosureResearchAtomicPowerCertificate
 import Classicism.Results.Research.ModalPropagationCertificates.StrongAtomicity
 import Classicism.Results.Research.ModalPropagationCertificates.BoxedComprehension
 import Classicism.Results.Other.Meta
+import Classicism.Results.BourbakiWitt.Certificates
 import Classicism.Certified.Box5
 import Classicism.Results.Existence
 import Classicism.Results.Other.Witnesses
@@ -2126,6 +2127,28 @@ theorem necessary_vicinity_and_necessary_truths_are_nd_necessary_imply_necessary
 /-- `necessary-weak-rigid-comprehension-implies-necessary-boolean-completeness`: the boxed form of `weak-rigid-comprehension-r-implies-boolean-completeness-r` -/
 theorem necessary_weak_rigid_comprehension_implies_necessary_boolean_completeness : Statements.necessary_weak_rigid_comprehension_implies_necessary_boolean_completeness := by
   map_boxed weak_rigid_comprehension_r_implies_boolean_completeness_r
+
+/-! ### Resting on the Bourbaki–Witt lemma (`Background/BourbakiWitt.lean`, `Results/BourbakiWitt/`) -/
+
+/-- `boolean-completeness-and-modalized-relational-choice-imply-necessary-transversal` -/
+theorem boolean_completeness_and_modalized_relational_choice_imply_necessary_transversal : Statements.boolean_completeness_and_modalized_relational_choice_imply_necessary_transversal := by
+  map_cert Proofs.BWTransversal.boolean_completeness_and_modalized_relational_choice_imply_necessary_transversal.entails
+
+/-- `vicinity-and-relational-choice-imply-transversal-choice` -/
+theorem vicinity_and_relational_choice_imply_transversal_choice : Statements.vicinity_and_relational_choice_imply_transversal_choice := by
+  map_cert Proofs.BWChoice.vicinity_and_relational_choice_imply_transversal_choice.entails
+
+/-- `vicinity-boolean-completeness-t-and-relational-choice-imply-actuality` -/
+theorem vicinity_boolean_completeness_t_and_relational_choice_imply_actuality : Statements.vicinity_boolean_completeness_t_and_relational_choice_imply_actuality := by
+  map_cert Proofs.BWActuality.vicinity_boolean_completeness_t_and_relational_choice_imply_actuality.entails
+
+/-- `necessary-vicinity-and-necessary-relational-choice-imply-necessary-transversal-choice`: the boxed form of `vicinity-and-relational-choice-imply-transversal-choice` -/
+theorem necessary_vicinity_and_necessary_relational_choice_imply_necessary_transversal_choice : Statements.necessary_vicinity_and_necessary_relational_choice_imply_necessary_transversal_choice := by
+  map_boxed vicinity_and_relational_choice_imply_transversal_choice
+
+/-- `necessary-vicinity-boolean-completeness-t-and-relational-choice-imply-necessary-actuality`: the boxed form of `vicinity-boolean-completeness-t-and-relational-choice-imply-actuality` -/
+theorem necessary_vicinity_boolean_completeness_t_and_relational_choice_imply_necessary_actuality : Statements.necessary_vicinity_boolean_completeness_t_and_relational_choice_imply_necessary_actuality := by
+  map_boxed vicinity_boolean_completeness_t_and_relational_choice_imply_actuality
 
 /-! ## The theory of 5-necessity (`lean-box5`, 1 November 2026)
 
