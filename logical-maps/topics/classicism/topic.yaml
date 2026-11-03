@@ -230,6 +230,7 @@ lean:
     - Classicism.Models.SymmetricIdeal
     - Classicism.Models.SymmetricIdealMeets
     - Classicism.Models.QualitativeLinksMeets
+    - Classicism.Models.SymmetricCollapsePoint
     - Classicism.Models.PairInjCollapse
     - Classicism.Models.OldNewBase
     - Classicism.Models.FiniteCompressionBase

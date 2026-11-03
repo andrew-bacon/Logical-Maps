@@ -234,6 +234,177 @@ theorem two_separable : twoBase.SeparableCollapses := by
   · show twoCollapse i (2 * j) ≠ twoCollapse i (2 * j + 1)
     simp only [twoCollapse]; split_ifs <;> omega
 
+/-- In the two-object model with the second object unpinned, a world is in the symmetry group
+exactly when its arrow goes to the first object: the arrows there are all permutations. -/
+theorem two_mem_groupProp (U : twoCat.Ob) (k : twoBase.W₀ ⟶ U) :
+    (⟨U, PUnit.unit, k⟩ : Tuple (SymT twoBase.F.De twoBase.G twoBase.J) .t twoBase.W₀) ∈ twoBase.groupProp ↔
+      U = false := by
+  cases U with
+  | false => exact iff_of_true ⟨k, k.2, rfl⟩ rfl
+  | true =>
+    refine iff_of_false ?_ (by decide)
+    rintro ⟨g, -, he⟩
+    exact absurd (Sigma.mk.inj_iff.1 he).1 (by decide)
+
+theorem two_symmetryGroupPinned : twoBase.SymmetryGroupPinned := by
+  refine ⟨∅, Set.finite_empty, fun V h i _ => ?_⟩
+  ext ⟨U, ⟨⟩, k⟩
+  show (⟨U, PUnit.unit, h ≫ k⟩ : Tuple (SymT twoBase.F.De twoBase.G twoBase.J) .t twoBase.W₀) ∈ twoBase.groupProp ↔
+    (⟨U, PUnit.unit, i ≫ k⟩ : Tuple (SymT twoBase.F.De twoBase.G twoBase.J) .t twoBase.W₀) ∈ twoBase.groupProp
+  rw [two_mem_groupProp, two_mem_groupProp]
+
+/-- **`actual-world-isolated`**: no arrow returns from the second object to the first. -/
+theorem two_actualWorldIsolated : twoBase.model.ActualWorldIsolated :=
+  SymBase.actualWorldIsolated_of_pinned two_symmetryGroupPinned fun {V U} i j hm => by
+    rw [two_mem_groupProp] at hm ⊢
+    subst hm
+    cases V with
+    | false => rfl
+    | true => exact j.2.elim
+
+/-! ### The qualitative contrast, evaluated at `W₁` -/
+
+/-- The qualitative-contrast base, with `W₁` as the base object. -/
+def contrastBaseW₁ : SymBase := { contrastBase with W₀ := W₁ }
+
+theorem contrastW₁_infinitelyManyIndividuals : contrastBaseW₁.model.InfinitelyManyIndividuals :=
+  inferInstanceAs (Infinite ℕ)
+
+/-! ### Recurrent colours -/
+
+/-- The coloured points of an object: `{0, …, m}` at `W_{m+1}` (`some m`), the even numbers at
+`W_∞` (`none`). -/
+def colour : Option ℕ → Set ℕ
+  | some m => {x | x ≤ m}
+  | none => {x | Even x}
+
+/-- An object for each positive integer, `some m` for `W_{m+1}`, and `W_∞`, `none`, each with
+base `ℕ`; the arrows the surjections sending coloured points to coloured points. -/
+def colourCat : FunCat where
+  Obj := Option ℕ
+  X _ := ℕ
+  Arr {V W} f := Function.Surjective f ∧ ∀ x ∈ colour V, f x ∈ colour W
+  arr_id _ := ⟨Function.surjective_id, fun _ h => h⟩
+  arr_comp hf hg := ⟨hg.1.comp hf.1, fun x hx => hg.2 _ (hf.2 x hx)⟩
+
+/-- The symmetries: the permutations preserving the colour set. -/
+def colourSyms (V : colourCat.Ob) : Set (V ⟶ V) :=
+  {g | Function.Bijective (FunCat.fn g) ∧ ∀ x, FunCat.fn g x ∈ colour V ↔ x ∈ colour V}
+
+theorem colourSyms_symGroup : SymGroup colourSyms := by
+  intro V g hg
+  let e := Equiv.ofBijective _ hg.1
+  have hp : ∀ x, e.symm x ∈ colour V ↔ x ∈ colour V := fun x => by
+    have := hg.2 (e.symm x)
+    rw [show FunCat.fn g (e.symm x) = x from e.apply_symm_apply x] at this
+    exact this.symm
+  refine ⟨FunCat.arr (F := colourCat) (i := V) (j := V) e.symm ⟨e.symm.surjective, fun x hx => (hp x).2 hx⟩,
+    ⟨e.symm.bijective, hp⟩, ?_, ?_⟩
+  · exact FunCat.hom_ext (funext fun x => e.symm_apply_apply x)
+  · exact FunCat.hom_ext (funext fun x => e.apply_symm_apply x)
+
+/-- The base, at `W₁`, with the finite sets everywhere. -/
+def colourBase : SymBase where
+  F := colourCat
+  G := colourSyms
+  G_id _ := ⟨Function.bijective_id, fun _ => Iff.rfl⟩
+  G_comp hg hs := ⟨hs.1.comp hg.1, fun x => (hs.2 _).trans (hg.2 x)⟩
+  G_inv := colourSyms_symGroup
+  W₀ := (some 0 : Option ℕ)
+  ne _ := ⟨(0 : ℕ)⟩
+  J := PinIdeal.fin _
+  J_base _ h := h
+
+/-- A transposition of two uncoloured points preserves the colour set. -/
+theorem colour_swap {V : Option ℕ} {y z : ℕ} (hy : y ∉ colour V) (hz : z ∉ colour V) (x : ℕ) :
+    Equiv.swap y z x ∈ colour V ↔ x ∈ colour V := by
+  rcases eq_or_ne x y with rfl | hxy
+  · rw [Equiv.swap_apply_left]; exact iff_of_false hz hy
+  rcases eq_or_ne x z with rfl | hxz
+  · rw [Equiv.swap_apply_right]; exact iff_of_false hy hz
+  rw [Equiv.swap_apply_of_ne_of_ne hxy hxz]
+
+/-- **`transposable`**, with the property of being uncoloured and outside `N`. -/
+theorem colour_transposable : colourBase.Transposable := by
+  refine SymBase.transposable_of_moves (S := colourBase) (fun V x => x ∉ colour V)
+    (fun V g hg x hx h => hx ((hg.2 x).1 h)) (fun K hK => ?_) (fun K hK y hy hyK => ?_)
+  · obtain ⟨z, hz, hz0⟩ := exists_fresh hK 0
+    exact ⟨z, fun h => hz0 (Nat.le_zero.1 h), hz⟩
+  · obtain ⟨z, hz, hzy⟩ := exists_fresh (hK.union (Set.finite_singleton 0)) y
+    have hzc : z ∉ colour (some 0) := fun h => hz (Or.inr (Nat.le_zero.1 h))
+    refine ⟨FunCat.arr (F := colourCat) (i := some 0) (j := some 0) (Equiv.swap y z)
+      ⟨(Equiv.swap y z).surjective, fun x hx => (colour_swap hy hzc x).2 hx⟩,
+      ⟨(Equiv.swap y z).bijective, colour_swap hy hzc⟩, fun x hx => ?_, ?_⟩
+    · exact swap_fix hyK (fun h => hz (Or.inl h)) hx
+    · show Equiv.swap y z y ≠ y
+      rw [Equiv.swap_apply_left]; exact hzy
+
+theorem colour_surjectiveArrows : colourBase.SurjectiveArrows := fun _ k => k.2.1
+
+theorem colour_infinitelyManyIndividuals : colourBase.model.InfinitelyManyIndividuals :=
+  inferInstanceAs (Infinite ℕ)
+
+/-- Separable collapses, the pairs `2i + 2, 2i + 3`, uncoloured at `W₁`: `halfThen i` fixes the
+coloured point `0`. -/
+theorem colour_separable : colourBase.SeparableCollapses := by
+  have h0 : ∀ i, halfThen i 0 = 0 := fun i => by simp only [halfThen]; rw [if_pos (by omega)]
+  let k : ℕ → ((some 0 : colourCat.Ob) ⟶ (some 0 : colourCat.Ob)) := fun i =>
+    FunCat.arr (F := colourCat) (i := some 0) (j := some 0) (halfThen i)
+      ⟨halfThen_surjective i, fun x hx => by
+        have : x = 0 := Nat.le_zero.1 hx
+        subst this; show halfThen i 0 ≤ 0; rw [h0]⟩
+  refine ⟨fun i => 2 * i + 2, fun i => 2 * i + 3, fun i j hij => ?_⟩
+  rcases Nat.lt_or_gt_of_ne hij with h | h
+  · exact ⟨some 0, k i, Or.inl (halfThen_sep h)⟩
+  · exact ⟨some 0, k j, Or.inr (halfThen_sep h)⟩
+
+/-- **The hull conditions** for recurrent colours, with `M₀ = {0}`, the coloured point of
+`W₁`: a prescription agreeing with `h'` on `P` and with `h` on `Q` extends to a surjection, which
+sends `0` to a coloured point, every object's colour set containing `0`; and a permutation fixing
+`0` and `N` pointwise moves the points of `P` outside `N` off `Q`. -/
+theorem colour_hullConditions : colourBase.HullConditions := by
+  classical
+  have h0c : ∀ V, (0 : ℕ) ∈ colour V := fun V => by
+    cases V with
+    | some m => exact Nat.zero_le m
+    | none => exact even_zero
+  refine ⟨({0} : Set ℕ), Set.finite_singleton _, fun M _ hM₀ V h _ h' hag P Q hP hQ hPQ => ?_,
+    fun N P Q hN hP hQ hM₀ => ?_⟩
+  · let f : ℕ → ℕ := FunCat.fn h
+    let f' : ℕ → ℕ := FunCat.fn h'
+    have h0M : (0 : ℕ) ∈ M := hM₀ rfl
+    obtain ⟨K, -, hK⟩ := exists_bound (hP.union hQ)
+    let j : ℕ → ℕ := fun x => if x ∈ P then f' x else if x ∈ Q then f x else x - K
+    have hj : Function.Surjective j := fun y => ⟨y + K, by
+      have h1 : y + K ∉ P := fun h => by have := hK _ (Or.inl h); omega
+      have h2 : y + K ∉ Q := fun h => by have := hK _ (Or.inr h); omega
+      simp only [j]; split_ifs <;> omega⟩
+    have hjc : ∀ x ∈ colour (some 0), j x ∈ colour V := fun x hx => by
+      have hx0 : x = 0 := Nat.le_zero.1 hx
+      subst hx0
+      simp only [j]
+      split_ifs
+      · exact h'.2.2 0 (le_refl 0)
+      · exact h.2.2 0 (le_refl 0)
+      · exact h0c V
+    refine ⟨FunCat.arr (F := colourCat) (i := some 0) (j := V) j ⟨hj, hjc⟩, fun (x : ℕ) hx => ?_,
+      fun (x : ℕ) hx => ?_⟩
+    · show j x = f' x
+      simp only [j, if_pos hx]
+    · show j x = f x
+      simp only [j]
+      split_ifs with hxP
+      · exact (hag x (hPQ ⟨hxP, hx⟩)).symm
+      · rfl
+  · obtain ⟨g, hg, hfix, hmove⟩ := b2_fix0 (B := rangeGap) Iff.rfl N P Q hN hP hQ hM₀
+    have hg0 : FunCat.fn g 0 = 0 := hg.2
+    have hcol : ∀ x, FunCat.fn g x ∈ colour (some 0) ↔ x ∈ colour (some 0) := fun x => by
+      show FunCat.fn g x ≤ 0 ↔ x ≤ 0
+      rw [Nat.le_zero, Nat.le_zero]
+      exact ⟨fun e => hg.1.1 (e.trans hg0.symm), fun e => e ▸ hg0⟩
+    exact ⟨FunCat.arr (F := colourCat) (i := some 0) (j := some 0) (FunCat.fn g)
+      ⟨hg.1.2, fun x hx => (hcol x).2 hx⟩, ⟨hg.1, hcol⟩, hfix, hmove⟩
+
 end SymIdeal
 
 /-! ### The old and new individuals -/
@@ -283,6 +454,83 @@ theorem separable : (base A).SeparableCollapses := by
   · refine ⟨A, FunCat.arr (F := cat) (i := A) (j := A) _ (key j), Or.inr ⟨?_, ?_⟩⟩
     · rw [hk, hk, (SymIdeal.halfThen_sep h).1]
     · rw [hk, hk]; exact fun c => (SymIdeal.halfThen_sep h).2 (e.injective c)
+
+/-- A bound beyond the first coordinates of a finite set of points. -/
+theorem exists_fst_bound {P : Set Point} (hP : P.Finite) : ∃ K : ℕ, ∀ x ∈ P, x.1 < K := by
+  obtain ⟨K, -, hK⟩ := SymIdeal.exists_bound (hP.image Prod.fst)
+  exact ⟨K, fun x hx => hK _ ⟨x, hx, rfl⟩⟩
+
+/-- A prescription by `g'` on `P` and by `g` on `Q`, shifted down beyond them: a surjection. -/
+def splice (P Q : Set Point) (K : ℕ) (g g' : Point → Point) (x : Point) : Point := by
+  classical
+  exact if x ∈ P then g' x else if x ∈ Q then g x else (x.1 - K, x.2)
+
+theorem splice_surjective {P Q : Set Point} {K : ℕ} (hK : ∀ x ∈ P ∪ Q, x.1 < K) (g g' : Point → Point) :
+    Function.Surjective (splice P Q K g g') := fun y => ⟨(y.1 + K, y.2), by
+  have h1 : (y.1 + K, y.2) ∉ P := fun h => by have := hK _ (Or.inl h); simp at this
+  have h2 : (y.1 + K, y.2) ∉ Q := fun h => by have := hK _ (Or.inr h); simp at this
+  simp only [splice, if_neg h1, if_neg h2]
+  ext <;> simp⟩
+
+theorem splice_P {P Q : Set Point} {K : ℕ} {g g' : Point → Point} {x : Point} (hx : x ∈ P) :
+    splice P Q K g g' x = g' x := by
+  simp only [splice, if_pos hx]
+
+theorem splice_Q {P Q : Set Point} {K : ℕ} {g g' : Point → Point} {x : Point} (hx : x ∈ Q)
+    (hag : x ∈ P → g x = g' x) : splice P Q K g g' x = g x := by
+  simp only [splice]
+  split_ifs with hxP
+  · exact (hag hxP).symm
+  · rfl
+
+/-- **The hull conditions** with `M₀ = ∅`: the arrows out of `A` are the surjections of the
+points, into `A` or onto `B`'s points, so prescriptions agreeing on `P ∩ Q` splice; and a
+permutation of the points, conjugated from `ℕ`, moves points off a finite set. -/
+theorem hullConditions : (base A).HullConditions := by
+  classical
+  refine ⟨∅, Set.finite_empty, fun M _ _ V h _ h' hag P Q hP hQ hPQ => ?_, fun N P Q hN hP hQ _ => ?_⟩
+  · obtain ⟨K, hK⟩ := exists_fst_bound (hP.union hQ)
+    cases V with
+    | A =>
+      refine ⟨mkRoot (splice P Q K (FunCat.fn h) (FunCat.fn h')) (splice_surjective hK _ _),
+        fun x hx => splice_P hx, fun x hx => splice_Q hx fun hxP => hag x (hPQ ⟨hxP, hx⟩)⟩
+    | B =>
+      obtain ⟨k, -, hkh⟩ := h.2
+      obtain ⟨k', -, hkh'⟩ := h'.2
+      have ek : ∀ x, FunCat.fn h x = Sum.inl (k x) := fun x => congrFun hkh x
+      have ek' : ∀ x, FunCat.fn h' x = Sum.inl (k' x) := fun x => congrFun hkh' x
+      refine ⟨mkEntrance (splice P Q K k k') (splice_surjective hK _ _), fun x hx => ?_, fun x hx => ?_⟩
+      · show Sum.inl (splice P Q K k k' x) = FunCat.fn h' x
+        rw [splice_P hx, ek']
+      · show Sum.inl (splice P Q K k k' x) = FunCat.fn h x
+        rw [ek, splice_Q hx fun hxP => by
+          have := hag x (hPQ ⟨hxP, hx⟩)
+          change FunCat.fn h x = FunCat.fn h' x at this
+          rw [ek, ek'] at this
+          exact Sum.inl_injective this]
+  · let e := Nat.pairEquiv
+    obtain ⟨σ, hσ, hfix, hmove⟩ := SymIdeal.move_points (B := SymIdeal.allSurj) ∅
+      (fun K hK y _ => by
+        obtain ⟨z, hz, -⟩ := SymIdeal.exists_fresh hK y
+        exact ⟨z, hz, (Equiv.swap y z).bijective⟩)
+      (((hP.diff (t := N)).image e).toFinset) (e '' N) (e '' Q) (hN.image e) (hQ.image e)
+      (Set.empty_subset _) fun s hs => by
+        obtain ⟨x, ⟨-, hxN⟩, rfl⟩ := (Set.Finite.mem_toFinset _).1 hs
+        rintro ⟨y, hy, hyx⟩
+        exact hxN (e.injective hyx ▸ hy)
+    let gE : Equiv.Perm Point := (e.trans (Equiv.ofBijective σ hσ)).trans e.symm
+    have hgE : ∀ x, gE x = e.symm (σ (e x)) := fun x => rfl
+    let g := mkRoot gE gE.surjective
+    let gi := mkRoot gE.symm gE.symm.surjective
+    have h1 : g ≫ gi = 𝟙 A := FunCat.hom_ext (funext fun x => gE.symm_apply_apply x)
+    have h2 : gi ≫ g = 𝟙 A := FunCat.hom_ext (funext fun x => gE.apply_symm_apply x)
+    refine ⟨g, ⟨gi, h1, h2⟩, fun x hx => ?_, fun x hx hxN => ?_⟩
+    · show gE x = x
+      rw [hgE, hfix (e x) ⟨x, hx, rfl⟩, e.symm_apply_apply]
+    · show gE x ∉ Q
+      intro hq
+      refine hmove (e x) ((Set.Finite.mem_toFinset _).2 ⟨x, ⟨hx, hxN⟩, rfl⟩) ⟨gE x, hq, ?_⟩
+      rw [hgE, e.apply_symm_apply]
 
 end FiniteCompression
 
