@@ -58,6 +58,68 @@ theorem xa_settled (v : Prop) (hs : Vs v) (a : Prop) : SettledP (Vs v) (Xa a) :=
 theorem ge_settled (v : Prop) (hs : Vs v) : ∀ x y, Settled (Vs v) (Ge x y) :=
   fun _ _ => settled_le v hs _ _
 
+/-! ### The settled tower of an abstract step
+
+The facts about `N` used below, for an abstract `a` and step `G`, so that a use at `Aa h K` and
+`Gr h K b` costs the translator one instantiation of a closed lemma. -/
+
+section GenN
+variable (v : Prop) (hs : Vs v) (a : Prop) (G : Prop → Prop → Prop)
+include hs
+
+theorem gen_tn_settled (hGs : ∀ x y, Settled (Vs v) (G x y)) :
+    SettledP (Vs v) (Tower (SettledP (Vs v)) (Xa a) Ge G) :=
+  tower_settled v hs _ _ _ (xa_settled v hs _) (ge_settled v hs) hGs
+
+theorem gen_tn_closed (hG : ∀ x y, Xa a x → G x y → Xa a y) :
+    Closed (SettledP (Vs v)) (Xa a) Ge G (Tower (SettledP (Vs v)) (Xa a) Ge G) :=
+  bw_closed _ _ _ _ hG (admits_settled _ _ (xa_settled v hs _))
+
+theorem gen_tn_total (hGs : ∀ x y, Settled (Vs v) (G x y))
+    (hG : ∀ x y, Xa a x → G x y → Xa a y) (hser : ∀ x, Xa a x → ∃ y, G x y)
+    (hprog : ∀ x y, Xa a x → G x y → Ge x y)
+    (hfun : ∀ x y y', Xa a x → G x y → G x y' → y = y') :
+    TotalOn Ge (Tower (SettledP (Vs v)) (Xa a) Ge G) :=
+  have hX := xa_settled v hs a
+  bw_total _ _ _ _ (ge_trans _) hG hser hprog (gen_inv a G hG hfun) (admits_settled _ _ hX)
+    (admits_settled _ _ (pivot_settled v hs _ _ _ hX (ge_settled v hs) hGs))
+    (fun c e _ _ => admits_settled _ _ (mce_settled v hs _ _ _ hX (ge_settled v hs) hGs c e))
+
+/-- Claim A for abstract steps: if `G` agrees with `F` at the true members of the tower of `F`,
+and `F` fixes false propositions, the tower of `F` is included in the settled tower of `G`. -/
+theorem gen_claim_A (F : Prop → Prop → Prop) (hGs : ∀ x y, Settled (Vs v) (G x y))
+    (hG : ∀ x y, Xa a x → G x y → Xa a y) (hser : ∀ x, Xa a x → ∃ y, G x y)
+    (hprog : ∀ x y, Xa a x → G x y → Ge x y)
+    (hfun : ∀ x y y', Xa a x → G x y → G x y' → y = y')
+    (hF : ∀ x y, Xa a x → F x y → Xa a y) (hFser : ∀ x, Xa a x → ∃ y, F x y)
+    (hFprog : ∀ x y, Xa a x → F x y → Ge x y)
+    (hFfun : ∀ x y y', Xa a x → F x y → F x y' → y = y')
+    (hfalse : ∀ p r, ¬ p → F p r → r = p)
+    (hFG : ∀ x y, Tower AllProps (Xa a) Ge F x → x → F x y → G x y) :
+    ∀ p, Tower AllProps (Xa a) Ge F p → Tower (SettledP (Vs v)) (Xa a) Ge G p := by
+  have hN := gen_tn_closed v hs a G hG
+  have hNs := gen_tn_settled v hs a G hGs
+  have hNt := gen_tn_total v hs a G hGs hG hser hprog hfun
+  have hM := gen_closed a F hF
+  have hMt := gen_total a F hF hFser hFprog hFfun
+  have hY := tower_sub AllProps (Xa a) Ge F
+    (λ p ↦ Tower AllProps (Xa a) Ge F p ∧ Tower (SettledP (Vs v)) (Xa a) Ge G p) (admits_all _)
+    ⟨fun x hx => hM.1 x hx.1, fun x y hx hf => ?_, fun Z t _ hZ _ ht => ?_⟩
+  · exact fun p hp => (hY p hp).2
+  · refine ⟨hM.2.1 x y hx.1 hf, ?_⟩
+    rcases em x with h₁ | h₁
+    · exact hN.2.1 x y hx.2 (hFG x y hx.1 h₁ hf)
+    · rw [hfalse x y h₁ hf]
+      exact hx.2
+  · refine ⟨hM.2.2 Z t trivial (fun z hz => (hZ z hz).1)
+      (fun x y hx hy => hMt x y (hZ x hx).1 (hZ y hy).1) ht, ?_⟩
+    refine hN.2.2 (λ p ↦ Tower (SettledP (Vs v)) (Xa a) Ge G p ∧ t ≤ p) t
+      (fun p => settled_and _ _ _ hs (hNs p) fun _ => settled_le v hs _ _)
+      (fun _ k => k.1) (fun x y hx hy => hNt x y hx.1 hy.1)
+      ⟨⟨ht.1.1, fun _ k => k.2⟩, fun u hu => ht.2 u ⟨hu.1, fun z hz => hu.2 z ⟨(hZ z hz).2, ht.1.2 z hz⟩⟩⟩
+
+end GenN
+
 section Code
 variable (v : Prop) (hs : Vs v) (h : Prop) (hh : h ≤ Vs v) (K : Prop → Prop → Prop)
 include hs hh
@@ -205,45 +267,24 @@ theorem gr_settled : ∀ x y, Settled (Vs v) (Gr h K b x y) := fun _ _ => settle
 
 theorem tn_settled :
     SettledP (Vs v) (Tower (SettledP (Vs v)) (Xa (Aa h K)) Ge (Gr h K b)) :=
-  tower_settled v hs _ _ _ (xa_settled v hs _) (ge_settled v hs)
-    (gr_settled v hs h hh K K₂ hK₂ hK₂W b hb)
+  gen_tn_settled v hs _ _ (gr_settled v hs h hh K K₂ hK₂ hK₂W b hb)
 
 theorem tn_closed :
     Closed (SettledP (Vs v)) (Xa (Aa h K)) Ge (Gr h K b)
       (Tower (SettledP (Vs v)) (Xa (Aa h K)) Ge (Gr h K b)) :=
-  bw_closed _ _ _ _ (gr_X v hs h hh K K₂ hK₂ hK₂W b hb)
-    (admits_settled _ _ (xa_settled v hs _))
+  gen_tn_closed v hs _ _ (gr_X v hs h hh K K₂ hK₂ hK₂W b hb)
 
 theorem tn_total : TotalOn Ge (Tower (SettledP (Vs v)) (Xa (Aa h K)) Ge (Gr h K b)) :=
-  have hX := xa_settled v hs (Aa h K)
-  have hF := gr_settled v hs h hh K K₂ hK₂ hK₂W b hb
-  bw_total _ _ _ _ (ge_trans _) (gr_X v hs h hh K K₂ hK₂ hK₂W b hb)
-    (gr_ser v hs h hh K K₂ hK₂ hK₂W b hb) (gr_prog v hs h hh K K₂ hK₂ hK₂W b hb)
-    (gr_inv v hs h hh K K₂ hK₂ hK₂W b hb) (admits_settled _ _ hX)
-    (admits_settled _ _ (pivot_settled v hs _ _ _ hX (ge_settled v hs) hF))
-    (fun c e _ _ => admits_settled _ _ (mce_settled v hs _ _ _ hX (ge_settled v hs) hF c e))
+  gen_tn_total v hs _ _ (gr_settled v hs h hh K K₂ hK₂ hK₂W b hb) (gr_X v hs h hh K K₂ hK₂ hK₂W b hb)
+    (gr_ser v hs h hh K K₂ hK₂ hK₂W b hb) (gr_prog v hs h hh K K₂ hK₂ hK₂W b hb) (gr_fun v hs h hh K K₂ hK₂ hK₂W b hb)
 
 /-- Claim A: `M ⊆ N`. -/
-theorem claim_A : ∀ p, Tm h K p → Tower (SettledP (Vs v)) (Xa (Aa h K)) Ge (Gr h K b) p := by
-  have hN := tn_closed v hs h hh K K₂ hK₂ hK₂W b hb
-  have hNs := tn_settled v hs h hh K K₂ hK₂ hK₂W b hb
-  have hNt := tn_total v hs h hh K K₂ hK₂ hK₂W b hb
-  have hY := tower_sub AllProps (Xa (Aa h K)) Ge (Fs h K)
-    (λ p ↦ Tm h K p ∧ Tower (SettledP (Vs v)) (Xa (Aa h K)) Ge (Gr h K b) p) (admits_all _)
-    ⟨fun x hx => tm_X v hs h hh K x hx.1, fun x y hx hf => ?_, fun Z t _ hZ _ ht => ?_⟩
-  · exact fun p hp => (hY p hp).2
-  · refine ⟨tm_step v hs h hh K x y hx.1 hf, ?_⟩
-    rcases em x with h₁ | h₁
-    · rw [← g_eq v hs h hh K K₂ hK₂ hK₂W b hb x y hx.1 h₁ hf]
-      exact hN.2.1 x _ hx.2 rfl
-    · rw [fs_false v hs h hh K x y h₁ hf]
-      exact hx.2
-  · refine ⟨(tm_closed v hs h hh K).2.2 Z t trivial (fun z hz => (hZ z hz).1)
-      (fun x y hx hy => tm_total v hs h hh K x y (hZ x hx).1 (hZ y hy).1) ht, ?_⟩
-    refine hN.2.2 (λ p ↦ Tower (SettledP (Vs v)) (Xa (Aa h K)) Ge (Gr h K b) p ∧ t ≤ p) t
-      (fun p => settled_and _ _ _ hs (hNs p) fun _ => settled_le v hs _ _)
-      (fun _ k => k.1) (fun x y hx hy => hNt x y hx.1 hy.1)
-      ⟨⟨ht.1.1, fun _ k => k.2⟩, fun u hu => ht.2 u ⟨hu.1, fun z hz => hu.2 z ⟨(hZ z hz).2, ht.1.2 z hz⟩⟩⟩
+theorem claim_A : ∀ p, Tm h K p → Tower (SettledP (Vs v)) (Xa (Aa h K)) Ge (Gr h K b) p :=
+  gen_claim_A v hs _ _ _ (gr_settled v hs h hh K K₂ hK₂ hK₂W b hb) (gr_X v hs h hh K K₂ hK₂ hK₂W b hb)
+    (gr_ser v hs h hh K K₂ hK₂ hK₂W b hb) (gr_prog v hs h hh K K₂ hK₂ hK₂W b hb) (gr_fun v hs h hh K K₂ hK₂ hK₂W b hb)
+    (fs_X v hs h hh K) (fs_ser v hs h hh K) (fs_prog v hs h hh K) (fs_fun v hs h hh K)
+    (fs_false v hs h hh K)
+    (fun x y hx h₁ hf => (g_eq v hs h hh K K₂ hK₂ hK₂W b hb x y hx h₁ hf).symm)
 
 /-- Claims B and C: `m` is true, given that `a` is. -/
 theorem m_true (bc : BooleanCompleteness Prop) (ha : Aa h K) (m : Prop)
