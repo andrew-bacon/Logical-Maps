@@ -1,5 +1,6 @@
 import Classicism.Certified.Signatures
 import Classicism.Certified.Arithmetic
+import Classicism.Certified.ChurchRecursionSchemas
 
 /-!
 # Generated statements
@@ -78,6 +79,14 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 /-- Principle definition check: `boolean-completeness-t`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.BooleanCompletenessT.schemaIn
+
+/-- Principle definition check: `church-numeral-functional-recursion`. -/
+example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
+  Classicism.P.ChurchNumeralFunctionalRecursion.schemaIn
+
+/-- Principle definition check: `church-numeral-infinity`. -/
+example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
+  Classicism.P.ChurchNumeralInfinity.schemaIn
 
 /-- Principle definition check: `converse-witnessed-possibility-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
@@ -234,6 +243,10 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 /-- Principle definition check: `necessary-boolean-completeness-t`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   Classicism.P.NecBooleanCompletenessT.schemaIn
+
+/-- Principle definition check: `necessary-church-numeral-infinity`. -/
+example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
+  Classicism.P.NecChurchNumeralInfinity.schemaIn
 
 /-- Principle definition check: `necessary-countable-boolean-completeness-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
@@ -498,6 +511,10 @@ example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
 /-- Principle definition check: `separated-structure-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
   (Classicism.Meta.AxiomSet.separatedStructure _)
+
+/-- Principle definition check: `sequence-functional-recursion`. -/
+example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
+  Classicism.P.SequenceFunctionalRecursion.schemaIn
 
 /-- Principle definition check: `signature-b-r`. -/
 example {Sig : Classicism.Meta.Signature} : Classicism.Meta.AxiomSet Sig :=
@@ -2639,6 +2656,30 @@ def necessary_boolean_completeness_t_implies_boolean_completeness_t : Prop :=
   ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecBooleanCompletenessT.schemaIn →
     Classicism.Meta.AxiomSet.Entails Ax Classicism.P.BooleanCompletenessT.schemaIn
+
+/-- `necessary-church-numeral-infinity-implies-church-numeral-functional-recursion`
+
+□Church Numeral Infinity ⇒ Church Numeral Functional Recursion -/
+def necessary_church_numeral_infinity_implies_church_numeral_functional_recursion : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecChurchNumeralInfinity.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ChurchNumeralFunctionalRecursion.schemaIn
+
+/-- `necessary-church-numeral-infinity-implies-church-numeral-infinity`
+
+□Church Numeral Infinity ⇒ Church Numeral Infinity -/
+def necessary_church_numeral_infinity_implies_church_numeral_infinity : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecChurchNumeralInfinity.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.ChurchNumeralInfinity.schemaIn
+
+/-- `necessary-church-numeral-infinity-implies-sequence-functional-recursion`
+
+□Church Numeral Infinity ⇒ Sequence Functional Recursion -/
+def necessary_church_numeral_infinity_implies_sequence_functional_recursion : Prop :=
+  ∀ {Sig : Classicism.Meta.Signature} (_ : Sig.Admitted) (Ax : Classicism.Meta.AxiomSet Sig),
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.NecChurchNumeralInfinity.schemaIn →
+    Classicism.Meta.AxiomSet.Entails Ax Classicism.P.SequenceFunctionalRecursion.schemaIn
 
 /-- `necessary-completeness-and-necessary-actuality-imply-necessary-weak-rigid-comprehension`
 

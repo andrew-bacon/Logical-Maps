@@ -1,0 +1,28 @@
+id: church-numeral-functional-recursion
+name: Church Numeral Functional Recursion
+statement: For each initial value and operation on a relational output type there is a function on the
+  Church numeral type satisfying the zero equation and the successor equation on the inductively generated
+  naturals.
+formal: $\forall a^\tau g^{\tau\to\tau}\,\exists f^{\nu^C_\alpha\to\tau}\, .\,f0^C_\alpha=a\land\forall
+  n^{\nu^C_\alpha}\, .\,N^C_\alpha n\to f(s^C_\alpha n)=g(fn)\qquad(\alpha,\tau\ne e)$
+definitions: See Background, Church numerals and sequences, for $\nu^C_\alpha$, $0^C_\alpha$, $s^C_\alpha$
+  and $N^C_\alpha$.
+notes: A named principle schema, with Infinity kept as an explicit premise of the connecting result [[necessary-church-numeral-infinity-implies-church-numeral-functional-recursion]].
+  The function is defined on the whole ambient type; its successor equation is asserted only for Church
+  naturals. No uniqueness outside that property is claimed.
+lean_def: Classicism.P.ChurchNumeralFunctionalRecursion.schemaIn
+category: infinity
+date: '2026-11-02'
+sources:
+- Andrew Bacon, Notes for Zach (25 March 2023), circulated as Sequences in Classicism, §§1–3.
+- Andrew Bacon and Codex (OpenAI), prompted by Andrew Bacon, recursion discussion and revised sequence
+  constructor proof, 2 November 2026.
+source_names:
+- Bacon 2023 note
+- Bacon / Codex 2 Nov
+references:
+- paper: bacon-sequences-2023
+  role: background
+  locator: §§1–3, pp. 1–4
+  note: Background for Church encodings and the least-relation construction. The revised sequence accumulator
+    and explicit boxed assumptions are specified here.

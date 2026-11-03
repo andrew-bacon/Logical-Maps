@@ -68,6 +68,8 @@ import Classicism.Tools.Quote
 import Classicism.Tools.Translate
 import Classicism.Tools.Schema
 import Classicism.Tools.Audit
+import Classicism.Certified.ChurchSequences
+import Classicism.Certified.ChurchRecursionSchemas
 import Classicism.Tools.Tests
 -- What the pipeline certifies at build time
 import Classicism.Certified.Quoted

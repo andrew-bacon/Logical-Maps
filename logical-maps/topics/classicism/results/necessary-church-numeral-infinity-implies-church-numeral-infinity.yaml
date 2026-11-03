@@ -1,0 +1,29 @@
+id: necessary-church-numeral-infinity-implies-church-numeral-infinity
+premises:
+- necessary-church-numeral-infinity
+conclusion: church-numeral-infinity
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Codex (OpenAI), prompted by Andrew Bacon
+  recorded_by: Codex (OpenAI), prompted by Andrew Bacon
+  checked_by: []
+  date: '2026-11-02'
+  lean: none
+sources:
+- Andrew Bacon, Notes for Zach (25 March 2023), circulated as Sequences in Classicism, §§1–3.
+- Andrew Bacon and Codex (OpenAI), prompted by Andrew Bacon, recursion discussion and revised sequence
+  constructor proof, 2 November 2026.
+source_names:
+- Bacon 2023 note
+- Bacon / Codex 2 Nov
+references:
+- paper: bacon-sequences-2023
+  role: background
+  locator: §§1–3, pp. 1–4
+  note: Background for Church encodings and the least-relation construction. The revised sequence accumulator
+    and explicit boxed assumptions are specified here.
+proof: Apply T to the closed Infinity sentence at each relational carrier α.
+notes: Mathematical proof supplied; the map generates a Lean statement, but no Lean derivation certificate
+  for this result is claimed. Church-numeral Infinity is distinct from the existing cardinality-based
+  Infinity principles.

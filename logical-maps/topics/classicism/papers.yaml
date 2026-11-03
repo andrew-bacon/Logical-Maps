@@ -132,3 +132,15 @@ papers:
   note: The first-page authorship note credits Bacon with the framework and proposed applications, and
     Claude Opus 5.5 with the write-up and verification. This contribution records the pure-language applications
     in §§4–6; §7 involving E is excluded.
+
+- id: bacon-sequences-2023
+  title: Notes for Zach (Sequences in Classicism)
+  citation: >-
+    Bacon, Andrew (2023). Notes for Zach. Unpublished note dated 25 March 2023,
+    circulated as Sequences in Classicism. Church numerals and recursion (§1,
+    pp. 1–3); sequences and their recursion (§§2–3, pp. 3–4).
+  note: >-
+    Background for the Church encodings and least-relation construction. The map
+    uses explicit boxed Church-numeral Infinity for functional recursion and a
+    revised sequence accumulator Num(α) → t. It does not attribute the revised
+    cons-injectivity proof to the 2023 note. No PDF is redistributed.

@@ -1,0 +1,30 @@
+id: sequence-functional-recursion
+name: Sequence Functional Recursion
+statement: For each initial value and cons-step operation on a relational output type there is a function
+  satisfying the empty-sequence equation and the cons equation on the inductively generated Church sequences.
+formal: $\forall a^\tau g^{\sigma\to\tau\to\tau}\,\exists f^{L_{\alpha,\sigma}\to\tau}\, .\,f\epsilon=a\land\forall
+  b^\sigma s^{L_{\alpha,\sigma}}\, .\,\operatorname{Seq}_{\alpha,\sigma}(s)\to f(\operatorname{cons}(b,s))=(gb)(fs)\qquad(\alpha,\tau\ne
+  e)$
+definitions: $B_\alpha=\nu^C_\alpha\to t$ and $L_{\alpha,\sigma}=(\sigma\to B_\alpha\to B_\alpha)\to B_\alpha\to
+  B_\alpha$. See Background, Church numerals and sequences, for ε, cons and the least inductive property
+  Seq.
+notes: The accumulator is a property of Church numerals, not t as in the 2023 note. This permits a noncircular
+  positional-observation proof of cons injectivity from Church Numeral Infinity. The entry type σ is unrestricted,
+  including e; the output type τ is relational. The equations are not asserted for arbitrary inhabitants
+  of the ambient sequence type. See [[necessary-church-numeral-infinity-implies-sequence-functional-recursion]].
+lean_def: Classicism.P.SequenceFunctionalRecursion.schemaIn
+category: infinity
+date: '2026-11-02'
+sources:
+- Andrew Bacon, Notes for Zach (25 March 2023), circulated as Sequences in Classicism, §§1–3.
+- Andrew Bacon and Codex (OpenAI), prompted by Andrew Bacon, recursion discussion and revised sequence
+  constructor proof, 2 November 2026.
+source_names:
+- Bacon 2023 note
+- Bacon / Codex 2 Nov
+references:
+- paper: bacon-sequences-2023
+  role: background
+  locator: §§1–3, pp. 1–4
+  note: Background for Church encodings and the least-relation construction. The revised sequence accumulator
+    and explicit boxed assumptions are specified here.

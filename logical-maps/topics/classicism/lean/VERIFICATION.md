@@ -1389,3 +1389,29 @@ certificates in the database's sense, because the statements they prove are hand
 rather than generated from the records. The statements were checked against the records by hand and
 by name; that is the current level of assurance, and the report says so rather than
 claiming more.
+
+## Church numerals and sequence recursion, 2 November 2026
+
+Added by Codex (OpenAI), prompted by Andrew Bacon. The new
+`Background/ChurchSequences.lean` defines Church numerals, their least inductive
+property and Peano-separation Infinity, plus sequences with accumulator
+`Church.Num α → Prop`. `Principles/Recursion.lean` states Church Numeral Infinity,
+its boxed form, Church Numeral Functional Recursion and Sequence Functional
+Recursion; `Certified/ChurchRecursionSchemas.lean` quotes the four principles,
+checks their reflections, and makes each a schema at every signature.
+
+Focused checks with the pinned Lean 4.33.1 compiler: all 11 background theorems
+pass the Equivalence gate (all in C⁻, with no axioms) and the relational
+type-system audit. `Church.cons_injective` also translates to a kernel-checked
+object-language derivation. `Church.cons_ne_nil` passes the shallow gate and
+type audit; it has no translated derivation in this contribution. The four
+principles and their schemas compile.
+
+The two functional-recursion implications are recorded with mathematical
+proofs and generated Lean statements, with `certificate.lean: none`. They are
+not claimed as Lean-certified results. The sequence result is for the revised
+accumulator, not the original t-accumulator in Bacon's 25 March 2023 note.
+The complete library/model audit was not run: this environment has the pinned
+compiler and the required core modules, but not the Mathlib dependency needed
+by the library-wide signature/model imports. No existing verification status
+was changed.

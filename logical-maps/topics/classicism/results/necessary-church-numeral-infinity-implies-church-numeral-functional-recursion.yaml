@@ -1,0 +1,33 @@
+id: necessary-church-numeral-infinity-implies-church-numeral-functional-recursion
+premises:
+- necessary-church-numeral-infinity
+conclusion: church-numeral-functional-recursion
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Andrew Bacon (2023 least-relation construction), with Codex (OpenAI), prompted by Andrew
+    Bacon (explicit boxed hypotheses and proof completion)
+  recorded_by: Codex (OpenAI), prompted by Andrew Bacon
+  checked_by: []
+  date: '2026-11-02'
+  lean: none
+sources:
+- Andrew Bacon, Notes for Zach (25 March 2023), circulated as Sequences in Classicism, §§1–3.
+- Andrew Bacon and Codex (OpenAI), prompted by Andrew Bacon, recursion discussion and revised sequence
+  constructor proof, 2 November 2026.
+source_names:
+- Bacon 2023 note
+- Bacon / Codex 2 Nov
+references:
+- paper: bacon-sequences-2023
+  role: background
+  locator: §§1–3, pp. 1–4
+  note: Background for Church encodings and the least-relation construction. The revised sequence accumulator
+    and explicit boxed assumptions are specified here.
+proof: The least recursion relation is total on the inductively generated naturals and persistent by minimality.
+  Church Numeral Infinity gives functionality by unfolding and induction; boxed Church Numeral Infinity
+  gives necessary functionality. At a relational output type, the pointwise universal projection of the
+  graph equals its unique value by Intensionality. See the full write-up.
+notes: Mathematical proof supplied; the map generates a Lean statement, but no Lean derivation certificate
+  for this result is claimed. Church-numeral Infinity is distinct from the existing cardinality-based
+  Infinity principles.

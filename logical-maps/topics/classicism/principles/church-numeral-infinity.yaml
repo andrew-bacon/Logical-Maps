@@ -1,0 +1,28 @@
+id: church-numeral-infinity
+name: Church Numeral Infinity
+statement: Zero is not the successor of a Church natural, and successor is injective on the Church naturals
+  at each relational iteration carrier α.
+formal: $\operatorname{ChInf}_\alpha:=\bigl(\forall n^{\nu^C_\alpha}\, .\,N^C_\alpha n\to s^C_\alpha n\ne0^C_\alpha\bigr)\land\forall
+  m^{\nu^C_\alpha}n^{\nu^C_\alpha}\, .\,N^C_\alpha m\land N^C_\alpha n\land s^C_\alpha m=s^C_\alpha n\to
+  m=n\qquad(\alpha\ne e)$
+definitions: 'See Background, Church numerals and sequences: $\nu^C_\alpha=(\alpha\to\alpha)\to\alpha\to\alpha$,
+  with the least inductive property $N^C_\alpha$.'
+notes: This is a schema of Peano separation sentences for Church numerals, not the existing Infinity schema,
+  cardinality-based Axiom of Infinity, or I* for Fregean numerical quantifiers. No equivalence with those
+  principles is asserted. The restriction α ≠ e is required by the fixed relational type system.
+lean_def: Classicism.P.ChurchNumeralInfinity.schemaIn
+category: infinity
+date: '2026-11-02'
+sources:
+- Andrew Bacon, Notes for Zach (25 March 2023), circulated as Sequences in Classicism, §§1–3.
+- Andrew Bacon and Codex (OpenAI), prompted by Andrew Bacon, recursion discussion and revised sequence
+  constructor proof, 2 November 2026.
+source_names:
+- Bacon 2023 note
+- Bacon / Codex 2 Nov
+references:
+- paper: bacon-sequences-2023
+  role: background
+  locator: §§1–3, pp. 1–4
+  note: Background for Church encodings and the least-relation construction. The revised sequence accumulator
+    and explicit boxed assumptions are specified here.

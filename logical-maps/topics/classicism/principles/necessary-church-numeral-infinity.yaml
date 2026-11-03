@@ -1,0 +1,24 @@
+id: necessary-church-numeral-infinity
+name: □Church Numeral Infinity
+statement: Church Numeral Infinity holds necessarily at each relational iteration carrier α.
+formal: $\Box\operatorname{ChInf}_\alpha\qquad(\alpha\ne e)$
+definitions: $\operatorname{ChInf}_\alpha$ is [[church-numeral-infinity]]. The box encloses both universally
+  closed clauses; α remains a schematic type parameter.
+notes: This supplies necessary functionality of the least recursion relation. It must not be replaced
+  by unboxed Church Numeral Infinity merely by necessitating a derivation with an undischarged assumption.
+lean_def: Classicism.P.NecChurchNumeralInfinity.schemaIn
+category: infinity
+date: '2026-11-02'
+sources:
+- Andrew Bacon, Notes for Zach (25 March 2023), circulated as Sequences in Classicism, §§1–3.
+- Andrew Bacon and Codex (OpenAI), prompted by Andrew Bacon, recursion discussion and revised sequence
+  constructor proof, 2 November 2026.
+source_names:
+- Bacon 2023 note
+- Bacon / Codex 2 Nov
+references:
+- paper: bacon-sequences-2023
+  role: background
+  locator: §§1–3, pp. 1–4
+  note: Background for Church encodings and the least-relation construction. The revised sequence accumulator
+    and explicit boxed assumptions are specified here.
