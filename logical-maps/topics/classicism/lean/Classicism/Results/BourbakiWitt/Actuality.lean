@@ -76,6 +76,71 @@ theorem gen_claim_A (F : Prop → Prop → Prop) (hGs : ∀ x y, Settled (Vs v) 
 
 end GenN
 
+/-! ### The argument of §6 for an abstract decoded step
+
+Claims A–C for an abstract `g` in place of the decoded step, so that the theorem below costs the
+translator one instantiation, at `Gd h K b`. -/
+
+/-- The graph of a step `g`: `(Gr g)(p, r) := r = g p`. -/
+def GrOf (g : Prop → Prop) : Prop → Prop → Prop := λ p r ↦ r = g p
+
+section GenM
+variable (v : Prop) (hs : Vs v) (a : Prop) (g : Prop → Prop)
+
+theorem grOf_X (hgle : ∀ p, g p ≤ p) : ∀ x y, Xa a x → GrOf g x y → Xa a y :=
+  fun x _ hx e => e ▸ le_tr _ _ _ (hgle x) hx
+
+theorem grOf_ser : ∀ x, Xa a x → ∃ y, GrOf g x y := fun x _ => ⟨g x, rfl⟩
+
+theorem grOf_prog (hgle : ∀ p, g p ≤ p) : ∀ x y, Xa a x → GrOf g x y → Ge x y :=
+  fun x _ _ e => e ▸ hgle x
+
+theorem grOf_fun : ∀ x y y', Xa a x → GrOf g x y → GrOf g x y' → y = y' :=
+  fun _ _ _ _ e₁ e₂ => e₁.trans e₂.symm
+
+include hs
+
+theorem grOf_settled : ∀ x y, Settled (Vs v) (GrOf g x y) := fun _ _ => settled_eq v hs _ _
+
+/-- Claims A–C: `m`, the glb of the tower of `F`, is true, given that `g` agrees with `F` at the
+true members of that tower and `m` is the glb of the tower's other members. -/
+theorem gen_m_true (F : Prop → Prop → Prop) (hgle : ∀ p, g p ≤ p)
+    (hF : ∀ x y, Xa a x → F x y → Xa a y) (hFser : ∀ x, Xa a x → ∃ y, F x y)
+    (hFprog : ∀ x y, Xa a x → F x y → Ge x y)
+    (hFfun : ∀ x y y', Xa a x → F x y → F x y' → y = y')
+    (hfalse : ∀ p r, ¬ p → F p r → r = p)
+    (hFG : ∀ x y, Tower AllProps (Xa a) Ge F x → x → F x y → y = g x) (m : Prop)
+    (hmle : ∀ x, Tower AllProps (Xa a) Ge F x → m ≤ x)
+    (hfm : ∀ q, Tower AllProps (Xa a) Ge F q → ¬ q → q = m)
+    (hglb : ∀ w, (∀ x, Tower AllProps (Xa a) Ge F x → ¬ (x = m) → w ≤ x) → w ≤ m) : m := by
+  have hGs := grOf_settled v hs g
+  have hG := grOf_X a g hgle
+  have hser := grOf_ser a g
+  have hprog := grOf_prog a g hgle
+  have hfun := grOf_fun a g
+  have hNt := gen_tn_total v hs a (GrOf g) hGs hG hser hprog hfun
+  have hNs := gen_tn_settled v hs a (GrOf g) hGs
+  have hA := gen_claim_A v hs a (GrOf g) F hGs hG hser hprog hfun hF hFser hFprog hFfun hfalse hFG
+  -- Claim B: members of `N` strictly above `m` are true.
+  have hB : ∀ p, Tower (SettledP (Vs v)) (Xa a) Ge (GrOf g) p → m ≤ p → ¬ (p = m) → p := by
+    intro p hp hmp hne
+    rcases em p with h₁ | h₁
+    · exact h₁
+    · refine (hne (le_antisymm_prop p m (hglb p fun x hx hxm => ?_) hmp)).elim
+      have hxt : x := (em x).elim id fun k => (hxm (hfm x hx k)).elim
+      exact (hNt x p (hA x hx) hp).elim id (fun k => (h₁ (true_of_le x p k hxt)).elim)
+  -- Claim C.
+  have hIs : SettledP (Vs v)
+      (λ p ↦ Tower (SettledP (Vs v)) (Xa a) Ge (GrOf g) p ∧ m ≤ p ∧ ¬ (p = m)) := fun p =>
+    settled_and _ _ _ hs (hNs p) fun _ =>
+      settled_and _ _ _ hs (settled_le v hs _ _) fun _ => settled_not _ _ (settled_eq v hs _ _)
+  have hw : Vs v ∧ ∀ p, (Tower (SettledP (Vs v)) (Xa a) Ge (GrOf g) p ∧ m ≤ p ∧ ¬ (p = m)) → p :=
+    ⟨hs, fun p hp => hB p hp.1 hp.2.1 hp.2.2⟩
+  have hwm := hglb _ fun x hx hxm => settled_family_meet v hs _ hIs x ⟨hA x hx, hmle x hx, hxm⟩
+  exact true_of_le _ _ hwm hw
+
+end GenM
+
 section Code
 variable (v : Prop) (hs : Vs v) (h : Prop) (hh : h ≤ Vs v) (K : Prop → Prop → Prop)
 include hs hh
@@ -89,68 +154,14 @@ include hK₂ hK₂W hb
 
 theorem g_le (p : Prop) : Gd h K b p ≤ p := le_intro _ _ (nec% (fun (k : Gd h K b p) => k.1))
 
-theorem gr_X : ∀ x y, Xa (Aa h K) x → Gr h K b x y → Xa (Aa h K) y :=
-  fun x _ hx e => e ▸ le_tr _ _ _ (g_le v hs h hh K K₂ hK₂ hK₂W b hb x) hx
-
-theorem gr_ser : ∀ x, Xa (Aa h K) x → ∃ y, Gr h K b x y := fun x _ => ⟨Gd h K b x, rfl⟩
-
-theorem gr_prog : ∀ x y, Xa (Aa h K) x → Gr h K b x y → Ge x y :=
-  fun x _ _ e => e ▸ g_le v hs h hh K K₂ hK₂ hK₂W b hb x
-
-theorem gr_fun : ∀ x y y', Xa (Aa h K) x → Gr h K b x y → Gr h K b x y' → y = y' :=
-  fun _ _ _ _ e₁ e₂ => e₁.trans e₂.symm
-
-theorem gr_inv : ∀ x x' y y', Xa (Aa h K) x → Xa (Aa h K) x' → Ge x x' → Ge x' x →
-    Gr h K b x y → Gr h K b x' y' → Ge y y' ∧ Ge y' y :=
-  invariant_of_partial _ _ _ (ge_refl _) (ge_anti _) (gr_X v hs h hh K K₂ hK₂ hK₂W b hb)
-    (gr_fun v hs h hh K K₂ hK₂ hK₂W b hb)
-
-theorem gr_settled : ∀ x y, Settled (Vs v) (Gr h K b x y) := fun _ _ => settled_eq v hs _ _
-
-theorem tn_settled :
-    SettledP (Vs v) (Tower (SettledP (Vs v)) (Xa (Aa h K)) Ge (Gr h K b)) :=
-  gen_tn_settled v hs _ _ (gr_settled v hs h hh K K₂ hK₂ hK₂W b hb)
-
-theorem tn_closed :
-    Closed (SettledP (Vs v)) (Xa (Aa h K)) Ge (Gr h K b)
-      (Tower (SettledP (Vs v)) (Xa (Aa h K)) Ge (Gr h K b)) :=
-  gen_tn_closed v hs _ _ (gr_X v hs h hh K K₂ hK₂ hK₂W b hb)
-
-theorem tn_total : TotalOn Ge (Tower (SettledP (Vs v)) (Xa (Aa h K)) Ge (Gr h K b)) :=
-  gen_tn_total v hs _ _ (gr_settled v hs h hh K K₂ hK₂ hK₂W b hb) (gr_X v hs h hh K K₂ hK₂ hK₂W b hb)
-    (gr_ser v hs h hh K K₂ hK₂ hK₂W b hb) (gr_prog v hs h hh K K₂ hK₂ hK₂W b hb) (gr_fun v hs h hh K K₂ hK₂ hK₂W b hb)
-
-/-- Claim A: `M ⊆ N`. -/
-theorem claim_A : ∀ p, Tm h K p → Tower (SettledP (Vs v)) (Xa (Aa h K)) Ge (Gr h K b) p :=
-  gen_claim_A v hs _ _ _ (gr_settled v hs h hh K K₂ hK₂ hK₂W b hb) (gr_X v hs h hh K K₂ hK₂ hK₂W b hb)
-    (gr_ser v hs h hh K K₂ hK₂ hK₂W b hb) (gr_prog v hs h hh K K₂ hK₂ hK₂W b hb) (gr_fun v hs h hh K K₂ hK₂ hK₂W b hb)
-    (fs_X v hs h hh K) (fs_ser v hs h hh K) (fs_prog v hs h hh K) (fs_fun v hs h hh K)
-    (fs_false v hs h hh K)
-    (fun x y hx h₁ hf => (g_eq v hs h hh K K₂ hK₂ hK₂W b hb x y hx h₁ hf).symm)
-
-/-- Claims B and C: `m` is true, given that `a` is. -/
+/-- Claims A–C: `m` is true, given that `a` is (`gen_m_true` at `g`). -/
 theorem m_true (bc : BooleanCompleteness Prop) (ha : Aa h K) (m : Prop)
-    (hm : SupIn (Xa (Aa h K)) Ge m (Tm h K)) : m := by
-  have hNt := tn_total v hs h hh K K₂ hK₂ hK₂W b hb
-  have hA := claim_A v hs h hh K K₂ hK₂ hK₂W b hb
-  have hmf := m_false v hs h hh K m hm
-  -- Claim B: members of `N` strictly above `m` are true.
-  have hB : ∀ p, Tower (SettledP (Vs v)) (Xa (Aa h K)) Ge (Gr h K b) p → m ≤ p → ¬ (p = m) → p := by
-    intro p hp hmp hne
-    rcases em p with h₁ | h₁
-    · exact h₁
-    · refine (hne (le_antisymm_prop p m (m_glb_rest v hs h hh K bc ha m hm p fun x hx hxm => ?_) hmp)).elim
-      have hxt : x := (em x).elim id fun k => (hxm (false_member v hs h hh K m hm x hx k)).elim
-      exact (hNt x p (hA x hx) hp).elim id (fun k => (h₁ (true_of_le x p k hxt)).elim)
-  -- Claim C.
-  let I : Prop → Prop := λ p ↦ Tower (SettledP (Vs v)) (Xa (Aa h K)) Ge (Gr h K b) p ∧ m ≤ p ∧ ¬ (p = m)
-  have hIs : SettledP (Vs v) I := fun p =>
-    settled_and _ _ _ hs (tn_settled v hs h hh K K₂ hK₂ hK₂W b hb p) fun _ =>
-      settled_and _ _ _ hs (settled_le v hs _ _) fun _ => settled_not _ _ (settled_eq v hs _ _)
-  have hw : Vs v ∧ ∀ p, I p → p := ⟨hs, fun p hp => hB p hp.1 hp.2.1 hp.2.2⟩
-  have hwm := m_glb_rest v hs h hh K bc ha m hm _ fun x hx hxm =>
-    settled_family_meet v hs I hIs x ⟨hA x hx, hm.1.2 x hx, hxm⟩
-  exact true_of_le _ _ hwm hw
+    (hm : SupIn (Xa (Aa h K)) Ge m (Tm h K)) : m :=
+  gen_m_true v hs _ (Gd h K b) (Fs h K) (g_le v hs h hh K K₂ hK₂ hK₂W b hb)
+    (fs_X v hs h hh K) (fs_ser v hs h hh K) (fs_prog v hs h hh K) (fs_fun v hs h hh K)
+    (fs_false v hs h hh K) (fun x y hx h₁ hf => (g_eq v hs h hh K K₂ hK₂ hK₂W b hb x y hx h₁ hf).symm) m
+    (fun x hx => hm.1.2 x hx) (fun q hq hq' => false_member v hs h hh K m hm q hq hq')
+    (fun w hw => m_glb_rest v hs h hh K bc ha m hm w hw)
 
 end Second
 
