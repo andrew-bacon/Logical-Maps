@@ -58,9 +58,18 @@ L_{\alpha,\sigma}&:=(\sigma\to B_\alpha\to B_\alpha)\to B_\alpha\to B_\alpha,\\
 \end{aligned}
 $$
 
-This changes the accumulator $t$ used in the 2023 note. It is the revised
-encoding for which the positional-observation proof below establishes cons
-injectivity. The map does not assert that the same proof works with accumulator $t$.
+This changes the accumulator $t$ used in the 2023 note. The change is
+substantive: in a full one-world extensional model with infinitely many
+individuals, $\Box\operatorname{ChInf}_{e\to t}$ holds, but cons for the
+original $t$-accumulator is not injective on generated sequences. General
+functional recursion for that original encoding also fails in this model.
+See the sequence recursion write-up below for the counterexample.
+
+This is a counterexample to the implication from Infinity at a fixed
+carrier, not from the entire all-carriers Infinity schema: the model fails
+$\operatorname{ChInf}_t$. The result proved here uses
+$B_\alpha=\nu^C_\alpha\to t$ and requires only
+$\Box\operatorname{ChInf}_\alpha$ at the displayed carrier.
 
 The principle [[sequence-functional-recursion]] says
 
