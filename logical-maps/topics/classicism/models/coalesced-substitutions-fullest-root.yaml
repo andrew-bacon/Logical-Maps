@@ -119,3 +119,7 @@ lean:
     complete-components: Classicism.Meta.Coalesced.substitutionsFullestData_complete
     fullest-domains: Classicism.Meta.Coalesced.substitutionsFullestData_fullest
     free-root-component: Classicism.Meta.Coalesced.substitutionsFullestData_free
+  verdicts:
+  - holds: actuality
+    ref: Classicism.Map.Models.coalesced_substitutions_fullest_root.actuality
+    status: verified

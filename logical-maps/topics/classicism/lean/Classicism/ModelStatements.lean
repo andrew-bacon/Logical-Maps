@@ -74,6 +74,34 @@ def Models.coalesced_definable_root.infinity_e : Prop :=
 def Models.coalesced_definable_root.axiom_of_infinity_e : Prop :=
   (Classicism.Meta.Coalesced.definableRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.definableRoot).HoldsAx Classicism.P.AxiomOfInfinityE.schemaIn
 
+/-- `coalesced-definable-root`: □Vicinity fails. -/
+def Models.coalesced_definable_root.necessary_vicinity : Prop :=
+  (Classicism.Meta.Coalesced.definableRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.definableRoot).HoldsAx Classicism.P.NecVicinity.schemaIn
+
+/-- `coalesced-definable-root`: □Weakly Inextensible Comprehension fails. -/
+def Models.coalesced_definable_root.necessary_weakly_inextensible_comprehension_r : Prop :=
+  (Classicism.Meta.Coalesced.definableRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.definableRoot).HoldsAx Classicism.P.NecWeaklyInextensibleComprehension.schemaIn
+
+/-- `coalesced-definable-root`: □Transversal fails. -/
+def Models.coalesced_definable_root.necessary_transversal_r : Prop :=
+  (Classicism.Meta.Coalesced.definableRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.definableRoot).HoldsAx Classicism.P.NecTransversal.schemaIn
+
+/-- `coalesced-definable-root`: Arithmetic Necessitism holds. -/
+def Models.coalesced_definable_root.arithmetic_necessitism : Prop :=
+  (Classicism.Meta.Coalesced.definableRoot).IsModel ∧ (Classicism.Meta.Coalesced.definableRoot).HoldsAx Classicism.P.ArithmeticNecessitism.schemaIn
+
+/-- `coalesced-definable-root`: □Axiom of Infinity (type e) fails. -/
+def Models.coalesced_definable_root.necessary_axiom_of_infinity_e : Prop :=
+  (Classicism.Meta.Coalesced.definableRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.definableRoot).HoldsAx Classicism.P.NecAxiomOfInfinityE.schemaIn
+
+/-- `coalesced-definable-root`: □Axiom of Infinity (type t) fails. -/
+def Models.coalesced_definable_root.necessary_axiom_of_infinity_t : Prop :=
+  (Classicism.Meta.Coalesced.definableRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.definableRoot).HoldsAx Classicism.P.NecAxiomOfInfinityT.schemaIn
+
+/-- `coalesced-definable-root`: Actuality holds. -/
+def Models.coalesced_definable_root.actuality : Prop :=
+  (Classicism.Meta.Coalesced.definableRoot).IsModel ∧ (Classicism.Meta.Coalesced.definableRoot).HoldsAx Classicism.P.Actuality.schemaIn
+
 /-- `coalesced-maximalist-root`: Maximalism (signature Σ) holds. -/
 def Models.coalesced_maximalist_root.distinctness_signature_r : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).Admitted ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).HoldsAx (Classicism.Meta.AxiomSet.distinctnessC _)
@@ -141,6 +169,10 @@ def Models.coalesced_single_individual_root.necessary_weakly_inextensible_compre
 /-- `coalesced-single-individual-root`: □Transversal fails. -/
 def Models.coalesced_single_individual_root.necessary_transversal_r : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).HoldsAx Classicism.P.NecTransversal.schemaIn
+
+/-- `coalesced-substitutions-fullest-root`: Actuality holds. -/
+def Models.coalesced_substitutions_fullest_root.actuality : Prop :=
+  (Classicism.Meta.Coalesced.substitutionsFullestRoot).IsModel ∧ (Classicism.Meta.Coalesced.substitutionsFullestRoot).HoldsAx Classicism.P.Actuality.schemaIn
 
 /-- `finite-support-dyadic-roundings`: BF fails. -/
 def Models.finite_support_dyadic_roundings.barcan_r : Prop :=

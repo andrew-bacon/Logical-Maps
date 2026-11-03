@@ -1,5 +1,6 @@
 import Classicism.Models.CoalescedInterpretations
 import Classicism.Coalesced.SumData
+import Classicism.Models.SymBase
 
 /-!
 # The interpretation-arrow members of `coalesced-sums` as group data
@@ -186,5 +187,50 @@ theorem substitutionsFullestData_fullest : substitutionsFullestData.FullestDomai
 
 theorem substitutionsFullestData_free : substitutionsFullestData.FreeRootComponent :=
   SumData.freeRootComponent_ofInterp_all _
+
+/-! ### The definable root -/
+
+/-- `coalesced-definable-root`'s sum over `Σ₀ = {d}` as group data: its model is `definableSum`,
+whose pure reduct is the record's model `definableRoot`. -/
+noncomputable abbrev definableData : SumData :=
+  SumData.ofInterp (definableSel _) definableSel_admitsConsts oneIndividual_ne definableSum_isModel
+
+theorem definableData_complete : definableData.CompleteComponents :=
+  SumData.completeComponents_ofInterp Signature.oneIndividual_closed _
+
+/-- A pure schema holding in a model of a signature holds in its pure reduct. -/
+theorem holdsAx_reduct_of {Sig : Signature} {C : Type} [SmallCategory C] {B : Premodel Sig C}
+    {X : AxiomSet Signature.pure} (h : B.HoldsAx (AxiomSet.ofPure X)) :
+    B.reduct.HoldsAx (AxiomSet.ofPure X) :=
+  (Premodel.holdsAx_schemaIn_iff _ X).2 ((Premodel.holdsAx_ofPure B X).1 h)
+
+/-- A pure schema failing in a model of a signature fails in its pure reduct. -/
+theorem not_holdsAx_reduct_of {Sig : Signature} {C : Type} [SmallCategory C] {B : Premodel Sig C}
+    {X : AxiomSet Signature.pure} (h : ¬ B.HoldsAx (AxiomSet.ofPure X)) :
+    ¬ B.reduct.HoldsAx (AxiomSet.ofPure X) := fun H =>
+  h ((Premodel.holdsAx_ofPure B X).2 ((Premodel.holdsAx_schemaIn_iff _ X).1 H))
+
+/-! ### Actuality with a free root component -/
+
+/-- **With a free root component, Actuality holds at the root**: the proposition true at the root's
+identity arrow alone is a root entity, true and below every truth (the first half of
+`SumData.actualWorldIsolated_of`, which needs no condition on the root endo-arrows). -/
+theorem SumData.holds_actuality_of_free {D : SumData} (hF : D.FreeRootComponent) :
+    D.model.HoldsAx P.Actuality.schemaIn := by
+  obtain ⟨b, hb⟩ := D.isModel (𝟙 _) (Term.bot (Sig := D.Sig) (Γ := [])) .nil
+  have hb' : D.RI.incl .t b = ∅ := hb.trans (D.model.sem_bot D.isModel _ _)
+  let a0 : Tuple D.RA.inner .t (CoalescedSum.base D.S) := ⟨CoalescedSum.root, PUnit.unit, D.S.one⟩
+  obtain ⟨a, ha⟩ := hF .t b {a0} fun p hp => by
+    rw [hb']
+    exact ⟨fun h => hp (by rw [show p = a0 from h]), fun h => h.elim⟩
+  rw [Premodel.holdsAx_ofPure]
+  rintro _ rfl
+  refine Premodel.holds_actuality_of (D.model.reduct_isModel D.isModel) a ?_ fun p hp => ?_
+  · show a0 ∈ D.RI.incl .t a
+    rw [ha]; rfl
+  · show D.RI.incl .t a ⊆ D.RI.incl .t p
+    rw [ha]
+    rintro _ rfl
+    exact hp
 
 end Classicism.Meta.Coalesced

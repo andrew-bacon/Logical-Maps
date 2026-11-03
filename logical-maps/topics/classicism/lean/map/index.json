@@ -16770,21 +16770,21 @@
   {"relational-choice-r":
    {"proofs":
     [{"name": "Classicism.Meta.Coalesced.substitutionsFullestRoot_isModel",
-      "lines": [174, 175],
+      "lines": [175, 176],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"},
      {"name":
       "Classicism.Map.Arguments.coalesced_sums.relational_choice_free_root.relational_choice_r",
       "lines": [527, 531],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Meta.Coalesced.substitutionsFullestData_free",
-      "lines": [187, 188],
+      "lines": [188, 189],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Signature.plus",
       "lines": [146, 147],
       "file": "Classicism/Models/CoalescedInterpretations.lean"},
      {"name": "Classicism.Meta.Coalesced.substitutionsFullestRoot",
-      "lines": [167, 172],
+      "lines": [168, 173],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "certificate":
     {"name":
@@ -16795,21 +16795,21 @@
    "necessary-weakly-inextensible-comprehension-r":
    {"proofs":
     [{"name": "Classicism.Meta.Coalesced.substitutionsFullestRoot_isModel",
-      "lines": [174, 175],
+      "lines": [175, 176],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"},
      {"name":
       "Classicism.Map.Arguments.coalesced_sums.pure_sentences_possible.necessary_weakly_inextensible_comprehension_r",
       "lines": [580, 584],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Meta.Coalesced.substitutionsFullestData_complete",
-      "lines": [181, 182],
+      "lines": [182, 183],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Signature.plus",
       "lines": [146, 147],
       "file": "Classicism/Models/CoalescedInterpretations.lean"},
      {"name": "Classicism.Meta.Coalesced.substitutionsFullestRoot",
-      "lines": [167, 172],
+      "lines": [168, 173],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "certificate":
     {"name":
@@ -16820,21 +16820,21 @@
    "necessary-vicinity":
    {"proofs":
     [{"name": "Classicism.Meta.Coalesced.substitutionsFullestRoot_isModel",
-      "lines": [174, 175],
+      "lines": [175, 176],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"},
      {"name":
       "Classicism.Map.Arguments.coalesced_sums.pure_sentences_possible.necessary_vicinity",
       "lines": [574, 578],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Meta.Coalesced.substitutionsFullestData_complete",
-      "lines": [181, 182],
+      "lines": [182, 183],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Signature.plus",
       "lines": [146, 147],
       "file": "Classicism/Models/CoalescedInterpretations.lean"},
      {"name": "Classicism.Meta.Coalesced.substitutionsFullestRoot",
-      "lines": [167, 172],
+      "lines": [168, 173],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "certificate":
     {"name":
@@ -16845,21 +16845,21 @@
    "necessary-transversal-r":
    {"proofs":
     [{"name": "Classicism.Meta.Coalesced.substitutionsFullestRoot_isModel",
-      "lines": [174, 175],
+      "lines": [175, 176],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"},
      {"name":
       "Classicism.Map.Arguments.coalesced_sums.transversal_boxed.necessary_transversal_r",
       "lines": [590, 594],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Meta.Coalesced.substitutionsFullestData_complete",
-      "lines": [181, 182],
+      "lines": [182, 183],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Signature.plus",
       "lines": [146, 147],
       "file": "Classicism/Models/CoalescedInterpretations.lean"},
      {"name": "Classicism.Meta.Coalesced.substitutionsFullestRoot",
-      "lines": [167, 172],
+      "lines": [168, 173],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "certificate":
     {"name":
@@ -16870,21 +16870,21 @@
    "necessary-axiom-of-infinity-t":
    {"proofs":
     [{"name": "Classicism.Meta.Coalesced.substitutionsFullestRoot_isModel",
-      "lines": [174, 175],
+      "lines": [175, 176],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"},
      {"name":
       "Classicism.Map.Arguments.coalesced_sums.necessary_axiom_of_infinity_complete_components.necessary_axiom_of_infinity_t",
       "lines": [606, 609],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Meta.Coalesced.substitutionsFullestData_complete",
-      "lines": [181, 182],
+      "lines": [182, 183],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Signature.plus",
       "lines": [146, 147],
       "file": "Classicism/Models/CoalescedInterpretations.lean"},
      {"name": "Classicism.Meta.Coalesced.substitutionsFullestRoot",
-      "lines": [167, 172],
+      "lines": [168, 173],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "certificate":
     {"name":
@@ -16895,21 +16895,21 @@
    "necessary-axiom-of-infinity-e":
    {"proofs":
     [{"name": "Classicism.Meta.Coalesced.substitutionsFullestRoot_isModel",
-      "lines": [174, 175],
+      "lines": [175, 176],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"},
      {"name":
       "Classicism.Map.Arguments.coalesced_sums.necessary_axiom_of_infinity_complete_components.necessary_axiom_of_infinity_e",
       "lines": [600, 604],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Meta.Coalesced.substitutionsFullestData_complete",
-      "lines": [181, 182],
+      "lines": [182, 183],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Signature.plus",
       "lines": [146, 147],
       "file": "Classicism/Models/CoalescedInterpretations.lean"},
      {"name": "Classicism.Meta.Coalesced.substitutionsFullestRoot",
-      "lines": [167, 172],
+      "lines": [168, 173],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "certificate":
     {"name":
@@ -16920,27 +16920,51 @@
    "arithmetic-necessitism":
    {"proofs":
     [{"name": "Classicism.Meta.Coalesced.substitutionsFullestRoot_isModel",
-      "lines": [174, 175],
+      "lines": [175, 176],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"},
      {"name":
       "Classicism.Map.Arguments.coalesced_sums.arithmetic_necessitism_complete_components.arithmetic_necessitism",
       "lines": [555, 566],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Meta.Coalesced.substitutionsFullestData_complete",
-      "lines": [181, 182],
+      "lines": [182, 183],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Signature.plus",
       "lines": [146, 147],
       "file": "Classicism/Models/CoalescedInterpretations.lean"},
      {"name": "Classicism.Meta.Coalesced.substitutionsFullestRoot",
-      "lines": [167, 172],
+      "lines": [168, 173],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "certificate":
     {"name":
      "Classicism.Map.Models.coalesced_substitutions_fullest_root.arithmetic_necessitism",
      "lines": [306, 308],
      "file": "Classicism/MapDerived.lean",
+     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
+   "actuality":
+   {"proofs":
+    [{"name": "Classicism.Meta.Coalesced.substitutionsFullestRoot_isModel",
+      "lines": [175, 176],
+      "file": "Classicism/Models/CoalescedInterpretationSums.lean"},
+     {"name": "Classicism.Meta.Coalesced.SumData.holds_actuality_of_free",
+      "lines": [215, 234],
+      "file": "Classicism/Models/CoalescedInterpretationSums.lean"},
+     {"name": "Classicism.Meta.Coalesced.substitutionsFullestData_free",
+      "lines": [188, 189],
+      "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
+    "definitions":
+    [{"name": "Classicism.Meta.Signature.plus",
+      "lines": [146, 147],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.substitutionsFullestRoot",
+      "lines": [168, 173],
+      "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
+    "certificate":
+    {"name":
+     "Classicism.Map.Models.coalesced_substitutions_fullest_root.actuality",
+     "lines": [225, 229],
+     "file": "Classicism/MapWitnesses.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}}},
   "coalesced-single-individual-root":
   {"truths-are-nd-necessary":
@@ -17162,7 +17186,7 @@
       "lines": [580, 584],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Meta.Coalesced.pinnedSubstData_complete",
-      "lines": [164, 165],
+      "lines": [165, 166],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Signature.plus",
@@ -17187,7 +17211,7 @@
       "lines": [574, 578],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Meta.Coalesced.pinnedSubstData_complete",
-      "lines": [164, 165],
+      "lines": [165, 166],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Signature.plus",
@@ -17212,7 +17236,7 @@
       "lines": [590, 594],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Meta.Coalesced.pinnedSubstData_complete",
-      "lines": [164, 165],
+      "lines": [165, 166],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Signature.plus",
@@ -17237,7 +17261,7 @@
       "lines": [606, 609],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Meta.Coalesced.pinnedSubstData_complete",
-      "lines": [164, 165],
+      "lines": [165, 166],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Signature.plus",
@@ -17262,7 +17286,7 @@
       "lines": [600, 604],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Meta.Coalesced.pinnedSubstData_complete",
-      "lines": [164, 165],
+      "lines": [165, 166],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Signature.plus",
@@ -17332,7 +17356,7 @@
       "lines": [555, 566],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Meta.Coalesced.pinnedSubstData_complete",
-      "lines": [164, 165],
+      "lines": [165, 166],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Signature.plus",
@@ -17383,7 +17407,7 @@
       "lines": [527, 531],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Meta.Coalesced.pinnedInterpData_free",
-      "lines": [144, 158],
+      "lines": [145, 159],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Signature.plus",
@@ -17408,7 +17432,7 @@
       "lines": [580, 584],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Meta.Coalesced.pinnedInterpData_complete",
-      "lines": [116, 117],
+      "lines": [117, 118],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Signature.plus",
@@ -17433,7 +17457,7 @@
       "lines": [574, 578],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Meta.Coalesced.pinnedInterpData_complete",
-      "lines": [116, 117],
+      "lines": [117, 118],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Signature.plus",
@@ -17458,7 +17482,7 @@
       "lines": [590, 594],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Meta.Coalesced.pinnedInterpData_complete",
-      "lines": [116, 117],
+      "lines": [117, 118],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Signature.plus",
@@ -17483,7 +17507,7 @@
       "lines": [606, 609],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Meta.Coalesced.pinnedInterpData_complete",
-      "lines": [116, 117],
+      "lines": [117, 118],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Signature.plus",
@@ -17508,7 +17532,7 @@
       "lines": [600, 604],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Meta.Coalesced.pinnedInterpData_complete",
-      "lines": [116, 117],
+      "lines": [117, 118],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Signature.plus",
@@ -17578,7 +17602,7 @@
       "lines": [555, 566],
       "file": "Classicism/MapArguments.lean"},
      {"name": "Classicism.Meta.Coalesced.pinnedInterpData_complete",
-      "lines": [116, 117],
+      "lines": [117, 118],
       "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
     "definitions":
     [{"name": "Classicism.Meta.Signature.plus",
@@ -17863,6 +17887,146 @@
      "lines": [126, 128],
      "file": "Classicism/MapDerived.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
+   "necessary-weakly-inextensible-comprehension-r":
+   {"proofs":
+    [{"name": "Classicism.Meta.Coalesced.definableRoot_isModel",
+      "lines": [207, 208],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.not_holdsAx_reduct_of",
+      "lines": [207, 211],
+      "file": "Classicism/Models/CoalescedInterpretationSums.lean"},
+     {"name":
+      "Classicism.Map.Arguments.coalesced_sums.pure_sentences_possible.necessary_weakly_inextensible_comprehension_r",
+      "lines": [580, 584],
+      "file": "Classicism/MapArguments.lean"},
+     {"name": "Classicism.Meta.Coalesced.definableData_complete",
+      "lines": [198, 199],
+      "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
+    "definitions":
+    [{"name": "Classicism.Meta.Signature.oneIndividual",
+      "lines": [138, 139],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.definableRoot",
+      "lines": [201, 202],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"}],
+    "certificate":
+    {"name":
+     "Classicism.Map.Models.coalesced_definable_root.necessary_weakly_inextensible_comprehension_r",
+     "lines": [190, 193],
+     "file": "Classicism/MapWitnesses.lean",
+     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
+   "necessary-vicinity":
+   {"proofs":
+    [{"name": "Classicism.Meta.Coalesced.definableRoot_isModel",
+      "lines": [207, 208],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.not_holdsAx_reduct_of",
+      "lines": [207, 211],
+      "file": "Classicism/Models/CoalescedInterpretationSums.lean"},
+     {"name":
+      "Classicism.Map.Arguments.coalesced_sums.pure_sentences_possible.necessary_vicinity",
+      "lines": [574, 578],
+      "file": "Classicism/MapArguments.lean"},
+     {"name": "Classicism.Meta.Coalesced.definableData_complete",
+      "lines": [198, 199],
+      "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
+    "definitions":
+    [{"name": "Classicism.Meta.Signature.oneIndividual",
+      "lines": [138, 139],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.definableRoot",
+      "lines": [201, 202],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"}],
+    "certificate":
+    {"name":
+     "Classicism.Map.Models.coalesced_definable_root.necessary_vicinity",
+     "lines": [185, 188],
+     "file": "Classicism/MapWitnesses.lean",
+     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
+   "necessary-transversal-r":
+   {"proofs":
+    [{"name": "Classicism.Meta.Coalesced.definableRoot_isModel",
+      "lines": [207, 208],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.not_holdsAx_reduct_of",
+      "lines": [207, 211],
+      "file": "Classicism/Models/CoalescedInterpretationSums.lean"},
+     {"name":
+      "Classicism.Map.Arguments.coalesced_sums.transversal_boxed.necessary_transversal_r",
+      "lines": [590, 594],
+      "file": "Classicism/MapArguments.lean"},
+     {"name": "Classicism.Meta.Coalesced.definableData_complete",
+      "lines": [198, 199],
+      "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
+    "definitions":
+    [{"name": "Classicism.Meta.Signature.oneIndividual",
+      "lines": [138, 139],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.definableRoot",
+      "lines": [201, 202],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"}],
+    "certificate":
+    {"name":
+     "Classicism.Map.Models.coalesced_definable_root.necessary_transversal_r",
+     "lines": [195, 198],
+     "file": "Classicism/MapWitnesses.lean",
+     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
+   "necessary-axiom-of-infinity-t":
+   {"proofs":
+    [{"name": "Classicism.Meta.Coalesced.definableRoot_isModel",
+      "lines": [207, 208],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.not_holdsAx_reduct_of",
+      "lines": [207, 211],
+      "file": "Classicism/Models/CoalescedInterpretationSums.lean"},
+     {"name":
+      "Classicism.Map.Arguments.coalesced_sums.necessary_axiom_of_infinity_complete_components.necessary_axiom_of_infinity_t",
+      "lines": [606, 609],
+      "file": "Classicism/MapArguments.lean"},
+     {"name": "Classicism.Meta.Coalesced.definableData_complete",
+      "lines": [198, 199],
+      "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
+    "definitions":
+    [{"name": "Classicism.Meta.Signature.oneIndividual",
+      "lines": [138, 139],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.definableRoot",
+      "lines": [201, 202],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"}],
+    "certificate":
+    {"name":
+     "Classicism.Map.Models.coalesced_definable_root.necessary_axiom_of_infinity_t",
+     "lines": [211, 214],
+     "file": "Classicism/MapWitnesses.lean",
+     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
+   "necessary-axiom-of-infinity-e":
+   {"proofs":
+    [{"name": "Classicism.Meta.Coalesced.definableRoot_isModel",
+      "lines": [207, 208],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.not_holdsAx_reduct_of",
+      "lines": [207, 211],
+      "file": "Classicism/Models/CoalescedInterpretationSums.lean"},
+     {"name":
+      "Classicism.Map.Arguments.coalesced_sums.necessary_axiom_of_infinity_complete_components.necessary_axiom_of_infinity_e",
+      "lines": [600, 604],
+      "file": "Classicism/MapArguments.lean"},
+     {"name": "Classicism.Meta.Coalesced.definableData_complete",
+      "lines": [198, 199],
+      "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
+    "definitions":
+    [{"name": "Classicism.Meta.Signature.oneIndividual",
+      "lines": [138, 139],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.definableRoot",
+      "lines": [201, 202],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"}],
+    "certificate":
+    {"name":
+     "Classicism.Map.Models.coalesced_definable_root.necessary_axiom_of_infinity_e",
+     "lines": [205, 209],
+     "file": "Classicism/MapWitnesses.lean",
+     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
    "infinity-e":
    {"proofs":
     [{"name": "Classicism.Meta.Coalesced.definableRoot_isModel",
@@ -17960,6 +18124,57 @@
      "Classicism.Map.Models.coalesced_definable_root.axiom_of_infinity_e",
      "lines": [391, 397],
      "file": "Classicism/MapModels.lean",
+     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
+   "arithmetic-necessitism":
+   {"proofs":
+    [{"name": "Classicism.Meta.Coalesced.definableRoot_isModel",
+      "lines": [207, 208],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.holdsAx_reduct_of",
+      "lines": [201, 205],
+      "file": "Classicism/Models/CoalescedInterpretationSums.lean"},
+     {"name":
+      "Classicism.Map.Arguments.coalesced_sums.arithmetic_necessitism_complete_components.arithmetic_necessitism",
+      "lines": [555, 566],
+      "file": "Classicism/MapArguments.lean"},
+     {"name": "Classicism.Meta.Coalesced.definableData_complete",
+      "lines": [198, 199],
+      "file": "Classicism/Models/CoalescedInterpretationSums.lean"}],
+    "definitions":
+    [{"name": "Classicism.Meta.Signature.oneIndividual",
+      "lines": [138, 139],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.definableRoot",
+      "lines": [201, 202],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"}],
+    "certificate":
+    {"name":
+     "Classicism.Map.Models.coalesced_definable_root.arithmetic_necessitism",
+     "lines": [200, 203],
+     "file": "Classicism/MapWitnesses.lean",
+     "axioms": ["propext", "Classical.choice", "Quot.sound"]}},
+   "actuality":
+   {"proofs":
+    [{"name": "Classicism.Meta.Coalesced.definableRoot_isModel",
+      "lines": [207, 208],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.AllFinite.holds_actuality_of_isolated",
+      "lines": [284, 289],
+      "file": "Classicism/Models/CoalescedFinite.lean"},
+     {"name": "Classicism.Meta.Coalesced.definableRoot_actualWorldIsolated",
+      "lines": [247, 250],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"}],
+    "definitions":
+    [{"name": "Classicism.Meta.Signature.oneIndividual",
+      "lines": [138, 139],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"},
+     {"name": "Classicism.Meta.Coalesced.definableRoot",
+      "lines": [201, 202],
+      "file": "Classicism/Models/CoalescedInterpretations.lean"}],
+    "certificate":
+    {"name": "Classicism.Map.Models.coalesced_definable_root.actuality",
+     "lines": [216, 219],
+     "file": "Classicism/MapWitnesses.lean",
      "axioms": ["propext", "Classical.choice", "Quot.sound"]}}},
   "coalesced-constant-indexed-root":
   {"truths-are-nd-necessary":
