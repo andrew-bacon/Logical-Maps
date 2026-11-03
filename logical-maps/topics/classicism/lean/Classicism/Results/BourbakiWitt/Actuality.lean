@@ -185,20 +185,30 @@ theorem b_meet (d r : Prop) (hd : Dl h K d) (hk : K₂ d r) : (b ∧ d) = r := b
       (f k.1).elim (fun n => (n k.2).elim) id)) (le_elim _ _ hub)))
     (le_and_le _ _ _ hrb hrd)
 
-/-- `H` fails at every discarded part. -/
-theorem h_fails (d : Prop) (hd : Dl h K d) : ¬ Hc h K b d := by
-  intro ⟨e, hce, hmix⟩
-  obtain ⟨r, hk, _⟩ := hK₂ d
+/-- `H` fails at a discarded part `d` through its chosen part `r_d`. -/
+theorem h_fails_chosen (d e : Prop) (hd : Dl h K d) (hmix : Mixed b e) (hk : K₂ d e) : False :=
+  hmix.2 (and_neg_false_of_le e b ((hb b).2 (le_refl_prop b) e ⟨d, hd, hk⟩))
+
+/-- `H` fails at a discarded part `d` through a child other than `r_d`. -/
+theorem h_fails_other (d e r : Prop) (hd : Dl h K d) (hce : Child h K d e) (hmix : Mixed b e)
+    (hk : K₂ d r) (e₁ : ¬ (e = r)) : False := by
   have hcr := k2_child v hs h hh K K₂ hK₂ hK₂W b hb d r hd hk
-  rcases em (e = r) with e₁ | e₁
-  · subst e₁
-    exact hmix.2 (and_neg_false_of_le e b ((hb b).2 (le_refl_prop b) e ⟨d, hd, hk⟩))
-  · have hdis := child_disjoint v hs h hh K d e r hce hcr e₁
-    have hed : e ≤ d := child_le v hs h hh K d e hce
-    refine hmix.1 (false_of_le_false _ (e ∧ (b ∧ d)) (le_intro _ _ (modal_K _ _
-      (nec% (fun (f : e → d) (k : e ∧ b) => (⟨k.1, k.2, f k.1⟩ : e ∧ (b ∧ d)))) (le_elim _ _ hed))) ?_)
-    rw [b_meet v hs h hh K K₂ hK₂ hK₂W b hb d r hd hk]
-    exact hdis
+  have hdis := child_disjoint v hs h hh K d e r hce hcr e₁
+  have hed : e ≤ d := child_le v hs h hh K d e hce
+  refine hmix.1 (false_of_le_false _ (e ∧ (b ∧ d)) (le_intro _ _ (modal_K _ _
+    (nec% (fun (f : e → d) (k : e ∧ b) => (⟨k.1, k.2, f k.1⟩ : e ∧ (b ∧ d)))) (le_elim _ _ hed))) ?_)
+  rw [b_meet v hs h hh K K₂ hK₂ hK₂W b hb d r hd hk]
+  exact hdis
+
+theorem h_fails_at (d e r : Prop) (hd : Dl h K d) (hce : Child h K d e) (hmix : Mixed b e)
+    (hk : K₂ d r) : False :=
+  (em (e = r)).elim (fun e₁ => h_fails_chosen v hs h hh K K₂ hK₂ hK₂W b hb d e hd hmix (e₁ ▸ hk))
+    (fun e₁ => h_fails_other v hs h hh K K₂ hK₂ hK₂W b hb d e r hd hce hmix hk e₁)
+
+/-- `H` fails at every discarded part. -/
+theorem h_fails (d : Prop) (hd : Dl h K d) : ¬ Hc h K b d := fun hH =>
+  hH.elim fun e he => (hK₂ d).elim fun r hr =>
+    h_fails_at v hs h hh K K₂ hK₂ hK₂W b hb d e r hd he.1 he.2 hr.1
 
 /-- `H` holds at every true member of `M`. -/
 theorem h_holds (c : Prop) (hc : Tm h K c) (hct : c) : Hc h K b c := by
