@@ -1,4 +1,4 @@
-import Classicism.Results.BourbakiWitt.Derive.ActualityChain
+import Classicism.Results.BourbakiWitt.Derive.ActualityCode
 import Classicism.Results.BourbakiWitt.Actuality
 import Classicism.Tools.Translate
 import Classicism.Certified.Schemas

@@ -17,11 +17,11 @@ result derived in the object language and read as an entailment between schemas
 #classicism_audit Classicism.Background.BourbakiWitt Classicism.Results.BourbakiWitt.NecessaryTransversal
   Classicism.Results.BourbakiWitt.Settled Classicism.Results.BourbakiWitt.TransversalChoice
   Classicism.Results.BourbakiWitt.ActualityParts Classicism.Results.BourbakiWitt.ActualityChain
-  Classicism.Results.BourbakiWitt.Actuality
+  Classicism.Results.BourbakiWitt.ActualityCode Classicism.Results.BourbakiWitt.Actuality
 #classicism_types_audit Classicism.Background.BourbakiWitt Classicism.Results.BourbakiWitt.NecessaryTransversal
   Classicism.Results.BourbakiWitt.Settled Classicism.Results.BourbakiWitt.TransversalChoice
   Classicism.Results.BourbakiWitt.ActualityParts Classicism.Results.BourbakiWitt.ActualityChain
-  Classicism.Results.BourbakiWitt.Actuality
+  Classicism.Results.BourbakiWitt.ActualityCode Classicism.Results.BourbakiWitt.Actuality
 
 #classicism_entails Classicism.Proofs.BWTransversal.boolean_completeness_and_modalized_relational_choice_imply_necessary_transversal
 #classicism_entails Classicism.Proofs.BWChoice.vicinity_and_relational_choice_imply_transversal_choice
