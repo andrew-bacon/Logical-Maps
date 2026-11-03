@@ -129,13 +129,15 @@ theorem rootTransport_agree {ρ : RTy} (x : (interpAction sel).D (.rel ρ))
       p.1 ≠ CoalescedSum.root → (p ∈ Y ↔ p ∈ (interpIncl sel).incl ρ x))
     {k : ι} {V : C k} (r : (interpArrows A M).R.obj ⟨k, V⟩) :
     rootTransport {q | ofRT (constAtom A M .e) (fun i => constAtom A M (.var i)) sel q ∈ Y} r =
-      rootTransport (x : {X : Set (RootTuple (interpArrows A M) A ρ _) // LandsT X ∧ X ∈ sel.sel ρ _}).1 r := by
+      rootTransport (x : {X : Set (RootTuple (interpArrows A M) A ρ
+        (selArgsT (constAtom A M .e) (fun i => constAtom A M (.var i)) sel ρ)) //
+        LandsT X ∧ X ∈ sel.sel ρ _}).1 r := by
   ext p
   refine (hY _ fun h => by cases h).trans ?_
-  change toRT (constAtom A M .e) (fun i => constAtom A M (.var i)) sel
-      (ofRT (constAtom A M .e) (fun i => constAtom A M (.var i)) sel _) ∈ _ ↔ _
-  rw [toRT_ofRT]
-  rfl
+  exact Iff.of_eq (congrArg (fun q => q ∈ (x : {X : Set (RootTuple (interpArrows A M) A ρ
+        (selArgsT (constAtom A M .e) (fun i => constAtom A M (.var i)) sel ρ)) //
+        LandsT X ∧ X ∈ sel.sel ρ _}).1)
+    (toRT_ofRT (constAtom A M .e) (fun i => constAtom A M (.var i)) sel _))
 
 end Free
 

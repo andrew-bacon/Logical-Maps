@@ -103,6 +103,14 @@ theorem coalesced_constant_indexed_root.boolean_completeness_t : Statements.Mode
 theorem coalesced_constant_indexed_root.arithmetic_necessitism : Statements.Models.coalesced_constant_indexed_root.arithmetic_necessitism :=
   ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.constantIndexedData), Classicism.Map.Arguments.coalesced_sums.arithmetic_necessitism_complete_components.arithmetic_necessitism (Classicism.Meta.Coalesced.constantIndexedData) (Classicism.Meta.Coalesced.constantIndexedData_complete)⟩
 
+/-- `coalesced-constant-indexed-root`: □Axiom of Infinity (type e) fails, by `coalesced-sums`'s argument `necessary-axiom-of-infinity-complete-components`. -/
+theorem coalesced_constant_indexed_root.necessary_axiom_of_infinity_e : Statements.Models.coalesced_constant_indexed_root.necessary_axiom_of_infinity_e :=
+  ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.constantIndexedData), Classicism.Map.Arguments.coalesced_sums.necessary_axiom_of_infinity_complete_components.necessary_axiom_of_infinity_e (Classicism.Meta.Coalesced.constantIndexedData) (Classicism.Meta.Coalesced.constantIndexedData_complete)⟩
+
+/-- `coalesced-constant-indexed-root`: □Axiom of Infinity (type t) fails, by `coalesced-sums`'s argument `necessary-axiom-of-infinity-complete-components`. -/
+theorem coalesced_constant_indexed_root.necessary_axiom_of_infinity_t : Statements.Models.coalesced_constant_indexed_root.necessary_axiom_of_infinity_t :=
+  ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.constantIndexedData), Classicism.Map.Arguments.coalesced_sums.necessary_axiom_of_infinity_complete_components.necessary_axiom_of_infinity_t (Classicism.Meta.Coalesced.constantIndexedData) (Classicism.Meta.Coalesced.constantIndexedData_complete)⟩
+
 /-- `coalesced-constant-indexed-root`: Self-Atomicity (type t) fails, by `coalesced-sums`'s argument `self-atomicity-component`. -/
 theorem coalesced_constant_indexed_root.self_atomicity_t : Statements.Models.coalesced_constant_indexed_root.self_atomicity_t :=
   ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.constantIndexedData), Classicism.Map.Arguments.coalesced_sums.self_atomicity_component.self_atomicity_t (Classicism.Meta.Coalesced.constantIndexedData) (Classicism.Meta.Coalesced.constantIndexedData_complete) (Classicism.Meta.Coalesced.constantIndexedData_distinguished) (Classicism.Meta.Coalesced.constantIndexedData_fullest)⟩
@@ -151,6 +159,14 @@ theorem coalesced_maximalist_root.boolean_completeness_t : Statements.Models.coa
 theorem coalesced_maximalist_root.arithmetic_necessitism : Statements.Models.coalesced_maximalist_root.arithmetic_necessitism :=
   ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.maximalistRoot), Classicism.Map.Arguments.coalesced_sums.arithmetic_necessitism_complete_components.arithmetic_necessitism (Classicism.Meta.Coalesced.maximalistRoot) (Classicism.Meta.Coalesced.maximalistData_complete Classicism.Meta.Coalesced.sigmaTop_closed)⟩
 
+/-- `coalesced-maximalist-root`: □Axiom of Infinity (type e) fails, by `coalesced-sums`'s argument `necessary-axiom-of-infinity-complete-components`. -/
+theorem coalesced_maximalist_root.necessary_axiom_of_infinity_e : Statements.Models.coalesced_maximalist_root.necessary_axiom_of_infinity_e :=
+  ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.maximalistRoot), Classicism.Map.Arguments.coalesced_sums.necessary_axiom_of_infinity_complete_components.necessary_axiom_of_infinity_e (Classicism.Meta.Coalesced.maximalistRoot) (Classicism.Meta.Coalesced.maximalistData_complete Classicism.Meta.Coalesced.sigmaTop_closed)⟩
+
+/-- `coalesced-maximalist-root`: □Axiom of Infinity (type t) fails, by `coalesced-sums`'s argument `necessary-axiom-of-infinity-complete-components`. -/
+theorem coalesced_maximalist_root.necessary_axiom_of_infinity_t : Statements.Models.coalesced_maximalist_root.necessary_axiom_of_infinity_t :=
+  ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.maximalistRoot), Classicism.Map.Arguments.coalesced_sums.necessary_axiom_of_infinity_complete_components.necessary_axiom_of_infinity_t (Classicism.Meta.Coalesced.maximalistRoot) (Classicism.Meta.Coalesced.maximalistData_complete Classicism.Meta.Coalesced.sigmaTop_closed)⟩
+
 /-- `coalesced-maximalist-root`: Self-Atomicity (type t) fails, by `coalesced-sums`'s argument `self-atomicity-component`. -/
 theorem coalesced_maximalist_root.self_atomicity_t : Statements.Models.coalesced_maximalist_root.self_atomicity_t :=
   ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.maximalistRoot), Classicism.Map.Arguments.coalesced_sums.self_atomicity_component.self_atomicity_t (Classicism.Meta.Coalesced.maximalistRoot) (Classicism.Meta.Coalesced.maximalistData_complete Classicism.Meta.Coalesced.sigmaTop_closed) (Classicism.Meta.Coalesced.maximalistData_distinguished) (Classicism.Meta.Coalesced.maximalistData_fullest)⟩
@@ -163,9 +179,65 @@ theorem coalesced_maximalist_root.atoms_are_self_atoms_t : Statements.Models.coa
 theorem coalesced_maximalist_root.truths_are_nd_necessary : Statements.Models.coalesced_maximalist_root.truths_are_nd_necessary :=
   ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.maximalistRoot), Classicism.Map.Arguments.nd_necessity_isolated_actual_world.truths_are_nd_necessary (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)) (Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.maximalistRoot)) (Classicism.Meta.Coalesced.maximalistData_isolated)⟩
 
+/-- `coalesced-pinned-interpretations-root`: Relational Choice holds, by `coalesced-sums`'s argument `relational-choice-free-root`. -/
+theorem coalesced_pinned_interpretations_root.relational_choice_r : Statements.Models.coalesced_pinned_interpretations_root.relational_choice_r :=
+  ⟨Classicism.Meta.Coalesced.pinnedInterpRoot_isModel, Classicism.Map.Arguments.coalesced_sums.relational_choice_free_root.relational_choice_r (Classicism.Meta.Coalesced.pinnedInterpData) (Classicism.Meta.Coalesced.pinnedInterpData_free)⟩
+
+/-- `coalesced-pinned-interpretations-root`: Actuality holds, by `coalesced-sums`'s argument `actuality-singleton-root`. -/
+theorem coalesced_pinned_interpretations_root.actuality : Statements.Models.coalesced_pinned_interpretations_root.actuality :=
+  ⟨Classicism.Meta.Coalesced.pinnedInterpRoot_isModel, Classicism.Map.Arguments.coalesced_sums.actuality_singleton_root.actuality (Classicism.Meta.Coalesced.pinnedInterpData) (Classicism.Meta.Coalesced.pinnedInterpRoot_actualWorldIsolated)⟩
+
+/-- `coalesced-pinned-interpretations-root`: □Vicinity fails, by `coalesced-sums`'s argument `pure-sentences-possible`. -/
+theorem coalesced_pinned_interpretations_root.necessary_vicinity : Statements.Models.coalesced_pinned_interpretations_root.necessary_vicinity :=
+  ⟨Classicism.Meta.Coalesced.pinnedInterpRoot_isModel, Classicism.Map.Arguments.coalesced_sums.pure_sentences_possible.necessary_vicinity (Classicism.Meta.Coalesced.pinnedInterpData) (Classicism.Meta.Coalesced.pinnedInterpData_complete)⟩
+
+/-- `coalesced-pinned-interpretations-root`: □Weakly Inextensible Comprehension fails, by `coalesced-sums`'s argument `pure-sentences-possible`. -/
+theorem coalesced_pinned_interpretations_root.necessary_weakly_inextensible_comprehension_r : Statements.Models.coalesced_pinned_interpretations_root.necessary_weakly_inextensible_comprehension_r :=
+  ⟨Classicism.Meta.Coalesced.pinnedInterpRoot_isModel, Classicism.Map.Arguments.coalesced_sums.pure_sentences_possible.necessary_weakly_inextensible_comprehension_r (Classicism.Meta.Coalesced.pinnedInterpData) (Classicism.Meta.Coalesced.pinnedInterpData_complete)⟩
+
+/-- `coalesced-pinned-interpretations-root`: □Transversal fails, by `coalesced-sums`'s argument `transversal-boxed`. -/
+theorem coalesced_pinned_interpretations_root.necessary_transversal_r : Statements.Models.coalesced_pinned_interpretations_root.necessary_transversal_r :=
+  ⟨Classicism.Meta.Coalesced.pinnedInterpRoot_isModel, Classicism.Map.Arguments.coalesced_sums.transversal_boxed.necessary_transversal_r (Classicism.Meta.Coalesced.pinnedInterpData) (Classicism.Meta.Coalesced.pinnedInterpData_complete)⟩
+
+/-- `coalesced-pinned-interpretations-root`: Arithmetic Necessitism holds, by `coalesced-sums`'s argument `arithmetic-necessitism-complete-components`. -/
+theorem coalesced_pinned_interpretations_root.arithmetic_necessitism : Statements.Models.coalesced_pinned_interpretations_root.arithmetic_necessitism :=
+  ⟨Classicism.Meta.Coalesced.pinnedInterpRoot_isModel, Classicism.Map.Arguments.coalesced_sums.arithmetic_necessitism_complete_components.arithmetic_necessitism (Classicism.Meta.Coalesced.pinnedInterpData) (Classicism.Meta.Coalesced.pinnedInterpData_complete)⟩
+
+/-- `coalesced-pinned-interpretations-root`: □Axiom of Infinity (type e) fails, by `coalesced-sums`'s argument `necessary-axiom-of-infinity-complete-components`. -/
+theorem coalesced_pinned_interpretations_root.necessary_axiom_of_infinity_e : Statements.Models.coalesced_pinned_interpretations_root.necessary_axiom_of_infinity_e :=
+  ⟨Classicism.Meta.Coalesced.pinnedInterpRoot_isModel, Classicism.Map.Arguments.coalesced_sums.necessary_axiom_of_infinity_complete_components.necessary_axiom_of_infinity_e (Classicism.Meta.Coalesced.pinnedInterpData) (Classicism.Meta.Coalesced.pinnedInterpData_complete)⟩
+
+/-- `coalesced-pinned-interpretations-root`: □Axiom of Infinity (type t) fails, by `coalesced-sums`'s argument `necessary-axiom-of-infinity-complete-components`. -/
+theorem coalesced_pinned_interpretations_root.necessary_axiom_of_infinity_t : Statements.Models.coalesced_pinned_interpretations_root.necessary_axiom_of_infinity_t :=
+  ⟨Classicism.Meta.Coalesced.pinnedInterpRoot_isModel, Classicism.Map.Arguments.coalesced_sums.necessary_axiom_of_infinity_complete_components.necessary_axiom_of_infinity_t (Classicism.Meta.Coalesced.pinnedInterpData) (Classicism.Meta.Coalesced.pinnedInterpData_complete)⟩
+
 /-- `coalesced-pinned-interpretations-root`: Truths are ND-necessary holds, by the argument `nd-necessity-isolated-actual-world`. -/
 theorem coalesced_pinned_interpretations_root.truths_are_nd_necessary : Statements.Models.coalesced_pinned_interpretations_root.truths_are_nd_necessary :=
   ⟨Classicism.Meta.Coalesced.pinnedInterpRoot_isModel, Classicism.Map.Arguments.nd_necessity_isolated_actual_world.truths_are_nd_necessary (Classicism.Meta.Coalesced.pinnedInterpRoot) (Classicism.Meta.Coalesced.pinnedInterpRoot_isModel) (Classicism.Meta.Coalesced.pinnedInterpRoot_actualWorldIsolated)⟩
+
+/-- `coalesced-pinned-substitutions-root`: □Vicinity fails, by `coalesced-sums`'s argument `pure-sentences-possible`. -/
+theorem coalesced_pinned_substitutions_root.necessary_vicinity : Statements.Models.coalesced_pinned_substitutions_root.necessary_vicinity :=
+  ⟨Classicism.Meta.Coalesced.pinnedSubstRoot_isModel, Classicism.Map.Arguments.coalesced_sums.pure_sentences_possible.necessary_vicinity (Classicism.Meta.Coalesced.pinnedSubstData) (Classicism.Meta.Coalesced.pinnedSubstData_complete)⟩
+
+/-- `coalesced-pinned-substitutions-root`: □Weakly Inextensible Comprehension fails, by `coalesced-sums`'s argument `pure-sentences-possible`. -/
+theorem coalesced_pinned_substitutions_root.necessary_weakly_inextensible_comprehension_r : Statements.Models.coalesced_pinned_substitutions_root.necessary_weakly_inextensible_comprehension_r :=
+  ⟨Classicism.Meta.Coalesced.pinnedSubstRoot_isModel, Classicism.Map.Arguments.coalesced_sums.pure_sentences_possible.necessary_weakly_inextensible_comprehension_r (Classicism.Meta.Coalesced.pinnedSubstData) (Classicism.Meta.Coalesced.pinnedSubstData_complete)⟩
+
+/-- `coalesced-pinned-substitutions-root`: □Transversal fails, by `coalesced-sums`'s argument `transversal-boxed`. -/
+theorem coalesced_pinned_substitutions_root.necessary_transversal_r : Statements.Models.coalesced_pinned_substitutions_root.necessary_transversal_r :=
+  ⟨Classicism.Meta.Coalesced.pinnedSubstRoot_isModel, Classicism.Map.Arguments.coalesced_sums.transversal_boxed.necessary_transversal_r (Classicism.Meta.Coalesced.pinnedSubstData) (Classicism.Meta.Coalesced.pinnedSubstData_complete)⟩
+
+/-- `coalesced-pinned-substitutions-root`: Arithmetic Necessitism holds, by `coalesced-sums`'s argument `arithmetic-necessitism-complete-components`. -/
+theorem coalesced_pinned_substitutions_root.arithmetic_necessitism : Statements.Models.coalesced_pinned_substitutions_root.arithmetic_necessitism :=
+  ⟨Classicism.Meta.Coalesced.pinnedSubstRoot_isModel, Classicism.Map.Arguments.coalesced_sums.arithmetic_necessitism_complete_components.arithmetic_necessitism (Classicism.Meta.Coalesced.pinnedSubstData) (Classicism.Meta.Coalesced.pinnedSubstData_complete)⟩
+
+/-- `coalesced-pinned-substitutions-root`: □Axiom of Infinity (type e) fails, by `coalesced-sums`'s argument `necessary-axiom-of-infinity-complete-components`. -/
+theorem coalesced_pinned_substitutions_root.necessary_axiom_of_infinity_e : Statements.Models.coalesced_pinned_substitutions_root.necessary_axiom_of_infinity_e :=
+  ⟨Classicism.Meta.Coalesced.pinnedSubstRoot_isModel, Classicism.Map.Arguments.coalesced_sums.necessary_axiom_of_infinity_complete_components.necessary_axiom_of_infinity_e (Classicism.Meta.Coalesced.pinnedSubstData) (Classicism.Meta.Coalesced.pinnedSubstData_complete)⟩
+
+/-- `coalesced-pinned-substitutions-root`: □Axiom of Infinity (type t) fails, by `coalesced-sums`'s argument `necessary-axiom-of-infinity-complete-components`. -/
+theorem coalesced_pinned_substitutions_root.necessary_axiom_of_infinity_t : Statements.Models.coalesced_pinned_substitutions_root.necessary_axiom_of_infinity_t :=
+  ⟨Classicism.Meta.Coalesced.pinnedSubstRoot_isModel, Classicism.Map.Arguments.coalesced_sums.necessary_axiom_of_infinity_complete_components.necessary_axiom_of_infinity_t (Classicism.Meta.Coalesced.pinnedSubstData) (Classicism.Meta.Coalesced.pinnedSubstData_complete)⟩
 
 /-- `coalesced-single-individual-root`: Intensional Choice fails, by `coalesced-sums`'s argument `intensional-choice-component`. -/
 theorem coalesced_single_individual_root.intensional_choice_r : Statements.Models.coalesced_single_individual_root.intensional_choice_r :=
@@ -195,6 +267,14 @@ theorem coalesced_single_individual_root.boolean_completeness_t : Statements.Mod
 theorem coalesced_single_individual_root.arithmetic_necessitism : Statements.Models.coalesced_single_individual_root.arithmetic_necessitism :=
   ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.singleIndividualData), Classicism.Map.Arguments.coalesced_sums.arithmetic_necessitism_complete_components.arithmetic_necessitism (Classicism.Meta.Coalesced.singleIndividualData) (Classicism.Meta.Coalesced.singleIndividualData_complete)⟩
 
+/-- `coalesced-single-individual-root`: □Axiom of Infinity (type e) fails, by `coalesced-sums`'s argument `necessary-axiom-of-infinity-complete-components`. -/
+theorem coalesced_single_individual_root.necessary_axiom_of_infinity_e : Statements.Models.coalesced_single_individual_root.necessary_axiom_of_infinity_e :=
+  ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.singleIndividualData), Classicism.Map.Arguments.coalesced_sums.necessary_axiom_of_infinity_complete_components.necessary_axiom_of_infinity_e (Classicism.Meta.Coalesced.singleIndividualData) (Classicism.Meta.Coalesced.singleIndividualData_complete)⟩
+
+/-- `coalesced-single-individual-root`: □Axiom of Infinity (type t) fails, by `coalesced-sums`'s argument `necessary-axiom-of-infinity-complete-components`. -/
+theorem coalesced_single_individual_root.necessary_axiom_of_infinity_t : Statements.Models.coalesced_single_individual_root.necessary_axiom_of_infinity_t :=
+  ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.singleIndividualData), Classicism.Map.Arguments.coalesced_sums.necessary_axiom_of_infinity_complete_components.necessary_axiom_of_infinity_t (Classicism.Meta.Coalesced.singleIndividualData) (Classicism.Meta.Coalesced.singleIndividualData_complete)⟩
+
 /-- `coalesced-single-individual-root`: Self-Atomicity (type t) fails, by `coalesced-sums`'s argument `self-atomicity-component`. -/
 theorem coalesced_single_individual_root.self_atomicity_t : Statements.Models.coalesced_single_individual_root.self_atomicity_t :=
   ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.singleIndividualData), Classicism.Map.Arguments.coalesced_sums.self_atomicity_component.self_atomicity_t (Classicism.Meta.Coalesced.singleIndividualData) (Classicism.Meta.Coalesced.singleIndividualData_complete) (Classicism.Meta.Coalesced.singleIndividualData_distinguished) (Classicism.Meta.Coalesced.singleIndividualData_fullest)⟩
@@ -206,6 +286,34 @@ theorem coalesced_single_individual_root.atoms_are_self_atoms_t : Statements.Mod
 /-- `coalesced-single-individual-root`: Truths are ND-necessary holds, by the argument `nd-necessity-isolated-actual-world`. -/
 theorem coalesced_single_individual_root.truths_are_nd_necessary : Statements.Models.coalesced_single_individual_root.truths_are_nd_necessary :=
   ⟨Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.singleIndividualData), Classicism.Map.Arguments.nd_necessity_isolated_actual_world.truths_are_nd_necessary (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)) (Classicism.Meta.Coalesced.SumData.isModel (Classicism.Meta.Coalesced.singleIndividualData)) (Classicism.Meta.Coalesced.singleIndividualData_isolated)⟩
+
+/-- `coalesced-substitutions-fullest-root`: Relational Choice holds, by `coalesced-sums`'s argument `relational-choice-free-root`. -/
+theorem coalesced_substitutions_fullest_root.relational_choice_r : Statements.Models.coalesced_substitutions_fullest_root.relational_choice_r :=
+  ⟨Classicism.Meta.Coalesced.substitutionsFullestRoot_isModel, Classicism.Map.Arguments.coalesced_sums.relational_choice_free_root.relational_choice_r (Classicism.Meta.Coalesced.substitutionsFullestData) (Classicism.Meta.Coalesced.substitutionsFullestData_free)⟩
+
+/-- `coalesced-substitutions-fullest-root`: □Vicinity fails, by `coalesced-sums`'s argument `pure-sentences-possible`. -/
+theorem coalesced_substitutions_fullest_root.necessary_vicinity : Statements.Models.coalesced_substitutions_fullest_root.necessary_vicinity :=
+  ⟨Classicism.Meta.Coalesced.substitutionsFullestRoot_isModel, Classicism.Map.Arguments.coalesced_sums.pure_sentences_possible.necessary_vicinity (Classicism.Meta.Coalesced.substitutionsFullestData) (Classicism.Meta.Coalesced.substitutionsFullestData_complete)⟩
+
+/-- `coalesced-substitutions-fullest-root`: □Weakly Inextensible Comprehension fails, by `coalesced-sums`'s argument `pure-sentences-possible`. -/
+theorem coalesced_substitutions_fullest_root.necessary_weakly_inextensible_comprehension_r : Statements.Models.coalesced_substitutions_fullest_root.necessary_weakly_inextensible_comprehension_r :=
+  ⟨Classicism.Meta.Coalesced.substitutionsFullestRoot_isModel, Classicism.Map.Arguments.coalesced_sums.pure_sentences_possible.necessary_weakly_inextensible_comprehension_r (Classicism.Meta.Coalesced.substitutionsFullestData) (Classicism.Meta.Coalesced.substitutionsFullestData_complete)⟩
+
+/-- `coalesced-substitutions-fullest-root`: □Transversal fails, by `coalesced-sums`'s argument `transversal-boxed`. -/
+theorem coalesced_substitutions_fullest_root.necessary_transversal_r : Statements.Models.coalesced_substitutions_fullest_root.necessary_transversal_r :=
+  ⟨Classicism.Meta.Coalesced.substitutionsFullestRoot_isModel, Classicism.Map.Arguments.coalesced_sums.transversal_boxed.necessary_transversal_r (Classicism.Meta.Coalesced.substitutionsFullestData) (Classicism.Meta.Coalesced.substitutionsFullestData_complete)⟩
+
+/-- `coalesced-substitutions-fullest-root`: Arithmetic Necessitism holds, by `coalesced-sums`'s argument `arithmetic-necessitism-complete-components`. -/
+theorem coalesced_substitutions_fullest_root.arithmetic_necessitism : Statements.Models.coalesced_substitutions_fullest_root.arithmetic_necessitism :=
+  ⟨Classicism.Meta.Coalesced.substitutionsFullestRoot_isModel, Classicism.Map.Arguments.coalesced_sums.arithmetic_necessitism_complete_components.arithmetic_necessitism (Classicism.Meta.Coalesced.substitutionsFullestData) (Classicism.Meta.Coalesced.substitutionsFullestData_complete)⟩
+
+/-- `coalesced-substitutions-fullest-root`: □Axiom of Infinity (type e) fails, by `coalesced-sums`'s argument `necessary-axiom-of-infinity-complete-components`. -/
+theorem coalesced_substitutions_fullest_root.necessary_axiom_of_infinity_e : Statements.Models.coalesced_substitutions_fullest_root.necessary_axiom_of_infinity_e :=
+  ⟨Classicism.Meta.Coalesced.substitutionsFullestRoot_isModel, Classicism.Map.Arguments.coalesced_sums.necessary_axiom_of_infinity_complete_components.necessary_axiom_of_infinity_e (Classicism.Meta.Coalesced.substitutionsFullestData) (Classicism.Meta.Coalesced.substitutionsFullestData_complete)⟩
+
+/-- `coalesced-substitutions-fullest-root`: □Axiom of Infinity (type t) fails, by `coalesced-sums`'s argument `necessary-axiom-of-infinity-complete-components`. -/
+theorem coalesced_substitutions_fullest_root.necessary_axiom_of_infinity_t : Statements.Models.coalesced_substitutions_fullest_root.necessary_axiom_of_infinity_t :=
+  ⟨Classicism.Meta.Coalesced.substitutionsFullestRoot_isModel, Classicism.Map.Arguments.coalesced_sums.necessary_axiom_of_infinity_complete_components.necessary_axiom_of_infinity_t (Classicism.Meta.Coalesced.substitutionsFullestData) (Classicism.Meta.Coalesced.substitutionsFullestData_complete)⟩
 
 /-- `finite-support-dyadic-roundings`: Actuality holds, by `finite-support-one-object`'s argument `actual-world`. -/
 theorem finite_support_dyadic_roundings.actuality : Statements.Models.finite_support_dyadic_roundings.actuality :=

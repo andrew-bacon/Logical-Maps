@@ -189,8 +189,8 @@ local notation "M" => MSet.model_isModel Unit
 instance finite_e : Finite ((A).Dom (A).W₀ .e) := inferInstanceAs (Finite Unit)
 
 instance finite_t : Finite ((A).Dom (A).W₀ (.rel .t)) := by
-  haveI : Finite (CategoryTheory.SingleObj Unit) := inferInstanceAs (Finite Unit)
-  haveI : ∀ V W : CategoryTheory.SingleObj Unit, Finite (V ⟶ W) := fun _ _ => inferInstanceAs (Finite Unit)
+  have : Finite (CategoryTheory.SingleObj Unit) := inferInstanceAs (Finite Unit)
+  have : ∀ V W : CategoryTheory.SingleObj Unit, Finite (V ⟶ W) := fun _ _ => inferInstanceAs (Finite Unit)
   change Finite (Set (Σ V : CategoryTheory.SingleObj Unit, PUnit × (CategoryTheory.SingleObj.star Unit ⟶ V)))
   infer_instance
 

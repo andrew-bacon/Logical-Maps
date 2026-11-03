@@ -409,6 +409,14 @@ def Models.coalesced_constant_indexed_root.boolean_completeness_t : Prop :=
 def Models.coalesced_constant_indexed_root.arithmetic_necessitism : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).HoldsAx Classicism.P.ArithmeticNecessitism.schemaIn
 
+/-- `coalesced-constant-indexed-root`: □Axiom of Infinity (type e) fails. -/
+def Models.coalesced_constant_indexed_root.necessary_axiom_of_infinity_e : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).HoldsAx Classicism.P.NecAxiomOfInfinityE.schemaIn
+
+/-- `coalesced-constant-indexed-root`: □Axiom of Infinity (type t) fails. -/
+def Models.coalesced_constant_indexed_root.necessary_axiom_of_infinity_t : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).HoldsAx Classicism.P.NecAxiomOfInfinityT.schemaIn
+
 /-- `coalesced-constant-indexed-root`: Self-Atomicity (type t) fails. -/
 def Models.coalesced_constant_indexed_root.self_atomicity_t : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.constantIndexedData)).HoldsAx Classicism.P.SelfAtomicityT.schemaIn
@@ -457,6 +465,14 @@ def Models.coalesced_maximalist_root.boolean_completeness_t : Prop :=
 def Models.coalesced_maximalist_root.arithmetic_necessitism : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).HoldsAx Classicism.P.ArithmeticNecessitism.schemaIn
 
+/-- `coalesced-maximalist-root`: □Axiom of Infinity (type e) fails. -/
+def Models.coalesced_maximalist_root.necessary_axiom_of_infinity_e : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).HoldsAx Classicism.P.NecAxiomOfInfinityE.schemaIn
+
+/-- `coalesced-maximalist-root`: □Axiom of Infinity (type t) fails. -/
+def Models.coalesced_maximalist_root.necessary_axiom_of_infinity_t : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).HoldsAx Classicism.P.NecAxiomOfInfinityT.schemaIn
+
 /-- `coalesced-maximalist-root`: Self-Atomicity (type t) fails. -/
 def Models.coalesced_maximalist_root.self_atomicity_t : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).HoldsAx Classicism.P.SelfAtomicityT.schemaIn
@@ -469,9 +485,65 @@ def Models.coalesced_maximalist_root.atoms_are_self_atoms_t : Prop :=
 def Models.coalesced_maximalist_root.truths_are_nd_necessary : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.maximalistRoot)).HoldsAx Classicism.P.TruthsAreNDNecessary.schemaIn
 
+/-- `coalesced-pinned-interpretations-root`: Relational Choice holds. -/
+def Models.coalesced_pinned_interpretations_root.relational_choice_r : Prop :=
+  (Classicism.Meta.Coalesced.pinnedInterpRoot).IsModel ∧ (Classicism.Meta.Coalesced.pinnedInterpRoot).HoldsAx Classicism.P.RelationalChoice.schemaIn
+
+/-- `coalesced-pinned-interpretations-root`: Actuality holds. -/
+def Models.coalesced_pinned_interpretations_root.actuality : Prop :=
+  (Classicism.Meta.Coalesced.pinnedInterpRoot).IsModel ∧ (Classicism.Meta.Coalesced.pinnedInterpRoot).HoldsAx Classicism.P.Actuality.schemaIn
+
+/-- `coalesced-pinned-interpretations-root`: □Vicinity fails. -/
+def Models.coalesced_pinned_interpretations_root.necessary_vicinity : Prop :=
+  (Classicism.Meta.Coalesced.pinnedInterpRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.pinnedInterpRoot).HoldsAx Classicism.P.NecVicinity.schemaIn
+
+/-- `coalesced-pinned-interpretations-root`: □Weakly Inextensible Comprehension fails. -/
+def Models.coalesced_pinned_interpretations_root.necessary_weakly_inextensible_comprehension_r : Prop :=
+  (Classicism.Meta.Coalesced.pinnedInterpRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.pinnedInterpRoot).HoldsAx Classicism.P.NecWeaklyInextensibleComprehension.schemaIn
+
+/-- `coalesced-pinned-interpretations-root`: □Transversal fails. -/
+def Models.coalesced_pinned_interpretations_root.necessary_transversal_r : Prop :=
+  (Classicism.Meta.Coalesced.pinnedInterpRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.pinnedInterpRoot).HoldsAx Classicism.P.NecTransversal.schemaIn
+
+/-- `coalesced-pinned-interpretations-root`: Arithmetic Necessitism holds. -/
+def Models.coalesced_pinned_interpretations_root.arithmetic_necessitism : Prop :=
+  (Classicism.Meta.Coalesced.pinnedInterpRoot).IsModel ∧ (Classicism.Meta.Coalesced.pinnedInterpRoot).HoldsAx Classicism.P.ArithmeticNecessitism.schemaIn
+
+/-- `coalesced-pinned-interpretations-root`: □Axiom of Infinity (type e) fails. -/
+def Models.coalesced_pinned_interpretations_root.necessary_axiom_of_infinity_e : Prop :=
+  (Classicism.Meta.Coalesced.pinnedInterpRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.pinnedInterpRoot).HoldsAx Classicism.P.NecAxiomOfInfinityE.schemaIn
+
+/-- `coalesced-pinned-interpretations-root`: □Axiom of Infinity (type t) fails. -/
+def Models.coalesced_pinned_interpretations_root.necessary_axiom_of_infinity_t : Prop :=
+  (Classicism.Meta.Coalesced.pinnedInterpRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.pinnedInterpRoot).HoldsAx Classicism.P.NecAxiomOfInfinityT.schemaIn
+
 /-- `coalesced-pinned-interpretations-root`: Truths are ND-necessary holds. -/
 def Models.coalesced_pinned_interpretations_root.truths_are_nd_necessary : Prop :=
   (Classicism.Meta.Coalesced.pinnedInterpRoot).IsModel ∧ (Classicism.Meta.Coalesced.pinnedInterpRoot).HoldsAx Classicism.P.TruthsAreNDNecessary.schemaIn
+
+/-- `coalesced-pinned-substitutions-root`: □Vicinity fails. -/
+def Models.coalesced_pinned_substitutions_root.necessary_vicinity : Prop :=
+  (Classicism.Meta.Coalesced.pinnedSubstRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.pinnedSubstRoot).HoldsAx Classicism.P.NecVicinity.schemaIn
+
+/-- `coalesced-pinned-substitutions-root`: □Weakly Inextensible Comprehension fails. -/
+def Models.coalesced_pinned_substitutions_root.necessary_weakly_inextensible_comprehension_r : Prop :=
+  (Classicism.Meta.Coalesced.pinnedSubstRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.pinnedSubstRoot).HoldsAx Classicism.P.NecWeaklyInextensibleComprehension.schemaIn
+
+/-- `coalesced-pinned-substitutions-root`: □Transversal fails. -/
+def Models.coalesced_pinned_substitutions_root.necessary_transversal_r : Prop :=
+  (Classicism.Meta.Coalesced.pinnedSubstRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.pinnedSubstRoot).HoldsAx Classicism.P.NecTransversal.schemaIn
+
+/-- `coalesced-pinned-substitutions-root`: Arithmetic Necessitism holds. -/
+def Models.coalesced_pinned_substitutions_root.arithmetic_necessitism : Prop :=
+  (Classicism.Meta.Coalesced.pinnedSubstRoot).IsModel ∧ (Classicism.Meta.Coalesced.pinnedSubstRoot).HoldsAx Classicism.P.ArithmeticNecessitism.schemaIn
+
+/-- `coalesced-pinned-substitutions-root`: □Axiom of Infinity (type e) fails. -/
+def Models.coalesced_pinned_substitutions_root.necessary_axiom_of_infinity_e : Prop :=
+  (Classicism.Meta.Coalesced.pinnedSubstRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.pinnedSubstRoot).HoldsAx Classicism.P.NecAxiomOfInfinityE.schemaIn
+
+/-- `coalesced-pinned-substitutions-root`: □Axiom of Infinity (type t) fails. -/
+def Models.coalesced_pinned_substitutions_root.necessary_axiom_of_infinity_t : Prop :=
+  (Classicism.Meta.Coalesced.pinnedSubstRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.pinnedSubstRoot).HoldsAx Classicism.P.NecAxiomOfInfinityT.schemaIn
 
 /-- `coalesced-single-individual-root`: Intensional Choice fails. -/
 def Models.coalesced_single_individual_root.intensional_choice_r : Prop :=
@@ -501,6 +573,14 @@ def Models.coalesced_single_individual_root.boolean_completeness_t : Prop :=
 def Models.coalesced_single_individual_root.arithmetic_necessitism : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).HoldsAx Classicism.P.ArithmeticNecessitism.schemaIn
 
+/-- `coalesced-single-individual-root`: □Axiom of Infinity (type e) fails. -/
+def Models.coalesced_single_individual_root.necessary_axiom_of_infinity_e : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).HoldsAx Classicism.P.NecAxiomOfInfinityE.schemaIn
+
+/-- `coalesced-single-individual-root`: □Axiom of Infinity (type t) fails. -/
+def Models.coalesced_single_individual_root.necessary_axiom_of_infinity_t : Prop :=
+  (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).HoldsAx Classicism.P.NecAxiomOfInfinityT.schemaIn
+
 /-- `coalesced-single-individual-root`: Self-Atomicity (type t) fails. -/
 def Models.coalesced_single_individual_root.self_atomicity_t : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).IsModel ∧ ¬ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).HoldsAx Classicism.P.SelfAtomicityT.schemaIn
@@ -512,6 +592,34 @@ def Models.coalesced_single_individual_root.atoms_are_self_atoms_t : Prop :=
 /-- `coalesced-single-individual-root`: Truths are ND-necessary holds. -/
 def Models.coalesced_single_individual_root.truths_are_nd_necessary : Prop :=
   (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).IsModel ∧ (Classicism.Meta.Coalesced.SumData.model (Classicism.Meta.Coalesced.singleIndividualData)).HoldsAx Classicism.P.TruthsAreNDNecessary.schemaIn
+
+/-- `coalesced-substitutions-fullest-root`: Relational Choice holds. -/
+def Models.coalesced_substitutions_fullest_root.relational_choice_r : Prop :=
+  (Classicism.Meta.Coalesced.substitutionsFullestRoot).IsModel ∧ (Classicism.Meta.Coalesced.substitutionsFullestRoot).HoldsAx Classicism.P.RelationalChoice.schemaIn
+
+/-- `coalesced-substitutions-fullest-root`: □Vicinity fails. -/
+def Models.coalesced_substitutions_fullest_root.necessary_vicinity : Prop :=
+  (Classicism.Meta.Coalesced.substitutionsFullestRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.substitutionsFullestRoot).HoldsAx Classicism.P.NecVicinity.schemaIn
+
+/-- `coalesced-substitutions-fullest-root`: □Weakly Inextensible Comprehension fails. -/
+def Models.coalesced_substitutions_fullest_root.necessary_weakly_inextensible_comprehension_r : Prop :=
+  (Classicism.Meta.Coalesced.substitutionsFullestRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.substitutionsFullestRoot).HoldsAx Classicism.P.NecWeaklyInextensibleComprehension.schemaIn
+
+/-- `coalesced-substitutions-fullest-root`: □Transversal fails. -/
+def Models.coalesced_substitutions_fullest_root.necessary_transversal_r : Prop :=
+  (Classicism.Meta.Coalesced.substitutionsFullestRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.substitutionsFullestRoot).HoldsAx Classicism.P.NecTransversal.schemaIn
+
+/-- `coalesced-substitutions-fullest-root`: Arithmetic Necessitism holds. -/
+def Models.coalesced_substitutions_fullest_root.arithmetic_necessitism : Prop :=
+  (Classicism.Meta.Coalesced.substitutionsFullestRoot).IsModel ∧ (Classicism.Meta.Coalesced.substitutionsFullestRoot).HoldsAx Classicism.P.ArithmeticNecessitism.schemaIn
+
+/-- `coalesced-substitutions-fullest-root`: □Axiom of Infinity (type e) fails. -/
+def Models.coalesced_substitutions_fullest_root.necessary_axiom_of_infinity_e : Prop :=
+  (Classicism.Meta.Coalesced.substitutionsFullestRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.substitutionsFullestRoot).HoldsAx Classicism.P.NecAxiomOfInfinityE.schemaIn
+
+/-- `coalesced-substitutions-fullest-root`: □Axiom of Infinity (type t) fails. -/
+def Models.coalesced_substitutions_fullest_root.necessary_axiom_of_infinity_t : Prop :=
+  (Classicism.Meta.Coalesced.substitutionsFullestRoot).IsModel ∧ ¬ (Classicism.Meta.Coalesced.substitutionsFullestRoot).HoldsAx Classicism.P.NecAxiomOfInfinityT.schemaIn
 
 /-- `finite-support-dyadic-roundings`: Actuality holds. -/
 def Models.finite_support_dyadic_roundings.actuality : Prop :=
@@ -1873,9 +1981,29 @@ def Arguments.coalesced_sums.atomicity_t_component.atomicity_t : Prop :=
 def Arguments.coalesced_sums.boolean_completeness_t_component.boolean_completeness_t : Prop :=
   ∀ (D : Classicism.Meta.Coalesced.SumData), Classicism.Meta.Coalesced.SumData.CompleteComponents D → Classicism.Meta.Coalesced.SumData.DistinguishedArrows D → Classicism.Meta.Coalesced.SumData.FullestDomains D → ¬ ((Classicism.Meta.Coalesced.SumData.model D)).HoldsAx Classicism.P.BooleanCompletenessT.schemaIn
 
+/-- `coalesced-sums`, argument `pure-sentences-possible`: □Vicinity fails in every model meeting its conditions. -/
+def Arguments.coalesced_sums.pure_sentences_possible.necessary_vicinity : Prop :=
+  ∀ (D : Classicism.Meta.Coalesced.SumData), Classicism.Meta.Coalesced.SumData.CompleteComponents D → ¬ ((Classicism.Meta.Coalesced.SumData.model D)).HoldsAx Classicism.P.NecVicinity.schemaIn
+
+/-- `coalesced-sums`, argument `pure-sentences-possible`: □Weakly Inextensible Comprehension fails in every model meeting its conditions. -/
+def Arguments.coalesced_sums.pure_sentences_possible.necessary_weakly_inextensible_comprehension_r : Prop :=
+  ∀ (D : Classicism.Meta.Coalesced.SumData), Classicism.Meta.Coalesced.SumData.CompleteComponents D → ¬ ((Classicism.Meta.Coalesced.SumData.model D)).HoldsAx Classicism.P.NecWeaklyInextensibleComprehension.schemaIn
+
+/-- `coalesced-sums`, argument `transversal-boxed`: □Transversal fails in every model meeting its conditions. -/
+def Arguments.coalesced_sums.transversal_boxed.necessary_transversal_r : Prop :=
+  ∀ (D : Classicism.Meta.Coalesced.SumData), Classicism.Meta.Coalesced.SumData.CompleteComponents D → ¬ ((Classicism.Meta.Coalesced.SumData.model D)).HoldsAx Classicism.P.NecTransversal.schemaIn
+
 /-- `coalesced-sums`, argument `arithmetic-necessitism-complete-components`: Arithmetic Necessitism holds in every model meeting its conditions. -/
 def Arguments.coalesced_sums.arithmetic_necessitism_complete_components.arithmetic_necessitism : Prop :=
   ∀ (D : Classicism.Meta.Coalesced.SumData), Classicism.Meta.Coalesced.SumData.CompleteComponents D → ((Classicism.Meta.Coalesced.SumData.model D)).HoldsAx Classicism.P.ArithmeticNecessitism.schemaIn
+
+/-- `coalesced-sums`, argument `necessary-axiom-of-infinity-complete-components`: □Axiom of Infinity (type e) fails in every model meeting its conditions. -/
+def Arguments.coalesced_sums.necessary_axiom_of_infinity_complete_components.necessary_axiom_of_infinity_e : Prop :=
+  ∀ (D : Classicism.Meta.Coalesced.SumData), Classicism.Meta.Coalesced.SumData.CompleteComponents D → ¬ ((Classicism.Meta.Coalesced.SumData.model D)).HoldsAx Classicism.P.NecAxiomOfInfinityE.schemaIn
+
+/-- `coalesced-sums`, argument `necessary-axiom-of-infinity-complete-components`: □Axiom of Infinity (type t) fails in every model meeting its conditions. -/
+def Arguments.coalesced_sums.necessary_axiom_of_infinity_complete_components.necessary_axiom_of_infinity_t : Prop :=
+  ∀ (D : Classicism.Meta.Coalesced.SumData), Classicism.Meta.Coalesced.SumData.CompleteComponents D → ¬ ((Classicism.Meta.Coalesced.SumData.model D)).HoldsAx Classicism.P.NecAxiomOfInfinityT.schemaIn
 
 /-- `coalesced-sums`, argument `self-atomicity-component`: Self-Atomicity (type t) fails in every model meeting its conditions. -/
 def Arguments.coalesced_sums.self_atomicity_component.self_atomicity_t : Prop :=
