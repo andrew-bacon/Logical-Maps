@@ -228,6 +228,8 @@ lean:
     - Classicism.Semantics.Interpretations
     - Classicism.Models.SymmetricFull
     - Classicism.Models.SymmetricIdeal
+    - Classicism.Models.SymmetricIdealMeets
+    - Classicism.Models.QualitativeLinksMeets
     - Classicism.Models.PairInjCollapse
     - Classicism.Models.OldNewBase
     - Classicism.Models.FiniteCompressionBase
