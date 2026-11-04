@@ -1454,3 +1454,25 @@ finitely pinned domains, the necessary Axioms of Infinity, the self-atom argumen
 
 *Checked.* The full build passes; `lean-check` reports 473 of 473 model verdicts verified (52
 new, all from the group's and the topic's certified arguments), OK (pending proofs remain).
+
+## Coalesced sums: the members as group data, 3 November
+
+`Coalesced/PureSentencesPossible.lean` takes from `Results/Other/Witnesses.lean` the lemma that the
+necessitation of a schema some Lean model refutes fails at a coalesced root with complete components
+(`SumData.not_holdsAx_box_of_complete`, which no longer asks for distinguished arrows), with the
+truncation model's failures of Vicinity and Weakly Inextensible Comprehension and the soundness
+lemmas they use, so that the group's arguments `pure-sentences-possible`, `transversal-boxed` and
+`necessary-axiom-of-infinity-complete-components` are certified as arguments (`MapArguments.lean`).
+The Axioms of Infinity at `e` and `t` fail in the full model with one world, one individual and two
+propositions (`MSet.model Unit`).
+
+`Models/CoalescedInterpretationSums.lean`: the sum over the interpretation arrows into the canonical
+family is a `SumData` (`SumData.ofInterp`) meeting `complete-components`; with the fullest root
+domains it meets `fullest-domains` and `free-root-component`, and the finitely pinned root with only
+the identity meets `free-root-component`. New member in Lean: `coalesced-substitutions-fullest-root`
+(`substitutionsFullestRoot`), whose Actuality follows from a free root component alone
+(`SumData.holds_actuality_of_free`). `coalesced-definable-root`'s model is the reduct of such a sum;
+its seven verdicts from the group's arguments are certified through it (`MapWitnesses.lean`).
+
+*Checked.* `lean-check` OK (pending proofs remain): 456 model verdicts verified. The group's
+certified verdicts went from 75 (48 from arguments, 27 member by member) to 110 (75 and 35).

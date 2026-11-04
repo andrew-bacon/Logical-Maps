@@ -238,6 +238,7 @@ lean:
     - Classicism.Coalesced.SumData
     - Classicism.Models.CoalescedFinite
     - Classicism.Models.CoalescedInterpretations
+    - Classicism.Models.CoalescedInterpretationSums
     - Classicism.Models.Henkin
     - Classicism.Models.GluedFreeMonoid
     - Classicism.Models.GluedFreeProduct
