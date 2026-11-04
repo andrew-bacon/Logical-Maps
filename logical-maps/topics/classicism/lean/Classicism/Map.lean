@@ -1,3 +1,4 @@
+import Classicism.Results.ChurchRecursion
 import Classicism.Statements
 import Classicism.Results.Arity
 import Classicism.Results.Boxed
@@ -2277,5 +2278,11 @@ theorem necessary_axiom_of_infinity_t_implies_axiom_of_infinity_t : Statements.n
 
 theorem necessary_atomlessness_implies_necessary_axiom_of_infinity_t : Statements.necessary_atomlessness_implies_necessary_axiom_of_infinity_t := by
   map_cert Proofs.necessary_atomlessness_implies_necessary_axiom_of_infinity_t.entails
+
+theorem necessary_church_numeral_infinity_implies_church_numeral_functional_recursion : Statements.necessary_church_numeral_infinity_implies_church_numeral_functional_recursion := by
+  map_cert Meta.necessary_church_numeral_infinity_implies_church_numeral_functional_recursion
+
+theorem necessary_church_numeral_infinity_implies_sequence_functional_recursion : Statements.necessary_church_numeral_infinity_implies_sequence_functional_recursion := by
+  map_cert Meta.necessary_church_numeral_infinity_implies_sequence_functional_recursion
 
 end Classicism.Map

@@ -173,8 +173,7 @@ theorem cons_injective (hI : Infinity α) (b c : σ) (s r : Seq α σ)
 theorem cons_ne_nil (hI : Infinity α) (b : σ) (s : Seq α σ) : cons b s ≠ nil α σ := by
   intro he
   have hb := (observe_cons_zero hI (λ _ : σ ↦ True) b s).2 True.intro
-  exact (observe_nil (λ _ : σ ↦ True) (zero α)).1
-    ((congrArg (λ z ↦ observe (λ _ : σ ↦ True) z (zero α)) he).mp hb)
+  exact False.elim ((congrArg (λ z ↦ observe (λ _ : σ ↦ True) z (zero α)) he).mp hb)
 
 end basic
 end Classicism.Church

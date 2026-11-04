@@ -1,0 +1,12 @@
+import Classicism.Certified.ChurchRecursionSchemas
+import Classicism.Certified.ChurchSequences
+import Classicism.Background.ChurchRecursion
+
+#classicism_audit Classicism.Background.ChurchRecursion
+#classicism_types_audit Classicism.Background.ChurchRecursion
+
+set_option maxRecDepth 10000
+set_option maxHeartbeats 20000000
+
+#classicism_certify Classicism.Church.num_recursion_unary
+#classicism_certify Classicism.Church.seq_recursion_unary
