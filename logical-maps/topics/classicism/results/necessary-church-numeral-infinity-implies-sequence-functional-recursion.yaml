@@ -10,7 +10,7 @@ certificate:
   recorded_by: Codex (OpenAI), prompted by Andrew Bacon
   checked_by: []
   date: '2026-11-02'
-  lean: none
+  lean: verified
   lean_ref: Classicism.Map.necessary_church_numeral_infinity_implies_sequence_functional_recursion
 sources:
 - Andrew Bacon, Notes for Zach (25 March 2023), circulated as Sequences in Classicism, §§1–3.
@@ -30,11 +30,13 @@ proof: With accumulator Num(α) → t, positional observations separate generate
   laws give functionality of the least recursion relation. Boxed Infinity gives necessary functionality;
   persistence follows from minimality without Infinity. Pointwise universal projection gives the desired
   function by Intensionality. See the full write-up.
-notes: Mathematical proof supplied; the map generates a Lean statement, but no Lean derivation certificate
-  for this result is claimed. Church-numeral Infinity is distinct from the existing cardinality-based
-  Infinity principles.
+notes: Complete kernel-checked object-language derivation, lifted to every relational output type
+  including propositions. All 22 new lemmas pass the Classicism Equivalence and relational type audits.
+  The full Classicism build and generated-statement certificate audit passed with pinned Lean 4.33.1
+  on 4 November 2026; pmap lean-check classicism --update marked this result verified.
+  Church-numeral Infinity is distinct from the existing cardinality-based Infinity principles.
 
 changes:
 - date: '2026-11-04'
   by: Codex (OpenAI), prompted by Andrew Bacon
-  summary: Reconstructed least-graph Lean derivations and all-relational-output lifting; verification pending.
+  summary: Added least-graph Lean derivations and all-relational-output lifting; the full Classicism build and certificate audit passed and marked this result Lean verified.

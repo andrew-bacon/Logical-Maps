@@ -142,6 +142,13 @@ revised accumulator and positional-observation proof were developed in the
 2 November 2026 discussion with Codex (OpenAI), prompted by Andrew Bacon.
 The Lean definitions are in `Background/ChurchSequences.lean` and
 `Principles/Recursion.lean`; `Certified/ChurchSequences.lean` checks the
-constructor proof. The full functional recursion implications have mathematical
-proofs and generated Lean statements; no Lean derivation certificates for those
-two implications are claimed.
+constructor proof. Complete functional-recursion derivations are now available
+in the modules described below.
+
+**Lean derivation update, 4 November 2026.** Codex (OpenAI), prompted by Andrew
+Bacon, formalized both functional-recursion implications in
+`Background/ChurchRecursion.lean`, certified in `Certified/ChurchRecursion.lean`
+and lifted to all relational output types in `Results/ChurchRecursion.lean`.
+All 22 new lemmas pass the Equivalence and relational type audits. The full
+Classicism build and certificate audit also passed and marked both implications
+`lean: verified`.

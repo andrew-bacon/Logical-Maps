@@ -73,5 +73,12 @@ f0=a\land\forall n\, .\,Nn\to f(sn)=g(fn).$$
 No choice, Barcan, rigid comprehension or unboxed Functionality is used.
 The proof asserts no recursion equation or uniqueness requirement outside $N$.
 
-**Verification status.** Mathematical proof and formal Lean statement; the complete
-implication has no Lean derivation certificate in this contribution.
+**Verification update, 4 November 2026.** Codex (OpenAI), prompted by Andrew
+Bacon, supplied the complete Lean derivation in `Background/ChurchRecursion.lean`.
+All 22 new lemmas pass the Equivalence and relational type audits.
+`Certified/ChurchRecursion.lean` checks both object-language derivations;
+`Results/ChurchRecursion.lean` lifts them to every relational output type,
+including propositions via the empty argument tuple. The complete entailments
+compile with only `propext` and `Quot.sound` in their axiom reports.
+The full Classicism build and `pmap lean-check classicism --update` also passed.
+The audit marked both recursion implications `lean: verified`.

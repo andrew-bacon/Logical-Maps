@@ -164,6 +164,12 @@ The case $\tau=t$ uses the empty argument tuple. No Infinity at $\sigma$ or
 $\tau$, choice, Barcan, rigid comprehension, or general extensionality is needed.
 The cons equation is only asserted for generated tails.
 
-**Verification status.** The constructor proof has dedicated Lean checks. The full
-recursion implication has this mathematical proof and a formal Lean statement;
-no Lean derivation certificate for that implication is claimed.
+**Verification update, 4 November 2026.** Codex (OpenAI), prompted by Andrew
+Bacon, supplied the complete Lean derivation in `Background/ChurchRecursion.lean`.
+All 22 new lemmas pass the Equivalence and relational type audits.
+`Certified/ChurchRecursion.lean` checks both object-language derivations;
+`Results/ChurchRecursion.lean` lifts them to every relational output type,
+including propositions via the empty argument tuple. The complete entailments
+compile with only `propext` and `Quot.sound` in their axiom reports.
+The full Classicism build and `pmap lean-check classicism --update` also passed.
+The audit marked both recursion implications `lean: verified`.

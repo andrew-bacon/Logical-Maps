@@ -1415,3 +1415,36 @@ The complete library/model audit was not run: this environment has the pinned
 compiler and the required core modules, but not the Mathlib dependency needed
 by the library-wide signature/model imports. No existing verification status
 was changed.
+
+## Church recursion reconstruction, 4 November 2026
+
+Codex (OpenAI), prompted by Andrew Bacon. Reconstructed the least-graph proofs
+in `Background/ChurchRecursion.lean` after the earlier local patch was lost.
+The nine numeral-graph and nine sequence-graph lemmas establish base/step,
+support, totality, unfolding, constructor inversion, functionality and persistence.
+Two shared graph-conversion lemmas reuse `mp_value`; two unary recursion cores
+are lifted to every relational output type using the existing list-rule machinery.
+The empty argument list covers proposition outputs. Neither recursion principle
+is used as a premise.
+
+Pinned Lean 4.33.1 focused checks passed: all 22 lemmas pass the Equivalence
+gate in C-minus and the relational type audit; both unary cores are certified
+as object-language derivations. Both complete schema entailments compile;
+`scripts/ChurchRecursionCheck.lean` reports only `propext` and `Quot.sound`,
+with no `sorryAx` or choice. The existing `cons_ne_nil` proof now uses explicit
+false elimination to make its translation available without changing its claim.
+
+Full integration checks also passed using the pinned Lean 4.33.1 and Mathlib
+v4.33.1 cache. All 291 modules in the `Classicism` import graph built successfully
+with one Lake build request at a time and `LEAN_NUM_THREADS=1`, in about 53 minutes.
+This includes `Strict.Audit`, `Certified.ChurchRecursion`, and `Classicism.Map`.
+The 8 GiB environment recorded no out-of-memory event or kill during this run.
+
+`python3 scripts/pmap.py lean-check classicism --update` then exited successfully:
+555 verified result/model proofs, 52 verified variants, 421 verified model verdicts,
+and 56 verified argument verdicts. Both recursion implications passed their
+generated-statement and axiom audits and were marked `lean: verified` by that
+command. The generated `map/index.json` was refreshed. An unrelated automatic
+record-status change was restored to keep this contribution scoped to recursion.
+Other pending proofs in the database remain pending; audit success does not
+assert that every recorded mathematical result is formalized.
