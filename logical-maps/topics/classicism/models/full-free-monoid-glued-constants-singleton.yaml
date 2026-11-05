@@ -53,6 +53,12 @@ settings:
     the free monoid on countably many generators with the trivial M-set at type e, with the
     constants glued as there. Evaluation point: the root.
 meets:
+  countably-many-arrows: >-
+    The arrows are the finite sequences of natural numbers.
+  unretracted-arrow: >-
+    A non-identity element of the free monoid has no left inverse, so no arrow retracts it.
+  infinitely-many-propositions: >-
+    The arrows are infinitely many and the model is full, so every set of them is a proposition.
   incomparable-free-arrows: >-
     The generators $f_1$ and $f_2$: in a free monoid only $1$ fixes an element, and no generator is
     a left multiple of another.
@@ -103,9 +109,9 @@ history:
   - necessary-relational-choice-r
 - date: '2026-09-23'
   by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
-  summary: Recorded the Distinctness-preserving collapse; see the notes.
+  summary: Recorded Truths are ND-necessary; see the notes.
   satisfies:
-  - distinctness-preserving-collapse
+  - truths-are-nd-necessary
 - date: '2026-09-25'
   by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
   summary: 'Added Transversal Choice, by the argument recorded for Relational Choice: a full model contains
@@ -114,3 +120,18 @@ history:
     are unboxed. Recorded on a question of Zachary Goodsell, after an observation of Christopher Sun.'
   satisfies:
   - transversal-choice-r
+lean:
+  param: Classicism.Meta.Intensional.freeMonoidSingleton
+  meets:
+    one-object-action-model: Classicism.Meta.Intensional.FreeMonoidMembers.singleton_oneObject
+    unretracted-arrow: Classicism.Meta.Intensional.FreeMonoidMembers.singleton_unretracted
+    infinitely-many-propositions: Classicism.Meta.Intensional.FreeMonoidMembers.singleton_infinitely_many_propositions
+    actual-world-isolated: Classicism.Meta.Intensional.FreeMonoidMembers.singleton_actual_world_isolated
+    one-individual: Classicism.Meta.Intensional.FreeMonoidMembers.singleton_one_individual
+  verdicts:
+  - holds: logical-necessity-r
+    ref: Classicism.Map.Models.full_free_monoid_glued_constants_singleton.logical_necessity_r
+    status: verified
+  - holds: barcan-r
+    ref: Classicism.Map.Models.full_free_monoid_glued_constants_singleton.barcan_r
+    status: verified

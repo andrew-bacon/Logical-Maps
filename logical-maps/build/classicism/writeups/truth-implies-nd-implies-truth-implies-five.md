@@ -1,14 +1,14 @@
-# Truth implies ND-necessity ⇒ Truth implies 5-necessity
+# Truths are ND-necessary ⇒ Truths are 5-necessary
 
 <p class='cert'>Result — Source: Misc., Lean `Classicism.Map.truth_implies_nd_implies_truth_implies_five`; produced by Claude Fable 5.1 (Anthropic), 14 October 2026, at Cian Dorr's direction; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
 
 ## Premises
 
-- **Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
+- **Truths are ND-necessary.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 
 ## Conclusion
 
-- **Truth implies 5-necessity.** Every truth is 5-necessary: necessary under every S5 operator.
+- **Truths are 5-necessary.** Every truth is 5-necessary: necessary under every S5 operator.
 
 ## Proof
 

@@ -3,13 +3,14 @@ import Classicism.Principles
 import Classicism.Results.Records.Coarse
 import Classicism.Results.Records.C5
 import Classicism.Results.Records.Lattice
-import Classicism.Results.Records.AppendixD
+import Classicism.Background.AppendixD
+import Classicism.Background.Varieties
 
 /-!
 # Proofs of map records: varieties of necessity
 
 Records concluding in the principles of the map's category `necessity-varieties`: the
-Distinctness-Preserving Collapse and the principles comparing truth, `□₅`, `□̂̂` and `□_≠`
+Truths are ND-necessary and the principles comparing truth, `□₅`, `□̂̂` and `□_≠`
 (Background, *Hats, two-hat necessity and 5-necessity*). The conventions are in
 `Results/Records.lean`.
 
@@ -28,49 +29,6 @@ open Classicism.P Classicism.Paper
 
 /-! ### The chain `□ ≤ □_≠ ≤ □̂̂ ≤ □₅ ≤ λp. p` -/
 
-/-- `□p → □_≠p`: take `q := ⊤`. -/
-theorem box_le_boxNe (p : Prop) : □ p → BoxNe p := fun h =>
-  ⟨True, trivial, modal_K _ _ (nec% (fun (hp : p) (_ : ◇ True) => hp)) h⟩
-
-/-- `¬□_≠¬q → ◇q`: if `q = ⊥`, then `¬q` is `⊤`, so `□_≠¬q` with witness `⊤`. -/
-theorem dia_of_not_boxNe_neg (q : Prop) : ¬ BoxNe (¬ q) → ◇ q := fun h hq =>
-  h ⟨True, trivial, by rw [hq]; exact nec% (fun (_ : ◇ True) => (fun h => h : ¬ False))⟩
-
-/-- `□_≠p → □̂̂p`: a witness `q` of `□_≠p` is one of `□̂̂p`, since `¬□_≠¬q → ◇q`
-necessarily. (That is, `□_≠ = □̂` and hatting is monotone.) -/
-theorem boxNe_le_boxHH (p : Prop) : BoxNe p → BoxHH p := fun ⟨q, hq, hb⟩ =>
-  ⟨q, hq, modal_K _ _ (nec% (fun (h : ◇ q → p) (hn : ¬ BoxNe (¬ q)) =>
-    h (dia_of_not_boxNe_neg q hn))) hb⟩
-
-/-- `□₅p → p`: the identity operator is an S5 operator. -/
-theorem box5_le (p : Prop) : Box5 p → p := fun h =>
-  h (fun r => r)
-    ⟨nec% (fun (r : Prop) (h : □ r) => box_elim h),
-     nec% (fun (r s : Prop) (h : r → s) (hr : r) => h hr),
-     nec% (fun (r : Prop) (hr : r) (hn : ¬ r) => hn hr)⟩
-
-/-- `□_≠ ≤ X` for an operator `X` that is N, K and B, and necessarily N: from a witness `s`
-of `□_≠r`, B gives `X(¬X¬s)`, necessary N gives `□(¬X¬s → ◇s)`, so `□(¬X¬s → r)`, and N
-and K give `Xr`. -/
-theorem boxNe_le_of_nkb (X : Prop → Prop) :
-    (∀ p, □ p → X p) → (∀ p q : Prop, X (p → q) → X p → X q) →
-      (∀ p, p → X (¬ X (¬ p))) → □ (∀ p, □ p → X p) → ∀ r, BoxNe r → X r :=
-  fun hN hK hB bN r ⟨s, hs, hb⟩ =>
-    hK _ _ (hN _ (modal_K _ _ (modal_K _ _
-      (nec% (fun (N : ∀ p, □ p → X p) (h : ◇ s → r) (hx : ¬ X (¬ s)) =>
-        h (fun hs₀ => hx (N (¬ s) ((box_not_eq s).mpr hs₀))))) bN) hb)) (hB s hs)
-
-/-- `□̂̂p → □₅p`, Proposition D21 of *The Bounds of Possibility*, Appendix D, right to left.
-Given an S5 operator `X` and a witness `q` of `□̂̂p`: necessarily `□_≠ ≤ X`
-(`boxNe_le_of_nkb`, using `4` for necessary N), so `□(¬X¬q → p)`, and B, N and K give `Xp`. -/
-theorem boxHH_le_box5 (p : Prop) : BoxHH p → Box5 p := fun ⟨q, hq, hb⟩ X ⟨bN, bK, bB⟩ =>
-  have dom : □ (∀ r, BoxNe r → X r) := modal_K _ _ (modal_K _ _ (modal_K _ _ (modal_K _ _
-    (nec% (boxNe_le_of_nkb X)) bN) bK) bB) (modal_four _ bN)
-  box_elim bK _ _ (box_elim bN _ (modal_K _ _ (modal_K _ _
-      (nec% (fun (D : ∀ r, BoxNe r → X r) (h : ¬ BoxNe (¬ q) → p) (hx : ¬ X (¬ q)) =>
-        h (fun hb' => hx (D _ hb')))) dom) hb))
-    (box_elim bB q hq)
-
 /-! ### Corollaries of the chain -/
 
 /-- `five-implies-nd-implies-two-hat-implies-nd`: `□̂̂p → □₅p → □_≠p`. -/
@@ -80,12 +38,12 @@ theorem five_implies_nd_implies_two_hat_implies_nd :
 
 /-- `truth-implies-nd-implies-five-implies-nd`: `□₅p → p → □_≠p`. -/
 theorem truth_implies_nd_implies_five_implies_nd :
-    DistinctnessPreservingCollapse → FiveImpliesNdNecessity := fun h p hp =>
+    TruthsAreNDNecessary → FiveImpliesNdNecessity := fun h p hp =>
   h p (box5_le p hp)
 
 /-- `truth-implies-nd-implies-truth-implies-five`: `p → □_≠p → □̂̂p → □₅p`. -/
 theorem truth_implies_nd_implies_truth_implies_five :
-    DistinctnessPreservingCollapse → TruthImpliesFiveNecessity := fun h p hp =>
+    TruthsAreNDNecessary → TruthImpliesFiveNecessity := fun h p hp =>
   boxHH_le_box5 p (boxNe_le_boxHH p (h p hp))
 
 /-- `truth-implies-two-hat-implies-five-implies-two-hat`: `□₅p → p → □̂̂p`. -/
@@ -105,7 +63,7 @@ theorem five_implies_nd_implies_five_implies_two_hat :
 
 /-- `five-implies-nd-and-truth-implies-five-imply-truth-implies-nd`: `p → □₅p → □_≠p`. -/
 theorem five_implies_nd_and_truth_implies_five_imply_truth_implies_nd :
-    FiveImpliesNdNecessity → TruthImpliesFiveNecessity → DistinctnessPreservingCollapse :=
+    FiveImpliesNdNecessity → TruthImpliesFiveNecessity → TruthsAreNDNecessary :=
   fun h₁ h₂ p hp => h₁ p (h₂ p hp)
 
 /-- `five-implies-two-hat-and-truth-implies-five-imply-truth-implies-two-hat`:
@@ -150,12 +108,12 @@ theorem necessary_five_implies_nd_implies_two_hat_implies_nd :
 
 /-- `necessary-truth-implies-nd-implies-necessary-five-implies-nd`. -/
 theorem necessary_truth_implies_nd_implies_necessary_five_implies_nd :
-    NecDistinctnessPreservingCollapse → NecFiveImpliesNdNecessity :=
+    NecTruthsAreNDNecessary → NecFiveImpliesNdNecessity :=
   modal_K _ _ (nec% truth_implies_nd_implies_five_implies_nd)
 
 /-- `necessary-truth-implies-nd-implies-necessary-truth-implies-five`. -/
 theorem necessary_truth_implies_nd_implies_necessary_truth_implies_five :
-    NecDistinctnessPreservingCollapse → NecTruthImpliesFiveNecessity :=
+    NecTruthsAreNDNecessary → NecTruthImpliesFiveNecessity :=
   modal_K _ _ (nec% truth_implies_nd_implies_truth_implies_five)
 
 /-- `necessary-truth-implies-two-hat-implies-five-implies-two-hat`. -/
@@ -176,7 +134,7 @@ theorem necessary_five_implies_nd_implies_five_implies_two_hat :
 /-- `necessary-five-implies-nd-and-necessary-truth-implies-five-imply-necessary-truth-implies-nd`. -/
 theorem necessary_five_implies_nd_and_necessary_truth_implies_five_imply_necessary_truth_implies_nd :
     NecFiveImpliesNdNecessity → NecTruthImpliesFiveNecessity →
-      NecDistinctnessPreservingCollapse := fun h₁ h₂ =>
+      NecTruthsAreNDNecessary := fun h₁ h₂ =>
   modal_K _ _ (modal_K _ _
     (nec% five_implies_nd_and_truth_implies_five_imply_truth_implies_nd) h₁) h₂
 

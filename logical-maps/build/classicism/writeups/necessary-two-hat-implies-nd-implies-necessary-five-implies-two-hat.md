@@ -1,14 +1,14 @@
-# □Two-hat necessity implies ND-necessity ⇒ □5-necessity implies two-hat necessity
+# □Two-hat necessities are ND-necessary ⇒ □5-necessities are two-hat necessary
 
 <p class='cert'>Result — Source: The Bounds of Possibility (2021), Lean `Classicism.Map.necessary_two_hat_implies_nd_implies_necessary_five_implies_two_hat`; produced by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026, combining Propositions D3, D6, D11 and D14 and fact (A5) of The Bounds of Possibility, Appendix D; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
 
 ## Premises
 
-- **□Two-hat necessity implies ND-necessity.** Necessarily, whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat. In C this is the identity $\hat{\hat\Box}=\Box_{\ne}$.
+- **□Two-hat necessities are ND-necessary.** Necessarily, whatever is two-hat necessary is ND-necessary: the distinctness-preserving modality agrees with its hat. In C this is the identity $\hat{\hat\Box}=\Box_{\ne}$.
 
 ## Conclusion
 
-- **□5-necessity implies two-hat necessity.** Necessarily, whatever is 5-necessary is two-hat necessary. In C this is the identity $\Box_5=\hat{\hat\Box}$.
+- **□5-necessities are two-hat necessary.** Necessarily, whatever is 5-necessary is two-hat necessary. In C this is the identity $\Box_5=\hat{\hat\Box}$.
 
 ## Proof
 

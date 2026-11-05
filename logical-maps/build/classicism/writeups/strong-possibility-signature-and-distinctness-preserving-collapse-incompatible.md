@@ -1,11 +1,11 @@
-# Strong Possibility (signature Σ) ∧ Truth implies ND-necessity ⇒ ⊥
+# Strong Possibility (signature Σ) ∧ Truths are ND-necessary ⇒ ⊥
 
 <p class='cert'>Result — Source: Misc.; produced by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 23 September 2026, adapting the recorded pure-language proof; the observation prompting the pass is Cian Dorr’s; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 23 September 2026.</p>
 
 ## Premises
 
 - **Strong Possibility (signature Σ).** Every closed sentence of the fixed signature consistent with its Maximalist Classicism is possible under the distinctness-preserving modality.
-- **Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
+- **Truths are ND-necessary.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 
 ## Conclusion
 

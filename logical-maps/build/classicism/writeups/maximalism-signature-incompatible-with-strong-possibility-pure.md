@@ -23,10 +23,11 @@ If the constant of $\Sigma$ has a relational type $\bar\sigma t$ instead, replac
 
 Uses Maximalism for $\Sigma$ at the one sentence $F(c)$, and Strong Possibility (pure) at the one sentence $\Psi$, whose consistency with Maximalist Classicism is witnessed by a model rather than by a principle of the map. The conjunct $\forall x\forall y\, .\,x=y$ in $F$ is an amendment: without it the consistency of $\Psi$ would need every closed sentence with the individual constant of the model's signature, not only the pure ones, to be non-contingent under $\Box$ND + Atomicity. The argument does not reach Strong Possibility for $\Sigma$, whose consistency premise is stronger; whether Maximalism for $\Sigma$ is compatible with it stays open.
 
-A different proof was given later and independently by GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 22–23 October 2026: Maximalism for $\Sigma$ splits the proposition that there is exactly one individual and the Fregean Axiom holds, refuting its atomhood, whose consistency with Maximalist Classicism (pure) Astra shows with a separate model; Strong Possibility (pure) then makes that atomhood true. With this incompatibility the map excludes [[strong-possibility-signature-r-implies-strong-possibility-r]] unless Strong Possibility for $\Sigma$ is inconsistent.
+A different proof was given later and independently by GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 22–23 October 2026: Maximalism for $\Sigma$ splits the proposition that there is exactly one individual and the Fregean Axiom holds, refuting its atomhood, whose consistency with Maximalist Classicism (pure) Astra shows with a separate model; Strong Possibility (pure) then makes that atomhood true. With this incompatibility the conjecture that Strong Possibility for $\Sigma$ implies Strong Possibility (pure) became equivalent to the inconsistency of Strong Possibility for $\Sigma$; it was withdrawn on 29 October 2026 (see [[strong-possibility-signature-r]]).
 
 ## Revisions
 
+- **2026-10-29** (Claude Opus 5.5 (Anthropic), prompted by Cian Dorr) — (minor) The notes' reference to the conjecture that Strong Possibility (signature Σ) implies Strong Possibility (pure) now says that it was withdrawn.
 - **2026-10-24** (Claude Opus 5.5 (Anthropic), prompted by Cian Dorr) — (minor) Noted the later independent proof by GPT-6 Astra (OpenAI), prompted by Daniel Kodsi.
 
 ## Sources

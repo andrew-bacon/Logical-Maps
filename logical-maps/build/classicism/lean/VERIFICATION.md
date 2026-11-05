@@ -1220,7 +1220,7 @@ before (254 of 256 transformed).
 
 **Metalogical results.** `possible-infinity-{e,t}-and-no-pure-contingency-imply-axiom-of-infinity-{e,t}`
 (No Pure Contingency at the negation of the pure Axiom, and the shallow lemma
-`npc_dia_imp`); `possibility-schema-r-implies-possible-infinity-e` (the Axiom of Infinity at
+`npc_dia_imp`); `distinctness-schema-r-implies-possible-infinity-e` (the Axiom of Infinity at
 `e` holds in the full Henkin model on `ℕ`, `axiomOfInfinityE_holds_nat`: a finite
 cardinality holds only of finite sets); and, item 4 of the night's list,
 `maximalist-distinctness-incompatible-with-necessary-functionality-r` and
@@ -1254,7 +1254,7 @@ compute) and, in `Syntax/Blocks.lean`, a block at its own variables (`allEBlock_
 Not proved: the three incompatibilities of Witnessed Possibility (with No Contingency for
 the signature, Signature B, ND), which need a constant: at a signature with none, Witnessed
 Possibility says only `P → ◇P`, so as statements over every signature they are false; and
-`possibility-signature-r-implies-witnessed-possibility-r`, which needs a variant of
+`distinctness-signature-r-implies-witnessed-possibility-r`, which needs a variant of
 conservativity that turns given constants into distinct variables.
 
 *Checked.* The full build passes. 223 result certificates and 22 form certificates prove
@@ -1274,8 +1274,8 @@ and `t` (`Infinity.lean`); **Strong Possibility**, pure and for a signature, wit
 
 Certified: `classicism-implies-ordinary-comprehension-r` (the witness `λȳ. P`, with
 `Conv.appBlock_lamBlock_vars`; two new lemmas about lifts over a block);
-`possibility-plus-r-implies-possibility-schema-r` and
-`possibility-plus-signature-r-implies-possibility-signature-r` (the instances with no
+`possibility-plus-r-implies-distinctness-schema-r` and
+`possibility-plus-signature-r-implies-distinctness-signature-r` (the instances with no
 variables); `possibility-plus-signature-r-implies-possibility-plus-r` (a pure instance read
 in a closed signature is an instance for it; its consistency by conservativity); and
 `fregean-incompatible-with-infinity-t` (the instance at `n = 3`, refuted by the certified
@@ -1369,6 +1369,39 @@ quoted by `#classicism_schema` (142 schemas).
 577 of 577 records with generated statements (the 26 model records among them), 341 proofs
 verified; no claim fails.
 
+## The Bourbaki–Witt certificates within memory, 3 November
+
+The derivations of the results resting on the Bourbaki–Witt lemma (`Results/BourbakiWitt/`)
+did not build on a 15 GB machine: `Derive/ActualityChain` was killed for memory after
+30 minutes, `Derive/Actuality` likewise, and `Derive/TransversalChoice` built only at
+12.5 GB. The cost was each use of a general lemma (`bw_total`, `bw_comparable`,
+`bourbaki_witt_fixed_point`, `tower_sub`) at a large step: `Fs h K`, `Gr h K b` and `Cand`
+are definitions the translator expands, and every instantiation of the lemma's hypotheses
+(the admissibility of `Pivot` and `Mce` among them) carried them. The fix is the one this
+file already records for long proofs, applied to instantiations: closed lemmas for an
+abstract step, instantiated once.
+
+- `Settled.bw_settled_fixed_point`: the lemma for admissible chains with the settled
+  properties admissible, for settled `X`, `R`, `F`; `TransversalChoice.cand_fixed` uses it.
+  `Derive/TransversalChoice`: 139 s, 2.7 GB (was 893 s, 12.5 GB).
+- `ActualityChain`'s `gen_closed`, `gen_total`, `gen_comp`, `gen_above`, `gen_glb_rest`:
+  the tower of an abstract step `F` below `a`. `Derive/ActualityChain`: 529 s, 8.2 GB.
+- `Actuality` split into `ActualityCode` (§§4–5) and `Actuality` (§6), each with its own
+  derivation module; §6 is one lemma `gen_m_true` for an abstract decoded step `g` (with
+  `GrOf g`, its graph), which `m_true` instantiates once. `Derive/ActualityCode`: 759 s,
+  8.9 GB; `Derive/Actuality`: 921 s, 10.1 GB.
+
+One proof also failed to derive, independently of memory: `h_fails`, whose `subst` under a
+case split gave a motive the translator's derivation did not convert to the statement. It
+is now three closed lemmas (`h_fails_chosen`, `h_fails_other`, `h_fails_at`) with the case
+split by `Or.elim` and the identity used by `▸`.
+
+*Checked.* Each derivation module built alone, then `Certificates`, then the whole library
+(1465 s, 11.8 GB used at the peak). The audits pass on all 200 theorems of the eight
+modules; the five map certificates resting on the lemma depend on `propext` and `Quot.sound`
+only. Peak figures are the machine's used memory sampled every few seconds, not the
+process's maximum.
+
 ## Certificates
 
 No record's `lean` field was changed; all 208 remain `none`. Two things have to happen
@@ -1389,3 +1422,57 @@ certificates in the database's sense, because the statements they prove are hand
 rather than generated from the records. The statements were checked against the records by hand and
 by name; that is the current level of assurance, and the report says so rather than
 claiming more.
+
+## The symmetric ideally-full group's conditions, 3 November
+
+Lean models for eight more members of `symmetric-ideally-full`, and the group's conditions proved
+for members that had a Lean base but no proof of them, so that the group's arguments (all already
+certified) apply in Lean.
+
+- `Models/SymTransposable.lean`: `transposable` for any base (`SymBase.transposable_of_moves`):
+  a property `P` preserved by the symmetries, and for each finite `K` and `P`-point outside it a
+  symmetry fixing `K` pointwise and moving it; `symmetryGroupPinned_of_one` and
+  `actualWorldIsolated_of_pinned` for the actual world as the symmetry group.
+- `Models/SymmetricIdealMeets.lean`: new bases for the class-reflecting surjections
+  (`classReflect`), the permutations of infinitely many infinite classes (`permInfClasses`), the
+  two-object all-maps model (`allMapsBase`, with its hull conditions), the qualitative contrast
+  at `W₁` (`contrastBaseW₁`) and the recurrent colours (`colourBase`, with its hull conditions,
+  `M₀ = {0}`); `transposable`, infinitely many individuals and separable collapses for the
+  qualitative contrast, the two-object unpinned model (and its isolated actual world), the old
+  and new individuals and the finite-compression entrance (and its hull conditions, the second
+  half conjugated from Base 1 through `Nat.pairEquiv`).
+- `Models/QualitativeLinksMeets.lean`: Base 3 (`QualitativeLinks.base`) meets `transposable`
+  (links over the same two points transposed), surjective arrows, `symmetry-group-pinned`,
+  `actual-world-isolated` and `separable-collapses` (`collapseBy`, an arrow for any surjection of
+  the points merging `0` and `1`).
+- `Models/SymmetricCollapsePoint.lean`: the collapse pair and a point (`ptBase`), with all its
+  recorded conditions including the hull conditions (`M₀ = {0, 1}`, as for Base 2).
+
+Not done: the Boolean-prefix model (bases of countable atomless Boolean algebras), the members'
+own arguments, and the general arguments with no Lean proof yet (Arithmetic Necessitism from
+finitely pinned domains, the necessary Axioms of Infinity, the self-atom arguments).
+
+*Checked.* The full build passes; `lean-check` reports 473 of 473 model verdicts verified (52
+new, all from the group's and the topic's certified arguments), OK (pending proofs remain).
+
+## Coalesced sums: the members as group data, 3 November
+
+`Coalesced/PureSentencesPossible.lean` takes from `Results/Other/Witnesses.lean` the lemma that the
+necessitation of a schema some Lean model refutes fails at a coalesced root with complete components
+(`SumData.not_holdsAx_box_of_complete`, which no longer asks for distinguished arrows), with the
+truncation model's failures of Vicinity and Weakly Inextensible Comprehension and the soundness
+lemmas they use, so that the group's arguments `pure-sentences-possible`, `transversal-boxed` and
+`necessary-axiom-of-infinity-complete-components` are certified as arguments (`MapArguments.lean`).
+The Axioms of Infinity at `e` and `t` fail in the full model with one world, one individual and two
+propositions (`MSet.model Unit`).
+
+`Models/CoalescedInterpretationSums.lean`: the sum over the interpretation arrows into the canonical
+family is a `SumData` (`SumData.ofInterp`) meeting `complete-components`; with the fullest root
+domains it meets `fullest-domains` and `free-root-component`, and the finitely pinned root with only
+the identity meets `free-root-component`. New member in Lean: `coalesced-substitutions-fullest-root`
+(`substitutionsFullestRoot`), whose Actuality follows from a free root component alone
+(`SumData.holds_actuality_of_free`). `coalesced-definable-root`'s model is the reduct of such a sum;
+its seven verdicts from the group's arguments are certified through it (`MapWitnesses.lean`).
+
+*Checked.* `lean-check` OK (pending proofs remain): 456 model verdicts verified. The group's
+certified verdicts went from 75 (48 from arguments, 27 member by member) to 110 (75 and 35).

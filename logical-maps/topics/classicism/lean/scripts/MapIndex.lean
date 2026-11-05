@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import Classicism.MapNumericalRigidity
+=======
+import Classicism
+>>>>>>> upstream/main
 import Classicism.Map
 import Classicism.MapExactLower
 import Classicism.MapModels

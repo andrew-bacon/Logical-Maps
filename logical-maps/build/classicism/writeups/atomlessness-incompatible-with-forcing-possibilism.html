@@ -323,60 +323,26 @@ body.writeup-page { max-width: 82ch; margin: 3em auto; padding: 0 1.5em 3em; fon
 <script defer src="../math/katex.min.js"></script>
 <script defer src="../math/contrib/auto-render.min.js"></script>
 <script defer src="../math/math.js"></script></head><body class="writeup-page"><nav class="writeup-nav" aria-label="Write-up navigation"><a href="../index.html">← Back to map</a><div class="display-toggles"><button type="button" class="theme-toggle" data-theme-toggle>[Dark mode]</button><button type="button" class="theme-toggle" data-colourblind-toggle aria-label="Colourblind mode" aria-pressed="false">[Colourblind mode: off]</button></div></nav><header id="title-block-header"><h1>Atomlessness ∧ Forcing Possibilism ⇒ ⊥</h1></header><p class="cert">
-Result — Source: Misc.; produced by Claude Opus 5.5 (Anthropic),
-prompted by Cian Dorr, 25 October 2026; recorded by Claude Opus 5.5
-(Anthropic), prompted by Cian Dorr, 25 October 2026.
+Result — Source: Misc.; produced by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 25 October 2026; recorded by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 25 October 2026.
 </p>
 <h2 id="premises">Premises</h2>
 <ul>
-<li><strong>Atomlessness.</strong> Atomlessness in the displayed closed
-propositional formulation.</li>
-<li><strong>Forcing Possibilism.</strong> Every complete Boolean algebra
-that is finite or has strictly fewer elements than there are
-propositions is isomorphic to the entailment algebra below some
-proposition other than top.</li>
+<li><strong>Atomlessness.</strong> Atomlessness in the displayed closed propositional formulation.</li>
+<li><strong>Forcing Possibilism.</strong> Every complete Boolean algebra that is finite or has strictly fewer elements than there are propositions is isomorphic to the entailment algebra below some proposition other than top.</li>
 </ul>
 <h2 id="conclusion">Conclusion</h2>
 <ul>
 <li><strong>⊥.</strong> These premises cannot all hold together.</li>
 </ul>
 <h2 id="proof">Proof</h2>
-<p>Apply Forcing Possibilism at <span
-class="math inline">\sigma=t</span> to the two-element algebra: <span
-class="math inline">X:=\lambda p\, .\,p=\bot\lor p=\top</span> and <span
-class="math inline">R:=\lambda p\,q\, .\,Xp\land Xq\land p\le q</span>.
-In C, <span class="math inline">\bot\ne\top</span>, so <span
-class="math inline">X</span> has exactly two instances; <span
-class="math inline">R</span> orders them as a Boolean algebra, every
-property of instances of <span class="math inline">X</span> has a least
-upper bound among them, and every injective relation from <span
-class="math inline">X</span> to itself is onto, so <span
-class="math inline">X</span> is Dedekind finite. Forcing Possibilism
-then gives <span class="math inline">p\ne\top</span> and an order
-isomorphism between <span class="math inline">(X,R)</span> and the
-propositions entailing <span class="math inline">p</span>, ordered by
-<span class="math inline">\le</span>. So exactly two propositions entail
-<span class="math inline">p</span>: <span
-class="math inline">\bot</span> and <span class="math inline">p</span>,
-with <span class="math inline">p\ne\bot</span>. Then <span
-class="math inline">p</span> is possible, and every <span
-class="math inline">q\le p</span> with <span class="math inline">q\ne
-p</span> is <span class="math inline">\bot</span>, so no possible <span
-class="math inline">q</span> is strictly below <span
-class="math inline">p</span>, contrary to Atomlessness.</p>
+<p>Apply Forcing Possibilism at <span class="math inline">\sigma=t</span> to the two-element algebra: <span class="math inline">X:=\lambda p\, .\,p=\bot\lor p=\top</span> and <span class="math inline">R:=\lambda p\,q\, .\,Xp\land Xq\land p\le q</span>. In C, <span class="math inline">\bot\ne\top</span>, so <span class="math inline">X</span> has exactly two instances; <span class="math inline">R</span> orders them as a Boolean algebra, every property of instances of <span class="math inline">X</span> has a least upper bound among them, and every injective relation from <span class="math inline">X</span> to itself is onto, so <span class="math inline">X</span> is Dedekind finite. Forcing Possibilism then gives <span class="math inline">p\ne\top</span> and an order isomorphism between <span class="math inline">(X,R)</span> and the propositions entailing <span class="math inline">p</span>, ordered by <span class="math inline">\le</span>. So exactly two propositions entail <span class="math inline">p</span>: <span class="math inline">\bot</span> and <span class="math inline">p</span>, with <span class="math inline">p\ne\bot</span>. Then <span class="math inline">p</span> is possible, and every <span class="math inline">q\le p</span> with <span class="math inline">q\ne p</span> is <span class="math inline">\bot</span>, so no possible <span class="math inline">q</span> is strictly below <span class="math inline">p</span>, contrary to Atomlessness.</p>
 <h2 id="notes">Notes</h2>
-<p>More generally, Forcing Possibilism applied to the finite algebras
-makes, for each <span class="math inline">n</span>, some proposition
-other than <span class="math inline">\top</span> the join of exactly
-<span class="math inline">n</span> atoms; the two-element case is all
-this record uses.</p>
+<p>More generally, Forcing Possibilism applied to the finite algebras makes, for each <span class="math inline">n</span>, some proposition other than <span class="math inline">\top</span> the join of exactly <span class="math inline">n</span> atoms; the two-element case is all this record uses.</p>
 <h2 id="sources">Sources</h2>
 <ul>
-<li><strong>Opus 25 Oct</strong> — Claude Opus 5.5 (Anthropic), prompted
-by Cian Dorr, argument of 25 October 2026 (the proof below).</li>
+<li><strong>Opus 25 Oct</strong> — Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, argument of 25 October 2026 (the proof below).</li>
 </ul>
 <p class="cert">
-Record:
-<code>topics/classicism/results/atomlessness-incompatible-with-forcing-possibilism.yaml</code>
+Record: <code>topics/classicism/results/atomlessness-incompatible-with-forcing-possibilism.yaml</code>
 </p>
 </body></html>

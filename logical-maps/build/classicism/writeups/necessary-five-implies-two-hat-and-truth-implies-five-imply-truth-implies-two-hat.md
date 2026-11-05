@@ -1,15 +1,15 @@
-# □5-necessity implies two-hat necessity ∧ □Truth implies 5-necessity ⇒ □Truth implies two-hat necessity
+# □5-necessities are two-hat necessary ∧ □Truths are 5-necessary ⇒ □Truths are two-hat necessary
 
 <p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_five_implies_two_hat_and_truth_implies_five_imply_truth_implies_two_hat`; produced by Claude Fable 5.1 (Anthropic), 14 October 2026, at Cian Dorr's direction; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
 
 ## Premises
 
-- **□5-necessity implies two-hat necessity.** Necessarily, whatever is 5-necessary is two-hat necessary. In C this is the identity $\Box_5=\hat{\hat\Box}$.
-- **□Truth implies 5-necessity.** Necessarily, every truth is 5-necessary: necessary under every S5 operator. In C this is the identity $\Box_5=\lambda p\, .\,p$.
+- **□5-necessities are two-hat necessary.** Necessarily, whatever is 5-necessary is two-hat necessary. In C this is the identity $\Box_5=\hat{\hat\Box}$.
+- **□Truths are 5-necessary.** Necessarily, every truth is 5-necessary: necessary under every S5 operator. In C this is the identity $\Box_5=\lambda p\, .\,p$.
 
 ## Conclusion
 
-- **□Truth implies two-hat necessity.** Necessarily, every truth is two-hat necessary. In C this is the identity $\hat{\hat\Box}=\lambda p\, .\,p$.
+- **□Truths are two-hat necessary.** Necessarily, every truth is two-hat necessary. In C this is the identity $\hat{\hat\Box}=\lambda p\, .\,p$.
 
 ## Proof
 

@@ -27,6 +27,7 @@ references:
 group: coalesced-sums
 settings:
   root-arrows: interpretations-and-substitutions
+  sigma: construction
   construction: 'As in coalesced-pinned-interpretations-root, with further arrows from $W_0$ to itself: one for
     every type-preserving map $f$ of the constants of $\Sigma^+$ to themselves, the identity among them.
     $f$ acts on the individuals at $W_0$ as on constants; maps compose with each other as functions, and
@@ -42,6 +43,7 @@ settings:
       the domain: it is pinned down by $f(S)$, and its transports are transports of the original.'
 meets:
   complete-components: The models in $A$ are complete for C($\Sigma$), so in particular for C.
+  pinned-substitution-root: This is the model whose root the condition describes.
 arguments:
 - fails:
   - self-atoms-are-atoms-t
@@ -115,7 +117,7 @@ arguments:
     finitely pinned model.
 - id: as-in-all-maps
   fails:
-  - distinctness-preserving-collapse
+  - truths-are-nd-necessary
   - vicinity
   - weakly-inextensible-comprehension-r
   - boolean-completeness-t
@@ -125,7 +127,7 @@ arguments:
   text: >-
     The arguments of finite-support-two-object-all-maps carry over, the maps of the constants playing
     the part of the maps of $\mathbb N$, with every proposition used containing no arrow into a
-    component, so that its transports there are empty and land. Truth implies ND-necessity: the
+    component, so that its transports there are empty and land. Truths are ND-necessary: the
     transposition of two constants $c,d$ is invertible, so it sees every truth, while the true
     proposition that $c$ is fixed is false there. Vicinity: a truth pinned down by $S$ contains a map
     fixing $S$ that collapses two individual constants outside $S$; that they are distinct is true and
@@ -201,3 +203,23 @@ notes: 'A variant of coalesced-pinned-interpretations-root, suggested by Cian Do
   substitutions of constants make Actuality fail, as in the finitely pinned model on all maps, while
   Maximalism and BF still hold. The argument that it is a model of C is that of the original with the maps
   added (see the write-up) and has not been checked by a second reader. No Lean verification is claimed.'
+
+# The model in Lean (Models/CoalescedInterpretations.lean, 31 October 2026, Claude Opus 5.5, prompted
+# by Cian Dorr): the coalesced sum over the canonical model of Σ⁺, countably many constants of every
+# closed type, with its base at each world, as the complete family (complete for C(Σ⁺), so for C(Σ)), the
+# record's Σ being Σ⁺ itself and every constant denoting ĉ; that it is a model is `isModel_pinnedSum`
+# (Coalesced/Pinned.lean). Its verdicts proved there (Classicism/MapModels.lean); statuses are written by
+# lean-check --update.
+lean:
+  model: Classicism.Meta.Coalesced.pinnedSubstRoot
+  is_model: Classicism.Meta.Coalesced.pinnedSubstRoot_isModel
+  param: Classicism.Meta.Coalesced.pinnedSubstData
+  meets:
+    complete-components: Classicism.Meta.Coalesced.pinnedSubstData_complete
+  verdicts:
+  - holds: barcan-r
+    ref: Classicism.Map.Models.coalesced_pinned_substitutions_root.barcan_r
+    status: verified
+  - holds: distinctness-signature-r
+    ref: Classicism.Map.Models.coalesced_pinned_substitutions_root.distinctness_signature_r
+    status: verified

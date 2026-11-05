@@ -1,5 +1,6 @@
 import Classicism.Paper
 import Classicism.Principles
+import Classicism.Background.Relations
 
 /-!
 # Proofs of map records: Choice, Plenitude and Transversals
@@ -246,14 +247,6 @@ theorem relational_choice_and_extensionality_imply_transversal_choice {σ : Type
   rw [e] at hS₂
   exact hSu z hS₂
 
-/-- Two coextensive weakly rigid properties are identical: each is below the other by
-weak persistence and weak inextensibility, and Intensionality. -/
-theorem eq_of_weaklyRigid {σ : Type} [Ty σ] (C C' : σ → Prop) (hC : WeaklyRigid C)
-    (hC' : WeaklyRigid C') (hco : ∀ z, C z ↔ C' z) : C = C' :=
-  le_antisymm_arrow C C'
-    ((le_iff _ _).2 (hC.2 C' fun z hz => weaklyPersistent_apply hC'.1 z ((hco z).1 hz)))
-    ((le_iff _ _).2 (hC'.2 C fun z hz => weaklyPersistent_apply hC.1 z ((hco z).2 hz)))
-
 /-- `relational-choice-and-weak-rigid-comprehension-imply-transversal-choice`: as above,
 with each cell represented by a weakly rigid coextension, which is unique. -/
 theorem relational_choice_and_weak_rigid_comprehension_imply_transversal_choice
@@ -273,7 +266,7 @@ theorem relational_choice_and_weak_rigid_comprehension_imply_transversal_choice
   refine ⟨y, hRxy, ⟨C, hC, fun z => ⟨fun hz => hR.2.2 y x z (hR.2.1 x y hRxy) ((hco z).2 hz),
     fun hz => (hco z).1 (hR.2.2 x y z hRxy hz)⟩, hSy⟩, ?_⟩
   rintro z ⟨hRxz, C', hC', hco', hSC'⟩
-  have e : C' = C := eq_of_weaklyRigid C' C hC' hC fun u =>
+  have e : C' = C := eq_of_weaklyRigid_coext hC' hC fun u =>
     ⟨fun hu => (hco u).1 (hR.2.2 x z u hRxz ((hco' u).1 hu)),
      fun hu => (hco' u).2 (hR.2.2 z x u (hR.2.1 x z hRxz) ((hco u).2 hu))⟩
   rw [e] at hSC'
@@ -345,33 +338,11 @@ At output `σ' → t`, its list form in `σ'` being the record at every output t
 operation `Fx := λu. ∀y. Uxy → yu` represents `U` wherever its values are necessarily
 unique, by Intensionality. -/
 
-/-- `φ(x, y₀) → ∀u. y₀u ↔ Fxu`. -/
-theorem mp_value_coext {σ σ' : Type} [Ty σ] [Ty σ'] (U : σ → (σ' → Prop) → Prop) (x : σ)
-    (y₀ : σ' → Prop) :
-    (U x y₀ ∧ ∀ z, U x z → y₀ = z) → ∀ u, y₀ u ↔ ∀ y : σ' → Prop, U x y → y u :=
-  fun h u => ⟨fun hu y hy => (h.2 y hy) ▸ hu, fun hF => hF y₀ h.1⟩
-
-/-- `□φ(x, y₀)` makes `y₀` the value `Fx`. -/
-theorem mp_value {σ σ' : Type} [Ty σ] [Ty σ'] (U : σ → (σ' → Prop) → Prop) (x : σ)
-    (y₀ : σ' → Prop) (h : □ (U x y₀ ∧ ∀ z, U x z → y₀ = z)) :
-    y₀ = λ u ↦ ∀ y : σ' → Prop, U x y → y u :=
-  intensionality _ _ (modal_K _ _ (nec% (mp_value_coext U x y₀)) h)
-
-/-- `(∀x. ∃y. □φ(x, y)) → ∀x y. Uxy ↔ y = Fx`. -/
-theorem mp_represents {σ σ' : Type} [Ty σ] [Ty σ'] (U : σ → (σ' → Prop) → Prop) :
-    (∀ x, ∃ y, □ (U x y ∧ ∀ z, U x z → y = z)) →
-      ∀ x (y : σ' → Prop), U x y ↔ y = λ u ↦ ∀ y' : σ' → Prop, U x y' → y' u :=
-  fun H x y => (H x).elim fun y₀ hy₀ =>
-    have e := mp_value U x y₀ hy₀
-    have hφ := box_elim hy₀
-    ⟨fun hU => (hφ.2 y hU).symm.trans e, fun hy => (hy.trans e.symm) ▸ hφ.1⟩
-
 /-- `classicism-implies-modalized-plenitude-r`, at output `σ' → t`, its list form in `σ'`
 being the map's record: `λxu. ∀y. Uxy → yu` necessarily represents `U`. -/
 theorem classicism_implies_modalized_plenitude_r {σ' σ : Type} [Ty σ'] [Ty σ] :
     ModalizedPlenitude σ (σ' → Prop) := fun U hH =>
   ⟨λ x u ↦ ∀ y : σ' → Prop, U x y → y u, modal_K _ _ (nec% (mp_represents U)) hH⟩
-
 
 /-- `necessary-intensional-choice-r-implies-intensional-choice-r`: `T`. -/
 theorem necessary_intensional_choice_r_implies_intensional_choice_r {σ : Type} [Ty σ] :
@@ -392,13 +363,6 @@ theorem extensionality_r_implies_intensional_choice_r {σ : Type} [Ty σ] :
 
 /-! ### Well-orders (7–8 October 2026) -/
 
-/-- In a well-order the minimal instance of a property is its least instance. -/
-theorem least_of_minimal {σ : Type} [Ty σ] {R : σ → σ → Prop} (h : WellOrders R)
-    {Y : σ → Prop} {m : σ} (hmin : ∀ y, Y y → R y m → y = m) : ∀ z, Y z → R m z :=
-  fun z hz => (h.2.2.1 m z).elim id fun hzm => by
-    rw [hmin z hz hzm]
-    exact (h.2.2.1 m m).elim id id
-
 /-- `well-ordering-r-implies-transversal-choice-r`: the least member of each cell. -/
 theorem well_ordering_r_implies_transversal_choice_r {σ : Type} [Ty σ] :
     WellOrdering σ → TransversalChoice σ := fun ⟨R, hR⟩ E hE =>
@@ -416,14 +380,6 @@ theorem necessary_well_ordering_r_implies_well_ordering_r {σ : Type} [Ty σ] :
 theorem necessary_well_ordering_r_implies_necessary_transversal_choice_r {σ : Type} [Ty σ] :
     NecWellOrdering σ → NecTransversalChoice σ :=
   modal_K _ _ (nec% (well_ordering_r_implies_transversal_choice_r (σ := σ)))
-
-/-- A well-order makes the least instance of an instantiated property its unique least
-instance. -/
-theorem unique_least {σ : Type} [Ty σ] (R : σ → σ → Prop) (F : σ → Prop) (h : WellOrders R)
-    (hF : ∃ x, F x) : ∃ x, (F x ∧ ∀ y, F y → R x y) ∧ ∀ y, (F y ∧ ∀ z, F z → R y z) → y = x :=
-  (h.2.2.2 F hF).elim fun m ⟨hm, hmin⟩ =>
-    have least := least_of_minimal h hmin
-    ⟨m, ⟨hm, least⟩, fun y hy => h.2.1 y m (hy.2 m hm) (least y hy.1)⟩
 
 /-- `modal-well-ordering-r-implies-intensional-choice-r`: being the least instance. -/
 theorem modal_well_ordering_r_implies_intensional_choice_r {σ : Type} [Ty σ] :
@@ -448,15 +404,6 @@ theorem modal_well_ordering_r_implies_necessary_intensional_choice_r {σ : Type}
 theorem modal_well_ordering_r_implies_necessary_well_ordering_r {σ : Type} [Ty σ] :
     ModalWellOrdering σ → NecWellOrdering σ := fun ⟨R, hR⟩ =>
   modal_K _ _ (nec% (fun (h : WellOrders R) => (⟨R, h⟩ : WellOrdering σ))) hR
-
-/-- Being a well-order depends only on the extension. -/
-theorem wellOrders_of_iff {σ : Type} [Ty σ] (R R' : σ → σ → Prop) (he : ∀ x y, R' x y ↔ R x y)
-    (h : WellOrders R) : WellOrders R' :=
-  ⟨fun x y z a b => (he x z).2 (h.1 x y z ((he x y).1 a) ((he y z).1 b)),
-   fun x y a b => h.2.1 x y ((he x y).1 a) ((he y x).1 b),
-   fun x y => (h.2.2.1 x y).elim (fun a => Or.inl ((he x y).2 a)) (fun a => Or.inr ((he y x).2 a)),
-   fun Y hY => (h.2.2.2 Y hY).elim fun x ⟨hx, hmin⟩ =>
-     ⟨x, hx, fun y hy hyx => hmin y hy ((he y x).1 hyx)⟩⟩
 
 /-- The relation defined from a unique well-order is a well-order. -/
 theorem wellOrders_of_unique {σ : Type} [Ty σ] (G : (σ → σ → Prop) → Prop)
@@ -910,10 +857,6 @@ theorem wr_le_of_incl (A B : σ → Prop) (hA : WeaklyRigid A) (hB : WeaklyRigid
     (h : ∀ y, A y → B y) : A ≤ B :=
   le_of_box_incl (hA.2 B fun y hy => hB.1 y (h y hy))
 
-/-- Entailment is necessary if true. -/
-theorem box_le_arrow' (A B : σ → Prop) (h : A ≤ B) : □ (A ≤ B) :=
-  modal_K _ _ (nec% (le_iff A B).2) (modal_four _ ((le_iff A B).1 h))
-
 /-- `J x Y`: `Y` is weakly rigid and coextensive with the segment up to `x`. -/
 def MJ (R : σ → σ → Prop) (x : σ) (Y : σ → Prop) : Prop :=
   WeaklyRigid Y ∧ ∀ y, Y y ↔ R y x
@@ -958,9 +901,9 @@ theorem mwo_step1 : □ (MChain Rs) :=
     rs_wi hRs hco (fun M' => A ≤ M' ∨ M' ≤ A) fun C ⟨y, hC⟩ =>
       (hR.2.2.1 x y).elim
         (fun h => modal_K _ _ (nec% (fun (h : A ≤ C) => (Or.inl h : A ≤ C ∨ C ≤ A)))
-          (box_le_arrow' A C (mj_le hR x y A C hA hC h)))
+          (box_le_rel A C (mj_le hR x y A C hA hC h)))
         (fun h => modal_K _ _ (nec% (fun (h : C ≤ A) => (Or.inr h : A ≤ C ∨ C ≤ A)))
-          (box_le_arrow' C A (mj_le hR y x C A hC hA h)))
+          (box_le_rel C A (mj_le hR y x C A hC hA h)))
   modal_K _ _ (nec% (fun (h : ∀ M, Rs M → ∀ M', Rs M' → M ≤ M' ∨ M' ≤ M) M M' hM hM' =>
     h M hM M' hM')) (rs_wi hRs hco _ inner)
 
@@ -989,7 +932,7 @@ theorem mwo_step2 : □ (∀ M, Rs M → MLeast Rs M) := by
                 fun hne => (hn ⟨h, hne⟩).elim
             modal_K _ _ (nec% (fun (hAC : A ≤ C) (h : C ≤ A ∧ C ≠ A) =>
                 ((h.2 (le_antisymm_arrow C A h.1 hAC)).elim : MLeast Rs C)))
-              (box_le_arrow' A C (mj_le hR x y A C hA hC hxy)))
+              (box_le_rel A C (mj_le hR x y A C hA hC hxy)))
     exact modal_K _ _ (modal_K _ _ (modal_K _ _
       (nec% (fun (hc : MChain Rs) (hA : Rs A)
           (hb : ∀ W, Rs W → (W ≤ A ∧ W ≠ A) → MLeast Rs W) => mwo_step2_world A hc hA hb))
@@ -1052,7 +995,7 @@ theorem mwo_step4 (wrc : P.WeakRigidComprehension (σ → Prop)) :
           (nec% (fun (h₁ : Rs C) (h₂ : C t) (h₃ : C ≤ B) (h₄ : MGood Rs C) =>
             (⟨C, h₁, h₂, h₃, h₄⟩ : ∃ M, Rs M ∧ M t ∧ M ≤ B ∧ MGood Rs M)))
           (rs_box hRs hco t C hJ)) (hC.1 t ((hJ.2 t).2 ((hR.2.2.1 t t).elim id id))))
-          (box_le_arrow' C B hCB)) (ih t htx.1 htx.2 C hJ)
+          (box_le_rel C B hCB)) (ih t htx.1 htx.2 C hJ)
     exact modal_K _ _ (modal_K _ _ (modal_K _ _
       (nec% (fun (hc : MChain Rs) (hi : ∀ t, A t → t = x ∨ B t)
           (hii : ∀ t, B t → ∃ M, Rs M ∧ M t ∧ M ≤ B ∧ MGood Rs M) =>
@@ -1208,10 +1151,6 @@ theorem modal_well_ordering_implies_necessary_modalized_relational_choice {σ τ
 
 /-! ### Strong Atomicity, Weak Rigid Comprehension and Relational Choice (20 October 2026) -/
 
-/-- An atom of type `t` is not `⊥`. -/
-theorem atom_ne_false (w : Prop) (hw : Atom w) : w ≠ False := fun e =>
-  not_le_neg_of_atom hw (le_neg_of_eq_false w e)
-
 /-- Distinct atoms of type `t` are incompatible: their meet lies below each, so it is that
 atom or `⊥`, and it is not both atoms. -/
 theorem box_not_and_of_atoms (w w' : Prop) (hw : Atom w) (hw' : Atom w') (hne : w ≠ w') :
@@ -1345,5 +1284,102 @@ theorem strong_atomicity_weak_rigid_comprehension_and_relational_choice_imply_in
           (h₂ : ∀ y z, (∃ X, R X ∧ X y) → (∃ X, R X ∧ X z) → z = y) =>
         (h₁.elim fun x hx => ⟨x, hx, fun y hy => h₂ x y hx hy⟩ :
           ∃ x, (∃ X, R X ∧ X x) ∧ ∀ y, (∃ X, R X ∧ X y) → y = x))) hex) huniq
+
+/-! ### Persistence of modal choice, with Existence at the type (lean-type-existence, 1 November 2026)
+
+The two records below argue that a property is serial "since types are inhabited". At a
+type parameter `[Ty τ]` that is not a theorem of the shallow layer, which deliberately leaves
+Existence out of `Ty` (`lean/README.md`, "C and C⁻"). So each proof takes the instance of
+Existence it uses as one more hypothesis, `Existence τ`, like any other instance of a
+principle. Read as an entailment, the hypothesis is the schema `P.Existence.schema`, which
+`C` proves at every closed type (`Meta.classicism_implies_existence_r`: at `e` by the axiom
+`e_exists`, at relational types by `⊤_ρ`); the certificates discharge it there with
+`Entails.discharge_existence` (`Results/Existence.lean`). The witness enters each
+necessitation as a free variable, which `nec%` admits. -/
+
+/-- With a necessarily functional `S` necessarily below `λF y. Fy ∨ ¬∃z. Fz`, Modalized
+Relational Choice holds at `σ`, `τ`: `λx y. Rxy ∧ S(Rx)y` chooses from the rows of `R`. -/
+theorem mrc_of_box_selector {σ τ : Type} [Ty σ] [Ty τ] (S : (τ → Prop) → τ → Prop)
+    (hS : □ (Functional S)) (hle : □ (∀ (F : τ → Prop) (y : τ), S F y → F y ∨ ¬ ∃ z, F z)) :
+    ModalizedRelationalChoice σ τ := fun R hR =>
+  ⟨fun x y => R x y ∧ S (fun z => R x z) y,
+   modal_K _ _ (modal_K _ _ (modal_K _ _
+     (nec% (fun (hf : Functional S) (hi : ∀ (F : τ → Prop) (y : τ), S F y → F y ∨ ¬ ∃ z, F z)
+         (hs : Serial R) (x : σ) =>
+       ((hf (fun z => R x z)).elim fun y ⟨hy, hu⟩ =>
+         ⟨y, ⟨(hi _ y hy).elim id fun hn => (hn (hs x)).elim, hy⟩,
+           fun z hz => hu z hz.2⟩ :
+         ∃ y, (R x y ∧ S (fun z => R x z) y) ∧
+           ∀ z, (R x z ∧ S (fun z => R x z) z) → y = z)))
+     hS) hle) hR,
+   le_of_box_incl (nec% (fun (x : σ) (y : τ) (h : R x y ∧ S (fun z => R x z) y) => h.1))⟩
+
+/-- `modalized-relational-choice-implies-necessary-modalized-relational-choice` (Astra via
+Kodsi, 26 October 2026): Modalized Relational Choice at `(τt, τ)` gives a necessarily
+functional `S` below `U := λF y. Fy ∨ ¬∃z. Fz`, necessarily serial since `τ` has an
+inhabitant `y₀`; by `4` the two facts about `S` are necessary, and `mrc_of_box_selector`
+under the box gives □Modalized Relational Choice at `(σ, τ)`. Existence at `τ` is the
+instance the record's "types are inhabited" uses. -/
+theorem modalized_relational_choice_implies_necessary_modalized_relational_choice
+    {σ τ : Type} [Ty σ] [Ty τ] :
+    ModalizedRelationalChoice (τ → Prop) τ → Existence τ → NecModalizedRelationalChoice σ τ :=
+  fun mrc ⟨y₀, _⟩ =>
+    (mrc (fun F y => F y ∨ ¬ ∃ z, F z)
+      (nec% (fun (F : τ → Prop) => ((em (∃ z, F z)).elim
+        (fun h => h.elim fun z hz => ⟨z, Or.inl hz⟩) (fun h => ⟨y₀, Or.inr h⟩) :
+          ∃ y, F y ∨ ¬ ∃ z, F z)))).elim fun S ⟨hS, hle⟩ =>
+    modal_K _ _ (modal_K _ _ (nec% (mrc_of_box_selector (σ := σ) S))
+      (modal_four _ hS)) (modal_four _ ((le_iff _ _).1 hle))
+
+/-- Intensional Choice at `σ`, in its entailing form: for each `F`, some `G` with
+`□((∀x. Gx → Fx) ∧ (∃x. Fx → ∃!x. Gx))`. From it at `F' := λx. Fx ∨ ¬∃x. Fx`, necessarily
+instantiated since `σ` has an inhabitant `x₀`, take `H` and put `G := λx. Hx ∧ Fx`. -/
+theorem intensional_choice_entailing {σ : Type} [Ty σ] (ic : IntensionalChoice σ) (x₀ : σ)
+    (F : σ → Prop) :
+    ∃ G : σ → Prop, □ ((∀ x, G x → F x) ∧
+      ((∃ x, F x) → ∃ x, G x ∧ ∀ y, G y → y = x)) :=
+  (ic (fun x => F x ∨ ¬ ∃ x, F x)
+    (nec% (((em (∃ x, F x)).elim (fun h => h.elim fun x hx => ⟨x, Or.inl hx⟩)
+      (fun h => ⟨x₀, Or.inr h⟩) : ∃ x, F x ∨ ¬ ∃ x, F x)))).elim fun H ⟨hle, hu⟩ =>
+  ⟨fun x => H x ∧ F x, modal_K _ _ (modal_K _ _
+    (nec% (fun (hi : ∀ x, H x → F x ∨ ¬ ∃ x, F x) (hu : ∃ x, H x ∧ ∀ y, H y → y = x) =>
+      (⟨fun _ h => h.2, fun hF => hu.elim fun x ⟨hx, hxu⟩ =>
+        ⟨x, ⟨hx, (hi x hx).elim id fun hn => (hn hF).elim⟩, fun y hy => hxu y hy.1⟩⟩ :
+        (∀ x, H x ∧ F x → F x) ∧
+          ((∃ x, F x) → ∃ x, (H x ∧ F x) ∧ ∀ y, H y ∧ F y → y = x))))
+    ((le_iff _ _).1 hle)) hu⟩
+
+/-- The entailing form gives Intensional Choice, with no Existence: `T` gives `G ≤ F` and
+`K` gives `□∃!x. Gx` from `□∃x. Fx`. -/
+theorem intensional_choice_of_entailing {σ : Type} [Ty σ]
+    (h : ∀ F : σ → Prop, ∃ G : σ → Prop, □ ((∀ x, G x → F x) ∧
+      ((∃ x, F x) → ∃ x, G x ∧ ∀ y, G y → y = x))) : IntensionalChoice σ := fun F hF =>
+  (h F).elim fun G hG =>
+    ⟨G, le_of_box_incl (modal_K _ _
+        (nec% (fun (h : (∀ x, G x → F x) ∧ ((∃ x, F x) → ∃ x, G x ∧ ∀ y, G y → y = x)) =>
+          (h.1 : G ⊆ F))) hG),
+     modal_K _ _ (modal_K _ _
+       (nec% (fun (h : (∀ x, G x → F x) ∧ ((∃ x, F x) → ∃ x, G x ∧ ∀ y, G y → y = x)) =>
+         h.2)) hG) hF⟩
+
+/-- `barcan-and-intensional-choice-imply-necessary-intensional-choice` (Astra via Kodsi,
+26 October 2026): the entailing form's matrix is boxed, so by `4` each `F` necessarily has
+a `G` for it; BF at `σt` moves the box out, and under it the entailing form gives
+Intensional Choice. Existence at `σ` is the instance the record's "it is a theorem that it
+is instantiated" uses. -/
+theorem barcan_and_intensional_choice_imply_necessary_intensional_choice {σ : Type} [Ty σ] :
+    Barcan (σ → Prop) → IntensionalChoice σ → Existence σ → NecIntensionalChoice σ :=
+  fun bf ic ⟨x₀, _⟩ =>
+    modal_K _ _ (nec% (intensional_choice_of_entailing (σ := σ)))
+      (bf (fun F => ∃ G : σ → Prop, □ ((∀ x, G x → F x) ∧
+          ((∃ x, F x) → ∃ x, G x ∧ ∀ y, G y → y = x)))
+        fun F => (intensional_choice_entailing ic x₀ F).elim fun G hG =>
+          modal_K _ _ (nec% (fun (h : □ ((∀ x, G x → F x) ∧
+              ((∃ x, F x) → ∃ x, G x ∧ ∀ y, G y → y = x))) =>
+            (⟨G, h⟩ : ∃ G : σ → Prop, □ ((∀ x, G x → F x) ∧
+              ((∃ x, F x) → ∃ x, G x ∧ ∀ y, G y → y = x)))))
+            (modal_four _ hG))
+
+/-! ### End of persistence of modal choice -/
 
 end Classicism.Proofs

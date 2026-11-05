@@ -1,0 +1,392 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Supported model over the ultrafilters of a complete homogeneous algebra, with a free root</title><link rel="icon" type="image/png" href="../favicon.png">
+<style>/* Fixed forest palette, adapted from the supplied style example.
+   Semantic and source hues retain their meaning in both modes. */
+:root {
+  --bg: #f3f1e8;
+  --panel: #f8f7f0;
+  --panel-2: #e9ecdf;
+  --line: #d4d9c9;
+  --line-strong: #a2ae97;
+  --ink: #283c28;
+  --ink-2: #4f604b;
+  --ink-3: #5f6d58;
+  --accent: #356044;
+  --link-hover: #914b30;
+  --human: #3e7052;
+  --assisted: #746044;
+  --ai: #a35b36;
+  --derived: #7b8271;
+  --indep: #a0483a;
+  --open: #e2e5d9;
+  --open-ink: #65705f;
+  --conj: #896b27;
+  --node-fill: #f8f7f0;
+  --node-stroke: #98a68b;
+  --junction: #52634b;
+  --hl: #e0e7cd;
+  --focus: #914b30;
+  --badge-ink: #ffffff;
+  --warning-bg: #f4e6dc;
+  --source-forest: #3e7052;
+  --source-rust: #a25336;
+  --source-ochre: #896b27;
+  --source-slate: #4c7279;
+  --source-berry: #80556d;
+  --source-olive: #69753c;
+  --source-misc: #696d61;
+  --shadow: 0 4px 24px rgb(40 60 40 / 12%);
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --serif: var(--sans);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: #0e1912;
+  --panel: #142018;
+  --panel-2: #1d2b20;
+  --line: #304332;
+  --line-strong: #596e51;
+  --ink: #d7dfca;
+  --ink-2: #b3c1a7;
+  --ink-3: #96aa8d;
+  --accent: #a6c699;
+  --link-hover: #dfab89;
+  --human: #94bc95;
+  --assisted: #c1ad8d;
+  --ai: #dca17b;
+  --derived: #83937c;
+  --indep: #e09b86;
+  --open: #243327;
+  --open-ink: #a2b398;
+  --conj: #d0b36b;
+  --node-fill: #19261c;
+  --node-stroke: #627957;
+  --junction: #b3c1a7;
+  --hl: #30422a;
+  --focus: #dfab89;
+  --badge-ink: #0e1912;
+  --warning-bg: #32251f;
+  --source-forest: #94bc95;
+  --source-rust: #dca17b;
+  --source-ochre: #d0b36b;
+  --source-slate: #95bcc1;
+  --source-berry: #c5a0b7;
+  --source-olive: #b6c383;
+  --source-misc: #a9b09c;
+  --shadow: 0 4px 24px rgb(0 0 0 / 25%);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); scrollbar-color: var(--line-strong) var(--bg); }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.6 var(--sans); }
+button, input, select { font: inherit; color: inherit; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--link-hover); text-decoration: underline; text-underline-offset: 3px; }
+input[type="checkbox"] { accent-color: var(--accent); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+::selection { background: var(--hl); color: var(--ink); }
+.theme-toggle { border: 0; padding: 6px 0; background: transparent; color: var(--ink-2); cursor: pointer; font: 13px var(--sans); white-space: nowrap; }
+.theme-toggle:hover { color: var(--link-hover); }
+.display-toggles { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 16px; }
+.theme-toggle[aria-pressed="true"] { color: var(--accent); }
+
+/* A prismatic name: one rainbow wheel around a point in the word, spinning;
+   --prism-x and --prism-y move that point off the middle.
+   Pure spectral stops, turned by a registered angle rather than a hue
+   filter, which would muddy them. */
+@property --prism { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+.prismatic { font-weight: 600; color: transparent; background: conic-gradient(from var(--prism) at var(--prism-x, 50%) var(--prism-y, 50%), #ff1a1a, #ff8a00, #ffd000, #22c33a, #00a8f0, #3d4bff, #b026ff, #ff1a1a); -webkit-background-clip: text; background-clip: text; animation: prism-spin 6s linear infinite; }
+/* As a link it keeps the gradient on hover, under an accent underline. */
+a.prismatic, a.prismatic:hover { color: transparent; }
+a.prismatic:hover { text-decoration-color: var(--accent); }
+@keyframes prism-spin { to { --prism: 360deg; } }
+@media (prefers-reduced-motion: reduce) { .prismatic { animation: none; } }
+
+/* Standalone write-ups use the same quiet, ruled typography as the map. */
+html:has(body.writeup-page) { background: var(--bg); }
+body.writeup-page { max-width: 82ch; margin: 3em auto; padding: 0 1.5em 3em; font: 16px/1.7 var(--sans); overflow-wrap: anywhere; }
+.writeup-nav { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 16px; border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 24px; font-size: 13px; }
+.writeup-page h1 { font-size: 1.4em; line-height: 1.4; margin: 0 0 20px; color: var(--ink); }
+.writeup-page h2 { font-size: 1.15em; line-height: 1.4; margin: 1.8em 0 .5em; padding-top: 14px; border-top: 1px solid var(--line); }
+.writeup-page h3 { font-size: 1em; }
+.writeup-page p { margin: 0 0 12px; }
+.writeup-page .cert { color: var(--ink-2); font-size: .85em; }
+.writeup-page code, .writeup-page pre { font: .85em/1.6 var(--mono); color: var(--ink); }
+.writeup-page pre { padding: 14px; background: var(--panel-2); overflow-x: auto; }
+.writeup-page blockquote { color: var(--ink-2); border-left: 2px solid var(--line-strong); margin-left: 0; padding-left: 20px; }
+.writeup-page math[display="block"] { display: block; overflow-x: auto; padding: 8px 0; }
+.writeup-page table { display: block; overflow-x: auto; border-collapse: collapse; }
+.writeup-page th, .writeup-page td { border-bottom: 1px solid var(--line); padding: 8px 12px; }
+@media (max-width: 600px) {
+  body.writeup-page { margin: 1.5em auto; padding: 0 1em 2em; }
+}
+@media print {
+  :root, :root[data-theme="dark"] { --bg: white; --ink: #283c28; --ink-2: #4f604b; --accent: #356044; --line: #d4d9c9; color-scheme: light; }
+  .writeup-nav { display: none; }
+  body.writeup-page { max-width: none; margin: 0; padding: 0; }
+}
+
+/* Teal-grey, muted rust, deep teal and warm stone. Screen-only overrides
+   preserve print styling. */
+@media screen {
+  :root {
+    --bg: #ebf1f1;
+    --panel: #e1eae9;
+    --panel-2: #d0dfde;
+    --line: #c0cecd;
+    --line-strong: #849997;
+    --ink: #303b3a;
+    --ink-2: #4a5a59;
+    --ink-3: #526160;
+    --accent: #884932;
+    --link-hover: #6f3827;
+    --derived: #6f8180;
+    --open: #d6e2e1;
+    --open-ink: #526160;
+    --node-fill: #f1f6f6;
+    --node-stroke: #7f9391;
+    --junction: #596b6a;
+    --human: #2f6b66;
+    --source-forest: #2f6b66;
+    --hl: #e6ddd0;
+    --focus: #884932;
+    --shadow: 0 4px 24px rgb(48 59 58 / 10%);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #171e1d;
+    --panel: #202a29;
+    --panel-2: #2b3736;
+    --line: #3d4b4a;
+    --line-strong: #6b817f;
+    --ink: #dbe8e7;
+    --ink-2: #b9cbca;
+    --ink-3: #a6bdbb;
+    --accent: #e2ad92;
+    --link-hover: #f0c3aa;
+    --derived: #87a09e;
+    --open: #303d3c;
+    --open-ink: #aec6c4;
+    --node-fill: #263130;
+    --node-stroke: #738d8b;
+    --junction: #b3cbc9;
+    --human: #86c0b6;
+    --source-forest: #86c0b6;
+    --hl: #463f37;
+    --focus: #e2ad92;
+    --badge-ink: #171e1a;
+    --shadow: 0 4px 24px rgb(0 0 0 / 24%);
+  }
+}
+
+/* Shared Okabe–Ito palette: https://jfly.uni-koeln.de/color/#pallet
+   Loaded after topic themes. Sky blue and orange distinguish positive and
+   negative relations; darker inks keep small labels readable in light mode.
+   Neutral surfaces are identical across maps. Print uses the shared theme. */
+@media screen {
+  :root[data-palette="colourblind"] {
+    --bg: #f4f5f6;
+    --panel: #ffffff;
+    --panel-2: #e9edf0;
+    --line: #d0d6da;
+    --line-strong: #87949d;
+    --ink: #202930;
+    --ink-2: #45535d;
+    --ink-3: #586670;
+    --accent: #0072b2;
+    --link-hover: #925f00;
+    --human: #0072b2;
+    --assisted: #80506a;
+    --ai: #a44500;
+    --derived: #687780;
+    --indep: #925f00;
+    --open: #e9edf0;
+    --open-ink: #586670;
+    --conj: #80506a;
+    --node-fill: #ffffff;
+    --node-stroke: #7a8b96;
+    --junction: #45535d;
+    --hl: #dce4ea;
+    --focus: #0072b2;
+    --badge-ink: #ffffff;
+    --warning-bg: #fff0ce;
+    --source-forest: #56b4e9;
+    --source-rust: #e69f00;
+    --source-ochre: #d55e00;
+    --source-slate: #0072b2;
+    --source-berry: #cc79a7;
+    --source-olive: #009e73;
+    --source-misc: #687780;
+    --rel-positive: #56b4e9;
+    --rel-negative: #e69f00;
+    --shadow: 0 4px 24px rgb(32 41 48 / 12%);
+  }
+  :root[data-palette="colourblind"][data-theme="dark"] {
+    --bg: #111820;
+    --panel: #18222b;
+    --panel-2: #23303b;
+    --line: #354550;
+    --line-strong: #718492;
+    --ink: #edf2f5;
+    --ink-2: #c1ced7;
+    --ink-3: #a5b5c1;
+    --accent: #56b4e9;
+    --link-hover: #e69f00;
+    --human: #56b4e9;
+    --assisted: #cc79a7;
+    --ai: #e69f00;
+    --derived: #91a1ad;
+    --indep: #e69f00;
+    --open: #23303b;
+    --open-ink: #a5b5c1;
+    --conj: #cc79a7;
+    --node-fill: #1c2933;
+    --node-stroke: #8094a3;
+    --junction: #c1ced7;
+    --hl: #354654;
+    --focus: #56b4e9;
+    --badge-ink: #111820;
+    --warning-bg: #352b18;
+    --source-misc: #91a1ad;
+    --shadow: 0 4px 24px rgb(0 0 0 / 25%);
+  }
+  /* Source swatches use the unmodified palette; outlined badges allow their
+     text to keep the normal contrast on both light and dark surfaces. */
+  :root[data-palette="colourblind"] .badge.source {
+    background: var(--panel);
+    color: var(--ink);
+    border: 1px solid var(--source-color);
+    border-left-width: 4px;
+  }
+}
+</style>
+<script>/* Apply before paint; share the preference between every map and write-up. */
+(() => {
+  const key = 'pmap-theme';
+  const paletteKey = 'pmap-palette';
+  const system = window.matchMedia?.('(prefers-color-scheme: dark)');
+  let preference;
+  let palette;
+  try { preference = localStorage.getItem(key); } catch (_) {}
+  try { palette = localStorage.getItem(paletteKey); } catch (_) {}
+  if (!['light', 'dark'].includes(preference)) preference = null;
+  if (palette !== 'colourblind') palette = 'default';
+  function apply(theme) {
+    document.documentElement.dataset.theme = theme;
+    document.querySelectorAll('[data-theme-toggle]').forEach(button => {
+      button.textContent = theme === 'dark' ? '[Light mode]' : '[Dark mode]';
+      button.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
+    });
+  }
+  function applyPalette() {
+    document.documentElement.dataset.palette = palette;
+    document.querySelectorAll('[data-colourblind-toggle]').forEach(button => {
+      button.setAttribute('aria-pressed', String(palette === 'colourblind'));
+      button.textContent = `[Colourblind mode: ${palette === 'colourblind' ? 'on' : 'off'}]`;
+    });
+  }
+  const initial = () => preference || (system?.matches ? 'dark' : 'light');
+  apply(initial());
+  applyPalette();
+  document.addEventListener('DOMContentLoaded', () => {
+    apply(initial());
+    applyPalette();
+    document.querySelectorAll('[data-theme-toggle]').forEach(button => {
+      button.addEventListener('click', () => {
+        preference = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        apply(preference);
+        try { localStorage.setItem(key, preference); } catch (_) {}
+      });
+    });
+    document.querySelectorAll('[data-colourblind-toggle]').forEach(button => {
+      button.addEventListener('click', () => {
+        palette = palette === 'colourblind' ? 'default' : 'colourblind';
+        applyPalette();
+        try { localStorage.setItem(paletteKey, palette); } catch (_) {}
+      });
+    });
+  });
+  system?.addEventListener('change', () => { if (!preference) apply(initial()); });
+  window.addEventListener('storage', event => {
+    if (event.key === key || event.key === null) {
+      preference = ['light', 'dark'].includes(event.newValue) ? event.newValue : null;
+      apply(initial());
+    }
+    if (event.key === paletteKey || event.key === null) {
+      palette = event.newValue === 'colourblind' ? 'colourblind' : 'default';
+      applyPalette();
+    }
+  });
+})();
+</script>
+<link rel="stylesheet" href="../math/katex.min.css">
+<script defer src="../math/katex.min.js"></script>
+<script defer src="../math/contrib/auto-render.min.js"></script>
+<script defer src="../math/math.js"></script></head><body class="writeup-page"><nav class="writeup-nav" aria-label="Write-up navigation"><a href="../index.html">← Back to map</a><div class="display-toggles"><button type="button" class="theme-toggle" data-theme-toggle>[Dark mode]</button><button type="button" class="theme-toggle" data-colourblind-toggle aria-label="Colourblind mode" aria-pressed="false">[Colourblind mode: off]</button></div></nav><header id="title-block-header"><h1>Supported model over the ultrafilters of a complete homogeneous algebra, with a free root</h1></header><p>The construction is due to GPT-6 Astra (OpenAI), prompted by Daniel Kodsi. It appears as a Boolean-valued model in Astra’s note <em>Observer separation with propositional completeness and divergent possibilities</em> (25 October 2026, §§1–3), listed in Kodsi’s pull request #18. OpenAI Codex (GPT-6), prompted by Daniel Kodsi, integrated it as <code>supported-boolean-complete-predecessor</code> in his pull request #21 (28 October 2026). Cian Dorr reformulated it as an action model on 29 October 2026, and Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, wrote this version.</p>
+<p>At the root <span class="math inline">r</span> the model satisfies:</p>
+<ul>
+<li>□Boolean Completeness (type <span class="math inline">t</span>);</li>
+<li>□BF;</li>
+<li>Relational Choice;</li>
+<li>Actuality.</li>
+</ul>
+<p>It does not satisfy □Actuality, or Atomicity (type <span class="math inline">t</span>). In the component, Actuality is necessarily false.</p>
+<h2 id="the-algebra">The algebra</h2>
+<p>Let <span class="math inline">B</span> be the regular open algebra of Cantor space. It is complete and atomless, and <em>homogeneous</em>: every nonzero interval <span class="math inline">[0,b]</span> is isomorphic to <span class="math inline">B</span>. Let <span class="math inline">G=\operatorname{Aut}(B)</span>.</p>
+<p>For a finite <span class="math inline">P\subseteq B</span>, let <span class="math inline">H_P</span> be the automorphisms fixing <span class="math inline">P</span> pointwise. The finite subalgebra <span class="math inline">\langle P\rangle</span> has finitely many atoms, the <em>cells</em> <span class="math inline">c_1,\dots,c_m</span>, which partition <span class="math inline">1</span>.</p>
+<p><strong>Lemma 1.</strong> The elements of <span class="math inline">B</span> fixed by <span class="math inline">H_P</span> are exactly the joins of cells.</p>
+<p><em>Proof.</em> Every member of <span class="math inline">H_P</span> fixes each cell, so it fixes their joins. Conversely, suppose <span class="math inline">0&lt;b\wedge c&lt;c</span> for a cell <span class="math inline">c</span>. Then <span class="math inline">[0,b\wedge c]</span> and <span class="math inline">[0,c-b]</span> are both isomorphic to <span class="math inline">B</span>. An isomorphism exchanging them, extended by the identity off <span class="math inline">c</span>, lies in <span class="math inline">H_P</span> and moves <span class="math inline">b</span>. <span class="math inline">\square</span></p>
+<p><strong>Lemma 2 (finite attainment).</strong> If <span class="math inline">S\subseteq B</span> is <span class="math inline">H_P</span>-invariant, then <span class="math inline">\bigvee S</span> is the join of at most two members of <span class="math inline">S</span> per cell, and <span class="math inline">\bigwedge S</span> dually.</p>
+<p><em>Proof.</em> Take a cell <span class="math inline">c</span> that some <span class="math inline">b\in S</span> meets.</p>
+<ul>
+<li>If <span class="math inline">b\ge c</span>, then <span class="math inline">b</span> covers <span class="math inline">c</span>.</li>
+<li>Otherwise, the automorphism <span class="math inline">u</span> of Lemma 1 gives <span class="math inline">u(b)\in S</span> with <span class="math inline">u(b)\wedge c=c-b</span>, so <span class="math inline">b</span> and <span class="math inline">u(b)</span> together cover <span class="math inline">c</span>.</li>
+</ul>
+<p>So finitely many members of <span class="math inline">S</span> join to the union of the cells that <span class="math inline">S</span> meets. Every member of <span class="math inline">S</span> lies below that union, so it is <span class="math inline">\bigvee S</span>. <span class="math inline">\square</span></p>
+<h2 id="the-model">The model</h2>
+<p><strong>The worlds and the component.</strong> The worlds are the ultrafilters of <span class="math inline">B</span>. Each <span class="math inline">b\in B</span> determines the set of worlds <span class="math inline">\hat b:=\{U:b\in U\}</span>, and <span class="math inline">b\mapsto\hat b</span> is an isomorphism of <span class="math inline">B</span> onto the clopen algebra of its Stone space.</p>
+<ul>
+<li>The component has exactly one arrow between any two worlds, and a single individual. So an entity of relational type is a relation <span class="math inline">F</span> between tuples and worlds, the same at every world.</li>
+<li><span class="math inline">G</span> acts on worlds and, by conjugation, on entities.</li>
+<li>An entity is admitted if it satisfies two conditions:
+<ul>
+<li><strong>it is supported:</strong> <span class="math inline">g\cdot F=F</span> for every <span class="math inline">g\in H_P</span>, for some finite <span class="math inline">P\subseteq B</span>;</li>
+<li><strong>its fibres are in <span class="math inline">B</span>:</strong> for each tuple <span class="math inline">\bar x</span>, the set of worlds at which <span class="math inline">F</span> holds of <span class="math inline">\bar x</span> is <span class="math inline">\hat b</span> for some <span class="math inline">b\in B</span>.</li>
+</ul></li>
+<li>So the propositions of the component are the sets <span class="math inline">\hat b</span>, a copy of <span class="math inline">B</span>.</li>
+</ul>
+<p><strong>The root.</strong> A root <span class="math inline">r</span> is added, with one arrow to each world and none back. A root entity is a pair <span class="math inline">(R,a)</span> of an arbitrary current extension <span class="math inline">R</span> and a component entity <span class="math inline">a</span>. So the propositions at <span class="math inline">r</span> are the pairs <span class="math inline">(\varepsilon,\hat b)</span>, a copy of <span class="math inline">2\times B</span>, and <span class="math inline">r</span> sees itself and every world.</p>
+<p><strong>Closure.</strong> The domains contain the denotations of all terms, so the structure is a model of C.</p>
+<ul>
+<li>The logical constants are invariant under <span class="math inline">G</span>.</li>
+<li>Application, abstraction and the Boolean operations preserve support and keep fibres in <span class="math inline">B</span>.</li>
+<li>Quantifiers in an action model are evaluated world by world. So the fibre of <span class="math inline">\forall x\,Fx</span> is the intersection of the fibres <span class="math inline">\hat b_x</span> of the instances, and that of <span class="math inline">\exists x\,Fx</span> is their union.</li>
+<li>If <span class="math inline">F</span> is supported by <span class="math inline">P</span>, the set of the <span class="math inline">b_x</span> is <span class="math inline">H_P</span>-invariant. By Lemma 2 the intersection is a finite intersection, so it is again <span class="math inline">\hat b</span> for <span class="math inline">b=\bigwedge_xb_x</span>, and likewise for the union.</li>
+</ul>
+<p>Without finite support, the intersection of infinitely many clopen sets needn’t be clopen, and the domains wouldn’t be closed. At the root, current extensions are arbitrary and the component parts are component entities, so the same holds there, as for the coalesced roots.</p>
+<h2 id="verdicts">Verdicts</h2>
+<ul>
+<li><strong>Boolean Completeness (type <span class="math inline">t</span>), necessarily.</strong>
+<ul>
+<li><em>At a world of the component.</em> A family of propositions in the domain is supported, so by Lemma 2 its union is the finite union <span class="math inline">\hat b</span> with <span class="math inline">b=\bigvee_ib_i</span>. That is its least upper bound.</li>
+<li><em>At <span class="math inline">r</span>.</em> A family of root propositions <span class="math inline">(\varepsilon_i,\hat b_i)</span> is arbitrary, and its least upper bound is <span class="math inline">(\bigvee\varepsilon_i,\widehat{\bigvee b_i})</span>, with the join taken in the complete algebra <span class="math inline">B</span>. This is where completeness of <span class="math inline">B</span> is needed: a union of clopen sets needn’t be clopen, but the least clopen set containing it exists.</li>
+</ul></li>
+<li><strong>BF, necessarily.</strong>
+<ul>
+<li>In the component, the same entities are available at every world, so BF holds trivially.</li>
+<li>At <span class="math inline">r</span>, every component entity is the transport of a root entity, the one with empty current extension.</li>
+</ul></li>
+<li><strong>Relational Choice.</strong> For a serial <span class="math inline">U</span> at <span class="math inline">r</span>, choose, in the metatheory, a functional subrelation of its current extension, and pair it with the empty component entity.</li>
+<li><strong>Actuality.</strong> At <span class="math inline">r</span>, the proposition true at <span class="math inline">r</span> alone is true and below every truth.</li>
+<li><strong>No Actuality in the component.</strong> At a world <span class="math inline">U</span>, an actual-world proposition would be some <span class="math inline">\hat b</span> with <span class="math inline">b\in U</span> and <span class="math inline">\hat b\subseteq\hat c</span> for every <span class="math inline">c\in U</span>. Then <span class="math inline">b</span> would be an atom of <span class="math inline">B</span>, and <span class="math inline">B</span> is atomless. So Actuality is false at every world of the component, and □Actuality fails at <span class="math inline">r</span>.</li>
+<li><strong>No Atomicity (type <span class="math inline">t</span>) at <span class="math inline">r</span>.</strong> Below a nonzero <span class="math inline">(0,\hat b)</span>, every <span class="math inline">(0,\hat c)</span> with <span class="math inline">c&lt;b</span> is again nonzero.</li>
+</ul>
+<h2 id="remarks">Remarks</h2>
+<p><strong>The two presentations.</strong> Astra’s presentation is Boolean-valued: propositions are elements of <span class="math inline">B</span>, relations are finitely supported functions into <span class="math inline">B</span>, identity is crisp, and quantifiers are infima and suprema. There, Lemma 2 is what makes each ultrafilter a world respecting the quantifiers. In the action model the worlds come first, and Lemma 2 is what keeps the domains closed under the quantifiers. The two are the same model.</p>
+<p><strong>The fibre condition is needed.</strong> Without it, every supported relation would be admitted. The component’s propositions would then be all the <span class="math inline">H_P</span>-invariant sets of ultrafilters, a larger algebra, since <span class="math inline">G</span> isn’t transitive on the ultrafilters in a cell. That component is still a model of C, and it satisfies C5, BF, Boolean Completeness at <span class="math inline">t</span> and Atomlessness. But its algebra isn’t externally complete, and the free root would then fail Boolean Completeness.</p>
+<p><strong>Cantor space.</strong> With the countable atomless algebra in place of <span class="math inline">B</span>, Cantor space for the worlds and its homeomorphisms for <span class="math inline">G</span>, the supported sets of worlds are exactly the clopen ones. So the fibre condition comes free. The component is then a clean model of C5 + Boolean Completeness at <span class="math inline">t</span> + ¬Actuality, but the free root fails Boolean Completeness at <span class="math inline">t</span>.</p>
+<h2 id="paper-references">Paper references</h2>
+<ul>
+<li><strong>Background: Classicism.</strong> Bacon, Andrew, and Cian Dorr (2024). Classicism. In Peter Fritz and Nicholas K. Jones (eds), Higher-Order Metaphysics, Oxford University Press, pp. 109–190. The map was built from the draft dated 16 May 2023, 87 pages, which does not differ materially from the published version; all page, proposition and footnote locators in this map refer to that draft’s numbering. — §3.5, pp. 58–61; Appendix E, Definition E.2, pp. 80–83. Action models, and the unrestricted root of the coalesced sums.</li>
+</ul>
+</body></html>

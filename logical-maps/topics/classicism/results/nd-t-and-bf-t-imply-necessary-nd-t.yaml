@@ -10,7 +10,8 @@ certificate:
   recorded_by: Claude Opus 5.5 (Anthropic), 16 October 2026, at Cian Dorr's direction
   checked_by: []
   date: '2026-10-16'
-  lean: stated
+  lean: verified
+  lean_ref: Classicism.Map.nd_t_and_bf_t_imply_necessary_nd_t
 sources:
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, Proposition 2.4, p. 23.
 source_names:

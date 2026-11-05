@@ -1,15 +1,15 @@
-# No Pure Contingency ∧ Truth implies 5-necessity ⇒ □Truth implies 5-necessity
+# No Pure Contingency ∧ Truths are 5-necessary ⇒ □Truths are 5-necessary
 
 <p class='cert'>Result — Source: Misc., Lean `Classicism.Map.no_pure_contingency_and_truth_implies_five_necessity_imply_necessary_truth_implies_five_necessity`; produced by Claude Fable 5.1 (Anthropic), at Cian Dorr's direction, 14 October 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
 
 ## Premises
 
 - **No Pure Contingency.** Each closed sentence of the pure language, if true, is necessary. This is a sentence schema, not a quantifier over propositions.
-- **Truth implies 5-necessity.** Every truth is 5-necessary: necessary under every S5 operator.
+- **Truths are 5-necessary.** Every truth is 5-necessary: necessary under every S5 operator.
 
 ## Conclusion
 
-- **□Truth implies 5-necessity.** Necessarily, every truth is 5-necessary: necessary under every S5 operator. In C this is the identity $\Box_5=\lambda p\, .\,p$.
+- **□Truths are 5-necessary.** Necessarily, every truth is 5-necessary: necessary under every S5 operator. In C this is the identity $\Box_5=\lambda p\, .\,p$.
 
 ## Proof
 

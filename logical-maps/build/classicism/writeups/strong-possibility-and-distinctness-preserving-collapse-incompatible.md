@@ -1,11 +1,11 @@
-# Strong Possibility (pure) ∧ Truth implies ND-necessity ⇒ ⊥
+# Strong Possibility (pure) ∧ Truths are ND-necessary ⇒ ⊥
 
 <p class='cert'>Result — Source: Classicism (2024); produced by Andrew Bacon and Cian Dorr; stated as a result at Cian Dorr’s suggestion, 22 September 2026, with the proof written out by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 22 September 2026.</p>
 
 ## Premises
 
 - **Strong Possibility (pure).** Each closed pure sentence consistent with Maximalist Classicism is possible under the distinctness-preserving modality.
-- **Truth implies ND-necessity.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
+- **Truths are ND-necessary.** Every truth is ND-necessary, that is, necessary under the distinctness-preserving modality.
 
 ## Conclusion
 

@@ -7,6 +7,17 @@ framework: 'The fixed base is Bacon and Dorr’s Classicism (C) in their relatio
   of H-equivalent formulas are identical. Preserve the theoremhood side condition; equivalence under optional
   assumptions does not satisfy it.'
 background: []
+background_pages:
+- framework
+- necessity
+- order
+- atoms
+- rigidity
+- varieties
+- relations
+- arithmetic
+- signatures
+- lean
 source_catalog:
 - id: bacon-substitution-structures-2019
   name: Substitution Structures (2019)
@@ -22,6 +33,9 @@ source_catalog:
   kind: misc
 - id: lewin-1991
   name: Lewin, A Simple Proof of Zorn's Lemma
+  kind: published-paper
+- id: lang-algebra
+  name: Lang, Algebra
   kind: published-paper
 - id: prior-1963
   name: Prior, Formal Logic
@@ -225,10 +239,20 @@ lean:
     - Classicism.Semantics.Interpretations
     - Classicism.Models.SymmetricFull
     - Classicism.Models.SymmetricIdeal
+    - Classicism.Models.SymmetricIdealMeets
+    - Classicism.Models.QualitativeLinksMeets
+    - Classicism.Models.SymmetricCollapsePoint
     - Classicism.Models.PairInjCollapse
     - Classicism.Models.OldNewBase
     - Classicism.Models.FiniteCompressionBase
     - Classicism.Models.FixedPointEntranceModel
+    - Classicism.Coalesced.SumData
+    - Classicism.Models.CoalescedFinite
+    - Classicism.Models.CoalescedInterpretations
+    - Classicism.Models.CoalescedInterpretationSums
+    - Classicism.Models.Henkin
+    - Classicism.Models.GluedFreeMonoid
+    - Classicism.Models.GluedFreeProduct
     holds: ({model}).IsModel ∧ ({model}).HoldsAx {def}
     fails: ({model}).IsModel ∧ ¬ ({model}).HoldsAx {def}
     relative_categories: [signature]

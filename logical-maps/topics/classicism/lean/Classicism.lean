@@ -5,11 +5,12 @@ import Classicism.Core
 import Classicism.Equivalence
 import Classicism.Booleanism
 import Classicism.Identities
-import Classicism.Modal
-import Classicism.Order
-import Classicism.Comprehension
+import Classicism.Background.Necessity
+import Classicism.Background.Order
+import Classicism.Background.Rigidity
 import Classicism.Pointwise
-import Classicism.Lattice
+import Classicism.Background.Lattice
+import Classicism.Background.Atoms
 import Classicism.Principles
 import Classicism.Results.Records
 -- The object language as an object of Lean
@@ -92,8 +93,20 @@ import Classicism.Strict.Audit
 import Classicism.Strict.Tests
 import Classicism.Statements
 import Classicism.Map
+<<<<<<< HEAD
 import Classicism.MapExactLower
+=======
+import Classicism.MapAtoms
+>>>>>>> upstream/main
 import Classicism.Tools.MapIndex
 import Classicism.ModelStatements
 import Classicism.MapModels
 import Classicism.MapDerived
+import Classicism.MapWitnesses
+import Classicism.Background.Framework
+import Classicism.Background.Varieties
+import Classicism.Background.Relations
+import Classicism.Background.RigidityClosure
+-- Completeness of intensional action models, and coalesced sums
+import Classicism.Completeness.Completeness
+import Classicism.Coalesced

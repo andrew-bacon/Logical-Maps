@@ -322,220 +322,54 @@ body.writeup-page { max-width: 82ch; margin: 3em auto; padding: 0 1.5em 3em; fon
 <link rel="stylesheet" href="../math/katex.min.css">
 <script defer src="../math/katex.min.js"></script>
 <script defer src="../math/contrib/auto-render.min.js"></script>
-<script defer src="../math/math.js"></script></head><body class="writeup-page"><nav class="writeup-nav" aria-label="Write-up navigation"><a href="../index.html">← Back to map</a><div class="display-toggles"><button type="button" class="theme-toggle" data-theme-toggle>[Dark mode]</button><button type="button" class="theme-toggle" data-colourblind-toggle aria-label="Colourblind mode" aria-pressed="false">[Colourblind mode: off]</button></div></nav><header id="title-block-header"><h1>Symmetric ideally-full model: a one-point entrance to the qualitative-links tail</h1></header><p>Construction and verification by GPT-6 Astra (OpenAI), prompted by
-Daniel Kodsi, 22 October 2026; checked and rewritten for the map by
-Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 24 October 2026.</p>
-<p>The model is a member of the group of symmetric ideally-full models,
-recorded with one individual at each object, as Astra built it. (The
-group’s variant with the base as individuals is not generated: the base
-at the evaluation object is the single point <span
-class="math inline">*</span>.)</p>
-<p>At its evaluation point this model satisfies Atomicity, Rigid
-Comprehension (hence Boolean Completeness and Tame Rigidity), Relational
-Choice, Weakly Rigid Power (hence Rigid Power) and □Strong Actuality,
-and fails □Tame Rigidity, BF (at <span class="math inline">t</span>, and
-at every relational type), ND (at <span class="math inline">t</span>)
-and Strong Atomicity (at <span class="math inline">t</span>, and at
-every relational type). So Rigid Comprehension and Weakly Rigid Power,
-even with the rest, do not make Tame Rigidity necessary.</p>
+<script defer src="../math/math.js"></script></head><body class="writeup-page"><nav class="writeup-nav" aria-label="Write-up navigation"><a href="../index.html">← Back to map</a><div class="display-toggles"><button type="button" class="theme-toggle" data-theme-toggle>[Dark mode]</button><button type="button" class="theme-toggle" data-colourblind-toggle aria-label="Colourblind mode" aria-pressed="false">[Colourblind mode: off]</button></div></nav><header id="title-block-header"><h1>Symmetric ideally-full model: a one-point entrance to the qualitative-links tail</h1></header><p>Construction and verification by GPT-6 Astra (OpenAI), prompted by Daniel Kodsi, 22 October 2026; checked and rewritten for the map by Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 24 October 2026.</p>
+<p>The model is a member of the group of symmetric ideally-full models, recorded with one individual at each object, as Astra built it. (The group’s variant with the base as individuals is not generated: the base at the evaluation object is the single point <span class="math inline">*</span>.)</p>
+<p>At its evaluation point this model satisfies Atomicity, Rigid Comprehension (hence Boolean Completeness and Tame Rigidity), Relational Choice, Weakly Rigid Power (hence Rigid Power) and □Strong Actuality, and fails □Tame Rigidity, BF (at <span class="math inline">t</span>, and at every relational type), ND (at <span class="math inline">t</span>) and Strong Atomicity (at <span class="math inline">t</span>, and at every relational type). So Rigid Comprehension and Weakly Rigid Power, even with the rest, do not make Tame Rigidity necessary.</p>
 <h2 id="the-model">The model</h2>
-<p>It is a symmetric ideally-full model in the sense of Dorr,
-<em>Boolean Completeness does not imply Rigid Comprehension</em>,
-Definitions 15–18, p. 8, a model of C by its Proposition 20.</p>
-<p><strong>The tail <span class="math inline">B</span>.</strong> Take
-the pinning base, monoid <span class="math inline">M</span> of arrows
-and symmetry group <span class="math inline">G</span> of <a
-href="symmetric-qualitative-links-individuals-singleton.html">the
-qualitative-links model with one individual</a>, and add one point <span
-class="math inline">d</span>, fixed by every arrow and every symmetry
-and in the image of no other point. Agreement on <span
-class="math inline">d</span> is automatic, so pinning and symmetry, and
-hence every domain at <span class="math inline">B</span>, are as in that
-model.</p>
-<p><strong>The entrance <span class="math inline">A</span>.</strong> An
-object with pinning base <span class="math inline">\{*\}</span>, trivial
-symmetry group, and one arrow <span class="math inline">i:A\to B</span>,
-sending <span class="math inline">*</span> to <span
-class="math inline">d</span>. Then <span class="math inline">m\circ
-i=i</span> for every <span class="math inline">m\in M</span>, there are
-no arrows from <span class="math inline">B</span> to <span
-class="math inline">A</span>, and the only arrow from <span
-class="math inline">A</span> to itself is its identity.</p>
-<p>There is one individual at each object, and <span
-class="math inline">d</span> is a pinning point only. Every relational
-constant of Σ denotes the top element of its type. Evaluation point:
-<span class="math inline">1_A</span>.</p>
-<h2 id="the-entities-at-a">1. The entities at <span
-class="math inline">A</span></h2>
-<p>The arrows out of <span class="math inline">A</span> are <span
-class="math inline">1_A</span> and <span class="math inline">i</span>
-(as <span class="math inline">m\circ i=i</span>). So an intension at
-<span class="math inline">A</span> of a relational type is determined by
-two sets: <span class="math inline">E</span>, its extension at <span
-class="math inline">1_A</span>, a set of tuples from <span
-class="math inline">A</span>’s domains, and <span
-class="math inline">S</span>, its extension at <span
-class="math inline">i</span>, a set of tuples from <span
-class="math inline">B</span>’s. Symmetry at <span
-class="math inline">i</span> says <span class="math inline">S=gS</span>
-for every <span class="math inline">g\in G</span>, as <span
-class="math inline">g\circ i=i</span>; and the empty set pins it. So</p>
+<p>It is a symmetric ideally-full model in the sense of Dorr, <em>Boolean Completeness does not imply Rigid Comprehension</em>, Definitions 15–18, p. 8, a model of C by its Proposition 20.</p>
+<p><strong>The tail <span class="math inline">B</span>.</strong> Take the pinning base, monoid <span class="math inline">M</span> of arrows and symmetry group <span class="math inline">G</span> of <a href="symmetric-qualitative-links-individuals-singleton.html">the qualitative-links model with one individual</a>, and add one point <span class="math inline">d</span>, fixed by every arrow and every symmetry and in the image of no other point. Agreement on <span class="math inline">d</span> is automatic, so pinning and symmetry, and hence every domain at <span class="math inline">B</span>, are as in that model.</p>
+<p><strong>The entrance <span class="math inline">A</span>.</strong> An object with pinning base <span class="math inline">\{*\}</span>, trivial symmetry group, and one arrow <span class="math inline">i:A\to B</span>, sending <span class="math inline">*</span> to <span class="math inline">d</span>. Then <span class="math inline">m\circ i=i</span> for every <span class="math inline">m\in M</span>, there are no arrows from <span class="math inline">B</span> to <span class="math inline">A</span>, and the only arrow from <span class="math inline">A</span> to itself is its identity.</p>
+<p>There is one individual at each object, and <span class="math inline">d</span> is a pinning point only. Every relational constant of Σ denotes the top element of its type. Evaluation point: <span class="math inline">1_A</span>.</p>
+<h2 id="the-entities-at-a">1. The entities at <span class="math inline">A</span></h2>
+<p>The arrows out of <span class="math inline">A</span> are <span class="math inline">1_A</span> and <span class="math inline">i</span> (as <span class="math inline">m\circ i=i</span>). So an intension at <span class="math inline">A</span> of a relational type is determined by two sets: <span class="math inline">E</span>, its extension at <span class="math inline">1_A</span>, a set of tuples from <span class="math inline">A</span>’s domains, and <span class="math inline">S</span>, its extension at <span class="math inline">i</span>, a set of tuples from <span class="math inline">B</span>’s. Symmetry at <span class="math inline">i</span> says <span class="math inline">S=gS</span> for every <span class="math inline">g\in G</span>, as <span class="math inline">g\circ i=i</span>; and the empty set pins it. So</p>
 <p><span class="math display">
-\text{the entities at }A\text{ are exactly the pairs }(E,S)\text{ with
-}S\ G\text{-invariant.}
+\text{the entities at }A\text{ are exactly the pairs }(E,S)\text{ with }S\ G\text{-invariant.}
 \tag{1}
 </span></p>
-<p>Transport along <span class="math inline">i</span> sends <span
-class="math inline">(E,S)</span> to the intension at <span
-class="math inline">B</span> that is <span class="math inline">S</span>
-at every arrow, a <em>constant</em> intension, fixed by every arrow out
-of <span class="math inline">B</span>.</p>
-<p>Write <span class="math inline">i\cdot E</span> for the set of
-transports along <span class="math inline">i</span> of the tuples in
-<span class="math inline">E</span>, and <span
-class="math inline">T_A(E):=(E,\,i\cdot E)</span>; it is an entity by
-(1), its tuples being fixed by <span class="math inline">G</span>.
-Similarly, at <span class="math inline">B</span>, for a set <span
-class="math inline">D</span> of tuples fixed by every arrow, <span
-class="math inline">T_B(D)</span> is the constant intension <span
-class="math inline">D</span>.</p>
+<p>Transport along <span class="math inline">i</span> sends <span class="math inline">(E,S)</span> to the intension at <span class="math inline">B</span> that is <span class="math inline">S</span> at every arrow, a <em>constant</em> intension, fixed by every arrow out of <span class="math inline">B</span>.</p>
+<p>Write <span class="math inline">i\cdot E</span> for the set of transports along <span class="math inline">i</span> of the tuples in <span class="math inline">E</span>, and <span class="math inline">T_A(E):=(E,\,i\cdot E)</span>; it is an entity by (1), its tuples being fixed by <span class="math inline">G</span>. Similarly, at <span class="math inline">B</span>, for a set <span class="math inline">D</span> of tuples fixed by every arrow, <span class="math inline">T_B(D)</span> is the constant intension <span class="math inline">D</span>.</p>
 <h2 id="rigid-comprehension">2. Rigid Comprehension</h2>
-<p><strong>Lemma 1.</strong> <span class="math inline">T_A(E)</span> is
-rigid, and so is <span class="math inline">T_B(D)</span>.</p>
-<p><em>Proof.</em> At every arrow the extension of <span
-class="math inline">T_A(E)</span> is the image of <span
-class="math inline">E</span>, so it is persistent. Suppose <span
-class="math inline">Z</span> necessarily holds of every tuple in <span
-class="math inline">E</span>: then <span class="math inline">E\subseteq
-Z_{1_A}</span> and <span class="math inline">i\cdot E\subseteq
-Z_i</span>, so <span class="math inline">T_A(E)\le Z</span>. At <span
-class="math inline">B</span>, a test necessarily holding of the current
-tuples of the constant <span class="math inline">i\cdot E</span> holds
-of them at every arrow, these tuples being fixed by every arrow; so
-<span class="math inline">i\cdot T_A(E)</span> is weakly inextensible
-there too. The same argument applies to <span
-class="math inline">T_B(D)</span>. <span
-class="math inline">\square</span></p>
-<p>So every relation at <span class="math inline">A</span>, with
-extension <span class="math inline">E</span>, has the rigid coextension
-<span class="math inline">T_A(E)</span>.</p>
-<h2 id="atomicity-and-relational-choice">3. Atomicity and Relational
-Choice</h2>
-<p>By (1), at each relational type the entities at <span
-class="math inline">A</span> form the algebra</p>
+<p><strong>Lemma 1.</strong> <span class="math inline">T_A(E)</span> is rigid, and so is <span class="math inline">T_B(D)</span>.</p>
+<p><em>Proof.</em> At every arrow the extension of <span class="math inline">T_A(E)</span> is the image of <span class="math inline">E</span>, so it is persistent. Suppose <span class="math inline">Z</span> necessarily holds of every tuple in <span class="math inline">E</span>: then <span class="math inline">E\subseteq Z_{1_A}</span> and <span class="math inline">i\cdot E\subseteq Z_i</span>, so <span class="math inline">T_A(E)\le Z</span>. At <span class="math inline">B</span>, a test necessarily holding of the current tuples of the constant <span class="math inline">i\cdot E</span> holds of them at every arrow, these tuples being fixed by every arrow; so <span class="math inline">i\cdot T_A(E)</span> is weakly inextensible there too. The same argument applies to <span class="math inline">T_B(D)</span>. <span class="math inline">\square</span></p>
+<p>So every relation at <span class="math inline">A</span>, with extension <span class="math inline">E</span>, has the rigid coextension <span class="math inline">T_A(E)</span>.</p>
+<h2 id="atomicity-and-relational-choice">3. Atomicity and Relational Choice</h2>
+<p>By (1), at each relational type the entities at <span class="math inline">A</span> form the algebra</p>
 <p><span class="math display">
-\mathcal P(\text{tuples at }A)\times\{\text{unions of }G\text{-orbits of
-tuples at }B\},
+\mathcal P(\text{tuples at }A)\times\{\text{unions of }G\text{-orbits of tuples at }B\},
 </span></p>
-<p>ordered componentwise: a complete atomic Boolean algebra, whose atoms
-are the <span class="math inline">(\{\bar x\},\varnothing)</span> and
-the <span class="math inline">(\varnothing,O)</span> for <span
-class="math inline">O</span> a <span class="math inline">G</span>-orbit.
-So Atomicity holds at <span class="math inline">A</span>.</p>
-<p>For a relation <span class="math inline">U</span> serial at <span
-class="math inline">A</span>, choose (in the metatheory) a value <span
-class="math inline">y_x</span> for each input <span
-class="math inline">x</span>; the pair <span
-class="math inline">(\{\langle x,y_x\rangle\},\varnothing)</span> is an
-entity by (1), and it is a functional subrelation of <span
-class="math inline">U</span> at <span class="math inline">A</span>. So
-Relational Choice holds at <span class="math inline">A</span>.</p>
+<p>ordered componentwise: a complete atomic Boolean algebra, whose atoms are the <span class="math inline">(\{\bar x\},\varnothing)</span> and the <span class="math inline">(\varnothing,O)</span> for <span class="math inline">O</span> a <span class="math inline">G</span>-orbit. So Atomicity holds at <span class="math inline">A</span>.</p>
+<p>For a relation <span class="math inline">U</span> serial at <span class="math inline">A</span>, choose (in the metatheory) a value <span class="math inline">y_x</span> for each input <span class="math inline">x</span>; the pair <span class="math inline">(\{\langle x,y_x\rangle\},\varnothing)</span> is an entity by (1), and it is a functional subrelation of <span class="math inline">U</span> at <span class="math inline">A</span>. So Relational Choice holds at <span class="math inline">A</span>.</p>
 <h2 id="weakly-rigid-power">4. Weakly Rigid Power</h2>
-<p>Let <span class="math inline">F</span> be weakly rigid at <span
-class="math inline">A</span>. By Rigid Comprehension and Sun’s lemma
-(coextensive weakly rigid relations are identical), <span
-class="math inline">F=T_A(E)</span> for its extension <span
-class="math inline">E</span>. Let</p>
+<p>Let <span class="math inline">F</span> be weakly rigid at <span class="math inline">A</span>. By Rigid Comprehension and Sun’s lemma (coextensive weakly rigid relations are identical), <span class="math inline">F=T_A(E)</span> for its extension <span class="math inline">E</span>. Let</p>
 <p><span class="math display">
 P_F:=\lambda Y\, .\,\operatorname{WeaklyRigid}(Y)\land Y\le F .
 </span></p>
-<p><em>At <span class="math inline">A</span></em>, by the same argument,
-its instances are the <span class="math inline">T_A(E&#39;)</span> with
-<span class="math inline">E&#39;\subseteq E</span>.</p>
-<p><em>At <span class="math inline">B</span></em>, after <span
-class="math inline">i</span>: if <span class="math inline">Y</span> is
-weakly rigid there and <span class="math inline">Y\le i\cdot F</span>,
-the constant <span class="math inline">i\cdot E</span>, then its
-extension <span class="math inline">D</span> is a subset of <span
-class="math inline">i\cdot E</span>, so of tuples fixed by every arrow;
-<span class="math inline">T_B(D)</span> is rigid (Lemma 1) and
-coextensive with <span class="math inline">Y</span>, so <span
-class="math inline">Y=T_B(D)</span>. And <span
-class="math inline">T_B(D)=i\cdot T_A(E_D)</span> for <span
-class="math inline">E_D:=\{\bar x\in E:i\cdot\bar x\in D\}</span>.</p>
-<p>So the extension of <span class="math inline">P_F</span> at <span
-class="math inline">i</span> is the image of its extension at <span
-class="math inline">1_A</span>: <span class="math inline">P_F</span> is
-<span class="math inline">T_A</span> of its extension, rigid by Lemma 1,
-and so weakly rigid.</p>
+<p><em>At <span class="math inline">A</span></em>, by the same argument, its instances are the <span class="math inline">T_A(E&#39;)</span> with <span class="math inline">E&#39;\subseteq E</span>.</p>
+<p><em>At <span class="math inline">B</span></em>, after <span class="math inline">i</span>: if <span class="math inline">Y</span> is weakly rigid there and <span class="math inline">Y\le i\cdot F</span>, the constant <span class="math inline">i\cdot E</span>, then its extension <span class="math inline">D</span> is a subset of <span class="math inline">i\cdot E</span>, so of tuples fixed by every arrow; <span class="math inline">T_B(D)</span> is rigid (Lemma 1) and coextensive with <span class="math inline">Y</span>, so <span class="math inline">Y=T_B(D)</span>. And <span class="math inline">T_B(D)=i\cdot T_A(E_D)</span> for <span class="math inline">E_D:=\{\bar x\in E:i\cdot\bar x\in D\}</span>.</p>
+<p>So the extension of <span class="math inline">P_F</span> at <span class="math inline">i</span> is the image of its extension at <span class="math inline">1_A</span>: <span class="math inline">P_F</span> is <span class="math inline">T_A</span> of its extension, rigid by Lemma 1, and so weakly rigid.</p>
 <h2 id="tame-rigidity-fails">5. □Tame Rigidity fails</h2>
-<p>The tail fails Tame Rigidity at type <span class="math inline">(t\to
-t)\to t</span>, by the argument recorded for the qualitative-links model
-with one individual. The domains at <span class="math inline">B</span>
-are those of that model, <span class="math inline">d</span> being a
-pinning point only, and the entrance adds no arrow out of <span
-class="math inline">B</span>, so the same relation refutes Tame Rigidity
-at <span class="math inline">B</span>. As <span
-class="math inline">B</span> is reachable from <span
-class="math inline">A</span>, □Tame Rigidity fails at <span
-class="math inline">A</span>.</p>
-<h2 id="strong-actuality-bf-nd-and-strong-atomicity-fails">6. Strong
-Actuality; BF, ND and Strong Atomicity fails</h2>
-<p>The propositions at <span class="math inline">A</span> are the four
-pairs <span class="math inline">(a,b)</span> of truth values, and their
-transports to <span class="math inline">B</span> are <span
-class="math inline">\bot</span> or <span
-class="math inline">\top</span>. Let <span
-class="math inline">r:=(\top,\bot)</span>, the proposition true at <span
-class="math inline">A</span> only.</p>
-<p><em>□Strong Actuality.</em> <span class="math inline">r</span> is a
-true atom at <span class="math inline">A</span>, and its transport <span
-class="math inline">\bot</span> decides every proposition at <span
-class="math inline">B</span>, so <span class="math inline">r</span> is a
-strong atom at <span class="math inline">A</span> entailing every truth.
-At <span class="math inline">B</span>, the tail’s strong true atom does
-the same (the tail satisfies □Strong Actuality). So Strong Actuality
-holds at both objects.</p>
-<p><em>BF at <span class="math inline">t</span> fails.</em> Let <span
-class="math inline">Q(p):=r\lor p=\top\lor p=\bot</span>. Every
-proposition <span class="math inline">p</span> at <span
-class="math inline">A</span> has <span class="math inline">\Box
-Q(p)</span>: <span class="math inline">Q(p)</span> is true at <span
-class="math inline">A</span> by <span class="math inline">r</span>, and
-at <span class="math inline">B</span> since <span
-class="math inline">i\cdot p\in\{\bot,\top\}</span>. But <span
-class="math inline">\Box\forall p\, .\,Q(p)</span> fails, since at <span
-class="math inline">B</span>, where <span class="math inline">r</span>
-is false, the tail has a contingent proposition.</p>
-<p><em>ND at <span class="math inline">t</span> fails.</em> <span
-class="math inline">r\ne\bot</span> at <span
-class="math inline">A</span>, while <span class="math inline">i\cdot
-r=\bot=i\cdot\bot</span>.</p>
-<p><em>Strong Atomicity at <span class="math inline">t</span>
-fails.</em> <span class="math inline">\neg r=(\bot,\top)</span> is an
-atom at <span class="math inline">A</span> with transport <span
-class="math inline">\top</span> at <span class="math inline">B</span>,
-which a contingent proposition of the tail splits; so it is not a strong
-atom, and no strong atom lies below it.</p>
-<p>The relational forms fail too: through <span
-class="math inline">p\mapsto\lambda\bar x\, .\,p</span> and back by
-universal quantification, BF or Strong Atomicity at a relational type
-would give it at <span class="math inline">t</span>.</p>
+<p>The tail fails Tame Rigidity at type <span class="math inline">(t\to t)\to t</span>, by the argument recorded for the qualitative-links model with one individual. The domains at <span class="math inline">B</span> are those of that model, <span class="math inline">d</span> being a pinning point only, and the entrance adds no arrow out of <span class="math inline">B</span>, so the same relation refutes Tame Rigidity at <span class="math inline">B</span>. As <span class="math inline">B</span> is reachable from <span class="math inline">A</span>, □Tame Rigidity fails at <span class="math inline">A</span>.</p>
+<h2 id="strong-actuality-bf-nd-and-strong-atomicity-fails">6. Strong Actuality; BF, ND and Strong Atomicity fails</h2>
+<p>The propositions at <span class="math inline">A</span> are the four pairs <span class="math inline">(a,b)</span> of truth values, and their transports to <span class="math inline">B</span> are <span class="math inline">\bot</span> or <span class="math inline">\top</span>. Let <span class="math inline">r:=(\top,\bot)</span>, the proposition true at <span class="math inline">A</span> only.</p>
+<p><em>□Strong Actuality.</em> <span class="math inline">r</span> is a true atom at <span class="math inline">A</span>, and its transport <span class="math inline">\bot</span> decides every proposition at <span class="math inline">B</span>, so <span class="math inline">r</span> is a strong atom at <span class="math inline">A</span> entailing every truth. At <span class="math inline">B</span>, the tail’s strong true atom does the same (the tail satisfies □Strong Actuality). So Strong Actuality holds at both objects.</p>
+<p><em>BF at <span class="math inline">t</span> fails.</em> Let <span class="math inline">Q(p):=r\lor p=\top\lor p=\bot</span>. Every proposition <span class="math inline">p</span> at <span class="math inline">A</span> has <span class="math inline">\Box Q(p)</span>: <span class="math inline">Q(p)</span> is true at <span class="math inline">A</span> by <span class="math inline">r</span>, and at <span class="math inline">B</span> since <span class="math inline">i\cdot p\in\{\bot,\top\}</span>. But <span class="math inline">\Box\forall p\, .\,Q(p)</span> fails, since at <span class="math inline">B</span>, where <span class="math inline">r</span> is false, the tail has a contingent proposition.</p>
+<p><em>ND at <span class="math inline">t</span> fails.</em> <span class="math inline">r\ne\bot</span> at <span class="math inline">A</span>, while <span class="math inline">i\cdot r=\bot=i\cdot\bot</span>.</p>
+<p><em>Strong Atomicity at <span class="math inline">t</span> fails.</em> <span class="math inline">\neg r=(\bot,\top)</span> is an atom at <span class="math inline">A</span> with transport <span class="math inline">\top</span> at <span class="math inline">B</span>, which a contingent proposition of the tail splits; so it is not a strong atom, and no strong atom lies below it.</p>
+<p>The relational forms fail too: through <span class="math inline">p\mapsto\lambda\bar x\, .\,p</span> and back by universal quantification, BF or Strong Atomicity at a relational type would give it at <span class="math inline">t</span>.</p>
 <h2 id="remark">Remark</h2>
-<p>Nothing in §§1–4 or §6 uses the particular tail: a one-point entrance
-to any one-object symmetric ideally-full model with one individual has
-Atomicity, Rigid Comprehension, Relational Choice and Weakly Rigid
-Power, and fails the necessitation of every closed principle that fails
-in the tail.</p>
+<p>Nothing in §§1–4 or §6 uses the particular tail: a one-point entrance to any one-object symmetric ideally-full model with one individual has Atomicity, Rigid Comprehension, Relational Choice and Weakly Rigid Power, and fails the necessitation of every closed principle that fails in the tail.</p>
 <h2 id="paper-references">Paper references</h2>
 <ul>
-<li><strong>Background: Boolean Completeness does not imply Rigid
-Comprehension.</strong> Dorr, Cian. Boolean Completeness does not imply
-Rigid Comprehension. Unpublished draft in progress, 30 July 2026, 27
-pages. All page, proposition and lemma locators for this source refer to
-that draft. Parts of the draft were drafted with AI assistance; its
-mathematical claims are attributed to the author. — Definitions 15–18,
-p. 8; Proposition 20. Symmetric ideally-full models, of which this is
-one.</li>
+<li><strong>Background: Boolean Completeness does not imply Rigid Comprehension.</strong> Dorr, Cian. Boolean Completeness does not imply Rigid Comprehension. Unpublished draft in progress, 30 July 2026, 27 pages. All page, proposition and lemma locators for this source refer to that draft. Parts of the draft were drafted with AI assistance; its mathematical claims are attributed to the author. — Definitions 15–18, p. 8; Proposition 20. Symmetric ideally-full models, of which this is one.</li>
 </ul>
 </body></html>

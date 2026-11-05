@@ -47,13 +47,16 @@ parameters:
       naturals:
         text: The individuals are the natural numbers, acted on by the arrows themselves.
         label: individuals ℕ
+        brief: the individuals are the natural numbers, moved by the arrows
         meets:
           infinitely-many-individuals: The individuals are the natural numbers.
+          infinitely-many-individuals-everywhere: The individuals at the sole object are the natural numbers.
       singleton:
         text: >-
           There is a single individual, which every arrow fixes; the arrows still act on
           $\mathbb N$, which supplies the pinning sets.
         label: one individual
+        brief: a single individual, fixed by every arrow; the arrows still act on ℕ
         meets:
           one-individual: The only individual is fixed by every arrow, at the sole object.
   sigma:
@@ -69,6 +72,7 @@ parameters:
           Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each
           denotes the top element of its type.
         label: Σ top
+        brief: every constant of Σ denotes the top element of its type
         meets:
           sigma-top: This is the interpretation.
       true-atom:
@@ -79,6 +83,7 @@ parameters:
           other constant of Σ, of which there is at least one, is relational and denotes the top
           element of its type.
         label: Σ true atom
+        brief: one constant denotes the true atom (as a constant relation), the others top
         requires: [actual-world-pinned]
         meets:
           sigma-true-atom: This is the interpretation.
@@ -105,6 +110,13 @@ meets:
   infinitely-many-propositions: >-
     The propositions that a given number is fixed by the arrow, one for each number, are pairwise
     distinct, each pinned down by that number (the shared argument axiom-of-infinity-t).
+  infinitely-many-propositions-everywhere: >-
+    The evaluation object is the only object, and its propositions are infinitely many (as for
+    infinitely-many-propositions).
+  finite-extension-properties-everywhere: >-
+    The evaluation object is the only object. The model is ideally full, so it contains every intension
+    pinned down by $\emptyset$, among them the constant intensions, which give any extension at $1$;
+    and the haecceity of an entity is pinned down by the set pinning the entity, so identity is literal.
   codomain-intensions: >-
     With one object such an intension is constant, so it is pinned down by $\emptyset$, and the
     domain holds every finitely pinned intension.

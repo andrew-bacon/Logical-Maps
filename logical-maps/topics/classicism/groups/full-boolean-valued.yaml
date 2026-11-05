@@ -32,6 +32,7 @@ parameters:
           Universe, fixed for this record: the construction is carried out in an arbitrary model of
           ZFC.
         label: in ZFC
+        brief: built in an arbitrary model of ZFC
       constructible:
         text: >-
           Universe, fixed for this record: the construction is carried out inside Gödel's
@@ -44,8 +45,39 @@ parameters:
           argument for the member, being a proof in ZFC about the model's values, holds of it. In
           particular $L\models\mathrm{CH}$, so an algebra chosen by cases on CH is the one for CH.
         label: built in L
+        brief: built inside L, where CH holds
 
 arguments:
+
+- id: necessary-axiom-of-infinity-t
+  holds: [necessary-axiom-of-infinity-t]
+  choice: free
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+  date: '2026-10-31'
+  text: >-
+    As $\Box p$ is $p=\top$, it suffices that the Axiom of Infinity at type $t$ has value $\top$. Let
+    $\Phi\in D_{(tt)t}$ send $X\in B^{B}$ to $\bigvee_F\bigwedge_{b\notin F}\neg X(b)$, the join over the
+    finite sets $F\subseteq B$: the value of the claim that $X$ holds of only finitely many propositions. It
+    is in the domain, which holds every function, and so is $W:=\lambda Y\, .\,\forall X\, .\,YX\to\Phi X$,
+    whose value at $Y$ is $\bigwedge_X(Y(X)\to\Phi(X))$. $W\mathbf 0_t$ has value $\top$, since
+    $\mathbf 0_t(X)=\bigwedge_b\neg X(b)\le\Phi(X)$, taking $F=\varnothing$. And $WY\le W(\operatorname{Suc}_tY)$:
+    $\operatorname{Suc}_tY(X)=\bigvee_y X(y)\land Y(X_y)$, where $X_y$, the value of $\lambda u\, .\,Xu\land
+    u\ne y$, agrees with $X$ except that $X_y(y)=0$, equality being crisp; so $\Phi(X_y)\le\Phi(X)$, each
+    $F$ for $X_y$ giving $F\cup\{y\}$ for $X$. Hence the value of $\operatorname{FiniteCardinality}_t(Z)$ is
+    at most that of $WZ$, and that of $\operatorname{FiniteCardinality}_t(Z)\land Z(\lambda u\, .\,\top)$ is
+    at most $\Phi(\lambda u\, .\,\top)=\bigvee_F\bigwedge_{b\notin F}\bot=\bot$, $B$ being infinite, as $A$ is
+    in every member. So the existential has value $\bot$ and the Axiom value $\top$.
+
+- id: necessary-axiom-of-infinity-e
+  requires: [infinitely-many-individuals]
+  holds: [necessary-axiom-of-infinity-e]
+  choice: free
+  by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
+  date: '2026-10-31'
+  text: >-
+    As for necessary-axiom-of-infinity-t, at type $e$: with $\Phi(X):=\bigvee_F\bigwedge_{n\notin F}\neg
+    X(n)$ for $X\in B^{D_e}$, the Axiom of Infinity at $e$ has value $\top$, since
+    $\Phi(\lambda u\, .\,\top)=\bot$ when $D_e$ is infinite.
 
 - id: necessity-of-analysis-constructible
   when: {universe: constructible}
@@ -58,8 +90,9 @@ arguments:
     of a real in $L$ is $\Sigma^1_2$ (Shoenfield), so $\Phi$ is $\Pi^1_3$, a first-order analytical
     sentence in any real number structure, whose natural numbers code sets of naturals by its reals.
     Write $\pi,\rho$ for the projections of $B=\mathbf 2\times A$ onto the atom's coordinate and $A$.
-    As in the argument for the contingency of CH, the $\pi$-coordinate of a box-free sentence is its
-    truth in the full model over $L$ and the $\rho$-coordinate its value in $L^A$, and both have real
+    As in the argument for the contingency of CH, the $\pi$-coordinate of a box-free sentence of the
+    kind used there, whose relation variables are only applied to carrier elements, with identity only
+    between those, is its truth in the full model over $L$ and the $\rho$-coordinate its value in $L^A$, and both have real
     number structures on subsets of $D_t=B$. $L\models\Phi$, while forcing with $A$ adds a Cohen real
     over $L$, not constructible, and Shoenfield absoluteness makes the $\Sigma^1_2$ definition of
     constructibility mean the same in $L^A$; so $\Phi$ has value $0_A$ there. Real number structures
@@ -67,3 +100,11 @@ arguments:
     R)\to\Phi(\mathfrak R)$ has value $(1,0_A)$ and $\forall\mathfrak R\, .\,\operatorname{Real}_t(\mathfrak
     R)\to\neg\Phi(\mathfrak R)$ has value $(0,1_A)$. As $\Box p$ is $p=\top$, both disjuncts of the
     instance are $\bot$.
+  revisions:
+  - date: '2026-10-29'
+    by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, from a correction by OpenAI Codex (GPT-6),
+      prompted by Daniel Kodsi, in Daniel Kodsi's pull request #18
+    note: >-
+      The transfer is stated for the fragment the argument uses, as in the corrected argument ch-contingent
+      of full-boolean-valued-atom-and-atomless; it does not hold for every box-free sentence. The verdict is
+      unchanged.

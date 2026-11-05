@@ -1,4 +1,4 @@
-# □Actuality ⇒ □5-necessity implies two-hat necessity
+# □Actuality ⇒ □5-necessities are two-hat necessary
 
 <p class='cert'>Result — Source: The Bounds of Possibility (2021), Lean `Classicism.Map.necessary_actuality_implies_necessary_five_implies_two_hat`; produced by The Bounds of Possibility, Appendix D, Propositions D19–D21 (in HS4R); the weakening of the hypothesis to necessary Actuality observed by Cian Dorr and Claude Fable 5.1 (Anthropic), 14 October 2026; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
 
@@ -8,7 +8,7 @@
 
 ## Conclusion
 
-- **□5-necessity implies two-hat necessity.** Necessarily, whatever is 5-necessary is two-hat necessary. In C this is the identity $\Box_5=\hat{\hat\Box}$.
+- **□5-necessities are two-hat necessary.** Necessarily, whatever is 5-necessary is two-hat necessary. In C this is the identity $\Box_5=\hat{\hat\Box}$.
 
 ## Proof
 

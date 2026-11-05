@@ -6,7 +6,7 @@ certificate:
   recorded_by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 20 September 2026
   checked_by: []
   date: '2026-09-20'
-  lean: stated
+  lean: none
 sources:
 - Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, construction and verification of 20 September 2026 (see the write-up).
 - Andrew Bacon and Cian Dorr, Classicism, draft of 16 May 2023, §3.2, Definition 3.6 and Proposition 3.7,
@@ -29,6 +29,7 @@ references:
 group: coalesced-sums
 settings:
   root-arrows: distinguished
+  sigma: top
   construction: 'Take the full Henkin models $M_n$ with individual domain $\{1,\ldots,n\}$ for every $n\ge1$,
     and add a root world. Individuals are threads $(a_n)_n$ with $a_n\in\{1,\ldots,n\}$. Application is
     componentwise, identity at world $n$ is the identity of $M_n$ and at the root is identity of elements.
@@ -39,11 +40,35 @@ settings:
 definition: 'Interpretation of Σ, fixed for this record: every constant of Σ is relational, and each denotes
   the top element of its type.'
 meets:
+  fullest-domains: >-
+    An entity of a function type is a family of $M_n$-entities together with an arbitrary root
+    component, which is every intension whose transport along each distinguished arrow is in that
+    component's domain.
+  finitely-many-individuals-somewhere: >-
+    The world of $M_1$, seen from the root, has one individual.
+  finitely-many-propositions-somewhere: >-
+    The world of $M_1$, seen from the root, is a one-world full Henkin model with two propositions.
   two-actual-components: >-
     Every component is a one-world Henkin model, where the top proposition is the true atom; the
     root domains are the fullest.
   free-root-component: An entity of a function type has an arbitrary root component defined on whole threads.
   sigma-top: This is the interpretation the definition fixes.
+  full-model: >-
+    Every component is full, so every intension at the root has components in the components'
+    domains, and the root domains, being the fullest, contain it.
+  full-action-model: It is the coalesced sum's action model on the sum of the categories, full at every object.
+  extensionally-full: It is full.
+  infinitely-many-individuals: The root individuals are the threads, uncountably many.
+  infinitely-many-propositions: >-
+    The root propositions true at exactly one distinguished arrow are infinitely many.
+  epic-arrows: >-
+    Between two objects there is at most one arrow, so every arrow is an epimorphism; the identities
+    act as the identity, and the distinguished arrow into $M_n$ projects the threads onto
+    $\{1,\ldots,n\}$, surjectively.
+  unretracted-arrow: No arrow returns to the root, so no distinguished arrow has a retraction.
+  fewer-propositions-after: >-
+    The root has three distinct propositions, and the one-world component $M_1$, from which no
+    arrow leaves, has only two.
 arguments:
 - holds:
   - axiom-of-infinity-e
@@ -181,9 +206,9 @@ history:
   - necessary-relational-choice-r
 - date: '2026-09-23'
   by: Claude Fable 5.1 (Anthropic), prompted by Cian Dorr
-  summary: Recorded the Distinctness-preserving collapse; see the notes.
+  summary: Recorded Truths are ND-necessary; see the notes.
   satisfies:
-  - distinctness-preserving-collapse
+  - truths-are-nd-necessary
 - date: '2026-09-25'
   by: Claude Fable 5.1 (Anthropic), prompted by Zachary Goodsell
   summary: 'Added Transversal Choice at the root, by the argument recorded for Relational Choice: a root
@@ -215,3 +240,27 @@ history:
   - necessary-strong-atomicity-r
   violates:
   - pure-b-r
+
+# The model in Lean (Classicism/Models/CoalescedFinite.lean) and its own verdict proved there
+# (Classicism/MapModels.lean); statuses are written by lean-check --update. The verdicts the map's
+# general arguments give it are certified from the arguments' (MapDerived.lean), with the proofs
+# under `meets` that it meets their conditions.
+lean:
+  param: Classicism.Meta.Coalesced.SumData.ofAppendixE Classicism.Meta.Coalesced.AllFinite.comp Classicism.Meta.Coalesced.AllFinite.comp_isModel
+  meets:
+    distinguished-arrows: Classicism.Meta.Coalesced.SumData.ofAppendixE_distinguished Classicism.Meta.Coalesced.AllFinite.comp_isModel
+    free-root-component: Classicism.Meta.Coalesced.SumData.ofAppendixE_free Classicism.Meta.Coalesced.AllFinite.comp_isModel
+    fullest-domains: Classicism.Meta.Coalesced.SumData.ofAppendixE_fullest Classicism.Meta.Coalesced.AllFinite.comp_isModel
+    full-model: Classicism.Meta.Coalesced.AllFinite.full
+    full-action-model: Classicism.Meta.Coalesced.AllFinite.full
+    extensionally-full: Classicism.Meta.Intensional.Premodel.Full.extFull _ Classicism.Meta.Coalesced.AllFinite.full
+    infinitely-many-individuals: Classicism.Meta.Coalesced.AllFinite.infinitelyManyIndividuals
+    infinitely-many-propositions: Classicism.Meta.Coalesced.AllFinite.infinitelyManyPropositions
+    epic-arrows: Classicism.Meta.Coalesced.AllFinite.epicArrows
+    unretracted-arrow: Classicism.Meta.Coalesced.AllFinite.unretractedArrow
+    fewer-propositions-after: Classicism.Meta.Coalesced.AllFinite.fewerPropositionsAfter
+    actual-world-isolated: Classicism.Meta.Coalesced.AllFinite.actualWorldIsolated
+  verdicts:
+  - holds: necessary-truth-implies-five-necessity
+    ref: Classicism.Map.Models.coalesced_all_finite_individual_domains.necessary_truth_implies_five_necessity
+    status: verified

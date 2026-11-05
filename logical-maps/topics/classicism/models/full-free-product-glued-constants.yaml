@@ -32,17 +32,19 @@ references:
 - paper: bacon-dorr-classicism
   role: background
   locator: §3.5, pp. 58–61
-definition: 'Let $M:=F_\infty * E * B * \mathbb Z_2$ be the free product of monoids, where $F_\infty$
-  is the free monoid on countably many generators $f_1,f_2,\ldots$, $E=\{1,e\}$ with $e^2=e$, $B=\langle
-  b,c\mid cb=1\rangle$ is the bicyclic monoid, and $\mathbb Z_2=\{1,s\}$ with $s^2=1$. Take the full one-object
-  action model over $M$ (Classicism, §3.5) with a single individual, evaluated at the identity. The constants
-  of Σ are glued at the sites $f_k$: enumerate the pure formulas $P_k(\bar x)$, with $\bar x$ matching
-  a tuple of distinct constants, such that $\exists\bar x\,P_k$ is true at the identity, choose a witness
-  tuple for each, and let each constant denote the intension whose value at an arrow $u\circ f_k$ is $u$
-  applied to the $k$-th witness and whose value at the remaining arrows is empty. Each factor has one
-  job (write-up, §4): the free generators are the gluing sites that give Logical Necessity; the idempotent
-  $e$ is a non-epic arrow, so BF fails; $b$ is retracted by $c$ but not invertible, so ND-necessity and
-  two-hat necessity come apart; $s$ is a non-identity unit, so some truth is not 5-necessary.'
+group: glued-free-monoid
+settings:
+  construction: 'Let $M:=F_\infty * E * B * \mathbb Z_2$ be the free product of monoids, where $F_\infty$
+    is the free monoid on countably many generators $f_1,f_2,\ldots$, $E=\{1,e\}$ with $e^2=e$, $B=\langle
+    b,c\mid cb=1\rangle$ is the bicyclic monoid, and $\mathbb Z_2=\{1,s\}$ with $s^2=1$. Take the full one-object
+    action model over $M$ (Classicism, §3.5) with a single individual, evaluated at the identity. The constants
+    of Σ are glued at the sites $f_k$: enumerate the pure formulas $P_k(\bar x)$, with $\bar x$ matching
+    a tuple of distinct constants, such that $\exists\bar x\,P_k$ is true at the identity, choose a witness
+    tuple for each, and let each constant denote the intension whose value at an arrow $u\circ f_k$ is $u$
+    applied to the $k$-th witness and whose value at the remaining arrows is empty. Each factor has one
+    job (write-up, §4): the free generators are the gluing sites that give Logical Necessity; the idempotent
+    $e$ is a non-epic arrow, so BF fails; $b$ is retracted by $c$ but not invertible, so ND-necessity and
+    two-hat necessity come apart; $s$ is a non-identity unit, so some truth is not 5-necessary.'
 meets:
   fixed-arrow: >-
     The idempotent $e$: $e\cdot e=e$.
@@ -106,3 +108,18 @@ history:
     Weakly Rigid Power follows from Rigid Power and □Tame Rigidity by the recorded results. The model
     is not a member of the full-action-models group, whose shared conditions would otherwise have supplied
     these.
+lean:
+  param: Classicism.Meta.Intensional.freeProductSites
+  meets:
+    one-object-action-model: Classicism.Meta.Intensional.FreeProductSites.oneObject
+    one-individual: Classicism.Meta.Intensional.FreeProductSites.one_individual
+    infinitely-many-propositions: Classicism.Meta.Intensional.FreeProductSites.infinitely_many_propositions
+    nonidentity-arrow: Classicism.Meta.Intensional.FreeProductSites.nonidentity
+    nonepic-arrow: Classicism.Meta.Intensional.FreeProductSites.nonepic
+    unretracted-arrow: Classicism.Meta.Intensional.FreeProductSites.unretracted
+    returning-arrow: Classicism.Meta.Intensional.FreeProductSites.returning
+    identity-singletons: Classicism.Meta.Intensional.FreeProductSites.identity_singletons
+  verdicts:
+  - holds: logical-necessity-r
+    ref: Classicism.Map.Models.full_free_product_glued_constants.logical_necessity_r
+    status: verified

@@ -19,6 +19,7 @@ references:
 group: coalesced-sums
 settings:
   root-arrows: distinguished
+  sigma: construction
   construction: Take a coalesced sum of a set of source action models complete for C in the fixed signature,
     evaluated at the new root. See Definition E.2 for the construction.
   domains: fullest
@@ -59,8 +60,8 @@ arguments:
   - necessary-truth-implies-five-necessity
   text: The components form a set of action models complete for C in the signature, so for each of the
     three unboxed collapse principles, which fail in some model of C (the paired-individuals two-object
-    model for 5-necessity implies two-hat necessity, the two-object retract full model for two-hat necessity
-    implies ND-necessity, the involution group for Truth implies 5-necessity), some component falsifies
+    model for 5-necessities are two-hat necessary, the two-object retract full model for Two-hat necessities
+    are ND-necessary, the involution group for Truths are 5-necessary), some component falsifies
     it at its own evaluation point; the component is carried into the coalesced sum unchanged and its
     evaluation point is a world accessible from the root by the distinguished arrow. So none of the boxed
     collapse principles holds at the root, although every truth at the root is ND-necessary.
@@ -77,7 +78,7 @@ history:
   satisfies:
   - distinctness-signature-r
   - actuality
-  - distinctness-preserving-collapse
+  - truths-are-nd-necessary
   violates:
   - strong-possibility-r
   - distinctness-necessary-r
@@ -139,3 +140,37 @@ history:
     the root, and symmetric-infinite-classes refutes Transversal at type e.'
   violates:
   - necessary-transversal-r
+
+# The model in Lean (Coalesced/SumData.lean): the coalesced sum of the complete family of
+# Completeness/, with Appendix E's product root individuals and constants, at the signature with one
+# constant of type t (Signature.sigmaTop).
+lean:
+  param: Classicism.Meta.Coalesced.maximalistRoot
+  meets:
+    complete-components: Classicism.Meta.Coalesced.maximalistData_complete Classicism.Meta.Coalesced.sigmaTop_closed
+    distinguished-arrows: Classicism.Meta.Coalesced.maximalistData_distinguished
+    free-root-component: Classicism.Meta.Coalesced.maximalistData_free
+    fullest-domains: Classicism.Meta.Coalesced.maximalistData_fullest
+    actual-world-isolated: Classicism.Meta.Coalesced.maximalistData_isolated
+  verdicts:
+  - holds: distinctness-signature-r
+    ref: Classicism.Map.Models.coalesced_maximalist_root.distinctness_signature_r
+    status: verified
+  - holds: axiom-of-infinity-e
+    ref: Classicism.Map.Models.coalesced_maximalist_root.axiom_of_infinity_e
+    status: verified
+  - fails: necessary-two-hat-implies-nd-necessity
+    ref: Classicism.Map.Models.coalesced_maximalist_root.necessary_two_hat_implies_nd_necessity
+    status: verified
+  - fails: necessary-truth-implies-five-necessity
+    ref: Classicism.Map.Models.coalesced_maximalist_root.necessary_truth_implies_five_necessity
+    status: verified
+  - fails: necessary-vicinity
+    ref: Classicism.Map.Models.coalesced_maximalist_root.necessary_vicinity
+    status: verified
+  - fails: necessary-weakly-inextensible-comprehension-r
+    ref: Classicism.Map.Models.coalesced_maximalist_root.necessary_weakly_inextensible_comprehension_r
+    status: verified
+  - fails: necessary-transversal-r
+    ref: Classicism.Map.Models.coalesced_maximalist_root.necessary_transversal_r
+    status: verified

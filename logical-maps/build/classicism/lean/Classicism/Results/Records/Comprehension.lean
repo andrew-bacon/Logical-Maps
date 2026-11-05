@@ -1,5 +1,6 @@
 import Classicism.Paper
 import Classicism.Principles
+import Classicism.Background.RigidityClosure
 
 /-!
 # Proofs of map records: Comprehension
@@ -162,16 +163,6 @@ theorem necessary_tame_rigidity_and_necessary_weak_rigid_comprehension_imply_nec
     NecTameRigidity τ → NecWeakRigidComprehension τ → NecRigidComprehension τ := fun h₁ h₂ =>
   modal_K _ _ (modal_K _ _
     (nec% (tame_rigidity_and_weak_rigid_comprehension_imply_rigid_comprehension (τ := τ))) h₁) h₂
-
-/-- Coextensive weakly rigid relations are identical: each is below the other by the other's
-weak persistence and its own weak inextensibility, and `≤` is antisymmetric. -/
-theorem eq_of_weaklyRigid_coext {τ : Type} [Rel τ] [Order τ] [Pointwise τ] {F G : τ}
-    (hF : WeaklyRigid F) (hG : WeaklyRigid G) (h : F ≡ G) : F = G :=
-  le_antisymm_rel F G
-    (le_of_box_incl (hF.2 G (Pointwise.incl_trans F G (boxAt G) (Pointwise.incl_of_coext F G h)
-      hG.1)))
-    (le_of_box_incl (hG.2 F (Pointwise.incl_trans G F (boxAt F) (Pointwise.incl_of_coext' F G h)
-      hF.1)))
 
 /-- `rigid-comprehension-implies-tame-rigidity`: a weakly rigid `F` is coextensive with a rigid
 `G`, which is weakly rigid, so `F = G`. -/
@@ -344,19 +335,12 @@ theorem barcan_of_weaklyInextensible_top {σ : Type} [Ty σ]
   modal_K _ _ (nec% (fun (h : ∀ x : σ, True → X x) (x : σ) => h x trivial))
     (wi X (fun x _ => hX x))
 
-/-- BF makes `λx. ⊤` weakly rigid. -/
-theorem weaklyRigid_top_of_barcan {σ : Type} [Ty σ] (bf : Barcan σ) :
-    WeaklyRigid (fun _ : σ => True) :=
-  ⟨fun _ _ => box_true, fun Z hZ =>
-    modal_K _ _ (nec% (fun (h : ∀ x : σ, Z x) (x : σ) (_ : True) => h x))
-      (bf Z fun z => hZ z trivial)⟩
-
 /-- `tame-rigidity-and-barcan-imply-necessary-barcan`, at `σ`: Tame Rigidity at `σ → t`
 makes the weakly rigid `λx. ⊤` rigid, and its inextensibility is `□`BF. -/
 theorem tame_rigidity_and_barcan_imply_necessary_barcan {σ : Type} [Ty σ] :
     TameRigidity (σ → Prop) → Barcan σ → NecBarcan σ := fun tr bf =>
   modal_K _ _ (nec% (barcan_of_weaklyInextensible_top (σ := σ)))
-    (tr _ (weaklyRigid_top_of_barcan bf)).2
+    (tr _ (P.Barcan.to_universalWeaklyRigid bf)).2
 
 /-- `tame-rigidity-and-bf-relational-imply-necessary-bf-relational`: the same, at a
 relational type. -/

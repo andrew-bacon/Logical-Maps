@@ -45,3 +45,4 @@ changes:
   by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr
   summary: 'Notes updated: C5 gives Arithmetic Necessitism ([[c5-implies-arithmetic-necessitism]]).'
   minor: true
+lean_def: Classicism.P.ArithmeticNecessitism.schemaIn

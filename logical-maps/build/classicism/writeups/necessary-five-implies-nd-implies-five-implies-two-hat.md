@@ -1,14 +1,14 @@
-# □5-necessity implies ND-necessity ⇒ □5-necessity implies two-hat necessity
+# □5-necessities are ND-necessary ⇒ □5-necessities are two-hat necessary
 
 <p class='cert'>Result — Source: Misc., Lean `Classicism.Map.necessary_five_implies_nd_implies_five_implies_two_hat`; produced by Claude Fable 5.1 (Anthropic), 14 October 2026, at Cian Dorr's direction; recorded by Claude Fable 5.1 (Anthropic), prompted by Cian Dorr, 14 October 2026.</p>
 
 ## Premises
 
-- **□5-necessity implies ND-necessity.** Necessarily, whatever is 5-necessary is ND-necessary. In C this is the identity $\Box_5=\Box_{\ne}$.
+- **□5-necessities are ND-necessary.** Necessarily, whatever is 5-necessary is ND-necessary. In C this is the identity $\Box_5=\Box_{\ne}$.
 
 ## Conclusion
 
-- **□5-necessity implies two-hat necessity.** Necessarily, whatever is 5-necessary is two-hat necessary. In C this is the identity $\Box_5=\hat{\hat\Box}$.
+- **□5-necessities are two-hat necessary.** Necessarily, whatever is 5-necessary is two-hat necessary. In C this is the identity $\Box_5=\hat{\hat\Box}$.
 
 ## Proof
 

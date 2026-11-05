@@ -12,7 +12,7 @@
 
 ## Proof
 
-Fix $\sigma$. Coextensiveness, $(\approx X)Y:=\forall z^\sigma\, .\,Xz\leftrightarrow Yz$, is a closed relation of type $(\sigma t)(\sigma t)t$, and it is an equivalence relation by propositional logic. Transversal Choice at type $\sigma t$ gives $F^{(\sigma t)t}$ with exactly one instance in each cell of $\approx$. The cell of $X$ is the set of properties coextensive with $X$, so for each $X$ there is exactly one $Y$ with $FY$ coextensive with $X$. This is Transversal at $\sigma$.
+Fix $\sigma$. Coextensiveness, $\lambda X\,Y\, .\,X\equiv Y$, is a closed relation of type $(\sigma t)(\sigma t)t$, and it is an equivalence relation by propositional logic. Transversal Choice at type $\sigma t$ gives $F^{(\sigma t)t}$ with exactly one instance in each of its cells. The cell of $X$ is the set of properties coextensive with $X$, so for each $X$ there is exactly one $Y$ with $FY$ coextensive with $X$. This is Transversal at $\sigma$.
 
 ## Notes
 

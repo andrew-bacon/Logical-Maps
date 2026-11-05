@@ -1,0 +1,21 @@
+id: necessary-atomlessness-implies-necessary-atoms-are-strong-atoms-r
+premises:
+- necessary-atomlessness
+conclusion: necessary-atoms-are-strong-atoms-r
+status: proved
+certificate:
+  source_id: misc
+  produced_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 29 October 2026
+  recorded_by: Claude Opus 5.5 (Anthropic), prompted by Cian Dorr, 29 October 2026
+  checked_by: []
+  date: '2026-10-29'
+  lean: verified
+  lean_ref: Classicism.Map.necessary_atomlessness_implies_necessary_atoms_are_strong_atoms_r
+sources:
+- Cian Dorr, suggestion of 29 October 2026.
+source_names:
+- Dorr 29 Oct
+proof: >-
+  The boxed form of [[atomlessness-implies-atoms-are-strong-atoms-r]]: that result is a derivation in C, so
+  its necessitation and K give this one.
+references: []
