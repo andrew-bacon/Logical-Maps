@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport042ESegment01
+
+#print axioms Classicism.MathematicalContingency.embedding_has_necessary_rigid_witness.derivable
+#print axioms Classicism.MathematicalContingency.embedding_has_necessary_rigid_witness.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.embedding_has_necessary_rigid_witness.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.embedding_has_necessary_rigid_witness"

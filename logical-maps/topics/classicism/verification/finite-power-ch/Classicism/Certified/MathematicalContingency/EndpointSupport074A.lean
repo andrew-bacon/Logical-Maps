@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport074ASegment01
+
+#print axioms Classicism.MathematicalContingency.powerRepresentativeValue_below.derivable
+#print axioms Classicism.MathematicalContingency.powerRepresentativeValue_below.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.powerRepresentativeValue_below.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.powerRepresentativeValue_below"

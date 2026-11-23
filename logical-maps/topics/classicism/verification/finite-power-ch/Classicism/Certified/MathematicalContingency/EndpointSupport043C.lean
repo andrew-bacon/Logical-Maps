@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport043CSegment03
+
+#print axioms Classicism.MathematicalContingency.exactOrdinal_rigid_realization.derivable
+#print axioms Classicism.MathematicalContingency.exactOrdinal_rigid_realization.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.exactOrdinal_rigid_realization.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.exactOrdinal_rigid_realization"

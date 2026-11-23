@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport059BSegment01
+
+#print axioms Classicism.MathematicalContingency.disjoint_lower_zero.derivable
+#print axioms Classicism.MathematicalContingency.disjoint_lower_zero.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.disjoint_lower_zero.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.disjoint_lower_zero"

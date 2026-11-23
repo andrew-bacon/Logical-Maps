@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport056ESegment02
+
+#print axioms Classicism.MathematicalContingency.frozenNameCarrier_not_embeds.derivable
+#print axioms Classicism.MathematicalContingency.frozenNameCarrier_not_embeds.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.frozenNameCarrier_not_embeds.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.frozenNameCarrier_not_embeds"

@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport032ASegment15
+
+#print axioms Classicism.MathematicalContingency.countableCoordinateValue_interfaces.derivable
+#print axioms Classicism.MathematicalContingency.countableCoordinateValue_interfaces.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.countableCoordinateValue_interfaces.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.countableCoordinateValue_interfaces"

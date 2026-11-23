@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport033DSegment01
+
+#print axioms Classicism.MathematicalContingency.nameCarrier_subsets.derivable
+#print axioms Classicism.MathematicalContingency.nameCarrier_subsets.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.nameCarrier_subsets.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.nameCarrier_subsets"

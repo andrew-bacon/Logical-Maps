@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport056FSegment01
+
+#print axioms Classicism.MathematicalContingency.nameCarrier_separation.derivable
+#print axioms Classicism.MathematicalContingency.nameCarrier_separation.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.nameCarrier_separation.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.nameCarrier_separation"

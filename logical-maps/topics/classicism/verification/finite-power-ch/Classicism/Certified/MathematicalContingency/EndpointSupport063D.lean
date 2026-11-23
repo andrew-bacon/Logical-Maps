@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport063DSegment01
+
+#print axioms Classicism.MathematicalContingency.finiteSubset_greatest.derivable
+#print axioms Classicism.MathematicalContingency.finiteSubset_greatest.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.finiteSubset_greatest.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.finiteSubset_greatest"

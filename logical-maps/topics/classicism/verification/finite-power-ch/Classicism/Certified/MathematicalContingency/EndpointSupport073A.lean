@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport073ASegment08
+
+#print axioms Classicism.MathematicalContingency.cohen_cover_cardinality_obstruction.derivable
+#print axioms Classicism.MathematicalContingency.cohen_cover_cardinality_obstruction.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.cohen_cover_cardinality_obstruction.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.cohen_cover_cardinality_obstruction"

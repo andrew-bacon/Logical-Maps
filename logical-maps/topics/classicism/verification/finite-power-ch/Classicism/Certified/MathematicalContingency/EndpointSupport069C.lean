@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport069CSegment02
+
+#print axioms Classicism.MathematicalContingency.reducedAt_image_incompatible.derivable
+#print axioms Classicism.MathematicalContingency.reducedAt_image_incompatible.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.reducedAt_image_incompatible.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.reducedAt_image_incompatible"

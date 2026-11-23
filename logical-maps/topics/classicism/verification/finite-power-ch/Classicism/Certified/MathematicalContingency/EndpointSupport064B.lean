@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport064BSegment01
+
+#print axioms Classicism.MathematicalContingency.rankRun_surjective.derivable
+#print axioms Classicism.MathematicalContingency.rankRun_surjective.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.rankRun_surjective.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.rankRun_surjective"

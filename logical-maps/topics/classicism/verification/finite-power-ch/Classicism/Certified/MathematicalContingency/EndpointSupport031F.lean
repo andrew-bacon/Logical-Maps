@@ -1,0 +1,5 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport031FSegment02
+
+#print axioms Classicism.MathematicalContingency.countableCoordinateValue_functional.derivable
+#print axioms Classicism.MathematicalContingency.countableCoordinateValue_functional.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.countableCoordinateValue_functional.reflect

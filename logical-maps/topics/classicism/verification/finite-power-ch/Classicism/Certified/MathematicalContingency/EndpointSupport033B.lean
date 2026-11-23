@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport033BSegment01
+
+#print axioms Classicism.MathematicalContingency.rigid_map_functional.derivable
+#print axioms Classicism.MathematicalContingency.rigid_map_functional.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.rigid_map_functional.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.rigid_map_functional"

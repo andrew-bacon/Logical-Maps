@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport047ASegment02
+
+#print axioms Classicism.MathematicalContingency.coordinate_bounds_of_embeddings.derivable
+#print axioms Classicism.MathematicalContingency.coordinate_bounds_of_embeddings.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.coordinate_bounds_of_embeddings.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.coordinate_bounds_of_embeddings"

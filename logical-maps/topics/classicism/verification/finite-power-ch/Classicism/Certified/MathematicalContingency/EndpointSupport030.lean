@@ -1,0 +1,43 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport029
+import Classicism.Results.MathematicalContingency.FinitePowerCH
+import Classicism.Tools.ReuseCertificate
+
+/-! Saved checkpoint-140 theorem values checked against native dependencies,
+fresh current-statement quotations, and the C-minus axiom boundary.
+OpenAI Codex, prompted by Andrew Bacon, 1 November 2026. -/
+set_option synthInstance.maxSize 4000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+set_option Classicism.CertificateData.progress ".lake/finite-power-quotation-phases.log"
+
+set_option Classicism.CertificateData.compositionalReflection true
+
+#classicism_reuse_checkpoint
+  "Classicism/Certified/MathematicalContingency/Checkpoint140/EndpointSupport030.json"
+  Classicism.MathematicalContingency.coneSupremum_positive
+  Classicism.MathematicalContingency.representedSupremum_below
+  Classicism.MathematicalContingency.representedSupremum_disjoint
+  Classicism.MathematicalContingency.coneGenerators_sub
+  Classicism.MathematicalContingency.coneSupremum_negative
+  Classicism.MathematicalContingency.countableBit_opposite_incompatible
+
+#print axioms Classicism.MathematicalContingency.coneSupremum_positive.derivable
+#print axioms Classicism.MathematicalContingency.coneSupremum_positive.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.coneSupremum_positive.reflect
+#print axioms Classicism.MathematicalContingency.representedSupremum_below.derivable
+#print axioms Classicism.MathematicalContingency.representedSupremum_below.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.representedSupremum_below.reflect
+#print axioms Classicism.MathematicalContingency.representedSupremum_disjoint.derivable
+#print axioms Classicism.MathematicalContingency.representedSupremum_disjoint.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.representedSupremum_disjoint.reflect
+#print axioms Classicism.MathematicalContingency.coneGenerators_sub.derivable
+#print axioms Classicism.MathematicalContingency.coneGenerators_sub.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.coneGenerators_sub.reflect
+#print axioms Classicism.MathematicalContingency.coneSupremum_negative.derivable
+#print axioms Classicism.MathematicalContingency.coneSupremum_negative.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.coneSupremum_negative.reflect
+#print axioms Classicism.MathematicalContingency.countableBit_opposite_incompatible.derivable
+#print axioms Classicism.MathematicalContingency.countableBit_opposite_incompatible.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.countableBit_opposite_incompatible.reflect

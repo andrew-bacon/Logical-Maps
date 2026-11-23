@@ -1,0 +1,13 @@
+import Classicism.Tools.DeepSplitTranslate
+import Classicism.Results.MathematicalContingency.OrdinalCardinalityShadow
+import Classicism.Certified.MathematicalContingency.WellOrderAdjoinTop03
+/-! Factor the existential witnesses before specializing them to empty relations. -/
+set_option synthInstance.maxSize 2000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+#classicism_deep_split_derive Classicism.MathematicalContingency.ordinalCard_zero_of_empty
+#print axioms Classicism.MathematicalContingency.ordinalCard_zero_of_empty.derivable
+#classicism_deep_split_derive Classicism.MathematicalContingency.exists_empty_wellOrder
+#print axioms Classicism.MathematicalContingency.exists_empty_wellOrder.derivable

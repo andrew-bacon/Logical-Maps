@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport049DSegment02
+
+#print axioms Classicism.MathematicalContingency.rigidFiniteTernary_embeds_finitePower.derivable
+#print axioms Classicism.MathematicalContingency.rigidFiniteTernary_embeds_finitePower.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.rigidFiniteTernary_embeds_finitePower.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.rigidFiniteTernary_embeds_finitePower"

@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport042ASegment01
+
+#print axioms Classicism.MathematicalContingency.rigid_binary_atomic.derivable
+#print axioms Classicism.MathematicalContingency.rigid_binary_atomic.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.rigid_binary_atomic.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.rigid_binary_atomic"

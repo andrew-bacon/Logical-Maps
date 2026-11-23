@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport074FSegment02
+
+#print axioms Classicism.MathematicalContingency.rigidPower_representativeImage_no_injection.derivable
+#print axioms Classicism.MathematicalContingency.rigidPower_representativeImage_no_injection.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.rigidPower_representativeImage_no_injection.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.rigidPower_representativeImage_no_injection"

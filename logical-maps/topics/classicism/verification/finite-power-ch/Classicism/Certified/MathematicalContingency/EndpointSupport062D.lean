@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport062DSegment01
+
+#print axioms Classicism.MathematicalContingency.leastLayer_total.derivable
+#print axioms Classicism.MathematicalContingency.leastLayer_total.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.leastLayer_total.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.leastLayer_total"

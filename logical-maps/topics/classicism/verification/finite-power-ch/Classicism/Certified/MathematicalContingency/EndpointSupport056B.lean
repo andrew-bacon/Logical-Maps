@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport056BSegment05
+
+#print axioms Classicism.MathematicalContingency.cohen_names_dense_separation.derivable
+#print axioms Classicism.MathematicalContingency.cohen_names_dense_separation.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.cohen_names_dense_separation.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.cohen_names_dense_separation"

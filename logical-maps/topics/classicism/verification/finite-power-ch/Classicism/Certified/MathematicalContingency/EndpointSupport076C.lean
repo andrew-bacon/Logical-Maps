@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport076CSegment14
+
+#print axioms Classicism.MathematicalContingency.cohen_not_cardinalCH_of_coordinate_bounds.derivable
+#print axioms Classicism.MathematicalContingency.cohen_not_cardinalCH_of_coordinate_bounds.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.cohen_not_cardinalCH_of_coordinate_bounds.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.cohen_not_cardinalCH_of_coordinate_bounds"

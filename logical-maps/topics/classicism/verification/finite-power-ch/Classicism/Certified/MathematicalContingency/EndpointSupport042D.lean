@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport042DSegment01
+
+#print axioms Classicism.MathematicalContingency.rigid_injects_necessary.derivable
+#print axioms Classicism.MathematicalContingency.rigid_injects_necessary.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.rigid_injects_necessary.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.rigid_injects_necessary"

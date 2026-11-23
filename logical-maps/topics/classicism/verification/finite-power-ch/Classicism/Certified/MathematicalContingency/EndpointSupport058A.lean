@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport058ASegment01
+
+#print axioms Classicism.MathematicalContingency.local_injection_exclusion.derivable
+#print axioms Classicism.MathematicalContingency.local_injection_exclusion.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.local_injection_exclusion.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.local_injection_exclusion"

@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport063ESegment01
+
+#print axioms Classicism.MathematicalContingency.nextIn_total.derivable
+#print axioms Classicism.MathematicalContingency.nextIn_total.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.nextIn_total.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.nextIn_total"

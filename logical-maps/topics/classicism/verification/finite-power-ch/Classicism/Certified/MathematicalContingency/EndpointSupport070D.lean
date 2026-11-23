@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport070DSegment04
+
+#print axioms Classicism.MathematicalContingency.bounded_fixed_assignment_finite.derivable
+#print axioms Classicism.MathematicalContingency.bounded_fixed_assignment_finite.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.bounded_fixed_assignment_finite.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.bounded_fixed_assignment_finite"

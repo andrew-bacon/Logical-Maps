@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport074CSegment01
+
+#print axioms Classicism.MathematicalContingency.powerRepresentativeValue_disjoint.derivable
+#print axioms Classicism.MathematicalContingency.powerRepresentativeValue_disjoint.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.powerRepresentativeValue_disjoint.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.powerRepresentativeValue_disjoint"

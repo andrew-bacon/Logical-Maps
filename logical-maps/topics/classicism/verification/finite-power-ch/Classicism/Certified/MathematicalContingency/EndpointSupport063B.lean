@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport063BSegment01
+
+#print axioms Classicism.MathematicalContingency.finiteSubset_subset.derivable
+#print axioms Classicism.MathematicalContingency.finiteSubset_subset.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.finiteSubset_subset.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.finiteSubset_subset"

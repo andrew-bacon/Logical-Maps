@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport041BSegment01
+
+#print axioms Classicism.MathematicalContingency.rigid_forall_three.derivable
+#print axioms Classicism.MathematicalContingency.rigid_forall_three.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.rigid_forall_three.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.rigid_forall_three"

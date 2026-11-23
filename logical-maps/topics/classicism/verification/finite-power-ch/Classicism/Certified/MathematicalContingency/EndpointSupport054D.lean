@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport054DSegment01
+
+#print axioms Classicism.MathematicalContingency.rigid_representative_exists.derivable
+#print axioms Classicism.MathematicalContingency.rigid_representative_exists.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.rigid_representative_exists.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.rigid_representative_exists"

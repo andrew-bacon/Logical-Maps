@@ -1,0 +1,3 @@
+import Classicism.Certified.MathematicalContingency.EndpointAssembly34Segment131
+
+#print axioms Classicism.MathematicalContingency.FinitePower.positive_possible_cardinalCH_of_stable.derivable

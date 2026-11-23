@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport059FSegment01
+
+#print axioms Classicism.MathematicalContingency.fibrePullback_injects.derivable
+#print axioms Classicism.MathematicalContingency.fibrePullback_injects.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.fibrePullback_injects.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.fibrePullback_injects"

@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport060ASegment02
+
+#print axioms Classicism.MathematicalContingency.antichain_uniform_fibre_codes.derivable
+#print axioms Classicism.MathematicalContingency.antichain_uniform_fibre_codes.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.antichain_uniform_fibre_codes.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.antichain_uniform_fibre_codes"

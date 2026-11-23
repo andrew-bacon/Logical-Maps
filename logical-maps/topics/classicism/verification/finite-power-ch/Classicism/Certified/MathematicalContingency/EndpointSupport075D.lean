@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport075DSegment02
+
+#print axioms Classicism.MathematicalContingency.nameCarrier_product_gap.derivable
+#print axioms Classicism.MathematicalContingency.nameCarrier_product_gap.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.nameCarrier_product_gap.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.nameCarrier_product_gap"

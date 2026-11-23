@@ -1,0 +1,8 @@
+name = "finite_power_ch"
+defaultTargets = ["FinitePowerCH"]
+
+[[lean_lib]]
+name = "Classicism"
+
+[[lean_lib]]
+name = "FinitePowerCH"

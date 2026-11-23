@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport073ESegment13
+
+#print axioms Classicism.MathematicalContingency.cohen_frozen_intermediate_uncountable.derivable
+#print axioms Classicism.MathematicalContingency.cohen_frozen_intermediate_uncountable.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.cohen_frozen_intermediate_uncountable.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.cohen_frozen_intermediate_uncountable"

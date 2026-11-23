@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport075CSegment02
+
+#print axioms Classicism.MathematicalContingency.relProduct_embeds_of_pairing.derivable
+#print axioms Classicism.MathematicalContingency.relProduct_embeds_of_pairing.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.relProduct_embeds_of_pairing.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.relProduct_embeds_of_pairing"

@@ -1,0 +1,3 @@
+import Classicism.Certified.MathematicalContingency.EndpointAssembly37Segment225
+
+#print axioms Classicism.MathematicalContingency.FinitePower.negative_possible_not_cardinalCH.derivable

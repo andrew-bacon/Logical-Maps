@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport075BSegment02
+
+#print axioms Classicism.MathematicalContingency.relProduct_embeds_from_coordinates.derivable
+#print axioms Classicism.MathematicalContingency.relProduct_embeds_from_coordinates.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.relProduct_embeds_from_coordinates.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.relProduct_embeds_from_coordinates"

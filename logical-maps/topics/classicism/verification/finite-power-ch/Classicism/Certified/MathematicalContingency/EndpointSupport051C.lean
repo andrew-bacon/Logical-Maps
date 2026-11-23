@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport051CSegment01
+
+#print axioms Classicism.MathematicalContingency.finitePower_absorption_of_constructors.derivable
+#print axioms Classicism.MathematicalContingency.finitePower_absorption_of_constructors.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.finitePower_absorption_of_constructors.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.finitePower_absorption_of_constructors"

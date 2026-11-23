@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport049FSegment02
+
+#print axioms Classicism.MathematicalContingency.finiteCondition_cardinal_bound.derivable
+#print axioms Classicism.MathematicalContingency.finiteCondition_cardinal_bound.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.finiteCondition_cardinal_bound.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.finiteCondition_cardinal_bound"

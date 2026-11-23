@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport057DSegment01
+
+#print axioms Classicism.MathematicalContingency.maps_of_coext.derivable
+#print axioms Classicism.MathematicalContingency.maps_of_coext.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.maps_of_coext.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.maps_of_coext"

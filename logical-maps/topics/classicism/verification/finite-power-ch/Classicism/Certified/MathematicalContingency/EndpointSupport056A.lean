@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport056ASegment01
+
+#print axioms Classicism.MathematicalContingency.distinct_values_not_coext.derivable
+#print axioms Classicism.MathematicalContingency.distinct_values_not_coext.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.distinct_values_not_coext.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.distinct_values_not_coext"

@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport065CSegment01
+
+#print axioms Classicism.MathematicalContingency.minimumOn_unique.derivable
+#print axioms Classicism.MathematicalContingency.minimumOn_unique.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.minimumOn_unique.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.minimumOn_unique"

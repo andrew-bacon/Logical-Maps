@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport036DSegment03
+
+#print axioms Classicism.MathematicalContingency.countable_whole_row_coext.derivable
+#print axioms Classicism.MathematicalContingency.countable_whole_row_coext.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.countable_whole_row_coext.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.countable_whole_row_coext"

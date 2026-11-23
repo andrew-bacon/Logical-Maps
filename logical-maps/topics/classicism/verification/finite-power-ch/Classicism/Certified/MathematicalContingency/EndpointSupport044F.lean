@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport044FSegment02
+
+#print axioms Classicism.MathematicalContingency.hartogsCarrier_nd.derivable
+#print axioms Classicism.MathematicalContingency.hartogsCarrier_nd.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.hartogsCarrier_nd.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.hartogsCarrier_nd"

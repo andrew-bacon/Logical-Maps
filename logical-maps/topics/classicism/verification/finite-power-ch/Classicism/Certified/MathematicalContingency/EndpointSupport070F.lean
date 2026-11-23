@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport070FSegment01
+
+#print axioms Classicism.MathematicalContingency.ternary_conflict_of_not_agree.derivable
+#print axioms Classicism.MathematicalContingency.ternary_conflict_of_not_agree.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.ternary_conflict_of_not_agree.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.ternary_conflict_of_not_agree"

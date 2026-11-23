@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport062ASegment02
+
+#print axioms Classicism.MathematicalContingency.leastCone_bijects.derivable
+#print axioms Classicism.MathematicalContingency.leastCone_bijects.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.leastCone_bijects.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.leastCone_bijects"

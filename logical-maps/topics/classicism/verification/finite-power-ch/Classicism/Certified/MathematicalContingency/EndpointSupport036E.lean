@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport036ESegment07
+
+#print axioms Classicism.MathematicalContingency.countable_names_dense_coverage.derivable
+#print axioms Classicism.MathematicalContingency.countable_names_dense_coverage.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.countable_names_dense_coverage.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.countable_names_dense_coverage"

@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport033ESegment02
+
+#print axioms Classicism.MathematicalContingency.indexedNames_frozen_map.derivable
+#print axioms Classicism.MathematicalContingency.indexedNames_frozen_map.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.indexedNames_frozen_map.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.indexedNames_frozen_map"

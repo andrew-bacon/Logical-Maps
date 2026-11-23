@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport076DSegment12
+
+#print axioms Classicism.MathematicalContingency.cohen_not_cardinalCH_of_completion.derivable
+#print axioms Classicism.MathematicalContingency.cohen_not_cardinalCH_of_completion.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.cohen_not_cardinalCH_of_completion.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.cohen_not_cardinalCH_of_completion"

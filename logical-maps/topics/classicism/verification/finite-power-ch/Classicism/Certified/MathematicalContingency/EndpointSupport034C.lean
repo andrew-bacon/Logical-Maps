@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport034CSegment01
+
+#print axioms Classicism.MathematicalContingency.countableDomain_unused_row.derivable
+#print axioms Classicism.MathematicalContingency.countableDomain_unused_row.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.countableDomain_unused_row.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.countableDomain_unused_row"

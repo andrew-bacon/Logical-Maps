@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport072DSegment07
+
+#print axioms Classicism.MathematicalContingency.uniformCCC.derivable
+#print axioms Classicism.MathematicalContingency.uniformCCC.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.uniformCCC.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.uniformCCC"

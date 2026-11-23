@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport032DSegment01
+
+#print axioms Classicism.MathematicalContingency.indexedName_exists.derivable
+#print axioms Classicism.MathematicalContingency.indexedName_exists.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.indexedName_exists.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.indexedName_exists"

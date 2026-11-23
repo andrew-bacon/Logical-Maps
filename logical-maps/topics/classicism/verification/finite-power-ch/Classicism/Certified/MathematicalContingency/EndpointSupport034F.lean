@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport034FSegment01
+
+#print axioms Classicism.MathematicalContingency.countableDomain_union.derivable
+#print axioms Classicism.MathematicalContingency.countableDomain_union.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.countableDomain_union.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.countableDomain_union"

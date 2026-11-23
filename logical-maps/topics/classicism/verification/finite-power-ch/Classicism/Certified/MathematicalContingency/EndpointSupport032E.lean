@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport032ESegment02
+
+#print axioms Classicism.MathematicalContingency.countable_names_maps.derivable
+#print axioms Classicism.MathematicalContingency.countable_names_maps.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.countable_names_maps.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.countable_names_maps"

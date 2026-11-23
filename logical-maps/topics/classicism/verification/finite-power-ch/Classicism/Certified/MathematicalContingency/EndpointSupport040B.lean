@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport040BSegment01
+
+#print axioms Classicism.MathematicalContingency.stable_wellOrder_induction.derivable
+#print axioms Classicism.MathematicalContingency.stable_wellOrder_induction.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.stable_wellOrder_induction.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.stable_wellOrder_induction"

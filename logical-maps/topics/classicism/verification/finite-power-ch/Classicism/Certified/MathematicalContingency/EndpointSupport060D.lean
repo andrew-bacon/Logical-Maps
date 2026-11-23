@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport060DSegment01
+
+#print axioms Classicism.MathematicalContingency.serialCode_functional.derivable
+#print axioms Classicism.MathematicalContingency.serialCode_functional.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.serialCode_functional.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.serialCode_functional"

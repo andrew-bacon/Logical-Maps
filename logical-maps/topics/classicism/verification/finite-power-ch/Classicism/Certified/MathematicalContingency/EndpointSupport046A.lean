@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport046ASegment01
+
+#print axioms Classicism.MathematicalContingency.pairingImage_domains.derivable
+#print axioms Classicism.MathematicalContingency.pairingImage_domains.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.pairingImage_domains.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.pairingImage_domains"

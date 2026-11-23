@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport037ESegment10
+
+#print axioms Classicism.MathematicalContingency.countable_completion_possible_surjects.derivable
+#print axioms Classicism.MathematicalContingency.countable_completion_possible_surjects.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.countable_completion_possible_surjects.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.countable_completion_possible_surjects"

@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport033FSegment01
+
+#print axioms Classicism.MathematicalContingency.frozen_rows_cover_preserved_power.derivable
+#print axioms Classicism.MathematicalContingency.frozen_rows_cover_preserved_power.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.frozen_rows_cover_preserved_power.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.frozen_rows_cover_preserved_power"

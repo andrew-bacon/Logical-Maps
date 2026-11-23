@@ -1,0 +1,26 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport002
+import Classicism.Results.MathematicalContingency.FinitePowerCH
+import Classicism.Tools.DeepSplitTranslate
+
+/-! Closed derivations needed by the Finite-Power CH endpoint.
+Only missing derivations in its proof dependency closure are generated here.
+OpenAI Codex, prompted by Andrew Bacon, 31 October 2026. -/
+set_option synthInstance.maxSize 4000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+set_option Classicism.Meta.DeepSplitTranslate.profile true
+set_option Classicism.Meta.DeepSplitTranslate.progress ".lake/finite-power-endpoint-progress.log"
+#classicism_deep_split_derive Classicism.MathematicalContingency.closedSegments_of_pairing_and_two
+#print axioms Classicism.MathematicalContingency.closedSegments_of_pairing_and_two.derivable
+#classicism_deep_split_derive Classicism.MathematicalContingency.pairAt_exists
+#print axioms Classicism.MathematicalContingency.pairAt_exists.derivable
+#classicism_deep_split_derive Classicism.MathematicalContingency.pairAt_unique
+#print axioms Classicism.MathematicalContingency.pairAt_unique.derivable
+#classicism_deep_split_derive Classicism.MathematicalContingency.pairAt_coordinates
+#print axioms Classicism.MathematicalContingency.pairAt_coordinates.derivable
+#classicism_deep_split_derive Classicism.MathematicalContingency.pairing_of_pairCarrier_embedding
+#print axioms Classicism.MathematicalContingency.pairing_of_pairCarrier_embedding.derivable
+#classicism_deep_split_derive Classicism.MathematicalContingency.wellOrder_embeds_from_segment_bounds
+#print axioms Classicism.MathematicalContingency.wellOrder_embeds_from_segment_bounds.derivable

@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport071CSegment03
+
+#print axioms Classicism.MathematicalContingency.cohen_bounded_incompatible_finite.derivable
+#print axioms Classicism.MathematicalContingency.cohen_bounded_incompatible_finite.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.cohen_bounded_incompatible_finite.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.cohen_bounded_incompatible_finite"

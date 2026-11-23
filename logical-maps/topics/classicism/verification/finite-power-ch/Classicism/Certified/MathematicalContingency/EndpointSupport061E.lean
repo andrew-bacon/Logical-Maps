@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport061ESegment02
+
+#print axioms Classicism.MathematicalContingency.selectedCones_incompatible.derivable
+#print axioms Classicism.MathematicalContingency.selectedCones_incompatible.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.selectedCones_incompatible.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.selectedCones_incompatible"

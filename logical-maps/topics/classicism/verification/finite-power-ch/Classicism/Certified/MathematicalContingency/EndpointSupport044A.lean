@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport044ASegment01
+
+#print axioms Classicism.MathematicalContingency.ordLim_stableApplication.derivable
+#print axioms Classicism.MathematicalContingency.ordLim_stableApplication.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.ordLim_stableApplication.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.ordLim_stableApplication"

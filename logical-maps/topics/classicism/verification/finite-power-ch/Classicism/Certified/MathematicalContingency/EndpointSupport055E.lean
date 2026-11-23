@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport055ESegment02
+
+#print axioms Classicism.MathematicalContingency.finiteCondition_add_fresh.derivable
+#print axioms Classicism.MathematicalContingency.finiteCondition_add_fresh.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.finiteCondition_add_fresh.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.finiteCondition_add_fresh"

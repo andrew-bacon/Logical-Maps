@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport064CSegment02
+
+#print axioms Classicism.MathematicalContingency.finiteRank_total.derivable
+#print axioms Classicism.MathematicalContingency.finiteRank_total.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.finiteRank_total.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.finiteRank_total"

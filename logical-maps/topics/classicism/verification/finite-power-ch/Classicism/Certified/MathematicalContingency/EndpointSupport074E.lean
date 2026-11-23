@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport074ESegment01
+
+#print axioms Classicism.MathematicalContingency.powerRepresentativeValue_cover.derivable
+#print axioms Classicism.MathematicalContingency.powerRepresentativeValue_cover.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.powerRepresentativeValue_cover.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.powerRepresentativeValue_cover"

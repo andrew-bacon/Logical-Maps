@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport068DSegment01
+
+#print axioms Classicism.MathematicalContingency.ternaryErase_insert_other.derivable
+#print axioms Classicism.MathematicalContingency.ternaryErase_insert_other.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.ternaryErase_insert_other.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.ternaryErase_insert_other"

@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport067CSegment02
+
+#print axioms Classicism.MathematicalContingency.ternaryBound_induction.derivable
+#print axioms Classicism.MathematicalContingency.ternaryBound_induction.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.ternaryBound_induction.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.ternaryBound_induction"

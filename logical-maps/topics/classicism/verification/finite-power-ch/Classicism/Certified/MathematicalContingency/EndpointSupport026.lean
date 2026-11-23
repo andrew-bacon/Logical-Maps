@@ -1,0 +1,43 @@
+import Classicism.Certified.MathematicalContingency.EndpointAssembly31
+import Classicism.Results.MathematicalContingency.FinitePowerCH
+import Classicism.Tools.ReuseCertificate
+
+/-! Saved checkpoint-140 theorem values checked against native dependencies,
+fresh current-statement quotations, and the C-minus axiom boundary.
+OpenAI Codex, prompted by Andrew Bacon, 1 November 2026. -/
+set_option synthInstance.maxSize 4000
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 8
+set_option Classicism.CertificateData.progress ".lake/finite-power-quotation-phases.log"
+
+set_option Classicism.CertificateData.compositionalReflection true
+
+#classicism_reuse_checkpoint
+  "Classicism/Certified/MathematicalContingency/Checkpoint140/EndpointSupport026.json"
+  Classicism.MathematicalContingency.countableDomain_empty
+  Classicism.MathematicalContingency.countableCondition_empty
+  Classicism.MathematicalContingency.intervalIso_sequence
+  Classicism.MathematicalContingency.entailment_trans
+  Classicism.MathematicalContingency.intervalIso_order_backward
+  Classicism.MathematicalContingency.intervalIso_order_forward
+
+#print axioms Classicism.MathematicalContingency.countableDomain_empty.derivable
+#print axioms Classicism.MathematicalContingency.countableDomain_empty.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.countableDomain_empty.reflect
+#print axioms Classicism.MathematicalContingency.countableCondition_empty.derivable
+#print axioms Classicism.MathematicalContingency.countableCondition_empty.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.countableCondition_empty.reflect
+#print axioms Classicism.MathematicalContingency.intervalIso_sequence.derivable
+#print axioms Classicism.MathematicalContingency.intervalIso_sequence.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.intervalIso_sequence.reflect
+#print axioms Classicism.MathematicalContingency.entailment_trans.derivable
+#print axioms Classicism.MathematicalContingency.entailment_trans.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.entailment_trans.reflect
+#print axioms Classicism.MathematicalContingency.intervalIso_order_backward.derivable
+#print axioms Classicism.MathematicalContingency.intervalIso_order_backward.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.intervalIso_order_backward.reflect
+#print axioms Classicism.MathematicalContingency.intervalIso_order_forward.derivable
+#print axioms Classicism.MathematicalContingency.intervalIso_order_forward.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.intervalIso_order_forward.reflect

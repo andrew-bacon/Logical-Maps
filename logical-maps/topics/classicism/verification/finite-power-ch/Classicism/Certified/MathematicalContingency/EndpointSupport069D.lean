@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport069DSegment01
+
+#print axioms Classicism.MathematicalContingency.finiteSubset_injective_preimage.derivable
+#print axioms Classicism.MathematicalContingency.finiteSubset_injective_preimage.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.finiteSubset_injective_preimage.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.finiteSubset_injective_preimage"

@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport051FSegment04
+
+#print axioms Classicism.MathematicalContingency.finiteCondition_wellOrder_of_pairing.derivable
+#print axioms Classicism.MathematicalContingency.finiteCondition_wellOrder_of_pairing.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.finiteCondition_wellOrder_of_pairing.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.finiteCondition_wellOrder_of_pairing"

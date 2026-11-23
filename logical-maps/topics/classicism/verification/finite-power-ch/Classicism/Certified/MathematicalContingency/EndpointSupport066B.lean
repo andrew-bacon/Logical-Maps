@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport066BSegment07
+
+#print axioms Classicism.MathematicalContingency.finiteLayers_injects.derivable
+#print axioms Classicism.MathematicalContingency.finiteLayers_injects.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.finiteLayers_injects.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.finiteLayers_injects"

@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport053ESegment01
+
+#print axioms Classicism.MathematicalContingency.cohenCondition_opposite_incompatible.derivable
+#print axioms Classicism.MathematicalContingency.cohenCondition_opposite_incompatible.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.cohenCondition_opposite_incompatible.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.cohenCondition_opposite_incompatible"

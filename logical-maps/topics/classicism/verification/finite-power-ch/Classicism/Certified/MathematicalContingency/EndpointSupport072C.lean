@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport072CSegment06
+
+#print axioms Classicism.MathematicalContingency.cohenFamilies_countable.derivable
+#print axioms Classicism.MathematicalContingency.cohenFamilies_countable.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.cohenFamilies_countable.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.cohenFamilies_countable"

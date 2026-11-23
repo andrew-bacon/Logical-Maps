@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport057ASegment05
+
+#print axioms Classicism.MathematicalContingency.cohen_subfamily_separation.derivable
+#print axioms Classicism.MathematicalContingency.cohen_subfamily_separation.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.cohen_subfamily_separation.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.cohen_subfamily_separation"

@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport040DSegment01
+
+#print axioms Classicism.MathematicalContingency.necessary_wellOrder_of_atomic_stability.derivable
+#print axioms Classicism.MathematicalContingency.necessary_wellOrder_of_atomic_stability.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.necessary_wellOrder_of_atomic_stability.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.necessary_wellOrder_of_atomic_stability"

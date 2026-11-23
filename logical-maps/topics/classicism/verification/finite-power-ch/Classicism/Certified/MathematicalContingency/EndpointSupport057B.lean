@@ -1,0 +1,6 @@
+import Classicism.Certified.MathematicalContingency.EndpointSupport057BSegment06
+
+#print axioms Classicism.MathematicalContingency.cohen_frozen_subfamily_exists.derivable
+#print axioms Classicism.MathematicalContingency.cohen_frozen_subfamily_exists.checkpoint140_exact
+#print axioms Classicism.MathematicalContingency.cohen_frozen_subfamily_exists.reflect
+run_cmd Lean.logInfo "checkpoint 140 current-statement audit: Classicism.MathematicalContingency.cohen_frozen_subfamily_exists"
